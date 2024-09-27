@@ -44,9 +44,9 @@ namespace Amazon.MediaConvert.Model
         /// Requests to create jobs with an expired version result in a regular job, as if no
         /// specific Job engine version was requested.
         /// </summary>
-        public DateTime ExpirationDate
+        public DateTime? ExpirationDate
         {
-            get { return this._expirationDate.GetValueOrDefault(); }
+            get { return this._expirationDate; }
             set { this._expirationDate = value; }
         }
 

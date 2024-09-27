@@ -69,11 +69,16 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetRetainResources())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.RetainResources)
+                    if (publicRequest.RetainResources.Count == 0)
+                        request.Parameters.Add("RetainResources", "");
+                    else
                     {
-                        request.Parameters.Add("RetainResources" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.RetainResources)
+                         {
+                             request.Parameters.Add("RetainResources" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetRoleARN())

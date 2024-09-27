@@ -65,20 +65,30 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetEnvironmentIds())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.EnvironmentIds)
+                    if (publicRequest.EnvironmentIds.Count == 0)
+                        request.Parameters.Add("EnvironmentIds", "");
+                    else
                     {
-                        request.Parameters.Add("EnvironmentIds" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.EnvironmentIds)
+                         {
+                             request.Parameters.Add("EnvironmentIds" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetEnvironmentNames())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.EnvironmentNames)
+                    if (publicRequest.EnvironmentNames.Count == 0)
+                        request.Parameters.Add("EnvironmentNames", "");
+                    else
                     {
-                        request.Parameters.Add("EnvironmentNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.EnvironmentNames)
+                         {
+                             request.Parameters.Add("EnvironmentNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetIncludedDeletedBackToUtc())

@@ -68,19 +68,19 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("cleanExpiredFiles", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.CleanExpiredFiles = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("numberOfSnapshotsToRetain", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfSnapshotsToRetain = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("snapshotRetentionPeriodInDays", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.SnapshotRetentionPeriodInDays = unmarshaller.Unmarshall(context);
                     continue;
                 }

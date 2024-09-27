@@ -61,30 +61,35 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetTags())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Tags)
+                    if (publicRequest.Tags.Count == 0)
+                        request.Parameters.Add("Tags", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetKey())
-                        {
-                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
-                        }
-                        if(publicRequestlistValue.IsSetPropagateAtLaunch())
-                        {
-                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "PropagateAtLaunch", StringUtils.FromBool(publicRequestlistValue.PropagateAtLaunch));
-                        }
-                        if(publicRequestlistValue.IsSetResourceId())
-                        {
-                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceId", StringUtils.FromString(publicRequestlistValue.ResourceId));
-                        }
-                        if(publicRequestlistValue.IsSetResourceType())
-                        {
-                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
-                        }
-                        if(publicRequestlistValue.IsSetValue())
-                        {
-                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Tags)
+                         {
+                            if(publicRequestlistValue.IsSetKey())
+                            {
+                                request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
+                            }
+                            if(publicRequestlistValue.IsSetPropagateAtLaunch())
+                            {
+                                request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "PropagateAtLaunch", StringUtils.FromBool(publicRequestlistValue.PropagateAtLaunch));
+                            }
+                            if(publicRequestlistValue.IsSetResourceId())
+                            {
+                                request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceId", StringUtils.FromString(publicRequestlistValue.ResourceId));
+                            }
+                            if(publicRequestlistValue.IsSetResourceType())
+                            {
+                                request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
+                            }
+                            if(publicRequestlistValue.IsSetValue())
+                            {
+                                request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

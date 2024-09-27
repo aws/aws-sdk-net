@@ -83,49 +83,35 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.DeliverySourceName);
                     }
 
-<<<<<<< HEAD
-                    if(publicRequest.IsSetTags())
-||||||| Commit version number update changes
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-=======
-                if(publicRequest.IsSetFieldDelimiter())
-                {
-                    context.Writer.WritePropertyName("fieldDelimiter");
-                    context.Writer.Write(publicRequest.FieldDelimiter);
-                }
-
-                if(publicRequest.IsSetRecordFields())
-                {
-                    context.Writer.WritePropertyName("recordFields");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRecordFieldsListValue in publicRequest.RecordFields)
+                    if(publicRequest.IsSetFieldDelimiter())
                     {
-                            context.Writer.Write(publicRequestRecordFieldsListValue);
+                        context.Writer.WritePropertyName("fieldDelimiter");
+                        context.Writer.Write(publicRequest.FieldDelimiter);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetS3DeliveryConfiguration())
-                {
-                    context.Writer.WritePropertyName("s3DeliveryConfiguration");
-                    context.Writer.WriteObjectStart();
+                    if(publicRequest.IsSetRecordFields())
+                    {
+                        context.Writer.WritePropertyName("recordFields");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRecordFieldsListValue in publicRequest.RecordFields)
+                        {
+                                context.Writer.Write(publicRequestRecordFieldsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
 
-                    var marshaller = S3DeliveryConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.S3DeliveryConfiguration, context);
+                    if(publicRequest.IsSetS3DeliveryConfiguration())
+                    {
+                        context.Writer.WritePropertyName("s3DeliveryConfiguration");
+                        context.Writer.WriteObjectStart();
 
-                    context.Writer.WriteObjectEnd();
-                }
+                        var marshaller = S3DeliveryConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.S3DeliveryConfiguration, context);
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
->>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
                     {
                         context.Writer.WritePropertyName("tags");
                         context.Writer.WriteObjectStart();

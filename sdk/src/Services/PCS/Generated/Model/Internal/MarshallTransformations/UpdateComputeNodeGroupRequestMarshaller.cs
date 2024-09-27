@@ -63,111 +63,114 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAmiId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("amiId");
-                    context.Writer.Write(publicRequest.AmiId);
-                }
-
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetClusterIdentifier())
-                {
-                    context.Writer.WritePropertyName("clusterIdentifier");
-                    context.Writer.Write(publicRequest.ClusterIdentifier);
-                }
-
-                if(publicRequest.IsSetComputeNodeGroupIdentifier())
-                {
-                    context.Writer.WritePropertyName("computeNodeGroupIdentifier");
-                    context.Writer.Write(publicRequest.ComputeNodeGroupIdentifier);
-                }
-
-                if(publicRequest.IsSetCustomLaunchTemplate())
-                {
-                    context.Writer.WritePropertyName("customLaunchTemplate");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CustomLaunchTemplateMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CustomLaunchTemplate, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetIamInstanceProfileArn())
-                {
-                    context.Writer.WritePropertyName("iamInstanceProfileArn");
-                    context.Writer.Write(publicRequest.IamInstanceProfileArn);
-                }
-
-                if(publicRequest.IsSetPurchaseOption())
-                {
-                    context.Writer.WritePropertyName("purchaseOption");
-                    context.Writer.Write(publicRequest.PurchaseOption);
-                }
-
-                if(publicRequest.IsSetScalingConfiguration())
-                {
-                    context.Writer.WritePropertyName("scalingConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ScalingConfigurationRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ScalingConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSlurmConfiguration())
-                {
-                    context.Writer.WritePropertyName("slurmConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UpdateComputeNodeGroupSlurmConfigurationRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SlurmConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSpotOptions())
-                {
-                    context.Writer.WritePropertyName("spotOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SpotOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SpotOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSubnetIds())
-                {
-                    context.Writer.WritePropertyName("subnetIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSubnetIdsListValue in publicRequest.SubnetIds)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAmiId())
                     {
-                            context.Writer.Write(publicRequestSubnetIdsListValue);
+                        context.Writer.WritePropertyName("amiId");
+                        context.Writer.Write(publicRequest.AmiId);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetClusterIdentifier())
+                    {
+                        context.Writer.WritePropertyName("clusterIdentifier");
+                        context.Writer.Write(publicRequest.ClusterIdentifier);
+                    }
+
+                    if(publicRequest.IsSetComputeNodeGroupIdentifier())
+                    {
+                        context.Writer.WritePropertyName("computeNodeGroupIdentifier");
+                        context.Writer.Write(publicRequest.ComputeNodeGroupIdentifier);
+                    }
+
+                    if(publicRequest.IsSetCustomLaunchTemplate())
+                    {
+                        context.Writer.WritePropertyName("customLaunchTemplate");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CustomLaunchTemplateMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CustomLaunchTemplate, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetIamInstanceProfileArn())
+                    {
+                        context.Writer.WritePropertyName("iamInstanceProfileArn");
+                        context.Writer.Write(publicRequest.IamInstanceProfileArn);
+                    }
+
+                    if(publicRequest.IsSetPurchaseOption())
+                    {
+                        context.Writer.WritePropertyName("purchaseOption");
+                        context.Writer.Write(publicRequest.PurchaseOption);
+                    }
+
+                    if(publicRequest.IsSetScalingConfiguration())
+                    {
+                        context.Writer.WritePropertyName("scalingConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ScalingConfigurationRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ScalingConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSlurmConfiguration())
+                    {
+                        context.Writer.WritePropertyName("slurmConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = UpdateComputeNodeGroupSlurmConfigurationRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SlurmConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSpotOptions())
+                    {
+                        context.Writer.WritePropertyName("spotOptions");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SpotOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SpotOptions, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSubnetIds())
+                    {
+                        context.Writer.WritePropertyName("subnetIds");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSubnetIdsListValue in publicRequest.SubnetIds)
+                        {
+                                context.Writer.Write(publicRequestSubnetIdsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

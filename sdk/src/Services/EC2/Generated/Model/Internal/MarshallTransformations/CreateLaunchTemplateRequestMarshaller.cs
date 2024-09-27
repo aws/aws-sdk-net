@@ -67,57 +67,62 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     if(publicRequest.LaunchTemplateData.IsSetBlockDeviceMappings())
                     {
-                        int publicRequestLaunchTemplateDatalistValueIndex = 1;
-                        foreach(var publicRequestLaunchTemplateDatalistValue in publicRequest.LaunchTemplateData.BlockDeviceMappings)
+                        if (publicRequest.LaunchTemplateData.BlockDeviceMappings.Count == 0)
+                            request.Parameters.Add("LaunchTemplateData" + "." + "BlockDeviceMapping", "");
+                        else
                         {
-                            if(publicRequestLaunchTemplateDatalistValue.IsSetDeviceName())
-                            {
-                                request.Parameters.Add("LaunchTemplateData" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "DeviceName", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.DeviceName));
-                            }
-                            if(publicRequestLaunchTemplateDatalistValue.IsSetEbs())
-                            {
-                                if(publicRequestLaunchTemplateDatalistValue.Ebs.IsSetDeleteOnTermination())
+                             int publicRequestLaunchTemplateDatalistValueIndex = 1;
+                             foreach(var publicRequestLaunchTemplateDatalistValue in publicRequest.LaunchTemplateData.BlockDeviceMappings)
+                             {
+                                if(publicRequestLaunchTemplateDatalistValue.IsSetDeviceName())
                                 {
-                                    request.Parameters.Add("LaunchTemplateData" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ebs" + "." + "DeleteOnTermination", StringUtils.FromBool(publicRequestLaunchTemplateDatalistValue.Ebs.DeleteOnTermination));
+                                    request.Parameters.Add("LaunchTemplateData" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "DeviceName", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.DeviceName));
                                 }
-                                if(publicRequestLaunchTemplateDatalistValue.Ebs.IsSetEncrypted())
+                                if(publicRequestLaunchTemplateDatalistValue.IsSetEbs())
                                 {
-                                    request.Parameters.Add("LaunchTemplateData" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ebs" + "." + "Encrypted", StringUtils.FromBool(publicRequestLaunchTemplateDatalistValue.Ebs.Encrypted));
+                                    if(publicRequestLaunchTemplateDatalistValue.Ebs.IsSetDeleteOnTermination())
+                                    {
+                                        request.Parameters.Add("LaunchTemplateData" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ebs" + "." + "DeleteOnTermination", StringUtils.FromBool(publicRequestLaunchTemplateDatalistValue.Ebs.DeleteOnTermination));
+                                    }
+                                    if(publicRequestLaunchTemplateDatalistValue.Ebs.IsSetEncrypted())
+                                    {
+                                        request.Parameters.Add("LaunchTemplateData" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ebs" + "." + "Encrypted", StringUtils.FromBool(publicRequestLaunchTemplateDatalistValue.Ebs.Encrypted));
+                                    }
+                                    if(publicRequestLaunchTemplateDatalistValue.Ebs.IsSetIops())
+                                    {
+                                        request.Parameters.Add("LaunchTemplateData" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ebs" + "." + "Iops", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.Ebs.Iops));
+                                    }
+                                    if(publicRequestLaunchTemplateDatalistValue.Ebs.IsSetKmsKeyId())
+                                    {
+                                        request.Parameters.Add("LaunchTemplateData" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ebs" + "." + "KmsKeyId", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.Ebs.KmsKeyId));
+                                    }
+                                    if(publicRequestLaunchTemplateDatalistValue.Ebs.IsSetSnapshotId())
+                                    {
+                                        request.Parameters.Add("LaunchTemplateData" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ebs" + "." + "SnapshotId", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.Ebs.SnapshotId));
+                                    }
+                                    if(publicRequestLaunchTemplateDatalistValue.Ebs.IsSetThroughput())
+                                    {
+                                        request.Parameters.Add("LaunchTemplateData" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ebs" + "." + "Throughput", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.Ebs.Throughput));
+                                    }
+                                    if(publicRequestLaunchTemplateDatalistValue.Ebs.IsSetVolumeSize())
+                                    {
+                                        request.Parameters.Add("LaunchTemplateData" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ebs" + "." + "VolumeSize", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.Ebs.VolumeSize));
+                                    }
+                                    if(publicRequestLaunchTemplateDatalistValue.Ebs.IsSetVolumeType())
+                                    {
+                                        request.Parameters.Add("LaunchTemplateData" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ebs" + "." + "VolumeType", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.Ebs.VolumeType));
+                                    }
                                 }
-                                if(publicRequestLaunchTemplateDatalistValue.Ebs.IsSetIops())
+                                if(publicRequestLaunchTemplateDatalistValue.IsSetNoDevice())
                                 {
-                                    request.Parameters.Add("LaunchTemplateData" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ebs" + "." + "Iops", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.Ebs.Iops));
+                                    request.Parameters.Add("LaunchTemplateData" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "NoDevice", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.NoDevice));
                                 }
-                                if(publicRequestLaunchTemplateDatalistValue.Ebs.IsSetKmsKeyId())
+                                if(publicRequestLaunchTemplateDatalistValue.IsSetVirtualName())
                                 {
-                                    request.Parameters.Add("LaunchTemplateData" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ebs" + "." + "KmsKeyId", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.Ebs.KmsKeyId));
+                                    request.Parameters.Add("LaunchTemplateData" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "VirtualName", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.VirtualName));
                                 }
-                                if(publicRequestLaunchTemplateDatalistValue.Ebs.IsSetSnapshotId())
-                                {
-                                    request.Parameters.Add("LaunchTemplateData" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ebs" + "." + "SnapshotId", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.Ebs.SnapshotId));
-                                }
-                                if(publicRequestLaunchTemplateDatalistValue.Ebs.IsSetThroughput())
-                                {
-                                    request.Parameters.Add("LaunchTemplateData" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ebs" + "." + "Throughput", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.Ebs.Throughput));
-                                }
-                                if(publicRequestLaunchTemplateDatalistValue.Ebs.IsSetVolumeSize())
-                                {
-                                    request.Parameters.Add("LaunchTemplateData" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ebs" + "." + "VolumeSize", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.Ebs.VolumeSize));
-                                }
-                                if(publicRequestLaunchTemplateDatalistValue.Ebs.IsSetVolumeType())
-                                {
-                                    request.Parameters.Add("LaunchTemplateData" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ebs" + "." + "VolumeType", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.Ebs.VolumeType));
-                                }
-                            }
-                            if(publicRequestLaunchTemplateDatalistValue.IsSetNoDevice())
-                            {
-                                request.Parameters.Add("LaunchTemplateData" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "NoDevice", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.NoDevice));
-                            }
-                            if(publicRequestLaunchTemplateDatalistValue.IsSetVirtualName())
-                            {
-                                request.Parameters.Add("LaunchTemplateData" + "." + "BlockDeviceMapping" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "VirtualName", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.VirtualName));
-                            }
-                            publicRequestLaunchTemplateDatalistValueIndex++;
+                                 publicRequestLaunchTemplateDatalistValueIndex++;
+                             }
                         }
                     }
                     if(publicRequest.LaunchTemplateData.IsSetCapacityReservationSpecification())
@@ -174,30 +179,40 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if(publicRequest.LaunchTemplateData.IsSetElasticGpuSpecifications())
                     {
-                        int publicRequestLaunchTemplateDatalistValueIndex = 1;
-                        foreach(var publicRequestLaunchTemplateDatalistValue in publicRequest.LaunchTemplateData.ElasticGpuSpecifications)
+                        if (publicRequest.LaunchTemplateData.ElasticGpuSpecifications.Count == 0)
+                            request.Parameters.Add("LaunchTemplateData" + "." + "ElasticGpuSpecification", "");
+                        else
                         {
-                            if(publicRequestLaunchTemplateDatalistValue.IsSetType())
-                            {
-                                request.Parameters.Add("LaunchTemplateData" + "." + "ElasticGpuSpecification" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Type", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.Type));
-                            }
-                            publicRequestLaunchTemplateDatalistValueIndex++;
+                             int publicRequestLaunchTemplateDatalistValueIndex = 1;
+                             foreach(var publicRequestLaunchTemplateDatalistValue in publicRequest.LaunchTemplateData.ElasticGpuSpecifications)
+                             {
+                                if(publicRequestLaunchTemplateDatalistValue.IsSetType())
+                                {
+                                    request.Parameters.Add("LaunchTemplateData" + "." + "ElasticGpuSpecification" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Type", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.Type));
+                                }
+                                 publicRequestLaunchTemplateDatalistValueIndex++;
+                             }
                         }
                     }
                     if(publicRequest.LaunchTemplateData.IsSetElasticInferenceAccelerators())
                     {
-                        int publicRequestLaunchTemplateDatalistValueIndex = 1;
-                        foreach(var publicRequestLaunchTemplateDatalistValue in publicRequest.LaunchTemplateData.ElasticInferenceAccelerators)
+                        if (publicRequest.LaunchTemplateData.ElasticInferenceAccelerators.Count == 0)
+                            request.Parameters.Add("LaunchTemplateData" + "." + "ElasticInferenceAccelerator", "");
+                        else
                         {
-                            if(publicRequestLaunchTemplateDatalistValue.IsSetCount())
-                            {
-                                request.Parameters.Add("LaunchTemplateData" + "." + "ElasticInferenceAccelerator" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Count", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.Count));
-                            }
-                            if(publicRequestLaunchTemplateDatalistValue.IsSetType())
-                            {
-                                request.Parameters.Add("LaunchTemplateData" + "." + "ElasticInferenceAccelerator" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Type", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.Type));
-                            }
-                            publicRequestLaunchTemplateDatalistValueIndex++;
+                             int publicRequestLaunchTemplateDatalistValueIndex = 1;
+                             foreach(var publicRequestLaunchTemplateDatalistValue in publicRequest.LaunchTemplateData.ElasticInferenceAccelerators)
+                             {
+                                if(publicRequestLaunchTemplateDatalistValue.IsSetCount())
+                                {
+                                    request.Parameters.Add("LaunchTemplateData" + "." + "ElasticInferenceAccelerator" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Count", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.Count));
+                                }
+                                if(publicRequestLaunchTemplateDatalistValue.IsSetType())
+                                {
+                                    request.Parameters.Add("LaunchTemplateData" + "." + "ElasticInferenceAccelerator" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Type", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.Type));
+                                }
+                                 publicRequestLaunchTemplateDatalistValueIndex++;
+                             }
                         }
                     }
                     if(publicRequest.LaunchTemplateData.IsSetEnclaveOptions())
@@ -278,20 +293,30 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         }
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetAcceleratorManufacturers())
                         {
-                            int publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex = 1;
-                            foreach(var publicRequestLaunchTemplateDataInstanceRequirementslistValue in publicRequest.LaunchTemplateData.InstanceRequirements.AcceleratorManufacturers)
+                            if (publicRequest.LaunchTemplateData.InstanceRequirements.AcceleratorManufacturers.Count == 0)
+                                request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "AcceleratorManufacturer", "");
+                            else
                             {
-                                request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "AcceleratorManufacturer" + "." + publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestLaunchTemplateDataInstanceRequirementslistValue));
-                                publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex++;
+                                 int publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex = 1;
+                                 foreach(var publicRequestLaunchTemplateDataInstanceRequirementslistValue in publicRequest.LaunchTemplateData.InstanceRequirements.AcceleratorManufacturers)
+                                 {
+                                     request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "AcceleratorManufacturer" + "." + publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestLaunchTemplateDataInstanceRequirementslistValue));
+                                     publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex++;
+                                 }
                             }
                         }
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetAcceleratorNames())
                         {
-                            int publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex = 1;
-                            foreach(var publicRequestLaunchTemplateDataInstanceRequirementslistValue in publicRequest.LaunchTemplateData.InstanceRequirements.AcceleratorNames)
+                            if (publicRequest.LaunchTemplateData.InstanceRequirements.AcceleratorNames.Count == 0)
+                                request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "AcceleratorName", "");
+                            else
                             {
-                                request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "AcceleratorName" + "." + publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestLaunchTemplateDataInstanceRequirementslistValue));
-                                publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex++;
+                                 int publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex = 1;
+                                 foreach(var publicRequestLaunchTemplateDataInstanceRequirementslistValue in publicRequest.LaunchTemplateData.InstanceRequirements.AcceleratorNames)
+                                 {
+                                     request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "AcceleratorName" + "." + publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestLaunchTemplateDataInstanceRequirementslistValue));
+                                     publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex++;
+                                 }
                             }
                         }
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetAcceleratorTotalMemoryMiB())
@@ -307,20 +332,30 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         }
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetAcceleratorTypes())
                         {
-                            int publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex = 1;
-                            foreach(var publicRequestLaunchTemplateDataInstanceRequirementslistValue in publicRequest.LaunchTemplateData.InstanceRequirements.AcceleratorTypes)
+                            if (publicRequest.LaunchTemplateData.InstanceRequirements.AcceleratorTypes.Count == 0)
+                                request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "AcceleratorType", "");
+                            else
                             {
-                                request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "AcceleratorType" + "." + publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestLaunchTemplateDataInstanceRequirementslistValue));
-                                publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex++;
+                                 int publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex = 1;
+                                 foreach(var publicRequestLaunchTemplateDataInstanceRequirementslistValue in publicRequest.LaunchTemplateData.InstanceRequirements.AcceleratorTypes)
+                                 {
+                                     request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "AcceleratorType" + "." + publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestLaunchTemplateDataInstanceRequirementslistValue));
+                                     publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex++;
+                                 }
                             }
                         }
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetAllowedInstanceTypes())
                         {
-                            int publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex = 1;
-                            foreach(var publicRequestLaunchTemplateDataInstanceRequirementslistValue in publicRequest.LaunchTemplateData.InstanceRequirements.AllowedInstanceTypes)
+                            if (publicRequest.LaunchTemplateData.InstanceRequirements.AllowedInstanceTypes.Count == 0)
+                                request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "AllowedInstanceType", "");
+                            else
                             {
-                                request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "AllowedInstanceType" + "." + publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestLaunchTemplateDataInstanceRequirementslistValue));
-                                publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex++;
+                                 int publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex = 1;
+                                 foreach(var publicRequestLaunchTemplateDataInstanceRequirementslistValue in publicRequest.LaunchTemplateData.InstanceRequirements.AllowedInstanceTypes)
+                                 {
+                                     request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "AllowedInstanceType" + "." + publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestLaunchTemplateDataInstanceRequirementslistValue));
+                                     publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex++;
+                                 }
                             }
                         }
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetBareMetal())
@@ -344,29 +379,44 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         }
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetCpuManufacturers())
                         {
-                            int publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex = 1;
-                            foreach(var publicRequestLaunchTemplateDataInstanceRequirementslistValue in publicRequest.LaunchTemplateData.InstanceRequirements.CpuManufacturers)
+                            if (publicRequest.LaunchTemplateData.InstanceRequirements.CpuManufacturers.Count == 0)
+                                request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "CpuManufacturer", "");
+                            else
                             {
-                                request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "CpuManufacturer" + "." + publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestLaunchTemplateDataInstanceRequirementslistValue));
-                                publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex++;
+                                 int publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex = 1;
+                                 foreach(var publicRequestLaunchTemplateDataInstanceRequirementslistValue in publicRequest.LaunchTemplateData.InstanceRequirements.CpuManufacturers)
+                                 {
+                                     request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "CpuManufacturer" + "." + publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestLaunchTemplateDataInstanceRequirementslistValue));
+                                     publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex++;
+                                 }
                             }
                         }
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetExcludedInstanceTypes())
                         {
-                            int publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex = 1;
-                            foreach(var publicRequestLaunchTemplateDataInstanceRequirementslistValue in publicRequest.LaunchTemplateData.InstanceRequirements.ExcludedInstanceTypes)
+                            if (publicRequest.LaunchTemplateData.InstanceRequirements.ExcludedInstanceTypes.Count == 0)
+                                request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "ExcludedInstanceType", "");
+                            else
                             {
-                                request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "ExcludedInstanceType" + "." + publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestLaunchTemplateDataInstanceRequirementslistValue));
-                                publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex++;
+                                 int publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex = 1;
+                                 foreach(var publicRequestLaunchTemplateDataInstanceRequirementslistValue in publicRequest.LaunchTemplateData.InstanceRequirements.ExcludedInstanceTypes)
+                                 {
+                                     request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "ExcludedInstanceType" + "." + publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestLaunchTemplateDataInstanceRequirementslistValue));
+                                     publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex++;
+                                 }
                             }
                         }
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetInstanceGenerations())
                         {
-                            int publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex = 1;
-                            foreach(var publicRequestLaunchTemplateDataInstanceRequirementslistValue in publicRequest.LaunchTemplateData.InstanceRequirements.InstanceGenerations)
+                            if (publicRequest.LaunchTemplateData.InstanceRequirements.InstanceGenerations.Count == 0)
+                                request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "InstanceGeneration", "");
+                            else
                             {
-                                request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "InstanceGeneration" + "." + publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestLaunchTemplateDataInstanceRequirementslistValue));
-                                publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex++;
+                                 int publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex = 1;
+                                 foreach(var publicRequestLaunchTemplateDataInstanceRequirementslistValue in publicRequest.LaunchTemplateData.InstanceRequirements.InstanceGenerations)
+                                 {
+                                     request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "InstanceGeneration" + "." + publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestLaunchTemplateDataInstanceRequirementslistValue));
+                                     publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex++;
+                                 }
                             }
                         }
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetLocalStorage())
@@ -375,11 +425,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         }
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetLocalStorageTypes())
                         {
-                            int publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex = 1;
-                            foreach(var publicRequestLaunchTemplateDataInstanceRequirementslistValue in publicRequest.LaunchTemplateData.InstanceRequirements.LocalStorageTypes)
+                            if (publicRequest.LaunchTemplateData.InstanceRequirements.LocalStorageTypes.Count == 0)
+                                request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "LocalStorageType", "");
+                            else
                             {
-                                request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "LocalStorageType" + "." + publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestLaunchTemplateDataInstanceRequirementslistValue));
-                                publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex++;
+                                 int publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex = 1;
+                                 foreach(var publicRequestLaunchTemplateDataInstanceRequirementslistValue in publicRequest.LaunchTemplateData.InstanceRequirements.LocalStorageTypes)
+                                 {
+                                     request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "LocalStorageType" + "." + publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestLaunchTemplateDataInstanceRequirementslistValue));
+                                     publicRequestLaunchTemplateDataInstanceRequirementslistValueIndex++;
+                                 }
                             }
                         }
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetMaxSpotPriceAsPercentageOfOptimalOnDemandPrice())
@@ -479,14 +534,19 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if(publicRequest.LaunchTemplateData.IsSetLicenseSpecifications())
                     {
-                        int publicRequestLaunchTemplateDatalistValueIndex = 1;
-                        foreach(var publicRequestLaunchTemplateDatalistValue in publicRequest.LaunchTemplateData.LicenseSpecifications)
+                        if (publicRequest.LaunchTemplateData.LicenseSpecifications.Count == 0)
+                            request.Parameters.Add("LaunchTemplateData" + "." + "LicenseSpecification", "");
+                        else
                         {
-                            if(publicRequestLaunchTemplateDatalistValue.IsSetLicenseConfigurationArn())
-                            {
-                                request.Parameters.Add("LaunchTemplateData" + "." + "LicenseSpecification" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "LicenseConfigurationArn", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.LicenseConfigurationArn));
-                            }
-                            publicRequestLaunchTemplateDatalistValueIndex++;
+                             int publicRequestLaunchTemplateDatalistValueIndex = 1;
+                             foreach(var publicRequestLaunchTemplateDatalistValue in publicRequest.LaunchTemplateData.LicenseSpecifications)
+                             {
+                                if(publicRequestLaunchTemplateDatalistValue.IsSetLicenseConfigurationArn())
+                                {
+                                    request.Parameters.Add("LaunchTemplateData" + "." + "LicenseSpecification" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "LicenseConfigurationArn", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.LicenseConfigurationArn));
+                                }
+                                 publicRequestLaunchTemplateDatalistValueIndex++;
+                             }
                         }
                     }
                     if(publicRequest.LaunchTemplateData.IsSetMaintenanceOptions())
@@ -528,160 +588,190 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if(publicRequest.LaunchTemplateData.IsSetNetworkInterfaces())
                     {
-                        int publicRequestLaunchTemplateDatalistValueIndex = 1;
-                        foreach(var publicRequestLaunchTemplateDatalistValue in publicRequest.LaunchTemplateData.NetworkInterfaces)
+                        if (publicRequest.LaunchTemplateData.NetworkInterfaces.Count == 0)
+                            request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface", "");
+                        else
                         {
-                            if(publicRequestLaunchTemplateDatalistValue.IsSetAssociateCarrierIpAddress())
-                            {
-                                request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "AssociateCarrierIpAddress", StringUtils.FromBool(publicRequestLaunchTemplateDatalistValue.AssociateCarrierIpAddress));
-                            }
-                            if(publicRequestLaunchTemplateDatalistValue.IsSetAssociatePublicIpAddress())
-                            {
-                                request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "AssociatePublicIpAddress", StringUtils.FromBool(publicRequestLaunchTemplateDatalistValue.AssociatePublicIpAddress));
-                            }
-                            if(publicRequestLaunchTemplateDatalistValue.IsSetConnectionTrackingSpecification())
-                            {
-                                if(publicRequestLaunchTemplateDatalistValue.ConnectionTrackingSpecification.IsSetTcpEstablishedTimeout())
+                             int publicRequestLaunchTemplateDatalistValueIndex = 1;
+                             foreach(var publicRequestLaunchTemplateDatalistValue in publicRequest.LaunchTemplateData.NetworkInterfaces)
+                             {
+                                if(publicRequestLaunchTemplateDatalistValue.IsSetAssociateCarrierIpAddress())
                                 {
-                                    request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "ConnectionTrackingSpecification" + "." + "TcpEstablishedTimeout", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.ConnectionTrackingSpecification.TcpEstablishedTimeout));
+                                    request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "AssociateCarrierIpAddress", StringUtils.FromBool(publicRequestLaunchTemplateDatalistValue.AssociateCarrierIpAddress));
                                 }
-                                if(publicRequestLaunchTemplateDatalistValue.ConnectionTrackingSpecification.IsSetUdpStreamTimeout())
+                                if(publicRequestLaunchTemplateDatalistValue.IsSetAssociatePublicIpAddress())
                                 {
-                                    request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "ConnectionTrackingSpecification" + "." + "UdpStreamTimeout", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.ConnectionTrackingSpecification.UdpStreamTimeout));
+                                    request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "AssociatePublicIpAddress", StringUtils.FromBool(publicRequestLaunchTemplateDatalistValue.AssociatePublicIpAddress));
                                 }
-                                if(publicRequestLaunchTemplateDatalistValue.ConnectionTrackingSpecification.IsSetUdpTimeout())
+                                if(publicRequestLaunchTemplateDatalistValue.IsSetConnectionTrackingSpecification())
                                 {
-                                    request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "ConnectionTrackingSpecification" + "." + "UdpTimeout", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.ConnectionTrackingSpecification.UdpTimeout));
-                                }
-                            }
-                            if(publicRequestLaunchTemplateDatalistValue.IsSetDeleteOnTermination())
-                            {
-                                request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "DeleteOnTermination", StringUtils.FromBool(publicRequestLaunchTemplateDatalistValue.DeleteOnTermination));
-                            }
-                            if(publicRequestLaunchTemplateDatalistValue.IsSetDescription())
-                            {
-                                request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Description", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.Description));
-                            }
-                            if(publicRequestLaunchTemplateDatalistValue.IsSetDeviceIndex())
-                            {
-                                request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "DeviceIndex", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.DeviceIndex));
-                            }
-                            if(publicRequestLaunchTemplateDatalistValue.IsSetEnaSrdSpecification())
-                            {
-                                if(publicRequestLaunchTemplateDatalistValue.EnaSrdSpecification.IsSetEnaSrdEnabled())
-                                {
-                                    request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "EnaSrdSpecification" + "." + "EnaSrdEnabled", StringUtils.FromBool(publicRequestLaunchTemplateDatalistValue.EnaSrdSpecification.EnaSrdEnabled));
-                                }
-                                if(publicRequestLaunchTemplateDatalistValue.EnaSrdSpecification.IsSetEnaSrdUdpSpecification())
-                                {
-                                    if(publicRequestLaunchTemplateDatalistValue.EnaSrdSpecification.EnaSrdUdpSpecification.IsSetEnaSrdUdpEnabled())
+                                    if(publicRequestLaunchTemplateDatalistValue.ConnectionTrackingSpecification.IsSetTcpEstablishedTimeout())
                                     {
-                                        request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "EnaSrdSpecification" + "." + "EnaSrdUdpSpecification" + "." + "EnaSrdUdpEnabled", StringUtils.FromBool(publicRequestLaunchTemplateDatalistValue.EnaSrdSpecification.EnaSrdUdpSpecification.EnaSrdUdpEnabled));
+                                        request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "ConnectionTrackingSpecification" + "." + "TcpEstablishedTimeout", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.ConnectionTrackingSpecification.TcpEstablishedTimeout));
+                                    }
+                                    if(publicRequestLaunchTemplateDatalistValue.ConnectionTrackingSpecification.IsSetUdpStreamTimeout())
+                                    {
+                                        request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "ConnectionTrackingSpecification" + "." + "UdpStreamTimeout", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.ConnectionTrackingSpecification.UdpStreamTimeout));
+                                    }
+                                    if(publicRequestLaunchTemplateDatalistValue.ConnectionTrackingSpecification.IsSetUdpTimeout())
+                                    {
+                                        request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "ConnectionTrackingSpecification" + "." + "UdpTimeout", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.ConnectionTrackingSpecification.UdpTimeout));
                                     }
                                 }
-                            }
-                            if(publicRequestLaunchTemplateDatalistValue.IsSetGroups())
-                            {
-                                int publicRequestLaunchTemplateDatalistValuelistValueIndex = 1;
-                                foreach(var publicRequestLaunchTemplateDatalistValuelistValue in publicRequestLaunchTemplateDatalistValue.Groups)
+                                if(publicRequestLaunchTemplateDatalistValue.IsSetDeleteOnTermination())
                                 {
-                                    request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "SecurityGroupId" + "." + publicRequestLaunchTemplateDatalistValuelistValueIndex, StringUtils.FromString(publicRequestLaunchTemplateDatalistValuelistValue));
-                                    publicRequestLaunchTemplateDatalistValuelistValueIndex++;
+                                    request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "DeleteOnTermination", StringUtils.FromBool(publicRequestLaunchTemplateDatalistValue.DeleteOnTermination));
                                 }
-                            }
-                            if(publicRequestLaunchTemplateDatalistValue.IsSetInterfaceType())
-                            {
-                                request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "InterfaceType", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.InterfaceType));
-                            }
-                            if(publicRequestLaunchTemplateDatalistValue.IsSetIpv4PrefixCount())
-                            {
-                                request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ipv4PrefixCount", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.Ipv4PrefixCount));
-                            }
-                            if(publicRequestLaunchTemplateDatalistValue.IsSetIpv4Prefixes())
-                            {
-                                int publicRequestLaunchTemplateDatalistValuelistValueIndex = 1;
-                                foreach(var publicRequestLaunchTemplateDatalistValuelistValue in publicRequestLaunchTemplateDatalistValue.Ipv4Prefixes)
+                                if(publicRequestLaunchTemplateDatalistValue.IsSetDescription())
                                 {
-                                    if(publicRequestLaunchTemplateDatalistValuelistValue.IsSetIpv4Prefix())
-                                    {
-                                        request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ipv4Prefix" + "." + publicRequestLaunchTemplateDatalistValuelistValueIndex + "." + "Ipv4Prefix", StringUtils.FromString(publicRequestLaunchTemplateDatalistValuelistValue.Ipv4Prefix));
-                                    }
-                                    publicRequestLaunchTemplateDatalistValuelistValueIndex++;
+                                    request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Description", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.Description));
                                 }
-                            }
-                            if(publicRequestLaunchTemplateDatalistValue.IsSetIpv6AddressCount())
-                            {
-                                request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ipv6AddressCount", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.Ipv6AddressCount));
-                            }
-                            if(publicRequestLaunchTemplateDatalistValue.IsSetIpv6Addresses())
-                            {
-                                int publicRequestLaunchTemplateDatalistValuelistValueIndex = 1;
-                                foreach(var publicRequestLaunchTemplateDatalistValuelistValue in publicRequestLaunchTemplateDatalistValue.Ipv6Addresses)
+                                if(publicRequestLaunchTemplateDatalistValue.IsSetDeviceIndex())
                                 {
-                                    if(publicRequestLaunchTemplateDatalistValuelistValue.IsSetIpv6Address())
-                                    {
-                                        request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ipv6Addresses" + "." + publicRequestLaunchTemplateDatalistValuelistValueIndex + "." + "Ipv6Address", StringUtils.FromString(publicRequestLaunchTemplateDatalistValuelistValue.Ipv6Address));
-                                    }
-                                    publicRequestLaunchTemplateDatalistValuelistValueIndex++;
+                                    request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "DeviceIndex", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.DeviceIndex));
                                 }
-                            }
-                            if(publicRequestLaunchTemplateDatalistValue.IsSetIpv6PrefixCount())
-                            {
-                                request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ipv6PrefixCount", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.Ipv6PrefixCount));
-                            }
-                            if(publicRequestLaunchTemplateDatalistValue.IsSetIpv6Prefixes())
-                            {
-                                int publicRequestLaunchTemplateDatalistValuelistValueIndex = 1;
-                                foreach(var publicRequestLaunchTemplateDatalistValuelistValue in publicRequestLaunchTemplateDatalistValue.Ipv6Prefixes)
+                                if(publicRequestLaunchTemplateDatalistValue.IsSetEnaSrdSpecification())
                                 {
-                                    if(publicRequestLaunchTemplateDatalistValuelistValue.IsSetIpv6Prefix())
+                                    if(publicRequestLaunchTemplateDatalistValue.EnaSrdSpecification.IsSetEnaSrdEnabled())
                                     {
-                                        request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ipv6Prefix" + "." + publicRequestLaunchTemplateDatalistValuelistValueIndex + "." + "Ipv6Prefix", StringUtils.FromString(publicRequestLaunchTemplateDatalistValuelistValue.Ipv6Prefix));
+                                        request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "EnaSrdSpecification" + "." + "EnaSrdEnabled", StringUtils.FromBool(publicRequestLaunchTemplateDatalistValue.EnaSrdSpecification.EnaSrdEnabled));
                                     }
-                                    publicRequestLaunchTemplateDatalistValuelistValueIndex++;
+                                    if(publicRequestLaunchTemplateDatalistValue.EnaSrdSpecification.IsSetEnaSrdUdpSpecification())
+                                    {
+                                        if(publicRequestLaunchTemplateDatalistValue.EnaSrdSpecification.EnaSrdUdpSpecification.IsSetEnaSrdUdpEnabled())
+                                        {
+                                            request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "EnaSrdSpecification" + "." + "EnaSrdUdpSpecification" + "." + "EnaSrdUdpEnabled", StringUtils.FromBool(publicRequestLaunchTemplateDatalistValue.EnaSrdSpecification.EnaSrdUdpSpecification.EnaSrdUdpEnabled));
+                                        }
+                                    }
                                 }
-                            }
-                            if(publicRequestLaunchTemplateDatalistValue.IsSetNetworkCardIndex())
-                            {
-                                request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "NetworkCardIndex", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.NetworkCardIndex));
-                            }
-                            if(publicRequestLaunchTemplateDatalistValue.IsSetNetworkInterfaceId())
-                            {
-                                request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "NetworkInterfaceId", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.NetworkInterfaceId));
-                            }
-                            if(publicRequestLaunchTemplateDatalistValue.IsSetPrimaryIpv6())
-                            {
-                                request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "PrimaryIpv6", StringUtils.FromBool(publicRequestLaunchTemplateDatalistValue.PrimaryIpv6));
-                            }
-                            if(publicRequestLaunchTemplateDatalistValue.IsSetPrivateIpAddress())
-                            {
-                                request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "PrivateIpAddress", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.PrivateIpAddress));
-                            }
-                            if(publicRequestLaunchTemplateDatalistValue.IsSetPrivateIpAddresses())
-                            {
-                                int publicRequestLaunchTemplateDatalistValuelistValueIndex = 1;
-                                foreach(var publicRequestLaunchTemplateDatalistValuelistValue in publicRequestLaunchTemplateDatalistValue.PrivateIpAddresses)
+                                if(publicRequestLaunchTemplateDatalistValue.IsSetGroups())
                                 {
-                                    if(publicRequestLaunchTemplateDatalistValuelistValue.IsSetPrimary())
+                                    if (publicRequestLaunchTemplateDatalistValue.Groups.Count == 0)
+                                        request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "SecurityGroupId", "");
+                                    else
                                     {
-                                        request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "PrivateIpAddresses" + "." + publicRequestLaunchTemplateDatalistValuelistValueIndex + "." + "Primary", StringUtils.FromBool(publicRequestLaunchTemplateDatalistValuelistValue.Primary));
+                                         int publicRequestLaunchTemplateDatalistValuelistValueIndex = 1;
+                                         foreach(var publicRequestLaunchTemplateDatalistValuelistValue in publicRequestLaunchTemplateDatalistValue.Groups)
+                                         {
+                                             request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "SecurityGroupId" + "." + publicRequestLaunchTemplateDatalistValuelistValueIndex, StringUtils.FromString(publicRequestLaunchTemplateDatalistValuelistValue));
+                                             publicRequestLaunchTemplateDatalistValuelistValueIndex++;
+                                         }
                                     }
-                                    if(publicRequestLaunchTemplateDatalistValuelistValue.IsSetPrivateIpAddress())
-                                    {
-                                        request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "PrivateIpAddresses" + "." + publicRequestLaunchTemplateDatalistValuelistValueIndex + "." + "PrivateIpAddress", StringUtils.FromString(publicRequestLaunchTemplateDatalistValuelistValue.PrivateIpAddress));
-                                    }
-                                    publicRequestLaunchTemplateDatalistValuelistValueIndex++;
                                 }
-                            }
-                            if(publicRequestLaunchTemplateDatalistValue.IsSetSecondaryPrivateIpAddressCount())
-                            {
-                                request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "SecondaryPrivateIpAddressCount", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.SecondaryPrivateIpAddressCount));
-                            }
-                            if(publicRequestLaunchTemplateDatalistValue.IsSetSubnetId())
-                            {
-                                request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "SubnetId", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.SubnetId));
-                            }
-                            publicRequestLaunchTemplateDatalistValueIndex++;
+                                if(publicRequestLaunchTemplateDatalistValue.IsSetInterfaceType())
+                                {
+                                    request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "InterfaceType", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.InterfaceType));
+                                }
+                                if(publicRequestLaunchTemplateDatalistValue.IsSetIpv4PrefixCount())
+                                {
+                                    request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ipv4PrefixCount", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.Ipv4PrefixCount));
+                                }
+                                if(publicRequestLaunchTemplateDatalistValue.IsSetIpv4Prefixes())
+                                {
+                                    if (publicRequestLaunchTemplateDatalistValue.Ipv4Prefixes.Count == 0)
+                                        request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ipv4Prefix", "");
+                                    else
+                                    {
+                                         int publicRequestLaunchTemplateDatalistValuelistValueIndex = 1;
+                                         foreach(var publicRequestLaunchTemplateDatalistValuelistValue in publicRequestLaunchTemplateDatalistValue.Ipv4Prefixes)
+                                         {
+                                            if(publicRequestLaunchTemplateDatalistValuelistValue.IsSetIpv4Prefix())
+                                            {
+                                                request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ipv4Prefix" + "." + publicRequestLaunchTemplateDatalistValuelistValueIndex + "." + "Ipv4Prefix", StringUtils.FromString(publicRequestLaunchTemplateDatalistValuelistValue.Ipv4Prefix));
+                                            }
+                                             publicRequestLaunchTemplateDatalistValuelistValueIndex++;
+                                         }
+                                    }
+                                }
+                                if(publicRequestLaunchTemplateDatalistValue.IsSetIpv6AddressCount())
+                                {
+                                    request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ipv6AddressCount", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.Ipv6AddressCount));
+                                }
+                                if(publicRequestLaunchTemplateDatalistValue.IsSetIpv6Addresses())
+                                {
+                                    if (publicRequestLaunchTemplateDatalistValue.Ipv6Addresses.Count == 0)
+                                        request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ipv6Addresses", "");
+                                    else
+                                    {
+                                         int publicRequestLaunchTemplateDatalistValuelistValueIndex = 1;
+                                         foreach(var publicRequestLaunchTemplateDatalistValuelistValue in publicRequestLaunchTemplateDatalistValue.Ipv6Addresses)
+                                         {
+                                            if(publicRequestLaunchTemplateDatalistValuelistValue.IsSetIpv6Address())
+                                            {
+                                                request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ipv6Addresses" + "." + publicRequestLaunchTemplateDatalistValuelistValueIndex + "." + "Ipv6Address", StringUtils.FromString(publicRequestLaunchTemplateDatalistValuelistValue.Ipv6Address));
+                                            }
+                                             publicRequestLaunchTemplateDatalistValuelistValueIndex++;
+                                         }
+                                    }
+                                }
+                                if(publicRequestLaunchTemplateDatalistValue.IsSetIpv6PrefixCount())
+                                {
+                                    request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ipv6PrefixCount", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.Ipv6PrefixCount));
+                                }
+                                if(publicRequestLaunchTemplateDatalistValue.IsSetIpv6Prefixes())
+                                {
+                                    if (publicRequestLaunchTemplateDatalistValue.Ipv6Prefixes.Count == 0)
+                                        request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ipv6Prefix", "");
+                                    else
+                                    {
+                                         int publicRequestLaunchTemplateDatalistValuelistValueIndex = 1;
+                                         foreach(var publicRequestLaunchTemplateDatalistValuelistValue in publicRequestLaunchTemplateDatalistValue.Ipv6Prefixes)
+                                         {
+                                            if(publicRequestLaunchTemplateDatalistValuelistValue.IsSetIpv6Prefix())
+                                            {
+                                                request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Ipv6Prefix" + "." + publicRequestLaunchTemplateDatalistValuelistValueIndex + "." + "Ipv6Prefix", StringUtils.FromString(publicRequestLaunchTemplateDatalistValuelistValue.Ipv6Prefix));
+                                            }
+                                             publicRequestLaunchTemplateDatalistValuelistValueIndex++;
+                                         }
+                                    }
+                                }
+                                if(publicRequestLaunchTemplateDatalistValue.IsSetNetworkCardIndex())
+                                {
+                                    request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "NetworkCardIndex", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.NetworkCardIndex));
+                                }
+                                if(publicRequestLaunchTemplateDatalistValue.IsSetNetworkInterfaceId())
+                                {
+                                    request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "NetworkInterfaceId", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.NetworkInterfaceId));
+                                }
+                                if(publicRequestLaunchTemplateDatalistValue.IsSetPrimaryIpv6())
+                                {
+                                    request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "PrimaryIpv6", StringUtils.FromBool(publicRequestLaunchTemplateDatalistValue.PrimaryIpv6));
+                                }
+                                if(publicRequestLaunchTemplateDatalistValue.IsSetPrivateIpAddress())
+                                {
+                                    request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "PrivateIpAddress", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.PrivateIpAddress));
+                                }
+                                if(publicRequestLaunchTemplateDatalistValue.IsSetPrivateIpAddresses())
+                                {
+                                    if (publicRequestLaunchTemplateDatalistValue.PrivateIpAddresses.Count == 0)
+                                        request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "PrivateIpAddresses", "");
+                                    else
+                                    {
+                                         int publicRequestLaunchTemplateDatalistValuelistValueIndex = 1;
+                                         foreach(var publicRequestLaunchTemplateDatalistValuelistValue in publicRequestLaunchTemplateDatalistValue.PrivateIpAddresses)
+                                         {
+                                            if(publicRequestLaunchTemplateDatalistValuelistValue.IsSetPrimary())
+                                            {
+                                                request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "PrivateIpAddresses" + "." + publicRequestLaunchTemplateDatalistValuelistValueIndex + "." + "Primary", StringUtils.FromBool(publicRequestLaunchTemplateDatalistValuelistValue.Primary));
+                                            }
+                                            if(publicRequestLaunchTemplateDatalistValuelistValue.IsSetPrivateIpAddress())
+                                            {
+                                                request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "PrivateIpAddresses" + "." + publicRequestLaunchTemplateDatalistValuelistValueIndex + "." + "PrivateIpAddress", StringUtils.FromString(publicRequestLaunchTemplateDatalistValuelistValue.PrivateIpAddress));
+                                            }
+                                             publicRequestLaunchTemplateDatalistValuelistValueIndex++;
+                                         }
+                                    }
+                                }
+                                if(publicRequestLaunchTemplateDatalistValue.IsSetSecondaryPrivateIpAddressCount())
+                                {
+                                    request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "SecondaryPrivateIpAddressCount", StringUtils.FromInt(publicRequestLaunchTemplateDatalistValue.SecondaryPrivateIpAddressCount));
+                                }
+                                if(publicRequestLaunchTemplateDatalistValue.IsSetSubnetId())
+                                {
+                                    request.Parameters.Add("LaunchTemplateData" + "." + "NetworkInterface" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "SubnetId", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.SubnetId));
+                                }
+                                 publicRequestLaunchTemplateDatalistValueIndex++;
+                             }
                         }
                     }
                     if(publicRequest.LaunchTemplateData.IsSetPlacement())
@@ -744,48 +834,68 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if(publicRequest.LaunchTemplateData.IsSetSecurityGroupIds())
                     {
-                        int publicRequestLaunchTemplateDatalistValueIndex = 1;
-                        foreach(var publicRequestLaunchTemplateDatalistValue in publicRequest.LaunchTemplateData.SecurityGroupIds)
+                        if (publicRequest.LaunchTemplateData.SecurityGroupIds.Count == 0)
+                            request.Parameters.Add("LaunchTemplateData" + "." + "SecurityGroupId", "");
+                        else
                         {
-                            request.Parameters.Add("LaunchTemplateData" + "." + "SecurityGroupId" + "." + publicRequestLaunchTemplateDatalistValueIndex, StringUtils.FromString(publicRequestLaunchTemplateDatalistValue));
-                            publicRequestLaunchTemplateDatalistValueIndex++;
+                             int publicRequestLaunchTemplateDatalistValueIndex = 1;
+                             foreach(var publicRequestLaunchTemplateDatalistValue in publicRequest.LaunchTemplateData.SecurityGroupIds)
+                             {
+                                 request.Parameters.Add("LaunchTemplateData" + "." + "SecurityGroupId" + "." + publicRequestLaunchTemplateDatalistValueIndex, StringUtils.FromString(publicRequestLaunchTemplateDatalistValue));
+                                 publicRequestLaunchTemplateDatalistValueIndex++;
+                             }
                         }
                     }
                     if(publicRequest.LaunchTemplateData.IsSetSecurityGroups())
                     {
-                        int publicRequestLaunchTemplateDatalistValueIndex = 1;
-                        foreach(var publicRequestLaunchTemplateDatalistValue in publicRequest.LaunchTemplateData.SecurityGroups)
+                        if (publicRequest.LaunchTemplateData.SecurityGroups.Count == 0)
+                            request.Parameters.Add("LaunchTemplateData" + "." + "SecurityGroup", "");
+                        else
                         {
-                            request.Parameters.Add("LaunchTemplateData" + "." + "SecurityGroup" + "." + publicRequestLaunchTemplateDatalistValueIndex, StringUtils.FromString(publicRequestLaunchTemplateDatalistValue));
-                            publicRequestLaunchTemplateDatalistValueIndex++;
+                             int publicRequestLaunchTemplateDatalistValueIndex = 1;
+                             foreach(var publicRequestLaunchTemplateDatalistValue in publicRequest.LaunchTemplateData.SecurityGroups)
+                             {
+                                 request.Parameters.Add("LaunchTemplateData" + "." + "SecurityGroup" + "." + publicRequestLaunchTemplateDatalistValueIndex, StringUtils.FromString(publicRequestLaunchTemplateDatalistValue));
+                                 publicRequestLaunchTemplateDatalistValueIndex++;
+                             }
                         }
                     }
                     if(publicRequest.LaunchTemplateData.IsSetTagSpecifications())
                     {
-                        int publicRequestLaunchTemplateDatalistValueIndex = 1;
-                        foreach(var publicRequestLaunchTemplateDatalistValue in publicRequest.LaunchTemplateData.TagSpecifications)
+                        if (publicRequest.LaunchTemplateData.TagSpecifications.Count == 0)
+                            request.Parameters.Add("LaunchTemplateData" + "." + "TagSpecification", "");
+                        else
                         {
-                            if(publicRequestLaunchTemplateDatalistValue.IsSetResourceType())
-                            {
-                                request.Parameters.Add("LaunchTemplateData" + "." + "TagSpecification" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.ResourceType));
-                            }
-                            if(publicRequestLaunchTemplateDatalistValue.IsSetTags())
-                            {
-                                int publicRequestLaunchTemplateDatalistValuelistValueIndex = 1;
-                                foreach(var publicRequestLaunchTemplateDatalistValuelistValue in publicRequestLaunchTemplateDatalistValue.Tags)
+                             int publicRequestLaunchTemplateDatalistValueIndex = 1;
+                             foreach(var publicRequestLaunchTemplateDatalistValue in publicRequest.LaunchTemplateData.TagSpecifications)
+                             {
+                                if(publicRequestLaunchTemplateDatalistValue.IsSetResourceType())
                                 {
-                                    if(publicRequestLaunchTemplateDatalistValuelistValue.IsSetKey())
-                                    {
-                                        request.Parameters.Add("LaunchTemplateData" + "." + "TagSpecification" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Tag" + "." + publicRequestLaunchTemplateDatalistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestLaunchTemplateDatalistValuelistValue.Key));
-                                    }
-                                    if(publicRequestLaunchTemplateDatalistValuelistValue.IsSetValue())
-                                    {
-                                        request.Parameters.Add("LaunchTemplateData" + "." + "TagSpecification" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Tag" + "." + publicRequestLaunchTemplateDatalistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestLaunchTemplateDatalistValuelistValue.Value));
-                                    }
-                                    publicRequestLaunchTemplateDatalistValuelistValueIndex++;
+                                    request.Parameters.Add("LaunchTemplateData" + "." + "TagSpecification" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.ResourceType));
                                 }
-                            }
-                            publicRequestLaunchTemplateDatalistValueIndex++;
+                                if(publicRequestLaunchTemplateDatalistValue.IsSetTags())
+                                {
+                                    if (publicRequestLaunchTemplateDatalistValue.Tags.Count == 0)
+                                        request.Parameters.Add("LaunchTemplateData" + "." + "TagSpecification" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Tag", "");
+                                    else
+                                    {
+                                         int publicRequestLaunchTemplateDatalistValuelistValueIndex = 1;
+                                         foreach(var publicRequestLaunchTemplateDatalistValuelistValue in publicRequestLaunchTemplateDatalistValue.Tags)
+                                         {
+                                            if(publicRequestLaunchTemplateDatalistValuelistValue.IsSetKey())
+                                            {
+                                                request.Parameters.Add("LaunchTemplateData" + "." + "TagSpecification" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Tag" + "." + publicRequestLaunchTemplateDatalistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestLaunchTemplateDatalistValuelistValue.Key));
+                                            }
+                                            if(publicRequestLaunchTemplateDatalistValuelistValue.IsSetValue())
+                                            {
+                                                request.Parameters.Add("LaunchTemplateData" + "." + "TagSpecification" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Tag" + "." + publicRequestLaunchTemplateDatalistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestLaunchTemplateDatalistValuelistValue.Value));
+                                            }
+                                             publicRequestLaunchTemplateDatalistValuelistValueIndex++;
+                                         }
+                                    }
+                                }
+                                 publicRequestLaunchTemplateDatalistValueIndex++;
+                             }
                         }
                     }
                     if(publicRequest.LaunchTemplateData.IsSetUserData())
@@ -799,30 +909,40 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetTagSpecifications())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.TagSpecifications)
+                    if (publicRequest.TagSpecifications.Count == 0)
+                        request.Parameters.Add("TagSpecification", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetResourceType())
-                        {
-                            request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
-                        }
-                        if(publicRequestlistValue.IsSetTags())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Tags)
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.TagSpecifications)
+                         {
+                            if(publicRequestlistValue.IsSetResourceType())
                             {
-                                if(publicRequestlistValuelistValue.IsSetKey())
-                                {
-                                    request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValuelistValue.Key));
-                                }
-                                if(publicRequestlistValuelistValue.IsSetValue())
-                                {
-                                    request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
-                                }
-                                publicRequestlistValuelistValueIndex++;
+                                request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
                             }
-                        }
-                        publicRequestlistValueIndex++;
+                            if(publicRequestlistValue.IsSetTags())
+                            {
+                                if (publicRequestlistValue.Tags.Count == 0)
+                                    request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag", "");
+                                else
+                                {
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Tags)
+                                     {
+                                        if(publicRequestlistValuelistValue.IsSetKey())
+                                        {
+                                            request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValuelistValue.Key));
+                                        }
+                                        if(publicRequestlistValuelistValue.IsSetValue())
+                                        {
+                                            request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
+                                        }
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
+                                }
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetVersionDescription())

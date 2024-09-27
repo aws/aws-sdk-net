@@ -61,18 +61,23 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetCertificates())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Certificates)
+                    if (publicRequest.Certificates.Count == 0)
+                        request.Parameters.Add("Certificates", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetCertificateArn())
-                        {
-                            request.Parameters.Add("Certificates" + "." + "member" + "." + publicRequestlistValueIndex + "." + "CertificateArn", StringUtils.FromString(publicRequestlistValue.CertificateArn));
-                        }
-                        if(publicRequestlistValue.IsSetIsDefault())
-                        {
-                            request.Parameters.Add("Certificates" + "." + "member" + "." + publicRequestlistValueIndex + "." + "IsDefault", StringUtils.FromBool(publicRequestlistValue.IsDefault));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Certificates)
+                         {
+                            if(publicRequestlistValue.IsSetCertificateArn())
+                            {
+                                request.Parameters.Add("Certificates" + "." + "member" + "." + publicRequestlistValueIndex + "." + "CertificateArn", StringUtils.FromString(publicRequestlistValue.CertificateArn));
+                            }
+                            if(publicRequestlistValue.IsSetIsDefault())
+                            {
+                                request.Parameters.Add("Certificates" + "." + "member" + "." + publicRequestlistValueIndex + "." + "IsDefault", StringUtils.FromBool(publicRequestlistValue.IsDefault));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetListenerArn())

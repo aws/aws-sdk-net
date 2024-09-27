@@ -65,38 +65,48 @@ namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetItems())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Items)
+                    if (publicRequest.Items.Count == 0)
+                        request.Parameters.Add("Item", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetAttributes())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Attributes)
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Items)
+                         {
+                            if(publicRequestlistValue.IsSetAttributes())
                             {
-                                if(publicRequestlistValuelistValue.IsSetAlternateNameEncoding())
+                                if (publicRequestlistValue.Attributes.Count == 0)
+                                    request.Parameters.Add("Item" + "." + publicRequestlistValueIndex + "." + "Attribute", "");
+                                else
                                 {
-                                    request.Parameters.Add("Item" + "." + publicRequestlistValueIndex + "." + "Attribute" + "." + publicRequestlistValuelistValueIndex + "." + "AlternateNameEncoding", StringUtils.FromString(publicRequestlistValuelistValue.AlternateNameEncoding));
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Attributes)
+                                     {
+                                        if(publicRequestlistValuelistValue.IsSetAlternateNameEncoding())
+                                        {
+                                            request.Parameters.Add("Item" + "." + publicRequestlistValueIndex + "." + "Attribute" + "." + publicRequestlistValuelistValueIndex + "." + "AlternateNameEncoding", StringUtils.FromString(publicRequestlistValuelistValue.AlternateNameEncoding));
+                                        }
+                                        if(publicRequestlistValuelistValue.IsSetAlternateValueEncoding())
+                                        {
+                                            request.Parameters.Add("Item" + "." + publicRequestlistValueIndex + "." + "Attribute" + "." + publicRequestlistValuelistValueIndex + "." + "AlternateValueEncoding", StringUtils.FromString(publicRequestlistValuelistValue.AlternateValueEncoding));
+                                        }
+                                        if(publicRequestlistValuelistValue.IsSetName())
+                                        {
+                                            request.Parameters.Add("Item" + "." + publicRequestlistValueIndex + "." + "Attribute" + "." + publicRequestlistValuelistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValuelistValue.Name));
+                                        }
+                                        if(publicRequestlistValuelistValue.IsSetValue())
+                                        {
+                                            request.Parameters.Add("Item" + "." + publicRequestlistValueIndex + "." + "Attribute" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
+                                        }
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
                                 }
-                                if(publicRequestlistValuelistValue.IsSetAlternateValueEncoding())
-                                {
-                                    request.Parameters.Add("Item" + "." + publicRequestlistValueIndex + "." + "Attribute" + "." + publicRequestlistValuelistValueIndex + "." + "AlternateValueEncoding", StringUtils.FromString(publicRequestlistValuelistValue.AlternateValueEncoding));
-                                }
-                                if(publicRequestlistValuelistValue.IsSetName())
-                                {
-                                    request.Parameters.Add("Item" + "." + publicRequestlistValueIndex + "." + "Attribute" + "." + publicRequestlistValuelistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValuelistValue.Name));
-                                }
-                                if(publicRequestlistValuelistValue.IsSetValue())
-                                {
-                                    request.Parameters.Add("Item" + "." + publicRequestlistValueIndex + "." + "Attribute" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
-                                }
-                                publicRequestlistValuelistValueIndex++;
                             }
-                        }
-                        if(publicRequestlistValue.IsSetName())
-                        {
-                            request.Parameters.Add("Item" + "." + publicRequestlistValueIndex + "." + "ItemName", StringUtils.FromString(publicRequestlistValue.Name));
-                        }
-                        publicRequestlistValueIndex++;
+                            if(publicRequestlistValue.IsSetName())
+                            {
+                                request.Parameters.Add("Item" + "." + publicRequestlistValueIndex + "." + "ItemName", StringUtils.FromString(publicRequestlistValue.Name));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

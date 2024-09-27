@@ -51,7 +51,8 @@ namespace Amazon.SageMakerRuntime.Model.Internal.MarshallTransformations
             var ms = new MemoryStream();
             Amazon.Util.AWSSDKUtils.CopyStream(context.Stream, ms);
             ms.Seek(0, SeekOrigin.Begin);
-            response.Body = ms;
+            if (ms.Length > 0)
+                response.Body = ms;
             if (context.ResponseData.IsHeaderPresent("X-Amzn-SageMaker-Closed-Session-Id"))
                 response.ClosedSessionId = context.ResponseData.GetHeaderValue("X-Amzn-SageMaker-Closed-Session-Id");
             if (context.ResponseData.IsHeaderPresent("Content-Type"))

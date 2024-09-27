@@ -69,20 +69,30 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetAlarmNames())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.AlarmNames)
+                    if (publicRequest.AlarmNames.Count == 0)
+                        request.Parameters.Add("AlarmNames", "");
+                    else
                     {
-                        request.Parameters.Add("AlarmNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.AlarmNames)
+                         {
+                             request.Parameters.Add("AlarmNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetAlarmTypes())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.AlarmTypes)
+                    if (publicRequest.AlarmTypes.Count == 0)
+                        request.Parameters.Add("AlarmTypes", "");
+                    else
                     {
-                        request.Parameters.Add("AlarmTypes" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.AlarmTypes)
+                         {
+                             request.Parameters.Add("AlarmTypes" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetChildrenOfAlarmName())

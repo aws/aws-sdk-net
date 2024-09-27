@@ -65,20 +65,30 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetUserIdsToAdd())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.UserIdsToAdd)
+                    if (publicRequest.UserIdsToAdd.Count == 0)
+                        request.Parameters.Add("UserIdsToAdd", "");
+                    else
                     {
-                        request.Parameters.Add("UserIdsToAdd" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.UserIdsToAdd)
+                         {
+                             request.Parameters.Add("UserIdsToAdd" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetUserIdsToRemove())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.UserIdsToRemove)
+                    if (publicRequest.UserIdsToRemove.Count == 0)
+                        request.Parameters.Add("UserIdsToRemove", "");
+                    else
                     {
-                        request.Parameters.Add("UserIdsToRemove" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.UserIdsToRemove)
+                         {
+                             request.Parameters.Add("UserIdsToRemove" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

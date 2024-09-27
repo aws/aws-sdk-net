@@ -64,63 +64,66 @@ namespace Amazon.DirectoryServiceData.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetDirectoryId())
                 request.Parameters.Add("DirectoryId", StringUtils.FromString(publicRequest.DirectoryId));
             request.ResourcePath = "/Groups/CreateGroup";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetGroupScope())
-                {
-                    context.Writer.WritePropertyName("GroupScope");
-                    context.Writer.Write(publicRequest.GroupScope);
-                }
-
-                if(publicRequest.IsSetGroupType())
-                {
-                    context.Writer.WritePropertyName("GroupType");
-                    context.Writer.Write(publicRequest.GroupType);
-                }
-
-                if(publicRequest.IsSetOtherAttributes())
-                {
-                    context.Writer.WritePropertyName("OtherAttributes");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestOtherAttributesKvp in publicRequest.OtherAttributes)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
-                        context.Writer.WritePropertyName(publicRequestOtherAttributesKvp.Key);
-                        var publicRequestOtherAttributesValue = publicRequestOtherAttributesKvp.Value;
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
 
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetGroupScope())
+                    {
+                        context.Writer.WritePropertyName("GroupScope");
+                        context.Writer.Write(publicRequest.GroupScope);
+                    }
+
+                    if(publicRequest.IsSetGroupType())
+                    {
+                        context.Writer.WritePropertyName("GroupType");
+                        context.Writer.Write(publicRequest.GroupType);
+                    }
+
+                    if(publicRequest.IsSetOtherAttributes())
+                    {
+                        context.Writer.WritePropertyName("OtherAttributes");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestOtherAttributesKvp in publicRequest.OtherAttributes)
+                        {
+                            context.Writer.WritePropertyName(publicRequestOtherAttributesKvp.Key);
+                            var publicRequestOtherAttributesValue = publicRequestOtherAttributesKvp.Value;
 
-                        var marshaller = AttributeValueMarshaller.Instance;
-                        marshaller.Marshall(publicRequestOtherAttributesValue, context);
+                            context.Writer.WriteObjectStart();
 
+                            var marshaller = AttributeValueMarshaller.Instance;
+                            marshaller.Marshall(publicRequestOtherAttributesValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetSAMAccountName())
+                    {
+                        context.Writer.WritePropertyName("SAMAccountName");
+                        context.Writer.Write(publicRequest.SAMAccountName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSAMAccountName())
-                {
-                    context.Writer.WritePropertyName("SAMAccountName");
-                    context.Writer.Write(publicRequest.SAMAccountName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             request.UseQueryString = true;

@@ -77,11 +77,16 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetEnableCloudwatchLogsExports())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.EnableCloudwatchLogsExports)
+                    if (publicRequest.EnableCloudwatchLogsExports.Count == 0)
+                        request.Parameters.Add("EnableCloudwatchLogsExports", "");
+                    else
                     {
-                        request.Parameters.Add("EnableCloudwatchLogsExports" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.EnableCloudwatchLogsExports)
+                         {
+                             request.Parameters.Add("EnableCloudwatchLogsExports" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetEnableIAMDatabaseAuthentication())
@@ -129,18 +134,23 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetTags())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Tags)
+                    if (publicRequest.Tags.Count == 0)
+                        request.Parameters.Add("Tags", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetKey())
-                        {
-                            request.Parameters.Add("Tags" + "." + "Tag" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
-                        }
-                        if(publicRequestlistValue.IsSetValue())
-                        {
-                            request.Parameters.Add("Tags" + "." + "Tag" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Tags)
+                         {
+                            if(publicRequestlistValue.IsSetKey())
+                            {
+                                request.Parameters.Add("Tags" + "." + "Tag" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
+                            }
+                            if(publicRequestlistValue.IsSetValue())
+                            {
+                                request.Parameters.Add("Tags" + "." + "Tag" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetUseLatestRestorableTime())
@@ -149,11 +159,16 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetVpcSecurityGroupIds())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.VpcSecurityGroupIds)
+                    if (publicRequest.VpcSecurityGroupIds.Count == 0)
+                        request.Parameters.Add("VpcSecurityGroupIds", "");
+                    else
                     {
-                        request.Parameters.Add("VpcSecurityGroupIds" + "." + "VpcSecurityGroupId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.VpcSecurityGroupIds)
+                         {
+                             request.Parameters.Add("VpcSecurityGroupIds" + "." + "VpcSecurityGroupId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

@@ -47,9 +47,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=60, Max=525600)]
-        public int IdleTimeoutInMinutes
+        public int? IdleTimeoutInMinutes
         {
-            get { return this._idleTimeoutInMinutes.GetValueOrDefault(); }
+            get { return this._idleTimeoutInMinutes; }
             set { this._idleTimeoutInMinutes = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=60, Max=525600)]
-        public int MaxIdleTimeoutInMinutes
+        public int? MaxIdleTimeoutInMinutes
         {
-            get { return this._maxIdleTimeoutInMinutes.GetValueOrDefault(); }
+            get { return this._maxIdleTimeoutInMinutes; }
             set { this._maxIdleTimeoutInMinutes = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=60, Max=525600)]
-        public int MinIdleTimeoutInMinutes
+        public int? MinIdleTimeoutInMinutes
         {
-            get { return this._minIdleTimeoutInMinutes.GetValueOrDefault(); }
+            get { return this._minIdleTimeoutInMinutes; }
             set { this._minIdleTimeoutInMinutes = value; }
         }
 

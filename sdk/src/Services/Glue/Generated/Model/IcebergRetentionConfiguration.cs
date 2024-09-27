@@ -45,9 +45,9 @@ namespace Amazon.Glue.Model
         /// data and metadata files are not deleted.
         /// </para>
         /// </summary>
-        public bool CleanExpiredFiles
+        public bool? CleanExpiredFiles
         {
-            get { return this._cleanExpiredFiles.GetValueOrDefault(); }
+            get { return this._cleanExpiredFiles; }
             set { this._cleanExpiredFiles = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.Glue.Model
         /// or if not present, the default value 1 will be used.
         /// </para>
         /// </summary>
-        public int NumberOfSnapshotsToRetain
+        public int? NumberOfSnapshotsToRetain
         {
-            get { return this._numberOfSnapshotsToRetain.GetValueOrDefault(); }
+            get { return this._numberOfSnapshotsToRetain; }
             set { this._numberOfSnapshotsToRetain = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.Glue.Model
         /// default value 5 will be used.
         /// </para>
         /// </summary>
-        public int SnapshotRetentionPeriodInDays
+        public int? SnapshotRetentionPeriodInDays
         {
-            get { return this._snapshotRetentionPeriodInDays.GetValueOrDefault(); }
+            get { return this._snapshotRetentionPeriodInDays; }
             set { this._snapshotRetentionPeriodInDays = value; }
         }
 

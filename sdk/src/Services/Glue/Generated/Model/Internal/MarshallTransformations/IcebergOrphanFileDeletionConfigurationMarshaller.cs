@@ -57,7 +57,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOrphanFileRetentionPeriodInDays())
             {
                 context.Writer.WritePropertyName("orphanFileRetentionPeriodInDays");
-                context.Writer.Write(requestObject.OrphanFileRetentionPeriodInDays);
+                context.Writer.Write(requestObject.OrphanFileRetentionPeriodInDays.Value);
             }
 
         }

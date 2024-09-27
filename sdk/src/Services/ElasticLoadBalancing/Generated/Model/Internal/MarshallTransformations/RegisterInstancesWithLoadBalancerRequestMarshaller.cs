@@ -61,14 +61,19 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetInstances())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Instances)
+                    if (publicRequest.Instances.Count == 0)
+                        request.Parameters.Add("Instances", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetInstanceId())
-                        {
-                            request.Parameters.Add("Instances" + "." + "member" + "." + publicRequestlistValueIndex + "." + "InstanceId", StringUtils.FromString(publicRequestlistValue.InstanceId));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Instances)
+                         {
+                            if(publicRequestlistValue.IsSetInstanceId())
+                            {
+                                request.Parameters.Add("Instances" + "." + "member" + "." + publicRequestlistValueIndex + "." + "InstanceId", StringUtils.FromString(publicRequestlistValue.InstanceId));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetLoadBalancerName())

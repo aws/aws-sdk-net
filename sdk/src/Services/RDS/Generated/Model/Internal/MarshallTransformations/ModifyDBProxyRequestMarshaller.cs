@@ -61,34 +61,39 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetAuth())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Auth)
+                    if (publicRequest.Auth.Count == 0)
+                        request.Parameters.Add("Auth", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetAuthScheme())
-                        {
-                            request.Parameters.Add("Auth" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthScheme", StringUtils.FromString(publicRequestlistValue.AuthScheme));
-                        }
-                        if(publicRequestlistValue.IsSetClientPasswordAuthType())
-                        {
-                            request.Parameters.Add("Auth" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ClientPasswordAuthType", StringUtils.FromString(publicRequestlistValue.ClientPasswordAuthType));
-                        }
-                        if(publicRequestlistValue.IsSetDescription())
-                        {
-                            request.Parameters.Add("Auth" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Description", StringUtils.FromString(publicRequestlistValue.Description));
-                        }
-                        if(publicRequestlistValue.IsSetIAMAuth())
-                        {
-                            request.Parameters.Add("Auth" + "." + "member" + "." + publicRequestlistValueIndex + "." + "IAMAuth", StringUtils.FromString(publicRequestlistValue.IAMAuth));
-                        }
-                        if(publicRequestlistValue.IsSetSecretArn())
-                        {
-                            request.Parameters.Add("Auth" + "." + "member" + "." + publicRequestlistValueIndex + "." + "SecretArn", StringUtils.FromString(publicRequestlistValue.SecretArn));
-                        }
-                        if(publicRequestlistValue.IsSetUserName())
-                        {
-                            request.Parameters.Add("Auth" + "." + "member" + "." + publicRequestlistValueIndex + "." + "UserName", StringUtils.FromString(publicRequestlistValue.UserName));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Auth)
+                         {
+                            if(publicRequestlistValue.IsSetAuthScheme())
+                            {
+                                request.Parameters.Add("Auth" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthScheme", StringUtils.FromString(publicRequestlistValue.AuthScheme));
+                            }
+                            if(publicRequestlistValue.IsSetClientPasswordAuthType())
+                            {
+                                request.Parameters.Add("Auth" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ClientPasswordAuthType", StringUtils.FromString(publicRequestlistValue.ClientPasswordAuthType));
+                            }
+                            if(publicRequestlistValue.IsSetDescription())
+                            {
+                                request.Parameters.Add("Auth" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Description", StringUtils.FromString(publicRequestlistValue.Description));
+                            }
+                            if(publicRequestlistValue.IsSetIAMAuth())
+                            {
+                                request.Parameters.Add("Auth" + "." + "member" + "." + publicRequestlistValueIndex + "." + "IAMAuth", StringUtils.FromString(publicRequestlistValue.IAMAuth));
+                            }
+                            if(publicRequestlistValue.IsSetSecretArn())
+                            {
+                                request.Parameters.Add("Auth" + "." + "member" + "." + publicRequestlistValueIndex + "." + "SecretArn", StringUtils.FromString(publicRequestlistValue.SecretArn));
+                            }
+                            if(publicRequestlistValue.IsSetUserName())
+                            {
+                                request.Parameters.Add("Auth" + "." + "member" + "." + publicRequestlistValueIndex + "." + "UserName", StringUtils.FromString(publicRequestlistValue.UserName));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetDBProxyName())
@@ -117,11 +122,16 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetSecurityGroups())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.SecurityGroups)
+                    if (publicRequest.SecurityGroups.Count == 0)
+                        request.Parameters.Add("SecurityGroups", "");
+                    else
                     {
-                        request.Parameters.Add("SecurityGroups" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.SecurityGroups)
+                         {
+                             request.Parameters.Add("SecurityGroups" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

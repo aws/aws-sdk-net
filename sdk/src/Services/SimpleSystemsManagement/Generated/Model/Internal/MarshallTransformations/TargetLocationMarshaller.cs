@@ -79,7 +79,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIncludeChildOrganizationUnits())
             {
                 context.Writer.WritePropertyName("IncludeChildOrganizationUnits");
-                context.Writer.Write(requestObject.IncludeChildOrganizationUnits);
+                context.Writer.Write(requestObject.IncludeChildOrganizationUnits.Value);
             }
 
             if(requestObject.IsSetRegions())

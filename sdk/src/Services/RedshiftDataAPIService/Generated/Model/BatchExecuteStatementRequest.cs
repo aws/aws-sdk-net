@@ -215,9 +215,9 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=86400)]
-        public int SessionKeepAliveSeconds
+        public int? SessionKeepAliveSeconds
         {
-            get { return this._sessionKeepAliveSeconds.GetValueOrDefault(); }
+            get { return this._sessionKeepAliveSeconds; }
             set { this._sessionKeepAliveSeconds = value; }
         }
 

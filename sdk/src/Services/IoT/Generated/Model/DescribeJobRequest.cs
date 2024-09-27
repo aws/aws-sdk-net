@@ -51,9 +51,9 @@ namespace Amazon.IoT.Model
         /// parameters have been resolved with their exact values.
         /// </para>
         /// </summary>
-        public bool BeforeSubstitution
+        public bool? BeforeSubstitution
         {
-            get { return this._beforeSubstitution.GetValueOrDefault(); }
+            get { return this._beforeSubstitution; }
             set { this._beforeSubstitution = value; }
         }
 

@@ -51,7 +51,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIdleTimeoutInMinutes())
             {
                 context.Writer.WritePropertyName("IdleTimeoutInMinutes");
-                context.Writer.Write(requestObject.IdleTimeoutInMinutes);
+                context.Writer.Write(requestObject.IdleTimeoutInMinutes.Value);
             }
 
         }

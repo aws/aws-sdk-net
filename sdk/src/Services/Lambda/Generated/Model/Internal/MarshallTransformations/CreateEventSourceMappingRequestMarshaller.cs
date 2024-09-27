@@ -250,38 +250,24 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.StartingPosition);
                     }
 
-<<<<<<< HEAD
                     if(publicRequest.IsSetStartingPositionTimestamp())
-||||||| Commit version number update changes
-                if(publicRequest.IsSetTopics())
-                {
-                    context.Writer.WritePropertyName("Topics");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTopicsListValue in publicRequest.Topics)
-=======
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTopics())
-                {
-                    context.Writer.WritePropertyName("Topics");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTopicsListValue in publicRequest.Topics)
->>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
                     {
                         context.Writer.WritePropertyName("StartingPositionTimestamp");
                         context.Writer.Write(publicRequest.StartingPositionTimestamp.Value);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
 
                     if(publicRequest.IsSetTopics())

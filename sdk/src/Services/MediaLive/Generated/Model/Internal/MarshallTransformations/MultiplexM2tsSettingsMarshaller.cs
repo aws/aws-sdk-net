@@ -69,7 +69,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAudioFramesPerPes())
             {
                 context.Writer.WritePropertyName("audioFramesPerPes");
-                context.Writer.Write(requestObject.AudioFramesPerPes);
+                context.Writer.Write(requestObject.AudioFramesPerPes.Value);
             }
 
             if(requestObject.IsSetAudioStreamType())
@@ -117,7 +117,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPcrPeriod())
             {
                 context.Writer.WritePropertyName("pcrPeriod");
-                context.Writer.Write(requestObject.PcrPeriod);
+                context.Writer.Write(requestObject.PcrPeriod.Value);
             }
 
             if(requestObject.IsSetScte35Control())
@@ -129,13 +129,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetScte35PrerollPullupMilliseconds())
             {
                 context.Writer.WritePropertyName("scte35PrerollPullupMilliseconds");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Scte35PrerollPullupMilliseconds))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Scte35PrerollPullupMilliseconds.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Scte35PrerollPullupMilliseconds));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Scte35PrerollPullupMilliseconds.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Scte35PrerollPullupMilliseconds);
+                    context.Writer.Write(requestObject.Scte35PrerollPullupMilliseconds.Value);
                 }
             }
 

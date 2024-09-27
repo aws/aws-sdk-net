@@ -188,32 +188,7 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
-<<<<<<< HEAD
                     if(publicRequest.IsSetReleaseLabel())
-||||||| Commit version number update changes
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-=======
-                if(publicRequest.IsSetSchedulerConfiguration())
-                {
-                    context.Writer.WritePropertyName("schedulerConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SchedulerConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SchedulerConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
->>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
                     {
                         context.Writer.WritePropertyName("releaseLabel");
                         context.Writer.Write(publicRequest.ReleaseLabel);
@@ -233,6 +208,17 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                             context.Writer.WriteObjectEnd();
                         }
                         context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSchedulerConfiguration())
+                    {
+                        context.Writer.WritePropertyName("schedulerConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SchedulerConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SchedulerConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
 
                     if(publicRequest.IsSetTags())

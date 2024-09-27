@@ -61,11 +61,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetAllocationIds())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.AllocationIds)
+                    if (publicRequest.AllocationIds.Count == 0)
+                        request.Parameters.Add("AllocationId", "");
+                    else
                     {
-                        request.Parameters.Add("AllocationId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.AllocationIds)
+                         {
+                             request.Parameters.Add("AllocationId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetMaxResults())

@@ -44,9 +44,9 @@ namespace Amazon.PCS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int MaxInstanceCount
+        public int? MaxInstanceCount
         {
-            get { return this._maxInstanceCount.GetValueOrDefault(); }
+            get { return this._maxInstanceCount; }
             set { this._maxInstanceCount = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.PCS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int MinInstanceCount
+        public int? MinInstanceCount
         {
-            get { return this._minInstanceCount.GetValueOrDefault(); }
+            get { return this._minInstanceCount; }
             set { this._minInstanceCount = value; }
         }
 

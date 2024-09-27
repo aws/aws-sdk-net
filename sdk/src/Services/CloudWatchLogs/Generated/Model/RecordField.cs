@@ -46,9 +46,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// operation.
         /// </para>
         /// </summary>
-        public bool Mandatory
+        public bool? Mandatory
         {
-            get { return this._mandatory.GetValueOrDefault(); }
+            get { return this._mandatory; }
             set { this._mandatory = value; }
         }
 

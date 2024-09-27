@@ -86,7 +86,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IncludeChildOrganizationUnits", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeChildOrganizationUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }

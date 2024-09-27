@@ -73,11 +73,16 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetRuleArns())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.RuleArns)
+                    if (publicRequest.RuleArns.Count == 0)
+                        request.Parameters.Add("RuleArns", "");
+                    else
                     {
-                        request.Parameters.Add("RuleArns" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.RuleArns)
+                         {
+                             request.Parameters.Add("RuleArns" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

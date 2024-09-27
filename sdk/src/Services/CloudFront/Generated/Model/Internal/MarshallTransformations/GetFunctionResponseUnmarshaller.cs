@@ -50,7 +50,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             var ms = new MemoryStream();
             Amazon.Util.AWSSDKUtils.CopyStream(context.Stream, ms);
             ms.Seek(0, SeekOrigin.Begin);
-            response.FunctionCode = ms;
+            if (ms.Length > 0)
+                response.FunctionCode = ms;
 
             if (context.ResponseData.IsHeaderPresent("Content-Type"))
                 response.ContentType = context.ResponseData.GetHeaderValue("Content-Type");

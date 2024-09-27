@@ -93,9 +93,9 @@ namespace Amazon.IVSRealTime.Model
         /// <c>ingestProtocol</c> is set to <c>RTMP</c>. Default: <c>false</c>. 
         /// </para>
         /// </summary>
-        public bool InsecureIngest
+        public bool? InsecureIngest
         {
-            get { return this._insecureIngest.GetValueOrDefault(); }
+            get { return this._insecureIngest; }
             set { this._insecureIngest = value; }
         }
 

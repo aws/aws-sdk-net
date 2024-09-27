@@ -51,13 +51,13 @@ namespace Amazon.DirectoryServiceData.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBOOL())
             {
                 context.Writer.WritePropertyName("BOOL");
-                context.Writer.Write(requestObject.BOOL);
+                context.Writer.Write(requestObject.BOOL.Value);
             }
 
             if(requestObject.IsSetN())
             {
                 context.Writer.WritePropertyName("N");
-                context.Writer.Write(requestObject.N);
+                context.Writer.Write(requestObject.N.Value);
             }
 
             if(requestObject.IsSetS())

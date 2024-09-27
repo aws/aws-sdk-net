@@ -51,7 +51,7 @@ namespace Amazon.SageMakerMetrics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnd())
             {
                 context.Writer.WritePropertyName("End");
-                context.Writer.Write(requestObject.End);
+                context.Writer.Write(requestObject.End.Value);
             }
 
             if(requestObject.IsSetMetricName())
@@ -81,7 +81,7 @@ namespace Amazon.SageMakerMetrics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStart())
             {
                 context.Writer.WritePropertyName("Start");
-                context.Writer.Write(requestObject.Start);
+                context.Writer.Write(requestObject.Start.Value);
             }
 
             if(requestObject.IsSetXAxisType())

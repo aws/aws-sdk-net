@@ -77,7 +77,18 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Definition);
                     }
 
-<<<<<<< HEAD
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetSeverity())
+                    {
+                        context.Writer.WritePropertyName("severity");
+                        context.Writer.Write(publicRequest.Severity);
+                    }
+
                     if(publicRequest.IsSetType())
                     {
                         context.Writer.WritePropertyName("type");
@@ -85,29 +96,6 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
                     }
 
                     writer.WriteObjectEnd();
-||||||| Commit version number update changes
-                if(publicRequest.IsSetType())
-                {
-                    context.Writer.WritePropertyName("type");
-                    context.Writer.Write(publicRequest.Type);
-=======
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
-                }
-
-                if(publicRequest.IsSetSeverity())
-                {
-                    context.Writer.WritePropertyName("severity");
-                    context.Writer.Write(publicRequest.Severity);
-                }
-
-                if(publicRequest.IsSetType())
-                {
-                    context.Writer.WritePropertyName("type");
-                    context.Writer.Write(publicRequest.Type);
->>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
                 }
 
                 request.Content = memoryStream.ToArray();

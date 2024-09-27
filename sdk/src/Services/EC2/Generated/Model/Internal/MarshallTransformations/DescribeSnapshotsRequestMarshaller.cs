@@ -61,23 +61,33 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetFilters())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Filters)
+                    if (publicRequest.Filters.Count == 0)
+                        request.Parameters.Add("Filter", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetName())
-                        {
-                            request.Parameters.Add("Filter" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
-                        }
-                        if(publicRequestlistValue.IsSetValues())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Values)
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Filters)
+                         {
+                            if(publicRequestlistValue.IsSetName())
                             {
-                                request.Parameters.Add("Filter" + "." + publicRequestlistValueIndex + "." + "Value" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
-                                publicRequestlistValuelistValueIndex++;
+                                request.Parameters.Add("Filter" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
                             }
-                        }
-                        publicRequestlistValueIndex++;
+                            if(publicRequestlistValue.IsSetValues())
+                            {
+                                if (publicRequestlistValue.Values.Count == 0)
+                                    request.Parameters.Add("Filter" + "." + publicRequestlistValueIndex + "." + "Value", "");
+                                else
+                                {
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Values)
+                                     {
+                                         request.Parameters.Add("Filter" + "." + publicRequestlistValueIndex + "." + "Value" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
+                                }
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetMaxResults())
@@ -90,29 +100,44 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetOwnerIds())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.OwnerIds)
+                    if (publicRequest.OwnerIds.Count == 0)
+                        request.Parameters.Add("Owner", "");
+                    else
                     {
-                        request.Parameters.Add("Owner" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.OwnerIds)
+                         {
+                             request.Parameters.Add("Owner" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetRestorableByUserIds())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.RestorableByUserIds)
+                    if (publicRequest.RestorableByUserIds.Count == 0)
+                        request.Parameters.Add("RestorableBy", "");
+                    else
                     {
-                        request.Parameters.Add("RestorableBy" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.RestorableByUserIds)
+                         {
+                             request.Parameters.Add("RestorableBy" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetSnapshotIds())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.SnapshotIds)
+                    if (publicRequest.SnapshotIds.Count == 0)
+                        request.Parameters.Add("SnapshotId", "");
+                    else
                     {
-                        request.Parameters.Add("SnapshotId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.SnapshotIds)
+                         {
+                             request.Parameters.Add("SnapshotId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

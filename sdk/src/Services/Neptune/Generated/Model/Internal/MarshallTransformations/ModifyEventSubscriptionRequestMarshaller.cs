@@ -65,11 +65,16 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetEventCategories())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.EventCategories)
+                    if (publicRequest.EventCategories.Count == 0)
+                        request.Parameters.Add("EventCategories", "");
+                    else
                     {
-                        request.Parameters.Add("EventCategories" + "." + "EventCategory" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.EventCategories)
+                         {
+                             request.Parameters.Add("EventCategories" + "." + "EventCategory" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetSnsTopicArn())

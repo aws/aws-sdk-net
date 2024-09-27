@@ -51,13 +51,13 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxInstanceCount())
             {
                 context.Writer.WritePropertyName("maxInstanceCount");
-                context.Writer.Write(requestObject.MaxInstanceCount);
+                context.Writer.Write(requestObject.MaxInstanceCount.Value);
             }
 
             if(requestObject.IsSetMinInstanceCount())
             {
                 context.Writer.WritePropertyName("minInstanceCount");
-                context.Writer.Write(requestObject.MinInstanceCount);
+                context.Writer.Write(requestObject.MinInstanceCount.Value);
             }
 
         }

@@ -109,34 +109,22 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.FailureRetentionPeriodInDays.Value);
                     }
 
-<<<<<<< HEAD
                     if(publicRequest.IsSetName())
                     {
                         context.Writer.WritePropertyName("Name");
                         context.Writer.Write(publicRequest.Name);
                     }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetRunConfig())
-                {
-                    context.Writer.WritePropertyName("RunConfig");
-                    context.Writer.WriteObjectStart();
-=======
-                if(publicRequest.IsSetResourcesToReplicateTags())
-                {
-                    context.Writer.WritePropertyName("ResourcesToReplicateTags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestResourcesToReplicateTagsListValue in publicRequest.ResourcesToReplicateTags)
-                    {
-                            context.Writer.Write(publicRequestResourcesToReplicateTagsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetRunConfig())
-                {
-                    context.Writer.WritePropertyName("RunConfig");
-                    context.Writer.WriteObjectStart();
->>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
+                    if(publicRequest.IsSetResourcesToReplicateTags())
+                    {
+                        context.Writer.WritePropertyName("ResourcesToReplicateTags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestResourcesToReplicateTagsListValue in publicRequest.ResourcesToReplicateTags)
+                        {
+                                context.Writer.Write(publicRequestResourcesToReplicateTagsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
 
                     if(publicRequest.IsSetRunConfig())
                     {

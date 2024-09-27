@@ -67,44 +67,59 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     if(publicRequest.CreateVolumePermission.IsSetAdd())
                     {
-                        int publicRequestCreateVolumePermissionlistValueIndex = 1;
-                        foreach(var publicRequestCreateVolumePermissionlistValue in publicRequest.CreateVolumePermission.Add)
+                        if (publicRequest.CreateVolumePermission.Add.Count == 0)
+                            request.Parameters.Add("CreateVolumePermission" + "." + "Add", "");
+                        else
                         {
-                            if(publicRequestCreateVolumePermissionlistValue.IsSetGroup())
-                            {
-                                request.Parameters.Add("CreateVolumePermission" + "." + "Add" + "." + publicRequestCreateVolumePermissionlistValueIndex + "." + "Group", StringUtils.FromString(publicRequestCreateVolumePermissionlistValue.Group));
-                            }
-                            if(publicRequestCreateVolumePermissionlistValue.IsSetUserId())
-                            {
-                                request.Parameters.Add("CreateVolumePermission" + "." + "Add" + "." + publicRequestCreateVolumePermissionlistValueIndex + "." + "UserId", StringUtils.FromString(publicRequestCreateVolumePermissionlistValue.UserId));
-                            }
-                            publicRequestCreateVolumePermissionlistValueIndex++;
+                             int publicRequestCreateVolumePermissionlistValueIndex = 1;
+                             foreach(var publicRequestCreateVolumePermissionlistValue in publicRequest.CreateVolumePermission.Add)
+                             {
+                                if(publicRequestCreateVolumePermissionlistValue.IsSetGroup())
+                                {
+                                    request.Parameters.Add("CreateVolumePermission" + "." + "Add" + "." + publicRequestCreateVolumePermissionlistValueIndex + "." + "Group", StringUtils.FromString(publicRequestCreateVolumePermissionlistValue.Group));
+                                }
+                                if(publicRequestCreateVolumePermissionlistValue.IsSetUserId())
+                                {
+                                    request.Parameters.Add("CreateVolumePermission" + "." + "Add" + "." + publicRequestCreateVolumePermissionlistValueIndex + "." + "UserId", StringUtils.FromString(publicRequestCreateVolumePermissionlistValue.UserId));
+                                }
+                                 publicRequestCreateVolumePermissionlistValueIndex++;
+                             }
                         }
                     }
                     if(publicRequest.CreateVolumePermission.IsSetRemove())
                     {
-                        int publicRequestCreateVolumePermissionlistValueIndex = 1;
-                        foreach(var publicRequestCreateVolumePermissionlistValue in publicRequest.CreateVolumePermission.Remove)
+                        if (publicRequest.CreateVolumePermission.Remove.Count == 0)
+                            request.Parameters.Add("CreateVolumePermission" + "." + "Remove", "");
+                        else
                         {
-                            if(publicRequestCreateVolumePermissionlistValue.IsSetGroup())
-                            {
-                                request.Parameters.Add("CreateVolumePermission" + "." + "Remove" + "." + publicRequestCreateVolumePermissionlistValueIndex + "." + "Group", StringUtils.FromString(publicRequestCreateVolumePermissionlistValue.Group));
-                            }
-                            if(publicRequestCreateVolumePermissionlistValue.IsSetUserId())
-                            {
-                                request.Parameters.Add("CreateVolumePermission" + "." + "Remove" + "." + publicRequestCreateVolumePermissionlistValueIndex + "." + "UserId", StringUtils.FromString(publicRequestCreateVolumePermissionlistValue.UserId));
-                            }
-                            publicRequestCreateVolumePermissionlistValueIndex++;
+                             int publicRequestCreateVolumePermissionlistValueIndex = 1;
+                             foreach(var publicRequestCreateVolumePermissionlistValue in publicRequest.CreateVolumePermission.Remove)
+                             {
+                                if(publicRequestCreateVolumePermissionlistValue.IsSetGroup())
+                                {
+                                    request.Parameters.Add("CreateVolumePermission" + "." + "Remove" + "." + publicRequestCreateVolumePermissionlistValueIndex + "." + "Group", StringUtils.FromString(publicRequestCreateVolumePermissionlistValue.Group));
+                                }
+                                if(publicRequestCreateVolumePermissionlistValue.IsSetUserId())
+                                {
+                                    request.Parameters.Add("CreateVolumePermission" + "." + "Remove" + "." + publicRequestCreateVolumePermissionlistValueIndex + "." + "UserId", StringUtils.FromString(publicRequestCreateVolumePermissionlistValue.UserId));
+                                }
+                                 publicRequestCreateVolumePermissionlistValueIndex++;
+                             }
                         }
                     }
                 }
                 if(publicRequest.IsSetGroupNames())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.GroupNames)
+                    if (publicRequest.GroupNames.Count == 0)
+                        request.Parameters.Add("UserGroup", "");
+                    else
                     {
-                        request.Parameters.Add("UserGroup" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.GroupNames)
+                         {
+                             request.Parameters.Add("UserGroup" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetOperationType())
@@ -117,11 +132,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetUserIds())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.UserIds)
+                    if (publicRequest.UserIds.Count == 0)
+                        request.Parameters.Add("UserId", "");
+                    else
                     {
-                        request.Parameters.Add("UserId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.UserIds)
+                         {
+                             request.Parameters.Add("UserId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

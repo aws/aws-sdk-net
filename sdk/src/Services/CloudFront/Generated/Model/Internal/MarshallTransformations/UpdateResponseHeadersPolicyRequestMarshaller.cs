@@ -81,7 +81,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         xmlWriter.WriteStartElement("CorsConfig");
                         if(publicRequest.ResponseHeadersPolicyConfig.CorsConfig.IsSetAccessControlAllowCredentials())
                             xmlWriter.WriteElementString("AccessControlAllowCredentials", StringUtils.FromBool(publicRequest.ResponseHeadersPolicyConfig.CorsConfig.AccessControlAllowCredentials.Value));
-
                         if (publicRequest.ResponseHeadersPolicyConfig.CorsConfig.AccessControlAllowHeaders != null)
                         {
                             xmlWriter.WriteStartElement("AccessControlAllowHeaders");
@@ -99,7 +98,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             }
                             if(publicRequest.ResponseHeadersPolicyConfig.CorsConfig.AccessControlAllowHeaders.IsSetQuantity())
                                 xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.ResponseHeadersPolicyConfig.CorsConfig.AccessControlAllowHeaders.Quantity.Value));
-
                             xmlWriter.WriteEndElement();
                         }
                         if (publicRequest.ResponseHeadersPolicyConfig.CorsConfig.AccessControlAllowMethods != null)
@@ -119,7 +117,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             }
                             if(publicRequest.ResponseHeadersPolicyConfig.CorsConfig.AccessControlAllowMethods.IsSetQuantity())
                                 xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.ResponseHeadersPolicyConfig.CorsConfig.AccessControlAllowMethods.Quantity.Value));
-
                             xmlWriter.WriteEndElement();
                         }
                         if (publicRequest.ResponseHeadersPolicyConfig.CorsConfig.AccessControlAllowOrigins != null)
@@ -139,7 +136,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             }
                             if(publicRequest.ResponseHeadersPolicyConfig.CorsConfig.AccessControlAllowOrigins.IsSetQuantity())
                                 xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.ResponseHeadersPolicyConfig.CorsConfig.AccessControlAllowOrigins.Quantity.Value));
-
                             xmlWriter.WriteEndElement();
                         }
                         if (publicRequest.ResponseHeadersPolicyConfig.CorsConfig.AccessControlExposeHeaders != null)
@@ -159,15 +155,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             }
                             if(publicRequest.ResponseHeadersPolicyConfig.CorsConfig.AccessControlExposeHeaders.IsSetQuantity())
                                 xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.ResponseHeadersPolicyConfig.CorsConfig.AccessControlExposeHeaders.Quantity.Value));
-
                             xmlWriter.WriteEndElement();
                         }
                         if(publicRequest.ResponseHeadersPolicyConfig.CorsConfig.IsSetAccessControlMaxAgeSec())
                             xmlWriter.WriteElementString("AccessControlMaxAgeSec", StringUtils.FromInt(publicRequest.ResponseHeadersPolicyConfig.CorsConfig.AccessControlMaxAgeSec.Value));
-
                         if(publicRequest.ResponseHeadersPolicyConfig.CorsConfig.IsSetOriginOverride())
                             xmlWriter.WriteElementString("OriginOverride", StringUtils.FromBool(publicRequest.ResponseHeadersPolicyConfig.CorsConfig.OriginOverride.Value));
-
                         xmlWriter.WriteEndElement();
                     }
                     if (publicRequest.ResponseHeadersPolicyConfig.CustomHeadersConfig != null)
@@ -184,13 +177,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteStartElement("ResponseHeadersPolicyCustomHeader");
                                 if(publicRequestResponseHeadersPolicyConfigCustomHeadersConfigItemsValue.IsSetHeader())
                                     xmlWriter.WriteElementString("Header", StringUtils.FromString(publicRequestResponseHeadersPolicyConfigCustomHeadersConfigItemsValue.Header));
-
                                 if(publicRequestResponseHeadersPolicyConfigCustomHeadersConfigItemsValue.IsSetOverride())
                                     xmlWriter.WriteElementString("Override", StringUtils.FromBool(publicRequestResponseHeadersPolicyConfigCustomHeadersConfigItemsValue.Override.Value));
-
                                 if(publicRequestResponseHeadersPolicyConfigCustomHeadersConfigItemsValue.IsSetValue())
                                     xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestResponseHeadersPolicyConfigCustomHeadersConfigItemsValue.Value));
-
                                 xmlWriter.WriteEndElement();
                             }
                             }            
@@ -198,7 +188,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         }
                         if(publicRequest.ResponseHeadersPolicyConfig.CustomHeadersConfig.IsSetQuantity())
                             xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.ResponseHeadersPolicyConfig.CustomHeadersConfig.Quantity.Value));
-
                         xmlWriter.WriteEndElement();
                     }
                     if(publicRequest.ResponseHeadersPolicyConfig.IsSetName())
@@ -218,7 +207,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                 xmlWriter.WriteStartElement("ResponseHeadersPolicyRemoveHeader");
                                 if(publicRequestResponseHeadersPolicyConfigRemoveHeadersConfigItemsValue.IsSetHeader())
                                     xmlWriter.WriteElementString("Header", StringUtils.FromString(publicRequestResponseHeadersPolicyConfigRemoveHeadersConfigItemsValue.Header));
-
                                 xmlWriter.WriteEndElement();
                             }
                             }            
@@ -226,7 +214,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         }
                         if(publicRequest.ResponseHeadersPolicyConfig.RemoveHeadersConfig.IsSetQuantity())
                             xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.ResponseHeadersPolicyConfig.RemoveHeadersConfig.Quantity.Value));
-
                         xmlWriter.WriteEndElement();
                     }
                     if (publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig != null)
@@ -237,10 +224,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             xmlWriter.WriteStartElement("ContentSecurityPolicy");
                             if(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.ContentSecurityPolicy.IsSetContentSecurityPolicy())
                                 xmlWriter.WriteElementString("ContentSecurityPolicy", StringUtils.FromString(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.ContentSecurityPolicy.ContentSecurityPolicy));
-
                             if(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.ContentSecurityPolicy.IsSetOverride())
                                 xmlWriter.WriteElementString("Override", StringUtils.FromBool(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.ContentSecurityPolicy.Override.Value));
-
                             xmlWriter.WriteEndElement();
                         }
                         if (publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.ContentTypeOptions != null)
@@ -248,7 +233,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             xmlWriter.WriteStartElement("ContentTypeOptions");
                             if(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.ContentTypeOptions.IsSetOverride())
                                 xmlWriter.WriteElementString("Override", StringUtils.FromBool(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.ContentTypeOptions.Override.Value));
-
                             xmlWriter.WriteEndElement();
                         }
                         if (publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.FrameOptions != null)
@@ -256,10 +240,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             xmlWriter.WriteStartElement("FrameOptions");
                             if(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.FrameOptions.IsSetFrameOption())
                                 xmlWriter.WriteElementString("FrameOption", StringUtils.FromString(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.FrameOptions.FrameOption));
-
                             if(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.FrameOptions.IsSetOverride())
                                 xmlWriter.WriteElementString("Override", StringUtils.FromBool(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.FrameOptions.Override.Value));
-
                             xmlWriter.WriteEndElement();
                         }
                         if (publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.ReferrerPolicy != null)
@@ -267,10 +249,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             xmlWriter.WriteStartElement("ReferrerPolicy");
                             if(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.ReferrerPolicy.IsSetOverride())
                                 xmlWriter.WriteElementString("Override", StringUtils.FromBool(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.ReferrerPolicy.Override.Value));
-
                             if(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.ReferrerPolicy.IsSetReferrerPolicy())
                                 xmlWriter.WriteElementString("ReferrerPolicy", StringUtils.FromString(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.ReferrerPolicy.ReferrerPolicy));
-
                             xmlWriter.WriteEndElement();
                         }
                         if (publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.StrictTransportSecurity != null)
@@ -278,16 +258,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             xmlWriter.WriteStartElement("StrictTransportSecurity");
                             if(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.StrictTransportSecurity.IsSetAccessControlMaxAgeSec())
                                 xmlWriter.WriteElementString("AccessControlMaxAgeSec", StringUtils.FromInt(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.StrictTransportSecurity.AccessControlMaxAgeSec.Value));
-
                             if(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.StrictTransportSecurity.IsSetIncludeSubdomains())
                                 xmlWriter.WriteElementString("IncludeSubdomains", StringUtils.FromBool(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.StrictTransportSecurity.IncludeSubdomains.Value));
-
                             if(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.StrictTransportSecurity.IsSetOverride())
                                 xmlWriter.WriteElementString("Override", StringUtils.FromBool(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.StrictTransportSecurity.Override.Value));
-
                             if(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.StrictTransportSecurity.IsSetPreload())
                                 xmlWriter.WriteElementString("Preload", StringUtils.FromBool(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.StrictTransportSecurity.Preload.Value));
-
                             xmlWriter.WriteEndElement();
                         }
                         if (publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.XSSProtection != null)
@@ -295,16 +271,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             xmlWriter.WriteStartElement("XSSProtection");
                             if(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.XSSProtection.IsSetModeBlock())
                                 xmlWriter.WriteElementString("ModeBlock", StringUtils.FromBool(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.XSSProtection.ModeBlock.Value));
-
                             if(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.XSSProtection.IsSetOverride())
                                 xmlWriter.WriteElementString("Override", StringUtils.FromBool(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.XSSProtection.Override.Value));
-
                             if(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.XSSProtection.IsSetProtection())
                                 xmlWriter.WriteElementString("Protection", StringUtils.FromBool(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.XSSProtection.Protection.Value));
-
                             if(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.XSSProtection.IsSetReportUri())
                                 xmlWriter.WriteElementString("ReportUri", StringUtils.FromString(publicRequest.ResponseHeadersPolicyConfig.SecurityHeadersConfig.XSSProtection.ReportUri));
-
                             xmlWriter.WriteEndElement();
                         }
                         xmlWriter.WriteEndElement();
@@ -314,10 +286,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         xmlWriter.WriteStartElement("ServerTimingHeadersConfig");
                         if(publicRequest.ResponseHeadersPolicyConfig.ServerTimingHeadersConfig.IsSetEnabled())
                             xmlWriter.WriteElementString("Enabled", StringUtils.FromBool(publicRequest.ResponseHeadersPolicyConfig.ServerTimingHeadersConfig.Enabled.Value));
-
                         if(publicRequest.ResponseHeadersPolicyConfig.ServerTimingHeadersConfig.IsSetSamplingRate())
                             xmlWriter.WriteElementString("SamplingRate", StringUtils.FromDouble(publicRequest.ResponseHeadersPolicyConfig.ServerTimingHeadersConfig.SamplingRate.Value));
-
                         xmlWriter.WriteEndElement();
                     }
 

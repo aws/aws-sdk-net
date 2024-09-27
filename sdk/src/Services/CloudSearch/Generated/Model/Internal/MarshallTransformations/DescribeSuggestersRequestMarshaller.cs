@@ -69,11 +69,16 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetSuggesterNames())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.SuggesterNames)
+                    if (publicRequest.SuggesterNames.Count == 0)
+                        request.Parameters.Add("SuggesterNames", "");
+                    else
                     {
-                        request.Parameters.Add("SuggesterNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.SuggesterNames)
+                         {
+                             request.Parameters.Add("SuggesterNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

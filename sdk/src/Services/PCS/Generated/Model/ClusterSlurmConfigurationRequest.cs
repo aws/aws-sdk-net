@@ -44,9 +44,9 @@ namespace Amazon.PCS.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int ScaleDownIdleTimeInSeconds
+        public int? ScaleDownIdleTimeInSeconds
         {
-            get { return this._scaleDownIdleTimeInSeconds.GetValueOrDefault(); }
+            get { return this._scaleDownIdleTimeInSeconds; }
             set { this._scaleDownIdleTimeInSeconds = value; }
         }
 

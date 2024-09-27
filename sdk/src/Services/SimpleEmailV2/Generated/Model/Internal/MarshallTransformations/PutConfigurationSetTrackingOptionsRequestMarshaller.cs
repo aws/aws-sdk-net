@@ -78,26 +78,16 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.CustomRedirectDomain);
                     }
 
+                    if(publicRequest.IsSetHttpsPolicy())
+                    {
+                        context.Writer.WritePropertyName("HttpsPolicy");
+                        context.Writer.Write(publicRequest.HttpsPolicy);
+                    }
+
                     writer.WriteObjectEnd();
                 }
 
-<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
-||||||| Commit version number update changes
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-=======
-                if(publicRequest.IsSetHttpsPolicy())
-                {
-                    context.Writer.WritePropertyName("HttpsPolicy");
-                    context.Writer.Write(publicRequest.HttpsPolicy);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
->>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
             }
 
 

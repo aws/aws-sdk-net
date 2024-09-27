@@ -51,7 +51,8 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             var ms = new MemoryStream();
             Amazon.Util.AWSSDKUtils.CopyStream(context.Stream, ms);
             ms.Seek(0, SeekOrigin.Begin);
-            response.Body = ms;
+            if (ms.Length > 0)
+                response.Body = ms;
 
             return response;
         }

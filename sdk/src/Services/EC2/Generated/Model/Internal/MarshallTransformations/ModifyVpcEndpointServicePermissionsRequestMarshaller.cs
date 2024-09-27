@@ -61,20 +61,30 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetAddAllowedPrincipals())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.AddAllowedPrincipals)
+                    if (publicRequest.AddAllowedPrincipals.Count == 0)
+                        request.Parameters.Add("AddAllowedPrincipals", "");
+                    else
                     {
-                        request.Parameters.Add("AddAllowedPrincipals" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.AddAllowedPrincipals)
+                         {
+                             request.Parameters.Add("AddAllowedPrincipals" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetRemoveAllowedPrincipals())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.RemoveAllowedPrincipals)
+                    if (publicRequest.RemoveAllowedPrincipals.Count == 0)
+                        request.Parameters.Add("RemoveAllowedPrincipals", "");
+                    else
                     {
-                        request.Parameters.Add("RemoveAllowedPrincipals" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.RemoveAllowedPrincipals)
+                         {
+                             request.Parameters.Add("RemoveAllowedPrincipals" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetServiceId())

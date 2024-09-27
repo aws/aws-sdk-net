@@ -65,9 +65,9 @@ namespace Amazon.AppConfig.Model
         /// A parameter that indicates if deletion protection is enabled or not.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.AppConfig.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=15, Max=1440)]
-        public int ProtectionPeriodInMinutes
+        public int? ProtectionPeriodInMinutes
         {
-            get { return this._protectionPeriodInMinutes.GetValueOrDefault(); }
+            get { return this._protectionPeriodInMinutes; }
             set { this._protectionPeriodInMinutes = value; }
         }
 

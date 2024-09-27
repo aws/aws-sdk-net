@@ -68,7 +68,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("includeChildDomainUnits", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeChildDomainUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -65,33 +65,38 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetBlockDeviceMappings())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.BlockDeviceMappings)
+                    if (publicRequest.BlockDeviceMappings.Count == 0)
+                        request.Parameters.Add("BlockDeviceMapping", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetDeviceName())
-                        {
-                            request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "DeviceName", StringUtils.FromString(publicRequestlistValue.DeviceName));
-                        }
-                        if(publicRequestlistValue.IsSetEbs())
-                        {
-                            if(publicRequestlistValue.Ebs.IsSetDeleteOnTermination())
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.BlockDeviceMappings)
+                         {
+                            if(publicRequestlistValue.IsSetDeviceName())
                             {
-                                request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "DeleteOnTermination", StringUtils.FromBool(publicRequestlistValue.Ebs.DeleteOnTermination));
+                                request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "DeviceName", StringUtils.FromString(publicRequestlistValue.DeviceName));
                             }
-                            if(publicRequestlistValue.Ebs.IsSetVolumeId())
+                            if(publicRequestlistValue.IsSetEbs())
                             {
-                                request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "VolumeId", StringUtils.FromString(publicRequestlistValue.Ebs.VolumeId));
+                                if(publicRequestlistValue.Ebs.IsSetDeleteOnTermination())
+                                {
+                                    request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "DeleteOnTermination", StringUtils.FromBool(publicRequestlistValue.Ebs.DeleteOnTermination));
+                                }
+                                if(publicRequestlistValue.Ebs.IsSetVolumeId())
+                                {
+                                    request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "VolumeId", StringUtils.FromString(publicRequestlistValue.Ebs.VolumeId));
+                                }
                             }
-                        }
-                        if(publicRequestlistValue.IsSetNoDevice())
-                        {
-                            request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "NoDevice", StringUtils.FromString(publicRequestlistValue.NoDevice));
-                        }
-                        if(publicRequestlistValue.IsSetVirtualName())
-                        {
-                            request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "VirtualName", StringUtils.FromString(publicRequestlistValue.VirtualName));
-                        }
-                        publicRequestlistValueIndex++;
+                            if(publicRequestlistValue.IsSetNoDevice())
+                            {
+                                request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "NoDevice", StringUtils.FromString(publicRequestlistValue.NoDevice));
+                            }
+                            if(publicRequestlistValue.IsSetVirtualName())
+                            {
+                                request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "VirtualName", StringUtils.FromString(publicRequestlistValue.VirtualName));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetDisableApiStop())
@@ -112,11 +117,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetGroups())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Groups)
+                    if (publicRequest.Groups.Count == 0)
+                        request.Parameters.Add("GroupId", "");
+                    else
                     {
-                        request.Parameters.Add("GroupId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Groups)
+                         {
+                             request.Parameters.Add("GroupId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetInstanceId())

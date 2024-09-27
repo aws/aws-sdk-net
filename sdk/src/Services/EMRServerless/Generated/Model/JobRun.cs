@@ -239,9 +239,9 @@ namespace Amazon.EMRServerless.Model
         /// The date and time when the job was terminated.
         /// </para>
         /// </summary>
-        public DateTime EndedAt
+        public DateTime? EndedAt
         {
-            get { return this._endedAt.GetValueOrDefault(); }
+            get { return this._endedAt; }
             set { this._endedAt = value; }
         }
 
@@ -386,9 +386,9 @@ namespace Amazon.EMRServerless.Model
         /// The total time for a job in the QUEUED state in milliseconds.
         /// </para>
         /// </summary>
-        public long QueuedDurationMilliseconds
+        public long? QueuedDurationMilliseconds
         {
-            get { return this._queuedDurationMilliseconds.GetValueOrDefault(); }
+            get { return this._queuedDurationMilliseconds; }
             set { this._queuedDurationMilliseconds = value; }
         }
 
@@ -441,9 +441,9 @@ namespace Amazon.EMRServerless.Model
         /// The date and time when the job moved to the RUNNING state.
         /// </para>
         /// </summary>
-        public DateTime StartedAt
+        public DateTime? StartedAt
         {
-            get { return this._startedAt.GetValueOrDefault(); }
+            get { return this._startedAt; }
             set { this._startedAt = value; }
         }
 

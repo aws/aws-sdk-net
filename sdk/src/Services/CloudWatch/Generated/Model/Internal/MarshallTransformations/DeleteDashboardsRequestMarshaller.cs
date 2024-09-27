@@ -61,11 +61,16 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetDashboardNames())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.DashboardNames)
+                    if (publicRequest.DashboardNames.Count == 0)
+                        request.Parameters.Add("DashboardNames", "");
+                    else
                     {
-                        request.Parameters.Add("DashboardNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.DashboardNames)
+                         {
+                             request.Parameters.Add("DashboardNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

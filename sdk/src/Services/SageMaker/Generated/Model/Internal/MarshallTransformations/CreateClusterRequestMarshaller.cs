@@ -93,6 +93,23 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                         context.Writer.WriteArrayEnd();
                     }
 
+                    if(publicRequest.IsSetNodeRecovery())
+                    {
+                        context.Writer.WritePropertyName("NodeRecovery");
+                        context.Writer.Write(publicRequest.NodeRecovery);
+                    }
+
+                    if(publicRequest.IsSetOrchestrator())
+                    {
+                        context.Writer.WritePropertyName("Orchestrator");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ClusterOrchestratorMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Orchestrator, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetTags())
                     {
                         context.Writer.WritePropertyName("Tags");
@@ -109,38 +126,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                         context.Writer.WriteArrayEnd();
                     }
 
-<<<<<<< HEAD
                     if(publicRequest.IsSetVpcConfig())
-||||||| Commit version number update changes
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
-=======
-                if(publicRequest.IsSetNodeRecovery())
-                {
-                    context.Writer.WritePropertyName("NodeRecovery");
-                    context.Writer.Write(publicRequest.NodeRecovery);
-                }
-
-                if(publicRequest.IsSetOrchestrator())
-                {
-                    context.Writer.WritePropertyName("Orchestrator");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ClusterOrchestratorMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Orchestrator, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
->>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
                     {
                         context.Writer.WritePropertyName("VpcConfig");
                         context.Writer.WriteObjectStart();

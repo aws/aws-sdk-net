@@ -62,9 +62,9 @@ namespace Amazon.DataZone.Model
         /// Specifies whether to include child domain units.
         /// </para>
         /// </summary>
-        public bool IncludeChildDomainUnits
+        public bool? IncludeChildDomainUnits
         {
-            get { return this._includeChildDomainUnits.GetValueOrDefault(); }
+            get { return this._includeChildDomainUnits; }
             set { this._includeChildDomainUnits = value; }
         }
 

@@ -65,18 +65,23 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetDefaultTags())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.DefaultTags)
+                    if (publicRequest.DefaultTags.Count == 0)
+                        request.Parameters.Add("DefaultTags", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetName())
-                        {
-                            request.Parameters.Add("DefaultTags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
-                        }
-                        if(publicRequestlistValue.IsSetValue())
-                        {
-                            request.Parameters.Add("DefaultTags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.DefaultTags)
+                         {
+                            if(publicRequestlistValue.IsSetName())
+                            {
+                                request.Parameters.Add("DefaultTags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
+                            }
+                            if(publicRequestlistValue.IsSetValue())
+                            {
+                                request.Parameters.Add("DefaultTags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetDefaultTemplateData())
@@ -85,69 +90,99 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetDestinations())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Destinations)
+                    if (publicRequest.Destinations.Count == 0)
+                        request.Parameters.Add("Destinations", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetDestination())
-                        {
-                            if(publicRequestlistValue.Destination.IsSetBccAddresses())
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Destinations)
+                         {
+                            if(publicRequestlistValue.IsSetDestination())
                             {
-                                int publicRequestlistValueDestinationlistValueIndex = 1;
-                                foreach(var publicRequestlistValueDestinationlistValue in publicRequestlistValue.Destination.BccAddresses)
+                                if(publicRequestlistValue.Destination.IsSetBccAddresses())
                                 {
-                                    request.Parameters.Add("Destinations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "BccAddresses" + "." + "member" + "." + publicRequestlistValueDestinationlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationlistValue));
-                                    publicRequestlistValueDestinationlistValueIndex++;
+                                    if (publicRequestlistValue.Destination.BccAddresses.Count == 0)
+                                        request.Parameters.Add("Destinations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "BccAddresses", "");
+                                    else
+                                    {
+                                         int publicRequestlistValueDestinationlistValueIndex = 1;
+                                         foreach(var publicRequestlistValueDestinationlistValue in publicRequestlistValue.Destination.BccAddresses)
+                                         {
+                                             request.Parameters.Add("Destinations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "BccAddresses" + "." + "member" + "." + publicRequestlistValueDestinationlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationlistValue));
+                                             publicRequestlistValueDestinationlistValueIndex++;
+                                         }
+                                    }
+                                }
+                                if(publicRequestlistValue.Destination.IsSetCcAddresses())
+                                {
+                                    if (publicRequestlistValue.Destination.CcAddresses.Count == 0)
+                                        request.Parameters.Add("Destinations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "CcAddresses", "");
+                                    else
+                                    {
+                                         int publicRequestlistValueDestinationlistValueIndex = 1;
+                                         foreach(var publicRequestlistValueDestinationlistValue in publicRequestlistValue.Destination.CcAddresses)
+                                         {
+                                             request.Parameters.Add("Destinations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "CcAddresses" + "." + "member" + "." + publicRequestlistValueDestinationlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationlistValue));
+                                             publicRequestlistValueDestinationlistValueIndex++;
+                                         }
+                                    }
+                                }
+                                if(publicRequestlistValue.Destination.IsSetToAddresses())
+                                {
+                                    if (publicRequestlistValue.Destination.ToAddresses.Count == 0)
+                                        request.Parameters.Add("Destinations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "ToAddresses", "");
+                                    else
+                                    {
+                                         int publicRequestlistValueDestinationlistValueIndex = 1;
+                                         foreach(var publicRequestlistValueDestinationlistValue in publicRequestlistValue.Destination.ToAddresses)
+                                         {
+                                             request.Parameters.Add("Destinations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "ToAddresses" + "." + "member" + "." + publicRequestlistValueDestinationlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationlistValue));
+                                             publicRequestlistValueDestinationlistValueIndex++;
+                                         }
+                                    }
                                 }
                             }
-                            if(publicRequestlistValue.Destination.IsSetCcAddresses())
+                            if(publicRequestlistValue.IsSetReplacementTags())
                             {
-                                int publicRequestlistValueDestinationlistValueIndex = 1;
-                                foreach(var publicRequestlistValueDestinationlistValue in publicRequestlistValue.Destination.CcAddresses)
+                                if (publicRequestlistValue.ReplacementTags.Count == 0)
+                                    request.Parameters.Add("Destinations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ReplacementTags", "");
+                                else
                                 {
-                                    request.Parameters.Add("Destinations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "CcAddresses" + "." + "member" + "." + publicRequestlistValueDestinationlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationlistValue));
-                                    publicRequestlistValueDestinationlistValueIndex++;
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.ReplacementTags)
+                                     {
+                                        if(publicRequestlistValuelistValue.IsSetName())
+                                        {
+                                            request.Parameters.Add("Destinations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ReplacementTags" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValuelistValue.Name));
+                                        }
+                                        if(publicRequestlistValuelistValue.IsSetValue())
+                                        {
+                                            request.Parameters.Add("Destinations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ReplacementTags" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
+                                        }
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
                                 }
                             }
-                            if(publicRequestlistValue.Destination.IsSetToAddresses())
+                            if(publicRequestlistValue.IsSetReplacementTemplateData())
                             {
-                                int publicRequestlistValueDestinationlistValueIndex = 1;
-                                foreach(var publicRequestlistValueDestinationlistValue in publicRequestlistValue.Destination.ToAddresses)
-                                {
-                                    request.Parameters.Add("Destinations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "ToAddresses" + "." + "member" + "." + publicRequestlistValueDestinationlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationlistValue));
-                                    publicRequestlistValueDestinationlistValueIndex++;
-                                }
+                                request.Parameters.Add("Destinations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ReplacementTemplateData", StringUtils.FromString(publicRequestlistValue.ReplacementTemplateData));
                             }
-                        }
-                        if(publicRequestlistValue.IsSetReplacementTags())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.ReplacementTags)
-                            {
-                                if(publicRequestlistValuelistValue.IsSetName())
-                                {
-                                    request.Parameters.Add("Destinations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ReplacementTags" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValuelistValue.Name));
-                                }
-                                if(publicRequestlistValuelistValue.IsSetValue())
-                                {
-                                    request.Parameters.Add("Destinations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ReplacementTags" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
-                                }
-                                publicRequestlistValuelistValueIndex++;
-                            }
-                        }
-                        if(publicRequestlistValue.IsSetReplacementTemplateData())
-                        {
-                            request.Parameters.Add("Destinations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ReplacementTemplateData", StringUtils.FromString(publicRequestlistValue.ReplacementTemplateData));
-                        }
-                        publicRequestlistValueIndex++;
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetReplyToAddresses())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ReplyToAddresses)
+                    if (publicRequest.ReplyToAddresses.Count == 0)
+                        request.Parameters.Add("ReplyToAddresses", "");
+                    else
                     {
-                        request.Parameters.Add("ReplyToAddresses" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ReplyToAddresses)
+                         {
+                             request.Parameters.Add("ReplyToAddresses" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetReturnPath())

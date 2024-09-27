@@ -61,11 +61,16 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetAccounts())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Accounts)
+                    if (publicRequest.Accounts.Count == 0)
+                        request.Parameters.Add("Accounts", "");
+                    else
                     {
-                        request.Parameters.Add("Accounts" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Accounts)
+                         {
+                             request.Parameters.Add("Accounts" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetCallAs())
@@ -80,11 +85,16 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     }
                     if(publicRequest.DeploymentTargets.IsSetAccounts())
                     {
-                        int publicRequestDeploymentTargetslistValueIndex = 1;
-                        foreach(var publicRequestDeploymentTargetslistValue in publicRequest.DeploymentTargets.Accounts)
+                        if (publicRequest.DeploymentTargets.Accounts.Count == 0)
+                            request.Parameters.Add("DeploymentTargets" + "." + "Accounts", "");
+                        else
                         {
-                            request.Parameters.Add("DeploymentTargets" + "." + "Accounts" + "." + "member" + "." + publicRequestDeploymentTargetslistValueIndex, StringUtils.FromString(publicRequestDeploymentTargetslistValue));
-                            publicRequestDeploymentTargetslistValueIndex++;
+                             int publicRequestDeploymentTargetslistValueIndex = 1;
+                             foreach(var publicRequestDeploymentTargetslistValue in publicRequest.DeploymentTargets.Accounts)
+                             {
+                                 request.Parameters.Add("DeploymentTargets" + "." + "Accounts" + "." + "member" + "." + publicRequestDeploymentTargetslistValueIndex, StringUtils.FromString(publicRequestDeploymentTargetslistValue));
+                                 publicRequestDeploymentTargetslistValueIndex++;
+                             }
                         }
                     }
                     if(publicRequest.DeploymentTargets.IsSetAccountsUrl())
@@ -93,11 +103,16 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     }
                     if(publicRequest.DeploymentTargets.IsSetOrganizationalUnitIds())
                     {
-                        int publicRequestDeploymentTargetslistValueIndex = 1;
-                        foreach(var publicRequestDeploymentTargetslistValue in publicRequest.DeploymentTargets.OrganizationalUnitIds)
+                        if (publicRequest.DeploymentTargets.OrganizationalUnitIds.Count == 0)
+                            request.Parameters.Add("DeploymentTargets" + "." + "OrganizationalUnitIds", "");
+                        else
                         {
-                            request.Parameters.Add("DeploymentTargets" + "." + "OrganizationalUnitIds" + "." + "member" + "." + publicRequestDeploymentTargetslistValueIndex, StringUtils.FromString(publicRequestDeploymentTargetslistValue));
-                            publicRequestDeploymentTargetslistValueIndex++;
+                             int publicRequestDeploymentTargetslistValueIndex = 1;
+                             foreach(var publicRequestDeploymentTargetslistValue in publicRequest.DeploymentTargets.OrganizationalUnitIds)
+                             {
+                                 request.Parameters.Add("DeploymentTargets" + "." + "OrganizationalUnitIds" + "." + "member" + "." + publicRequestDeploymentTargetslistValueIndex, StringUtils.FromString(publicRequestDeploymentTargetslistValue));
+                                 publicRequestDeploymentTargetslistValueIndex++;
+                             }
                         }
                     }
                 }
@@ -137,45 +152,60 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     }
                     if(publicRequest.OperationPreferences.IsSetRegionOrder())
                     {
-                        int publicRequestOperationPreferenceslistValueIndex = 1;
-                        foreach(var publicRequestOperationPreferenceslistValue in publicRequest.OperationPreferences.RegionOrder)
+                        if (publicRequest.OperationPreferences.RegionOrder.Count == 0)
+                            request.Parameters.Add("OperationPreferences" + "." + "RegionOrder", "");
+                        else
                         {
-                            request.Parameters.Add("OperationPreferences" + "." + "RegionOrder" + "." + "member" + "." + publicRequestOperationPreferenceslistValueIndex, StringUtils.FromString(publicRequestOperationPreferenceslistValue));
-                            publicRequestOperationPreferenceslistValueIndex++;
+                             int publicRequestOperationPreferenceslistValueIndex = 1;
+                             foreach(var publicRequestOperationPreferenceslistValue in publicRequest.OperationPreferences.RegionOrder)
+                             {
+                                 request.Parameters.Add("OperationPreferences" + "." + "RegionOrder" + "." + "member" + "." + publicRequestOperationPreferenceslistValueIndex, StringUtils.FromString(publicRequestOperationPreferenceslistValue));
+                                 publicRequestOperationPreferenceslistValueIndex++;
+                             }
                         }
                     }
                 }
                 if(publicRequest.IsSetParameterOverrides())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ParameterOverrides)
+                    if (publicRequest.ParameterOverrides.Count == 0)
+                        request.Parameters.Add("ParameterOverrides", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetParameterKey())
-                        {
-                            request.Parameters.Add("ParameterOverrides" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ParameterKey", StringUtils.FromString(publicRequestlistValue.ParameterKey));
-                        }
-                        if(publicRequestlistValue.IsSetParameterValue())
-                        {
-                            request.Parameters.Add("ParameterOverrides" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ParameterValue", StringUtils.FromString(publicRequestlistValue.ParameterValue));
-                        }
-                        if(publicRequestlistValue.IsSetResolvedValue())
-                        {
-                            request.Parameters.Add("ParameterOverrides" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResolvedValue", StringUtils.FromString(publicRequestlistValue.ResolvedValue));
-                        }
-                        if(publicRequestlistValue.IsSetUsePreviousValue())
-                        {
-                            request.Parameters.Add("ParameterOverrides" + "." + "member" + "." + publicRequestlistValueIndex + "." + "UsePreviousValue", StringUtils.FromBool(publicRequestlistValue.UsePreviousValue));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ParameterOverrides)
+                         {
+                            if(publicRequestlistValue.IsSetParameterKey())
+                            {
+                                request.Parameters.Add("ParameterOverrides" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ParameterKey", StringUtils.FromString(publicRequestlistValue.ParameterKey));
+                            }
+                            if(publicRequestlistValue.IsSetParameterValue())
+                            {
+                                request.Parameters.Add("ParameterOverrides" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ParameterValue", StringUtils.FromString(publicRequestlistValue.ParameterValue));
+                            }
+                            if(publicRequestlistValue.IsSetResolvedValue())
+                            {
+                                request.Parameters.Add("ParameterOverrides" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResolvedValue", StringUtils.FromString(publicRequestlistValue.ResolvedValue));
+                            }
+                            if(publicRequestlistValue.IsSetUsePreviousValue())
+                            {
+                                request.Parameters.Add("ParameterOverrides" + "." + "member" + "." + publicRequestlistValueIndex + "." + "UsePreviousValue", StringUtils.FromBool(publicRequestlistValue.UsePreviousValue));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetRegions())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Regions)
+                    if (publicRequest.Regions.Count == 0)
+                        request.Parameters.Add("Regions", "");
+                    else
                     {
-                        request.Parameters.Add("Regions" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Regions)
+                         {
+                             request.Parameters.Add("Regions" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetStackSetName())

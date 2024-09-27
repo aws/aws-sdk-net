@@ -65,11 +65,16 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetLoadBalancerPorts())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.LoadBalancerPorts)
+                    if (publicRequest.LoadBalancerPorts.Count == 0)
+                        request.Parameters.Add("LoadBalancerPorts", "");
+                    else
                     {
-                        request.Parameters.Add("LoadBalancerPorts" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromInt(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.LoadBalancerPorts)
+                         {
+                             request.Parameters.Add("LoadBalancerPorts" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromInt(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

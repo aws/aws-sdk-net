@@ -63,32 +63,35 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConnectionName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ConnectionName");
-                    context.Writer.Write(publicRequest.ConnectionName);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConnectionName())
+                    {
+                        context.Writer.WritePropertyName("ConnectionName");
+                        context.Writer.Write(publicRequest.ConnectionName);
+                    }
+
+                    if(publicRequest.IsSetTestConnectionInput())
+                    {
+                        context.Writer.WritePropertyName("TestConnectionInput");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TestConnectionInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TestConnectionInput, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTestConnectionInput())
-                {
-                    context.Writer.WritePropertyName("TestConnectionInput");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TestConnectionInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TestConnectionInput, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

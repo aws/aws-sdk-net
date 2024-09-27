@@ -80,10 +80,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                         xmlWriter.WriteStartElement("member");
                         if(publicRequestChangesValue.IsSetLocationName())
                             xmlWriter.WriteElementString("LocationName", StringUtils.FromString(publicRequestChangesValue.LocationName));
-
                         if(publicRequestChangesValue.IsSetAction())
                             xmlWriter.WriteElementString("Action", StringUtils.FromString(publicRequestChangesValue.Action));
-
                         var publicRequestChangesValueCidrList = publicRequestChangesValue.CidrList;
                         if (publicRequestChangesValueCidrList != null && (publicRequestChangesValueCidrList.Count > 0 || !AWSConfigs.InitializeCollections)) 
                         {

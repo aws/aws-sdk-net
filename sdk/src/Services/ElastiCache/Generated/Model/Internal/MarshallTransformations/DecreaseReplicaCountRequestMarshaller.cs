@@ -69,45 +69,65 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetReplicaConfiguration())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ReplicaConfiguration)
+                    if (publicRequest.ReplicaConfiguration.Count == 0)
+                        request.Parameters.Add("ReplicaConfiguration", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetNewReplicaCount())
-                        {
-                            request.Parameters.Add("ReplicaConfiguration" + "." + "ConfigureShard" + "." + publicRequestlistValueIndex + "." + "NewReplicaCount", StringUtils.FromInt(publicRequestlistValue.NewReplicaCount));
-                        }
-                        if(publicRequestlistValue.IsSetNodeGroupId())
-                        {
-                            request.Parameters.Add("ReplicaConfiguration" + "." + "ConfigureShard" + "." + publicRequestlistValueIndex + "." + "NodeGroupId", StringUtils.FromString(publicRequestlistValue.NodeGroupId));
-                        }
-                        if(publicRequestlistValue.IsSetPreferredAvailabilityZones())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.PreferredAvailabilityZones)
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ReplicaConfiguration)
+                         {
+                            if(publicRequestlistValue.IsSetNewReplicaCount())
                             {
-                                request.Parameters.Add("ReplicaConfiguration" + "." + "ConfigureShard" + "." + publicRequestlistValueIndex + "." + "PreferredAvailabilityZones" + "." + "PreferredAvailabilityZone" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
-                                publicRequestlistValuelistValueIndex++;
+                                request.Parameters.Add("ReplicaConfiguration" + "." + "ConfigureShard" + "." + publicRequestlistValueIndex + "." + "NewReplicaCount", StringUtils.FromInt(publicRequestlistValue.NewReplicaCount));
                             }
-                        }
-                        if(publicRequestlistValue.IsSetPreferredOutpostArns())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.PreferredOutpostArns)
+                            if(publicRequestlistValue.IsSetNodeGroupId())
                             {
-                                request.Parameters.Add("ReplicaConfiguration" + "." + "ConfigureShard" + "." + publicRequestlistValueIndex + "." + "PreferredOutpostArns" + "." + "PreferredOutpostArn" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
-                                publicRequestlistValuelistValueIndex++;
+                                request.Parameters.Add("ReplicaConfiguration" + "." + "ConfigureShard" + "." + publicRequestlistValueIndex + "." + "NodeGroupId", StringUtils.FromString(publicRequestlistValue.NodeGroupId));
                             }
-                        }
-                        publicRequestlistValueIndex++;
+                            if(publicRequestlistValue.IsSetPreferredAvailabilityZones())
+                            {
+                                if (publicRequestlistValue.PreferredAvailabilityZones.Count == 0)
+                                    request.Parameters.Add("ReplicaConfiguration" + "." + "ConfigureShard" + "." + publicRequestlistValueIndex + "." + "PreferredAvailabilityZones", "");
+                                else
+                                {
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.PreferredAvailabilityZones)
+                                     {
+                                         request.Parameters.Add("ReplicaConfiguration" + "." + "ConfigureShard" + "." + publicRequestlistValueIndex + "." + "PreferredAvailabilityZones" + "." + "PreferredAvailabilityZone" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
+                                }
+                            }
+                            if(publicRequestlistValue.IsSetPreferredOutpostArns())
+                            {
+                                if (publicRequestlistValue.PreferredOutpostArns.Count == 0)
+                                    request.Parameters.Add("ReplicaConfiguration" + "." + "ConfigureShard" + "." + publicRequestlistValueIndex + "." + "PreferredOutpostArns", "");
+                                else
+                                {
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.PreferredOutpostArns)
+                                     {
+                                         request.Parameters.Add("ReplicaConfiguration" + "." + "ConfigureShard" + "." + publicRequestlistValueIndex + "." + "PreferredOutpostArns" + "." + "PreferredOutpostArn" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
+                                }
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetReplicasToRemove())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ReplicasToRemove)
+                    if (publicRequest.ReplicasToRemove.Count == 0)
+                        request.Parameters.Add("ReplicasToRemove", "");
+                    else
                     {
-                        request.Parameters.Add("ReplicasToRemove" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ReplicasToRemove)
+                         {
+                             request.Parameters.Add("ReplicasToRemove" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetReplicationGroupId())

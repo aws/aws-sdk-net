@@ -51,13 +51,13 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("Enabled");
-                context.Writer.Write(requestObject.Enabled);
+                context.Writer.Write(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetProtectionPeriodInMinutes())
             {
                 context.Writer.WritePropertyName("ProtectionPeriodInMinutes");
-                context.Writer.Write(requestObject.ProtectionPeriodInMinutes);
+                context.Writer.Write(requestObject.ProtectionPeriodInMinutes.Value);
             }
 
         }

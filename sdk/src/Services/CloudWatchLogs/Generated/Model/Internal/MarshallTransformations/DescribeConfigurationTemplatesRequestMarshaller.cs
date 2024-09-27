@@ -63,66 +63,69 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDeliveryDestinationTypes())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("deliveryDestinationTypes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDeliveryDestinationTypesListValue in publicRequest.DeliveryDestinationTypes)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDeliveryDestinationTypes())
                     {
-                            context.Writer.Write(publicRequestDeliveryDestinationTypesListValue);
+                        context.Writer.WritePropertyName("deliveryDestinationTypes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDeliveryDestinationTypesListValue in publicRequest.DeliveryDestinationTypes)
+                        {
+                                context.Writer.Write(publicRequestDeliveryDestinationTypesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetLimit())
-                {
-                    context.Writer.WritePropertyName("limit");
-                    context.Writer.Write(publicRequest.Limit);
-                }
-
-                if(publicRequest.IsSetLogTypes())
-                {
-                    context.Writer.WritePropertyName("logTypes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLogTypesListValue in publicRequest.LogTypes)
+                    if(publicRequest.IsSetLimit())
                     {
-                            context.Writer.Write(publicRequestLogTypesListValue);
+                        context.Writer.WritePropertyName("limit");
+                        context.Writer.Write(publicRequest.Limit.Value);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetResourceTypes())
-                {
-                    context.Writer.WritePropertyName("resourceTypes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestResourceTypesListValue in publicRequest.ResourceTypes)
+                    if(publicRequest.IsSetLogTypes())
                     {
-                            context.Writer.Write(publicRequestResourceTypesListValue);
+                        context.Writer.WritePropertyName("logTypes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLogTypesListValue in publicRequest.LogTypes)
+                        {
+                                context.Writer.Write(publicRequestLogTypesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetResourceTypes())
+                    {
+                        context.Writer.WritePropertyName("resourceTypes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestResourceTypesListValue in publicRequest.ResourceTypes)
+                        {
+                                context.Writer.Write(publicRequestResourceTypesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetService())
+                    {
+                        context.Writer.WritePropertyName("service");
+                        context.Writer.Write(publicRequest.Service);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetService())
-                {
-                    context.Writer.WritePropertyName("service");
-                    context.Writer.Write(publicRequest.Service);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

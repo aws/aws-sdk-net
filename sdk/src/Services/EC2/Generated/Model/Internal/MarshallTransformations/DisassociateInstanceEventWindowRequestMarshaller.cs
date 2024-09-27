@@ -63,36 +63,51 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     if(publicRequest.AssociationTarget.IsSetDedicatedHostIds())
                     {
-                        int publicRequestAssociationTargetlistValueIndex = 1;
-                        foreach(var publicRequestAssociationTargetlistValue in publicRequest.AssociationTarget.DedicatedHostIds)
+                        if (publicRequest.AssociationTarget.DedicatedHostIds.Count == 0)
+                            request.Parameters.Add("AssociationTarget" + "." + "DedicatedHostId", "");
+                        else
                         {
-                            request.Parameters.Add("AssociationTarget" + "." + "DedicatedHostId" + "." + publicRequestAssociationTargetlistValueIndex, StringUtils.FromString(publicRequestAssociationTargetlistValue));
-                            publicRequestAssociationTargetlistValueIndex++;
+                             int publicRequestAssociationTargetlistValueIndex = 1;
+                             foreach(var publicRequestAssociationTargetlistValue in publicRequest.AssociationTarget.DedicatedHostIds)
+                             {
+                                 request.Parameters.Add("AssociationTarget" + "." + "DedicatedHostId" + "." + publicRequestAssociationTargetlistValueIndex, StringUtils.FromString(publicRequestAssociationTargetlistValue));
+                                 publicRequestAssociationTargetlistValueIndex++;
+                             }
                         }
                     }
                     if(publicRequest.AssociationTarget.IsSetInstanceIds())
                     {
-                        int publicRequestAssociationTargetlistValueIndex = 1;
-                        foreach(var publicRequestAssociationTargetlistValue in publicRequest.AssociationTarget.InstanceIds)
+                        if (publicRequest.AssociationTarget.InstanceIds.Count == 0)
+                            request.Parameters.Add("AssociationTarget" + "." + "InstanceId", "");
+                        else
                         {
-                            request.Parameters.Add("AssociationTarget" + "." + "InstanceId" + "." + publicRequestAssociationTargetlistValueIndex, StringUtils.FromString(publicRequestAssociationTargetlistValue));
-                            publicRequestAssociationTargetlistValueIndex++;
+                             int publicRequestAssociationTargetlistValueIndex = 1;
+                             foreach(var publicRequestAssociationTargetlistValue in publicRequest.AssociationTarget.InstanceIds)
+                             {
+                                 request.Parameters.Add("AssociationTarget" + "." + "InstanceId" + "." + publicRequestAssociationTargetlistValueIndex, StringUtils.FromString(publicRequestAssociationTargetlistValue));
+                                 publicRequestAssociationTargetlistValueIndex++;
+                             }
                         }
                     }
                     if(publicRequest.AssociationTarget.IsSetInstanceTags())
                     {
-                        int publicRequestAssociationTargetlistValueIndex = 1;
-                        foreach(var publicRequestAssociationTargetlistValue in publicRequest.AssociationTarget.InstanceTags)
+                        if (publicRequest.AssociationTarget.InstanceTags.Count == 0)
+                            request.Parameters.Add("AssociationTarget" + "." + "InstanceTag", "");
+                        else
                         {
-                            if(publicRequestAssociationTargetlistValue.IsSetKey())
-                            {
-                                request.Parameters.Add("AssociationTarget" + "." + "InstanceTag" + "." + publicRequestAssociationTargetlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestAssociationTargetlistValue.Key));
-                            }
-                            if(publicRequestAssociationTargetlistValue.IsSetValue())
-                            {
-                                request.Parameters.Add("AssociationTarget" + "." + "InstanceTag" + "." + publicRequestAssociationTargetlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestAssociationTargetlistValue.Value));
-                            }
-                            publicRequestAssociationTargetlistValueIndex++;
+                             int publicRequestAssociationTargetlistValueIndex = 1;
+                             foreach(var publicRequestAssociationTargetlistValue in publicRequest.AssociationTarget.InstanceTags)
+                             {
+                                if(publicRequestAssociationTargetlistValue.IsSetKey())
+                                {
+                                    request.Parameters.Add("AssociationTarget" + "." + "InstanceTag" + "." + publicRequestAssociationTargetlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestAssociationTargetlistValue.Key));
+                                }
+                                if(publicRequestAssociationTargetlistValue.IsSetValue())
+                                {
+                                    request.Parameters.Add("AssociationTarget" + "." + "InstanceTag" + "." + publicRequestAssociationTargetlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestAssociationTargetlistValue.Value));
+                                }
+                                 publicRequestAssociationTargetlistValueIndex++;
+                             }
                         }
                     }
                 }

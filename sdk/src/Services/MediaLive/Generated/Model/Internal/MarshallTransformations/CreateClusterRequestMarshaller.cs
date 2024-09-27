@@ -61,69 +61,72 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/prod/clusters";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClusterType())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clusterType");
-                    context.Writer.Write(publicRequest.ClusterType);
-                }
-
-                if(publicRequest.IsSetInstanceRoleArn())
-                {
-                    context.Writer.WritePropertyName("instanceRoleArn");
-                    context.Writer.Write(publicRequest.InstanceRoleArn);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetNetworkSettings())
-                {
-                    context.Writer.WritePropertyName("networkSettings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ClusterNetworkSettingsCreateRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.NetworkSettings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRequestId())
-                {
-                    context.Writer.WritePropertyName("requestId");
-                    context.Writer.Write(publicRequest.RequestId);
-                }
-
-                else if(!(publicRequest.IsSetRequestId()))
-                {
-                    context.Writer.WritePropertyName("requestId");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClusterType())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("clusterType");
+                        context.Writer.Write(publicRequest.ClusterType);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetInstanceRoleArn())
+                    {
+                        context.Writer.WritePropertyName("instanceRoleArn");
+                        context.Writer.Write(publicRequest.InstanceRoleArn);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetNetworkSettings())
+                    {
+                        context.Writer.WritePropertyName("networkSettings");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ClusterNetworkSettingsCreateRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.NetworkSettings, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetRequestId())
+                    {
+                        context.Writer.WritePropertyName("requestId");
+                        context.Writer.Write(publicRequest.RequestId);
+                    }
+
+                    else if(!(publicRequest.IsSetRequestId()))
+                    {
+                        context.Writer.WritePropertyName("requestId");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

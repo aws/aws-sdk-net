@@ -67,11 +67,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if(publicRequest.InstanceTagAttribute.IsSetInstanceTagKeys())
                     {
-                        int publicRequestInstanceTagAttributelistValueIndex = 1;
-                        foreach(var publicRequestInstanceTagAttributelistValue in publicRequest.InstanceTagAttribute.InstanceTagKeys)
+                        if (publicRequest.InstanceTagAttribute.InstanceTagKeys.Count == 0)
+                            request.Parameters.Add("InstanceTagAttribute" + "." + "InstanceTagKey", "");
+                        else
                         {
-                            request.Parameters.Add("InstanceTagAttribute" + "." + "InstanceTagKey" + "." + publicRequestInstanceTagAttributelistValueIndex, StringUtils.FromString(publicRequestInstanceTagAttributelistValue));
-                            publicRequestInstanceTagAttributelistValueIndex++;
+                             int publicRequestInstanceTagAttributelistValueIndex = 1;
+                             foreach(var publicRequestInstanceTagAttributelistValue in publicRequest.InstanceTagAttribute.InstanceTagKeys)
+                             {
+                                 request.Parameters.Add("InstanceTagAttribute" + "." + "InstanceTagKey" + "." + publicRequestInstanceTagAttributelistValueIndex, StringUtils.FromString(publicRequestInstanceTagAttributelistValue));
+                                 publicRequestInstanceTagAttributelistValueIndex++;
+                             }
                         }
                     }
                 }

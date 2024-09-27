@@ -65,11 +65,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetConnectionEvents())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ConnectionEvents)
+                    if (publicRequest.ConnectionEvents.Count == 0)
+                        request.Parameters.Add("ConnectionEvents", "");
+                    else
                     {
-                        request.Parameters.Add("ConnectionEvents" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ConnectionEvents)
+                         {
+                             request.Parameters.Add("ConnectionEvents" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetConnectionNotificationArn())

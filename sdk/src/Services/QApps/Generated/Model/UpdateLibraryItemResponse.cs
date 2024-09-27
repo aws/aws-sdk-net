@@ -167,9 +167,9 @@ namespace Amazon.QApps.Model
         /// Indicates whether the library item has been verified.
         /// </para>
         /// </summary>
-        public bool IsVerified
+        public bool? IsVerified
         {
-            get { return this._isVerified.GetValueOrDefault(); }
+            get { return this._isVerified; }
             set { this._isVerified = value; }
         }
 

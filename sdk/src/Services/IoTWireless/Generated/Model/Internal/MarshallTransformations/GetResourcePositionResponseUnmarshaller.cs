@@ -51,7 +51,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             var ms = new MemoryStream();
             Amazon.Util.AWSSDKUtils.CopyStream(context.Stream, ms);
             ms.Seek(0, SeekOrigin.Begin);
-            response.GeoJsonPayload = ms;
+            if (ms.Length > 0)
+                response.GeoJsonPayload = ms;
 
             return response;
         }

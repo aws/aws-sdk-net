@@ -106,33 +106,19 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.SecretArn);
                     }
 
-<<<<<<< HEAD
+                    if(publicRequest.IsSetSessionId())
+                    {
+                        context.Writer.WritePropertyName("SessionId");
+                        context.Writer.Write(publicRequest.SessionId);
+                    }
+
+                    if(publicRequest.IsSetSessionKeepAliveSeconds())
+                    {
+                        context.Writer.WritePropertyName("SessionKeepAliveSeconds");
+                        context.Writer.Write(publicRequest.SessionKeepAliveSeconds.Value);
+                    }
+
                     if(publicRequest.IsSetSqls())
-||||||| Commit version number update changes
-                if(publicRequest.IsSetSqls())
-                {
-                    context.Writer.WritePropertyName("Sqls");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSqlsListValue in publicRequest.Sqls)
-=======
-                if(publicRequest.IsSetSessionId())
-                {
-                    context.Writer.WritePropertyName("SessionId");
-                    context.Writer.Write(publicRequest.SessionId);
-                }
-
-                if(publicRequest.IsSetSessionKeepAliveSeconds())
-                {
-                    context.Writer.WritePropertyName("SessionKeepAliveSeconds");
-                    context.Writer.Write(publicRequest.SessionKeepAliveSeconds);
-                }
-
-                if(publicRequest.IsSetSqls())
-                {
-                    context.Writer.WritePropertyName("Sqls");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSqlsListValue in publicRequest.Sqls)
->>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
                     {
                         context.Writer.WritePropertyName("Sqls");
                         context.Writer.WriteArrayStart();

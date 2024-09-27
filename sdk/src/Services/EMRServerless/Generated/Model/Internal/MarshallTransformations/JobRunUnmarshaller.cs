@@ -122,7 +122,7 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("endedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.EndedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -170,7 +170,7 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("queuedDurationMilliseconds", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.QueuedDurationMilliseconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -188,7 +188,7 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("startedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }

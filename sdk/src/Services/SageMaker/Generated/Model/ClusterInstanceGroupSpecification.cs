@@ -69,16 +69,8 @@ namespace Amazon.SageMaker.Model
         /// cluster.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Required=true, Min=1)]
-        public int? InstanceCount
-||||||| Commit version number update changes
-        [AWSProperty(Required=true, Min=1)]
-        public int InstanceCount
-=======
         [AWSProperty(Required=true, Min=0)]
-        public int InstanceCount
->>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
+        public int? InstanceCount
         {
             get { return this._instanceCount; }
             set { this._instanceCount = value; }

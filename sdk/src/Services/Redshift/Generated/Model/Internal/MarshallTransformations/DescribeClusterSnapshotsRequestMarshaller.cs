@@ -97,18 +97,23 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetSortingEntities())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.SortingEntities)
+                    if (publicRequest.SortingEntities.Count == 0)
+                        request.Parameters.Add("SortingEntities", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetAttribute())
-                        {
-                            request.Parameters.Add("SortingEntities" + "." + "SnapshotSortingEntity" + "." + publicRequestlistValueIndex + "." + "Attribute", StringUtils.FromString(publicRequestlistValue.Attribute));
-                        }
-                        if(publicRequestlistValue.IsSetSortOrder())
-                        {
-                            request.Parameters.Add("SortingEntities" + "." + "SnapshotSortingEntity" + "." + publicRequestlistValueIndex + "." + "SortOrder", StringUtils.FromString(publicRequestlistValue.SortOrder));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.SortingEntities)
+                         {
+                            if(publicRequestlistValue.IsSetAttribute())
+                            {
+                                request.Parameters.Add("SortingEntities" + "." + "SnapshotSortingEntity" + "." + publicRequestlistValueIndex + "." + "Attribute", StringUtils.FromString(publicRequestlistValue.Attribute));
+                            }
+                            if(publicRequestlistValue.IsSetSortOrder())
+                            {
+                                request.Parameters.Add("SortingEntities" + "." + "SnapshotSortingEntity" + "." + publicRequestlistValueIndex + "." + "SortOrder", StringUtils.FromString(publicRequestlistValue.SortOrder));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetStartTimeUtc())
@@ -117,20 +122,30 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetTagKeys())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.TagKeys)
+                    if (publicRequest.TagKeys.Count == 0)
+                        request.Parameters.Add("TagKeys", "");
+                    else
                     {
-                        request.Parameters.Add("TagKeys" + "." + "TagKey" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.TagKeys)
+                         {
+                             request.Parameters.Add("TagKeys" + "." + "TagKey" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetTagValues())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.TagValues)
+                    if (publicRequest.TagValues.Count == 0)
+                        request.Parameters.Add("TagValues", "");
+                    else
                     {
-                        request.Parameters.Add("TagValues" + "." + "TagValue" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.TagValues)
+                         {
+                             request.Parameters.Add("TagValues" + "." + "TagValue" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

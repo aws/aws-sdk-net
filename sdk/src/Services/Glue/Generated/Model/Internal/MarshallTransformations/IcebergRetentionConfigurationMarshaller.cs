@@ -51,19 +51,19 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCleanExpiredFiles())
             {
                 context.Writer.WritePropertyName("cleanExpiredFiles");
-                context.Writer.Write(requestObject.CleanExpiredFiles);
+                context.Writer.Write(requestObject.CleanExpiredFiles.Value);
             }
 
             if(requestObject.IsSetNumberOfSnapshotsToRetain())
             {
                 context.Writer.WritePropertyName("numberOfSnapshotsToRetain");
-                context.Writer.Write(requestObject.NumberOfSnapshotsToRetain);
+                context.Writer.Write(requestObject.NumberOfSnapshotsToRetain.Value);
             }
 
             if(requestObject.IsSetSnapshotRetentionPeriodInDays())
             {
                 context.Writer.WritePropertyName("snapshotRetentionPeriodInDays");
-                context.Writer.Write(requestObject.SnapshotRetentionPeriodInDays);
+                context.Writer.Write(requestObject.SnapshotRetentionPeriodInDays.Value);
             }
 
         }

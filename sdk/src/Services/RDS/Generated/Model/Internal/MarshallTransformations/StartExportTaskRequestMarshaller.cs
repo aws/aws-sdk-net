@@ -61,11 +61,16 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetExportOnly())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ExportOnly)
+                    if (publicRequest.ExportOnly.Count == 0)
+                        request.Parameters.Add("ExportOnly", "");
+                    else
                     {
-                        request.Parameters.Add("ExportOnly" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ExportOnly)
+                         {
+                             request.Parameters.Add("ExportOnly" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetExportTaskIdentifier())

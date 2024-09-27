@@ -51,7 +51,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableHiveCompatiblePath())
             {
                 context.Writer.WritePropertyName("enableHiveCompatiblePath");
-                context.Writer.Write(requestObject.EnableHiveCompatiblePath);
+                context.Writer.Write(requestObject.EnableHiveCompatiblePath.Value);
             }
 
             if(requestObject.IsSetSuffixPath())

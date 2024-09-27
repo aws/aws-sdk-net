@@ -109,9 +109,9 @@ namespace Amazon.DirectoryServiceData.Model
         ///  Indicates whether the user account is active. 
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

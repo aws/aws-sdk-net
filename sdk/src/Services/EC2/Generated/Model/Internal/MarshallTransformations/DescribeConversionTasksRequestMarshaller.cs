@@ -61,11 +61,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetConversionTaskIds())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ConversionTaskIds)
+                    if (publicRequest.ConversionTaskIds.Count == 0)
+                        request.Parameters.Add("ConversionTaskId", "");
+                    else
                     {
-                        request.Parameters.Add("ConversionTaskId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ConversionTaskIds)
+                         {
+                             request.Parameters.Add("ConversionTaskId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

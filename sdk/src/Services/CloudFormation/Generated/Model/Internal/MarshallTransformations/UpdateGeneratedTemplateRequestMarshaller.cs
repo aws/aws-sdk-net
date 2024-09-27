@@ -61,33 +61,38 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetAddResources())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.AddResources)
+                    if (publicRequest.AddResources.Count == 0)
+                        request.Parameters.Add("AddResources", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetLogicalResourceId())
-                        {
-                            request.Parameters.Add("AddResources" + "." + "member" + "." + publicRequestlistValueIndex + "." + "LogicalResourceId", StringUtils.FromString(publicRequestlistValue.LogicalResourceId));
-                        }
-                        if(publicRequestlistValue.IsSetResourceIdentifier())
-                        {
-                            int mapIndex = 1;
-                            foreach(var key in publicRequestlistValue.ResourceIdentifier.Keys)
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.AddResources)
+                         {
+                            if(publicRequestlistValue.IsSetLogicalResourceId())
                             {
-                                String value;
-                                bool hasValue = publicRequestlistValue.ResourceIdentifier.TryGetValue(key, out value);
-                                request.Parameters.Add("AddResources" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceIdentifier" + "." + "entry" + "." + mapIndex + "." + "key", StringUtils.FromString(key));
-                                if (hasValue)
-                                {
-                                    request.Parameters.Add("AddResources" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceIdentifier" + "." + "entry" + "." + mapIndex + "." + "value", StringUtils.FromString(value));
-                                }
-                                mapIndex++;
+                                request.Parameters.Add("AddResources" + "." + "member" + "." + publicRequestlistValueIndex + "." + "LogicalResourceId", StringUtils.FromString(publicRequestlistValue.LogicalResourceId));
                             }
-                        }
-                        if(publicRequestlistValue.IsSetResourceType())
-                        {
-                            request.Parameters.Add("AddResources" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
-                        }
-                        publicRequestlistValueIndex++;
+                            if(publicRequestlistValue.IsSetResourceIdentifier())
+                            {
+                                int mapIndex = 1;
+                                foreach(var key in publicRequestlistValue.ResourceIdentifier.Keys)
+                                {
+                                    String value;
+                                    bool hasValue = publicRequestlistValue.ResourceIdentifier.TryGetValue(key, out value);
+                                    request.Parameters.Add("AddResources" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceIdentifier" + "." + "entry" + "." + mapIndex + "." + "key", StringUtils.FromString(key));
+                                    if (hasValue)
+                                    {
+                                        request.Parameters.Add("AddResources" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceIdentifier" + "." + "entry" + "." + mapIndex + "." + "value", StringUtils.FromString(value));
+                                    }
+                                    mapIndex++;
+                                }
+                            }
+                            if(publicRequestlistValue.IsSetResourceType())
+                            {
+                                request.Parameters.Add("AddResources" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetGeneratedTemplateName())
@@ -104,11 +109,16 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetRemoveResources())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.RemoveResources)
+                    if (publicRequest.RemoveResources.Count == 0)
+                        request.Parameters.Add("RemoveResources", "");
+                    else
                     {
-                        request.Parameters.Add("RemoveResources" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.RemoveResources)
+                         {
+                             request.Parameters.Add("RemoveResources" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetTemplateConfiguration())

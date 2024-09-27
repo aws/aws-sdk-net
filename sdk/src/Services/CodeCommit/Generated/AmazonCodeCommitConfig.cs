@@ -34,16 +34,10 @@ namespace Amazon.CodeCommit
     public partial class AmazonCodeCommitConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("CodeCommit", "4.0.0.0");
 
         private static readonly AmazonCodeCommitEndpointResolver EndpointResolver =
             new AmazonCodeCommitEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("CodeCommit", "3.7.401.11");
-=======
-            InternalSDKUtils.BuildUserAgentString("CodeCommit", "3.7.401.26");
->>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
 
         private string _userAgent = UserAgentString;
         ///<summary>

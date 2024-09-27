@@ -65,11 +65,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetNetworkInterfaceIds())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.NetworkInterfaceIds)
+                    if (publicRequest.NetworkInterfaceIds.Count == 0)
+                        request.Parameters.Add("NetworkInterfaceIds", "");
+                    else
                     {
-                        request.Parameters.Add("NetworkInterfaceIds" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.NetworkInterfaceIds)
+                         {
+                             request.Parameters.Add("NetworkInterfaceIds" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetTransitGatewayMulticastDomainId())

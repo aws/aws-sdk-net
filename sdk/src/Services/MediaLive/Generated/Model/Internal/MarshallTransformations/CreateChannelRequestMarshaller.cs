@@ -63,37 +63,23 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             request.ResourcePath = "/prod/channels";
             using (MemoryStream memoryStream = new MemoryStream())
             {
-<<<<<<< HEAD
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-||||||| Commit version number update changes
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCdiInputSpecification())
-=======
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAnywhereSettings())
-                {
-                    context.Writer.WritePropertyName("anywhereSettings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = AnywhereSettingsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AnywhereSettings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetCdiInputSpecification())
->>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
                 {
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;
                     writer.WriteObjectStart();
                     var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAnywhereSettings())
+                    {
+                        context.Writer.WritePropertyName("anywhereSettings");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AnywhereSettingsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AnywhereSettings, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetCdiInputSpecification())
                     {
                         context.Writer.WritePropertyName("cdiInputSpecification");

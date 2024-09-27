@@ -65,53 +65,58 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetBlockDeviceMappings())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.BlockDeviceMappings)
+                    if (publicRequest.BlockDeviceMappings.Count == 0)
+                        request.Parameters.Add("BlockDeviceMappings", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetDeviceName())
-                        {
-                            request.Parameters.Add("BlockDeviceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "DeviceName", StringUtils.FromString(publicRequestlistValue.DeviceName));
-                        }
-                        if(publicRequestlistValue.IsSetEbs())
-                        {
-                            if(publicRequestlistValue.Ebs.IsSetDeleteOnTermination())
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.BlockDeviceMappings)
+                         {
+                            if(publicRequestlistValue.IsSetDeviceName())
                             {
-                                request.Parameters.Add("BlockDeviceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "DeleteOnTermination", StringUtils.FromBool(publicRequestlistValue.Ebs.DeleteOnTermination));
+                                request.Parameters.Add("BlockDeviceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "DeviceName", StringUtils.FromString(publicRequestlistValue.DeviceName));
                             }
-                            if(publicRequestlistValue.Ebs.IsSetEncrypted())
+                            if(publicRequestlistValue.IsSetEbs())
                             {
-                                request.Parameters.Add("BlockDeviceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "Encrypted", StringUtils.FromBool(publicRequestlistValue.Ebs.Encrypted));
+                                if(publicRequestlistValue.Ebs.IsSetDeleteOnTermination())
+                                {
+                                    request.Parameters.Add("BlockDeviceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "DeleteOnTermination", StringUtils.FromBool(publicRequestlistValue.Ebs.DeleteOnTermination));
+                                }
+                                if(publicRequestlistValue.Ebs.IsSetEncrypted())
+                                {
+                                    request.Parameters.Add("BlockDeviceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "Encrypted", StringUtils.FromBool(publicRequestlistValue.Ebs.Encrypted));
+                                }
+                                if(publicRequestlistValue.Ebs.IsSetIops())
+                                {
+                                    request.Parameters.Add("BlockDeviceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "Iops", StringUtils.FromInt(publicRequestlistValue.Ebs.Iops));
+                                }
+                                if(publicRequestlistValue.Ebs.IsSetSnapshotId())
+                                {
+                                    request.Parameters.Add("BlockDeviceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "SnapshotId", StringUtils.FromString(publicRequestlistValue.Ebs.SnapshotId));
+                                }
+                                if(publicRequestlistValue.Ebs.IsSetThroughput())
+                                {
+                                    request.Parameters.Add("BlockDeviceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "Throughput", StringUtils.FromInt(publicRequestlistValue.Ebs.Throughput));
+                                }
+                                if(publicRequestlistValue.Ebs.IsSetVolumeSize())
+                                {
+                                    request.Parameters.Add("BlockDeviceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "VolumeSize", StringUtils.FromInt(publicRequestlistValue.Ebs.VolumeSize));
+                                }
+                                if(publicRequestlistValue.Ebs.IsSetVolumeType())
+                                {
+                                    request.Parameters.Add("BlockDeviceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "VolumeType", StringUtils.FromString(publicRequestlistValue.Ebs.VolumeType));
+                                }
                             }
-                            if(publicRequestlistValue.Ebs.IsSetIops())
+                            if(publicRequestlistValue.IsSetNoDevice())
                             {
-                                request.Parameters.Add("BlockDeviceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "Iops", StringUtils.FromInt(publicRequestlistValue.Ebs.Iops));
+                                request.Parameters.Add("BlockDeviceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "NoDevice", StringUtils.FromBool(publicRequestlistValue.NoDevice));
                             }
-                            if(publicRequestlistValue.Ebs.IsSetSnapshotId())
+                            if(publicRequestlistValue.IsSetVirtualName())
                             {
-                                request.Parameters.Add("BlockDeviceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "SnapshotId", StringUtils.FromString(publicRequestlistValue.Ebs.SnapshotId));
+                                request.Parameters.Add("BlockDeviceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "VirtualName", StringUtils.FromString(publicRequestlistValue.VirtualName));
                             }
-                            if(publicRequestlistValue.Ebs.IsSetThroughput())
-                            {
-                                request.Parameters.Add("BlockDeviceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "Throughput", StringUtils.FromInt(publicRequestlistValue.Ebs.Throughput));
-                            }
-                            if(publicRequestlistValue.Ebs.IsSetVolumeSize())
-                            {
-                                request.Parameters.Add("BlockDeviceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "VolumeSize", StringUtils.FromInt(publicRequestlistValue.Ebs.VolumeSize));
-                            }
-                            if(publicRequestlistValue.Ebs.IsSetVolumeType())
-                            {
-                                request.Parameters.Add("BlockDeviceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "VolumeType", StringUtils.FromString(publicRequestlistValue.Ebs.VolumeType));
-                            }
-                        }
-                        if(publicRequestlistValue.IsSetNoDevice())
-                        {
-                            request.Parameters.Add("BlockDeviceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "NoDevice", StringUtils.FromBool(publicRequestlistValue.NoDevice));
-                        }
-                        if(publicRequestlistValue.IsSetVirtualName())
-                        {
-                            request.Parameters.Add("BlockDeviceMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "VirtualName", StringUtils.FromString(publicRequestlistValue.VirtualName));
-                        }
-                        publicRequestlistValueIndex++;
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetClassicLinkVPCId())
@@ -120,11 +125,16 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetClassicLinkVPCSecurityGroups())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ClassicLinkVPCSecurityGroups)
+                    if (publicRequest.ClassicLinkVPCSecurityGroups.Count == 0)
+                        request.Parameters.Add("ClassicLinkVPCSecurityGroups", "");
+                    else
                     {
-                        request.Parameters.Add("ClassicLinkVPCSecurityGroups" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ClassicLinkVPCSecurityGroups)
+                         {
+                             request.Parameters.Add("ClassicLinkVPCSecurityGroups" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetEbsOptimized())
@@ -191,11 +201,16 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetSecurityGroups())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.SecurityGroups)
+                    if (publicRequest.SecurityGroups.Count == 0)
+                        request.Parameters.Add("SecurityGroups", "");
+                    else
                     {
-                        request.Parameters.Add("SecurityGroups" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.SecurityGroups)
+                         {
+                             request.Parameters.Add("SecurityGroups" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetSpotPrice())

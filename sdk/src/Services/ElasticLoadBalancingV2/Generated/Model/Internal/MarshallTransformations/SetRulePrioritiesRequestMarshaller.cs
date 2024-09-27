@@ -61,18 +61,23 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetRulePriorities())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.RulePriorities)
+                    if (publicRequest.RulePriorities.Count == 0)
+                        request.Parameters.Add("RulePriorities", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetPriority())
-                        {
-                            request.Parameters.Add("RulePriorities" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Priority", StringUtils.FromInt(publicRequestlistValue.Priority));
-                        }
-                        if(publicRequestlistValue.IsSetRuleArn())
-                        {
-                            request.Parameters.Add("RulePriorities" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RuleArn", StringUtils.FromString(publicRequestlistValue.RuleArn));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.RulePriorities)
+                         {
+                            if(publicRequestlistValue.IsSetPriority())
+                            {
+                                request.Parameters.Add("RulePriorities" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Priority", StringUtils.FromInt(publicRequestlistValue.Priority));
+                            }
+                            if(publicRequestlistValue.IsSetRuleArn())
+                            {
+                                request.Parameters.Add("RulePriorities" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RuleArn", StringUtils.FromString(publicRequestlistValue.RuleArn));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

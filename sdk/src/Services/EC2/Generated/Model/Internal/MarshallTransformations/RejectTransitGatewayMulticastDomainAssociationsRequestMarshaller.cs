@@ -61,11 +61,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetSubnetIds())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.SubnetIds)
+                    if (publicRequest.SubnetIds.Count == 0)
+                        request.Parameters.Add("SubnetIds", "");
+                    else
                     {
-                        request.Parameters.Add("SubnetIds" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.SubnetIds)
+                         {
+                             request.Parameters.Add("SubnetIds" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetTransitGatewayAttachmentId())

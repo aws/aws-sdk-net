@@ -70,16 +70,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// Reclamation.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Required=true, Min=0)]
-        public int? TimeoutDurationMinutes
-||||||| Commit version number update changes
-        [AWSProperty(Required=true, Min=0)]
-        public int TimeoutDurationMinutes
-=======
         [AWSProperty(Min=0)]
-        public int TimeoutDurationMinutes
->>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
+        public int? TimeoutDurationMinutes
         {
             get { return this._timeoutDurationMinutes; }
             set { this._timeoutDurationMinutes = value; }

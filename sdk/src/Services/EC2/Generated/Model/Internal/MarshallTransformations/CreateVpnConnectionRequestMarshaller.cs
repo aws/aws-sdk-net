@@ -103,189 +103,239 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if(publicRequest.Options.IsSetTunnelOptions())
                     {
-                        int publicRequestOptionslistValueIndex = 1;
-                        foreach(var publicRequestOptionslistValue in publicRequest.Options.TunnelOptions)
+                        if (publicRequest.Options.TunnelOptions.Count == 0)
+                            request.Parameters.Add("Options" + "." + "TunnelOptions", "");
+                        else
                         {
-                            if(publicRequestOptionslistValue.IsSetDPDTimeoutAction())
-                            {
-                                request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "DPDTimeoutAction", StringUtils.FromString(publicRequestOptionslistValue.DPDTimeoutAction));
-                            }
-                            if(publicRequestOptionslistValue.IsSetDPDTimeoutSeconds())
-                            {
-                                request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "DPDTimeoutSeconds", StringUtils.FromInt(publicRequestOptionslistValue.DPDTimeoutSeconds));
-                            }
-                            if(publicRequestOptionslistValue.IsSetEnableTunnelLifecycleControl())
-                            {
-                                request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "EnableTunnelLifecycleControl", StringUtils.FromBool(publicRequestOptionslistValue.EnableTunnelLifecycleControl));
-                            }
-                            if(publicRequestOptionslistValue.IsSetIKEVersions())
-                            {
-                                int publicRequestOptionslistValuelistValueIndex = 1;
-                                foreach(var publicRequestOptionslistValuelistValue in publicRequestOptionslistValue.IKEVersions)
+                             int publicRequestOptionslistValueIndex = 1;
+                             foreach(var publicRequestOptionslistValue in publicRequest.Options.TunnelOptions)
+                             {
+                                if(publicRequestOptionslistValue.IsSetDPDTimeoutAction())
                                 {
-                                    if(publicRequestOptionslistValuelistValue.IsSetValue())
-                                    {
-                                        request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "IKEVersion" + "." + publicRequestOptionslistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestOptionslistValuelistValue.Value));
-                                    }
-                                    publicRequestOptionslistValuelistValueIndex++;
+                                    request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "DPDTimeoutAction", StringUtils.FromString(publicRequestOptionslistValue.DPDTimeoutAction));
                                 }
-                            }
-                            if(publicRequestOptionslistValue.IsSetLogOptions())
-                            {
-                                if(publicRequestOptionslistValue.LogOptions.IsSetCloudWatchLogOptions())
+                                if(publicRequestOptionslistValue.IsSetDPDTimeoutSeconds())
                                 {
-                                    if(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.IsSetLogEnabled())
+                                    request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "DPDTimeoutSeconds", StringUtils.FromInt(publicRequestOptionslistValue.DPDTimeoutSeconds));
+                                }
+                                if(publicRequestOptionslistValue.IsSetEnableTunnelLifecycleControl())
+                                {
+                                    request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "EnableTunnelLifecycleControl", StringUtils.FromBool(publicRequestOptionslistValue.EnableTunnelLifecycleControl));
+                                }
+                                if(publicRequestOptionslistValue.IsSetIKEVersions())
+                                {
+                                    if (publicRequestOptionslistValue.IKEVersions.Count == 0)
+                                        request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "IKEVersion", "");
+                                    else
                                     {
-                                        request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "LogOptions" + "." + "CloudWatchLogOptions" + "." + "LogEnabled", StringUtils.FromBool(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.LogEnabled));
-                                    }
-                                    if(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.IsSetLogGroupArn())
-                                    {
-                                        request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "LogOptions" + "." + "CloudWatchLogOptions" + "." + "LogGroupArn", StringUtils.FromString(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.LogGroupArn));
-                                    }
-                                    if(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.IsSetLogOutputFormat())
-                                    {
-                                        request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "LogOptions" + "." + "CloudWatchLogOptions" + "." + "LogOutputFormat", StringUtils.FromString(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.LogOutputFormat));
+                                         int publicRequestOptionslistValuelistValueIndex = 1;
+                                         foreach(var publicRequestOptionslistValuelistValue in publicRequestOptionslistValue.IKEVersions)
+                                         {
+                                            if(publicRequestOptionslistValuelistValue.IsSetValue())
+                                            {
+                                                request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "IKEVersion" + "." + publicRequestOptionslistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestOptionslistValuelistValue.Value));
+                                            }
+                                             publicRequestOptionslistValuelistValueIndex++;
+                                         }
                                     }
                                 }
-                            }
-                            if(publicRequestOptionslistValue.IsSetPhase1DHGroupNumbers())
-                            {
-                                int publicRequestOptionslistValuelistValueIndex = 1;
-                                foreach(var publicRequestOptionslistValuelistValue in publicRequestOptionslistValue.Phase1DHGroupNumbers)
+                                if(publicRequestOptionslistValue.IsSetLogOptions())
                                 {
-                                    if(publicRequestOptionslistValuelistValue.IsSetValue())
+                                    if(publicRequestOptionslistValue.LogOptions.IsSetCloudWatchLogOptions())
                                     {
-                                        request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "Phase1DHGroupNumber" + "." + publicRequestOptionslistValuelistValueIndex + "." + "Value", StringUtils.FromInt(publicRequestOptionslistValuelistValue.Value));
+                                        if(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.IsSetLogEnabled())
+                                        {
+                                            request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "LogOptions" + "." + "CloudWatchLogOptions" + "." + "LogEnabled", StringUtils.FromBool(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.LogEnabled));
+                                        }
+                                        if(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.IsSetLogGroupArn())
+                                        {
+                                            request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "LogOptions" + "." + "CloudWatchLogOptions" + "." + "LogGroupArn", StringUtils.FromString(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.LogGroupArn));
+                                        }
+                                        if(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.IsSetLogOutputFormat())
+                                        {
+                                            request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "LogOptions" + "." + "CloudWatchLogOptions" + "." + "LogOutputFormat", StringUtils.FromString(publicRequestOptionslistValue.LogOptions.CloudWatchLogOptions.LogOutputFormat));
+                                        }
                                     }
-                                    publicRequestOptionslistValuelistValueIndex++;
                                 }
-                            }
-                            if(publicRequestOptionslistValue.IsSetPhase1EncryptionAlgorithms())
-                            {
-                                int publicRequestOptionslistValuelistValueIndex = 1;
-                                foreach(var publicRequestOptionslistValuelistValue in publicRequestOptionslistValue.Phase1EncryptionAlgorithms)
+                                if(publicRequestOptionslistValue.IsSetPhase1DHGroupNumbers())
                                 {
-                                    if(publicRequestOptionslistValuelistValue.IsSetValue())
+                                    if (publicRequestOptionslistValue.Phase1DHGroupNumbers.Count == 0)
+                                        request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "Phase1DHGroupNumber", "");
+                                    else
                                     {
-                                        request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "Phase1EncryptionAlgorithm" + "." + publicRequestOptionslistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestOptionslistValuelistValue.Value));
+                                         int publicRequestOptionslistValuelistValueIndex = 1;
+                                         foreach(var publicRequestOptionslistValuelistValue in publicRequestOptionslistValue.Phase1DHGroupNumbers)
+                                         {
+                                            if(publicRequestOptionslistValuelistValue.IsSetValue())
+                                            {
+                                                request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "Phase1DHGroupNumber" + "." + publicRequestOptionslistValuelistValueIndex + "." + "Value", StringUtils.FromInt(publicRequestOptionslistValuelistValue.Value));
+                                            }
+                                             publicRequestOptionslistValuelistValueIndex++;
+                                         }
                                     }
-                                    publicRequestOptionslistValuelistValueIndex++;
                                 }
-                            }
-                            if(publicRequestOptionslistValue.IsSetPhase1IntegrityAlgorithms())
-                            {
-                                int publicRequestOptionslistValuelistValueIndex = 1;
-                                foreach(var publicRequestOptionslistValuelistValue in publicRequestOptionslistValue.Phase1IntegrityAlgorithms)
+                                if(publicRequestOptionslistValue.IsSetPhase1EncryptionAlgorithms())
                                 {
-                                    if(publicRequestOptionslistValuelistValue.IsSetValue())
+                                    if (publicRequestOptionslistValue.Phase1EncryptionAlgorithms.Count == 0)
+                                        request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "Phase1EncryptionAlgorithm", "");
+                                    else
                                     {
-                                        request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "Phase1IntegrityAlgorithm" + "." + publicRequestOptionslistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestOptionslistValuelistValue.Value));
+                                         int publicRequestOptionslistValuelistValueIndex = 1;
+                                         foreach(var publicRequestOptionslistValuelistValue in publicRequestOptionslistValue.Phase1EncryptionAlgorithms)
+                                         {
+                                            if(publicRequestOptionslistValuelistValue.IsSetValue())
+                                            {
+                                                request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "Phase1EncryptionAlgorithm" + "." + publicRequestOptionslistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestOptionslistValuelistValue.Value));
+                                            }
+                                             publicRequestOptionslistValuelistValueIndex++;
+                                         }
                                     }
-                                    publicRequestOptionslistValuelistValueIndex++;
                                 }
-                            }
-                            if(publicRequestOptionslistValue.IsSetPhase1LifetimeSeconds())
-                            {
-                                request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "Phase1LifetimeSeconds", StringUtils.FromInt(publicRequestOptionslistValue.Phase1LifetimeSeconds));
-                            }
-                            if(publicRequestOptionslistValue.IsSetPhase2DHGroupNumbers())
-                            {
-                                int publicRequestOptionslistValuelistValueIndex = 1;
-                                foreach(var publicRequestOptionslistValuelistValue in publicRequestOptionslistValue.Phase2DHGroupNumbers)
+                                if(publicRequestOptionslistValue.IsSetPhase1IntegrityAlgorithms())
                                 {
-                                    if(publicRequestOptionslistValuelistValue.IsSetValue())
+                                    if (publicRequestOptionslistValue.Phase1IntegrityAlgorithms.Count == 0)
+                                        request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "Phase1IntegrityAlgorithm", "");
+                                    else
                                     {
-                                        request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "Phase2DHGroupNumber" + "." + publicRequestOptionslistValuelistValueIndex + "." + "Value", StringUtils.FromInt(publicRequestOptionslistValuelistValue.Value));
+                                         int publicRequestOptionslistValuelistValueIndex = 1;
+                                         foreach(var publicRequestOptionslistValuelistValue in publicRequestOptionslistValue.Phase1IntegrityAlgorithms)
+                                         {
+                                            if(publicRequestOptionslistValuelistValue.IsSetValue())
+                                            {
+                                                request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "Phase1IntegrityAlgorithm" + "." + publicRequestOptionslistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestOptionslistValuelistValue.Value));
+                                            }
+                                             publicRequestOptionslistValuelistValueIndex++;
+                                         }
                                     }
-                                    publicRequestOptionslistValuelistValueIndex++;
                                 }
-                            }
-                            if(publicRequestOptionslistValue.IsSetPhase2EncryptionAlgorithms())
-                            {
-                                int publicRequestOptionslistValuelistValueIndex = 1;
-                                foreach(var publicRequestOptionslistValuelistValue in publicRequestOptionslistValue.Phase2EncryptionAlgorithms)
+                                if(publicRequestOptionslistValue.IsSetPhase1LifetimeSeconds())
                                 {
-                                    if(publicRequestOptionslistValuelistValue.IsSetValue())
-                                    {
-                                        request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "Phase2EncryptionAlgorithm" + "." + publicRequestOptionslistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestOptionslistValuelistValue.Value));
-                                    }
-                                    publicRequestOptionslistValuelistValueIndex++;
+                                    request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "Phase1LifetimeSeconds", StringUtils.FromInt(publicRequestOptionslistValue.Phase1LifetimeSeconds));
                                 }
-                            }
-                            if(publicRequestOptionslistValue.IsSetPhase2IntegrityAlgorithms())
-                            {
-                                int publicRequestOptionslistValuelistValueIndex = 1;
-                                foreach(var publicRequestOptionslistValuelistValue in publicRequestOptionslistValue.Phase2IntegrityAlgorithms)
+                                if(publicRequestOptionslistValue.IsSetPhase2DHGroupNumbers())
                                 {
-                                    if(publicRequestOptionslistValuelistValue.IsSetValue())
+                                    if (publicRequestOptionslistValue.Phase2DHGroupNumbers.Count == 0)
+                                        request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "Phase2DHGroupNumber", "");
+                                    else
                                     {
-                                        request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "Phase2IntegrityAlgorithm" + "." + publicRequestOptionslistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestOptionslistValuelistValue.Value));
+                                         int publicRequestOptionslistValuelistValueIndex = 1;
+                                         foreach(var publicRequestOptionslistValuelistValue in publicRequestOptionslistValue.Phase2DHGroupNumbers)
+                                         {
+                                            if(publicRequestOptionslistValuelistValue.IsSetValue())
+                                            {
+                                                request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "Phase2DHGroupNumber" + "." + publicRequestOptionslistValuelistValueIndex + "." + "Value", StringUtils.FromInt(publicRequestOptionslistValuelistValue.Value));
+                                            }
+                                             publicRequestOptionslistValuelistValueIndex++;
+                                         }
                                     }
-                                    publicRequestOptionslistValuelistValueIndex++;
                                 }
-                            }
-                            if(publicRequestOptionslistValue.IsSetPhase2LifetimeSeconds())
-                            {
-                                request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "Phase2LifetimeSeconds", StringUtils.FromInt(publicRequestOptionslistValue.Phase2LifetimeSeconds));
-                            }
-                            if(publicRequestOptionslistValue.IsSetPreSharedKey())
-                            {
-                                request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "PreSharedKey", StringUtils.FromString(publicRequestOptionslistValue.PreSharedKey));
-                            }
-                            if(publicRequestOptionslistValue.IsSetRekeyFuzzPercentage())
-                            {
-                                request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "RekeyFuzzPercentage", StringUtils.FromInt(publicRequestOptionslistValue.RekeyFuzzPercentage));
-                            }
-                            if(publicRequestOptionslistValue.IsSetRekeyMarginTimeSeconds())
-                            {
-                                request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "RekeyMarginTimeSeconds", StringUtils.FromInt(publicRequestOptionslistValue.RekeyMarginTimeSeconds));
-                            }
-                            if(publicRequestOptionslistValue.IsSetReplayWindowSize())
-                            {
-                                request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "ReplayWindowSize", StringUtils.FromInt(publicRequestOptionslistValue.ReplayWindowSize));
-                            }
-                            if(publicRequestOptionslistValue.IsSetStartupAction())
-                            {
-                                request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "StartupAction", StringUtils.FromString(publicRequestOptionslistValue.StartupAction));
-                            }
-                            if(publicRequestOptionslistValue.IsSetTunnelInsideCidr())
-                            {
-                                request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "TunnelInsideCidr", StringUtils.FromString(publicRequestOptionslistValue.TunnelInsideCidr));
-                            }
-                            if(publicRequestOptionslistValue.IsSetTunnelInsideIpv6Cidr())
-                            {
-                                request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "TunnelInsideIpv6Cidr", StringUtils.FromString(publicRequestOptionslistValue.TunnelInsideIpv6Cidr));
-                            }
-                            publicRequestOptionslistValueIndex++;
+                                if(publicRequestOptionslistValue.IsSetPhase2EncryptionAlgorithms())
+                                {
+                                    if (publicRequestOptionslistValue.Phase2EncryptionAlgorithms.Count == 0)
+                                        request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "Phase2EncryptionAlgorithm", "");
+                                    else
+                                    {
+                                         int publicRequestOptionslistValuelistValueIndex = 1;
+                                         foreach(var publicRequestOptionslistValuelistValue in publicRequestOptionslistValue.Phase2EncryptionAlgorithms)
+                                         {
+                                            if(publicRequestOptionslistValuelistValue.IsSetValue())
+                                            {
+                                                request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "Phase2EncryptionAlgorithm" + "." + publicRequestOptionslistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestOptionslistValuelistValue.Value));
+                                            }
+                                             publicRequestOptionslistValuelistValueIndex++;
+                                         }
+                                    }
+                                }
+                                if(publicRequestOptionslistValue.IsSetPhase2IntegrityAlgorithms())
+                                {
+                                    if (publicRequestOptionslistValue.Phase2IntegrityAlgorithms.Count == 0)
+                                        request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "Phase2IntegrityAlgorithm", "");
+                                    else
+                                    {
+                                         int publicRequestOptionslistValuelistValueIndex = 1;
+                                         foreach(var publicRequestOptionslistValuelistValue in publicRequestOptionslistValue.Phase2IntegrityAlgorithms)
+                                         {
+                                            if(publicRequestOptionslistValuelistValue.IsSetValue())
+                                            {
+                                                request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "Phase2IntegrityAlgorithm" + "." + publicRequestOptionslistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestOptionslistValuelistValue.Value));
+                                            }
+                                             publicRequestOptionslistValuelistValueIndex++;
+                                         }
+                                    }
+                                }
+                                if(publicRequestOptionslistValue.IsSetPhase2LifetimeSeconds())
+                                {
+                                    request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "Phase2LifetimeSeconds", StringUtils.FromInt(publicRequestOptionslistValue.Phase2LifetimeSeconds));
+                                }
+                                if(publicRequestOptionslistValue.IsSetPreSharedKey())
+                                {
+                                    request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "PreSharedKey", StringUtils.FromString(publicRequestOptionslistValue.PreSharedKey));
+                                }
+                                if(publicRequestOptionslistValue.IsSetRekeyFuzzPercentage())
+                                {
+                                    request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "RekeyFuzzPercentage", StringUtils.FromInt(publicRequestOptionslistValue.RekeyFuzzPercentage));
+                                }
+                                if(publicRequestOptionslistValue.IsSetRekeyMarginTimeSeconds())
+                                {
+                                    request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "RekeyMarginTimeSeconds", StringUtils.FromInt(publicRequestOptionslistValue.RekeyMarginTimeSeconds));
+                                }
+                                if(publicRequestOptionslistValue.IsSetReplayWindowSize())
+                                {
+                                    request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "ReplayWindowSize", StringUtils.FromInt(publicRequestOptionslistValue.ReplayWindowSize));
+                                }
+                                if(publicRequestOptionslistValue.IsSetStartupAction())
+                                {
+                                    request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "StartupAction", StringUtils.FromString(publicRequestOptionslistValue.StartupAction));
+                                }
+                                if(publicRequestOptionslistValue.IsSetTunnelInsideCidr())
+                                {
+                                    request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "TunnelInsideCidr", StringUtils.FromString(publicRequestOptionslistValue.TunnelInsideCidr));
+                                }
+                                if(publicRequestOptionslistValue.IsSetTunnelInsideIpv6Cidr())
+                                {
+                                    request.Parameters.Add("Options" + "." + "TunnelOptions" + "." + publicRequestOptionslistValueIndex + "." + "TunnelInsideIpv6Cidr", StringUtils.FromString(publicRequestOptionslistValue.TunnelInsideIpv6Cidr));
+                                }
+                                 publicRequestOptionslistValueIndex++;
+                             }
                         }
                     }
                 }
                 if(publicRequest.IsSetTagSpecifications())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.TagSpecifications)
+                    if (publicRequest.TagSpecifications.Count == 0)
+                        request.Parameters.Add("TagSpecification", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetResourceType())
-                        {
-                            request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
-                        }
-                        if(publicRequestlistValue.IsSetTags())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Tags)
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.TagSpecifications)
+                         {
+                            if(publicRequestlistValue.IsSetResourceType())
                             {
-                                if(publicRequestlistValuelistValue.IsSetKey())
-                                {
-                                    request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValuelistValue.Key));
-                                }
-                                if(publicRequestlistValuelistValue.IsSetValue())
-                                {
-                                    request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
-                                }
-                                publicRequestlistValuelistValueIndex++;
+                                request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
                             }
-                        }
-                        publicRequestlistValueIndex++;
+                            if(publicRequestlistValue.IsSetTags())
+                            {
+                                if (publicRequestlistValue.Tags.Count == 0)
+                                    request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag", "");
+                                else
+                                {
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Tags)
+                                     {
+                                        if(publicRequestlistValuelistValue.IsSetKey())
+                                        {
+                                            request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValuelistValue.Key));
+                                        }
+                                        if(publicRequestlistValuelistValue.IsSetValue())
+                                        {
+                                            request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
+                                        }
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
+                                }
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetTransitGatewayId())

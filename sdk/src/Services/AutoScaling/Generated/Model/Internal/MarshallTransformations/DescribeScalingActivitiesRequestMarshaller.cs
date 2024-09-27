@@ -61,11 +61,16 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetActivityIds())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ActivityIds)
+                    if (publicRequest.ActivityIds.Count == 0)
+                        request.Parameters.Add("ActivityIds", "");
+                    else
                     {
-                        request.Parameters.Add("ActivityIds" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ActivityIds)
+                         {
+                             request.Parameters.Add("ActivityIds" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetAutoScalingGroupName())

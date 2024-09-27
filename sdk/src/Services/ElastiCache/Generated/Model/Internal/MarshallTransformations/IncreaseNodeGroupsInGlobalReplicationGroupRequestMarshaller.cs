@@ -73,39 +73,54 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetRegionalConfigurations())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.RegionalConfigurations)
+                    if (publicRequest.RegionalConfigurations.Count == 0)
+                        request.Parameters.Add("RegionalConfigurations", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetReplicationGroupId())
-                        {
-                            request.Parameters.Add("RegionalConfigurations" + "." + "RegionalConfiguration" + "." + publicRequestlistValueIndex + "." + "ReplicationGroupId", StringUtils.FromString(publicRequestlistValue.ReplicationGroupId));
-                        }
-                        if(publicRequestlistValue.IsSetReplicationGroupRegion())
-                        {
-                            request.Parameters.Add("RegionalConfigurations" + "." + "RegionalConfiguration" + "." + publicRequestlistValueIndex + "." + "ReplicationGroupRegion", StringUtils.FromString(publicRequestlistValue.ReplicationGroupRegion));
-                        }
-                        if(publicRequestlistValue.IsSetReshardingConfiguration())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.ReshardingConfiguration)
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.RegionalConfigurations)
+                         {
+                            if(publicRequestlistValue.IsSetReplicationGroupId())
                             {
-                                if(publicRequestlistValuelistValue.IsSetNodeGroupId())
-                                {
-                                    request.Parameters.Add("RegionalConfigurations" + "." + "RegionalConfiguration" + "." + publicRequestlistValueIndex + "." + "ReshardingConfiguration" + "." + "ReshardingConfiguration" + "." + publicRequestlistValuelistValueIndex + "." + "NodeGroupId", StringUtils.FromString(publicRequestlistValuelistValue.NodeGroupId));
-                                }
-                                if(publicRequestlistValuelistValue.IsSetPreferredAvailabilityZones())
-                                {
-                                    int publicRequestlistValuelistValuelistValueIndex = 1;
-                                    foreach(var publicRequestlistValuelistValuelistValue in publicRequestlistValuelistValue.PreferredAvailabilityZones)
-                                    {
-                                        request.Parameters.Add("RegionalConfigurations" + "." + "RegionalConfiguration" + "." + publicRequestlistValueIndex + "." + "ReshardingConfiguration" + "." + "ReshardingConfiguration" + "." + publicRequestlistValuelistValueIndex + "." + "PreferredAvailabilityZones" + "." + "AvailabilityZone" + "." + publicRequestlistValuelistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValuelistValue));
-                                        publicRequestlistValuelistValuelistValueIndex++;
-                                    }
-                                }
-                                publicRequestlistValuelistValueIndex++;
+                                request.Parameters.Add("RegionalConfigurations" + "." + "RegionalConfiguration" + "." + publicRequestlistValueIndex + "." + "ReplicationGroupId", StringUtils.FromString(publicRequestlistValue.ReplicationGroupId));
                             }
-                        }
-                        publicRequestlistValueIndex++;
+                            if(publicRequestlistValue.IsSetReplicationGroupRegion())
+                            {
+                                request.Parameters.Add("RegionalConfigurations" + "." + "RegionalConfiguration" + "." + publicRequestlistValueIndex + "." + "ReplicationGroupRegion", StringUtils.FromString(publicRequestlistValue.ReplicationGroupRegion));
+                            }
+                            if(publicRequestlistValue.IsSetReshardingConfiguration())
+                            {
+                                if (publicRequestlistValue.ReshardingConfiguration.Count == 0)
+                                    request.Parameters.Add("RegionalConfigurations" + "." + "RegionalConfiguration" + "." + publicRequestlistValueIndex + "." + "ReshardingConfiguration", "");
+                                else
+                                {
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.ReshardingConfiguration)
+                                     {
+                                        if(publicRequestlistValuelistValue.IsSetNodeGroupId())
+                                        {
+                                            request.Parameters.Add("RegionalConfigurations" + "." + "RegionalConfiguration" + "." + publicRequestlistValueIndex + "." + "ReshardingConfiguration" + "." + "ReshardingConfiguration" + "." + publicRequestlistValuelistValueIndex + "." + "NodeGroupId", StringUtils.FromString(publicRequestlistValuelistValue.NodeGroupId));
+                                        }
+                                        if(publicRequestlistValuelistValue.IsSetPreferredAvailabilityZones())
+                                        {
+                                            if (publicRequestlistValuelistValue.PreferredAvailabilityZones.Count == 0)
+                                                request.Parameters.Add("RegionalConfigurations" + "." + "RegionalConfiguration" + "." + publicRequestlistValueIndex + "." + "ReshardingConfiguration" + "." + "ReshardingConfiguration" + "." + publicRequestlistValuelistValueIndex + "." + "PreferredAvailabilityZones", "");
+                                            else
+                                            {
+                                                 int publicRequestlistValuelistValuelistValueIndex = 1;
+                                                 foreach(var publicRequestlistValuelistValuelistValue in publicRequestlistValuelistValue.PreferredAvailabilityZones)
+                                                 {
+                                                     request.Parameters.Add("RegionalConfigurations" + "." + "RegionalConfiguration" + "." + publicRequestlistValueIndex + "." + "ReshardingConfiguration" + "." + "ReshardingConfiguration" + "." + publicRequestlistValuelistValueIndex + "." + "PreferredAvailabilityZones" + "." + "AvailabilityZone" + "." + publicRequestlistValuelistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValuelistValue));
+                                                     publicRequestlistValuelistValuelistValueIndex++;
+                                                 }
+                                            }
+                                        }
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
+                                }
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

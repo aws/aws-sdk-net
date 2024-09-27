@@ -131,42 +131,28 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                         context.Writer.WriteArrayEnd();
                     }
 
+                    if(publicRequest.IsSetMulticastSettings())
+                    {
+                        context.Writer.WritePropertyName("multicastSettings");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MulticastSettingsUpdateRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.MulticastSettings, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetName())
                     {
                         context.Writer.WritePropertyName("name");
                         context.Writer.Write(publicRequest.Name);
                     }
 
-<<<<<<< HEAD
                     if(publicRequest.IsSetRoleArn())
                     {
                         context.Writer.WritePropertyName("roleArn");
                         context.Writer.Write(publicRequest.RoleArn);
                     }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-=======
-                if(publicRequest.IsSetMulticastSettings())
-                {
-                    context.Writer.WritePropertyName("multicastSettings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MulticastSettingsUpdateRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.MulticastSettings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
->>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
 
                     if(publicRequest.IsSetSources())
                     {

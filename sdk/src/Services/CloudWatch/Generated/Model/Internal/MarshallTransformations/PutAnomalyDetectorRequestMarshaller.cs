@@ -63,18 +63,23 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 {
                     if(publicRequest.Configuration.IsSetExcludedTimeRanges())
                     {
-                        int publicRequestConfigurationlistValueIndex = 1;
-                        foreach(var publicRequestConfigurationlistValue in publicRequest.Configuration.ExcludedTimeRanges)
+                        if (publicRequest.Configuration.ExcludedTimeRanges.Count == 0)
+                            request.Parameters.Add("Configuration" + "." + "ExcludedTimeRanges", "");
+                        else
                         {
-                            if(publicRequestConfigurationlistValue.IsSetEndTime())
-                            {
-                                request.Parameters.Add("Configuration" + "." + "ExcludedTimeRanges" + "." + "member" + "." + publicRequestConfigurationlistValueIndex + "." + "EndTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestConfigurationlistValue.EndTime));
-                            }
-                            if(publicRequestConfigurationlistValue.IsSetStartTime())
-                            {
-                                request.Parameters.Add("Configuration" + "." + "ExcludedTimeRanges" + "." + "member" + "." + publicRequestConfigurationlistValueIndex + "." + "StartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestConfigurationlistValue.StartTime));
-                            }
-                            publicRequestConfigurationlistValueIndex++;
+                             int publicRequestConfigurationlistValueIndex = 1;
+                             foreach(var publicRequestConfigurationlistValue in publicRequest.Configuration.ExcludedTimeRanges)
+                             {
+                                if(publicRequestConfigurationlistValue.IsSetEndTime())
+                                {
+                                    request.Parameters.Add("Configuration" + "." + "ExcludedTimeRanges" + "." + "member" + "." + publicRequestConfigurationlistValueIndex + "." + "EndTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestConfigurationlistValue.EndTime));
+                                }
+                                if(publicRequestConfigurationlistValue.IsSetStartTime())
+                                {
+                                    request.Parameters.Add("Configuration" + "." + "ExcludedTimeRanges" + "." + "member" + "." + publicRequestConfigurationlistValueIndex + "." + "StartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestConfigurationlistValue.StartTime));
+                                }
+                                 publicRequestConfigurationlistValueIndex++;
+                             }
                         }
                     }
                     if(publicRequest.Configuration.IsSetMetricTimezone())
@@ -84,18 +89,23 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetDimensions())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Dimensions)
+                    if (publicRequest.Dimensions.Count == 0)
+                        request.Parameters.Add("Dimensions", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetName())
-                        {
-                            request.Parameters.Add("Dimensions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
-                        }
-                        if(publicRequestlistValue.IsSetValue())
-                        {
-                            request.Parameters.Add("Dimensions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Dimensions)
+                         {
+                            if(publicRequestlistValue.IsSetName())
+                            {
+                                request.Parameters.Add("Dimensions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
+                            }
+                            if(publicRequestlistValue.IsSetValue())
+                            {
+                                request.Parameters.Add("Dimensions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetMetricCharacteristics())
@@ -109,76 +119,86 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 {
                     if(publicRequest.MetricMathAnomalyDetector.IsSetMetricDataQueries())
                     {
-                        int publicRequestMetricMathAnomalyDetectorlistValueIndex = 1;
-                        foreach(var publicRequestMetricMathAnomalyDetectorlistValue in publicRequest.MetricMathAnomalyDetector.MetricDataQueries)
+                        if (publicRequest.MetricMathAnomalyDetector.MetricDataQueries.Count == 0)
+                            request.Parameters.Add("MetricMathAnomalyDetector" + "." + "MetricDataQueries", "");
+                        else
                         {
-                            if(publicRequestMetricMathAnomalyDetectorlistValue.IsSetAccountId())
-                            {
-                                request.Parameters.Add("MetricMathAnomalyDetector" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestMetricMathAnomalyDetectorlistValueIndex + "." + "AccountId", StringUtils.FromString(publicRequestMetricMathAnomalyDetectorlistValue.AccountId));
-                            }
-                            if(publicRequestMetricMathAnomalyDetectorlistValue.IsSetExpression())
-                            {
-                                request.Parameters.Add("MetricMathAnomalyDetector" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestMetricMathAnomalyDetectorlistValueIndex + "." + "Expression", StringUtils.FromString(publicRequestMetricMathAnomalyDetectorlistValue.Expression));
-                            }
-                            if(publicRequestMetricMathAnomalyDetectorlistValue.IsSetId())
-                            {
-                                request.Parameters.Add("MetricMathAnomalyDetector" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestMetricMathAnomalyDetectorlistValueIndex + "." + "Id", StringUtils.FromString(publicRequestMetricMathAnomalyDetectorlistValue.Id));
-                            }
-                            if(publicRequestMetricMathAnomalyDetectorlistValue.IsSetLabel())
-                            {
-                                request.Parameters.Add("MetricMathAnomalyDetector" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestMetricMathAnomalyDetectorlistValueIndex + "." + "Label", StringUtils.FromString(publicRequestMetricMathAnomalyDetectorlistValue.Label));
-                            }
-                            if(publicRequestMetricMathAnomalyDetectorlistValue.IsSetMetricStat())
-                            {
-                                if(publicRequestMetricMathAnomalyDetectorlistValue.MetricStat.IsSetMetric())
+                             int publicRequestMetricMathAnomalyDetectorlistValueIndex = 1;
+                             foreach(var publicRequestMetricMathAnomalyDetectorlistValue in publicRequest.MetricMathAnomalyDetector.MetricDataQueries)
+                             {
+                                if(publicRequestMetricMathAnomalyDetectorlistValue.IsSetAccountId())
                                 {
-                                    if(publicRequestMetricMathAnomalyDetectorlistValue.MetricStat.Metric.IsSetDimensions())
+                                    request.Parameters.Add("MetricMathAnomalyDetector" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestMetricMathAnomalyDetectorlistValueIndex + "." + "AccountId", StringUtils.FromString(publicRequestMetricMathAnomalyDetectorlistValue.AccountId));
+                                }
+                                if(publicRequestMetricMathAnomalyDetectorlistValue.IsSetExpression())
+                                {
+                                    request.Parameters.Add("MetricMathAnomalyDetector" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestMetricMathAnomalyDetectorlistValueIndex + "." + "Expression", StringUtils.FromString(publicRequestMetricMathAnomalyDetectorlistValue.Expression));
+                                }
+                                if(publicRequestMetricMathAnomalyDetectorlistValue.IsSetId())
+                                {
+                                    request.Parameters.Add("MetricMathAnomalyDetector" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestMetricMathAnomalyDetectorlistValueIndex + "." + "Id", StringUtils.FromString(publicRequestMetricMathAnomalyDetectorlistValue.Id));
+                                }
+                                if(publicRequestMetricMathAnomalyDetectorlistValue.IsSetLabel())
+                                {
+                                    request.Parameters.Add("MetricMathAnomalyDetector" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestMetricMathAnomalyDetectorlistValueIndex + "." + "Label", StringUtils.FromString(publicRequestMetricMathAnomalyDetectorlistValue.Label));
+                                }
+                                if(publicRequestMetricMathAnomalyDetectorlistValue.IsSetMetricStat())
+                                {
+                                    if(publicRequestMetricMathAnomalyDetectorlistValue.MetricStat.IsSetMetric())
                                     {
-                                        int publicRequestMetricMathAnomalyDetectorlistValueMetricStatMetriclistValueIndex = 1;
-                                        foreach(var publicRequestMetricMathAnomalyDetectorlistValueMetricStatMetriclistValue in publicRequestMetricMathAnomalyDetectorlistValue.MetricStat.Metric.Dimensions)
+                                        if(publicRequestMetricMathAnomalyDetectorlistValue.MetricStat.Metric.IsSetDimensions())
                                         {
-                                            if(publicRequestMetricMathAnomalyDetectorlistValueMetricStatMetriclistValue.IsSetName())
+                                            if (publicRequestMetricMathAnomalyDetectorlistValue.MetricStat.Metric.Dimensions.Count == 0)
+                                                request.Parameters.Add("MetricMathAnomalyDetector" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestMetricMathAnomalyDetectorlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "Dimensions", "");
+                                            else
                                             {
-                                                request.Parameters.Add("MetricMathAnomalyDetector" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestMetricMathAnomalyDetectorlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "Dimensions" + "." + "member" + "." + publicRequestMetricMathAnomalyDetectorlistValueMetricStatMetriclistValueIndex + "." + "Name", StringUtils.FromString(publicRequestMetricMathAnomalyDetectorlistValueMetricStatMetriclistValue.Name));
+                                                 int publicRequestMetricMathAnomalyDetectorlistValueMetricStatMetriclistValueIndex = 1;
+                                                 foreach(var publicRequestMetricMathAnomalyDetectorlistValueMetricStatMetriclistValue in publicRequestMetricMathAnomalyDetectorlistValue.MetricStat.Metric.Dimensions)
+                                                 {
+                                                    if(publicRequestMetricMathAnomalyDetectorlistValueMetricStatMetriclistValue.IsSetName())
+                                                    {
+                                                        request.Parameters.Add("MetricMathAnomalyDetector" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestMetricMathAnomalyDetectorlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "Dimensions" + "." + "member" + "." + publicRequestMetricMathAnomalyDetectorlistValueMetricStatMetriclistValueIndex + "." + "Name", StringUtils.FromString(publicRequestMetricMathAnomalyDetectorlistValueMetricStatMetriclistValue.Name));
+                                                    }
+                                                    if(publicRequestMetricMathAnomalyDetectorlistValueMetricStatMetriclistValue.IsSetValue())
+                                                    {
+                                                        request.Parameters.Add("MetricMathAnomalyDetector" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestMetricMathAnomalyDetectorlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "Dimensions" + "." + "member" + "." + publicRequestMetricMathAnomalyDetectorlistValueMetricStatMetriclistValueIndex + "." + "Value", StringUtils.FromString(publicRequestMetricMathAnomalyDetectorlistValueMetricStatMetriclistValue.Value));
+                                                    }
+                                                     publicRequestMetricMathAnomalyDetectorlistValueMetricStatMetriclistValueIndex++;
+                                                 }
                                             }
-                                            if(publicRequestMetricMathAnomalyDetectorlistValueMetricStatMetriclistValue.IsSetValue())
-                                            {
-                                                request.Parameters.Add("MetricMathAnomalyDetector" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestMetricMathAnomalyDetectorlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "Dimensions" + "." + "member" + "." + publicRequestMetricMathAnomalyDetectorlistValueMetricStatMetriclistValueIndex + "." + "Value", StringUtils.FromString(publicRequestMetricMathAnomalyDetectorlistValueMetricStatMetriclistValue.Value));
-                                            }
-                                            publicRequestMetricMathAnomalyDetectorlistValueMetricStatMetriclistValueIndex++;
+                                        }
+                                        if(publicRequestMetricMathAnomalyDetectorlistValue.MetricStat.Metric.IsSetMetricName())
+                                        {
+                                            request.Parameters.Add("MetricMathAnomalyDetector" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestMetricMathAnomalyDetectorlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "MetricName", StringUtils.FromString(publicRequestMetricMathAnomalyDetectorlistValue.MetricStat.Metric.MetricName));
+                                        }
+                                        if(publicRequestMetricMathAnomalyDetectorlistValue.MetricStat.Metric.IsSetNamespace())
+                                        {
+                                            request.Parameters.Add("MetricMathAnomalyDetector" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestMetricMathAnomalyDetectorlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "Namespace", StringUtils.FromString(publicRequestMetricMathAnomalyDetectorlistValue.MetricStat.Metric.Namespace));
                                         }
                                     }
-                                    if(publicRequestMetricMathAnomalyDetectorlistValue.MetricStat.Metric.IsSetMetricName())
+                                    if(publicRequestMetricMathAnomalyDetectorlistValue.MetricStat.IsSetPeriod())
                                     {
-                                        request.Parameters.Add("MetricMathAnomalyDetector" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestMetricMathAnomalyDetectorlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "MetricName", StringUtils.FromString(publicRequestMetricMathAnomalyDetectorlistValue.MetricStat.Metric.MetricName));
+                                        request.Parameters.Add("MetricMathAnomalyDetector" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestMetricMathAnomalyDetectorlistValueIndex + "." + "MetricStat" + "." + "Period", StringUtils.FromInt(publicRequestMetricMathAnomalyDetectorlistValue.MetricStat.Period));
                                     }
-                                    if(publicRequestMetricMathAnomalyDetectorlistValue.MetricStat.Metric.IsSetNamespace())
+                                    if(publicRequestMetricMathAnomalyDetectorlistValue.MetricStat.IsSetStat())
                                     {
-                                        request.Parameters.Add("MetricMathAnomalyDetector" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestMetricMathAnomalyDetectorlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "Namespace", StringUtils.FromString(publicRequestMetricMathAnomalyDetectorlistValue.MetricStat.Metric.Namespace));
+                                        request.Parameters.Add("MetricMathAnomalyDetector" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestMetricMathAnomalyDetectorlistValueIndex + "." + "MetricStat" + "." + "Stat", StringUtils.FromString(publicRequestMetricMathAnomalyDetectorlistValue.MetricStat.Stat));
+                                    }
+                                    if(publicRequestMetricMathAnomalyDetectorlistValue.MetricStat.IsSetUnit())
+                                    {
+                                        request.Parameters.Add("MetricMathAnomalyDetector" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestMetricMathAnomalyDetectorlistValueIndex + "." + "MetricStat" + "." + "Unit", StringUtils.FromString(publicRequestMetricMathAnomalyDetectorlistValue.MetricStat.Unit));
                                     }
                                 }
-                                if(publicRequestMetricMathAnomalyDetectorlistValue.MetricStat.IsSetPeriod())
+                                if(publicRequestMetricMathAnomalyDetectorlistValue.IsSetPeriod())
                                 {
-                                    request.Parameters.Add("MetricMathAnomalyDetector" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestMetricMathAnomalyDetectorlistValueIndex + "." + "MetricStat" + "." + "Period", StringUtils.FromInt(publicRequestMetricMathAnomalyDetectorlistValue.MetricStat.Period));
+                                    request.Parameters.Add("MetricMathAnomalyDetector" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestMetricMathAnomalyDetectorlistValueIndex + "." + "Period", StringUtils.FromInt(publicRequestMetricMathAnomalyDetectorlistValue.Period));
                                 }
-                                if(publicRequestMetricMathAnomalyDetectorlistValue.MetricStat.IsSetStat())
+                                if(publicRequestMetricMathAnomalyDetectorlistValue.IsSetReturnData())
                                 {
-                                    request.Parameters.Add("MetricMathAnomalyDetector" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestMetricMathAnomalyDetectorlistValueIndex + "." + "MetricStat" + "." + "Stat", StringUtils.FromString(publicRequestMetricMathAnomalyDetectorlistValue.MetricStat.Stat));
+                                    request.Parameters.Add("MetricMathAnomalyDetector" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestMetricMathAnomalyDetectorlistValueIndex + "." + "ReturnData", StringUtils.FromBool(publicRequestMetricMathAnomalyDetectorlistValue.ReturnData));
                                 }
-                                if(publicRequestMetricMathAnomalyDetectorlistValue.MetricStat.IsSetUnit())
-                                {
-                                    request.Parameters.Add("MetricMathAnomalyDetector" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestMetricMathAnomalyDetectorlistValueIndex + "." + "MetricStat" + "." + "Unit", StringUtils.FromString(publicRequestMetricMathAnomalyDetectorlistValue.MetricStat.Unit));
-                                }
-                            }
-                            if(publicRequestMetricMathAnomalyDetectorlistValue.IsSetPeriod())
-                            {
-                                request.Parameters.Add("MetricMathAnomalyDetector" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestMetricMathAnomalyDetectorlistValueIndex + "." + "Period", StringUtils.FromInt(publicRequestMetricMathAnomalyDetectorlistValue.Period));
-                            }
-                            if(publicRequestMetricMathAnomalyDetectorlistValue.IsSetReturnData())
-                            {
-                                request.Parameters.Add("MetricMathAnomalyDetector" + "." + "MetricDataQueries" + "." + "member" + "." + publicRequestMetricMathAnomalyDetectorlistValueIndex + "." + "ReturnData", StringUtils.FromBool(publicRequestMetricMathAnomalyDetectorlistValue.ReturnData));
-                            }
-                            publicRequestMetricMathAnomalyDetectorlistValueIndex++;
+                                 publicRequestMetricMathAnomalyDetectorlistValueIndex++;
+                             }
                         }
                     }
                 }
@@ -198,18 +218,23 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     }
                     if(publicRequest.SingleMetricAnomalyDetector.IsSetDimensions())
                     {
-                        int publicRequestSingleMetricAnomalyDetectorlistValueIndex = 1;
-                        foreach(var publicRequestSingleMetricAnomalyDetectorlistValue in publicRequest.SingleMetricAnomalyDetector.Dimensions)
+                        if (publicRequest.SingleMetricAnomalyDetector.Dimensions.Count == 0)
+                            request.Parameters.Add("SingleMetricAnomalyDetector" + "." + "Dimensions", "");
+                        else
                         {
-                            if(publicRequestSingleMetricAnomalyDetectorlistValue.IsSetName())
-                            {
-                                request.Parameters.Add("SingleMetricAnomalyDetector" + "." + "Dimensions" + "." + "member" + "." + publicRequestSingleMetricAnomalyDetectorlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestSingleMetricAnomalyDetectorlistValue.Name));
-                            }
-                            if(publicRequestSingleMetricAnomalyDetectorlistValue.IsSetValue())
-                            {
-                                request.Parameters.Add("SingleMetricAnomalyDetector" + "." + "Dimensions" + "." + "member" + "." + publicRequestSingleMetricAnomalyDetectorlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestSingleMetricAnomalyDetectorlistValue.Value));
-                            }
-                            publicRequestSingleMetricAnomalyDetectorlistValueIndex++;
+                             int publicRequestSingleMetricAnomalyDetectorlistValueIndex = 1;
+                             foreach(var publicRequestSingleMetricAnomalyDetectorlistValue in publicRequest.SingleMetricAnomalyDetector.Dimensions)
+                             {
+                                if(publicRequestSingleMetricAnomalyDetectorlistValue.IsSetName())
+                                {
+                                    request.Parameters.Add("SingleMetricAnomalyDetector" + "." + "Dimensions" + "." + "member" + "." + publicRequestSingleMetricAnomalyDetectorlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestSingleMetricAnomalyDetectorlistValue.Name));
+                                }
+                                if(publicRequestSingleMetricAnomalyDetectorlistValue.IsSetValue())
+                                {
+                                    request.Parameters.Add("SingleMetricAnomalyDetector" + "." + "Dimensions" + "." + "member" + "." + publicRequestSingleMetricAnomalyDetectorlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestSingleMetricAnomalyDetectorlistValue.Value));
+                                }
+                                 publicRequestSingleMetricAnomalyDetectorlistValueIndex++;
+                             }
                         }
                     }
                     if(publicRequest.SingleMetricAnomalyDetector.IsSetMetricName())

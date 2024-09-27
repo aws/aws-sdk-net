@@ -61,11 +61,16 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetFilter())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Filter)
+                    if (publicRequest.Filter.Count == 0)
+                        request.Parameters.Add("Filter", "");
+                    else
                     {
-                        request.Parameters.Add("Filter" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Filter)
+                         {
+                             request.Parameters.Add("Filter" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetMarker())

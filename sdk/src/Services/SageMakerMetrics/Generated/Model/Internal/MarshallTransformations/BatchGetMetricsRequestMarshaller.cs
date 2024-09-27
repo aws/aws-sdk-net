@@ -61,31 +61,34 @@ namespace Amazon.SageMakerMetrics.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/BatchGetMetrics";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMetricQueries())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("MetricQueries");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMetricQueriesListValue in publicRequest.MetricQueries)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMetricQueries())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("MetricQueries");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMetricQueriesListValue in publicRequest.MetricQueries)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = MetricQueryMarshaller.Instance;
-                        marshaller.Marshall(publicRequestMetricQueriesListValue, context);
+                            var marshaller = MetricQueryMarshaller.Instance;
+                            marshaller.Marshall(publicRequestMetricQueriesListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -65,18 +65,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetInstanceCreditSpecifications())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.InstanceCreditSpecifications)
+                    if (publicRequest.InstanceCreditSpecifications.Count == 0)
+                        request.Parameters.Add("InstanceCreditSpecification", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetCpuCredits())
-                        {
-                            request.Parameters.Add("InstanceCreditSpecification" + "." + publicRequestlistValueIndex + "." + "CpuCredits", StringUtils.FromString(publicRequestlistValue.CpuCredits));
-                        }
-                        if(publicRequestlistValue.IsSetInstanceId())
-                        {
-                            request.Parameters.Add("InstanceCreditSpecification" + "." + publicRequestlistValueIndex + "." + "InstanceId", StringUtils.FromString(publicRequestlistValue.InstanceId));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.InstanceCreditSpecifications)
+                         {
+                            if(publicRequestlistValue.IsSetCpuCredits())
+                            {
+                                request.Parameters.Add("InstanceCreditSpecification" + "." + publicRequestlistValueIndex + "." + "CpuCredits", StringUtils.FromString(publicRequestlistValue.CpuCredits));
+                            }
+                            if(publicRequestlistValue.IsSetInstanceId())
+                            {
+                                request.Parameters.Add("InstanceCreditSpecification" + "." + publicRequestlistValueIndex + "." + "InstanceId", StringUtils.FromString(publicRequestlistValue.InstanceId));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

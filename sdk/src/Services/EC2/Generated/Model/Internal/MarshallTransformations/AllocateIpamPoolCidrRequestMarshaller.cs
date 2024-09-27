@@ -61,11 +61,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetAllowedCidrs())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.AllowedCidrs)
+                    if (publicRequest.AllowedCidrs.Count == 0)
+                        request.Parameters.Add("AllowedCidr", "");
+                    else
                     {
-                        request.Parameters.Add("AllowedCidr" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.AllowedCidrs)
+                         {
+                             request.Parameters.Add("AllowedCidr" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetCidr())
@@ -86,11 +91,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetDisallowedCidrs())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.DisallowedCidrs)
+                    if (publicRequest.DisallowedCidrs.Count == 0)
+                        request.Parameters.Add("DisallowedCidr", "");
+                    else
                     {
-                        request.Parameters.Add("DisallowedCidr" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.DisallowedCidrs)
+                         {
+                             request.Parameters.Add("DisallowedCidr" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetIpamPoolId())

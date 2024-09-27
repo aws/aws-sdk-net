@@ -69,464 +69,694 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetExcludePaths())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ExcludePaths)
+                    if (publicRequest.ExcludePaths.Count == 0)
+                        request.Parameters.Add("ExcludePath", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetDestination())
-                        {
-                            if(publicRequestlistValue.Destination.IsSetPacketHeaderStatement())
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ExcludePaths)
+                         {
+                            if(publicRequestlistValue.IsSetDestination())
                             {
-                                if(publicRequestlistValue.Destination.PacketHeaderStatement.IsSetDestinationAddresses())
+                                if(publicRequestlistValue.Destination.IsSetPacketHeaderStatement())
                                 {
-                                    int publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex = 1;
-                                    foreach(var publicRequestlistValueDestinationPacketHeaderStatementlistValue in publicRequestlistValue.Destination.PacketHeaderStatement.DestinationAddresses)
+                                    if(publicRequestlistValue.Destination.PacketHeaderStatement.IsSetDestinationAddresses())
                                     {
-                                        request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "DestinationAddress" + "." + publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationPacketHeaderStatementlistValue));
-                                        publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
-                                    }
-                                }
-                                if(publicRequestlistValue.Destination.PacketHeaderStatement.IsSetDestinationPorts())
-                                {
-                                    int publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex = 1;
-                                    foreach(var publicRequestlistValueDestinationPacketHeaderStatementlistValue in publicRequestlistValue.Destination.PacketHeaderStatement.DestinationPorts)
-                                    {
-                                        request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "DestinationPort" + "." + publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationPacketHeaderStatementlistValue));
-                                        publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
-                                    }
-                                }
-                                if(publicRequestlistValue.Destination.PacketHeaderStatement.IsSetDestinationPrefixLists())
-                                {
-                                    int publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex = 1;
-                                    foreach(var publicRequestlistValueDestinationPacketHeaderStatementlistValue in publicRequestlistValue.Destination.PacketHeaderStatement.DestinationPrefixLists)
-                                    {
-                                        request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "DestinationPrefixList" + "." + publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationPacketHeaderStatementlistValue));
-                                        publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
-                                    }
-                                }
-                                if(publicRequestlistValue.Destination.PacketHeaderStatement.IsSetProtocols())
-                                {
-                                    int publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex = 1;
-                                    foreach(var publicRequestlistValueDestinationPacketHeaderStatementlistValue in publicRequestlistValue.Destination.PacketHeaderStatement.Protocols)
-                                    {
-                                        request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "Protocol" + "." + publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationPacketHeaderStatementlistValue));
-                                        publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
-                                    }
-                                }
-                                if(publicRequestlistValue.Destination.PacketHeaderStatement.IsSetSourceAddresses())
-                                {
-                                    int publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex = 1;
-                                    foreach(var publicRequestlistValueDestinationPacketHeaderStatementlistValue in publicRequestlistValue.Destination.PacketHeaderStatement.SourceAddresses)
-                                    {
-                                        request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "SourceAddress" + "." + publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationPacketHeaderStatementlistValue));
-                                        publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
-                                    }
-                                }
-                                if(publicRequestlistValue.Destination.PacketHeaderStatement.IsSetSourcePorts())
-                                {
-                                    int publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex = 1;
-                                    foreach(var publicRequestlistValueDestinationPacketHeaderStatementlistValue in publicRequestlistValue.Destination.PacketHeaderStatement.SourcePorts)
-                                    {
-                                        request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "SourcePort" + "." + publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationPacketHeaderStatementlistValue));
-                                        publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
-                                    }
-                                }
-                                if(publicRequestlistValue.Destination.PacketHeaderStatement.IsSetSourcePrefixLists())
-                                {
-                                    int publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex = 1;
-                                    foreach(var publicRequestlistValueDestinationPacketHeaderStatementlistValue in publicRequestlistValue.Destination.PacketHeaderStatement.SourcePrefixLists)
-                                    {
-                                        request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "SourcePrefixList" + "." + publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationPacketHeaderStatementlistValue));
-                                        publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
-                                    }
-                                }
-                            }
-                            if(publicRequestlistValue.Destination.IsSetResourceStatement())
-                            {
-                                if(publicRequestlistValue.Destination.ResourceStatement.IsSetResources())
-                                {
-                                    int publicRequestlistValueDestinationResourceStatementlistValueIndex = 1;
-                                    foreach(var publicRequestlistValueDestinationResourceStatementlistValue in publicRequestlistValue.Destination.ResourceStatement.Resources)
-                                    {
-                                        request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "ResourceStatement" + "." + "Resource" + "." + publicRequestlistValueDestinationResourceStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationResourceStatementlistValue));
-                                        publicRequestlistValueDestinationResourceStatementlistValueIndex++;
-                                    }
-                                }
-                                if(publicRequestlistValue.Destination.ResourceStatement.IsSetResourceTypes())
-                                {
-                                    int publicRequestlistValueDestinationResourceStatementlistValueIndex = 1;
-                                    foreach(var publicRequestlistValueDestinationResourceStatementlistValue in publicRequestlistValue.Destination.ResourceStatement.ResourceTypes)
-                                    {
-                                        request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "ResourceStatement" + "." + "ResourceType" + "." + publicRequestlistValueDestinationResourceStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationResourceStatementlistValue));
-                                        publicRequestlistValueDestinationResourceStatementlistValueIndex++;
-                                    }
-                                }
-                            }
-                        }
-                        if(publicRequestlistValue.IsSetSource())
-                        {
-                            if(publicRequestlistValue.Source.IsSetPacketHeaderStatement())
-                            {
-                                if(publicRequestlistValue.Source.PacketHeaderStatement.IsSetDestinationAddresses())
-                                {
-                                    int publicRequestlistValueSourcePacketHeaderStatementlistValueIndex = 1;
-                                    foreach(var publicRequestlistValueSourcePacketHeaderStatementlistValue in publicRequestlistValue.Source.PacketHeaderStatement.DestinationAddresses)
-                                    {
-                                        request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "DestinationAddress" + "." + publicRequestlistValueSourcePacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueSourcePacketHeaderStatementlistValue));
-                                        publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
-                                    }
-                                }
-                                if(publicRequestlistValue.Source.PacketHeaderStatement.IsSetDestinationPorts())
-                                {
-                                    int publicRequestlistValueSourcePacketHeaderStatementlistValueIndex = 1;
-                                    foreach(var publicRequestlistValueSourcePacketHeaderStatementlistValue in publicRequestlistValue.Source.PacketHeaderStatement.DestinationPorts)
-                                    {
-                                        request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "DestinationPort" + "." + publicRequestlistValueSourcePacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueSourcePacketHeaderStatementlistValue));
-                                        publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
-                                    }
-                                }
-                                if(publicRequestlistValue.Source.PacketHeaderStatement.IsSetDestinationPrefixLists())
-                                {
-                                    int publicRequestlistValueSourcePacketHeaderStatementlistValueIndex = 1;
-                                    foreach(var publicRequestlistValueSourcePacketHeaderStatementlistValue in publicRequestlistValue.Source.PacketHeaderStatement.DestinationPrefixLists)
-                                    {
-                                        request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "DestinationPrefixList" + "." + publicRequestlistValueSourcePacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueSourcePacketHeaderStatementlistValue));
-                                        publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
-                                    }
-                                }
-                                if(publicRequestlistValue.Source.PacketHeaderStatement.IsSetProtocols())
-                                {
-                                    int publicRequestlistValueSourcePacketHeaderStatementlistValueIndex = 1;
-                                    foreach(var publicRequestlistValueSourcePacketHeaderStatementlistValue in publicRequestlistValue.Source.PacketHeaderStatement.Protocols)
-                                    {
-                                        request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "Protocol" + "." + publicRequestlistValueSourcePacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueSourcePacketHeaderStatementlistValue));
-                                        publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
-                                    }
-                                }
-                                if(publicRequestlistValue.Source.PacketHeaderStatement.IsSetSourceAddresses())
-                                {
-                                    int publicRequestlistValueSourcePacketHeaderStatementlistValueIndex = 1;
-                                    foreach(var publicRequestlistValueSourcePacketHeaderStatementlistValue in publicRequestlistValue.Source.PacketHeaderStatement.SourceAddresses)
-                                    {
-                                        request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "SourceAddress" + "." + publicRequestlistValueSourcePacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueSourcePacketHeaderStatementlistValue));
-                                        publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
-                                    }
-                                }
-                                if(publicRequestlistValue.Source.PacketHeaderStatement.IsSetSourcePorts())
-                                {
-                                    int publicRequestlistValueSourcePacketHeaderStatementlistValueIndex = 1;
-                                    foreach(var publicRequestlistValueSourcePacketHeaderStatementlistValue in publicRequestlistValue.Source.PacketHeaderStatement.SourcePorts)
-                                    {
-                                        request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "SourcePort" + "." + publicRequestlistValueSourcePacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueSourcePacketHeaderStatementlistValue));
-                                        publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
-                                    }
-                                }
-                                if(publicRequestlistValue.Source.PacketHeaderStatement.IsSetSourcePrefixLists())
-                                {
-                                    int publicRequestlistValueSourcePacketHeaderStatementlistValueIndex = 1;
-                                    foreach(var publicRequestlistValueSourcePacketHeaderStatementlistValue in publicRequestlistValue.Source.PacketHeaderStatement.SourcePrefixLists)
-                                    {
-                                        request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "SourcePrefixList" + "." + publicRequestlistValueSourcePacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueSourcePacketHeaderStatementlistValue));
-                                        publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
-                                    }
-                                }
-                            }
-                            if(publicRequestlistValue.Source.IsSetResourceStatement())
-                            {
-                                if(publicRequestlistValue.Source.ResourceStatement.IsSetResources())
-                                {
-                                    int publicRequestlistValueSourceResourceStatementlistValueIndex = 1;
-                                    foreach(var publicRequestlistValueSourceResourceStatementlistValue in publicRequestlistValue.Source.ResourceStatement.Resources)
-                                    {
-                                        request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "ResourceStatement" + "." + "Resource" + "." + publicRequestlistValueSourceResourceStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueSourceResourceStatementlistValue));
-                                        publicRequestlistValueSourceResourceStatementlistValueIndex++;
-                                    }
-                                }
-                                if(publicRequestlistValue.Source.ResourceStatement.IsSetResourceTypes())
-                                {
-                                    int publicRequestlistValueSourceResourceStatementlistValueIndex = 1;
-                                    foreach(var publicRequestlistValueSourceResourceStatementlistValue in publicRequestlistValue.Source.ResourceStatement.ResourceTypes)
-                                    {
-                                        request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "ResourceStatement" + "." + "ResourceType" + "." + publicRequestlistValueSourceResourceStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueSourceResourceStatementlistValue));
-                                        publicRequestlistValueSourceResourceStatementlistValueIndex++;
-                                    }
-                                }
-                            }
-                        }
-                        if(publicRequestlistValue.IsSetThroughResources())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.ThroughResources)
-                            {
-                                if(publicRequestlistValuelistValue.IsSetResourceStatement())
-                                {
-                                    if(publicRequestlistValuelistValue.ResourceStatement.IsSetResources())
-                                    {
-                                        int publicRequestlistValuelistValueResourceStatementlistValueIndex = 1;
-                                        foreach(var publicRequestlistValuelistValueResourceStatementlistValue in publicRequestlistValuelistValue.ResourceStatement.Resources)
+                                        if (publicRequestlistValue.Destination.PacketHeaderStatement.DestinationAddresses.Count == 0)
+                                            request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "DestinationAddress", "");
+                                        else
                                         {
-                                            request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "ThroughResource" + "." + publicRequestlistValuelistValueIndex + "." + "ResourceStatement" + "." + "Resource" + "." + publicRequestlistValuelistValueResourceStatementlistValueIndex, StringUtils.FromString(publicRequestlistValuelistValueResourceStatementlistValue));
-                                            publicRequestlistValuelistValueResourceStatementlistValueIndex++;
+                                             int publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex = 1;
+                                             foreach(var publicRequestlistValueDestinationPacketHeaderStatementlistValue in publicRequestlistValue.Destination.PacketHeaderStatement.DestinationAddresses)
+                                             {
+                                                 request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "DestinationAddress" + "." + publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationPacketHeaderStatementlistValue));
+                                                 publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
+                                             }
                                         }
                                     }
-                                    if(publicRequestlistValuelistValue.ResourceStatement.IsSetResourceTypes())
+                                    if(publicRequestlistValue.Destination.PacketHeaderStatement.IsSetDestinationPorts())
                                     {
-                                        int publicRequestlistValuelistValueResourceStatementlistValueIndex = 1;
-                                        foreach(var publicRequestlistValuelistValueResourceStatementlistValue in publicRequestlistValuelistValue.ResourceStatement.ResourceTypes)
+                                        if (publicRequestlistValue.Destination.PacketHeaderStatement.DestinationPorts.Count == 0)
+                                            request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "DestinationPort", "");
+                                        else
                                         {
-                                            request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "ThroughResource" + "." + publicRequestlistValuelistValueIndex + "." + "ResourceStatement" + "." + "ResourceType" + "." + publicRequestlistValuelistValueResourceStatementlistValueIndex, StringUtils.FromString(publicRequestlistValuelistValueResourceStatementlistValue));
-                                            publicRequestlistValuelistValueResourceStatementlistValueIndex++;
+                                             int publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex = 1;
+                                             foreach(var publicRequestlistValueDestinationPacketHeaderStatementlistValue in publicRequestlistValue.Destination.PacketHeaderStatement.DestinationPorts)
+                                             {
+                                                 request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "DestinationPort" + "." + publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationPacketHeaderStatementlistValue));
+                                                 publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
+                                             }
+                                        }
+                                    }
+                                    if(publicRequestlistValue.Destination.PacketHeaderStatement.IsSetDestinationPrefixLists())
+                                    {
+                                        if (publicRequestlistValue.Destination.PacketHeaderStatement.DestinationPrefixLists.Count == 0)
+                                            request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "DestinationPrefixList", "");
+                                        else
+                                        {
+                                             int publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex = 1;
+                                             foreach(var publicRequestlistValueDestinationPacketHeaderStatementlistValue in publicRequestlistValue.Destination.PacketHeaderStatement.DestinationPrefixLists)
+                                             {
+                                                 request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "DestinationPrefixList" + "." + publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationPacketHeaderStatementlistValue));
+                                                 publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
+                                             }
+                                        }
+                                    }
+                                    if(publicRequestlistValue.Destination.PacketHeaderStatement.IsSetProtocols())
+                                    {
+                                        if (publicRequestlistValue.Destination.PacketHeaderStatement.Protocols.Count == 0)
+                                            request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "Protocol", "");
+                                        else
+                                        {
+                                             int publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex = 1;
+                                             foreach(var publicRequestlistValueDestinationPacketHeaderStatementlistValue in publicRequestlistValue.Destination.PacketHeaderStatement.Protocols)
+                                             {
+                                                 request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "Protocol" + "." + publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationPacketHeaderStatementlistValue));
+                                                 publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
+                                             }
+                                        }
+                                    }
+                                    if(publicRequestlistValue.Destination.PacketHeaderStatement.IsSetSourceAddresses())
+                                    {
+                                        if (publicRequestlistValue.Destination.PacketHeaderStatement.SourceAddresses.Count == 0)
+                                            request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "SourceAddress", "");
+                                        else
+                                        {
+                                             int publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex = 1;
+                                             foreach(var publicRequestlistValueDestinationPacketHeaderStatementlistValue in publicRequestlistValue.Destination.PacketHeaderStatement.SourceAddresses)
+                                             {
+                                                 request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "SourceAddress" + "." + publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationPacketHeaderStatementlistValue));
+                                                 publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
+                                             }
+                                        }
+                                    }
+                                    if(publicRequestlistValue.Destination.PacketHeaderStatement.IsSetSourcePorts())
+                                    {
+                                        if (publicRequestlistValue.Destination.PacketHeaderStatement.SourcePorts.Count == 0)
+                                            request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "SourcePort", "");
+                                        else
+                                        {
+                                             int publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex = 1;
+                                             foreach(var publicRequestlistValueDestinationPacketHeaderStatementlistValue in publicRequestlistValue.Destination.PacketHeaderStatement.SourcePorts)
+                                             {
+                                                 request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "SourcePort" + "." + publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationPacketHeaderStatementlistValue));
+                                                 publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
+                                             }
+                                        }
+                                    }
+                                    if(publicRequestlistValue.Destination.PacketHeaderStatement.IsSetSourcePrefixLists())
+                                    {
+                                        if (publicRequestlistValue.Destination.PacketHeaderStatement.SourcePrefixLists.Count == 0)
+                                            request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "SourcePrefixList", "");
+                                        else
+                                        {
+                                             int publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex = 1;
+                                             foreach(var publicRequestlistValueDestinationPacketHeaderStatementlistValue in publicRequestlistValue.Destination.PacketHeaderStatement.SourcePrefixLists)
+                                             {
+                                                 request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "SourcePrefixList" + "." + publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationPacketHeaderStatementlistValue));
+                                                 publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
+                                             }
                                         }
                                     }
                                 }
-                                publicRequestlistValuelistValueIndex++;
+                                if(publicRequestlistValue.Destination.IsSetResourceStatement())
+                                {
+                                    if(publicRequestlistValue.Destination.ResourceStatement.IsSetResources())
+                                    {
+                                        if (publicRequestlistValue.Destination.ResourceStatement.Resources.Count == 0)
+                                            request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "ResourceStatement" + "." + "Resource", "");
+                                        else
+                                        {
+                                             int publicRequestlistValueDestinationResourceStatementlistValueIndex = 1;
+                                             foreach(var publicRequestlistValueDestinationResourceStatementlistValue in publicRequestlistValue.Destination.ResourceStatement.Resources)
+                                             {
+                                                 request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "ResourceStatement" + "." + "Resource" + "." + publicRequestlistValueDestinationResourceStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationResourceStatementlistValue));
+                                                 publicRequestlistValueDestinationResourceStatementlistValueIndex++;
+                                             }
+                                        }
+                                    }
+                                    if(publicRequestlistValue.Destination.ResourceStatement.IsSetResourceTypes())
+                                    {
+                                        if (publicRequestlistValue.Destination.ResourceStatement.ResourceTypes.Count == 0)
+                                            request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "ResourceStatement" + "." + "ResourceType", "");
+                                        else
+                                        {
+                                             int publicRequestlistValueDestinationResourceStatementlistValueIndex = 1;
+                                             foreach(var publicRequestlistValueDestinationResourceStatementlistValue in publicRequestlistValue.Destination.ResourceStatement.ResourceTypes)
+                                             {
+                                                 request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "ResourceStatement" + "." + "ResourceType" + "." + publicRequestlistValueDestinationResourceStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationResourceStatementlistValue));
+                                                 publicRequestlistValueDestinationResourceStatementlistValueIndex++;
+                                             }
+                                        }
+                                    }
+                                }
                             }
-                        }
-                        publicRequestlistValueIndex++;
+                            if(publicRequestlistValue.IsSetSource())
+                            {
+                                if(publicRequestlistValue.Source.IsSetPacketHeaderStatement())
+                                {
+                                    if(publicRequestlistValue.Source.PacketHeaderStatement.IsSetDestinationAddresses())
+                                    {
+                                        if (publicRequestlistValue.Source.PacketHeaderStatement.DestinationAddresses.Count == 0)
+                                            request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "DestinationAddress", "");
+                                        else
+                                        {
+                                             int publicRequestlistValueSourcePacketHeaderStatementlistValueIndex = 1;
+                                             foreach(var publicRequestlistValueSourcePacketHeaderStatementlistValue in publicRequestlistValue.Source.PacketHeaderStatement.DestinationAddresses)
+                                             {
+                                                 request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "DestinationAddress" + "." + publicRequestlistValueSourcePacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueSourcePacketHeaderStatementlistValue));
+                                                 publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
+                                             }
+                                        }
+                                    }
+                                    if(publicRequestlistValue.Source.PacketHeaderStatement.IsSetDestinationPorts())
+                                    {
+                                        if (publicRequestlistValue.Source.PacketHeaderStatement.DestinationPorts.Count == 0)
+                                            request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "DestinationPort", "");
+                                        else
+                                        {
+                                             int publicRequestlistValueSourcePacketHeaderStatementlistValueIndex = 1;
+                                             foreach(var publicRequestlistValueSourcePacketHeaderStatementlistValue in publicRequestlistValue.Source.PacketHeaderStatement.DestinationPorts)
+                                             {
+                                                 request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "DestinationPort" + "." + publicRequestlistValueSourcePacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueSourcePacketHeaderStatementlistValue));
+                                                 publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
+                                             }
+                                        }
+                                    }
+                                    if(publicRequestlistValue.Source.PacketHeaderStatement.IsSetDestinationPrefixLists())
+                                    {
+                                        if (publicRequestlistValue.Source.PacketHeaderStatement.DestinationPrefixLists.Count == 0)
+                                            request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "DestinationPrefixList", "");
+                                        else
+                                        {
+                                             int publicRequestlistValueSourcePacketHeaderStatementlistValueIndex = 1;
+                                             foreach(var publicRequestlistValueSourcePacketHeaderStatementlistValue in publicRequestlistValue.Source.PacketHeaderStatement.DestinationPrefixLists)
+                                             {
+                                                 request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "DestinationPrefixList" + "." + publicRequestlistValueSourcePacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueSourcePacketHeaderStatementlistValue));
+                                                 publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
+                                             }
+                                        }
+                                    }
+                                    if(publicRequestlistValue.Source.PacketHeaderStatement.IsSetProtocols())
+                                    {
+                                        if (publicRequestlistValue.Source.PacketHeaderStatement.Protocols.Count == 0)
+                                            request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "Protocol", "");
+                                        else
+                                        {
+                                             int publicRequestlistValueSourcePacketHeaderStatementlistValueIndex = 1;
+                                             foreach(var publicRequestlistValueSourcePacketHeaderStatementlistValue in publicRequestlistValue.Source.PacketHeaderStatement.Protocols)
+                                             {
+                                                 request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "Protocol" + "." + publicRequestlistValueSourcePacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueSourcePacketHeaderStatementlistValue));
+                                                 publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
+                                             }
+                                        }
+                                    }
+                                    if(publicRequestlistValue.Source.PacketHeaderStatement.IsSetSourceAddresses())
+                                    {
+                                        if (publicRequestlistValue.Source.PacketHeaderStatement.SourceAddresses.Count == 0)
+                                            request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "SourceAddress", "");
+                                        else
+                                        {
+                                             int publicRequestlistValueSourcePacketHeaderStatementlistValueIndex = 1;
+                                             foreach(var publicRequestlistValueSourcePacketHeaderStatementlistValue in publicRequestlistValue.Source.PacketHeaderStatement.SourceAddresses)
+                                             {
+                                                 request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "SourceAddress" + "." + publicRequestlistValueSourcePacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueSourcePacketHeaderStatementlistValue));
+                                                 publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
+                                             }
+                                        }
+                                    }
+                                    if(publicRequestlistValue.Source.PacketHeaderStatement.IsSetSourcePorts())
+                                    {
+                                        if (publicRequestlistValue.Source.PacketHeaderStatement.SourcePorts.Count == 0)
+                                            request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "SourcePort", "");
+                                        else
+                                        {
+                                             int publicRequestlistValueSourcePacketHeaderStatementlistValueIndex = 1;
+                                             foreach(var publicRequestlistValueSourcePacketHeaderStatementlistValue in publicRequestlistValue.Source.PacketHeaderStatement.SourcePorts)
+                                             {
+                                                 request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "SourcePort" + "." + publicRequestlistValueSourcePacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueSourcePacketHeaderStatementlistValue));
+                                                 publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
+                                             }
+                                        }
+                                    }
+                                    if(publicRequestlistValue.Source.PacketHeaderStatement.IsSetSourcePrefixLists())
+                                    {
+                                        if (publicRequestlistValue.Source.PacketHeaderStatement.SourcePrefixLists.Count == 0)
+                                            request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "SourcePrefixList", "");
+                                        else
+                                        {
+                                             int publicRequestlistValueSourcePacketHeaderStatementlistValueIndex = 1;
+                                             foreach(var publicRequestlistValueSourcePacketHeaderStatementlistValue in publicRequestlistValue.Source.PacketHeaderStatement.SourcePrefixLists)
+                                             {
+                                                 request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "SourcePrefixList" + "." + publicRequestlistValueSourcePacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueSourcePacketHeaderStatementlistValue));
+                                                 publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
+                                             }
+                                        }
+                                    }
+                                }
+                                if(publicRequestlistValue.Source.IsSetResourceStatement())
+                                {
+                                    if(publicRequestlistValue.Source.ResourceStatement.IsSetResources())
+                                    {
+                                        if (publicRequestlistValue.Source.ResourceStatement.Resources.Count == 0)
+                                            request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "ResourceStatement" + "." + "Resource", "");
+                                        else
+                                        {
+                                             int publicRequestlistValueSourceResourceStatementlistValueIndex = 1;
+                                             foreach(var publicRequestlistValueSourceResourceStatementlistValue in publicRequestlistValue.Source.ResourceStatement.Resources)
+                                             {
+                                                 request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "ResourceStatement" + "." + "Resource" + "." + publicRequestlistValueSourceResourceStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueSourceResourceStatementlistValue));
+                                                 publicRequestlistValueSourceResourceStatementlistValueIndex++;
+                                             }
+                                        }
+                                    }
+                                    if(publicRequestlistValue.Source.ResourceStatement.IsSetResourceTypes())
+                                    {
+                                        if (publicRequestlistValue.Source.ResourceStatement.ResourceTypes.Count == 0)
+                                            request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "ResourceStatement" + "." + "ResourceType", "");
+                                        else
+                                        {
+                                             int publicRequestlistValueSourceResourceStatementlistValueIndex = 1;
+                                             foreach(var publicRequestlistValueSourceResourceStatementlistValue in publicRequestlistValue.Source.ResourceStatement.ResourceTypes)
+                                             {
+                                                 request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "ResourceStatement" + "." + "ResourceType" + "." + publicRequestlistValueSourceResourceStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueSourceResourceStatementlistValue));
+                                                 publicRequestlistValueSourceResourceStatementlistValueIndex++;
+                                             }
+                                        }
+                                    }
+                                }
+                            }
+                            if(publicRequestlistValue.IsSetThroughResources())
+                            {
+                                if (publicRequestlistValue.ThroughResources.Count == 0)
+                                    request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "ThroughResource", "");
+                                else
+                                {
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.ThroughResources)
+                                     {
+                                        if(publicRequestlistValuelistValue.IsSetResourceStatement())
+                                        {
+                                            if(publicRequestlistValuelistValue.ResourceStatement.IsSetResources())
+                                            {
+                                                if (publicRequestlistValuelistValue.ResourceStatement.Resources.Count == 0)
+                                                    request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "ThroughResource" + "." + publicRequestlistValuelistValueIndex + "." + "ResourceStatement" + "." + "Resource", "");
+                                                else
+                                                {
+                                                     int publicRequestlistValuelistValueResourceStatementlistValueIndex = 1;
+                                                     foreach(var publicRequestlistValuelistValueResourceStatementlistValue in publicRequestlistValuelistValue.ResourceStatement.Resources)
+                                                     {
+                                                         request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "ThroughResource" + "." + publicRequestlistValuelistValueIndex + "." + "ResourceStatement" + "." + "Resource" + "." + publicRequestlistValuelistValueResourceStatementlistValueIndex, StringUtils.FromString(publicRequestlistValuelistValueResourceStatementlistValue));
+                                                         publicRequestlistValuelistValueResourceStatementlistValueIndex++;
+                                                     }
+                                                }
+                                            }
+                                            if(publicRequestlistValuelistValue.ResourceStatement.IsSetResourceTypes())
+                                            {
+                                                if (publicRequestlistValuelistValue.ResourceStatement.ResourceTypes.Count == 0)
+                                                    request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "ThroughResource" + "." + publicRequestlistValuelistValueIndex + "." + "ResourceStatement" + "." + "ResourceType", "");
+                                                else
+                                                {
+                                                     int publicRequestlistValuelistValueResourceStatementlistValueIndex = 1;
+                                                     foreach(var publicRequestlistValuelistValueResourceStatementlistValue in publicRequestlistValuelistValue.ResourceStatement.ResourceTypes)
+                                                     {
+                                                         request.Parameters.Add("ExcludePath" + "." + publicRequestlistValueIndex + "." + "ThroughResource" + "." + publicRequestlistValuelistValueIndex + "." + "ResourceStatement" + "." + "ResourceType" + "." + publicRequestlistValuelistValueResourceStatementlistValueIndex, StringUtils.FromString(publicRequestlistValuelistValueResourceStatementlistValue));
+                                                         publicRequestlistValuelistValueResourceStatementlistValueIndex++;
+                                                     }
+                                                }
+                                            }
+                                        }
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
+                                }
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetMatchPaths())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.MatchPaths)
+                    if (publicRequest.MatchPaths.Count == 0)
+                        request.Parameters.Add("MatchPath", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetDestination())
-                        {
-                            if(publicRequestlistValue.Destination.IsSetPacketHeaderStatement())
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.MatchPaths)
+                         {
+                            if(publicRequestlistValue.IsSetDestination())
                             {
-                                if(publicRequestlistValue.Destination.PacketHeaderStatement.IsSetDestinationAddresses())
+                                if(publicRequestlistValue.Destination.IsSetPacketHeaderStatement())
                                 {
-                                    int publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex = 1;
-                                    foreach(var publicRequestlistValueDestinationPacketHeaderStatementlistValue in publicRequestlistValue.Destination.PacketHeaderStatement.DestinationAddresses)
+                                    if(publicRequestlistValue.Destination.PacketHeaderStatement.IsSetDestinationAddresses())
                                     {
-                                        request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "DestinationAddress" + "." + publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationPacketHeaderStatementlistValue));
-                                        publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
-                                    }
-                                }
-                                if(publicRequestlistValue.Destination.PacketHeaderStatement.IsSetDestinationPorts())
-                                {
-                                    int publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex = 1;
-                                    foreach(var publicRequestlistValueDestinationPacketHeaderStatementlistValue in publicRequestlistValue.Destination.PacketHeaderStatement.DestinationPorts)
-                                    {
-                                        request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "DestinationPort" + "." + publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationPacketHeaderStatementlistValue));
-                                        publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
-                                    }
-                                }
-                                if(publicRequestlistValue.Destination.PacketHeaderStatement.IsSetDestinationPrefixLists())
-                                {
-                                    int publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex = 1;
-                                    foreach(var publicRequestlistValueDestinationPacketHeaderStatementlistValue in publicRequestlistValue.Destination.PacketHeaderStatement.DestinationPrefixLists)
-                                    {
-                                        request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "DestinationPrefixList" + "." + publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationPacketHeaderStatementlistValue));
-                                        publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
-                                    }
-                                }
-                                if(publicRequestlistValue.Destination.PacketHeaderStatement.IsSetProtocols())
-                                {
-                                    int publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex = 1;
-                                    foreach(var publicRequestlistValueDestinationPacketHeaderStatementlistValue in publicRequestlistValue.Destination.PacketHeaderStatement.Protocols)
-                                    {
-                                        request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "Protocol" + "." + publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationPacketHeaderStatementlistValue));
-                                        publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
-                                    }
-                                }
-                                if(publicRequestlistValue.Destination.PacketHeaderStatement.IsSetSourceAddresses())
-                                {
-                                    int publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex = 1;
-                                    foreach(var publicRequestlistValueDestinationPacketHeaderStatementlistValue in publicRequestlistValue.Destination.PacketHeaderStatement.SourceAddresses)
-                                    {
-                                        request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "SourceAddress" + "." + publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationPacketHeaderStatementlistValue));
-                                        publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
-                                    }
-                                }
-                                if(publicRequestlistValue.Destination.PacketHeaderStatement.IsSetSourcePorts())
-                                {
-                                    int publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex = 1;
-                                    foreach(var publicRequestlistValueDestinationPacketHeaderStatementlistValue in publicRequestlistValue.Destination.PacketHeaderStatement.SourcePorts)
-                                    {
-                                        request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "SourcePort" + "." + publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationPacketHeaderStatementlistValue));
-                                        publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
-                                    }
-                                }
-                                if(publicRequestlistValue.Destination.PacketHeaderStatement.IsSetSourcePrefixLists())
-                                {
-                                    int publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex = 1;
-                                    foreach(var publicRequestlistValueDestinationPacketHeaderStatementlistValue in publicRequestlistValue.Destination.PacketHeaderStatement.SourcePrefixLists)
-                                    {
-                                        request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "SourcePrefixList" + "." + publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationPacketHeaderStatementlistValue));
-                                        publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
-                                    }
-                                }
-                            }
-                            if(publicRequestlistValue.Destination.IsSetResourceStatement())
-                            {
-                                if(publicRequestlistValue.Destination.ResourceStatement.IsSetResources())
-                                {
-                                    int publicRequestlistValueDestinationResourceStatementlistValueIndex = 1;
-                                    foreach(var publicRequestlistValueDestinationResourceStatementlistValue in publicRequestlistValue.Destination.ResourceStatement.Resources)
-                                    {
-                                        request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "ResourceStatement" + "." + "Resource" + "." + publicRequestlistValueDestinationResourceStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationResourceStatementlistValue));
-                                        publicRequestlistValueDestinationResourceStatementlistValueIndex++;
-                                    }
-                                }
-                                if(publicRequestlistValue.Destination.ResourceStatement.IsSetResourceTypes())
-                                {
-                                    int publicRequestlistValueDestinationResourceStatementlistValueIndex = 1;
-                                    foreach(var publicRequestlistValueDestinationResourceStatementlistValue in publicRequestlistValue.Destination.ResourceStatement.ResourceTypes)
-                                    {
-                                        request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "ResourceStatement" + "." + "ResourceType" + "." + publicRequestlistValueDestinationResourceStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationResourceStatementlistValue));
-                                        publicRequestlistValueDestinationResourceStatementlistValueIndex++;
-                                    }
-                                }
-                            }
-                        }
-                        if(publicRequestlistValue.IsSetSource())
-                        {
-                            if(publicRequestlistValue.Source.IsSetPacketHeaderStatement())
-                            {
-                                if(publicRequestlistValue.Source.PacketHeaderStatement.IsSetDestinationAddresses())
-                                {
-                                    int publicRequestlistValueSourcePacketHeaderStatementlistValueIndex = 1;
-                                    foreach(var publicRequestlistValueSourcePacketHeaderStatementlistValue in publicRequestlistValue.Source.PacketHeaderStatement.DestinationAddresses)
-                                    {
-                                        request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "DestinationAddress" + "." + publicRequestlistValueSourcePacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueSourcePacketHeaderStatementlistValue));
-                                        publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
-                                    }
-                                }
-                                if(publicRequestlistValue.Source.PacketHeaderStatement.IsSetDestinationPorts())
-                                {
-                                    int publicRequestlistValueSourcePacketHeaderStatementlistValueIndex = 1;
-                                    foreach(var publicRequestlistValueSourcePacketHeaderStatementlistValue in publicRequestlistValue.Source.PacketHeaderStatement.DestinationPorts)
-                                    {
-                                        request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "DestinationPort" + "." + publicRequestlistValueSourcePacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueSourcePacketHeaderStatementlistValue));
-                                        publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
-                                    }
-                                }
-                                if(publicRequestlistValue.Source.PacketHeaderStatement.IsSetDestinationPrefixLists())
-                                {
-                                    int publicRequestlistValueSourcePacketHeaderStatementlistValueIndex = 1;
-                                    foreach(var publicRequestlistValueSourcePacketHeaderStatementlistValue in publicRequestlistValue.Source.PacketHeaderStatement.DestinationPrefixLists)
-                                    {
-                                        request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "DestinationPrefixList" + "." + publicRequestlistValueSourcePacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueSourcePacketHeaderStatementlistValue));
-                                        publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
-                                    }
-                                }
-                                if(publicRequestlistValue.Source.PacketHeaderStatement.IsSetProtocols())
-                                {
-                                    int publicRequestlistValueSourcePacketHeaderStatementlistValueIndex = 1;
-                                    foreach(var publicRequestlistValueSourcePacketHeaderStatementlistValue in publicRequestlistValue.Source.PacketHeaderStatement.Protocols)
-                                    {
-                                        request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "Protocol" + "." + publicRequestlistValueSourcePacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueSourcePacketHeaderStatementlistValue));
-                                        publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
-                                    }
-                                }
-                                if(publicRequestlistValue.Source.PacketHeaderStatement.IsSetSourceAddresses())
-                                {
-                                    int publicRequestlistValueSourcePacketHeaderStatementlistValueIndex = 1;
-                                    foreach(var publicRequestlistValueSourcePacketHeaderStatementlistValue in publicRequestlistValue.Source.PacketHeaderStatement.SourceAddresses)
-                                    {
-                                        request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "SourceAddress" + "." + publicRequestlistValueSourcePacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueSourcePacketHeaderStatementlistValue));
-                                        publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
-                                    }
-                                }
-                                if(publicRequestlistValue.Source.PacketHeaderStatement.IsSetSourcePorts())
-                                {
-                                    int publicRequestlistValueSourcePacketHeaderStatementlistValueIndex = 1;
-                                    foreach(var publicRequestlistValueSourcePacketHeaderStatementlistValue in publicRequestlistValue.Source.PacketHeaderStatement.SourcePorts)
-                                    {
-                                        request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "SourcePort" + "." + publicRequestlistValueSourcePacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueSourcePacketHeaderStatementlistValue));
-                                        publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
-                                    }
-                                }
-                                if(publicRequestlistValue.Source.PacketHeaderStatement.IsSetSourcePrefixLists())
-                                {
-                                    int publicRequestlistValueSourcePacketHeaderStatementlistValueIndex = 1;
-                                    foreach(var publicRequestlistValueSourcePacketHeaderStatementlistValue in publicRequestlistValue.Source.PacketHeaderStatement.SourcePrefixLists)
-                                    {
-                                        request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "SourcePrefixList" + "." + publicRequestlistValueSourcePacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueSourcePacketHeaderStatementlistValue));
-                                        publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
-                                    }
-                                }
-                            }
-                            if(publicRequestlistValue.Source.IsSetResourceStatement())
-                            {
-                                if(publicRequestlistValue.Source.ResourceStatement.IsSetResources())
-                                {
-                                    int publicRequestlistValueSourceResourceStatementlistValueIndex = 1;
-                                    foreach(var publicRequestlistValueSourceResourceStatementlistValue in publicRequestlistValue.Source.ResourceStatement.Resources)
-                                    {
-                                        request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "ResourceStatement" + "." + "Resource" + "." + publicRequestlistValueSourceResourceStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueSourceResourceStatementlistValue));
-                                        publicRequestlistValueSourceResourceStatementlistValueIndex++;
-                                    }
-                                }
-                                if(publicRequestlistValue.Source.ResourceStatement.IsSetResourceTypes())
-                                {
-                                    int publicRequestlistValueSourceResourceStatementlistValueIndex = 1;
-                                    foreach(var publicRequestlistValueSourceResourceStatementlistValue in publicRequestlistValue.Source.ResourceStatement.ResourceTypes)
-                                    {
-                                        request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "ResourceStatement" + "." + "ResourceType" + "." + publicRequestlistValueSourceResourceStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueSourceResourceStatementlistValue));
-                                        publicRequestlistValueSourceResourceStatementlistValueIndex++;
-                                    }
-                                }
-                            }
-                        }
-                        if(publicRequestlistValue.IsSetThroughResources())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.ThroughResources)
-                            {
-                                if(publicRequestlistValuelistValue.IsSetResourceStatement())
-                                {
-                                    if(publicRequestlistValuelistValue.ResourceStatement.IsSetResources())
-                                    {
-                                        int publicRequestlistValuelistValueResourceStatementlistValueIndex = 1;
-                                        foreach(var publicRequestlistValuelistValueResourceStatementlistValue in publicRequestlistValuelistValue.ResourceStatement.Resources)
+                                        if (publicRequestlistValue.Destination.PacketHeaderStatement.DestinationAddresses.Count == 0)
+                                            request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "DestinationAddress", "");
+                                        else
                                         {
-                                            request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "ThroughResource" + "." + publicRequestlistValuelistValueIndex + "." + "ResourceStatement" + "." + "Resource" + "." + publicRequestlistValuelistValueResourceStatementlistValueIndex, StringUtils.FromString(publicRequestlistValuelistValueResourceStatementlistValue));
-                                            publicRequestlistValuelistValueResourceStatementlistValueIndex++;
+                                             int publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex = 1;
+                                             foreach(var publicRequestlistValueDestinationPacketHeaderStatementlistValue in publicRequestlistValue.Destination.PacketHeaderStatement.DestinationAddresses)
+                                             {
+                                                 request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "DestinationAddress" + "." + publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationPacketHeaderStatementlistValue));
+                                                 publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
+                                             }
                                         }
                                     }
-                                    if(publicRequestlistValuelistValue.ResourceStatement.IsSetResourceTypes())
+                                    if(publicRequestlistValue.Destination.PacketHeaderStatement.IsSetDestinationPorts())
                                     {
-                                        int publicRequestlistValuelistValueResourceStatementlistValueIndex = 1;
-                                        foreach(var publicRequestlistValuelistValueResourceStatementlistValue in publicRequestlistValuelistValue.ResourceStatement.ResourceTypes)
+                                        if (publicRequestlistValue.Destination.PacketHeaderStatement.DestinationPorts.Count == 0)
+                                            request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "DestinationPort", "");
+                                        else
                                         {
-                                            request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "ThroughResource" + "." + publicRequestlistValuelistValueIndex + "." + "ResourceStatement" + "." + "ResourceType" + "." + publicRequestlistValuelistValueResourceStatementlistValueIndex, StringUtils.FromString(publicRequestlistValuelistValueResourceStatementlistValue));
-                                            publicRequestlistValuelistValueResourceStatementlistValueIndex++;
+                                             int publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex = 1;
+                                             foreach(var publicRequestlistValueDestinationPacketHeaderStatementlistValue in publicRequestlistValue.Destination.PacketHeaderStatement.DestinationPorts)
+                                             {
+                                                 request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "DestinationPort" + "." + publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationPacketHeaderStatementlistValue));
+                                                 publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
+                                             }
+                                        }
+                                    }
+                                    if(publicRequestlistValue.Destination.PacketHeaderStatement.IsSetDestinationPrefixLists())
+                                    {
+                                        if (publicRequestlistValue.Destination.PacketHeaderStatement.DestinationPrefixLists.Count == 0)
+                                            request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "DestinationPrefixList", "");
+                                        else
+                                        {
+                                             int publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex = 1;
+                                             foreach(var publicRequestlistValueDestinationPacketHeaderStatementlistValue in publicRequestlistValue.Destination.PacketHeaderStatement.DestinationPrefixLists)
+                                             {
+                                                 request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "DestinationPrefixList" + "." + publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationPacketHeaderStatementlistValue));
+                                                 publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
+                                             }
+                                        }
+                                    }
+                                    if(publicRequestlistValue.Destination.PacketHeaderStatement.IsSetProtocols())
+                                    {
+                                        if (publicRequestlistValue.Destination.PacketHeaderStatement.Protocols.Count == 0)
+                                            request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "Protocol", "");
+                                        else
+                                        {
+                                             int publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex = 1;
+                                             foreach(var publicRequestlistValueDestinationPacketHeaderStatementlistValue in publicRequestlistValue.Destination.PacketHeaderStatement.Protocols)
+                                             {
+                                                 request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "Protocol" + "." + publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationPacketHeaderStatementlistValue));
+                                                 publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
+                                             }
+                                        }
+                                    }
+                                    if(publicRequestlistValue.Destination.PacketHeaderStatement.IsSetSourceAddresses())
+                                    {
+                                        if (publicRequestlistValue.Destination.PacketHeaderStatement.SourceAddresses.Count == 0)
+                                            request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "SourceAddress", "");
+                                        else
+                                        {
+                                             int publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex = 1;
+                                             foreach(var publicRequestlistValueDestinationPacketHeaderStatementlistValue in publicRequestlistValue.Destination.PacketHeaderStatement.SourceAddresses)
+                                             {
+                                                 request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "SourceAddress" + "." + publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationPacketHeaderStatementlistValue));
+                                                 publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
+                                             }
+                                        }
+                                    }
+                                    if(publicRequestlistValue.Destination.PacketHeaderStatement.IsSetSourcePorts())
+                                    {
+                                        if (publicRequestlistValue.Destination.PacketHeaderStatement.SourcePorts.Count == 0)
+                                            request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "SourcePort", "");
+                                        else
+                                        {
+                                             int publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex = 1;
+                                             foreach(var publicRequestlistValueDestinationPacketHeaderStatementlistValue in publicRequestlistValue.Destination.PacketHeaderStatement.SourcePorts)
+                                             {
+                                                 request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "SourcePort" + "." + publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationPacketHeaderStatementlistValue));
+                                                 publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
+                                             }
+                                        }
+                                    }
+                                    if(publicRequestlistValue.Destination.PacketHeaderStatement.IsSetSourcePrefixLists())
+                                    {
+                                        if (publicRequestlistValue.Destination.PacketHeaderStatement.SourcePrefixLists.Count == 0)
+                                            request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "SourcePrefixList", "");
+                                        else
+                                        {
+                                             int publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex = 1;
+                                             foreach(var publicRequestlistValueDestinationPacketHeaderStatementlistValue in publicRequestlistValue.Destination.PacketHeaderStatement.SourcePrefixLists)
+                                             {
+                                                 request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "PacketHeaderStatement" + "." + "SourcePrefixList" + "." + publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationPacketHeaderStatementlistValue));
+                                                 publicRequestlistValueDestinationPacketHeaderStatementlistValueIndex++;
+                                             }
                                         }
                                     }
                                 }
-                                publicRequestlistValuelistValueIndex++;
+                                if(publicRequestlistValue.Destination.IsSetResourceStatement())
+                                {
+                                    if(publicRequestlistValue.Destination.ResourceStatement.IsSetResources())
+                                    {
+                                        if (publicRequestlistValue.Destination.ResourceStatement.Resources.Count == 0)
+                                            request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "ResourceStatement" + "." + "Resource", "");
+                                        else
+                                        {
+                                             int publicRequestlistValueDestinationResourceStatementlistValueIndex = 1;
+                                             foreach(var publicRequestlistValueDestinationResourceStatementlistValue in publicRequestlistValue.Destination.ResourceStatement.Resources)
+                                             {
+                                                 request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "ResourceStatement" + "." + "Resource" + "." + publicRequestlistValueDestinationResourceStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationResourceStatementlistValue));
+                                                 publicRequestlistValueDestinationResourceStatementlistValueIndex++;
+                                             }
+                                        }
+                                    }
+                                    if(publicRequestlistValue.Destination.ResourceStatement.IsSetResourceTypes())
+                                    {
+                                        if (publicRequestlistValue.Destination.ResourceStatement.ResourceTypes.Count == 0)
+                                            request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "ResourceStatement" + "." + "ResourceType", "");
+                                        else
+                                        {
+                                             int publicRequestlistValueDestinationResourceStatementlistValueIndex = 1;
+                                             foreach(var publicRequestlistValueDestinationResourceStatementlistValue in publicRequestlistValue.Destination.ResourceStatement.ResourceTypes)
+                                             {
+                                                 request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Destination" + "." + "ResourceStatement" + "." + "ResourceType" + "." + publicRequestlistValueDestinationResourceStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueDestinationResourceStatementlistValue));
+                                                 publicRequestlistValueDestinationResourceStatementlistValueIndex++;
+                                             }
+                                        }
+                                    }
+                                }
                             }
-                        }
-                        publicRequestlistValueIndex++;
+                            if(publicRequestlistValue.IsSetSource())
+                            {
+                                if(publicRequestlistValue.Source.IsSetPacketHeaderStatement())
+                                {
+                                    if(publicRequestlistValue.Source.PacketHeaderStatement.IsSetDestinationAddresses())
+                                    {
+                                        if (publicRequestlistValue.Source.PacketHeaderStatement.DestinationAddresses.Count == 0)
+                                            request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "DestinationAddress", "");
+                                        else
+                                        {
+                                             int publicRequestlistValueSourcePacketHeaderStatementlistValueIndex = 1;
+                                             foreach(var publicRequestlistValueSourcePacketHeaderStatementlistValue in publicRequestlistValue.Source.PacketHeaderStatement.DestinationAddresses)
+                                             {
+                                                 request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "DestinationAddress" + "." + publicRequestlistValueSourcePacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueSourcePacketHeaderStatementlistValue));
+                                                 publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
+                                             }
+                                        }
+                                    }
+                                    if(publicRequestlistValue.Source.PacketHeaderStatement.IsSetDestinationPorts())
+                                    {
+                                        if (publicRequestlistValue.Source.PacketHeaderStatement.DestinationPorts.Count == 0)
+                                            request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "DestinationPort", "");
+                                        else
+                                        {
+                                             int publicRequestlistValueSourcePacketHeaderStatementlistValueIndex = 1;
+                                             foreach(var publicRequestlistValueSourcePacketHeaderStatementlistValue in publicRequestlistValue.Source.PacketHeaderStatement.DestinationPorts)
+                                             {
+                                                 request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "DestinationPort" + "." + publicRequestlistValueSourcePacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueSourcePacketHeaderStatementlistValue));
+                                                 publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
+                                             }
+                                        }
+                                    }
+                                    if(publicRequestlistValue.Source.PacketHeaderStatement.IsSetDestinationPrefixLists())
+                                    {
+                                        if (publicRequestlistValue.Source.PacketHeaderStatement.DestinationPrefixLists.Count == 0)
+                                            request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "DestinationPrefixList", "");
+                                        else
+                                        {
+                                             int publicRequestlistValueSourcePacketHeaderStatementlistValueIndex = 1;
+                                             foreach(var publicRequestlistValueSourcePacketHeaderStatementlistValue in publicRequestlistValue.Source.PacketHeaderStatement.DestinationPrefixLists)
+                                             {
+                                                 request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "DestinationPrefixList" + "." + publicRequestlistValueSourcePacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueSourcePacketHeaderStatementlistValue));
+                                                 publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
+                                             }
+                                        }
+                                    }
+                                    if(publicRequestlistValue.Source.PacketHeaderStatement.IsSetProtocols())
+                                    {
+                                        if (publicRequestlistValue.Source.PacketHeaderStatement.Protocols.Count == 0)
+                                            request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "Protocol", "");
+                                        else
+                                        {
+                                             int publicRequestlistValueSourcePacketHeaderStatementlistValueIndex = 1;
+                                             foreach(var publicRequestlistValueSourcePacketHeaderStatementlistValue in publicRequestlistValue.Source.PacketHeaderStatement.Protocols)
+                                             {
+                                                 request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "Protocol" + "." + publicRequestlistValueSourcePacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueSourcePacketHeaderStatementlistValue));
+                                                 publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
+                                             }
+                                        }
+                                    }
+                                    if(publicRequestlistValue.Source.PacketHeaderStatement.IsSetSourceAddresses())
+                                    {
+                                        if (publicRequestlistValue.Source.PacketHeaderStatement.SourceAddresses.Count == 0)
+                                            request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "SourceAddress", "");
+                                        else
+                                        {
+                                             int publicRequestlistValueSourcePacketHeaderStatementlistValueIndex = 1;
+                                             foreach(var publicRequestlistValueSourcePacketHeaderStatementlistValue in publicRequestlistValue.Source.PacketHeaderStatement.SourceAddresses)
+                                             {
+                                                 request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "SourceAddress" + "." + publicRequestlistValueSourcePacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueSourcePacketHeaderStatementlistValue));
+                                                 publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
+                                             }
+                                        }
+                                    }
+                                    if(publicRequestlistValue.Source.PacketHeaderStatement.IsSetSourcePorts())
+                                    {
+                                        if (publicRequestlistValue.Source.PacketHeaderStatement.SourcePorts.Count == 0)
+                                            request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "SourcePort", "");
+                                        else
+                                        {
+                                             int publicRequestlistValueSourcePacketHeaderStatementlistValueIndex = 1;
+                                             foreach(var publicRequestlistValueSourcePacketHeaderStatementlistValue in publicRequestlistValue.Source.PacketHeaderStatement.SourcePorts)
+                                             {
+                                                 request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "SourcePort" + "." + publicRequestlistValueSourcePacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueSourcePacketHeaderStatementlistValue));
+                                                 publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
+                                             }
+                                        }
+                                    }
+                                    if(publicRequestlistValue.Source.PacketHeaderStatement.IsSetSourcePrefixLists())
+                                    {
+                                        if (publicRequestlistValue.Source.PacketHeaderStatement.SourcePrefixLists.Count == 0)
+                                            request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "SourcePrefixList", "");
+                                        else
+                                        {
+                                             int publicRequestlistValueSourcePacketHeaderStatementlistValueIndex = 1;
+                                             foreach(var publicRequestlistValueSourcePacketHeaderStatementlistValue in publicRequestlistValue.Source.PacketHeaderStatement.SourcePrefixLists)
+                                             {
+                                                 request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "PacketHeaderStatement" + "." + "SourcePrefixList" + "." + publicRequestlistValueSourcePacketHeaderStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueSourcePacketHeaderStatementlistValue));
+                                                 publicRequestlistValueSourcePacketHeaderStatementlistValueIndex++;
+                                             }
+                                        }
+                                    }
+                                }
+                                if(publicRequestlistValue.Source.IsSetResourceStatement())
+                                {
+                                    if(publicRequestlistValue.Source.ResourceStatement.IsSetResources())
+                                    {
+                                        if (publicRequestlistValue.Source.ResourceStatement.Resources.Count == 0)
+                                            request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "ResourceStatement" + "." + "Resource", "");
+                                        else
+                                        {
+                                             int publicRequestlistValueSourceResourceStatementlistValueIndex = 1;
+                                             foreach(var publicRequestlistValueSourceResourceStatementlistValue in publicRequestlistValue.Source.ResourceStatement.Resources)
+                                             {
+                                                 request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "ResourceStatement" + "." + "Resource" + "." + publicRequestlistValueSourceResourceStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueSourceResourceStatementlistValue));
+                                                 publicRequestlistValueSourceResourceStatementlistValueIndex++;
+                                             }
+                                        }
+                                    }
+                                    if(publicRequestlistValue.Source.ResourceStatement.IsSetResourceTypes())
+                                    {
+                                        if (publicRequestlistValue.Source.ResourceStatement.ResourceTypes.Count == 0)
+                                            request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "ResourceStatement" + "." + "ResourceType", "");
+                                        else
+                                        {
+                                             int publicRequestlistValueSourceResourceStatementlistValueIndex = 1;
+                                             foreach(var publicRequestlistValueSourceResourceStatementlistValue in publicRequestlistValue.Source.ResourceStatement.ResourceTypes)
+                                             {
+                                                 request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "Source" + "." + "ResourceStatement" + "." + "ResourceType" + "." + publicRequestlistValueSourceResourceStatementlistValueIndex, StringUtils.FromString(publicRequestlistValueSourceResourceStatementlistValue));
+                                                 publicRequestlistValueSourceResourceStatementlistValueIndex++;
+                                             }
+                                        }
+                                    }
+                                }
+                            }
+                            if(publicRequestlistValue.IsSetThroughResources())
+                            {
+                                if (publicRequestlistValue.ThroughResources.Count == 0)
+                                    request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "ThroughResource", "");
+                                else
+                                {
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.ThroughResources)
+                                     {
+                                        if(publicRequestlistValuelistValue.IsSetResourceStatement())
+                                        {
+                                            if(publicRequestlistValuelistValue.ResourceStatement.IsSetResources())
+                                            {
+                                                if (publicRequestlistValuelistValue.ResourceStatement.Resources.Count == 0)
+                                                    request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "ThroughResource" + "." + publicRequestlistValuelistValueIndex + "." + "ResourceStatement" + "." + "Resource", "");
+                                                else
+                                                {
+                                                     int publicRequestlistValuelistValueResourceStatementlistValueIndex = 1;
+                                                     foreach(var publicRequestlistValuelistValueResourceStatementlistValue in publicRequestlistValuelistValue.ResourceStatement.Resources)
+                                                     {
+                                                         request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "ThroughResource" + "." + publicRequestlistValuelistValueIndex + "." + "ResourceStatement" + "." + "Resource" + "." + publicRequestlistValuelistValueResourceStatementlistValueIndex, StringUtils.FromString(publicRequestlistValuelistValueResourceStatementlistValue));
+                                                         publicRequestlistValuelistValueResourceStatementlistValueIndex++;
+                                                     }
+                                                }
+                                            }
+                                            if(publicRequestlistValuelistValue.ResourceStatement.IsSetResourceTypes())
+                                            {
+                                                if (publicRequestlistValuelistValue.ResourceStatement.ResourceTypes.Count == 0)
+                                                    request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "ThroughResource" + "." + publicRequestlistValuelistValueIndex + "." + "ResourceStatement" + "." + "ResourceType", "");
+                                                else
+                                                {
+                                                     int publicRequestlistValuelistValueResourceStatementlistValueIndex = 1;
+                                                     foreach(var publicRequestlistValuelistValueResourceStatementlistValue in publicRequestlistValuelistValue.ResourceStatement.ResourceTypes)
+                                                     {
+                                                         request.Parameters.Add("MatchPath" + "." + publicRequestlistValueIndex + "." + "ThroughResource" + "." + publicRequestlistValuelistValueIndex + "." + "ResourceStatement" + "." + "ResourceType" + "." + publicRequestlistValuelistValueResourceStatementlistValueIndex, StringUtils.FromString(publicRequestlistValuelistValueResourceStatementlistValue));
+                                                         publicRequestlistValuelistValueResourceStatementlistValueIndex++;
+                                                     }
+                                                }
+                                            }
+                                        }
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
+                                }
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetTagSpecifications())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.TagSpecifications)
+                    if (publicRequest.TagSpecifications.Count == 0)
+                        request.Parameters.Add("TagSpecification", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetResourceType())
-                        {
-                            request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
-                        }
-                        if(publicRequestlistValue.IsSetTags())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Tags)
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.TagSpecifications)
+                         {
+                            if(publicRequestlistValue.IsSetResourceType())
                             {
-                                if(publicRequestlistValuelistValue.IsSetKey())
-                                {
-                                    request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValuelistValue.Key));
-                                }
-                                if(publicRequestlistValuelistValue.IsSetValue())
-                                {
-                                    request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
-                                }
-                                publicRequestlistValuelistValueIndex++;
+                                request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
                             }
-                        }
-                        publicRequestlistValueIndex++;
+                            if(publicRequestlistValue.IsSetTags())
+                            {
+                                if (publicRequestlistValue.Tags.Count == 0)
+                                    request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag", "");
+                                else
+                                {
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Tags)
+                                     {
+                                        if(publicRequestlistValuelistValue.IsSetKey())
+                                        {
+                                            request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValuelistValue.Key));
+                                        }
+                                        if(publicRequestlistValuelistValue.IsSetValue())
+                                        {
+                                            request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
+                                        }
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
+                                }
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

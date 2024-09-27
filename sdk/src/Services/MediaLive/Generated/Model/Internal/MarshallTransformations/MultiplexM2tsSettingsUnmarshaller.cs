@@ -86,7 +86,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("audioFramesPerPes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AudioFramesPerPes = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -134,7 +134,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("pcrPeriod", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PcrPeriod = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -146,7 +146,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("scte35PrerollPullupMilliseconds", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Scte35PrerollPullupMilliseconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

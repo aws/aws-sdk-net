@@ -85,11 +85,16 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetCacheSecurityGroupNames())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.CacheSecurityGroupNames)
+                    if (publicRequest.CacheSecurityGroupNames.Count == 0)
+                        request.Parameters.Add("CacheSecurityGroupNames", "");
+                    else
                     {
-                        request.Parameters.Add("CacheSecurityGroupNames" + "." + "CacheSecurityGroupName" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.CacheSecurityGroupNames)
+                         {
+                             request.Parameters.Add("CacheSecurityGroupNames" + "." + "CacheSecurityGroupName" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetCacheSubnetGroupName())
@@ -110,43 +115,48 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetLogDeliveryConfigurations())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.LogDeliveryConfigurations)
+                    if (publicRequest.LogDeliveryConfigurations.Count == 0)
+                        request.Parameters.Add("LogDeliveryConfigurations", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetDestinationDetails())
-                        {
-                            if(publicRequestlistValue.DestinationDetails.IsSetCloudWatchLogsDetails())
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.LogDeliveryConfigurations)
+                         {
+                            if(publicRequestlistValue.IsSetDestinationDetails())
                             {
-                                if(publicRequestlistValue.DestinationDetails.CloudWatchLogsDetails.IsSetLogGroup())
+                                if(publicRequestlistValue.DestinationDetails.IsSetCloudWatchLogsDetails())
                                 {
-                                    request.Parameters.Add("LogDeliveryConfigurations" + "." + "LogDeliveryConfigurationRequest" + "." + publicRequestlistValueIndex + "." + "DestinationDetails" + "." + "CloudWatchLogsDetails" + "." + "LogGroup", StringUtils.FromString(publicRequestlistValue.DestinationDetails.CloudWatchLogsDetails.LogGroup));
+                                    if(publicRequestlistValue.DestinationDetails.CloudWatchLogsDetails.IsSetLogGroup())
+                                    {
+                                        request.Parameters.Add("LogDeliveryConfigurations" + "." + "LogDeliveryConfigurationRequest" + "." + publicRequestlistValueIndex + "." + "DestinationDetails" + "." + "CloudWatchLogsDetails" + "." + "LogGroup", StringUtils.FromString(publicRequestlistValue.DestinationDetails.CloudWatchLogsDetails.LogGroup));
+                                    }
+                                }
+                                if(publicRequestlistValue.DestinationDetails.IsSetKinesisFirehoseDetails())
+                                {
+                                    if(publicRequestlistValue.DestinationDetails.KinesisFirehoseDetails.IsSetDeliveryStream())
+                                    {
+                                        request.Parameters.Add("LogDeliveryConfigurations" + "." + "LogDeliveryConfigurationRequest" + "." + publicRequestlistValueIndex + "." + "DestinationDetails" + "." + "KinesisFirehoseDetails" + "." + "DeliveryStream", StringUtils.FromString(publicRequestlistValue.DestinationDetails.KinesisFirehoseDetails.DeliveryStream));
+                                    }
                                 }
                             }
-                            if(publicRequestlistValue.DestinationDetails.IsSetKinesisFirehoseDetails())
+                            if(publicRequestlistValue.IsSetDestinationType())
                             {
-                                if(publicRequestlistValue.DestinationDetails.KinesisFirehoseDetails.IsSetDeliveryStream())
-                                {
-                                    request.Parameters.Add("LogDeliveryConfigurations" + "." + "LogDeliveryConfigurationRequest" + "." + publicRequestlistValueIndex + "." + "DestinationDetails" + "." + "KinesisFirehoseDetails" + "." + "DeliveryStream", StringUtils.FromString(publicRequestlistValue.DestinationDetails.KinesisFirehoseDetails.DeliveryStream));
-                                }
+                                request.Parameters.Add("LogDeliveryConfigurations" + "." + "LogDeliveryConfigurationRequest" + "." + publicRequestlistValueIndex + "." + "DestinationType", StringUtils.FromString(publicRequestlistValue.DestinationType));
                             }
-                        }
-                        if(publicRequestlistValue.IsSetDestinationType())
-                        {
-                            request.Parameters.Add("LogDeliveryConfigurations" + "." + "LogDeliveryConfigurationRequest" + "." + publicRequestlistValueIndex + "." + "DestinationType", StringUtils.FromString(publicRequestlistValue.DestinationType));
-                        }
-                        if(publicRequestlistValue.IsSetEnabled())
-                        {
-                            request.Parameters.Add("LogDeliveryConfigurations" + "." + "LogDeliveryConfigurationRequest" + "." + publicRequestlistValueIndex + "." + "Enabled", StringUtils.FromBool(publicRequestlistValue.Enabled));
-                        }
-                        if(publicRequestlistValue.IsSetLogFormat())
-                        {
-                            request.Parameters.Add("LogDeliveryConfigurations" + "." + "LogDeliveryConfigurationRequest" + "." + publicRequestlistValueIndex + "." + "LogFormat", StringUtils.FromString(publicRequestlistValue.LogFormat));
-                        }
-                        if(publicRequestlistValue.IsSetLogType())
-                        {
-                            request.Parameters.Add("LogDeliveryConfigurations" + "." + "LogDeliveryConfigurationRequest" + "." + publicRequestlistValueIndex + "." + "LogType", StringUtils.FromString(publicRequestlistValue.LogType));
-                        }
-                        publicRequestlistValueIndex++;
+                            if(publicRequestlistValue.IsSetEnabled())
+                            {
+                                request.Parameters.Add("LogDeliveryConfigurations" + "." + "LogDeliveryConfigurationRequest" + "." + publicRequestlistValueIndex + "." + "Enabled", StringUtils.FromBool(publicRequestlistValue.Enabled));
+                            }
+                            if(publicRequestlistValue.IsSetLogFormat())
+                            {
+                                request.Parameters.Add("LogDeliveryConfigurations" + "." + "LogDeliveryConfigurationRequest" + "." + publicRequestlistValueIndex + "." + "LogFormat", StringUtils.FromString(publicRequestlistValue.LogFormat));
+                            }
+                            if(publicRequestlistValue.IsSetLogType())
+                            {
+                                request.Parameters.Add("LogDeliveryConfigurations" + "." + "LogDeliveryConfigurationRequest" + "." + publicRequestlistValueIndex + "." + "LogType", StringUtils.FromString(publicRequestlistValue.LogType));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetNetworkType())
@@ -175,11 +185,16 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetPreferredAvailabilityZones())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.PreferredAvailabilityZones)
+                    if (publicRequest.PreferredAvailabilityZones.Count == 0)
+                        request.Parameters.Add("PreferredAvailabilityZones", "");
+                    else
                     {
-                        request.Parameters.Add("PreferredAvailabilityZones" + "." + "PreferredAvailabilityZone" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.PreferredAvailabilityZones)
+                         {
+                             request.Parameters.Add("PreferredAvailabilityZones" + "." + "PreferredAvailabilityZone" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetPreferredMaintenanceWindow())
@@ -192,11 +207,16 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetPreferredOutpostArns())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.PreferredOutpostArns)
+                    if (publicRequest.PreferredOutpostArns.Count == 0)
+                        request.Parameters.Add("PreferredOutpostArns", "");
+                    else
                     {
-                        request.Parameters.Add("PreferredOutpostArns" + "." + "PreferredOutpostArn" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.PreferredOutpostArns)
+                         {
+                             request.Parameters.Add("PreferredOutpostArns" + "." + "PreferredOutpostArn" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetReplicationGroupId())
@@ -205,20 +225,30 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetSecurityGroupIds())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.SecurityGroupIds)
+                    if (publicRequest.SecurityGroupIds.Count == 0)
+                        request.Parameters.Add("SecurityGroupIds", "");
+                    else
                     {
-                        request.Parameters.Add("SecurityGroupIds" + "." + "SecurityGroupId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.SecurityGroupIds)
+                         {
+                             request.Parameters.Add("SecurityGroupIds" + "." + "SecurityGroupId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetSnapshotArns())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.SnapshotArns)
+                    if (publicRequest.SnapshotArns.Count == 0)
+                        request.Parameters.Add("SnapshotArns", "");
+                    else
                     {
-                        request.Parameters.Add("SnapshotArns" + "." + "SnapshotArn" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.SnapshotArns)
+                         {
+                             request.Parameters.Add("SnapshotArns" + "." + "SnapshotArn" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetSnapshotName())
@@ -235,18 +265,23 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetTags())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Tags)
+                    if (publicRequest.Tags.Count == 0)
+                        request.Parameters.Add("Tags", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetKey())
-                        {
-                            request.Parameters.Add("Tags" + "." + "Tag" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
-                        }
-                        if(publicRequestlistValue.IsSetValue())
-                        {
-                            request.Parameters.Add("Tags" + "." + "Tag" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Tags)
+                         {
+                            if(publicRequestlistValue.IsSetKey())
+                            {
+                                request.Parameters.Add("Tags" + "." + "Tag" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
+                            }
+                            if(publicRequestlistValue.IsSetValue())
+                            {
+                                request.Parameters.Add("Tags" + "." + "Tag" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetTransitEncryptionEnabled())

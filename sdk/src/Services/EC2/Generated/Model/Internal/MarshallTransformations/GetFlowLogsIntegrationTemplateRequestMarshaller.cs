@@ -71,26 +71,31 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     if(publicRequest.IntegrateServices.IsSetAthenaIntegrations())
                     {
-                        int publicRequestIntegrateServiceslistValueIndex = 1;
-                        foreach(var publicRequestIntegrateServiceslistValue in publicRequest.IntegrateServices.AthenaIntegrations)
+                        if (publicRequest.IntegrateServices.AthenaIntegrations.Count == 0)
+                            request.Parameters.Add("IntegrateService" + "." + "AthenaIntegration", "");
+                        else
                         {
-                            if(publicRequestIntegrateServiceslistValue.IsSetIntegrationResultS3DestinationArn())
-                            {
-                                request.Parameters.Add("IntegrateService" + "." + "AthenaIntegration" + "." + publicRequestIntegrateServiceslistValueIndex + "." + "IntegrationResultS3DestinationArn", StringUtils.FromString(publicRequestIntegrateServiceslistValue.IntegrationResultS3DestinationArn));
-                            }
-                            if(publicRequestIntegrateServiceslistValue.IsSetPartitionEndDate())
-                            {
-                                request.Parameters.Add("IntegrateService" + "." + "AthenaIntegration" + "." + publicRequestIntegrateServiceslistValueIndex + "." + "PartitionEndDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestIntegrateServiceslistValue.PartitionEndDate));
-                            }
-                            if(publicRequestIntegrateServiceslistValue.IsSetPartitionLoadFrequency())
-                            {
-                                request.Parameters.Add("IntegrateService" + "." + "AthenaIntegration" + "." + publicRequestIntegrateServiceslistValueIndex + "." + "PartitionLoadFrequency", StringUtils.FromString(publicRequestIntegrateServiceslistValue.PartitionLoadFrequency));
-                            }
-                            if(publicRequestIntegrateServiceslistValue.IsSetPartitionStartDate())
-                            {
-                                request.Parameters.Add("IntegrateService" + "." + "AthenaIntegration" + "." + publicRequestIntegrateServiceslistValueIndex + "." + "PartitionStartDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestIntegrateServiceslistValue.PartitionStartDate));
-                            }
-                            publicRequestIntegrateServiceslistValueIndex++;
+                             int publicRequestIntegrateServiceslistValueIndex = 1;
+                             foreach(var publicRequestIntegrateServiceslistValue in publicRequest.IntegrateServices.AthenaIntegrations)
+                             {
+                                if(publicRequestIntegrateServiceslistValue.IsSetIntegrationResultS3DestinationArn())
+                                {
+                                    request.Parameters.Add("IntegrateService" + "." + "AthenaIntegration" + "." + publicRequestIntegrateServiceslistValueIndex + "." + "IntegrationResultS3DestinationArn", StringUtils.FromString(publicRequestIntegrateServiceslistValue.IntegrationResultS3DestinationArn));
+                                }
+                                if(publicRequestIntegrateServiceslistValue.IsSetPartitionEndDate())
+                                {
+                                    request.Parameters.Add("IntegrateService" + "." + "AthenaIntegration" + "." + publicRequestIntegrateServiceslistValueIndex + "." + "PartitionEndDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestIntegrateServiceslistValue.PartitionEndDate));
+                                }
+                                if(publicRequestIntegrateServiceslistValue.IsSetPartitionLoadFrequency())
+                                {
+                                    request.Parameters.Add("IntegrateService" + "." + "AthenaIntegration" + "." + publicRequestIntegrateServiceslistValueIndex + "." + "PartitionLoadFrequency", StringUtils.FromString(publicRequestIntegrateServiceslistValue.PartitionLoadFrequency));
+                                }
+                                if(publicRequestIntegrateServiceslistValue.IsSetPartitionStartDate())
+                                {
+                                    request.Parameters.Add("IntegrateService" + "." + "AthenaIntegration" + "." + publicRequestIntegrateServiceslistValueIndex + "." + "PartitionStartDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestIntegrateServiceslistValue.PartitionStartDate));
+                                }
+                                 publicRequestIntegrateServiceslistValueIndex++;
+                             }
                         }
                     }
                 }

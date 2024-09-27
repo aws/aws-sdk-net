@@ -68,13 +68,13 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("maxConcurrentRuns", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxConcurrentRuns = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("queueTimeoutMinutes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.QueueTimeoutMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }

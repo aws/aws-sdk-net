@@ -96,13 +96,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteStartElement("ContentTypeProfile");
                                     if(publicRequestFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItemsValue.IsSetContentType())
                                         xmlWriter.WriteElementString("ContentType", StringUtils.FromString(publicRequestFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItemsValue.ContentType));
-
                                     if(publicRequestFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItemsValue.IsSetFormat())
                                         xmlWriter.WriteElementString("Format", StringUtils.FromString(publicRequestFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItemsValue.Format));
-
                                     if(publicRequestFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItemsValue.IsSetProfileId())
                                         xmlWriter.WriteElementString("ProfileId", StringUtils.FromString(publicRequestFieldLevelEncryptionConfigContentTypeProfileConfigContentTypeProfilesItemsValue.ProfileId));
-
                                     xmlWriter.WriteEndElement();
                                 }
                                 }            
@@ -110,12 +107,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             }
                             if(publicRequest.FieldLevelEncryptionConfig.ContentTypeProfileConfig.ContentTypeProfiles.IsSetQuantity())
                                 xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.FieldLevelEncryptionConfig.ContentTypeProfileConfig.ContentTypeProfiles.Quantity.Value));
-
                             xmlWriter.WriteEndElement();
                         }
                         if(publicRequest.FieldLevelEncryptionConfig.ContentTypeProfileConfig.IsSetForwardWhenContentTypeIsUnknown())
                             xmlWriter.WriteElementString("ForwardWhenContentTypeIsUnknown", StringUtils.FromBool(publicRequest.FieldLevelEncryptionConfig.ContentTypeProfileConfig.ForwardWhenContentTypeIsUnknown.Value));
-
                         xmlWriter.WriteEndElement();
                     }
                     if (publicRequest.FieldLevelEncryptionConfig.QueryArgProfileConfig != null)
@@ -123,7 +118,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         xmlWriter.WriteStartElement("QueryArgProfileConfig");
                         if(publicRequest.FieldLevelEncryptionConfig.QueryArgProfileConfig.IsSetForwardWhenQueryArgProfileIsUnknown())
                             xmlWriter.WriteElementString("ForwardWhenQueryArgProfileIsUnknown", StringUtils.FromBool(publicRequest.FieldLevelEncryptionConfig.QueryArgProfileConfig.ForwardWhenQueryArgProfileIsUnknown.Value));
-
                         if (publicRequest.FieldLevelEncryptionConfig.QueryArgProfileConfig.QueryArgProfiles != null)
                         {
                             xmlWriter.WriteStartElement("QueryArgProfiles");
@@ -138,10 +132,8 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteStartElement("QueryArgProfile");
                                     if(publicRequestFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItemsValue.IsSetProfileId())
                                         xmlWriter.WriteElementString("ProfileId", StringUtils.FromString(publicRequestFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItemsValue.ProfileId));
-
                                     if(publicRequestFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItemsValue.IsSetQueryArg())
                                         xmlWriter.WriteElementString("QueryArg", StringUtils.FromString(publicRequestFieldLevelEncryptionConfigQueryArgProfileConfigQueryArgProfilesItemsValue.QueryArg));
-
                                     xmlWriter.WriteEndElement();
                                 }
                                 }            
@@ -149,7 +141,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             }
                             if(publicRequest.FieldLevelEncryptionConfig.QueryArgProfileConfig.QueryArgProfiles.IsSetQuantity())
                                 xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.FieldLevelEncryptionConfig.QueryArgProfileConfig.QueryArgProfiles.Quantity.Value));
-
                             xmlWriter.WriteEndElement();
                         }
                         xmlWriter.WriteEndElement();

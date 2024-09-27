@@ -61,29 +61,44 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetAddRouteTableIds())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.AddRouteTableIds)
+                    if (publicRequest.AddRouteTableIds.Count == 0)
+                        request.Parameters.Add("AddRouteTableId", "");
+                    else
                     {
-                        request.Parameters.Add("AddRouteTableId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.AddRouteTableIds)
+                         {
+                             request.Parameters.Add("AddRouteTableId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetAddSecurityGroupIds())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.AddSecurityGroupIds)
+                    if (publicRequest.AddSecurityGroupIds.Count == 0)
+                        request.Parameters.Add("AddSecurityGroupId", "");
+                    else
                     {
-                        request.Parameters.Add("AddSecurityGroupId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.AddSecurityGroupIds)
+                         {
+                             request.Parameters.Add("AddSecurityGroupId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetAddSubnetIds())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.AddSubnetIds)
+                    if (publicRequest.AddSubnetIds.Count == 0)
+                        request.Parameters.Add("AddSubnetId", "");
+                    else
                     {
-                        request.Parameters.Add("AddSubnetId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.AddSubnetIds)
+                         {
+                             request.Parameters.Add("AddSubnetId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetDnsOptions())
@@ -111,29 +126,44 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetRemoveRouteTableIds())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.RemoveRouteTableIds)
+                    if (publicRequest.RemoveRouteTableIds.Count == 0)
+                        request.Parameters.Add("RemoveRouteTableId", "");
+                    else
                     {
-                        request.Parameters.Add("RemoveRouteTableId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.RemoveRouteTableIds)
+                         {
+                             request.Parameters.Add("RemoveRouteTableId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetRemoveSecurityGroupIds())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.RemoveSecurityGroupIds)
+                    if (publicRequest.RemoveSecurityGroupIds.Count == 0)
+                        request.Parameters.Add("RemoveSecurityGroupId", "");
+                    else
                     {
-                        request.Parameters.Add("RemoveSecurityGroupId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.RemoveSecurityGroupIds)
+                         {
+                             request.Parameters.Add("RemoveSecurityGroupId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetRemoveSubnetIds())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.RemoveSubnetIds)
+                    if (publicRequest.RemoveSubnetIds.Count == 0)
+                        request.Parameters.Add("RemoveSubnetId", "");
+                    else
                     {
-                        request.Parameters.Add("RemoveSubnetId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.RemoveSubnetIds)
+                         {
+                             request.Parameters.Add("RemoveSubnetId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetResetPolicy())
@@ -142,22 +172,27 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetSubnetConfigurations())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.SubnetConfigurations)
+                    if (publicRequest.SubnetConfigurations.Count == 0)
+                        request.Parameters.Add("SubnetConfiguration", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetIpv4())
-                        {
-                            request.Parameters.Add("SubnetConfiguration" + "." + publicRequestlistValueIndex + "." + "Ipv4", StringUtils.FromString(publicRequestlistValue.Ipv4));
-                        }
-                        if(publicRequestlistValue.IsSetIpv6())
-                        {
-                            request.Parameters.Add("SubnetConfiguration" + "." + publicRequestlistValueIndex + "." + "Ipv6", StringUtils.FromString(publicRequestlistValue.Ipv6));
-                        }
-                        if(publicRequestlistValue.IsSetSubnetId())
-                        {
-                            request.Parameters.Add("SubnetConfiguration" + "." + publicRequestlistValueIndex + "." + "SubnetId", StringUtils.FromString(publicRequestlistValue.SubnetId));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.SubnetConfigurations)
+                         {
+                            if(publicRequestlistValue.IsSetIpv4())
+                            {
+                                request.Parameters.Add("SubnetConfiguration" + "." + publicRequestlistValueIndex + "." + "Ipv4", StringUtils.FromString(publicRequestlistValue.Ipv4));
+                            }
+                            if(publicRequestlistValue.IsSetIpv6())
+                            {
+                                request.Parameters.Add("SubnetConfiguration" + "." + publicRequestlistValueIndex + "." + "Ipv6", StringUtils.FromString(publicRequestlistValue.Ipv6));
+                            }
+                            if(publicRequestlistValue.IsSetSubnetId())
+                            {
+                                request.Parameters.Add("SubnetConfiguration" + "." + publicRequestlistValueIndex + "." + "SubnetId", StringUtils.FromString(publicRequestlistValue.SubnetId));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetVpcEndpointId())

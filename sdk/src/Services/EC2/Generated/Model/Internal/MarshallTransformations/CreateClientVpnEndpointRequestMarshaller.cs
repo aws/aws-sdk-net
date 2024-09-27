@@ -61,39 +61,44 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetAuthenticationOptions())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.AuthenticationOptions)
+                    if (publicRequest.AuthenticationOptions.Count == 0)
+                        request.Parameters.Add("Authentication", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetActiveDirectory())
-                        {
-                            if(publicRequestlistValue.ActiveDirectory.IsSetDirectoryId())
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.AuthenticationOptions)
+                         {
+                            if(publicRequestlistValue.IsSetActiveDirectory())
                             {
-                                request.Parameters.Add("Authentication" + "." + publicRequestlistValueIndex + "." + "ActiveDirectory" + "." + "DirectoryId", StringUtils.FromString(publicRequestlistValue.ActiveDirectory.DirectoryId));
+                                if(publicRequestlistValue.ActiveDirectory.IsSetDirectoryId())
+                                {
+                                    request.Parameters.Add("Authentication" + "." + publicRequestlistValueIndex + "." + "ActiveDirectory" + "." + "DirectoryId", StringUtils.FromString(publicRequestlistValue.ActiveDirectory.DirectoryId));
+                                }
                             }
-                        }
-                        if(publicRequestlistValue.IsSetFederatedAuthentication())
-                        {
-                            if(publicRequestlistValue.FederatedAuthentication.IsSetSAMLProviderArn())
+                            if(publicRequestlistValue.IsSetFederatedAuthentication())
                             {
-                                request.Parameters.Add("Authentication" + "." + publicRequestlistValueIndex + "." + "FederatedAuthentication" + "." + "SAMLProviderArn", StringUtils.FromString(publicRequestlistValue.FederatedAuthentication.SAMLProviderArn));
+                                if(publicRequestlistValue.FederatedAuthentication.IsSetSAMLProviderArn())
+                                {
+                                    request.Parameters.Add("Authentication" + "." + publicRequestlistValueIndex + "." + "FederatedAuthentication" + "." + "SAMLProviderArn", StringUtils.FromString(publicRequestlistValue.FederatedAuthentication.SAMLProviderArn));
+                                }
+                                if(publicRequestlistValue.FederatedAuthentication.IsSetSelfServiceSAMLProviderArn())
+                                {
+                                    request.Parameters.Add("Authentication" + "." + publicRequestlistValueIndex + "." + "FederatedAuthentication" + "." + "SelfServiceSAMLProviderArn", StringUtils.FromString(publicRequestlistValue.FederatedAuthentication.SelfServiceSAMLProviderArn));
+                                }
                             }
-                            if(publicRequestlistValue.FederatedAuthentication.IsSetSelfServiceSAMLProviderArn())
+                            if(publicRequestlistValue.IsSetMutualAuthentication())
                             {
-                                request.Parameters.Add("Authentication" + "." + publicRequestlistValueIndex + "." + "FederatedAuthentication" + "." + "SelfServiceSAMLProviderArn", StringUtils.FromString(publicRequestlistValue.FederatedAuthentication.SelfServiceSAMLProviderArn));
+                                if(publicRequestlistValue.MutualAuthentication.IsSetClientRootCertificateChainArn())
+                                {
+                                    request.Parameters.Add("Authentication" + "." + publicRequestlistValueIndex + "." + "MutualAuthentication" + "." + "ClientRootCertificateChainArn", StringUtils.FromString(publicRequestlistValue.MutualAuthentication.ClientRootCertificateChainArn));
+                                }
                             }
-                        }
-                        if(publicRequestlistValue.IsSetMutualAuthentication())
-                        {
-                            if(publicRequestlistValue.MutualAuthentication.IsSetClientRootCertificateChainArn())
+                            if(publicRequestlistValue.IsSetType())
                             {
-                                request.Parameters.Add("Authentication" + "." + publicRequestlistValueIndex + "." + "MutualAuthentication" + "." + "ClientRootCertificateChainArn", StringUtils.FromString(publicRequestlistValue.MutualAuthentication.ClientRootCertificateChainArn));
+                                request.Parameters.Add("Authentication" + "." + publicRequestlistValueIndex + "." + "Type", StringUtils.FromString(publicRequestlistValue.Type));
                             }
-                        }
-                        if(publicRequestlistValue.IsSetType())
-                        {
-                            request.Parameters.Add("Authentication" + "." + publicRequestlistValueIndex + "." + "Type", StringUtils.FromString(publicRequestlistValue.Type));
-                        }
-                        publicRequestlistValueIndex++;
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetClientCidrBlock())
@@ -151,20 +156,30 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetDnsServers())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.DnsServers)
+                    if (publicRequest.DnsServers.Count == 0)
+                        request.Parameters.Add("DnsServers", "");
+                    else
                     {
-                        request.Parameters.Add("DnsServers" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.DnsServers)
+                         {
+                             request.Parameters.Add("DnsServers" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetSecurityGroupIds())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.SecurityGroupIds)
+                    if (publicRequest.SecurityGroupIds.Count == 0)
+                        request.Parameters.Add("SecurityGroupId", "");
+                    else
                     {
-                        request.Parameters.Add("SecurityGroupId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.SecurityGroupIds)
+                         {
+                             request.Parameters.Add("SecurityGroupId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetSelfServicePortal())
@@ -185,30 +200,40 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetTagSpecifications())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.TagSpecifications)
+                    if (publicRequest.TagSpecifications.Count == 0)
+                        request.Parameters.Add("TagSpecification", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetResourceType())
-                        {
-                            request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
-                        }
-                        if(publicRequestlistValue.IsSetTags())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Tags)
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.TagSpecifications)
+                         {
+                            if(publicRequestlistValue.IsSetResourceType())
                             {
-                                if(publicRequestlistValuelistValue.IsSetKey())
-                                {
-                                    request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValuelistValue.Key));
-                                }
-                                if(publicRequestlistValuelistValue.IsSetValue())
-                                {
-                                    request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
-                                }
-                                publicRequestlistValuelistValueIndex++;
+                                request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
                             }
-                        }
-                        publicRequestlistValueIndex++;
+                            if(publicRequestlistValue.IsSetTags())
+                            {
+                                if (publicRequestlistValue.Tags.Count == 0)
+                                    request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag", "");
+                                else
+                                {
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Tags)
+                                     {
+                                        if(publicRequestlistValuelistValue.IsSetKey())
+                                        {
+                                            request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValuelistValue.Key));
+                                        }
+                                        if(publicRequestlistValuelistValue.IsSetValue())
+                                        {
+                                            request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
+                                        }
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
+                                }
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetTransportProtocol())

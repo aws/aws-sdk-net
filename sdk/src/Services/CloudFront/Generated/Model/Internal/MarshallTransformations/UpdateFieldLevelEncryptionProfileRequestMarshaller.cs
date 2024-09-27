@@ -108,15 +108,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                                     }
                                     if(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.FieldPatterns.IsSetQuantity())
                                         xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.FieldPatterns.Quantity.Value));
-
                                     xmlWriter.WriteEndElement();
                                 }
                                 if(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.IsSetProviderId())
                                     xmlWriter.WriteElementString("ProviderId", StringUtils.FromString(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.ProviderId));
-
                                 if(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.IsSetPublicKeyId())
                                     xmlWriter.WriteElementString("PublicKeyId", StringUtils.FromString(publicRequestFieldLevelEncryptionProfileConfigEncryptionEntitiesItemsValue.PublicKeyId));
-
                                 xmlWriter.WriteEndElement();
                             }
                             }            
@@ -124,7 +121,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         }
                         if(publicRequest.FieldLevelEncryptionProfileConfig.EncryptionEntities.IsSetQuantity())
                             xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.FieldLevelEncryptionProfileConfig.EncryptionEntities.Quantity.Value));
-
                         xmlWriter.WriteEndElement();
                     }
                     if(publicRequest.FieldLevelEncryptionProfileConfig.IsSetName())

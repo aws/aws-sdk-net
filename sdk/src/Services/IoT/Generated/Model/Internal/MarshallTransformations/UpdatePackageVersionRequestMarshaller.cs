@@ -87,32 +87,18 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Action);
                     }
 
-<<<<<<< HEAD
+                    if(publicRequest.IsSetArtifact())
+                    {
+                        context.Writer.WritePropertyName("artifact");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PackageVersionArtifactMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Artifact, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetAttributes())
-||||||| Commit version number update changes
-                if(publicRequest.IsSetAttributes())
-                {
-                    context.Writer.WritePropertyName("attributes");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestAttributesKvp in publicRequest.Attributes)
-=======
-                if(publicRequest.IsSetArtifact())
-                {
-                    context.Writer.WritePropertyName("artifact");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PackageVersionArtifactMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Artifact, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetAttributes())
-                {
-                    context.Writer.WritePropertyName("attributes");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestAttributesKvp in publicRequest.Attributes)
->>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
                     {
                         context.Writer.WritePropertyName("attributes");
                         context.Writer.WriteObjectStart();
@@ -132,26 +118,16 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Description);
                     }
 
+                    if(publicRequest.IsSetRecipe())
+                    {
+                        context.Writer.WritePropertyName("recipe");
+                        context.Writer.Write(publicRequest.Recipe);
+                    }
+
                     writer.WriteObjectEnd();
                 }
 
-<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
-||||||| Commit version number update changes
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-=======
-                if(publicRequest.IsSetRecipe())
-                {
-                    context.Writer.WritePropertyName("recipe");
-                    context.Writer.Write(publicRequest.Recipe);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
->>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
             }
 
             request.UseQueryString = true;

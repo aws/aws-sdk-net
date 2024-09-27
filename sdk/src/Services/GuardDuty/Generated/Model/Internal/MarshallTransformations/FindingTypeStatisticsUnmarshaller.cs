@@ -74,13 +74,13 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastGeneratedAt", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastGeneratedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("totalFindings", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalFindings = unmarshaller.Unmarshall(context);
                     continue;
                 }

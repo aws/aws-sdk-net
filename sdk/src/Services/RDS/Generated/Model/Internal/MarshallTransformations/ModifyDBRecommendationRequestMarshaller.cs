@@ -69,18 +69,23 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetRecommendedActionUpdates())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.RecommendedActionUpdates)
+                    if (publicRequest.RecommendedActionUpdates.Count == 0)
+                        request.Parameters.Add("RecommendedActionUpdates", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetActionId())
-                        {
-                            request.Parameters.Add("RecommendedActionUpdates" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ActionId", StringUtils.FromString(publicRequestlistValue.ActionId));
-                        }
-                        if(publicRequestlistValue.IsSetStatus())
-                        {
-                            request.Parameters.Add("RecommendedActionUpdates" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Status", StringUtils.FromString(publicRequestlistValue.Status));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.RecommendedActionUpdates)
+                         {
+                            if(publicRequestlistValue.IsSetActionId())
+                            {
+                                request.Parameters.Add("RecommendedActionUpdates" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ActionId", StringUtils.FromString(publicRequestlistValue.ActionId));
+                            }
+                            if(publicRequestlistValue.IsSetStatus())
+                            {
+                                request.Parameters.Add("RecommendedActionUpdates" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Status", StringUtils.FromString(publicRequestlistValue.Status));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetStatus())

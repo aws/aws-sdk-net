@@ -117,31 +117,17 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.DefaultStorageClass);
                     }
 
-<<<<<<< HEAD
+                    if(publicRequest.IsSetEncryptionType())
+                    {
+                        context.Writer.WritePropertyName("EncryptionType");
+                        context.Writer.Write(publicRequest.EncryptionType);
+                    }
+
                     if(publicRequest.IsSetFileShareARN())
                     {
                         context.Writer.WritePropertyName("FileShareARN");
                         context.Writer.Write(publicRequest.FileShareARN);
                     }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetFileShareARN())
-                {
-                    context.Writer.WritePropertyName("FileShareARN");
-                    context.Writer.Write(publicRequest.FileShareARN);
-                }
-=======
-                if(publicRequest.IsSetEncryptionType())
-                {
-                    context.Writer.WritePropertyName("EncryptionType");
-                    context.Writer.Write(publicRequest.EncryptionType);
-                }
-
-                if(publicRequest.IsSetFileShareARN())
-                {
-                    context.Writer.WritePropertyName("FileShareARN");
-                    context.Writer.Write(publicRequest.FileShareARN);
-                }
->>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
 
                     if(publicRequest.IsSetFileShareName())
                     {

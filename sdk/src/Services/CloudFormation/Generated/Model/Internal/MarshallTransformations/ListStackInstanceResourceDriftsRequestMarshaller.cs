@@ -85,11 +85,16 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetStackInstanceResourceDriftStatuses())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.StackInstanceResourceDriftStatuses)
+                    if (publicRequest.StackInstanceResourceDriftStatuses.Count == 0)
+                        request.Parameters.Add("StackInstanceResourceDriftStatuses", "");
+                    else
                     {
-                        request.Parameters.Add("StackInstanceResourceDriftStatuses" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.StackInstanceResourceDriftStatuses)
+                         {
+                             request.Parameters.Add("StackInstanceResourceDriftStatuses" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetStackSetName())

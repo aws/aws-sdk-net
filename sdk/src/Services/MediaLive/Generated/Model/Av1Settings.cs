@@ -74,9 +74,9 @@ namespace Amazon.MediaLive.Model
         /// Gets and sets the property BufSize. The size of the buffer (HRD buffer model) in bits.
         /// </summary>
         [AWSProperty(Min=50000, Max=16000000)]
-        public int BufSize
+        public int? BufSize
         {
-            get { return this._bufSize.GetValueOrDefault(); }
+            get { return this._bufSize; }
             set { this._bufSize = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.MediaLive.Model
         /// Framerate is a fraction, for example, 24000 / 1001.
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=3003)]
-        public int FramerateDenominator
+        public int? FramerateDenominator
         {
-            get { return this._framerateDenominator.GetValueOrDefault(); }
+            get { return this._framerateDenominator; }
             set { this._framerateDenominator = value; }
         }
 
@@ -140,9 +140,9 @@ namespace Amazon.MediaLive.Model
         /// is a fraction, for example, 24000 / 1001.
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int FramerateNumerator
+        public int? FramerateNumerator
         {
-            get { return this._framerateNumerator.GetValueOrDefault(); }
+            get { return this._framerateNumerator; }
             set { this._framerateNumerator = value; }
         }
 
@@ -157,9 +157,9 @@ namespace Amazon.MediaLive.Model
         /// is frames, GopSize must be a whole number and must be greater than or equal to 1.If
         /// GopSizeUnits is seconds, GopSize must be greater than 0, but it can be a decimal.
         /// </summary>
-        public double GopSize
+        public double? GopSize
         {
-            get { return this._gopSize.GetValueOrDefault(); }
+            get { return this._gopSize; }
             set { this._gopSize = value; }
         }
 
@@ -223,9 +223,9 @@ namespace Amazon.MediaLive.Model
         /// see the description for qvbrQualityLevel.
         /// </summary>
         [AWSProperty(Min=50000, Max=8000000)]
-        public int MaxBitrate
+        public int? MaxBitrate
         {
-            get { return this._maxBitrate.GetValueOrDefault(); }
+            get { return this._maxBitrate; }
             set { this._maxBitrate = value; }
         }
 
@@ -246,9 +246,9 @@ namespace Amazon.MediaLive.Model
         /// the maximum GOP stretch = (GOP size) + (Minimum I-interval) - 1
         /// </summary>
         [AWSProperty(Min=0, Max=30)]
-        public int MinIInterval
+        public int? MinIInterval
         {
-            get { return this._minIInterval.GetValueOrDefault(); }
+            get { return this._minIInterval; }
             set { this._minIInterval = value; }
         }
 
@@ -263,9 +263,9 @@ namespace Amazon.MediaLive.Model
         /// ratio (PAR).
         /// </summary>
         [AWSProperty(Min=1)]
-        public int ParDenominator
+        public int? ParDenominator
         {
-            get { return this._parDenominator.GetValueOrDefault(); }
+            get { return this._parDenominator; }
             set { this._parDenominator = value; }
         }
 
@@ -280,9 +280,9 @@ namespace Amazon.MediaLive.Model
         /// ratio (PAR).
         /// </summary>
         [AWSProperty(Min=1)]
-        public int ParNumerator
+        public int? ParNumerator
         {
-            get { return this._parNumerator.GetValueOrDefault(); }
+            get { return this._parNumerator; }
             set { this._parNumerator = value; }
         }
 
@@ -308,9 +308,9 @@ namespace Amazon.MediaLive.Model
         /// to 1,500,000
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
-        public int QvbrQualityLevel
+        public int? QvbrQualityLevel
         {
-            get { return this._qvbrQualityLevel.GetValueOrDefault(); }
+            get { return this._qvbrQualityLevel; }
             set { this._qvbrQualityLevel = value; }
         }
 

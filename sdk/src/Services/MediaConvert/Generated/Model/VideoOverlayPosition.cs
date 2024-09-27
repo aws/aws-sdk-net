@@ -51,9 +51,9 @@ namespace Amazon.MediaConvert.Model
         /// maintaining its original aspect ratio, enter a value for Height and leave Width blank.
         /// </summary>
         [AWSProperty(Min=-1, Max=2147483647)]
-        public int Height
+        public int? Height
         {
-            get { return this._height.GetValueOrDefault(); }
+            get { return this._height; }
             set { this._height = value; }
         }
 
@@ -91,9 +91,9 @@ namespace Amazon.MediaConvert.Model
         /// original aspect ratio, enter a value for Width and leave Height blank.
         /// </summary>
         [AWSProperty(Min=-1, Max=2147483647)]
-        public int Width
+        public int? Width
         {
-            get { return this._width.GetValueOrDefault(); }
+            get { return this._width; }
             set { this._width = value; }
         }
 
@@ -115,9 +115,9 @@ namespace Amazon.MediaConvert.Model
         /// video's frame.
         /// </summary>
         [AWSProperty(Min=-2147483648, Max=2147483647)]
-        public int XPosition
+        public int? XPosition
         {
-            get { return this._xPosition.GetValueOrDefault(); }
+            get { return this._xPosition; }
             set { this._xPosition = value; }
         }
 
@@ -139,9 +139,9 @@ namespace Amazon.MediaConvert.Model
         /// frame.
         /// </summary>
         [AWSProperty(Min=-2147483648, Max=2147483647)]
-        public int YPosition
+        public int? YPosition
         {
-            get { return this._yPosition.GetValueOrDefault(); }
+            get { return this._yPosition; }
             set { this._yPosition = value; }
         }
 

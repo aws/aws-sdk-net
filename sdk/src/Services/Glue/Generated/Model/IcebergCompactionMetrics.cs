@@ -45,9 +45,9 @@ namespace Amazon.Glue.Model
         /// The duration of the job in hours.
         /// </para>
         /// </summary>
-        public double JobDurationInHour
+        public double? JobDurationInHour
         {
-            get { return this._jobDurationInHour.GetValueOrDefault(); }
+            get { return this._jobDurationInHour; }
             set { this._jobDurationInHour = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.Glue.Model
         /// The number of bytes removed by the compaction job run.
         /// </para>
         /// </summary>
-        public long NumberOfBytesCompacted
+        public long? NumberOfBytesCompacted
         {
-            get { return this._numberOfBytesCompacted.GetValueOrDefault(); }
+            get { return this._numberOfBytesCompacted; }
             set { this._numberOfBytesCompacted = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.Glue.Model
         /// The number of DPU hours consumed by the job.
         /// </para>
         /// </summary>
-        public int NumberOfDpus
+        public int? NumberOfDpus
         {
-            get { return this._numberOfDpus.GetValueOrDefault(); }
+            get { return this._numberOfDpus; }
             set { this._numberOfDpus = value; }
         }
 
@@ -99,9 +99,9 @@ namespace Amazon.Glue.Model
         /// The number of files removed by the compaction job run.
         /// </para>
         /// </summary>
-        public long NumberOfFilesCompacted
+        public long? NumberOfFilesCompacted
         {
-            get { return this._numberOfFilesCompacted.GetValueOrDefault(); }
+            get { return this._numberOfFilesCompacted; }
             set { this._numberOfFilesCompacted = value; }
         }
 

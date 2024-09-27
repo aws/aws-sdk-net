@@ -61,11 +61,16 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetDomainNames())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.DomainNames)
+                    if (publicRequest.DomainNames.Count == 0)
+                        request.Parameters.Add("DomainNames", "");
+                    else
                     {
-                        request.Parameters.Add("DomainNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.DomainNames)
+                         {
+                             request.Parameters.Add("DomainNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

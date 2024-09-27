@@ -57,7 +57,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBufSize())
             {
                 context.Writer.WritePropertyName("bufSize");
-                context.Writer.Write(requestObject.BufSize);
+                context.Writer.Write(requestObject.BufSize.Value);
             }
 
             if(requestObject.IsSetColorSpaceSettings())
@@ -80,25 +80,25 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFramerateDenominator())
             {
                 context.Writer.WritePropertyName("framerateDenominator");
-                context.Writer.Write(requestObject.FramerateDenominator);
+                context.Writer.Write(requestObject.FramerateDenominator.Value);
             }
 
             if(requestObject.IsSetFramerateNumerator())
             {
                 context.Writer.WritePropertyName("framerateNumerator");
-                context.Writer.Write(requestObject.FramerateNumerator);
+                context.Writer.Write(requestObject.FramerateNumerator.Value);
             }
 
             if(requestObject.IsSetGopSize())
             {
                 context.Writer.WritePropertyName("gopSize");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.GopSize))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.GopSize.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.GopSize));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.GopSize.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.GopSize);
+                    context.Writer.Write(requestObject.GopSize.Value);
                 }
             }
 
@@ -123,31 +123,31 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxBitrate())
             {
                 context.Writer.WritePropertyName("maxBitrate");
-                context.Writer.Write(requestObject.MaxBitrate);
+                context.Writer.Write(requestObject.MaxBitrate.Value);
             }
 
             if(requestObject.IsSetMinIInterval())
             {
                 context.Writer.WritePropertyName("minIInterval");
-                context.Writer.Write(requestObject.MinIInterval);
+                context.Writer.Write(requestObject.MinIInterval.Value);
             }
 
             if(requestObject.IsSetParDenominator())
             {
                 context.Writer.WritePropertyName("parDenominator");
-                context.Writer.Write(requestObject.ParDenominator);
+                context.Writer.Write(requestObject.ParDenominator.Value);
             }
 
             if(requestObject.IsSetParNumerator())
             {
                 context.Writer.WritePropertyName("parNumerator");
-                context.Writer.Write(requestObject.ParNumerator);
+                context.Writer.Write(requestObject.ParNumerator.Value);
             }
 
             if(requestObject.IsSetQvbrQualityLevel())
             {
                 context.Writer.WritePropertyName("qvbrQualityLevel");
-                context.Writer.Write(requestObject.QvbrQualityLevel);
+                context.Writer.Write(requestObject.QvbrQualityLevel.Value);
             }
 
             if(requestObject.IsSetSceneChangeDetect())

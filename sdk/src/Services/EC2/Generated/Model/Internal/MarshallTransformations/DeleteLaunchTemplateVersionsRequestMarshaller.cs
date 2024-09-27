@@ -69,11 +69,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetVersions())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Versions)
+                    if (publicRequest.Versions.Count == 0)
+                        request.Parameters.Add("LaunchTemplateVersion", "");
+                    else
                     {
-                        request.Parameters.Add("LaunchTemplateVersion" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Versions)
+                         {
+                             request.Parameters.Add("LaunchTemplateVersion" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

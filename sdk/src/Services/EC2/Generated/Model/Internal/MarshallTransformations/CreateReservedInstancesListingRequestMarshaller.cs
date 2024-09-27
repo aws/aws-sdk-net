@@ -69,22 +69,27 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetPriceSchedules())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.PriceSchedules)
+                    if (publicRequest.PriceSchedules.Count == 0)
+                        request.Parameters.Add("PriceSchedules", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetCurrencyCode())
-                        {
-                            request.Parameters.Add("PriceSchedules" + "." + publicRequestlistValueIndex + "." + "CurrencyCode", StringUtils.FromString(publicRequestlistValue.CurrencyCode));
-                        }
-                        if(publicRequestlistValue.IsSetPrice())
-                        {
-                            request.Parameters.Add("PriceSchedules" + "." + publicRequestlistValueIndex + "." + "Price", StringUtils.FromDouble(publicRequestlistValue.Price));
-                        }
-                        if(publicRequestlistValue.IsSetTerm())
-                        {
-                            request.Parameters.Add("PriceSchedules" + "." + publicRequestlistValueIndex + "." + "Term", StringUtils.FromLong(publicRequestlistValue.Term));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.PriceSchedules)
+                         {
+                            if(publicRequestlistValue.IsSetCurrencyCode())
+                            {
+                                request.Parameters.Add("PriceSchedules" + "." + publicRequestlistValueIndex + "." + "CurrencyCode", StringUtils.FromString(publicRequestlistValue.CurrencyCode));
+                            }
+                            if(publicRequestlistValue.IsSetPrice())
+                            {
+                                request.Parameters.Add("PriceSchedules" + "." + publicRequestlistValueIndex + "." + "Price", StringUtils.FromDouble(publicRequestlistValue.Price));
+                            }
+                            if(publicRequestlistValue.IsSetTerm())
+                            {
+                                request.Parameters.Add("PriceSchedules" + "." + publicRequestlistValueIndex + "." + "Term", StringUtils.FromLong(publicRequestlistValue.Term));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetReservedInstancesId())

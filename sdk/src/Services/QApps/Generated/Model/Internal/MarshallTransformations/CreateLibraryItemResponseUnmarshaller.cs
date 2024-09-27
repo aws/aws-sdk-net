@@ -66,7 +66,7 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("isVerified", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.IsVerified = unmarshaller.Unmarshall(context);
                     continue;
                 }

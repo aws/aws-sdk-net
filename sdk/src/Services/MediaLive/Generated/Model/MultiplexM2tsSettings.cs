@@ -105,9 +105,9 @@ namespace Amazon.MediaLive.Model
         /// for each PES packet.
         /// </summary>
         [AWSProperty(Min=0)]
-        public int AudioFramesPerPes
+        public int? AudioFramesPerPes
         {
-            get { return this._audioFramesPerPes.GetValueOrDefault(); }
+            get { return this._audioFramesPerPes; }
             set { this._audioFramesPerPes = value; }
         }
 
@@ -237,9 +237,9 @@ namespace Amazon.MediaLive.Model
         /// Clock Reference (PCRs) inserted into the transport stream.
         /// </summary>
         [AWSProperty(Min=0, Max=500)]
-        public int PcrPeriod
+        public int? PcrPeriod
         {
-            get { return this._pcrPeriod.GetValueOrDefault(); }
+            get { return this._pcrPeriod; }
             set { this._pcrPeriod = value; }
         }
 
@@ -274,9 +274,9 @@ namespace Amazon.MediaLive.Model
         /// make the preroll shorter. Be aware that latency in the output will increase by the
         /// pullup amount.
         /// </summary>
-        public double Scte35PrerollPullupMilliseconds
+        public double? Scte35PrerollPullupMilliseconds
         {
-            get { return this._scte35PrerollPullupMilliseconds.GetValueOrDefault(); }
+            get { return this._scte35PrerollPullupMilliseconds; }
             set { this._scte35PrerollPullupMilliseconds = value; }
         }
 

@@ -77,6 +77,17 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.AccessToken);
                     }
 
+                    if(publicRequest.IsSetEmailMfaSettings())
+                    {
+                        context.Writer.WritePropertyName("EmailMfaSettings");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EmailMfaSettingsTypeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EmailMfaSettings, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetSMSMfaSettings())
                     {
                         context.Writer.WritePropertyName("SMSMfaSettings");
@@ -102,72 +113,7 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     writer.WriteObjectEnd();
                 }
 
-<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
-||||||| Commit version number update changes
-                if(publicRequest.IsSetSMSMfaSettings())
-                {
-                    context.Writer.WritePropertyName("SMSMfaSettings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SMSMfaSettingsTypeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SMSMfaSettings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSoftwareTokenMfaSettings())
-                {
-                    context.Writer.WritePropertyName("SoftwareTokenMfaSettings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SoftwareTokenMfaSettingsTypeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SoftwareTokenMfaSettings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-=======
-                if(publicRequest.IsSetEmailMfaSettings())
-                {
-                    context.Writer.WritePropertyName("EmailMfaSettings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EmailMfaSettingsTypeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EmailMfaSettings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSMSMfaSettings())
-                {
-                    context.Writer.WritePropertyName("SMSMfaSettings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SMSMfaSettingsTypeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SMSMfaSettings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSoftwareTokenMfaSettings())
-                {
-                    context.Writer.WritePropertyName("SoftwareTokenMfaSettings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SoftwareTokenMfaSettingsTypeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SoftwareTokenMfaSettings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
->>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
             }
 
 

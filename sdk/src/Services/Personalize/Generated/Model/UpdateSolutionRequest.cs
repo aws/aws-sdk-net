@@ -80,9 +80,9 @@ namespace Amazon.Personalize.Model
         /// 
         /// </para>
         /// </summary>
-        public bool PerformAutoTraining
+        public bool? PerformAutoTraining
         {
-            get { return this._performAutoTraining.GetValueOrDefault(); }
+            get { return this._performAutoTraining; }
             set { this._performAutoTraining = value; }
         }
 

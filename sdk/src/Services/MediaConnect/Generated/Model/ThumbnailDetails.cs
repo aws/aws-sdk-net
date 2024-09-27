@@ -108,9 +108,9 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property Timestamp. The timestamp of when thumbnail was generated.
         /// </summary>
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

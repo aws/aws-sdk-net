@@ -69,11 +69,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetRemoveFields())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.RemoveFields)
+                    if (publicRequest.RemoveFields.Count == 0)
+                        request.Parameters.Add("RemoveField", "");
+                    else
                     {
-                        request.Parameters.Add("RemoveField" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.RemoveFields)
+                         {
+                             request.Parameters.Add("RemoveField" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetSessionNumber())

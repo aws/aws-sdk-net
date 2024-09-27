@@ -46,9 +46,9 @@ namespace Amazon.Glue.Model
         /// The duration of the job in hours.
         /// </para>
         /// </summary>
-        public double JobDurationInHour
+        public double? JobDurationInHour
         {
-            get { return this._jobDurationInHour.GetValueOrDefault(); }
+            get { return this._jobDurationInHour; }
             set { this._jobDurationInHour = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.Glue.Model
         /// The number of data files deleted by the retention job run.
         /// </para>
         /// </summary>
-        public long NumberOfDataFilesDeleted
+        public long? NumberOfDataFilesDeleted
         {
-            get { return this._numberOfDataFilesDeleted.GetValueOrDefault(); }
+            get { return this._numberOfDataFilesDeleted; }
             set { this._numberOfDataFilesDeleted = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.Glue.Model
         /// The number of DPU hours consumed by the job.
         /// </para>
         /// </summary>
-        public int NumberOfDpus
+        public int? NumberOfDpus
         {
-            get { return this._numberOfDpus.GetValueOrDefault(); }
+            get { return this._numberOfDpus; }
             set { this._numberOfDpus = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.Glue.Model
         /// The number of manifest files deleted by the retention job run.
         /// </para>
         /// </summary>
-        public long NumberOfManifestFilesDeleted
+        public long? NumberOfManifestFilesDeleted
         {
-            get { return this._numberOfManifestFilesDeleted.GetValueOrDefault(); }
+            get { return this._numberOfManifestFilesDeleted; }
             set { this._numberOfManifestFilesDeleted = value; }
         }
 
@@ -118,9 +118,9 @@ namespace Amazon.Glue.Model
         /// The number of manifest lists deleted by the retention job run.
         /// </para>
         /// </summary>
-        public long NumberOfManifestListsDeleted
+        public long? NumberOfManifestListsDeleted
         {
-            get { return this._numberOfManifestListsDeleted.GetValueOrDefault(); }
+            get { return this._numberOfManifestListsDeleted; }
             set { this._numberOfManifestListsDeleted = value; }
         }
 

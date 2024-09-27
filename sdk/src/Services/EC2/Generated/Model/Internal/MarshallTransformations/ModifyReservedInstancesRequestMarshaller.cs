@@ -65,39 +65,49 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetReservedInstancesIds())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ReservedInstancesIds)
+                    if (publicRequest.ReservedInstancesIds.Count == 0)
+                        request.Parameters.Add("ReservedInstancesId", "");
+                    else
                     {
-                        request.Parameters.Add("ReservedInstancesId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ReservedInstancesIds)
+                         {
+                             request.Parameters.Add("ReservedInstancesId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetTargetConfigurations())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.TargetConfigurations)
+                    if (publicRequest.TargetConfigurations.Count == 0)
+                        request.Parameters.Add("ReservedInstancesConfigurationSetItemType", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetAvailabilityZone())
-                        {
-                            request.Parameters.Add("ReservedInstancesConfigurationSetItemType" + "." + publicRequestlistValueIndex + "." + "AvailabilityZone", StringUtils.FromString(publicRequestlistValue.AvailabilityZone));
-                        }
-                        if(publicRequestlistValue.IsSetInstanceCount())
-                        {
-                            request.Parameters.Add("ReservedInstancesConfigurationSetItemType" + "." + publicRequestlistValueIndex + "." + "InstanceCount", StringUtils.FromInt(publicRequestlistValue.InstanceCount));
-                        }
-                        if(publicRequestlistValue.IsSetInstanceType())
-                        {
-                            request.Parameters.Add("ReservedInstancesConfigurationSetItemType" + "." + publicRequestlistValueIndex + "." + "InstanceType", StringUtils.FromString(publicRequestlistValue.InstanceType));
-                        }
-                        if(publicRequestlistValue.IsSetPlatform())
-                        {
-                            request.Parameters.Add("ReservedInstancesConfigurationSetItemType" + "." + publicRequestlistValueIndex + "." + "Platform", StringUtils.FromString(publicRequestlistValue.Platform));
-                        }
-                        if(publicRequestlistValue.IsSetScope())
-                        {
-                            request.Parameters.Add("ReservedInstancesConfigurationSetItemType" + "." + publicRequestlistValueIndex + "." + "Scope", StringUtils.FromString(publicRequestlistValue.Scope));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.TargetConfigurations)
+                         {
+                            if(publicRequestlistValue.IsSetAvailabilityZone())
+                            {
+                                request.Parameters.Add("ReservedInstancesConfigurationSetItemType" + "." + publicRequestlistValueIndex + "." + "AvailabilityZone", StringUtils.FromString(publicRequestlistValue.AvailabilityZone));
+                            }
+                            if(publicRequestlistValue.IsSetInstanceCount())
+                            {
+                                request.Parameters.Add("ReservedInstancesConfigurationSetItemType" + "." + publicRequestlistValueIndex + "." + "InstanceCount", StringUtils.FromInt(publicRequestlistValue.InstanceCount));
+                            }
+                            if(publicRequestlistValue.IsSetInstanceType())
+                            {
+                                request.Parameters.Add("ReservedInstancesConfigurationSetItemType" + "." + publicRequestlistValueIndex + "." + "InstanceType", StringUtils.FromString(publicRequestlistValue.InstanceType));
+                            }
+                            if(publicRequestlistValue.IsSetPlatform())
+                            {
+                                request.Parameters.Add("ReservedInstancesConfigurationSetItemType" + "." + publicRequestlistValueIndex + "." + "Platform", StringUtils.FromString(publicRequestlistValue.Platform));
+                            }
+                            if(publicRequestlistValue.IsSetScope())
+                            {
+                                request.Parameters.Add("ReservedInstancesConfigurationSetItemType" + "." + publicRequestlistValueIndex + "." + "Scope", StringUtils.FromString(publicRequestlistValue.Scope));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

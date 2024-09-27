@@ -61,11 +61,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetVpcEndpointIds())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.VpcEndpointIds)
+                    if (publicRequest.VpcEndpointIds.Count == 0)
+                        request.Parameters.Add("VpcEndpointId", "");
+                    else
                     {
-                        request.Parameters.Add("VpcEndpointId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.VpcEndpointIds)
+                         {
+                             request.Parameters.Add("VpcEndpointId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

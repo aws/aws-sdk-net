@@ -68,7 +68,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("enableHiveCompatiblePath", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.EnableHiveCompatiblePath = unmarshaller.Unmarshall(context);
                     continue;
                 }

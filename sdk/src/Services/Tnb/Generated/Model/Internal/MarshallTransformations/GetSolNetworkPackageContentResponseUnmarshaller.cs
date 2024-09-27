@@ -51,7 +51,8 @@ namespace Amazon.Tnb.Model.Internal.MarshallTransformations
             var ms = new MemoryStream();
             Amazon.Util.AWSSDKUtils.CopyStream(context.Stream, ms);
             ms.Seek(0, SeekOrigin.Begin);
-            response.NsdContent = ms;
+            if (ms.Length > 0)
+                response.NsdContent = ms;
             if (context.ResponseData.IsHeaderPresent("Content-Type"))
                 response.ContentType = context.ResponseData.GetHeaderValue("Content-Type");
 

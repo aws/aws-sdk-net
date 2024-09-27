@@ -68,7 +68,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("IdleTimeoutInMinutes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.IdleTimeoutInMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -80,13 +80,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MaxIdleTimeoutInMinutes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxIdleTimeoutInMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MinIdleTimeoutInMinutes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MinIdleTimeoutInMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }

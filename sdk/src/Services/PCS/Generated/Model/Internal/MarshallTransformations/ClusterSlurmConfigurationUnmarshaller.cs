@@ -74,7 +74,7 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("scaleDownIdleTimeInSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ScaleDownIdleTimeInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

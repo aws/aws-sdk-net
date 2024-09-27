@@ -63,9 +63,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public int ComputeRedundancy
+        public int? ComputeRedundancy
         {
-            get { return this._computeRedundancy.GetValueOrDefault(); }
+            get { return this._computeRedundancy; }
             set { this._computeRedundancy = value; }
         }
 

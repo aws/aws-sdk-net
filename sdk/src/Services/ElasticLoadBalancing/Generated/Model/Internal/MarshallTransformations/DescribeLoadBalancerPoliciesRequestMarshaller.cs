@@ -65,11 +65,16 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetPolicyNames())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.PolicyNames)
+                    if (publicRequest.PolicyNames.Count == 0)
+                        request.Parameters.Add("PolicyNames", "");
+                    else
                     {
-                        request.Parameters.Add("PolicyNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.PolicyNames)
+                         {
+                             request.Parameters.Add("PolicyNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

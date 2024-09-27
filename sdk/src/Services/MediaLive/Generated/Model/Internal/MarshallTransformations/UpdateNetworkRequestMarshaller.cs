@@ -64,53 +64,56 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 throw new AmazonMediaLiveException("Request object does not have required field NetworkId set");
             request.AddPathResource("{networkId}", StringUtils.FromString(publicRequest.NetworkId));
             request.ResourcePath = "/prod/networks/{networkId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetIpPools())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("ipPools");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestIpPoolsListValue in publicRequest.IpPools)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetIpPools())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("ipPools");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestIpPoolsListValue in publicRequest.IpPools)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = IpPoolUpdateRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequestIpPoolsListValue, context);
+                            var marshaller = IpPoolUpdateRequestMarshaller.Instance;
+                            marshaller.Marshall(publicRequestIpPoolsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetRoutes())
-                {
-                    context.Writer.WritePropertyName("routes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRoutesListValue in publicRequest.Routes)
+                    if(publicRequest.IsSetName())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RouteUpdateRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequestRoutesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetRoutes())
+                    {
+                        context.Writer.WritePropertyName("routes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRoutesListValue in publicRequest.Routes)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = RouteUpdateRequestMarshaller.Instance;
+                            marshaller.Marshall(publicRequestRoutesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

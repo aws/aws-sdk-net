@@ -45,9 +45,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// that allows for integration with Apache Hive.
         /// </para>
         /// </summary>
-        public bool EnableHiveCompatiblePath
+        public bool? EnableHiveCompatiblePath
         {
-            get { return this._enableHiveCompatiblePath.GetValueOrDefault(); }
+            get { return this._enableHiveCompatiblePath; }
             set { this._enableHiveCompatiblePath = value; }
         }
 

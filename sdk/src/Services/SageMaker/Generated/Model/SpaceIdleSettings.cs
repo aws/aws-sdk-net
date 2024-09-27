@@ -44,9 +44,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=60, Max=525600)]
-        public int IdleTimeoutInMinutes
+        public int? IdleTimeoutInMinutes
         {
-            get { return this._idleTimeoutInMinutes.GetValueOrDefault(); }
+            get { return this._idleTimeoutInMinutes; }
             set { this._idleTimeoutInMinutes = value; }
         }
 

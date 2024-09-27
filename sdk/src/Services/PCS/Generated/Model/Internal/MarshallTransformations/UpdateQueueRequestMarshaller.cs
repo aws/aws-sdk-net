@@ -63,54 +63,57 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientToken())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetClusterIdentifier())
-                {
-                    context.Writer.WritePropertyName("clusterIdentifier");
-                    context.Writer.Write(publicRequest.ClusterIdentifier);
-                }
-
-                if(publicRequest.IsSetComputeNodeGroupConfigurations())
-                {
-                    context.Writer.WritePropertyName("computeNodeGroupConfigurations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestComputeNodeGroupConfigurationsListValue in publicRequest.ComputeNodeGroupConfigurations)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetClientToken())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ComputeNodeGroupConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestComputeNodeGroupConfigurationsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetClusterIdentifier())
+                    {
+                        context.Writer.WritePropertyName("clusterIdentifier");
+                        context.Writer.Write(publicRequest.ClusterIdentifier);
+                    }
+
+                    if(publicRequest.IsSetComputeNodeGroupConfigurations())
+                    {
+                        context.Writer.WritePropertyName("computeNodeGroupConfigurations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestComputeNodeGroupConfigurationsListValue in publicRequest.ComputeNodeGroupConfigurations)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ComputeNodeGroupConfigurationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestComputeNodeGroupConfigurationsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetQueueIdentifier())
+                    {
+                        context.Writer.WritePropertyName("queueIdentifier");
+                        context.Writer.Write(publicRequest.QueueIdentifier);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetQueueIdentifier())
-                {
-                    context.Writer.WritePropertyName("queueIdentifier");
-                    context.Writer.Write(publicRequest.QueueIdentifier);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

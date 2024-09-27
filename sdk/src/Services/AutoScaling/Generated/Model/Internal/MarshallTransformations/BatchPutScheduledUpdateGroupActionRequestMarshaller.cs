@@ -65,42 +65,47 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetScheduledUpdateGroupActions())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ScheduledUpdateGroupActions)
+                    if (publicRequest.ScheduledUpdateGroupActions.Count == 0)
+                        request.Parameters.Add("ScheduledUpdateGroupActions", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetDesiredCapacity())
-                        {
-                            request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "DesiredCapacity", StringUtils.FromInt(publicRequestlistValue.DesiredCapacity));
-                        }
-                        if(publicRequestlistValue.IsSetEndTimeUtc())
-                        {
-                            request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "EndTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestlistValue.EndTimeUtc));
-                        }
-                        if(publicRequestlistValue.IsSetMaxSize())
-                        {
-                            request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MaxSize", StringUtils.FromInt(publicRequestlistValue.MaxSize));
-                        }
-                        if(publicRequestlistValue.IsSetMinSize())
-                        {
-                            request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MinSize", StringUtils.FromInt(publicRequestlistValue.MinSize));
-                        }
-                        if(publicRequestlistValue.IsSetRecurrence())
-                        {
-                            request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Recurrence", StringUtils.FromString(publicRequestlistValue.Recurrence));
-                        }
-                        if(publicRequestlistValue.IsSetScheduledActionName())
-                        {
-                            request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ScheduledActionName", StringUtils.FromString(publicRequestlistValue.ScheduledActionName));
-                        }
-                        if(publicRequestlistValue.IsSetStartTimeUtc())
-                        {
-                            request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "StartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestlistValue.StartTimeUtc));
-                        }
-                        if(publicRequestlistValue.IsSetTimeZone())
-                        {
-                            request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "TimeZone", StringUtils.FromString(publicRequestlistValue.TimeZone));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ScheduledUpdateGroupActions)
+                         {
+                            if(publicRequestlistValue.IsSetDesiredCapacity())
+                            {
+                                request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "DesiredCapacity", StringUtils.FromInt(publicRequestlistValue.DesiredCapacity));
+                            }
+                            if(publicRequestlistValue.IsSetEndTimeUtc())
+                            {
+                                request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "EndTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestlistValue.EndTimeUtc));
+                            }
+                            if(publicRequestlistValue.IsSetMaxSize())
+                            {
+                                request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MaxSize", StringUtils.FromInt(publicRequestlistValue.MaxSize));
+                            }
+                            if(publicRequestlistValue.IsSetMinSize())
+                            {
+                                request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MinSize", StringUtils.FromInt(publicRequestlistValue.MinSize));
+                            }
+                            if(publicRequestlistValue.IsSetRecurrence())
+                            {
+                                request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Recurrence", StringUtils.FromString(publicRequestlistValue.Recurrence));
+                            }
+                            if(publicRequestlistValue.IsSetScheduledActionName())
+                            {
+                                request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ScheduledActionName", StringUtils.FromString(publicRequestlistValue.ScheduledActionName));
+                            }
+                            if(publicRequestlistValue.IsSetStartTimeUtc())
+                            {
+                                request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "StartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestlistValue.StartTimeUtc));
+                            }
+                            if(publicRequestlistValue.IsSetTimeZone())
+                            {
+                                request.Parameters.Add("ScheduledUpdateGroupActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "TimeZone", StringUtils.FromString(publicRequestlistValue.TimeZone));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

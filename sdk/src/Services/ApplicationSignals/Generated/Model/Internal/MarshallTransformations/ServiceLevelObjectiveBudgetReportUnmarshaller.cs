@@ -80,7 +80,7 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("BudgetRequestsRemaining", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BudgetRequestsRemaining = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -128,7 +128,7 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TotalBudgetRequests", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalBudgetRequests = unmarshaller.Unmarshall(context);
                     continue;
                 }

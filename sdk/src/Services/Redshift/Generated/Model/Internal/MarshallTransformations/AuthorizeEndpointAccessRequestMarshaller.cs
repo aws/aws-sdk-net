@@ -69,11 +69,16 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetVpcIds())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.VpcIds)
+                    if (publicRequest.VpcIds.Count == 0)
+                        request.Parameters.Add("VpcIds", "");
+                    else
                     {
-                        request.Parameters.Add("VpcIds" + "." + "VpcIdentifier" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.VpcIds)
+                         {
+                             request.Parameters.Add("VpcIds" + "." + "VpcIdentifier" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

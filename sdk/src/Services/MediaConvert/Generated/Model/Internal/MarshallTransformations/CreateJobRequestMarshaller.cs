@@ -113,31 +113,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                         context.Writer.WriteArrayEnd();
                     }
 
-<<<<<<< HEAD
+                    if(publicRequest.IsSetJobEngineVersion())
+                    {
+                        context.Writer.WritePropertyName("jobEngineVersion");
+                        context.Writer.Write(publicRequest.JobEngineVersion);
+                    }
+
                     if(publicRequest.IsSetJobTemplate())
                     {
                         context.Writer.WritePropertyName("jobTemplate");
                         context.Writer.Write(publicRequest.JobTemplate);
                     }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetJobTemplate())
-                {
-                    context.Writer.WritePropertyName("jobTemplate");
-                    context.Writer.Write(publicRequest.JobTemplate);
-                }
-=======
-                if(publicRequest.IsSetJobEngineVersion())
-                {
-                    context.Writer.WritePropertyName("jobEngineVersion");
-                    context.Writer.Write(publicRequest.JobEngineVersion);
-                }
-
-                if(publicRequest.IsSetJobTemplate())
-                {
-                    context.Writer.WritePropertyName("jobTemplate");
-                    context.Writer.Write(publicRequest.JobTemplate);
-                }
->>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
 
                     if(publicRequest.IsSetPriority())
                     {

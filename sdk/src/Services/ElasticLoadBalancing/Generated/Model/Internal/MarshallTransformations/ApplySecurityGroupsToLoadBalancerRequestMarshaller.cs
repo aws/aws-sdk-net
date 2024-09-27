@@ -65,11 +65,16 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetSecurityGroups())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.SecurityGroups)
+                    if (publicRequest.SecurityGroups.Count == 0)
+                        request.Parameters.Add("SecurityGroups", "");
+                    else
                     {
-                        request.Parameters.Add("SecurityGroups" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.SecurityGroups)
+                         {
+                             request.Parameters.Add("SecurityGroups" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

@@ -358,16 +358,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Required=true, Min=100, Max=2000000000)]
-        public long? Limit
-||||||| Commit version number update changes
-        [AWSProperty(Required=true, Min=100, Max=2000000000)]
-        public long Limit
-=======
         [AWSProperty(Required=true, Min=10, Max=2000000000)]
-        public long Limit
->>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
+        public long? Limit
         {
             get { return this._limit; }
             set { this._limit = value; }

@@ -69,46 +69,56 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetOptionSettings())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.OptionSettings)
+                    if (publicRequest.OptionSettings.Count == 0)
+                        request.Parameters.Add("OptionSettings", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetNamespace())
-                        {
-                            request.Parameters.Add("OptionSettings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Namespace", StringUtils.FromString(publicRequestlistValue.Namespace));
-                        }
-                        if(publicRequestlistValue.IsSetOptionName())
-                        {
-                            request.Parameters.Add("OptionSettings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionName", StringUtils.FromString(publicRequestlistValue.OptionName));
-                        }
-                        if(publicRequestlistValue.IsSetResourceName())
-                        {
-                            request.Parameters.Add("OptionSettings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceName", StringUtils.FromString(publicRequestlistValue.ResourceName));
-                        }
-                        if(publicRequestlistValue.IsSetValue())
-                        {
-                            request.Parameters.Add("OptionSettings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.OptionSettings)
+                         {
+                            if(publicRequestlistValue.IsSetNamespace())
+                            {
+                                request.Parameters.Add("OptionSettings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Namespace", StringUtils.FromString(publicRequestlistValue.Namespace));
+                            }
+                            if(publicRequestlistValue.IsSetOptionName())
+                            {
+                                request.Parameters.Add("OptionSettings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionName", StringUtils.FromString(publicRequestlistValue.OptionName));
+                            }
+                            if(publicRequestlistValue.IsSetResourceName())
+                            {
+                                request.Parameters.Add("OptionSettings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceName", StringUtils.FromString(publicRequestlistValue.ResourceName));
+                            }
+                            if(publicRequestlistValue.IsSetValue())
+                            {
+                                request.Parameters.Add("OptionSettings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetOptionsToRemove())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.OptionsToRemove)
+                    if (publicRequest.OptionsToRemove.Count == 0)
+                        request.Parameters.Add("OptionsToRemove", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetNamespace())
-                        {
-                            request.Parameters.Add("OptionsToRemove" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Namespace", StringUtils.FromString(publicRequestlistValue.Namespace));
-                        }
-                        if(publicRequestlistValue.IsSetOptionName())
-                        {
-                            request.Parameters.Add("OptionsToRemove" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionName", StringUtils.FromString(publicRequestlistValue.OptionName));
-                        }
-                        if(publicRequestlistValue.IsSetResourceName())
-                        {
-                            request.Parameters.Add("OptionsToRemove" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceName", StringUtils.FromString(publicRequestlistValue.ResourceName));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.OptionsToRemove)
+                         {
+                            if(publicRequestlistValue.IsSetNamespace())
+                            {
+                                request.Parameters.Add("OptionsToRemove" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Namespace", StringUtils.FromString(publicRequestlistValue.Namespace));
+                            }
+                            if(publicRequestlistValue.IsSetOptionName())
+                            {
+                                request.Parameters.Add("OptionsToRemove" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionName", StringUtils.FromString(publicRequestlistValue.OptionName));
+                            }
+                            if(publicRequestlistValue.IsSetResourceName())
+                            {
+                                request.Parameters.Add("OptionsToRemove" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceName", StringUtils.FromString(publicRequestlistValue.ResourceName));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetTemplateName())

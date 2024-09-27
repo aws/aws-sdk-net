@@ -51,7 +51,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIdleTimeoutInMinutes())
             {
                 context.Writer.WritePropertyName("IdleTimeoutInMinutes");
-                context.Writer.Write(requestObject.IdleTimeoutInMinutes);
+                context.Writer.Write(requestObject.IdleTimeoutInMinutes.Value);
             }
 
             if(requestObject.IsSetLifecycleManagement())
@@ -63,13 +63,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxIdleTimeoutInMinutes())
             {
                 context.Writer.WritePropertyName("MaxIdleTimeoutInMinutes");
-                context.Writer.Write(requestObject.MaxIdleTimeoutInMinutes);
+                context.Writer.Write(requestObject.MaxIdleTimeoutInMinutes.Value);
             }
 
             if(requestObject.IsSetMinIdleTimeoutInMinutes())
             {
                 context.Writer.WritePropertyName("MinIdleTimeoutInMinutes");
-                context.Writer.Write(requestObject.MinIdleTimeoutInMinutes);
+                context.Writer.Write(requestObject.MinIdleTimeoutInMinutes.Value);
             }
 
         }

@@ -61,20 +61,30 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetAddNetworkServices())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.AddNetworkServices)
+                    if (publicRequest.AddNetworkServices.Count == 0)
+                        request.Parameters.Add("AddNetworkService", "");
+                    else
                     {
-                        request.Parameters.Add("AddNetworkService" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.AddNetworkServices)
+                         {
+                             request.Parameters.Add("AddNetworkService" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetRemoveNetworkServices())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.RemoveNetworkServices)
+                    if (publicRequest.RemoveNetworkServices.Count == 0)
+                        request.Parameters.Add("RemoveNetworkService", "");
+                    else
                     {
-                        request.Parameters.Add("RemoveNetworkService" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.RemoveNetworkServices)
+                         {
+                             request.Parameters.Add("RemoveNetworkService" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetTrafficMirrorFilterId())

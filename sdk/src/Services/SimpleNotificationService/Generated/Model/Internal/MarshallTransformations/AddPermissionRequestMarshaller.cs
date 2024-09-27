@@ -61,20 +61,30 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
             {
                 if(publicRequest.IsSetActionName())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ActionName)
+                    if (publicRequest.ActionName.Count == 0)
+                        request.Parameters.Add("ActionName", "");
+                    else
                     {
-                        request.Parameters.Add("ActionName" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ActionName)
+                         {
+                             request.Parameters.Add("ActionName" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetAWSAccountId())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.AWSAccountId)
+                    if (publicRequest.AWSAccountId.Count == 0)
+                        request.Parameters.Add("AWSAccountId", "");
+                    else
                     {
-                        request.Parameters.Add("AWSAccountId" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.AWSAccountId)
+                         {
+                             request.Parameters.Add("AWSAccountId" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetLabel())

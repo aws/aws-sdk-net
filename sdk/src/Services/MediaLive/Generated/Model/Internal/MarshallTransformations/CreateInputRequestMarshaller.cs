@@ -101,6 +101,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                         context.Writer.WriteArrayEnd();
                     }
 
+                    if(publicRequest.IsSetInputNetworkLocation())
+                    {
+                        context.Writer.WritePropertyName("inputNetworkLocation");
+                        context.Writer.Write(publicRequest.InputNetworkLocation);
+                    }
+
                     if(publicRequest.IsSetInputSecurityGroups())
                     {
                         context.Writer.WritePropertyName("inputSecurityGroups");
@@ -128,6 +134,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                         context.Writer.WriteArrayEnd();
                     }
 
+                    if(publicRequest.IsSetMulticastSettings())
+                    {
+                        context.Writer.WritePropertyName("multicastSettings");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MulticastSettingsCreateRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.MulticastSettings, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetName())
                     {
                         context.Writer.WritePropertyName("name");
@@ -140,27 +157,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.RequestId);
                     }
 
-<<<<<<< HEAD
                     else if(!(publicRequest.IsSetRequestId()))
-||||||| Commit version number update changes
-                if(publicRequest.IsSetInputSecurityGroups())
-                {
-                    context.Writer.WritePropertyName("inputSecurityGroups");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestInputSecurityGroupsListValue in publicRequest.InputSecurityGroups)
-=======
-                if(publicRequest.IsSetInputNetworkLocation())
-                {
-                    context.Writer.WritePropertyName("inputNetworkLocation");
-                    context.Writer.Write(publicRequest.InputNetworkLocation);
-                }
-
-                if(publicRequest.IsSetInputSecurityGroups())
-                {
-                    context.Writer.WritePropertyName("inputSecurityGroups");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestInputSecurityGroupsListValue in publicRequest.InputSecurityGroups)
->>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
                     {
                         context.Writer.WritePropertyName("requestId");
                         context.Writer.Write(Guid.NewGuid().ToString());
@@ -197,37 +194,6 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
                         context.Writer.WriteObjectEnd();
                     }
-<<<<<<< HEAD
-||||||| Commit version number update changes
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-=======
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetMulticastSettings())
-                {
-                    context.Writer.WritePropertyName("multicastSettings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MulticastSettingsCreateRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.MulticastSettings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
->>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
 
                     if(publicRequest.IsSetTags())
                     {

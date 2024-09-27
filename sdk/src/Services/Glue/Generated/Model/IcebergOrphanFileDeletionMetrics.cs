@@ -44,9 +44,9 @@ namespace Amazon.Glue.Model
         /// The duration of the job in hours.
         /// </para>
         /// </summary>
-        public double JobDurationInHour
+        public double? JobDurationInHour
         {
-            get { return this._jobDurationInHour.GetValueOrDefault(); }
+            get { return this._jobDurationInHour; }
             set { this._jobDurationInHour = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.Glue.Model
         /// The number of DPU hours consumed by the job.
         /// </para>
         /// </summary>
-        public int NumberOfDpus
+        public int? NumberOfDpus
         {
-            get { return this._numberOfDpus.GetValueOrDefault(); }
+            get { return this._numberOfDpus; }
             set { this._numberOfDpus = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.Glue.Model
         /// The number of orphan files deleted by the orphan file deletion job run.
         /// </para>
         /// </summary>
-        public long NumberOfOrphanFilesDeleted
+        public long? NumberOfOrphanFilesDeleted
         {
-            get { return this._numberOfOrphanFilesDeleted.GetValueOrDefault(); }
+            get { return this._numberOfOrphanFilesDeleted; }
             set { this._numberOfOrphanFilesDeleted = value; }
         }
 

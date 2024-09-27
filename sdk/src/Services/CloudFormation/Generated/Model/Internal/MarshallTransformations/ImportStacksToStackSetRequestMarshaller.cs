@@ -99,30 +99,45 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     }
                     if(publicRequest.OperationPreferences.IsSetRegionOrder())
                     {
-                        int publicRequestOperationPreferenceslistValueIndex = 1;
-                        foreach(var publicRequestOperationPreferenceslistValue in publicRequest.OperationPreferences.RegionOrder)
+                        if (publicRequest.OperationPreferences.RegionOrder.Count == 0)
+                            request.Parameters.Add("OperationPreferences" + "." + "RegionOrder", "");
+                        else
                         {
-                            request.Parameters.Add("OperationPreferences" + "." + "RegionOrder" + "." + "member" + "." + publicRequestOperationPreferenceslistValueIndex, StringUtils.FromString(publicRequestOperationPreferenceslistValue));
-                            publicRequestOperationPreferenceslistValueIndex++;
+                             int publicRequestOperationPreferenceslistValueIndex = 1;
+                             foreach(var publicRequestOperationPreferenceslistValue in publicRequest.OperationPreferences.RegionOrder)
+                             {
+                                 request.Parameters.Add("OperationPreferences" + "." + "RegionOrder" + "." + "member" + "." + publicRequestOperationPreferenceslistValueIndex, StringUtils.FromString(publicRequestOperationPreferenceslistValue));
+                                 publicRequestOperationPreferenceslistValueIndex++;
+                             }
                         }
                     }
                 }
                 if(publicRequest.IsSetOrganizationalUnitIds())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.OrganizationalUnitIds)
+                    if (publicRequest.OrganizationalUnitIds.Count == 0)
+                        request.Parameters.Add("OrganizationalUnitIds", "");
+                    else
                     {
-                        request.Parameters.Add("OrganizationalUnitIds" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.OrganizationalUnitIds)
+                         {
+                             request.Parameters.Add("OrganizationalUnitIds" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetStackIds())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.StackIds)
+                    if (publicRequest.StackIds.Count == 0)
+                        request.Parameters.Add("StackIds", "");
+                    else
                     {
-                        request.Parameters.Add("StackIds" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.StackIds)
+                         {
+                             request.Parameters.Add("StackIds" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetStackIdsUrl())

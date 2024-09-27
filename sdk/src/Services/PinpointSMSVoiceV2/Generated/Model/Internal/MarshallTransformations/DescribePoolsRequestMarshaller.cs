@@ -99,27 +99,13 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.NextToken);
                     }
 
-<<<<<<< HEAD
-                    if(publicRequest.IsSetPoolIds())
-||||||| Commit version number update changes
-                if(publicRequest.IsSetPoolIds())
-                {
-                    context.Writer.WritePropertyName("PoolIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPoolIdsListValue in publicRequest.PoolIds)
-=======
-                if(publicRequest.IsSetOwner())
-                {
-                    context.Writer.WritePropertyName("Owner");
-                    context.Writer.Write(publicRequest.Owner);
-                }
+                    if(publicRequest.IsSetOwner())
+                    {
+                        context.Writer.WritePropertyName("Owner");
+                        context.Writer.Write(publicRequest.Owner);
+                    }
 
-                if(publicRequest.IsSetPoolIds())
-                {
-                    context.Writer.WritePropertyName("PoolIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPoolIdsListValue in publicRequest.PoolIds)
->>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
+                    if(publicRequest.IsSetPoolIds())
                     {
                         context.Writer.WritePropertyName("PoolIds");
                         context.Writer.WriteArrayStart();

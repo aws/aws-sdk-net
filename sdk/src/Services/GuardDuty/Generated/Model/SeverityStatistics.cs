@@ -44,9 +44,9 @@ namespace Amazon.GuardDuty.Model
         /// The timestamp at which a finding type for a specific severity was last generated.
         /// </para>
         /// </summary>
-        public DateTime LastGeneratedAt
+        public DateTime? LastGeneratedAt
         {
-            get { return this._lastGeneratedAt.GetValueOrDefault(); }
+            get { return this._lastGeneratedAt; }
             set { this._lastGeneratedAt = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.GuardDuty.Model
         /// The severity level associated with each finding type.
         /// </para>
         /// </summary>
-        public double Severity
+        public double? Severity
         {
-            get { return this._severity.GetValueOrDefault(); }
+            get { return this._severity; }
             set { this._severity = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.GuardDuty.Model
         /// The total number of findings associated with this severity.
         /// </para>
         /// </summary>
-        public int TotalFindings
+        public int? TotalFindings
         {
-            get { return this._totalFindings.GetValueOrDefault(); }
+            get { return this._totalFindings; }
             set { this._totalFindings = value; }
         }
 

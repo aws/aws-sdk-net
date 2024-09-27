@@ -78,22 +78,17 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     xmlWriter.WriteStartElement("Details");
                     if(publicRequest.Details.IsSetName())
                         xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.Details.Name));
-
                     if (publicRequest.Details.PublicAccessBlock != null)
                     {
                         xmlWriter.WriteStartElement("PublicAccessBlock");
                         if(publicRequest.Details.PublicAccessBlock.IsSetBlockPublicAcls())
                             xmlWriter.WriteElementString("BlockPublicAcls", StringUtils.FromBool(publicRequest.Details.PublicAccessBlock.BlockPublicAcls.Value));
-
                         if(publicRequest.Details.PublicAccessBlock.IsSetBlockPublicPolicy())
                             xmlWriter.WriteElementString("BlockPublicPolicy", StringUtils.FromBool(publicRequest.Details.PublicAccessBlock.BlockPublicPolicy.Value));
-
                         if(publicRequest.Details.PublicAccessBlock.IsSetIgnorePublicAcls())
                             xmlWriter.WriteElementString("IgnorePublicAcls", StringUtils.FromBool(publicRequest.Details.PublicAccessBlock.IgnorePublicAcls.Value));
-
                         if(publicRequest.Details.PublicAccessBlock.IsSetRestrictPublicBuckets())
                             xmlWriter.WriteElementString("RestrictPublicBuckets", StringUtils.FromBool(publicRequest.Details.PublicAccessBlock.RestrictPublicBuckets.Value));
-
                         xmlWriter.WriteEndElement();
                     }
                     var publicRequestDetailsRegions = publicRequest.Details.Regions;
@@ -107,10 +102,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             xmlWriter.WriteStartElement("Region");
                             if(publicRequestDetailsRegionsValue.IsSetBucket())
                                 xmlWriter.WriteElementString("Bucket", StringUtils.FromString(publicRequestDetailsRegionsValue.Bucket));
-
                             if(publicRequestDetailsRegionsValue.IsSetBucketAccountId())
                                 xmlWriter.WriteElementString("BucketAccountId", StringUtils.FromString(publicRequestDetailsRegionsValue.BucketAccountId));
-
                             xmlWriter.WriteEndElement();
                         }
                         }            

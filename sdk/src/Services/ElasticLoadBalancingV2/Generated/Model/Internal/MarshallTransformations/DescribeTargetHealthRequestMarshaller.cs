@@ -61,11 +61,16 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetInclude())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Include)
+                    if (publicRequest.Include.Count == 0)
+                        request.Parameters.Add("Include", "");
+                    else
                     {
-                        request.Parameters.Add("Include" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Include)
+                         {
+                             request.Parameters.Add("Include" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetTargetGroupArn())
@@ -74,22 +79,27 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetTargets())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Targets)
+                    if (publicRequest.Targets.Count == 0)
+                        request.Parameters.Add("Targets", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetAvailabilityZone())
-                        {
-                            request.Parameters.Add("Targets" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AvailabilityZone", StringUtils.FromString(publicRequestlistValue.AvailabilityZone));
-                        }
-                        if(publicRequestlistValue.IsSetId())
-                        {
-                            request.Parameters.Add("Targets" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Id", StringUtils.FromString(publicRequestlistValue.Id));
-                        }
-                        if(publicRequestlistValue.IsSetPort())
-                        {
-                            request.Parameters.Add("Targets" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Port", StringUtils.FromInt(publicRequestlistValue.Port));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Targets)
+                         {
+                            if(publicRequestlistValue.IsSetAvailabilityZone())
+                            {
+                                request.Parameters.Add("Targets" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AvailabilityZone", StringUtils.FromString(publicRequestlistValue.AvailabilityZone));
+                            }
+                            if(publicRequestlistValue.IsSetId())
+                            {
+                                request.Parameters.Add("Targets" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Id", StringUtils.FromString(publicRequestlistValue.Id));
+                            }
+                            if(publicRequestlistValue.IsSetPort())
+                            {
+                                request.Parameters.Add("Targets" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Port", StringUtils.FromInt(publicRequestlistValue.Port));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

@@ -64,32 +64,35 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 throw new AmazonMediaLiveException("Request object does not have required field ClusterId set");
             request.AddPathResource("{clusterId}", StringUtils.FromString(publicRequest.ClusterId));
             request.ResourcePath = "/prod/clusters/{clusterId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetNetworkSettings())
+                    {
+                        context.Writer.WritePropertyName("networkSettings");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ClusterNetworkSettingsUpdateRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.NetworkSettings, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetNetworkSettings())
-                {
-                    context.Writer.WritePropertyName("networkSettings");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ClusterNetworkSettingsUpdateRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.NetworkSettings, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

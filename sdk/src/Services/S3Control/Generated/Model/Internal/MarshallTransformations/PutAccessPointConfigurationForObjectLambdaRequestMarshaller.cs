@@ -88,10 +88,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     }
                     if(publicRequest.Configuration.IsSetCloudWatchMetricsEnabled())
                         xmlWriter.WriteElementString("CloudWatchMetricsEnabled", StringUtils.FromBool(publicRequest.Configuration.CloudWatchMetricsEnabled.Value));
-
                     if(publicRequest.Configuration.IsSetSupportingAccessPoint())
                         xmlWriter.WriteElementString("SupportingAccessPoint", StringUtils.FromString(publicRequest.Configuration.SupportingAccessPoint));
-
                     var publicRequestConfigurationTransformationConfigurations = publicRequest.Configuration.TransformationConfigurations;
                     if (publicRequestConfigurationTransformationConfigurations != null && (publicRequestConfigurationTransformationConfigurations.Count > 0 || !AWSConfigs.InitializeCollections)) 
                     {
@@ -121,10 +119,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                                     xmlWriter.WriteStartElement("AwsLambda");
                                     if(publicRequestConfigurationTransformationConfigurationsValue.ContentTransformation.AwsLambda.IsSetFunctionArn())
                                         xmlWriter.WriteElementString("FunctionArn", StringUtils.FromString(publicRequestConfigurationTransformationConfigurationsValue.ContentTransformation.AwsLambda.FunctionArn));
-
                                     if(publicRequestConfigurationTransformationConfigurationsValue.ContentTransformation.AwsLambda.IsSetFunctionPayload())
                                         xmlWriter.WriteElementString("FunctionPayload", StringUtils.FromString(publicRequestConfigurationTransformationConfigurationsValue.ContentTransformation.AwsLambda.FunctionPayload));
-
                                     xmlWriter.WriteEndElement();
                                 }
                                 xmlWriter.WriteEndElement();

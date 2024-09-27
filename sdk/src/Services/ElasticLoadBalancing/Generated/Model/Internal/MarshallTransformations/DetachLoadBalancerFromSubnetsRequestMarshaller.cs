@@ -65,11 +65,16 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetSubnets())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Subnets)
+                    if (publicRequest.Subnets.Count == 0)
+                        request.Parameters.Add("Subnets", "");
+                    else
                     {
-                        request.Parameters.Add("Subnets" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Subnets)
+                         {
+                             request.Parameters.Add("Subnets" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

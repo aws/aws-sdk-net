@@ -65,9 +65,9 @@ namespace Amazon.GuardDuty.Model
         /// The timestamp at which the statistics for this resource was last generated.
         /// </para>
         /// </summary>
-        public DateTime LastGeneratedAt
+        public DateTime? LastGeneratedAt
         {
-            get { return this._lastGeneratedAt.GetValueOrDefault(); }
+            get { return this._lastGeneratedAt; }
             set { this._lastGeneratedAt = value; }
         }
 
@@ -166,9 +166,9 @@ namespace Amazon.GuardDuty.Model
         /// The total number of findings associated with this resource.
         /// </para>
         /// </summary>
-        public int TotalFindings
+        public int? TotalFindings
         {
-            get { return this._totalFindings.GetValueOrDefault(); }
+            get { return this._totalFindings; }
             set { this._totalFindings = value; }
         }
 

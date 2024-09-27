@@ -63,9 +63,9 @@ namespace Amazon.Glue.Model
         /// input is not provided, the default value 3 will be used.
         /// </para>
         /// </summary>
-        public int OrphanFileRetentionPeriodInDays
+        public int? OrphanFileRetentionPeriodInDays
         {
-            get { return this._orphanFileRetentionPeriodInDays.GetValueOrDefault(); }
+            get { return this._orphanFileRetentionPeriodInDays; }
             set { this._orphanFileRetentionPeriodInDays = value; }
         }
 

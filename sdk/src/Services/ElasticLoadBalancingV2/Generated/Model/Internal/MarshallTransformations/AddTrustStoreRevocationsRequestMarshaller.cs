@@ -61,26 +61,31 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetRevocationContents())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.RevocationContents)
+                    if (publicRequest.RevocationContents.Count == 0)
+                        request.Parameters.Add("RevocationContents", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetRevocationType())
-                        {
-                            request.Parameters.Add("RevocationContents" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RevocationType", StringUtils.FromString(publicRequestlistValue.RevocationType));
-                        }
-                        if(publicRequestlistValue.IsSetS3Bucket())
-                        {
-                            request.Parameters.Add("RevocationContents" + "." + "member" + "." + publicRequestlistValueIndex + "." + "S3Bucket", StringUtils.FromString(publicRequestlistValue.S3Bucket));
-                        }
-                        if(publicRequestlistValue.IsSetS3Key())
-                        {
-                            request.Parameters.Add("RevocationContents" + "." + "member" + "." + publicRequestlistValueIndex + "." + "S3Key", StringUtils.FromString(publicRequestlistValue.S3Key));
-                        }
-                        if(publicRequestlistValue.IsSetS3ObjectVersion())
-                        {
-                            request.Parameters.Add("RevocationContents" + "." + "member" + "." + publicRequestlistValueIndex + "." + "S3ObjectVersion", StringUtils.FromString(publicRequestlistValue.S3ObjectVersion));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.RevocationContents)
+                         {
+                            if(publicRequestlistValue.IsSetRevocationType())
+                            {
+                                request.Parameters.Add("RevocationContents" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RevocationType", StringUtils.FromString(publicRequestlistValue.RevocationType));
+                            }
+                            if(publicRequestlistValue.IsSetS3Bucket())
+                            {
+                                request.Parameters.Add("RevocationContents" + "." + "member" + "." + publicRequestlistValueIndex + "." + "S3Bucket", StringUtils.FromString(publicRequestlistValue.S3Bucket));
+                            }
+                            if(publicRequestlistValue.IsSetS3Key())
+                            {
+                                request.Parameters.Add("RevocationContents" + "." + "member" + "." + publicRequestlistValueIndex + "." + "S3Key", StringUtils.FromString(publicRequestlistValue.S3Key));
+                            }
+                            if(publicRequestlistValue.IsSetS3ObjectVersion())
+                            {
+                                request.Parameters.Add("RevocationContents" + "." + "member" + "." + publicRequestlistValueIndex + "." + "S3ObjectVersion", StringUtils.FromString(publicRequestlistValue.S3ObjectVersion));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetTrustStoreArn())

@@ -51,7 +51,8 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             var ms = new MemoryStream();
             Amazon.Util.AWSSDKUtils.CopyStream(context.Stream, ms);
             ms.Seek(0, SeekOrigin.Begin);
-            response.Schema = ms;
+            if (ms.Length > 0)
+                response.Schema = ms;
 
             return response;
         }

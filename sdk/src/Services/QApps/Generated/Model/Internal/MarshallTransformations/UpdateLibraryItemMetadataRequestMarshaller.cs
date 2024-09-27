@@ -61,27 +61,30 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/catalog.updateItemMetadata";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetIsVerified())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("isVerified");
-                    context.Writer.Write(publicRequest.IsVerified);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetIsVerified())
+                    {
+                        context.Writer.WritePropertyName("isVerified");
+                        context.Writer.Write(publicRequest.IsVerified.Value);
+                    }
+
+                    if(publicRequest.IsSetLibraryItemId())
+                    {
+                        context.Writer.WritePropertyName("libraryItemId");
+                        context.Writer.Write(publicRequest.LibraryItemId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetLibraryItemId())
-                {
-                    context.Writer.WritePropertyName("libraryItemId");
-                    context.Writer.Write(publicRequest.LibraryItemId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

@@ -48,9 +48,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// unless device tracking is turned on and the device has been trusted.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Specifies whether email message MFA is the user's preferred method.
         /// </para>
         /// </summary>
-        public bool PreferredMfa
+        public bool? PreferredMfa
         {
-            get { return this._preferredMfa.GetValueOrDefault(); }
+            get { return this._preferredMfa; }
             set { this._preferredMfa = value; }
         }
 

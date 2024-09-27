@@ -45,9 +45,9 @@ namespace Amazon.EMRServerless.Model
         /// enabled on your application, the default value is 15. The valid range is 1 to 1000.
         /// </para>
         /// </summary>
-        public int MaxConcurrentRuns
+        public int? MaxConcurrentRuns
         {
-            get { return this._maxConcurrentRuns.GetValueOrDefault(); }
+            get { return this._maxConcurrentRuns; }
             set { this._maxConcurrentRuns = value; }
         }
 
@@ -65,9 +65,9 @@ namespace Amazon.EMRServerless.Model
         /// range is from 15 to 720.
         /// </para>
         /// </summary>
-        public int QueueTimeoutMinutes
+        public int? QueueTimeoutMinutes
         {
-            get { return this._queueTimeoutMinutes.GetValueOrDefault(); }
+            get { return this._queueTimeoutMinutes; }
             set { this._queueTimeoutMinutes = value; }
         }
 

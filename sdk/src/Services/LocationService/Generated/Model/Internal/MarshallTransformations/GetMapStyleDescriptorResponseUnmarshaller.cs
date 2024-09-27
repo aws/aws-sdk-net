@@ -51,7 +51,8 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             var ms = new MemoryStream();
             Amazon.Util.AWSSDKUtils.CopyStream(context.Stream, ms);
             ms.Seek(0, SeekOrigin.Begin);
-            response.Blob = ms;
+            if (ms.Length > 0)
+                response.Blob = ms;
             if (context.ResponseData.IsHeaderPresent("Cache-Control"))
                 response.CacheControl = context.ResponseData.GetHeaderValue("Cache-Control");
             if (context.ResponseData.IsHeaderPresent("Content-Type"))

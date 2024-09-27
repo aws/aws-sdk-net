@@ -53,9 +53,9 @@ namespace Amazon.DirectoryServiceData.Model
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
-        public bool BOOL
+        public bool? BOOL
         {
-            get { return this._bool.GetValueOrDefault(); }
+            get { return this._bool; }
             set { this._bool = value; }
         }
 
@@ -76,9 +76,9 @@ namespace Amazon.DirectoryServiceData.Model
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
-        public long N
+        public long? N
         {
-            get { return this._n.GetValueOrDefault(); }
+            get { return this._n; }
             set { this._n = value; }
         }
 

@@ -63,9 +63,9 @@ namespace Amazon.GuardDuty.Model
         /// The timestamp at which this finding type was last generated in your environment.
         /// </para>
         /// </summary>
-        public DateTime LastGeneratedAt
+        public DateTime? LastGeneratedAt
         {
-            get { return this._lastGeneratedAt.GetValueOrDefault(); }
+            get { return this._lastGeneratedAt; }
             set { this._lastGeneratedAt = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.GuardDuty.Model
         /// The total number of findings associated with generated for each distinct finding type.
         /// </para>
         /// </summary>
-        public int TotalFindings
+        public int? TotalFindings
         {
-            get { return this._totalFindings.GetValueOrDefault(); }
+            get { return this._totalFindings; }
             set { this._totalFindings = value; }
         }
 

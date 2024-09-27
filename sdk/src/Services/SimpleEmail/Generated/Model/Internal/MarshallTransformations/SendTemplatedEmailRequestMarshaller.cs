@@ -67,39 +67,59 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                 {
                     if(publicRequest.Destination.IsSetBccAddresses())
                     {
-                        int publicRequestDestinationlistValueIndex = 1;
-                        foreach(var publicRequestDestinationlistValue in publicRequest.Destination.BccAddresses)
+                        if (publicRequest.Destination.BccAddresses.Count == 0)
+                            request.Parameters.Add("Destination" + "." + "BccAddresses", "");
+                        else
                         {
-                            request.Parameters.Add("Destination" + "." + "BccAddresses" + "." + "member" + "." + publicRequestDestinationlistValueIndex, StringUtils.FromString(publicRequestDestinationlistValue));
-                            publicRequestDestinationlistValueIndex++;
+                             int publicRequestDestinationlistValueIndex = 1;
+                             foreach(var publicRequestDestinationlistValue in publicRequest.Destination.BccAddresses)
+                             {
+                                 request.Parameters.Add("Destination" + "." + "BccAddresses" + "." + "member" + "." + publicRequestDestinationlistValueIndex, StringUtils.FromString(publicRequestDestinationlistValue));
+                                 publicRequestDestinationlistValueIndex++;
+                             }
                         }
                     }
                     if(publicRequest.Destination.IsSetCcAddresses())
                     {
-                        int publicRequestDestinationlistValueIndex = 1;
-                        foreach(var publicRequestDestinationlistValue in publicRequest.Destination.CcAddresses)
+                        if (publicRequest.Destination.CcAddresses.Count == 0)
+                            request.Parameters.Add("Destination" + "." + "CcAddresses", "");
+                        else
                         {
-                            request.Parameters.Add("Destination" + "." + "CcAddresses" + "." + "member" + "." + publicRequestDestinationlistValueIndex, StringUtils.FromString(publicRequestDestinationlistValue));
-                            publicRequestDestinationlistValueIndex++;
+                             int publicRequestDestinationlistValueIndex = 1;
+                             foreach(var publicRequestDestinationlistValue in publicRequest.Destination.CcAddresses)
+                             {
+                                 request.Parameters.Add("Destination" + "." + "CcAddresses" + "." + "member" + "." + publicRequestDestinationlistValueIndex, StringUtils.FromString(publicRequestDestinationlistValue));
+                                 publicRequestDestinationlistValueIndex++;
+                             }
                         }
                     }
                     if(publicRequest.Destination.IsSetToAddresses())
                     {
-                        int publicRequestDestinationlistValueIndex = 1;
-                        foreach(var publicRequestDestinationlistValue in publicRequest.Destination.ToAddresses)
+                        if (publicRequest.Destination.ToAddresses.Count == 0)
+                            request.Parameters.Add("Destination" + "." + "ToAddresses", "");
+                        else
                         {
-                            request.Parameters.Add("Destination" + "." + "ToAddresses" + "." + "member" + "." + publicRequestDestinationlistValueIndex, StringUtils.FromString(publicRequestDestinationlistValue));
-                            publicRequestDestinationlistValueIndex++;
+                             int publicRequestDestinationlistValueIndex = 1;
+                             foreach(var publicRequestDestinationlistValue in publicRequest.Destination.ToAddresses)
+                             {
+                                 request.Parameters.Add("Destination" + "." + "ToAddresses" + "." + "member" + "." + publicRequestDestinationlistValueIndex, StringUtils.FromString(publicRequestDestinationlistValue));
+                                 publicRequestDestinationlistValueIndex++;
+                             }
                         }
                     }
                 }
                 if(publicRequest.IsSetReplyToAddresses())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ReplyToAddresses)
+                    if (publicRequest.ReplyToAddresses.Count == 0)
+                        request.Parameters.Add("ReplyToAddresses", "");
+                    else
                     {
-                        request.Parameters.Add("ReplyToAddresses" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ReplyToAddresses)
+                         {
+                             request.Parameters.Add("ReplyToAddresses" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetReturnPath())
@@ -120,18 +140,23 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetTags())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Tags)
+                    if (publicRequest.Tags.Count == 0)
+                        request.Parameters.Add("Tags", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetName())
-                        {
-                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
-                        }
-                        if(publicRequestlistValue.IsSetValue())
-                        {
-                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Tags)
+                         {
+                            if(publicRequestlistValue.IsSetName())
+                            {
+                                request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
+                            }
+                            if(publicRequestlistValue.IsSetValue())
+                            {
+                                request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetTemplate())

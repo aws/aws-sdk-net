@@ -51,7 +51,8 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
             var ms = new MemoryStream();
             Amazon.Util.AWSSDKUtils.CopyStream(context.Stream, ms);
             ms.Seek(0, SeekOrigin.Begin);
-            response.Profile = ms;
+            if (ms.Length > 0)
+                response.Profile = ms;
             if (context.ResponseData.IsHeaderPresent("Content-Encoding"))
                 response.ContentEncoding = context.ResponseData.GetHeaderValue("Content-Encoding");
             if (context.ResponseData.IsHeaderPresent("Content-Type"))

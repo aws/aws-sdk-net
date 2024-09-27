@@ -112,9 +112,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// the targeted OUs. The default is <c>false</c>.
         /// </para>
         /// </summary>
-        public bool IncludeChildOrganizationUnits
+        public bool? IncludeChildOrganizationUnits
         {
-            get { return this._includeChildOrganizationUnits.GetValueOrDefault(); }
+            get { return this._includeChildOrganizationUnits; }
             set { this._includeChildOrganizationUnits = value; }
         }
 

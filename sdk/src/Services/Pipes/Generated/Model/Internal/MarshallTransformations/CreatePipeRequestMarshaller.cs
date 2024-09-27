@@ -101,28 +101,16 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
-<<<<<<< HEAD
+                    if(publicRequest.IsSetKmsKeyIdentifier())
+                    {
+                        context.Writer.WritePropertyName("KmsKeyIdentifier");
+                        context.Writer.Write(publicRequest.KmsKeyIdentifier);
+                    }
+
                     if(publicRequest.IsSetLogConfiguration())
                     {
                         context.Writer.WritePropertyName("LogConfiguration");
                         context.Writer.WriteObjectStart();
-||||||| Commit version number update changes
-                if(publicRequest.IsSetLogConfiguration())
-                {
-                    context.Writer.WritePropertyName("LogConfiguration");
-                    context.Writer.WriteObjectStart();
-=======
-                if(publicRequest.IsSetKmsKeyIdentifier())
-                {
-                    context.Writer.WritePropertyName("KmsKeyIdentifier");
-                    context.Writer.Write(publicRequest.KmsKeyIdentifier);
-                }
-
-                if(publicRequest.IsSetLogConfiguration())
-                {
-                    context.Writer.WritePropertyName("LogConfiguration");
-                    context.Writer.WriteObjectStart();
->>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
 
                         var marshaller = PipeLogConfigurationParametersMarshaller.Instance;
                         marshaller.Marshall(publicRequest.LogConfiguration, context);

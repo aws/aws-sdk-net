@@ -63,49 +63,52 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFieldDelimiter())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("fieldDelimiter");
-                    context.Writer.Write(publicRequest.FieldDelimiter);
-                }
-
-                if(publicRequest.IsSetId())
-                {
-                    context.Writer.WritePropertyName("id");
-                    context.Writer.Write(publicRequest.Id);
-                }
-
-                if(publicRequest.IsSetRecordFields())
-                {
-                    context.Writer.WritePropertyName("recordFields");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRecordFieldsListValue in publicRequest.RecordFields)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFieldDelimiter())
                     {
-                            context.Writer.Write(publicRequestRecordFieldsListValue);
+                        context.Writer.WritePropertyName("fieldDelimiter");
+                        context.Writer.Write(publicRequest.FieldDelimiter);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetId())
+                    {
+                        context.Writer.WritePropertyName("id");
+                        context.Writer.Write(publicRequest.Id);
+                    }
+
+                    if(publicRequest.IsSetRecordFields())
+                    {
+                        context.Writer.WritePropertyName("recordFields");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRecordFieldsListValue in publicRequest.RecordFields)
+                        {
+                                context.Writer.Write(publicRequestRecordFieldsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetS3DeliveryConfiguration())
+                    {
+                        context.Writer.WritePropertyName("s3DeliveryConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = S3DeliveryConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.S3DeliveryConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetS3DeliveryConfiguration())
-                {
-                    context.Writer.WritePropertyName("s3DeliveryConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = S3DeliveryConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.S3DeliveryConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

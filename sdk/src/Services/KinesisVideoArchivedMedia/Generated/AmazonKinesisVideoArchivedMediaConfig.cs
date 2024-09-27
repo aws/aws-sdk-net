@@ -34,16 +34,10 @@ namespace Amazon.KinesisVideoArchivedMedia
     public partial class AmazonKinesisVideoArchivedMediaConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Kinesis Video Archived Media", "4.0.0.0");
 
         private static readonly AmazonKinesisVideoArchivedMediaEndpointResolver EndpointResolver =
             new AmazonKinesisVideoArchivedMediaEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("Kinesis Video Archived Media", "3.7.400.11");
-=======
-            InternalSDKUtils.BuildUserAgentString("Kinesis Video Archived Media", "3.7.400.26");
->>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
 
         private string _userAgent = UserAgentString;
         ///<summary>

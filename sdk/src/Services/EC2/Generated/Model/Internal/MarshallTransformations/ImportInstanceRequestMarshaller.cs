@@ -65,36 +65,41 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetDiskImages())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.DiskImages)
+                    if (publicRequest.DiskImages.Count == 0)
+                        request.Parameters.Add("DiskImage", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetDescription())
-                        {
-                            request.Parameters.Add("DiskImage" + "." + publicRequestlistValueIndex + "." + "Description", StringUtils.FromString(publicRequestlistValue.Description));
-                        }
-                        if(publicRequestlistValue.IsSetImage())
-                        {
-                            if(publicRequestlistValue.Image.IsSetBytes())
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.DiskImages)
+                         {
+                            if(publicRequestlistValue.IsSetDescription())
                             {
-                                request.Parameters.Add("DiskImage" + "." + publicRequestlistValueIndex + "." + "Image" + "." + "Bytes", StringUtils.FromLong(publicRequestlistValue.Image.Bytes));
+                                request.Parameters.Add("DiskImage" + "." + publicRequestlistValueIndex + "." + "Description", StringUtils.FromString(publicRequestlistValue.Description));
                             }
-                            if(publicRequestlistValue.Image.IsSetFormat())
+                            if(publicRequestlistValue.IsSetImage())
                             {
-                                request.Parameters.Add("DiskImage" + "." + publicRequestlistValueIndex + "." + "Image" + "." + "Format", StringUtils.FromString(publicRequestlistValue.Image.Format));
+                                if(publicRequestlistValue.Image.IsSetBytes())
+                                {
+                                    request.Parameters.Add("DiskImage" + "." + publicRequestlistValueIndex + "." + "Image" + "." + "Bytes", StringUtils.FromLong(publicRequestlistValue.Image.Bytes));
+                                }
+                                if(publicRequestlistValue.Image.IsSetFormat())
+                                {
+                                    request.Parameters.Add("DiskImage" + "." + publicRequestlistValueIndex + "." + "Image" + "." + "Format", StringUtils.FromString(publicRequestlistValue.Image.Format));
+                                }
+                                if(publicRequestlistValue.Image.IsSetImportManifestUrl())
+                                {
+                                    request.Parameters.Add("DiskImage" + "." + publicRequestlistValueIndex + "." + "Image" + "." + "ImportManifestUrl", StringUtils.FromString(publicRequestlistValue.Image.ImportManifestUrl));
+                                }
                             }
-                            if(publicRequestlistValue.Image.IsSetImportManifestUrl())
+                            if(publicRequestlistValue.IsSetVolume())
                             {
-                                request.Parameters.Add("DiskImage" + "." + publicRequestlistValueIndex + "." + "Image" + "." + "ImportManifestUrl", StringUtils.FromString(publicRequestlistValue.Image.ImportManifestUrl));
+                                if(publicRequestlistValue.Volume.IsSetSize())
+                                {
+                                    request.Parameters.Add("DiskImage" + "." + publicRequestlistValueIndex + "." + "Volume" + "." + "Size", StringUtils.FromLong(publicRequestlistValue.Volume.Size));
+                                }
                             }
-                        }
-                        if(publicRequestlistValue.IsSetVolume())
-                        {
-                            if(publicRequestlistValue.Volume.IsSetSize())
-                            {
-                                request.Parameters.Add("DiskImage" + "." + publicRequestlistValueIndex + "." + "Volume" + "." + "Size", StringUtils.FromLong(publicRequestlistValue.Volume.Size));
-                            }
-                        }
-                        publicRequestlistValueIndex++;
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetLaunchSpecification())
@@ -109,20 +114,30 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if(publicRequest.LaunchSpecification.IsSetGroupIds())
                     {
-                        int publicRequestLaunchSpecificationlistValueIndex = 1;
-                        foreach(var publicRequestLaunchSpecificationlistValue in publicRequest.LaunchSpecification.GroupIds)
+                        if (publicRequest.LaunchSpecification.GroupIds.Count == 0)
+                            request.Parameters.Add("LaunchSpecification" + "." + "GroupId", "");
+                        else
                         {
-                            request.Parameters.Add("LaunchSpecification" + "." + "GroupId" + "." + publicRequestLaunchSpecificationlistValueIndex, StringUtils.FromString(publicRequestLaunchSpecificationlistValue));
-                            publicRequestLaunchSpecificationlistValueIndex++;
+                             int publicRequestLaunchSpecificationlistValueIndex = 1;
+                             foreach(var publicRequestLaunchSpecificationlistValue in publicRequest.LaunchSpecification.GroupIds)
+                             {
+                                 request.Parameters.Add("LaunchSpecification" + "." + "GroupId" + "." + publicRequestLaunchSpecificationlistValueIndex, StringUtils.FromString(publicRequestLaunchSpecificationlistValue));
+                                 publicRequestLaunchSpecificationlistValueIndex++;
+                             }
                         }
                     }
                     if(publicRequest.LaunchSpecification.IsSetGroupNames())
                     {
-                        int publicRequestLaunchSpecificationlistValueIndex = 1;
-                        foreach(var publicRequestLaunchSpecificationlistValue in publicRequest.LaunchSpecification.GroupNames)
+                        if (publicRequest.LaunchSpecification.GroupNames.Count == 0)
+                            request.Parameters.Add("LaunchSpecification" + "." + "GroupName", "");
+                        else
                         {
-                            request.Parameters.Add("LaunchSpecification" + "." + "GroupName" + "." + publicRequestLaunchSpecificationlistValueIndex, StringUtils.FromString(publicRequestLaunchSpecificationlistValue));
-                            publicRequestLaunchSpecificationlistValueIndex++;
+                             int publicRequestLaunchSpecificationlistValueIndex = 1;
+                             foreach(var publicRequestLaunchSpecificationlistValue in publicRequest.LaunchSpecification.GroupNames)
+                             {
+                                 request.Parameters.Add("LaunchSpecification" + "." + "GroupName" + "." + publicRequestLaunchSpecificationlistValueIndex, StringUtils.FromString(publicRequestLaunchSpecificationlistValue));
+                                 publicRequestLaunchSpecificationlistValueIndex++;
+                             }
                         }
                     }
                     if(publicRequest.LaunchSpecification.IsSetInstanceInitiatedShutdownBehavior())

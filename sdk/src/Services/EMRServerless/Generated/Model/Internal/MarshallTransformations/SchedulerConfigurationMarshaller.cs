@@ -51,13 +51,13 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxConcurrentRuns())
             {
                 context.Writer.WritePropertyName("maxConcurrentRuns");
-                context.Writer.Write(requestObject.MaxConcurrentRuns);
+                context.Writer.Write(requestObject.MaxConcurrentRuns.Value);
             }
 
             if(requestObject.IsSetQueueTimeoutMinutes())
             {
                 context.Writer.WritePropertyName("queueTimeoutMinutes");
-                context.Writer.Write(requestObject.QueueTimeoutMinutes);
+                context.Writer.Write(requestObject.QueueTimeoutMinutes.Value);
             }
 
         }

@@ -73,7 +73,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         xmlWriter.WriteStartElement("RealtimeMetricsSubscriptionConfig");
                         if(publicRequest.MonitoringSubscription.RealtimeMetricsSubscriptionConfig.IsSetRealtimeMetricsSubscriptionStatus())
                             xmlWriter.WriteElementString("RealtimeMetricsSubscriptionStatus", StringUtils.FromString(publicRequest.MonitoringSubscription.RealtimeMetricsSubscriptionConfig.RealtimeMetricsSubscriptionStatus));
-
                         xmlWriter.WriteEndElement();
                     }
 

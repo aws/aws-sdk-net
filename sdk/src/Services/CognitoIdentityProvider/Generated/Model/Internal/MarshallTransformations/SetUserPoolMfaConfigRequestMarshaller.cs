@@ -65,37 +65,23 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             request.ResourcePath = "/";
             using (MemoryStream memoryStream = new MemoryStream())
             {
-<<<<<<< HEAD
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-||||||| Commit version number update changes
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMfaConfiguration())
-=======
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEmailMfaConfiguration())
-                {
-                    context.Writer.WritePropertyName("EmailMfaConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = EmailMfaConfigTypeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.EmailMfaConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetMfaConfiguration())
->>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
                 {
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;
                     writer.WriteObjectStart();
                     var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEmailMfaConfiguration())
+                    {
+                        context.Writer.WritePropertyName("EmailMfaConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EmailMfaConfigTypeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.EmailMfaConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetMfaConfiguration())
                     {
                         context.Writer.WritePropertyName("MfaConfiguration");

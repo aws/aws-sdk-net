@@ -61,18 +61,23 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetCustomerNodeEndpointList())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.CustomerNodeEndpointList)
+                    if (publicRequest.CustomerNodeEndpointList.Count == 0)
+                        request.Parameters.Add("CustomerNodeEndpointList", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetAddress())
-                        {
-                            request.Parameters.Add("CustomerNodeEndpointList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Address", StringUtils.FromString(publicRequestlistValue.Address));
-                        }
-                        if(publicRequestlistValue.IsSetPort())
-                        {
-                            request.Parameters.Add("CustomerNodeEndpointList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Port", StringUtils.FromInt(publicRequestlistValue.Port));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.CustomerNodeEndpointList)
+                         {
+                            if(publicRequestlistValue.IsSetAddress())
+                            {
+                                request.Parameters.Add("CustomerNodeEndpointList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Address", StringUtils.FromString(publicRequestlistValue.Address));
+                            }
+                            if(publicRequestlistValue.IsSetPort())
+                            {
+                                request.Parameters.Add("CustomerNodeEndpointList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Port", StringUtils.FromInt(publicRequestlistValue.Port));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetReplicationGroupId())

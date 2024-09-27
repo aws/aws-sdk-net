@@ -5,13 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.ECR")]
-<<<<<<< HEAD
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - Amazon EC2 Container Registry. Amazon EC2 Container Registry (Amazon ECR) is a managed AWS Docker registry service. Customers can use the familiar Docker CLI to push, pull, and manage images.")]
-||||||| Commit version number update changes
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon EC2 Container Registry. Amazon EC2 Container Registry (Amazon ECR) is a managed AWS Docker registry service. Customers can use the familiar Docker CLI to push, pull, and manage images.")]
-=======
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon Elastic Container Registry. Amazon EC2 Container Registry (Amazon ECR) is a managed AWS Docker registry service. Customers can use the familiar Docker CLI to push, pull, and manage images.")]
->>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET  - Amazon Elastic Container Registry. Amazon EC2 Container Registry (Amazon ECR) is a managed AWS Docker registry service. Customers can use the familiar Docker CLI to push, pull, and manage images.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]
@@ -34,13 +28,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-<<<<<<< HEAD
 [assembly: AssemblyVersion("4.0")]
 [assembly: AssemblyFileVersion("4.0.0.0")]
-||||||| Commit version number update changes
-[assembly: AssemblyVersion("3.3")]
-[assembly: AssemblyFileVersion("3.7.402.8")]
-=======
-[assembly: AssemblyVersion("3.3")]
-[assembly: AssemblyFileVersion("3.7.404.5")]
->>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618

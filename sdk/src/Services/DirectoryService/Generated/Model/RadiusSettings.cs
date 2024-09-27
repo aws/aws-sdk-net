@@ -146,16 +146,8 @@ namespace Amazon.DirectoryService.Model
         /// The amount of time, in seconds, to wait for the RADIUS server to respond.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Min=1, Max=20)]
-        public int? RadiusTimeout
-||||||| Commit version number update changes
-        [AWSProperty(Min=1, Max=20)]
-        public int RadiusTimeout
-=======
         [AWSProperty(Min=1, Max=50)]
-        public int RadiusTimeout
->>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
+        public int? RadiusTimeout
         {
             get { return this._radiusTimeout; }
             set { this._radiusTimeout = value; }

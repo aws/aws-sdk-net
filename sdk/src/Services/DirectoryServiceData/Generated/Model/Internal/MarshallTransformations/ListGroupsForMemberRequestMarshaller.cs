@@ -64,45 +64,48 @@ namespace Amazon.DirectoryServiceData.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetDirectoryId())
                 request.Parameters.Add("DirectoryId", StringUtils.FromString(publicRequest.DirectoryId));
             request.ResourcePath = "/GroupMemberships/ListGroupsForMember";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMaxResults())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetMemberRealm())
+                    {
+                        context.Writer.WritePropertyName("MemberRealm");
+                        context.Writer.Write(publicRequest.MemberRealm);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetRealm())
+                    {
+                        context.Writer.WritePropertyName("Realm");
+                        context.Writer.Write(publicRequest.Realm);
+                    }
+
+                    if(publicRequest.IsSetSAMAccountName())
+                    {
+                        context.Writer.WritePropertyName("SAMAccountName");
+                        context.Writer.Write(publicRequest.SAMAccountName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMemberRealm())
-                {
-                    context.Writer.WritePropertyName("MemberRealm");
-                    context.Writer.Write(publicRequest.MemberRealm);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetRealm())
-                {
-                    context.Writer.WritePropertyName("Realm");
-                    context.Writer.Write(publicRequest.Realm);
-                }
-
-                if(publicRequest.IsSetSAMAccountName())
-                {
-                    context.Writer.WritePropertyName("SAMAccountName");
-                    context.Writer.Write(publicRequest.SAMAccountName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             request.UseQueryString = true;

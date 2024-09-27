@@ -69,42 +69,28 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             request.ResourcePath = "/v2/domains/{domainIdentifier}/subscription-requests/{identifier}/accept";
             using (MemoryStream memoryStream = new MemoryStream())
             {
-<<<<<<< HEAD
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-||||||| Commit version number update changes
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDecisionComment())
-=======
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAssetScopes())
-                {
-                    context.Writer.WritePropertyName("assetScopes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAssetScopesListValue in publicRequest.AssetScopes)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AcceptedAssetScopeMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAssetScopesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetDecisionComment())
->>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
                 {
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;
                     writer.WriteObjectStart();
                     var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAssetScopes())
+                    {
+                        context.Writer.WritePropertyName("assetScopes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAssetScopesListValue in publicRequest.AssetScopes)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = AcceptedAssetScopeMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAssetScopesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
                     if(publicRequest.IsSetDecisionComment())
                     {
                         context.Writer.WritePropertyName("decisionComment");

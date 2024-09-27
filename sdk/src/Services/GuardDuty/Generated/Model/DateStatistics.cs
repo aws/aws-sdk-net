@@ -50,9 +50,9 @@ namespace Amazon.GuardDuty.Model
         /// <c>LastGeneratedAt</c> would look like 2024-09-05T17:12:29-07:00".
         /// </para>
         /// </summary>
-        public DateTime Date
+        public DateTime? Date
         {
-            get { return this._date.GetValueOrDefault(); }
+            get { return this._date; }
             set { this._date = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.GuardDuty.Model
         /// The timestamp at which the last finding in the findings count, was generated.
         /// </para>
         /// </summary>
-        public DateTime LastGeneratedAt
+        public DateTime? LastGeneratedAt
         {
-            get { return this._lastGeneratedAt.GetValueOrDefault(); }
+            get { return this._lastGeneratedAt; }
             set { this._lastGeneratedAt = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.GuardDuty.Model
         /// The severity of the findings generated on each date.
         /// </para>
         /// </summary>
-        public double Severity
+        public double? Severity
         {
-            get { return this._severity.GetValueOrDefault(); }
+            get { return this._severity; }
             set { this._severity = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.GuardDuty.Model
         /// The total number of findings that were generated per severity level on each date.
         /// </para>
         /// </summary>
-        public int TotalFindings
+        public int? TotalFindings
         {
-            get { return this._totalFindings.GetValueOrDefault(); }
+            get { return this._totalFindings; }
             set { this._totalFindings = value; }
         }
 

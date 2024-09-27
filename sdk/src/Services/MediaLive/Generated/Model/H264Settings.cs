@@ -514,9 +514,9 @@ namespace Amazon.MediaLive.Model
         /// value.
         /// </summary>
         [AWSProperty(Min=1, Max=51)]
-        public int MinQp
+        public int? MinQp
         {
-            get { return this._minQp.GetValueOrDefault(); }
+            get { return this._minQp; }
             set { this._minQp = value; }
         }
 

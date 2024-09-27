@@ -69,11 +69,16 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetServiceNamespaces())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ServiceNamespaces)
+                    if (publicRequest.ServiceNamespaces.Count == 0)
+                        request.Parameters.Add("ServiceNamespaces", "");
+                    else
                     {
-                        request.Parameters.Add("ServiceNamespaces" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ServiceNamespaces)
+                         {
+                             request.Parameters.Add("ServiceNamespaces" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

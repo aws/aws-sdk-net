@@ -103,27 +103,13 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
-<<<<<<< HEAD
-                    if(publicRequest.IsSetTags())
-||||||| Commit version number update changes
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-=======
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("RoleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("RoleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
->>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
+                    if(publicRequest.IsSetTags())
                     {
                         context.Writer.WritePropertyName("Tags");
                         context.Writer.WriteObjectStart();

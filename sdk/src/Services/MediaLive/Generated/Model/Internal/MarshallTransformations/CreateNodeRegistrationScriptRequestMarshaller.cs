@@ -64,60 +64,63 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 throw new AmazonMediaLiveException("Request object does not have required field ClusterId set");
             request.AddPathResource("{clusterId}", StringUtils.FromString(publicRequest.ClusterId));
             request.ResourcePath = "/prod/clusters/{clusterId}/nodeRegistrationScript";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("id");
-                    context.Writer.Write(publicRequest.Id);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetNodeInterfaceMappings())
-                {
-                    context.Writer.WritePropertyName("nodeInterfaceMappings");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestNodeInterfaceMappingsListValue in publicRequest.NodeInterfaceMappings)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetId())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = NodeInterfaceMappingMarshaller.Instance;
-                        marshaller.Marshall(publicRequestNodeInterfaceMappingsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("id");
+                        context.Writer.Write(publicRequest.Id);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetNodeInterfaceMappings())
+                    {
+                        context.Writer.WritePropertyName("nodeInterfaceMappings");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestNodeInterfaceMappingsListValue in publicRequest.NodeInterfaceMappings)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = NodeInterfaceMappingMarshaller.Instance;
+                            marshaller.Marshall(publicRequestNodeInterfaceMappingsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetRequestId())
+                    {
+                        context.Writer.WritePropertyName("requestId");
+                        context.Writer.Write(publicRequest.RequestId);
+                    }
+
+                    else if(!(publicRequest.IsSetRequestId()))
+                    {
+                        context.Writer.WritePropertyName("requestId");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetRole())
+                    {
+                        context.Writer.WritePropertyName("role");
+                        context.Writer.Write(publicRequest.Role);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetRequestId())
-                {
-                    context.Writer.WritePropertyName("requestId");
-                    context.Writer.Write(publicRequest.RequestId);
-                }
-
-                else if(!(publicRequest.IsSetRequestId()))
-                {
-                    context.Writer.WritePropertyName("requestId");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetRole())
-                {
-                    context.Writer.WritePropertyName("role");
-                    context.Writer.Write(publicRequest.Role);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

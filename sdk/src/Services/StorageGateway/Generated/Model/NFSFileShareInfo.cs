@@ -335,14 +335,8 @@ namespace Amazon.StorageGateway.Model
         /// Valid Values: <c>true</c> | <c>false</c> 
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        public bool? KMSEncrypted
-||||||| Commit version number update changes
-        public bool KMSEncrypted
-=======
         [Obsolete("KMSEncrypted is deprecated, use EncryptionType instead.")]
-        public bool KMSEncrypted
->>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
+        public bool? KMSEncrypted
         {
             get { return this._kmsEncrypted; }
             set { this._kmsEncrypted = value; }

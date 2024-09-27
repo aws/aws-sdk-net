@@ -109,9 +109,9 @@ namespace Amazon.ApplicationSignals.Model
         /// requests and how many failed requests occur in that time.
         /// </para>
         /// </summary>
-        public int BudgetRequestsRemaining
+        public int? BudgetRequestsRemaining
         {
-            get { return this._budgetRequestsRemaining.GetValueOrDefault(); }
+            get { return this._budgetRequestsRemaining; }
             set { this._budgetRequestsRemaining = value; }
         }
 
@@ -286,9 +286,9 @@ namespace Amazon.ApplicationSignals.Model
         /// both how many total requests occur.
         /// </para>
         /// </summary>
-        public int TotalBudgetRequests
+        public int? TotalBudgetRequests
         {
-            get { return this._totalBudgetRequests.GetValueOrDefault(); }
+            get { return this._totalBudgetRequests; }
             set { this._totalBudgetRequests = value; }
         }
 

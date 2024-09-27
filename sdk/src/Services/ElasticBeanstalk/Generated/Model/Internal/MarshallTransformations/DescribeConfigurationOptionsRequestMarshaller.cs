@@ -69,22 +69,27 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetOptions())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Options)
+                    if (publicRequest.Options.Count == 0)
+                        request.Parameters.Add("Options", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetNamespace())
-                        {
-                            request.Parameters.Add("Options" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Namespace", StringUtils.FromString(publicRequestlistValue.Namespace));
-                        }
-                        if(publicRequestlistValue.IsSetOptionName())
-                        {
-                            request.Parameters.Add("Options" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionName", StringUtils.FromString(publicRequestlistValue.OptionName));
-                        }
-                        if(publicRequestlistValue.IsSetResourceName())
-                        {
-                            request.Parameters.Add("Options" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceName", StringUtils.FromString(publicRequestlistValue.ResourceName));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Options)
+                         {
+                            if(publicRequestlistValue.IsSetNamespace())
+                            {
+                                request.Parameters.Add("Options" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Namespace", StringUtils.FromString(publicRequestlistValue.Namespace));
+                            }
+                            if(publicRequestlistValue.IsSetOptionName())
+                            {
+                                request.Parameters.Add("Options" + "." + "member" + "." + publicRequestlistValueIndex + "." + "OptionName", StringUtils.FromString(publicRequestlistValue.OptionName));
+                            }
+                            if(publicRequestlistValue.IsSetResourceName())
+                            {
+                                request.Parameters.Add("Options" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceName", StringUtils.FromString(publicRequestlistValue.ResourceName));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetPlatformArn())
