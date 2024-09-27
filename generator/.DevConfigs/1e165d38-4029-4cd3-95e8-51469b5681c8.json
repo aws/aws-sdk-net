@@ -1,0 +1,11 @@
+{
+  "services": [
+      {
+          "serviceName": "WorkLink",
+          "type": "removal",
+          "changeLogMessages": [
+              "Amazon WorkLink has been removed from the SDK."
+          ]
+      }
+  ]
+}
