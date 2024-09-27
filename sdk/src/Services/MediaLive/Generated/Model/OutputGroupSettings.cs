@@ -42,6 +42,7 @@ namespace Amazon.MediaLive.Model
         private MsSmoothGroupSettings _msSmoothGroupSettings;
         private MultiplexGroupSettings _multiplexGroupSettings;
         private RtmpGroupSettings _rtmpGroupSettings;
+        private SrtGroupSettings _srtGroupSettings;
         private UdpGroupSettings _udpGroupSettings;
 
         /// <summary>
@@ -162,6 +163,21 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetRtmpGroupSettings()
         {
             return this._rtmpGroupSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SrtGroupSettings.
+        /// </summary>
+        public SrtGroupSettings SrtGroupSettings
+        {
+            get { return this._srtGroupSettings; }
+            set { this._srtGroupSettings = value; }
+        }
+
+        // Check to see if SrtGroupSettings property is set
+        internal bool IsSetSrtGroupSettings()
+        {
+            return this._srtGroupSettings != null;
         }
 
         /// <summary>

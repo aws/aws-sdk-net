@@ -217,7 +217,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property RemoteIpDetails. 
         /// <para>
-        /// Provided if <c>CallerType</c> is <c>remoteIp</c>. Provides information about the remote
+        /// Provided if <c>CallerType</c> is <c>remoteip</c>. Provides information about the remote
         /// IP address that the API call originated from.
         /// </para>
         /// </summary>

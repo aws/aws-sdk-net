@@ -39,6 +39,7 @@ namespace Amazon.QApps.Model
         private bool? _canEdit;
         private DateTime? _createdAt;
         private string _description;
+        private bool? _isVerified;
         private string _status;
         private string _title;
 
@@ -134,6 +135,24 @@ namespace Amazon.QApps.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsVerified. 
+        /// <para>
+        /// Indicates whether the Q App has been verified.
+        /// </para>
+        /// </summary>
+        public bool IsVerified
+        {
+            get { return this._isVerified.GetValueOrDefault(); }
+            set { this._isVerified = value; }
+        }
+
+        // Check to see if IsVerified property is set
+        internal bool IsSetIsVerified()
+        {
+            return this._isVerified.HasValue; 
         }
 
         /// <summary>

@@ -37,8 +37,10 @@ namespace Amazon.Chatbot.Model
         private AccountPreferences _accountPreferences;
 
         /// <summary>
-        /// Gets and sets the property AccountPreferences. Preferences which apply for AWS Chatbot
-        /// usage in the calling AWS account.
+        /// Gets and sets the property AccountPreferences. 
+        /// <para>
+        /// Preferences related to AWS Chatbot usage in the calling AWS account.
+        /// </para>
         /// </summary>
         public AccountPreferences AccountPreferences
         {

@@ -68,6 +68,12 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// <para>
         /// The OptOutListName or OptOutListArn to add the phone number to.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you are using a shared AWS End User Messaging SMS and Voice resource then you must
+        /// use the full Amazon Resource Name(ARN).
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string OptOutListName

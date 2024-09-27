@@ -66,6 +66,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AutoMountHomeEFS", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AutoMountHomeEFS = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CanvasAppSettings", targetDepth))
                 {
                     var unmarshaller = CanvasAppSettingsUnmarshaller.Instance;

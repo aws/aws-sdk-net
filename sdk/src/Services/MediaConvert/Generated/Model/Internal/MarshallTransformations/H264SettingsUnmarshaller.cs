@@ -264,6 +264,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.RepeatPps = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("saliencyAwareEncoding", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SaliencyAwareEncoding = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("scanTypeConversionMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

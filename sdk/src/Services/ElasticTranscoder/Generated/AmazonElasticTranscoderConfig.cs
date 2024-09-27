@@ -34,10 +34,16 @@ namespace Amazon.ElasticTranscoder
     public partial class AmazonElasticTranscoderConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Elastic Transcoder", "4.0.0.0");
 
         private static readonly AmazonElasticTranscoderEndpointResolver EndpointResolver =
             new AmazonElasticTranscoderEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("Elastic Transcoder", "3.7.400.11");
+=======
+            InternalSDKUtils.BuildUserAgentString("Elastic Transcoder", "3.7.400.26");
+>>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
 
         private string _userAgent = UserAgentString;
         ///<summary>

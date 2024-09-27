@@ -34,10 +34,16 @@ namespace Amazon.Route53Resolver
     public partial class AmazonRoute53ResolverConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Route53Resolver", "4.0.0.0");
 
         private static readonly AmazonRoute53ResolverEndpointResolver EndpointResolver =
             new AmazonRoute53ResolverEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("Route53Resolver", "3.7.400.11");
+=======
+            InternalSDKUtils.BuildUserAgentString("Route53Resolver", "3.7.400.26");
+>>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
 
         private string _userAgent = UserAgentString;
         ///<summary>

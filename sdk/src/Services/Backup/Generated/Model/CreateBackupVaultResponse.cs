@@ -42,7 +42,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property BackupVaultArn. 
         /// <para>
         /// An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example,
-        /// <c>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</c>.
+        /// <c>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</c>.
         /// </para>
         /// </summary>
         public string BackupVaultArn

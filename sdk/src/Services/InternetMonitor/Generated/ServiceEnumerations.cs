@@ -579,6 +579,14 @@ namespace Amazon.InternetMonitor
         /// </summary>
         public static readonly QueryType MEASUREMENTS = new QueryType("MEASUREMENTS");
         /// <summary>
+        /// Constant OVERALL_TRAFFIC_SUGGESTIONS for QueryType
+        /// </summary>
+        public static readonly QueryType OVERALL_TRAFFIC_SUGGESTIONS = new QueryType("OVERALL_TRAFFIC_SUGGESTIONS");
+        /// <summary>
+        /// Constant OVERALL_TRAFFIC_SUGGESTIONS_DETAILS for QueryType
+        /// </summary>
+        public static readonly QueryType OVERALL_TRAFFIC_SUGGESTIONS_DETAILS = new QueryType("OVERALL_TRAFFIC_SUGGESTIONS_DETAILS");
+        /// <summary>
         /// Constant TOP_LOCATION_DETAILS for QueryType
         /// </summary>
         public static readonly QueryType TOP_LOCATION_DETAILS = new QueryType("TOP_LOCATION_DETAILS");

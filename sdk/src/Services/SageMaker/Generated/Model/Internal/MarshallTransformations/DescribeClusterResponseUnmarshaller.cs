@@ -88,6 +88,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.InstanceGroups = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NodeRecovery", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NodeRecovery = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Orchestrator", targetDepth))
+                {
+                    var unmarshaller = ClusterOrchestratorUnmarshaller.Instance;
+                    response.Orchestrator = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("VpcConfig", targetDepth))
                 {
                     var unmarshaller = VpcConfigUnmarshaller.Instance;

@@ -136,6 +136,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                     response.TimeoutDurationInHours = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("vpcConfig", targetDepth))
+                {
+                    var unmarshaller = VpcConfigUnmarshaller.Instance;
+                    response.VpcConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

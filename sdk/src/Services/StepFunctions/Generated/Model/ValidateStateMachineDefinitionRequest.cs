@@ -66,6 +66,8 @@ namespace Amazon.StepFunctions.Model
     public partial class ValidateStateMachineDefinitionRequest : AmazonStepFunctionsRequest
     {
         private string _definition;
+        private int? _maxResults;
+        private ValidateStateMachineDefinitionSeverity _severity;
         private StateMachineType _type;
 
         /// <summary>
@@ -87,6 +89,51 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetDefinition()
         {
             return this._definition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of diagnostics that are returned per call. The default and maximum
+        /// value is 100. Setting the value to 0 will also use the default of 100.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the number of diagnostics returned in the response exceeds <c>maxResults</c>, the
+        /// value of the <c>truncated</c> field in the response will be set to <c>true</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Severity. 
+        /// <para>
+        /// Minimum level of diagnostics to return. <c>ERROR</c> returns only <c>ERROR</c> diagnostics,
+        /// whereas <c>WARNING</c> returns both <c>WARNING</c> and <c>ERROR</c> diagnostics. The
+        /// default is <c>ERROR</c>. 
+        /// </para>
+        /// </summary>
+        public ValidateStateMachineDefinitionSeverity Severity
+        {
+            get { return this._severity; }
+            set { this._severity = value; }
+        }
+
+        // Check to see if Severity property is set
+        internal bool IsSetSeverity()
+        {
+            return this._severity != null;
         }
 
         /// <summary>

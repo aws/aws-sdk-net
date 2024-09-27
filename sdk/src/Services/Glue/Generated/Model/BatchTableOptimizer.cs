@@ -101,7 +101,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property TableOptimizer. 
         /// <para>
         /// A <c>TableOptimizer</c> object that contains details on the configuration and last
-        /// run of a table optimzer.
+        /// run of a table optimizer.
         /// </para>
         /// </summary>
         public TableOptimizer TableOptimizer

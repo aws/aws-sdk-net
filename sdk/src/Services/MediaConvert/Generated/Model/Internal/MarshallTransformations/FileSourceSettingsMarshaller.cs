@@ -48,6 +48,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetByteRateLimit())
+            {
+                context.Writer.WritePropertyName("byteRateLimit");
+                context.Writer.Write(requestObject.ByteRateLimit);
+            }
+
             if(requestObject.IsSetConvert608To708())
             {
                 context.Writer.WritePropertyName("convert608To708");

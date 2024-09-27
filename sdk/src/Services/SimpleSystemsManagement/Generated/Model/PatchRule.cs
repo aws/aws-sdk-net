@@ -47,15 +47,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// patch is marked as approved in the patch baseline. For example, a value of <c>7</c>
         /// means that patches are approved seven days after they are released.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
-        /// This parameter is marked as not required, but your request must include a value for
-        /// either <c>ApproveAfterDays</c> or <c>ApproveUntilDate</c>.
+        /// This parameter is marked as <c>Required: No</c>, but your request must include a value
+        /// for either <c>ApproveAfterDays</c> or <c>ApproveUntilDate</c>.
         /// </para>
-        ///  </note> 
+        ///  
         /// <para>
-        ///  Not supported for Debian Server or Ubuntu Server.
+        /// Not supported for Debian Server or Ubuntu Server.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// Use caution when setting this value for Windows Server patch baselines. Because patch
+        /// updates that are replaced by later updates are removed, setting too broad a value
+        /// for this parameter can result in crucial patches not being installed. For more information,
+        /// see the <b>Windows Server</b> tab in the topic <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-selecting-patches.html">How
+        /// security patches are selected</a> in the <i>Amazon Web Services Systems Manager User
+        /// Guide</i>.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Min=0, Max=360)]
         public int? ApproveAfterDays
@@ -78,17 +88,27 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// Enter dates in the format <c>YYYY-MM-DD</c>. For example, <c>2021-12-31</c>.
+        /// Enter dates in the format <c>YYYY-MM-DD</c>. For example, <c>2024-12-31</c>.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
-        /// This parameter is marked as not required, but your request must include a value for
-        /// either <c>ApproveUntilDate</c> or <c>ApproveAfterDays</c>.
+        /// This parameter is marked as <c>Required: No</c>, but your request must include a value
+        /// for either <c>ApproveUntilDate</c> or <c>ApproveAfterDays</c>.
         /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// Not supported for Debian Server or Ubuntu Server.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// Use caution when setting this value for Windows Server patch baselines. Because patch
+        /// updates that are replaced by later updates are removed, setting too broad a value
+        /// for this parameter can result in crucial patches not being installed. For more information,
+        /// see the <b>Windows Server</b> tab in the topic <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-selecting-patches.html">How
+        /// security patches are selected</a> in the <i>Amazon Web Services Systems Manager User
+        /// Guide</i>.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public string ApproveUntilDate

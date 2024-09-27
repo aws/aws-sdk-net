@@ -35,9 +35,11 @@ namespace Amazon.SageMakerRuntime.Model
     public partial class InvokeEndpointResponse : AmazonWebServiceResponse
     {
         private MemoryStream _body;
+        private string _closedSessionId;
         private string _contentType;
         private string _customAttributes;
         private string _invokedProductionVariant;
+        private string _newSessionId;
 
         /// <summary>
         /// Gets and sets the property Body. 
@@ -67,6 +69,25 @@ namespace Amazon.SageMakerRuntime.Model
         internal bool IsSetBody()
         {
             return this._body != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClosedSessionId. 
+        /// <para>
+        /// If you closed a stateful session with your request, the ID of that session.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string ClosedSessionId
+        {
+            get { return this._closedSessionId; }
+            set { this._closedSessionId = value; }
+        }
+
+        // Check to see if ClosedSessionId property is set
+        internal bool IsSetClosedSessionId()
+        {
+            return !string.IsNullOrEmpty(this._closedSessionId);
         }
 
         /// <summary>
@@ -144,6 +165,26 @@ namespace Amazon.SageMakerRuntime.Model
         internal bool IsSetInvokedProductionVariant()
         {
             return !string.IsNullOrEmpty(this._invokedProductionVariant);
+        }
+
+        /// <summary>
+        /// Gets and sets the property NewSessionId. 
+        /// <para>
+        /// If you created a stateful session with your request, the ID and expiration time that
+        /// the model assigns to that session.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string NewSessionId
+        {
+            get { return this._newSessionId; }
+            set { this._newSessionId = value; }
+        }
+
+        // Check to see if NewSessionId property is set
+        internal bool IsSetNewSessionId()
+        {
+            return !string.IsNullOrEmpty(this._newSessionId);
         }
 
     }

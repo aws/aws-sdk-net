@@ -35,9 +35,9 @@ namespace Amazon.RDSDataService.Model
     /// 
     ///  <note> 
     /// <para>
-    /// This operation isn't supported for Aurora PostgreSQL Serverless v2 and provisioned
-    /// DB clusters, and for Aurora Serverless v1 DB clusters, the operation is deprecated.
-    /// Use the <c>BatchExecuteStatement</c> or <c>ExecuteStatement</c> operation.
+    /// This operation isn't supported for Aurora Serverless v2 and provisioned DB clusters.
+    /// For Aurora Serverless v1 DB clusters, the operation is deprecated. Use the <c>BatchExecuteStatement</c>
+    /// or <c>ExecuteStatement</c> operation.
     /// </para>
     ///  </note>
     /// </summary>

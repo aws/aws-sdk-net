@@ -359,11 +359,6 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// BUILTIN_EXPLORER. For Android, an app explorer that traverses an Android app, interacting
-        /// with it and capturing screenshots at the same time.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// APPIUM_JAVA_JUNIT
         /// </para>
         ///  </li> <li> 
@@ -404,19 +399,7 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CALABASH
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// INSTRUMENTATION
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// UIAUTOMATION
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// UIAUTOMATOR
         /// </para>
         ///  </li> <li> 
         /// <para>

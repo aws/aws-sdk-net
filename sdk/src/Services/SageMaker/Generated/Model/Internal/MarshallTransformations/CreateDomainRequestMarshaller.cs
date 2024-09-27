@@ -140,7 +140,27 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.KmsKeyId);
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetSubnetIds())
+||||||| Commit version number update changes
+                if(publicRequest.IsSetTags())
+                {
+                    context.Writer.WritePropertyName("Tags");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+=======
+                if(publicRequest.IsSetTagPropagation())
+                {
+                    context.Writer.WritePropertyName("TagPropagation");
+                    context.Writer.Write(publicRequest.TagPropagation);
+                }
+
+                if(publicRequest.IsSetTags())
+                {
+                    context.Writer.WritePropertyName("Tags");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+>>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
                     {
                         context.Writer.WritePropertyName("SubnetIds");
                         context.Writer.WriteArrayStart();

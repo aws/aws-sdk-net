@@ -34,8 +34,28 @@ namespace Amazon.Bedrock.Model
     /// </summary>
     public partial class ModelInvocationJobS3OutputDataConfig
     {
+        private string _s3BucketOwner;
         private string _s3EncryptionKeyId;
         private string _s3Uri;
+
+        /// <summary>
+        /// Gets and sets the property S3BucketOwner. 
+        /// <para>
+        /// The ID of the Amazon Web Services account that owns the S3 bucket containing the output
+        /// data.
+        /// </para>
+        /// </summary>
+        public string S3BucketOwner
+        {
+            get { return this._s3BucketOwner; }
+            set { this._s3BucketOwner = value; }
+        }
+
+        // Check to see if S3BucketOwner property is set
+        internal bool IsSetS3BucketOwner()
+        {
+            return this._s3BucketOwner != null;
+        }
 
         /// <summary>
         /// Gets and sets the property S3EncryptionKeyId. 

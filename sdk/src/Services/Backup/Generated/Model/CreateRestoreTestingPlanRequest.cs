@@ -31,13 +31,12 @@ namespace Amazon.Backup.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateRestoreTestingPlan operation.
-    /// This is the first of two steps to create a restore testing plan; once this request
-    /// is successful, finish the procedure with request CreateRestoreTestingSelection.
+    /// Creates a restore testing plan.
     /// 
     ///  
     /// <para>
-    /// You must include the parameter RestoreTestingPlan. You may optionally include CreatorRequestId
-    /// and Tags.
+    /// The first of two steps to create a restore testing plan. After this request is successful,
+    /// finish the procedure using CreateRestoreTestingSelection.
     /// </para>
     /// </summary>
     public partial class CreateRestoreTestingPlanRequest : AmazonBackupRequest
@@ -96,9 +95,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Optional tags to include. A tag is a key-value pair you can use to manage, filter,
-        /// and search for your resources. Allowed characters include UTF-8 letters,numbers, spaces,
-        /// and the following characters: + - = . _ : /.
+        /// The tags to assign to the restore testing plan.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]

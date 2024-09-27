@@ -43,7 +43,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DetectorId. 
         /// <para>
-        /// The ID of the detector to create sample findings for.
+        /// The ID of the detector for which you need to create sample findings.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]

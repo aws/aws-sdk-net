@@ -41,10 +41,9 @@ namespace Amazon.MediaConvert.Model
         private string _timecodeStart;
 
         /// <summary>
-        /// Gets and sets the property FileInput. Specify the input file S3, HTTP, or HTTPS URI
-        /// for your video overlay. For consistency in color and formatting in your output video
-        /// image, we recommend that you specify a video with similar characteristics as the underlying
-        /// input video.
+        /// Gets and sets the property FileInput. Specify the input file S3, HTTP, or HTTPS URL
+        /// for your video overlay.To specify one or more Transitions for your base input video
+        /// instead: Leave blank.
         /// </summary>
         public string FileInput
         {

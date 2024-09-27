@@ -38,6 +38,7 @@ namespace Amazon.Kafka.Model
         private bool? _copyTopicConfigurations;
         private bool? _detectAndCopyNewTopics;
         private ReplicationStartingPosition _startingPosition;
+        private ReplicationTopicNameConfiguration _topicNameConfiguration;
         private List<string> _topicsToExclude = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _topicsToReplicate = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
@@ -113,6 +114,25 @@ namespace Amazon.Kafka.Model
         internal bool IsSetStartingPosition()
         {
             return this._startingPosition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TopicNameConfiguration. 
+        /// <para>
+        /// Configuration for specifying replicated topic names should be the same as their corresponding
+        /// upstream topics or prefixed with source cluster alias.
+        /// </para>
+        /// </summary>
+        public ReplicationTopicNameConfiguration TopicNameConfiguration
+        {
+            get { return this._topicNameConfiguration; }
+            set { this._topicNameConfiguration = value; }
+        }
+
+        // Check to see if TopicNameConfiguration property is set
+        internal bool IsSetTopicNameConfiguration()
+        {
+            return this._topicNameConfiguration != null;
         }
 
         /// <summary>

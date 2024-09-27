@@ -34,10 +34,16 @@ namespace Amazon.GroundStation
     public partial class AmazonGroundStationConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("GroundStation", "4.0.0.0");
 
         private static readonly AmazonGroundStationEndpointResolver EndpointResolver =
             new AmazonGroundStationEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("GroundStation", "3.7.400.12");
+=======
+            InternalSDKUtils.BuildUserAgentString("GroundStation", "3.7.400.27");
+>>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
 
         private string _userAgent = UserAgentString;
         ///<summary>

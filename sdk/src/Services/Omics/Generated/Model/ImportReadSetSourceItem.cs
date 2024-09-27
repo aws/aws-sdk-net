@@ -37,6 +37,7 @@ namespace Amazon.Omics.Model
         private string _description;
         private string _generatedFrom;
         private string _name;
+        private string _readSetId;
         private string _referenceArn;
         private string _sampleId;
         private SourceFiles _sourceFiles;
@@ -101,6 +102,25 @@ namespace Amazon.Omics.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReadSetId. 
+        /// <para>
+        /// The source's read set ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=10, Max=36)]
+        public string ReadSetId
+        {
+            get { return this._readSetId; }
+            set { this._readSetId = value; }
+        }
+
+        // Check to see if ReadSetId property is set
+        internal bool IsSetReadSetId()
+        {
+            return this._readSetId != null;
         }
 
         /// <summary>

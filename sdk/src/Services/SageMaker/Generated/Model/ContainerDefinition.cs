@@ -100,7 +100,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Environment. 
         /// <para>
-        /// The environment variables to set in the Docker container.
+        /// The environment variables to set in the Docker container. Don't include any sensitive
+        /// data in your environment variables.
         /// </para>
         ///  
         /// <para>

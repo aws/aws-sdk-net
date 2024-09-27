@@ -92,12 +92,21 @@ namespace Amazon.Kinesis.Model
     /// <para>
     ///  <a>CreateStream</a> has a limit of five transactions per second per account.
     /// </para>
+    ///  
+    /// <para>
+    /// You can add tags to the stream when making a <c>CreateStream</c> request by setting
+    /// the <c>Tags</c> parameter. If you pass <c>Tags</c> parameter, in addition to having
+    /// <c>kinesis:createStream</c> permission, you must also have <c>kinesis:addTagsToStream</c>
+    /// permission for the stream that will be created. Tags will take effect from the <c>CREATING</c>
+    /// status of the stream. 
+    /// </para>
     /// </summary>
     public partial class CreateStreamRequest : AmazonKinesisRequest
     {
         private int? _shardCount;
         private StreamModeDetails _streamModeDetails;
         private string _streamName;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ShardCount. 
@@ -160,6 +169,25 @@ namespace Amazon.Kinesis.Model
         internal bool IsSetStreamName()
         {
             return this._streamName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A set of up to 10 key-value pairs to use to create the tags.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=200)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

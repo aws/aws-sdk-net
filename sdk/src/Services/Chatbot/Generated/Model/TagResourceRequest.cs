@@ -31,7 +31,8 @@ namespace Amazon.Chatbot.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Applies the supplied tags to a configuration.
+    /// Attaches a key-value pair to a resource, as identified by its Amazon Resource Name
+    /// (ARN). Resources are users, servers, roles, and other entities.
     /// </summary>
     public partial class TagResourceRequest : AmazonChatbotRequest
     {
@@ -39,7 +40,10 @@ namespace Amazon.Chatbot.Model
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
-        /// Gets and sets the property ResourceARN. The ARN of the configuration.
+        /// Gets and sets the property ResourceARN. 
+        /// <para>
+        /// The ARN of the configuration.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]
         public string ResourceARN
@@ -55,7 +59,10 @@ namespace Amazon.Chatbot.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags. A list of tags to apply to the configuration.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags to apply to the configuration.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=200)]
         public List<Tag> Tags

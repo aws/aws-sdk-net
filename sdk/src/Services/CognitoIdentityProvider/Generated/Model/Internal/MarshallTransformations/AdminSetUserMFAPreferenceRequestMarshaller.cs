@@ -65,7 +65,32 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             request.ResourcePath = "/";
             using (MemoryStream memoryStream = new MemoryStream())
             {
+<<<<<<< HEAD
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+||||||| Commit version number update changes
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetSMSMfaSettings())
+=======
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetEmailMfaSettings())
+                {
+                    context.Writer.WritePropertyName("EmailMfaSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EmailMfaSettingsTypeMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EmailMfaSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetSMSMfaSettings())
+>>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
                 {
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;

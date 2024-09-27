@@ -77,6 +77,12 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// PoolArn. You can use <a>DescribePhoneNumbers</a> to find the values for PhoneNumberId
         /// and PhoneNumberArn and <a>DescribePools</a> to find the values of PoolId and PoolArn.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you are using a shared AWS End User Messaging SMS and Voice resource then you must
+        /// use the full Amazon Resource Name(ARN).
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string OriginationIdentity

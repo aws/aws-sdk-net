@@ -47,6 +47,11 @@ namespace Amazon.Bedrock.Model
         IListImportedModelsPaginator ListImportedModels(ListImportedModelsRequest request);
 
         /// <summary>
+        /// Paginator for ListInferenceProfiles operation
+        ///</summary>
+        IListInferenceProfilesPaginator ListInferenceProfiles(ListInferenceProfilesRequest request);
+
+        /// <summary>
         /// Paginator for ListModelCopyJobs operation
         ///</summary>
         IListModelCopyJobsPaginator ListModelCopyJobs(ListModelCopyJobsRequest request);

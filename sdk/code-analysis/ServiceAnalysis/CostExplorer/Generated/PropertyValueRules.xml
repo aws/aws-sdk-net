@@ -912,6 +912,18 @@
     <pattern>[\S\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CostExplorer.Model.DynamoDBCapacityDetails.CapacityUnits</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.DynamoDBCapacityDetails.Region</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CostExplorer.Model.EBSResourceUtilization.EbsReadBytesPerSecond</property>
     <min>0</min>
     <max>1024</max>
@@ -1428,6 +1440,12 @@
     <pattern>[\S\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CostExplorer.Model.ReservationPurchaseRecommendationDetail.AverageNumberOfCapacityUnitsUsedPerHour</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CostExplorer.Model.ReservationPurchaseRecommendationDetail.AverageNumberOfInstancesUsedPerHour</property>
     <min>0</min>
     <max>1024</max>
@@ -1482,6 +1500,12 @@
     <pattern>[\S\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CostExplorer.Model.ReservationPurchaseRecommendationDetail.MaximumNumberOfCapacityUnitsUsedPerHour</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CostExplorer.Model.ReservationPurchaseRecommendationDetail.MaximumNumberOfInstancesUsedPerHour</property>
     <min>0</min>
     <max>1024</max>
@@ -1494,6 +1518,12 @@
     <pattern>[\S\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CostExplorer.Model.ReservationPurchaseRecommendationDetail.MinimumNumberOfCapacityUnitsUsedPerHour</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CostExplorer.Model.ReservationPurchaseRecommendationDetail.MinimumNumberOfInstancesUsedPerHour</property>
     <min>0</min>
     <max>1024</max>
@@ -1501,6 +1531,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CostExplorer.Model.ReservationPurchaseRecommendationDetail.RecommendedNormalizedUnitsToPurchase</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.ReservationPurchaseRecommendationDetail.RecommendedNumberOfCapacityUnitsToPurchase</property>
     <min>0</min>
     <max>1024</max>
     <pattern>[\S\s]*</pattern>

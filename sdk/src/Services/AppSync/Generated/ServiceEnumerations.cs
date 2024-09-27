@@ -893,9 +893,17 @@ namespace Amazon.AppSync
         /// </summary>
         public static readonly FieldLogLevel ALL = new FieldLogLevel("ALL");
         /// <summary>
+        /// Constant DEBUG for FieldLogLevel
+        /// </summary>
+        public static readonly FieldLogLevel DEBUG = new FieldLogLevel("DEBUG");
+        /// <summary>
         /// Constant ERROR for FieldLogLevel
         /// </summary>
         public static readonly FieldLogLevel ERROR = new FieldLogLevel("ERROR");
+        /// <summary>
+        /// Constant INFO for FieldLogLevel
+        /// </summary>
+        public static readonly FieldLogLevel INFO = new FieldLogLevel("INFO");
         /// <summary>
         /// Constant NONE for FieldLogLevel
         /// </summary>

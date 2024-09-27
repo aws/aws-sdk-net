@@ -78,7 +78,27 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Description);
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetGlossaryTerms())
+||||||| Commit version number update changes
+                if(publicRequest.IsSetGlossaryTerms())
+                {
+                    context.Writer.WritePropertyName("glossaryTerms");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestGlossaryTermsListValue in publicRequest.GlossaryTerms)
+=======
+                if(publicRequest.IsSetDomainUnitId())
+                {
+                    context.Writer.WritePropertyName("domainUnitId");
+                    context.Writer.Write(publicRequest.DomainUnitId);
+                }
+
+                if(publicRequest.IsSetGlossaryTerms())
+                {
+                    context.Writer.WritePropertyName("glossaryTerms");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestGlossaryTermsListValue in publicRequest.GlossaryTerms)
+>>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
                     {
                         context.Writer.WritePropertyName("glossaryTerms");
                         context.Writer.WriteArrayStart();

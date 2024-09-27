@@ -49,6 +49,7 @@ namespace Amazon.EMRServerless.Model
         private NetworkConfiguration _networkConfiguration;
         private string _releaseLabel;
         private List<Configuration> _runtimeConfiguration = AWSConfigs.InitializeCollections ? new List<Configuration>() : null;
+        private SchedulerConfiguration _schedulerConfiguration;
         private Dictionary<string, WorkerTypeSpecificationInput> _workerTypeSpecifications = AWSConfigs.InitializeCollections ? new Dictionary<string, WorkerTypeSpecificationInput>() : null;
 
         /// <summary>
@@ -295,6 +296,25 @@ namespace Amazon.EMRServerless.Model
         internal bool IsSetRuntimeConfiguration()
         {
             return this._runtimeConfiguration != null && (this._runtimeConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SchedulerConfiguration. 
+        /// <para>
+        /// The scheduler configuration for batch and streaming jobs running on this application.
+        /// Supported with release labels emr-7.0.0 and above.
+        /// </para>
+        /// </summary>
+        public SchedulerConfiguration SchedulerConfiguration
+        {
+            get { return this._schedulerConfiguration; }
+            set { this._schedulerConfiguration = value; }
+        }
+
+        // Check to see if SchedulerConfiguration property is set
+        internal bool IsSetSchedulerConfiguration()
+        {
+            return this._schedulerConfiguration != null;
         }
 
         /// <summary>

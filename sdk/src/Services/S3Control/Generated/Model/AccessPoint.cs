@@ -169,7 +169,7 @@ namespace Amazon.S3Control.Model
         ///  <note> 
         /// <para>
         /// This element is empty if this access point is an Amazon S3 on Outposts access point
-        /// that is used by other Amazon Web Services.
+        /// that is used by other Amazon Web Servicesservices.
         /// </para>
         ///  </note>
         /// </summary>

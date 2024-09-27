@@ -167,19 +167,7 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CALABASH_TEST_PACKAGE
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// INSTRUMENTATION_TEST_PACKAGE
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// UIAUTOMATION_TEST_PACKAGE
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// UIAUTOMATOR_TEST_PACKAGE
         /// </para>
         ///  </li> <li> 
         /// <para>

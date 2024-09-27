@@ -39,8 +39,10 @@ namespace Amazon.Chatbot.Model
         private string _slackTeamId;
 
         /// <summary>
-        /// Gets and sets the property SlackTeamId. The ID of the Slack workspace authorized with
-        /// AWS Chatbot.
+        /// Gets and sets the property SlackTeamId. 
+        /// <para>
+        /// The ID of the Slack workspace authorized with AWS Chatbot.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string SlackTeamId

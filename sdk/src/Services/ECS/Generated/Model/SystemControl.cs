@@ -31,7 +31,7 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// A list of namespaced kernel parameters to set in the container. This parameter maps
-    /// to <c>Sysctls</c> in tthe docker conainer create command and the <c>--sysctl</c> option
+    /// to <c>Sysctls</c> in the docker container create command and the <c>--sysctl</c> option
     /// to docker run. For example, you can configure <c>net.ipv4.tcp_keepalive_time</c> setting
     /// to maintain longer lived connections.
     /// 

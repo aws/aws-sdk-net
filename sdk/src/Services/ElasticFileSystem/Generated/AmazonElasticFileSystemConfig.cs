@@ -34,10 +34,16 @@ namespace Amazon.ElasticFileSystem
     public partial class AmazonElasticFileSystemConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("EFS", "4.0.0.0");
 
         private static readonly AmazonElasticFileSystemEndpointResolver EndpointResolver =
             new AmazonElasticFileSystemEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("EFS", "3.7.400.11");
+=======
+            InternalSDKUtils.BuildUserAgentString("EFS", "3.7.400.26");
+>>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
 
         private string _userAgent = UserAgentString;
         ///<summary>

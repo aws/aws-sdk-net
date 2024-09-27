@@ -81,6 +81,7 @@
     "DescribeIpRestriction": "<p>Provides a summary and status of IP rules.</p>",
     "DescribeKeyRegistration": "<p>Describes all customer managed key registrations in a Amazon QuickSight account.</p>",
     "DescribeNamespace": "<p>Describes the current namespace.</p>",
+    "DescribeQPersonalizationConfiguration": "<p>Describes a personalization configuration.</p>",
     "DescribeRefreshSchedule": "<p>Provides a summary of a refresh schedule.</p>",
     "DescribeRoleCustomPermission": "<p>Describes all custom permissions that are mapped to a role.</p>",
     "DescribeTemplate": "<p>Describes a template's metadata.</p>",
@@ -109,6 +110,7 @@
     "ListDataSources": "<p>Lists data sources in current Amazon Web Services Region that belong to this Amazon Web Services account.</p>",
     "ListFolderMembers": "<p>List all assets (<code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>) in a folder. </p>",
     "ListFolders": "<p>Lists all folders in an account.</p>",
+    "ListFoldersForResource": "<p>List all folders that a resource is a member of.</p>",
     "ListGroupMemberships": "<p>Lists member users in a group.</p>",
     "ListGroups": "<p>Lists all user groups in Amazon QuickSight. </p>",
     "ListIAMPolicyAssignments": "<p>Lists the IAM policy assignments in the current Amazon QuickSight account.</p>",
@@ -165,6 +167,7 @@
     "UpdateIpRestriction": "<p>Updates the content and status of IP rules. Traffic from a source is allowed when the source satisfies either the <code>IpRestrictionRule</code>, <code>VpcIdRestrictionRule</code>, or <code>VpcEndpointIdRestrictionRule</code>. To use this operation, you must provide the entire map of rules. You can use the <code>DescribeIpRestriction</code> operation to get the current rule map.</p>",
     "UpdateKeyRegistration": "<p>Updates a customer managed key in a Amazon QuickSight account.</p>",
     "UpdatePublicSharingSettings": "<p>Use the <code>UpdatePublicSharingSettings</code> operation to turn on or turn off the public sharing settings of an Amazon QuickSight dashboard.</p> <p>To use this operation, turn on session capacity pricing for your Amazon QuickSight account.</p> <p>Before you can turn on public sharing on your account, make sure to give public sharing permissions to an administrative user in the Identity and Access Management (IAM) console. For more information on using IAM with Amazon QuickSight, see <a href=\"https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html\">Using Amazon QuickSight with IAM</a> in the <i>Amazon QuickSight User Guide</i>.</p>",
+    "UpdateQPersonalizationConfiguration": "<p>Updates a personalization configuration.</p>",
     "UpdateRefreshSchedule": "<p>Updates a refresh schedule for a dataset.</p>",
     "UpdateRoleCustomPermission": "<p>Updates the custom permissions that are associated with a role.</p>",
     "UpdateSPICECapacityConfiguration": "<p>Updates the SPICE capacity configuration for a Amazon QuickSight account.</p>",
@@ -712,6 +715,7 @@
         "Folder$Arn": "<p>The Amazon Resource Name (ARN) for the folder.</p>",
         "FolderArnList$member": null,
         "FolderSummary$Arn": "<p>The Amazon Resource Name (ARN) of the folder.</p>",
+        "FoldersForResourceArnList$member": null,
         "GenerateEmbedUrlForAnonymousUserResponse$AnonymousUserArn": "<p>The Amazon Resource Name (ARN) to use for the anonymous Amazon QuickSight user.</p>",
         "GenerateEmbedUrlForRegisteredUserRequest$UserArn": "<p>The Amazon Resource Name for the registered user.</p>",
         "GetDashboardEmbedUrlRequest$UserArn": "<p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one of the following:</p> <ul> <li> <p>Active Directory (AD) users or group members</p> </li> <li> <p>Invited nonfederated users</p> </li> <li> <p>IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect, or IAM federation.</p> </li> </ul> <p>Omit this parameter for users in the third group – IAM users and IAM role-based sessions.</p>",
@@ -720,6 +724,7 @@
         "GroupMember$Arn": "<p>The Amazon Resource Name (ARN) for the group member (user).</p>",
         "IAMPolicyAssignment$PolicyArn": "<p>The Amazon Resource Name (ARN) for the IAM policy.</p>",
         "Ingestion$Arn": "<p>The Amazon Resource Name (ARN) of the resource.</p>",
+        "ListFoldersForResourceRequest$ResourceArn": "<p>The Amazon Resource Name (ARN) the resource whose folders you need to list.</p>",
         "ListTagsForResourceRequest$ResourceArn": "<p>The Amazon Resource Name (ARN) of the resource that you want a list of tags for.</p>",
         "ListTopicRefreshSchedulesResponse$TopicArn": "<p>The Amazon Resource Name (ARN) of the topic.</p>",
         "ListTopicReviewedAnswersResponse$TopicArn": "<p>The Amazon Resource Name (ARN) of the topic.</p>",
@@ -1595,6 +1600,7 @@
         "DescribeKeyRegistrationRequest$AwsAccountId": "<p>The ID of the Amazon Web Services account that contains the customer managed key registration that you want to describe.</p>",
         "DescribeKeyRegistrationResponse$AwsAccountId": "<p>The ID of the Amazon Web Services account that contains the customer managed key registration specified in the request.</p>",
         "DescribeNamespaceRequest$AwsAccountId": "<p>The ID for the Amazon Web Services account that contains the Amazon QuickSight namespace that you want to describe.</p>",
+        "DescribeQPersonalizationConfigurationRequest$AwsAccountId": "<p>The ID of the Amazon Web Services account that contains the personalization configuration that the user wants described.</p>",
         "DescribeRefreshScheduleRequest$AwsAccountId": "<p>The Amazon Web Services account ID.</p>",
         "DescribeRoleCustomPermissionRequest$AwsAccountId": "<p>The ID for the Amazon Web Services account that you want to create a group in. The Amazon Web Services account ID that you provide must be the same Amazon Web Services account that contains your Amazon QuickSight account.</p>",
         "DescribeTemplateAliasRequest$AwsAccountId": "<p>The ID of the Amazon Web Services account that contains the template alias that you're describing.</p>",
@@ -1622,6 +1628,7 @@
         "ListDataSetsRequest$AwsAccountId": "<p>The Amazon Web Services account ID.</p>",
         "ListDataSourcesRequest$AwsAccountId": "<p>The Amazon Web Services account ID.</p>",
         "ListFolderMembersRequest$AwsAccountId": "<p>The ID for the Amazon Web Services account that contains the folder.</p>",
+        "ListFoldersForResourceRequest$AwsAccountId": "<p>The ID for the Amazon Web Services account that contains the resource.</p>",
         "ListFoldersRequest$AwsAccountId": "<p>The ID for the Amazon Web Services account that contains the folder.</p>",
         "ListGroupMembershipsRequest$AwsAccountId": "<p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>",
         "ListGroupsRequest$AwsAccountId": "<p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>",
@@ -1678,6 +1685,7 @@
         "UpdateIpRestrictionResponse$AwsAccountId": "<p>The ID of the Amazon Web Services account that contains the IP rules.</p>",
         "UpdateKeyRegistrationRequest$AwsAccountId": "<p>The ID of the Amazon Web Services account that contains the customer managed key registration that you want to update.</p>",
         "UpdatePublicSharingSettingsRequest$AwsAccountId": "<p>The Amazon Web Services account ID associated with your Amazon QuickSight subscription.</p>",
+        "UpdateQPersonalizationConfigurationRequest$AwsAccountId": "<p>The ID of the Amazon Web Services account account that contains the personalization configuration that the user wants to update.</p>",
         "UpdateRefreshScheduleRequest$AwsAccountId": "<p>The Amazon Web Services account ID.</p>",
         "UpdateRoleCustomPermissionRequest$AwsAccountId": "<p>The ID for the Amazon Web Services account that you want to create a group in. The Amazon Web Services account ID that you provide must be the same Amazon Web Services account that contains your Amazon QuickSight account.</p>",
         "UpdateSPICECapacityConfigurationRequest$AwsAccountId": "<p>The ID of the Amazon Web Services account that contains the SPICE configuration that you want to update.</p>",
@@ -2716,6 +2724,18 @@
         "Visual$ComboChartVisual": "<p>A combo chart.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/quicksight/latest/user/combo-charts.html\">Using combo charts</a> in the <i>Amazon QuickSight User Guide</i>.</p>"
       }
     },
+    "CommitMode": {
+      "base": null,
+      "refs": {
+        "DefaultDateTimePickerControlOptions$CommitMode": "<p>The visibility configuration of the Apply button on a <code>DateTimePickerControl</code>.</p>",
+        "DefaultFilterDropDownControlOptions$CommitMode": "<p>The visibility configuration of the Apply button on a <code>FilterDropDownControl</code>.</p>",
+        "DefaultRelativeDateTimeControlOptions$CommitMode": "<p>The visibility configuration of the Apply button on a <code>RelativeDateTimeControl</code>.</p>",
+        "FilterDateTimePickerControl$CommitMode": "<p>The visibility configurationof the Apply button on a <code>DateTimePickerControl</code>.</p>",
+        "FilterDropDownControl$CommitMode": "<p>The visibility configuration of the Apply button on a <code>FilterDropDownControl</code>.</p>",
+        "FilterRelativeDateTimeControl$CommitMode": "<p>The visibility configuration of the Apply button on a <code>FilterRelativeDateTimeControl</code>.</p>",
+        "ParameterDropDownControl$CommitMode": "<p>The visibility configuration of the Apply button on a <code>ParameterDropDownControl</code>.</p>"
+      }
+    },
     "ComparativeOrder": {
       "base": "<p>A structure that represents a comparative order.</p>",
       "refs": {
@@ -3608,6 +3628,12 @@
       "refs": {
         "Analysis$DataSetArns": "<p>The ARNs of the datasets of the analysis.</p>",
         "DashboardVersion$DataSetArns": "<p>The Amazon Resource Numbers (ARNs) for the datasets that are associated with this version of the dashboard.</p>"
+      }
+    },
+    "DataSetCalculatedFieldExpression": {
+      "base": null,
+      "refs": {
+        "CalculatedColumn$Expression": "<p>An expression that defines the calculated column.</p>"
       }
     },
     "DataSetConfiguration": {
@@ -4793,6 +4819,16 @@
       "refs": {
       }
     },
+    "DescribeQPersonalizationConfigurationRequest": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "DescribeQPersonalizationConfigurationResponse": {
+      "base": null,
+      "refs": {
+      }
+    },
     "DescribeRefreshScheduleRequest": {
       "base": null,
       "refs": {
@@ -5231,7 +5267,6 @@
     "Expression": {
       "base": null,
       "refs": {
-        "CalculatedColumn$Expression": "<p>An expression that defines the calculated column.</p>",
         "CalculatedMeasureField$Expression": "<p>The expression in the table calculation.</p>",
         "ConditionalFormattingCustomIconCondition$Expression": "<p>The expression that determines the condition of the icon set.</p>",
         "ConditionalFormattingGradientColor$Expression": "<p>The expression that determines the formatting configuration for gradient color.</p>",
@@ -5724,6 +5759,12 @@
         "CreateFolderRequest$FolderType": "<p>The type of folder. By default, <code>folderType</code> is <code>SHARED</code>.</p>",
         "Folder$FolderType": "<p>The type of folder it is.</p>",
         "FolderSummary$FolderType": "<p>The type of folder.</p>"
+      }
+    },
+    "FoldersForResourceArnList": {
+      "base": null,
+      "refs": {
+        "ListFoldersForResourceResponse$Folders": "<p>A list that contains the Amazon Resource Names (ARNs) of all folders that the resource is a member of.</p>"
       }
     },
     "Font": {
@@ -7377,6 +7418,16 @@
       "refs": {
       }
     },
+    "ListFoldersForResourceRequest": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "ListFoldersForResourceResponse": {
+      "base": null,
+      "refs": {
+      }
+    },
     "ListFoldersRequest": {
       "base": null,
       "refs": {
@@ -7761,6 +7812,7 @@
         "ListDataSetsRequest$MaxResults": "<p>The maximum number of results to be returned per request.</p>",
         "ListDataSourcesRequest$MaxResults": "<p>The maximum number of results to be returned per request.</p>",
         "ListFolderMembersRequest$MaxResults": "<p>The maximum number of results to be returned per request.</p>",
+        "ListFoldersForResourceRequest$MaxResults": "<p>The maximum number of results to be returned per request.</p>",
         "ListFoldersRequest$MaxResults": "<p>The maximum number of results to be returned per request.</p>",
         "ListGroupMembershipsRequest$MaxResults": "<p>The maximum number of results to return from this request.</p>",
         "ListGroupsRequest$MaxResults": "<p>The maximum number of results to return.</p>",
@@ -8560,6 +8612,14 @@
       "refs": {
         "ForecastComputation$PeriodsForward": "<p>The periods forward setup of a forecast computation.</p>",
         "TimeBasedForecastProperties$PeriodsForward": "<p>The periods forward setup of a forecast computation.</p>"
+      }
+    },
+    "PersonalizationMode": {
+      "base": null,
+      "refs": {
+        "DescribeQPersonalizationConfigurationResponse$PersonalizationMode": "<p>A value that indicates whether personalization is enabled or not.</p>",
+        "UpdateQPersonalizationConfigurationRequest$PersonalizationMode": "<p>An option to allow Amazon QuickSight to customize data stories with user specific metadata, specifically location and job information, in your IAM Identity Center instance.</p>",
+        "UpdateQPersonalizationConfigurationResponse$PersonalizationMode": "<p>The personalization mode that is used for the personalization configuration.</p>"
       }
     },
     "PhysicalTable": {
@@ -11128,6 +11188,7 @@
         "DescribeIpRestrictionResponse$Status": "<p>The HTTP status of the request. </p>",
         "DescribeKeyRegistrationResponse$Status": "<p>The HTTP status of the request.</p>",
         "DescribeNamespaceResponse$Status": "<p>The HTTP status of the request.</p>",
+        "DescribeQPersonalizationConfigurationResponse$Status": "<p>The HTTP status of the request.</p>",
         "DescribeRefreshScheduleResponse$Status": "<p>The HTTP status of the request.</p>",
         "DescribeRoleCustomPermissionResponse$Status": "<p>The HTTP status of the request.</p>",
         "DescribeTemplateAliasResponse$Status": "<p>The HTTP status of the request.</p>",
@@ -11156,6 +11217,7 @@
         "ListDataSetsResponse$Status": "<p>The HTTP status of the request.</p>",
         "ListDataSourcesResponse$Status": "<p>The HTTP status of the request.</p>",
         "ListFolderMembersResponse$Status": "<p>The HTTP status of the request.</p>",
+        "ListFoldersForResourceResponse$Status": "<p>The HTTP status of the request.</p>",
         "ListFoldersResponse$Status": "<p>The HTTP status of the request.</p>",
         "ListGroupMembershipsResponse$Status": "<p>The HTTP status of the request.</p>",
         "ListGroupsResponse$Status": "<p>The HTTP status of the request.</p>",
@@ -11213,6 +11275,7 @@
         "UpdateIdentityPropagationConfigResponse$Status": "<p>The HTTP status of the request.</p>",
         "UpdateIpRestrictionResponse$Status": "<p>The HTTP status of the request. </p>",
         "UpdatePublicSharingSettingsResponse$Status": "<p>The HTTP status of the request.</p>",
+        "UpdateQPersonalizationConfigurationResponse$Status": "<p>The HTTP status of the request.</p>",
         "UpdateRefreshScheduleResponse$Status": "<p>The HTTP status of the request.</p>",
         "UpdateRoleCustomPermissionResponse$Status": "<p>The HTTP status of the request.</p>",
         "UpdateSPICECapacityConfigurationResponse$Status": "<p>The HTTP status of the request.</p>",
@@ -11366,6 +11429,7 @@
         "DescribeIngestionResponse$RequestId": "<p>The Amazon Web Services request ID for this operation.</p>",
         "DescribeIpRestrictionResponse$RequestId": "<p>The Amazon Web Services request ID for this operation.</p>",
         "DescribeNamespaceResponse$RequestId": "<p>The Amazon Web Services request ID for this operation.</p>",
+        "DescribeQPersonalizationConfigurationResponse$RequestId": "<p>The Amazon Web Services request ID for this operation.</p>",
         "DescribeRefreshScheduleRequest$ScheduleId": "<p>The ID of the refresh schedule.</p>",
         "DescribeRefreshScheduleResponse$RequestId": "<p>The Amazon Web Services request ID for this operation.</p>",
         "DescribeRoleCustomPermissionResponse$RequestId": "<p>The Amazon Web Services request ID for this operation.</p>",
@@ -11438,6 +11502,9 @@
         "ListFolderMembersRequest$NextToken": "<p>The token for the next set of results, or null if there are no more results.</p>",
         "ListFolderMembersResponse$NextToken": "<p>The token for the next set of results, or null if there are no more results.</p>",
         "ListFolderMembersResponse$RequestId": "<p>The Amazon Web Services request ID for this operation.</p>",
+        "ListFoldersForResourceRequest$NextToken": "<p>The token for the next set of results, or null if there are no more results.</p>",
+        "ListFoldersForResourceResponse$NextToken": "<p>The token for the next set of results, or null if there are no more results.</p>",
+        "ListFoldersForResourceResponse$RequestId": "<p>The Amazon Web Services request ID for this operation.</p>",
         "ListFoldersRequest$NextToken": "<p>The token for the next set of results, or null if there are no more results.</p>",
         "ListFoldersResponse$NextToken": "<p>The token for the next set of results, or null if there are no more results.</p>",
         "ListFoldersResponse$RequestId": "<p>The Amazon Web Services request ID for this operation.</p>",
@@ -11605,6 +11672,7 @@
         "UpdateIdentityPropagationConfigResponse$RequestId": "<p>The Amazon Web Services request ID for this operation.</p>",
         "UpdateIpRestrictionResponse$RequestId": "<p>The Amazon Web Services request ID for this operation.</p>",
         "UpdatePublicSharingSettingsResponse$RequestId": "<p>The Amazon Web Services request ID for this operation.</p>",
+        "UpdateQPersonalizationConfigurationResponse$RequestId": "<p>The Amazon Web Services request ID for this operation.</p>",
         "UpdateRefreshScheduleResponse$RequestId": "<p>The Amazon Web Services request ID for this operation.</p>",
         "UpdateRefreshScheduleResponse$ScheduleId": "<p>The ID of the refresh schedule.</p>",
         "UpdateRoleCustomPermissionResponse$RequestId": "<p>The Amazon Web Services request ID for this operation.</p>",
@@ -13372,6 +13440,16 @@
       }
     },
     "UpdatePublicSharingSettingsResponse": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "UpdateQPersonalizationConfigurationRequest": {
+      "base": null,
+      "refs": {
+      }
+    },
+    "UpdateQPersonalizationConfigurationResponse": {
       "base": null,
       "refs": {
       }

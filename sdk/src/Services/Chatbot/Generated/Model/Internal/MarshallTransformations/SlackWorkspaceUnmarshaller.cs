@@ -78,6 +78,18 @@ namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
                     unmarshalledObject.SlackTeamName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("State", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StateReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StateReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

@@ -41,6 +41,7 @@ namespace Amazon.DataZone.Model
         private string _kmsKeyIdentifier;
         private string _name;
         private string _portalUrl;
+        private string _rootDomainUnitId;
         private SingleSignOn _singleSignOn;
         private DomainStatus _status;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -174,6 +175,25 @@ namespace Amazon.DataZone.Model
         internal bool IsSetPortalUrl()
         {
             return this._portalUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RootDomainUnitId. 
+        /// <para>
+        /// The ID of the root domain unit.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string RootDomainUnitId
+        {
+            get { return this._rootDomainUnitId; }
+            set { this._rootDomainUnitId = value; }
+        }
+
+        // Check to see if RootDomainUnitId property is set
+        internal bool IsSetRootDomainUnitId()
+        {
+            return this._rootDomainUnitId != null;
         }
 
         /// <summary>

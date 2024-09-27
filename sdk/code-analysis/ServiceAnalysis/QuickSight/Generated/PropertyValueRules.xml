@@ -1374,6 +1374,12 @@
     <pattern>^[a-zA-Z0-9._-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeQPersonalizationConfigurationRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.DescribeRefreshScheduleRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
@@ -1810,6 +1816,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.ListFoldersRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ListFoldersForResourceRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ListFoldersForResourceRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
   </property-value-rule>
@@ -2624,6 +2641,12 @@
     <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateQPersonalizationConfigurationRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.UpdateRefreshScheduleRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
@@ -3191,7 +3214,7 @@
   <property-value-rule>
     <property>Amazon.QuickSight.Model.CalculatedColumn.Expression</property>
     <min>1</min>
-    <max>4096</max>
+    <max>250000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.CalculatedField.DataSetIdentifier</property>

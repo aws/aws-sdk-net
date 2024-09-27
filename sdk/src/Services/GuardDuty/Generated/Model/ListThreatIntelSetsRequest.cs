@@ -44,7 +44,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DetectorId. 
         /// <para>
-        /// The unique ID of the detector that the threatIntelSet is associated with.
+        /// The unique ID of the detector that is associated with the threatIntelSet.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]

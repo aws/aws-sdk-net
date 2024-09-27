@@ -99,7 +99,7 @@ namespace Amazon.SecurityHub.Model
         ///  
         /// <para>
         ///  <c>ActivatedRule</c>|<c>OverrideAction</c> applies only when updating or adding a
-        /// <c>RuleGroup</c> to a web ACL. In this case you do not use <c>ActivatedRule</c> <c>Action</c>.
+        /// <c>RuleGroup</c> to a web ACL. In this case you don't use <c>ActivatedRule</c> <c>Action</c>.
         /// For all other update requests, <c>ActivatedRule</c> <c>Action</c> is used instead
         /// of <c>ActivatedRule</c> <c>OverrideAction</c>.
         /// </para>
@@ -121,7 +121,7 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// Specifies the order in which the rules in a web ACL are evaluated. Rules with a lower
         /// value for <c>Priority</c> are evaluated before rules with a higher value. The value
-        /// must be a unique integer. If you add multiple rules to a web ACL, the values do not
+        /// must be a unique integer. If you add multiple rules to a web ACL, the values don't
         /// need to be consecutive.
         /// </para>
         /// </summary>

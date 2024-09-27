@@ -95,16 +95,15 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        ///  <c>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</c>
-        /// 
+        ///  <c>amzn-s3-demo-bucket/my-prefix/i-02573cafcfEXAMPLE/awsrunShellScript</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <c>doc-example-bucket</c> is the name of the S3 bucket;
+        ///  <c>amzn-s3-demo-bucket</c> is the name of the S3 bucket;
         /// </para>
         ///  
         /// <para>
-        ///  <c>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</c> is the name of the S3 prefix;
+        ///  <c>my-prefix</c> is the name of the S3 prefix;
         /// </para>
         ///  
         /// <para>
@@ -137,16 +136,15 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        ///  <c>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</c>
-        /// 
+        ///  <c>amzn-s3-demo-bucket/my-prefix/i-02573cafcfEXAMPLE/awsrunShellScript</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <c>doc-example-bucket</c> is the name of the S3 bucket;
+        ///  <c>amzn-s3-demo-bucket</c> is the name of the S3 bucket;
         /// </para>
         ///  
         /// <para>
-        ///  <c>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</c> is the name of the S3 prefix;
+        ///  <c>my-prefix</c> is the name of the S3 prefix;
         /// </para>
         ///  
         /// <para>

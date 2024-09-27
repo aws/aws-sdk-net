@@ -67,6 +67,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.DBClusterIdentifier = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DBShardGroupArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DBShardGroupArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DBShardGroupIdentifier", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

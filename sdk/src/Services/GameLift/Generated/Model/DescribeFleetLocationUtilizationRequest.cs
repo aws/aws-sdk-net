@@ -56,6 +56,11 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">
+    /// Amazon GameLift service locations</a> for managed hosting
+    /// </para>
+    ///  
+    /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html#gamelift-metrics-fleet">GameLift
     /// metrics for fleets</a> 
     /// </para>

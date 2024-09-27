@@ -69,6 +69,7 @@ namespace Amazon.Runtime.CredentialManagement
         private const string DisableRequestCompressionField = "disable_request_compression";
         private const string RequestMinCompressionSizeBytesField = "request_min_compression_size_bytes";
         private const string ClientAppIdField = "sdk_ua_app_id";
+        private const string AccountIdEndpointModeField = "account_id_endpoint_mode";
         private readonly Logger _logger = Logger.GetLogger(typeof(SharedCredentialsFile));
 
         private static readonly HashSet<string> ReservedPropertyNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
@@ -101,6 +102,7 @@ namespace Amazon.Runtime.CredentialManagement
             DisableRequestCompressionField,
             RequestMinCompressionSizeBytesField,
             ClientAppIdField,
+            AccountIdEndpointModeField
         };
 
         /// <summary>
@@ -432,6 +434,8 @@ namespace Amazon.Runtime.CredentialManagement
 
             if (profile.ClientAppId != null)
                 reservedProperties[ClientAppIdField] = profile.ClientAppId;
+            if (profile.AccountIdEndpointMode != null)
+                reservedProperties[AccountIdEndpointModeField] = profile.AccountIdEndpointMode.ToString().ToLowerInvariant();
 
             var profileDictionary = PropertyMapping.CombineProfileParts(
                 profile.Options, ReservedPropertyNames, reservedProperties, profile.Properties);
@@ -862,7 +866,32 @@ namespace Amazon.Runtime.CredentialManagement
                     }
                 }
 
-                profile = new CredentialProfile(profileName, profileOptions)
+                AccountIdEndpointMode? accountIdEndpointMode = null;
+                if (reservedProperties.TryGetValue(AccountIdEndpointModeField, out var accountIdEndpointModeString))
+                {
+#if BCL35
+                    try
+                    {
+                        accountIdEndpointMode = (AccountIdEndpointMode)Enum.Parse(typeof(AccountIdEndpointMode), accountIdEndpointModeString, true);
+                    }
+                    catch (Exception)
+                    {
+                        _logger.InfoFormat("Invalid value {0} for {1} in profile {2}. A string preferred/disabled/required is expected.", accountIdEndpointModeString, AccountIdEndpointModeField, profileName);
+                        profile = null;
+                        return false;
+                    }
+#else
+                    if (!Enum.TryParse<AccountIdEndpointMode>(accountIdEndpointModeString, true, out var accountIdEndpointModeTemp))
+                    {
+                        _logger.InfoFormat("Invalid value {0} for {1} in profile {2}. A string  preferred/disabled/required is expected.", accountIdEndpointModeString, AccountIdEndpointModeField, profileName);
+                        profile = null;
+                        return false;
+                    }
+                    accountIdEndpointMode = accountIdEndpointModeTemp;
+                
+#endif
+                }
+                    profile = new CredentialProfile(profileName, profileOptions)
                 {
                     UniqueKey = toolkitArtifactGuid,
                     Properties = userProperties,
@@ -886,7 +915,8 @@ namespace Amazon.Runtime.CredentialManagement
                     EndpointUrl = endpointUrlString,
                     DisableRequestCompression = disableRequestCompression,
                     RequestMinCompressionSizeBytes = requestMinCompressionSizeBytes,
-                    ClientAppId = clientAppId
+                    ClientAppId = clientAppId,
+                    AccountIdEndpointMode = accountIdEndpointMode
                 };
 
                 if (!IsSupportedProfileType(profile.ProfileType))

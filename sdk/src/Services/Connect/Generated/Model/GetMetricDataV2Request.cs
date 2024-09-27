@@ -1683,7 +1683,7 @@ namespace Amazon.Connect.Model
         /// <para>
         /// The <c>Negate</c> key in Metric Level Filters is not applicable for this metric.
         /// </para>
-        ///  </note> </dd> <dt>SUM_CONTACTS_ABANDONED</dt> <dd> 
+        ///  </note> </dd> <dt>CONTACTS_ABANDONED</dt> <dd> 
         /// <para>
         /// Unit: Count
         /// </para>

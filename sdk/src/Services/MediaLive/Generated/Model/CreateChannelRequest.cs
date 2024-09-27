@@ -35,6 +35,7 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class CreateChannelRequest : AmazonMediaLiveRequest
     {
+        private AnywhereSettings _anywhereSettings;
         private CdiInputSpecification _cdiInputSpecification;
         private ChannelClass _channelClass;
         private List<OutputDestination> _destinations = AWSConfigs.InitializeCollections ? new List<OutputDestination>() : null;
@@ -49,6 +50,22 @@ namespace Amazon.MediaLive.Model
         private string _roleArn;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private VpcOutputSettings _vpc;
+
+        /// <summary>
+        /// Gets and sets the property AnywhereSettings. The Elemental Anywhere settings for this
+        /// channel.
+        /// </summary>
+        public AnywhereSettings AnywhereSettings
+        {
+            get { return this._anywhereSettings; }
+            set { this._anywhereSettings = value; }
+        }
+
+        // Check to see if AnywhereSettings property is set
+        internal bool IsSetAnywhereSettings()
+        {
+            return this._anywhereSettings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CdiInputSpecification. Specification of CDI inputs for

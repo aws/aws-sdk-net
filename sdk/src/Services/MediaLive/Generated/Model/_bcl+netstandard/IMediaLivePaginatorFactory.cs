@@ -32,6 +32,11 @@ namespace Amazon.MediaLive.Model
         IDescribeSchedulePaginator DescribeSchedule(DescribeScheduleRequest request);
 
         /// <summary>
+        /// Paginator for ListChannelPlacementGroups operation
+        ///</summary>
+        IListChannelPlacementGroupsPaginator ListChannelPlacementGroups(ListChannelPlacementGroupsRequest request);
+
+        /// <summary>
         /// Paginator for ListChannels operation
         ///</summary>
         IListChannelsPaginator ListChannels(ListChannelsRequest request);
@@ -45,6 +50,11 @@ namespace Amazon.MediaLive.Model
         /// Paginator for ListCloudWatchAlarmTemplates operation
         ///</summary>
         IListCloudWatchAlarmTemplatesPaginator ListCloudWatchAlarmTemplates(ListCloudWatchAlarmTemplatesRequest request);
+
+        /// <summary>
+        /// Paginator for ListClusters operation
+        ///</summary>
+        IListClustersPaginator ListClusters(ListClustersRequest request);
 
         /// <summary>
         /// Paginator for ListEventBridgeRuleTemplateGroups operation
@@ -85,6 +95,16 @@ namespace Amazon.MediaLive.Model
         /// Paginator for ListMultiplexPrograms operation
         ///</summary>
         IListMultiplexProgramsPaginator ListMultiplexPrograms(ListMultiplexProgramsRequest request);
+
+        /// <summary>
+        /// Paginator for ListNetworks operation
+        ///</summary>
+        IListNetworksPaginator ListNetworks(ListNetworksRequest request);
+
+        /// <summary>
+        /// Paginator for ListNodes operation
+        ///</summary>
+        IListNodesPaginator ListNodes(ListNodesRequest request);
 
         /// <summary>
         /// Paginator for ListOfferings operation

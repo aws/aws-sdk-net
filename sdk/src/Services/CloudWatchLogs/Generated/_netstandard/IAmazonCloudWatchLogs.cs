@@ -1145,6 +1145,38 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
                 
+        #region  DescribeConfigurationTemplates
+
+
+
+        /// <summary>
+        /// Use this operation to return the valid and default values that are used when creating
+        /// delivery sources, delivery destinations, and deliveries. For more information about
+        /// deliveries, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateDelivery.html">CreateDelivery</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationTemplates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeConfigurationTemplates service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeConfigurationTemplates">REST API Reference for DescribeConfigurationTemplates Operation</seealso>
+        Task<DescribeConfigurationTemplatesResponse> DescribeConfigurationTemplatesAsync(DescribeConfigurationTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeDeliveries
 
 
@@ -2317,10 +2349,10 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Each account can have one account-level subscription filter policy. If you are updating
-        /// an existing filter, you must specify the correct name in <c>PolicyName</c>. To perform
-        /// a <c>PutAccountPolicy</c> subscription filter operation for any destination except
-        /// a Lambda function, you must also have the <c>iam:PassRole</c> permission.
+        /// Each account can have one account-level subscription filter policy per Region. If
+        /// you are updating an existing filter, you must specify the correct name in <c>PolicyName</c>.
+        /// To perform a <c>PutAccountPolicy</c> subscription filter operation for any destination
+        /// except a Lambda function, you must also have the <c>iam:PassRole</c> permission.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAccountPolicy service method.</param>
@@ -2856,6 +2888,15 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
+        /// Using regular expressions to create metric filters is supported. For these filters,
+        /// there is a quotas of quota of two regular expression patterns within a single filter
+        /// pattern. There is also a quota of five regular expression patterns per log group.
+        /// For more information about using regular expressions in metric filters, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">
+        /// Filter pattern syntax for metric filters, subscription filters, filter log events,
+        /// and Live Tail</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// When you create a metric filter, you can also optionally assign a unit and dimensions
         /// to the metric that is created.
         /// </para>
@@ -3083,6 +3124,16 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
+        /// Using regular expressions to create subscription filters is supported. For these filters,
+        /// there is a quotas of quota of two regular expression patterns within a single filter
+        /// pattern. There is also a quota of five regular expression patterns per log group.
+        /// For more information about using regular expressions in subscription filters, see
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">
+        /// Filter pattern syntax for metric filters, subscription filters, filter log events,
+        /// and Live Tail</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// To perform a <c>PutSubscriptionFilter</c> operation for any destination except a Lambda
         /// function, you must also have the <c>iam:PassRole</c> permission.
         /// </para>
@@ -3162,12 +3213,12 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_SessionStreamingException.html">SessionStreamingException</a>
+        /// A <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartLiveTailResponseStream.html#CWL-Type-StartLiveTailResponseStream-SessionStreamingException">SessionStreamingException</a>
         /// object is returned if an unknown error occurs on the server side.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_SessionTimeoutException.html">SessionTimeoutException</a>
+        /// A <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartLiveTailResponseStream.html#CWL-Type-StartLiveTailResponseStream-SessionTimeoutException">SessionTimeoutException</a>
         /// object is returned when the session times out, after it has been kept open for three
         /// hours.
         /// </para>
@@ -3560,6 +3611,44 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UpdateAnomaly">REST API Reference for UpdateAnomaly Operation</seealso>
         Task<UpdateAnomalyResponse> UpdateAnomalyAsync(UpdateAnomalyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateDeliveryConfiguration
+
+
+
+        /// <summary>
+        /// Use this operation to update the configuration of a <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_Delivery.html">delivery</a>
+        /// to change either the S3 path pattern or the format of the delivered logs. You can't
+        /// use this operation to change the source or destination of the delivery.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDeliveryConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDeliveryConfiguration service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.AccessDeniedException">
+        /// You don't have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ConflictException">
+        /// This operation attempted to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UpdateDeliveryConfiguration">REST API Reference for UpdateDeliveryConfiguration Operation</seealso>
+        Task<UpdateDeliveryConfigurationResponse> UpdateDeliveryConfigurationAsync(UpdateDeliveryConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

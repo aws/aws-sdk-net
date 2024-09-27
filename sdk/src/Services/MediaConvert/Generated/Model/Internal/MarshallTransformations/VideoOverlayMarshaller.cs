@@ -54,6 +54,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.EndTimecode);
             }
 
+            if(requestObject.IsSetInitialPosition())
+            {
+                context.Writer.WritePropertyName("initialPosition");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = VideoOverlayPositionMarshaller.Instance;
+                marshaller.Marshall(requestObject.InitialPosition, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetInput())
             {
                 context.Writer.WritePropertyName("input");
@@ -65,10 +76,32 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetPlayback())
+            {
+                context.Writer.WritePropertyName("playback");
+                context.Writer.Write(requestObject.Playback);
+            }
+
             if(requestObject.IsSetStartTimecode())
             {
                 context.Writer.WritePropertyName("startTimecode");
                 context.Writer.Write(requestObject.StartTimecode);
+            }
+
+            if(requestObject.IsSetTransitions())
+            {
+                context.Writer.WritePropertyName("transitions");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectTransitionsListValue in requestObject.Transitions)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = VideoOverlayTransitionMarshaller.Instance;
+                    marshaller.Marshall(requestObjectTransitionsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }

@@ -45,7 +45,7 @@ namespace Amazon.Synthetics.Model
         /// The name of the canary that you want to run. To find canary names, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=21)]
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }

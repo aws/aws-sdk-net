@@ -39,7 +39,8 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property BedrockModel. 
         /// <para>
-        /// Defines the Amazon Bedrock model and inference parameters you want used.
+        /// Defines the Amazon Bedrock model or inference profile and inference parameters you
+        /// want used.
         /// </para>
         /// </summary>
         public EvaluationBedrockModel BedrockModel

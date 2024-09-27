@@ -77,6 +77,7 @@ namespace Amazon.SageMakerRuntime.Model
         private string _endpointName;
         private string _inferenceComponentName;
         private string _inferenceId;
+        private string _sessionId;
         private string _targetContainerHostname;
         private string _targetModel;
         private string _targetVariant;
@@ -263,6 +264,42 @@ namespace Amazon.SageMakerRuntime.Model
         internal bool IsSetInferenceId()
         {
             return !string.IsNullOrEmpty(this._inferenceId);
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionId. 
+        /// <para>
+        /// Creates a stateful session or identifies an existing one. You can do one of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Create a stateful session by specifying the value <c>NEW_SESSION</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Send your request to an existing stateful session by specifying the ID of that session.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// With a stateful session, you can send multiple requests to a stateful model. When
+        /// you create a session with a stateful model, the model must create the session ID and
+        /// set the expiration time. The model must also provide that information in the response
+        /// to your request. You can get the ID and timestamp from the <c>NewSessionId</c> response
+        /// parameter. For any subsequent request where you specify that session ID, SageMaker
+        /// routes the request to the same instance that supports the session.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string SessionId
+        {
+            get { return this._sessionId; }
+            set { this._sessionId = value; }
+        }
+
+        // Check to see if SessionId property is set
+        internal bool IsSetSessionId()
+        {
+            return !string.IsNullOrEmpty(this._sessionId);
         }
 
         /// <summary>

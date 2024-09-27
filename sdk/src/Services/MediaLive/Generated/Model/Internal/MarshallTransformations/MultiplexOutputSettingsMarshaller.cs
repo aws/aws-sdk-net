@@ -48,6 +48,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetContainerSettings())
+            {
+                context.Writer.WritePropertyName("containerSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = MultiplexContainerSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ContainerSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDestination())
             {
                 context.Writer.WritePropertyName("destination");

@@ -3026,7 +3026,12 @@ namespace Amazon.S3Control
         /// You must have the <c>s3:GetAccessGrantsInstance</c> permission to use this operation.
         /// 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <note> 
+        /// <para>
+        ///  <c>GetAccessGrantsInstance</c> is not supported for cross-account access. You can
+        /// only call the API from the account that owns the S3 Access Grants instance.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccessGrantsInstance service method.</param>
         /// 
@@ -3044,7 +3049,12 @@ namespace Amazon.S3Control
         /// You must have the <c>s3:GetAccessGrantsInstance</c> permission to use this operation.
         /// 
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <note> 
+        /// <para>
+        ///  <c>GetAccessGrantsInstance</c> is not supported for cross-account access. You can
+        /// only call the API from the account that owns the S3 Access Grants instance.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccessGrantsInstance service method.</param>
         /// <param name="cancellationToken">
@@ -5654,6 +5664,52 @@ namespace Amazon.S3Control
         /// <returns>The response from the ListAccessPointsForObjectLambda service method, as returned by S3Control.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessPointsForObjectLambda">REST API Reference for ListAccessPointsForObjectLambda Operation</seealso>
         Task<ListAccessPointsForObjectLambdaResponse> ListAccessPointsForObjectLambdaAsync(ListAccessPointsForObjectLambdaRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListCallerAccessGrants
+
+
+        /// <summary>
+        /// Returns a list of the access grants that were given to the caller using S3 Access
+        /// Grants and that allow the caller to access the S3 data of the Amazon Web Services
+        /// account specified in the request.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3:ListCallerAccessGrants</c> permission to use this operation.
+        /// 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCallerAccessGrants service method.</param>
+        /// 
+        /// <returns>The response from the ListCallerAccessGrants service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListCallerAccessGrants">REST API Reference for ListCallerAccessGrants Operation</seealso>
+        ListCallerAccessGrantsResponse ListCallerAccessGrants(ListCallerAccessGrantsRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of the access grants that were given to the caller using S3 Access
+        /// Grants and that allow the caller to access the S3 data of the Amazon Web Services
+        /// account specified in the request.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3:ListCallerAccessGrants</c> permission to use this operation.
+        /// 
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCallerAccessGrants service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCallerAccessGrants service method, as returned by S3Control.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListCallerAccessGrants">REST API Reference for ListCallerAccessGrants Operation</seealso>
+        Task<ListCallerAccessGrantsResponse> ListCallerAccessGrantsAsync(ListCallerAccessGrantsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

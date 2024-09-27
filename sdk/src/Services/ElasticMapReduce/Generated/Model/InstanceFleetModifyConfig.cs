@@ -42,6 +42,7 @@ namespace Amazon.ElasticMapReduce.Model
     public partial class InstanceFleetModifyConfig
     {
         private string _instanceFleetId;
+        private List<InstanceTypeConfig> _instanceTypeConfigs = AWSConfigs.InitializeCollections ? new List<InstanceTypeConfig>() : null;
         private InstanceFleetResizingSpecifications _resizeSpecifications;
         private int? _targetOnDemandCapacity;
         private int? _targetSpotCapacity;
@@ -63,6 +64,26 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetInstanceFleetId()
         {
             return this._instanceFleetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceTypeConfigs. 
+        /// <para>
+        /// An array of InstanceTypeConfig objects that specify how Amazon EMR provisions Amazon
+        /// EC2 instances when it fulfills On-Demand and Spot capacities. For more information,
+        /// see <a href="https://docs.aws.amazon.com/emr/latest/APIReference/API_InstanceTypeConfig.html">InstanceTypeConfig</a>.
+        /// </para>
+        /// </summary>
+        public List<InstanceTypeConfig> InstanceTypeConfigs
+        {
+            get { return this._instanceTypeConfigs; }
+            set { this._instanceTypeConfigs = value; }
+        }
+
+        // Check to see if InstanceTypeConfigs property is set
+        internal bool IsSetInstanceTypeConfigs()
+        {
+            return this._instanceTypeConfigs != null && (this._instanceTypeConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

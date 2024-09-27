@@ -34,7 +34,60 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class InputDestinationRequest
     {
+        private string _network;
+        private List<InputRequestDestinationRoute> _networkRoutes = AWSConfigs.InitializeCollections ? new List<InputRequestDestinationRoute>() : null;
+        private string _staticIpAddress;
         private string _streamName;
+
+        /// <summary>
+        /// Gets and sets the property Network. If the push input has an input location of ON-PREM,
+        /// ID the ID of the attached network.
+        /// </summary>
+        public string Network
+        {
+            get { return this._network; }
+            set { this._network = value; }
+        }
+
+        // Check to see if Network property is set
+        internal bool IsSetNetwork()
+        {
+            return this._network != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkRoutes. If the push input has an input location
+        /// of ON-PREM it's a requirement to specify what the route of the inputis going to be
+        /// on the customer local network.
+        /// </summary>
+        public List<InputRequestDestinationRoute> NetworkRoutes
+        {
+            get { return this._networkRoutes; }
+            set { this._networkRoutes = value; }
+        }
+
+        // Check to see if NetworkRoutes property is set
+        internal bool IsSetNetworkRoutes()
+        {
+            return this._networkRoutes != null && (this._networkRoutes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StaticIpAddress. If the push input has an input location
+        /// of ON-PREM it's optional to specify what the ip addressof the input is going to be
+        /// on the customer local network.
+        /// </summary>
+        public string StaticIpAddress
+        {
+            get { return this._staticIpAddress; }
+            set { this._staticIpAddress = value; }
+        }
+
+        // Check to see if StaticIpAddress property is set
+        internal bool IsSetStaticIpAddress()
+        {
+            return this._staticIpAddress != null;
+        }
 
         /// <summary>
         /// Gets and sets the property StreamName. A unique name for the location the RTMP stream

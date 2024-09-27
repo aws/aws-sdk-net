@@ -66,7 +66,7 @@ namespace Amazon.Runtime.Internal
             try
             {
                 SetMetrics(executionContext.RequestContext);
-                IRequest wrappedRequest = executionContext.RequestContext.Request; 
+                IRequest wrappedRequest = executionContext.RequestContext.Request;
                 httpRequest = CreateWebRequest(executionContext.RequestContext);
                 httpRequest.SetRequestHeaders(wrappedRequest.Headers);
 

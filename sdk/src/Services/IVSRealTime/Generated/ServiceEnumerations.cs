@@ -159,9 +159,29 @@ namespace Amazon.IVSRealTime
     {
 
         /// <summary>
+        /// Constant BITRATE_EXCEEDED for EventErrorCode
+        /// </summary>
+        public static readonly EventErrorCode BITRATE_EXCEEDED = new EventErrorCode("BITRATE_EXCEEDED");
+        /// <summary>
         /// Constant INSUFFICIENT_CAPABILITIES for EventErrorCode
         /// </summary>
         public static readonly EventErrorCode INSUFFICIENT_CAPABILITIES = new EventErrorCode("INSUFFICIENT_CAPABILITIES");
+        /// <summary>
+        /// Constant INVALID_AUDIO_CODEC for EventErrorCode
+        /// </summary>
+        public static readonly EventErrorCode INVALID_AUDIO_CODEC = new EventErrorCode("INVALID_AUDIO_CODEC");
+        /// <summary>
+        /// Constant INVALID_PROTOCOL for EventErrorCode
+        /// </summary>
+        public static readonly EventErrorCode INVALID_PROTOCOL = new EventErrorCode("INVALID_PROTOCOL");
+        /// <summary>
+        /// Constant INVALID_STREAM_KEY for EventErrorCode
+        /// </summary>
+        public static readonly EventErrorCode INVALID_STREAM_KEY = new EventErrorCode("INVALID_STREAM_KEY");
+        /// <summary>
+        /// Constant INVALID_VIDEO_CODEC for EventErrorCode
+        /// </summary>
+        public static readonly EventErrorCode INVALID_VIDEO_CODEC = new EventErrorCode("INVALID_VIDEO_CODEC");
         /// <summary>
         /// Constant PUBLISHER_NOT_FOUND for EventErrorCode
         /// </summary>
@@ -170,6 +190,18 @@ namespace Amazon.IVSRealTime
         /// Constant QUOTA_EXCEEDED for EventErrorCode
         /// </summary>
         public static readonly EventErrorCode QUOTA_EXCEEDED = new EventErrorCode("QUOTA_EXCEEDED");
+        /// <summary>
+        /// Constant RESOLUTION_EXCEEDED for EventErrorCode
+        /// </summary>
+        public static readonly EventErrorCode RESOLUTION_EXCEEDED = new EventErrorCode("RESOLUTION_EXCEEDED");
+        /// <summary>
+        /// Constant REUSE_OF_STREAM_KEY for EventErrorCode
+        /// </summary>
+        public static readonly EventErrorCode REUSE_OF_STREAM_KEY = new EventErrorCode("REUSE_OF_STREAM_KEY");
+        /// <summary>
+        /// Constant STREAM_DURATION_EXCEEDED for EventErrorCode
+        /// </summary>
+        public static readonly EventErrorCode STREAM_DURATION_EXCEEDED = new EventErrorCode("STREAM_DURATION_EXCEEDED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -278,6 +310,164 @@ namespace Amazon.IVSRealTime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EventName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IngestConfigurationState.
+    /// </summary>
+    public class IngestConfigurationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for IngestConfigurationState
+        /// </summary>
+        public static readonly IngestConfigurationState ACTIVE = new IngestConfigurationState("ACTIVE");
+        /// <summary>
+        /// Constant INACTIVE for IngestConfigurationState
+        /// </summary>
+        public static readonly IngestConfigurationState INACTIVE = new IngestConfigurationState("INACTIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IngestConfigurationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IngestConfigurationState FindValue(string value)
+        {
+            return FindValue<IngestConfigurationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IngestConfigurationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IngestProtocol.
+    /// </summary>
+    public class IngestProtocol : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RTMP for IngestProtocol
+        /// </summary>
+        public static readonly IngestProtocol RTMP = new IngestProtocol("RTMP");
+        /// <summary>
+        /// Constant RTMPS for IngestProtocol
+        /// </summary>
+        public static readonly IngestProtocol RTMPS = new IngestProtocol("RTMPS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IngestProtocol(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IngestProtocol FindValue(string value)
+        {
+            return FindValue<IngestProtocol>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IngestProtocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ParticipantProtocol.
+    /// </summary>
+    public class ParticipantProtocol : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RTMP for ParticipantProtocol
+        /// </summary>
+        public static readonly ParticipantProtocol RTMP = new ParticipantProtocol("RTMP");
+        /// <summary>
+        /// Constant RTMPS for ParticipantProtocol
+        /// </summary>
+        public static readonly ParticipantProtocol RTMPS = new ParticipantProtocol("RTMPS");
+        /// <summary>
+        /// Constant UNKNOWN for ParticipantProtocol
+        /// </summary>
+        public static readonly ParticipantProtocol UNKNOWN = new ParticipantProtocol("UNKNOWN");
+        /// <summary>
+        /// Constant WHIP for ParticipantProtocol
+        /// </summary>
+        public static readonly ParticipantProtocol WHIP = new ParticipantProtocol("WHIP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ParticipantProtocol(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ParticipantProtocol FindValue(string value)
+        {
+            return FindValue<ParticipantProtocol>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ParticipantProtocol(string value)
         {
             return FindValue(value);
         }

@@ -171,6 +171,12 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// The name of the OptOutList to associate with the phone number. You can use the OptOutListName
         /// or OptOutListArn.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you are using a shared AWS End User Messaging SMS and Voice resource then you must
+        /// use the full Amazon Resource Name(ARN).
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
         public string OptOutListName
@@ -190,6 +196,12 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// <para>
         /// The pool to associated with the phone number. You can use the PoolId or PoolArn. 
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you are using a shared AWS End User Messaging SMS and Voice resource then you must
+        /// use the full Amazon Resource Name(ARN).
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
         public string PoolId

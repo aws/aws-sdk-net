@@ -66,7 +66,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// A valid security key in PEM format.
+        /// A valid security key in PEM format as a String.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

@@ -34,10 +34,16 @@ namespace Amazon.ImportExport
     public partial class AmazonImportExportConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("ImportExport", "4.0.0.0");
 
         private static readonly AmazonImportExportEndpointResolver EndpointResolver =
             new AmazonImportExportEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("ImportExport", "3.7.400.11");
+=======
+            InternalSDKUtils.BuildUserAgentString("ImportExport", "3.7.400.26");
+>>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
 
         private string _userAgent = UserAgentString;
         ///<summary>

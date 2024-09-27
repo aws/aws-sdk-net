@@ -72,6 +72,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.CascadingControlConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CommitMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CommitMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DisplayOptions", targetDepth))
                 {
                     var unmarshaller = DropDownControlDisplayOptionsUnmarshaller.Instance;

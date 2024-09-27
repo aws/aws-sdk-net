@@ -36,9 +36,44 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class ModifyDBShardGroupRequest : AmazonRDSRequest
     {
+        private int? _computeRedundancy;
         private string _dbShardGroupIdentifier;
         private double? _maxACU;
         private double? _minACU;
+
+        /// <summary>
+        /// Gets and sets the property ComputeRedundancy. 
+        /// <para>
+        /// Specifies whether to create standby DB shard groups for the DB shard group. Valid
+        /// values are the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// 0 - Creates a DB shard group without a standby DB shard group. This is the default
+        /// value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// 1 - Creates a DB shard group with a standby DB shard group in a different Availability
+        /// Zone (AZ).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// 2 - Creates a DB shard group with two standby DB shard groups in two different AZs.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public int ComputeRedundancy
+        {
+            get { return this._computeRedundancy.GetValueOrDefault(); }
+            set { this._computeRedundancy = value; }
+        }
+
+        // Check to see if ComputeRedundancy property is set
+        internal bool IsSetComputeRedundancy()
+        {
+            return this._computeRedundancy.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property DBShardGroupIdentifier. 

@@ -74,10 +74,22 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("IdentityCenterApplicationArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.IdentityCenterApplicationArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("IdentityCenterArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.IdentityCenterArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("IdentityCenterInstanceArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.IdentityCenterInstanceArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }

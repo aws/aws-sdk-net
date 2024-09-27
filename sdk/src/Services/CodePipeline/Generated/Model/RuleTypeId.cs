@@ -44,21 +44,8 @@ namespace Amazon.CodePipeline.Model
         /// Gets and sets the property Category. 
         /// <para>
         /// A category defines what kind of rule can be run in the stage, and constrains the provider
-        /// type for the rule. Valid categories are limited to one of the following values. 
+        /// type for the rule. The valid category is <c>Rule</c>. 
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// INVOKE
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Approval
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Rule
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public RuleCategory Category
@@ -95,9 +82,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Provider. 
         /// <para>
-        /// The provider of the service being called by the rule. Valid providers are determined
-        /// by the rulecategory. For example, a managed rule in the Rule category type has an
-        /// owner of AWS, which would be specified as <c>AWS</c>.
+        /// The rule provider, such as the <c>DeploymentWindow</c> rule.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=35)]

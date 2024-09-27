@@ -35,7 +35,28 @@ namespace Amazon.ElasticMapReduce.Model
     /// </summary>
     public partial class SpotResizingSpecification
     {
+        private SpotProvisioningAllocationStrategy _allocationStrategy;
         private int? _timeoutDurationMinutes;
+
+        /// <summary>
+        /// Gets and sets the property AllocationStrategy. 
+        /// <para>
+        /// Specifies the allocation strategy to use to launch Spot instances during a resize.
+        /// If you run Amazon EMR releases 6.9.0 or higher, the default is <c>price-capacity-optimized</c>.
+        /// If you run Amazon EMR releases 6.8.0 or lower, the default is <c>capacity-optimized</c>.
+        /// </para>
+        /// </summary>
+        public SpotProvisioningAllocationStrategy AllocationStrategy
+        {
+            get { return this._allocationStrategy; }
+            set { this._allocationStrategy = value; }
+        }
+
+        // Check to see if AllocationStrategy property is set
+        internal bool IsSetAllocationStrategy()
+        {
+            return this._allocationStrategy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property TimeoutDurationMinutes. 
@@ -49,8 +70,16 @@ namespace Amazon.ElasticMapReduce.Model
         /// Reclamation.
         /// </para>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Required=true, Min=0)]
         public int? TimeoutDurationMinutes
+||||||| Commit version number update changes
+        [AWSProperty(Required=true, Min=0)]
+        public int TimeoutDurationMinutes
+=======
+        [AWSProperty(Min=0)]
+        public int TimeoutDurationMinutes
+>>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
         {
             get { return this._timeoutDurationMinutes; }
             set { this._timeoutDurationMinutes = value; }

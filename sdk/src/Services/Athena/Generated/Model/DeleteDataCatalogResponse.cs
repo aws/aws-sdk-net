@@ -34,6 +34,22 @@ namespace Amazon.Athena.Model
     /// </summary>
     public partial class DeleteDataCatalogResponse : AmazonWebServiceResponse
     {
+        private DataCatalog _dataCatalog;
+
+        /// <summary>
+        /// Gets and sets the property DataCatalog.
+        /// </summary>
+        public DataCatalog DataCatalog
+        {
+            get { return this._dataCatalog; }
+            set { this._dataCatalog = value; }
+        }
+
+        // Check to see if DataCatalog property is set
+        internal bool IsSetDataCatalog()
+        {
+            return this._dataCatalog != null;
+        }
 
     }
 }

@@ -75,7 +75,32 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.ResourcePath = "/packages/{packageName}/versions/{versionName}";
             using (MemoryStream memoryStream = new MemoryStream())
             {
+<<<<<<< HEAD
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+||||||| Commit version number update changes
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAttributes())
+=======
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetArtifact())
+                {
+                    context.Writer.WritePropertyName("artifact");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PackageVersionArtifactMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Artifact, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetAttributes())
+>>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
                 {
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;
@@ -101,7 +126,27 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Description);
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetTags())
+||||||| Commit version number update changes
+                if(publicRequest.IsSetTags())
+                {
+                    context.Writer.WritePropertyName("tags");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+=======
+                if(publicRequest.IsSetRecipe())
+                {
+                    context.Writer.WritePropertyName("recipe");
+                    context.Writer.Write(publicRequest.Recipe);
+                }
+
+                if(publicRequest.IsSetTags())
+                {
+                    context.Writer.WritePropertyName("tags");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+>>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
                     {
                         context.Writer.WritePropertyName("tags");
                         context.Writer.WriteObjectStart();

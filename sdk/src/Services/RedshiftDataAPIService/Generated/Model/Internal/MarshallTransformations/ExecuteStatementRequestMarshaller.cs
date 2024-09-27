@@ -128,11 +128,37 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Sql);
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetStatementName())
                     {
                         context.Writer.WritePropertyName("StatementName");
                         context.Writer.Write(publicRequest.StatementName);
                     }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetSql())
+                {
+                    context.Writer.WritePropertyName("Sql");
+                    context.Writer.Write(publicRequest.Sql);
+                }
+=======
+                if(publicRequest.IsSetSessionId())
+                {
+                    context.Writer.WritePropertyName("SessionId");
+                    context.Writer.Write(publicRequest.SessionId);
+                }
+
+                if(publicRequest.IsSetSessionKeepAliveSeconds())
+                {
+                    context.Writer.WritePropertyName("SessionKeepAliveSeconds");
+                    context.Writer.Write(publicRequest.SessionKeepAliveSeconds);
+                }
+
+                if(publicRequest.IsSetSql())
+                {
+                    context.Writer.WritePropertyName("Sql");
+                    context.Writer.Write(publicRequest.Sql);
+                }
+>>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
 
                     if(publicRequest.IsSetWithEvent())
                     {

@@ -49,7 +49,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the snapshot.
+        /// The description of the disk image being imported.
         /// </para>
         /// </summary>
         public string Description

@@ -37,6 +37,7 @@ namespace Amazon.MediaConvert.Model
     public partial class SpekeKeyProvider
     {
         private string _certificateArn;
+        private EncryptionContractConfiguration _encryptionContractConfiguration;
         private string _resourceId;
         private List<string> _systemIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _url;
@@ -57,6 +58,25 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetCertificateArn()
         {
             return this._certificateArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionContractConfiguration. Specify the SPEKE version,
+        /// either v1.0 or v2.0, that MediaConvert uses when encrypting your output. For more
+        /// information, see: https://docs.aws.amazon.com/speke/latest/documentation/speke-api-specification.html
+        /// To use SPEKE v1.0: Leave blank. To use SPEKE v2.0: Specify a SPEKE v2.0 video preset
+        /// and a SPEKE v2.0 audio preset.
+        /// </summary>
+        public EncryptionContractConfiguration EncryptionContractConfiguration
+        {
+            get { return this._encryptionContractConfiguration; }
+            set { this._encryptionContractConfiguration = value; }
+        }
+
+        // Check to see if EncryptionContractConfiguration property is set
+        internal bool IsSetEncryptionContractConfiguration()
+        {
+            return this._encryptionContractConfiguration != null;
         }
 
         /// <summary>

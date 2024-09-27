@@ -72,6 +72,18 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.Ip = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("network", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Network = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("networkRoutes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<InputDestinationRoute, InputDestinationRouteUnmarshaller>(InputDestinationRouteUnmarshaller.Instance);
+                    unmarshalledObject.NetworkRoutes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("port", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -34,10 +34,16 @@ namespace Amazon.ConnectWisdomService
     public partial class AmazonConnectWisdomServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Wisdom", "4.0.0.0");
 
         private static readonly AmazonConnectWisdomServiceEndpointResolver EndpointResolver =
             new AmazonConnectWisdomServiceEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("Wisdom", "3.7.400.11");
+=======
+            InternalSDKUtils.BuildUserAgentString("Wisdom", "3.7.400.26");
+>>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
 
         private string _userAgent = UserAgentString;
         ///<summary>

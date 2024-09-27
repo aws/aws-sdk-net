@@ -103,7 +103,8 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property RadiusRetries. 
         /// <para>
-        /// The maximum number of times that communication with the RADIUS server is attempted.
+        /// The maximum number of times that communication with the RADIUS server is retried after
+        /// the initial attempt.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
@@ -145,8 +146,16 @@ namespace Amazon.DirectoryService.Model
         /// The amount of time, in seconds, to wait for the RADIUS server to respond.
         /// </para>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Min=1, Max=20)]
         public int? RadiusTimeout
+||||||| Commit version number update changes
+        [AWSProperty(Min=1, Max=20)]
+        public int RadiusTimeout
+=======
+        [AWSProperty(Min=1, Max=50)]
+        public int RadiusTimeout
+>>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
         {
             get { return this._radiusTimeout; }
             set { this._radiusTimeout = value; }

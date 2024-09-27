@@ -102,7 +102,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.ResourceName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("sourceIps", targetDepth))
+                if (context.TestExpression("sourceIPs", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.SourceIps = unmarshaller.Unmarshall(context);

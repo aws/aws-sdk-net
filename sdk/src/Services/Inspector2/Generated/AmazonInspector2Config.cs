@@ -34,10 +34,16 @@ namespace Amazon.Inspector2
     public partial class AmazonInspector2Config : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Inspector2", "4.0.0.0");
 
         private static readonly AmazonInspector2EndpointResolver EndpointResolver =
             new AmazonInspector2EndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("Inspector2", "3.7.402.0");
+=======
+            InternalSDKUtils.BuildUserAgentString("Inspector2", "3.7.402.15");
+>>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
 
         private string _userAgent = UserAgentString;
         ///<summary>

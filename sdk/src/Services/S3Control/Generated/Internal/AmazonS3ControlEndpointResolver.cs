@@ -494,6 +494,12 @@ namespace Amazon.S3Control.Internal
                 result.AccountId = request.AccountId;
                 return result;
             }
+            if (requestContext.RequestName == "ListCallerAccessGrantsRequest") {
+                result.RequiresAccountId = true;
+                var request = (ListCallerAccessGrantsRequest)requestContext.OriginalRequest;
+                result.AccountId = request.AccountId;
+                return result;
+            }
             if (requestContext.RequestName == "ListJobsRequest") {
                 result.RequiresAccountId = true;
                 var request = (ListJobsRequest)requestContext.OriginalRequest;

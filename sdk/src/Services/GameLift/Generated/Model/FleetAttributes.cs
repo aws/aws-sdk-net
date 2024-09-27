@@ -480,6 +480,16 @@ namespace Amazon.GameLift.Model
         /// is determined by the OS of the build or script that is deployed on this fleet. This
         /// attribute is used with fleets where <c>ComputeType</c> is "EC2" or "Container".
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the
+        /// <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For
+        /// game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x., first
+        /// update the game server build to server SDK 5.x, and then deploy to AL2023 instances.
+        /// See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html">
+        /// Migrate to Amazon GameLift server SDK version 5.</a> 
+        /// </para>
+        ///  </note>
         /// </summary>
         public OperatingSystem OperatingSystem
         {
@@ -551,7 +561,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property ServerLaunchParameters. 
         /// <para>
         ///  <b>This parameter is no longer used.</b> Server launch parameters are now defined
-        /// using the fleet's runtime configuration . Requests that use this parameter continue
+        /// using the fleet's runtime configuration. Requests that use this parameter continue
         /// to be valid.
         /// </para>
         /// </summary>
@@ -572,8 +582,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property ServerLaunchPath. 
         /// <para>
         ///  <b>This parameter is no longer used.</b> Server launch paths are now defined using
-        /// the fleet's <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html">RuntimeConfiguration</a>
-        /// . Requests that use this parameter continue to be valid.
+        /// the fleet's <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html">RuntimeConfiguration</a>.
+        /// Requests that use this parameter continue to be valid.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -596,17 +606,23 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// NEW -- A new fleet has been defined and desired instances is set to 1. 
+        /// NEW -- A new fleet resource has been defined and Amazon GameLift has started creating
+        /// the fleet. Desired instances is set to 1. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DOWNLOADING/VALIDATING/BUILDING/ACTIVATING -- Amazon GameLift is setting up the new
-        /// fleet, creating new instances with the game build or Realtime script and starting
-        /// server processes.
+        /// DOWNLOADING/VALIDATING/BUILDING -- Amazon GameLift is download the game server build,
+        /// running install scripts, and then validating the build files. When complete, Amazon
+        /// GameLift launches a fleet instance. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ACTIVE -- Hosts can now accept game sessions.
+        /// ACTIVATING -- Amazon GameLift is launching a game server process and testing its connectivity
+        /// with the Amazon GameLift service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACTIVE -- The fleet is now ready to host game sessions.
         /// </para>
         ///  </li> <li> 
         /// <para>

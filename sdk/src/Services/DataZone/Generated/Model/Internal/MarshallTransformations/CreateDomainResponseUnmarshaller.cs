@@ -94,6 +94,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     response.PortalUrl = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("rootDomainUnitId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.RootDomainUnitId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("singleSignOn", targetDepth))
                 {
                     var unmarshaller = SingleSignOnUnmarshaller.Instance;

@@ -77,6 +77,14 @@ namespace Amazon.S3Control.Model
         }
 
         /// <summary>
+        /// Paginator for ListCallerAccessGrants operation
+        ///</summary>
+        public IListCallerAccessGrantsPaginator ListCallerAccessGrants(ListCallerAccessGrantsRequest request) 
+        {
+            return new ListCallerAccessGrantsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListJobs operation
         ///</summary>
         public IListJobsPaginator ListJobs(ListJobsRequest request) 

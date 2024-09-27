@@ -87,7 +87,39 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                         context.Writer.WriteArrayEnd();
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetMaxResults())
+||||||| Commit version number update changes
+                if(publicRequest.IsSetNextToken())
+                {
+                    context.Writer.WritePropertyName("NextToken");
+                    context.Writer.Write(publicRequest.NextToken);
+                }
+
+                if(publicRequest.IsSetSenderIds())
+                {
+                    context.Writer.WritePropertyName("SenderIds");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSenderIdsListValue in publicRequest.SenderIds)
+=======
+                if(publicRequest.IsSetNextToken())
+                {
+                    context.Writer.WritePropertyName("NextToken");
+                    context.Writer.Write(publicRequest.NextToken);
+                }
+
+                if(publicRequest.IsSetOwner())
+                {
+                    context.Writer.WritePropertyName("Owner");
+                    context.Writer.Write(publicRequest.Owner);
+                }
+
+                if(publicRequest.IsSetSenderIds())
+                {
+                    context.Writer.WritePropertyName("SenderIds");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSenderIdsListValue in publicRequest.SenderIds)
+>>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
                     {
                         context.Writer.WritePropertyName("MaxResults");
                         context.Writer.Write(publicRequest.MaxResults.Value);

@@ -5402,6 +5402,14 @@ namespace Amazon.Glue
         /// Constant Compaction for TableOptimizerType
         /// </summary>
         public static readonly TableOptimizerType Compaction = new TableOptimizerType("compaction");
+        /// <summary>
+        /// Constant Orphan_file_deletion for TableOptimizerType
+        /// </summary>
+        public static readonly TableOptimizerType Orphan_file_deletion = new TableOptimizerType("orphan_file_deletion");
+        /// <summary>
+        /// Constant Retention for TableOptimizerType
+        /// </summary>
+        public static readonly TableOptimizerType Retention = new TableOptimizerType("retention");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

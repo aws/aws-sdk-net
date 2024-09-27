@@ -35,8 +35,8 @@ namespace Amazon.WorkSpaces.Model
     /// 
     ///  
     /// <para>
-    /// You cannot start a WorkSpace unless it has a running mode of <c>AutoStop</c> and a
-    /// state of <c>STOPPED</c>.
+    /// You cannot start a WorkSpace unless it has a running mode of <c>AutoStop</c> or <c>Manual</c>
+    /// and a state of <c>STOPPED</c>.
     /// </para>
     /// </summary>
     public partial class StartWorkspacesRequest : AmazonWorkSpacesRequest

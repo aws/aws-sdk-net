@@ -42,8 +42,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property Formats. 
         /// <para>
-        /// A list of the format of your reports: <c>CSV</c>, <c>JSON</c>, or both. If not specified,
-        /// the default format is <c>CSV</c>.
+        /// The format of your reports: <c>CSV</c>, <c>JSON</c>, or both. If not specified, the
+        /// default format is <c>CSV</c>.
         /// </para>
         /// </summary>
         public List<string> Formats

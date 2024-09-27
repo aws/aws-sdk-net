@@ -58,6 +58,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     response.Instance = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ReplicationConfiguration", targetDepth))
+                {
+                    var unmarshaller = ReplicationConfigurationUnmarshaller.Instance;
+                    response.ReplicationConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

@@ -41,7 +41,27 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class DescribeJobRequest : AmazonIoTRequest
     {
+        private bool? _beforeSubstitution;
         private string _jobId;
+
+        /// <summary>
+        /// Gets and sets the property BeforeSubstitution. 
+        /// <para>
+        /// A flag that provides a view of the job document before and after the substitution
+        /// parameters have been resolved with their exact values.
+        /// </para>
+        /// </summary>
+        public bool BeforeSubstitution
+        {
+            get { return this._beforeSubstitution.GetValueOrDefault(); }
+            set { this._beforeSubstitution = value; }
+        }
+
+        // Check to see if BeforeSubstitution property is set
+        internal bool IsSetBeforeSubstitution()
+        {
+            return this._beforeSubstitution.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property JobId. 

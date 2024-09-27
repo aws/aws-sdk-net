@@ -51,6 +51,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         private List<SenderIdFilter> _filters = AWSConfigs.InitializeCollections ? new List<SenderIdFilter>() : null;
         private int? _maxResults;
         private string _nextToken;
+        private Owner _owner;
         private List<SenderIdAndCountry> _senderIds = AWSConfigs.InitializeCollections ? new List<SenderIdAndCountry>() : null;
 
         /// <summary>
@@ -112,10 +113,36 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Owner. 
+        /// <para>
+        /// Use <c>SELF</c> to filter the list of Sender Ids to ones your account owns or use
+        /// <c>SHARED</c> to filter on Sender Ids shared with your account. The <c>Owner</c> and
+        /// <c>SenderIds</c> parameters can't be used at the same time. 
+        /// </para>
+        /// </summary>
+        public Owner Owner
+        {
+            get { return this._owner; }
+            set { this._owner = value; }
+        }
+
+        // Check to see if Owner property is set
+        internal bool IsSetOwner()
+        {
+            return this._owner != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SenderIds. 
         /// <para>
         /// An array of SenderIdAndCountry objects to search for.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you are using a shared AWS End User Messaging SMS and Voice resource then you must
+        /// use the full Amazon Resource Name(ARN).
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
         public List<SenderIdAndCountry> SenderIds

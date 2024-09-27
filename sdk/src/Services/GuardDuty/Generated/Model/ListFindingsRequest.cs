@@ -261,6 +261,10 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// service.ebsVolumeScanDetails.scanId
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// service.resourceRole
         /// </para>
         ///  </li> <li> 

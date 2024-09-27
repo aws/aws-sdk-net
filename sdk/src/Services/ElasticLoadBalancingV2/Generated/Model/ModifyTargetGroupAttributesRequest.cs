@@ -41,7 +41,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// The attributes.
+        /// The target group attributes.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -94,7 +94,8 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property CertificateUploadDate. 
         /// <para>
         /// The timestamp when the certificate that was used by edge-optimized endpoint for this
-        /// domain name was uploaded.
+        /// domain name was uploaded. API Gateway doesn't change this value if you update the
+        /// certificate.
         /// </para>
         /// </summary>
         public DateTime? CertificateUploadDate

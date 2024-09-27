@@ -33,6 +33,12 @@ namespace Amazon.Backup.Model
     /// Container for the parameters to the TagResource operation.
     /// Assigns a set of key-value pairs to a recovery point, backup plan, or backup vault
     /// identified by an Amazon Resource Name (ARN).
+    /// 
+    ///  
+    /// <para>
+    /// This API is supported for recovery points for resource types including Aurora, Amazon
+    /// DocumentDB. Amazon EBS, Amazon FSx, Neptune, and Amazon RDS.
+    /// </para>
     /// </summary>
     public partial class TagResourceRequest : AmazonBackupRequest
     {
@@ -44,6 +50,13 @@ namespace Amazon.Backup.Model
         /// <para>
         /// An ARN that uniquely identifies a resource. The format of the ARN depends on the type
         /// of the tagged resource.
+        /// </para>
+        ///  
+        /// <para>
+        /// ARNs that do not include <c>backup</c> are incompatible with tagging. <c>TagResource</c>
+        /// and <c>UntagResource</c> with invalid ARNs will result in an error. Acceptable ARN
+        /// content can include <c>arn:aws:backup:us-east</c>. Invalid ARN content may look like
+        /// <c>arn:aws:ec2:us-east</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

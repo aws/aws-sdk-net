@@ -217,6 +217,10 @@ namespace Amazon.EMRServerless
         /// </summary>
         public static readonly JobRunState PENDING = new JobRunState("PENDING");
         /// <summary>
+        /// Constant QUEUED for JobRunState
+        /// </summary>
+        public static readonly JobRunState QUEUED = new JobRunState("QUEUED");
+        /// <summary>
         /// Constant RUNNING for JobRunState
         /// </summary>
         public static readonly JobRunState RUNNING = new JobRunState("RUNNING");

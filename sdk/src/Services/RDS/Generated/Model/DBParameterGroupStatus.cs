@@ -93,8 +93,31 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ParameterApplyStatus. 
         /// <para>
-        /// The status of parameter updates.
+        /// The status of parameter updates. Valid values are:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>applying</c>: The parameter group change is being applied to the database.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>failed-to-apply</c>: The parameter group is in an invalid state.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>in-sync</c>: The parameter group change is synchronized with the database.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>pending-database-upgrade</c>: The parameter group change will be applied after
+        /// the DB instance is upgraded.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>pending-reboot</c>: The parameter group change will be applied after the DB instance
+        /// reboots.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string ParameterApplyStatus
         {

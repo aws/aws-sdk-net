@@ -31,10 +31,10 @@ namespace Amazon.Backup.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLegalHold operation.
-    /// This action creates a legal hold on a recovery point (backup). A legal hold is a restraint
-    /// on altering or deleting a backup until an authorized user cancels the legal hold.
-    /// Any actions to delete or disassociate a recovery point will fail with an error if
-    /// one or more active legal holds are on the recovery point.
+    /// Creates a legal hold on a recovery point (backup). A legal hold is a restraint on
+    /// altering or deleting a backup until an authorized user cancels the legal hold. Any
+    /// actions to delete or disassociate a recovery point will fail with an error if one
+    /// or more active legal holds are on the recovery point.
     /// </summary>
     public partial class CreateLegalHoldRequest : AmazonBackupRequest
     {
@@ -47,7 +47,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// This is the string description of the legal hold.
+        /// The description of the legal hold.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -86,8 +86,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property RecoveryPointSelection. 
         /// <para>
-        /// This specifies criteria to assign a set of resources, such as resource types or backup
-        /// vaults.
+        /// The criteria to assign a set of resources, such as resource types or backup vaults.
         /// </para>
         /// </summary>
         public RecoveryPointSelection RecoveryPointSelection
@@ -126,7 +125,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property Title. 
         /// <para>
-        /// This is the string title of the legal hold.
+        /// The title of the legal hold.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

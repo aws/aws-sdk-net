@@ -2885,6 +2885,10 @@ namespace Amazon.WorkSpaces
         /// </summary>
         public static readonly WorkspaceImageErrorDetailCode AntiVirusInstalled = new WorkspaceImageErrorDetailCode("AntiVirusInstalled");
         /// <summary>
+        /// Constant AppXPackagesInstalled for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode AppXPackagesInstalled = new WorkspaceImageErrorDetailCode("AppXPackagesInstalled");
+        /// <summary>
         /// Constant AutoLogonEnabled for WorkspaceImageErrorDetailCode
         /// </summary>
         public static readonly WorkspaceImageErrorDetailCode AutoLogonEnabled = new WorkspaceImageErrorDetailCode("AutoLogonEnabled");
@@ -2957,9 +2961,17 @@ namespace Amazon.WorkSpaces
         /// </summary>
         public static readonly WorkspaceImageErrorDetailCode Requires64BitOS = new WorkspaceImageErrorDetailCode("Requires64BitOS");
         /// <summary>
+        /// Constant ReservedStorageInUse for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode ReservedStorageInUse = new WorkspaceImageErrorDetailCode("ReservedStorageInUse");
+        /// <summary>
         /// Constant UEFINotSupported for WorkspaceImageErrorDetailCode
         /// </summary>
         public static readonly WorkspaceImageErrorDetailCode UEFINotSupported = new WorkspaceImageErrorDetailCode("UEFINotSupported");
+        /// <summary>
+        /// Constant UnknownError for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode UnknownError = new WorkspaceImageErrorDetailCode("UnknownError");
         /// <summary>
         /// Constant VMWareToolsInstalled for WorkspaceImageErrorDetailCode
         /// </summary>

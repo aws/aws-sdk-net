@@ -71,7 +71,7 @@ namespace Amazon.IVSRealTime
     ///  <ul> <li> 
     /// <para>
     ///  <b>Composition process</b> — Composites participants of a stage into a single video
-    /// and forwards it to a set of outputs (e.g., IVS channels). Composition endpoints support
+    /// and forwards it to a set of outputs (e.g., IVS channels). Composition operations support
     /// this process.
     /// </para>
     ///  </li> <li> 
@@ -92,10 +92,10 @@ namespace Amazon.IVSRealTime
     /// <para>
     /// A <i>tag</i> is a metadata label that you assign to an AWS resource. A tag comprises
     /// a <i>key</i> and a <i>value</i>, both set by you. For example, you might set a tag
-    /// as <c>topic:nature</c> to label a particular video category. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-    /// AWS Resources</a> for more information, including restrictions that apply to tags
-    /// and "Tag naming limits and requirements"; Amazon IVS stages has no service-specific
-    /// constraints beyond what is documented there.
+    /// as <c>topic:nature</c> to label a particular video category. See <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html">Best
+    /// practices and strategies</a> in <i>Tagging AWS Resources and Tag Editor</i> for details,
+    /// including restrictions that apply to tags and "Tag naming limits and requirements";
+    /// Amazon IVS stages has no service-specific constraints beyond what is documented there.
     /// </para>
     ///  
     /// <para>
@@ -106,7 +106,7 @@ namespace Amazon.IVSRealTime
     /// </para>
     ///  
     /// <para>
-    /// The Amazon IVS real-time API has these tag-related endpoints: <a>TagResource</a>,
+    /// The Amazon IVS real-time API has these tag-related operations: <a>TagResource</a>,
     /// <a>UntagResource</a>, and <a>ListTagsForResource</a>. The following resource supports
     /// tagging: Stage.
     /// </para>
@@ -397,6 +397,53 @@ namespace Amazon.IVSRealTime
 
         #endregion
         
+        #region  CreateIngestConfiguration
+
+        internal virtual CreateIngestConfigurationResponse CreateIngestConfiguration(CreateIngestConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIngestConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIngestConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateIngestConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new IngestConfiguration resource, used to specify the ingest protocol for
+        /// a stage.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIngestConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateIngestConfiguration service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/CreateIngestConfiguration">REST API Reference for CreateIngestConfiguration Operation</seealso>
+        public virtual Task<CreateIngestConfigurationResponse> CreateIngestConfigurationAsync(CreateIngestConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIngestConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIngestConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateIngestConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateParticipantToken
 
         internal virtual CreateParticipantTokenResponse CreateParticipantToken(CreateParticipantTokenRequest request)
@@ -609,6 +656,57 @@ namespace Amazon.IVSRealTime
 
         #endregion
         
+        #region  DeleteIngestConfiguration
+
+        internal virtual DeleteIngestConfigurationResponse DeleteIngestConfiguration(DeleteIngestConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIngestConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIngestConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteIngestConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a specified IngestConfiguration, so it can no longer be used to broadcast.
+        /// An IngestConfiguration cannot be deleted if the publisher is actively streaming to
+        /// a stage, unless <c>force</c> is set to <c>true</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIngestConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteIngestConfiguration service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/DeleteIngestConfiguration">REST API Reference for DeleteIngestConfiguration Operation</seealso>
+        public virtual Task<DeleteIngestConfigurationResponse> DeleteIngestConfigurationAsync(DeleteIngestConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIngestConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIngestConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteIngestConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeletePublicKey
 
         internal virtual DeletePublicKeyResponse DeletePublicKey(DeletePublicKeyRequest request)
@@ -673,7 +771,9 @@ namespace Amazon.IVSRealTime
 
 
         /// <summary>
-        /// Shuts down and deletes the specified stage (disconnecting all participants).
+        /// Shuts down and deletes the specified stage (disconnecting all participants). This
+        /// operation also removes the <c>stageArn</c> from the associated <a>IngestConfiguration</a>,
+        /// if there are participants using the IngestConfiguration to publish to the stage.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteStage service method.</param>
         /// <param name="cancellationToken">
@@ -782,8 +882,9 @@ namespace Amazon.IVSRealTime
 
 
         /// <summary>
-        /// Disconnects a specified participant and revokes the participant permanently from a
-        /// specified stage.
+        /// Disconnects a specified participant from a specified stage. If the participant is
+        /// publishing using an <a>IngestConfiguration</a>, DisconnectParticipant also updates
+        /// the <c>stageArn</c> in the IngestConfiguration to be an empty string.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisconnectParticipant service method.</param>
         /// <param name="cancellationToken">
@@ -915,6 +1016,49 @@ namespace Amazon.IVSRealTime
             options.ResponseUnmarshaller = GetEncoderConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetEncoderConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetIngestConfiguration
+
+        internal virtual GetIngestConfigurationResponse GetIngestConfiguration(GetIngestConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIngestConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIngestConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetIngestConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets information about the specified IngestConfiguration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIngestConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIngestConfiguration service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetIngestConfiguration">REST API Reference for GetIngestConfiguration Operation</seealso>
+        public virtual Task<GetIngestConfigurationResponse> GetIngestConfigurationAsync(GetIngestConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIngestConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIngestConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetIngestConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1292,6 +1436,47 @@ namespace Amazon.IVSRealTime
 
         #endregion
         
+        #region  ListIngestConfigurations
+
+        internal virtual ListIngestConfigurationsResponse ListIngestConfigurations(ListIngestConfigurationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIngestConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIngestConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListIngestConfigurationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all IngestConfigurations in your account, in the AWS region where the API request
+        /// is processed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIngestConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListIngestConfigurations service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListIngestConfigurations">REST API Reference for ListIngestConfigurations Operation</seealso>
+        public virtual Task<ListIngestConfigurationsResponse> ListIngestConfigurationsAsync(ListIngestConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIngestConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIngestConfigurationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListIngestConfigurationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListParticipantEvents
 
         internal virtual ListParticipantEventsResponse ListParticipantEvents(ListParticipantEventsRequest request)
@@ -1608,7 +1793,7 @@ namespace Amazon.IVSRealTime
         /// 
         ///  
         /// <para>
-        /// A Composition is an ephemeral resource that exists after this endpoint returns successfully.
+        /// A Composition is an ephemeral resource that exists after this operation returns successfully.
         /// Composition stops and the resource is deleted:
         /// </para>
         ///  <ul> <li> 
@@ -1808,6 +1993,56 @@ namespace Amazon.IVSRealTime
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateIngestConfiguration
+
+        internal virtual UpdateIngestConfigurationResponse UpdateIngestConfiguration(UpdateIngestConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateIngestConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateIngestConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateIngestConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates a specified IngestConfiguration. Only the stage ARN attached to the IngestConfiguration
+        /// can be updated. An IngestConfiguration that is active cannot be updated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIngestConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateIngestConfiguration service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/UpdateIngestConfiguration">REST API Reference for UpdateIngestConfiguration Operation</seealso>
+        public virtual Task<UpdateIngestConfigurationResponse> UpdateIngestConfigurationAsync(UpdateIngestConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateIngestConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateIngestConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateIngestConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion

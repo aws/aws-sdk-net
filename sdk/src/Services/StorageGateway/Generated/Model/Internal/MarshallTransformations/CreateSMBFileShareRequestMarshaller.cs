@@ -129,11 +129,31 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.ClientToken);
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetDefaultStorageClass())
                     {
                         context.Writer.WritePropertyName("DefaultStorageClass");
                         context.Writer.Write(publicRequest.DefaultStorageClass);
                     }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetFileShareName())
+                {
+                    context.Writer.WritePropertyName("FileShareName");
+                    context.Writer.Write(publicRequest.FileShareName);
+                }
+=======
+                if(publicRequest.IsSetEncryptionType())
+                {
+                    context.Writer.WritePropertyName("EncryptionType");
+                    context.Writer.Write(publicRequest.EncryptionType);
+                }
+
+                if(publicRequest.IsSetFileShareName())
+                {
+                    context.Writer.WritePropertyName("FileShareName");
+                    context.Writer.Write(publicRequest.FileShareName);
+                }
+>>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
 
                     if(publicRequest.IsSetFileShareName())
                     {

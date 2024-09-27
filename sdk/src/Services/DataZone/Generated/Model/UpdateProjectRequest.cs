@@ -63,7 +63,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property DomainIdentifier. 
         /// <para>
-        /// The identifier of the Amazon DataZone domain in which a project is to be updated.
+        /// The ID of the Amazon DataZone domain where a project is being updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

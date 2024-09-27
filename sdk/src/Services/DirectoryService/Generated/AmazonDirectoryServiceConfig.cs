@@ -34,10 +34,16 @@ namespace Amazon.DirectoryService
     public partial class AmazonDirectoryServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Directory Service", "4.0.0.0");
 
         private static readonly AmazonDirectoryServiceEndpointResolver EndpointResolver =
             new AmazonDirectoryServiceEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("Directory Service", "3.7.400.11");
+=======
+            InternalSDKUtils.BuildUserAgentString("Directory Service", "3.7.401.5");
+>>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
 
         private string _userAgent = UserAgentString;
         ///<summary>

@@ -41,7 +41,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property DestinationBackupVaultArn. 
         /// <para>
         /// An Amazon Resource Name (ARN) that uniquely identifies the destination backup vault
-        /// for the copied backup. For example, <c>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</c>.
+        /// for the copied backup. For example, <c>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

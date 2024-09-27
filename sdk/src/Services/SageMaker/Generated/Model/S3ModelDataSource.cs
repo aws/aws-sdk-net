@@ -36,6 +36,7 @@ namespace Amazon.SageMaker.Model
     {
         private ModelCompressionType _compressionType;
         private InferenceHubAccessConfig _hubAccessConfig;
+        private string _manifestS3Uri;
         private ModelAccessConfig _modelAccessConfig;
         private S3ModelDataType _s3DataType;
         private string _s3Uri;
@@ -154,6 +155,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetHubAccessConfig()
         {
             return this._hubAccessConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManifestS3Uri. 
+        /// <para>
+        /// The Amazon S3 URI of the manifest file. The manifest file is a CSV file that stores
+        /// the artifact locations.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1024)]
+        public string ManifestS3Uri
+        {
+            get { return this._manifestS3Uri; }
+            set { this._manifestS3Uri = value; }
+        }
+
+        // Check to see if ManifestS3Uri property is set
+        internal bool IsSetManifestS3Uri()
+        {
+            return this._manifestS3Uri != null;
         }
 
         /// <summary>

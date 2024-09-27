@@ -1615,41 +1615,13 @@ namespace Amazon.DeviceFarm
         /// </summary>
         public static readonly TestType APPIUM_WEB_RUBY = new TestType("APPIUM_WEB_RUBY");
         /// <summary>
-        /// Constant BUILTIN_EXPLORER for TestType
-        /// </summary>
-        public static readonly TestType BUILTIN_EXPLORER = new TestType("BUILTIN_EXPLORER");
-        /// <summary>
         /// Constant BUILTIN_FUZZ for TestType
         /// </summary>
         public static readonly TestType BUILTIN_FUZZ = new TestType("BUILTIN_FUZZ");
         /// <summary>
-        /// Constant CALABASH for TestType
-        /// </summary>
-        public static readonly TestType CALABASH = new TestType("CALABASH");
-        /// <summary>
         /// Constant INSTRUMENTATION for TestType
         /// </summary>
         public static readonly TestType INSTRUMENTATION = new TestType("INSTRUMENTATION");
-        /// <summary>
-        /// Constant REMOTE_ACCESS_RECORD for TestType
-        /// </summary>
-        public static readonly TestType REMOTE_ACCESS_RECORD = new TestType("REMOTE_ACCESS_RECORD");
-        /// <summary>
-        /// Constant REMOTE_ACCESS_REPLAY for TestType
-        /// </summary>
-        public static readonly TestType REMOTE_ACCESS_REPLAY = new TestType("REMOTE_ACCESS_REPLAY");
-        /// <summary>
-        /// Constant UIAUTOMATION for TestType
-        /// </summary>
-        public static readonly TestType UIAUTOMATION = new TestType("UIAUTOMATION");
-        /// <summary>
-        /// Constant UIAUTOMATOR for TestType
-        /// </summary>
-        public static readonly TestType UIAUTOMATOR = new TestType("UIAUTOMATOR");
-        /// <summary>
-        /// Constant WEB_PERFORMANCE_PROFILE for TestType
-        /// </summary>
-        public static readonly TestType WEB_PERFORMANCE_PROFILE = new TestType("WEB_PERFORMANCE_PROFILE");
         /// <summary>
         /// Constant XCTEST for TestType
         /// </summary>

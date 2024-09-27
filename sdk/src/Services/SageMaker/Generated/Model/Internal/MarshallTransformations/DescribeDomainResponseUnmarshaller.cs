@@ -172,6 +172,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.SubnetIds = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TagPropagation", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.TagPropagation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Url", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

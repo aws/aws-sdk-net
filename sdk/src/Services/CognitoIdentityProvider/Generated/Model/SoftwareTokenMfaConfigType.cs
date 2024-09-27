@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The type used for enabling software token MFA at the user pool level.
+    /// Configures a user pool for time-based one-time password (TOTP) multi-factor authentication
+    /// (MFA). Enables or disables TOTP.
     /// </summary>
     public partial class SoftwareTokenMfaConfigType
     {

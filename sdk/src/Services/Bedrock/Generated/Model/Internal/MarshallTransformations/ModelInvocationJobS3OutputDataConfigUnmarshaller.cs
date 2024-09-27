@@ -66,6 +66,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("s3BucketOwner", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.S3BucketOwner = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("s3EncryptionKeyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

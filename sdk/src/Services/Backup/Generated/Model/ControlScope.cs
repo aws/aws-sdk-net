@@ -93,8 +93,13 @@ namespace Amazon.Backup.Model
         /// <para>
         /// The tag key-value pair applied to those Amazon Web Services resources that you want
         /// to trigger an evaluation for a rule. A maximum of one key-value pair can be provided.
-        /// The tag value is optional, but it cannot be an empty string. The structure to assign
-        /// a tag is: <c>[{"Key":"string","Value":"string"}]</c>.
+        /// The tag value is optional, but it cannot be an empty string if you are creating or
+        /// editing a framework from the console (though the value can be an empty string when
+        /// included in a CloudFormation template).
+        /// </para>
+        ///  
+        /// <para>
+        /// The structure to assign a tag is: <c>[{"Key":"string","Value":"string"}]</c>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

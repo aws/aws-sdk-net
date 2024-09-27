@@ -54,6 +54,28 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Enabled.Value);
             }
 
+            if(requestObject.IsSetOrphanFileDeletionConfiguration())
+            {
+                context.Writer.WritePropertyName("orphanFileDeletionConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = OrphanFileDeletionConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.OrphanFileDeletionConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetRetentionConfiguration())
+            {
+                context.Writer.WritePropertyName("retentionConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RetentionConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.RetentionConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("roleArn");

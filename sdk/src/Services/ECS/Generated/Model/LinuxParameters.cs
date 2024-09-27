@@ -72,7 +72,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Devices. 
         /// <para>
         /// Any host devices to expose to the container. This parameter maps to <c>Devices</c>
-        /// in tthe docker conainer create command and the <c>--device</c> option to docker run.
+        /// in the docker container create command and the <c>--device</c> option to docker run.
         /// </para>
         ///  <note> 
         /// <para>

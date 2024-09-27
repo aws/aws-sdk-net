@@ -157,11 +157,13 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// For Amazon File Cache, the path can be an S3 bucket or prefix in the format <c>s3://myBucket/myPrefix/</c>.
+        /// For Amazon File Cache, the path can be an S3 bucket or prefix in the format <c>s3://bucket-name/prefix/</c>
+        /// (where <c>prefix</c> is optional).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For Amazon FSx for Lustre, the path can be an S3 bucket or prefix in the format <c>s3://myBucket/myPrefix/</c>.
+        /// For Amazon FSx for Lustre, the path can be an S3 bucket or prefix in the format <c>s3://bucket-name/prefix/</c>
+        /// (where <c>prefix</c> is optional).
         /// </para>
         ///  </li> </ul>
         /// </summary>

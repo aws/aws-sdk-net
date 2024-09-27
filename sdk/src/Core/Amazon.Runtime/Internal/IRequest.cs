@@ -380,5 +380,10 @@ namespace Amazon.Runtime.Internal
         /// Checksum data to calculate checksum after optionally compressing the request payload
         /// </summary>
         ChecksumData ChecksumData { get; set; }
+
+        /// <summary>
+        /// The time which the request was signed at.
+        /// </summary>
+        DateTime? SignedAt { get; set; }
     }
 }

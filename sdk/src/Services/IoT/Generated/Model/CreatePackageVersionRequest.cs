@@ -42,12 +42,33 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class CreatePackageVersionRequest : AmazonIoTRequest
     {
+        private PackageVersionArtifact _artifact;
         private Dictionary<string, string> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _clientToken;
         private string _description;
         private string _packageName;
+        private string _recipe;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _versionName;
+
+        /// <summary>
+        /// Gets and sets the property Artifact. 
+        /// <para>
+        /// The various build components created during the build process such as libraries and
+        /// configuration files that make up a software package version.
+        /// </para>
+        /// </summary>
+        public PackageVersionArtifact Artifact
+        {
+            get { return this._artifact; }
+            set { this._artifact = value; }
+        }
+
+        // Check to see if Artifact property is set
+        internal bool IsSetArtifact()
+        {
+            return this._artifact != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Attributes. 
@@ -130,6 +151,26 @@ namespace Amazon.IoT.Model
         internal bool IsSetPackageName()
         {
             return this._packageName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Recipe. 
+        /// <para>
+        /// The inline job document associated with a software package version used for a quick
+        /// job deployment via IoT Jobs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Max=3072)]
+        public string Recipe
+        {
+            get { return this._recipe; }
+            set { this._recipe = value; }
+        }
+
+        // Check to see if Recipe property is set
+        internal bool IsSetRecipe()
+        {
+            return this._recipe != null;
         }
 
         /// <summary>

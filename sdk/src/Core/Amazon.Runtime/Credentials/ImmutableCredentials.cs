@@ -47,6 +47,10 @@ namespace Amazon.Runtime
         /// </summary>
         public bool UseToken { get { return !string.IsNullOrEmpty(Token); } }
 
+        /// <summary>
+        /// Gets the AccountId property for the current credentials.
+        /// </summary>
+        public string AccountId { get; private set; }
         #endregion
 
 
@@ -67,6 +71,19 @@ namespace Amazon.Runtime
             SecretKey = awsSecretAccessKey;
 
             Token = token ?? string.Empty;
+            
+        }
+
+        /// <summary>
+        /// Constructs an ImmutableCredentials object with supplied accessKey, secretKey, and aws account id.
+        /// </summary>
+        /// <param name="awsAccessKeyId"></param>
+        /// <param name="awsSecretAccessKey"></param>
+        /// <param name="token">Optional. Can be set to null or empty for non-session credentials.</param>
+        /// <param name="accountId">Optional. If <see cref="AccountIdEndpointMode"/> is set to preferred or required, the account id will be used in endpoint resolution.</param>
+        public ImmutableCredentials(string awsAccessKeyId, string awsSecretAccessKey, string token, string accountId) : this(awsAccessKeyId, awsSecretAccessKey, token)
+        {
+            AccountId = accountId;
         }
 
         private ImmutableCredentials() { }

@@ -72,6 +72,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.HlsInputSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("multicastInputSettings", targetDepth))
+                {
+                    var unmarshaller = MulticastInputSettingsUnmarshaller.Instance;
+                    unmarshalledObject.MulticastInputSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("serverValidation", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

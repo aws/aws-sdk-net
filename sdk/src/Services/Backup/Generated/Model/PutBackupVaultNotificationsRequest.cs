@@ -73,9 +73,9 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// The list below shows items that are deprecated events (for reference) and are no longer
-        /// in use. They are no longer supported and will not return statuses or notifications.
-        /// Refer to the list above for current supported events.
+        /// The list below includes both supported events and deprecated events that are no longer
+        /// in use (for reference). Deprecated events do not return statuses or notifications.
+        /// Refer to the list above for the supported events.
         /// </para>
         ///  </note>
         /// </summary>
@@ -97,7 +97,7 @@ namespace Amazon.Backup.Model
         /// <para>
         /// The name of a logical container where backups are stored. Backup vaults are identified
         /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and hyphens.
+        /// Region where they are created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

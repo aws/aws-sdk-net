@@ -34,10 +34,16 @@ namespace Amazon.DataSync
     public partial class AmazonDataSyncConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("DataSync", "4.0.0.0");
 
         private static readonly AmazonDataSyncEndpointResolver EndpointResolver =
             new AmazonDataSyncEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("DataSync", "3.7.400.11");
+=======
+            InternalSDKUtils.BuildUserAgentString("DataSync", "3.7.400.26");
+>>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
 
         private string _userAgent = UserAgentString;
         ///<summary>

@@ -114,6 +114,12 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                     unmarshalledObject.ParticipantId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("protocol", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Protocol = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("published", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;

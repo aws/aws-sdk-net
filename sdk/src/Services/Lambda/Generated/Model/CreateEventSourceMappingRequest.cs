@@ -171,6 +171,7 @@ namespace Amazon.Lambda.Model
         private List<SourceAccessConfiguration> _sourceAccessConfigurations = AWSConfigs.InitializeCollections ? new List<SourceAccessConfiguration>() : null;
         private EventSourcePosition _startingPosition;
         private DateTime? _startingPositionTimestamp;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private List<string> _topics = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _tumblingWindowInSeconds;
 
@@ -703,6 +704,24 @@ namespace Amazon.Lambda.Model
         internal bool IsSetStartingPositionTimestamp()
         {
             return this._startingPositionTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags to apply to the event source mapping.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

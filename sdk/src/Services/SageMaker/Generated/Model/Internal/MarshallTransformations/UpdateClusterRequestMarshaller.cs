@@ -96,7 +96,23 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     writer.WriteObjectEnd();
                 }
 
+<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
+||||||| Commit version number update changes
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+=======
+                if(publicRequest.IsSetNodeRecovery())
+                {
+                    context.Writer.WritePropertyName("NodeRecovery");
+                    context.Writer.Write(publicRequest.NodeRecovery);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+>>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
             }
 
 

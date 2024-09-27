@@ -99,6 +99,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetOnStartDeepHealthChecks())
+            {
+                context.Writer.WritePropertyName("OnStartDeepHealthChecks");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectOnStartDeepHealthChecksListValue in requestObject.OnStartDeepHealthChecks)
+                {
+                        context.Writer.Write(requestObjectOnStartDeepHealthChecksListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetThreadsPerCore())
             {
                 context.Writer.WritePropertyName("ThreadsPerCore");

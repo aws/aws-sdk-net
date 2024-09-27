@@ -39,7 +39,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// Information about the attributes.
+        /// Information about the target group attributes.
         /// </para>
         /// </summary>
         public List<TargetGroupAttribute> Attributes

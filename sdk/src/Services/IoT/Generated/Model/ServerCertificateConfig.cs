@@ -44,7 +44,7 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-custom-domain-ocsp-config.html">Configuring
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-custom-endpoints-cert-config.html">Configuring
         /// OCSP server-certificate stapling in domain configuration</a> from Amazon Web Services
         /// IoT Core Developer Guide.
         /// </para>

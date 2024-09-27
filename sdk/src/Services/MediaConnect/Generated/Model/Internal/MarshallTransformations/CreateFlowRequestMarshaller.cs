@@ -140,7 +140,32 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                         context.Writer.WriteArrayEnd();
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetSource())
+||||||| Commit version number update changes
+                if(publicRequest.IsSetSources())
+                {
+                    context.Writer.WritePropertyName("sources");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSourcesListValue in publicRequest.Sources)
+=======
+                if(publicRequest.IsSetSourceMonitoringConfig())
+                {
+                    context.Writer.WritePropertyName("sourceMonitoringConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MonitoringConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SourceMonitoringConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetSources())
+                {
+                    context.Writer.WritePropertyName("sources");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSourcesListValue in publicRequest.Sources)
+>>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
                     {
                         context.Writer.WritePropertyName("source");
                         context.Writer.WriteObjectStart();

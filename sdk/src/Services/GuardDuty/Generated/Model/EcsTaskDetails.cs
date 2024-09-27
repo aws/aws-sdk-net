@@ -38,6 +38,7 @@ namespace Amazon.GuardDuty.Model
         private List<Container> _containers = AWSConfigs.InitializeCollections ? new List<Container>() : null;
         private string _definitionArn;
         private string _group;
+        private string _launchType;
         private DateTime? _startedAt;
         private string _startedBy;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -115,6 +116,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetGroup()
         {
             return this._group != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LaunchType. 
+        /// <para>
+        /// A capacity on which the task is running. For example, <c>Fargate</c> and <c>EC2</c>.
+        /// </para>
+        /// </summary>
+        public string LaunchType
+        {
+            get { return this._launchType; }
+            set { this._launchType = value; }
+        }
+
+        // Check to see if LaunchType property is set
+        internal bool IsSetLaunchType()
+        {
+            return this._launchType != null;
         }
 
         /// <summary>

@@ -94,8 +94,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DetectorId. 
         /// <para>
-        /// The unique ID of the detector of the GuardDuty account that you want to associate
-        /// member accounts with.
+        /// The unique ID of the detector of the GuardDuty account for which you want to associate
+        /// member accounts.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]

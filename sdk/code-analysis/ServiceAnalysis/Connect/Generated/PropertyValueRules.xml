@@ -4368,6 +4368,28 @@
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.ReplicationConfiguration.GlobalSignInEndpoint</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ReplicationConfiguration.SourceRegion</property>
+    <min>8</min>
+    <max>31</max>
+    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ReplicationStatusSummary.Region</property>
+    <min>8</min>
+    <max>31</max>
+    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ReplicationStatusSummary.ReplicationStatusReason</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.RoutingProfile.Description</property>
     <min>1</min>
     <max>250</max>

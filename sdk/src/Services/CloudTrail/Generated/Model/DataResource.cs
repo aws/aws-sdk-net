@@ -30,19 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// Data events provide information about the resource operations performed on or within
-    /// a resource itself. These are also known as data plane operations. You can specify
-    /// up to 250 data resources for a trail.
+    /// You can configure the <c>DataResource</c> in an <c>EventSelector</c> to log data events
+    /// for the following three resource types:
     /// 
-    ///  
-    /// <para>
-    /// Configure the <c>DataResource</c> to specify the resource type and resource ARNs for
-    /// which you want to log data events.
-    /// </para>
-    ///  
-    /// <para>
-    /// You can specify the following resource types in your event selectors for your trail:
-    /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <c>AWS::DynamoDB::Table</c> 
@@ -55,27 +45,34 @@ namespace Amazon.CloudTrail.Model
     /// <para>
     ///  <c>AWS::S3::Object</c> 
     /// </para>
-    ///  </li> </ul> <note> 
+    ///  </li> </ul> 
+    /// <para>
+    /// To log data events for all other resource types including objects stored in <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">directory
+    /// buckets</a>, you must use <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedEventSelector.html">AdvancedEventSelectors</a>.
+    /// You must also use <c>AdvancedEventSelectors</c> if you want to filter on the <c>eventName</c>
+    /// field.
+    /// </para>
+    ///  
+    /// <para>
+    /// Configure the <c>DataResource</c> to specify the resource type and resource ARNs for
+    /// which you want to log data events.
+    /// </para>
+    ///  <note> 
     /// <para>
     /// The total number of allowed data resources is 250. This number can be distributed
     /// between 1 and 5 event selectors, but the total cannot exceed 250 across all selectors
     /// for the trail.
     /// </para>
-    ///  
-    /// <para>
-    /// If you are using advanced event selectors, the maximum total number of values for
-    /// all conditions, across all advanced event selectors for the trail, is 500.
-    /// </para>
     ///  </note> 
     /// <para>
     /// The following example demonstrates how logging works when you configure logging of
-    /// all data events for an S3 bucket named <c>bucket-1</c>. In this example, the CloudTrail
-    /// user specified an empty prefix, and the option to log both <c>Read</c> and <c>Write</c>
-    /// data events.
+    /// all data events for a general purpose bucket named <c>amzn-s3-demo-bucket1</c>. In
+    /// this example, the CloudTrail user specified an empty prefix, and the option to log
+    /// both <c>Read</c> and <c>Write</c> data events.
     /// </para>
     ///  <ol> <li> 
     /// <para>
-    /// A user uploads an image file to <c>bucket-1</c>.
+    /// A user uploads an image file to <c>amzn-s3-demo-bucket1</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -86,7 +83,7 @@ namespace Amazon.CloudTrail.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A user uploads an object to an Amazon S3 bucket named <c>arn:aws:s3:::bucket-2</c>.
+    /// A user uploads an object to an Amazon S3 bucket named <c>arn:aws:s3:::amzn-s3-demo-bucket1</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -181,14 +178,14 @@ namespace Amazon.CloudTrail.Model
         ///  </note> </li> <li> 
         /// <para>
         /// To log data events for all objects in an S3 bucket, specify the bucket and an empty
-        /// object prefix such as <c>arn:aws:s3:::bucket-1/</c>. The trail logs data events for
-        /// all objects in this S3 bucket.
+        /// object prefix such as <c>arn:aws:s3:::amzn-s3-demo-bucket1/</c>. The trail logs data
+        /// events for all objects in this S3 bucket.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// To log data events for specific objects, specify the S3 bucket and object prefix such
-        /// as <c>arn:aws:s3:::bucket-1/example-images</c>. The trail logs data events for objects
-        /// in this S3 bucket that match the prefix.
+        /// as <c>arn:aws:s3:::amzn-s3-demo-bucket1/example-images</c>. The trail logs data events
+        /// for objects in this S3 bucket that match the prefix.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -38,6 +38,7 @@ namespace Amazon.MediaConnect.Model
         private string _flowArn;
         private UpdateMaintenance _maintenance;
         private UpdateFailoverConfig _sourceFailoverConfig;
+        private MonitoringConfig _sourceMonitoringConfig;
 
         /// <summary>
         /// Gets and sets the property FlowArn. The flow that you want to update.
@@ -83,6 +84,21 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetSourceFailoverConfig()
         {
             return this._sourceFailoverConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceMonitoringConfig.
+        /// </summary>
+        public MonitoringConfig SourceMonitoringConfig
+        {
+            get { return this._sourceMonitoringConfig; }
+            set { this._sourceMonitoringConfig = value; }
+        }
+
+        // Check to see if SourceMonitoringConfig property is set
+        internal bool IsSetSourceMonitoringConfig()
+        {
+            return this._sourceMonitoringConfig != null;
         }
 
     }

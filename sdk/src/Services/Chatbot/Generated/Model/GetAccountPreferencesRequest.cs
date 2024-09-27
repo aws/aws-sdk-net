@@ -31,7 +31,7 @@ namespace Amazon.Chatbot.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAccountPreferences operation.
-    /// Get Chatbot account level preferences
+    /// Returns AWS Chatbot account preferences.
     /// </summary>
     public partial class GetAccountPreferencesRequest : AmazonChatbotRequest
     {

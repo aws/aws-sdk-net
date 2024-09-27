@@ -114,6 +114,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.RtmpGroupSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("srtGroupSettings", targetDepth))
+                {
+                    var unmarshaller = SrtGroupSettingsUnmarshaller.Instance;
+                    unmarshalledObject.SrtGroupSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("udpGroupSettings", targetDepth))
                 {
                     var unmarshaller = UdpGroupSettingsUnmarshaller.Instance;

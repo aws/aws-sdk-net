@@ -169,7 +169,27 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                         context.Writer.WriteArrayEnd();
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetTargetMaps())
+||||||| Commit version number update changes
+                if(publicRequest.IsSetTargetMaps())
+                {
+                    context.Writer.WritePropertyName("TargetMaps");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTargetMapsListValue in publicRequest.TargetMaps)
+=======
+                if(publicRequest.IsSetTargetLocationsURL())
+                {
+                    context.Writer.WritePropertyName("TargetLocationsURL");
+                    context.Writer.Write(publicRequest.TargetLocationsURL);
+                }
+
+                if(publicRequest.IsSetTargetMaps())
+                {
+                    context.Writer.WritePropertyName("TargetMaps");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTargetMapsListValue in publicRequest.TargetMaps)
+>>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
                     {
                         context.Writer.WritePropertyName("TargetMaps");
                         context.Writer.WriteArrayStart();

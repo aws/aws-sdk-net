@@ -38,6 +38,7 @@ namespace Amazon.DataZone.Model
         private string _createdBy;
         private string _description;
         private string _domainId;
+        private string _domainUnitId;
         private List<ProjectDeletionError> _failureReasons = AWSConfigs.InitializeCollections ? new List<ProjectDeletionError>() : null;
         private string _id;
         private string _name;
@@ -117,6 +118,25 @@ namespace Amazon.DataZone.Model
         internal bool IsSetDomainId()
         {
             return this._domainId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DomainUnitId. 
+        /// <para>
+        /// The ID of the domain unit.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string DomainUnitId
+        {
+            get { return this._domainUnitId; }
+            set { this._domainUnitId = value; }
+        }
+
+        // Check to see if DomainUnitId property is set
+        internal bool IsSetDomainUnitId()
+        {
+            return this._domainUnitId != null;
         }
 
         /// <summary>

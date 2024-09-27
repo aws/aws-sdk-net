@@ -78,6 +78,12 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                     unmarshalledObject.Attainment = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("BudgetRequestsRemaining", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.BudgetRequestsRemaining = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BudgetSecondsRemaining", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
@@ -88,6 +94,12 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.BudgetStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EvaluationType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EvaluationType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Goal", targetDepth))
@@ -102,10 +114,22 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RequestBasedSli", targetDepth))
+                {
+                    var unmarshaller = RequestBasedServiceLevelIndicatorUnmarshaller.Instance;
+                    unmarshalledObject.RequestBasedSli = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Sli", targetDepth))
                 {
                     var unmarshaller = ServiceLevelIndicatorUnmarshaller.Instance;
                     unmarshalledObject.Sli = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TotalBudgetRequests", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.TotalBudgetRequests = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TotalBudgetSeconds", targetDepth))

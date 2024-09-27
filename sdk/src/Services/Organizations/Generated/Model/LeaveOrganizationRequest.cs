@@ -98,8 +98,8 @@ namespace Amazon.Organizations.Model
     ///  </li> <li> 
     /// <para>
     /// A newly created account has a waiting period before it can be removed from its organization.
-    /// If you get an error that indicates that a wait period is required, then try again
-    /// in a few days.
+    /// You must wait until at least seven days after the account was created. Invited accounts
+    /// aren't subject to this waiting period.
     /// </para>
     ///  </li> <li> 
     /// <para>

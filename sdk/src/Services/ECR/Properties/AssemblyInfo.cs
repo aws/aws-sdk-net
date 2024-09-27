@@ -7,14 +7,26 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.ECR")]
+<<<<<<< HEAD
 #if BCL
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Amazon EC2 Container Registry. Amazon EC2 Container Registry (Amazon ECR) is a managed AWS Docker registry service. Customers can use the familiar Docker CLI to push, pull, and manage images.")]
+||||||| Commit version number update changes
+#if BCL35
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon EC2 Container Registry. Amazon EC2 Container Registry (Amazon ECR) is a managed AWS Docker registry service. Customers can use the familiar Docker CLI to push, pull, and manage images.")]
+#elif BCL45
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon EC2 Container Registry. Amazon EC2 Container Registry (Amazon ECR) is a managed AWS Docker registry service. Customers can use the familiar Docker CLI to push, pull, and manage images.")]
+=======
+#if BCL35
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (3.5) - Amazon Elastic Container Registry. Amazon EC2 Container Registry (Amazon ECR) is a managed AWS Docker registry service. Customers can use the familiar Docker CLI to push, pull, and manage images.")]
+#elif BCL45
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.5) - Amazon Elastic Container Registry. Amazon EC2 Container Registry (Amazon ECR) is a managed AWS Docker registry service. Customers can use the familiar Docker CLI to push, pull, and manage images.")]
+>>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
 #elif NETSTANDARD20
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon EC2 Container Registry. Amazon EC2 Container Registry (Amazon ECR) is a managed AWS Docker registry service. Customers can use the familiar Docker CLI to push, pull, and manage images.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon Elastic Container Registry. Amazon EC2 Container Registry (Amazon ECR) is a managed AWS Docker registry service. Customers can use the familiar Docker CLI to push, pull, and manage images.")]
 #elif NETCOREAPP3_1
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Amazon EC2 Container Registry. Amazon EC2 Container Registry (Amazon ECR) is a managed AWS Docker registry service. Customers can use the familiar Docker CLI to push, pull, and manage images.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Amazon Elastic Container Registry. Amazon EC2 Container Registry (Amazon ECR) is a managed AWS Docker registry service. Customers can use the familiar Docker CLI to push, pull, and manage images.")]
 #elif NET8_0
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - Amazon EC2 Container Registry. Amazon EC2 Container Registry (Amazon ECR) is a managed AWS Docker registry service. Customers can use the familiar Docker CLI to push, pull, and manage images.")]
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - Amazon Elastic Container Registry. Amazon EC2 Container Registry (Amazon ECR) is a managed AWS Docker registry service. Customers can use the familiar Docker CLI to push, pull, and manage images.")]
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif
@@ -41,6 +53,16 @@ using System.Runtime.CompilerServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
+<<<<<<< HEAD
+||||||| Commit version number update changes
+[assembly: AssemblyVersion("3.3")]
+[assembly: AssemblyFileVersion("3.7.402.8")]
+
+=======
+[assembly: AssemblyVersion("3.3")]
+[assembly: AssemblyFileVersion("3.7.404.5")]
+
+>>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
 #if BCL
 [assembly: AssemblyVersion("4.0")]
 #else

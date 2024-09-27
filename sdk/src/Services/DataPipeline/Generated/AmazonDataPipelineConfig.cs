@@ -34,10 +34,16 @@ namespace Amazon.DataPipeline
     public partial class AmazonDataPipelineConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Data Pipeline", "4.0.0.0");
 
         private static readonly AmazonDataPipelineEndpointResolver EndpointResolver =
             new AmazonDataPipelineEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("Data Pipeline", "3.7.400.11");
+=======
+            InternalSDKUtils.BuildUserAgentString("Data Pipeline", "3.7.400.26");
+>>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
 
         private string _userAgent = UserAgentString;
         ///<summary>

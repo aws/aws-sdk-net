@@ -185,6 +185,7 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetReleaseLabel())
                     {
                         context.Writer.WritePropertyName("releaseLabel");
@@ -192,6 +193,30 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                     }
 
                     if(publicRequest.IsSetRuntimeConfiguration())
+||||||| Commit version number update changes
+                if(publicRequest.IsSetWorkerTypeSpecifications())
+                {
+                    context.Writer.WritePropertyName("workerTypeSpecifications");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestWorkerTypeSpecificationsKvp in publicRequest.WorkerTypeSpecifications)
+=======
+                if(publicRequest.IsSetSchedulerConfiguration())
+                {
+                    context.Writer.WritePropertyName("schedulerConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SchedulerConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SchedulerConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetWorkerTypeSpecifications())
+                {
+                    context.Writer.WritePropertyName("workerTypeSpecifications");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestWorkerTypeSpecificationsKvp in publicRequest.WorkerTypeSpecifications)
+>>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
                     {
                         context.Writer.WritePropertyName("runtimeConfiguration");
                         context.Writer.WriteArrayStart();

@@ -40,7 +40,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// This return is the next item following a partial list of returned resources.
+        /// The next item following a partial list of returned resources.
         /// </para>
         /// </summary>
         public string NextToken
@@ -58,7 +58,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property RecoveryPoints. 
         /// <para>
-        /// This is a list of the recovery points returned by <c>ListRecoveryPointsByLegalHold</c>.
+        /// The recovery points.
         /// </para>
         /// </summary>
         public List<RecoveryPointMember> RecoveryPoints

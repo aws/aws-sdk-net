@@ -9,7 +9,7 @@
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbInstanceRequest.Bucket</property>
     <min>2</min>
     <max>64</max>
-    <pattern>[^_][^"]*</pattern>
+    <pattern>[^_"][^"]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbInstanceRequest.DbParameterGroupIdentifier</property>
@@ -197,9 +197,25 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.TimestreamInfluxDB.Model.ListDbInstancesRequest.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamInfluxDB.Model.ListDbInstancesResponse.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.ListDbParameterGroupsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamInfluxDB.Model.ListDbParameterGroupsRequest.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamInfluxDB.Model.ListDbParameterGroupsResponse.NextToken</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.ListTagsForResourceRequest.ResourceArn</property>

@@ -40,6 +40,7 @@ namespace Amazon.SageMaker.Model
         private List<ClusterInstanceStorageConfig> _instanceStorageConfigs = AWSConfigs.InitializeCollections ? new List<ClusterInstanceStorageConfig>() : null;
         private ClusterInstanceType _instanceType;
         private ClusterLifeCycleConfig _lifeCycleConfig;
+        private List<string> _onStartDeepHealthChecks = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _targetCount;
         private int? _threadsPerCore;
 
@@ -158,14 +159,42 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OnStartDeepHealthChecks. 
+        /// <para>
+        /// A flag indicating whether deep health checks should be performed when the cluster
+        /// instance group is created or updated.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2)]
+        public List<string> OnStartDeepHealthChecks
+        {
+            get { return this._onStartDeepHealthChecks; }
+            set { this._onStartDeepHealthChecks = value; }
+        }
+
+        // Check to see if OnStartDeepHealthChecks property is set
+        internal bool IsSetOnStartDeepHealthChecks()
+        {
+            return this._onStartDeepHealthChecks != null && (this._onStartDeepHealthChecks.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property TargetCount. 
         /// <para>
         /// The number of instances you specified to add to the instance group of a SageMaker
         /// HyperPod cluster.
         /// </para>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Min=1)]
         public int? TargetCount
+||||||| Commit version number update changes
+        [AWSProperty(Min=1)]
+        public int TargetCount
+=======
+        [AWSProperty(Min=0)]
+        public int TargetCount
+>>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
         {
             get { return this._targetCount; }
             set { this._targetCount = value; }

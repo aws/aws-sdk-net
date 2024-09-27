@@ -60,8 +60,8 @@ namespace Amazon.Synthetics.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// Specify this parameter to limit how many canaries are returned each time you use the
-        /// <c>DescribeCanaries</c> operation. If you omit this parameter, the default of 100
-        /// is used.
+        /// <c>DescribeCanaries</c> operation. If you omit this parameter, the default of 20 is
+        /// used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]

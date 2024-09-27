@@ -35,6 +35,7 @@ namespace Amazon.MailManager.Model
     public partial class RuleStringToEvaluate
     {
         private RuleStringEmailAttribute _attribute;
+        private string _mimeHeaderAttribute;
 
         /// <summary>
         /// Gets and sets the property Attribute. 
@@ -52,6 +53,24 @@ namespace Amazon.MailManager.Model
         internal bool IsSetAttribute()
         {
             return this._attribute != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MimeHeaderAttribute. 
+        /// <para>
+        /// The email MIME X-Header attribute to evaluate in a string condition expression.
+        /// </para>
+        /// </summary>
+        public string MimeHeaderAttribute
+        {
+            get { return this._mimeHeaderAttribute; }
+            set { this._mimeHeaderAttribute = value; }
+        }
+
+        // Check to see if MimeHeaderAttribute property is set
+        internal bool IsSetMimeHeaderAttribute()
+        {
+            return this._mimeHeaderAttribute != null;
         }
 
     }

@@ -37,7 +37,11 @@ namespace Amazon.Chatbot.Model
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
-        /// Gets and sets the property Tags. A list of tags applied to the configuration.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Key-value pairs that are assigned to a resource, usually for the purpose of grouping
+        /// and searching for items. Tags are metadata that you define.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
         public List<Tag> Tags

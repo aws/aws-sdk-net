@@ -63,6 +63,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private bool? _stepExecutionsTruncated;
         private string _target;
         private List<TargetLocation> _targetLocations = AWSConfigs.InitializeCollections ? new List<TargetLocation>() : null;
+        private string _targetLocationsURL;
         private List<Dictionary<string, List<string>>> _targetMaps = AWSConfigs.InitializeCollections ? new List<Dictionary<string, List<string>>>() : null;
         private string _targetParameterName;
         private List<Target> _targets = AWSConfigs.InitializeCollections ? new List<Target>() : null;
@@ -609,6 +610,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetTargetLocations()
         {
             return this._targetLocations != null && (this._targetLocations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetLocationsURL. 
+        /// <para>
+        /// A publicly accessible URL for a file that contains the <c>TargetLocations</c> body.
+        /// Currently, only files in presigned Amazon S3 buckets are supported
+        /// </para>
+        /// </summary>
+        public string TargetLocationsURL
+        {
+            get { return this._targetLocationsURL; }
+            set { this._targetLocationsURL = value; }
+        }
+
+        // Check to see if TargetLocationsURL property is set
+        internal bool IsSetTargetLocationsURL()
+        {
+            return this._targetLocationsURL != null;
         }
 
         /// <summary>

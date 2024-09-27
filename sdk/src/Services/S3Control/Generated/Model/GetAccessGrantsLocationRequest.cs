@@ -71,7 +71,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The ID of the Amazon Web Services account that is making this request.
+        /// The Amazon Web Services account ID of the S3 Access Grants instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]

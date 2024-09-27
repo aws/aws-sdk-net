@@ -31,15 +31,17 @@ namespace Amazon.Chatbot.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteChimeWebhookConfiguration operation.
-    /// Deletes a Chime Webhook Configuration
+    /// Deletes a Amazon Chime webhook configuration for AWS Chatbot.
     /// </summary>
     public partial class DeleteChimeWebhookConfigurationRequest : AmazonChatbotRequest
     {
         private string _chatConfigurationArn;
 
         /// <summary>
-        /// Gets and sets the property ChatConfigurationArn. The ARN of the ChimeWebhookConfiguration
-        /// to delete.
+        /// Gets and sets the property ChatConfigurationArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the ChimeWebhookConfiguration to delete.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=1169)]
         public string ChatConfigurationArn

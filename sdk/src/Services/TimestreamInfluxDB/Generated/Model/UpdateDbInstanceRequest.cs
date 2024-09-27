@@ -35,9 +35,29 @@ namespace Amazon.TimestreamInfluxDB.Model
     /// </summary>
     public partial class UpdateDbInstanceRequest : AmazonTimestreamInfluxDBRequest
     {
+        private DbInstanceType _dbInstanceType;
         private string _dbParameterGroupIdentifier;
+        private DeploymentType _deploymentType;
         private string _identifier;
         private LogDeliveryConfiguration _logDeliveryConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property DbInstanceType. 
+        /// <para>
+        /// The Timestream for InfluxDB DB instance type to run InfluxDB on.
+        /// </para>
+        /// </summary>
+        public DbInstanceType DbInstanceType
+        {
+            get { return this._dbInstanceType; }
+            set { this._dbInstanceType = value; }
+        }
+
+        // Check to see if DbInstanceType property is set
+        internal bool IsSetDbInstanceType()
+        {
+            return this._dbInstanceType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DbParameterGroupIdentifier. 
@@ -58,6 +78,25 @@ namespace Amazon.TimestreamInfluxDB.Model
         internal bool IsSetDbParameterGroupIdentifier()
         {
             return this._dbParameterGroupIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeploymentType. 
+        /// <para>
+        /// Specifies whether the DB instance will be deployed as a standalone instance or with
+        /// a Multi-AZ standby for high availability.
+        /// </para>
+        /// </summary>
+        public DeploymentType DeploymentType
+        {
+            get { return this._deploymentType; }
+            set { this._deploymentType = value; }
+        }
+
+        // Check to see if DeploymentType property is set
+        internal bool IsSetDeploymentType()
+        {
+            return this._deploymentType != null;
         }
 
         /// <summary>

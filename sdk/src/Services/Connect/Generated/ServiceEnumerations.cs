@@ -2373,6 +2373,72 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type InstanceReplicationStatus.
+    /// </summary>
+    public class InstanceReplicationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INSTANCE_REPLICA_DELETING for InstanceReplicationStatus
+        /// </summary>
+        public static readonly InstanceReplicationStatus INSTANCE_REPLICA_DELETING = new InstanceReplicationStatus("INSTANCE_REPLICA_DELETING");
+        /// <summary>
+        /// Constant INSTANCE_REPLICATION_COMPLETE for InstanceReplicationStatus
+        /// </summary>
+        public static readonly InstanceReplicationStatus INSTANCE_REPLICATION_COMPLETE = new InstanceReplicationStatus("INSTANCE_REPLICATION_COMPLETE");
+        /// <summary>
+        /// Constant INSTANCE_REPLICATION_DELETION_FAILED for InstanceReplicationStatus
+        /// </summary>
+        public static readonly InstanceReplicationStatus INSTANCE_REPLICATION_DELETION_FAILED = new InstanceReplicationStatus("INSTANCE_REPLICATION_DELETION_FAILED");
+        /// <summary>
+        /// Constant INSTANCE_REPLICATION_FAILED for InstanceReplicationStatus
+        /// </summary>
+        public static readonly InstanceReplicationStatus INSTANCE_REPLICATION_FAILED = new InstanceReplicationStatus("INSTANCE_REPLICATION_FAILED");
+        /// <summary>
+        /// Constant INSTANCE_REPLICATION_IN_PROGRESS for InstanceReplicationStatus
+        /// </summary>
+        public static readonly InstanceReplicationStatus INSTANCE_REPLICATION_IN_PROGRESS = new InstanceReplicationStatus("INSTANCE_REPLICATION_IN_PROGRESS");
+        /// <summary>
+        /// Constant RESOURCE_REPLICATION_NOT_STARTED for InstanceReplicationStatus
+        /// </summary>
+        public static readonly InstanceReplicationStatus RESOURCE_REPLICATION_NOT_STARTED = new InstanceReplicationStatus("RESOURCE_REPLICATION_NOT_STARTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceReplicationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceReplicationStatus FindValue(string value)
+        {
+            return FindValue<InstanceReplicationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceReplicationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InstanceStatus.
     /// </summary>
     public class InstanceStatus : ConstantClass
@@ -6521,6 +6587,14 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly VocabularyLanguageCode ArAE = new VocabularyLanguageCode("ar-AE");
         /// <summary>
+        /// Constant CaES for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode CaES = new VocabularyLanguageCode("ca-ES");
+        /// <summary>
+        /// Constant DaDK for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode DaDK = new VocabularyLanguageCode("da-DK");
+        /// <summary>
         /// Constant DeCH for VocabularyLanguageCode
         /// </summary>
         public static readonly VocabularyLanguageCode DeCH = new VocabularyLanguageCode("de-CH");
@@ -6573,6 +6647,10 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly VocabularyLanguageCode EsUS = new VocabularyLanguageCode("es-US");
         /// <summary>
+        /// Constant FiFI for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode FiFI = new VocabularyLanguageCode("fi-FI");
+        /// <summary>
         /// Constant FrCA for VocabularyLanguageCode
         /// </summary>
         public static readonly VocabularyLanguageCode FrCA = new VocabularyLanguageCode("fr-CA");
@@ -6584,6 +6662,10 @@ namespace Amazon.Connect
         /// Constant HiIN for VocabularyLanguageCode
         /// </summary>
         public static readonly VocabularyLanguageCode HiIN = new VocabularyLanguageCode("hi-IN");
+        /// <summary>
+        /// Constant IdID for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode IdID = new VocabularyLanguageCode("id-ID");
         /// <summary>
         /// Constant ItIT for VocabularyLanguageCode
         /// </summary>
@@ -6597,6 +6679,22 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly VocabularyLanguageCode KoKR = new VocabularyLanguageCode("ko-KR");
         /// <summary>
+        /// Constant MsMY for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode MsMY = new VocabularyLanguageCode("ms-MY");
+        /// <summary>
+        /// Constant NlNL for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode NlNL = new VocabularyLanguageCode("nl-NL");
+        /// <summary>
+        /// Constant NoNO for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode NoNO = new VocabularyLanguageCode("no-NO");
+        /// <summary>
+        /// Constant PlPL for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode PlPL = new VocabularyLanguageCode("pl-PL");
+        /// <summary>
         /// Constant PtBR for VocabularyLanguageCode
         /// </summary>
         public static readonly VocabularyLanguageCode PtBR = new VocabularyLanguageCode("pt-BR");
@@ -6604,6 +6702,14 @@ namespace Amazon.Connect
         /// Constant PtPT for VocabularyLanguageCode
         /// </summary>
         public static readonly VocabularyLanguageCode PtPT = new VocabularyLanguageCode("pt-PT");
+        /// <summary>
+        /// Constant SvSE for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode SvSE = new VocabularyLanguageCode("sv-SE");
+        /// <summary>
+        /// Constant TlPH for VocabularyLanguageCode
+        /// </summary>
+        public static readonly VocabularyLanguageCode TlPH = new VocabularyLanguageCode("tl-PH");
         /// <summary>
         /// Constant ZhCN for VocabularyLanguageCode
         /// </summary>

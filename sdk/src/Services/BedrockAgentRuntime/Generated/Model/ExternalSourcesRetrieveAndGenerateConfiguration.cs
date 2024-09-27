@@ -65,7 +65,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// function.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=20, Max=1011)]
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string ModelArn
         {
             get { return this._modelArn; }

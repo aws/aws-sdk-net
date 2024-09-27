@@ -46,15 +46,38 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
             request.AddSubResource("session");
 
+            if (!publicRequest.IsSetBucketName())
+            {
+                throw new AmazonS3Exception("Request object does not have required field BucketName set");
+            }
+
             if (publicRequest.IsSetSessionMode())
             {
                 request.Headers["x-amz-create-session-mode"] = publicRequest.SessionMode;
             }
-            if (!publicRequest.IsSetBucketName())
-                throw new AmazonS3Exception("Request object does not have required field BucketName set");
+            
+            if (publicRequest.IsSetServerSideEncryptionMethod())
+            {
+                request.Headers["x-amz-server-side-encryption"] = publicRequest.ServerSideEncryption;
+            }
+
+            if (publicRequest.IsSetSSEKMSKeyId())
+            {
+                request.Headers["x-amz-server-side-encryption-aws-kms-key-id"] = publicRequest.SSEKMSKeyId;
+            }
+
+            if (publicRequest.IsSetSSEKMSEncryptionContext())
+            {
+                request.Headers["x-amz-server-side-encryption-context"] = publicRequest.SSEKMSEncryptionContext;
+            }
+
+            if (publicRequest.IsSetBucketKeyEnabled())
+            {
+                request.Headers["x-amz-server-side-encryption-bucket-key-enabled"] = S3Transforms.ToStringValue(publicRequest.BucketKeyEnabled);
+            }
+
             request.AddPathResource("{Bucket}", StringUtils.FromString(publicRequest.BucketName));
             request.ResourcePath = "/{Bucket}";
-
 
             return request;
         }

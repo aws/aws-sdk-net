@@ -75,13 +75,18 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>SELECT_MFA_TYPE</c>: Selects the MFA type. Valid MFA options are <c>SMS_MFA</c>
-        /// for text SMS MFA, and <c>SOFTWARE_TOKEN_MFA</c> for time-based one-time password (TOTP)
-        /// software token MFA.
+        /// for SMS message MFA, <c>EMAIL_OTP</c> for email message MFA, and <c>SOFTWARE_TOKEN_MFA</c>
+        /// for time-based one-time password (TOTP) software token MFA.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>SMS_MFA</c>: Next challenge is to supply an <c>SMS_MFA_CODE</c>, delivered via
-        /// SMS.
+        ///  <c>SMS_MFA</c>: Next challenge is to supply an <c>SMS_MFA_CODE</c>that your user
+        /// pool delivered in an SMS message.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>EMAIL_OTP</c>: Next challenge is to supply an <c>EMAIL_OTP_CODE</c> that your
+        /// user pool delivered in an email message.
         /// </para>
         ///  </li> <li> 
         /// <para>

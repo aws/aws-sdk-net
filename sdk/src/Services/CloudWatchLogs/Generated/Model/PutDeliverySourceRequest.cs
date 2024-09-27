@@ -96,11 +96,15 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// For Amazon Bedrock, the valid value is <c>APPLICATION_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// For Amazon CodeWhisperer, the valid value is <c>EVENT_LOGS</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For IAM Identity Centerr, the valid value is <c>ERROR_LOGS</c>.
+        /// For IAM Identity Center, the valid value is <c>ERROR_LOGS</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>

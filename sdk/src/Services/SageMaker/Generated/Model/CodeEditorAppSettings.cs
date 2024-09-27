@@ -40,9 +40,28 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class CodeEditorAppSettings
     {
+        private AppLifecycleManagement _appLifecycleManagement;
         private List<CustomImage> _customImages = AWSConfigs.InitializeCollections ? new List<CustomImage>() : null;
         private ResourceSpec _defaultResourceSpec;
         private List<string> _lifecycleConfigArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AppLifecycleManagement. 
+        /// <para>
+        /// Settings that are used to configure and manage the lifecycle of CodeEditor applications.
+        /// </para>
+        /// </summary>
+        public AppLifecycleManagement AppLifecycleManagement
+        {
+            get { return this._appLifecycleManagement; }
+            set { this._appLifecycleManagement = value; }
+        }
+
+        // Check to see if AppLifecycleManagement property is set
+        internal bool IsSetAppLifecycleManagement()
+        {
+            return this._appLifecycleManagement != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CustomImages. 

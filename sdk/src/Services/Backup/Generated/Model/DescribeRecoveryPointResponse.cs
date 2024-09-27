@@ -80,7 +80,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property BackupVaultArn. 
         /// <para>
-        /// An ARN that uniquely identifies a backup vault; for example, <c>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</c>.
+        /// An ARN that uniquely identifies a backup vault; for example, <c>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</c>.
         /// </para>
         /// </summary>
         public string BackupVaultArn
@@ -100,7 +100,7 @@ namespace Amazon.Backup.Model
         /// <para>
         /// The name of a logical container where backups are stored. Backup vaults are identified
         /// by names that are unique to the account used to create them and the Region where they
-        /// are created. They consist of lowercase letters, numbers, and hyphens.
+        /// are created.
         /// </para>
         /// </summary>
         public string BackupVaultName
@@ -158,9 +158,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property CompositeMemberIdentifier. 
         /// <para>
-        /// This is the identifier of a resource within a composite group, such as nested (child)
-        /// recovery point belonging to a composite (parent) stack. The ID is transferred from
-        /// the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax">
+        /// The identifier of a resource within a composite group, such as nested (child) recovery
+        /// point belonging to a composite (parent) stack. The ID is transferred from the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax">
         /// logical ID</a> within a stack.
         /// </para>
         /// </summary>
@@ -328,10 +327,9 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        /// Resource types that are able to be transitioned to cold storage are listed in the
-        /// "Lifecycle to cold storage" section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
-        /// Feature availability by resource</a> table. Backup ignores this expression for other
-        /// resource types.
+        /// Resource types that can transition to cold storage are listed in the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-feature-availability.html#features-by-resource">Feature
+        /// availability by resource</a> table. Backup ignores this expression for other resource
+        /// types.
         /// </para>
         /// </summary>
         public Lifecycle Lifecycle
@@ -405,7 +403,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ResourceName. 
         /// <para>
-        /// This is the non-unique name of the resource that belongs to the specified backup.
+        /// The name of the resource that belongs to the specified backup.
         /// </para>
         /// </summary>
         public string ResourceName
@@ -444,7 +442,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property SourceBackupVaultArn. 
         /// <para>
         /// An Amazon Resource Name (ARN) that uniquely identifies the source vault where the
-        /// resource was originally backed up in; for example, <c>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</c>.
+        /// resource was originally backed up in; for example, <c>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</c>.
         /// If the recovery is restored to the same Amazon Web Services account or Region, this
         /// value will be <c>null</c>.
         /// </para>
@@ -487,7 +485,9 @@ namespace Amazon.Backup.Model
         ///  <c>STOPPED</c> status occurs on a continuous backup where a user has taken some action
         /// that causes the continuous backup to be disabled. This can be caused by the removal
         /// of permissions, turning off versioning, turning off events being sent to EventBridge,
-        /// or disabling the EventBridge rules that are put in place by Backup.
+        /// or disabling the EventBridge rules that are put in place by Backup. For recovery points
+        /// of Amazon S3, Amazon RDS, and Amazon Aurora resources, this status occurs when the
+        /// retention period of a continuous backup rule is changed.
         /// </para>
         ///  
         /// <para>
@@ -555,7 +555,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property VaultType. 
         /// <para>
-        /// This is the type of vault in which the described recovery point is stored.
+        /// The type of vault in which the described recovery point is stored.
         /// </para>
         /// </summary>
         public VaultType VaultType

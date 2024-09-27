@@ -29,5 +29,16 @@ namespace Amazon.S3.Transfer
     /// </summary>
     public abstract class BaseUploadRequest
     {
+        private RequestPayer requestPayer;
+
+        /// <summary>
+        /// Confirms that the requester knows that they will be charged for the request. 
+        /// Bucket owners need not specify this parameter in their requests.
+        /// </summary>
+        public RequestPayer RequestPayer
+        {
+            get { return this.requestPayer; }
+            set { this.requestPayer = value; }
+        }
     }
 }

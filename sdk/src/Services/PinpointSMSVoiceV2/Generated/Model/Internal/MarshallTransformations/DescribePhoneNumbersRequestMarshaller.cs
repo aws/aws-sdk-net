@@ -99,7 +99,27 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.NextToken);
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetPhoneNumberIds())
+||||||| Commit version number update changes
+                if(publicRequest.IsSetPhoneNumberIds())
+                {
+                    context.Writer.WritePropertyName("PhoneNumberIds");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestPhoneNumberIdsListValue in publicRequest.PhoneNumberIds)
+=======
+                if(publicRequest.IsSetOwner())
+                {
+                    context.Writer.WritePropertyName("Owner");
+                    context.Writer.Write(publicRequest.Owner);
+                }
+
+                if(publicRequest.IsSetPhoneNumberIds())
+                {
+                    context.Writer.WritePropertyName("PhoneNumberIds");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestPhoneNumberIdsListValue in publicRequest.PhoneNumberIds)
+>>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
                     {
                         context.Writer.WritePropertyName("PhoneNumberIds");
                         context.Writer.WriteArrayStart();

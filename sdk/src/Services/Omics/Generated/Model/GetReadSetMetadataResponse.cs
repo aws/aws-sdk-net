@@ -35,6 +35,7 @@ namespace Amazon.Omics.Model
     public partial class GetReadSetMetadataResponse : AmazonWebServiceResponse
     {
         private string _arn;
+        private string _creationJobId;
         private DateTime? _creationTime;
         private CreationType _creationType;
         private string _description;
@@ -68,6 +69,25 @@ namespace Amazon.Omics.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreationJobId. 
+        /// <para>
+        /// The read set's creation job ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=127)]
+        public string CreationJobId
+        {
+            get { return this._creationJobId; }
+            set { this._creationJobId = value; }
+        }
+
+        // Check to see if CreationJobId property is set
+        internal bool IsSetCreationJobId()
+        {
+            return this._creationJobId != null;
         }
 
         /// <summary>

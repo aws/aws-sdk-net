@@ -145,7 +145,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// This is the Amazon Web Services Regions within the job summary.
+        /// The Amazon Web Services Regions within the job summary.
         /// </para>
         /// </summary>
         public string Region

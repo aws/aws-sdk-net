@@ -32,7 +32,7 @@ namespace Amazon.Lambda.Model
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
     /// Removes <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>
-    /// from a function.
+    /// from a function, event source mapping, or code signing configuration.
     /// </summary>
     public partial class UntagResourceRequest : AmazonLambdaRequest
     {
@@ -42,10 +42,10 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Resource. 
         /// <para>
-        /// The function's Amazon Resource Name (ARN).
+        /// The resource's Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Resource
         {
             get { return this._resource; }
@@ -61,7 +61,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// A list of tag keys to remove from the function.
+        /// A list of tag keys to remove from the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

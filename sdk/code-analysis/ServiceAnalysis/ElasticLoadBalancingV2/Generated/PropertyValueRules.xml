@@ -160,6 +160,11 @@
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticLoadBalancingV2.Model.ListenerAttribute.Key</property>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9._]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticLoadBalancingV2.Model.LoadBalancer.CustomerOwnedIpv4Pool</property>
     <max>256</max>
     <pattern>^(ipv4pool-coip-)[a-zA-Z0-9]+$</pattern>

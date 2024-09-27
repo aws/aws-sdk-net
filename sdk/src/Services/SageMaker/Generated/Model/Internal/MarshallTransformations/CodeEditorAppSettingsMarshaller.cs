@@ -48,6 +48,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAppLifecycleManagement())
+            {
+                context.Writer.WritePropertyName("AppLifecycleManagement");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AppLifecycleManagementMarshaller.Instance;
+                marshaller.Marshall(requestObject.AppLifecycleManagement, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetCustomImages())
             {
                 context.Writer.WritePropertyName("CustomImages");

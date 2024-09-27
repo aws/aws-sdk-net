@@ -61,7 +61,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DetectorId. 
         /// <para>
-        /// The ID of the detector associated with the findings to update feedback for.
+        /// The ID of the detector that is associated with the findings for which you want to
+        /// update the feedback.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]

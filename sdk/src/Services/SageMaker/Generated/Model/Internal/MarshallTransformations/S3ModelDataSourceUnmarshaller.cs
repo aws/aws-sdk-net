@@ -78,6 +78,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.HubAccessConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ManifestS3Uri", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ManifestS3Uri = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ModelAccessConfig", targetDepth))
                 {
                     var unmarshaller = ModelAccessConfigUnmarshaller.Instance;

@@ -34,10 +34,16 @@ namespace Amazon.SageMaker
     public partial class AmazonSageMakerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("SageMaker", "4.0.0.0");
 
         private static readonly AmazonSageMakerEndpointResolver EndpointResolver =
             new AmazonSageMakerEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("SageMaker", "3.7.403.4");
+=======
+            InternalSDKUtils.BuildUserAgentString("SageMaker", "3.7.410.1");
+>>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
 
         private string _userAgent = UserAgentString;
         ///<summary>

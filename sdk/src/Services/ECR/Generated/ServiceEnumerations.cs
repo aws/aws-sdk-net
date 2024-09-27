@@ -38,6 +38,10 @@ namespace Amazon.ECR
         /// Constant KMS for EncryptionType
         /// </summary>
         public static readonly EncryptionType KMS = new EncryptionType("KMS");
+        /// <summary>
+        /// Constant KMS_DSSE for EncryptionType
+        /// </summary>
+        public static readonly EncryptionType KMS_DSSE = new EncryptionType("KMS_DSSE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -49,7 +49,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property AccountIds. 
         /// <para>
-        /// The account ID of the member account.
+        /// A list of member account IDs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]

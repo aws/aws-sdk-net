@@ -83,8 +83,37 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                         var marshaller = GoalMarshaller.Instance;
                         marshaller.Marshall(publicRequest.Goal, context);
 
+<<<<<<< HEAD
                         context.Writer.WriteObjectEnd();
                     }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetSliConfig())
+                {
+                    context.Writer.WritePropertyName("SliConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ServiceLevelIndicatorConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SliConfig, context);
+=======
+                if(publicRequest.IsSetRequestBasedSliConfig())
+                {
+                    context.Writer.WritePropertyName("RequestBasedSliConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RequestBasedServiceLevelIndicatorConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RequestBasedSliConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetSliConfig())
+                {
+                    context.Writer.WritePropertyName("SliConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ServiceLevelIndicatorConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SliConfig, context);
+>>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
 
                     if(publicRequest.IsSetName())
                     {

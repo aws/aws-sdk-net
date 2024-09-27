@@ -46,7 +46,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     ///  
     /// <para>
     /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
-    /// Services service, Amazon Simple Notification Service might place your account in the
+    /// Servicesservice, Amazon Simple Notification Service might place your account in the
     /// SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
     /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
     /// your app while in the sandbox environment, you can move out of the sandbox and into
@@ -58,10 +58,31 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class SetUserPoolMfaConfigRequest : AmazonCognitoIdentityProviderRequest
     {
+        private EmailMfaConfigType _emailMfaConfiguration;
         private UserPoolMfaType _mfaConfiguration;
         private SmsMfaConfigType _smsMfaConfiguration;
         private SoftwareTokenMfaConfigType _softwareTokenMfaConfiguration;
         private string _userPoolId;
+
+        /// <summary>
+        /// Gets and sets the property EmailMfaConfiguration. 
+        /// <para>
+        /// Configures user pool email messages for MFA. Sets the subject and body of the email
+        /// message template for MFA messages. To activate this setting, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">
+        /// advanced security features</a> must be active in your user pool.
+        /// </para>
+        /// </summary>
+        public EmailMfaConfigType EmailMfaConfiguration
+        {
+            get { return this._emailMfaConfiguration; }
+            set { this._emailMfaConfiguration = value; }
+        }
+
+        // Check to see if EmailMfaConfiguration property is set
+        internal bool IsSetEmailMfaConfiguration()
+        {
+            return this._emailMfaConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MfaConfiguration. 
@@ -100,7 +121,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property SmsMfaConfiguration. 
         /// <para>
-        /// The SMS text message MFA configuration.
+        /// Configures user pool SMS messages for MFA. Sets the message template and the SMS message
+        /// sending configuration for Amazon SNS.
         /// </para>
         /// </summary>
         public SmsMfaConfigType SmsMfaConfiguration
@@ -118,7 +140,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property SoftwareTokenMfaConfiguration. 
         /// <para>
-        /// The software token MFA configuration.
+        /// Configures a user pool for time-based one-time password (TOTP) MFA. Enables or disables
+        /// TOTP.
         /// </para>
         /// </summary>
         public SoftwareTokenMfaConfigType SoftwareTokenMfaConfiguration

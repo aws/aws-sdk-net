@@ -69,6 +69,14 @@ namespace Amazon.Bedrock.Model
         }
 
         /// <summary>
+        /// Paginator for ListInferenceProfiles operation
+        ///</summary>
+        public IListInferenceProfilesPaginator ListInferenceProfiles(ListInferenceProfilesRequest request) 
+        {
+            return new ListInferenceProfilesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListModelCopyJobs operation
         ///</summary>
         public IListModelCopyJobsPaginator ListModelCopyJobs(ListModelCopyJobsRequest request) 

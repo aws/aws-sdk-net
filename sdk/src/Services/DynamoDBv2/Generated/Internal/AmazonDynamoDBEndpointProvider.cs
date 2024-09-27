@@ -51,6 +51,8 @@ namespace Amazon.DynamoDBv2.Internal
                 ["UseDualStack"] = parameters["UseDualStack"],
                 ["UseFIPS"] = parameters["UseFIPS"],
                 ["Endpoint"] = parameters["Endpoint"],
+                ["AccountId"] = parameters["AccountId"],
+                ["AccountIdEndpointMode"] = parameters["AccountIdEndpointMode"],
             };
             if (IsSet(refs["Endpoint"]))
             {
@@ -62,16 +64,40 @@ namespace Amazon.DynamoDBv2.Internal
                 {
                     throw new AmazonClientException("Invalid Configuration: Dualstack and custom endpoint are not supported");
                 }
-                return new Endpoint((string)refs["Endpoint"], InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                return new Endpoint(Interpolate(@"{Endpoint}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
             }
             if (IsSet(refs["Region"]))
             {
                 if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
                 {
+                    if (Equals(refs["Region"], "local"))
+                    {
+                        if (Equals(refs["UseFIPS"], true))
+                        {
+                            throw new AmazonClientException("Invalid Configuration: FIPS and local endpoint are not supported");
+                        }
+                        if (Equals(refs["UseDualStack"], true))
+                        {
+                            throw new AmazonClientException("Invalid Configuration: Dualstack and local endpoint are not supported");
+                        }
+                        return new Endpoint("http://localhost:8000", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""dynamodb"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                    }
+                    if (IsSet(refs["AccountIdEndpointMode"]) && Equals(refs["AccountIdEndpointMode"], "required") && !IsSet(refs["AccountId"]))
+                    {
+                        throw new AmazonClientException("AccountIdEndpointMode is required but no AccountID was provided or able to be loaded.");
+                    }
+                    if (IsSet(refs["AccountId"]) && Equals(GetAttr(refs["PartitionResult"], "name"), "aws") && !Equals(refs["UseFIPS"], true) && !Equals(refs["UseDualStack"], true) && !IsValidHostLabel((string)refs["AccountId"], false))
+                    {
+                        throw new AmazonClientException("Credentials-sourced account ID parameter is invalid");
+                    }
                     if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
                     {
-                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")) && Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
+                        if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true) && Equals(GetAttr(refs["PartitionResult"], "supportsDualStack"), true))
                         {
+                            if (IsSet(refs["AccountIdEndpointMode"]) && Equals(refs["AccountIdEndpointMode"], "disabled"))
+                            {
+                                return new Endpoint(Interpolate(@"https://dynamodb-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                            }
                             return new Endpoint(Interpolate(@"https://dynamodb-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                         }
                         throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
@@ -82,7 +108,15 @@ namespace Amazon.DynamoDBv2.Internal
                         {
                             if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov"))
                             {
-                                return new Endpoint(Interpolate(@"https://dynamodb.{Region}.amazonaws.com", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                                if (IsSet(refs["AccountIdEndpointMode"]) && Equals(refs["AccountIdEndpointMode"], "disabled"))
+                                {
+                                    return new Endpoint(Interpolate(@"https://dynamodb.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                                }
+                                return new Endpoint(Interpolate(@"https://dynamodb.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                            }
+                            if (IsSet(refs["AccountIdEndpointMode"]) && Equals(refs["AccountIdEndpointMode"], "disabled"))
+                            {
+                                return new Endpoint(Interpolate(@"https://dynamodb-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                             }
                             return new Endpoint(Interpolate(@"https://dynamodb-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                         }
@@ -90,15 +124,23 @@ namespace Amazon.DynamoDBv2.Internal
                     }
                     if (Equals(refs["UseDualStack"], true))
                     {
-                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
+                        if (Equals(GetAttr(refs["PartitionResult"], "supportsDualStack"), true))
                         {
+                            if (IsSet(refs["AccountIdEndpointMode"]) && Equals(refs["AccountIdEndpointMode"], "disabled"))
+                            {
+                                return new Endpoint(Interpolate(@"https://dynamodb.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                            }
                             return new Endpoint(Interpolate(@"https://dynamodb.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                         }
                         throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
                     }
-                    if (Equals(refs["Region"], "local"))
+                    if (IsSet(refs["AccountIdEndpointMode"]) && Equals(refs["AccountIdEndpointMode"], "disabled"))
                     {
-                        return new Endpoint("http://localhost:8000", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""dynamodb"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                        return new Endpoint(Interpolate(@"https://dynamodb.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    }
+                    if (IsSet(refs["AccountId"]) && Equals(GetAttr(refs["PartitionResult"], "name"), "aws") && !Equals(refs["UseFIPS"], true) && !Equals(refs["UseDualStack"], true))
+                    {
+                        return new Endpoint(Interpolate(@"https://{AccountId}.ddb.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                     }
                     return new Endpoint(Interpolate(@"https://dynamodb.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                 }

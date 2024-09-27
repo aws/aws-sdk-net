@@ -176,6 +176,12 @@
     <pattern>arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lambda.Model.CreateEventSourceMappingResponse.EventSourceMappingArn</property>
+    <min>85</min>
+    <max>120</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:event-source-mapping:[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lambda.Model.CreateEventSourceMappingResponse.FunctionArn</property>
     <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
@@ -349,6 +355,12 @@
     <pattern>arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lambda.Model.DeleteEventSourceMappingResponse.EventSourceMappingArn</property>
+    <min>85</min>
+    <max>120</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:event-source-mapping:[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lambda.Model.DeleteEventSourceMappingResponse.FunctionArn</property>
     <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
@@ -493,6 +505,12 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetEventSourceMappingResponse.EventSourceArn</property>
     <pattern>arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.GetEventSourceMappingResponse.EventSourceMappingArn</property>
+    <min>85</min>
+    <max>120</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:event-source-mapping:[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.GetEventSourceMappingResponse.FunctionArn</property>
@@ -953,7 +971,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.ListTagsRequest.Resource</property>
-    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <min>1</min>
+    <max>256</max>
+    <pattern>arn:(aws[a-zA-Z-]*):lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:(function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?|code-signing-config:csc-[a-z0-9]{17}|event-source-mapping:[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.ListVersionsByFunctionRequest.FunctionName</property>
@@ -1234,11 +1254,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.TagResourceRequest.Resource</property>
-    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <min>1</min>
+    <max>256</max>
+    <pattern>arn:(aws[a-zA-Z-]*):lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:(function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?|code-signing-config:csc-[a-z0-9]{17}|event-source-mapping:[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UntagResourceRequest.Resource</property>
-    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <min>1</min>
+    <max>256</max>
+    <pattern>arn:(aws[a-zA-Z-]*):lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:(function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?|code-signing-config:csc-[a-z0-9]{17}|event-source-mapping:[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateAliasRequest.Description</property>
@@ -1342,6 +1366,12 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateEventSourceMappingResponse.EventSourceArn</property>
     <pattern>arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-])+:([a-z]{2}(-gov)?-[a-z]+-\d{1})?:(\d{12})?:(.*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.UpdateEventSourceMappingResponse.EventSourceMappingArn</property>
+    <min>85</min>
+    <max>120</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1}:\d{12}:event-source-mapping:[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateEventSourceMappingResponse.FunctionArn</property>

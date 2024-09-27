@@ -69,7 +69,7 @@ namespace Amazon.Backup.Model
         /// <para>
         /// The name of a logical container where backups are stored. Backup vaults are identified
         /// by names that are unique to the account used to create them and the Amazon Web Services
-        /// Region where they are created. They consist of lowercase letters, numbers, and hyphens.
+        /// Region where they are created.
         /// </para>
         /// </summary>
         public string BackupVaultName
@@ -144,7 +144,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ParentRecoveryPointArn. 
         /// <para>
-        /// This is the Amazon Resource Name (ARN) of the parent (composite) recovery point.
+        /// The Amazon Resource Name (ARN) of the parent (composite) recovery point.
         /// </para>
         /// </summary>
         public string ParentRecoveryPointArn
@@ -181,7 +181,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ResourceName. 
         /// <para>
-        /// This is the non-unique name of the resource that belongs to the specified backup.
+        /// The non-unique name of the resource that belongs to the specified backup.
         /// </para>
         /// </summary>
         public string ResourceName
@@ -217,7 +217,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property StatusMessage. 
         /// <para>
-        /// A message explaining the reason of the recovery point deletion failure.
+        /// A message explaining the current status of the recovery point.
         /// </para>
         /// </summary>
         public string StatusMessage
@@ -235,7 +235,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property VaultType. 
         /// <para>
-        /// This is the type of vault in which the described recovery point is stored.
+        /// The type of vault in which the described recovery point is stored.
         /// </para>
         /// </summary>
         public VaultType VaultType

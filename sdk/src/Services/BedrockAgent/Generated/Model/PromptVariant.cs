@@ -35,6 +35,7 @@ namespace Amazon.BedrockAgent.Model
     public partial class PromptVariant
     {
         private PromptInferenceConfiguration _inferenceConfiguration;
+        private List<PromptMetadataEntry> _metadata = AWSConfigs.InitializeCollections ? new List<PromptMetadataEntry>() : null;
         private string _modelId;
         private string _name;
         private PromptTemplateConfiguration _templateConfiguration;
@@ -59,9 +60,31 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Metadata. 
+        /// <para>
+        /// An array of objects, each containing a key-value pair that defines a metadata tag
+        /// and value to attach to a prompt variant. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-create.html">Create
+        /// a prompt using Prompt management</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=50)]
+        public List<PromptMetadataEntry> Metadata
+        {
+            get { return this._metadata; }
+            set { this._metadata = value; }
+        }
+
+        // Check to see if Metadata property is set
+        internal bool IsSetMetadata()
+        {
+            return this._metadata != null && (this._metadata.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property ModelId. 
         /// <para>
-        /// The unique identifier of the model with which to run inference on the prompt.
+        /// The unique identifier of the model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference
+        /// profile</a> with which to run inference on the prompt.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

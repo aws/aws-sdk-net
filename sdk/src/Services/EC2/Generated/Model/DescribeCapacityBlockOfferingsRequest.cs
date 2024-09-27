@@ -88,8 +88,15 @@ namespace Amazon.EC2.Model
         /// The number of instances for which to reserve capacity.
         /// </para>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Required=true)]
         public int? InstanceCount
+||||||| Commit version number update changes
+        [AWSProperty(Required=true)]
+        public int InstanceCount
+=======
+        public int InstanceCount
+>>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
         {
             get { return this._instanceCount; }
             set { this._instanceCount = value; }
@@ -107,7 +114,6 @@ namespace Amazon.EC2.Model
         /// The type of instance for which the Capacity Block offering reserves capacity.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string InstanceType
         {
             get { return this._instanceType; }

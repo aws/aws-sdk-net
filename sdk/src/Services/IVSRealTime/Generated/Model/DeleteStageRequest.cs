@@ -31,7 +31,9 @@ namespace Amazon.IVSRealTime.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteStage operation.
-    /// Shuts down and deletes the specified stage (disconnecting all participants).
+    /// Shuts down and deletes the specified stage (disconnecting all participants). This
+    /// operation also removes the <c>stageArn</c> from the associated <a>IngestConfiguration</a>,
+    /// if there are participants using the IngestConfiguration to publish to the stage.
     /// </summary>
     public partial class DeleteStageRequest : AmazonIVSRealTimeRequest
     {

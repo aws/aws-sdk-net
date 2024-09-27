@@ -78,6 +78,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.DashSignaledSystemIds = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("encryptionContractConfiguration", targetDepth))
+                {
+                    var unmarshaller = EncryptionContractConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.EncryptionContractConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("hlsSignaledSystemIds", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

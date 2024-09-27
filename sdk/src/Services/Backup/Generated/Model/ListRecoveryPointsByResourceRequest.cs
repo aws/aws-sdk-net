@@ -31,8 +31,8 @@ namespace Amazon.Backup.Model
 {
     /// <summary>
     /// Container for the parameters to the ListRecoveryPointsByResource operation.
-    /// Returns detailed information about all the recovery points of the type specified by
-    /// a resource Amazon Resource Name (ARN).
+    /// The information about the recovery points of the type specified by a resource Amazon
+    /// Resource Name (ARN).
     /// 
     ///  <note> 
     /// <para>

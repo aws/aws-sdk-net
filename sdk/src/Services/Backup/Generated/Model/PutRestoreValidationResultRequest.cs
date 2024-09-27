@@ -63,7 +63,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ValidationStatus. 
         /// <para>
-        /// This is the status of your restore validation.
+        /// The status of your restore validation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

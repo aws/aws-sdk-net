@@ -42,7 +42,7 @@ namespace Amazon.ECS.Model
     ///  
     /// <para>
     /// Most fields of this parameter (<c>containerPort</c>, <c>hostPort</c>, <c>protocol</c>)
-    /// maps to <c>PortBindings</c> in the docker conainer create command and the <c>--publish</c>
+    /// maps to <c>PortBindings</c> in the docker container create command and the <c>--publish</c>
     /// option to <c>docker run</c>. If the network mode of a task definition is set to <c>host</c>,
     /// host ports must either be undefined or match the container port in the port mapping.
     /// </para>

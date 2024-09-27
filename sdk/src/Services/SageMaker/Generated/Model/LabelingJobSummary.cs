@@ -246,7 +246,7 @@ namespace Amazon.SageMaker.Model
         /// data object is sent to a worker.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=2048)]
+        [AWSProperty(Max=2048)]
         public string PreHumanTaskLambdaArn
         {
             get { return this._preHumanTaskLambdaArn; }

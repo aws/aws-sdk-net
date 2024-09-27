@@ -276,6 +276,11 @@
     <max>300</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetFindingsStatisticsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.GetIPSetRequest.DetectorId</property>
     <min>1</min>
     <max>300</max>

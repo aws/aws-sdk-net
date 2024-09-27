@@ -226,7 +226,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property ComplianceSecurityControlId. 
         /// <para>
         ///  The unique identifier of a control across standards. Values for this field typically
-        /// consist of an Amazon Web Servicesservice and a number, such as APIGateway.5. 
+        /// consist of an Amazon Web Services service and a number, such as APIGateway.5. 
         /// </para>
         /// </summary>
         public List<StringFilter> ComplianceSecurityControlId
@@ -2308,7 +2308,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <c>SUPPRESSED</c> - Indicates that you reviewed the finding and do not believe that
+        ///  <c>SUPPRESSED</c> - Indicates that you reviewed the finding and don't believe that
         /// any action is needed.
         /// </para>
         ///  

@@ -30,11 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IVSRealTime.Model
 {
     /// <summary>
-    /// Summary information about various endpoints for a stage.
+    /// Summary information about various endpoints for a stage. We recommend that you cache
+    /// these values at stage creation; the values can be cached for up to 14 days.
     /// </summary>
     public partial class StageEndpoints
     {
         private string _events;
+        private string _rtmp;
+        private string _rtmps;
         private string _whip;
 
         /// <summary>
@@ -57,9 +60,47 @@ namespace Amazon.IVSRealTime.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Rtmp. 
+        /// <para>
+        /// The endpoint to be used for IVS real-time streaming using the RTMP protocol.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
+        public string Rtmp
+        {
+            get { return this._rtmp; }
+            set { this._rtmp = value; }
+        }
+
+        // Check to see if Rtmp property is set
+        internal bool IsSetRtmp()
+        {
+            return this._rtmp != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Rtmps. 
+        /// <para>
+        /// The endpoint to be used for IVS real-time streaming using the RTMPS protocol.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
+        public string Rtmps
+        {
+            get { return this._rtmps; }
+            set { this._rtmps = value; }
+        }
+
+        // Check to see if Rtmps property is set
+        internal bool IsSetRtmps()
+        {
+            return this._rtmps != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Whip. 
         /// <para>
-        /// WHIP endpoint.
+        /// The endpoint to be used for IVS real-time streaming using the WHIP protocol.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

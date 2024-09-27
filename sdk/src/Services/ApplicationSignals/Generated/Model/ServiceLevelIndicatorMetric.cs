@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationSignals.Model
 {
     /// <summary>
-    /// This structure contains the information about the metric that is used for the SLO.
+    /// This structure contains the information about the metric that is used for a period-based
+    /// SLO.
     /// </summary>
     public partial class ServiceLevelIndicatorMetric
     {

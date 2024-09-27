@@ -35,13 +35,19 @@ namespace Amazon.GuardDuty.Model
     public partial class FindingStatistics
     {
         private Dictionary<string, int> _countBySeverity = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
+        private List<AccountStatistics> _groupedByAccount = AWSConfigs.InitializeCollections ? new List<AccountStatistics>() : null;
+        private List<DateStatistics> _groupedByDate = AWSConfigs.InitializeCollections ? new List<DateStatistics>() : null;
+        private List<FindingTypeStatistics> _groupedByFindingType = AWSConfigs.InitializeCollections ? new List<FindingTypeStatistics>() : null;
+        private List<ResourceStatistics> _groupedByResource = AWSConfigs.InitializeCollections ? new List<ResourceStatistics>() : null;
+        private List<SeverityStatistics> _groupedBySeverity = AWSConfigs.InitializeCollections ? new List<SeverityStatistics>() : null;
 
         /// <summary>
         /// Gets and sets the property CountBySeverity. 
         /// <para>
-        /// Represents a map of severity to count statistics for a set of findings.
+        /// Represents a list of map of severity to count statistics for a set of findings.
         /// </para>
         /// </summary>
+        [Obsolete("This parameter is deprecated. Please set GroupBy to 'SEVERITY' to return GroupedBySeverity instead.")]
         public Dictionary<string, int> CountBySeverity
         {
             get { return this._countBySeverity; }
@@ -52,6 +58,106 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetCountBySeverity()
         {
             return this._countBySeverity != null && (this._countBySeverity.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GroupedByAccount. 
+        /// <para>
+        /// Represents a list of map of accounts with a findings count associated with each account.
+        /// </para>
+        /// </summary>
+        public List<AccountStatistics> GroupedByAccount
+        {
+            get { return this._groupedByAccount; }
+            set { this._groupedByAccount = value; }
+        }
+
+        // Check to see if GroupedByAccount property is set
+        internal bool IsSetGroupedByAccount()
+        {
+            return this._groupedByAccount != null && (this._groupedByAccount.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GroupedByDate. 
+        /// <para>
+        /// Represents a list of map of dates with a count of total findings generated on each
+        /// date per severity level.
+        /// </para>
+        /// </summary>
+        public List<DateStatistics> GroupedByDate
+        {
+            get { return this._groupedByDate; }
+            set { this._groupedByDate = value; }
+        }
+
+        // Check to see if GroupedByDate property is set
+        internal bool IsSetGroupedByDate()
+        {
+            return this._groupedByDate != null && (this._groupedByDate.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GroupedByFindingType. 
+        /// <para>
+        /// Represents a list of map of finding types with a count of total findings generated
+        /// for each type. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Based on the <c>orderBy</c> parameter, this request returns either the most occurring
+        /// finding types or the least occurring finding types. If the <c>orderBy</c> parameter
+        /// is <c>ASC</c>, this will represent the least occurring finding types in your account;
+        /// otherwise, this will represent the most occurring finding types. The default value
+        /// of <c>orderBy</c> is <c>DESC</c>.
+        /// </para>
+        /// </summary>
+        public List<FindingTypeStatistics> GroupedByFindingType
+        {
+            get { return this._groupedByFindingType; }
+            set { this._groupedByFindingType = value; }
+        }
+
+        // Check to see if GroupedByFindingType property is set
+        internal bool IsSetGroupedByFindingType()
+        {
+            return this._groupedByFindingType != null && (this._groupedByFindingType.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GroupedByResource. 
+        /// <para>
+        /// Represents a list of map of top resources with a count of total findings.
+        /// </para>
+        /// </summary>
+        public List<ResourceStatistics> GroupedByResource
+        {
+            get { return this._groupedByResource; }
+            set { this._groupedByResource = value; }
+        }
+
+        // Check to see if GroupedByResource property is set
+        internal bool IsSetGroupedByResource()
+        {
+            return this._groupedByResource != null && (this._groupedByResource.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GroupedBySeverity. 
+        /// <para>
+        /// Represents a list of map of total findings for each severity level.
+        /// </para>
+        /// </summary>
+        public List<SeverityStatistics> GroupedBySeverity
+        {
+            get { return this._groupedBySeverity; }
+            set { this._groupedBySeverity = value; }
+        }
+
+        // Check to see if GroupedBySeverity property is set
+        internal bool IsSetGroupedBySeverity()
+        {
+            return this._groupedBySeverity != null && (this._groupedBySeverity.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

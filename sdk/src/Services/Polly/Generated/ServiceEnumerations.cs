@@ -155,6 +155,10 @@ namespace Amazon.Polly
         /// </summary>
         public static readonly LanguageCode CmnCN = new LanguageCode("cmn-CN");
         /// <summary>
+        /// Constant CsCZ for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode CsCZ = new LanguageCode("cs-CZ");
+        /// <summary>
         /// Constant CyGB for LanguageCode
         /// </summary>
         public static readonly LanguageCode CyGB = new LanguageCode("cy-GB");
@@ -166,6 +170,10 @@ namespace Amazon.Polly
         /// Constant DeAT for LanguageCode
         /// </summary>
         public static readonly LanguageCode DeAT = new LanguageCode("de-AT");
+        /// <summary>
+        /// Constant DeCH for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode DeCH = new LanguageCode("de-CH");
         /// <summary>
         /// Constant DeDE for LanguageCode
         /// </summary>
@@ -729,6 +737,10 @@ namespace Amazon.Polly
         /// </summary>
         public static readonly VoiceId Jan = new VoiceId("Jan");
         /// <summary>
+        /// Constant Jitka for VoiceId
+        /// </summary>
+        public static readonly VoiceId Jitka = new VoiceId("Jitka");
+        /// <summary>
         /// Constant Joanna for VoiceId
         /// </summary>
         public static readonly VoiceId Joanna = new VoiceId("Joanna");
@@ -884,6 +896,10 @@ namespace Amazon.Polly
         /// Constant Ruth for VoiceId
         /// </summary>
         public static readonly VoiceId Ruth = new VoiceId("Ruth");
+        /// <summary>
+        /// Constant Sabrina for VoiceId
+        /// </summary>
+        public static readonly VoiceId Sabrina = new VoiceId("Sabrina");
         /// <summary>
         /// Constant Salli for VoiceId
         /// </summary>

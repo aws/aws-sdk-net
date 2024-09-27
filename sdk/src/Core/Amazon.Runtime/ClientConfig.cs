@@ -90,11 +90,33 @@ namespace Amazon.Runtime
         private bool didProcessServiceURL = false;
         private IAWSTokenProvider _awsTokenProvider = new DefaultAWSTokenProviderChain();
         private TelemetryProvider telemetryProvider = AWSConfigs.TelemetryProvider;
+        private AccountIdEndpointMode? accountIdEndpointMode = null;
 
         private CredentialProfileStoreChain credentialProfileStoreChain;
 #if BCL
         private readonly TcpKeepAlive tcpKeepAlive = new TcpKeepAlive();
 #endif
+
+        /// <summary>
+        /// Controls whether the resolved endpoint will include the account id. This allows for direct routing of traffic
+        /// to the cell responsible for a given account, which avoids the additional latency of extra backend hops and reduces
+        /// complexity in the routing layer.
+        /// </summary>
+        public AccountIdEndpointMode AccountIdEndpointMode
+        {
+            get
+            {
+                if (!accountIdEndpointMode.HasValue)
+                {
+                    return FallbackInternalConfigurationFactory.AccountIdEndpointMode ?? AccountIdEndpointMode.PREFERRED;
+                }
+                return accountIdEndpointMode.Value;
+            }
+            set
+            {
+                this.accountIdEndpointMode = value;
+            }
+        }
         /// <summary>
         /// Specifies the profile to be used. When this is set on the ClientConfig and that config is passed to 
         /// the service client constructor the sdk will try to find the credentials associated with the Profile.Name property

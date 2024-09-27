@@ -290,6 +290,14 @@ namespace Amazon.TimestreamInfluxDB
         /// Constant UPDATING for Status
         /// </summary>
         public static readonly Status UPDATING = new Status("UPDATING");
+        /// <summary>
+        /// Constant UPDATING_DEPLOYMENT_TYPE for Status
+        /// </summary>
+        public static readonly Status UPDATING_DEPLOYMENT_TYPE = new Status("UPDATING_DEPLOYMENT_TYPE");
+        /// <summary>
+        /// Constant UPDATING_INSTANCE_TYPE for Status
+        /// </summary>
+        public static readonly Status UPDATING_INSTANCE_TYPE = new Status("UPDATING_INSTANCE_TYPE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

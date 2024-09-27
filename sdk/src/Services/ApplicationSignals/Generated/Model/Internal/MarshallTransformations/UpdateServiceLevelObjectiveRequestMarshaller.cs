@@ -103,7 +103,72 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                     writer.WriteObjectEnd();
                 }
 
+<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
+||||||| Commit version number update changes
+                if(publicRequest.IsSetGoal())
+                {
+                    context.Writer.WritePropertyName("Goal");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = GoalMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Goal, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetSliConfig())
+                {
+                    context.Writer.WritePropertyName("SliConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ServiceLevelIndicatorConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SliConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+=======
+                if(publicRequest.IsSetGoal())
+                {
+                    context.Writer.WritePropertyName("Goal");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = GoalMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Goal, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetRequestBasedSliConfig())
+                {
+                    context.Writer.WritePropertyName("RequestBasedSliConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RequestBasedServiceLevelIndicatorConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RequestBasedSliConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetSliConfig())
+                {
+                    context.Writer.WritePropertyName("SliConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ServiceLevelIndicatorConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SliConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+>>>>>>> d837e1d9b57336394b2832b28a2a9052473dd618
             }
 
 

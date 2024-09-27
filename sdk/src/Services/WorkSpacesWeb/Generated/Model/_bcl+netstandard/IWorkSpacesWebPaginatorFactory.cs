@@ -52,6 +52,11 @@ namespace Amazon.WorkSpacesWeb.Model
         IListPortalsPaginator ListPortals(ListPortalsRequest request);
 
         /// <summary>
+        /// Paginator for ListSessions operation
+        ///</summary>
+        IListSessionsPaginator ListSessions(ListSessionsRequest request);
+
+        /// <summary>
         /// Paginator for ListTrustStoreCertificates operation
         ///</summary>
         IListTrustStoreCertificatesPaginator ListTrustStoreCertificates(ListTrustStoreCertificatesRequest request);

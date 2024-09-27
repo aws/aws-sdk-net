@@ -30,11 +30,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// Advanced event selectors let you create fine-grained selectors for CloudTrail management
-    /// and data events. They help you control costs by logging only those events that are
-    /// important to you. For more information about advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Logging
-    /// management events</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-    /// data events</a> in the <i>CloudTrail User Guide</i>.
+    /// Advanced event selectors let you create fine-grained selectors for CloudTrail management,
+    /// data, and network activity events. They help you control costs by logging only those
+    /// events that are important to you. For more information about configuring advanced
+    /// event selectors, see the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
+    /// data events</a>, <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-network-events-with-cloudtrail.html">Logging
+    /// network activity events</a>, and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Logging
+    /// management events</a> topics in the <i>CloudTrail User Guide</i>.
     /// 
     ///  
     /// <para>
@@ -79,6 +81,34 @@ namespace Amazon.CloudTrail.Model
     ///  </li> <li> 
     /// <para>
     ///  <c>resources.ARN</c> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Supported CloudTrail event record fields for network activity events</b> 
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// Network activity events is in preview release for CloudTrail and is subject to change.
+    /// </para>
+    ///  </note> <ul> <li> 
+    /// <para>
+    ///  <c>eventCategory</c> (required)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>eventSource</c> (required)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>eventName</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>errorCode</c> - The only valid value for <c>errorCode</c> is <c>VpceAccessDenied</c>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>vpcEndpointId</c> 
     /// </para>
     ///  </li> </ul> <note> 
     /// <para>
