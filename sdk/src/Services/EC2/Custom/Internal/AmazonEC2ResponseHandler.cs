@@ -204,12 +204,18 @@ namespace Amazon.EC2.Internal
         {
             foreach (var ipPermission in ipPermissions)
             {
+                if (ipPermission.Ipv4Ranges == null)
+                {
+                    continue;
+                }
+
 #pragma warning disable CS0612,CS0618
                 ipPermission.IpRanges = ipPermission.Ipv4Ranges.Select(i => i.CidrIp).ToList();
 #pragma warning restore CS0612,CS0618
                 ipPermission.CopyIpv4RangesToInternalCollection(ipPermission.Ipv4Ranges);
             }
         }
+
         /// <summary>
         /// The original values used by the customer in the Ipv4Ranges property on the request 
         /// object is restored. This is done when the customer is using the deprecated IpRanges property.
@@ -219,39 +225,42 @@ namespace Amazon.EC2.Internal
         {
             foreach (var ipPermission in IpPermissions)
             {
-                if(ipPermission.RestoreOldIpV4Range)
+                if (ipPermission.RestoreOldIpV4Range)
                 {
                     ipPermission.Ipv4Ranges = ipPermission.PreIpv4Ranges;
                     ipPermission.RestoreOldIpV4Range = false;
                 }
-                    
             }
         }
 
         private static void PopulateLaunchSpecificationSecurityGroupNames(LaunchSpecification launchSpecification)
         {
-            if (launchSpecification != null)
+            if (launchSpecification == null || launchSpecification.AllSecurityGroups == null)
             {
-                var groupNames = new List<string>();
-                foreach (GroupIdentifier group in launchSpecification.AllSecurityGroups)
-                {
-                    groupNames.Add(group.GroupName);
-                }
-                launchSpecification.SecurityGroups = groupNames;
+                return;
             }
+
+            var groupNames = new List<string>();
+            foreach (GroupIdentifier group in launchSpecification.AllSecurityGroups)
+            {
+                groupNames.Add(group.GroupName);
+            }
+            launchSpecification.SecurityGroups = groupNames;
         }
 
         private static void PopulateReservationSecurityGroupNames(Reservation reservation)
         {
-            if (reservation != null)
+            if (reservation == null || reservation.Groups == null)
             {
-                var groupNames = new List<string>();
-                foreach (GroupIdentifier group in reservation.Groups)
-                {
-                    groupNames.Add(group.GroupName);
-                }
-                reservation.GroupNames = groupNames;
+                return;
             }
+
+            var groupNames = new List<string>();
+            foreach (GroupIdentifier group in reservation.Groups)
+            {
+                groupNames.Add(group.GroupName);
+            }
+            reservation.GroupNames = groupNames;
         }
     }
 }
