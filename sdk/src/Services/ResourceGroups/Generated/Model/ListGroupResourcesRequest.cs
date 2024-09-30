@@ -31,7 +31,8 @@ namespace Amazon.ResourceGroups.Model
 {
     /// <summary>
     /// Container for the parameters to the ListGroupResources operation.
-    /// Returns a list of ARNs of the resources that are members of a specified resource group.
+    /// Returns a list of Amazon resource names (ARNs) of the resources that are members of
+    /// a specified resource group.
     /// 
     ///  
     /// <para>
@@ -117,7 +118,7 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property Group. 
         /// <para>
-        /// The name or the ARN of the resource group
+        /// The name or the Amazon resource name (ARN) of the resource group. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]

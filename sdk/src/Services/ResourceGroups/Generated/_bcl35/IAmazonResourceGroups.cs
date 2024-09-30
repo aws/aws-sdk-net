@@ -69,7 +69,8 @@ namespace Amazon.ResourceGroups
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Resolving resource group member ARNs so they can be returned as search results
+    /// Resolving resource group member Amazon resource names (ARN)s so they can be returned
+    /// as search results
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -93,6 +94,83 @@ namespace Amazon.ResourceGroups
 #endif
 
 
+        
+        #region  CancelTagSyncTask
+
+
+        /// <summary>
+        /// Cancels the specified tag-sync task. 
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Minimum permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To run this command, you must have the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>resource-groups:CancelTagSyncTask</c> on the application group
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>resource-groups:DeleteGroup</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelTagSyncTask service method.</param>
+        /// 
+        /// <returns>The response from the CancelTagSyncTask service method, as returned by ResourceGroups.</returns>
+        /// <exception cref="Amazon.ResourceGroups.Model.BadRequestException">
+        /// The request includes one or more parameters that violate validation rules.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request. Check permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.InternalServerErrorException">
+        /// An internal error occurred while processing the request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.MethodNotAllowedException">
+        /// The request uses an HTTP method that isn't allowed for the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.TooManyRequestsException">
+        /// You've exceeded throttling limits by making too many requests in a period of time.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.UnauthorizedException">
+        /// The request was rejected because it doesn't have valid credentials for the target
+        /// resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/CancelTagSyncTask">REST API Reference for CancelTagSyncTask Operation</seealso>
+        CancelTagSyncTaskResponse CancelTagSyncTask(CancelTagSyncTaskRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelTagSyncTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelTagSyncTask operation on AmazonResourceGroupsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelTagSyncTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/CancelTagSyncTask">REST API Reference for CancelTagSyncTask Operation</seealso>
+        IAsyncResult BeginCancelTagSyncTask(CancelTagSyncTaskRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelTagSyncTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelTagSyncTask.</param>
+        /// 
+        /// <returns>Returns a  CancelTagSyncTaskResult from ResourceGroups.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/CancelTagSyncTask">REST API Reference for CancelTagSyncTask Operation</seealso>
+        CancelTagSyncTaskResponse EndCancelTagSyncTask(IAsyncResult asyncResult);
+
+        #endregion
         
         #region  CreateGroup
 
@@ -522,7 +600,7 @@ namespace Amazon.ResourceGroups
 
         /// <summary>
         /// Returns a list of tags that are associated with a resource group, specified by an
-        /// ARN.
+        /// Amazon resource name (ARN).
         /// 
         ///  
         /// <para>
@@ -590,6 +668,82 @@ namespace Amazon.ResourceGroups
 
         #endregion
         
+        #region  GetTagSyncTask
+
+
+        /// <summary>
+        /// Returns information about a specified tag-sync task. 
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Minimum permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To run this command, you must have the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>resource-groups:GetTagSyncTask</c> on the application group
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTagSyncTask service method.</param>
+        /// 
+        /// <returns>The response from the GetTagSyncTask service method, as returned by ResourceGroups.</returns>
+        /// <exception cref="Amazon.ResourceGroups.Model.BadRequestException">
+        /// The request includes one or more parameters that violate validation rules.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request. Check permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.InternalServerErrorException">
+        /// An internal error occurred while processing the request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.MethodNotAllowedException">
+        /// The request uses an HTTP method that isn't allowed for the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.NotFoundException">
+        /// One or more of the specified resources don't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.TooManyRequestsException">
+        /// You've exceeded throttling limits by making too many requests in a period of time.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.UnauthorizedException">
+        /// The request was rejected because it doesn't have valid credentials for the target
+        /// resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetTagSyncTask">REST API Reference for GetTagSyncTask Operation</seealso>
+        GetTagSyncTaskResponse GetTagSyncTask(GetTagSyncTaskRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTagSyncTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTagSyncTask operation on AmazonResourceGroupsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTagSyncTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetTagSyncTask">REST API Reference for GetTagSyncTask Operation</seealso>
+        IAsyncResult BeginGetTagSyncTask(GetTagSyncTaskRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTagSyncTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTagSyncTask.</param>
+        /// 
+        /// <returns>Returns a  GetTagSyncTaskResult from ResourceGroups.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetTagSyncTask">REST API Reference for GetTagSyncTask Operation</seealso>
+        GetTagSyncTaskResponse EndGetTagSyncTask(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GroupResources
 
 
@@ -598,8 +752,7 @@ namespace Amazon.ResourceGroups
         /// 
         ///  <important> 
         /// <para>
-        /// You can use this operation with only resource groups that are configured with the
-        /// following types:
+        /// You can only use this operation with the following groups:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -609,9 +762,14 @@ namespace Amazon.ResourceGroups
         /// <para>
         ///  <c>AWS::EC2::CapacityReservationPool</c> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS::ResourceGroups::ApplicationGroup</c> 
+        /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Other resource group type and resource types aren't currently supported by this operation.
+        /// Other resource group types and resource types are not currently supported by this
+        /// operation.
         /// </para>
         ///  </important> 
         /// <para>
@@ -679,11 +837,68 @@ namespace Amazon.ResourceGroups
 
         #endregion
         
+        #region  ListGroupingStatuses
+
+
+        /// <summary>
+        /// Returns the status of the last grouping or ungrouping action for each resource in
+        /// the specified application group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGroupingStatuses service method.</param>
+        /// 
+        /// <returns>The response from the ListGroupingStatuses service method, as returned by ResourceGroups.</returns>
+        /// <exception cref="Amazon.ResourceGroups.Model.BadRequestException">
+        /// The request includes one or more parameters that violate validation rules.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request. Check permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.InternalServerErrorException">
+        /// An internal error occurred while processing the request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.MethodNotAllowedException">
+        /// The request uses an HTTP method that isn't allowed for the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.TooManyRequestsException">
+        /// You've exceeded throttling limits by making too many requests in a period of time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/ListGroupingStatuses">REST API Reference for ListGroupingStatuses Operation</seealso>
+        ListGroupingStatusesResponse ListGroupingStatuses(ListGroupingStatusesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListGroupingStatuses operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListGroupingStatuses operation on AmazonResourceGroupsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListGroupingStatuses
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/ListGroupingStatuses">REST API Reference for ListGroupingStatuses Operation</seealso>
+        IAsyncResult BeginListGroupingStatuses(ListGroupingStatusesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListGroupingStatuses operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListGroupingStatuses.</param>
+        /// 
+        /// <returns>Returns a  ListGroupingStatusesResult from ResourceGroups.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/ListGroupingStatuses">REST API Reference for ListGroupingStatuses Operation</seealso>
+        ListGroupingStatusesResponse EndListGroupingStatuses(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListGroupResources
 
 
         /// <summary>
-        /// Returns a list of ARNs of the resources that are members of a specified resource group.
+        /// Returns a list of Amazon resource names (ARNs) of the resources that are members of
+        /// a specified resource group.
         /// 
         ///  
         /// <para>
@@ -833,6 +1048,80 @@ namespace Amazon.ResourceGroups
         /// <returns>Returns a  ListGroupsResult from ResourceGroups.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/ListGroups">REST API Reference for ListGroups Operation</seealso>
         ListGroupsResponse EndListGroups(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListTagSyncTasks
+
+
+        /// <summary>
+        /// Returns a list of tag-sync tasks. 
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Minimum permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To run this command, you must have the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>resource-groups:ListTagSyncTasks</c> with the group passed in the filters as the
+        /// resource or * if using no filters 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagSyncTasks service method.</param>
+        /// 
+        /// <returns>The response from the ListTagSyncTasks service method, as returned by ResourceGroups.</returns>
+        /// <exception cref="Amazon.ResourceGroups.Model.BadRequestException">
+        /// The request includes one or more parameters that violate validation rules.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request. Check permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.InternalServerErrorException">
+        /// An internal error occurred while processing the request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.MethodNotAllowedException">
+        /// The request uses an HTTP method that isn't allowed for the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.TooManyRequestsException">
+        /// You've exceeded throttling limits by making too many requests in a period of time.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.UnauthorizedException">
+        /// The request was rejected because it doesn't have valid credentials for the target
+        /// resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/ListTagSyncTasks">REST API Reference for ListTagSyncTasks Operation</seealso>
+        ListTagSyncTasksResponse ListTagSyncTasks(ListTagSyncTasksRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagSyncTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagSyncTasks operation on AmazonResourceGroupsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagSyncTasks
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/ListTagSyncTasks">REST API Reference for ListTagSyncTasks Operation</seealso>
+        IAsyncResult BeginListTagSyncTasks(ListTagSyncTasksRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagSyncTasks operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagSyncTasks.</param>
+        /// 
+        /// <returns>Returns a  ListTagSyncTasksResult from ResourceGroups.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/ListTagSyncTasks">REST API Reference for ListTagSyncTasks Operation</seealso>
+        ListTagSyncTasksResponse EndListTagSyncTasks(IAsyncResult asyncResult);
 
         #endregion
         
@@ -997,12 +1286,98 @@ namespace Amazon.ResourceGroups
 
         #endregion
         
+        #region  StartTagSyncTask
+
+
+        /// <summary>
+        /// Creates a new tag-sync task to onboard and sync resources tagged with a specific tag
+        /// key-value pair to an application. 
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Minimum permissions</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To run this command, you must have the following permissions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>resource-groups:StartTagSyncTask</c> on the application group
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>resource-groups:CreateGroup</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>iam:PassRole</c> on the role provided in the request 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartTagSyncTask service method.</param>
+        /// 
+        /// <returns>The response from the StartTagSyncTask service method, as returned by ResourceGroups.</returns>
+        /// <exception cref="Amazon.ResourceGroups.Model.BadRequestException">
+        /// The request includes one or more parameters that violate validation rules.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.ForbiddenException">
+        /// The caller isn't authorized to make the request. Check permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.InternalServerErrorException">
+        /// An internal error occurred while processing the request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.MethodNotAllowedException">
+        /// The request uses an HTTP method that isn't allowed for the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.NotFoundException">
+        /// One or more of the specified resources don't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.TooManyRequestsException">
+        /// You've exceeded throttling limits by making too many requests in a period of time.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceGroups.Model.UnauthorizedException">
+        /// The request was rejected because it doesn't have valid credentials for the target
+        /// resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/StartTagSyncTask">REST API Reference for StartTagSyncTask Operation</seealso>
+        StartTagSyncTaskResponse StartTagSyncTask(StartTagSyncTaskRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartTagSyncTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartTagSyncTask operation on AmazonResourceGroupsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartTagSyncTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/StartTagSyncTask">REST API Reference for StartTagSyncTask Operation</seealso>
+        IAsyncResult BeginStartTagSyncTask(StartTagSyncTaskRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartTagSyncTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartTagSyncTask.</param>
+        /// 
+        /// <returns>Returns a  StartTagSyncTaskResult from ResourceGroups.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/StartTagSyncTask">REST API Reference for StartTagSyncTask Operation</seealso>
+        StartTagSyncTaskResponse EndStartTagSyncTask(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  Tag
 
 
         /// <summary>
-        /// Adds tags to a resource group with the specified ARN. Existing tags on a resource
-        /// group are not changed if they are not specified in the request parameters.
+        /// Adds tags to a resource group with the specified Amazon resource name (ARN). Existing
+        /// tags on a resource group are not changed if they are not specified in the request
+        /// parameters.
         /// 
         ///  <important> 
         /// <para>

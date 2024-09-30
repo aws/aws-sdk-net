@@ -40,7 +40,7 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN of a resource.
+        /// The Amazon resource name (ARN) of a resource.
         /// </para>
         /// </summary>
         public string ResourceArn

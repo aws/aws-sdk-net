@@ -89,6 +89,18 @@ namespace Amazon.ResourceGroups
         /// </summary>
         public static readonly GroupFilterName ConfigurationType = new GroupFilterName("configuration-type");
         /// <summary>
+        /// Constant Criticality for GroupFilterName
+        /// </summary>
+        public static readonly GroupFilterName Criticality = new GroupFilterName("criticality");
+        /// <summary>
+        /// Constant DisplayName for GroupFilterName
+        /// </summary>
+        public static readonly GroupFilterName DisplayName = new GroupFilterName("display-name");
+        /// <summary>
+        /// Constant Owner for GroupFilterName
+        /// </summary>
+        public static readonly GroupFilterName Owner = new GroupFilterName("owner");
+        /// <summary>
         /// Constant ResourceType for GroupFilterName
         /// </summary>
         public static readonly GroupFilterName ResourceType = new GroupFilterName("resource-type");
@@ -122,6 +134,114 @@ namespace Amazon.ResourceGroups
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator GroupFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GroupingStatus.
+    /// </summary>
+    public class GroupingStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for GroupingStatus
+        /// </summary>
+        public static readonly GroupingStatus FAILED = new GroupingStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for GroupingStatus
+        /// </summary>
+        public static readonly GroupingStatus IN_PROGRESS = new GroupingStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant SKIPPED for GroupingStatus
+        /// </summary>
+        public static readonly GroupingStatus SKIPPED = new GroupingStatus("SKIPPED");
+        /// <summary>
+        /// Constant SUCCESS for GroupingStatus
+        /// </summary>
+        public static readonly GroupingStatus SUCCESS = new GroupingStatus("SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GroupingStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GroupingStatus FindValue(string value)
+        {
+            return FindValue<GroupingStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GroupingStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GroupingType.
+    /// </summary>
+    public class GroupingType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GROUP for GroupingType
+        /// </summary>
+        public static readonly GroupingType GROUP = new GroupingType("GROUP");
+        /// <summary>
+        /// Constant UNGROUP for GroupingType
+        /// </summary>
+        public static readonly GroupingType UNGROUP = new GroupingType("UNGROUP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GroupingType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GroupingType FindValue(string value)
+        {
+            return FindValue<GroupingType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GroupingType(string value)
         {
             return FindValue(value);
         }
@@ -230,6 +350,56 @@ namespace Amazon.ResourceGroups
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator GroupLifecycleEventsStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ListGroupingStatusesFilterName.
+    /// </summary>
+    public class ListGroupingStatusesFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ResourceArn for ListGroupingStatusesFilterName
+        /// </summary>
+        public static readonly ListGroupingStatusesFilterName ResourceArn = new ListGroupingStatusesFilterName("resource-arn");
+        /// <summary>
+        /// Constant Status for ListGroupingStatusesFilterName
+        /// </summary>
+        public static readonly ListGroupingStatusesFilterName Status = new ListGroupingStatusesFilterName("status");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ListGroupingStatusesFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ListGroupingStatusesFilterName FindValue(string value)
+        {
+            return FindValue<ListGroupingStatusesFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ListGroupingStatusesFilterName(string value)
         {
             return FindValue(value);
         }
@@ -430,6 +600,56 @@ namespace Amazon.ResourceGroups
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceStatusValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TagSyncTaskStatus.
+    /// </summary>
+    public class TagSyncTaskStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for TagSyncTaskStatus
+        /// </summary>
+        public static readonly TagSyncTaskStatus ACTIVE = new TagSyncTaskStatus("ACTIVE");
+        /// <summary>
+        /// Constant ERROR for TagSyncTaskStatus
+        /// </summary>
+        public static readonly TagSyncTaskStatus ERROR = new TagSyncTaskStatus("ERROR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TagSyncTaskStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TagSyncTaskStatus FindValue(string value)
+        {
+            return FindValue<TagSyncTaskStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TagSyncTaskStatus(string value)
         {
             return FindValue(value);
         }
