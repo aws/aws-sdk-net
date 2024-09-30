@@ -1,3 +1,21 @@
+### 3.7.895.0 (2024-09-30 22:01 UTC)
+* Bedrock (3.7.407.0)
+	* Add support for custom models via provisioned throughput for Bedrock Model Evaluation
+* CloudDirectory (3.7.400.27)
+	* Add examples for API operations in model.
+* Connect (3.7.405.0)
+	* Amazon Connect introduces StartOutboundChatContact API allowing customers to initiate outbound chat contacts
+* Pricing (3.7.400.27)
+	* Add examples for API operations in model.
+* ResourceGroups (3.7.401.0)
+	* This update includes new APIs to support application groups and to allow users to manage resource tag-sync tasks in applications.
+* SupplyChain (3.7.401.0)
+	* Release DataLakeDataset, DataIntegrationFlow and ResourceTagging APIs for AWS Supply Chain
+* TimestreamInfluxDB (3.7.402.0)
+	* Timestream for InfluxDB now supports port configuration and additional customer-modifiable InfluxDB v2 parameters. This release adds Port to the CreateDbInstance and UpdateDbInstance API, and additional InfluxDB v2 parameters to the CreateDbParameterGroup API.
+* VerifiedPermissions (3.7.400.27)
+	* Add examples for API operations in model.
+
 ### 3.7.894.0 (2024-09-27 18:46 UTC)
 * CustomerProfiles (3.7.401.0)
 	* Introduces optional RoleArn parameter for PutIntegration request and includes RoleArn in the response of PutIntegration, GetIntegration and ListIntegrations
