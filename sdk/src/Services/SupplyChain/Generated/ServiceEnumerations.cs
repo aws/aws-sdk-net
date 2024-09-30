@@ -187,4 +187,316 @@ namespace Amazon.SupplyChain
         }
     }
 
+
+    /// <summary>
+    /// Constants used for properties of type DataIntegrationFlowFileType.
+    /// </summary>
+    public class DataIntegrationFlowFileType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CSV for DataIntegrationFlowFileType
+        /// </summary>
+        public static readonly DataIntegrationFlowFileType CSV = new DataIntegrationFlowFileType("CSV");
+        /// <summary>
+        /// Constant JSON for DataIntegrationFlowFileType
+        /// </summary>
+        public static readonly DataIntegrationFlowFileType JSON = new DataIntegrationFlowFileType("JSON");
+        /// <summary>
+        /// Constant PARQUET for DataIntegrationFlowFileType
+        /// </summary>
+        public static readonly DataIntegrationFlowFileType PARQUET = new DataIntegrationFlowFileType("PARQUET");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataIntegrationFlowFileType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataIntegrationFlowFileType FindValue(string value)
+        {
+            return FindValue<DataIntegrationFlowFileType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataIntegrationFlowFileType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DataIntegrationFlowLoadType.
+    /// </summary>
+    public class DataIntegrationFlowLoadType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INCREMENTAL for DataIntegrationFlowLoadType
+        /// </summary>
+        public static readonly DataIntegrationFlowLoadType INCREMENTAL = new DataIntegrationFlowLoadType("INCREMENTAL");
+        /// <summary>
+        /// Constant REPLACE for DataIntegrationFlowLoadType
+        /// </summary>
+        public static readonly DataIntegrationFlowLoadType REPLACE = new DataIntegrationFlowLoadType("REPLACE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataIntegrationFlowLoadType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataIntegrationFlowLoadType FindValue(string value)
+        {
+            return FindValue<DataIntegrationFlowLoadType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataIntegrationFlowLoadType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DataIntegrationFlowSourceType.
+    /// </summary>
+    public class DataIntegrationFlowSourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DATASET for DataIntegrationFlowSourceType
+        /// </summary>
+        public static readonly DataIntegrationFlowSourceType DATASET = new DataIntegrationFlowSourceType("DATASET");
+        /// <summary>
+        /// Constant S3 for DataIntegrationFlowSourceType
+        /// </summary>
+        public static readonly DataIntegrationFlowSourceType S3 = new DataIntegrationFlowSourceType("S3");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataIntegrationFlowSourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataIntegrationFlowSourceType FindValue(string value)
+        {
+            return FindValue<DataIntegrationFlowSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataIntegrationFlowSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DataIntegrationFlowTargetType.
+    /// </summary>
+    public class DataIntegrationFlowTargetType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DATASET for DataIntegrationFlowTargetType
+        /// </summary>
+        public static readonly DataIntegrationFlowTargetType DATASET = new DataIntegrationFlowTargetType("DATASET");
+        /// <summary>
+        /// Constant S3 for DataIntegrationFlowTargetType
+        /// </summary>
+        public static readonly DataIntegrationFlowTargetType S3 = new DataIntegrationFlowTargetType("S3");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataIntegrationFlowTargetType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataIntegrationFlowTargetType FindValue(string value)
+        {
+            return FindValue<DataIntegrationFlowTargetType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataIntegrationFlowTargetType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DataIntegrationFlowTransformationType.
+    /// </summary>
+    public class DataIntegrationFlowTransformationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for DataIntegrationFlowTransformationType
+        /// </summary>
+        public static readonly DataIntegrationFlowTransformationType NONE = new DataIntegrationFlowTransformationType("NONE");
+        /// <summary>
+        /// Constant SQL for DataIntegrationFlowTransformationType
+        /// </summary>
+        public static readonly DataIntegrationFlowTransformationType SQL = new DataIntegrationFlowTransformationType("SQL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataIntegrationFlowTransformationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataIntegrationFlowTransformationType FindValue(string value)
+        {
+            return FindValue<DataIntegrationFlowTransformationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataIntegrationFlowTransformationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DataLakeDatasetSchemaFieldType.
+    /// </summary>
+    public class DataLakeDatasetSchemaFieldType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DOUBLE for DataLakeDatasetSchemaFieldType
+        /// </summary>
+        public static readonly DataLakeDatasetSchemaFieldType DOUBLE = new DataLakeDatasetSchemaFieldType("DOUBLE");
+        /// <summary>
+        /// Constant INT for DataLakeDatasetSchemaFieldType
+        /// </summary>
+        public static readonly DataLakeDatasetSchemaFieldType INT = new DataLakeDatasetSchemaFieldType("INT");
+        /// <summary>
+        /// Constant STRING for DataLakeDatasetSchemaFieldType
+        /// </summary>
+        public static readonly DataLakeDatasetSchemaFieldType STRING = new DataLakeDatasetSchemaFieldType("STRING");
+        /// <summary>
+        /// Constant TIMESTAMP for DataLakeDatasetSchemaFieldType
+        /// </summary>
+        public static readonly DataLakeDatasetSchemaFieldType TIMESTAMP = new DataLakeDatasetSchemaFieldType("TIMESTAMP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataLakeDatasetSchemaFieldType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataLakeDatasetSchemaFieldType FindValue(string value)
+        {
+            return FindValue<DataLakeDatasetSchemaFieldType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataLakeDatasetSchemaFieldType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 }

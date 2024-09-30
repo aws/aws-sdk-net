@@ -57,6 +57,24 @@ namespace Amazon.SupplyChain
     {
         private static IServiceMetadata serviceMetadata = new AmazonSupplyChainMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private ISupplyChainPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ISupplyChainPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new SupplyChainPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>
@@ -345,6 +363,307 @@ namespace Amazon.SupplyChain
 
         #endregion
         
+        #region  CreateDataIntegrationFlow
+
+        /// <summary>
+        /// Create DataIntegrationFlow to map one or more different sources to one target using
+        /// the SQL transformation query.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataIntegrationFlow service method.</param>
+        /// 
+        /// <returns>The response from the CreateDataIntegrationFlow service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/CreateDataIntegrationFlow">REST API Reference for CreateDataIntegrationFlow Operation</seealso>
+        public virtual CreateDataIntegrationFlowResponse CreateDataIntegrationFlow(CreateDataIntegrationFlowRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDataIntegrationFlowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataIntegrationFlowResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDataIntegrationFlowResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDataIntegrationFlow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataIntegrationFlow operation on AmazonSupplyChainClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDataIntegrationFlow
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/CreateDataIntegrationFlow">REST API Reference for CreateDataIntegrationFlow Operation</seealso>
+        public virtual IAsyncResult BeginCreateDataIntegrationFlow(CreateDataIntegrationFlowRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDataIntegrationFlowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataIntegrationFlowResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateDataIntegrationFlow operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDataIntegrationFlow.</param>
+        /// 
+        /// <returns>Returns a  CreateDataIntegrationFlowResult from SupplyChain.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/CreateDataIntegrationFlow">REST API Reference for CreateDataIntegrationFlow Operation</seealso>
+        public virtual CreateDataIntegrationFlowResponse EndCreateDataIntegrationFlow(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateDataIntegrationFlowResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateDataLakeDataset
+
+        /// <summary>
+        /// Create a data lake dataset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataLakeDataset service method.</param>
+        /// 
+        /// <returns>The response from the CreateDataLakeDataset service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/CreateDataLakeDataset">REST API Reference for CreateDataLakeDataset Operation</seealso>
+        public virtual CreateDataLakeDatasetResponse CreateDataLakeDataset(CreateDataLakeDatasetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDataLakeDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataLakeDatasetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDataLakeDatasetResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDataLakeDataset operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataLakeDataset operation on AmazonSupplyChainClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDataLakeDataset
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/CreateDataLakeDataset">REST API Reference for CreateDataLakeDataset Operation</seealso>
+        public virtual IAsyncResult BeginCreateDataLakeDataset(CreateDataLakeDatasetRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDataLakeDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataLakeDatasetResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateDataLakeDataset operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDataLakeDataset.</param>
+        /// 
+        /// <returns>Returns a  CreateDataLakeDatasetResult from SupplyChain.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/CreateDataLakeDataset">REST API Reference for CreateDataLakeDataset Operation</seealso>
+        public virtual CreateDataLakeDatasetResponse EndCreateDataLakeDataset(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateDataLakeDatasetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteDataIntegrationFlow
+
+        /// <summary>
+        /// Delete the DataIntegrationFlow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataIntegrationFlow service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDataIntegrationFlow service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/DeleteDataIntegrationFlow">REST API Reference for DeleteDataIntegrationFlow Operation</seealso>
+        public virtual DeleteDataIntegrationFlowResponse DeleteDataIntegrationFlow(DeleteDataIntegrationFlowRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDataIntegrationFlowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataIntegrationFlowResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDataIntegrationFlowResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDataIntegrationFlow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataIntegrationFlow operation on AmazonSupplyChainClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDataIntegrationFlow
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/DeleteDataIntegrationFlow">REST API Reference for DeleteDataIntegrationFlow Operation</seealso>
+        public virtual IAsyncResult BeginDeleteDataIntegrationFlow(DeleteDataIntegrationFlowRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDataIntegrationFlowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataIntegrationFlowResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteDataIntegrationFlow operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDataIntegrationFlow.</param>
+        /// 
+        /// <returns>Returns a  DeleteDataIntegrationFlowResult from SupplyChain.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/DeleteDataIntegrationFlow">REST API Reference for DeleteDataIntegrationFlow Operation</seealso>
+        public virtual DeleteDataIntegrationFlowResponse EndDeleteDataIntegrationFlow(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteDataIntegrationFlowResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteDataLakeDataset
+
+        /// <summary>
+        /// Delete a data lake dataset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataLakeDataset service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDataLakeDataset service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/DeleteDataLakeDataset">REST API Reference for DeleteDataLakeDataset Operation</seealso>
+        public virtual DeleteDataLakeDatasetResponse DeleteDataLakeDataset(DeleteDataLakeDatasetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDataLakeDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataLakeDatasetResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDataLakeDatasetResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDataLakeDataset operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataLakeDataset operation on AmazonSupplyChainClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDataLakeDataset
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/DeleteDataLakeDataset">REST API Reference for DeleteDataLakeDataset Operation</seealso>
+        public virtual IAsyncResult BeginDeleteDataLakeDataset(DeleteDataLakeDatasetRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDataLakeDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataLakeDatasetResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteDataLakeDataset operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDataLakeDataset.</param>
+        /// 
+        /// <returns>Returns a  DeleteDataLakeDatasetResult from SupplyChain.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/DeleteDataLakeDataset">REST API Reference for DeleteDataLakeDataset Operation</seealso>
+        public virtual DeleteDataLakeDatasetResponse EndDeleteDataLakeDataset(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteDataLakeDatasetResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetBillOfMaterialsImportJob
 
         /// <summary>
@@ -416,6 +735,381 @@ namespace Amazon.SupplyChain
         public virtual GetBillOfMaterialsImportJobResponse EndGetBillOfMaterialsImportJob(IAsyncResult asyncResult)
         {
             return EndInvoke<GetBillOfMaterialsImportJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetDataIntegrationFlow
+
+        /// <summary>
+        /// View the DataIntegrationFlow details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataIntegrationFlow service method.</param>
+        /// 
+        /// <returns>The response from the GetDataIntegrationFlow service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetDataIntegrationFlow">REST API Reference for GetDataIntegrationFlow Operation</seealso>
+        public virtual GetDataIntegrationFlowResponse GetDataIntegrationFlow(GetDataIntegrationFlowRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataIntegrationFlowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataIntegrationFlowResponseUnmarshaller.Instance;
+
+            return Invoke<GetDataIntegrationFlowResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDataIntegrationFlow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDataIntegrationFlow operation on AmazonSupplyChainClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDataIntegrationFlow
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetDataIntegrationFlow">REST API Reference for GetDataIntegrationFlow Operation</seealso>
+        public virtual IAsyncResult BeginGetDataIntegrationFlow(GetDataIntegrationFlowRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataIntegrationFlowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataIntegrationFlowResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDataIntegrationFlow operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDataIntegrationFlow.</param>
+        /// 
+        /// <returns>Returns a  GetDataIntegrationFlowResult from SupplyChain.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetDataIntegrationFlow">REST API Reference for GetDataIntegrationFlow Operation</seealso>
+        public virtual GetDataIntegrationFlowResponse EndGetDataIntegrationFlow(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDataIntegrationFlowResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetDataLakeDataset
+
+        /// <summary>
+        /// Get a data lake dataset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataLakeDataset service method.</param>
+        /// 
+        /// <returns>The response from the GetDataLakeDataset service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetDataLakeDataset">REST API Reference for GetDataLakeDataset Operation</seealso>
+        public virtual GetDataLakeDatasetResponse GetDataLakeDataset(GetDataLakeDatasetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataLakeDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataLakeDatasetResponseUnmarshaller.Instance;
+
+            return Invoke<GetDataLakeDatasetResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDataLakeDataset operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDataLakeDataset operation on AmazonSupplyChainClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDataLakeDataset
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetDataLakeDataset">REST API Reference for GetDataLakeDataset Operation</seealso>
+        public virtual IAsyncResult BeginGetDataLakeDataset(GetDataLakeDatasetRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataLakeDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataLakeDatasetResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDataLakeDataset operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDataLakeDataset.</param>
+        /// 
+        /// <returns>Returns a  GetDataLakeDatasetResult from SupplyChain.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetDataLakeDataset">REST API Reference for GetDataLakeDataset Operation</seealso>
+        public virtual GetDataLakeDatasetResponse EndGetDataLakeDataset(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDataLakeDatasetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListDataIntegrationFlows
+
+        /// <summary>
+        /// Lists all the DataIntegrationFlows in a paginated way.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataIntegrationFlows service method.</param>
+        /// 
+        /// <returns>The response from the ListDataIntegrationFlows service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListDataIntegrationFlows">REST API Reference for ListDataIntegrationFlows Operation</seealso>
+        public virtual ListDataIntegrationFlowsResponse ListDataIntegrationFlows(ListDataIntegrationFlowsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataIntegrationFlowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataIntegrationFlowsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDataIntegrationFlowsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDataIntegrationFlows operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDataIntegrationFlows operation on AmazonSupplyChainClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDataIntegrationFlows
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListDataIntegrationFlows">REST API Reference for ListDataIntegrationFlows Operation</seealso>
+        public virtual IAsyncResult BeginListDataIntegrationFlows(ListDataIntegrationFlowsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataIntegrationFlowsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataIntegrationFlowsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDataIntegrationFlows operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDataIntegrationFlows.</param>
+        /// 
+        /// <returns>Returns a  ListDataIntegrationFlowsResult from SupplyChain.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListDataIntegrationFlows">REST API Reference for ListDataIntegrationFlows Operation</seealso>
+        public virtual ListDataIntegrationFlowsResponse EndListDataIntegrationFlows(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDataIntegrationFlowsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListDataLakeDatasets
+
+        /// <summary>
+        /// List the data lake datasets for a specific instance and name space.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataLakeDatasets service method.</param>
+        /// 
+        /// <returns>The response from the ListDataLakeDatasets service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListDataLakeDatasets">REST API Reference for ListDataLakeDatasets Operation</seealso>
+        public virtual ListDataLakeDatasetsResponse ListDataLakeDatasets(ListDataLakeDatasetsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataLakeDatasetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataLakeDatasetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDataLakeDatasetsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDataLakeDatasets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDataLakeDatasets operation on AmazonSupplyChainClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDataLakeDatasets
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListDataLakeDatasets">REST API Reference for ListDataLakeDatasets Operation</seealso>
+        public virtual IAsyncResult BeginListDataLakeDatasets(ListDataLakeDatasetsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataLakeDatasetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataLakeDatasetsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDataLakeDatasets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDataLakeDatasets.</param>
+        /// 
+        /// <returns>Returns a  ListDataLakeDatasetsResult from SupplyChain.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListDataLakeDatasets">REST API Reference for ListDataLakeDatasets Operation</seealso>
+        public virtual ListDataLakeDatasetsResponse EndListDataLakeDatasets(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDataLakeDatasetsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListTagsForResource
+
+        /// <summary>
+        /// List all the tags for an Amazon Web ServicesSupply Chain resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation on AmazonSupplyChainClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
+        /// 
+        /// <returns>Returns a  ListTagsForResourceResult from SupplyChain.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTagsForResourceResponse>(asyncResult);
         }
 
         #endregion
@@ -495,6 +1189,306 @@ namespace Amazon.SupplyChain
         public virtual SendDataIntegrationEventResponse EndSendDataIntegrationEvent(IAsyncResult asyncResult)
         {
             return EndInvoke<SendDataIntegrationEventResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+        /// <summary>
+        /// Create tags for an Amazon Web Services Supply chain resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation on AmazonSupplyChainClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
+        /// 
+        /// <returns>Returns a  TagResourceResult from SupplyChain.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse EndTagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<TagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+        /// <summary>
+        /// Delete tags for an Amazon Web Services Supply chain resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation on AmazonSupplyChainClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
+        /// 
+        /// <returns>Returns a  UntagResourceResult from SupplyChain.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UntagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateDataIntegrationFlow
+
+        /// <summary>
+        /// Update the DataIntegrationFlow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataIntegrationFlow service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDataIntegrationFlow service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/UpdateDataIntegrationFlow">REST API Reference for UpdateDataIntegrationFlow Operation</seealso>
+        public virtual UpdateDataIntegrationFlowResponse UpdateDataIntegrationFlow(UpdateDataIntegrationFlowRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDataIntegrationFlowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataIntegrationFlowResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDataIntegrationFlowResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDataIntegrationFlow operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataIntegrationFlow operation on AmazonSupplyChainClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDataIntegrationFlow
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/UpdateDataIntegrationFlow">REST API Reference for UpdateDataIntegrationFlow Operation</seealso>
+        public virtual IAsyncResult BeginUpdateDataIntegrationFlow(UpdateDataIntegrationFlowRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDataIntegrationFlowRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataIntegrationFlowResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateDataIntegrationFlow operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDataIntegrationFlow.</param>
+        /// 
+        /// <returns>Returns a  UpdateDataIntegrationFlowResult from SupplyChain.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/UpdateDataIntegrationFlow">REST API Reference for UpdateDataIntegrationFlow Operation</seealso>
+        public virtual UpdateDataIntegrationFlowResponse EndUpdateDataIntegrationFlow(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateDataIntegrationFlowResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateDataLakeDataset
+
+        /// <summary>
+        /// Update a data lake dataset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataLakeDataset service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDataLakeDataset service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/UpdateDataLakeDataset">REST API Reference for UpdateDataLakeDataset Operation</seealso>
+        public virtual UpdateDataLakeDatasetResponse UpdateDataLakeDataset(UpdateDataLakeDatasetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDataLakeDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataLakeDatasetResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDataLakeDatasetResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDataLakeDataset operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataLakeDataset operation on AmazonSupplyChainClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDataLakeDataset
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/UpdateDataLakeDataset">REST API Reference for UpdateDataLakeDataset Operation</seealso>
+        public virtual IAsyncResult BeginUpdateDataLakeDataset(UpdateDataLakeDatasetRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDataLakeDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataLakeDatasetResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateDataLakeDataset operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDataLakeDataset.</param>
+        /// 
+        /// <returns>Returns a  UpdateDataLakeDatasetResult from SupplyChain.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/UpdateDataLakeDataset">REST API Reference for UpdateDataLakeDataset Operation</seealso>
+        public virtual UpdateDataLakeDatasetResponse EndUpdateDataLakeDataset(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateDataLakeDatasetResponse>(asyncResult);
         }
 
         #endregion
