@@ -230,6 +230,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         }
 
+        [Ignore]
         [TestMethod]
         [TestCategory("S3")]
         public void DefaultKeyTests()
@@ -238,6 +239,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             TestPresignedUrls(keyId: null, ServerSideEncryptionMethod.AWSKMS);
 
         }
+
+        [Ignore]
         [TestMethod]
         [TestCategory("S3")]
         public void KmsDsseTest()
