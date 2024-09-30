@@ -1202,7 +1202,8 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Threshold: For <c>ThresholdValue</c>, enter any whole number from 1 to 604800 (inclusive),
-        /// in seconds. For <c>Comparison</c>, you must enter <c>LT</c> (for "Less than").
+        /// in seconds. For <c>Comparison</c>, you can use <c>LT</c> (for "Less than") or <c>LTE</c>
+        /// (for "Less than equal").
         /// </para>
         ///  
         /// <para>
@@ -1221,7 +1222,8 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Threshold: For <c>ThresholdValue</c> enter any whole number from 1 to 604800 (inclusive),
-        /// in seconds. For <c>Comparison</c>, you must enter <c>LT</c> (for "Less than").
+        /// in seconds. For <c>Comparison</c>, you can use <c>LT</c> (for "Less than") or <c>LTE</c>
+        /// (for "Less than equal").
         /// </para>
         ///  
         /// <para>
@@ -1626,7 +1628,8 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Threshold: For <c>ThresholdValue</c>, enter any whole number from 1 to 604800 (inclusive),
-        /// in seconds. For <c>Comparison</c>, you must enter <c>LT</c> (for "Less than"). 
+        /// in seconds. For <c>Comparison</c>, you can use <c>LT</c> (for "Less than") or <c>LTE</c>
+        /// (for "Less than equal").
         /// </para>
         ///  
         /// <para>
@@ -1718,7 +1721,8 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Threshold: For <c>ThresholdValue</c>, enter any whole number from 1 to 604800 (inclusive),
-        /// in seconds. For <c>Comparison</c>, you must enter <c>LT</c> (for "Less than"). 
+        /// in seconds. For <c>Comparison</c>, you can use <c>LT</c> (for "Less than") or <c>LTE</c>
+        /// (for "Less than equal").
         /// </para>
         ///  
         /// <para>
@@ -1737,7 +1741,8 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Threshold: For <c>ThresholdValue</c>, enter any whole number from 1 to 604800 (inclusive),
-        /// in seconds. For <c>Comparison</c>, you must enter <c>LT</c> (for "Less than"). 
+        /// in seconds. For <c>Comparison</c>, you can use <c>LT</c> (for "Less than") or <c>LTE</c>
+        /// (for "Less than equal").
         /// </para>
         ///  
         /// <para>

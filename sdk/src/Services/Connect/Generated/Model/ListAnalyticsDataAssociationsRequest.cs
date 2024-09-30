@@ -31,12 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAnalyticsDataAssociations operation.
-    /// This API is in preview release for Amazon Connect and is subject to change.
-    /// 
-    ///  
-    /// <para>
     /// Lists the association status of requested dataset ID for a given Amazon Connect instance.
-    /// </para>
     /// </summary>
     public partial class ListAnalyticsDataAssociationsRequest : AmazonConnectRequest
     {

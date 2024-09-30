@@ -73,7 +73,8 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid metric filter values for <c>INITIATION_METHOD</c>: <c>INBOUND</c> | <c>OUTBOUND</c>
-        /// | <c>TRANSFER</c> | <c>QUEUE_TRANSFER</c> | <c>CALLBACK</c> | <c>API</c> 
+        /// | <c>TRANSFER</c> | <c>QUEUE_TRANSFER</c> | <c>CALLBACK</c> | <c>API</c> | <c>WEBRTC_API</c>
+        /// | <c>MONITOR</c> | <c>DISCONNECT</c> | <c>EXTERNAL_OUTBOUND</c> 
         /// </para>
         ///  
         /// <para>

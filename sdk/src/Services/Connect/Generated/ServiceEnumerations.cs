@@ -1297,6 +1297,10 @@ namespace Amazon.Connect
     {
 
         /// <summary>
+        /// Constant CONNECT_PHONENUMBER_ARN for EndpointType
+        /// </summary>
+        public static readonly EndpointType CONNECT_PHONENUMBER_ARN = new EndpointType("CONNECT_PHONENUMBER_ARN");
+        /// <summary>
         /// Constant CONTACT_FLOW for EndpointType
         /// </summary>
         public static readonly EndpointType CONTACT_FLOW = new EndpointType("CONTACT_FLOW");
