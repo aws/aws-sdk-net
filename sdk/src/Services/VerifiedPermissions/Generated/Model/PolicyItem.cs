@@ -192,11 +192,11 @@ namespace Amazon.VerifiedPermissions.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>static</c> 
+        ///  <c>STATIC</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>templateLinked</c> 
+        ///  <c>TEMPLATE_LINKED</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

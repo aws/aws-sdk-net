@@ -777,7 +777,7 @@ namespace Amazon.VerifiedPermissions
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// OpenID Connect (OIDC) provider: <c>Namespace::[Entity type]::[principalIdClaim]|[user
+        /// OpenID Connect (OIDC) provider: <c>Namespace::[Entity type]::[entityIdPrefix]|[user
         /// principal attribute]</c>, for example <c>MyCorp::User::MyOIDCProvider|a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</c>.
         /// </para>
         ///  </li> </ul> </note> <note> 
@@ -949,7 +949,7 @@ namespace Amazon.VerifiedPermissions
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// OpenID Connect (OIDC) provider: <c>Namespace::[Entity type]::[principalIdClaim]|[user
+        /// OpenID Connect (OIDC) provider: <c>Namespace::[Entity type]::[entityIdPrefix]|[user
         /// principal attribute]</c>, for example <c>MyCorp::User::MyOIDCProvider|a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</c>.
         /// </para>
         ///  </li> </ul> </note> <note> 
@@ -4638,10 +4638,6 @@ namespace Amazon.VerifiedPermissions
         /// 
         ///  
         /// <para>
-        /// At this time, Verified Permissions accepts tokens from only Amazon Cognito.
-        /// </para>
-        ///  
-        /// <para>
         /// Verified Permissions validates each token that is specified in a request by checking
         /// its expiration date and its signature.
         /// </para>
@@ -4785,10 +4781,6 @@ namespace Amazon.VerifiedPermissions
         /// is either <c>Allow</c> or <c>Deny</c>, along with a list of the policies that resulted
         /// in the decision.
         /// 
-        ///  
-        /// <para>
-        /// At this time, Verified Permissions accepts tokens from only Amazon Cognito.
-        /// </para>
         ///  
         /// <para>
         /// Verified Permissions validates each token that is specified in a request by checking
