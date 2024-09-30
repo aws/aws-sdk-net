@@ -263,6 +263,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.RepeatPps);
             }
 
+            if(requestObject.IsSetSaliencyAwareEncoding())
+            {
+                context.Writer.WritePropertyName("saliencyAwareEncoding");
+                context.Writer.Write(requestObject.SaliencyAwareEncoding);
+            }
+
             if(requestObject.IsSetScanTypeConversionMode())
             {
                 context.Writer.WritePropertyName("scanTypeConversionMode");

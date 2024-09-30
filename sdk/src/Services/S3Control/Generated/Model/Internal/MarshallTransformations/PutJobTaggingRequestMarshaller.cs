@@ -82,10 +82,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         xmlWriter.WriteStartElement("member");
                         if(publicRequestTagsValue.IsSetKey())
                             xmlWriter.WriteElementString("Key", StringUtils.FromString(publicRequestTagsValue.Key));
-
                         if(publicRequestTagsValue.IsSetValue())
                             xmlWriter.WriteElementString("Value", StringUtils.FromString(publicRequestTagsValue.Value));
-
                         xmlWriter.WriteEndElement();
                     }
                     }            

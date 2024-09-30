@@ -67,11 +67,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     if(publicRequest.Options.IsSetAddTransitGatewayCidrBlocks())
                     {
-                        int publicRequestOptionslistValueIndex = 1;
-                        foreach(var publicRequestOptionslistValue in publicRequest.Options.AddTransitGatewayCidrBlocks)
+                        if (publicRequest.Options.AddTransitGatewayCidrBlocks.Count == 0)
+                            request.Parameters.Add("Options" + "." + "AddTransitGatewayCidrBlocks", "");
+                        else
                         {
-                            request.Parameters.Add("Options" + "." + "AddTransitGatewayCidrBlocks" + "." + publicRequestOptionslistValueIndex, StringUtils.FromString(publicRequestOptionslistValue));
-                            publicRequestOptionslistValueIndex++;
+                             int publicRequestOptionslistValueIndex = 1;
+                             foreach(var publicRequestOptionslistValue in publicRequest.Options.AddTransitGatewayCidrBlocks)
+                             {
+                                 request.Parameters.Add("Options" + "." + "AddTransitGatewayCidrBlocks" + "." + publicRequestOptionslistValueIndex, StringUtils.FromString(publicRequestOptionslistValue));
+                                 publicRequestOptionslistValueIndex++;
+                             }
                         }
                     }
                     if(publicRequest.Options.IsSetAmazonSideAsn())
@@ -104,11 +109,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if(publicRequest.Options.IsSetRemoveTransitGatewayCidrBlocks())
                     {
-                        int publicRequestOptionslistValueIndex = 1;
-                        foreach(var publicRequestOptionslistValue in publicRequest.Options.RemoveTransitGatewayCidrBlocks)
+                        if (publicRequest.Options.RemoveTransitGatewayCidrBlocks.Count == 0)
+                            request.Parameters.Add("Options" + "." + "RemoveTransitGatewayCidrBlocks", "");
+                        else
                         {
-                            request.Parameters.Add("Options" + "." + "RemoveTransitGatewayCidrBlocks" + "." + publicRequestOptionslistValueIndex, StringUtils.FromString(publicRequestOptionslistValue));
-                            publicRequestOptionslistValueIndex++;
+                             int publicRequestOptionslistValueIndex = 1;
+                             foreach(var publicRequestOptionslistValue in publicRequest.Options.RemoveTransitGatewayCidrBlocks)
+                             {
+                                 request.Parameters.Add("Options" + "." + "RemoveTransitGatewayCidrBlocks" + "." + publicRequestOptionslistValueIndex, StringUtils.FromString(publicRequestOptionslistValue));
+                                 publicRequestOptionslistValueIndex++;
+                             }
                         }
                     }
                     if(publicRequest.Options.IsSetSecurityGroupReferencingSupport())

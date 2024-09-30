@@ -61,27 +61,37 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetReservedInstanceIds())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ReservedInstanceIds)
+                    if (publicRequest.ReservedInstanceIds.Count == 0)
+                        request.Parameters.Add("ReservedInstanceId", "");
+                    else
                     {
-                        request.Parameters.Add("ReservedInstanceId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ReservedInstanceIds)
+                         {
+                             request.Parameters.Add("ReservedInstanceId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetTargetConfigurations())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.TargetConfigurations)
+                    if (publicRequest.TargetConfigurations.Count == 0)
+                        request.Parameters.Add("TargetConfiguration", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetInstanceCount())
-                        {
-                            request.Parameters.Add("TargetConfiguration" + "." + publicRequestlistValueIndex + "." + "InstanceCount", StringUtils.FromInt(publicRequestlistValue.InstanceCount));
-                        }
-                        if(publicRequestlistValue.IsSetOfferingId())
-                        {
-                            request.Parameters.Add("TargetConfiguration" + "." + publicRequestlistValueIndex + "." + "OfferingId", StringUtils.FromString(publicRequestlistValue.OfferingId));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.TargetConfigurations)
+                         {
+                            if(publicRequestlistValue.IsSetInstanceCount())
+                            {
+                                request.Parameters.Add("TargetConfiguration" + "." + publicRequestlistValueIndex + "." + "InstanceCount", StringUtils.FromInt(publicRequestlistValue.InstanceCount));
+                            }
+                            if(publicRequestlistValue.IsSetOfferingId())
+                            {
+                                request.Parameters.Add("TargetConfiguration" + "." + publicRequestlistValueIndex + "." + "OfferingId", StringUtils.FromString(publicRequestlistValue.OfferingId));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

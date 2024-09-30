@@ -265,6 +265,20 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
             #endregion
         }
 
+        public void ElasticLoadBalancingV2DescribeListenerAttributes()
+        {
+            #region describe-listener-attributes-1724874395194
+
+            var client = new AmazonElasticLoadBalancingV2Client();
+            var response = client.DescribeListenerAttributes(new DescribeListenerAttributesRequest 
+            {
+                ListenerArn = "aws:elasticloadbalancing:us-east-1:123456789012:listener/net/my-listener/73e2d6bc24d8a067/d5dc06411fa5bcea"
+            });
+
+
+            #endregion
+        }
+
         public void ElasticLoadBalancingV2DescribeListeners()
         {
             #region elbv2-describe-listeners-1

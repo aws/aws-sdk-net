@@ -65,11 +65,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetIpv6Addresses())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Ipv6Addresses)
+                    if (publicRequest.Ipv6Addresses.Count == 0)
+                        request.Parameters.Add("Ipv6Addresses", "");
+                    else
                     {
-                        request.Parameters.Add("Ipv6Addresses" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Ipv6Addresses)
+                         {
+                             request.Parameters.Add("Ipv6Addresses" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetIpv6PrefixCount())
@@ -78,11 +83,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetIpv6Prefixes())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Ipv6Prefixes)
+                    if (publicRequest.Ipv6Prefixes.Count == 0)
+                        request.Parameters.Add("Ipv6Prefix", "");
+                    else
                     {
-                        request.Parameters.Add("Ipv6Prefix" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Ipv6Prefixes)
+                         {
+                             request.Parameters.Add("Ipv6Prefix" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetNetworkInterfaceId())

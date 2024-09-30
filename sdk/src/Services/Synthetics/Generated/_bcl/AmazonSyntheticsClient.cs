@@ -607,8 +607,8 @@ namespace Amazon.Synthetics
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The CloudWatch alarms created for this canary. These alarms have a name of <c>Synthetics-SharpDrop-Alarm-<i>MyCanaryName</i>
-        /// </c>.
+        /// The CloudWatch alarms created for this canary. These alarms have a name of <c>Synthetics-Alarm-<i>first-198-characters-of-canary-name</i>-<i>canaryId</i>-<i>alarm
+        /// number</i> </c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -617,12 +617,13 @@ namespace Amazon.Synthetics
         ///  </li> <li> 
         /// <para>
         /// IAM roles created for the canary. If they were created in the console, these roles
-        /// have the name <c> role/service-role/CloudWatchSyntheticsRole-<i>MyCanaryName</i> </c>.
+        /// have the name <c> role/service-role/CloudWatchSyntheticsRole-<i>First-21-Characters-of-CanaryName</i>
+        /// </c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// CloudWatch Logs log groups created for the canary. These logs groups have the name
-        /// <c>/aws/lambda/cwsyn-<i>MyCanaryName</i> </c>. 
+        /// <c>/aws/lambda/cwsyn-<i>First-21-Characters-of-CanaryName</i> </c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -673,8 +674,8 @@ namespace Amazon.Synthetics
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The CloudWatch alarms created for this canary. These alarms have a name of <c>Synthetics-SharpDrop-Alarm-<i>MyCanaryName</i>
-        /// </c>.
+        /// The CloudWatch alarms created for this canary. These alarms have a name of <c>Synthetics-Alarm-<i>first-198-characters-of-canary-name</i>-<i>canaryId</i>-<i>alarm
+        /// number</i> </c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -683,12 +684,13 @@ namespace Amazon.Synthetics
         ///  </li> <li> 
         /// <para>
         /// IAM roles created for the canary. If they were created in the console, these roles
-        /// have the name <c> role/service-role/CloudWatchSyntheticsRole-<i>MyCanaryName</i> </c>.
+        /// have the name <c> role/service-role/CloudWatchSyntheticsRole-<i>First-21-Characters-of-CanaryName</i>
+        /// </c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// CloudWatch Logs log groups created for the canary. These logs groups have the name
-        /// <c>/aws/lambda/cwsyn-<i>MyCanaryName</i> </c>. 
+        /// <c>/aws/lambda/cwsyn-<i>First-21-Characters-of-CanaryName</i> </c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>

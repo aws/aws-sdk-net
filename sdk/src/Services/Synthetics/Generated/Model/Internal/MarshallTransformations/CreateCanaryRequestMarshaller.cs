@@ -115,6 +115,17 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Name);
                     }
 
+                    if(publicRequest.IsSetResourcesToReplicateTags())
+                    {
+                        context.Writer.WritePropertyName("ResourcesToReplicateTags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestResourcesToReplicateTagsListValue in publicRequest.ResourcesToReplicateTags)
+                        {
+                                context.Writer.Write(publicRequestResourcesToReplicateTagsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
                     if(publicRequest.IsSetRunConfig())
                     {
                         context.Writer.WritePropertyName("RunConfig");

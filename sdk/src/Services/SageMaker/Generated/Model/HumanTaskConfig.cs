@@ -53,7 +53,6 @@ namespace Amazon.SageMaker.Model
         /// Configures how labels are consolidated across human workers.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public AnnotationConsolidationConfig AnnotationConsolidationConfig
         {
             get { return this._annotationConsolidationConfig; }
@@ -1520,7 +1519,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true, Max=2048)]
+        [AWSProperty(Max=2048)]
         public string PreHumanTaskLambdaArn
         {
             get { return this._preHumanTaskLambdaArn; }

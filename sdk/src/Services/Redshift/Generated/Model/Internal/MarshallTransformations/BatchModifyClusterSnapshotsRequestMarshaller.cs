@@ -69,11 +69,16 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetSnapshotIdentifierList())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.SnapshotIdentifierList)
+                    if (publicRequest.SnapshotIdentifierList.Count == 0)
+                        request.Parameters.Add("SnapshotIdentifierList", "");
+                    else
                     {
-                        request.Parameters.Add("SnapshotIdentifierList" + "." + "String" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.SnapshotIdentifierList)
+                         {
+                             request.Parameters.Add("SnapshotIdentifierList" + "." + "String" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

@@ -61,34 +61,44 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetManagedRules())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ManagedRules)
+                    if (publicRequest.ManagedRules.Count == 0)
+                        request.Parameters.Add("ManagedRules", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetResourceARN())
-                        {
-                            request.Parameters.Add("ManagedRules" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceARN", StringUtils.FromString(publicRequestlistValue.ResourceARN));
-                        }
-                        if(publicRequestlistValue.IsSetTags())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Tags)
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ManagedRules)
+                         {
+                            if(publicRequestlistValue.IsSetResourceARN())
                             {
-                                if(publicRequestlistValuelistValue.IsSetKey())
-                                {
-                                    request.Parameters.Add("ManagedRules" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Tags" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValuelistValue.Key));
-                                }
-                                if(publicRequestlistValuelistValue.IsSetValue())
-                                {
-                                    request.Parameters.Add("ManagedRules" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Tags" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
-                                }
-                                publicRequestlistValuelistValueIndex++;
+                                request.Parameters.Add("ManagedRules" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceARN", StringUtils.FromString(publicRequestlistValue.ResourceARN));
                             }
-                        }
-                        if(publicRequestlistValue.IsSetTemplateName())
-                        {
-                            request.Parameters.Add("ManagedRules" + "." + "member" + "." + publicRequestlistValueIndex + "." + "TemplateName", StringUtils.FromString(publicRequestlistValue.TemplateName));
-                        }
-                        publicRequestlistValueIndex++;
+                            if(publicRequestlistValue.IsSetTags())
+                            {
+                                if (publicRequestlistValue.Tags.Count == 0)
+                                    request.Parameters.Add("ManagedRules" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Tags", "");
+                                else
+                                {
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Tags)
+                                     {
+                                        if(publicRequestlistValuelistValue.IsSetKey())
+                                        {
+                                            request.Parameters.Add("ManagedRules" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Tags" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValuelistValue.Key));
+                                        }
+                                        if(publicRequestlistValuelistValue.IsSetValue())
+                                        {
+                                            request.Parameters.Add("ManagedRules" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Tags" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
+                                        }
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
+                                }
+                            }
+                            if(publicRequestlistValue.IsSetTemplateName())
+                            {
+                                request.Parameters.Add("ManagedRules" + "." + "member" + "." + publicRequestlistValueIndex + "." + "TemplateName", StringUtils.FromString(publicRequestlistValue.TemplateName));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

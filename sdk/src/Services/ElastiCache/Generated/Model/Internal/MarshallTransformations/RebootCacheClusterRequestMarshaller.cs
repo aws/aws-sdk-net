@@ -65,11 +65,16 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetCacheNodeIdsToReboot())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.CacheNodeIdsToReboot)
+                    if (publicRequest.CacheNodeIdsToReboot.Count == 0)
+                        request.Parameters.Add("CacheNodeIdsToReboot", "");
+                    else
                     {
-                        request.Parameters.Add("CacheNodeIdsToReboot" + "." + "CacheNodeId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.CacheNodeIdsToReboot)
+                         {
+                             request.Parameters.Add("CacheNodeIdsToReboot" + "." + "CacheNodeId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

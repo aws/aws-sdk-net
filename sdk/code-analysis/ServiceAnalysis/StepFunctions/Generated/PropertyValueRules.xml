@@ -666,6 +666,11 @@
     <max>1048576</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StepFunctions.Model.ValidateStateMachineDefinitionRequest.MaxResults</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StepFunctions.Model.ActivityFailedEventDetails.Cause</property>
     <min>0</min>
     <max>32768</max>

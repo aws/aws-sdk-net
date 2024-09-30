@@ -61,11 +61,16 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
             {
                 if(publicRequest.IsSetAttributes())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Attributes)
+                    if (publicRequest.Attributes.Count == 0)
+                        request.Parameters.Add("attributes", "");
+                    else
                     {
-                        request.Parameters.Add("attributes" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Attributes)
+                         {
+                             request.Parameters.Add("attributes" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

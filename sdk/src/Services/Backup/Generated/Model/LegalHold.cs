@@ -50,7 +50,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property CancellationDate. 
         /// <para>
-        /// This is the time in number format when legal hold was cancelled.
+        /// The time when the legal hold was cancelled.
         /// </para>
         /// </summary>
         public DateTime? CancellationDate
@@ -68,7 +68,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property CreationDate. 
         /// <para>
-        /// This is the time in number format when legal hold was created.
+        /// The time when the legal hold was created.
         /// </para>
         /// </summary>
         public DateTime? CreationDate
@@ -86,7 +86,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// This is the description of a legal hold.
+        /// The description of a legal hold.
         /// </para>
         /// </summary>
         public string Description
@@ -104,8 +104,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property LegalHoldArn. 
         /// <para>
-        /// This is an Amazon Resource Number (ARN) that uniquely identifies the legal hold; for
-        /// example, <c>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</c>.
+        /// The Amazon Resource Name (ARN) of the legal hold; for example, <c>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</c>.
         /// </para>
         /// </summary>
         public string LegalHoldArn
@@ -123,7 +122,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property LegalHoldId. 
         /// <para>
-        /// ID of specific legal hold on one or more recovery points.
+        /// The ID of the legal hold.
         /// </para>
         /// </summary>
         public string LegalHoldId
@@ -141,8 +140,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// This is the status of the legal hold. Statuses can be <c>ACTIVE</c>, <c>CREATING</c>,
-        /// <c>CANCELED</c>, and <c>CANCELING</c>.
+        /// The status of the legal hold.
         /// </para>
         /// </summary>
         public LegalHoldStatus Status
@@ -160,7 +158,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property Title. 
         /// <para>
-        /// This is the title of a legal hold.
+        /// The title of a legal hold.
         /// </para>
         /// </summary>
         public string Title

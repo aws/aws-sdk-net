@@ -44,6 +44,7 @@ namespace Amazon.MediaConnect.Model
         private List<AddOutputRequest> _outputs = AWSConfigs.InitializeCollections ? new List<AddOutputRequest>() : null;
         private SetSourceRequest _source;
         private FailoverConfig _sourceFailoverConfig;
+        private MonitoringConfig _sourceMonitoringConfig;
         private List<SetSourceRequest> _sources = AWSConfigs.InitializeCollections ? new List<SetSourceRequest>() : null;
         private List<VpcInterfaceRequest> _vpcInterfaces = AWSConfigs.InitializeCollections ? new List<VpcInterfaceRequest>() : null;
 
@@ -170,6 +171,21 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetSourceFailoverConfig()
         {
             return this._sourceFailoverConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceMonitoringConfig.
+        /// </summary>
+        public MonitoringConfig SourceMonitoringConfig
+        {
+            get { return this._sourceMonitoringConfig; }
+            set { this._sourceMonitoringConfig = value; }
+        }
+
+        // Check to see if SourceMonitoringConfig property is set
+        internal bool IsSetSourceMonitoringConfig()
+        {
+            return this._sourceMonitoringConfig != null;
         }
 
         /// <summary>

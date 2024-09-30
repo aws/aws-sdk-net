@@ -102,10 +102,11 @@ namespace Amazon.Ivschat
     /// <para>
     /// A <i>tag</i> is a metadata label that you assign to an AWS resource. A tag comprises
     /// a <i>key</i> and a <i>value</i>, both set by you. For example, you might set a tag
-    /// as <c>topic:nature</c> to label a particular video category. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-    /// AWS Resources</a> for more information, including restrictions that apply to tags
-    /// and "Tag naming limits and requirements"; Amazon IVS Chat has no service-specific
-    /// constraints beyond what is documented there.
+    /// as <c>topic:nature</c> to label a particular video category. See <a href="https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html">Best
+    /// practices and strategies</a> in <i>Tagging Amazon Web Services Resources and Tag Editor</i>
+    /// for details, including restrictions that apply to tags and "Tag naming limits and
+    /// requirements"; Amazon IVS Chat has no service-specific constraints beyond what is
+    /// documented there.
     /// </para>
     ///  
     /// <para>
@@ -116,7 +117,7 @@ namespace Amazon.Ivschat
     /// </para>
     ///  
     /// <para>
-    /// The Amazon IVS Chat API has these tag-related endpoints: <a>TagResource</a>, <a>UntagResource</a>,
+    /// The Amazon IVS Chat API has these tag-related operations: <a>TagResource</a>, <a>UntagResource</a>,
     /// and <a>ListTagsForResource</a>. The following resource supports tagging: Room.
     /// </para>
     ///  
@@ -146,7 +147,7 @@ namespace Amazon.Ivschat
     ///  </li> </ul> 
     /// <para>
     /// Users (viewers) connect to a room using secure access tokens that you create using
-    /// the <a>CreateChatToken</a> endpoint through the AWS SDK. You call CreateChatToken
+    /// the <a>CreateChatToken</a> operation through the AWS SDK. You call CreateChatToken
     /// for every user’s chat session, passing identity and authorization information about
     /// the user.
     /// </para>

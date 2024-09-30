@@ -90,10 +90,28 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     unmarshalledObject.DeliverySourceName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("fieldDelimiter", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FieldDelimiter = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("recordFields", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.RecordFields = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("s3DeliveryConfiguration", targetDepth))
+                {
+                    var unmarshaller = S3DeliveryConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.S3DeliveryConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("tags", targetDepth))

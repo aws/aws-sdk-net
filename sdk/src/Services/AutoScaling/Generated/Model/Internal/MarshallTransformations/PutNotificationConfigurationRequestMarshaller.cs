@@ -65,11 +65,16 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetNotificationTypes())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.NotificationTypes)
+                    if (publicRequest.NotificationTypes.Count == 0)
+                        request.Parameters.Add("NotificationTypes", "");
+                    else
                     {
-                        request.Parameters.Add("NotificationTypes" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.NotificationTypes)
+                         {
+                             request.Parameters.Add("NotificationTypes" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetTopicARN())

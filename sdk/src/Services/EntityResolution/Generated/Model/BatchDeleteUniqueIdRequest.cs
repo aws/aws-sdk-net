@@ -73,7 +73,7 @@ namespace Amazon.EntityResolution.Model
         // Check to see if UniqueIds property is set
         internal bool IsSetUniqueIds()
         {
-            return this._uniqueIds != null && (this._uniqueIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._uniqueIds != null && this._uniqueIds.Count > 0;
         }
 
         /// <summary>

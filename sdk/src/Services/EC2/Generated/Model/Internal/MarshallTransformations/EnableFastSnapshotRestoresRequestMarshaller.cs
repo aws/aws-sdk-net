@@ -61,20 +61,30 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetAvailabilityZones())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.AvailabilityZones)
+                    if (publicRequest.AvailabilityZones.Count == 0)
+                        request.Parameters.Add("AvailabilityZone", "");
+                    else
                     {
-                        request.Parameters.Add("AvailabilityZone" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.AvailabilityZones)
+                         {
+                             request.Parameters.Add("AvailabilityZone" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetSourceSnapshotIds())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.SourceSnapshotIds)
+                    if (publicRequest.SourceSnapshotIds.Count == 0)
+                        request.Parameters.Add("SourceSnapshotId", "");
+                    else
                     {
-                        request.Parameters.Add("SourceSnapshotId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.SourceSnapshotIds)
+                         {
+                             request.Parameters.Add("SourceSnapshotId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

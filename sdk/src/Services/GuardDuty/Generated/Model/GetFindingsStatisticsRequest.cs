@@ -31,8 +31,14 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the GetFindingsStatistics operation.
-    /// Lists Amazon GuardDuty findings statistics for the specified detector ID.
+    /// Lists GuardDuty findings statistics for the specified detector ID.
     /// 
+    ///  
+    /// <para>
+    /// You must provide either <c>findingStatisticTypes</c> or <c>groupBy</c> parameter,
+    /// and not both. You can use the <c>maxResults</c> and <c>orderBy</c> parameters only
+    /// when using <c>groupBy</c>.
+    /// </para>
     ///  
     /// <para>
     /// There might be regional differences because some flags might not be available in all
@@ -45,12 +51,14 @@ namespace Amazon.GuardDuty.Model
         private string _detectorId;
         private FindingCriteria _findingCriteria;
         private List<string> _findingStatisticTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private GroupByType _groupBy;
+        private int? _maxResults;
+        private OrderBy _orderBy;
 
         /// <summary>
         /// Gets and sets the property DetectorId. 
         /// <para>
-        /// The ID of the detector that specifies the GuardDuty service whose findings' statistics
-        /// you want to retrieve.
+        /// The ID of the detector whose findings statistics you want to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]
@@ -90,7 +98,8 @@ namespace Amazon.GuardDuty.Model
         /// The types of finding statistics to retrieve.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=10)]
+        [Obsolete("This parameter is deprecated, please use GroupBy instead")]
+        [AWSProperty(Min=0, Max=10)]
         public List<string> FindingStatisticTypes
         {
             get { return this._findingStatisticTypes; }
@@ -101,6 +110,71 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetFindingStatisticTypes()
         {
             return this._findingStatisticTypes != null && (this._findingStatisticTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GroupBy. 
+        /// <para>
+        /// Displays the findings statistics grouped by one of the listed valid values.
+        /// </para>
+        /// </summary>
+        public GroupByType GroupBy
+        {
+            get { return this._groupBy; }
+            set { this._groupBy = value; }
+        }
+
+        // Check to see if GroupBy property is set
+        internal bool IsSetGroupBy()
+        {
+            return this._groupBy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to be returned in the response. The default value is
+        /// 25.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use this parameter only with the <c>groupBy</c> parameter.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public int? MaxResults
+        {
+            get { return this._maxResults; }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrderBy. 
+        /// <para>
+        /// Displays the sorted findings in the requested order. The default value of <c>orderBy</c>
+        /// is <c>DESC</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use this parameter only with the <c>groupBy</c> parameter.
+        /// </para>
+        /// </summary>
+        public OrderBy OrderBy
+        {
+            get { return this._orderBy; }
+            set { this._orderBy = value; }
+        }
+
+        // Check to see if OrderBy property is set
+        internal bool IsSetOrderBy()
+        {
+            return this._orderBy != null;
         }
 
     }

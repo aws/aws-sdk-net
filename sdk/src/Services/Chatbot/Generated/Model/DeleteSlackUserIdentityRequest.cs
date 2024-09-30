@@ -31,7 +31,7 @@ namespace Amazon.Chatbot.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteSlackUserIdentity operation.
-    /// Deletes a Slack user identity
+    /// Deletes a user level permission for a Slack channel configuration.
     /// </summary>
     public partial class DeleteSlackUserIdentityRequest : AmazonChatbotRequest
     {
@@ -40,8 +40,10 @@ namespace Amazon.Chatbot.Model
         private string _slackUserId;
 
         /// <summary>
-        /// Gets and sets the property ChatConfigurationArn. The ARN of the SlackChannelConfiguration
-        /// associated with the user identity to delete.
+        /// Gets and sets the property ChatConfigurationArn. 
+        /// <para>
+        /// The ARN of the SlackChannelConfiguration associated with the user identity to delete.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=1169)]
         public string ChatConfigurationArn
@@ -57,8 +59,10 @@ namespace Amazon.Chatbot.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SlackTeamId. The ID of the Slack workspace authorized with
-        /// AWS Chatbot.
+        /// Gets and sets the property SlackTeamId. 
+        /// <para>
+        /// The ID of the Slack workspace authorized with AWS Chatbot.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string SlackTeamId
@@ -74,7 +78,10 @@ namespace Amazon.Chatbot.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SlackUserId. The ID of the user in Slack.
+        /// Gets and sets the property SlackUserId. 
+        /// <para>
+        /// The ID of the user in Slack
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string SlackUserId

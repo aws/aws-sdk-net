@@ -101,6 +101,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                         context.Writer.WriteArrayEnd();
                     }
 
+                    if(publicRequest.IsSetInputNetworkLocation())
+                    {
+                        context.Writer.WritePropertyName("inputNetworkLocation");
+                        context.Writer.Write(publicRequest.InputNetworkLocation);
+                    }
+
                     if(publicRequest.IsSetInputSecurityGroups())
                     {
                         context.Writer.WritePropertyName("inputSecurityGroups");
@@ -126,6 +132,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                             context.Writer.WriteObjectEnd();
                         }
                         context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetMulticastSettings())
+                    {
+                        context.Writer.WritePropertyName("multicastSettings");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MulticastSettingsCreateRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.MulticastSettings, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
 
                     if(publicRequest.IsSetName())

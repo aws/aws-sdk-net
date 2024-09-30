@@ -31,7 +31,7 @@ namespace Amazon.Chatbot.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSlackChannelConfigurations operation.
-    /// Lists Slack Channel Configurations optionally filtered by ChatConfigurationArn
+    /// Lists Slack channel configurations optionally filtered by ChatConfigurationArn
     /// </summary>
     public partial class DescribeSlackChannelConfigurationsRequest : AmazonChatbotRequest
     {
@@ -40,8 +40,10 @@ namespace Amazon.Chatbot.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property ChatConfigurationArn. An optional ARN of a SlackChannelConfiguration
-        /// to describe.
+        /// Gets and sets the property ChatConfigurationArn. 
+        /// <para>
+        /// An optional Amazon Resource Number (ARN) of a SlackChannelConfiguration to describe.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=19, Max=1169)]
         public string ChatConfigurationArn
@@ -57,9 +59,12 @@ namespace Amazon.Chatbot.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults. The maximum number of results to include in
-        /// the response. If more results exist than the specified MaxResults value, a token is
-        /// included in the response so that the remaining results can be retrieved.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to include in the response. If more results exist than
+        /// the specified MaxResults value, a token is included in the response so that the remaining
+        /// results can be retrieved. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public int? MaxResults
@@ -75,10 +80,12 @@ namespace Amazon.Chatbot.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. An optional token returned from a prior request.
-        /// Use this token for pagination of results from this action. If this parameter is specified,
-        /// the response includes only results beyond the token, up to the value specified by
-        /// MaxResults.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        ///  An optional token returned from a prior request. Use this token for pagination of
+        /// results from this action. If this parameter is specified, the response includes only
+        /// results beyond the token, up to the value specified by MaxResults. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1276)]
         public string NextToken

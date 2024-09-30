@@ -61,30 +61,35 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetTypeConfigurationIdentifiers())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.TypeConfigurationIdentifiers)
+                    if (publicRequest.TypeConfigurationIdentifiers.Count == 0)
+                        request.Parameters.Add("TypeConfigurationIdentifiers", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetType())
-                        {
-                            request.Parameters.Add("TypeConfigurationIdentifiers" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Type", StringUtils.FromString(publicRequestlistValue.Type));
-                        }
-                        if(publicRequestlistValue.IsSetTypeArn())
-                        {
-                            request.Parameters.Add("TypeConfigurationIdentifiers" + "." + "member" + "." + publicRequestlistValueIndex + "." + "TypeArn", StringUtils.FromString(publicRequestlistValue.TypeArn));
-                        }
-                        if(publicRequestlistValue.IsSetTypeConfigurationAlias())
-                        {
-                            request.Parameters.Add("TypeConfigurationIdentifiers" + "." + "member" + "." + publicRequestlistValueIndex + "." + "TypeConfigurationAlias", StringUtils.FromString(publicRequestlistValue.TypeConfigurationAlias));
-                        }
-                        if(publicRequestlistValue.IsSetTypeConfigurationArn())
-                        {
-                            request.Parameters.Add("TypeConfigurationIdentifiers" + "." + "member" + "." + publicRequestlistValueIndex + "." + "TypeConfigurationArn", StringUtils.FromString(publicRequestlistValue.TypeConfigurationArn));
-                        }
-                        if(publicRequestlistValue.IsSetTypeName())
-                        {
-                            request.Parameters.Add("TypeConfigurationIdentifiers" + "." + "member" + "." + publicRequestlistValueIndex + "." + "TypeName", StringUtils.FromString(publicRequestlistValue.TypeName));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.TypeConfigurationIdentifiers)
+                         {
+                            if(publicRequestlistValue.IsSetType())
+                            {
+                                request.Parameters.Add("TypeConfigurationIdentifiers" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Type", StringUtils.FromString(publicRequestlistValue.Type));
+                            }
+                            if(publicRequestlistValue.IsSetTypeArn())
+                            {
+                                request.Parameters.Add("TypeConfigurationIdentifiers" + "." + "member" + "." + publicRequestlistValueIndex + "." + "TypeArn", StringUtils.FromString(publicRequestlistValue.TypeArn));
+                            }
+                            if(publicRequestlistValue.IsSetTypeConfigurationAlias())
+                            {
+                                request.Parameters.Add("TypeConfigurationIdentifiers" + "." + "member" + "." + publicRequestlistValueIndex + "." + "TypeConfigurationAlias", StringUtils.FromString(publicRequestlistValue.TypeConfigurationAlias));
+                            }
+                            if(publicRequestlistValue.IsSetTypeConfigurationArn())
+                            {
+                                request.Parameters.Add("TypeConfigurationIdentifiers" + "." + "member" + "." + publicRequestlistValueIndex + "." + "TypeConfigurationArn", StringUtils.FromString(publicRequestlistValue.TypeConfigurationArn));
+                            }
+                            if(publicRequestlistValue.IsSetTypeName())
+                            {
+                                request.Parameters.Add("TypeConfigurationIdentifiers" + "." + "member" + "." + publicRequestlistValueIndex + "." + "TypeName", StringUtils.FromString(publicRequestlistValue.TypeName));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

@@ -94,6 +94,24 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                         context.Writer.WriteArrayEnd();
                     }
 
+                    if(publicRequest.IsSetGroupBy())
+                    {
+                        context.Writer.WritePropertyName("groupBy");
+                        context.Writer.Write(publicRequest.GroupBy);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetOrderBy())
+                    {
+                        context.Writer.WritePropertyName("orderBy");
+                        context.Writer.Write(publicRequest.OrderBy);
+                    }
+
                     writer.WriteObjectEnd();
                 }
 

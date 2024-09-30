@@ -91,7 +91,7 @@ namespace Amazon.Runtime.Internal.Auth
         public static void SignRequest(IRequest request, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey)
         {
             request.Headers[HeaderKeys.XAmzDateHeader] = AWSSDKUtils.FormattedCurrentTimestampRFC822;
-
+            request.SignedAt = AWSSDKUtils.CorrectedUtcNow;
             var stringToSign = BuildStringToSign(request);
             metrics.AddProperty(Metric.StringToSign, stringToSign);
             var auth = CryptoUtilFactory.CryptoInstance.HMACSign(stringToSign, awsSecretAccessKey, SigningAlgorithm.HmacSHA1);

@@ -102,6 +102,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     unmarshalledObject.EventSourceArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EventSourceMappingArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EventSourceMappingArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FilterCriteria", targetDepth))
                 {
                     var unmarshaller = FilterCriteriaUnmarshaller.Instance;

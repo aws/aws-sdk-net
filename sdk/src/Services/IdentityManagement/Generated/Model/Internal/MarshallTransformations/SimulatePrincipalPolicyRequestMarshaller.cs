@@ -61,11 +61,16 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetActionNames())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ActionNames)
+                    if (publicRequest.ActionNames.Count == 0)
+                        request.Parameters.Add("ActionNames", "");
+                    else
                     {
-                        request.Parameters.Add("ActionNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ActionNames)
+                         {
+                             request.Parameters.Add("ActionNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetCallerArn())
@@ -74,27 +79,37 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetContextEntries())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ContextEntries)
+                    if (publicRequest.ContextEntries.Count == 0)
+                        request.Parameters.Add("ContextEntries", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetContextKeyName())
-                        {
-                            request.Parameters.Add("ContextEntries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ContextKeyName", StringUtils.FromString(publicRequestlistValue.ContextKeyName));
-                        }
-                        if(publicRequestlistValue.IsSetContextKeyType())
-                        {
-                            request.Parameters.Add("ContextEntries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ContextKeyType", StringUtils.FromString(publicRequestlistValue.ContextKeyType));
-                        }
-                        if(publicRequestlistValue.IsSetContextKeyValues())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.ContextKeyValues)
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ContextEntries)
+                         {
+                            if(publicRequestlistValue.IsSetContextKeyName())
                             {
-                                request.Parameters.Add("ContextEntries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ContextKeyValues" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
-                                publicRequestlistValuelistValueIndex++;
+                                request.Parameters.Add("ContextEntries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ContextKeyName", StringUtils.FromString(publicRequestlistValue.ContextKeyName));
                             }
-                        }
-                        publicRequestlistValueIndex++;
+                            if(publicRequestlistValue.IsSetContextKeyType())
+                            {
+                                request.Parameters.Add("ContextEntries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ContextKeyType", StringUtils.FromString(publicRequestlistValue.ContextKeyType));
+                            }
+                            if(publicRequestlistValue.IsSetContextKeyValues())
+                            {
+                                if (publicRequestlistValue.ContextKeyValues.Count == 0)
+                                    request.Parameters.Add("ContextEntries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ContextKeyValues", "");
+                                else
+                                {
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.ContextKeyValues)
+                                     {
+                                         request.Parameters.Add("ContextEntries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ContextKeyValues" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
+                                }
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetMarker())
@@ -107,20 +122,30 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetPermissionsBoundaryPolicyInputList())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.PermissionsBoundaryPolicyInputList)
+                    if (publicRequest.PermissionsBoundaryPolicyInputList.Count == 0)
+                        request.Parameters.Add("PermissionsBoundaryPolicyInputList", "");
+                    else
                     {
-                        request.Parameters.Add("PermissionsBoundaryPolicyInputList" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.PermissionsBoundaryPolicyInputList)
+                         {
+                             request.Parameters.Add("PermissionsBoundaryPolicyInputList" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetPolicyInputList())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.PolicyInputList)
+                    if (publicRequest.PolicyInputList.Count == 0)
+                        request.Parameters.Add("PolicyInputList", "");
+                    else
                     {
-                        request.Parameters.Add("PolicyInputList" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.PolicyInputList)
+                         {
+                             request.Parameters.Add("PolicyInputList" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetPolicySourceArn())
@@ -129,11 +154,16 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetResourceArns())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ResourceArns)
+                    if (publicRequest.ResourceArns.Count == 0)
+                        request.Parameters.Add("ResourceArns", "");
+                    else
                     {
-                        request.Parameters.Add("ResourceArns" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ResourceArns)
+                         {
+                             request.Parameters.Add("ResourceArns" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetResourceHandlingOption())

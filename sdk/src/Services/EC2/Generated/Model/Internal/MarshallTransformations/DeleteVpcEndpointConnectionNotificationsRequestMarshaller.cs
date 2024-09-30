@@ -61,11 +61,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetConnectionNotificationIds())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ConnectionNotificationIds)
+                    if (publicRequest.ConnectionNotificationIds.Count == 0)
+                        request.Parameters.Add("ConnectionNotificationId", "");
+                    else
                     {
-                        request.Parameters.Add("ConnectionNotificationId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ConnectionNotificationIds)
+                         {
+                             request.Parameters.Add("ConnectionNotificationId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

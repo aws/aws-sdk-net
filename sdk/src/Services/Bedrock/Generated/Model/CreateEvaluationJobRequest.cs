@@ -113,8 +113,9 @@ namespace Amazon.Bedrock.Model
         /// Gets and sets the property InferenceConfig. 
         /// <para>
         /// Specify the models you want to use in your model evaluation job. Automatic model evaluation
-        /// jobs support a single model, and model evaluation job that use human workers support
-        /// two models.
+        /// jobs support a single model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference
+        /// profile</a>, and model evaluation job that use human workers support two models or
+        /// inference profiles.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

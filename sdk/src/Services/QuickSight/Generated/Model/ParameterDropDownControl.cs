@@ -36,6 +36,7 @@ namespace Amazon.QuickSight.Model
     public partial class ParameterDropDownControl
     {
         private CascadingControlConfiguration _cascadingControlConfiguration;
+        private CommitMode _commitMode;
         private DropDownControlDisplayOptions _displayOptions;
         private string _parameterControlId;
         private ParameterSelectableValues _selectableValues;
@@ -60,6 +61,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetCascadingControlConfiguration()
         {
             return this._cascadingControlConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CommitMode. 
+        /// <para>
+        /// The visibility configuration of the Apply button on a <c>ParameterDropDownControl</c>.
+        /// </para>
+        /// </summary>
+        public CommitMode CommitMode
+        {
+            get { return this._commitMode; }
+            set { this._commitMode = value; }
+        }
+
+        // Check to see if CommitMode property is set
+        internal bool IsSetCommitMode()
+        {
+            return this._commitMode != null;
         }
 
         /// <summary>

@@ -65,11 +65,16 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetInstanceRefreshIds())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.InstanceRefreshIds)
+                    if (publicRequest.InstanceRefreshIds.Count == 0)
+                        request.Parameters.Add("InstanceRefreshIds", "");
+                    else
                     {
-                        request.Parameters.Add("InstanceRefreshIds" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.InstanceRefreshIds)
+                         {
+                             request.Parameters.Add("InstanceRefreshIds" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetMaxRecords())

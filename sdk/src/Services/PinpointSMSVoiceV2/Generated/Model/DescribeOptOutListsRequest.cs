@@ -50,6 +50,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         private int? _maxResults;
         private string _nextToken;
         private List<string> _optOutListNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Owner _owner;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -96,6 +97,12 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// The OptOutLists to show the details of. This is an array of strings that can be either
         /// the OptOutListName or OptOutListArn.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you are using a shared AWS End User Messaging SMS and Voice resource then you must
+        /// use the full Amazon Resource Name(ARN).
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
         public List<string> OptOutListNames
@@ -108,6 +115,26 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         internal bool IsSetOptOutListNames()
         {
             return this._optOutListNames != null && (this._optOutListNames.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Owner. 
+        /// <para>
+        /// Use <c>SELF</c> to filter the list of Opt-Out List to ones your account owns or use
+        /// <c>SHARED</c> to filter on Opt-Out List shared with your account. The <c>Owner</c>
+        /// and <c>OptOutListNames</c> parameters can't be used at the same time.
+        /// </para>
+        /// </summary>
+        public Owner Owner
+        {
+            get { return this._owner; }
+            set { this._owner = value; }
+        }
+
+        // Check to see if Owner property is set
+        internal bool IsSetOwner()
+        {
+            return this._owner != null;
         }
 
     }

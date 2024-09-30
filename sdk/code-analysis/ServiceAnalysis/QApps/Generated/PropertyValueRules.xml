@@ -30,6 +30,7 @@
     <property>Amazon.QApps.Model.CreateQAppRequest.Title</property>
     <min>0</min>
     <max>100</max>
+    <pattern>[^{}\\"&lt;&gt;]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.CreateQAppResponse.AppId</property>
@@ -54,6 +55,7 @@
     <property>Amazon.QApps.Model.CreateQAppResponse.Title</property>
     <min>0</min>
     <max>100</max>
+    <pattern>[^{}\\"&lt;&gt;]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.DeleteLibraryItemRequest.LibraryItemId</property>
@@ -119,6 +121,7 @@
     <property>Amazon.QApps.Model.GetQAppResponse.Title</property>
     <min>0</min>
     <max>100</max>
+    <pattern>[^{}\\"&lt;&gt;]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.GetQAppSessionRequest.SessionId</property>
@@ -211,6 +214,10 @@
     <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QApps.Model.UpdateLibraryItemMetadataRequest.LibraryItemId</property>
+    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QApps.Model.UpdateQAppRequest.AppId</property>
     <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
@@ -223,6 +230,7 @@
     <property>Amazon.QApps.Model.UpdateQAppRequest.Title</property>
     <min>0</min>
     <max>100</max>
+    <pattern>[^{}\\"&lt;&gt;]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.UpdateQAppResponse.AppId</property>
@@ -247,6 +255,7 @@
     <property>Amazon.QApps.Model.UpdateQAppResponse.Title</property>
     <min>0</min>
     <max>100</max>
+    <pattern>[^{}\\"&lt;&gt;]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.UpdateQAppSessionRequest.SessionId</property>
@@ -294,6 +303,7 @@
     <property>Amazon.QApps.Model.FileUploadCard.Title</property>
     <min>0</min>
     <max>100</max>
+    <pattern>[^{}\\"&lt;&gt;]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.FileUploadCardInput.FileId</property>
@@ -312,6 +322,7 @@
     <property>Amazon.QApps.Model.FileUploadCardInput.Title</property>
     <min>0</min>
     <max>100</max>
+    <pattern>[^{}\\"&lt;&gt;]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.LibraryItemMember.AppId</property>
@@ -335,6 +346,7 @@
     <property>Amazon.QApps.Model.PredictAppDefinition.Title</property>
     <min>0</min>
     <max>100</max>
+    <pattern>[^{}\\"&lt;&gt;]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.PredictQAppInputOptions.ProblemStatement</property>
@@ -354,6 +366,7 @@
     <property>Amazon.QApps.Model.QPluginCard.Title</property>
     <min>0</min>
     <max>100</max>
+    <pattern>[^{}\\"&lt;&gt;]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.QPluginCardInput.Id</property>
@@ -373,6 +386,7 @@
     <property>Amazon.QApps.Model.QPluginCardInput.Title</property>
     <min>0</min>
     <max>100</max>
+    <pattern>[^{}\\"&lt;&gt;]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.QQueryCard.Id</property>
@@ -387,6 +401,7 @@
     <property>Amazon.QApps.Model.QQueryCard.Title</property>
     <min>0</min>
     <max>100</max>
+    <pattern>[^{}\\"&lt;&gt;]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.QQueryCardInput.Id</property>
@@ -401,6 +416,7 @@
     <property>Amazon.QApps.Model.QQueryCardInput.Title</property>
     <min>0</min>
     <max>100</max>
+    <pattern>[^{}\\"&lt;&gt;]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.TextInputCard.DefaultValue</property>
@@ -420,6 +436,7 @@
     <property>Amazon.QApps.Model.TextInputCard.Title</property>
     <min>0</min>
     <max>100</max>
+    <pattern>[^{}\\"&lt;&gt;]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.TextInputCardInput.DefaultValue</property>
@@ -439,6 +456,7 @@
     <property>Amazon.QApps.Model.TextInputCardInput.Title</property>
     <min>0</min>
     <max>100</max>
+    <pattern>[^{}\\"&lt;&gt;]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.UserAppItem.AppId</property>
@@ -453,5 +471,6 @@
     <property>Amazon.QApps.Model.UserAppItem.Title</property>
     <min>0</min>
     <max>100</max>
+    <pattern>[^{}\\"&lt;&gt;]+</pattern>
   </property-value-rule>
 </property-value-rules>

@@ -378,7 +378,10 @@ namespace Amazon.BedrockRuntime
         /// The request failed due to an error while processing the model.
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ModelNotReadyException">
-        /// The model specified in the request is not ready to serve inference requests.
+        /// The model specified in the request is not ready to serve inference requests. The AWS
+        /// SDK will automatically retry the operation up to 5 times. For information about configuring
+        /// automatic retries, see <a href="https://docs.aws.amazon.com/sdkref/latest/guide/feature-retry-behavior.html">Retry
+        /// behavior</a> in the <i>AWS SDKs and Tools</i> reference guide.
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ModelTimeoutException">
         /// The request took too long to process. Processing time exceeded the model timeout length.
@@ -452,7 +455,10 @@ namespace Amazon.BedrockRuntime
         /// The request failed due to an error while processing the model.
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ModelNotReadyException">
-        /// The model specified in the request is not ready to serve inference requests.
+        /// The model specified in the request is not ready to serve inference requests. The AWS
+        /// SDK will automatically retry the operation up to 5 times. For information about configuring
+        /// automatic retries, see <a href="https://docs.aws.amazon.com/sdkref/latest/guide/feature-retry-behavior.html">Retry
+        /// behavior</a> in the <i>AWS SDKs and Tools</i> reference guide.
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ModelTimeoutException">
         /// The request took too long to process. Processing time exceeded the model timeout length.
@@ -538,7 +544,10 @@ namespace Amazon.BedrockRuntime
         /// The request failed due to an error while processing the model.
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ModelNotReadyException">
-        /// The model specified in the request is not ready to serve inference requests.
+        /// The model specified in the request is not ready to serve inference requests. The AWS
+        /// SDK will automatically retry the operation up to 5 times. For information about configuring
+        /// automatic retries, see <a href="https://docs.aws.amazon.com/sdkref/latest/guide/feature-retry-behavior.html">Retry
+        /// behavior</a> in the <i>AWS SDKs and Tools</i> reference guide.
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ModelTimeoutException">
         /// The request took too long to process. Processing time exceeded the model timeout length.
@@ -623,7 +632,10 @@ namespace Amazon.BedrockRuntime
         /// The request failed due to an error while processing the model.
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ModelNotReadyException">
-        /// The model specified in the request is not ready to serve inference requests.
+        /// The model specified in the request is not ready to serve inference requests. The AWS
+        /// SDK will automatically retry the operation up to 5 times. For information about configuring
+        /// automatic retries, see <a href="https://docs.aws.amazon.com/sdkref/latest/guide/feature-retry-behavior.html">Retry
+        /// behavior</a> in the <i>AWS SDKs and Tools</i> reference guide.
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ModelTimeoutException">
         /// The request took too long to process. Processing time exceeded the model timeout length.
@@ -685,7 +697,10 @@ namespace Amazon.BedrockRuntime
         /// The request failed due to an error while processing the model.
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ModelNotReadyException">
-        /// The model specified in the request is not ready to serve inference requests.
+        /// The model specified in the request is not ready to serve inference requests. The AWS
+        /// SDK will automatically retry the operation up to 5 times. For information about configuring
+        /// automatic retries, see <a href="https://docs.aws.amazon.com/sdkref/latest/guide/feature-retry-behavior.html">Retry
+        /// behavior</a> in the <i>AWS SDKs and Tools</i> reference guide.
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ModelTimeoutException">
         /// The request took too long to process. Processing time exceeded the model timeout length.
@@ -751,7 +766,10 @@ namespace Amazon.BedrockRuntime
         /// The request failed due to an error while processing the model.
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ModelNotReadyException">
-        /// The model specified in the request is not ready to serve inference requests.
+        /// The model specified in the request is not ready to serve inference requests. The AWS
+        /// SDK will automatically retry the operation up to 5 times. For information about configuring
+        /// automatic retries, see <a href="https://docs.aws.amazon.com/sdkref/latest/guide/feature-retry-behavior.html">Retry
+        /// behavior</a> in the <i>AWS SDKs and Tools</i> reference guide.
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ModelTimeoutException">
         /// The request took too long to process. Processing time exceeded the model timeout length.
@@ -827,7 +845,10 @@ namespace Amazon.BedrockRuntime
         /// The request failed due to an error while processing the model.
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ModelNotReadyException">
-        /// The model specified in the request is not ready to serve inference requests.
+        /// The model specified in the request is not ready to serve inference requests. The AWS
+        /// SDK will automatically retry the operation up to 5 times. For information about configuring
+        /// automatic retries, see <a href="https://docs.aws.amazon.com/sdkref/latest/guide/feature-retry-behavior.html">Retry
+        /// behavior</a> in the <i>AWS SDKs and Tools</i> reference guide.
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ModelStreamErrorException">
         /// An error occurred while streaming the response. Retry your request.
@@ -905,7 +926,10 @@ namespace Amazon.BedrockRuntime
         /// The request failed due to an error while processing the model.
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ModelNotReadyException">
-        /// The model specified in the request is not ready to serve inference requests.
+        /// The model specified in the request is not ready to serve inference requests. The AWS
+        /// SDK will automatically retry the operation up to 5 times. For information about configuring
+        /// automatic retries, see <a href="https://docs.aws.amazon.com/sdkref/latest/guide/feature-retry-behavior.html">Retry
+        /// behavior</a> in the <i>AWS SDKs and Tools</i> reference guide.
         /// </exception>
         /// <exception cref="Amazon.BedrockRuntime.Model.ModelStreamErrorException">
         /// An error occurred while streaming the response. Retry your request.

@@ -31,7 +31,7 @@ namespace Amazon.Backup.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLogicallyAirGappedBackupVault operation.
-    /// This request creates a logical container to where backups may be copied.
+    /// Creates a logical container to where backups may be copied.
     /// 
     ///  
     /// <para>
@@ -56,7 +56,9 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property BackupVaultName. 
         /// <para>
-        /// This is the name of the vault that is being created.
+        /// The name of a logical container where backups are stored. Logically air-gapped backup
+        /// vaults are identified by names that are unique to the account used to create them
+        /// and the Region where they are created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -75,7 +77,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property BackupVaultTags. 
         /// <para>
-        /// These are the tags that will be included in the newly-created vault.
+        /// The tags to assign to the vault.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -94,7 +96,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property CreatorRequestId. 
         /// <para>
-        /// This is the ID of the creation request.
+        /// The ID of the creation request.
         /// </para>
         ///  
         /// <para>
@@ -117,18 +119,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property MaxRetentionDays. 
         /// <para>
-        /// This is the setting that specifies the maximum retention period that the vault retains
-        /// its recovery points. If this parameter is not specified, Backup does not enforce a
-        /// maximum retention period on the recovery points in the vault (allowing indefinite
-        /// storage).
-        /// </para>
-        ///  
-        /// <para>
-        /// If specified, any backup or copy job to the vault must have a lifecycle policy with
-        /// a retention period equal to or shorter than the maximum retention period. If the job
-        /// retention period is longer than that maximum retention period, then the vault fails
-        /// the backup or copy job, and you should either modify your lifecycle settings or use
-        /// a different vault.
+        /// The maximum retention period that the vault retains its recovery points.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -148,15 +139,11 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property MinRetentionDays. 
         /// <para>
         /// This setting specifies the minimum retention period that the vault retains its recovery
-        /// points. If this parameter is not specified, no minimum retention period is enforced.
+        /// points.
         /// </para>
         ///  
         /// <para>
-        /// If specified, any backup or copy job to the vault must have a lifecycle policy with
-        /// a retention period equal to or longer than the minimum retention period. If a job
-        /// retention period is shorter than that minimum retention period, then the vault fails
-        /// the backup or copy job, and you should either modify your lifecycle settings or use
-        /// a different vault.
+        /// The minimum value accepted is 7 days.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

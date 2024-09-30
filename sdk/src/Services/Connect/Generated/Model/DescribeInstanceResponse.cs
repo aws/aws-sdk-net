@@ -35,6 +35,7 @@ namespace Amazon.Connect.Model
     public partial class DescribeInstanceResponse : AmazonWebServiceResponse
     {
         private Instance _instance;
+        private ReplicationConfiguration _replicationConfiguration;
 
         /// <summary>
         /// Gets and sets the property Instance. 
@@ -52,6 +53,29 @@ namespace Amazon.Connect.Model
         internal bool IsSetInstance()
         {
             return this._instance != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicationConfiguration. 
+        /// <para>
+        /// Status information about the replication process. This field is included only when
+        /// you are using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ReplicateInstance.html">ReplicateInstance</a>
+        /// API to replicate an Amazon Connect instance across Amazon Web Services Regions. For
+        /// information about replicating Amazon Connect instances, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-replica-connect-instance.html">Create
+        /// a replica of your existing Amazon Connect instance</a> in the <i>Amazon Connect Administrator
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        public ReplicationConfiguration ReplicationConfiguration
+        {
+            get { return this._replicationConfiguration; }
+            set { this._replicationConfiguration = value; }
+        }
+
+        // Check to see if ReplicationConfiguration property is set
+        internal bool IsSetReplicationConfiguration()
+        {
+            return this._replicationConfiguration != null;
         }
 
     }

@@ -41,19 +41,19 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property AggregationPeriod. 
         /// <para>
-        /// This is the period that sets the boundaries for returned results.
+        /// The period for the returned results.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>ONE_DAY</c> for daily job count for the prior 14 days.
+        ///  <c>ONE_DAY</c> - The daily job count for the prior 14 days.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>SEVEN_DAYS</c> for the aggregated job count for the prior 7 days.
+        ///  <c>SEVEN_DAYS</c> - The aggregated job count for the prior 7 days.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>FOURTEEN_DAYS</c> for aggregated job count for prior 14 days.
+        ///  <c>FOURTEEN_DAYS</c> - The aggregated job count for prior 14 days.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -72,8 +72,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property BackupJobSummaries. 
         /// <para>
-        /// This request returns a summary that contains Region, Account, State, ResourceType,
-        /// MessageCategory, StartTime, EndTime, and Count of included jobs.
+        /// The summary information.
         /// </para>
         /// </summary>
         public List<BackupJobSummary> BackupJobSummaries

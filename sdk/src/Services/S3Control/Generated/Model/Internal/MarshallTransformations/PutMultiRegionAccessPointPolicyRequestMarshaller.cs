@@ -78,10 +78,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     xmlWriter.WriteStartElement("Details");
                     if(publicRequest.Details.IsSetName())
                         xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.Details.Name));
-
                     if(publicRequest.Details.IsSetPolicy())
                         xmlWriter.WriteElementString("Policy", StringUtils.FromString(publicRequest.Details.Policy));
-
                     xmlWriter.WriteEndElement();
                 }
 

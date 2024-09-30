@@ -48,6 +48,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetS3BucketOwner())
+            {
+                context.Writer.WritePropertyName("s3BucketOwner");
+                context.Writer.Write(requestObject.S3BucketOwner);
+            }
+
             if(requestObject.IsSetS3EncryptionKeyId())
             {
                 context.Writer.WritePropertyName("s3EncryptionKeyId");

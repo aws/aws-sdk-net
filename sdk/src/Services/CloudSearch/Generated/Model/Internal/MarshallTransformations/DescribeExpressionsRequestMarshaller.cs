@@ -69,11 +69,16 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetExpressionNames())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ExpressionNames)
+                    if (publicRequest.ExpressionNames.Count == 0)
+                        request.Parameters.Add("ExpressionNames", "");
+                    else
                     {
-                        request.Parameters.Add("ExpressionNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ExpressionNames)
+                         {
+                             request.Parameters.Add("ExpressionNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

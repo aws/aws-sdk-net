@@ -61,34 +61,39 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetDataQueries())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.DataQueries)
+                    if (publicRequest.DataQueries.Count == 0)
+                        request.Parameters.Add("DataQuery", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetDestination())
-                        {
-                            request.Parameters.Add("DataQuery" + "." + publicRequestlistValueIndex + "." + "Destination", StringUtils.FromString(publicRequestlistValue.Destination));
-                        }
-                        if(publicRequestlistValue.IsSetId())
-                        {
-                            request.Parameters.Add("DataQuery" + "." + publicRequestlistValueIndex + "." + "Id", StringUtils.FromString(publicRequestlistValue.Id));
-                        }
-                        if(publicRequestlistValue.IsSetMetric())
-                        {
-                            request.Parameters.Add("DataQuery" + "." + publicRequestlistValueIndex + "." + "Metric", StringUtils.FromString(publicRequestlistValue.Metric));
-                        }
-                        if(publicRequestlistValue.IsSetPeriod())
-                        {
-                            request.Parameters.Add("DataQuery" + "." + publicRequestlistValueIndex + "." + "Period", StringUtils.FromString(publicRequestlistValue.Period));
-                        }
-                        if(publicRequestlistValue.IsSetSource())
-                        {
-                            request.Parameters.Add("DataQuery" + "." + publicRequestlistValueIndex + "." + "Source", StringUtils.FromString(publicRequestlistValue.Source));
-                        }
-                        if(publicRequestlistValue.IsSetStatistic())
-                        {
-                            request.Parameters.Add("DataQuery" + "." + publicRequestlistValueIndex + "." + "Statistic", StringUtils.FromString(publicRequestlistValue.Statistic));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.DataQueries)
+                         {
+                            if(publicRequestlistValue.IsSetDestination())
+                            {
+                                request.Parameters.Add("DataQuery" + "." + publicRequestlistValueIndex + "." + "Destination", StringUtils.FromString(publicRequestlistValue.Destination));
+                            }
+                            if(publicRequestlistValue.IsSetId())
+                            {
+                                request.Parameters.Add("DataQuery" + "." + publicRequestlistValueIndex + "." + "Id", StringUtils.FromString(publicRequestlistValue.Id));
+                            }
+                            if(publicRequestlistValue.IsSetMetric())
+                            {
+                                request.Parameters.Add("DataQuery" + "." + publicRequestlistValueIndex + "." + "Metric", StringUtils.FromString(publicRequestlistValue.Metric));
+                            }
+                            if(publicRequestlistValue.IsSetPeriod())
+                            {
+                                request.Parameters.Add("DataQuery" + "." + publicRequestlistValueIndex + "." + "Period", StringUtils.FromString(publicRequestlistValue.Period));
+                            }
+                            if(publicRequestlistValue.IsSetSource())
+                            {
+                                request.Parameters.Add("DataQuery" + "." + publicRequestlistValueIndex + "." + "Source", StringUtils.FromString(publicRequestlistValue.Source));
+                            }
+                            if(publicRequestlistValue.IsSetStatistic())
+                            {
+                                request.Parameters.Add("DataQuery" + "." + publicRequestlistValueIndex + "." + "Statistic", StringUtils.FromString(publicRequestlistValue.Statistic));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetEndTime())

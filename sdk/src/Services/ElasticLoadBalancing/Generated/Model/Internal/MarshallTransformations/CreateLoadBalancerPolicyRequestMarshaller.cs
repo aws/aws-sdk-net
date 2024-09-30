@@ -65,18 +65,23 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetPolicyAttributes())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.PolicyAttributes)
+                    if (publicRequest.PolicyAttributes.Count == 0)
+                        request.Parameters.Add("PolicyAttributes", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetAttributeName())
-                        {
-                            request.Parameters.Add("PolicyAttributes" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AttributeName", StringUtils.FromString(publicRequestlistValue.AttributeName));
-                        }
-                        if(publicRequestlistValue.IsSetAttributeValue())
-                        {
-                            request.Parameters.Add("PolicyAttributes" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AttributeValue", StringUtils.FromString(publicRequestlistValue.AttributeValue));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.PolicyAttributes)
+                         {
+                            if(publicRequestlistValue.IsSetAttributeName())
+                            {
+                                request.Parameters.Add("PolicyAttributes" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AttributeName", StringUtils.FromString(publicRequestlistValue.AttributeName));
+                            }
+                            if(publicRequestlistValue.IsSetAttributeValue())
+                            {
+                                request.Parameters.Add("PolicyAttributes" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AttributeValue", StringUtils.FromString(publicRequestlistValue.AttributeValue));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetPolicyName())

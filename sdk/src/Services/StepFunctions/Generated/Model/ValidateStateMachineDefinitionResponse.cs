@@ -36,6 +36,7 @@ namespace Amazon.StepFunctions.Model
     {
         private List<ValidateStateMachineDefinitionDiagnostic> _diagnostics = AWSConfigs.InitializeCollections ? new List<ValidateStateMachineDefinitionDiagnostic>() : null;
         private ValidateStateMachineDefinitionResultCode _result;
+        private bool? _truncated;
 
         /// <summary>
         /// Gets and sets the property Diagnostics. 
@@ -75,6 +76,26 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetResult()
         {
             return this._result != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Truncated. 
+        /// <para>
+        /// The result value will be <c>true</c> if the number of diagnostics found in the workflow
+        /// definition exceeds <c>maxResults</c>. When all diagnostics results are returned, the
+        /// value will be <c>false</c>.
+        /// </para>
+        /// </summary>
+        public bool? Truncated
+        {
+            get { return this._truncated; }
+            set { this._truncated = value; }
+        }
+
+        // Check to see if Truncated property is set
+        internal bool IsSetTruncated()
+        {
+            return this._truncated.HasValue; 
         }
 
     }

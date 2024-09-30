@@ -54,6 +54,22 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.InstanceFleetId);
             }
 
+            if(requestObject.IsSetInstanceTypeConfigs())
+            {
+                context.Writer.WritePropertyName("InstanceTypeConfigs");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectInstanceTypeConfigsListValue in requestObject.InstanceTypeConfigs)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = InstanceTypeConfigMarshaller.Instance;
+                    marshaller.Marshall(requestObjectInstanceTypeConfigsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetResizeSpecifications())
             {
                 context.Writer.WritePropertyName("ResizeSpecifications");

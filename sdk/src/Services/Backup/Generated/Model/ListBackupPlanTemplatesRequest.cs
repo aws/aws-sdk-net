@@ -31,8 +31,7 @@ namespace Amazon.Backup.Model
 {
     /// <summary>
     /// Container for the parameters to the ListBackupPlanTemplates operation.
-    /// Returns metadata of your saved backup plan templates, including the template ID, name,
-    /// and the creation and deletion dates.
+    /// Lists the backup plan templates.
     /// </summary>
     public partial class ListBackupPlanTemplatesRequest : AmazonBackupRequest
     {
@@ -42,7 +41,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of items to be returned.
+        /// The maximum number of items to return.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]

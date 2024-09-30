@@ -40,6 +40,7 @@ namespace Amazon.MediaConvert.Model
         private BillingTagsSource _billingTagsSource;
         private string _clientRequestToken;
         private List<HopDestination> _hopDestinations = AWSConfigs.InitializeCollections ? new List<HopDestination>() : null;
+        private string _jobEngineVersion;
         private string _jobTemplate;
         private int? _priority;
         private string _queue;
@@ -122,6 +123,25 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetHopDestinations()
         {
             return this._hopDestinations != null && (this._hopDestinations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobEngineVersion. Use Job engine versions to run jobs for
+        /// your production workflow on one version, while you test and validate the latest version.
+        /// To specify a Job engine version: Enter a date in a YYYY-MM-DD format. For a list of
+        /// valid Job engine versions, submit a ListVersions request. To not specify a Job engine
+        /// version: Leave blank.
+        /// </summary>
+        public string JobEngineVersion
+        {
+            get { return this._jobEngineVersion; }
+            set { this._jobEngineVersion = value; }
+        }
+
+        // Check to see if JobEngineVersion property is set
+        internal bool IsSetJobEngineVersion()
+        {
+            return this._jobEngineVersion != null;
         }
 
         /// <summary>

@@ -99,20 +99,30 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     if(publicRequest.CloudwatchLogsExportConfiguration.IsSetDisableLogTypes())
                     {
-                        int publicRequestCloudwatchLogsExportConfigurationlistValueIndex = 1;
-                        foreach(var publicRequestCloudwatchLogsExportConfigurationlistValue in publicRequest.CloudwatchLogsExportConfiguration.DisableLogTypes)
+                        if (publicRequest.CloudwatchLogsExportConfiguration.DisableLogTypes.Count == 0)
+                            request.Parameters.Add("CloudwatchLogsExportConfiguration" + "." + "DisableLogTypes", "");
+                        else
                         {
-                            request.Parameters.Add("CloudwatchLogsExportConfiguration" + "." + "DisableLogTypes" + "." + "member" + "." + publicRequestCloudwatchLogsExportConfigurationlistValueIndex, StringUtils.FromString(publicRequestCloudwatchLogsExportConfigurationlistValue));
-                            publicRequestCloudwatchLogsExportConfigurationlistValueIndex++;
+                             int publicRequestCloudwatchLogsExportConfigurationlistValueIndex = 1;
+                             foreach(var publicRequestCloudwatchLogsExportConfigurationlistValue in publicRequest.CloudwatchLogsExportConfiguration.DisableLogTypes)
+                             {
+                                 request.Parameters.Add("CloudwatchLogsExportConfiguration" + "." + "DisableLogTypes" + "." + "member" + "." + publicRequestCloudwatchLogsExportConfigurationlistValueIndex, StringUtils.FromString(publicRequestCloudwatchLogsExportConfigurationlistValue));
+                                 publicRequestCloudwatchLogsExportConfigurationlistValueIndex++;
+                             }
                         }
                     }
                     if(publicRequest.CloudwatchLogsExportConfiguration.IsSetEnableLogTypes())
                     {
-                        int publicRequestCloudwatchLogsExportConfigurationlistValueIndex = 1;
-                        foreach(var publicRequestCloudwatchLogsExportConfigurationlistValue in publicRequest.CloudwatchLogsExportConfiguration.EnableLogTypes)
+                        if (publicRequest.CloudwatchLogsExportConfiguration.EnableLogTypes.Count == 0)
+                            request.Parameters.Add("CloudwatchLogsExportConfiguration" + "." + "EnableLogTypes", "");
+                        else
                         {
-                            request.Parameters.Add("CloudwatchLogsExportConfiguration" + "." + "EnableLogTypes" + "." + "member" + "." + publicRequestCloudwatchLogsExportConfigurationlistValueIndex, StringUtils.FromString(publicRequestCloudwatchLogsExportConfigurationlistValue));
-                            publicRequestCloudwatchLogsExportConfigurationlistValueIndex++;
+                             int publicRequestCloudwatchLogsExportConfigurationlistValueIndex = 1;
+                             foreach(var publicRequestCloudwatchLogsExportConfigurationlistValue in publicRequest.CloudwatchLogsExportConfiguration.EnableLogTypes)
+                             {
+                                 request.Parameters.Add("CloudwatchLogsExportConfiguration" + "." + "EnableLogTypes" + "." + "member" + "." + publicRequestCloudwatchLogsExportConfigurationlistValueIndex, StringUtils.FromString(publicRequestCloudwatchLogsExportConfigurationlistValue));
+                                 publicRequestCloudwatchLogsExportConfigurationlistValueIndex++;
+                             }
                         }
                     }
                 }
@@ -138,11 +148,16 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetDBSecurityGroups())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.DBSecurityGroups)
+                    if (publicRequest.DBSecurityGroups.Count == 0)
+                        request.Parameters.Add("DBSecurityGroups", "");
+                    else
                     {
-                        request.Parameters.Add("DBSecurityGroups" + "." + "DBSecurityGroupName" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.DBSecurityGroups)
+                         {
+                             request.Parameters.Add("DBSecurityGroups" + "." + "DBSecurityGroupName" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetDBSubnetGroupName())
@@ -171,11 +186,16 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetDomainDnsIps())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.DomainDnsIps)
+                    if (publicRequest.DomainDnsIps.Count == 0)
+                        request.Parameters.Add("DomainDnsIps", "");
+                    else
                     {
-                        request.Parameters.Add("DomainDnsIps" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.DomainDnsIps)
+                         {
+                             request.Parameters.Add("DomainDnsIps" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetDomainFqdn())
@@ -280,18 +300,23 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetProcessorFeatures())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ProcessorFeatures)
+                    if (publicRequest.ProcessorFeatures.Count == 0)
+                        request.Parameters.Add("ProcessorFeatures", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetName())
-                        {
-                            request.Parameters.Add("ProcessorFeatures" + "." + "ProcessorFeature" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
-                        }
-                        if(publicRequestlistValue.IsSetValue())
-                        {
-                            request.Parameters.Add("ProcessorFeatures" + "." + "ProcessorFeature" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ProcessorFeatures)
+                         {
+                            if(publicRequestlistValue.IsSetName())
+                            {
+                                request.Parameters.Add("ProcessorFeatures" + "." + "ProcessorFeature" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
+                            }
+                            if(publicRequestlistValue.IsSetValue())
+                            {
+                                request.Parameters.Add("ProcessorFeatures" + "." + "ProcessorFeature" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetPromotionTier())
@@ -336,11 +361,16 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetVpcSecurityGroupIds())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.VpcSecurityGroupIds)
+                    if (publicRequest.VpcSecurityGroupIds.Count == 0)
+                        request.Parameters.Add("VpcSecurityGroupIds", "");
+                    else
                     {
-                        request.Parameters.Add("VpcSecurityGroupIds" + "." + "VpcSecurityGroupId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.VpcSecurityGroupIds)
+                         {
+                             request.Parameters.Add("VpcSecurityGroupIds" + "." + "VpcSecurityGroupId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

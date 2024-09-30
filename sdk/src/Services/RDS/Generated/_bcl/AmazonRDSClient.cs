@@ -3133,9 +3133,6 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.
         /// </exception>
-        /// <exception cref="Amazon.RDS.Model.InvalidMaxAcuException">
-        /// The maximum capacity of the DB shard group must be 48-7168 Aurora capacity units (ACUs).
-        /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidVPCNetworkStateException">
         /// The DB subnet group doesn't cover all Availability Zones after it's created because
         /// of users' change.
@@ -3182,9 +3179,6 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.
-        /// </exception>
-        /// <exception cref="Amazon.RDS.Model.InvalidMaxAcuException">
-        /// The maximum capacity of the DB shard group must be 48-7168 Aurora capacity units (ACUs).
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidVPCNetworkStateException">
         /// The DB subnet group doesn't cover all Availability Zones after it's created because
@@ -9222,8 +9216,9 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// For an overview on tagging an Amazon RDS resource, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging
-        /// Amazon RDS Resources</a> in the <i>Amazon RDS User Guide</i>.
+        /// For an overview on tagging an Amazon RDS resource, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging
+        /// Amazon RDS Resources</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html">Tagging
+        /// Amazon Aurora and Amazon RDS Resources</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
@@ -9274,8 +9269,9 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// For an overview on tagging an Amazon RDS resource, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging
-        /// Amazon RDS Resources</a> in the <i>Amazon RDS User Guide</i>.
+        /// For an overview on tagging an Amazon RDS resource, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging
+        /// Amazon RDS Resources</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html">Tagging
+        /// Amazon Aurora and Amazon RDS Resources</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
@@ -10765,9 +10761,6 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.
         /// </exception>
-        /// <exception cref="Amazon.RDS.Model.InvalidMaxAcuException">
-        /// The maximum capacity of the DB shard group must be 48-7168 Aurora capacity units (ACUs).
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBShardGroup">REST API Reference for ModifyDBShardGroup Operation</seealso>
         public virtual ModifyDBShardGroupResponse ModifyDBShardGroup(ModifyDBShardGroupRequest request)
         {
@@ -10798,9 +10791,6 @@ namespace Amazon.RDS
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.InvalidDBClusterStateException">
         /// The requested operation can't be performed while the cluster is in this state.
-        /// </exception>
-        /// <exception cref="Amazon.RDS.Model.InvalidMaxAcuException">
-        /// The maximum capacity of the DB shard group must be 48-7168 Aurora capacity units (ACUs).
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBShardGroup">REST API Reference for ModifyDBShardGroup Operation</seealso>
         public virtual Task<ModifyDBShardGroupResponse> ModifyDBShardGroupAsync(ModifyDBShardGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -12293,8 +12283,9 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// For an overview on tagging an Amazon RDS resource, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging
-        /// Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> 
+        /// For an overview on tagging an Amazon RDS resource, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging
+        /// Amazon RDS Resources</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html">Tagging
+        /// Amazon Aurora and Amazon RDS Resources</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource service method.</param>
@@ -12345,8 +12336,9 @@ namespace Amazon.RDS
         /// 
         ///  
         /// <para>
-        /// For an overview on tagging an Amazon RDS resource, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">Tagging
-        /// Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> 
+        /// For an overview on tagging an Amazon RDS resource, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging
+        /// Amazon RDS Resources</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html">Tagging
+        /// Amazon Aurora and Amazon RDS Resources</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource service method.</param>
@@ -13235,6 +13227,15 @@ namespace Amazon.RDS
         /// If you are restoring from a shared manual DB snapshot, the <c>DBSnapshotIdentifier</c>
         /// must be the ARN of the shared DB snapshot.
         /// </para>
+        ///  
+        /// <para>
+        /// To restore from a DB snapshot with an unsupported engine version, you must first upgrade
+        /// the engine version of the snapshot. For more information about upgrading a RDS for
+        /// MySQL DB snapshot engine version, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/mysql-upgrade-snapshot.html">Upgrading
+        /// a MySQL DB snapshot engine version</a>. For more information about upgrading a RDS
+        /// for PostgreSQL DB snapshot engine version, <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBSnapshot.PostgreSQL.html">Upgrading
+        /// a PostgreSQL DB snapshot engine version</a>.
+        /// </para>
         ///  <note> 
         /// <para>
         /// This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora, use
@@ -13362,6 +13363,15 @@ namespace Amazon.RDS
         /// <para>
         /// If you are restoring from a shared manual DB snapshot, the <c>DBSnapshotIdentifier</c>
         /// must be the ARN of the shared DB snapshot.
+        /// </para>
+        ///  
+        /// <para>
+        /// To restore from a DB snapshot with an unsupported engine version, you must first upgrade
+        /// the engine version of the snapshot. For more information about upgrading a RDS for
+        /// MySQL DB snapshot engine version, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/mysql-upgrade-snapshot.html">Upgrading
+        /// a MySQL DB snapshot engine version</a>. For more information about upgrading a RDS
+        /// for PostgreSQL DB snapshot engine version, <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBSnapshot.PostgreSQL.html">Upgrading
+        /// a PostgreSQL DB snapshot engine version</a>.
         /// </para>
         ///  <note> 
         /// <para>

@@ -41,8 +41,9 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// The domain of the GitHub Enterprise organization. Note that this parameter is only
-        /// required if your project's source type is GITHUB_ENTERPRISE
+        /// The domain of the GitHub Enterprise organization or the GitLab Self Managed group.
+        /// Note that this parameter is only required if your project's source type is GITHUB_ENTERPRISE
+        /// or GITLAB_SELF_MANAGED.
         /// </para>
         /// </summary>
         public string Domain
@@ -60,8 +61,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of either the enterprise or organization that will send webhook events to
-        /// CodeBuild, depending on if the webhook is a global or organization webhook respectively.
+        /// The name of either the group, enterprise, or organization that will send webhook events
+        /// to CodeBuild, depending on the type of webhook.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,7 +81,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Scope. 
         /// <para>
-        /// The type of scope for a GitHub webhook.
+        /// The type of scope for a GitHub or GitLab webhook.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

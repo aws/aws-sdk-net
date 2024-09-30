@@ -81,66 +81,81 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetInstanceTypeSpecifications())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.InstanceTypeSpecifications)
+                    if (publicRequest.InstanceTypeSpecifications.Count == 0)
+                        request.Parameters.Add("InstanceTypeSpecification", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetAvailabilityZone())
-                        {
-                            request.Parameters.Add("InstanceTypeSpecification" + "." + publicRequestlistValueIndex + "." + "AvailabilityZone", StringUtils.FromString(publicRequestlistValue.AvailabilityZone));
-                        }
-                        if(publicRequestlistValue.IsSetAvailabilityZoneId())
-                        {
-                            request.Parameters.Add("InstanceTypeSpecification" + "." + publicRequestlistValueIndex + "." + "AvailabilityZoneId", StringUtils.FromString(publicRequestlistValue.AvailabilityZoneId));
-                        }
-                        if(publicRequestlistValue.IsSetEbsOptimized())
-                        {
-                            request.Parameters.Add("InstanceTypeSpecification" + "." + publicRequestlistValueIndex + "." + "EbsOptimized", StringUtils.FromBool(publicRequestlistValue.EbsOptimized));
-                        }
-                        if(publicRequestlistValue.IsSetInstancePlatform())
-                        {
-                            request.Parameters.Add("InstanceTypeSpecification" + "." + publicRequestlistValueIndex + "." + "InstancePlatform", StringUtils.FromString(publicRequestlistValue.InstancePlatform));
-                        }
-                        if(publicRequestlistValue.IsSetInstanceType())
-                        {
-                            request.Parameters.Add("InstanceTypeSpecification" + "." + publicRequestlistValueIndex + "." + "InstanceType", StringUtils.FromString(publicRequestlistValue.InstanceType));
-                        }
-                        if(publicRequestlistValue.IsSetPriority())
-                        {
-                            request.Parameters.Add("InstanceTypeSpecification" + "." + publicRequestlistValueIndex + "." + "Priority", StringUtils.FromInt(publicRequestlistValue.Priority));
-                        }
-                        if(publicRequestlistValue.IsSetWeight())
-                        {
-                            request.Parameters.Add("InstanceTypeSpecification" + "." + publicRequestlistValueIndex + "." + "Weight", StringUtils.FromDouble(publicRequestlistValue.Weight));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.InstanceTypeSpecifications)
+                         {
+                            if(publicRequestlistValue.IsSetAvailabilityZone())
+                            {
+                                request.Parameters.Add("InstanceTypeSpecification" + "." + publicRequestlistValueIndex + "." + "AvailabilityZone", StringUtils.FromString(publicRequestlistValue.AvailabilityZone));
+                            }
+                            if(publicRequestlistValue.IsSetAvailabilityZoneId())
+                            {
+                                request.Parameters.Add("InstanceTypeSpecification" + "." + publicRequestlistValueIndex + "." + "AvailabilityZoneId", StringUtils.FromString(publicRequestlistValue.AvailabilityZoneId));
+                            }
+                            if(publicRequestlistValue.IsSetEbsOptimized())
+                            {
+                                request.Parameters.Add("InstanceTypeSpecification" + "." + publicRequestlistValueIndex + "." + "EbsOptimized", StringUtils.FromBool(publicRequestlistValue.EbsOptimized));
+                            }
+                            if(publicRequestlistValue.IsSetInstancePlatform())
+                            {
+                                request.Parameters.Add("InstanceTypeSpecification" + "." + publicRequestlistValueIndex + "." + "InstancePlatform", StringUtils.FromString(publicRequestlistValue.InstancePlatform));
+                            }
+                            if(publicRequestlistValue.IsSetInstanceType())
+                            {
+                                request.Parameters.Add("InstanceTypeSpecification" + "." + publicRequestlistValueIndex + "." + "InstanceType", StringUtils.FromString(publicRequestlistValue.InstanceType));
+                            }
+                            if(publicRequestlistValue.IsSetPriority())
+                            {
+                                request.Parameters.Add("InstanceTypeSpecification" + "." + publicRequestlistValueIndex + "." + "Priority", StringUtils.FromInt(publicRequestlistValue.Priority));
+                            }
+                            if(publicRequestlistValue.IsSetWeight())
+                            {
+                                request.Parameters.Add("InstanceTypeSpecification" + "." + publicRequestlistValueIndex + "." + "Weight", StringUtils.FromDouble(publicRequestlistValue.Weight));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetTagSpecifications())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.TagSpecifications)
+                    if (publicRequest.TagSpecifications.Count == 0)
+                        request.Parameters.Add("TagSpecification", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetResourceType())
-                        {
-                            request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
-                        }
-                        if(publicRequestlistValue.IsSetTags())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Tags)
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.TagSpecifications)
+                         {
+                            if(publicRequestlistValue.IsSetResourceType())
                             {
-                                if(publicRequestlistValuelistValue.IsSetKey())
-                                {
-                                    request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValuelistValue.Key));
-                                }
-                                if(publicRequestlistValuelistValue.IsSetValue())
-                                {
-                                    request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
-                                }
-                                publicRequestlistValuelistValueIndex++;
+                                request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
                             }
-                        }
-                        publicRequestlistValueIndex++;
+                            if(publicRequestlistValue.IsSetTags())
+                            {
+                                if (publicRequestlistValue.Tags.Count == 0)
+                                    request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag", "");
+                                else
+                                {
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Tags)
+                                     {
+                                        if(publicRequestlistValuelistValue.IsSetKey())
+                                        {
+                                            request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValuelistValue.Key));
+                                        }
+                                        if(publicRequestlistValuelistValue.IsSetValue())
+                                        {
+                                            request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
+                                        }
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
+                                }
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetTenancy())

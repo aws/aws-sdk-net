@@ -101,6 +101,7 @@ namespace Amazon.S3.Transfer.Internal
             downloadRequest.ServerSideEncryptionCustomerMethod = this._request.ServerSideEncryptionCustomerMethod;
             downloadRequest.ServerSideEncryptionCustomerProvidedKey = this._request.ServerSideEncryptionCustomerProvidedKey;
             downloadRequest.ServerSideEncryptionCustomerProvidedKeyMD5 = this._request.ServerSideEncryptionCustomerProvidedKeyMD5;
+            downloadRequest.RequestPayer = this._request.RequestPayer;
 
             //Ensure the target file is a rooted within LocalDirectory. Otherwise error.
             if(!InternalSDKUtils.IsFilePathRootedWithDirectoryPath(downloadRequest.FilePath, _request.LocalDirectory))
@@ -135,6 +136,8 @@ namespace Amazon.S3.Transfer.Internal
                     listRequestV2.Prefix = listRequestV2.Prefix.Substring(1);
             }
 
+            listRequestV2.RequestPayer = this._request.RequestPayer;
+
             return listRequestV2;
         }
 
@@ -159,6 +162,8 @@ namespace Amazon.S3.Transfer.Internal
                 else
                     listRequest.Prefix = listRequest.Prefix.Substring(1);
             }
+
+            listRequest.RequestPayer = this._request.RequestPayer;
 
             return listRequest;
         }

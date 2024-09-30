@@ -94,6 +94,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// authenticating using either Secrets Manager or temporary credentials. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=63)]
         public string ClusterIdentifier
         {
             get { return this._clusterIdentifier; }

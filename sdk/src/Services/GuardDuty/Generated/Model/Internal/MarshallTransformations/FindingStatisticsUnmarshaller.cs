@@ -72,6 +72,36 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.CountBySeverity = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("groupedByAccount", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AccountStatistics, AccountStatisticsUnmarshaller>(AccountStatisticsUnmarshaller.Instance);
+                    unmarshalledObject.GroupedByAccount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("groupedByDate", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DateStatistics, DateStatisticsUnmarshaller>(DateStatisticsUnmarshaller.Instance);
+                    unmarshalledObject.GroupedByDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("groupedByFindingType", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<FindingTypeStatistics, FindingTypeStatisticsUnmarshaller>(FindingTypeStatisticsUnmarshaller.Instance);
+                    unmarshalledObject.GroupedByFindingType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("groupedByResource", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ResourceStatistics, ResourceStatisticsUnmarshaller>(ResourceStatisticsUnmarshaller.Instance);
+                    unmarshalledObject.GroupedByResource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("groupedBySeverity", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<SeverityStatistics, SeverityStatisticsUnmarshaller>(SeverityStatisticsUnmarshaller.Instance);
+                    unmarshalledObject.GroupedBySeverity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

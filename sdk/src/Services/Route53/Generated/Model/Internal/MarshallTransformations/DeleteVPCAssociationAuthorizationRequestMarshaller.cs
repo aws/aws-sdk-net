@@ -71,10 +71,8 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     xmlWriter.WriteStartElement("VPC");
                     if(publicRequest.VPC.IsSetVPCRegion())
                         xmlWriter.WriteElementString("VPCRegion", StringUtils.FromString(publicRequest.VPC.VPCRegion));
-
                     if(publicRequest.VPC.IsSetVPCId())
                         xmlWriter.WriteElementString("VPCId", StringUtils.FromString(publicRequest.VPC.VPCId));
-
                     xmlWriter.WriteEndElement();
                 }
 

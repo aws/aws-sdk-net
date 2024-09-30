@@ -30,7 +30,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chatbot.Model
 {
     /// <summary>
-    /// A tag applied to the configuration.
+    /// A key-value pair. A tag consists of a tag key and a tag value. Tag keys and tag values
+    /// are both required, but tag values can be empty (null) strings.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// Do not include confidential or sensitive information in this field. 
+    /// </para>
+    ///  </important> 
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
+    /// Tag Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class Tag
     {
@@ -38,7 +49,10 @@ namespace Amazon.Chatbot.Model
         private string _tagValue;
 
         /// <summary>
-        /// Gets and sets the property TagKey. The tag key.
+        /// Gets and sets the property TagKey. 
+        /// <para>
+        /// The key of the tag.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
         public string TagKey
@@ -54,9 +68,12 @@ namespace Amazon.Chatbot.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TagValue. The tag value.
+        /// Gets and sets the property TagValue. 
+        /// <para>
+        /// The value of the tag.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string TagValue
         {
             get { return this._tagValue; }

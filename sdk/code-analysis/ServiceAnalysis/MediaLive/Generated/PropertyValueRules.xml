@@ -379,6 +379,11 @@
     <pattern>^[^\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.ListChannelPlacementGroupsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.ListChannelsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -402,6 +407,11 @@
     <property>Amazon.MediaLive.Model.ListCloudWatchAlarmTemplatesResponse.NextToken</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.ListClustersRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.ListEventBridgeRuleTemplateGroupsRequest.MaxResults</property>
@@ -450,6 +460,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.ListMultiplexProgramsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.ListNetworksRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.ListNodesRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
   </property-value-rule>
@@ -812,6 +832,43 @@
   <property-value-rule>
     <property>Amazon.MediaLive.Model.AutomaticInputFailoverSettings.ErrorClearTimeMsec</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.Av1Settings.BufSize</property>
+    <min>50000</min>
+    <max>16000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.Av1Settings.FramerateDenominator</property>
+    <min>1</min>
+    <max>3003</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.Av1Settings.FramerateNumerator</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.Av1Settings.MaxBitrate</property>
+    <min>50000</min>
+    <max>8000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.Av1Settings.MinIInterval</property>
+    <min>0</min>
+    <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.Av1Settings.ParDenominator</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.Av1Settings.ParNumerator</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.Av1Settings.QvbrQualityLevel</property>
+    <min>1</min>
+    <max>10</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.BlackoutSlate.NetworkId</property>
@@ -1547,6 +1604,11 @@
     <max>30</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.H264Settings.MinQp</property>
+    <min>1</min>
+    <max>51</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.H264Settings.NumRefFrames</property>
     <min>1</min>
     <max>6</max>
@@ -1606,6 +1668,11 @@
     <property>Amazon.MediaLive.Model.H265Settings.MinIInterval</property>
     <min>0</min>
     <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.H265Settings.MinQp</property>
+    <min>1</min>
+    <max>51</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.H265Settings.ParDenominator</property>
@@ -1996,6 +2063,15 @@
     <max>10000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaLive.Model.MultiplexM2tsSettings.AudioFramesPerPes</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.MultiplexM2tsSettings.PcrPeriod</property>
+    <min>0</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaLive.Model.MultiplexMediaConnectOutputDestinationSettings.EntitlementArn</property>
     <min>1</min>
   </property-value-rule>
@@ -2217,6 +2293,16 @@
     <min>1</min>
     <max>255</max>
     <pattern>^[^\s]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.SrtOutputSettings.BufferMsec</property>
+    <min>0</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaLive.Model.SrtOutputSettings.Latency</property>
+    <min>40</min>
+    <max>16000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaLive.Model.StartDeleteMonitorDeploymentResponseContent.Arn</property>

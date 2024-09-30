@@ -60,7 +60,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of client authentication to disable. Currently, only the parameter, <c>SmartCard</c>
+        /// The type of client authentication to disable. Currently the only parameter <c>"SmartCard"</c>
         /// is supported.
         /// </para>
         /// </summary>

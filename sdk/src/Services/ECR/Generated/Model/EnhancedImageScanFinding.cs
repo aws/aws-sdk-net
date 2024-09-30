@@ -37,8 +37,10 @@ namespace Amazon.ECR.Model
     {
         private string _awsAccountId;
         private string _description;
+        private string _exploitAvailable;
         private string _findingArn;
         private DateTime? _firstObservedAt;
+        private string _fixAvailable;
         private DateTime? _lastObservedAt;
         private PackageVulnerabilityDetails _packageVulnerabilityDetails;
         private Remediation _remediation;
@@ -88,6 +90,24 @@ namespace Amazon.ECR.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExploitAvailable. 
+        /// <para>
+        /// If a finding discovered in your environment has an exploit available.
+        /// </para>
+        /// </summary>
+        public string ExploitAvailable
+        {
+            get { return this._exploitAvailable; }
+            set { this._exploitAvailable = value; }
+        }
+
+        // Check to see if ExploitAvailable property is set
+        internal bool IsSetExploitAvailable()
+        {
+            return this._exploitAvailable != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FindingArn. 
         /// <para>
         /// The Amazon Resource Number (ARN) of the finding.
@@ -121,6 +141,27 @@ namespace Amazon.ECR.Model
         internal bool IsSetFirstObservedAt()
         {
             return this._firstObservedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FixAvailable. 
+        /// <para>
+        /// Details on whether a fix is available through a version update. This value can be
+        /// <c>YES</c>, <c>NO</c>, or <c>PARTIAL</c>. A <c>PARTIAL</c> fix means that some, but
+        /// not all, of the packages identified in the finding have fixes available through updated
+        /// versions.
+        /// </para>
+        /// </summary>
+        public string FixAvailable
+        {
+            get { return this._fixAvailable; }
+            set { this._fixAvailable = value; }
+        }
+
+        // Check to see if FixAvailable property is set
+        internal bool IsSetFixAvailable()
+        {
+            return this._fixAvailable != null;
         }
 
         /// <summary>

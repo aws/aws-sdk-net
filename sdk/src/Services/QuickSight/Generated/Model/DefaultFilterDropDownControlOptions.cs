@@ -34,9 +34,28 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class DefaultFilterDropDownControlOptions
     {
+        private CommitMode _commitMode;
         private DropDownControlDisplayOptions _displayOptions;
         private FilterSelectableValues _selectableValues;
         private SheetControlListType _type;
+
+        /// <summary>
+        /// Gets and sets the property CommitMode. 
+        /// <para>
+        /// The visibility configuration of the Apply button on a <c>FilterDropDownControl</c>.
+        /// </para>
+        /// </summary>
+        public CommitMode CommitMode
+        {
+            get { return this._commitMode; }
+            set { this._commitMode = value; }
+        }
+
+        // Check to see if CommitMode property is set
+        internal bool IsSetCommitMode()
+        {
+            return this._commitMode != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DisplayOptions. 

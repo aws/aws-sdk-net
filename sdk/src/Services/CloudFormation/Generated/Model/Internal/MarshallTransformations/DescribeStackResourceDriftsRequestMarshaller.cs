@@ -73,11 +73,16 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetStackResourceDriftStatusFilters())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.StackResourceDriftStatusFilters)
+                    if (publicRequest.StackResourceDriftStatusFilters.Count == 0)
+                        request.Parameters.Add("StackResourceDriftStatusFilters", "");
+                    else
                     {
-                        request.Parameters.Add("StackResourceDriftStatusFilters" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.StackResourceDriftStatusFilters)
+                         {
+                             request.Parameters.Add("StackResourceDriftStatusFilters" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

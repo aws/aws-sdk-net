@@ -77,8 +77,13 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        ///  <c>SMS_MFA</c>: Next challenge is to supply an <c>SMS_MFA_CODE</c>, delivered via
-        /// SMS.
+        ///  <c>SMS_MFA</c>: Next challenge is to supply an <c>SMS_MFA_CODE</c>that your user
+        /// pool delivered in an SMS message.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>EMAIL_OTP</c>: Next challenge is to supply an <c>EMAIL_OTP_CODE</c> that your
+        /// user pool delivered in an email message.
         /// </para>
         ///  </li> <li> 
         /// <para>

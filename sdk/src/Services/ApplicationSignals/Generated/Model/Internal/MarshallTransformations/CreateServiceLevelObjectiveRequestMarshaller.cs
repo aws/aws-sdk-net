@@ -92,6 +92,17 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Name);
                     }
 
+                    if(publicRequest.IsSetRequestBasedSliConfig())
+                    {
+                        context.Writer.WritePropertyName("RequestBasedSliConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = RequestBasedServiceLevelIndicatorConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.RequestBasedSliConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetSliConfig())
                     {
                         context.Writer.WritePropertyName("SliConfig");

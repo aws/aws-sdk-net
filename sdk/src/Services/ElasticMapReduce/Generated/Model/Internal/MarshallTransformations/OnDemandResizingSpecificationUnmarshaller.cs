@@ -66,6 +66,18 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AllocationStrategy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AllocationStrategy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CapacityReservationOptions", targetDepth))
+                {
+                    var unmarshaller = OnDemandCapacityReservationOptionsUnmarshaller.Instance;
+                    unmarshalledObject.CapacityReservationOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TimeoutDurationMinutes", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;

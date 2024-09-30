@@ -61,11 +61,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetHostIdSet())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.HostIdSet)
+                    if (publicRequest.HostIdSet.Count == 0)
+                        request.Parameters.Add("HostIdSet", "");
+                    else
                     {
-                        request.Parameters.Add("HostIdSet" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.HostIdSet)
+                         {
+                             request.Parameters.Add("HostIdSet" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetOfferingId())

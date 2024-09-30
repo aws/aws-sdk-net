@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Backup.Model
 {
     /// <summary>
-    /// A list of backup options for each resource type.
+    /// The backup options for each resource type.
     /// </summary>
     public partial class AdvancedBackupSetting
     {

@@ -31,8 +31,7 @@ namespace Amazon.Backup.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateReportPlan operation.
-    /// Updates an existing report plan identified by its <c>ReportPlanName</c> with the input
-    /// document in JSON format.
+    /// Updates the specified report plan.
     /// </summary>
     public partial class UpdateReportPlanRequest : AmazonBackupRequest
     {
@@ -65,8 +64,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ReportDeliveryChannel. 
         /// <para>
-        /// A structure that contains information about where to deliver your reports, specifically
-        /// your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.
+        /// The information about where to deliver your reports, specifically your Amazon S3 bucket
+        /// name, S3 key prefix, and the formats of your reports.
         /// </para>
         /// </summary>
         public ReportDeliveryChannel ReportDeliveryChannel
@@ -124,8 +123,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ReportSetting. 
         /// <para>
-        /// Identifies the report template for the report. Reports are built using a report template.
-        /// The report templates are:
+        /// The report template for the report. Reports are built using a report template. The
+        /// report templates are:
         /// </para>
         ///  
         /// <para>

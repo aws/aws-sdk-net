@@ -113,11 +113,6 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>fargateFIPSMode</c> - If you specify <c>fargateFIPSMode</c>, Fargate FIPS 140
-        /// compliance is affected.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <c>fargateTaskRetirementWaitPeriod</c> - When Amazon Web Services determines that
         /// a security or infrastructure update is needed for an Amazon ECS task hosted on Fargate,
         /// the tasks need to be stopped and new tasks launched to replace them. Use <c>fargateTaskRetirementWaitPeriod</c>

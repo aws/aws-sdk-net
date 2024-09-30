@@ -77,13 +77,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  <ul> <li> 
         /// <para>
         ///  <b>InvokedAfter</b>: Specify a timestamp to limit your results. For example, specify
-        /// <c>2021-07-07T00:00:00Z</c> to see a list of command executions occurring July 7,
+        /// <c>2024-07-07T00:00:00Z</c> to see a list of command executions occurring July 7,
         /// 2021, and later.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>InvokedBefore</b>: Specify a timestamp to limit your results. For example, specify
-        /// <c>2021-07-07T00:00:00Z</c> to see a list of command executions from before July 7,
+        /// <c>2024-07-07T00:00:00Z</c> to see a list of command executions from before July 7,
         /// 2021.
         /// </para>
         ///  </li> <li> 

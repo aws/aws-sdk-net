@@ -65,6 +65,7 @@ namespace Amazon.Synthetics.Model
         private string _executionRoleArn;
         private int? _failureRetentionPeriodInDays;
         private string _name;
+        private List<string> _resourcesToReplicateTags = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private CanaryRunConfigInput _runConfig;
         private string _runtimeVersion;
         private CanaryScheduleInput _schedule;
@@ -217,7 +218,7 @@ namespace Amazon.Synthetics.Model
         /// Considerations for Synthetics Canaries</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=21)]
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string Name
         {
             get { return this._name; }
@@ -228,6 +229,31 @@ namespace Amazon.Synthetics.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourcesToReplicateTags. 
+        /// <para>
+        /// To have the tags that you apply to this canary also be applied to the Lambda function
+        /// that the canary uses, specify this parameter with the value <c>lambda-function</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify this parameter and don't specify any tags in the <c>Tags</c> parameter,
+        /// the canary creation fails.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> ResourcesToReplicateTags
+        {
+            get { return this._resourcesToReplicateTags; }
+            set { this._resourcesToReplicateTags = value; }
+        }
+
+        // Check to see if ResourcesToReplicateTags property is set
+        internal bool IsSetResourcesToReplicateTags()
+        {
+            return this._resourcesToReplicateTags != null && (this._resourcesToReplicateTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -327,6 +353,11 @@ namespace Amazon.Synthetics.Model
         /// Tags can help you organize and categorize your resources. You can also use them to
         /// scope user permissions, by granting a user permission to access or change only the
         /// resources that have certain tag values.
+        /// </para>
+        ///  
+        /// <para>
+        /// To have the tags that you apply to this canary also be applied to the Lambda function
+        /// that the canary uses, specify this parameter with the value <c>lambda-function</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

@@ -64,17 +64,9 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The Server-side encryption algorithm used when storing this object in S3.
         /// <para>
-        /// The server-side encryption algorithm used when you store this object in Amazon S3
-        /// (for example, <code>AES256</code>, <code>aws:kms</code>, <code>aws:kms:dsse</code>).
+        /// The server-side encryption algorithm used when you store this object in Amazon S3.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// For directory buckets, only server-side encryption with Amazon S3 managed keys (SSE-S3)
-        /// (<code>AES256</code>) is supported.
-        /// </para>
-        ///  </note>
         /// </summary>
         public ServerSideEncryptionMethod ServerSideEncryptionMethod
         {
@@ -148,18 +140,9 @@ namespace Amazon.S3.Model
 
 
         /// <summary>
-        /// The id of the AWS Key Management Service key that Amazon S3 uses to encrypt and decrypt the object.
         /// <para>
-        /// If <code>x-amz-server-side-encryption</code> is has a valid value of <code>aws:kms</code>,
-        /// this header specifies the ID of the Amazon Web Services Key Management Service (Amazon
-        /// Web Services KMS) symmetric encryption customer managed key that was used for the
-        /// object. 
+        /// If present, indicates the ID of the KMS key that was used for object encryption.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// This functionality is not supported for directory buckets.
-        /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string ServerSideEncryptionKeyManagementServiceKeyId
@@ -207,20 +190,11 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// Specifies the AWS KMS Encryption Context to use for object encryption.
-        /// The value of this header is a base64-encoded UTF-8 string holding JSON with the encryption context key-value pairs.
         /// <para>
-        /// If present, specifies the Amazon Web Services KMS Encryption Context to use for object
-        /// encryption. The value of this header is a base64-encoded UTF-8 string holding JSON
-        /// with the encryption context key-value pairs. This value is stored as object metadata
-        /// and automatically gets passed on to Amazon Web Services KMS for future <code>GetObject</code>
-        /// or <code>CopyObject</code> operations on this object.
+        /// If present, indicates the Amazon Web Services KMS Encryption Context to use for object encryption. 
+        /// The value of this header is a Base64-encoded string of a UTF-8 encoded JSON, which contains the encryption context as key-value pairs. 
+        /// This value is stored as object metadata and automatically gets passed on to Amazon Web Services KMS for future <c>GetObject</c> operations on this object.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// This functionality is not supported for directory buckets.
-        /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string ServerSideEncryptionKeyManagementServiceEncryptionContext
@@ -253,11 +227,6 @@ namespace Amazon.S3.Model
         /// Indicates whether the uploaded object uses an S3 Bucket Key for server-side encryption
         /// with Key Management Service (KMS) keys (SSE-KMS).
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// This functionality is not supported for directory buckets.
-        /// </para>
-        ///  </note>
         /// </summary>
         public bool? BucketKeyEnabled
         {

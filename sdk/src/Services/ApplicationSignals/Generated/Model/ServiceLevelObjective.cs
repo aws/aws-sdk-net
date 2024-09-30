@@ -43,9 +43,11 @@ namespace Amazon.ApplicationSignals.Model
         private string _arn;
         private DateTime? _createdTime;
         private string _description;
+        private EvaluationType _evaluationType;
         private Goal _goal;
         private DateTime? _lastUpdatedTime;
         private string _name;
+        private RequestBasedServiceLevelIndicator _requestBasedSli;
         private ServiceLevelIndicator _sli;
 
         /// <summary>
@@ -107,6 +109,24 @@ namespace Amazon.ApplicationSignals.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EvaluationType. 
+        /// <para>
+        /// Displays whether this is a period-based SLO or a request-based SLO.
+        /// </para>
+        /// </summary>
+        public EvaluationType EvaluationType
+        {
+            get { return this._evaluationType; }
+            set { this._evaluationType = value; }
+        }
+
+        // Check to see if EvaluationType property is set
+        internal bool IsSetEvaluationType()
+        {
+            return this._evaluationType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Goal.
         /// </summary>
         [AWSProperty(Required=true)]
@@ -162,12 +182,31 @@ namespace Amazon.ApplicationSignals.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Sli. 
+        /// Gets and sets the property RequestBasedSli. 
         /// <para>
-        /// A structure containing information about the performance metric that this SLO monitors.
+        /// A structure containing information about the performance metric that this SLO monitors,
+        /// if this is a request-based SLO.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        public RequestBasedServiceLevelIndicator RequestBasedSli
+        {
+            get { return this._requestBasedSli; }
+            set { this._requestBasedSli = value; }
+        }
+
+        // Check to see if RequestBasedSli property is set
+        internal bool IsSetRequestBasedSli()
+        {
+            return this._requestBasedSli != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Sli. 
+        /// <para>
+        /// A structure containing information about the performance metric that this SLO monitors,
+        /// if this is a period-based SLO.
+        /// </para>
+        /// </summary>
         public ServiceLevelIndicator Sli
         {
             get { return this._sli; }

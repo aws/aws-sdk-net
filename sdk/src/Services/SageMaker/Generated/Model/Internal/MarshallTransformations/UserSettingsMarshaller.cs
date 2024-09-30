@@ -48,6 +48,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAutoMountHomeEFS())
+            {
+                context.Writer.WritePropertyName("AutoMountHomeEFS");
+                context.Writer.Write(requestObject.AutoMountHomeEFS);
+            }
+
             if(requestObject.IsSetCanvasAppSettings())
             {
                 context.Writer.WritePropertyName("CanvasAppSettings");

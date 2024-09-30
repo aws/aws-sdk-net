@@ -101,6 +101,12 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
+                    if(publicRequest.IsSetKmsKeyIdentifier())
+                    {
+                        context.Writer.WritePropertyName("KmsKeyIdentifier");
+                        context.Writer.Write(publicRequest.KmsKeyIdentifier);
+                    }
+
                     if(publicRequest.IsSetLogConfiguration())
                     {
                         context.Writer.WritePropertyName("LogConfiguration");

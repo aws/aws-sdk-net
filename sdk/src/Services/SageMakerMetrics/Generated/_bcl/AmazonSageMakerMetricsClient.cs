@@ -257,12 +257,53 @@ namespace Amazon.SageMakerMetrics
         #endregion
 
 
+        #region  BatchGetMetrics
+
+
+        /// <summary>
+        /// Used to retrieve training metrics from SageMaker.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetMetrics service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetMetrics service method, as returned by SageMakerMetrics.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-metrics-2022-09-30/BatchGetMetrics">REST API Reference for BatchGetMetrics Operation</seealso>
+        public virtual BatchGetMetricsResponse BatchGetMetrics(BatchGetMetricsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetMetricsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetMetricsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Used to retrieve training metrics from SageMaker.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetMetrics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetMetrics service method, as returned by SageMakerMetrics.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-metrics-2022-09-30/BatchGetMetrics">REST API Reference for BatchGetMetrics Operation</seealso>
+        public virtual Task<BatchGetMetricsResponse> BatchGetMetricsAsync(BatchGetMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetMetricsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchGetMetricsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchPutMetrics
 
 
         /// <summary>
         /// Used to ingest training metrics into SageMaker. These metrics can be visualized in
-        /// SageMaker Studio and retrieved with the <c>GetMetrics</c> API.
+        /// SageMaker Studio.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchPutMetrics service method.</param>
         /// 
@@ -280,7 +321,7 @@ namespace Amazon.SageMakerMetrics
 
         /// <summary>
         /// Used to ingest training metrics into SageMaker. These metrics can be visualized in
-        /// SageMaker Studio and retrieved with the <c>GetMetrics</c> API.
+        /// SageMaker Studio.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchPutMetrics service method.</param>
         /// <param name="cancellationToken">

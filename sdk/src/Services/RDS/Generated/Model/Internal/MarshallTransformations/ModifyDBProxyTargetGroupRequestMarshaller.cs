@@ -79,11 +79,16 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     }
                     if(publicRequest.ConnectionPoolConfig.IsSetSessionPinningFilters())
                     {
-                        int publicRequestConnectionPoolConfiglistValueIndex = 1;
-                        foreach(var publicRequestConnectionPoolConfiglistValue in publicRequest.ConnectionPoolConfig.SessionPinningFilters)
+                        if (publicRequest.ConnectionPoolConfig.SessionPinningFilters.Count == 0)
+                            request.Parameters.Add("ConnectionPoolConfig" + "." + "SessionPinningFilters", "");
+                        else
                         {
-                            request.Parameters.Add("ConnectionPoolConfig" + "." + "SessionPinningFilters" + "." + "member" + "." + publicRequestConnectionPoolConfiglistValueIndex, StringUtils.FromString(publicRequestConnectionPoolConfiglistValue));
-                            publicRequestConnectionPoolConfiglistValueIndex++;
+                             int publicRequestConnectionPoolConfiglistValueIndex = 1;
+                             foreach(var publicRequestConnectionPoolConfiglistValue in publicRequest.ConnectionPoolConfig.SessionPinningFilters)
+                             {
+                                 request.Parameters.Add("ConnectionPoolConfig" + "." + "SessionPinningFilters" + "." + "member" + "." + publicRequestConnectionPoolConfiglistValueIndex, StringUtils.FromString(publicRequestConnectionPoolConfiglistValue));
+                                 publicRequestConnectionPoolConfiglistValueIndex++;
+                             }
                         }
                     }
                 }

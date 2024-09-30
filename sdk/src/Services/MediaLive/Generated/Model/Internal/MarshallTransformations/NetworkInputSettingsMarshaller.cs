@@ -59,6 +59,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetMulticastInputSettings())
+            {
+                context.Writer.WritePropertyName("multicastInputSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = MulticastInputSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.MulticastInputSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetServerValidation())
             {
                 context.Writer.WritePropertyName("serverValidation");

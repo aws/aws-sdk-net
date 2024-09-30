@@ -69,11 +69,16 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetRevocationIds())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.RevocationIds)
+                    if (publicRequest.RevocationIds.Count == 0)
+                        request.Parameters.Add("RevocationIds", "");
+                    else
                     {
-                        request.Parameters.Add("RevocationIds" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromLong(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.RevocationIds)
+                         {
+                             request.Parameters.Add("RevocationIds" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromLong(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetTrustStoreArn())

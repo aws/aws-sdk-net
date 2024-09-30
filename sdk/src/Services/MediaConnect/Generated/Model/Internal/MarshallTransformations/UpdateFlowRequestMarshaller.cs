@@ -94,6 +94,17 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
+                    if(publicRequest.IsSetSourceMonitoringConfig())
+                    {
+                        context.Writer.WritePropertyName("sourceMonitoringConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MonitoringConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SourceMonitoringConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     writer.WriteObjectEnd();
                 }
 

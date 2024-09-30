@@ -44,7 +44,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property BackupPlanId. 
         /// <para>
-        /// Uniquely identifies the backup plan to be associated with the selection of resources.
+        /// The ID of the backup plan.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -63,7 +63,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property BackupSelection. 
         /// <para>
-        /// Specifies the body of a request to assign a set of resources to a backup plan.
+        /// The body of a request to assign a set of resources to a backup plan.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

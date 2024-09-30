@@ -115,7 +115,7 @@ namespace Amazon.Runtime.Internal
             if (!string.IsNullOrEmpty(clientAppId))
                 sb.Append(" app/").Append(InternalSDKUtils.ReplaceInvalidUserAgentCharacters(clientAppId));
 
-            sb.Append(" cfg/retry-mode#}").Append(ToUserAgentHeaderString(requestContext.ClientConfig.RetryMode));
+            sb.Append(" cfg/retry-mode#").Append(ToUserAgentHeaderString(requestContext.ClientConfig.RetryMode));
 
             sb.Append(" md/").Append(requestContext.IsAsync ? "ClientAsync" : "ClientSync");
 

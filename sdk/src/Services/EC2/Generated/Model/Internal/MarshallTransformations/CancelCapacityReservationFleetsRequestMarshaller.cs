@@ -61,11 +61,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetCapacityReservationFleetIds())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.CapacityReservationFleetIds)
+                    if (publicRequest.CapacityReservationFleetIds.Count == 0)
+                        request.Parameters.Add("CapacityReservationFleetId", "");
+                    else
                     {
-                        request.Parameters.Add("CapacityReservationFleetId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.CapacityReservationFleetIds)
+                         {
+                             request.Parameters.Add("CapacityReservationFleetId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

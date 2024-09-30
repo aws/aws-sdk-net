@@ -61,14 +61,19 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetAddOperatingRegions())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.AddOperatingRegions)
+                    if (publicRequest.AddOperatingRegions.Count == 0)
+                        request.Parameters.Add("AddOperatingRegion", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetRegionName())
-                        {
-                            request.Parameters.Add("AddOperatingRegion" + "." + publicRequestlistValueIndex + "." + "RegionName", StringUtils.FromString(publicRequestlistValue.RegionName));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.AddOperatingRegions)
+                         {
+                            if(publicRequestlistValue.IsSetRegionName())
+                            {
+                                request.Parameters.Add("AddOperatingRegion" + "." + publicRequestlistValueIndex + "." + "RegionName", StringUtils.FromString(publicRequestlistValue.RegionName));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetDescription())
@@ -85,14 +90,19 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetRemoveOperatingRegions())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.RemoveOperatingRegions)
+                    if (publicRequest.RemoveOperatingRegions.Count == 0)
+                        request.Parameters.Add("RemoveOperatingRegion", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetRegionName())
-                        {
-                            request.Parameters.Add("RemoveOperatingRegion" + "." + publicRequestlistValueIndex + "." + "RegionName", StringUtils.FromString(publicRequestlistValue.RegionName));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.RemoveOperatingRegions)
+                         {
+                            if(publicRequestlistValue.IsSetRegionName())
+                            {
+                                request.Parameters.Add("RemoveOperatingRegion" + "." + publicRequestlistValueIndex + "." + "RegionName", StringUtils.FromString(publicRequestlistValue.RegionName));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetTier())

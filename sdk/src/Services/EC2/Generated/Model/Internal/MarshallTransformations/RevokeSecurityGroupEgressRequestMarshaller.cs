@@ -65,115 +65,145 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetIpPermissions())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.IpPermissions)
+                    if (publicRequest.IpPermissions.Count == 0)
+                        request.Parameters.Add("IpPermissions", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetFromPort())
-                        {
-                            request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "FromPort", StringUtils.FromInt(publicRequestlistValue.FromPort));
-                        }
-                        if(publicRequestlistValue.IsSetIpProtocol())
-                        {
-                            request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "IpProtocol", StringUtils.FromString(publicRequestlistValue.IpProtocol));
-                        }
-                        if(publicRequestlistValue.IsSetIpv4Ranges())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Ipv4Ranges)
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.IpPermissions)
+                         {
+                            if(publicRequestlistValue.IsSetFromPort())
                             {
-                                if(publicRequestlistValuelistValue.IsSetCidrIp())
-                                {
-                                    request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "IpRanges" + "." + publicRequestlistValuelistValueIndex + "." + "CidrIp", StringUtils.FromString(publicRequestlistValuelistValue.CidrIp));
-                                }
-                                if(publicRequestlistValuelistValue.IsSetDescription())
-                                {
-                                    request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "IpRanges" + "." + publicRequestlistValuelistValueIndex + "." + "Description", StringUtils.FromString(publicRequestlistValuelistValue.Description));
-                                }
-                                publicRequestlistValuelistValueIndex++;
+                                request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "FromPort", StringUtils.FromInt(publicRequestlistValue.FromPort));
                             }
-                        }
-                        if(publicRequestlistValue.IsSetIpv6Ranges())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Ipv6Ranges)
+                            if(publicRequestlistValue.IsSetIpProtocol())
                             {
-                                if(publicRequestlistValuelistValue.IsSetCidrIpv6())
-                                {
-                                    request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "Ipv6Ranges" + "." + publicRequestlistValuelistValueIndex + "." + "CidrIpv6", StringUtils.FromString(publicRequestlistValuelistValue.CidrIpv6));
-                                }
-                                if(publicRequestlistValuelistValue.IsSetDescription())
-                                {
-                                    request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "Ipv6Ranges" + "." + publicRequestlistValuelistValueIndex + "." + "Description", StringUtils.FromString(publicRequestlistValuelistValue.Description));
-                                }
-                                publicRequestlistValuelistValueIndex++;
+                                request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "IpProtocol", StringUtils.FromString(publicRequestlistValue.IpProtocol));
                             }
-                        }
-                        if(publicRequestlistValue.IsSetPrefixListIds())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.PrefixListIds)
+                            if(publicRequestlistValue.IsSetIpv4Ranges())
                             {
-                                if(publicRequestlistValuelistValue.IsSetDescription())
+                                if (publicRequestlistValue.Ipv4Ranges.Count == 0)
+                                    request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "IpRanges", "");
+                                else
                                 {
-                                    request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "PrefixListIds" + "." + publicRequestlistValuelistValueIndex + "." + "Description", StringUtils.FromString(publicRequestlistValuelistValue.Description));
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Ipv4Ranges)
+                                     {
+                                        if(publicRequestlistValuelistValue.IsSetCidrIp())
+                                        {
+                                            request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "IpRanges" + "." + publicRequestlistValuelistValueIndex + "." + "CidrIp", StringUtils.FromString(publicRequestlistValuelistValue.CidrIp));
+                                        }
+                                        if(publicRequestlistValuelistValue.IsSetDescription())
+                                        {
+                                            request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "IpRanges" + "." + publicRequestlistValuelistValueIndex + "." + "Description", StringUtils.FromString(publicRequestlistValuelistValue.Description));
+                                        }
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
                                 }
-                                if(publicRequestlistValuelistValue.IsSetId())
-                                {
-                                    request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "PrefixListIds" + "." + publicRequestlistValuelistValueIndex + "." + "PrefixListId", StringUtils.FromString(publicRequestlistValuelistValue.Id));
-                                }
-                                publicRequestlistValuelistValueIndex++;
                             }
-                        }
-                        if(publicRequestlistValue.IsSetToPort())
-                        {
-                            request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "ToPort", StringUtils.FromInt(publicRequestlistValue.ToPort));
-                        }
-                        if(publicRequestlistValue.IsSetUserIdGroupPairs())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.UserIdGroupPairs)
+                            if(publicRequestlistValue.IsSetIpv6Ranges())
                             {
-                                if(publicRequestlistValuelistValue.IsSetDescription())
+                                if (publicRequestlistValue.Ipv6Ranges.Count == 0)
+                                    request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "Ipv6Ranges", "");
+                                else
                                 {
-                                    request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "Groups" + "." + publicRequestlistValuelistValueIndex + "." + "Description", StringUtils.FromString(publicRequestlistValuelistValue.Description));
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Ipv6Ranges)
+                                     {
+                                        if(publicRequestlistValuelistValue.IsSetCidrIpv6())
+                                        {
+                                            request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "Ipv6Ranges" + "." + publicRequestlistValuelistValueIndex + "." + "CidrIpv6", StringUtils.FromString(publicRequestlistValuelistValue.CidrIpv6));
+                                        }
+                                        if(publicRequestlistValuelistValue.IsSetDescription())
+                                        {
+                                            request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "Ipv6Ranges" + "." + publicRequestlistValuelistValueIndex + "." + "Description", StringUtils.FromString(publicRequestlistValuelistValue.Description));
+                                        }
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
                                 }
-                                if(publicRequestlistValuelistValue.IsSetGroupId())
-                                {
-                                    request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "Groups" + "." + publicRequestlistValuelistValueIndex + "." + "GroupId", StringUtils.FromString(publicRequestlistValuelistValue.GroupId));
-                                }
-                                if(publicRequestlistValuelistValue.IsSetGroupName())
-                                {
-                                    request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "Groups" + "." + publicRequestlistValuelistValueIndex + "." + "GroupName", StringUtils.FromString(publicRequestlistValuelistValue.GroupName));
-                                }
-                                if(publicRequestlistValuelistValue.IsSetPeeringStatus())
-                                {
-                                    request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "Groups" + "." + publicRequestlistValuelistValueIndex + "." + "PeeringStatus", StringUtils.FromString(publicRequestlistValuelistValue.PeeringStatus));
-                                }
-                                if(publicRequestlistValuelistValue.IsSetUserId())
-                                {
-                                    request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "Groups" + "." + publicRequestlistValuelistValueIndex + "." + "UserId", StringUtils.FromString(publicRequestlistValuelistValue.UserId));
-                                }
-                                if(publicRequestlistValuelistValue.IsSetVpcId())
-                                {
-                                    request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "Groups" + "." + publicRequestlistValuelistValueIndex + "." + "VpcId", StringUtils.FromString(publicRequestlistValuelistValue.VpcId));
-                                }
-                                if(publicRequestlistValuelistValue.IsSetVpcPeeringConnectionId())
-                                {
-                                    request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "Groups" + "." + publicRequestlistValuelistValueIndex + "." + "VpcPeeringConnectionId", StringUtils.FromString(publicRequestlistValuelistValue.VpcPeeringConnectionId));
-                                }
-                                publicRequestlistValuelistValueIndex++;
                             }
-                        }
-                        publicRequestlistValueIndex++;
+                            if(publicRequestlistValue.IsSetPrefixListIds())
+                            {
+                                if (publicRequestlistValue.PrefixListIds.Count == 0)
+                                    request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "PrefixListIds", "");
+                                else
+                                {
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.PrefixListIds)
+                                     {
+                                        if(publicRequestlistValuelistValue.IsSetDescription())
+                                        {
+                                            request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "PrefixListIds" + "." + publicRequestlistValuelistValueIndex + "." + "Description", StringUtils.FromString(publicRequestlistValuelistValue.Description));
+                                        }
+                                        if(publicRequestlistValuelistValue.IsSetId())
+                                        {
+                                            request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "PrefixListIds" + "." + publicRequestlistValuelistValueIndex + "." + "PrefixListId", StringUtils.FromString(publicRequestlistValuelistValue.Id));
+                                        }
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
+                                }
+                            }
+                            if(publicRequestlistValue.IsSetToPort())
+                            {
+                                request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "ToPort", StringUtils.FromInt(publicRequestlistValue.ToPort));
+                            }
+                            if(publicRequestlistValue.IsSetUserIdGroupPairs())
+                            {
+                                if (publicRequestlistValue.UserIdGroupPairs.Count == 0)
+                                    request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "Groups", "");
+                                else
+                                {
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.UserIdGroupPairs)
+                                     {
+                                        if(publicRequestlistValuelistValue.IsSetDescription())
+                                        {
+                                            request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "Groups" + "." + publicRequestlistValuelistValueIndex + "." + "Description", StringUtils.FromString(publicRequestlistValuelistValue.Description));
+                                        }
+                                        if(publicRequestlistValuelistValue.IsSetGroupId())
+                                        {
+                                            request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "Groups" + "." + publicRequestlistValuelistValueIndex + "." + "GroupId", StringUtils.FromString(publicRequestlistValuelistValue.GroupId));
+                                        }
+                                        if(publicRequestlistValuelistValue.IsSetGroupName())
+                                        {
+                                            request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "Groups" + "." + publicRequestlistValuelistValueIndex + "." + "GroupName", StringUtils.FromString(publicRequestlistValuelistValue.GroupName));
+                                        }
+                                        if(publicRequestlistValuelistValue.IsSetPeeringStatus())
+                                        {
+                                            request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "Groups" + "." + publicRequestlistValuelistValueIndex + "." + "PeeringStatus", StringUtils.FromString(publicRequestlistValuelistValue.PeeringStatus));
+                                        }
+                                        if(publicRequestlistValuelistValue.IsSetUserId())
+                                        {
+                                            request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "Groups" + "." + publicRequestlistValuelistValueIndex + "." + "UserId", StringUtils.FromString(publicRequestlistValuelistValue.UserId));
+                                        }
+                                        if(publicRequestlistValuelistValue.IsSetVpcId())
+                                        {
+                                            request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "Groups" + "." + publicRequestlistValuelistValueIndex + "." + "VpcId", StringUtils.FromString(publicRequestlistValuelistValue.VpcId));
+                                        }
+                                        if(publicRequestlistValuelistValue.IsSetVpcPeeringConnectionId())
+                                        {
+                                            request.Parameters.Add("IpPermissions" + "." + publicRequestlistValueIndex + "." + "Groups" + "." + publicRequestlistValuelistValueIndex + "." + "VpcPeeringConnectionId", StringUtils.FromString(publicRequestlistValuelistValue.VpcPeeringConnectionId));
+                                        }
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
+                                }
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetSecurityGroupRuleIds())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.SecurityGroupRuleIds)
+                    if (publicRequest.SecurityGroupRuleIds.Count == 0)
+                        request.Parameters.Add("SecurityGroupRuleId", "");
+                    else
                     {
-                        request.Parameters.Add("SecurityGroupRuleId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.SecurityGroupRuleIds)
+                         {
+                             request.Parameters.Add("SecurityGroupRuleId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

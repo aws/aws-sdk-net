@@ -31,14 +31,16 @@ namespace Amazon.Backup.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateRestoreTestingSelection operation.
-    /// Most elements except the <c>RestoreTestingSelectionName</c> can be updated with this
-    /// request.
+    /// Updates the specified restore testing selection.
     /// 
     ///  
     /// <para>
-    ///  <c>RestoreTestingSelection</c> can use either protected resource ARNs or conditions,
-    /// but not both. That is, if your selection has <c>ProtectedResourceArns</c>, requesting
-    /// an update with the parameter <c>ProtectedResourceConditions</c> will be unsuccessful.
+    /// Most elements except the <c>RestoreTestingSelectionName</c> can be updated with this
+    /// request.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can use either protected resource ARNs or conditions, but not both.
     /// </para>
     /// </summary>
     public partial class UpdateRestoreTestingSelectionRequest : AmazonBackupRequest
@@ -91,8 +93,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property RestoreTestingSelectionName. 
         /// <para>
-        /// This is the required restore testing selection name of the restore testing selection
-        /// you wish to update.
+        /// The required restore testing selection name of the restore testing selection you wish
+        /// to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

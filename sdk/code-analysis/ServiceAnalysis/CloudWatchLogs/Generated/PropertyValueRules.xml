@@ -28,6 +28,11 @@
     <pattern>[\w-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.CreateDeliveryRequest.FieldDelimiter</property>
+    <min>0</min>
+    <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.CreateExportTaskRequest.Destination</property>
     <min>1</min>
     <max>512</max>
@@ -200,6 +205,25 @@
     <min>1</min>
     <max>512</max>
     <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DescribeConfigurationTemplatesRequest.Limit</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DescribeConfigurationTemplatesRequest.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DescribeConfigurationTemplatesRequest.Service</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\w_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DescribeConfigurationTemplatesResponse.NextToken</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.DescribeDeliveriesRequest.Limit</property>
@@ -939,6 +963,17 @@
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.UpdateDeliveryConfigurationRequest.FieldDelimiter</property>
+    <min>0</min>
+    <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.UpdateDeliveryConfigurationRequest.Id</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9A-Za-z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.UpdateLogAnomalyDetectorRequest.AnomalyDetectorArn</property>
     <min>1</min>
     <pattern>[\w#+=/:,.@-]*</pattern>
@@ -1042,6 +1077,29 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.ConfigurationTemplate.LogType</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\w]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.ConfigurationTemplate.ResourceType</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\w-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.ConfigurationTemplate.Service</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\w_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.ConfigurationTemplateDeliveryConfigValues.FieldDelimiter</property>
+    <min>0</min>
+    <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.DataAlreadyAcceptedException.ExpectedSequenceToken</property>
     <min>1</min>
   </property-value-rule>
@@ -1050,6 +1108,11 @@
     <min>1</min>
     <max>60</max>
     <pattern>[\w-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.Delivery.FieldDelimiter</property>
+    <min>0</min>
+    <max>5</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.Delivery.Id</property>
@@ -1079,7 +1142,7 @@
     <property>Amazon.CloudWatchLogs.Model.DeliverySource.Service</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[\w]*</pattern>
+    <pattern>[\w_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.Destination.AccessPolicy</property>
@@ -1370,6 +1433,11 @@
     <max>10000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.RecordField.Name</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.ResourcePolicy.LastUpdatedTime</property>
     <min>0</min>
   </property-value-rule>
@@ -1377,6 +1445,11 @@
     <property>Amazon.CloudWatchLogs.Model.ResourcePolicy.PolicyDocument</property>
     <min>1</min>
     <max>5120</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.S3DeliveryConfiguration.SuffixPath</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.SearchedLogStream.LogStreamName</property>

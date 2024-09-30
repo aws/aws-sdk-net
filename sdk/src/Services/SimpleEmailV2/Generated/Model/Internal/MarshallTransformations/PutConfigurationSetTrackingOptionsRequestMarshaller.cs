@@ -78,6 +78,12 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.CustomRedirectDomain);
                     }
 
+                    if(publicRequest.IsSetHttpsPolicy())
+                    {
+                        context.Writer.WritePropertyName("HttpsPolicy");
+                        context.Writer.Write(publicRequest.HttpsPolicy);
+                    }
+
                     writer.WriteObjectEnd();
                 }
 

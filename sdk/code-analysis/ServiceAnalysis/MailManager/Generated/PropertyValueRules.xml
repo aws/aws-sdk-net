@@ -763,6 +763,10 @@
     <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MailManager.Model.RuleStringToEvaluate.MimeHeaderAttribute</property>
+    <pattern>^X-[a-zA-Z0-9-]{1,256}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MailManager.Model.S3Action.RoleArn</property>
     <min>20</min>
     <max>2048</max>

@@ -114,6 +114,19 @@ namespace Amazon.Finspace.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <c>kx.sg.large</c> – The host type with a configuration of 16 GiB memory and 2 vCPUs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>kx.sg.xlarge</c> – The host type with a configuration of 32 GiB memory and 4 vCPUs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>kx.sg.2xlarge</c> – The host type with a configuration of 64 GiB memory and 8
+        /// vCPUs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>kx.sg.4xlarge</c> – The host type with a configuration of 108 GiB memory and 16
         /// vCPUs.
         /// </para>

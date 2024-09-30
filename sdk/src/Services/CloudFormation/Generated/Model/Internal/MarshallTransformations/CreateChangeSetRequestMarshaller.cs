@@ -61,11 +61,16 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetCapabilities())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Capabilities)
+                    if (publicRequest.Capabilities.Count == 0)
+                        request.Parameters.Add("Capabilities", "");
+                    else
                     {
-                        request.Parameters.Add("Capabilities" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Capabilities)
+                         {
+                             request.Parameters.Add("Capabilities" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetChangeSetName())
@@ -94,11 +99,16 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetNotificationARNs())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.NotificationARNs)
+                    if (publicRequest.NotificationARNs.Count == 0)
+                        request.Parameters.Add("NotificationARNs", "");
+                    else
                     {
-                        request.Parameters.Add("NotificationARNs" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.NotificationARNs)
+                         {
+                             request.Parameters.Add("NotificationARNs" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetOnStackFailure())
@@ -107,66 +117,81 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetParameters())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Parameters)
+                    if (publicRequest.Parameters.Count == 0)
+                        request.Parameters.Add("Parameters", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetParameterKey())
-                        {
-                            request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ParameterKey", StringUtils.FromString(publicRequestlistValue.ParameterKey));
-                        }
-                        if(publicRequestlistValue.IsSetParameterValue())
-                        {
-                            request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ParameterValue", StringUtils.FromString(publicRequestlistValue.ParameterValue));
-                        }
-                        if(publicRequestlistValue.IsSetResolvedValue())
-                        {
-                            request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResolvedValue", StringUtils.FromString(publicRequestlistValue.ResolvedValue));
-                        }
-                        if(publicRequestlistValue.IsSetUsePreviousValue())
-                        {
-                            request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "UsePreviousValue", StringUtils.FromBool(publicRequestlistValue.UsePreviousValue));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Parameters)
+                         {
+                            if(publicRequestlistValue.IsSetParameterKey())
+                            {
+                                request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ParameterKey", StringUtils.FromString(publicRequestlistValue.ParameterKey));
+                            }
+                            if(publicRequestlistValue.IsSetParameterValue())
+                            {
+                                request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ParameterValue", StringUtils.FromString(publicRequestlistValue.ParameterValue));
+                            }
+                            if(publicRequestlistValue.IsSetResolvedValue())
+                            {
+                                request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResolvedValue", StringUtils.FromString(publicRequestlistValue.ResolvedValue));
+                            }
+                            if(publicRequestlistValue.IsSetUsePreviousValue())
+                            {
+                                request.Parameters.Add("Parameters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "UsePreviousValue", StringUtils.FromBool(publicRequestlistValue.UsePreviousValue));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetResourcesToImport())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ResourcesToImport)
+                    if (publicRequest.ResourcesToImport.Count == 0)
+                        request.Parameters.Add("ResourcesToImport", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetLogicalResourceId())
-                        {
-                            request.Parameters.Add("ResourcesToImport" + "." + "member" + "." + publicRequestlistValueIndex + "." + "LogicalResourceId", StringUtils.FromString(publicRequestlistValue.LogicalResourceId));
-                        }
-                        if(publicRequestlistValue.IsSetResourceIdentifier())
-                        {
-                            int mapIndex = 1;
-                            foreach(var key in publicRequestlistValue.ResourceIdentifier.Keys)
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ResourcesToImport)
+                         {
+                            if(publicRequestlistValue.IsSetLogicalResourceId())
                             {
-                                String value;
-                                bool hasValue = publicRequestlistValue.ResourceIdentifier.TryGetValue(key, out value);
-                                request.Parameters.Add("ResourcesToImport" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceIdentifier" + "." + "entry" + "." + mapIndex + "." + "key", StringUtils.FromString(key));
-                                if (hasValue)
-                                {
-                                    request.Parameters.Add("ResourcesToImport" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceIdentifier" + "." + "entry" + "." + mapIndex + "." + "value", StringUtils.FromString(value));
-                                }
-                                mapIndex++;
+                                request.Parameters.Add("ResourcesToImport" + "." + "member" + "." + publicRequestlistValueIndex + "." + "LogicalResourceId", StringUtils.FromString(publicRequestlistValue.LogicalResourceId));
                             }
-                        }
-                        if(publicRequestlistValue.IsSetResourceType())
-                        {
-                            request.Parameters.Add("ResourcesToImport" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
-                        }
-                        publicRequestlistValueIndex++;
+                            if(publicRequestlistValue.IsSetResourceIdentifier())
+                            {
+                                int mapIndex = 1;
+                                foreach(var key in publicRequestlistValue.ResourceIdentifier.Keys)
+                                {
+                                    String value;
+                                    bool hasValue = publicRequestlistValue.ResourceIdentifier.TryGetValue(key, out value);
+                                    request.Parameters.Add("ResourcesToImport" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceIdentifier" + "." + "entry" + "." + mapIndex + "." + "key", StringUtils.FromString(key));
+                                    if (hasValue)
+                                    {
+                                        request.Parameters.Add("ResourcesToImport" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceIdentifier" + "." + "entry" + "." + mapIndex + "." + "value", StringUtils.FromString(value));
+                                    }
+                                    mapIndex++;
+                                }
+                            }
+                            if(publicRequestlistValue.IsSetResourceType())
+                            {
+                                request.Parameters.Add("ResourcesToImport" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetResourceTypes())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ResourceTypes)
+                    if (publicRequest.ResourceTypes.Count == 0)
+                        request.Parameters.Add("ResourceTypes", "");
+                    else
                     {
-                        request.Parameters.Add("ResourceTypes" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ResourceTypes)
+                         {
+                             request.Parameters.Add("ResourceTypes" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetRoleARN())
@@ -181,18 +206,23 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     }
                     if(publicRequest.RollbackConfiguration.IsSetRollbackTriggers())
                     {
-                        int publicRequestRollbackConfigurationlistValueIndex = 1;
-                        foreach(var publicRequestRollbackConfigurationlistValue in publicRequest.RollbackConfiguration.RollbackTriggers)
+                        if (publicRequest.RollbackConfiguration.RollbackTriggers.Count == 0)
+                            request.Parameters.Add("RollbackConfiguration" + "." + "RollbackTriggers", "");
+                        else
                         {
-                            if(publicRequestRollbackConfigurationlistValue.IsSetArn())
-                            {
-                                request.Parameters.Add("RollbackConfiguration" + "." + "RollbackTriggers" + "." + "member" + "." + publicRequestRollbackConfigurationlistValueIndex + "." + "Arn", StringUtils.FromString(publicRequestRollbackConfigurationlistValue.Arn));
-                            }
-                            if(publicRequestRollbackConfigurationlistValue.IsSetType())
-                            {
-                                request.Parameters.Add("RollbackConfiguration" + "." + "RollbackTriggers" + "." + "member" + "." + publicRequestRollbackConfigurationlistValueIndex + "." + "Type", StringUtils.FromString(publicRequestRollbackConfigurationlistValue.Type));
-                            }
-                            publicRequestRollbackConfigurationlistValueIndex++;
+                             int publicRequestRollbackConfigurationlistValueIndex = 1;
+                             foreach(var publicRequestRollbackConfigurationlistValue in publicRequest.RollbackConfiguration.RollbackTriggers)
+                             {
+                                if(publicRequestRollbackConfigurationlistValue.IsSetArn())
+                                {
+                                    request.Parameters.Add("RollbackConfiguration" + "." + "RollbackTriggers" + "." + "member" + "." + publicRequestRollbackConfigurationlistValueIndex + "." + "Arn", StringUtils.FromString(publicRequestRollbackConfigurationlistValue.Arn));
+                                }
+                                if(publicRequestRollbackConfigurationlistValue.IsSetType())
+                                {
+                                    request.Parameters.Add("RollbackConfiguration" + "." + "RollbackTriggers" + "." + "member" + "." + publicRequestRollbackConfigurationlistValueIndex + "." + "Type", StringUtils.FromString(publicRequestRollbackConfigurationlistValue.Type));
+                                }
+                                 publicRequestRollbackConfigurationlistValueIndex++;
+                             }
                         }
                     }
                 }
@@ -202,18 +232,23 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetTags())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Tags)
+                    if (publicRequest.Tags.Count == 0)
+                        request.Parameters.Add("Tags", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetKey())
-                        {
-                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
-                        }
-                        if(publicRequestlistValue.IsSetValue())
-                        {
-                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Tags)
+                         {
+                            if(publicRequestlistValue.IsSetKey())
+                            {
+                                request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
+                            }
+                            if(publicRequestlistValue.IsSetValue())
+                            {
+                                request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetTemplateBody())

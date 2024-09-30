@@ -73,7 +73,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         xmlWriter.WriteStartElement("CookiesConfig");
                         if(publicRequest.OriginRequestPolicyConfig.CookiesConfig.IsSetCookieBehavior())
                             xmlWriter.WriteElementString("CookieBehavior", StringUtils.FromString(publicRequest.OriginRequestPolicyConfig.CookiesConfig.CookieBehavior));
-
                         if (publicRequest.OriginRequestPolicyConfig.CookiesConfig.Cookies != null)
                         {
                             xmlWriter.WriteStartElement("Cookies");
@@ -91,7 +90,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             }
                             if(publicRequest.OriginRequestPolicyConfig.CookiesConfig.Cookies.IsSetQuantity())
                                 xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.OriginRequestPolicyConfig.CookiesConfig.Cookies.Quantity.Value));
-
                             xmlWriter.WriteEndElement();
                         }
                         xmlWriter.WriteEndElement();
@@ -101,7 +99,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         xmlWriter.WriteStartElement("HeadersConfig");
                         if(publicRequest.OriginRequestPolicyConfig.HeadersConfig.IsSetHeaderBehavior())
                             xmlWriter.WriteElementString("HeaderBehavior", StringUtils.FromString(publicRequest.OriginRequestPolicyConfig.HeadersConfig.HeaderBehavior));
-
                         if (publicRequest.OriginRequestPolicyConfig.HeadersConfig.Headers != null)
                         {
                             xmlWriter.WriteStartElement("Headers");
@@ -119,7 +116,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             }
                             if(publicRequest.OriginRequestPolicyConfig.HeadersConfig.Headers.IsSetQuantity())
                                 xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.OriginRequestPolicyConfig.HeadersConfig.Headers.Quantity.Value));
-
                             xmlWriter.WriteEndElement();
                         }
                         xmlWriter.WriteEndElement();
@@ -132,7 +128,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         xmlWriter.WriteStartElement("QueryStringsConfig");
                         if(publicRequest.OriginRequestPolicyConfig.QueryStringsConfig.IsSetQueryStringBehavior())
                             xmlWriter.WriteElementString("QueryStringBehavior", StringUtils.FromString(publicRequest.OriginRequestPolicyConfig.QueryStringsConfig.QueryStringBehavior));
-
                         if (publicRequest.OriginRequestPolicyConfig.QueryStringsConfig.QueryStrings != null)
                         {
                             xmlWriter.WriteStartElement("QueryStrings");
@@ -150,7 +145,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                             }
                             if(publicRequest.OriginRequestPolicyConfig.QueryStringsConfig.QueryStrings.IsSetQuantity())
                                 xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.OriginRequestPolicyConfig.QueryStringsConfig.QueryStrings.Quantity.Value));
-
                             xmlWriter.WriteEndElement();
                         }
                         xmlWriter.WriteEndElement();

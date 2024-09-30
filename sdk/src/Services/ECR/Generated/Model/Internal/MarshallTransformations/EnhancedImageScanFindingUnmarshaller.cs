@@ -78,6 +78,12 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("exploitAvailable", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExploitAvailable = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("findingArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -88,6 +94,12 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.FirstObservedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("fixAvailable", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FixAvailable = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lastObservedAt", targetDepth))

@@ -104,7 +104,7 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The unique ARN associated with the server-side encryption key. You can specify a key
         /// to encrypt your backups from services that support full Backup management. If you
-        /// do not specify a key, Backup creates an KMS key for you by default. 
+        /// don't specify a key, Backup creates an KMS key for you by default. 
         /// </para>
         /// </summary>
         public string EncryptionKeyArn

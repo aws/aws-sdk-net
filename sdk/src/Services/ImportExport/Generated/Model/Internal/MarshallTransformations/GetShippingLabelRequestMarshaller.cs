@@ -77,11 +77,16 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetJobIds())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.JobIds)
+                    if (publicRequest.JobIds.Count == 0)
+                        request.Parameters.Add("jobIds", "");
+                    else
                     {
-                        request.Parameters.Add("jobIds" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.JobIds)
+                         {
+                             request.Parameters.Add("jobIds" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetName())

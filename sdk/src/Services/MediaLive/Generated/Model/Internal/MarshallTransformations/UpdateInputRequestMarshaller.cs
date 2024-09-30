@@ -131,6 +131,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                         context.Writer.WriteArrayEnd();
                     }
 
+                    if(publicRequest.IsSetMulticastSettings())
+                    {
+                        context.Writer.WritePropertyName("multicastSettings");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MulticastSettingsUpdateRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.MulticastSettings, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetName())
                     {
                         context.Writer.WritePropertyName("name");

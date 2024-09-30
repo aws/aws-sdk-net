@@ -71,11 +71,16 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     if(publicRequest.AuthenticationMode.IsSetPasswords())
                     {
-                        int publicRequestAuthenticationModelistValueIndex = 1;
-                        foreach(var publicRequestAuthenticationModelistValue in publicRequest.AuthenticationMode.Passwords)
+                        if (publicRequest.AuthenticationMode.Passwords.Count == 0)
+                            request.Parameters.Add("AuthenticationMode" + "." + "Passwords", "");
+                        else
                         {
-                            request.Parameters.Add("AuthenticationMode" + "." + "Passwords" + "." + "member" + "." + publicRequestAuthenticationModelistValueIndex, StringUtils.FromString(publicRequestAuthenticationModelistValue));
-                            publicRequestAuthenticationModelistValueIndex++;
+                             int publicRequestAuthenticationModelistValueIndex = 1;
+                             foreach(var publicRequestAuthenticationModelistValue in publicRequest.AuthenticationMode.Passwords)
+                             {
+                                 request.Parameters.Add("AuthenticationMode" + "." + "Passwords" + "." + "member" + "." + publicRequestAuthenticationModelistValueIndex, StringUtils.FromString(publicRequestAuthenticationModelistValue));
+                                 publicRequestAuthenticationModelistValueIndex++;
+                             }
                         }
                     }
                     if(publicRequest.AuthenticationMode.IsSetType())
@@ -89,11 +94,16 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetPasswords())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Passwords)
+                    if (publicRequest.Passwords.Count == 0)
+                        request.Parameters.Add("Passwords", "");
+                    else
                     {
-                        request.Parameters.Add("Passwords" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Passwords)
+                         {
+                             request.Parameters.Add("Passwords" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetUserId())

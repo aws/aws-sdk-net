@@ -63,11 +63,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     if(publicRequest.InstanceRequirementsWithMetadata.IsSetArchitectureTypes())
                     {
-                        int publicRequestInstanceRequirementsWithMetadatalistValueIndex = 1;
-                        foreach(var publicRequestInstanceRequirementsWithMetadatalistValue in publicRequest.InstanceRequirementsWithMetadata.ArchitectureTypes)
+                        if (publicRequest.InstanceRequirementsWithMetadata.ArchitectureTypes.Count == 0)
+                            request.Parameters.Add("InstanceRequirementsWithMetadata" + "." + "ArchitectureType", "");
+                        else
                         {
-                            request.Parameters.Add("InstanceRequirementsWithMetadata" + "." + "ArchitectureType" + "." + publicRequestInstanceRequirementsWithMetadatalistValueIndex, StringUtils.FromString(publicRequestInstanceRequirementsWithMetadatalistValue));
-                            publicRequestInstanceRequirementsWithMetadatalistValueIndex++;
+                             int publicRequestInstanceRequirementsWithMetadatalistValueIndex = 1;
+                             foreach(var publicRequestInstanceRequirementsWithMetadatalistValue in publicRequest.InstanceRequirementsWithMetadata.ArchitectureTypes)
+                             {
+                                 request.Parameters.Add("InstanceRequirementsWithMetadata" + "." + "ArchitectureType" + "." + publicRequestInstanceRequirementsWithMetadatalistValueIndex, StringUtils.FromString(publicRequestInstanceRequirementsWithMetadatalistValue));
+                                 publicRequestInstanceRequirementsWithMetadatalistValueIndex++;
+                             }
                         }
                     }
                     if(publicRequest.InstanceRequirementsWithMetadata.IsSetInstanceRequirements())
@@ -85,20 +90,30 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         }
                         if(publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.IsSetAcceleratorManufacturers())
                         {
-                            int publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex = 1;
-                            foreach(var publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValue in publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.AcceleratorManufacturers)
+                            if (publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.AcceleratorManufacturers.Count == 0)
+                                request.Parameters.Add("InstanceRequirementsWithMetadata" + "." + "InstanceRequirements" + "." + "AcceleratorManufacturer", "");
+                            else
                             {
-                                request.Parameters.Add("InstanceRequirementsWithMetadata" + "." + "InstanceRequirements" + "." + "AcceleratorManufacturer" + "." + publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValue));
-                                publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex++;
+                                 int publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex = 1;
+                                 foreach(var publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValue in publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.AcceleratorManufacturers)
+                                 {
+                                     request.Parameters.Add("InstanceRequirementsWithMetadata" + "." + "InstanceRequirements" + "." + "AcceleratorManufacturer" + "." + publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValue));
+                                     publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex++;
+                                 }
                             }
                         }
                         if(publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.IsSetAcceleratorNames())
                         {
-                            int publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex = 1;
-                            foreach(var publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValue in publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.AcceleratorNames)
+                            if (publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.AcceleratorNames.Count == 0)
+                                request.Parameters.Add("InstanceRequirementsWithMetadata" + "." + "InstanceRequirements" + "." + "AcceleratorName", "");
+                            else
                             {
-                                request.Parameters.Add("InstanceRequirementsWithMetadata" + "." + "InstanceRequirements" + "." + "AcceleratorName" + "." + publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValue));
-                                publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex++;
+                                 int publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex = 1;
+                                 foreach(var publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValue in publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.AcceleratorNames)
+                                 {
+                                     request.Parameters.Add("InstanceRequirementsWithMetadata" + "." + "InstanceRequirements" + "." + "AcceleratorName" + "." + publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValue));
+                                     publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex++;
+                                 }
                             }
                         }
                         if(publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.IsSetAcceleratorTotalMemoryMiB())
@@ -114,20 +129,30 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         }
                         if(publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.IsSetAcceleratorTypes())
                         {
-                            int publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex = 1;
-                            foreach(var publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValue in publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.AcceleratorTypes)
+                            if (publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.AcceleratorTypes.Count == 0)
+                                request.Parameters.Add("InstanceRequirementsWithMetadata" + "." + "InstanceRequirements" + "." + "AcceleratorType", "");
+                            else
                             {
-                                request.Parameters.Add("InstanceRequirementsWithMetadata" + "." + "InstanceRequirements" + "." + "AcceleratorType" + "." + publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValue));
-                                publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex++;
+                                 int publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex = 1;
+                                 foreach(var publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValue in publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.AcceleratorTypes)
+                                 {
+                                     request.Parameters.Add("InstanceRequirementsWithMetadata" + "." + "InstanceRequirements" + "." + "AcceleratorType" + "." + publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValue));
+                                     publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex++;
+                                 }
                             }
                         }
                         if(publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.IsSetAllowedInstanceTypes())
                         {
-                            int publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex = 1;
-                            foreach(var publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValue in publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.AllowedInstanceTypes)
+                            if (publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.AllowedInstanceTypes.Count == 0)
+                                request.Parameters.Add("InstanceRequirementsWithMetadata" + "." + "InstanceRequirements" + "." + "AllowedInstanceType", "");
+                            else
                             {
-                                request.Parameters.Add("InstanceRequirementsWithMetadata" + "." + "InstanceRequirements" + "." + "AllowedInstanceType" + "." + publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValue));
-                                publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex++;
+                                 int publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex = 1;
+                                 foreach(var publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValue in publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.AllowedInstanceTypes)
+                                 {
+                                     request.Parameters.Add("InstanceRequirementsWithMetadata" + "." + "InstanceRequirements" + "." + "AllowedInstanceType" + "." + publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValue));
+                                     publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex++;
+                                 }
                             }
                         }
                         if(publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.IsSetBareMetal())
@@ -151,29 +176,44 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         }
                         if(publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.IsSetCpuManufacturers())
                         {
-                            int publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex = 1;
-                            foreach(var publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValue in publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.CpuManufacturers)
+                            if (publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.CpuManufacturers.Count == 0)
+                                request.Parameters.Add("InstanceRequirementsWithMetadata" + "." + "InstanceRequirements" + "." + "CpuManufacturer", "");
+                            else
                             {
-                                request.Parameters.Add("InstanceRequirementsWithMetadata" + "." + "InstanceRequirements" + "." + "CpuManufacturer" + "." + publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValue));
-                                publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex++;
+                                 int publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex = 1;
+                                 foreach(var publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValue in publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.CpuManufacturers)
+                                 {
+                                     request.Parameters.Add("InstanceRequirementsWithMetadata" + "." + "InstanceRequirements" + "." + "CpuManufacturer" + "." + publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValue));
+                                     publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex++;
+                                 }
                             }
                         }
                         if(publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.IsSetExcludedInstanceTypes())
                         {
-                            int publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex = 1;
-                            foreach(var publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValue in publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.ExcludedInstanceTypes)
+                            if (publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.ExcludedInstanceTypes.Count == 0)
+                                request.Parameters.Add("InstanceRequirementsWithMetadata" + "." + "InstanceRequirements" + "." + "ExcludedInstanceType", "");
+                            else
                             {
-                                request.Parameters.Add("InstanceRequirementsWithMetadata" + "." + "InstanceRequirements" + "." + "ExcludedInstanceType" + "." + publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValue));
-                                publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex++;
+                                 int publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex = 1;
+                                 foreach(var publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValue in publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.ExcludedInstanceTypes)
+                                 {
+                                     request.Parameters.Add("InstanceRequirementsWithMetadata" + "." + "InstanceRequirements" + "." + "ExcludedInstanceType" + "." + publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValue));
+                                     publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex++;
+                                 }
                             }
                         }
                         if(publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.IsSetInstanceGenerations())
                         {
-                            int publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex = 1;
-                            foreach(var publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValue in publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.InstanceGenerations)
+                            if (publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.InstanceGenerations.Count == 0)
+                                request.Parameters.Add("InstanceRequirementsWithMetadata" + "." + "InstanceRequirements" + "." + "InstanceGeneration", "");
+                            else
                             {
-                                request.Parameters.Add("InstanceRequirementsWithMetadata" + "." + "InstanceRequirements" + "." + "InstanceGeneration" + "." + publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValue));
-                                publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex++;
+                                 int publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex = 1;
+                                 foreach(var publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValue in publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.InstanceGenerations)
+                                 {
+                                     request.Parameters.Add("InstanceRequirementsWithMetadata" + "." + "InstanceRequirements" + "." + "InstanceGeneration" + "." + publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValue));
+                                     publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex++;
+                                 }
                             }
                         }
                         if(publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.IsSetLocalStorage())
@@ -182,11 +222,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         }
                         if(publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.IsSetLocalStorageTypes())
                         {
-                            int publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex = 1;
-                            foreach(var publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValue in publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.LocalStorageTypes)
+                            if (publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.LocalStorageTypes.Count == 0)
+                                request.Parameters.Add("InstanceRequirementsWithMetadata" + "." + "InstanceRequirements" + "." + "LocalStorageType", "");
+                            else
                             {
-                                request.Parameters.Add("InstanceRequirementsWithMetadata" + "." + "InstanceRequirements" + "." + "LocalStorageType" + "." + publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValue));
-                                publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex++;
+                                 int publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex = 1;
+                                 foreach(var publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValue in publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.LocalStorageTypes)
+                                 {
+                                     request.Parameters.Add("InstanceRequirementsWithMetadata" + "." + "InstanceRequirements" + "." + "LocalStorageType" + "." + publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex, StringUtils.FromString(publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValue));
+                                     publicRequestInstanceRequirementsWithMetadataInstanceRequirementslistValueIndex++;
+                                 }
                             }
                         }
                         if(publicRequest.InstanceRequirementsWithMetadata.InstanceRequirements.IsSetMaxSpotPriceAsPercentageOfOptimalOnDemandPrice())
@@ -274,21 +319,31 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if(publicRequest.InstanceRequirementsWithMetadata.IsSetVirtualizationTypes())
                     {
-                        int publicRequestInstanceRequirementsWithMetadatalistValueIndex = 1;
-                        foreach(var publicRequestInstanceRequirementsWithMetadatalistValue in publicRequest.InstanceRequirementsWithMetadata.VirtualizationTypes)
+                        if (publicRequest.InstanceRequirementsWithMetadata.VirtualizationTypes.Count == 0)
+                            request.Parameters.Add("InstanceRequirementsWithMetadata" + "." + "VirtualizationType", "");
+                        else
                         {
-                            request.Parameters.Add("InstanceRequirementsWithMetadata" + "." + "VirtualizationType" + "." + publicRequestInstanceRequirementsWithMetadatalistValueIndex, StringUtils.FromString(publicRequestInstanceRequirementsWithMetadatalistValue));
-                            publicRequestInstanceRequirementsWithMetadatalistValueIndex++;
+                             int publicRequestInstanceRequirementsWithMetadatalistValueIndex = 1;
+                             foreach(var publicRequestInstanceRequirementsWithMetadatalistValue in publicRequest.InstanceRequirementsWithMetadata.VirtualizationTypes)
+                             {
+                                 request.Parameters.Add("InstanceRequirementsWithMetadata" + "." + "VirtualizationType" + "." + publicRequestInstanceRequirementsWithMetadatalistValueIndex, StringUtils.FromString(publicRequestInstanceRequirementsWithMetadatalistValue));
+                                 publicRequestInstanceRequirementsWithMetadatalistValueIndex++;
+                             }
                         }
                     }
                 }
                 if(publicRequest.IsSetInstanceTypes())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.InstanceTypes)
+                    if (publicRequest.InstanceTypes.Count == 0)
+                        request.Parameters.Add("InstanceType", "");
+                    else
                     {
-                        request.Parameters.Add("InstanceType" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.InstanceTypes)
+                         {
+                             request.Parameters.Add("InstanceType" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetMaxResults())
@@ -301,11 +356,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetRegionNames())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.RegionNames)
+                    if (publicRequest.RegionNames.Count == 0)
+                        request.Parameters.Add("RegionName", "");
+                    else
                     {
-                        request.Parameters.Add("RegionName" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.RegionNames)
+                         {
+                             request.Parameters.Add("RegionName" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetSingleAvailabilityZone())

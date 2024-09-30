@@ -69,20 +69,30 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetNodeGroupsToRemove())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.NodeGroupsToRemove)
+                    if (publicRequest.NodeGroupsToRemove.Count == 0)
+                        request.Parameters.Add("NodeGroupsToRemove", "");
+                    else
                     {
-                        request.Parameters.Add("NodeGroupsToRemove" + "." + "NodeGroupToRemove" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.NodeGroupsToRemove)
+                         {
+                             request.Parameters.Add("NodeGroupsToRemove" + "." + "NodeGroupToRemove" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetNodeGroupsToRetain())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.NodeGroupsToRetain)
+                    if (publicRequest.NodeGroupsToRetain.Count == 0)
+                        request.Parameters.Add("NodeGroupsToRetain", "");
+                    else
                     {
-                        request.Parameters.Add("NodeGroupsToRetain" + "." + "NodeGroupToRetain" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.NodeGroupsToRetain)
+                         {
+                             request.Parameters.Add("NodeGroupsToRetain" + "." + "NodeGroupToRetain" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetReplicationGroupId())
@@ -91,23 +101,33 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetReshardingConfiguration())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ReshardingConfiguration)
+                    if (publicRequest.ReshardingConfiguration.Count == 0)
+                        request.Parameters.Add("ReshardingConfiguration", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetNodeGroupId())
-                        {
-                            request.Parameters.Add("ReshardingConfiguration" + "." + "ReshardingConfiguration" + "." + publicRequestlistValueIndex + "." + "NodeGroupId", StringUtils.FromString(publicRequestlistValue.NodeGroupId));
-                        }
-                        if(publicRequestlistValue.IsSetPreferredAvailabilityZones())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.PreferredAvailabilityZones)
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ReshardingConfiguration)
+                         {
+                            if(publicRequestlistValue.IsSetNodeGroupId())
                             {
-                                request.Parameters.Add("ReshardingConfiguration" + "." + "ReshardingConfiguration" + "." + publicRequestlistValueIndex + "." + "PreferredAvailabilityZones" + "." + "AvailabilityZone" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
-                                publicRequestlistValuelistValueIndex++;
+                                request.Parameters.Add("ReshardingConfiguration" + "." + "ReshardingConfiguration" + "." + publicRequestlistValueIndex + "." + "NodeGroupId", StringUtils.FromString(publicRequestlistValue.NodeGroupId));
                             }
-                        }
-                        publicRequestlistValueIndex++;
+                            if(publicRequestlistValue.IsSetPreferredAvailabilityZones())
+                            {
+                                if (publicRequestlistValue.PreferredAvailabilityZones.Count == 0)
+                                    request.Parameters.Add("ReshardingConfiguration" + "." + "ReshardingConfiguration" + "." + publicRequestlistValueIndex + "." + "PreferredAvailabilityZones", "");
+                                else
+                                {
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.PreferredAvailabilityZones)
+                                     {
+                                         request.Parameters.Add("ReshardingConfiguration" + "." + "ReshardingConfiguration" + "." + publicRequestlistValueIndex + "." + "PreferredAvailabilityZones" + "." + "AvailabilityZone" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
+                                }
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

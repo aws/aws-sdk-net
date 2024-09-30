@@ -51,11 +51,11 @@ namespace Amazon.RDSDataService
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Aurora PostgreSQL - Serverless v2, Serverless v1, and provisioned
+    /// Aurora PostgreSQL - Serverless v2, provisioned, and Serverless v1
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Aurora MySQL - Serverless v1 only
+    /// Aurora MySQL - Serverless v2, provisioned, and Serverless v1
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -495,9 +495,9 @@ namespace Amazon.RDSDataService
         /// </para>
         ///  
         /// <para>
-        /// DDL statements inside a transaction cause an implicit commit. We recommend that you
-        /// run each DDL statement in a separate <c>ExecuteStatement</c> call with <c>continueAfterTimeout</c>
-        /// enabled.
+        /// For Aurora MySQL, DDL statements inside a transaction cause an implicit commit. We
+        /// recommend that you run each MySQL DDL statement in a separate <c>ExecuteStatement</c>
+        /// call with <c>continueAfterTimeout</c> enabled.
         /// </para>
         ///  </note>
         /// </summary>
@@ -585,9 +585,9 @@ namespace Amazon.RDSDataService
         /// </para>
         ///  
         /// <para>
-        /// DDL statements inside a transaction cause an implicit commit. We recommend that you
-        /// run each DDL statement in a separate <c>ExecuteStatement</c> call with <c>continueAfterTimeout</c>
-        /// enabled.
+        /// For Aurora MySQL, DDL statements inside a transaction cause an implicit commit. We
+        /// recommend that you run each MySQL DDL statement in a separate <c>ExecuteStatement</c>
+        /// call with <c>continueAfterTimeout</c> enabled.
         /// </para>
         ///  </note>
         /// </summary>
@@ -831,9 +831,9 @@ namespace Amazon.RDSDataService
         /// 
         ///  <note> 
         /// <para>
-        /// This operation isn't supported for Aurora PostgreSQL Serverless v2 and provisioned
-        /// DB clusters, and for Aurora Serverless v1 DB clusters, the operation is deprecated.
-        /// Use the <c>BatchExecuteStatement</c> or <c>ExecuteStatement</c> operation.
+        /// This operation isn't supported for Aurora Serverless v2 and provisioned DB clusters.
+        /// For Aurora Serverless v1 DB clusters, the operation is deprecated. Use the <c>BatchExecuteStatement</c>
+        /// or <c>ExecuteStatement</c> operation.
         /// </para>
         ///  </note>
         /// </summary>
@@ -873,9 +873,9 @@ namespace Amazon.RDSDataService
         /// 
         ///  <note> 
         /// <para>
-        /// This operation isn't supported for Aurora PostgreSQL Serverless v2 and provisioned
-        /// DB clusters, and for Aurora Serverless v1 DB clusters, the operation is deprecated.
-        /// Use the <c>BatchExecuteStatement</c> or <c>ExecuteStatement</c> operation.
+        /// This operation isn't supported for Aurora Serverless v2 and provisioned DB clusters.
+        /// For Aurora Serverless v1 DB clusters, the operation is deprecated. Use the <c>BatchExecuteStatement</c>
+        /// or <c>ExecuteStatement</c> operation.
         /// </para>
         ///  </note>
         /// </summary>

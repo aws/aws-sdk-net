@@ -655,6 +655,52 @@ namespace Amazon.DataZone
 
 
     /// <summary>
+    /// Constants used for properties of type DataZoneEntityType.
+    /// </summary>
+    public class DataZoneEntityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DOMAIN_UNIT for DataZoneEntityType
+        /// </summary>
+        public static readonly DataZoneEntityType DOMAIN_UNIT = new DataZoneEntityType("DOMAIN_UNIT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataZoneEntityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataZoneEntityType FindValue(string value)
+        {
+            return FindValue<DataZoneEntityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataZoneEntityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DeploymentStatus.
     /// </summary>
     public class DeploymentStatus : ConstantClass
@@ -826,6 +872,52 @@ namespace Amazon.DataZone
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DomainStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DomainUnitDesignation.
+    /// </summary>
+    public class DomainUnitDesignation : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OWNER for DomainUnitDesignation
+        /// </summary>
+        public static readonly DomainUnitDesignation OWNER = new DomainUnitDesignation("OWNER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DomainUnitDesignation(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DomainUnitDesignation FindValue(string value)
+        {
+            return FindValue<DomainUnitDesignation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DomainUnitDesignation(string value)
         {
             return FindValue(value);
         }
@@ -1539,6 +1631,92 @@ namespace Amazon.DataZone
 
 
     /// <summary>
+    /// Constants used for properties of type ManagedPolicyType.
+    /// </summary>
+    public class ManagedPolicyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADD_TO_PROJECT_MEMBER_POOL for ManagedPolicyType
+        /// </summary>
+        public static readonly ManagedPolicyType ADD_TO_PROJECT_MEMBER_POOL = new ManagedPolicyType("ADD_TO_PROJECT_MEMBER_POOL");
+        /// <summary>
+        /// Constant CREATE_ASSET_TYPE for ManagedPolicyType
+        /// </summary>
+        public static readonly ManagedPolicyType CREATE_ASSET_TYPE = new ManagedPolicyType("CREATE_ASSET_TYPE");
+        /// <summary>
+        /// Constant CREATE_DOMAIN_UNIT for ManagedPolicyType
+        /// </summary>
+        public static readonly ManagedPolicyType CREATE_DOMAIN_UNIT = new ManagedPolicyType("CREATE_DOMAIN_UNIT");
+        /// <summary>
+        /// Constant CREATE_ENVIRONMENT for ManagedPolicyType
+        /// </summary>
+        public static readonly ManagedPolicyType CREATE_ENVIRONMENT = new ManagedPolicyType("CREATE_ENVIRONMENT");
+        /// <summary>
+        /// Constant CREATE_ENVIRONMENT_PROFILE for ManagedPolicyType
+        /// </summary>
+        public static readonly ManagedPolicyType CREATE_ENVIRONMENT_PROFILE = new ManagedPolicyType("CREATE_ENVIRONMENT_PROFILE");
+        /// <summary>
+        /// Constant CREATE_FORM_TYPE for ManagedPolicyType
+        /// </summary>
+        public static readonly ManagedPolicyType CREATE_FORM_TYPE = new ManagedPolicyType("CREATE_FORM_TYPE");
+        /// <summary>
+        /// Constant CREATE_GLOSSARY for ManagedPolicyType
+        /// </summary>
+        public static readonly ManagedPolicyType CREATE_GLOSSARY = new ManagedPolicyType("CREATE_GLOSSARY");
+        /// <summary>
+        /// Constant CREATE_PROJECT for ManagedPolicyType
+        /// </summary>
+        public static readonly ManagedPolicyType CREATE_PROJECT = new ManagedPolicyType("CREATE_PROJECT");
+        /// <summary>
+        /// Constant DELEGATE_CREATE_ENVIRONMENT_PROFILE for ManagedPolicyType
+        /// </summary>
+        public static readonly ManagedPolicyType DELEGATE_CREATE_ENVIRONMENT_PROFILE = new ManagedPolicyType("DELEGATE_CREATE_ENVIRONMENT_PROFILE");
+        /// <summary>
+        /// Constant OVERRIDE_DOMAIN_UNIT_OWNERS for ManagedPolicyType
+        /// </summary>
+        public static readonly ManagedPolicyType OVERRIDE_DOMAIN_UNIT_OWNERS = new ManagedPolicyType("OVERRIDE_DOMAIN_UNIT_OWNERS");
+        /// <summary>
+        /// Constant OVERRIDE_PROJECT_OWNERS for ManagedPolicyType
+        /// </summary>
+        public static readonly ManagedPolicyType OVERRIDE_PROJECT_OWNERS = new ManagedPolicyType("OVERRIDE_PROJECT_OWNERS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ManagedPolicyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ManagedPolicyType FindValue(string value)
+        {
+            return FindValue<ManagedPolicyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ManagedPolicyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MetadataGenerationRunStatus.
     /// </summary>
     public class MetadataGenerationRunStatus : ConstantClass
@@ -1844,6 +2022,56 @@ namespace Amazon.DataZone
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator NotificationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ProjectDesignation.
+    /// </summary>
+    public class ProjectDesignation : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTRIBUTOR for ProjectDesignation
+        /// </summary>
+        public static readonly ProjectDesignation CONTRIBUTOR = new ProjectDesignation("CONTRIBUTOR");
+        /// <summary>
+        /// Constant OWNER for ProjectDesignation
+        /// </summary>
+        public static readonly ProjectDesignation OWNER = new ProjectDesignation("OWNER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProjectDesignation(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProjectDesignation FindValue(string value)
+        {
+            return FindValue<ProjectDesignation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProjectDesignation(string value)
         {
             return FindValue(value);
         }
@@ -2466,6 +2694,60 @@ namespace Amazon.DataZone
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SubscriptionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TargetEntityType.
+    /// </summary>
+    public class TargetEntityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DOMAIN_UNIT for TargetEntityType
+        /// </summary>
+        public static readonly TargetEntityType DOMAIN_UNIT = new TargetEntityType("DOMAIN_UNIT");
+        /// <summary>
+        /// Constant ENVIRONMENT_BLUEPRINT_CONFIGURATION for TargetEntityType
+        /// </summary>
+        public static readonly TargetEntityType ENVIRONMENT_BLUEPRINT_CONFIGURATION = new TargetEntityType("ENVIRONMENT_BLUEPRINT_CONFIGURATION");
+        /// <summary>
+        /// Constant ENVIRONMENT_PROFILE for TargetEntityType
+        /// </summary>
+        public static readonly TargetEntityType ENVIRONMENT_PROFILE = new TargetEntityType("ENVIRONMENT_PROFILE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TargetEntityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TargetEntityType FindValue(string value)
+        {
+            return FindValue<TargetEntityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TargetEntityType(string value)
         {
             return FindValue(value);
         }

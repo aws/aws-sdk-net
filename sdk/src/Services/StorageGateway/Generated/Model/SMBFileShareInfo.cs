@@ -44,6 +44,7 @@ namespace Amazon.StorageGateway.Model
         private CacheAttributes _cacheAttributes;
         private CaseSensitivity _caseSensitivity;
         private string _defaultStorageClass;
+        private EncryptionType _encryptionType;
         private string _fileShareARN;
         private string _fileShareId;
         private string _fileShareName;
@@ -231,6 +232,38 @@ namespace Amazon.StorageGateway.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EncryptionType. 
+        /// <para>
+        /// A value that specifies the type of server-side encryption that the file share will
+        /// use for the data that it stores in Amazon S3.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// We recommend using <c>EncryptionType</c> instead of <c>KMSEncrypted</c> to set the
+        /// file share encryption method. You do not need to provide values for both parameters.
+        /// </para>
+        ///  
+        /// <para>
+        /// If values for both parameters exist in the same request, then the specified encryption
+        /// methods must not conflict. For example, if <c>EncryptionType</c> is <c>SseS3</c>,
+        /// then <c>KMSEncrypted</c> must be <c>false</c>. If <c>EncryptionType</c> is <c>SseKms</c>
+        /// or <c>DsseKms</c>, then <c>KMSEncrypted</c> must be <c>true</c>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public EncryptionType EncryptionType
+        {
+            get { return this._encryptionType; }
+            set { this._encryptionType = value; }
+        }
+
+        // Check to see if EncryptionType property is set
+        internal bool IsSetEncryptionType()
+        {
+            return this._encryptionType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FileShareARN.
         /// </summary>
         [AWSProperty(Min=50, Max=500)]
@@ -368,14 +401,28 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property KMSEncrypted. 
         /// <para>
-        /// Set to <c>true</c> to use Amazon S3 server-side encryption with your own KMS key,
-        /// or <c>false</c> to use a key managed by Amazon S3. Optional.
+        /// Optional. Set to <c>true</c> to use Amazon S3 server-side encryption with your own
+        /// KMS key (SSE-KMS), or <c>false</c> to use a key managed by Amazon S3 (SSE-S3). To
+        /// use dual-layer encryption (DSSE-KMS), set the <c>EncryptionType</c> parameter instead.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// We recommend using <c>EncryptionType</c> instead of <c>KMSEncrypted</c> to set the
+        /// file share encryption method. You do not need to provide values for both parameters.
         /// </para>
         ///  
+        /// <para>
+        /// If values for both parameters exist in the same request, then the specified encryption
+        /// methods must not conflict. For example, if <c>EncryptionType</c> is <c>SseS3</c>,
+        /// then <c>KMSEncrypted</c> must be <c>false</c>. If <c>EncryptionType</c> is <c>SseKms</c>
+        /// or <c>DsseKms</c>, then <c>KMSEncrypted</c> must be <c>true</c>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Valid Values: <c>true</c> | <c>false</c> 
         /// </para>
         /// </summary>
+        [Obsolete("KMSEncrypted is deprecated, use EncryptionType instead.")]
         public bool? KMSEncrypted
         {
             get { return this._kmsEncrypted; }
@@ -433,6 +480,12 @@ namespace Amazon.StorageGateway.Model
         /// <para>
         ///  <c>SettlingTimeInSeconds</c> has no effect on the timing of the object uploading
         /// to Amazon S3, only the timing of the notification.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting is not meant to specify an exact time at which the notification will
+        /// be sent. In some cases, the gateway might require more than the specified delay time
+        /// to generate and send notifications.
         /// </para>
         ///  </note> 
         /// <para>
@@ -604,9 +657,9 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using
-        /// Microsoft Windows ACLs to control access to an SMB file share</a> in the <i>Storage
-        /// Gateway User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/filegateway/latest/files3/smb-acl.html">Using
+        /// Windows ACLs to limit SMB file share access</a> in the <i>Amazon S3 File Gateway User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         public bool? SMBACLEnabled

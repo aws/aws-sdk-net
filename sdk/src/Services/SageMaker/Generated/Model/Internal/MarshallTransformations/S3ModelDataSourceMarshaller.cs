@@ -65,6 +65,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetManifestS3Uri())
+            {
+                context.Writer.WritePropertyName("ManifestS3Uri");
+                context.Writer.Write(requestObject.ManifestS3Uri);
+            }
+
             if(requestObject.IsSetModelAccessConfig())
             {
                 context.Writer.WritePropertyName("ModelAccessConfig");

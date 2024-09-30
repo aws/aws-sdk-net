@@ -180,6 +180,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.MinIInterval = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("minQp", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.MinQp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("mvOverPictureBoundaries", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

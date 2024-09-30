@@ -58,6 +58,7 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
 
             DateTime createdAt = response.CreatedAt;
             string createdBy = response.CreatedBy;
+            bool isVerified = response.IsVerified;
             string libraryItemId = response.LibraryItemId;
             int ratingCount = response.RatingCount;
             string status = response.Status;
@@ -186,6 +187,7 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
             DateTime createdAt = response.CreatedAt;
             string createdBy = response.CreatedBy;
             bool isRatedByUser = response.IsRatedByUser;
+            bool isVerified = response.IsVerified;
             string libraryItemId = response.LibraryItemId;
             int ratingCount = response.RatingCount;
             string status = response.Status;
@@ -423,11 +425,28 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
             List<Category> categories = response.Categories;
             DateTime createdAt = response.CreatedAt;
             string createdBy = response.CreatedBy;
+            bool isVerified = response.IsVerified;
             string libraryItemId = response.LibraryItemId;
             int ratingCount = response.RatingCount;
             string status = response.Status;
             DateTime updatedAt = response.UpdatedAt;
             string updatedBy = response.UpdatedBy;
+
+            #endregion
+        }
+
+        public void QAppsUpdateLibraryItemMetadata()
+        {
+            #region example-1
+
+            var client = new AmazonQAppsClient();
+            var response = client.UpdateLibraryItemMetadata(new UpdateLibraryItemMetadataRequest 
+            {
+                InstanceId = "0b95c9c4-89cc-4aa8-9aae-aa91cbec699f",
+                IsVerified = true,
+                LibraryItemId = "cb9ecf72-8563-450d-9db9-994f98297316"
+            });
+
 
             #endregion
         }

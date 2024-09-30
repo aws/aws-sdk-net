@@ -48,6 +48,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetBandwidthReductionFilterSettings())
+            {
+                context.Writer.WritePropertyName("bandwidthReductionFilterSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = BandwidthReductionFilterSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.BandwidthReductionFilterSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTemporalFilterSettings())
             {
                 context.Writer.WritePropertyName("temporalFilterSettings");

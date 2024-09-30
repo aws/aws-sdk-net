@@ -51,7 +51,8 @@ namespace Amazon.IotData.Model.Internal.MarshallTransformations
             var ms = new MemoryStream();
             Amazon.Util.AWSSDKUtils.CopyStream(context.Stream, ms);
             ms.Seek(0, SeekOrigin.Begin);
-            response.Payload = ms;
+            if (ms.Length > 0)
+                response.Payload = ms;
 
             return response;
         }

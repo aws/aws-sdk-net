@@ -73,7 +73,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// the filter conditions inside this list.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=5)]
+        [AWSProperty(Min=2)]
         public List<RetrievalFilter> AndAll
         {
             get { return this._andAll; }
@@ -352,7 +352,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// one of the filter conditions inside this list.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=5)]
+        [AWSProperty(Min=2)]
         public List<RetrievalFilter> OrAll
         {
             get { return this._orAll; }

@@ -66,6 +66,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("byteRateLimit", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ByteRateLimit = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("convert608To708", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

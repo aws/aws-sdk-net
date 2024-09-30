@@ -40,6 +40,7 @@ namespace Amazon.SageMaker.Model
         private List<ClusterInstanceStorageConfig> _instanceStorageConfigs = AWSConfigs.InitializeCollections ? new List<ClusterInstanceStorageConfig>() : null;
         private ClusterInstanceType _instanceType;
         private ClusterLifeCycleConfig _lifeCycleConfig;
+        private List<string> _onStartDeepHealthChecks = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _threadsPerCore;
 
         /// <summary>
@@ -68,7 +69,7 @@ namespace Amazon.SageMaker.Model
         /// cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=0)]
         public int? InstanceCount
         {
             get { return this._instanceCount; }
@@ -156,6 +157,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetLifeCycleConfig()
         {
             return this._lifeCycleConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OnStartDeepHealthChecks. 
+        /// <para>
+        /// A flag indicating whether deep health checks should be performed when the cluster
+        /// instance group is created or updated.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2)]
+        public List<string> OnStartDeepHealthChecks
+        {
+            get { return this._onStartDeepHealthChecks; }
+            set { this._onStartDeepHealthChecks = value; }
+        }
+
+        // Check to see if OnStartDeepHealthChecks property is set
+        internal bool IsSetOnStartDeepHealthChecks()
+        {
+            return this._onStartDeepHealthChecks != null && (this._onStartDeepHealthChecks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

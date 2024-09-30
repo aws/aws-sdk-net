@@ -46,7 +46,7 @@ namespace Amazon.Glue.Model
         /// an access token, thus it is acceptable to have this value as a request parameter.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=4096)]
+        [AWSProperty(Sensitive=true, Min=1, Max=4096)]
         public string AuthorizationCode
         {
             get { return this._authorizationCode; }

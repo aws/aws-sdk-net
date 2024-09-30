@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chatbot.Model
 {
     /// <summary>
-    /// We were not able to find the resource for your request.
+    /// We were unable to find the resource for your request
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

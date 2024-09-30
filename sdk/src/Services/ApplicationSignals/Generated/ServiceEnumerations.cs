@@ -35,6 +35,14 @@ namespace Amazon.ApplicationSignals
         /// </summary>
         public static readonly DurationUnit DAY = new DurationUnit("DAY");
         /// <summary>
+        /// Constant HOUR for DurationUnit
+        /// </summary>
+        public static readonly DurationUnit HOUR = new DurationUnit("HOUR");
+        /// <summary>
+        /// Constant MINUTE for DurationUnit
+        /// </summary>
+        public static readonly DurationUnit MINUTE = new DurationUnit("MINUTE");
+        /// <summary>
         /// Constant MONTH for DurationUnit
         /// </summary>
         public static readonly DurationUnit MONTH = new DurationUnit("MONTH");
@@ -68,6 +76,56 @@ namespace Amazon.ApplicationSignals
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DurationUnit(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EvaluationType.
+    /// </summary>
+    public class EvaluationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PeriodBased for EvaluationType
+        /// </summary>
+        public static readonly EvaluationType PeriodBased = new EvaluationType("PeriodBased");
+        /// <summary>
+        /// Constant RequestBased for EvaluationType
+        /// </summary>
+        public static readonly EvaluationType RequestBased = new EvaluationType("RequestBased");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EvaluationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EvaluationType FindValue(string value)
+        {
+            return FindValue<EvaluationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EvaluationType(string value)
         {
             return FindValue(value);
         }

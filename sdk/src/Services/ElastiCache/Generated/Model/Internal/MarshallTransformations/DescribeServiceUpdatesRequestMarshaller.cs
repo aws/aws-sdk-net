@@ -73,11 +73,16 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetServiceUpdateStatus())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ServiceUpdateStatus)
+                    if (publicRequest.ServiceUpdateStatus.Count == 0)
+                        request.Parameters.Add("ServiceUpdateStatus", "");
+                    else
                     {
-                        request.Parameters.Add("ServiceUpdateStatus" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ServiceUpdateStatus)
+                         {
+                             request.Parameters.Add("ServiceUpdateStatus" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

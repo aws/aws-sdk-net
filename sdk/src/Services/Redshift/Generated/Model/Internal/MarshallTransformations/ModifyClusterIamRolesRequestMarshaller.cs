@@ -61,11 +61,16 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetAddIamRoles())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.AddIamRoles)
+                    if (publicRequest.AddIamRoles.Count == 0)
+                        request.Parameters.Add("AddIamRoles", "");
+                    else
                     {
-                        request.Parameters.Add("AddIamRoles" + "." + "IamRoleArn" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.AddIamRoles)
+                         {
+                             request.Parameters.Add("AddIamRoles" + "." + "IamRoleArn" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetClusterIdentifier())
@@ -78,11 +83,16 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetRemoveIamRoles())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.RemoveIamRoles)
+                    if (publicRequest.RemoveIamRoles.Count == 0)
+                        request.Parameters.Add("RemoveIamRoles", "");
+                    else
                     {
-                        request.Parameters.Add("RemoveIamRoles" + "." + "IamRoleArn" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.RemoveIamRoles)
+                         {
+                             request.Parameters.Add("RemoveIamRoles" + "." + "IamRoleArn" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

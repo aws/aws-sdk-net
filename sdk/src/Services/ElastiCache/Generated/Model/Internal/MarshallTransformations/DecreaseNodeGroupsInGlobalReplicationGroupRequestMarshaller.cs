@@ -65,20 +65,30 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetGlobalNodeGroupsToRemove())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.GlobalNodeGroupsToRemove)
+                    if (publicRequest.GlobalNodeGroupsToRemove.Count == 0)
+                        request.Parameters.Add("GlobalNodeGroupsToRemove", "");
+                    else
                     {
-                        request.Parameters.Add("GlobalNodeGroupsToRemove" + "." + "GlobalNodeGroupId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.GlobalNodeGroupsToRemove)
+                         {
+                             request.Parameters.Add("GlobalNodeGroupsToRemove" + "." + "GlobalNodeGroupId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetGlobalNodeGroupsToRetain())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.GlobalNodeGroupsToRetain)
+                    if (publicRequest.GlobalNodeGroupsToRetain.Count == 0)
+                        request.Parameters.Add("GlobalNodeGroupsToRetain", "");
+                    else
                     {
-                        request.Parameters.Add("GlobalNodeGroupsToRetain" + "." + "GlobalNodeGroupId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.GlobalNodeGroupsToRetain)
+                         {
+                             request.Parameters.Add("GlobalNodeGroupsToRetain" + "." + "GlobalNodeGroupId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetGlobalReplicationGroupId())

@@ -36,12 +36,14 @@ namespace Amazon.Glue.Model
     public partial class TableOptimizerConfiguration
     {
         private bool? _enabled;
+        private OrphanFileDeletionConfiguration _orphanFileDeletionConfiguration;
+        private RetentionConfiguration _retentionConfiguration;
         private string _roleArn;
 
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Whether table optimization is enabled. 
+        /// Whether table optimization is enabled.
         /// </para>
         /// </summary>
         public bool? Enabled
@@ -54,6 +56,42 @@ namespace Amazon.Glue.Model
         internal bool IsSetEnabled()
         {
             return this._enabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrphanFileDeletionConfiguration. 
+        /// <para>
+        /// The configuration for an orphan file deletion optimizer.
+        /// </para>
+        /// </summary>
+        public OrphanFileDeletionConfiguration OrphanFileDeletionConfiguration
+        {
+            get { return this._orphanFileDeletionConfiguration; }
+            set { this._orphanFileDeletionConfiguration = value; }
+        }
+
+        // Check to see if OrphanFileDeletionConfiguration property is set
+        internal bool IsSetOrphanFileDeletionConfiguration()
+        {
+            return this._orphanFileDeletionConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetentionConfiguration. 
+        /// <para>
+        /// The configuration for a snapshot retention optimizer.
+        /// </para>
+        /// </summary>
+        public RetentionConfiguration RetentionConfiguration
+        {
+            get { return this._retentionConfiguration; }
+            set { this._retentionConfiguration = value; }
+        }
+
+        // Check to see if RetentionConfiguration property is set
+        internal bool IsSetRetentionConfiguration()
+        {
+            return this._retentionConfiguration != null;
         }
 
         /// <summary>

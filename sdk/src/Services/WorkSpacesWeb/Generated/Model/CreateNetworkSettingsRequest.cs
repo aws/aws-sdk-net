@@ -98,7 +98,7 @@ namespace Amazon.WorkSpacesWeb.Model
         /// to your VPC. At least two of these subnets must be in different availability zones.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=3)]
+        [AWSProperty(Required=true, Min=2, Max=5)]
         public List<string> SubnetIds
         {
             get { return this._subnetIds; }

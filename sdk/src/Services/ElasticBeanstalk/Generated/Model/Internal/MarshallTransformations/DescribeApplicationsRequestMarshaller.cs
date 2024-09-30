@@ -61,11 +61,16 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetApplicationNames())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ApplicationNames)
+                    if (publicRequest.ApplicationNames.Count == 0)
+                        request.Parameters.Add("ApplicationNames", "");
+                    else
                     {
-                        request.Parameters.Add("ApplicationNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ApplicationNames)
+                         {
+                             request.Parameters.Add("ApplicationNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

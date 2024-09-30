@@ -88,6 +88,12 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
                     response.IsRatedByUser = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("isVerified", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    response.IsVerified = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("libraryItemId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

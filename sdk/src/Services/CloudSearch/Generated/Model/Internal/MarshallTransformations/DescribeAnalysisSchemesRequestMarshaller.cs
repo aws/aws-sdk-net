@@ -61,11 +61,16 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetAnalysisSchemeNames())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.AnalysisSchemeNames)
+                    if (publicRequest.AnalysisSchemeNames.Count == 0)
+                        request.Parameters.Add("AnalysisSchemeNames", "");
+                    else
                     {
-                        request.Parameters.Add("AnalysisSchemeNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.AnalysisSchemeNames)
+                         {
+                             request.Parameters.Add("AnalysisSchemeNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetDeployed())

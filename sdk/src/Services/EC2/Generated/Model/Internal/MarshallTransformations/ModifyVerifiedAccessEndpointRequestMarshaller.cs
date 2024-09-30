@@ -83,11 +83,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if(publicRequest.LoadBalancerOptions.IsSetSubnetIds())
                     {
-                        int publicRequestLoadBalancerOptionslistValueIndex = 1;
-                        foreach(var publicRequestLoadBalancerOptionslistValue in publicRequest.LoadBalancerOptions.SubnetIds)
+                        if (publicRequest.LoadBalancerOptions.SubnetIds.Count == 0)
+                            request.Parameters.Add("LoadBalancerOptions" + "." + "SubnetId", "");
+                        else
                         {
-                            request.Parameters.Add("LoadBalancerOptions" + "." + "SubnetId" + "." + publicRequestLoadBalancerOptionslistValueIndex, StringUtils.FromString(publicRequestLoadBalancerOptionslistValue));
-                            publicRequestLoadBalancerOptionslistValueIndex++;
+                             int publicRequestLoadBalancerOptionslistValueIndex = 1;
+                             foreach(var publicRequestLoadBalancerOptionslistValue in publicRequest.LoadBalancerOptions.SubnetIds)
+                             {
+                                 request.Parameters.Add("LoadBalancerOptions" + "." + "SubnetId" + "." + publicRequestLoadBalancerOptionslistValueIndex, StringUtils.FromString(publicRequestLoadBalancerOptionslistValue));
+                                 publicRequestLoadBalancerOptionslistValueIndex++;
+                             }
                         }
                     }
                 }

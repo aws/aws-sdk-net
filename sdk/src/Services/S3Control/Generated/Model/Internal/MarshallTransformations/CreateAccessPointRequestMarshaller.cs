@@ -82,16 +82,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     xmlWriter.WriteStartElement("PublicAccessBlockConfiguration");
                     if(publicRequest.PublicAccessBlockConfiguration.IsSetBlockPublicAcls())
                         xmlWriter.WriteElementString("BlockPublicAcls", StringUtils.FromBool(publicRequest.PublicAccessBlockConfiguration.BlockPublicAcls.Value));
-
                     if(publicRequest.PublicAccessBlockConfiguration.IsSetBlockPublicPolicy())
                         xmlWriter.WriteElementString("BlockPublicPolicy", StringUtils.FromBool(publicRequest.PublicAccessBlockConfiguration.BlockPublicPolicy.Value));
-
                     if(publicRequest.PublicAccessBlockConfiguration.IsSetIgnorePublicAcls())
                         xmlWriter.WriteElementString("IgnorePublicAcls", StringUtils.FromBool(publicRequest.PublicAccessBlockConfiguration.IgnorePublicAcls.Value));
-
                     if(publicRequest.PublicAccessBlockConfiguration.IsSetRestrictPublicBuckets())
                         xmlWriter.WriteElementString("RestrictPublicBuckets", StringUtils.FromBool(publicRequest.PublicAccessBlockConfiguration.RestrictPublicBuckets.Value));
-
                     xmlWriter.WriteEndElement();
                 }
                 if (publicRequest.VpcConfiguration != null)
@@ -99,7 +95,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     xmlWriter.WriteStartElement("VpcConfiguration");
                     if(publicRequest.VpcConfiguration.IsSetVpcId())
                         xmlWriter.WriteElementString("VpcId", StringUtils.FromString(publicRequest.VpcConfiguration.VpcId));
-
                     xmlWriter.WriteEndElement();
                 }
 

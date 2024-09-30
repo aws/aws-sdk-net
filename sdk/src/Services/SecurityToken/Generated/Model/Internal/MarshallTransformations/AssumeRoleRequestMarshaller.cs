@@ -73,30 +73,40 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetPolicyArns())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.PolicyArns)
+                    if (publicRequest.PolicyArns.Count == 0)
+                        request.Parameters.Add("PolicyArns", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetArn())
-                        {
-                            request.Parameters.Add("PolicyArns" + "." + "member" + "." + publicRequestlistValueIndex + "." + "arn", StringUtils.FromString(publicRequestlistValue.Arn));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.PolicyArns)
+                         {
+                            if(publicRequestlistValue.IsSetArn())
+                            {
+                                request.Parameters.Add("PolicyArns" + "." + "member" + "." + publicRequestlistValueIndex + "." + "arn", StringUtils.FromString(publicRequestlistValue.Arn));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetProvidedContexts())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ProvidedContexts)
+                    if (publicRequest.ProvidedContexts.Count == 0)
+                        request.Parameters.Add("ProvidedContexts", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetContextAssertion())
-                        {
-                            request.Parameters.Add("ProvidedContexts" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ContextAssertion", StringUtils.FromString(publicRequestlistValue.ContextAssertion));
-                        }
-                        if(publicRequestlistValue.IsSetProviderArn())
-                        {
-                            request.Parameters.Add("ProvidedContexts" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ProviderArn", StringUtils.FromString(publicRequestlistValue.ProviderArn));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ProvidedContexts)
+                         {
+                            if(publicRequestlistValue.IsSetContextAssertion())
+                            {
+                                request.Parameters.Add("ProvidedContexts" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ContextAssertion", StringUtils.FromString(publicRequestlistValue.ContextAssertion));
+                            }
+                            if(publicRequestlistValue.IsSetProviderArn())
+                            {
+                                request.Parameters.Add("ProvidedContexts" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ProviderArn", StringUtils.FromString(publicRequestlistValue.ProviderArn));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetRoleArn())
@@ -117,18 +127,23 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetTags())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Tags)
+                    if (publicRequest.Tags.Count == 0)
+                        request.Parameters.Add("Tags", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetKey())
-                        {
-                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
-                        }
-                        if(publicRequestlistValue.IsSetValue())
-                        {
-                            request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Tags)
+                         {
+                            if(publicRequestlistValue.IsSetKey())
+                            {
+                                request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
+                            }
+                            if(publicRequestlistValue.IsSetValue())
+                            {
+                                request.Parameters.Add("Tags" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetTokenCode())
@@ -137,11 +152,16 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetTransitiveTagKeys())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.TransitiveTagKeys)
+                    if (publicRequest.TransitiveTagKeys.Count == 0)
+                        request.Parameters.Add("TransitiveTagKeys", "");
+                    else
                     {
-                        request.Parameters.Add("TransitiveTagKeys" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.TransitiveTagKeys)
+                         {
+                             request.Parameters.Add("TransitiveTagKeys" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

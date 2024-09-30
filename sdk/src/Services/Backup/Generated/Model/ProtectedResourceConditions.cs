@@ -30,14 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Backup.Model
 {
     /// <summary>
-    /// A list of conditions that you define for resources in your restore testing plan using
-    /// tags.
-    /// 
-    ///  
-    /// <para>
-    /// For example, <c>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo", "Value":
-    /// "true" },</c>. Condition operators are case sensitive.
-    /// </para>
+    /// The conditions that you define for resources in your restore testing plan using tags.
     /// </summary>
     public partial class ProtectedResourceConditions
     {

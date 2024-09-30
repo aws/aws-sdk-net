@@ -51,7 +51,8 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
             var ms = new MemoryStream();
             Amazon.Util.AWSSDKUtils.CopyStream(context.Stream, ms);
             ms.Seek(0, SeekOrigin.Begin);
-            response.Content = ms;
+            if (ms.Length > 0)
+                response.Content = ms;
             if (context.ResponseData.IsHeaderPresent("Configuration-Version"))
                 response.ConfigurationVersion = context.ResponseData.GetHeaderValue("Configuration-Version");
             if (context.ResponseData.IsHeaderPresent("Content-Type"))

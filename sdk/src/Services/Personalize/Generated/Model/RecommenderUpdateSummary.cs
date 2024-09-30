@@ -117,26 +117,13 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the recommender update.
+        /// The status of the recommender update. A recommender update can be in one of the following
+        /// states:
         /// </para>
         ///  
         /// <para>
-        /// A recommender can be in one of the following states:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
         /// CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// STOP PENDING &gt; STOP IN_PROGRESS &gt; INACTIVE &gt; START PENDING &gt; START IN_PROGRESS
-        /// &gt; ACTIVE
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DELETE PENDING &gt; DELETE IN_PROGRESS
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Max=256)]
         public string Status

@@ -776,6 +776,53 @@ namespace Amazon.FIS
 
         #endregion
         
+        #region  GetSafetyLever
+
+
+        /// <summary>
+        /// Gets information about the specified safety lever.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSafetyLever service method.</param>
+        /// 
+        /// <returns>The response from the GetSafetyLever service method, as returned by FIS.</returns>
+        /// <exception cref="Amazon.FIS.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetSafetyLever">REST API Reference for GetSafetyLever Operation</seealso>
+        public virtual GetSafetyLeverResponse GetSafetyLever(GetSafetyLeverRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSafetyLeverRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSafetyLeverResponseUnmarshaller.Instance;
+
+            return Invoke<GetSafetyLeverResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets information about the specified safety lever.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSafetyLever service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSafetyLever service method, as returned by FIS.</returns>
+        /// <exception cref="Amazon.FIS.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetSafetyLever">REST API Reference for GetSafetyLever Operation</seealso>
+        public virtual Task<GetSafetyLeverResponse> GetSafetyLeverAsync(GetSafetyLeverRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSafetyLeverRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSafetyLeverResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetSafetyLeverResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetTargetAccountConfiguration
 
 
@@ -1527,6 +1574,65 @@ namespace Amazon.FIS
             options.ResponseUnmarshaller = UpdateExperimentTemplateResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateExperimentTemplateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateSafetyLeverState
+
+
+        /// <summary>
+        /// Updates the specified safety lever state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSafetyLeverState service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSafetyLeverState service method, as returned by FIS.</returns>
+        /// <exception cref="Amazon.FIS.Model.ConflictException">
+        /// The request could not be processed because of a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.FIS.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.FIS.Model.ValidationException">
+        /// The specified input is not valid, or fails to satisfy the constraints for the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/UpdateSafetyLeverState">REST API Reference for UpdateSafetyLeverState Operation</seealso>
+        public virtual UpdateSafetyLeverStateResponse UpdateSafetyLeverState(UpdateSafetyLeverStateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSafetyLeverStateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSafetyLeverStateResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSafetyLeverStateResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the specified safety lever state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSafetyLeverState service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateSafetyLeverState service method, as returned by FIS.</returns>
+        /// <exception cref="Amazon.FIS.Model.ConflictException">
+        /// The request could not be processed because of a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.FIS.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.FIS.Model.ValidationException">
+        /// The specified input is not valid, or fails to satisfy the constraints for the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/UpdateSafetyLeverState">REST API Reference for UpdateSafetyLeverState Operation</seealso>
+        public virtual Task<UpdateSafetyLeverStateResponse> UpdateSafetyLeverStateAsync(UpdateSafetyLeverStateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSafetyLeverStateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSafetyLeverStateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateSafetyLeverStateResponse>(request, options, cancellationToken);
         }
 
         #endregion

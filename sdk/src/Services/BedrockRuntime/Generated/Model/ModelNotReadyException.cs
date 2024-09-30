@@ -30,13 +30,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// The model specified in the request is not ready to serve inference requests.
+    /// The model specified in the request is not ready to serve inference requests. The AWS
+    /// SDK will automatically retry the operation up to 5 times. For information about configuring
+    /// automatic retries, see <a href="https://docs.aws.amazon.com/sdkref/latest/guide/feature-retry-behavior.html">Retry
+    /// behavior</a> in the <i>AWS SDKs and Tools</i> reference guide.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class ModelNotReadyException : AmazonBedrockRuntimeException
     {
+
+        private RetryableDetails _retryableDetails = new RetryableDetails(false);
 
         /// <summary>
         /// Constructs a new ModelNotReadyException with the specified error
@@ -116,5 +121,16 @@ namespace Amazon.BedrockRuntime.Model
         }
 #endif
 
+        /// <summary>
+        /// Flag indicating if the exception is retryable and the associated retry
+        /// details. A null value indicates that the exception is not retryable.
+        /// </summary>
+        public override RetryableDetails Retryable
+        {
+            get
+            {
+                return _retryableDetails;
+            }
+        }
     }
 }

@@ -332,8 +332,9 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property VpcConfig. 
         /// <para>
-        /// VPC configuration (optional). Configuration parameters for the private Virtual Private
-        /// Cloud (VPC) that contains the resources you are using for this job.
+        /// The configuration of the Virtual Private Cloud (VPC) that contains the resources that
+        /// you're using for this job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/vpc-model-customization.html">Protect
+        /// your model customization jobs using a VPC</a>.
         /// </para>
         /// </summary>
         public VpcConfig VpcConfig

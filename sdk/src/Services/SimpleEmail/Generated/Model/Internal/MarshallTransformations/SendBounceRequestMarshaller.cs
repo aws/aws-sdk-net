@@ -61,65 +61,75 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetBouncedRecipientInfoList())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.BouncedRecipientInfoList)
+                    if (publicRequest.BouncedRecipientInfoList.Count == 0)
+                        request.Parameters.Add("BouncedRecipientInfoList", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetBounceType())
-                        {
-                            request.Parameters.Add("BouncedRecipientInfoList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "BounceType", StringUtils.FromString(publicRequestlistValue.BounceType));
-                        }
-                        if(publicRequestlistValue.IsSetRecipient())
-                        {
-                            request.Parameters.Add("BouncedRecipientInfoList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Recipient", StringUtils.FromString(publicRequestlistValue.Recipient));
-                        }
-                        if(publicRequestlistValue.IsSetRecipientArn())
-                        {
-                            request.Parameters.Add("BouncedRecipientInfoList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RecipientArn", StringUtils.FromString(publicRequestlistValue.RecipientArn));
-                        }
-                        if(publicRequestlistValue.IsSetRecipientDsnFields())
-                        {
-                            if(publicRequestlistValue.RecipientDsnFields.IsSetAction())
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.BouncedRecipientInfoList)
+                         {
+                            if(publicRequestlistValue.IsSetBounceType())
                             {
-                                request.Parameters.Add("BouncedRecipientInfoList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RecipientDsnFields" + "." + "Action", StringUtils.FromString(publicRequestlistValue.RecipientDsnFields.Action));
+                                request.Parameters.Add("BouncedRecipientInfoList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "BounceType", StringUtils.FromString(publicRequestlistValue.BounceType));
                             }
-                            if(publicRequestlistValue.RecipientDsnFields.IsSetDiagnosticCode())
+                            if(publicRequestlistValue.IsSetRecipient())
                             {
-                                request.Parameters.Add("BouncedRecipientInfoList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RecipientDsnFields" + "." + "DiagnosticCode", StringUtils.FromString(publicRequestlistValue.RecipientDsnFields.DiagnosticCode));
+                                request.Parameters.Add("BouncedRecipientInfoList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Recipient", StringUtils.FromString(publicRequestlistValue.Recipient));
                             }
-                            if(publicRequestlistValue.RecipientDsnFields.IsSetExtensionFields())
+                            if(publicRequestlistValue.IsSetRecipientArn())
                             {
-                                int publicRequestlistValueRecipientDsnFieldslistValueIndex = 1;
-                                foreach(var publicRequestlistValueRecipientDsnFieldslistValue in publicRequestlistValue.RecipientDsnFields.ExtensionFields)
+                                request.Parameters.Add("BouncedRecipientInfoList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RecipientArn", StringUtils.FromString(publicRequestlistValue.RecipientArn));
+                            }
+                            if(publicRequestlistValue.IsSetRecipientDsnFields())
+                            {
+                                if(publicRequestlistValue.RecipientDsnFields.IsSetAction())
                                 {
-                                    if(publicRequestlistValueRecipientDsnFieldslistValue.IsSetName())
+                                    request.Parameters.Add("BouncedRecipientInfoList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RecipientDsnFields" + "." + "Action", StringUtils.FromString(publicRequestlistValue.RecipientDsnFields.Action));
+                                }
+                                if(publicRequestlistValue.RecipientDsnFields.IsSetDiagnosticCode())
+                                {
+                                    request.Parameters.Add("BouncedRecipientInfoList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RecipientDsnFields" + "." + "DiagnosticCode", StringUtils.FromString(publicRequestlistValue.RecipientDsnFields.DiagnosticCode));
+                                }
+                                if(publicRequestlistValue.RecipientDsnFields.IsSetExtensionFields())
+                                {
+                                    if (publicRequestlistValue.RecipientDsnFields.ExtensionFields.Count == 0)
+                                        request.Parameters.Add("BouncedRecipientInfoList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RecipientDsnFields" + "." + "ExtensionFields", "");
+                                    else
                                     {
-                                        request.Parameters.Add("BouncedRecipientInfoList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RecipientDsnFields" + "." + "ExtensionFields" + "." + "member" + "." + publicRequestlistValueRecipientDsnFieldslistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValueRecipientDsnFieldslistValue.Name));
+                                         int publicRequestlistValueRecipientDsnFieldslistValueIndex = 1;
+                                         foreach(var publicRequestlistValueRecipientDsnFieldslistValue in publicRequestlistValue.RecipientDsnFields.ExtensionFields)
+                                         {
+                                            if(publicRequestlistValueRecipientDsnFieldslistValue.IsSetName())
+                                            {
+                                                request.Parameters.Add("BouncedRecipientInfoList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RecipientDsnFields" + "." + "ExtensionFields" + "." + "member" + "." + publicRequestlistValueRecipientDsnFieldslistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValueRecipientDsnFieldslistValue.Name));
+                                            }
+                                            if(publicRequestlistValueRecipientDsnFieldslistValue.IsSetValue())
+                                            {
+                                                request.Parameters.Add("BouncedRecipientInfoList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RecipientDsnFields" + "." + "ExtensionFields" + "." + "member" + "." + publicRequestlistValueRecipientDsnFieldslistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValueRecipientDsnFieldslistValue.Value));
+                                            }
+                                             publicRequestlistValueRecipientDsnFieldslistValueIndex++;
+                                         }
                                     }
-                                    if(publicRequestlistValueRecipientDsnFieldslistValue.IsSetValue())
-                                    {
-                                        request.Parameters.Add("BouncedRecipientInfoList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RecipientDsnFields" + "." + "ExtensionFields" + "." + "member" + "." + publicRequestlistValueRecipientDsnFieldslistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValueRecipientDsnFieldslistValue.Value));
-                                    }
-                                    publicRequestlistValueRecipientDsnFieldslistValueIndex++;
+                                }
+                                if(publicRequestlistValue.RecipientDsnFields.IsSetFinalRecipient())
+                                {
+                                    request.Parameters.Add("BouncedRecipientInfoList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RecipientDsnFields" + "." + "FinalRecipient", StringUtils.FromString(publicRequestlistValue.RecipientDsnFields.FinalRecipient));
+                                }
+                                if(publicRequestlistValue.RecipientDsnFields.IsSetLastAttemptDateUtc())
+                                {
+                                    request.Parameters.Add("BouncedRecipientInfoList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RecipientDsnFields" + "." + "LastAttemptDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestlistValue.RecipientDsnFields.LastAttemptDateUtc));
+                                }
+                                if(publicRequestlistValue.RecipientDsnFields.IsSetRemoteMta())
+                                {
+                                    request.Parameters.Add("BouncedRecipientInfoList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RecipientDsnFields" + "." + "RemoteMta", StringUtils.FromString(publicRequestlistValue.RecipientDsnFields.RemoteMta));
+                                }
+                                if(publicRequestlistValue.RecipientDsnFields.IsSetStatus())
+                                {
+                                    request.Parameters.Add("BouncedRecipientInfoList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RecipientDsnFields" + "." + "Status", StringUtils.FromString(publicRequestlistValue.RecipientDsnFields.Status));
                                 }
                             }
-                            if(publicRequestlistValue.RecipientDsnFields.IsSetFinalRecipient())
-                            {
-                                request.Parameters.Add("BouncedRecipientInfoList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RecipientDsnFields" + "." + "FinalRecipient", StringUtils.FromString(publicRequestlistValue.RecipientDsnFields.FinalRecipient));
-                            }
-                            if(publicRequestlistValue.RecipientDsnFields.IsSetLastAttemptDateUtc())
-                            {
-                                request.Parameters.Add("BouncedRecipientInfoList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RecipientDsnFields" + "." + "LastAttemptDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestlistValue.RecipientDsnFields.LastAttemptDateUtc));
-                            }
-                            if(publicRequestlistValue.RecipientDsnFields.IsSetRemoteMta())
-                            {
-                                request.Parameters.Add("BouncedRecipientInfoList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RecipientDsnFields" + "." + "RemoteMta", StringUtils.FromString(publicRequestlistValue.RecipientDsnFields.RemoteMta));
-                            }
-                            if(publicRequestlistValue.RecipientDsnFields.IsSetStatus())
-                            {
-                                request.Parameters.Add("BouncedRecipientInfoList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RecipientDsnFields" + "." + "Status", StringUtils.FromString(publicRequestlistValue.RecipientDsnFields.Status));
-                            }
-                        }
-                        publicRequestlistValueIndex++;
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetBounceSender())
@@ -142,18 +152,23 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     }
                     if(publicRequest.MessageDsn.IsSetExtensionFields())
                     {
-                        int publicRequestMessageDsnlistValueIndex = 1;
-                        foreach(var publicRequestMessageDsnlistValue in publicRequest.MessageDsn.ExtensionFields)
+                        if (publicRequest.MessageDsn.ExtensionFields.Count == 0)
+                            request.Parameters.Add("MessageDsn" + "." + "ExtensionFields", "");
+                        else
                         {
-                            if(publicRequestMessageDsnlistValue.IsSetName())
-                            {
-                                request.Parameters.Add("MessageDsn" + "." + "ExtensionFields" + "." + "member" + "." + publicRequestMessageDsnlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestMessageDsnlistValue.Name));
-                            }
-                            if(publicRequestMessageDsnlistValue.IsSetValue())
-                            {
-                                request.Parameters.Add("MessageDsn" + "." + "ExtensionFields" + "." + "member" + "." + publicRequestMessageDsnlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestMessageDsnlistValue.Value));
-                            }
-                            publicRequestMessageDsnlistValueIndex++;
+                             int publicRequestMessageDsnlistValueIndex = 1;
+                             foreach(var publicRequestMessageDsnlistValue in publicRequest.MessageDsn.ExtensionFields)
+                             {
+                                if(publicRequestMessageDsnlistValue.IsSetName())
+                                {
+                                    request.Parameters.Add("MessageDsn" + "." + "ExtensionFields" + "." + "member" + "." + publicRequestMessageDsnlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestMessageDsnlistValue.Name));
+                                }
+                                if(publicRequestMessageDsnlistValue.IsSetValue())
+                                {
+                                    request.Parameters.Add("MessageDsn" + "." + "ExtensionFields" + "." + "member" + "." + publicRequestMessageDsnlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestMessageDsnlistValue.Value));
+                                }
+                                 publicRequestMessageDsnlistValueIndex++;
+                             }
                         }
                     }
                     if(publicRequest.MessageDsn.IsSetReportingMta())

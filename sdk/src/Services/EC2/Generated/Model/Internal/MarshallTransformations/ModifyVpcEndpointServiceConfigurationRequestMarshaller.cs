@@ -65,29 +65,44 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetAddGatewayLoadBalancerArns())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.AddGatewayLoadBalancerArns)
+                    if (publicRequest.AddGatewayLoadBalancerArns.Count == 0)
+                        request.Parameters.Add("AddGatewayLoadBalancerArn", "");
+                    else
                     {
-                        request.Parameters.Add("AddGatewayLoadBalancerArn" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.AddGatewayLoadBalancerArns)
+                         {
+                             request.Parameters.Add("AddGatewayLoadBalancerArn" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetAddNetworkLoadBalancerArns())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.AddNetworkLoadBalancerArns)
+                    if (publicRequest.AddNetworkLoadBalancerArns.Count == 0)
+                        request.Parameters.Add("AddNetworkLoadBalancerArn", "");
+                    else
                     {
-                        request.Parameters.Add("AddNetworkLoadBalancerArn" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.AddNetworkLoadBalancerArns)
+                         {
+                             request.Parameters.Add("AddNetworkLoadBalancerArn" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetAddSupportedIpAddressTypes())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.AddSupportedIpAddressTypes)
+                    if (publicRequest.AddSupportedIpAddressTypes.Count == 0)
+                        request.Parameters.Add("AddSupportedIpAddressType", "");
+                    else
                     {
-                        request.Parameters.Add("AddSupportedIpAddressType" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.AddSupportedIpAddressTypes)
+                         {
+                             request.Parameters.Add("AddSupportedIpAddressType" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetPrivateDnsName())
@@ -96,20 +111,30 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetRemoveGatewayLoadBalancerArns())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.RemoveGatewayLoadBalancerArns)
+                    if (publicRequest.RemoveGatewayLoadBalancerArns.Count == 0)
+                        request.Parameters.Add("RemoveGatewayLoadBalancerArn", "");
+                    else
                     {
-                        request.Parameters.Add("RemoveGatewayLoadBalancerArn" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.RemoveGatewayLoadBalancerArns)
+                         {
+                             request.Parameters.Add("RemoveGatewayLoadBalancerArn" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetRemoveNetworkLoadBalancerArns())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.RemoveNetworkLoadBalancerArns)
+                    if (publicRequest.RemoveNetworkLoadBalancerArns.Count == 0)
+                        request.Parameters.Add("RemoveNetworkLoadBalancerArn", "");
+                    else
                     {
-                        request.Parameters.Add("RemoveNetworkLoadBalancerArn" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.RemoveNetworkLoadBalancerArns)
+                         {
+                             request.Parameters.Add("RemoveNetworkLoadBalancerArn" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetRemovePrivateDnsName())
@@ -118,11 +143,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetRemoveSupportedIpAddressTypes())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.RemoveSupportedIpAddressTypes)
+                    if (publicRequest.RemoveSupportedIpAddressTypes.Count == 0)
+                        request.Parameters.Add("RemoveSupportedIpAddressType", "");
+                    else
                     {
-                        request.Parameters.Add("RemoveSupportedIpAddressType" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.RemoveSupportedIpAddressTypes)
+                         {
+                             request.Parameters.Add("RemoveSupportedIpAddressType" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetServiceId())

@@ -38,6 +38,7 @@ namespace Amazon.SimpleEmailV2.Model
     {
         private string _configurationSetName;
         private string _customRedirectDomain;
+        private HttpsPolicy _httpsPolicy;
 
         /// <summary>
         /// Gets and sets the property ConfigurationSetName. 
@@ -74,6 +75,21 @@ namespace Amazon.SimpleEmailV2.Model
         internal bool IsSetCustomRedirectDomain()
         {
             return this._customRedirectDomain != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HttpsPolicy.
+        /// </summary>
+        public HttpsPolicy HttpsPolicy
+        {
+            get { return this._httpsPolicy; }
+            set { this._httpsPolicy = value; }
+        }
+
+        // Check to see if HttpsPolicy property is set
+        internal bool IsSetHttpsPolicy()
+        {
+            return this._httpsPolicy != null;
         }
 
     }

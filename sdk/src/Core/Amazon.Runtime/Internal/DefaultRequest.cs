@@ -55,6 +55,7 @@ namespace Amazon.Runtime.Internal
         string canonicalResource;
         RegionEndpoint alternateRegion;
         long originalStreamLength;
+        DateTime? signedAt;
 
         /// <summary>
         /// Constructs a new DefaultRequest with the specified service name and the
@@ -76,7 +77,20 @@ namespace Amazon.Runtime.Internal
             parametersCollection = new ParameterCollection();
             parametersFacade = new ParametersDictionaryFacade(parametersCollection);
         }
-
+        /// <summary>
+        /// The time which the request was signed at.
+        /// </summary>
+        public DateTime? SignedAt
+        {
+            get
+            {
+                return signedAt;
+            }
+            set
+            {
+                this.signedAt = value;
+            }
+        }
 
         /// <summary>
         /// The name of the request

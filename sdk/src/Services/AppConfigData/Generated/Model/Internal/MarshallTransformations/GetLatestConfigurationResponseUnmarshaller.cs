@@ -51,7 +51,8 @@ namespace Amazon.AppConfigData.Model.Internal.MarshallTransformations
             var ms = new MemoryStream();
             Amazon.Util.AWSSDKUtils.CopyStream(context.Stream, ms);
             ms.Seek(0, SeekOrigin.Begin);
-            response.Configuration = ms;
+            if (ms.Length > 0)
+                response.Configuration = ms;
             if (context.ResponseData.IsHeaderPresent("Content-Type"))
                 response.ContentType = context.ResponseData.GetHeaderValue("Content-Type");
             if (context.ResponseData.IsHeaderPresent("Next-Poll-Configuration-Token"))

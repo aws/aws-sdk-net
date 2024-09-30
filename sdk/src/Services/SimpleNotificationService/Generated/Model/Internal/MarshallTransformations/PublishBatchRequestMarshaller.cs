@@ -61,60 +61,65 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
             {
                 if(publicRequest.IsSetPublishBatchRequestEntries())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.PublishBatchRequestEntries)
+                    if (publicRequest.PublishBatchRequestEntries.Count == 0)
+                        request.Parameters.Add("PublishBatchRequestEntries", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetId())
-                        {
-                            request.Parameters.Add("PublishBatchRequestEntries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Id", StringUtils.FromString(publicRequestlistValue.Id));
-                        }
-                        if(publicRequestlistValue.IsSetMessage())
-                        {
-                            request.Parameters.Add("PublishBatchRequestEntries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Message", StringUtils.FromString(publicRequestlistValue.Message));
-                        }
-                        if(publicRequestlistValue.IsSetMessageAttributes())
-                        {
-                            int mapIndex = 1;
-                            foreach(var key in publicRequestlistValue.MessageAttributes.Keys)
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.PublishBatchRequestEntries)
+                         {
+                            if(publicRequestlistValue.IsSetId())
                             {
-                                MessageAttributeValue value;
-                                bool hasValue = publicRequestlistValue.MessageAttributes.TryGetValue(key, out value);
-                                request.Parameters.Add("PublishBatchRequestEntries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MessageAttributes" + "." + "entry" + "." + mapIndex + "." + "Name", StringUtils.FromString(key));
-                                if (hasValue)
-                                {
-                                    if(value.IsSetBinaryValue())
-                                    {
-                                        request.Parameters.Add("PublishBatchRequestEntries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MessageAttributes" + "." + "entry" + "." + mapIndex + "." + "Value" + "." + "BinaryValue", StringUtils.FromMemoryStream(value.BinaryValue));
-                                    }
-                                    if(value.IsSetDataType())
-                                    {
-                                        request.Parameters.Add("PublishBatchRequestEntries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MessageAttributes" + "." + "entry" + "." + mapIndex + "." + "Value" + "." + "DataType", StringUtils.FromString(value.DataType));
-                                    }
-                                    if(value.IsSetStringValue())
-                                    {
-                                        request.Parameters.Add("PublishBatchRequestEntries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MessageAttributes" + "." + "entry" + "." + mapIndex + "." + "Value" + "." + "StringValue", StringUtils.FromString(value.StringValue));
-                                    }
-                                }
-                                mapIndex++;
+                                request.Parameters.Add("PublishBatchRequestEntries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Id", StringUtils.FromString(publicRequestlistValue.Id));
                             }
-                        }
-                        if(publicRequestlistValue.IsSetMessageDeduplicationId())
-                        {
-                            request.Parameters.Add("PublishBatchRequestEntries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MessageDeduplicationId", StringUtils.FromString(publicRequestlistValue.MessageDeduplicationId));
-                        }
-                        if(publicRequestlistValue.IsSetMessageGroupId())
-                        {
-                            request.Parameters.Add("PublishBatchRequestEntries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MessageGroupId", StringUtils.FromString(publicRequestlistValue.MessageGroupId));
-                        }
-                        if(publicRequestlistValue.IsSetMessageStructure())
-                        {
-                            request.Parameters.Add("PublishBatchRequestEntries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MessageStructure", StringUtils.FromString(publicRequestlistValue.MessageStructure));
-                        }
-                        if(publicRequestlistValue.IsSetSubject())
-                        {
-                            request.Parameters.Add("PublishBatchRequestEntries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Subject", StringUtils.FromString(publicRequestlistValue.Subject));
-                        }
-                        publicRequestlistValueIndex++;
+                            if(publicRequestlistValue.IsSetMessage())
+                            {
+                                request.Parameters.Add("PublishBatchRequestEntries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Message", StringUtils.FromString(publicRequestlistValue.Message));
+                            }
+                            if(publicRequestlistValue.IsSetMessageAttributes())
+                            {
+                                int mapIndex = 1;
+                                foreach(var key in publicRequestlistValue.MessageAttributes.Keys)
+                                {
+                                    MessageAttributeValue value;
+                                    bool hasValue = publicRequestlistValue.MessageAttributes.TryGetValue(key, out value);
+                                    request.Parameters.Add("PublishBatchRequestEntries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MessageAttributes" + "." + "entry" + "." + mapIndex + "." + "Name", StringUtils.FromString(key));
+                                    if (hasValue)
+                                    {
+                                        if(value.IsSetBinaryValue())
+                                        {
+                                            request.Parameters.Add("PublishBatchRequestEntries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MessageAttributes" + "." + "entry" + "." + mapIndex + "." + "Value" + "." + "BinaryValue", StringUtils.FromMemoryStream(value.BinaryValue));
+                                        }
+                                        if(value.IsSetDataType())
+                                        {
+                                            request.Parameters.Add("PublishBatchRequestEntries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MessageAttributes" + "." + "entry" + "." + mapIndex + "." + "Value" + "." + "DataType", StringUtils.FromString(value.DataType));
+                                        }
+                                        if(value.IsSetStringValue())
+                                        {
+                                            request.Parameters.Add("PublishBatchRequestEntries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MessageAttributes" + "." + "entry" + "." + mapIndex + "." + "Value" + "." + "StringValue", StringUtils.FromString(value.StringValue));
+                                        }
+                                    }
+                                    mapIndex++;
+                                }
+                            }
+                            if(publicRequestlistValue.IsSetMessageDeduplicationId())
+                            {
+                                request.Parameters.Add("PublishBatchRequestEntries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MessageDeduplicationId", StringUtils.FromString(publicRequestlistValue.MessageDeduplicationId));
+                            }
+                            if(publicRequestlistValue.IsSetMessageGroupId())
+                            {
+                                request.Parameters.Add("PublishBatchRequestEntries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MessageGroupId", StringUtils.FromString(publicRequestlistValue.MessageGroupId));
+                            }
+                            if(publicRequestlistValue.IsSetMessageStructure())
+                            {
+                                request.Parameters.Add("PublishBatchRequestEntries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MessageStructure", StringUtils.FromString(publicRequestlistValue.MessageStructure));
+                            }
+                            if(publicRequestlistValue.IsSetSubject())
+                            {
+                                request.Parameters.Add("PublishBatchRequestEntries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Subject", StringUtils.FromString(publicRequestlistValue.Subject));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetTopicArn())

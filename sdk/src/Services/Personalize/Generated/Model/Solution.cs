@@ -32,12 +32,11 @@ namespace Amazon.Personalize.Model
     /// <summary>
     /// <important> 
     /// <para>
-    /// After you create a solution, you can’t change its configuration. By default, all new
-    /// solutions use automatic training. With automatic training, you incur training costs
-    /// while your solution is active. You can't stop automatic training for a solution. To
-    /// avoid unnecessary costs, make sure to delete the solution when you are finished. For
-    /// information about training costs, see <a href="https://aws.amazon.com/personalize/pricing/">Amazon
-    /// Personalize pricing</a>.
+    /// By default, all new solutions use automatic training. With automatic training, you
+    /// incur training costs while your solution is active. To avoid unnecessary costs, when
+    /// you are finished you can <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UpdateSolution.html">update
+    /// the solution</a> to turn off automatic training. For information about training costs,
+    /// see <a href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.
     /// </para>
     ///  </important> 
     /// <para>
@@ -59,6 +58,7 @@ namespace Amazon.Personalize.Model
         private string _datasetGroupArn;
         private string _eventType;
         private DateTime? _lastUpdatedDateTime;
+        private SolutionUpdateSummary _latestSolutionUpdate;
         private SolutionVersionSummary _latestSolutionVersion;
         private string _name;
         private bool? _performAutoML;
@@ -161,6 +161,24 @@ namespace Amazon.Personalize.Model
         internal bool IsSetLastUpdatedDateTime()
         {
             return this._lastUpdatedDateTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LatestSolutionUpdate. 
+        /// <para>
+        /// Provides a summary of the latest updates to the solution.
+        /// </para>
+        /// </summary>
+        public SolutionUpdateSummary LatestSolutionUpdate
+        {
+            get { return this._latestSolutionUpdate; }
+            set { this._latestSolutionUpdate = value; }
+        }
+
+        // Check to see if LatestSolutionUpdate property is set
+        internal bool IsSetLatestSolutionUpdate()
+        {
+            return this._latestSolutionUpdate != null;
         }
 
         /// <summary>

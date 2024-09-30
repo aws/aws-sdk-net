@@ -32,6 +32,7 @@ namespace Amazon.DirectoryService.Model
     /// <summary>
     /// Container for the parameters to the ResetUserPassword operation.
     /// Resets the password for any user in your Managed Microsoft AD or Simple AD directory.
+    /// Disabled users will become enabled and can be authenticated following the API call.
     /// 
     ///  
     /// <para>

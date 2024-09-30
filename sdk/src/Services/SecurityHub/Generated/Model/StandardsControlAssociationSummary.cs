@@ -107,7 +107,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property SecurityControlId. 
         /// <para>
         ///  A unique standard-agnostic identifier for a control. Values for this field typically
-        /// consist of an Amazon Web Servicesservice and a number, such as APIGateway.5. This
+        /// consist of an Amazon Web Services service and a number, such as APIGateway.5. This
         /// field doesn't reference a specific standard. 
         /// </para>
         /// </summary>

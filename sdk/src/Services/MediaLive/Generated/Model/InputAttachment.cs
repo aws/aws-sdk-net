@@ -38,6 +38,7 @@ namespace Amazon.MediaLive.Model
         private string _inputAttachmentName;
         private string _inputId;
         private InputSettings _inputSettings;
+        private List<string> _logicalInterfaceNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AutomaticInputFailoverSettings. User-specified settings
@@ -101,6 +102,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetInputSettings()
         {
             return this._inputSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogicalInterfaceNames. Optional assignment of an input
+        /// to a logical interface on the Node. Only applies to on premises channels.
+        /// </summary>
+        public List<string> LogicalInterfaceNames
+        {
+            get { return this._logicalInterfaceNames; }
+            set { this._logicalInterfaceNames = value; }
+        }
+
+        // Check to see if LogicalInterfaceNames property is set
+        internal bool IsSetLogicalInterfaceNames()
+        {
+            return this._logicalInterfaceNames != null && (this._logicalInterfaceNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

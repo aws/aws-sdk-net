@@ -51,7 +51,8 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
             var ms = new MemoryStream();
             Amazon.Util.AWSSDKUtils.CopyStream(context.Stream, ms);
             ms.Seek(0, SeekOrigin.Begin);
-            response.Results = ms;
+            if (ms.Length > 0)
+                response.Results = ms;
 
             return response;
         }

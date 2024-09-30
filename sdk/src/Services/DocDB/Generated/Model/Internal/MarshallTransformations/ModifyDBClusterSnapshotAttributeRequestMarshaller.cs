@@ -69,20 +69,30 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetValuesToAdd())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ValuesToAdd)
+                    if (publicRequest.ValuesToAdd.Count == 0)
+                        request.Parameters.Add("ValuesToAdd", "");
+                    else
                     {
-                        request.Parameters.Add("ValuesToAdd" + "." + "AttributeValue" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ValuesToAdd)
+                         {
+                             request.Parameters.Add("ValuesToAdd" + "." + "AttributeValue" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetValuesToRemove())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ValuesToRemove)
+                    if (publicRequest.ValuesToRemove.Count == 0)
+                        request.Parameters.Add("ValuesToRemove", "");
+                    else
                     {
-                        request.Parameters.Add("ValuesToRemove" + "." + "AttributeValue" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ValuesToRemove)
+                         {
+                             request.Parameters.Add("ValuesToRemove" + "." + "AttributeValue" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

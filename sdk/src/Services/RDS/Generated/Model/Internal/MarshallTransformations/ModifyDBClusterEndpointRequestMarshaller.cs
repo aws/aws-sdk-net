@@ -69,20 +69,30 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetExcludedMembers())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ExcludedMembers)
+                    if (publicRequest.ExcludedMembers.Count == 0)
+                        request.Parameters.Add("ExcludedMembers", "");
+                    else
                     {
-                        request.Parameters.Add("ExcludedMembers" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ExcludedMembers)
+                         {
+                             request.Parameters.Add("ExcludedMembers" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetStaticMembers())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.StaticMembers)
+                    if (publicRequest.StaticMembers.Count == 0)
+                        request.Parameters.Add("StaticMembers", "");
+                    else
                     {
-                        request.Parameters.Add("StaticMembers" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.StaticMembers)
+                         {
+                             request.Parameters.Add("StaticMembers" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

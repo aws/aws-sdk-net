@@ -61,23 +61,33 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetAuthorizedTokenIssuerList())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.AuthorizedTokenIssuerList)
+                    if (publicRequest.AuthorizedTokenIssuerList.Count == 0)
+                        request.Parameters.Add("AuthorizedTokenIssuerList", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetAuthorizedAudiencesList())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.AuthorizedAudiencesList)
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.AuthorizedTokenIssuerList)
+                         {
+                            if(publicRequestlistValue.IsSetAuthorizedAudiencesList())
                             {
-                                request.Parameters.Add("AuthorizedTokenIssuerList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthorizedAudiencesList" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
-                                publicRequestlistValuelistValueIndex++;
+                                if (publicRequestlistValue.AuthorizedAudiencesList.Count == 0)
+                                    request.Parameters.Add("AuthorizedTokenIssuerList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthorizedAudiencesList", "");
+                                else
+                                {
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.AuthorizedAudiencesList)
+                                     {
+                                         request.Parameters.Add("AuthorizedTokenIssuerList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthorizedAudiencesList" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
+                                }
                             }
-                        }
-                        if(publicRequestlistValue.IsSetTrustedTokenIssuerArn())
-                        {
-                            request.Parameters.Add("AuthorizedTokenIssuerList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "TrustedTokenIssuerArn", StringUtils.FromString(publicRequestlistValue.TrustedTokenIssuerArn));
-                        }
-                        publicRequestlistValueIndex++;
+                            if(publicRequestlistValue.IsSetTrustedTokenIssuerArn())
+                            {
+                                request.Parameters.Add("AuthorizedTokenIssuerList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "TrustedTokenIssuerArn", StringUtils.FromString(publicRequestlistValue.TrustedTokenIssuerArn));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetIamRoleArn())
@@ -102,25 +112,35 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetServiceIntegrations())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ServiceIntegrations)
+                    if (publicRequest.ServiceIntegrations.Count == 0)
+                        request.Parameters.Add("ServiceIntegrations", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetLakeFormation())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.LakeFormation)
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ServiceIntegrations)
+                         {
+                            if(publicRequestlistValue.IsSetLakeFormation())
                             {
-                                if(publicRequestlistValuelistValue.IsSetLakeFormationQuery())
+                                if (publicRequestlistValue.LakeFormation.Count == 0)
+                                    request.Parameters.Add("ServiceIntegrations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "LakeFormation", "");
+                                else
                                 {
-                                    if(publicRequestlistValuelistValue.LakeFormationQuery.IsSetAuthorization())
-                                    {
-                                        request.Parameters.Add("ServiceIntegrations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "LakeFormation" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "LakeFormationQuery" + "." + "Authorization", StringUtils.FromString(publicRequestlistValuelistValue.LakeFormationQuery.Authorization));
-                                    }
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.LakeFormation)
+                                     {
+                                        if(publicRequestlistValuelistValue.IsSetLakeFormationQuery())
+                                        {
+                                            if(publicRequestlistValuelistValue.LakeFormationQuery.IsSetAuthorization())
+                                            {
+                                                request.Parameters.Add("ServiceIntegrations" + "." + "member" + "." + publicRequestlistValueIndex + "." + "LakeFormation" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "LakeFormationQuery" + "." + "Authorization", StringUtils.FromString(publicRequestlistValuelistValue.LakeFormationQuery.Authorization));
+                                            }
+                                        }
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
                                 }
-                                publicRequestlistValuelistValueIndex++;
                             }
-                        }
-                        publicRequestlistValueIndex++;
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

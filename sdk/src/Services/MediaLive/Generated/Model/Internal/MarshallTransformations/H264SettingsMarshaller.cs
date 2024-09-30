@@ -209,6 +209,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MinIInterval.Value);
             }
 
+            if(requestObject.IsSetMinQp())
+            {
+                context.Writer.WritePropertyName("minQp");
+                context.Writer.Write(requestObject.MinQp.Value);
+            }
+
             if(requestObject.IsSetNumRefFrames())
             {
                 context.Writer.WritePropertyName("numRefFrames");

@@ -61,11 +61,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetIpv4Prefixes())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Ipv4Prefixes)
+                    if (publicRequest.Ipv4Prefixes.Count == 0)
+                        request.Parameters.Add("Ipv4Prefix", "");
+                    else
                     {
-                        request.Parameters.Add("Ipv4Prefix" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Ipv4Prefixes)
+                         {
+                             request.Parameters.Add("Ipv4Prefix" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetNetworkInterfaceId())
@@ -74,11 +79,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetPrivateIpAddresses())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.PrivateIpAddresses)
+                    if (publicRequest.PrivateIpAddresses.Count == 0)
+                        request.Parameters.Add("PrivateIpAddress", "");
+                    else
                     {
-                        request.Parameters.Add("PrivateIpAddress" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.PrivateIpAddresses)
+                         {
+                             request.Parameters.Add("PrivateIpAddress" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

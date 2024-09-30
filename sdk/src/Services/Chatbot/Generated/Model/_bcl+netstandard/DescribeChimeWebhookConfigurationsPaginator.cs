@@ -42,6 +42,12 @@ namespace Amazon.Chatbot.Model
         /// </summary>
         public IPaginatedEnumerable<DescribeChimeWebhookConfigurationsResponse> Responses => new PaginatedResponse<DescribeChimeWebhookConfigurationsResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the WebhookConfigurations
+        /// </summary>
+        public IPaginatedEnumerable<ChimeWebhookConfiguration> WebhookConfigurations => 
+            new PaginatedResultKeyResponse<DescribeChimeWebhookConfigurationsResponse, ChimeWebhookConfiguration>(this, (i) => i.WebhookConfigurations ?? new List<ChimeWebhookConfiguration>());
+
         internal DescribeChimeWebhookConfigurationsPaginator(IAmazonChatbot client, DescribeChimeWebhookConfigurationsRequest request)
         {
             this._client = client;

@@ -1383,6 +1383,56 @@ namespace Amazon.PinpointSMSVoiceV2
 
 
     /// <summary>
+    /// Constants used for properties of type Owner.
+    /// </summary>
+    public class Owner : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SELF for Owner
+        /// </summary>
+        public static readonly Owner SELF = new Owner("SELF");
+        /// <summary>
+        /// Constant SHARED for Owner
+        /// </summary>
+        public static readonly Owner SHARED = new Owner("SHARED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Owner(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Owner FindValue(string value)
+        {
+            return FindValue<Owner>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Owner(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PhoneNumberFilterName.
     /// </summary>
     public class PhoneNumberFilterName : ConstantClass
@@ -2332,6 +2382,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// Constant PhoneNumber for ResourceType
         /// </summary>
         public static readonly ResourceType PhoneNumber = new ResourceType("phone-number");
+        /// <summary>
+        /// Constant Policy for ResourceType
+        /// </summary>
+        public static readonly ResourceType Policy = new ResourceType("policy");
         /// <summary>
         /// Constant Pool for ResourceType
         /// </summary>

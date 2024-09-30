@@ -88,7 +88,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         }
                         if(publicRequest.InvalidationBatch.Paths.IsSetQuantity())
                             xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.InvalidationBatch.Paths.Quantity.Value));
-
                         xmlWriter.WriteEndElement();
                     }
 

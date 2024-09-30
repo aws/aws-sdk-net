@@ -44,6 +44,7 @@ namespace Amazon.EMRServerless.Model
         private ConfigurationOverrides _configurationOverrides;
         private DateTime? _createdAt;
         private string _createdBy;
+        private DateTime? _endedAt;
         private string _executionRole;
         private long? _executionTimeoutMinutes;
         private JobDriver _jobDriver;
@@ -51,8 +52,10 @@ namespace Amazon.EMRServerless.Model
         private JobRunMode _mode;
         private string _name;
         private NetworkConfiguration _networkConfiguration;
+        private long? _queuedDurationMilliseconds;
         private string _releaseLabel;
         private RetryPolicy _retryPolicy;
+        private DateTime? _startedAt;
         private JobRunState _state;
         private string _stateDetails;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -231,6 +234,24 @@ namespace Amazon.EMRServerless.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EndedAt. 
+        /// <para>
+        /// The date and time when the job was terminated.
+        /// </para>
+        /// </summary>
+        public DateTime? EndedAt
+        {
+            get { return this._endedAt; }
+            set { this._endedAt = value; }
+        }
+
+        // Check to see if EndedAt property is set
+        internal bool IsSetEndedAt()
+        {
+            return this._endedAt.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ExecutionRole. 
         /// <para>
         /// The execution role ARN of the job run.
@@ -360,6 +381,24 @@ namespace Amazon.EMRServerless.Model
         }
 
         /// <summary>
+        /// Gets and sets the property QueuedDurationMilliseconds. 
+        /// <para>
+        /// The total time for a job in the QUEUED state in milliseconds.
+        /// </para>
+        /// </summary>
+        public long? QueuedDurationMilliseconds
+        {
+            get { return this._queuedDurationMilliseconds; }
+            set { this._queuedDurationMilliseconds = value; }
+        }
+
+        // Check to see if QueuedDurationMilliseconds property is set
+        internal bool IsSetQueuedDurationMilliseconds()
+        {
+            return this._queuedDurationMilliseconds.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ReleaseLabel. 
         /// <para>
         /// The Amazon EMR release associated with the application your job is running on.
@@ -394,6 +433,24 @@ namespace Amazon.EMRServerless.Model
         internal bool IsSetRetryPolicy()
         {
             return this._retryPolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartedAt. 
+        /// <para>
+        /// The date and time when the job moved to the RUNNING state.
+        /// </para>
+        /// </summary>
+        public DateTime? StartedAt
+        {
+            get { return this._startedAt; }
+            set { this._startedAt = value; }
+        }
+
+        // Check to see if StartedAt property is set
+        internal bool IsSetStartedAt()
+        {
+            return this._startedAt.HasValue; 
         }
 
         /// <summary>

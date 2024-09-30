@@ -65,18 +65,23 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetTrafficSources())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.TrafficSources)
+                    if (publicRequest.TrafficSources.Count == 0)
+                        request.Parameters.Add("TrafficSources", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetIdentifier())
-                        {
-                            request.Parameters.Add("TrafficSources" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Identifier", StringUtils.FromString(publicRequestlistValue.Identifier));
-                        }
-                        if(publicRequestlistValue.IsSetType())
-                        {
-                            request.Parameters.Add("TrafficSources" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Type", StringUtils.FromString(publicRequestlistValue.Type));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.TrafficSources)
+                         {
+                            if(publicRequestlistValue.IsSetIdentifier())
+                            {
+                                request.Parameters.Add("TrafficSources" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Identifier", StringUtils.FromString(publicRequestlistValue.Identifier));
+                            }
+                            if(publicRequestlistValue.IsSetType())
+                            {
+                                request.Parameters.Add("TrafficSources" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Type", StringUtils.FromString(publicRequestlistValue.Type));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

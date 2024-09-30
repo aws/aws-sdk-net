@@ -42,6 +42,12 @@ namespace Amazon.Glue.Model
         /// </summary>
         public IPaginatedEnumerable<ListTableOptimizerRunsResponse> Responses => new PaginatedResponse<ListTableOptimizerRunsResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the TableOptimizerRuns
+        /// </summary>
+        public IPaginatedEnumerable<TableOptimizerRun> TableOptimizerRuns => 
+            new PaginatedResultKeyResponse<ListTableOptimizerRunsResponse, TableOptimizerRun>(this, (i) => i.TableOptimizerRuns ?? new List<TableOptimizerRun>());
+
         internal ListTableOptimizerRunsPaginator(IAmazonGlue client, ListTableOptimizerRunsRequest request)
         {
             this._client = client;

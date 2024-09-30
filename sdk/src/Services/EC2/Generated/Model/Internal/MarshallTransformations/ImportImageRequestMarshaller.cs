@@ -96,41 +96,46 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetDiskContainers())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.DiskContainers)
+                    if (publicRequest.DiskContainers.Count == 0)
+                        request.Parameters.Add("DiskContainer", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetDescription())
-                        {
-                            request.Parameters.Add("DiskContainer" + "." + publicRequestlistValueIndex + "." + "Description", StringUtils.FromString(publicRequestlistValue.Description));
-                        }
-                        if(publicRequestlistValue.IsSetDeviceName())
-                        {
-                            request.Parameters.Add("DiskContainer" + "." + publicRequestlistValueIndex + "." + "DeviceName", StringUtils.FromString(publicRequestlistValue.DeviceName));
-                        }
-                        if(publicRequestlistValue.IsSetFormat())
-                        {
-                            request.Parameters.Add("DiskContainer" + "." + publicRequestlistValueIndex + "." + "Format", StringUtils.FromString(publicRequestlistValue.Format));
-                        }
-                        if(publicRequestlistValue.IsSetSnapshotId())
-                        {
-                            request.Parameters.Add("DiskContainer" + "." + publicRequestlistValueIndex + "." + "SnapshotId", StringUtils.FromString(publicRequestlistValue.SnapshotId));
-                        }
-                        if(publicRequestlistValue.IsSetUrl())
-                        {
-                            request.Parameters.Add("DiskContainer" + "." + publicRequestlistValueIndex + "." + "Url", StringUtils.FromString(publicRequestlistValue.Url));
-                        }
-                        if(publicRequestlistValue.IsSetUserBucket())
-                        {
-                            if(publicRequestlistValue.UserBucket.IsSetS3Bucket())
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.DiskContainers)
+                         {
+                            if(publicRequestlistValue.IsSetDescription())
                             {
-                                request.Parameters.Add("DiskContainer" + "." + publicRequestlistValueIndex + "." + "UserBucket" + "." + "S3Bucket", StringUtils.FromString(publicRequestlistValue.UserBucket.S3Bucket));
+                                request.Parameters.Add("DiskContainer" + "." + publicRequestlistValueIndex + "." + "Description", StringUtils.FromString(publicRequestlistValue.Description));
                             }
-                            if(publicRequestlistValue.UserBucket.IsSetS3Key())
+                            if(publicRequestlistValue.IsSetDeviceName())
                             {
-                                request.Parameters.Add("DiskContainer" + "." + publicRequestlistValueIndex + "." + "UserBucket" + "." + "S3Key", StringUtils.FromString(publicRequestlistValue.UserBucket.S3Key));
+                                request.Parameters.Add("DiskContainer" + "." + publicRequestlistValueIndex + "." + "DeviceName", StringUtils.FromString(publicRequestlistValue.DeviceName));
                             }
-                        }
-                        publicRequestlistValueIndex++;
+                            if(publicRequestlistValue.IsSetFormat())
+                            {
+                                request.Parameters.Add("DiskContainer" + "." + publicRequestlistValueIndex + "." + "Format", StringUtils.FromString(publicRequestlistValue.Format));
+                            }
+                            if(publicRequestlistValue.IsSetSnapshotId())
+                            {
+                                request.Parameters.Add("DiskContainer" + "." + publicRequestlistValueIndex + "." + "SnapshotId", StringUtils.FromString(publicRequestlistValue.SnapshotId));
+                            }
+                            if(publicRequestlistValue.IsSetUrl())
+                            {
+                                request.Parameters.Add("DiskContainer" + "." + publicRequestlistValueIndex + "." + "Url", StringUtils.FromString(publicRequestlistValue.Url));
+                            }
+                            if(publicRequestlistValue.IsSetUserBucket())
+                            {
+                                if(publicRequestlistValue.UserBucket.IsSetS3Bucket())
+                                {
+                                    request.Parameters.Add("DiskContainer" + "." + publicRequestlistValueIndex + "." + "UserBucket" + "." + "S3Bucket", StringUtils.FromString(publicRequestlistValue.UserBucket.S3Bucket));
+                                }
+                                if(publicRequestlistValue.UserBucket.IsSetS3Key())
+                                {
+                                    request.Parameters.Add("DiskContainer" + "." + publicRequestlistValueIndex + "." + "UserBucket" + "." + "S3Key", StringUtils.FromString(publicRequestlistValue.UserBucket.S3Key));
+                                }
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetEncrypted())
@@ -147,14 +152,19 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetLicenseSpecifications())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.LicenseSpecifications)
+                    if (publicRequest.LicenseSpecifications.Count == 0)
+                        request.Parameters.Add("LicenseSpecifications", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetLicenseConfigurationArn())
-                        {
-                            request.Parameters.Add("LicenseSpecifications" + "." + publicRequestlistValueIndex + "." + "LicenseConfigurationArn", StringUtils.FromString(publicRequestlistValue.LicenseConfigurationArn));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.LicenseSpecifications)
+                         {
+                            if(publicRequestlistValue.IsSetLicenseConfigurationArn())
+                            {
+                                request.Parameters.Add("LicenseSpecifications" + "." + publicRequestlistValueIndex + "." + "LicenseConfigurationArn", StringUtils.FromString(publicRequestlistValue.LicenseConfigurationArn));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetLicenseType())
@@ -171,30 +181,40 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetTagSpecifications())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.TagSpecifications)
+                    if (publicRequest.TagSpecifications.Count == 0)
+                        request.Parameters.Add("TagSpecification", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetResourceType())
-                        {
-                            request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
-                        }
-                        if(publicRequestlistValue.IsSetTags())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Tags)
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.TagSpecifications)
+                         {
+                            if(publicRequestlistValue.IsSetResourceType())
                             {
-                                if(publicRequestlistValuelistValue.IsSetKey())
-                                {
-                                    request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValuelistValue.Key));
-                                }
-                                if(publicRequestlistValuelistValue.IsSetValue())
-                                {
-                                    request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
-                                }
-                                publicRequestlistValuelistValueIndex++;
+                                request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
                             }
-                        }
-                        publicRequestlistValueIndex++;
+                            if(publicRequestlistValue.IsSetTags())
+                            {
+                                if (publicRequestlistValue.Tags.Count == 0)
+                                    request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag", "");
+                                else
+                                {
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Tags)
+                                     {
+                                        if(publicRequestlistValuelistValue.IsSetKey())
+                                        {
+                                            request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValuelistValue.Key));
+                                        }
+                                        if(publicRequestlistValuelistValue.IsSetValue())
+                                        {
+                                            request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
+                                        }
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
+                                }
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetUsageOperation())

@@ -82,18 +82,23 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     }
                     if(publicRequest.LoadBalancerAttributes.IsSetAdditionalAttributes())
                     {
-                        int publicRequestLoadBalancerAttributeslistValueIndex = 1;
-                        foreach(var publicRequestLoadBalancerAttributeslistValue in publicRequest.LoadBalancerAttributes.AdditionalAttributes)
+                        if (publicRequest.LoadBalancerAttributes.AdditionalAttributes.Count == 0)
+                            request.Parameters.Add("LoadBalancerAttributes" + "." + "AdditionalAttributes", "");
+                        else
                         {
-                            if(publicRequestLoadBalancerAttributeslistValue.IsSetKey())
-                            {
-                                request.Parameters.Add("LoadBalancerAttributes" + "." + "AdditionalAttributes" + "." + "member" + "." + publicRequestLoadBalancerAttributeslistValueIndex + "." + "Key", StringUtils.FromString(publicRequestLoadBalancerAttributeslistValue.Key));
-                            }
-                            if(publicRequestLoadBalancerAttributeslistValue.IsSetValue())
-                            {
-                                request.Parameters.Add("LoadBalancerAttributes" + "." + "AdditionalAttributes" + "." + "member" + "." + publicRequestLoadBalancerAttributeslistValueIndex + "." + "Value", StringUtils.FromString(publicRequestLoadBalancerAttributeslistValue.Value));
-                            }
-                            publicRequestLoadBalancerAttributeslistValueIndex++;
+                             int publicRequestLoadBalancerAttributeslistValueIndex = 1;
+                             foreach(var publicRequestLoadBalancerAttributeslistValue in publicRequest.LoadBalancerAttributes.AdditionalAttributes)
+                             {
+                                if(publicRequestLoadBalancerAttributeslistValue.IsSetKey())
+                                {
+                                    request.Parameters.Add("LoadBalancerAttributes" + "." + "AdditionalAttributes" + "." + "member" + "." + publicRequestLoadBalancerAttributeslistValueIndex + "." + "Key", StringUtils.FromString(publicRequestLoadBalancerAttributeslistValue.Key));
+                                }
+                                if(publicRequestLoadBalancerAttributeslistValue.IsSetValue())
+                                {
+                                    request.Parameters.Add("LoadBalancerAttributes" + "." + "AdditionalAttributes" + "." + "member" + "." + publicRequestLoadBalancerAttributeslistValueIndex + "." + "Value", StringUtils.FromString(publicRequestLoadBalancerAttributeslistValue.Value));
+                                }
+                                 publicRequestLoadBalancerAttributeslistValueIndex++;
+                             }
                         }
                     }
                     if(publicRequest.LoadBalancerAttributes.IsSetConnectionDraining())

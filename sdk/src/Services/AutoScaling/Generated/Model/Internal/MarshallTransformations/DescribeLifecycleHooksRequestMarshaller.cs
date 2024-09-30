@@ -65,11 +65,16 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetLifecycleHookNames())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.LifecycleHookNames)
+                    if (publicRequest.LifecycleHookNames.Count == 0)
+                        request.Parameters.Add("LifecycleHookNames", "");
+                    else
                     {
-                        request.Parameters.Add("LifecycleHookNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.LifecycleHookNames)
+                         {
+                             request.Parameters.Add("LifecycleHookNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

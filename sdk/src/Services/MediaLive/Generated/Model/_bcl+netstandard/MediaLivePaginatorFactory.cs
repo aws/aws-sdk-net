@@ -45,6 +45,14 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
+        /// Paginator for ListChannelPlacementGroups operation
+        ///</summary>
+        public IListChannelPlacementGroupsPaginator ListChannelPlacementGroups(ListChannelPlacementGroupsRequest request) 
+        {
+            return new ListChannelPlacementGroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListChannels operation
         ///</summary>
         public IListChannelsPaginator ListChannels(ListChannelsRequest request) 
@@ -66,6 +74,14 @@ namespace Amazon.MediaLive.Model
         public IListCloudWatchAlarmTemplatesPaginator ListCloudWatchAlarmTemplates(ListCloudWatchAlarmTemplatesRequest request) 
         {
             return new ListCloudWatchAlarmTemplatesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListClusters operation
+        ///</summary>
+        public IListClustersPaginator ListClusters(ListClustersRequest request) 
+        {
+            return new ListClustersPaginator(this.client, request);
         }
 
         /// <summary>
@@ -130,6 +146,22 @@ namespace Amazon.MediaLive.Model
         public IListMultiplexProgramsPaginator ListMultiplexPrograms(ListMultiplexProgramsRequest request) 
         {
             return new ListMultiplexProgramsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListNetworks operation
+        ///</summary>
+        public IListNetworksPaginator ListNetworks(ListNetworksRequest request) 
+        {
+            return new ListNetworksPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListNodes operation
+        ///</summary>
+        public IListNodesPaginator ListNodes(ListNodesRequest request) 
+        {
+            return new ListNodesPaginator(this.client, request);
         }
 
         /// <summary>

@@ -516,17 +516,14 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Locations. 
         /// <para>
-        /// A set of remote locations to deploy additional instances to and manage as part of
-        /// the fleet. This parameter can only be used when creating fleets in Amazon Web Services
-        /// Regions that support multiple locations. You can add any Amazon GameLift-supported
-        /// Amazon Web Services Region as a remote location, in the form of an Amazon Web Services
-        /// Region code, such as <c>us-west-2</c> or Local Zone code. To create a fleet with instances
-        /// in the home Region only, don't set this parameter. 
-        /// </para>
-        ///  
-        /// <para>
-        /// When using this parameter, Amazon GameLift requires you to include your home location
-        /// in the request.
+        /// A set of remote locations to deploy additional instances to and manage as a multi-location
+        /// fleet. Use this parameter when creating a fleet in Amazon Web Services Regions that
+        /// support multiple locations. You can add any Amazon Web Services Region or Local Zone
+        /// that's supported by Amazon GameLift. Provide a list of one or more Amazon Web Services
+        /// Region codes, such as <c>us-west-2</c>, or Local Zone names. When using this parameter,
+        /// Amazon GameLift requires you to include your home location in the request. For a list
+        /// of supported Regions and Local Zones, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">
+        /// Amazon GameLift service locations</a> for managed hosting.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

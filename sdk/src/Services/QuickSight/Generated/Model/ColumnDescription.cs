@@ -42,7 +42,7 @@ namespace Amazon.QuickSight.Model
         /// The text of a description for a column.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=500)]
+        [AWSProperty(Sensitive=true, Min=0, Max=500)]
         public string Text
         {
             get { return this._text; }

@@ -69,18 +69,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetPurchaseRequests())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.PurchaseRequests)
+                    if (publicRequest.PurchaseRequests.Count == 0)
+                        request.Parameters.Add("PurchaseRequest", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetInstanceCount())
-                        {
-                            request.Parameters.Add("PurchaseRequest" + "." + publicRequestlistValueIndex + "." + "InstanceCount", StringUtils.FromInt(publicRequestlistValue.InstanceCount));
-                        }
-                        if(publicRequestlistValue.IsSetPurchaseToken())
-                        {
-                            request.Parameters.Add("PurchaseRequest" + "." + publicRequestlistValueIndex + "." + "PurchaseToken", StringUtils.FromString(publicRequestlistValue.PurchaseToken));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.PurchaseRequests)
+                         {
+                            if(publicRequestlistValue.IsSetInstanceCount())
+                            {
+                                request.Parameters.Add("PurchaseRequest" + "." + publicRequestlistValueIndex + "." + "InstanceCount", StringUtils.FromInt(publicRequestlistValue.InstanceCount));
+                            }
+                            if(publicRequestlistValue.IsSetPurchaseToken())
+                            {
+                                request.Parameters.Add("PurchaseRequest" + "." + publicRequestlistValueIndex + "." + "PurchaseToken", StringUtils.FromString(publicRequestlistValue.PurchaseToken));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

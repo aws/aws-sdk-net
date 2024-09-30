@@ -43,8 +43,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property BackupVaultAccountId. 
         /// <para>
-        /// This is the list of protected resources by backup vault within the vault(s) you specify
-        /// by account ID.
+        /// The list of protected resources by backup vault within the vault(s) you specify by
+        /// account ID.
         /// </para>
         /// </summary>
         public string BackupVaultAccountId
@@ -62,8 +62,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property BackupVaultName. 
         /// <para>
-        /// This is the list of protected resources by backup vault within the vault(s) you specify
-        /// by name.
+        /// The list of protected resources by backup vault within the vault(s) you specify by
+        /// name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

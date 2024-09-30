@@ -69,22 +69,27 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     {
                         if(publicRequest.EventDestination.CloudWatchDestination.IsSetDimensionConfigurations())
                         {
-                            int publicRequestEventDestinationCloudWatchDestinationlistValueIndex = 1;
-                            foreach(var publicRequestEventDestinationCloudWatchDestinationlistValue in publicRequest.EventDestination.CloudWatchDestination.DimensionConfigurations)
+                            if (publicRequest.EventDestination.CloudWatchDestination.DimensionConfigurations.Count == 0)
+                                request.Parameters.Add("EventDestination" + "." + "CloudWatchDestination" + "." + "DimensionConfigurations", "");
+                            else
                             {
-                                if(publicRequestEventDestinationCloudWatchDestinationlistValue.IsSetDefaultDimensionValue())
-                                {
-                                    request.Parameters.Add("EventDestination" + "." + "CloudWatchDestination" + "." + "DimensionConfigurations" + "." + "member" + "." + publicRequestEventDestinationCloudWatchDestinationlistValueIndex + "." + "DefaultDimensionValue", StringUtils.FromString(publicRequestEventDestinationCloudWatchDestinationlistValue.DefaultDimensionValue));
-                                }
-                                if(publicRequestEventDestinationCloudWatchDestinationlistValue.IsSetDimensionName())
-                                {
-                                    request.Parameters.Add("EventDestination" + "." + "CloudWatchDestination" + "." + "DimensionConfigurations" + "." + "member" + "." + publicRequestEventDestinationCloudWatchDestinationlistValueIndex + "." + "DimensionName", StringUtils.FromString(publicRequestEventDestinationCloudWatchDestinationlistValue.DimensionName));
-                                }
-                                if(publicRequestEventDestinationCloudWatchDestinationlistValue.IsSetDimensionValueSource())
-                                {
-                                    request.Parameters.Add("EventDestination" + "." + "CloudWatchDestination" + "." + "DimensionConfigurations" + "." + "member" + "." + publicRequestEventDestinationCloudWatchDestinationlistValueIndex + "." + "DimensionValueSource", StringUtils.FromString(publicRequestEventDestinationCloudWatchDestinationlistValue.DimensionValueSource));
-                                }
-                                publicRequestEventDestinationCloudWatchDestinationlistValueIndex++;
+                                 int publicRequestEventDestinationCloudWatchDestinationlistValueIndex = 1;
+                                 foreach(var publicRequestEventDestinationCloudWatchDestinationlistValue in publicRequest.EventDestination.CloudWatchDestination.DimensionConfigurations)
+                                 {
+                                    if(publicRequestEventDestinationCloudWatchDestinationlistValue.IsSetDefaultDimensionValue())
+                                    {
+                                        request.Parameters.Add("EventDestination" + "." + "CloudWatchDestination" + "." + "DimensionConfigurations" + "." + "member" + "." + publicRequestEventDestinationCloudWatchDestinationlistValueIndex + "." + "DefaultDimensionValue", StringUtils.FromString(publicRequestEventDestinationCloudWatchDestinationlistValue.DefaultDimensionValue));
+                                    }
+                                    if(publicRequestEventDestinationCloudWatchDestinationlistValue.IsSetDimensionName())
+                                    {
+                                        request.Parameters.Add("EventDestination" + "." + "CloudWatchDestination" + "." + "DimensionConfigurations" + "." + "member" + "." + publicRequestEventDestinationCloudWatchDestinationlistValueIndex + "." + "DimensionName", StringUtils.FromString(publicRequestEventDestinationCloudWatchDestinationlistValue.DimensionName));
+                                    }
+                                    if(publicRequestEventDestinationCloudWatchDestinationlistValue.IsSetDimensionValueSource())
+                                    {
+                                        request.Parameters.Add("EventDestination" + "." + "CloudWatchDestination" + "." + "DimensionConfigurations" + "." + "member" + "." + publicRequestEventDestinationCloudWatchDestinationlistValueIndex + "." + "DimensionValueSource", StringUtils.FromString(publicRequestEventDestinationCloudWatchDestinationlistValue.DimensionValueSource));
+                                    }
+                                     publicRequestEventDestinationCloudWatchDestinationlistValueIndex++;
+                                 }
                             }
                         }
                     }
@@ -105,11 +110,16 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     }
                     if(publicRequest.EventDestination.IsSetMatchingEventTypes())
                     {
-                        int publicRequestEventDestinationlistValueIndex = 1;
-                        foreach(var publicRequestEventDestinationlistValue in publicRequest.EventDestination.MatchingEventTypes)
+                        if (publicRequest.EventDestination.MatchingEventTypes.Count == 0)
+                            request.Parameters.Add("EventDestination" + "." + "MatchingEventTypes", "");
+                        else
                         {
-                            request.Parameters.Add("EventDestination" + "." + "MatchingEventTypes" + "." + "member" + "." + publicRequestEventDestinationlistValueIndex, StringUtils.FromString(publicRequestEventDestinationlistValue));
-                            publicRequestEventDestinationlistValueIndex++;
+                             int publicRequestEventDestinationlistValueIndex = 1;
+                             foreach(var publicRequestEventDestinationlistValue in publicRequest.EventDestination.MatchingEventTypes)
+                             {
+                                 request.Parameters.Add("EventDestination" + "." + "MatchingEventTypes" + "." + "member" + "." + publicRequestEventDestinationlistValueIndex, StringUtils.FromString(publicRequestEventDestinationlistValue));
+                                 publicRequestEventDestinationlistValueIndex++;
+                             }
                         }
                     }
                     if(publicRequest.EventDestination.IsSetName())

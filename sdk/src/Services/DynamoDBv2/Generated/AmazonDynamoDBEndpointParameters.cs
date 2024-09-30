@@ -75,5 +75,23 @@ namespace Amazon.DynamoDBv2.Endpoints
             get { return (string)this["Endpoint"]; }
             set { this["Endpoint"] = value; } 
         }
+
+        /// <summary>
+        /// AccountId parameter
+        /// </summary>
+        public string AccountId 
+        { 
+            get { return (string)this["AccountId"]; }
+            set { this["AccountId"] = value; } 
+        }
+
+        /// <summary>
+        /// AccountIdEndpointMode parameter
+        /// </summary>
+        public string AccountIdEndpointMode 
+        { 
+            get { return (string)this["AccountIdEndpointMode"]; }
+            set { this["AccountIdEndpointMode"] = value; } 
+        }
     }
 }

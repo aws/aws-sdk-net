@@ -79,50 +79,60 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     if(publicRequest.LaunchPermission.IsSetAdd())
                     {
-                        int publicRequestLaunchPermissionlistValueIndex = 1;
-                        foreach(var publicRequestLaunchPermissionlistValue in publicRequest.LaunchPermission.Add)
+                        if (publicRequest.LaunchPermission.Add.Count == 0)
+                            request.Parameters.Add("LaunchPermission" + "." + "Add", "");
+                        else
                         {
-                            if(publicRequestLaunchPermissionlistValue.IsSetGroup())
-                            {
-                                request.Parameters.Add("LaunchPermission" + "." + "Add" + "." + publicRequestLaunchPermissionlistValueIndex + "." + "Group", StringUtils.FromString(publicRequestLaunchPermissionlistValue.Group));
-                            }
-                            if(publicRequestLaunchPermissionlistValue.IsSetOrganizationalUnitArn())
-                            {
-                                request.Parameters.Add("LaunchPermission" + "." + "Add" + "." + publicRequestLaunchPermissionlistValueIndex + "." + "OrganizationalUnitArn", StringUtils.FromString(publicRequestLaunchPermissionlistValue.OrganizationalUnitArn));
-                            }
-                            if(publicRequestLaunchPermissionlistValue.IsSetOrganizationArn())
-                            {
-                                request.Parameters.Add("LaunchPermission" + "." + "Add" + "." + publicRequestLaunchPermissionlistValueIndex + "." + "OrganizationArn", StringUtils.FromString(publicRequestLaunchPermissionlistValue.OrganizationArn));
-                            }
-                            if(publicRequestLaunchPermissionlistValue.IsSetUserId())
-                            {
-                                request.Parameters.Add("LaunchPermission" + "." + "Add" + "." + publicRequestLaunchPermissionlistValueIndex + "." + "UserId", StringUtils.FromString(publicRequestLaunchPermissionlistValue.UserId));
-                            }
-                            publicRequestLaunchPermissionlistValueIndex++;
+                             int publicRequestLaunchPermissionlistValueIndex = 1;
+                             foreach(var publicRequestLaunchPermissionlistValue in publicRequest.LaunchPermission.Add)
+                             {
+                                if(publicRequestLaunchPermissionlistValue.IsSetGroup())
+                                {
+                                    request.Parameters.Add("LaunchPermission" + "." + "Add" + "." + publicRequestLaunchPermissionlistValueIndex + "." + "Group", StringUtils.FromString(publicRequestLaunchPermissionlistValue.Group));
+                                }
+                                if(publicRequestLaunchPermissionlistValue.IsSetOrganizationalUnitArn())
+                                {
+                                    request.Parameters.Add("LaunchPermission" + "." + "Add" + "." + publicRequestLaunchPermissionlistValueIndex + "." + "OrganizationalUnitArn", StringUtils.FromString(publicRequestLaunchPermissionlistValue.OrganizationalUnitArn));
+                                }
+                                if(publicRequestLaunchPermissionlistValue.IsSetOrganizationArn())
+                                {
+                                    request.Parameters.Add("LaunchPermission" + "." + "Add" + "." + publicRequestLaunchPermissionlistValueIndex + "." + "OrganizationArn", StringUtils.FromString(publicRequestLaunchPermissionlistValue.OrganizationArn));
+                                }
+                                if(publicRequestLaunchPermissionlistValue.IsSetUserId())
+                                {
+                                    request.Parameters.Add("LaunchPermission" + "." + "Add" + "." + publicRequestLaunchPermissionlistValueIndex + "." + "UserId", StringUtils.FromString(publicRequestLaunchPermissionlistValue.UserId));
+                                }
+                                 publicRequestLaunchPermissionlistValueIndex++;
+                             }
                         }
                     }
                     if(publicRequest.LaunchPermission.IsSetRemove())
                     {
-                        int publicRequestLaunchPermissionlistValueIndex = 1;
-                        foreach(var publicRequestLaunchPermissionlistValue in publicRequest.LaunchPermission.Remove)
+                        if (publicRequest.LaunchPermission.Remove.Count == 0)
+                            request.Parameters.Add("LaunchPermission" + "." + "Remove", "");
+                        else
                         {
-                            if(publicRequestLaunchPermissionlistValue.IsSetGroup())
-                            {
-                                request.Parameters.Add("LaunchPermission" + "." + "Remove" + "." + publicRequestLaunchPermissionlistValueIndex + "." + "Group", StringUtils.FromString(publicRequestLaunchPermissionlistValue.Group));
-                            }
-                            if(publicRequestLaunchPermissionlistValue.IsSetOrganizationalUnitArn())
-                            {
-                                request.Parameters.Add("LaunchPermission" + "." + "Remove" + "." + publicRequestLaunchPermissionlistValueIndex + "." + "OrganizationalUnitArn", StringUtils.FromString(publicRequestLaunchPermissionlistValue.OrganizationalUnitArn));
-                            }
-                            if(publicRequestLaunchPermissionlistValue.IsSetOrganizationArn())
-                            {
-                                request.Parameters.Add("LaunchPermission" + "." + "Remove" + "." + publicRequestLaunchPermissionlistValueIndex + "." + "OrganizationArn", StringUtils.FromString(publicRequestLaunchPermissionlistValue.OrganizationArn));
-                            }
-                            if(publicRequestLaunchPermissionlistValue.IsSetUserId())
-                            {
-                                request.Parameters.Add("LaunchPermission" + "." + "Remove" + "." + publicRequestLaunchPermissionlistValueIndex + "." + "UserId", StringUtils.FromString(publicRequestLaunchPermissionlistValue.UserId));
-                            }
-                            publicRequestLaunchPermissionlistValueIndex++;
+                             int publicRequestLaunchPermissionlistValueIndex = 1;
+                             foreach(var publicRequestLaunchPermissionlistValue in publicRequest.LaunchPermission.Remove)
+                             {
+                                if(publicRequestLaunchPermissionlistValue.IsSetGroup())
+                                {
+                                    request.Parameters.Add("LaunchPermission" + "." + "Remove" + "." + publicRequestLaunchPermissionlistValueIndex + "." + "Group", StringUtils.FromString(publicRequestLaunchPermissionlistValue.Group));
+                                }
+                                if(publicRequestLaunchPermissionlistValue.IsSetOrganizationalUnitArn())
+                                {
+                                    request.Parameters.Add("LaunchPermission" + "." + "Remove" + "." + publicRequestLaunchPermissionlistValueIndex + "." + "OrganizationalUnitArn", StringUtils.FromString(publicRequestLaunchPermissionlistValue.OrganizationalUnitArn));
+                                }
+                                if(publicRequestLaunchPermissionlistValue.IsSetOrganizationArn())
+                                {
+                                    request.Parameters.Add("LaunchPermission" + "." + "Remove" + "." + publicRequestLaunchPermissionlistValueIndex + "." + "OrganizationArn", StringUtils.FromString(publicRequestLaunchPermissionlistValue.OrganizationArn));
+                                }
+                                if(publicRequestLaunchPermissionlistValue.IsSetUserId())
+                                {
+                                    request.Parameters.Add("LaunchPermission" + "." + "Remove" + "." + publicRequestLaunchPermissionlistValueIndex + "." + "UserId", StringUtils.FromString(publicRequestLaunchPermissionlistValue.UserId));
+                                }
+                                 publicRequestLaunchPermissionlistValueIndex++;
+                             }
                         }
                     }
                 }
@@ -132,47 +142,72 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetOrganizationalUnitArns())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.OrganizationalUnitArns)
+                    if (publicRequest.OrganizationalUnitArns.Count == 0)
+                        request.Parameters.Add("OrganizationalUnitArn", "");
+                    else
                     {
-                        request.Parameters.Add("OrganizationalUnitArn" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.OrganizationalUnitArns)
+                         {
+                             request.Parameters.Add("OrganizationalUnitArn" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetOrganizationArns())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.OrganizationArns)
+                    if (publicRequest.OrganizationArns.Count == 0)
+                        request.Parameters.Add("OrganizationArn", "");
+                    else
                     {
-                        request.Parameters.Add("OrganizationArn" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.OrganizationArns)
+                         {
+                             request.Parameters.Add("OrganizationArn" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetProductCodes())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ProductCodes)
+                    if (publicRequest.ProductCodes.Count == 0)
+                        request.Parameters.Add("ProductCode", "");
+                    else
                     {
-                        request.Parameters.Add("ProductCode" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ProductCodes)
+                         {
+                             request.Parameters.Add("ProductCode" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetUserGroups())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.UserGroups)
+                    if (publicRequest.UserGroups.Count == 0)
+                        request.Parameters.Add("UserGroup", "");
+                    else
                     {
-                        request.Parameters.Add("UserGroup" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.UserGroups)
+                         {
+                             request.Parameters.Add("UserGroup" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetUserIds())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.UserIds)
+                    if (publicRequest.UserIds.Count == 0)
+                        request.Parameters.Add("UserId", "");
+                    else
                     {
-                        request.Parameters.Add("UserId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.UserIds)
+                         {
+                             request.Parameters.Add("UserId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetValue())

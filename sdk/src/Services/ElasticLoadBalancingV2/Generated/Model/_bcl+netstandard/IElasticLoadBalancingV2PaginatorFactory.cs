@@ -27,6 +27,11 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
 
         /// <summary>
+        /// Paginator for DescribeListenerCertificates operation
+        ///</summary>
+        IDescribeListenerCertificatesPaginator DescribeListenerCertificates(DescribeListenerCertificatesRequest request);
+
+        /// <summary>
         /// Paginator for DescribeListeners operation
         ///</summary>
         IDescribeListenersPaginator DescribeListeners(DescribeListenersRequest request);
@@ -35,6 +40,11 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Paginator for DescribeLoadBalancers operation
         ///</summary>
         IDescribeLoadBalancersPaginator DescribeLoadBalancers(DescribeLoadBalancersRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeRules operation
+        ///</summary>
+        IDescribeRulesPaginator DescribeRules(DescribeRulesRequest request);
 
         /// <summary>
         /// Paginator for DescribeTargetGroups operation

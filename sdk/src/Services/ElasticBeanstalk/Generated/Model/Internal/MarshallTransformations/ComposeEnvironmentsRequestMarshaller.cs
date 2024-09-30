@@ -69,11 +69,16 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetVersionLabels())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.VersionLabels)
+                    if (publicRequest.VersionLabels.Count == 0)
+                        request.Parameters.Add("VersionLabels", "");
+                    else
                     {
-                        request.Parameters.Add("VersionLabels" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.VersionLabels)
+                         {
+                             request.Parameters.Add("VersionLabels" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

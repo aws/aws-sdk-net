@@ -61,20 +61,30 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetCacheClusterIds())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.CacheClusterIds)
+                    if (publicRequest.CacheClusterIds.Count == 0)
+                        request.Parameters.Add("CacheClusterIds", "");
+                    else
                     {
-                        request.Parameters.Add("CacheClusterIds" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.CacheClusterIds)
+                         {
+                             request.Parameters.Add("CacheClusterIds" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetReplicationGroupIds())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ReplicationGroupIds)
+                    if (publicRequest.ReplicationGroupIds.Count == 0)
+                        request.Parameters.Add("ReplicationGroupIds", "");
+                    else
                     {
-                        request.Parameters.Add("ReplicationGroupIds" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ReplicationGroupIds)
+                         {
+                             request.Parameters.Add("ReplicationGroupIds" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetServiceUpdateName())

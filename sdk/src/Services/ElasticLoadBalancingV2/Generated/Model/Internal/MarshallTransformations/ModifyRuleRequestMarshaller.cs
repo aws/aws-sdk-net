@@ -61,306 +61,356 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetActions())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Actions)
+                    if (publicRequest.Actions.Count == 0)
+                        request.Parameters.Add("Actions", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetAuthenticateCognitoConfig())
-                        {
-                            if(publicRequestlistValue.AuthenticateCognitoConfig.IsSetAuthenticationRequestExtraParams())
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Actions)
+                         {
+                            if(publicRequestlistValue.IsSetAuthenticateCognitoConfig())
                             {
-                                int mapIndex = 1;
-                                foreach(var key in publicRequestlistValue.AuthenticateCognitoConfig.AuthenticationRequestExtraParams.Keys)
+                                if(publicRequestlistValue.AuthenticateCognitoConfig.IsSetAuthenticationRequestExtraParams())
                                 {
-                                    String value;
-                                    bool hasValue = publicRequestlistValue.AuthenticateCognitoConfig.AuthenticationRequestExtraParams.TryGetValue(key, out value);
-                                    request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateCognitoConfig" + "." + "AuthenticationRequestExtraParams" + "." + "entry" + "." + mapIndex + "." + "key", StringUtils.FromString(key));
-                                    if (hasValue)
+                                    int mapIndex = 1;
+                                    foreach(var key in publicRequestlistValue.AuthenticateCognitoConfig.AuthenticationRequestExtraParams.Keys)
                                     {
-                                        request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateCognitoConfig" + "." + "AuthenticationRequestExtraParams" + "." + "entry" + "." + mapIndex + "." + "value", StringUtils.FromString(value));
+                                        String value;
+                                        bool hasValue = publicRequestlistValue.AuthenticateCognitoConfig.AuthenticationRequestExtraParams.TryGetValue(key, out value);
+                                        request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateCognitoConfig" + "." + "AuthenticationRequestExtraParams" + "." + "entry" + "." + mapIndex + "." + "key", StringUtils.FromString(key));
+                                        if (hasValue)
+                                        {
+                                            request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateCognitoConfig" + "." + "AuthenticationRequestExtraParams" + "." + "entry" + "." + mapIndex + "." + "value", StringUtils.FromString(value));
+                                        }
+                                        mapIndex++;
                                     }
-                                    mapIndex++;
+                                }
+                                if(publicRequestlistValue.AuthenticateCognitoConfig.IsSetOnUnauthenticatedRequest())
+                                {
+                                    request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateCognitoConfig" + "." + "OnUnauthenticatedRequest", StringUtils.FromString(publicRequestlistValue.AuthenticateCognitoConfig.OnUnauthenticatedRequest));
+                                }
+                                if(publicRequestlistValue.AuthenticateCognitoConfig.IsSetScope())
+                                {
+                                    request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateCognitoConfig" + "." + "Scope", StringUtils.FromString(publicRequestlistValue.AuthenticateCognitoConfig.Scope));
+                                }
+                                if(publicRequestlistValue.AuthenticateCognitoConfig.IsSetSessionCookieName())
+                                {
+                                    request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateCognitoConfig" + "." + "SessionCookieName", StringUtils.FromString(publicRequestlistValue.AuthenticateCognitoConfig.SessionCookieName));
+                                }
+                                if(publicRequestlistValue.AuthenticateCognitoConfig.IsSetSessionTimeout())
+                                {
+                                    request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateCognitoConfig" + "." + "SessionTimeout", StringUtils.FromLong(publicRequestlistValue.AuthenticateCognitoConfig.SessionTimeout));
+                                }
+                                if(publicRequestlistValue.AuthenticateCognitoConfig.IsSetUserPoolArn())
+                                {
+                                    request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateCognitoConfig" + "." + "UserPoolArn", StringUtils.FromString(publicRequestlistValue.AuthenticateCognitoConfig.UserPoolArn));
+                                }
+                                if(publicRequestlistValue.AuthenticateCognitoConfig.IsSetUserPoolClientId())
+                                {
+                                    request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateCognitoConfig" + "." + "UserPoolClientId", StringUtils.FromString(publicRequestlistValue.AuthenticateCognitoConfig.UserPoolClientId));
+                                }
+                                if(publicRequestlistValue.AuthenticateCognitoConfig.IsSetUserPoolDomain())
+                                {
+                                    request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateCognitoConfig" + "." + "UserPoolDomain", StringUtils.FromString(publicRequestlistValue.AuthenticateCognitoConfig.UserPoolDomain));
                                 }
                             }
-                            if(publicRequestlistValue.AuthenticateCognitoConfig.IsSetOnUnauthenticatedRequest())
+                            if(publicRequestlistValue.IsSetAuthenticateOidcConfig())
                             {
-                                request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateCognitoConfig" + "." + "OnUnauthenticatedRequest", StringUtils.FromString(publicRequestlistValue.AuthenticateCognitoConfig.OnUnauthenticatedRequest));
-                            }
-                            if(publicRequestlistValue.AuthenticateCognitoConfig.IsSetScope())
-                            {
-                                request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateCognitoConfig" + "." + "Scope", StringUtils.FromString(publicRequestlistValue.AuthenticateCognitoConfig.Scope));
-                            }
-                            if(publicRequestlistValue.AuthenticateCognitoConfig.IsSetSessionCookieName())
-                            {
-                                request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateCognitoConfig" + "." + "SessionCookieName", StringUtils.FromString(publicRequestlistValue.AuthenticateCognitoConfig.SessionCookieName));
-                            }
-                            if(publicRequestlistValue.AuthenticateCognitoConfig.IsSetSessionTimeout())
-                            {
-                                request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateCognitoConfig" + "." + "SessionTimeout", StringUtils.FromLong(publicRequestlistValue.AuthenticateCognitoConfig.SessionTimeout));
-                            }
-                            if(publicRequestlistValue.AuthenticateCognitoConfig.IsSetUserPoolArn())
-                            {
-                                request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateCognitoConfig" + "." + "UserPoolArn", StringUtils.FromString(publicRequestlistValue.AuthenticateCognitoConfig.UserPoolArn));
-                            }
-                            if(publicRequestlistValue.AuthenticateCognitoConfig.IsSetUserPoolClientId())
-                            {
-                                request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateCognitoConfig" + "." + "UserPoolClientId", StringUtils.FromString(publicRequestlistValue.AuthenticateCognitoConfig.UserPoolClientId));
-                            }
-                            if(publicRequestlistValue.AuthenticateCognitoConfig.IsSetUserPoolDomain())
-                            {
-                                request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateCognitoConfig" + "." + "UserPoolDomain", StringUtils.FromString(publicRequestlistValue.AuthenticateCognitoConfig.UserPoolDomain));
-                            }
-                        }
-                        if(publicRequestlistValue.IsSetAuthenticateOidcConfig())
-                        {
-                            if(publicRequestlistValue.AuthenticateOidcConfig.IsSetAuthenticationRequestExtraParams())
-                            {
-                                int mapIndex = 1;
-                                foreach(var key in publicRequestlistValue.AuthenticateOidcConfig.AuthenticationRequestExtraParams.Keys)
+                                if(publicRequestlistValue.AuthenticateOidcConfig.IsSetAuthenticationRequestExtraParams())
                                 {
-                                    String value;
-                                    bool hasValue = publicRequestlistValue.AuthenticateOidcConfig.AuthenticationRequestExtraParams.TryGetValue(key, out value);
-                                    request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateOidcConfig" + "." + "AuthenticationRequestExtraParams" + "." + "entry" + "." + mapIndex + "." + "key", StringUtils.FromString(key));
-                                    if (hasValue)
+                                    int mapIndex = 1;
+                                    foreach(var key in publicRequestlistValue.AuthenticateOidcConfig.AuthenticationRequestExtraParams.Keys)
                                     {
-                                        request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateOidcConfig" + "." + "AuthenticationRequestExtraParams" + "." + "entry" + "." + mapIndex + "." + "value", StringUtils.FromString(value));
+                                        String value;
+                                        bool hasValue = publicRequestlistValue.AuthenticateOidcConfig.AuthenticationRequestExtraParams.TryGetValue(key, out value);
+                                        request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateOidcConfig" + "." + "AuthenticationRequestExtraParams" + "." + "entry" + "." + mapIndex + "." + "key", StringUtils.FromString(key));
+                                        if (hasValue)
+                                        {
+                                            request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateOidcConfig" + "." + "AuthenticationRequestExtraParams" + "." + "entry" + "." + mapIndex + "." + "value", StringUtils.FromString(value));
+                                        }
+                                        mapIndex++;
                                     }
-                                    mapIndex++;
+                                }
+                                if(publicRequestlistValue.AuthenticateOidcConfig.IsSetAuthorizationEndpoint())
+                                {
+                                    request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateOidcConfig" + "." + "AuthorizationEndpoint", StringUtils.FromString(publicRequestlistValue.AuthenticateOidcConfig.AuthorizationEndpoint));
+                                }
+                                if(publicRequestlistValue.AuthenticateOidcConfig.IsSetClientId())
+                                {
+                                    request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateOidcConfig" + "." + "ClientId", StringUtils.FromString(publicRequestlistValue.AuthenticateOidcConfig.ClientId));
+                                }
+                                if(publicRequestlistValue.AuthenticateOidcConfig.IsSetClientSecret())
+                                {
+                                    request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateOidcConfig" + "." + "ClientSecret", StringUtils.FromString(publicRequestlistValue.AuthenticateOidcConfig.ClientSecret));
+                                }
+                                if(publicRequestlistValue.AuthenticateOidcConfig.IsSetIssuer())
+                                {
+                                    request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateOidcConfig" + "." + "Issuer", StringUtils.FromString(publicRequestlistValue.AuthenticateOidcConfig.Issuer));
+                                }
+                                if(publicRequestlistValue.AuthenticateOidcConfig.IsSetOnUnauthenticatedRequest())
+                                {
+                                    request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateOidcConfig" + "." + "OnUnauthenticatedRequest", StringUtils.FromString(publicRequestlistValue.AuthenticateOidcConfig.OnUnauthenticatedRequest));
+                                }
+                                if(publicRequestlistValue.AuthenticateOidcConfig.IsSetScope())
+                                {
+                                    request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateOidcConfig" + "." + "Scope", StringUtils.FromString(publicRequestlistValue.AuthenticateOidcConfig.Scope));
+                                }
+                                if(publicRequestlistValue.AuthenticateOidcConfig.IsSetSessionCookieName())
+                                {
+                                    request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateOidcConfig" + "." + "SessionCookieName", StringUtils.FromString(publicRequestlistValue.AuthenticateOidcConfig.SessionCookieName));
+                                }
+                                if(publicRequestlistValue.AuthenticateOidcConfig.IsSetSessionTimeout())
+                                {
+                                    request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateOidcConfig" + "." + "SessionTimeout", StringUtils.FromLong(publicRequestlistValue.AuthenticateOidcConfig.SessionTimeout));
+                                }
+                                if(publicRequestlistValue.AuthenticateOidcConfig.IsSetTokenEndpoint())
+                                {
+                                    request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateOidcConfig" + "." + "TokenEndpoint", StringUtils.FromString(publicRequestlistValue.AuthenticateOidcConfig.TokenEndpoint));
+                                }
+                                if(publicRequestlistValue.AuthenticateOidcConfig.IsSetUseExistingClientSecret())
+                                {
+                                    request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateOidcConfig" + "." + "UseExistingClientSecret", StringUtils.FromBool(publicRequestlistValue.AuthenticateOidcConfig.UseExistingClientSecret));
+                                }
+                                if(publicRequestlistValue.AuthenticateOidcConfig.IsSetUserInfoEndpoint())
+                                {
+                                    request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateOidcConfig" + "." + "UserInfoEndpoint", StringUtils.FromString(publicRequestlistValue.AuthenticateOidcConfig.UserInfoEndpoint));
                                 }
                             }
-                            if(publicRequestlistValue.AuthenticateOidcConfig.IsSetAuthorizationEndpoint())
+                            if(publicRequestlistValue.IsSetFixedResponseConfig())
                             {
-                                request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateOidcConfig" + "." + "AuthorizationEndpoint", StringUtils.FromString(publicRequestlistValue.AuthenticateOidcConfig.AuthorizationEndpoint));
-                            }
-                            if(publicRequestlistValue.AuthenticateOidcConfig.IsSetClientId())
-                            {
-                                request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateOidcConfig" + "." + "ClientId", StringUtils.FromString(publicRequestlistValue.AuthenticateOidcConfig.ClientId));
-                            }
-                            if(publicRequestlistValue.AuthenticateOidcConfig.IsSetClientSecret())
-                            {
-                                request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateOidcConfig" + "." + "ClientSecret", StringUtils.FromString(publicRequestlistValue.AuthenticateOidcConfig.ClientSecret));
-                            }
-                            if(publicRequestlistValue.AuthenticateOidcConfig.IsSetIssuer())
-                            {
-                                request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateOidcConfig" + "." + "Issuer", StringUtils.FromString(publicRequestlistValue.AuthenticateOidcConfig.Issuer));
-                            }
-                            if(publicRequestlistValue.AuthenticateOidcConfig.IsSetOnUnauthenticatedRequest())
-                            {
-                                request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateOidcConfig" + "." + "OnUnauthenticatedRequest", StringUtils.FromString(publicRequestlistValue.AuthenticateOidcConfig.OnUnauthenticatedRequest));
-                            }
-                            if(publicRequestlistValue.AuthenticateOidcConfig.IsSetScope())
-                            {
-                                request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateOidcConfig" + "." + "Scope", StringUtils.FromString(publicRequestlistValue.AuthenticateOidcConfig.Scope));
-                            }
-                            if(publicRequestlistValue.AuthenticateOidcConfig.IsSetSessionCookieName())
-                            {
-                                request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateOidcConfig" + "." + "SessionCookieName", StringUtils.FromString(publicRequestlistValue.AuthenticateOidcConfig.SessionCookieName));
-                            }
-                            if(publicRequestlistValue.AuthenticateOidcConfig.IsSetSessionTimeout())
-                            {
-                                request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateOidcConfig" + "." + "SessionTimeout", StringUtils.FromLong(publicRequestlistValue.AuthenticateOidcConfig.SessionTimeout));
-                            }
-                            if(publicRequestlistValue.AuthenticateOidcConfig.IsSetTokenEndpoint())
-                            {
-                                request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateOidcConfig" + "." + "TokenEndpoint", StringUtils.FromString(publicRequestlistValue.AuthenticateOidcConfig.TokenEndpoint));
-                            }
-                            if(publicRequestlistValue.AuthenticateOidcConfig.IsSetUseExistingClientSecret())
-                            {
-                                request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateOidcConfig" + "." + "UseExistingClientSecret", StringUtils.FromBool(publicRequestlistValue.AuthenticateOidcConfig.UseExistingClientSecret));
-                            }
-                            if(publicRequestlistValue.AuthenticateOidcConfig.IsSetUserInfoEndpoint())
-                            {
-                                request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateOidcConfig" + "." + "UserInfoEndpoint", StringUtils.FromString(publicRequestlistValue.AuthenticateOidcConfig.UserInfoEndpoint));
-                            }
-                        }
-                        if(publicRequestlistValue.IsSetFixedResponseConfig())
-                        {
-                            if(publicRequestlistValue.FixedResponseConfig.IsSetContentType())
-                            {
-                                request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "FixedResponseConfig" + "." + "ContentType", StringUtils.FromString(publicRequestlistValue.FixedResponseConfig.ContentType));
-                            }
-                            if(publicRequestlistValue.FixedResponseConfig.IsSetMessageBody())
-                            {
-                                request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "FixedResponseConfig" + "." + "MessageBody", StringUtils.FromString(publicRequestlistValue.FixedResponseConfig.MessageBody));
-                            }
-                            if(publicRequestlistValue.FixedResponseConfig.IsSetStatusCode())
-                            {
-                                request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "FixedResponseConfig" + "." + "StatusCode", StringUtils.FromString(publicRequestlistValue.FixedResponseConfig.StatusCode));
-                            }
-                        }
-                        if(publicRequestlistValue.IsSetForwardConfig())
-                        {
-                            if(publicRequestlistValue.ForwardConfig.IsSetTargetGroups())
-                            {
-                                int publicRequestlistValueForwardConfiglistValueIndex = 1;
-                                foreach(var publicRequestlistValueForwardConfiglistValue in publicRequestlistValue.ForwardConfig.TargetGroups)
+                                if(publicRequestlistValue.FixedResponseConfig.IsSetContentType())
                                 {
-                                    if(publicRequestlistValueForwardConfiglistValue.IsSetTargetGroupArn())
+                                    request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "FixedResponseConfig" + "." + "ContentType", StringUtils.FromString(publicRequestlistValue.FixedResponseConfig.ContentType));
+                                }
+                                if(publicRequestlistValue.FixedResponseConfig.IsSetMessageBody())
+                                {
+                                    request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "FixedResponseConfig" + "." + "MessageBody", StringUtils.FromString(publicRequestlistValue.FixedResponseConfig.MessageBody));
+                                }
+                                if(publicRequestlistValue.FixedResponseConfig.IsSetStatusCode())
+                                {
+                                    request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "FixedResponseConfig" + "." + "StatusCode", StringUtils.FromString(publicRequestlistValue.FixedResponseConfig.StatusCode));
+                                }
+                            }
+                            if(publicRequestlistValue.IsSetForwardConfig())
+                            {
+                                if(publicRequestlistValue.ForwardConfig.IsSetTargetGroups())
+                                {
+                                    if (publicRequestlistValue.ForwardConfig.TargetGroups.Count == 0)
+                                        request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ForwardConfig" + "." + "TargetGroups", "");
+                                    else
                                     {
-                                        request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ForwardConfig" + "." + "TargetGroups" + "." + "member" + "." + publicRequestlistValueForwardConfiglistValueIndex + "." + "TargetGroupArn", StringUtils.FromString(publicRequestlistValueForwardConfiglistValue.TargetGroupArn));
+                                         int publicRequestlistValueForwardConfiglistValueIndex = 1;
+                                         foreach(var publicRequestlistValueForwardConfiglistValue in publicRequestlistValue.ForwardConfig.TargetGroups)
+                                         {
+                                            if(publicRequestlistValueForwardConfiglistValue.IsSetTargetGroupArn())
+                                            {
+                                                request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ForwardConfig" + "." + "TargetGroups" + "." + "member" + "." + publicRequestlistValueForwardConfiglistValueIndex + "." + "TargetGroupArn", StringUtils.FromString(publicRequestlistValueForwardConfiglistValue.TargetGroupArn));
+                                            }
+                                            if(publicRequestlistValueForwardConfiglistValue.IsSetWeight())
+                                            {
+                                                request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ForwardConfig" + "." + "TargetGroups" + "." + "member" + "." + publicRequestlistValueForwardConfiglistValueIndex + "." + "Weight", StringUtils.FromInt(publicRequestlistValueForwardConfiglistValue.Weight));
+                                            }
+                                             publicRequestlistValueForwardConfiglistValueIndex++;
+                                         }
                                     }
-                                    if(publicRequestlistValueForwardConfiglistValue.IsSetWeight())
+                                }
+                                if(publicRequestlistValue.ForwardConfig.IsSetTargetGroupStickinessConfig())
+                                {
+                                    if(publicRequestlistValue.ForwardConfig.TargetGroupStickinessConfig.IsSetDurationSeconds())
                                     {
-                                        request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ForwardConfig" + "." + "TargetGroups" + "." + "member" + "." + publicRequestlistValueForwardConfiglistValueIndex + "." + "Weight", StringUtils.FromInt(publicRequestlistValueForwardConfiglistValue.Weight));
+                                        request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ForwardConfig" + "." + "TargetGroupStickinessConfig" + "." + "DurationSeconds", StringUtils.FromInt(publicRequestlistValue.ForwardConfig.TargetGroupStickinessConfig.DurationSeconds));
                                     }
-                                    publicRequestlistValueForwardConfiglistValueIndex++;
+                                    if(publicRequestlistValue.ForwardConfig.TargetGroupStickinessConfig.IsSetEnabled())
+                                    {
+                                        request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ForwardConfig" + "." + "TargetGroupStickinessConfig" + "." + "Enabled", StringUtils.FromBool(publicRequestlistValue.ForwardConfig.TargetGroupStickinessConfig.Enabled));
+                                    }
                                 }
                             }
-                            if(publicRequestlistValue.ForwardConfig.IsSetTargetGroupStickinessConfig())
+                            if(publicRequestlistValue.IsSetOrder())
                             {
-                                if(publicRequestlistValue.ForwardConfig.TargetGroupStickinessConfig.IsSetDurationSeconds())
+                                request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Order", StringUtils.FromInt(publicRequestlistValue.Order));
+                            }
+                            if(publicRequestlistValue.IsSetRedirectConfig())
+                            {
+                                if(publicRequestlistValue.RedirectConfig.IsSetHost())
                                 {
-                                    request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ForwardConfig" + "." + "TargetGroupStickinessConfig" + "." + "DurationSeconds", StringUtils.FromInt(publicRequestlistValue.ForwardConfig.TargetGroupStickinessConfig.DurationSeconds));
+                                    request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RedirectConfig" + "." + "Host", StringUtils.FromString(publicRequestlistValue.RedirectConfig.Host));
                                 }
-                                if(publicRequestlistValue.ForwardConfig.TargetGroupStickinessConfig.IsSetEnabled())
+                                if(publicRequestlistValue.RedirectConfig.IsSetPath())
                                 {
-                                    request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ForwardConfig" + "." + "TargetGroupStickinessConfig" + "." + "Enabled", StringUtils.FromBool(publicRequestlistValue.ForwardConfig.TargetGroupStickinessConfig.Enabled));
+                                    request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RedirectConfig" + "." + "Path", StringUtils.FromString(publicRequestlistValue.RedirectConfig.Path));
+                                }
+                                if(publicRequestlistValue.RedirectConfig.IsSetPort())
+                                {
+                                    request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RedirectConfig" + "." + "Port", StringUtils.FromString(publicRequestlistValue.RedirectConfig.Port));
+                                }
+                                if(publicRequestlistValue.RedirectConfig.IsSetProtocol())
+                                {
+                                    request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RedirectConfig" + "." + "Protocol", StringUtils.FromString(publicRequestlistValue.RedirectConfig.Protocol));
+                                }
+                                if(publicRequestlistValue.RedirectConfig.IsSetQuery())
+                                {
+                                    request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RedirectConfig" + "." + "Query", StringUtils.FromString(publicRequestlistValue.RedirectConfig.Query));
+                                }
+                                if(publicRequestlistValue.RedirectConfig.IsSetStatusCode())
+                                {
+                                    request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RedirectConfig" + "." + "StatusCode", StringUtils.FromString(publicRequestlistValue.RedirectConfig.StatusCode));
                                 }
                             }
-                        }
-                        if(publicRequestlistValue.IsSetOrder())
-                        {
-                            request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Order", StringUtils.FromInt(publicRequestlistValue.Order));
-                        }
-                        if(publicRequestlistValue.IsSetRedirectConfig())
-                        {
-                            if(publicRequestlistValue.RedirectConfig.IsSetHost())
+                            if(publicRequestlistValue.IsSetTargetGroupArn())
                             {
-                                request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RedirectConfig" + "." + "Host", StringUtils.FromString(publicRequestlistValue.RedirectConfig.Host));
+                                request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "TargetGroupArn", StringUtils.FromString(publicRequestlistValue.TargetGroupArn));
                             }
-                            if(publicRequestlistValue.RedirectConfig.IsSetPath())
+                            if(publicRequestlistValue.IsSetType())
                             {
-                                request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RedirectConfig" + "." + "Path", StringUtils.FromString(publicRequestlistValue.RedirectConfig.Path));
+                                request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Type", StringUtils.FromString(publicRequestlistValue.Type));
                             }
-                            if(publicRequestlistValue.RedirectConfig.IsSetPort())
-                            {
-                                request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RedirectConfig" + "." + "Port", StringUtils.FromString(publicRequestlistValue.RedirectConfig.Port));
-                            }
-                            if(publicRequestlistValue.RedirectConfig.IsSetProtocol())
-                            {
-                                request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RedirectConfig" + "." + "Protocol", StringUtils.FromString(publicRequestlistValue.RedirectConfig.Protocol));
-                            }
-                            if(publicRequestlistValue.RedirectConfig.IsSetQuery())
-                            {
-                                request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RedirectConfig" + "." + "Query", StringUtils.FromString(publicRequestlistValue.RedirectConfig.Query));
-                            }
-                            if(publicRequestlistValue.RedirectConfig.IsSetStatusCode())
-                            {
-                                request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RedirectConfig" + "." + "StatusCode", StringUtils.FromString(publicRequestlistValue.RedirectConfig.StatusCode));
-                            }
-                        }
-                        if(publicRequestlistValue.IsSetTargetGroupArn())
-                        {
-                            request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "TargetGroupArn", StringUtils.FromString(publicRequestlistValue.TargetGroupArn));
-                        }
-                        if(publicRequestlistValue.IsSetType())
-                        {
-                            request.Parameters.Add("Actions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Type", StringUtils.FromString(publicRequestlistValue.Type));
-                        }
-                        publicRequestlistValueIndex++;
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetConditions())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Conditions)
+                    if (publicRequest.Conditions.Count == 0)
+                        request.Parameters.Add("Conditions", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetField())
-                        {
-                            request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Field", StringUtils.FromString(publicRequestlistValue.Field));
-                        }
-                        if(publicRequestlistValue.IsSetHostHeaderConfig())
-                        {
-                            if(publicRequestlistValue.HostHeaderConfig.IsSetValues())
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Conditions)
+                         {
+                            if(publicRequestlistValue.IsSetField())
                             {
-                                int publicRequestlistValueHostHeaderConfiglistValueIndex = 1;
-                                foreach(var publicRequestlistValueHostHeaderConfiglistValue in publicRequestlistValue.HostHeaderConfig.Values)
-                                {
-                                    request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "HostHeaderConfig" + "." + "Values" + "." + "member" + "." + publicRequestlistValueHostHeaderConfiglistValueIndex, StringUtils.FromString(publicRequestlistValueHostHeaderConfiglistValue));
-                                    publicRequestlistValueHostHeaderConfiglistValueIndex++;
-                                }
+                                request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Field", StringUtils.FromString(publicRequestlistValue.Field));
                             }
-                        }
-                        if(publicRequestlistValue.IsSetHttpHeaderConfig())
-                        {
-                            if(publicRequestlistValue.HttpHeaderConfig.IsSetHttpHeaderName())
+                            if(publicRequestlistValue.IsSetHostHeaderConfig())
                             {
-                                request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "HttpHeaderConfig" + "." + "HttpHeaderName", StringUtils.FromString(publicRequestlistValue.HttpHeaderConfig.HttpHeaderName));
-                            }
-                            if(publicRequestlistValue.HttpHeaderConfig.IsSetValues())
-                            {
-                                int publicRequestlistValueHttpHeaderConfiglistValueIndex = 1;
-                                foreach(var publicRequestlistValueHttpHeaderConfiglistValue in publicRequestlistValue.HttpHeaderConfig.Values)
+                                if(publicRequestlistValue.HostHeaderConfig.IsSetValues())
                                 {
-                                    request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "HttpHeaderConfig" + "." + "Values" + "." + "member" + "." + publicRequestlistValueHttpHeaderConfiglistValueIndex, StringUtils.FromString(publicRequestlistValueHttpHeaderConfiglistValue));
-                                    publicRequestlistValueHttpHeaderConfiglistValueIndex++;
-                                }
-                            }
-                        }
-                        if(publicRequestlistValue.IsSetHttpRequestMethodConfig())
-                        {
-                            if(publicRequestlistValue.HttpRequestMethodConfig.IsSetValues())
-                            {
-                                int publicRequestlistValueHttpRequestMethodConfiglistValueIndex = 1;
-                                foreach(var publicRequestlistValueHttpRequestMethodConfiglistValue in publicRequestlistValue.HttpRequestMethodConfig.Values)
-                                {
-                                    request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "HttpRequestMethodConfig" + "." + "Values" + "." + "member" + "." + publicRequestlistValueHttpRequestMethodConfiglistValueIndex, StringUtils.FromString(publicRequestlistValueHttpRequestMethodConfiglistValue));
-                                    publicRequestlistValueHttpRequestMethodConfiglistValueIndex++;
-                                }
-                            }
-                        }
-                        if(publicRequestlistValue.IsSetPathPatternConfig())
-                        {
-                            if(publicRequestlistValue.PathPatternConfig.IsSetValues())
-                            {
-                                int publicRequestlistValuePathPatternConfiglistValueIndex = 1;
-                                foreach(var publicRequestlistValuePathPatternConfiglistValue in publicRequestlistValue.PathPatternConfig.Values)
-                                {
-                                    request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "PathPatternConfig" + "." + "Values" + "." + "member" + "." + publicRequestlistValuePathPatternConfiglistValueIndex, StringUtils.FromString(publicRequestlistValuePathPatternConfiglistValue));
-                                    publicRequestlistValuePathPatternConfiglistValueIndex++;
-                                }
-                            }
-                        }
-                        if(publicRequestlistValue.IsSetQueryStringConfig())
-                        {
-                            if(publicRequestlistValue.QueryStringConfig.IsSetValues())
-                            {
-                                int publicRequestlistValueQueryStringConfiglistValueIndex = 1;
-                                foreach(var publicRequestlistValueQueryStringConfiglistValue in publicRequestlistValue.QueryStringConfig.Values)
-                                {
-                                    if(publicRequestlistValueQueryStringConfiglistValue.IsSetKey())
+                                    if (publicRequestlistValue.HostHeaderConfig.Values.Count == 0)
+                                        request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "HostHeaderConfig" + "." + "Values", "");
+                                    else
                                     {
-                                        request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "QueryStringConfig" + "." + "Values" + "." + "member" + "." + publicRequestlistValueQueryStringConfiglistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValueQueryStringConfiglistValue.Key));
+                                         int publicRequestlistValueHostHeaderConfiglistValueIndex = 1;
+                                         foreach(var publicRequestlistValueHostHeaderConfiglistValue in publicRequestlistValue.HostHeaderConfig.Values)
+                                         {
+                                             request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "HostHeaderConfig" + "." + "Values" + "." + "member" + "." + publicRequestlistValueHostHeaderConfiglistValueIndex, StringUtils.FromString(publicRequestlistValueHostHeaderConfiglistValue));
+                                             publicRequestlistValueHostHeaderConfiglistValueIndex++;
+                                         }
                                     }
-                                    if(publicRequestlistValueQueryStringConfiglistValue.IsSetValue())
-                                    {
-                                        request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "QueryStringConfig" + "." + "Values" + "." + "member" + "." + publicRequestlistValueQueryStringConfiglistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValueQueryStringConfiglistValue.Value));
-                                    }
-                                    publicRequestlistValueQueryStringConfiglistValueIndex++;
                                 }
                             }
-                        }
-                        if(publicRequestlistValue.IsSetSourceIpConfig())
-                        {
-                            if(publicRequestlistValue.SourceIpConfig.IsSetValues())
+                            if(publicRequestlistValue.IsSetHttpHeaderConfig())
                             {
-                                int publicRequestlistValueSourceIpConfiglistValueIndex = 1;
-                                foreach(var publicRequestlistValueSourceIpConfiglistValue in publicRequestlistValue.SourceIpConfig.Values)
+                                if(publicRequestlistValue.HttpHeaderConfig.IsSetHttpHeaderName())
                                 {
-                                    request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "SourceIpConfig" + "." + "Values" + "." + "member" + "." + publicRequestlistValueSourceIpConfiglistValueIndex, StringUtils.FromString(publicRequestlistValueSourceIpConfiglistValue));
-                                    publicRequestlistValueSourceIpConfiglistValueIndex++;
+                                    request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "HttpHeaderConfig" + "." + "HttpHeaderName", StringUtils.FromString(publicRequestlistValue.HttpHeaderConfig.HttpHeaderName));
+                                }
+                                if(publicRequestlistValue.HttpHeaderConfig.IsSetValues())
+                                {
+                                    if (publicRequestlistValue.HttpHeaderConfig.Values.Count == 0)
+                                        request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "HttpHeaderConfig" + "." + "Values", "");
+                                    else
+                                    {
+                                         int publicRequestlistValueHttpHeaderConfiglistValueIndex = 1;
+                                         foreach(var publicRequestlistValueHttpHeaderConfiglistValue in publicRequestlistValue.HttpHeaderConfig.Values)
+                                         {
+                                             request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "HttpHeaderConfig" + "." + "Values" + "." + "member" + "." + publicRequestlistValueHttpHeaderConfiglistValueIndex, StringUtils.FromString(publicRequestlistValueHttpHeaderConfiglistValue));
+                                             publicRequestlistValueHttpHeaderConfiglistValueIndex++;
+                                         }
+                                    }
                                 }
                             }
-                        }
-                        if(publicRequestlistValue.IsSetValues())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Values)
+                            if(publicRequestlistValue.IsSetHttpRequestMethodConfig())
                             {
-                                request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Values" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
-                                publicRequestlistValuelistValueIndex++;
+                                if(publicRequestlistValue.HttpRequestMethodConfig.IsSetValues())
+                                {
+                                    if (publicRequestlistValue.HttpRequestMethodConfig.Values.Count == 0)
+                                        request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "HttpRequestMethodConfig" + "." + "Values", "");
+                                    else
+                                    {
+                                         int publicRequestlistValueHttpRequestMethodConfiglistValueIndex = 1;
+                                         foreach(var publicRequestlistValueHttpRequestMethodConfiglistValue in publicRequestlistValue.HttpRequestMethodConfig.Values)
+                                         {
+                                             request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "HttpRequestMethodConfig" + "." + "Values" + "." + "member" + "." + publicRequestlistValueHttpRequestMethodConfiglistValueIndex, StringUtils.FromString(publicRequestlistValueHttpRequestMethodConfiglistValue));
+                                             publicRequestlistValueHttpRequestMethodConfiglistValueIndex++;
+                                         }
+                                    }
+                                }
                             }
-                        }
-                        publicRequestlistValueIndex++;
+                            if(publicRequestlistValue.IsSetPathPatternConfig())
+                            {
+                                if(publicRequestlistValue.PathPatternConfig.IsSetValues())
+                                {
+                                    if (publicRequestlistValue.PathPatternConfig.Values.Count == 0)
+                                        request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "PathPatternConfig" + "." + "Values", "");
+                                    else
+                                    {
+                                         int publicRequestlistValuePathPatternConfiglistValueIndex = 1;
+                                         foreach(var publicRequestlistValuePathPatternConfiglistValue in publicRequestlistValue.PathPatternConfig.Values)
+                                         {
+                                             request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "PathPatternConfig" + "." + "Values" + "." + "member" + "." + publicRequestlistValuePathPatternConfiglistValueIndex, StringUtils.FromString(publicRequestlistValuePathPatternConfiglistValue));
+                                             publicRequestlistValuePathPatternConfiglistValueIndex++;
+                                         }
+                                    }
+                                }
+                            }
+                            if(publicRequestlistValue.IsSetQueryStringConfig())
+                            {
+                                if(publicRequestlistValue.QueryStringConfig.IsSetValues())
+                                {
+                                    if (publicRequestlistValue.QueryStringConfig.Values.Count == 0)
+                                        request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "QueryStringConfig" + "." + "Values", "");
+                                    else
+                                    {
+                                         int publicRequestlistValueQueryStringConfiglistValueIndex = 1;
+                                         foreach(var publicRequestlistValueQueryStringConfiglistValue in publicRequestlistValue.QueryStringConfig.Values)
+                                         {
+                                            if(publicRequestlistValueQueryStringConfiglistValue.IsSetKey())
+                                            {
+                                                request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "QueryStringConfig" + "." + "Values" + "." + "member" + "." + publicRequestlistValueQueryStringConfiglistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValueQueryStringConfiglistValue.Key));
+                                            }
+                                            if(publicRequestlistValueQueryStringConfiglistValue.IsSetValue())
+                                            {
+                                                request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "QueryStringConfig" + "." + "Values" + "." + "member" + "." + publicRequestlistValueQueryStringConfiglistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValueQueryStringConfiglistValue.Value));
+                                            }
+                                             publicRequestlistValueQueryStringConfiglistValueIndex++;
+                                         }
+                                    }
+                                }
+                            }
+                            if(publicRequestlistValue.IsSetSourceIpConfig())
+                            {
+                                if(publicRequestlistValue.SourceIpConfig.IsSetValues())
+                                {
+                                    if (publicRequestlistValue.SourceIpConfig.Values.Count == 0)
+                                        request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "SourceIpConfig" + "." + "Values", "");
+                                    else
+                                    {
+                                         int publicRequestlistValueSourceIpConfiglistValueIndex = 1;
+                                         foreach(var publicRequestlistValueSourceIpConfiglistValue in publicRequestlistValue.SourceIpConfig.Values)
+                                         {
+                                             request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "SourceIpConfig" + "." + "Values" + "." + "member" + "." + publicRequestlistValueSourceIpConfiglistValueIndex, StringUtils.FromString(publicRequestlistValueSourceIpConfiglistValue));
+                                             publicRequestlistValueSourceIpConfiglistValueIndex++;
+                                         }
+                                    }
+                                }
+                            }
+                            if(publicRequestlistValue.IsSetValues())
+                            {
+                                if (publicRequestlistValue.Values.Count == 0)
+                                    request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Values", "");
+                                else
+                                {
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Values)
+                                     {
+                                         request.Parameters.Add("Conditions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Values" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
+                                }
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetRuleArn())

@@ -38,10 +38,12 @@ namespace Amazon.Chatbot.Model
         private List<TeamsUserIdentity> _teamsUserIdentities = AWSConfigs.InitializeCollections ? new List<TeamsUserIdentity>() : null;
 
         /// <summary>
-        /// Gets and sets the property NextToken. An optional token returned from a prior request.
-        /// Use this token for pagination of results from this action. If this parameter is specified,
-        /// the response includes only results beyond the token, up to the value specified by
-        /// MaxResults.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// An optional token returned from a prior request. Use this token for pagination of
+        /// results from this action. If this parameter is specified, the response includes only
+        /// results beyond the token, up to the value specified by MaxResults. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1276)]
         public string NextToken
@@ -57,8 +59,10 @@ namespace Amazon.Chatbot.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TeamsUserIdentities. User level permissions associated
-        /// to a channel configuration.
+        /// Gets and sets the property TeamsUserIdentities. 
+        /// <para>
+        /// User level permissions associated to a channel configuration.
+        /// </para>
         /// </summary>
         public List<TeamsUserIdentity> TeamsUserIdentities
         {

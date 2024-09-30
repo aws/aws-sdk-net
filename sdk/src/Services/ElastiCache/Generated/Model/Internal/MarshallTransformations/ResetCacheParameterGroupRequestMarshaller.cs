@@ -65,18 +65,23 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetParameterNameValues())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ParameterNameValues)
+                    if (publicRequest.ParameterNameValues.Count == 0)
+                        request.Parameters.Add("ParameterNameValues", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetParameterName())
-                        {
-                            request.Parameters.Add("ParameterNameValues" + "." + "ParameterNameValue" + "." + publicRequestlistValueIndex + "." + "ParameterName", StringUtils.FromString(publicRequestlistValue.ParameterName));
-                        }
-                        if(publicRequestlistValue.IsSetParameterValue())
-                        {
-                            request.Parameters.Add("ParameterNameValues" + "." + "ParameterNameValue" + "." + publicRequestlistValueIndex + "." + "ParameterValue", StringUtils.FromString(publicRequestlistValue.ParameterValue));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ParameterNameValues)
+                         {
+                            if(publicRequestlistValue.IsSetParameterName())
+                            {
+                                request.Parameters.Add("ParameterNameValues" + "." + "ParameterNameValue" + "." + publicRequestlistValueIndex + "." + "ParameterName", StringUtils.FromString(publicRequestlistValue.ParameterName));
+                            }
+                            if(publicRequestlistValue.IsSetParameterValue())
+                            {
+                                request.Parameters.Add("ParameterNameValues" + "." + "ParameterNameValue" + "." + publicRequestlistValueIndex + "." + "ParameterValue", StringUtils.FromString(publicRequestlistValue.ParameterValue));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetResetAllParameters())

@@ -90,6 +90,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.Settings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("srtSettings", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<SrtOutputDestinationSettings, SrtOutputDestinationSettingsUnmarshaller>(SrtOutputDestinationSettingsUnmarshaller.Instance);
+                    unmarshalledObject.SrtSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

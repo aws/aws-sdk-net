@@ -125,6 +125,14 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Paginator for ListFoldersForResource operation
+        ///</summary>
+        public IListFoldersForResourcePaginator ListFoldersForResource(ListFoldersForResourceRequest request) 
+        {
+            return new ListFoldersForResourcePaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListGroupMemberships operation
         ///</summary>
         public IListGroupMembershipsPaginator ListGroupMemberships(ListGroupMembershipsRequest request) 

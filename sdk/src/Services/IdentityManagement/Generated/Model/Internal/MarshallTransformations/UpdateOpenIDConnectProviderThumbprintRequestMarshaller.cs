@@ -65,11 +65,16 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetThumbprintList())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ThumbprintList)
+                    if (publicRequest.ThumbprintList.Count == 0)
+                        request.Parameters.Add("ThumbprintList", "");
+                    else
                     {
-                        request.Parameters.Add("ThumbprintList" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ThumbprintList)
+                         {
+                             request.Parameters.Add("ThumbprintList" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

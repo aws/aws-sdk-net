@@ -73,26 +73,31 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetTimeRanges())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.TimeRanges)
+                    if (publicRequest.TimeRanges.Count == 0)
+                        request.Parameters.Add("TimeRange", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetEndHour())
-                        {
-                            request.Parameters.Add("TimeRange" + "." + publicRequestlistValueIndex + "." + "EndHour", StringUtils.FromInt(publicRequestlistValue.EndHour));
-                        }
-                        if(publicRequestlistValue.IsSetEndWeekDay())
-                        {
-                            request.Parameters.Add("TimeRange" + "." + publicRequestlistValueIndex + "." + "EndWeekDay", StringUtils.FromString(publicRequestlistValue.EndWeekDay));
-                        }
-                        if(publicRequestlistValue.IsSetStartHour())
-                        {
-                            request.Parameters.Add("TimeRange" + "." + publicRequestlistValueIndex + "." + "StartHour", StringUtils.FromInt(publicRequestlistValue.StartHour));
-                        }
-                        if(publicRequestlistValue.IsSetStartWeekDay())
-                        {
-                            request.Parameters.Add("TimeRange" + "." + publicRequestlistValueIndex + "." + "StartWeekDay", StringUtils.FromString(publicRequestlistValue.StartWeekDay));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.TimeRanges)
+                         {
+                            if(publicRequestlistValue.IsSetEndHour())
+                            {
+                                request.Parameters.Add("TimeRange" + "." + publicRequestlistValueIndex + "." + "EndHour", StringUtils.FromInt(publicRequestlistValue.EndHour));
+                            }
+                            if(publicRequestlistValue.IsSetEndWeekDay())
+                            {
+                                request.Parameters.Add("TimeRange" + "." + publicRequestlistValueIndex + "." + "EndWeekDay", StringUtils.FromString(publicRequestlistValue.EndWeekDay));
+                            }
+                            if(publicRequestlistValue.IsSetStartHour())
+                            {
+                                request.Parameters.Add("TimeRange" + "." + publicRequestlistValueIndex + "." + "StartHour", StringUtils.FromInt(publicRequestlistValue.StartHour));
+                            }
+                            if(publicRequestlistValue.IsSetStartWeekDay())
+                            {
+                                request.Parameters.Add("TimeRange" + "." + publicRequestlistValueIndex + "." + "StartWeekDay", StringUtils.FromString(publicRequestlistValue.StartWeekDay));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

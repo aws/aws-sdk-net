@@ -39,10 +39,12 @@ namespace Amazon.Runtime.Internal.Auth
                 throw new ArgumentOutOfRangeException("awsAccessKeyId", "The AWS Access Key ID cannot be NULL or a Zero length string");
             }
 
-            string dateTime = AWSSDKUtils.GetFormattedTimestampRFC822(0);
-            request.Headers.Add(HeaderKeys.XAmzDateHeader, dateTime);
+            DateTime dateTime = CorrectClockSkew.GetCorrectedUtcNowForEndpoint(request.Endpoint.ToString());
+            request.SignedAt = dateTime;
+            string dateTimeString = dateTime.ToString(AWSSDKUtils.RFC822DateFormat, CultureInfo.InvariantCulture);
+            request.Headers.Add(HeaderKeys.XAmzDateHeader, dateTimeString);
 
-            string signature = ComputeHash(dateTime, awsSecretAccessKey, SigningAlgorithm.HmacSHA1);
+            string signature = ComputeHash(dateTimeString, awsSecretAccessKey, SigningAlgorithm.HmacSHA1);
 
             request.Headers.Add(HeaderKeys.AuthorizationHeader, "AWS " + awsAccessKeyId + ":" + signature);
         }

@@ -30,5 +30,10 @@ namespace Amazon.Glue.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<ListTableOptimizerRunsResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the TableOptimizerRuns
+        /// </summary>
+        IPaginatedEnumerable<TableOptimizerRun> TableOptimizerRuns { get; }
     }
 }

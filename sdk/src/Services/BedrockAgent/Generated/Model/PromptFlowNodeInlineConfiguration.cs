@@ -60,7 +60,8 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property ModelId. 
         /// <para>
-        /// The unique identifier of the model to run inference with.
+        /// The unique identifier of the model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference
+        /// profile</a> to run inference with.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

@@ -227,8 +227,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property IamRoleArn. 
         /// <para>
-        /// Specifies the IAM role ARN used to create the target recovery point; for example,
-        /// <c>arn:aws:iam::123456789012:role/S3Access</c>.
+        /// The IAM role ARN used to create the target recovery point; for example, <c>arn:aws:iam::123456789012:role/S3Access</c>.
         /// </para>
         /// </summary>
         public string IamRoleArn
@@ -377,7 +376,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ValidationStatus. 
         /// <para>
-        /// This is the status of validation run on the indicated restore job.
+        /// The status of validation run on the indicated restore job.
         /// </para>
         /// </summary>
         public RestoreValidationStatus ValidationStatus

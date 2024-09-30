@@ -92,11 +92,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetGroups())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Groups)
+                    if (publicRequest.Groups.Count == 0)
+                        request.Parameters.Add("SecurityGroupId", "");
+                    else
                     {
-                        request.Parameters.Add("SecurityGroupId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Groups)
+                         {
+                             request.Parameters.Add("SecurityGroupId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetInterfaceType())
@@ -109,14 +114,19 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetIpv4Prefixes())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Ipv4Prefixes)
+                    if (publicRequest.Ipv4Prefixes.Count == 0)
+                        request.Parameters.Add("Ipv4Prefix", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetIpv4Prefix())
-                        {
-                            request.Parameters.Add("Ipv4Prefix" + "." + publicRequestlistValueIndex + "." + "Ipv4Prefix", StringUtils.FromString(publicRequestlistValue.Ipv4Prefix));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Ipv4Prefixes)
+                         {
+                            if(publicRequestlistValue.IsSetIpv4Prefix())
+                            {
+                                request.Parameters.Add("Ipv4Prefix" + "." + publicRequestlistValueIndex + "." + "Ipv4Prefix", StringUtils.FromString(publicRequestlistValue.Ipv4Prefix));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetIpv6AddressCount())
@@ -125,18 +135,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetIpv6Addresses())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Ipv6Addresses)
+                    if (publicRequest.Ipv6Addresses.Count == 0)
+                        request.Parameters.Add("Ipv6Addresses", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetIpv6Address())
-                        {
-                            request.Parameters.Add("Ipv6Addresses" + "." + publicRequestlistValueIndex + "." + "Ipv6Address", StringUtils.FromString(publicRequestlistValue.Ipv6Address));
-                        }
-                        if(publicRequestlistValue.IsSetIsPrimaryIpv6())
-                        {
-                            request.Parameters.Add("Ipv6Addresses" + "." + publicRequestlistValueIndex + "." + "IsPrimaryIpv6", StringUtils.FromBool(publicRequestlistValue.IsPrimaryIpv6));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Ipv6Addresses)
+                         {
+                            if(publicRequestlistValue.IsSetIpv6Address())
+                            {
+                                request.Parameters.Add("Ipv6Addresses" + "." + publicRequestlistValueIndex + "." + "Ipv6Address", StringUtils.FromString(publicRequestlistValue.Ipv6Address));
+                            }
+                            if(publicRequestlistValue.IsSetIsPrimaryIpv6())
+                            {
+                                request.Parameters.Add("Ipv6Addresses" + "." + publicRequestlistValueIndex + "." + "IsPrimaryIpv6", StringUtils.FromBool(publicRequestlistValue.IsPrimaryIpv6));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetIpv6PrefixCount())
@@ -145,14 +160,19 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetIpv6Prefixes())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Ipv6Prefixes)
+                    if (publicRequest.Ipv6Prefixes.Count == 0)
+                        request.Parameters.Add("Ipv6Prefix", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetIpv6Prefix())
-                        {
-                            request.Parameters.Add("Ipv6Prefix" + "." + publicRequestlistValueIndex + "." + "Ipv6Prefix", StringUtils.FromString(publicRequestlistValue.Ipv6Prefix));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Ipv6Prefixes)
+                         {
+                            if(publicRequestlistValue.IsSetIpv6Prefix())
+                            {
+                                request.Parameters.Add("Ipv6Prefix" + "." + publicRequestlistValueIndex + "." + "Ipv6Prefix", StringUtils.FromString(publicRequestlistValue.Ipv6Prefix));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetPrivateIpAddress())
@@ -161,18 +181,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetPrivateIpAddresses())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.PrivateIpAddresses)
+                    if (publicRequest.PrivateIpAddresses.Count == 0)
+                        request.Parameters.Add("PrivateIpAddresses", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetPrimary())
-                        {
-                            request.Parameters.Add("PrivateIpAddresses" + "." + publicRequestlistValueIndex + "." + "Primary", StringUtils.FromBool(publicRequestlistValue.Primary));
-                        }
-                        if(publicRequestlistValue.IsSetPrivateIpAddress())
-                        {
-                            request.Parameters.Add("PrivateIpAddresses" + "." + publicRequestlistValueIndex + "." + "PrivateIpAddress", StringUtils.FromString(publicRequestlistValue.PrivateIpAddress));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.PrivateIpAddresses)
+                         {
+                            if(publicRequestlistValue.IsSetPrimary())
+                            {
+                                request.Parameters.Add("PrivateIpAddresses" + "." + publicRequestlistValueIndex + "." + "Primary", StringUtils.FromBool(publicRequestlistValue.Primary));
+                            }
+                            if(publicRequestlistValue.IsSetPrivateIpAddress())
+                            {
+                                request.Parameters.Add("PrivateIpAddresses" + "." + publicRequestlistValueIndex + "." + "PrivateIpAddress", StringUtils.FromString(publicRequestlistValue.PrivateIpAddress));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetSecondaryPrivateIpAddressCount())
@@ -185,30 +210,40 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetTagSpecifications())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.TagSpecifications)
+                    if (publicRequest.TagSpecifications.Count == 0)
+                        request.Parameters.Add("TagSpecification", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetResourceType())
-                        {
-                            request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
-                        }
-                        if(publicRequestlistValue.IsSetTags())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Tags)
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.TagSpecifications)
+                         {
+                            if(publicRequestlistValue.IsSetResourceType())
                             {
-                                if(publicRequestlistValuelistValue.IsSetKey())
-                                {
-                                    request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValuelistValue.Key));
-                                }
-                                if(publicRequestlistValuelistValue.IsSetValue())
-                                {
-                                    request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
-                                }
-                                publicRequestlistValuelistValueIndex++;
+                                request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
                             }
-                        }
-                        publicRequestlistValueIndex++;
+                            if(publicRequestlistValue.IsSetTags())
+                            {
+                                if (publicRequestlistValue.Tags.Count == 0)
+                                    request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag", "");
+                                else
+                                {
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Tags)
+                                     {
+                                        if(publicRequestlistValuelistValue.IsSetKey())
+                                        {
+                                            request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValuelistValue.Key));
+                                        }
+                                        if(publicRequestlistValuelistValue.IsSetValue())
+                                        {
+                                            request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
+                                        }
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
+                                }
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

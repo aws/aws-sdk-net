@@ -34,7 +34,27 @@ namespace Amazon.Synthetics.Model
     /// the Lambda handler with the location where the canary should start running the script.
     /// If the script is stored in an S3 bucket, the bucket name, key, and version are also
     /// included. If the script was passed into the canary directly, the script code is contained
-    /// in the value of <c>Zipfile</c>.
+    /// in the value of <c>Zipfile</c>. 
+    /// 
+    ///  
+    /// <para>
+    /// If you are uploading your canary scripts with an Amazon S3 bucket, your zip file should
+    /// include your script in a certain folder structure.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// For Node.js canaries, the folder structure must be <c>nodejs/node_modules/<i>myCanaryFilename.js</i>
+    /// </c> For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_WritingCanary_Nodejs.html#CloudWatch_Synthetics_Canaries_package">Packaging
+    /// your Node.js canary files</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For Python canaries, the folder structure must be <c>python/<i>myCanaryFilename.p</i>
+    /// </c> or <c>python/<i>myFolder/myCanaryFilename.py</i> </c> For more information, see
+    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_WritingCanary_Python.html#CloudWatch_Synthetics_Canaries_WritingCanary_Python_package">Packaging
+    /// your Python canary files</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class CanaryCodeInput
     {

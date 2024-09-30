@@ -62,7 +62,7 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// Defines when a protected resource is transitioned to cold storage and when it expires.
         /// Backup transitions and expires backups automatically according to the lifecycle that
-        /// you define. If you do not specify a lifecycle, Backup applies the lifecycle policy
+        /// you define. If you don't specify a lifecycle, Backup applies the lifecycle policy
         /// of the source backup to the destination backup.
         /// </para>
         ///  

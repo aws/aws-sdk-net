@@ -76,76 +76,86 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetMetricDataQueries())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.MetricDataQueries)
+                    if (publicRequest.MetricDataQueries.Count == 0)
+                        request.Parameters.Add("MetricDataQueries", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetAccountId())
-                        {
-                            request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AccountId", StringUtils.FromString(publicRequestlistValue.AccountId));
-                        }
-                        if(publicRequestlistValue.IsSetExpression())
-                        {
-                            request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Expression", StringUtils.FromString(publicRequestlistValue.Expression));
-                        }
-                        if(publicRequestlistValue.IsSetId())
-                        {
-                            request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Id", StringUtils.FromString(publicRequestlistValue.Id));
-                        }
-                        if(publicRequestlistValue.IsSetLabel())
-                        {
-                            request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Label", StringUtils.FromString(publicRequestlistValue.Label));
-                        }
-                        if(publicRequestlistValue.IsSetMetricStat())
-                        {
-                            if(publicRequestlistValue.MetricStat.IsSetMetric())
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.MetricDataQueries)
+                         {
+                            if(publicRequestlistValue.IsSetAccountId())
                             {
-                                if(publicRequestlistValue.MetricStat.Metric.IsSetDimensions())
+                                request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AccountId", StringUtils.FromString(publicRequestlistValue.AccountId));
+                            }
+                            if(publicRequestlistValue.IsSetExpression())
+                            {
+                                request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Expression", StringUtils.FromString(publicRequestlistValue.Expression));
+                            }
+                            if(publicRequestlistValue.IsSetId())
+                            {
+                                request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Id", StringUtils.FromString(publicRequestlistValue.Id));
+                            }
+                            if(publicRequestlistValue.IsSetLabel())
+                            {
+                                request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Label", StringUtils.FromString(publicRequestlistValue.Label));
+                            }
+                            if(publicRequestlistValue.IsSetMetricStat())
+                            {
+                                if(publicRequestlistValue.MetricStat.IsSetMetric())
                                 {
-                                    int publicRequestlistValueMetricStatMetriclistValueIndex = 1;
-                                    foreach(var publicRequestlistValueMetricStatMetriclistValue in publicRequestlistValue.MetricStat.Metric.Dimensions)
+                                    if(publicRequestlistValue.MetricStat.Metric.IsSetDimensions())
                                     {
-                                        if(publicRequestlistValueMetricStatMetriclistValue.IsSetName())
+                                        if (publicRequestlistValue.MetricStat.Metric.Dimensions.Count == 0)
+                                            request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "Dimensions", "");
+                                        else
                                         {
-                                            request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "Dimensions" + "." + "member" + "." + publicRequestlistValueMetricStatMetriclistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValueMetricStatMetriclistValue.Name));
+                                             int publicRequestlistValueMetricStatMetriclistValueIndex = 1;
+                                             foreach(var publicRequestlistValueMetricStatMetriclistValue in publicRequestlistValue.MetricStat.Metric.Dimensions)
+                                             {
+                                                if(publicRequestlistValueMetricStatMetriclistValue.IsSetName())
+                                                {
+                                                    request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "Dimensions" + "." + "member" + "." + publicRequestlistValueMetricStatMetriclistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValueMetricStatMetriclistValue.Name));
+                                                }
+                                                if(publicRequestlistValueMetricStatMetriclistValue.IsSetValue())
+                                                {
+                                                    request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "Dimensions" + "." + "member" + "." + publicRequestlistValueMetricStatMetriclistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValueMetricStatMetriclistValue.Value));
+                                                }
+                                                 publicRequestlistValueMetricStatMetriclistValueIndex++;
+                                             }
                                         }
-                                        if(publicRequestlistValueMetricStatMetriclistValue.IsSetValue())
-                                        {
-                                            request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "Dimensions" + "." + "member" + "." + publicRequestlistValueMetricStatMetriclistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValueMetricStatMetriclistValue.Value));
-                                        }
-                                        publicRequestlistValueMetricStatMetriclistValueIndex++;
+                                    }
+                                    if(publicRequestlistValue.MetricStat.Metric.IsSetMetricName())
+                                    {
+                                        request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "MetricName", StringUtils.FromString(publicRequestlistValue.MetricStat.Metric.MetricName));
+                                    }
+                                    if(publicRequestlistValue.MetricStat.Metric.IsSetNamespace())
+                                    {
+                                        request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "Namespace", StringUtils.FromString(publicRequestlistValue.MetricStat.Metric.Namespace));
                                     }
                                 }
-                                if(publicRequestlistValue.MetricStat.Metric.IsSetMetricName())
+                                if(publicRequestlistValue.MetricStat.IsSetPeriod())
                                 {
-                                    request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "MetricName", StringUtils.FromString(publicRequestlistValue.MetricStat.Metric.MetricName));
+                                    request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricStat" + "." + "Period", StringUtils.FromInt(publicRequestlistValue.MetricStat.Period));
                                 }
-                                if(publicRequestlistValue.MetricStat.Metric.IsSetNamespace())
+                                if(publicRequestlistValue.MetricStat.IsSetStat())
                                 {
-                                    request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "Namespace", StringUtils.FromString(publicRequestlistValue.MetricStat.Metric.Namespace));
+                                    request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricStat" + "." + "Stat", StringUtils.FromString(publicRequestlistValue.MetricStat.Stat));
+                                }
+                                if(publicRequestlistValue.MetricStat.IsSetUnit())
+                                {
+                                    request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricStat" + "." + "Unit", StringUtils.FromString(publicRequestlistValue.MetricStat.Unit));
                                 }
                             }
-                            if(publicRequestlistValue.MetricStat.IsSetPeriod())
+                            if(publicRequestlistValue.IsSetPeriod())
                             {
-                                request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricStat" + "." + "Period", StringUtils.FromInt(publicRequestlistValue.MetricStat.Period));
+                                request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Period", StringUtils.FromInt(publicRequestlistValue.Period));
                             }
-                            if(publicRequestlistValue.MetricStat.IsSetStat())
+                            if(publicRequestlistValue.IsSetReturnData())
                             {
-                                request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricStat" + "." + "Stat", StringUtils.FromString(publicRequestlistValue.MetricStat.Stat));
+                                request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ReturnData", StringUtils.FromBool(publicRequestlistValue.ReturnData));
                             }
-                            if(publicRequestlistValue.MetricStat.IsSetUnit())
-                            {
-                                request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricStat" + "." + "Unit", StringUtils.FromString(publicRequestlistValue.MetricStat.Unit));
-                            }
-                        }
-                        if(publicRequestlistValue.IsSetPeriod())
-                        {
-                            request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Period", StringUtils.FromInt(publicRequestlistValue.Period));
-                        }
-                        if(publicRequestlistValue.IsSetReturnData())
-                        {
-                            request.Parameters.Add("MetricDataQueries" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ReturnData", StringUtils.FromBool(publicRequestlistValue.ReturnData));
-                        }
-                        publicRequestlistValueIndex++;
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetNextToken())

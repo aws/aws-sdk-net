@@ -75,34 +75,44 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     if(publicRequest.LoadPermission.IsSetAdd())
                     {
-                        int publicRequestLoadPermissionlistValueIndex = 1;
-                        foreach(var publicRequestLoadPermissionlistValue in publicRequest.LoadPermission.Add)
+                        if (publicRequest.LoadPermission.Add.Count == 0)
+                            request.Parameters.Add("LoadPermission" + "." + "Add", "");
+                        else
                         {
-                            if(publicRequestLoadPermissionlistValue.IsSetGroup())
-                            {
-                                request.Parameters.Add("LoadPermission" + "." + "Add" + "." + publicRequestLoadPermissionlistValueIndex + "." + "Group", StringUtils.FromString(publicRequestLoadPermissionlistValue.Group));
-                            }
-                            if(publicRequestLoadPermissionlistValue.IsSetUserId())
-                            {
-                                request.Parameters.Add("LoadPermission" + "." + "Add" + "." + publicRequestLoadPermissionlistValueIndex + "." + "UserId", StringUtils.FromString(publicRequestLoadPermissionlistValue.UserId));
-                            }
-                            publicRequestLoadPermissionlistValueIndex++;
+                             int publicRequestLoadPermissionlistValueIndex = 1;
+                             foreach(var publicRequestLoadPermissionlistValue in publicRequest.LoadPermission.Add)
+                             {
+                                if(publicRequestLoadPermissionlistValue.IsSetGroup())
+                                {
+                                    request.Parameters.Add("LoadPermission" + "." + "Add" + "." + publicRequestLoadPermissionlistValueIndex + "." + "Group", StringUtils.FromString(publicRequestLoadPermissionlistValue.Group));
+                                }
+                                if(publicRequestLoadPermissionlistValue.IsSetUserId())
+                                {
+                                    request.Parameters.Add("LoadPermission" + "." + "Add" + "." + publicRequestLoadPermissionlistValueIndex + "." + "UserId", StringUtils.FromString(publicRequestLoadPermissionlistValue.UserId));
+                                }
+                                 publicRequestLoadPermissionlistValueIndex++;
+                             }
                         }
                     }
                     if(publicRequest.LoadPermission.IsSetRemove())
                     {
-                        int publicRequestLoadPermissionlistValueIndex = 1;
-                        foreach(var publicRequestLoadPermissionlistValue in publicRequest.LoadPermission.Remove)
+                        if (publicRequest.LoadPermission.Remove.Count == 0)
+                            request.Parameters.Add("LoadPermission" + "." + "Remove", "");
+                        else
                         {
-                            if(publicRequestLoadPermissionlistValue.IsSetGroup())
-                            {
-                                request.Parameters.Add("LoadPermission" + "." + "Remove" + "." + publicRequestLoadPermissionlistValueIndex + "." + "Group", StringUtils.FromString(publicRequestLoadPermissionlistValue.Group));
-                            }
-                            if(publicRequestLoadPermissionlistValue.IsSetUserId())
-                            {
-                                request.Parameters.Add("LoadPermission" + "." + "Remove" + "." + publicRequestLoadPermissionlistValueIndex + "." + "UserId", StringUtils.FromString(publicRequestLoadPermissionlistValue.UserId));
-                            }
-                            publicRequestLoadPermissionlistValueIndex++;
+                             int publicRequestLoadPermissionlistValueIndex = 1;
+                             foreach(var publicRequestLoadPermissionlistValue in publicRequest.LoadPermission.Remove)
+                             {
+                                if(publicRequestLoadPermissionlistValue.IsSetGroup())
+                                {
+                                    request.Parameters.Add("LoadPermission" + "." + "Remove" + "." + publicRequestLoadPermissionlistValueIndex + "." + "Group", StringUtils.FromString(publicRequestLoadPermissionlistValue.Group));
+                                }
+                                if(publicRequestLoadPermissionlistValue.IsSetUserId())
+                                {
+                                    request.Parameters.Add("LoadPermission" + "." + "Remove" + "." + publicRequestLoadPermissionlistValueIndex + "." + "UserId", StringUtils.FromString(publicRequestLoadPermissionlistValue.UserId));
+                                }
+                                 publicRequestLoadPermissionlistValueIndex++;
+                             }
                         }
                     }
                 }
@@ -116,29 +126,44 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetProductCodes())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ProductCodes)
+                    if (publicRequest.ProductCodes.Count == 0)
+                        request.Parameters.Add("ProductCode", "");
+                    else
                     {
-                        request.Parameters.Add("ProductCode" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ProductCodes)
+                         {
+                             request.Parameters.Add("ProductCode" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetUserGroups())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.UserGroups)
+                    if (publicRequest.UserGroups.Count == 0)
+                        request.Parameters.Add("UserGroup", "");
+                    else
                     {
-                        request.Parameters.Add("UserGroup" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.UserGroups)
+                         {
+                             request.Parameters.Add("UserGroup" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetUserIds())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.UserIds)
+                    if (publicRequest.UserIds.Count == 0)
+                        request.Parameters.Add("UserId", "");
+                    else
                     {
-                        request.Parameters.Add("UserId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.UserIds)
+                         {
+                             request.Parameters.Add("UserId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

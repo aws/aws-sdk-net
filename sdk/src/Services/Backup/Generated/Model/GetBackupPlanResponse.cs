@@ -181,10 +181,10 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property LastExecutionDate. 
         /// <para>
-        /// The last time a job to back up resources was run with this backup plan. A date and
-        /// time, in Unix format and Coordinated Universal Time (UTC). The value of <c>LastExecutionDate</c>
-        /// is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
-        /// January 26, 2018 12:11:30.087 AM.
+        /// The last time this backup plan was run. A date and time, in Unix format and Coordinated
+        /// Universal Time (UTC). The value of <c>LastExecutionDate</c> is accurate to milliseconds.
+        /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
+        /// AM.
         /// </para>
         /// </summary>
         public DateTime? LastExecutionDate

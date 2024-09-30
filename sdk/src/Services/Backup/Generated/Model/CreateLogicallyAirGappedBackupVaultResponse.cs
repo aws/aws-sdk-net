@@ -42,7 +42,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property BackupVaultArn. 
         /// <para>
-        /// This is the ARN (Amazon Resource Name) of the vault being created.
+        /// The ARN (Amazon Resource Name) of the vault.
         /// </para>
         /// </summary>
         public string BackupVaultArn
@@ -62,8 +62,7 @@ namespace Amazon.Backup.Model
         /// <para>
         /// The name of a logical container where backups are stored. Logically air-gapped backup
         /// vaults are identified by names that are unique to the account used to create them
-        /// and the Region where they are created. They consist of lowercase letters, numbers,
-        /// and hyphens.
+        /// and the Region where they are created.
         /// </para>
         /// </summary>
         public string BackupVaultName
@@ -105,7 +104,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property VaultState. 
         /// <para>
-        /// This is the current state of the vault.
+        /// The current state of the vault.
         /// </para>
         /// </summary>
         public VaultState VaultState

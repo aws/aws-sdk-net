@@ -50,8 +50,8 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If a desired number is set to a value higher than the calculated maximum, Amazon GameLift
-    /// places the calculated maximum.
+    /// If a desired number is set to a value higher than the calculated maximum, fleet creation
+    /// fails..
     /// </para>
     ///  </li> <li> 
     /// <para>

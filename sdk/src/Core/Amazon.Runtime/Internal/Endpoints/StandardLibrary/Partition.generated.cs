@@ -37,7 +37,7 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
                 supportsDualStack = true,
                 implicitGlobalRegion = "us-east-1"
             };
-            _partitionsByRegex.Add(@"^(us|eu|ap|sa|ca|me|af|il)\-\w+\-\d+$", aws);
+            _partitionsByRegex.Add(@"^(us|eu|ap|sa|ca|me|af|il|mx)\-\w+\-\d+$", aws);
             _partitionsByRegionName.Add("af-south-1", aws);
             _partitionsByRegionName.Add("ap-east-1", aws);
             _partitionsByRegionName.Add("ap-northeast-1", aws);

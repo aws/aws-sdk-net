@@ -1396,10 +1396,6 @@
       <Project>{D2D05C00-79A7-47E4-9B77-FE08B1E7FC1D}</Project>
       <Name>AWSSDK.WorkDocs.CodeAnalysis</Name>
     </ProjectReference>
-    <ProjectReference Include="../ServiceAnalysis/WorkLink/AWSSDK.WorkLink.CodeAnalysis.csproj">
-      <Project>{8484906F-DCA2-4C37-B5A1-D91EADB881D3}</Project>
-      <Name>AWSSDK.WorkLink.CodeAnalysis</Name>
-    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/WorkMail/AWSSDK.WorkMail.CodeAnalysis.csproj">
       <Project>{1268A2A7-7344-4C80-A985-28B7C8ABEB37}</Project>
       <Name>AWSSDK.WorkMail.CodeAnalysis</Name>

@@ -38,6 +38,7 @@ namespace Amazon.MediaLive.Model
         private List<MediaPackageOutputDestinationSettings> _mediaPackageSettings = AWSConfigs.InitializeCollections ? new List<MediaPackageOutputDestinationSettings>() : null;
         private MultiplexProgramChannelDestinationSettings _multiplexSettings;
         private List<OutputDestinationSettings> _settings = AWSConfigs.InitializeCollections ? new List<OutputDestinationSettings>() : null;
+        private List<SrtOutputDestinationSettings> _srtSettings = AWSConfigs.InitializeCollections ? new List<SrtOutputDestinationSettings>() : null;
 
         /// <summary>
         /// Gets and sets the property Id. User-specified id. This is used in an output group
@@ -101,6 +102,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetSettings()
         {
             return this._settings != null && (this._settings.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SrtSettings. SRT settings for an SRT output; one destination
+        /// for each redundant encoder.
+        /// </summary>
+        public List<SrtOutputDestinationSettings> SrtSettings
+        {
+            get { return this._srtSettings; }
+            set { this._srtSettings = value; }
+        }
+
+        // Check to see if SrtSettings property is set
+        internal bool IsSetSrtSettings()
+        {
+            return this._srtSettings != null && (this._srtSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

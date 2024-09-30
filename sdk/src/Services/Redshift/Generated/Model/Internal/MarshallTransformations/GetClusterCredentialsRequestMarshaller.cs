@@ -73,11 +73,16 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetDbGroups())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.DbGroups)
+                    if (publicRequest.DbGroups.Count == 0)
+                        request.Parameters.Add("DbGroups", "");
+                    else
                     {
-                        request.Parameters.Add("DbGroups" + "." + "DbGroup" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.DbGroups)
+                         {
+                             request.Parameters.Add("DbGroups" + "." + "DbGroup" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetDbName())

@@ -132,8 +132,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ReportPlanTags. 
         /// <para>
-        /// Metadata that you can assign to help organize the report plans that you create. Each
-        /// tag is a key-value pair.
+        /// The tags to assign to the report plan.
         /// </para>
         /// </summary>
         public Dictionary<string, string> ReportPlanTags

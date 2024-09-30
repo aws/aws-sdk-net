@@ -61,20 +61,30 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetDBClusterIdentifiers())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.DBClusterIdentifiers)
+                    if (publicRequest.DBClusterIdentifiers.Count == 0)
+                        request.Parameters.Add("DBClusterIdentifiers", "");
+                    else
                     {
-                        request.Parameters.Add("DBClusterIdentifiers" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.DBClusterIdentifiers)
+                         {
+                             request.Parameters.Add("DBClusterIdentifiers" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetDBInstanceIdentifiers())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.DBInstanceIdentifiers)
+                    if (publicRequest.DBInstanceIdentifiers.Count == 0)
+                        request.Parameters.Add("DBInstanceIdentifiers", "");
+                    else
                     {
-                        request.Parameters.Add("DBInstanceIdentifiers" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.DBInstanceIdentifiers)
+                         {
+                             request.Parameters.Add("DBInstanceIdentifiers" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetDBProxyName())

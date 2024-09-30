@@ -83,6 +83,34 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.DeliverySourceName);
                     }
 
+                    if(publicRequest.IsSetFieldDelimiter())
+                    {
+                        context.Writer.WritePropertyName("fieldDelimiter");
+                        context.Writer.Write(publicRequest.FieldDelimiter);
+                    }
+
+                    if(publicRequest.IsSetRecordFields())
+                    {
+                        context.Writer.WritePropertyName("recordFields");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestRecordFieldsListValue in publicRequest.RecordFields)
+                        {
+                                context.Writer.Write(publicRequestRecordFieldsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetS3DeliveryConfiguration())
+                    {
+                        context.Writer.WritePropertyName("s3DeliveryConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = S3DeliveryConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.S3DeliveryConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetTags())
                     {
                         context.Writer.WritePropertyName("tags");

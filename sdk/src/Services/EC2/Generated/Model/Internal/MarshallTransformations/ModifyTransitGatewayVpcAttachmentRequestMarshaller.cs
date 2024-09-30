@@ -61,11 +61,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetAddSubnetIds())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.AddSubnetIds)
+                    if (publicRequest.AddSubnetIds.Count == 0)
+                        request.Parameters.Add("AddSubnetIds", "");
+                    else
                     {
-                        request.Parameters.Add("AddSubnetIds" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.AddSubnetIds)
+                         {
+                             request.Parameters.Add("AddSubnetIds" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetOptions())
@@ -89,11 +94,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetRemoveSubnetIds())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.RemoveSubnetIds)
+                    if (publicRequest.RemoveSubnetIds.Count == 0)
+                        request.Parameters.Add("RemoveSubnetIds", "");
+                    else
                     {
-                        request.Parameters.Add("RemoveSubnetIds" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.RemoveSubnetIds)
+                         {
+                             request.Parameters.Add("RemoveSubnetIds" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetTransitGatewayAttachmentId())

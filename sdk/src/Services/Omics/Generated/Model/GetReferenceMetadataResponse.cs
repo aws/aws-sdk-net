@@ -35,7 +35,9 @@ namespace Amazon.Omics.Model
     public partial class GetReferenceMetadataResponse : AmazonWebServiceResponse
     {
         private string _arn;
+        private string _creationJobId;
         private DateTime? _creationTime;
+        private ReferenceCreationType _creationType;
         private string _description;
         private ReferenceFiles _files;
         private string _id;
@@ -65,6 +67,25 @@ namespace Amazon.Omics.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CreationJobId. 
+        /// <para>
+        /// The reference's creation job ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=127)]
+        public string CreationJobId
+        {
+            get { return this._creationJobId; }
+            set { this._creationJobId = value; }
+        }
+
+        // Check to see if CreationJobId property is set
+        internal bool IsSetCreationJobId()
+        {
+            return this._creationJobId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
         /// When the reference was created.
@@ -81,6 +102,24 @@ namespace Amazon.Omics.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreationType. 
+        /// <para>
+        /// The reference's creation type.
+        /// </para>
+        /// </summary>
+        public ReferenceCreationType CreationType
+        {
+            get { return this._creationType; }
+            set { this._creationType = value; }
+        }
+
+        // Check to see if CreationType property is set
+        internal bool IsSetCreationType()
+        {
+            return this._creationType != null;
         }
 
         /// <summary>

@@ -65,11 +65,16 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetTagKeys())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.TagKeys)
+                    if (publicRequest.TagKeys.Count == 0)
+                        request.Parameters.Add("TagKeys", "");
+                    else
                     {
-                        request.Parameters.Add("TagKeys" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.TagKeys)
+                         {
+                             request.Parameters.Add("TagKeys" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

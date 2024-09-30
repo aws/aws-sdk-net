@@ -217,8 +217,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property RestoreTestingSelectionName. 
         /// <para>
-        /// This is the unique name of the restore testing selection that belongs to the related
-        /// restore testing plan.
+        /// The unique name of the restore testing selection that belongs to the related restore
+        /// testing plan.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

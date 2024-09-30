@@ -62,6 +62,16 @@ namespace Amazon.DataZone.Model
         IListDomainsPaginator ListDomains(ListDomainsRequest request);
 
         /// <summary>
+        /// Paginator for ListDomainUnitsForParent operation
+        ///</summary>
+        IListDomainUnitsForParentPaginator ListDomainUnitsForParent(ListDomainUnitsForParentRequest request);
+
+        /// <summary>
+        /// Paginator for ListEntityOwners operation
+        ///</summary>
+        IListEntityOwnersPaginator ListEntityOwners(ListEntityOwnersRequest request);
+
+        /// <summary>
         /// Paginator for ListEnvironmentActions operation
         ///</summary>
         IListEnvironmentActionsPaginator ListEnvironmentActions(ListEnvironmentActionsRequest request);
@@ -100,6 +110,11 @@ namespace Amazon.DataZone.Model
         /// Paginator for ListNotifications operation
         ///</summary>
         IListNotificationsPaginator ListNotifications(ListNotificationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListPolicyGrants operation
+        ///</summary>
+        IListPolicyGrantsPaginator ListPolicyGrants(ListPolicyGrantsRequest request);
 
         /// <summary>
         /// Paginator for ListProjectMemberships operation

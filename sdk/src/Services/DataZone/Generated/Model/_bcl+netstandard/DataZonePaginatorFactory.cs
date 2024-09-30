@@ -93,6 +93,22 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
+        /// Paginator for ListDomainUnitsForParent operation
+        ///</summary>
+        public IListDomainUnitsForParentPaginator ListDomainUnitsForParent(ListDomainUnitsForParentRequest request) 
+        {
+            return new ListDomainUnitsForParentPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListEntityOwners operation
+        ///</summary>
+        public IListEntityOwnersPaginator ListEntityOwners(ListEntityOwnersRequest request) 
+        {
+            return new ListEntityOwnersPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListEnvironmentActions operation
         ///</summary>
         public IListEnvironmentActionsPaginator ListEnvironmentActions(ListEnvironmentActionsRequest request) 
@@ -154,6 +170,14 @@ namespace Amazon.DataZone.Model
         public IListNotificationsPaginator ListNotifications(ListNotificationsRequest request) 
         {
             return new ListNotificationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPolicyGrants operation
+        ///</summary>
+        public IListPolicyGrantsPaginator ListPolicyGrants(ListPolicyGrantsRequest request) 
+        {
+            return new ListPolicyGrantsPaginator(this.client, request);
         }
 
         /// <summary>

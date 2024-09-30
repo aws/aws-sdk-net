@@ -517,7 +517,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The directory size.
+        /// The directory type.
         /// </para>
         /// </summary>
         public DirectoryType Type

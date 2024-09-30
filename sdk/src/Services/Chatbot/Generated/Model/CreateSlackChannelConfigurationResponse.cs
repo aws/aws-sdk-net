@@ -37,8 +37,10 @@ namespace Amazon.Chatbot.Model
         private SlackChannelConfiguration _channelConfiguration;
 
         /// <summary>
-        /// Gets and sets the property ChannelConfiguration. The configuration for a Slack channel
-        /// configured with AWS Chatbot.
+        /// Gets and sets the property ChannelConfiguration. 
+        /// <para>
+        /// The configuration for a Slack channel configured with AWS Chatbot.
+        /// </para>
         /// </summary>
         public SlackChannelConfiguration ChannelConfiguration
         {

@@ -65,49 +65,54 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetSecurityGroupRules())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.SecurityGroupRules)
+                    if (publicRequest.SecurityGroupRules.Count == 0)
+                        request.Parameters.Add("SecurityGroupRule", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetSecurityGroupRule())
-                        {
-                            if(publicRequestlistValue.SecurityGroupRule.IsSetCidrIpv4())
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.SecurityGroupRules)
+                         {
+                            if(publicRequestlistValue.IsSetSecurityGroupRule())
                             {
-                                request.Parameters.Add("SecurityGroupRule" + "." + publicRequestlistValueIndex + "." + "SecurityGroupRule" + "." + "CidrIpv4", StringUtils.FromString(publicRequestlistValue.SecurityGroupRule.CidrIpv4));
+                                if(publicRequestlistValue.SecurityGroupRule.IsSetCidrIpv4())
+                                {
+                                    request.Parameters.Add("SecurityGroupRule" + "." + publicRequestlistValueIndex + "." + "SecurityGroupRule" + "." + "CidrIpv4", StringUtils.FromString(publicRequestlistValue.SecurityGroupRule.CidrIpv4));
+                                }
+                                if(publicRequestlistValue.SecurityGroupRule.IsSetCidrIpv6())
+                                {
+                                    request.Parameters.Add("SecurityGroupRule" + "." + publicRequestlistValueIndex + "." + "SecurityGroupRule" + "." + "CidrIpv6", StringUtils.FromString(publicRequestlistValue.SecurityGroupRule.CidrIpv6));
+                                }
+                                if(publicRequestlistValue.SecurityGroupRule.IsSetDescription())
+                                {
+                                    request.Parameters.Add("SecurityGroupRule" + "." + publicRequestlistValueIndex + "." + "SecurityGroupRule" + "." + "Description", StringUtils.FromString(publicRequestlistValue.SecurityGroupRule.Description));
+                                }
+                                if(publicRequestlistValue.SecurityGroupRule.IsSetFromPort())
+                                {
+                                    request.Parameters.Add("SecurityGroupRule" + "." + publicRequestlistValueIndex + "." + "SecurityGroupRule" + "." + "FromPort", StringUtils.FromInt(publicRequestlistValue.SecurityGroupRule.FromPort));
+                                }
+                                if(publicRequestlistValue.SecurityGroupRule.IsSetIpProtocol())
+                                {
+                                    request.Parameters.Add("SecurityGroupRule" + "." + publicRequestlistValueIndex + "." + "SecurityGroupRule" + "." + "IpProtocol", StringUtils.FromString(publicRequestlistValue.SecurityGroupRule.IpProtocol));
+                                }
+                                if(publicRequestlistValue.SecurityGroupRule.IsSetPrefixListId())
+                                {
+                                    request.Parameters.Add("SecurityGroupRule" + "." + publicRequestlistValueIndex + "." + "SecurityGroupRule" + "." + "PrefixListId", StringUtils.FromString(publicRequestlistValue.SecurityGroupRule.PrefixListId));
+                                }
+                                if(publicRequestlistValue.SecurityGroupRule.IsSetReferencedGroupId())
+                                {
+                                    request.Parameters.Add("SecurityGroupRule" + "." + publicRequestlistValueIndex + "." + "SecurityGroupRule" + "." + "ReferencedGroupId", StringUtils.FromString(publicRequestlistValue.SecurityGroupRule.ReferencedGroupId));
+                                }
+                                if(publicRequestlistValue.SecurityGroupRule.IsSetToPort())
+                                {
+                                    request.Parameters.Add("SecurityGroupRule" + "." + publicRequestlistValueIndex + "." + "SecurityGroupRule" + "." + "ToPort", StringUtils.FromInt(publicRequestlistValue.SecurityGroupRule.ToPort));
+                                }
                             }
-                            if(publicRequestlistValue.SecurityGroupRule.IsSetCidrIpv6())
+                            if(publicRequestlistValue.IsSetSecurityGroupRuleId())
                             {
-                                request.Parameters.Add("SecurityGroupRule" + "." + publicRequestlistValueIndex + "." + "SecurityGroupRule" + "." + "CidrIpv6", StringUtils.FromString(publicRequestlistValue.SecurityGroupRule.CidrIpv6));
+                                request.Parameters.Add("SecurityGroupRule" + "." + publicRequestlistValueIndex + "." + "SecurityGroupRuleId", StringUtils.FromString(publicRequestlistValue.SecurityGroupRuleId));
                             }
-                            if(publicRequestlistValue.SecurityGroupRule.IsSetDescription())
-                            {
-                                request.Parameters.Add("SecurityGroupRule" + "." + publicRequestlistValueIndex + "." + "SecurityGroupRule" + "." + "Description", StringUtils.FromString(publicRequestlistValue.SecurityGroupRule.Description));
-                            }
-                            if(publicRequestlistValue.SecurityGroupRule.IsSetFromPort())
-                            {
-                                request.Parameters.Add("SecurityGroupRule" + "." + publicRequestlistValueIndex + "." + "SecurityGroupRule" + "." + "FromPort", StringUtils.FromInt(publicRequestlistValue.SecurityGroupRule.FromPort));
-                            }
-                            if(publicRequestlistValue.SecurityGroupRule.IsSetIpProtocol())
-                            {
-                                request.Parameters.Add("SecurityGroupRule" + "." + publicRequestlistValueIndex + "." + "SecurityGroupRule" + "." + "IpProtocol", StringUtils.FromString(publicRequestlistValue.SecurityGroupRule.IpProtocol));
-                            }
-                            if(publicRequestlistValue.SecurityGroupRule.IsSetPrefixListId())
-                            {
-                                request.Parameters.Add("SecurityGroupRule" + "." + publicRequestlistValueIndex + "." + "SecurityGroupRule" + "." + "PrefixListId", StringUtils.FromString(publicRequestlistValue.SecurityGroupRule.PrefixListId));
-                            }
-                            if(publicRequestlistValue.SecurityGroupRule.IsSetReferencedGroupId())
-                            {
-                                request.Parameters.Add("SecurityGroupRule" + "." + publicRequestlistValueIndex + "." + "SecurityGroupRule" + "." + "ReferencedGroupId", StringUtils.FromString(publicRequestlistValue.SecurityGroupRule.ReferencedGroupId));
-                            }
-                            if(publicRequestlistValue.SecurityGroupRule.IsSetToPort())
-                            {
-                                request.Parameters.Add("SecurityGroupRule" + "." + publicRequestlistValueIndex + "." + "SecurityGroupRule" + "." + "ToPort", StringUtils.FromInt(publicRequestlistValue.SecurityGroupRule.ToPort));
-                            }
-                        }
-                        if(publicRequestlistValue.IsSetSecurityGroupRuleId())
-                        {
-                            request.Parameters.Add("SecurityGroupRule" + "." + publicRequestlistValueIndex + "." + "SecurityGroupRuleId", StringUtils.FromString(publicRequestlistValue.SecurityGroupRuleId));
-                        }
-                        publicRequestlistValueIndex++;
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

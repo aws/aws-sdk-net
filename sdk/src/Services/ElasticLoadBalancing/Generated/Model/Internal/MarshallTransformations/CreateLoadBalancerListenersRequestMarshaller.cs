@@ -61,30 +61,35 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetListeners())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Listeners)
+                    if (publicRequest.Listeners.Count == 0)
+                        request.Parameters.Add("Listeners", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetInstancePort())
-                        {
-                            request.Parameters.Add("Listeners" + "." + "member" + "." + publicRequestlistValueIndex + "." + "InstancePort", StringUtils.FromInt(publicRequestlistValue.InstancePort));
-                        }
-                        if(publicRequestlistValue.IsSetInstanceProtocol())
-                        {
-                            request.Parameters.Add("Listeners" + "." + "member" + "." + publicRequestlistValueIndex + "." + "InstanceProtocol", StringUtils.FromString(publicRequestlistValue.InstanceProtocol));
-                        }
-                        if(publicRequestlistValue.IsSetLoadBalancerPort())
-                        {
-                            request.Parameters.Add("Listeners" + "." + "member" + "." + publicRequestlistValueIndex + "." + "LoadBalancerPort", StringUtils.FromInt(publicRequestlistValue.LoadBalancerPort));
-                        }
-                        if(publicRequestlistValue.IsSetProtocol())
-                        {
-                            request.Parameters.Add("Listeners" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Protocol", StringUtils.FromString(publicRequestlistValue.Protocol));
-                        }
-                        if(publicRequestlistValue.IsSetSSLCertificateId())
-                        {
-                            request.Parameters.Add("Listeners" + "." + "member" + "." + publicRequestlistValueIndex + "." + "SSLCertificateId", StringUtils.FromString(publicRequestlistValue.SSLCertificateId));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Listeners)
+                         {
+                            if(publicRequestlistValue.IsSetInstancePort())
+                            {
+                                request.Parameters.Add("Listeners" + "." + "member" + "." + publicRequestlistValueIndex + "." + "InstancePort", StringUtils.FromInt(publicRequestlistValue.InstancePort));
+                            }
+                            if(publicRequestlistValue.IsSetInstanceProtocol())
+                            {
+                                request.Parameters.Add("Listeners" + "." + "member" + "." + publicRequestlistValueIndex + "." + "InstanceProtocol", StringUtils.FromString(publicRequestlistValue.InstanceProtocol));
+                            }
+                            if(publicRequestlistValue.IsSetLoadBalancerPort())
+                            {
+                                request.Parameters.Add("Listeners" + "." + "member" + "." + publicRequestlistValueIndex + "." + "LoadBalancerPort", StringUtils.FromInt(publicRequestlistValue.LoadBalancerPort));
+                            }
+                            if(publicRequestlistValue.IsSetProtocol())
+                            {
+                                request.Parameters.Add("Listeners" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Protocol", StringUtils.FromString(publicRequestlistValue.Protocol));
+                            }
+                            if(publicRequestlistValue.IsSetSSLCertificateId())
+                            {
+                                request.Parameters.Add("Listeners" + "." + "member" + "." + publicRequestlistValueIndex + "." + "SSLCertificateId", StringUtils.FromString(publicRequestlistValue.SSLCertificateId));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetLoadBalancerName())

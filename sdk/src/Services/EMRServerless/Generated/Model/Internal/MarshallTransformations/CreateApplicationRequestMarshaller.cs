@@ -210,6 +210,17 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                         context.Writer.WriteArrayEnd();
                     }
 
+                    if(publicRequest.IsSetSchedulerConfiguration())
+                    {
+                        context.Writer.WritePropertyName("schedulerConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SchedulerConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SchedulerConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetTags())
                     {
                         context.Writer.WritePropertyName("tags");

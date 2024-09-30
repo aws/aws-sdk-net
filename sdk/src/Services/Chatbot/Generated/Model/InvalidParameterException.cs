@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chatbot.Model
 {
     /// <summary>
-    /// Your request input doesn't meet the constraints that AWS Chatbot requires.
+    /// Your request input doesn't meet the constraints required by AWS Chatbot.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

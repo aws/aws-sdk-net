@@ -34,11 +34,32 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class TableOptimizerRun
     {
+        private CompactionMetrics _compactionMetrics;
         private DateTime? _endTimestamp;
         private string _error;
         private TableOptimizerEventType _eventType;
         private RunMetrics _metrics;
+        private OrphanFileDeletionMetrics _orphanFileDeletionMetrics;
+        private RetentionMetrics _retentionMetrics;
         private DateTime? _startTimestamp;
+
+        /// <summary>
+        /// Gets and sets the property CompactionMetrics. 
+        /// <para>
+        /// A <c>CompactionMetrics</c> object containing metrics for the optimizer run.
+        /// </para>
+        /// </summary>
+        public CompactionMetrics CompactionMetrics
+        {
+            get { return this._compactionMetrics; }
+            set { this._compactionMetrics = value; }
+        }
+
+        // Check to see if CompactionMetrics property is set
+        internal bool IsSetCompactionMetrics()
+        {
+            return this._compactionMetrics != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EndTimestamp. 
@@ -99,7 +120,13 @@ namespace Amazon.Glue.Model
         /// <para>
         /// A <c>RunMetrics</c> object containing metrics for the optimizer run.
         /// </para>
+        ///  
+        /// <para>
+        /// This member is deprecated. See the individual metric members for compaction, retention,
+        /// and orphan file deletion.
+        /// </para>
         /// </summary>
+        [Obsolete("Metrics has been replaced by optimizer type specific metrics such as IcebergCompactionMetrics")]
         public RunMetrics Metrics
         {
             get { return this._metrics; }
@@ -110,6 +137,42 @@ namespace Amazon.Glue.Model
         internal bool IsSetMetrics()
         {
             return this._metrics != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrphanFileDeletionMetrics. 
+        /// <para>
+        /// An <c>OrphanFileDeletionMetrics</c> object containing metrics for the optimizer run.
+        /// </para>
+        /// </summary>
+        public OrphanFileDeletionMetrics OrphanFileDeletionMetrics
+        {
+            get { return this._orphanFileDeletionMetrics; }
+            set { this._orphanFileDeletionMetrics = value; }
+        }
+
+        // Check to see if OrphanFileDeletionMetrics property is set
+        internal bool IsSetOrphanFileDeletionMetrics()
+        {
+            return this._orphanFileDeletionMetrics != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetentionMetrics. 
+        /// <para>
+        /// A <c>RetentionMetrics</c> object containing metrics for the optimizer run.
+        /// </para>
+        /// </summary>
+        public RetentionMetrics RetentionMetrics
+        {
+            get { return this._retentionMetrics; }
+            set { this._retentionMetrics = value; }
+        }
+
+        // Check to see if RetentionMetrics property is set
+        internal bool IsSetRetentionMetrics()
+        {
+            return this._retentionMetrics != null;
         }
 
         /// <summary>

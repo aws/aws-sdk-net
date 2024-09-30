@@ -77,6 +77,7 @@ namespace Amazon.S3.Transfer.Internal
                 ObjectLockLegalHoldStatus = this._request.ObjectLockLegalHoldStatus,
                 ObjectLockMode = this._request.ObjectLockMode,
                 DisablePayloadSigning = this._request.DisablePayloadSigning,
+                RequestPayer = this._request.RequestPayer,
             };
             
             if (this._request.IsSetObjectLockRetainUntilDate())

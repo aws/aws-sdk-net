@@ -69,14 +69,19 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetPolicyArns())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.PolicyArns)
+                    if (publicRequest.PolicyArns.Count == 0)
+                        request.Parameters.Add("PolicyArns", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetArn())
-                        {
-                            request.Parameters.Add("PolicyArns" + "." + "member" + "." + publicRequestlistValueIndex + "." + "arn", StringUtils.FromString(publicRequestlistValue.Arn));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.PolicyArns)
+                         {
+                            if(publicRequestlistValue.IsSetArn())
+                            {
+                                request.Parameters.Add("PolicyArns" + "." + "member" + "." + publicRequestlistValueIndex + "." + "arn", StringUtils.FromString(publicRequestlistValue.Arn));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetPrincipalArn())

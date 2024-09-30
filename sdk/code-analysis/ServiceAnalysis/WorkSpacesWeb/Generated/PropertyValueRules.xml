@@ -410,6 +410,18 @@
     <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.ExpireSessionRequest.PortalId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-zA-Z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.ExpireSessionRequest.SessionId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-zA-Z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.GetBrowserSettingsRequest.BrowserSettingsArn</property>
     <min>20</min>
     <max>2048</max>
@@ -456,6 +468,18 @@
     <min>1</min>
     <max>204800</max>
     <pattern>^.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.GetSessionRequest.PortalId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-zA-Z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.GetSessionRequest.SessionId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-zA-Z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.GetTrustStoreRequest.TrustStoreArn</property>
@@ -575,6 +599,40 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.ListPortalsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.ListSessionsRequest.MaxResults</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.ListSessionsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.ListSessionsRequest.PortalId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-zA-Z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.ListSessionsRequest.SessionId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-zA-Z0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.ListSessionsRequest.Username</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.ListSessionsResponse.NextToken</property>
     <min>1</min>
     <max>2048</max>
     <pattern>^\S+$</pattern>
@@ -1130,6 +1188,42 @@
     <min>20</min>
     <max>2048</max>
     <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.Session.PortalArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.Session.SessionId</property>
+    <min>0</min>
+    <max>131072</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.Session.Username</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.SessionSummary.PortalArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[a-zA-Z0-9]{1,12}:[a-zA-Z]+(\/[a-fA-F0-9\-]{36})+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.SessionSummary.SessionId</property>
+    <min>0</min>
+    <max>131072</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkSpacesWeb.Model.SessionSummary.Username</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesWeb.Model.Tag.Key</property>

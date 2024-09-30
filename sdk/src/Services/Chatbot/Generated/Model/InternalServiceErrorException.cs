@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chatbot.Model
 {
     /// <summary>
-    /// Customer/consumer-facing internal service exception. https://w.amazon.com/index.php/AWS/API_Standards/Exceptions#InternalServiceError
+    /// Unexpected error during processing of request.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

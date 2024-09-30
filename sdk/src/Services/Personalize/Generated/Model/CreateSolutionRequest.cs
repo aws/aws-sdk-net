@@ -33,12 +33,11 @@ namespace Amazon.Personalize.Model
     /// Container for the parameters to the CreateSolution operation.
     /// <important> 
     /// <para>
-    /// After you create a solution, you can’t change its configuration. By default, all new
-    /// solutions use automatic training. With automatic training, you incur training costs
-    /// while your solution is active. You can't stop automatic training for a solution. To
-    /// avoid unnecessary costs, make sure to delete the solution when you are finished. For
-    /// information about training costs, see <a href="https://aws.amazon.com/personalize/pricing/">Amazon
-    /// Personalize pricing</a>.
+    /// By default, all new solutions use automatic training. With automatic training, you
+    /// incur training costs while your solution is active. To avoid unnecessary costs, when
+    /// you are finished you can <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UpdateSolution.html">update
+    /// the solution</a> to turn off automatic training. For information about training costs,
+    /// see <a href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.
     /// </para>
     ///  </important> 
     /// <para>
@@ -52,9 +51,9 @@ namespace Amazon.Personalize.Model
     /// <para>
     ///  By default, new solutions use automatic training to create solution versions every
     /// 7 days. You can change the training frequency. Automatic solution version creation
-    /// starts one hour after the solution is ACTIVE. If you manually create a solution version
-    /// within the hour, the solution skips the first automatic training. For more information,
-    /// see <a href="https://docs.aws.amazon.com/personalize/latest/dg/solution-config-auto-training.html">Configuring
+    /// starts within one hour after the solution is ACTIVE. If you manually create a solution
+    /// version within the hour, the solution skips the first automatic training. For more
+    /// information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/solution-config-auto-training.html">Configuring
     /// automatic training</a>.
     /// </para>
     ///  
@@ -109,6 +108,11 @@ namespace Amazon.Personalize.Model
     ///  <b>Related APIs</b> 
     /// </para>
     ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UpdateSolution.html">UpdateSolution</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListSolutions.html">ListSolutions</a>
     /// 
@@ -261,9 +265,9 @@ namespace Amazon.Personalize.Model
         /// </para>
         ///  
         /// <para>
-        ///  Automatic solution version creation starts one hour after the solution is ACTIVE.
-        /// If you manually create a solution version within the hour, the solution skips the
-        /// first automatic training. 
+        ///  Automatic solution version creation starts within one hour after the solution is
+        /// ACTIVE. If you manually create a solution version within the hour, the solution skips
+        /// the first automatic training. 
         /// </para>
         ///  
         /// <para>
@@ -334,8 +338,8 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property SolutionConfig. 
         /// <para>
-        /// The configuration to use with the solution. When <c>performAutoML</c> is set to true,
-        /// Amazon Personalize only evaluates the <c>autoMLConfig</c> section of the solution
+        /// The configuration properties for the solution. When <c>performAutoML</c> is set to
+        /// true, Amazon Personalize only evaluates the <c>autoMLConfig</c> section of the solution
         /// configuration.
         /// </para>
         ///  <note> 

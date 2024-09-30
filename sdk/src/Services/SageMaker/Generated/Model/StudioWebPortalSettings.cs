@@ -36,7 +36,9 @@ namespace Amazon.SageMaker.Model
     public partial class StudioWebPortalSettings
     {
         private List<string> _hiddenAppTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _hiddenInstanceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _hiddenMlTools = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<HiddenSageMakerImage> _hiddenSageMakerImageVersionAliases = AWSConfigs.InitializeCollections ? new List<HiddenSageMakerImage>() : null;
 
         /// <summary>
         /// Gets and sets the property HiddenAppTypes. 
@@ -58,6 +60,24 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property HiddenInstanceTypes. 
+        /// <para>
+        ///  The instance types you are hiding from the Studio user interface. 
+        /// </para>
+        /// </summary>
+        public List<string> HiddenInstanceTypes
+        {
+            get { return this._hiddenInstanceTypes; }
+            set { this._hiddenInstanceTypes = value; }
+        }
+
+        // Check to see if HiddenInstanceTypes property is set
+        internal bool IsSetHiddenInstanceTypes()
+        {
+            return this._hiddenInstanceTypes != null && (this._hiddenInstanceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property HiddenMlTools. 
         /// <para>
         /// The machine learning tools that are hidden from the Studio left navigation pane.
@@ -73,6 +93,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetHiddenMlTools()
         {
             return this._hiddenMlTools != null && (this._hiddenMlTools.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HiddenSageMakerImageVersionAliases. 
+        /// <para>
+        ///  The version aliases you are hiding from the Studio user interface. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=5)]
+        public List<HiddenSageMakerImage> HiddenSageMakerImageVersionAliases
+        {
+            get { return this._hiddenSageMakerImageVersionAliases; }
+            set { this._hiddenSageMakerImageVersionAliases = value; }
+        }
+
+        // Check to see if HiddenSageMakerImageVersionAliases property is set
+        internal bool IsSetHiddenSageMakerImageVersionAliases()
+        {
+            return this._hiddenSageMakerImageVersionAliases != null && (this._hiddenSageMakerImageVersionAliases.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

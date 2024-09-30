@@ -73,7 +73,8 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// The path can be an S3 bucket or prefix in the format <c>s3://myBucket/myPrefix/</c>.
+        /// The path can be an S3 bucket or prefix in the format <c>s3://bucket-name/prefix/</c>
+        /// (where <c>prefix</c> is optional).
         /// </para>
         ///  </li> </ul>
         /// </summary>

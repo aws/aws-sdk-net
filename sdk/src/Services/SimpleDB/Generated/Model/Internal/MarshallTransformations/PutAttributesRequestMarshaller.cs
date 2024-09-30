@@ -61,22 +61,27 @@ namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetAttributes())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Attributes)
+                    if (publicRequest.Attributes.Count == 0)
+                        request.Parameters.Add("Attribute", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetName())
-                        {
-                            request.Parameters.Add("Attribute" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
-                        }
-                        if(publicRequestlistValue.IsSetReplace())
-                        {
-                            request.Parameters.Add("Attribute" + "." + publicRequestlistValueIndex + "." + "Replace", StringUtils.FromBool(publicRequestlistValue.Replace));
-                        }
-                        if(publicRequestlistValue.IsSetValue())
-                        {
-                            request.Parameters.Add("Attribute" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Attributes)
+                         {
+                            if(publicRequestlistValue.IsSetName())
+                            {
+                                request.Parameters.Add("Attribute" + "." + publicRequestlistValueIndex + "." + "Name", StringUtils.FromString(publicRequestlistValue.Name));
+                            }
+                            if(publicRequestlistValue.IsSetReplace())
+                            {
+                                request.Parameters.Add("Attribute" + "." + publicRequestlistValueIndex + "." + "Replace", StringUtils.FromBool(publicRequestlistValue.Replace));
+                            }
+                            if(publicRequestlistValue.IsSetValue())
+                            {
+                                request.Parameters.Add("Attribute" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetDomainName())

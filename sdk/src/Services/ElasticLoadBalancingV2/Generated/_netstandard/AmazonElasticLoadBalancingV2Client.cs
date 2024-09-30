@@ -1319,6 +1319,43 @@ namespace Amazon.ElasticLoadBalancingV2
 
         #endregion
         
+        #region  DescribeListenerAttributes
+
+        internal virtual DescribeListenerAttributesResponse DescribeListenerAttributes(DescribeListenerAttributesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeListenerAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeListenerAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeListenerAttributesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the attributes for the specified listener.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeListenerAttributes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeListenerAttributes service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.ListenerNotFoundException">
+        /// The specified listener does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListenerAttributes">REST API Reference for DescribeListenerAttributes Operation</seealso>
+        public virtual Task<DescribeListenerAttributesResponse> DescribeListenerAttributesAsync(DescribeListenerAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeListenerAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeListenerAttributesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeListenerAttributesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeListenerCertificates
 
         internal virtual DescribeListenerCertificatesResponse DescribeListenerCertificates(DescribeListenerCertificatesRequest request)
@@ -2138,6 +2175,46 @@ namespace Amazon.ElasticLoadBalancingV2
             options.ResponseUnmarshaller = ModifyListenerResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyListenerResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyListenerAttributes
+
+        internal virtual ModifyListenerAttributesResponse ModifyListenerAttributes(ModifyListenerAttributesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyListenerAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyListenerAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyListenerAttributesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Modifies the specified attributes of the specified listener.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyListenerAttributes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyListenerAttributes service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.InvalidConfigurationRequestException">
+        /// The requested configuration is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.ListenerNotFoundException">
+        /// The specified listener does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyListenerAttributes">REST API Reference for ModifyListenerAttributes Operation</seealso>
+        public virtual Task<ModifyListenerAttributesResponse> ModifyListenerAttributesAsync(ModifyListenerAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyListenerAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyListenerAttributesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyListenerAttributesResponse>(request, options, cancellationToken);
         }
 
         #endregion

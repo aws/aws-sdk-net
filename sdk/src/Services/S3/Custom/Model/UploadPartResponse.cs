@@ -39,15 +39,8 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ServerSideEncryptionMethod. 
         /// <para>
-        /// The server-side encryption algorithm used when you store this object in Amazon S3
-        /// (for example, <code>AES256</code>, <code>aws:kms</code>).
+        /// The server-side encryption algorithm used when you store this object in Amazon S3 (for example, <c>AES256</c>, <c>aws:kms</c>).
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// For directory buckets, only server-side encryption with Amazon S3 managed keys (SSE-S3)
-        /// (<code>AES256</code>) is supported.
-        /// </para>
-        ///  </note>
         /// </summary>
         public ServerSideEncryptionMethod ServerSideEncryptionMethod
         {
@@ -102,14 +95,9 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property BucketKeyEnabled. 
         /// <para>
-        /// Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption
+        /// Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption 
         /// with Key Management Service (KMS) keys (SSE-KMS).
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// This functionality is not supported for directory buckets.
-        /// </para>
-        ///  </note>
         /// </summary>
         public bool? BucketKeyEnabled
         {

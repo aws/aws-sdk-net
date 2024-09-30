@@ -67,7 +67,7 @@ namespace Amazon.SecurityHub.Model
     /// </para>
     ///  
     /// <para>
-    /// Accounts that are managed using Organizations do not receive an invitation. They automatically
+    /// Accounts that are managed using Organizations don't receive an invitation. They automatically
     /// become a member account in Security Hub.
     /// </para>
     ///  <ul> <li> 

@@ -44,7 +44,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property BackupVaultName. 
         /// <para>
-        /// This is the name of the backup vault (the logical container in which backups are stored).
+        /// The name of the backup vault (the logical container in which backups are stored).
         /// </para>
         /// </summary>
         public string BackupVaultName
@@ -62,7 +62,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property RecoveryPointArn. 
         /// <para>
-        /// This is the Amazon Resource Name (ARN) of the parent (composite) recovery point.
+        /// The Amazon Resource Name (ARN) of the parent (composite) recovery point.
         /// </para>
         /// </summary>
         public string RecoveryPointArn
@@ -80,7 +80,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// This is the Amazon Resource Name (ARN) that uniquely identifies a saved resource.
+        /// The Amazon Resource Name (ARN) that uniquely identifies a saved resource.
         /// </para>
         /// </summary>
         public string ResourceArn
@@ -98,7 +98,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// This is the Amazon Web Services resource type that is saved as a recovery point.
+        /// The Amazon Web Services resource type that is saved as a recovery point.
         /// </para>
         /// </summary>
         public string ResourceType

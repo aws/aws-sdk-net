@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// One or more actions to update finding fields if a finding matches the defined criteria
-    /// of the rule.
+    /// One or more actions that Security Hub takes when a finding matches the defined criteria
+    /// of a rule.
     /// </summary>
     public partial class AutomationRulesAction
     {
@@ -59,10 +59,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  Specifies that the rule action should update the <c>Types</c> finding field. The
-        /// <c>Types</c> finding field classifies findings in the format of namespace/category/classifier.
-        /// For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format-type-taxonomy.html">Types
-        /// taxonomy for ASFF</a> in the <i>Security Hub User Guide</i>. 
+        ///  Specifies the type of action that Security Hub takes when a finding matches the defined
+        /// criteria of a rule. 
         /// </para>
         /// </summary>
         public AutomationRulesActionType Type

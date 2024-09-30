@@ -1463,6 +1463,40 @@ namespace Amazon.ElasticLoadBalancingV2
 
         #endregion
         
+        #region  DescribeListenerAttributes
+
+
+        /// <summary>
+        /// Describes the attributes for the specified listener.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeListenerAttributes service method.</param>
+        /// 
+        /// <returns>The response from the DescribeListenerAttributes service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.ListenerNotFoundException">
+        /// The specified listener does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListenerAttributes">REST API Reference for DescribeListenerAttributes Operation</seealso>
+        DescribeListenerAttributesResponse DescribeListenerAttributes(DescribeListenerAttributesRequest request);
+
+
+
+        /// <summary>
+        /// Describes the attributes for the specified listener.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeListenerAttributes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeListenerAttributes service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.ListenerNotFoundException">
+        /// The specified listener does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListenerAttributes">REST API Reference for DescribeListenerAttributes Operation</seealso>
+        Task<DescribeListenerAttributesResponse> DescribeListenerAttributesAsync(DescribeListenerAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeListenerCertificates
 
 
@@ -2426,6 +2460,46 @@ namespace Amazon.ElasticLoadBalancingV2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyListener">REST API Reference for ModifyListener Operation</seealso>
         Task<ModifyListenerResponse> ModifyListenerAsync(ModifyListenerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ModifyListenerAttributes
+
+
+        /// <summary>
+        /// Modifies the specified attributes of the specified listener.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyListenerAttributes service method.</param>
+        /// 
+        /// <returns>The response from the ModifyListenerAttributes service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.InvalidConfigurationRequestException">
+        /// The requested configuration is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.ListenerNotFoundException">
+        /// The specified listener does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyListenerAttributes">REST API Reference for ModifyListenerAttributes Operation</seealso>
+        ModifyListenerAttributesResponse ModifyListenerAttributes(ModifyListenerAttributesRequest request);
+
+
+
+        /// <summary>
+        /// Modifies the specified attributes of the specified listener.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyListenerAttributes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyListenerAttributes service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.InvalidConfigurationRequestException">
+        /// The requested configuration is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.ListenerNotFoundException">
+        /// The specified listener does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyListenerAttributes">REST API Reference for ModifyListenerAttributes Operation</seealso>
+        Task<ModifyListenerAttributesResponse> ModifyListenerAttributesAsync(ModifyListenerAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

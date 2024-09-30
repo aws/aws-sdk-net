@@ -38,7 +38,7 @@ namespace Amazon.SecurityHub.Model
     /// 
     ///  
     /// <para>
-    /// Updates from <c>BatchUpdateFindings</c> do not affect the value of <c>UpdatedAt</c>
+    /// Updates from <c>BatchUpdateFindings</c> don't affect the value of <c>UpdatedAt</c>
     /// for a finding.
     /// </para>
     ///  

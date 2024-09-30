@@ -360,7 +360,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The OpsItem status. Status can be <c>Open</c>, <c>In Progress</c>, or <c>Resolved</c>.
+        /// The OpsItem status.
         /// </para>
         /// </summary>
         public OpsItemStatus Status

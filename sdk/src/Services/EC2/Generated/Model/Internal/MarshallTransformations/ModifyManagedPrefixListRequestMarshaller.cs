@@ -61,18 +61,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetAddEntries())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.AddEntries)
+                    if (publicRequest.AddEntries.Count == 0)
+                        request.Parameters.Add("AddEntry", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetCidr())
-                        {
-                            request.Parameters.Add("AddEntry" + "." + publicRequestlistValueIndex + "." + "Cidr", StringUtils.FromString(publicRequestlistValue.Cidr));
-                        }
-                        if(publicRequestlistValue.IsSetDescription())
-                        {
-                            request.Parameters.Add("AddEntry" + "." + publicRequestlistValueIndex + "." + "Description", StringUtils.FromString(publicRequestlistValue.Description));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.AddEntries)
+                         {
+                            if(publicRequestlistValue.IsSetCidr())
+                            {
+                                request.Parameters.Add("AddEntry" + "." + publicRequestlistValueIndex + "." + "Cidr", StringUtils.FromString(publicRequestlistValue.Cidr));
+                            }
+                            if(publicRequestlistValue.IsSetDescription())
+                            {
+                                request.Parameters.Add("AddEntry" + "." + publicRequestlistValueIndex + "." + "Description", StringUtils.FromString(publicRequestlistValue.Description));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetCurrentVersion())
@@ -93,14 +98,19 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetRemoveEntries())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.RemoveEntries)
+                    if (publicRequest.RemoveEntries.Count == 0)
+                        request.Parameters.Add("RemoveEntry", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetCidr())
-                        {
-                            request.Parameters.Add("RemoveEntry" + "." + publicRequestlistValueIndex + "." + "Cidr", StringUtils.FromString(publicRequestlistValue.Cidr));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.RemoveEntries)
+                         {
+                            if(publicRequestlistValue.IsSetCidr())
+                            {
+                                request.Parameters.Add("RemoveEntry" + "." + publicRequestlistValueIndex + "." + "Cidr", StringUtils.FromString(publicRequestlistValue.Cidr));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

@@ -43,6 +43,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class UserSettings
     {
+        private AutoMountHomeEFS _autoMountHomeEFS;
         private CanvasAppSettings _canvasAppSettings;
         private CodeEditorAppSettings _codeEditorAppSettings;
         private List<CustomFileSystemConfig> _customFileSystemConfigs = AWSConfigs.InitializeCollections ? new List<CustomFileSystemConfig>() : null;
@@ -60,6 +61,26 @@ namespace Amazon.SageMaker.Model
         private StudioWebPortal _studioWebPortal;
         private StudioWebPortalSettings _studioWebPortalSettings;
         private TensorBoardAppSettings _tensorBoardAppSettings;
+
+        /// <summary>
+        /// Gets and sets the property AutoMountHomeEFS. 
+        /// <para>
+        /// Indicates whether auto-mounting of an EFS volume is supported for the user profile.
+        /// The <c>DefaultAsDomain</c> value is only supported for user profiles. Do not use the
+        /// <c>DefaultAsDomain</c> value when setting this parameter for a domain.
+        /// </para>
+        /// </summary>
+        public AutoMountHomeEFS AutoMountHomeEFS
+        {
+            get { return this._autoMountHomeEFS; }
+            set { this._autoMountHomeEFS = value; }
+        }
+
+        // Check to see if AutoMountHomeEFS property is set
+        internal bool IsSetAutoMountHomeEFS()
+        {
+            return this._autoMountHomeEFS != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CanvasAppSettings. 

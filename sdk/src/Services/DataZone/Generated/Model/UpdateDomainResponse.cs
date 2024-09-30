@@ -39,6 +39,7 @@ namespace Amazon.DataZone.Model
         private string _id;
         private DateTime? _lastUpdatedAt;
         private string _name;
+        private string _rootDomainUnitId;
         private SingleSignOn _singleSignOn;
 
         /// <summary>
@@ -130,6 +131,25 @@ namespace Amazon.DataZone.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RootDomainUnitId. 
+        /// <para>
+        /// The ID of the root domain unit.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string RootDomainUnitId
+        {
+            get { return this._rootDomainUnitId; }
+            set { this._rootDomainUnitId = value; }
+        }
+
+        // Check to see if RootDomainUnitId property is set
+        internal bool IsSetRootDomainUnitId()
+        {
+            return this._rootDomainUnitId != null;
         }
 
         /// <summary>

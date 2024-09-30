@@ -69,8 +69,13 @@ namespace Amazon.BedrockAgent.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If you agent fails to be created, the response returns a list of <c>failureReasons</c>
+    /// If your agent fails to be created, the response returns a list of <c>failureReasons</c>
     /// alongside a list of <c>recommendedActions</c> for you to troubleshoot.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The agent instructions will not be honored if your agent has only one knowledge base,
+    /// uses default prompts, has no action group, and user input is disabled.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -191,7 +196,8 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property FoundationModel. 
         /// <para>
-        /// The foundation model to be used for orchestration by the agent you create.
+        /// The Amazon Resource Name (ARN) of the foundation model to be used for orchestration
+        /// by the agent you create.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

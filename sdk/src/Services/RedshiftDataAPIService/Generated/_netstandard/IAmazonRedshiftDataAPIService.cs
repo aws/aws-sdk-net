@@ -108,11 +108,18 @@ namespace Amazon.RedshiftDataAPIService
         /// </param>
         /// 
         /// <returns>The response from the BatchExecuteStatement service method, as returned by RedshiftDataAPIService.</returns>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ActiveSessionsExceededException">
+        /// The Amazon Redshift Data API operation failed because the maximum number of active
+        /// sessions exceeded.
+        /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.ActiveStatementsExceededException">
         /// The number of active statements exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.BatchExecuteStatementException">
         /// An SQL statement encountered an environmental error while running.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
         /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
@@ -259,6 +266,9 @@ namespace Amazon.RedshiftDataAPIService
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
         /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.QueryTimeoutException">
+        /// The Amazon Redshift Data API operation failed due to timeout.
+        /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
         /// </exception>
@@ -324,11 +334,18 @@ namespace Amazon.RedshiftDataAPIService
         /// </param>
         /// 
         /// <returns>The response from the ExecuteStatement service method, as returned by RedshiftDataAPIService.</returns>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ActiveSessionsExceededException">
+        /// The Amazon Redshift Data API operation failed because the maximum number of active
+        /// sessions exceeded.
+        /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.ActiveStatementsExceededException">
         /// The number of active statements exceeds the limit.
         /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.ExecuteStatementException">
         /// The SQL statement encountered an environmental error while running.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
         /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
@@ -436,6 +453,9 @@ namespace Amazon.RedshiftDataAPIService
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
         /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.QueryTimeoutException">
+        /// The Amazon Redshift Data API operation failed due to timeout.
+        /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
         /// </exception>
@@ -506,6 +526,9 @@ namespace Amazon.RedshiftDataAPIService
         /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.QueryTimeoutException">
+        /// The Amazon Redshift Data API operation failed due to timeout.
         /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
@@ -610,6 +633,9 @@ namespace Amazon.RedshiftDataAPIService
         /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.QueryTimeoutException">
+        /// The Amazon Redshift Data API operation failed due to timeout.
         /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
         /// The Amazon Redshift Data API operation failed due to invalid input.

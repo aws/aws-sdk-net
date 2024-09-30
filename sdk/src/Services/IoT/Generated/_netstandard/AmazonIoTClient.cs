@@ -468,6 +468,65 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  AssociateSbomWithPackageVersion
+
+        internal virtual AssociateSbomWithPackageVersionResponse AssociateSbomWithPackageVersion(AssociateSbomWithPackageVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateSbomWithPackageVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateSbomWithPackageVersionResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateSbomWithPackageVersionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associates a software bill of materials (SBOM) with a specific software package version.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AssociateSbomWithPackageVersion</a>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSbomWithPackageVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateSbomWithPackageVersion service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.ConflictException">
+        /// A resource with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceQuotaExceededException">
+        /// A limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ValidationException">
+        /// The request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AssociateSbomWithPackageVersion">REST API Reference for AssociateSbomWithPackageVersion Operation</seealso>
+        public virtual Task<AssociateSbomWithPackageVersionResponse> AssociateSbomWithPackageVersionAsync(AssociateSbomWithPackageVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateSbomWithPackageVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateSbomWithPackageVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateSbomWithPackageVersionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AssociateTargetsWithJob
 
         internal virtual AssociateTargetsWithJobResponse AssociateTargetsWithJob(AssociateTargetsWithJobRequest request)
@@ -8453,6 +8512,63 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  DisassociateSbomFromPackageVersion
+
+        internal virtual DisassociateSbomFromPackageVersionResponse DisassociateSbomFromPackageVersion(DisassociateSbomFromPackageVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateSbomFromPackageVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateSbomFromPackageVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateSbomFromPackageVersionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Disassociates a software bill of materials (SBOM) from a specific software package
+        /// version.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DisassociateSbomWithPackageVersion</a>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSbomFromPackageVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateSbomFromPackageVersion service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.ConflictException">
+        /// A resource with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ValidationException">
+        /// The request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DisassociateSbomFromPackageVersion">REST API Reference for DisassociateSbomFromPackageVersion Operation</seealso>
+        public virtual Task<DisassociateSbomFromPackageVersionResponse> DisassociateSbomFromPackageVersionAsync(DisassociateSbomFromPackageVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateSbomFromPackageVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateSbomFromPackageVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateSbomFromPackageVersionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  EnableTopicRule
 
         internal virtual EnableTopicRuleResponse EnableTopicRule(EnableTopicRuleRequest request)
@@ -12114,6 +12230,60 @@ namespace Amazon.IoT
             options.ResponseUnmarshaller = ListRoleAliasesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListRoleAliasesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListSbomValidationResults
+
+        internal virtual ListSbomValidationResultsResponse ListSbomValidationResults(ListSbomValidationResultsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSbomValidationResultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSbomValidationResultsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSbomValidationResultsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// The validation results for all software bill of materials (SBOM) attached to a specific
+        /// software package version.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSbomValidationResults</a>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSbomValidationResults service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSbomValidationResults service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ValidationException">
+        /// The request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListSbomValidationResults">REST API Reference for ListSbomValidationResults Operation</seealso>
+        public virtual Task<ListSbomValidationResultsResponse> ListSbomValidationResultsAsync(ListSbomValidationResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSbomValidationResultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSbomValidationResultsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSbomValidationResultsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -16368,6 +16538,9 @@ namespace Amazon.IoT
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
         /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// A limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
         /// The specified resource does not exist.

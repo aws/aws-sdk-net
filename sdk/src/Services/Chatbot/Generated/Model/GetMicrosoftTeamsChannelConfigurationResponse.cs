@@ -37,8 +37,10 @@ namespace Amazon.Chatbot.Model
         private TeamsChannelConfiguration _channelConfiguration;
 
         /// <summary>
-        /// Gets and sets the property ChannelConfiguration. The configuration for a Microsoft
-        /// Teams channel configured with AWS Chatbot.
+        /// Gets and sets the property ChannelConfiguration. 
+        /// <para>
+        /// The configuration for a Microsoft Teams channel configured with AWS Chatbot.
+        /// </para>
         /// </summary>
         public TeamsChannelConfiguration ChannelConfiguration
         {

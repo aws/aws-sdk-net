@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// A finding aggregator. A finding aggregator contains the configuration for finding
-    /// aggregation.
+    /// A finding aggregator is a Security Hub resource that specifies cross-Region aggregation
+    /// settings, including the home Region and any linked Regions.
     /// </summary>
     public partial class FindingAggregator
     {

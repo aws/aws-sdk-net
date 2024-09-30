@@ -61,11 +61,16 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetConfigurationSetAttributeNames())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ConfigurationSetAttributeNames)
+                    if (publicRequest.ConfigurationSetAttributeNames.Count == 0)
+                        request.Parameters.Add("ConfigurationSetAttributeNames", "");
+                    else
                     {
-                        request.Parameters.Add("ConfigurationSetAttributeNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ConfigurationSetAttributeNames)
+                         {
+                             request.Parameters.Add("ConfigurationSetAttributeNames" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetConfigurationSetName())

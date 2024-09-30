@@ -65,61 +65,66 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetBlockDeviceMappings())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.BlockDeviceMappings)
+                    if (publicRequest.BlockDeviceMappings.Count == 0)
+                        request.Parameters.Add("BlockDeviceMapping", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetDeviceName())
-                        {
-                            request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "DeviceName", StringUtils.FromString(publicRequestlistValue.DeviceName));
-                        }
-                        if(publicRequestlistValue.IsSetEbs())
-                        {
-                            if(publicRequestlistValue.Ebs.IsSetDeleteOnTermination())
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.BlockDeviceMappings)
+                         {
+                            if(publicRequestlistValue.IsSetDeviceName())
                             {
-                                request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "DeleteOnTermination", StringUtils.FromBool(publicRequestlistValue.Ebs.DeleteOnTermination));
+                                request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "DeviceName", StringUtils.FromString(publicRequestlistValue.DeviceName));
                             }
-                            if(publicRequestlistValue.Ebs.IsSetEncrypted())
+                            if(publicRequestlistValue.IsSetEbs())
                             {
-                                request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "Encrypted", StringUtils.FromBool(publicRequestlistValue.Ebs.Encrypted));
+                                if(publicRequestlistValue.Ebs.IsSetDeleteOnTermination())
+                                {
+                                    request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "DeleteOnTermination", StringUtils.FromBool(publicRequestlistValue.Ebs.DeleteOnTermination));
+                                }
+                                if(publicRequestlistValue.Ebs.IsSetEncrypted())
+                                {
+                                    request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "Encrypted", StringUtils.FromBool(publicRequestlistValue.Ebs.Encrypted));
+                                }
+                                if(publicRequestlistValue.Ebs.IsSetIops())
+                                {
+                                    request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "Iops", StringUtils.FromInt(publicRequestlistValue.Ebs.Iops));
+                                }
+                                if(publicRequestlistValue.Ebs.IsSetKmsKeyId())
+                                {
+                                    request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "KmsKeyId", StringUtils.FromString(publicRequestlistValue.Ebs.KmsKeyId));
+                                }
+                                if(publicRequestlistValue.Ebs.IsSetOutpostArn())
+                                {
+                                    request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "OutpostArn", StringUtils.FromString(publicRequestlistValue.Ebs.OutpostArn));
+                                }
+                                if(publicRequestlistValue.Ebs.IsSetSnapshotId())
+                                {
+                                    request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "SnapshotId", StringUtils.FromString(publicRequestlistValue.Ebs.SnapshotId));
+                                }
+                                if(publicRequestlistValue.Ebs.IsSetThroughput())
+                                {
+                                    request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "Throughput", StringUtils.FromInt(publicRequestlistValue.Ebs.Throughput));
+                                }
+                                if(publicRequestlistValue.Ebs.IsSetVolumeSize())
+                                {
+                                    request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "VolumeSize", StringUtils.FromInt(publicRequestlistValue.Ebs.VolumeSize));
+                                }
+                                if(publicRequestlistValue.Ebs.IsSetVolumeType())
+                                {
+                                    request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "VolumeType", StringUtils.FromString(publicRequestlistValue.Ebs.VolumeType));
+                                }
                             }
-                            if(publicRequestlistValue.Ebs.IsSetIops())
+                            if(publicRequestlistValue.IsSetNoDevice())
                             {
-                                request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "Iops", StringUtils.FromInt(publicRequestlistValue.Ebs.Iops));
+                                request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "NoDevice", StringUtils.FromString(publicRequestlistValue.NoDevice));
                             }
-                            if(publicRequestlistValue.Ebs.IsSetKmsKeyId())
+                            if(publicRequestlistValue.IsSetVirtualName())
                             {
-                                request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "KmsKeyId", StringUtils.FromString(publicRequestlistValue.Ebs.KmsKeyId));
+                                request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "VirtualName", StringUtils.FromString(publicRequestlistValue.VirtualName));
                             }
-                            if(publicRequestlistValue.Ebs.IsSetOutpostArn())
-                            {
-                                request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "OutpostArn", StringUtils.FromString(publicRequestlistValue.Ebs.OutpostArn));
-                            }
-                            if(publicRequestlistValue.Ebs.IsSetSnapshotId())
-                            {
-                                request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "SnapshotId", StringUtils.FromString(publicRequestlistValue.Ebs.SnapshotId));
-                            }
-                            if(publicRequestlistValue.Ebs.IsSetThroughput())
-                            {
-                                request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "Throughput", StringUtils.FromInt(publicRequestlistValue.Ebs.Throughput));
-                            }
-                            if(publicRequestlistValue.Ebs.IsSetVolumeSize())
-                            {
-                                request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "VolumeSize", StringUtils.FromInt(publicRequestlistValue.Ebs.VolumeSize));
-                            }
-                            if(publicRequestlistValue.Ebs.IsSetVolumeType())
-                            {
-                                request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "Ebs" + "." + "VolumeType", StringUtils.FromString(publicRequestlistValue.Ebs.VolumeType));
-                            }
-                        }
-                        if(publicRequestlistValue.IsSetNoDevice())
-                        {
-                            request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "NoDevice", StringUtils.FromString(publicRequestlistValue.NoDevice));
-                        }
-                        if(publicRequestlistValue.IsSetVirtualName())
-                        {
-                            request.Parameters.Add("BlockDeviceMapping" + "." + publicRequestlistValueIndex + "." + "VirtualName", StringUtils.FromString(publicRequestlistValue.VirtualName));
-                        }
-                        publicRequestlistValueIndex++;
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetCapacityReservationSpecification())
@@ -184,30 +189,40 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetElasticGpuSpecification())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ElasticGpuSpecification)
+                    if (publicRequest.ElasticGpuSpecification.Count == 0)
+                        request.Parameters.Add("ElasticGpuSpecification", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetType())
-                        {
-                            request.Parameters.Add("ElasticGpuSpecification" + "." + publicRequestlistValueIndex + "." + "Type", StringUtils.FromString(publicRequestlistValue.Type));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ElasticGpuSpecification)
+                         {
+                            if(publicRequestlistValue.IsSetType())
+                            {
+                                request.Parameters.Add("ElasticGpuSpecification" + "." + publicRequestlistValueIndex + "." + "Type", StringUtils.FromString(publicRequestlistValue.Type));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetElasticInferenceAccelerators())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.ElasticInferenceAccelerators)
+                    if (publicRequest.ElasticInferenceAccelerators.Count == 0)
+                        request.Parameters.Add("ElasticInferenceAccelerator", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetCount())
-                        {
-                            request.Parameters.Add("ElasticInferenceAccelerator" + "." + publicRequestlistValueIndex + "." + "Count", StringUtils.FromInt(publicRequestlistValue.Count));
-                        }
-                        if(publicRequestlistValue.IsSetType())
-                        {
-                            request.Parameters.Add("ElasticInferenceAccelerator" + "." + publicRequestlistValueIndex + "." + "Type", StringUtils.FromString(publicRequestlistValue.Type));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.ElasticInferenceAccelerators)
+                         {
+                            if(publicRequestlistValue.IsSetCount())
+                            {
+                                request.Parameters.Add("ElasticInferenceAccelerator" + "." + publicRequestlistValueIndex + "." + "Count", StringUtils.FromInt(publicRequestlistValue.Count));
+                            }
+                            if(publicRequestlistValue.IsSetType())
+                            {
+                                request.Parameters.Add("ElasticInferenceAccelerator" + "." + publicRequestlistValueIndex + "." + "Type", StringUtils.FromString(publicRequestlistValue.Type));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetEnablePrimaryIpv6())
@@ -287,18 +302,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetIpv6Addresses())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Ipv6Addresses)
+                    if (publicRequest.Ipv6Addresses.Count == 0)
+                        request.Parameters.Add("Ipv6Address", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetIpv6Address())
-                        {
-                            request.Parameters.Add("Ipv6Address" + "." + publicRequestlistValueIndex + "." + "Ipv6Address", StringUtils.FromString(publicRequestlistValue.Ipv6Address));
-                        }
-                        if(publicRequestlistValue.IsSetIsPrimaryIpv6())
-                        {
-                            request.Parameters.Add("Ipv6Address" + "." + publicRequestlistValueIndex + "." + "IsPrimaryIpv6", StringUtils.FromBool(publicRequestlistValue.IsPrimaryIpv6));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Ipv6Addresses)
+                         {
+                            if(publicRequestlistValue.IsSetIpv6Address())
+                            {
+                                request.Parameters.Add("Ipv6Address" + "." + publicRequestlistValueIndex + "." + "Ipv6Address", StringUtils.FromString(publicRequestlistValue.Ipv6Address));
+                            }
+                            if(publicRequestlistValue.IsSetIsPrimaryIpv6())
+                            {
+                                request.Parameters.Add("Ipv6Address" + "." + publicRequestlistValueIndex + "." + "IsPrimaryIpv6", StringUtils.FromBool(publicRequestlistValue.IsPrimaryIpv6));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetKernelId())
@@ -326,14 +346,19 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetLicenseSpecifications())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.LicenseSpecifications)
+                    if (publicRequest.LicenseSpecifications.Count == 0)
+                        request.Parameters.Add("LicenseSpecification", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetLicenseConfigurationArn())
-                        {
-                            request.Parameters.Add("LicenseSpecification" + "." + publicRequestlistValueIndex + "." + "LicenseConfigurationArn", StringUtils.FromString(publicRequestlistValue.LicenseConfigurationArn));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.LicenseSpecifications)
+                         {
+                            if(publicRequestlistValue.IsSetLicenseConfigurationArn())
+                            {
+                                request.Parameters.Add("LicenseSpecification" + "." + publicRequestlistValueIndex + "." + "LicenseConfigurationArn", StringUtils.FromString(publicRequestlistValue.LicenseConfigurationArn));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetMaintenanceOptions())
@@ -380,164 +405,194 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetNetworkInterfaces())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.NetworkInterfaces)
+                    if (publicRequest.NetworkInterfaces.Count == 0)
+                        request.Parameters.Add("NetworkInterface", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetAssociateCarrierIpAddress())
-                        {
-                            request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "AssociateCarrierIpAddress", StringUtils.FromBool(publicRequestlistValue.AssociateCarrierIpAddress));
-                        }
-                        if(publicRequestlistValue.IsSetAssociatePublicIpAddress())
-                        {
-                            request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "AssociatePublicIpAddress", StringUtils.FromBool(publicRequestlistValue.AssociatePublicIpAddress));
-                        }
-                        if(publicRequestlistValue.IsSetConnectionTrackingSpecification())
-                        {
-                            if(publicRequestlistValue.ConnectionTrackingSpecification.IsSetTcpEstablishedTimeout())
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.NetworkInterfaces)
+                         {
+                            if(publicRequestlistValue.IsSetAssociateCarrierIpAddress())
                             {
-                                request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "ConnectionTrackingSpecification" + "." + "TcpEstablishedTimeout", StringUtils.FromInt(publicRequestlistValue.ConnectionTrackingSpecification.TcpEstablishedTimeout));
+                                request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "AssociateCarrierIpAddress", StringUtils.FromBool(publicRequestlistValue.AssociateCarrierIpAddress));
                             }
-                            if(publicRequestlistValue.ConnectionTrackingSpecification.IsSetUdpStreamTimeout())
+                            if(publicRequestlistValue.IsSetAssociatePublicIpAddress())
                             {
-                                request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "ConnectionTrackingSpecification" + "." + "UdpStreamTimeout", StringUtils.FromInt(publicRequestlistValue.ConnectionTrackingSpecification.UdpStreamTimeout));
+                                request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "AssociatePublicIpAddress", StringUtils.FromBool(publicRequestlistValue.AssociatePublicIpAddress));
                             }
-                            if(publicRequestlistValue.ConnectionTrackingSpecification.IsSetUdpTimeout())
+                            if(publicRequestlistValue.IsSetConnectionTrackingSpecification())
                             {
-                                request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "ConnectionTrackingSpecification" + "." + "UdpTimeout", StringUtils.FromInt(publicRequestlistValue.ConnectionTrackingSpecification.UdpTimeout));
-                            }
-                        }
-                        if(publicRequestlistValue.IsSetDeleteOnTermination())
-                        {
-                            request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "DeleteOnTermination", StringUtils.FromBool(publicRequestlistValue.DeleteOnTermination));
-                        }
-                        if(publicRequestlistValue.IsSetDescription())
-                        {
-                            request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "Description", StringUtils.FromString(publicRequestlistValue.Description));
-                        }
-                        if(publicRequestlistValue.IsSetDeviceIndex())
-                        {
-                            request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "DeviceIndex", StringUtils.FromInt(publicRequestlistValue.DeviceIndex));
-                        }
-                        if(publicRequestlistValue.IsSetEnaSrdSpecification())
-                        {
-                            if(publicRequestlistValue.EnaSrdSpecification.IsSetEnaSrdEnabled())
-                            {
-                                request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "EnaSrdSpecification" + "." + "EnaSrdEnabled", StringUtils.FromBool(publicRequestlistValue.EnaSrdSpecification.EnaSrdEnabled));
-                            }
-                            if(publicRequestlistValue.EnaSrdSpecification.IsSetEnaSrdUdpSpecification())
-                            {
-                                if(publicRequestlistValue.EnaSrdSpecification.EnaSrdUdpSpecification.IsSetEnaSrdUdpEnabled())
+                                if(publicRequestlistValue.ConnectionTrackingSpecification.IsSetTcpEstablishedTimeout())
                                 {
-                                    request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "EnaSrdSpecification" + "." + "EnaSrdUdpSpecification" + "." + "EnaSrdUdpEnabled", StringUtils.FromBool(publicRequestlistValue.EnaSrdSpecification.EnaSrdUdpSpecification.EnaSrdUdpEnabled));
+                                    request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "ConnectionTrackingSpecification" + "." + "TcpEstablishedTimeout", StringUtils.FromInt(publicRequestlistValue.ConnectionTrackingSpecification.TcpEstablishedTimeout));
+                                }
+                                if(publicRequestlistValue.ConnectionTrackingSpecification.IsSetUdpStreamTimeout())
+                                {
+                                    request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "ConnectionTrackingSpecification" + "." + "UdpStreamTimeout", StringUtils.FromInt(publicRequestlistValue.ConnectionTrackingSpecification.UdpStreamTimeout));
+                                }
+                                if(publicRequestlistValue.ConnectionTrackingSpecification.IsSetUdpTimeout())
+                                {
+                                    request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "ConnectionTrackingSpecification" + "." + "UdpTimeout", StringUtils.FromInt(publicRequestlistValue.ConnectionTrackingSpecification.UdpTimeout));
                                 }
                             }
-                        }
-                        if(publicRequestlistValue.IsSetGroups())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Groups)
+                            if(publicRequestlistValue.IsSetDeleteOnTermination())
                             {
-                                request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "SecurityGroupId" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
-                                publicRequestlistValuelistValueIndex++;
+                                request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "DeleteOnTermination", StringUtils.FromBool(publicRequestlistValue.DeleteOnTermination));
                             }
-                        }
-                        if(publicRequestlistValue.IsSetInterfaceType())
-                        {
-                            request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "InterfaceType", StringUtils.FromString(publicRequestlistValue.InterfaceType));
-                        }
-                        if(publicRequestlistValue.IsSetIpv4PrefixCount())
-                        {
-                            request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "Ipv4PrefixCount", StringUtils.FromInt(publicRequestlistValue.Ipv4PrefixCount));
-                        }
-                        if(publicRequestlistValue.IsSetIpv4Prefixes())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Ipv4Prefixes)
+                            if(publicRequestlistValue.IsSetDescription())
                             {
-                                if(publicRequestlistValuelistValue.IsSetIpv4Prefix())
-                                {
-                                    request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "Ipv4Prefix" + "." + publicRequestlistValuelistValueIndex + "." + "Ipv4Prefix", StringUtils.FromString(publicRequestlistValuelistValue.Ipv4Prefix));
-                                }
-                                publicRequestlistValuelistValueIndex++;
+                                request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "Description", StringUtils.FromString(publicRequestlistValue.Description));
                             }
-                        }
-                        if(publicRequestlistValue.IsSetIpv6AddressCount())
-                        {
-                            request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "Ipv6AddressCount", StringUtils.FromInt(publicRequestlistValue.Ipv6AddressCount));
-                        }
-                        if(publicRequestlistValue.IsSetIpv6Addresses())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Ipv6Addresses)
+                            if(publicRequestlistValue.IsSetDeviceIndex())
                             {
-                                if(publicRequestlistValuelistValue.IsSetIpv6Address())
-                                {
-                                    request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "Ipv6Addresses" + "." + publicRequestlistValuelistValueIndex + "." + "Ipv6Address", StringUtils.FromString(publicRequestlistValuelistValue.Ipv6Address));
-                                }
-                                if(publicRequestlistValuelistValue.IsSetIsPrimaryIpv6())
-                                {
-                                    request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "Ipv6Addresses" + "." + publicRequestlistValuelistValueIndex + "." + "IsPrimaryIpv6", StringUtils.FromBool(publicRequestlistValuelistValue.IsPrimaryIpv6));
-                                }
-                                publicRequestlistValuelistValueIndex++;
+                                request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "DeviceIndex", StringUtils.FromInt(publicRequestlistValue.DeviceIndex));
                             }
-                        }
-                        if(publicRequestlistValue.IsSetIpv6PrefixCount())
-                        {
-                            request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "Ipv6PrefixCount", StringUtils.FromInt(publicRequestlistValue.Ipv6PrefixCount));
-                        }
-                        if(publicRequestlistValue.IsSetIpv6Prefixes())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Ipv6Prefixes)
+                            if(publicRequestlistValue.IsSetEnaSrdSpecification())
                             {
-                                if(publicRequestlistValuelistValue.IsSetIpv6Prefix())
+                                if(publicRequestlistValue.EnaSrdSpecification.IsSetEnaSrdEnabled())
                                 {
-                                    request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "Ipv6Prefix" + "." + publicRequestlistValuelistValueIndex + "." + "Ipv6Prefix", StringUtils.FromString(publicRequestlistValuelistValue.Ipv6Prefix));
+                                    request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "EnaSrdSpecification" + "." + "EnaSrdEnabled", StringUtils.FromBool(publicRequestlistValue.EnaSrdSpecification.EnaSrdEnabled));
                                 }
-                                publicRequestlistValuelistValueIndex++;
+                                if(publicRequestlistValue.EnaSrdSpecification.IsSetEnaSrdUdpSpecification())
+                                {
+                                    if(publicRequestlistValue.EnaSrdSpecification.EnaSrdUdpSpecification.IsSetEnaSrdUdpEnabled())
+                                    {
+                                        request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "EnaSrdSpecification" + "." + "EnaSrdUdpSpecification" + "." + "EnaSrdUdpEnabled", StringUtils.FromBool(publicRequestlistValue.EnaSrdSpecification.EnaSrdUdpSpecification.EnaSrdUdpEnabled));
+                                    }
+                                }
                             }
-                        }
-                        if(publicRequestlistValue.IsSetNetworkCardIndex())
-                        {
-                            request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "NetworkCardIndex", StringUtils.FromInt(publicRequestlistValue.NetworkCardIndex));
-                        }
-                        if(publicRequestlistValue.IsSetNetworkInterfaceId())
-                        {
-                            request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "NetworkInterfaceId", StringUtils.FromString(publicRequestlistValue.NetworkInterfaceId));
-                        }
-                        if(publicRequestlistValue.IsSetPrimaryIpv6())
-                        {
-                            request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "PrimaryIpv6", StringUtils.FromBool(publicRequestlistValue.PrimaryIpv6));
-                        }
-                        if(publicRequestlistValue.IsSetPrivateIpAddress())
-                        {
-                            request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "PrivateIpAddress", StringUtils.FromString(publicRequestlistValue.PrivateIpAddress));
-                        }
-                        if(publicRequestlistValue.IsSetPrivateIpAddresses())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.PrivateIpAddresses)
+                            if(publicRequestlistValue.IsSetGroups())
                             {
-                                if(publicRequestlistValuelistValue.IsSetPrimary())
+                                if (publicRequestlistValue.Groups.Count == 0)
+                                    request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "SecurityGroupId", "");
+                                else
                                 {
-                                    request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "PrivateIpAddresses" + "." + publicRequestlistValuelistValueIndex + "." + "Primary", StringUtils.FromBool(publicRequestlistValuelistValue.Primary));
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Groups)
+                                     {
+                                         request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "SecurityGroupId" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
                                 }
-                                if(publicRequestlistValuelistValue.IsSetPrivateIpAddress())
-                                {
-                                    request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "PrivateIpAddresses" + "." + publicRequestlistValuelistValueIndex + "." + "PrivateIpAddress", StringUtils.FromString(publicRequestlistValuelistValue.PrivateIpAddress));
-                                }
-                                publicRequestlistValuelistValueIndex++;
                             }
-                        }
-                        if(publicRequestlistValue.IsSetSecondaryPrivateIpAddressCount())
-                        {
-                            request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "SecondaryPrivateIpAddressCount", StringUtils.FromInt(publicRequestlistValue.SecondaryPrivateIpAddressCount));
-                        }
-                        if(publicRequestlistValue.IsSetSubnetId())
-                        {
-                            request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "SubnetId", StringUtils.FromString(publicRequestlistValue.SubnetId));
-                        }
-                        publicRequestlistValueIndex++;
+                            if(publicRequestlistValue.IsSetInterfaceType())
+                            {
+                                request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "InterfaceType", StringUtils.FromString(publicRequestlistValue.InterfaceType));
+                            }
+                            if(publicRequestlistValue.IsSetIpv4PrefixCount())
+                            {
+                                request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "Ipv4PrefixCount", StringUtils.FromInt(publicRequestlistValue.Ipv4PrefixCount));
+                            }
+                            if(publicRequestlistValue.IsSetIpv4Prefixes())
+                            {
+                                if (publicRequestlistValue.Ipv4Prefixes.Count == 0)
+                                    request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "Ipv4Prefix", "");
+                                else
+                                {
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Ipv4Prefixes)
+                                     {
+                                        if(publicRequestlistValuelistValue.IsSetIpv4Prefix())
+                                        {
+                                            request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "Ipv4Prefix" + "." + publicRequestlistValuelistValueIndex + "." + "Ipv4Prefix", StringUtils.FromString(publicRequestlistValuelistValue.Ipv4Prefix));
+                                        }
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
+                                }
+                            }
+                            if(publicRequestlistValue.IsSetIpv6AddressCount())
+                            {
+                                request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "Ipv6AddressCount", StringUtils.FromInt(publicRequestlistValue.Ipv6AddressCount));
+                            }
+                            if(publicRequestlistValue.IsSetIpv6Addresses())
+                            {
+                                if (publicRequestlistValue.Ipv6Addresses.Count == 0)
+                                    request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "Ipv6Addresses", "");
+                                else
+                                {
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Ipv6Addresses)
+                                     {
+                                        if(publicRequestlistValuelistValue.IsSetIpv6Address())
+                                        {
+                                            request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "Ipv6Addresses" + "." + publicRequestlistValuelistValueIndex + "." + "Ipv6Address", StringUtils.FromString(publicRequestlistValuelistValue.Ipv6Address));
+                                        }
+                                        if(publicRequestlistValuelistValue.IsSetIsPrimaryIpv6())
+                                        {
+                                            request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "Ipv6Addresses" + "." + publicRequestlistValuelistValueIndex + "." + "IsPrimaryIpv6", StringUtils.FromBool(publicRequestlistValuelistValue.IsPrimaryIpv6));
+                                        }
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
+                                }
+                            }
+                            if(publicRequestlistValue.IsSetIpv6PrefixCount())
+                            {
+                                request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "Ipv6PrefixCount", StringUtils.FromInt(publicRequestlistValue.Ipv6PrefixCount));
+                            }
+                            if(publicRequestlistValue.IsSetIpv6Prefixes())
+                            {
+                                if (publicRequestlistValue.Ipv6Prefixes.Count == 0)
+                                    request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "Ipv6Prefix", "");
+                                else
+                                {
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Ipv6Prefixes)
+                                     {
+                                        if(publicRequestlistValuelistValue.IsSetIpv6Prefix())
+                                        {
+                                            request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "Ipv6Prefix" + "." + publicRequestlistValuelistValueIndex + "." + "Ipv6Prefix", StringUtils.FromString(publicRequestlistValuelistValue.Ipv6Prefix));
+                                        }
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
+                                }
+                            }
+                            if(publicRequestlistValue.IsSetNetworkCardIndex())
+                            {
+                                request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "NetworkCardIndex", StringUtils.FromInt(publicRequestlistValue.NetworkCardIndex));
+                            }
+                            if(publicRequestlistValue.IsSetNetworkInterfaceId())
+                            {
+                                request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "NetworkInterfaceId", StringUtils.FromString(publicRequestlistValue.NetworkInterfaceId));
+                            }
+                            if(publicRequestlistValue.IsSetPrimaryIpv6())
+                            {
+                                request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "PrimaryIpv6", StringUtils.FromBool(publicRequestlistValue.PrimaryIpv6));
+                            }
+                            if(publicRequestlistValue.IsSetPrivateIpAddress())
+                            {
+                                request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "PrivateIpAddress", StringUtils.FromString(publicRequestlistValue.PrivateIpAddress));
+                            }
+                            if(publicRequestlistValue.IsSetPrivateIpAddresses())
+                            {
+                                if (publicRequestlistValue.PrivateIpAddresses.Count == 0)
+                                    request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "PrivateIpAddresses", "");
+                                else
+                                {
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.PrivateIpAddresses)
+                                     {
+                                        if(publicRequestlistValuelistValue.IsSetPrimary())
+                                        {
+                                            request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "PrivateIpAddresses" + "." + publicRequestlistValuelistValueIndex + "." + "Primary", StringUtils.FromBool(publicRequestlistValuelistValue.Primary));
+                                        }
+                                        if(publicRequestlistValuelistValue.IsSetPrivateIpAddress())
+                                        {
+                                            request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "PrivateIpAddresses" + "." + publicRequestlistValuelistValueIndex + "." + "PrivateIpAddress", StringUtils.FromString(publicRequestlistValuelistValue.PrivateIpAddress));
+                                        }
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
+                                }
+                            }
+                            if(publicRequestlistValue.IsSetSecondaryPrivateIpAddressCount())
+                            {
+                                request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "SecondaryPrivateIpAddressCount", StringUtils.FromInt(publicRequestlistValue.SecondaryPrivateIpAddressCount));
+                            }
+                            if(publicRequestlistValue.IsSetSubnetId())
+                            {
+                                request.Parameters.Add("NetworkInterface" + "." + publicRequestlistValueIndex + "." + "SubnetId", StringUtils.FromString(publicRequestlistValue.SubnetId));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetPlacement())
@@ -604,20 +659,30 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetSecurityGroupIds())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.SecurityGroupIds)
+                    if (publicRequest.SecurityGroupIds.Count == 0)
+                        request.Parameters.Add("SecurityGroupId", "");
+                    else
                     {
-                        request.Parameters.Add("SecurityGroupId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.SecurityGroupIds)
+                         {
+                             request.Parameters.Add("SecurityGroupId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetSecurityGroups())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.SecurityGroups)
+                    if (publicRequest.SecurityGroups.Count == 0)
+                        request.Parameters.Add("SecurityGroup", "");
+                    else
                     {
-                        request.Parameters.Add("SecurityGroup" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.SecurityGroups)
+                         {
+                             request.Parameters.Add("SecurityGroup" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetSubnetId())
@@ -626,30 +691,40 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetTagSpecifications())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.TagSpecifications)
+                    if (publicRequest.TagSpecifications.Count == 0)
+                        request.Parameters.Add("TagSpecification", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetResourceType())
-                        {
-                            request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
-                        }
-                        if(publicRequestlistValue.IsSetTags())
-                        {
-                            int publicRequestlistValuelistValueIndex = 1;
-                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Tags)
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.TagSpecifications)
+                         {
+                            if(publicRequestlistValue.IsSetResourceType())
                             {
-                                if(publicRequestlistValuelistValue.IsSetKey())
-                                {
-                                    request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValuelistValue.Key));
-                                }
-                                if(publicRequestlistValuelistValue.IsSetValue())
-                                {
-                                    request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
-                                }
-                                publicRequestlistValuelistValueIndex++;
+                                request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "ResourceType", StringUtils.FromString(publicRequestlistValue.ResourceType));
                             }
-                        }
-                        publicRequestlistValueIndex++;
+                            if(publicRequestlistValue.IsSetTags())
+                            {
+                                if (publicRequestlistValue.Tags.Count == 0)
+                                    request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag", "");
+                                else
+                                {
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.Tags)
+                                     {
+                                        if(publicRequestlistValuelistValue.IsSetKey())
+                                        {
+                                            request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValuelistValue.Key));
+                                        }
+                                        if(publicRequestlistValuelistValue.IsSetValue())
+                                        {
+                                            request.Parameters.Add("TagSpecification" + "." + publicRequestlistValueIndex + "." + "Tag" + "." + publicRequestlistValuelistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValuelistValue.Value));
+                                        }
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
+                                }
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetUserData())

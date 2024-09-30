@@ -81,11 +81,6 @@ namespace Amazon.GameLift.Model
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html">Debug
     /// fleet issues</a> 
     /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-remote-access.html">
-    /// Remotely connect to a container fleet</a> 
-    /// </para>
     ///  </li> </ul>
     /// </summary>
     public partial class GetComputeAccessRequest : AmazonGameLiftRequest

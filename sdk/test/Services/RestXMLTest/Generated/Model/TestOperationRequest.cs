@@ -50,7 +50,7 @@ namespace Amazon.RestXMLTest.Model
         // Check to see if ContentLanguage property is set
         internal bool IsSetContentLanguage()
         {
-            return this._contentLanguage != null && (this._contentLanguage.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._contentLanguage != null && this._contentLanguage.Count > 0;
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Amazon.RestXMLTest.Model
         // Check to see if ContentLanguageEnums property is set
         internal bool IsSetContentLanguageEnums()
         {
-            return this._contentLanguageEnums != null && (this._contentLanguageEnums.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._contentLanguageEnums != null && this._contentLanguageEnums.Count > 0;
         }
 
     }

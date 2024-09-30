@@ -31,8 +31,7 @@ namespace Amazon.Backup.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateFramework operation.
-    /// Updates an existing framework identified by its <c>FrameworkName</c> with the input
-    /// document in JSON format.
+    /// Updates the specified framework.
     /// </summary>
     public partial class UpdateFrameworkRequest : AmazonBackupRequest
     {
@@ -44,8 +43,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property FrameworkControls. 
         /// <para>
-        /// A list of the controls that make up the framework. Each control in the list has a
-        /// name, input parameters, and scope.
+        /// The controls that make up the framework. Each control in the list has a name, input
+        /// parameters, and scope.
         /// </para>
         /// </summary>
         public List<FrameworkControl> FrameworkControls

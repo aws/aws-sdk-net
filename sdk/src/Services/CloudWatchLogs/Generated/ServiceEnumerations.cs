@@ -253,6 +253,76 @@ namespace Amazon.CloudWatchLogs
 
 
     /// <summary>
+    /// Constants used for properties of type EntityRejectionErrorType.
+    /// </summary>
+    public class EntityRejectionErrorType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EntitySizeTooLarge for EntityRejectionErrorType
+        /// </summary>
+        public static readonly EntityRejectionErrorType EntitySizeTooLarge = new EntityRejectionErrorType("EntitySizeTooLarge");
+        /// <summary>
+        /// Constant InvalidAttributes for EntityRejectionErrorType
+        /// </summary>
+        public static readonly EntityRejectionErrorType InvalidAttributes = new EntityRejectionErrorType("InvalidAttributes");
+        /// <summary>
+        /// Constant InvalidEntity for EntityRejectionErrorType
+        /// </summary>
+        public static readonly EntityRejectionErrorType InvalidEntity = new EntityRejectionErrorType("InvalidEntity");
+        /// <summary>
+        /// Constant InvalidKeyAttributes for EntityRejectionErrorType
+        /// </summary>
+        public static readonly EntityRejectionErrorType InvalidKeyAttributes = new EntityRejectionErrorType("InvalidKeyAttributes");
+        /// <summary>
+        /// Constant InvalidTypeValue for EntityRejectionErrorType
+        /// </summary>
+        public static readonly EntityRejectionErrorType InvalidTypeValue = new EntityRejectionErrorType("InvalidTypeValue");
+        /// <summary>
+        /// Constant MissingRequiredFields for EntityRejectionErrorType
+        /// </summary>
+        public static readonly EntityRejectionErrorType MissingRequiredFields = new EntityRejectionErrorType("MissingRequiredFields");
+        /// <summary>
+        /// Constant UnsupportedLogGroupType for EntityRejectionErrorType
+        /// </summary>
+        public static readonly EntityRejectionErrorType UnsupportedLogGroupType = new EntityRejectionErrorType("UnsupportedLogGroupType");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EntityRejectionErrorType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EntityRejectionErrorType FindValue(string value)
+        {
+            return FindValue<EntityRejectionErrorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EntityRejectionErrorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EvaluationFrequency.
     /// </summary>
     public class EvaluationFrequency : ConstantClass

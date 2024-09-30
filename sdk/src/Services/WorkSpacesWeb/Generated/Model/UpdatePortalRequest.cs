@@ -56,10 +56,9 @@ namespace Amazon.WorkSpacesWeb.Model
         /// </para>
         ///  
         /// <para>
-        ///  <c>IAM Identity Center</c> web portals are authenticated through IAM Identity Center
-        /// (successor to Single Sign-On). Identity sources (including external identity provider
-        /// integration), plus user and group access to your web portal, can be configured in
-        /// the IAM Identity Center.
+        ///  <c>IAM Identity Center</c> web portals are authenticated through IAM Identity Center.
+        /// Identity sources (including external identity provider integration), plus user and
+        /// group access to your web portal, can be configured in the IAM Identity Center.
         /// </para>
         /// </summary>
         public AuthenticationType AuthenticationType

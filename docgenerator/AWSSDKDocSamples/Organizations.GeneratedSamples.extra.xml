@@ -331,7 +331,7 @@
         <value>
             <example>
                 <para>
-                    The following example shows how to request details about an OU:/n/n
+                    The following example shows how to request details about an OU:
                 </para>
                 <code
                     title="To get information about an organizational unit"

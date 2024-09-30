@@ -61,18 +61,23 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetIdentifiers())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.Identifiers)
+                    if (publicRequest.Identifiers.Count == 0)
+                        request.Parameters.Add("Identifiers", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetSnapshotClusterIdentifier())
-                        {
-                            request.Parameters.Add("Identifiers" + "." + "DeleteClusterSnapshotMessage" + "." + publicRequestlistValueIndex + "." + "SnapshotClusterIdentifier", StringUtils.FromString(publicRequestlistValue.SnapshotClusterIdentifier));
-                        }
-                        if(publicRequestlistValue.IsSetSnapshotIdentifier())
-                        {
-                            request.Parameters.Add("Identifiers" + "." + "DeleteClusterSnapshotMessage" + "." + publicRequestlistValueIndex + "." + "SnapshotIdentifier", StringUtils.FromString(publicRequestlistValue.SnapshotIdentifier));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.Identifiers)
+                         {
+                            if(publicRequestlistValue.IsSetSnapshotClusterIdentifier())
+                            {
+                                request.Parameters.Add("Identifiers" + "." + "DeleteClusterSnapshotMessage" + "." + publicRequestlistValueIndex + "." + "SnapshotClusterIdentifier", StringUtils.FromString(publicRequestlistValue.SnapshotClusterIdentifier));
+                            }
+                            if(publicRequestlistValue.IsSetSnapshotIdentifier())
+                            {
+                                request.Parameters.Add("Identifiers" + "." + "DeleteClusterSnapshotMessage" + "." + publicRequestlistValueIndex + "." + "SnapshotIdentifier", StringUtils.FromString(publicRequestlistValue.SnapshotIdentifier));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
             }

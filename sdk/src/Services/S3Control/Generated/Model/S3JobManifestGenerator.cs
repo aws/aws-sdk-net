@@ -122,7 +122,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property SourceBucket. 
         /// <para>
-        /// The source bucket used by the ManifestGenerator.
+        /// The ARN of the source bucket used by the ManifestGenerator.
         /// </para>
         ///  <note> 
         /// <para>

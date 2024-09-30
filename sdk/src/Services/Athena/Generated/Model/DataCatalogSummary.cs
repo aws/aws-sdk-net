@@ -35,6 +35,9 @@ namespace Amazon.Athena.Model
     public partial class DataCatalogSummary
     {
         private string _catalogName;
+        private ConnectionType _connectionType;
+        private string _error;
+        private DataCatalogStatus _status;
         private DataCatalogType _type;
 
         /// <summary>
@@ -56,6 +59,120 @@ namespace Amazon.Athena.Model
         internal bool IsSetCatalogName()
         {
             return this._catalogName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectionType. 
+        /// <para>
+        /// The type of connection for a <c>FEDERATED</c> data catalog (for example, <c>REDSHIFT</c>,
+        /// <c>MYSQL</c>, or <c>SQLSERVER</c>). For information about individual connectors, see
+        /// <a href="https://docs.aws.amazon.com/athena/latest/ug/connectors-available.html">Available
+        /// data source connectors</a>.
+        /// </para>
+        /// </summary>
+        public ConnectionType ConnectionType
+        {
+            get { return this._connectionType; }
+            set { this._connectionType = value; }
+        }
+
+        // Check to see if ConnectionType property is set
+        internal bool IsSetConnectionType()
+        {
+            return this._connectionType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Error. 
+        /// <para>
+        /// Text of the error that occurred during data catalog creation or deletion.
+        /// </para>
+        /// </summary>
+        public string Error
+        {
+            get { return this._error; }
+            set { this._error = value; }
+        }
+
+        // Check to see if Error property is set
+        internal bool IsSetError()
+        {
+            return this._error != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the creation or deletion of the data catalog.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>LAMBDA</c>, <c>GLUE</c>, and <c>HIVE</c> data catalog types are created synchronously.
+        /// Their status is either <c>CREATE_COMPLETE</c> or <c>CREATE_FAILED</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <c>FEDERATED</c> data catalog type is created asynchronously.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Data catalog creation status:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CREATE_IN_PROGRESS</c>: Federated data catalog creation in progress.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CREATE_COMPLETE</c>: Data catalog creation complete.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CREATE_FAILED</c>: Data catalog could not be created.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CREATE_FAILED_CLEANUP_IN_PROGRESS</c>: Federated data catalog creation failed
+        /// and is being removed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CREATE_FAILED_CLEANUP_COMPLETE</c>: Federated data catalog creation failed and
+        /// was removed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CREATE_FAILED_CLEANUP_FAILED</c>: Federated data catalog creation failed but could
+        /// not be removed.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Data catalog deletion status:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>DELETE_IN_PROGRESS</c>: Federated data catalog deletion in progress.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DELETE_COMPLETE</c>: Federated data catalog deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DELETE_FAILED</c>: Federated data catalog could not be deleted.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public DataCatalogStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
         /// <summary>

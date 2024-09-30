@@ -88,6 +88,12 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
                     response.IsRatedByUser = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("isVerified", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    response.IsVerified = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("libraryItemId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -150,6 +156,10 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                {
+                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {

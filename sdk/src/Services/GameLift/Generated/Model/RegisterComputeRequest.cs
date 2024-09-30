@@ -178,7 +178,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property IpAddress. 
         /// <para>
         /// The IP address of the compute resource. Amazon GameLift requires either a DNS name
-        /// or IP address.
+        /// or IP address. When registering an Anywhere fleet, an IP address is required.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=128)]
@@ -198,7 +198,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property Location. 
         /// <para>
         /// The name of a custom location to associate with the compute resource being registered.
-        /// 
+        /// This parameter is required when registering a compute for an Anywhere fleet.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
