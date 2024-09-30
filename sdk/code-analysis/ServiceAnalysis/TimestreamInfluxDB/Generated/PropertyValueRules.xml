@@ -35,6 +35,11 @@
     <pattern>[a-zA-Z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.TimestreamInfluxDB.Model.CreateDbInstanceRequest.Port</property>
+    <min>1024</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbInstanceRequest.Username</property>
     <min>1</min>
     <max>64</max>
@@ -67,6 +72,11 @@
     <min>3</min>
     <max>40</max>
     <pattern>[a-zA-z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamInfluxDB.Model.CreateDbInstanceResponse.Port</property>
+    <min>1024</min>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbParameterGroupRequest.Description</property>
@@ -133,6 +143,11 @@
     <pattern>[a-zA-z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.TimestreamInfluxDB.Model.DeleteDbInstanceResponse.Port</property>
+    <min>1024</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.GetDbInstanceRequest.Identifier</property>
     <min>3</min>
     <max>64</max>
@@ -166,6 +181,11 @@
     <min>3</min>
     <max>40</max>
     <pattern>[a-zA-z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamInfluxDB.Model.GetDbInstanceResponse.Port</property>
+    <min>1024</min>
+    <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.GetDbParameterGroupRequest.Identifier</property>
@@ -248,6 +268,11 @@
     <pattern>[a-zA-Z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.TimestreamInfluxDB.Model.UpdateDbInstanceRequest.Port</property>
+    <min>1024</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.UpdateDbInstanceResponse.AllocatedStorage</property>
     <min>20</min>
     <max>16384</max>
@@ -277,6 +302,11 @@
     <pattern>[a-zA-z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.TimestreamInfluxDB.Model.UpdateDbInstanceResponse.Port</property>
+    <min>1024</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.DbInstanceSummary.AllocatedStorage</property>
     <min>20</min>
     <max>16384</max>
@@ -300,6 +330,11 @@
     <pattern>[a-zA-z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.TimestreamInfluxDB.Model.DbInstanceSummary.Port</property>
+    <min>1024</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.DbParameterGroupSummary.Arn</property>
     <min>1</min>
     <max>1011</max>
@@ -318,12 +353,91 @@
     <pattern>[a-zA-z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.TimestreamInfluxDB.Model.Duration.Value</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamInfluxDB.Model.InfluxDBv2Parameters.InfluxqlMaxSelectBuckets</property>
+    <min>0</min>
+    <max>1000000000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamInfluxDB.Model.InfluxDBv2Parameters.InfluxqlMaxSelectPoint</property>
+    <min>0</min>
+    <max>1000000000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamInfluxDB.Model.InfluxDBv2Parameters.InfluxqlMaxSelectSeries</property>
+    <min>0</min>
+    <max>1000000000000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.InfluxDBv2Parameters.QueryConcurrency</property>
     <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.TimestreamInfluxDB.Model.InfluxDBv2Parameters.QueryInitialMemoryBytes</property>
+    <min>0</min>
+    <max>1000000000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamInfluxDB.Model.InfluxDBv2Parameters.QueryMaxMemoryBytes</property>
+    <min>0</min>
+    <max>1000000000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamInfluxDB.Model.InfluxDBv2Parameters.QueryMemoryBytes</property>
+    <min>0</min>
+    <max>1000000000000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.InfluxDBv2Parameters.QueryQueueSize</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamInfluxDB.Model.InfluxDBv2Parameters.SessionLength</property>
+    <min>1</min>
+    <max>2880</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamInfluxDB.Model.InfluxDBv2Parameters.StorageCacheMaxMemorySize</property>
+    <min>0</min>
+    <max>1000000000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamInfluxDB.Model.InfluxDBv2Parameters.StorageCacheSnapshotMemorySize</property>
+    <min>0</min>
+    <max>1000000000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamInfluxDB.Model.InfluxDBv2Parameters.StorageCompactThroughputBurst</property>
+    <min>0</min>
+    <max>1000000000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamInfluxDB.Model.InfluxDBv2Parameters.StorageMaxConcurrentCompactions</property>
+    <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamInfluxDB.Model.InfluxDBv2Parameters.StorageMaxIndexLogFileSize</property>
+    <min>0</min>
+    <max>1000000000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamInfluxDB.Model.InfluxDBv2Parameters.StorageSeriesFileMaxConcurrentSnapshotCompactions</property>
+    <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamInfluxDB.Model.InfluxDBv2Parameters.StorageSeriesIdSetCacheSize</property>
+    <min>0</min>
+    <max>1000000000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TimestreamInfluxDB.Model.InfluxDBv2Parameters.StorageWalMaxConcurrentWrites</property>
     <min>0</min>
     <max>256</max>
   </property-value-rule>

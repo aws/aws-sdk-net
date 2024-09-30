@@ -134,6 +134,12 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Password);
                 }
 
+                if(publicRequest.IsSetPort())
+                {
+                    context.Writer.WritePropertyName("port");
+                    context.Writer.Write(publicRequest.Port);
+                }
+
                 if(publicRequest.IsSetPubliclyAccessible())
                 {
                     context.Writer.WritePropertyName("publiclyAccessible");

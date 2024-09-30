@@ -40,6 +40,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         private DeploymentType _deploymentType;
         private string _identifier;
         private LogDeliveryConfiguration _logDeliveryConfiguration;
+        private int? _port;
 
         /// <summary>
         /// Gets and sets the property DbInstanceType. 
@@ -134,6 +135,41 @@ namespace Amazon.TimestreamInfluxDB.Model
         internal bool IsSetLogDeliveryConfiguration()
         {
             return this._logDeliveryConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Port. 
+        /// <para>
+        /// The port number on which InfluxDB accepts connections.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you change the Port value, your database restarts immediately.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: 1024-65535
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: 8086
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: The value can't be 2375-2376, 7788-7799, 8090, or 51678-51680
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1024, Max=65535)]
+        public int Port
+        {
+            get { return this._port.GetValueOrDefault(); }
+            set { this._port = value; }
+        }
+
+        // Check to see if Port property is set
+        internal bool IsSetPort()
+        {
+            return this._port.HasValue; 
         }
 
     }

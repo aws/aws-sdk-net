@@ -42,6 +42,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         private string _endpoint;
         private string _id;
         private string _name;
+        private int? _port;
         private Status _status;
 
         /// <summary>
@@ -191,6 +192,25 @@ namespace Amazon.TimestreamInfluxDB.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Port. 
+        /// <para>
+        /// The port number on which InfluxDB accepts connections.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1024, Max=65535)]
+        public int Port
+        {
+            get { return this._port.GetValueOrDefault(); }
+            set { this._port = value; }
+        }
+
+        // Check to see if Port property is set
+        internal bool IsSetPort()
+        {
+            return this._port.HasValue; 
         }
 
         /// <summary>
