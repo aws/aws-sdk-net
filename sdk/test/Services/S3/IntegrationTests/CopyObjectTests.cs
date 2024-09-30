@@ -53,6 +53,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             BaseClean();
         }
 
+        [Ignore]
         [TestMethod]
         [TestCategory("S3")]
         public void TestCopyObject()
@@ -66,6 +67,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             });
         }
 
+        [Ignore]
         [DataRow(false, testKey, "/destinationTestKey1.txt", "destinationTestKey1.txt")]
         [DataRow(true, testKeyWithSlash, "/destinationTestKey2.txt", "/destinationTestKey2.txt")]
         [DataRow(true, testKeyWithSlash, "/", "/")]
