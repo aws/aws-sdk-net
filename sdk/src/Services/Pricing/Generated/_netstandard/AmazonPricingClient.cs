@@ -65,11 +65,11 @@ namespace Amazon.Pricing
     ///  </li> </ul> 
     /// <para>
     /// Use <c>GetServices</c> without a service code to retrieve the service codes for all
-    /// Amazon Web Services, then <c>GetServices</c> with a service code to retrieve the attribute
-    /// names for that service. After you have the service code and attribute names, you can
-    /// use <c>GetAttributeValues</c> to see what values are available for an attribute. With
-    /// the service code and an attribute name and value, you can use <c>GetProducts</c> to
-    /// find specific products that you're interested in, such as an <c>AmazonEC2</c> instance,
+    /// Amazon Web Services services, then <c>GetServices</c> with a service code to retrieve
+    /// the attribute names for that service. After you have the service code and attribute
+    /// names, you can use <c>GetAttributeValues</c> to see what values are available for
+    /// an attribute. With the service code and an attribute name and value, you can use <c>GetProducts</c>
+    /// to find specific products that you're interested in, such as an <c>AmazonEC2</c> instance,
     /// with a <c>Provisioned IOPS</c> <c>volumeType</c>.
     /// </para>
     ///  

@@ -13,7 +13,7 @@ namespace AWSSDKDocSamples.Amazon.Pricing.Generated
     {
         public void PricingDescribeServices()
         {
-            #region to-retrieve-service-metadata
+            #region example-1
 
             var client = new AmazonPricingClient();
             var response = client.DescribeServices(new DescribeServicesRequest 
@@ -32,7 +32,7 @@ namespace AWSSDKDocSamples.Amazon.Pricing.Generated
 
         public void PricingGetAttributeValues()
         {
-            #region to-retreive-attribute-values
+            #region example-1
 
             var client = new AmazonPricingClient();
             var response = client.GetAttributeValues(new GetAttributeValuesRequest 
