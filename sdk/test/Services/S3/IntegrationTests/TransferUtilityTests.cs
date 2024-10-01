@@ -471,7 +471,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             UploadWithSSE_C(KILO_SIZE, @"SimpleUploadTest\SmallFile");
         }
 
-        [Ignore]
         [TestMethod]
         [TestCategory("S3")]
         public void SimpleUploadWithSSE_C_LargeFile()

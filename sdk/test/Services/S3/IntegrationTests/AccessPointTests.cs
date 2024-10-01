@@ -92,7 +92,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             Assert.IsTrue(listResponse.S3Objects.Count > 0);
         }
 
-        [Ignore]
         [TestMethod]
         public void TestMultipartUploadViaTransferUtility()
         {
