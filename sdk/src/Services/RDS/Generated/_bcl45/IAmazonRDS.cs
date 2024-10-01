@@ -2593,6 +2593,10 @@ namespace Amazon.RDS
         /// The maximum number of DB shard groups for your Amazon Web Services account in the
         /// specified Amazon Web Services Region has been reached.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.NetworkTypeNotSupportedException">
+        /// The network type is invalid for the DB instance. Valid nework type values are <c>IPV4</c>
+        /// and <c>DUAL</c>.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.UnsupportedDBEngineVersionException">
         /// The specified DB engine version isn't supported for Aurora Limitless Database.
         /// </exception>
@@ -2633,6 +2637,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.MaxDBShardGroupLimitReachedException">
         /// The maximum number of DB shard groups for your Amazon Web Services account in the
         /// specified Amazon Web Services Region has been reached.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.NetworkTypeNotSupportedException">
+        /// The network type is invalid for the DB instance. Valid nework type values are <c>IPV4</c>
+        /// and <c>DUAL</c>.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.UnsupportedDBEngineVersionException">
         /// The specified DB engine version isn't supported for Aurora Limitless Database.

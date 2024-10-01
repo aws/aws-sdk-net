@@ -79,6 +79,7 @@ namespace Amazon.RDS.Model
         private string _characterSetName;
         private string _cloneGroupId;
         private DateTime? _clusterCreateTime;
+        private ClusterScalabilityType _clusterScalabilityType;
         private bool? _copyTagsToSnapshot;
         private bool? _crossAccountClone;
         private List<string> _customEndpoints = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -486,6 +487,26 @@ namespace Amazon.RDS.Model
         internal bool IsSetClusterCreateTime()
         {
             return this._clusterCreateTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClusterScalabilityType. 
+        /// <para>
+        /// The scalability mode of the Aurora DB cluster. When set to <c>limitless</c>, the cluster
+        /// operates as an Aurora Limitless Database. When set to <c>standard</c> (the default),
+        /// the cluster uses normal DB instance creation.
+        /// </para>
+        /// </summary>
+        public ClusterScalabilityType ClusterScalabilityType
+        {
+            get { return this._clusterScalabilityType; }
+            set { this._clusterScalabilityType = value; }
+        }
+
+        // Check to see if ClusterScalabilityType property is set
+        internal bool IsSetClusterScalabilityType()
+        {
+            return this._clusterScalabilityType != null;
         }
 
         /// <summary>

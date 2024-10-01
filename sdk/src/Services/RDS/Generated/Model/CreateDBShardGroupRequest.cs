@@ -47,6 +47,7 @@ namespace Amazon.RDS.Model
         private double? _maxACU;
         private double? _minACU;
         private bool? _publiclyAccessible;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ComputeRedundancy. 
@@ -223,6 +224,21 @@ namespace Amazon.RDS.Model
         internal bool IsSetPubliclyAccessible()
         {
             return this._publiclyAccessible.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags.
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

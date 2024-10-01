@@ -64,6 +64,7 @@ namespace Amazon.RDS.Model
         private int? _backupRetentionPeriod;
         private string _caCertificateIdentifier;
         private string _characterSetName;
+        private ClusterScalabilityType _clusterScalabilityType;
         private bool? _copyTagsToSnapshot;
         private string _databaseName;
         private string _dbClusterIdentifier;
@@ -317,6 +318,35 @@ namespace Amazon.RDS.Model
         internal bool IsSetCharacterSetName()
         {
             return this._characterSetName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClusterScalabilityType. 
+        /// <para>
+        /// Specifies the scalability mode of the Aurora DB cluster. When set to <c>limitless</c>,
+        /// the cluster operates as an Aurora Limitless Database. When set to <c>standard</c>
+        /// (the default), the cluster uses normal DB instance creation.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid for: Aurora DB clusters only
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can't modify this setting after you create the DB cluster.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public ClusterScalabilityType ClusterScalabilityType
+        {
+            get { return this._clusterScalabilityType; }
+            set { this._clusterScalabilityType = value; }
+        }
+
+        // Check to see if ClusterScalabilityType property is set
+        internal bool IsSetClusterScalabilityType()
+        {
+            return this._clusterScalabilityType != null;
         }
 
         /// <summary>
