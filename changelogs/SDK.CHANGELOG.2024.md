@@ -1,3 +1,39 @@
+### 4.0.0.0-preview.3 (2024-10-01 12:51 UTC)
+* DynamoDBStreams (4.0.0.0)
+	* Move DynamoDBStreams to its own package.
+* DynamoDBv2 (4.0.0.0)
+	* Removed DynamoDBStreams from DynamoDB package.
+	* Allow `TableNamePrefix` to be removed on operation level
+* S3 (4.0.0.0)
+	* Fix #3125. Expose TaggingDirective, which controls x-amz-tagging-directive as a property on CopyObjectRequest.
+* Core 4.0.0.0
+	* `EC2_METADATA_SVC`, `EC2_METADATA_ROOT`, `EC2_USERDATA_ROOT`, `EC2_DYNAMICDATA_ROOT`, `EC2_APITOKEN_URL` in `EC2InstanceMetadata` are removed. The fields were marked as obsolete in v3.
+	* `public static Condition NewCondition(DateComparisonType type, DateTime date)` in `Amazon.Auth/AccessControlPolicy/ConditionFactory` is removed. Please use `NewConditionUtc` instead.
+	* Add code analysis rule when using collection initializers without an object initializer for collection based modeled properties.
+	* Address protocol tests that are breaking changes.
+	* Apply missing documentation to some classes in Amazon.Runtime
+	* If a payload of a response has no data, instead of returning an empty memory stream as the payload we will return null as the payload.
+	* In the `ClientConfig` class, the obsolete `DetermineDnsSuffix` has been removed. Use the service specific `client.DetermineServiceOperationEndpoint` method instead. The `ReadEntireResponse` property has been removed, use the `AWSConfigs.LoggingConfig.LogResponses` or `ClientConfig.LogResponse` instead.
+	* Other non-breaking changes include: We will now not send empty lists over the wire in headers only, since the service rejects these anyways.
+	* The following methods in `AWSSDKUtils` are removed `ResolveResourcePath`, `ProtectEncodedSlashUrlEncode`, `ConvertToUnixEpochMilliSeconds`
+	* The following obsolete properties on `AWSConfigs` are removed: `Logging`, `ResponseLogging`, and `LogMetrics`. Use `LoggingConfig` instead.
+	* The obsolete `DoesS3BucketExistAsync`(string bucketName) in ICoreAmazonS3 is removed because it always uses HTTP. Please use `Amazon.S3.Util.AmazonS3Util.DoesS3BucketExistV2Async` instead.
+	* The obsolete `ECSTaskCredentials` class is removed. Please use the `GenericContainerCredentials` provider which also supports EKS Pod Identities.
+	* The obsolete `EndpointDiscoveryEnabled` class is removed. Please use the `EnvironmentVariableAWSConfiguration` instead.
+	* The obsolete `EnvironmentAWSCredentials` is removed. Please use `AppConfigAWSCredentials` instead.
+	* The obsolete `HasCachedAccessTokenAvailable` method on the SSOAWSCredentials class is removed.
+	* The obsolete `Parameters` dictionary in `WebServiceRequestEventArgs` is obsolete. `ParameteCollection` will be used instead.
+	* The obsolete `ProfileManager` class in Amazon.Util is removed. Please use the SharedCredentialsFile or the NetSDKCredentialsFile instead.
+	* The obsolete `StoredProfileAWSCredentials` and `StoredProfileCredentials` is removed. Please use the `NetSDKCredentialsFile` or the `SharedCredentialsFile`.
+	* The obsolete `StoredProfileFederatedCredentials` is removed. Please use `FederatedAWSCredentials` instead.
+	* The obsolete `StoredProfileSAMLCredentials` class in SecurityTokenService is removed. Please use `FederatedAWSCredentials` instead.
+	* The obsolete `TryGetSection` methods in `ProfileIniFile` that don't take in nested properties is removed. Please use the `TryGetSection` method in `ProfileIniFile` that accounts for nested properties.
+	* The obsolete `UseSigV4` property on the `AmazonWebServiceRequest` class is removed. `SignatureVersion` will be used directly instead.
+	* Unmarshalling an attribute with @xsi as part of the localName was not working, since xsi is a prefix. We will now successfully unmarshall an attribute with a prefix.
+	* Update XML handling to be able to unmarshall self closing XML elements.
+	* Xml Responses that returned pure whitespace in the body of an xml element will now return all the whitespace instead of an empty element.
+	* All services packages updated to require new Core
+
 ### 4.0.0.0-preview.2 (2024-08-28 14:45 UTC)
 * DynamoDBv2 (4.0.0.0)
 	* Add the ability to mock DynamoDB operations which now implement interfaces.
