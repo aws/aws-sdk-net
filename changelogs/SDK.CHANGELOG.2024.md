@@ -1,3 +1,15 @@
+### 3.7.896.0 (2024-10-01 18:32 UTC)
+* BedrockAgent (3.7.405.0)
+	* This release adds support to stop an ongoing ingestion job using the StopIngestionJob API in Agents for Amazon Bedrock.
+* CodeArtifact (3.7.401.0)
+	* Add support for the dual stack endpoints.
+* RDS (3.7.404.0)
+	* This release provides additional support for enabling Aurora Limitless Database DB clusters.
+* Core 3.7.400.27
+	* Fix NullReferenceException in MetricsHandler when ResponseMetadata is null
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.895.0 (2024-09-30 22:01 UTC)
 * Bedrock (3.7.407.0)
 	* Add support for custom models via provisioned throughput for Bedrock Model Evaluation

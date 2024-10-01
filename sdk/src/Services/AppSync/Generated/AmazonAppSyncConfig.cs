@@ -32,7 +32,7 @@ namespace Amazon.AppSync
     public partial class AmazonAppSyncConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("AppSync", "3.7.401.12");
+            InternalSDKUtils.BuildUserAgentString("AppSync", "3.7.401.13");
 
         private string _userAgent = UserAgentString;
         ///<summary>

@@ -1,9 +1,0 @@
-{
-  "core": {
-    "changeLogMessages": [
-      "Fix NullReferenceException in MetricsHandler when ResponseMetadata is null"
-    ],
-    "type": "patch",
-    "updateMinimum": false
-  }
-}
