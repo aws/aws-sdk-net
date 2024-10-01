@@ -69,7 +69,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// <summary>
         /// Tests a SigV4 PutObject with the checksum placed in the header
         /// </summary>
-        [Ignore]
         [DataTestMethod]
         [DynamicData(nameof(GetAlgorithmsToTest))]
         public void TestV4SignedHeadersPut(CoreChecksumAlgorithm algorithm)
@@ -89,7 +88,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// <summary>
         /// Tests a SigV4 PutObject with the checksum placed in the trailer
         /// </summary>
-        [Ignore]
         [DataTestMethod]
         [DynamicData(nameof(GetAlgorithmsToTest))]
         public void TestV4SignedTrailersPut(CoreChecksumAlgorithm algorithm)
@@ -110,7 +108,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// <summary>
         /// Tests a SigV4 PutObject with an unsigned payload and the checksum in the trailer
         /// </summary>
-        [Ignore]
         [DataTestMethod]
         [DynamicData(nameof(GetAlgorithmsToTest))]
         public void TestV4UnsignedTrailersPut(CoreChecksumAlgorithm algorithm)
@@ -131,7 +128,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// <summary>
         /// Tests a SigV4a PutObject with the checksum placed in the header
         /// </summary>
-        [Ignore]
         [DataTestMethod]
         [DynamicData(nameof(GetAlgorithmsToTest))]
         public void TestV4aSignedHeadersPut(CoreChecksumAlgorithm algorithm)
@@ -151,7 +147,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// <summary>
         /// Tests a SigV4a PutObject with the checksum placed in the trailer
         /// </summary>
-        [Ignore]
         [DataTestMethod]
         [DynamicData(nameof(GetAlgorithmsToTest))]
         public void TestV4aSignedTrailersPut(CoreChecksumAlgorithm algorithm)
@@ -171,7 +166,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// <summary>
         /// Tests a SigV4a PutObject with an unsigned payload and the checksum in the trailer
         /// </summary>
-        [Ignore]
         [DataTestMethod]
         [DynamicData(nameof(GetAlgorithmsToTest))]
         public void TestV4aUnsignedTrailersPut(CoreChecksumAlgorithm algorithm)
@@ -260,7 +254,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// <summary>
         /// Tests copying object using multipart upload with a signed body
         /// </summary>
-        [Ignore]
         [DataTestMethod]
         [DynamicData(nameof(GetAlgorithmsToTest))]
         public void TestSignedCopyObjectUsingMultipartUpload(CoreChecksumAlgorithm algorithm)
@@ -560,7 +553,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             Assert.AreEqual(uploadPartResponse.ChecksumSHA256, partDetail.ChecksumSHA256);
         }
 
-        [Ignore]
         [TestMethod]
         [TestCategory("S3")]
         [DataTestMethod]

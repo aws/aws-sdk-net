@@ -214,7 +214,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             TestPutGet(s3EncryptionClientMetadataMode, null, null, "", S3CannedACL.AuthenticatedRead, "");
         }
 
-        [Ignore]
         [TestMethod]
         [TestCategory("S3")]
         public void PutGetNullContentContentUsingMetadataMode()
@@ -222,7 +221,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             TestPutGet(s3EncryptionClientMetadataMode, null, null, null, S3CannedACL.AuthenticatedRead, "");
         }
 
-        [Ignore]
         [TestMethod]
         [TestCategory("S3")]
         public void PutGetContentUsingInstructionFileMode()
@@ -239,7 +237,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }, typeof(AmazonClientException), InstructionAndKMSErrorMessage);
         }
 
-        [Ignore]
         [TestMethod]
         [TestCategory("S3")]
         public void PutGetStreamUsingMetadataModeKMS()
@@ -257,7 +254,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }, typeof(AmazonClientException), InstructionAndKMSErrorMessage);
         }
 
-        [Ignore]
         [TestMethod]
         [TestCategory("S3")]
         public void PutGetContentUsingMetadataModeKMS()
@@ -265,7 +261,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             TestPutGet(s3EncryptionClientMetadataModeKMS, null, null, sampleContent, S3CannedACL.AuthenticatedRead, sampleContent);
         }
 
-        [Ignore]
         [TestMethod]
         [TestCategory("S3")]
         public void PutGetZeroLengthContentUsingMetadataModeKMS()
@@ -273,7 +268,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             TestPutGet(s3EncryptionClientMetadataModeKMS, null, null, "", S3CannedACL.AuthenticatedRead, "");
         }
 
-        [Ignore]
         [TestMethod]
         [TestCategory("S3")]
         public void PutGetNullContentContentUsingMetadataModeKMS()
@@ -291,7 +285,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }, typeof(AmazonClientException), InstructionAndKMSErrorMessage);
         }
 
-        [Ignore]
         [TestMethod]
         [TestCategory("S3")]
         public void MultipartEncryptionTestMetadataMode()
@@ -299,7 +292,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             MultipartEncryptionTest(s3EncryptionClientMetadataMode);
         }
 
-        [Ignore]
         [TestMethod]
         [TestCategory("S3")]
         public void MultipartEncryptionTestInstructionFile()
@@ -307,7 +299,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             MultipartEncryptionTest(s3EncryptionClientFileMode);
         }
 
-        [Ignore]
         [TestMethod]
         [TestCategory("S3")]
         public void MultipartEncryptionTestMetadataModeKMS()

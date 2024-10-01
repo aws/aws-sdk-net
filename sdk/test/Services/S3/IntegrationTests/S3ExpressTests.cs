@@ -211,7 +211,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             Assert.IsFalse(listDirectoryBucketsResponse.Buckets.Any(b => b.BucketName == destinationbucketName));
         }
 
-        [Ignore]
         [TestMethod]
         [TestCategory("S3")]
         public void Test_CopyObject_BetweenRegularBucket_And_S3ExpressBucket()
