@@ -30,30 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetKnowledgeBase operation.
-    /// Gets information about a knoweldge base.
+    /// This is the response object from the StopIngestionJob operation.
     /// </summary>
-    public partial class GetKnowledgeBaseRequest : AmazonBedrockAgentRequest
+    public partial class StopIngestionJobResponse : AmazonWebServiceResponse
     {
-        private string _knowledgeBaseId;
+        private IngestionJob _ingestionJob;
 
         /// <summary>
-        /// Gets and sets the property KnowledgeBaseId. 
+        /// Gets and sets the property IngestionJob. 
         /// <para>
-        /// The unique identifier of the knowledge base you want to get information on.
+        /// Contains information about the stopped data ingestion job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string KnowledgeBaseId
+        public IngestionJob IngestionJob
         {
-            get { return this._knowledgeBaseId; }
-            set { this._knowledgeBaseId = value; }
+            get { return this._ingestionJob; }
+            set { this._ingestionJob = value; }
         }
 
-        // Check to see if KnowledgeBaseId property is set
-        internal bool IsSetKnowledgeBaseId()
+        // Check to see if IngestionJob property is set
+        internal bool IsSetIngestionJob()
         {
-            return this._knowledgeBaseId != null;
+            return this._ingestionJob != null;
         }
 
     }

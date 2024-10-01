@@ -31,8 +31,8 @@ namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the GetIngestionJob operation.
-    /// Gets information about a ingestion job, in which a data source is added to a knowledge
-    /// base.
+    /// Gets information about a data ingestion job. Data sources are ingested into your knowledge
+    /// base so that Large Lanaguage Models (LLMs) can use your data.
     /// </summary>
     public partial class GetIngestionJobRequest : AmazonBedrockAgentRequest
     {
@@ -43,7 +43,8 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property DataSourceId. 
         /// <para>
-        /// The unique identifier of the data source in the ingestion job.
+        /// The unique identifier of the data source for the data ingestion job you want to get
+        /// information on.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,7 +63,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property IngestionJobId. 
         /// <para>
-        /// The unique identifier of the ingestion job.
+        /// The unique identifier of the data ingestion job you want to get information on.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -81,7 +82,8 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property KnowledgeBaseId. 
         /// <para>
-        /// The unique identifier of the knowledge base for which the ingestion job applies.
+        /// The unique identifier of the knowledge base for the data ingestion job you want to
+        /// get information on.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

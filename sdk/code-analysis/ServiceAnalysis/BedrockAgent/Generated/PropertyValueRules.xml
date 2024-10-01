@@ -1084,6 +1084,18 @@
     <pattern>^[0-9a-zA-Z]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.StopIngestionJobRequest.DataSourceId</property>
+    <pattern>^[0-9a-zA-Z]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.StopIngestionJobRequest.IngestionJobId</property>
+    <pattern>^[0-9a-zA-Z]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.StopIngestionJobRequest.KnowledgeBaseId</property>
+    <pattern>^[0-9a-zA-Z]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgent.Model.TagResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>1011</max>

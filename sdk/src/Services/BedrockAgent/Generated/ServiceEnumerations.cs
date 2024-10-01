@@ -1196,6 +1196,14 @@ namespace Amazon.BedrockAgent
         /// Constant STARTING for IngestionJobStatus
         /// </summary>
         public static readonly IngestionJobStatus STARTING = new IngestionJobStatus("STARTING");
+        /// <summary>
+        /// Constant STOPPED for IngestionJobStatus
+        /// </summary>
+        public static readonly IngestionJobStatus STOPPED = new IngestionJobStatus("STOPPED");
+        /// <summary>
+        /// Constant STOPPING for IngestionJobStatus
+        /// </summary>
+        public static readonly IngestionJobStatus STOPPING = new IngestionJobStatus("STOPPING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

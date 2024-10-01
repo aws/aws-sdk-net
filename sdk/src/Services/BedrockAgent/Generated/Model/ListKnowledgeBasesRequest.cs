@@ -31,7 +31,8 @@ namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the ListKnowledgeBases operation.
-    /// Lists the knowledge bases in an account and information about each of them.
+    /// Lists the knowledge bases in an account. The list also includesinformation about each
+    /// knowledge base.
     /// </summary>
     public partial class ListKnowledgeBasesRequest : AmazonBedrockAgentRequest
     {

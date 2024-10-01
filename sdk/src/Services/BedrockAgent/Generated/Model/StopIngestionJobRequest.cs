@@ -30,43 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Container for the parameters to the StartIngestionJob operation.
-    /// Begins a data ingestion job. Data sources are ingested into your knowledge base so
-    /// that Large Language Models (LLMs) can use your data.
+    /// Container for the parameters to the StopIngestionJob operation.
+    /// Stops a currently running data ingestion job. You can send a <c>StartIngestionJob</c>
+    /// request again to ingest the rest of your data when you are ready.
     /// </summary>
-    public partial class StartIngestionJobRequest : AmazonBedrockAgentRequest
+    public partial class StopIngestionJobRequest : AmazonBedrockAgentRequest
     {
-        private string _clientToken;
         private string _dataSourceId;
-        private string _description;
+        private string _ingestionJobId;
         private string _knowledgeBaseId;
-
-        /// <summary>
-        /// Gets and sets the property ClientToken. 
-        /// <para>
-        /// A unique, case-sensitive identifier to ensure that the API request completes no more
-        /// than one time. If this token matches a previous request, Amazon Bedrock ignores the
-        /// request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
-        /// idempotency</a>.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=33, Max=256)]
-        public string ClientToken
-        {
-            get { return this._clientToken; }
-            set { this._clientToken = value; }
-        }
-
-        // Check to see if ClientToken property is set
-        internal bool IsSetClientToken()
-        {
-            return this._clientToken != null;
-        }
 
         /// <summary>
         /// Gets and sets the property DataSourceId. 
         /// <para>
-        /// The unique identifier of the data source you want to ingest into your knowledge base.
+        /// The unique identifier of the data source for the data ingestion job you want to stop.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -83,28 +60,29 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description. 
+        /// Gets and sets the property IngestionJobId. 
         /// <para>
-        /// A description of the data ingestion job.
+        /// The unique identifier of the data ingestion job you want to stop.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=200)]
-        public string Description
+        [AWSProperty(Required=true)]
+        public string IngestionJobId
         {
-            get { return this._description; }
-            set { this._description = value; }
+            get { return this._ingestionJobId; }
+            set { this._ingestionJobId = value; }
         }
 
-        // Check to see if Description property is set
-        internal bool IsSetDescription()
+        // Check to see if IngestionJobId property is set
+        internal bool IsSetIngestionJobId()
         {
-            return this._description != null;
+            return this._ingestionJobId != null;
         }
 
         /// <summary>
         /// Gets and sets the property KnowledgeBaseId. 
         /// <para>
-        /// The unique identifier of the knowledge base for the data ingestion job.
+        /// The unique identifier of the knowledge base for the data ingestion job you want to
+        /// stop.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

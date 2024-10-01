@@ -31,7 +31,8 @@ namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the ListIngestionJobs operation.
-    /// Lists the ingestion jobs for a data source and information about each of them.
+    /// Lists the data ingestion jobs for a data source. The list also includes information
+    /// about each job.
     /// </summary>
     public partial class ListIngestionJobsRequest : AmazonBedrockAgentRequest
     {
@@ -45,7 +46,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property DataSourceId. 
         /// <para>
-        /// The unique identifier of the data source for which to return ingestion jobs.
+        /// The unique identifier of the data source for the list of data ingestion jobs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -64,7 +65,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Contains a definition of a filter for which to filter the results.
+        /// Contains information about the filters for filtering the data.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
@@ -83,7 +84,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property KnowledgeBaseId. 
         /// <para>
-        /// The unique identifier of the knowledge base for which to return ingestion jobs.
+        /// The unique identifier of the knowledge base for the list of data ingestion jobs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -144,7 +145,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        /// Contains details about how to sort the results.
+        /// Contains details about how to sort the data.
         /// </para>
         /// </summary>
         public IngestionJobSortBy SortBy
