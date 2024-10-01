@@ -80,6 +80,22 @@ namespace Amazon.CodeArtifact.Model
         /// <para>
         ///  <c>nuget</c>: A NuGet package. 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>generic</c>: A generic package. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ruby</c>: A Ruby package. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>swift</c>: A Swift package. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>cargo</c>: A Cargo package. 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public PackageFormat PackageFormat
