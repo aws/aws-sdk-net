@@ -858,12 +858,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVSRealTime.Model.Video.Height</property>
-    <min>1</min>
+    <min>2</min>
     <max>1920</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVSRealTime.Model.Video.Width</property>
-    <min>1</min>
+    <min>2</min>
     <max>1920</max>
   </property-value-rule>
 </property-value-rules>
