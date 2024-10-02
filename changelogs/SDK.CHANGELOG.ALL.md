@@ -1,3 +1,26 @@
+### 3.7.897.0 (2024-10-02 18:29 UTC)
+* AppStream (3.7.403.0)
+	* Added support for Automatic Time Zone Redirection on Amazon AppStream 2.0
+* B2bi (3.7.401.0)
+	* Added and updated APIs to support outbound EDI transformations
+* BedrockAgentRuntime (3.7.405.0)
+	* Added raw model response and usage metrics to PreProcessing and PostProcessing Trace
+* BedrockRuntime (3.7.404.0)
+	* Added new fields to Amazon Bedrock Guardrails trace
+* IoTDeviceAdvisor (3.7.401.0)
+	* Add clientToken attribute and implement idempotency for CreateSuiteDefinition.
+* IVSRealTime (3.7.402.0)
+	* Adds new Stage Health EventErrorCodes applicable to RTMP(S) broadcasts. Bug Fix: Enforces that EncoderConfiguration Video height and width must be even-number values.
+* S3 (3.7.404.0)
+	* This release introduces a header representing the minimum object size limit for Lifecycle transitions.
+* SageMaker (3.7.411.0)
+	* releasing builtinlcc to public
+* WorkSpaces (3.7.403.6)
+	* WSP is being rebranded to become DCV.
+* Core 3.7.400.28
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.896.0 (2024-10-01 18:32 UTC)
 * BedrockAgent (3.7.405.0)
 	* This release adds support to stop an ongoing ingestion job using the StopIngestionJob API in Agents for Amazon Bedrock.

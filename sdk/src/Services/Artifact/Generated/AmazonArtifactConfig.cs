@@ -32,7 +32,7 @@ namespace Amazon.Artifact
     public partial class AmazonArtifactConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Artifact", "3.7.400.27");
+            InternalSDKUtils.BuildUserAgentString("Artifact", "3.7.400.28");
 
         private string _userAgent = UserAgentString;
         ///<summary>

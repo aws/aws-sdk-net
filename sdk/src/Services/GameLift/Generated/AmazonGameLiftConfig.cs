@@ -32,7 +32,7 @@ namespace Amazon.GameLift
     public partial class AmazonGameLiftConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("GameLift", "3.7.401.12");
+            InternalSDKUtils.BuildUserAgentString("GameLift", "3.7.401.13");
 
         private string _userAgent = UserAgentString;
         ///<summary>
