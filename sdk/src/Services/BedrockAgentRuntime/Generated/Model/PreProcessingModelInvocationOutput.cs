@@ -34,8 +34,26 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// </summary>
     public partial class PreProcessingModelInvocationOutput
     {
+        private Metadata _metadata;
         private PreProcessingParsedResponse _parsedResponse;
+        private RawResponse _rawResponse;
         private string _traceId;
+
+        /// <summary>
+        /// Gets and sets the property Metadata.
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public Metadata Metadata
+        {
+            get { return this._metadata; }
+            set { this._metadata = value; }
+        }
+
+        // Check to see if Metadata property is set
+        internal bool IsSetMetadata()
+        {
+            return this._metadata != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ParsedResponse. 
@@ -55,6 +73,22 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetParsedResponse()
         {
             return this._parsedResponse != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RawResponse.
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public RawResponse RawResponse
+        {
+            get { return this._rawResponse; }
+            set { this._rawResponse = value; }
+        }
+
+        // Check to see if RawResponse property is set
+        internal bool IsSetRawResponse()
+        {
+            return this._rawResponse != null;
         }
 
         /// <summary>
