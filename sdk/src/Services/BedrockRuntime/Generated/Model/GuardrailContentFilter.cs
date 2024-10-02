@@ -36,6 +36,7 @@ namespace Amazon.BedrockRuntime.Model
     {
         private GuardrailContentPolicyAction _action;
         private GuardrailContentFilterConfidence _confidence;
+        private GuardrailContentFilterStrength _filterStrength;
         private GuardrailContentFilterType _type;
 
         /// <summary>
@@ -74,6 +75,24 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetConfidence()
         {
             return this._confidence != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FilterStrength. 
+        /// <para>
+        /// The filter strength setting for the guardrail content filter.
+        /// </para>
+        /// </summary>
+        public GuardrailContentFilterStrength FilterStrength
+        {
+            get { return this._filterStrength; }
+            set { this._filterStrength = value; }
+        }
+
+        // Check to see if FilterStrength property is set
+        internal bool IsSetFilterStrength()
+        {
+            return this._filterStrength != null;
         }
 
         /// <summary>

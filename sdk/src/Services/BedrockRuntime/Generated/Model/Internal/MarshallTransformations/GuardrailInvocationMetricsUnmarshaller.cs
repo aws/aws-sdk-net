@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GuardrailContentFilter Object
+    /// Response Unmarshaller for GuardrailInvocationMetrics Object
     /// </summary>  
-    public class GuardrailContentFilterUnmarshaller : IUnmarshaller<GuardrailContentFilter, XmlUnmarshallerContext>, IUnmarshaller<GuardrailContentFilter, JsonUnmarshallerContext>
+    public class GuardrailInvocationMetricsUnmarshaller : IUnmarshaller<GuardrailInvocationMetrics, XmlUnmarshallerContext>, IUnmarshaller<GuardrailInvocationMetrics, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        GuardrailContentFilter IUnmarshaller<GuardrailContentFilter, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        GuardrailInvocationMetrics IUnmarshaller<GuardrailInvocationMetrics, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public GuardrailContentFilter Unmarshall(JsonUnmarshallerContext context)
+        public GuardrailInvocationMetrics Unmarshall(JsonUnmarshallerContext context)
         {
-            GuardrailContentFilter unmarshalledObject = new GuardrailContentFilter();
+            GuardrailInvocationMetrics unmarshalledObject = new GuardrailInvocationMetrics();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,22 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("action", targetDepth))
+                if (context.TestExpression("guardrailCoverage", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Action = unmarshaller.Unmarshall(context);
+                    var unmarshaller = GuardrailCoverageUnmarshaller.Instance;
+                    unmarshalledObject.GuardrailCoverage = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("confidence", targetDepth))
+                if (context.TestExpression("guardrailProcessingLatency", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Confidence = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.GuardrailProcessingLatency = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("filterStrength", targetDepth))
+                if (context.TestExpression("usage", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FilterStrength = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    var unmarshaller = GuardrailUsageUnmarshaller.Instance;
+                    unmarshalledObject.Usage = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +89,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static GuardrailContentFilterUnmarshaller _instance = new GuardrailContentFilterUnmarshaller();        
+        private static GuardrailInvocationMetricsUnmarshaller _instance = new GuardrailInvocationMetricsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GuardrailContentFilterUnmarshaller Instance
+        public static GuardrailInvocationMetricsUnmarshaller Instance
         {
             get
             {

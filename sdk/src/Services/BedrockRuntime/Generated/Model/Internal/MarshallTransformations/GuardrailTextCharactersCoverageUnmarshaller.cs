@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GuardrailContentFilter Object
+    /// Response Unmarshaller for GuardrailTextCharactersCoverage Object
     /// </summary>  
-    public class GuardrailContentFilterUnmarshaller : IUnmarshaller<GuardrailContentFilter, XmlUnmarshallerContext>, IUnmarshaller<GuardrailContentFilter, JsonUnmarshallerContext>
+    public class GuardrailTextCharactersCoverageUnmarshaller : IUnmarshaller<GuardrailTextCharactersCoverage, XmlUnmarshallerContext>, IUnmarshaller<GuardrailTextCharactersCoverage, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        GuardrailContentFilter IUnmarshaller<GuardrailContentFilter, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        GuardrailTextCharactersCoverage IUnmarshaller<GuardrailTextCharactersCoverage, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public GuardrailContentFilter Unmarshall(JsonUnmarshallerContext context)
+        public GuardrailTextCharactersCoverage Unmarshall(JsonUnmarshallerContext context)
         {
-            GuardrailContentFilter unmarshalledObject = new GuardrailContentFilter();
+            GuardrailTextCharactersCoverage unmarshalledObject = new GuardrailTextCharactersCoverage();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,16 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("action", targetDepth))
+                if (context.TestExpression("guarded", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Action = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Guarded = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("confidence", targetDepth))
+                if (context.TestExpression("total", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Confidence = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("filterStrength", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FilterStrength = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Total = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +83,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static GuardrailContentFilterUnmarshaller _instance = new GuardrailContentFilterUnmarshaller();        
+        private static GuardrailTextCharactersCoverageUnmarshaller _instance = new GuardrailTextCharactersCoverageUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GuardrailContentFilterUnmarshaller Instance
+        public static GuardrailTextCharactersCoverageUnmarshaller Instance
         {
             get
             {
