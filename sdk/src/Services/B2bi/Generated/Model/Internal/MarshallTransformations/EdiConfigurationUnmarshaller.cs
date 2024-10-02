@@ -66,6 +66,12 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("capabilityDirection", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CapabilityDirection = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("inputLocation", targetDepth))
                 {
                     var unmarshaller = S3LocationUnmarshaller.Instance;

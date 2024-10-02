@@ -131,6 +131,29 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
             #endregion
         }
 
+        public void B2biCreateStarterMappingTemplate()
+        {
+            #region example-1
+
+            var client = new AmazonB2biClient();
+            var response = client.CreateStarterMappingTemplate(new CreateStarterMappingTemplateRequest 
+            {
+                MappingType = "JSONATA",
+                OutputSampleLocation = new S3Location {
+                    Key = "output-sample-key",
+                    BucketName = "output-sample-bucket"
+                },
+                TemplateDetails = new TemplateDetails { X12 = new X12Details {
+                    Version = "VERSION_4010",
+                    TransactionSet = "X12_110"
+                } }
+            });
+
+            string mappingTemplate = response.MappingTemplate;
+
+            #endregion
+        }
+
         public void B2biCreateTransformer()
         {
             #region example-1
@@ -138,15 +161,25 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
             var client = new AmazonB2biClient();
             var response = client.CreateTransformer(new CreateTransformerRequest 
             {
-                Name = "transformJSON",
+                Name = "transformX12",
                 ClientToken = "foo",
-                EdiType = new EdiType { X12Details = new X12Details {
-                    Version = "VERSION_4010",
-                    TransactionSet = "X12_110"
-                } },
-                FileFormat = "JSON",
-                MappingTemplate = "{}",
-                SampleDocument = "s3://test-bucket/sampleDoc.txt",
+                InputConversion = new InputConversion {
+                    FormatOptions = new FormatOptions { X12 = new X12Details {
+                        Version = "VERSION_4010",
+                        TransactionSet = "X12_110"
+                    } },
+                    FromFormat = "X12"
+                },
+                Mapping = new Mapping {
+                    Template = "{}",
+                    TemplateLanguage = "JSONATA"
+                },
+                SampleDocuments = new SampleDocuments {
+                    BucketName = "test-bucket",
+                    Keys = new List<SampleDocumentKeys> {
+                        new SampleDocumentKeys { Input = "sampleDoc.txt" }
+                    }
+                },
                 Tags = new List<Tag> {
                     new Tag {
                         Key = "sampleKey",
@@ -157,10 +190,9 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
 
             string name = response.Name;
             DateTime createdAt = response.CreatedAt;
-            EdiType ediType = response.EdiType;
-            string fileFormat = response.FileFormat;
-            string mappingTemplate = response.MappingTemplate;
-            string sampleDocument = response.SampleDocument;
+            InputConversion inputConversion = response.InputConversion;
+            Mapping mapping = response.Mapping;
+            SampleDocuments sampleDocuments = response.SampleDocuments;
             string status = response.Status;
             string transformerArn = response.TransformerArn;
             string transformerId = response.TransformerId;
@@ -305,11 +337,9 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
 
             string name = response.Name;
             DateTime createdAt = response.CreatedAt;
-            EdiType ediType = response.EdiType;
-            string fileFormat = response.FileFormat;
-            string mappingTemplate = response.MappingTemplate;
-            DateTime modifiedAt = response.ModifiedAt;
-            string sampleDocument = response.SampleDocument;
+            InputConversion inputConversion = response.InputConversion;
+            Mapping mapping = response.Mapping;
+            SampleDocuments sampleDocuments = response.SampleDocuments;
             string status = response.Status;
             string transformerArn = response.TransformerArn;
             string transformerId = response.TransformerId;
@@ -459,6 +489,32 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
                 }
             });
 
+
+            #endregion
+        }
+
+        public void B2biTestConversion()
+        {
+            #region example-1
+
+            var client = new AmazonB2biClient();
+            var response = client.TestConversion(new TestConversionRequest 
+            {
+                Source = new ConversionSource {
+                    FileFormat = "JSON",
+                    InputFile = new InputFileSource { FileContent = "Sample file content" }
+                },
+                Target = new ConversionTarget {
+                    FileFormat = "X12",
+                    FormatDetails = new ConversionTargetFormatDetails { X12 = new X12Details {
+                        Version = "VERSION_4010",
+                        TransactionSet = "X12_110"
+                    } }
+                }
+            });
+
+            string convertedFileContent = response.ConvertedFileContent;
+            List<string> validationMessages = response.ValidationMessages;
 
             #endregion
         }
@@ -627,25 +683,34 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
             var client = new AmazonB2biClient();
             var response = client.UpdateTransformer(new UpdateTransformerRequest 
             {
-                Name = "transformJSON",
-                EdiType = new EdiType { X12Details = new X12Details {
-                    Version = "VERSION_4010",
-                    TransactionSet = "X12_110"
-                } },
-                FileFormat = "JSON",
-                MappingTemplate = "{}",
-                SampleDocument = "s3://test-bucket/sampleDoc.txt",
+                Name = "transformX12",
+                InputConversion = new InputConversion {
+                    FormatOptions = new FormatOptions { X12 = new X12Details {
+                        Version = "VERSION_4010",
+                        TransactionSet = "X12_110"
+                    } },
+                    FromFormat = "X12"
+                },
+                Mapping = new Mapping {
+                    Template = "{}",
+                    TemplateLanguage = "JSONATA"
+                },
+                SampleDocuments = new SampleDocuments {
+                    BucketName = "test-bucket",
+                    Keys = new List<SampleDocumentKeys> {
+                        new SampleDocumentKeys { Input = "sampleDoc.txt" }
+                    }
+                },
                 Status = "inactive",
                 TransformerId = "tr-974c129999f84d8c9"
             });
 
             string name = response.Name;
             DateTime createdAt = response.CreatedAt;
-            EdiType ediType = response.EdiType;
-            string fileFormat = response.FileFormat;
-            string mappingTemplate = response.MappingTemplate;
+            InputConversion inputConversion = response.InputConversion;
+            Mapping mapping = response.Mapping;
             DateTime modifiedAt = response.ModifiedAt;
-            string sampleDocument = response.SampleDocument;
+            SampleDocuments sampleDocuments = response.SampleDocuments;
             string status = response.Status;
             string transformerArn = response.TransformerArn;
             string transformerId = response.TransformerId;

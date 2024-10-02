@@ -48,6 +48,12 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCapabilityDirection())
+            {
+                context.Writer.WritePropertyName("capabilityDirection");
+                context.Writer.Write(requestObject.CapabilityDirection);
+            }
+
             if(requestObject.IsSetInputLocation())
             {
                 context.Writer.WritePropertyName("inputLocation");

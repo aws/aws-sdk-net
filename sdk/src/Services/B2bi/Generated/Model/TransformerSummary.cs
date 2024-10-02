@@ -30,18 +30,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.B2bi.Model
 {
     /// <summary>
-    /// Contains the details for a transformer object. A transformer describes how to process
-    /// the incoming EDI documents and extract the necessary information to the output file.
+    /// Contains the details for a transformer object. A transformer can take an EDI file
+    /// as input and transform it into a JSON-or XML-formatted document. Alternatively, a
+    /// transformer can take a JSON-or XML-formatted document as input and transform it into
+    /// an EDI file.
     /// </summary>
     public partial class TransformerSummary
     {
         private DateTime? _createdAt;
         private EdiType _ediType;
         private FileFormat _fileFormat;
+        private InputConversion _inputConversion;
+        private Mapping _mapping;
         private string _mappingTemplate;
         private DateTime? _modifiedAt;
         private string _name;
+        private OutputConversion _outputConversion;
         private string _sampleDocument;
+        private SampleDocuments _sampleDocuments;
         private TransformerStatus _status;
         private string _transformerId;
 
@@ -72,7 +78,7 @@ namespace Amazon.B2bi.Model
         /// specific business documents.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [Obsolete("This is a legacy trait. Please use input-conversion or output-conversion.")]
         public EdiType EdiType
         {
             get { return this._ediType; }
@@ -92,7 +98,7 @@ namespace Amazon.B2bi.Model
         /// and <c>XML</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [Obsolete("This is a legacy trait. Please use input-conversion or output-conversion.")]
         public FileFormat FileFormat
         {
             get { return this._fileFormat; }
@@ -106,13 +112,51 @@ namespace Amazon.B2bi.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InputConversion. 
+        /// <para>
+        /// Returns a structure that contains the format options for the transformation.
+        /// </para>
+        /// </summary>
+        public InputConversion InputConversion
+        {
+            get { return this._inputConversion; }
+            set { this._inputConversion = value; }
+        }
+
+        // Check to see if InputConversion property is set
+        internal bool IsSetInputConversion()
+        {
+            return this._inputConversion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Mapping. 
+        /// <para>
+        /// Returns the structure that contains the mapping template and its language (either
+        /// XSLT or JSONATA).
+        /// </para>
+        /// </summary>
+        public Mapping Mapping
+        {
+            get { return this._mapping; }
+            set { this._mapping = value; }
+        }
+
+        // Check to see if Mapping property is set
+        internal bool IsSetMapping()
+        {
+            return this._mapping != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MappingTemplate. 
         /// <para>
         /// Returns the mapping template for the transformer. This template is used to map the
         /// parsed EDI file using JSONata or XSLT.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=350000)]
+        [Obsolete("This is a legacy trait. Please use input-conversion or output-conversion.")]
+        [AWSProperty(Min=0, Max=350000)]
         public string MappingTemplate
         {
             get { return this._mappingTemplate; }
@@ -164,12 +208,32 @@ namespace Amazon.B2bi.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OutputConversion. 
+        /// <para>
+        /// Returns the <c>OutputConversion</c> object, which contains the format options for
+        /// the outbound transformation.
+        /// </para>
+        /// </summary>
+        public OutputConversion OutputConversion
+        {
+            get { return this._outputConversion; }
+            set { this._outputConversion = value; }
+        }
+
+        // Check to see if OutputConversion property is set
+        internal bool IsSetOutputConversion()
+        {
+            return this._outputConversion != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SampleDocument. 
         /// <para>
         /// Returns a sample EDI document that is used by a transformer as a guide for processing
         /// the EDI data.
         /// </para>
         /// </summary>
+        [Obsolete("This is a legacy trait. Please use input-conversion or output-conversion.")]
         [AWSProperty(Min=0, Max=1024)]
         public string SampleDocument
         {
@@ -181,6 +245,25 @@ namespace Amazon.B2bi.Model
         internal bool IsSetSampleDocument()
         {
             return this._sampleDocument != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SampleDocuments. 
+        /// <para>
+        /// Returns a structure that contains the Amazon S3 bucket and an array of the corresponding
+        /// keys used to identify the location for your sample documents.
+        /// </para>
+        /// </summary>
+        public SampleDocuments SampleDocuments
+        {
+            get { return this._sampleDocuments; }
+            set { this._sampleDocuments = value; }
+        }
+
+        // Check to see if SampleDocuments property is set
+        internal bool IsSetSampleDocuments()
+        {
+            return this._sampleDocuments != null;
         }
 
         /// <summary>

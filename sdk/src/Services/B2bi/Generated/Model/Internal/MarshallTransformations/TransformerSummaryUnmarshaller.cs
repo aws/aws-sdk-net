@@ -84,6 +84,18 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
                     unmarshalledObject.FileFormat = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("inputConversion", targetDepth))
+                {
+                    var unmarshaller = InputConversionUnmarshaller.Instance;
+                    unmarshalledObject.InputConversion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("mapping", targetDepth))
+                {
+                    var unmarshaller = MappingUnmarshaller.Instance;
+                    unmarshalledObject.Mapping = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("mappingTemplate", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -102,10 +114,22 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("outputConversion", targetDepth))
+                {
+                    var unmarshaller = OutputConversionUnmarshaller.Instance;
+                    unmarshalledObject.OutputConversion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sampleDocument", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SampleDocument = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sampleDocuments", targetDepth))
+                {
+                    var unmarshaller = SampleDocumentsUnmarshaller.Instance;
+                    unmarshalledObject.SampleDocuments = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))

@@ -34,10 +34,29 @@ namespace Amazon.B2bi.Model
     /// </summary>
     public partial class EdiConfiguration
     {
+        private CapabilityDirection _capabilityDirection;
         private S3Location _inputLocation;
         private S3Location _outputLocation;
         private string _transformerId;
         private EdiType _type;
+
+        /// <summary>
+        /// Gets and sets the property CapabilityDirection. 
+        /// <para>
+        /// Specifies whether this is capability is for inbound or outbound transformations.
+        /// </para>
+        /// </summary>
+        public CapabilityDirection CapabilityDirection
+        {
+            get { return this._capabilityDirection; }
+            set { this._capabilityDirection = value; }
+        }
+
+        // Check to see if CapabilityDirection property is set
+        internal bool IsSetCapabilityDirection()
+        {
+            return this._capabilityDirection != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InputLocation. 
