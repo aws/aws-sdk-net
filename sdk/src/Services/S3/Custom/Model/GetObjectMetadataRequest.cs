@@ -56,6 +56,9 @@ namespace Amazon.S3.Model
     /// <c>s3:GetObject</c> permission. You need the relevant read object (or version) permission
     /// for this operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions,
     /// resources, and condition keys for Amazon S3</a> in the <i>Amazon S3 User Guide</i>.
+    /// For more information about the permissions to S3 API operations by S3 resource types,
+    /// see <a href="/AmazonS3/latest/userguide/using-with-s3-policy-actions.html">Required
+    /// permissions for Amazon S3 API operations</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
     ///  
     /// <para>

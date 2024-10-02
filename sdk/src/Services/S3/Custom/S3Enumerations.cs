@@ -3079,4 +3079,52 @@ namespace Amazon.S3
             return FindValue(value);
         }
     }
+    /// <summary>
+    /// Constants used for properties of type TransitionDefaultMinimumObjectSize.
+    /// </summary>
+    public class TransitionDefaultMinimumObjectSize : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant All_storage_classes_128K for TransitionDefaultMinimumObjectSize
+        /// </summary>
+        public static readonly TransitionDefaultMinimumObjectSize AllStorageClasses128K = new TransitionDefaultMinimumObjectSize("all_storage_classes_128K");
+        /// <summary>
+        /// Constant Varies_by_storage_class for TransitionDefaultMinimumObjectSize
+        /// </summary>
+        public static readonly TransitionDefaultMinimumObjectSize VariesByStorageClass = new TransitionDefaultMinimumObjectSize("varies_by_storage_class");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TransitionDefaultMinimumObjectSize(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TransitionDefaultMinimumObjectSize FindValue(string value)
+        {
+            return FindValue<TransitionDefaultMinimumObjectSize>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TransitionDefaultMinimumObjectSize(string value)
+        {
+            return FindValue(value);
+        }
+    }
 }

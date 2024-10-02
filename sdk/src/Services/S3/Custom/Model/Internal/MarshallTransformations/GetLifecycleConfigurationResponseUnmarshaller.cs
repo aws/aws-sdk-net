@@ -57,7 +57,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             
             if (context.IsStartOfDocument) 
                targetDepth += 2;
-            
+            if (context.ResponseData.IsHeaderPresent("x-amz-transition-default-minimum-object-size"))
+                response.TransitionDefaultMinimumObjectSize = context.ResponseData.GetHeaderValue("x-amz-transition-default-minimum-object-size");
+
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)

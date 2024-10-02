@@ -41,9 +41,9 @@ namespace Amazon.S3.Model
         /// Gets and sets the property ChecksumCRC32. 
         /// <para>
         /// This header can be used as a data integrity check to verify that the data received
-        /// is the same data that was originally sent. This specifies the base64-encoded, 32-bit
-        /// CRC32 checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
-        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
+        /// is the same data that was originally sent. This header specifies the base64-encoded,
+        /// 32-bit CRC-32 checksum of the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+        /// object integrity</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
         public string ChecksumCRC32
@@ -61,7 +61,13 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ChecksumCRC32C. 
         /// <para>
-        /// The base64-encoded, 32-bit CRC32C checksum of the object.
+        /// The base64-encoded, 32-bit CRC-32C checksum of the object. This will only be present
+        /// if it was uploaded with the object. When you use an API operation on an object that
+        /// was uploaded using multipart uploads, this value may not be a direct checksum value
+        /// of the full object. Instead, it's a calculation based on the checksum values of each
+        /// individual part. For more information about how checksums are calculated with multipart
+        /// uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
+        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
         public string ChecksumCRC32C
@@ -79,7 +85,13 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ChecksumSHA1. 
         /// <para>
-        /// The base64-encoded, 160-bit SHA-1 digest of the object.
+        /// The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present
+        /// if it was uploaded with the object. When you use the API operation on an object that
+        /// was uploaded using multipart uploads, this value may not be a direct checksum value
+        /// of the full object. Instead, it's a calculation based on the checksum values of each
+        /// individual part. For more information about how checksums are calculated with multipart
+        /// uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
+        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
         public string ChecksumSHA1
@@ -97,7 +109,13 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ChecksumSHA256. 
         /// <para>
-        /// The base64-encoded, 256-bit SHA-256 digest of the object.
+        /// The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present
+        /// if it was uploaded with the object. When you use an API operation on an object that
+        /// was uploaded using multipart uploads, this value may not be a direct checksum value
+        /// of the full object. Instead, it's a calculation based on the checksum values of each
+        /// individual part. For more information about how checksums are calculated with multipart
+        /// uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums">
+        /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
         public string ChecksumSHA256
@@ -115,7 +133,8 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property PartNumber. 
         /// <para>
-        /// Part number identifying the part. This is a positive integer between 1 and 10,000.
+        /// The part number identifying the part. This value is a positive integer between 1 and
+        /// 10,000.
         /// </para>
         /// </summary>
         public int PartNumber

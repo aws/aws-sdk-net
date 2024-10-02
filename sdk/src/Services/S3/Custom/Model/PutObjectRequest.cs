@@ -1090,19 +1090,19 @@ namespace Amazon.S3.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// CRC32
+        ///  <c>CRC32</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CRC32C
+        ///  <c>CRC32C</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SHA1
+        ///  <c>SHA1</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SHA256
+        ///  <c>SHA256</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
