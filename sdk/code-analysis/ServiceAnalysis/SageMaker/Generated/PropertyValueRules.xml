@@ -1811,6 +1811,11 @@
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeAppResponse.BuiltInLifecycleConfigArn</property>
+    <max>256</max>
+    <pattern>^(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:studio-lifecycle-config/.*|None)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeAppResponse.DomainId</property>
     <max>63</max>
     <pattern>^d-(-*[a-z0-9]){1,61}</pattern>
@@ -7349,6 +7354,11 @@
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.CodeEditorAppSettings.BuiltInLifecycleConfigArn</property>
+    <max>256</max>
+    <pattern>^(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:studio-lifecycle-config/.*|None)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.CodeRepository.RepositoryUrl</property>
     <max>1024</max>
     <pattern>^https://([.\-_a-zA-Z0-9]+/?){3,1016}$</pattern>
@@ -8990,6 +9000,11 @@
     <property>Amazon.SageMaker.Model.IntegerParameterRangeSpecification.MinValue</property>
     <max>256</max>
     <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.JupyterLabAppSettings.BuiltInLifecycleConfigArn</property>
+    <max>256</max>
+    <pattern>^(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:studio-lifecycle-config/.*|None)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.KernelSpec.DisplayName</property>

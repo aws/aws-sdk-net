@@ -72,6 +72,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.AppLifecycleManagement = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("BuiltInLifecycleConfigArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BuiltInLifecycleConfigArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CustomImages", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<CustomImage, CustomImageUnmarshaller>(CustomImageUnmarshaller.Instance);
