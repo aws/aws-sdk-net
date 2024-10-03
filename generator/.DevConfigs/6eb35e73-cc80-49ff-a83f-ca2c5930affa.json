@@ -1,0 +1,9 @@
+{
+    "core": {
+      "changeLogMessages": [
+        "Updates to support building and running netstandard project core only based UnitTests from service solutions."
+      ],
+      "type": "patch",
+      "updateMinimum": true
+    }
+  }

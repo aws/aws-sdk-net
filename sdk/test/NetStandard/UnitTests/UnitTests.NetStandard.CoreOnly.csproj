@@ -1,0 +1,69 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;netcoreapp3.1;net8.0</TargetFrameworks>
+    <DefineConstants>$(DefineConstants);NETSTANDARD;AWS_ASYNC_API</DefineConstants>
+    <DebugType>portable</DebugType>
+    <AssemblyName>UnitTests.NetStandard.CoreOnly</AssemblyName>
+    <PackageId>UnitTests.NetStandard.CoreOnly</PackageId>
+    <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.1'">$(DefineConstants)</DefineConstants>
+
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+
+    <NoWarn>CS1591,CS0612,CS0618,xUnit1013,NU1701</NoWarn>
+	<TreatWarningsAsErrors>true</TreatWarningsAsErrors>	
+		<SignAssembly>true</SignAssembly>
+    <LangVersion Condition="'$(TargetFramework)' == 'netstandard2.0'">8.0</LangVersion>
+  </PropertyGroup>
+	<Choose>
+		<When Condition=" '$(AWSKeyFile)' == '' ">
+			<PropertyGroup>
+				<AssemblyOriginatorKeyFile>..\..\..\awssdk.dll.snk</AssemblyOriginatorKeyFile>
+			</PropertyGroup>
+		</When>
+		<Otherwise>
+			<PropertyGroup>
+				<AssemblyOriginatorKeyFile>$(AWSKeyFile)</AssemblyOriginatorKeyFile>
+			</PropertyGroup>
+		</Otherwise>
+	</Choose>
+  <ItemGroup>
+    <EmbeddedResource Include="sample.rsa.private.key.txt" />
+    <EmbeddedResource Include="endpoint.customization.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\Core\AWSSDK.Core.NetStandard.csproj" />    
+    <ProjectReference Include="..\Common\AWSSDK.CommonTest.NetStandard.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5" />
+    <PackageReference Include="xunit" Version="2.4.2" />
+    <PackageReference Include="Moq" Version="4.8.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="bin\**" />
+    <Compile Remove="Services\**" />
+    <None Remove="bin\**" />
+    <EmbeddedResource Remove="bin\**" />
+    <EmbeddedResource Remove="Services\**" />
+
+    <Compile Remove="obj\**" />
+    <None Remove="obj\**" />
+    <None Remove="Services\**" />
+  </ItemGroup>
+</Project>
