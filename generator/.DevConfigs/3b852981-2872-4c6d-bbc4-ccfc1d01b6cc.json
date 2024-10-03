@@ -1,0 +1,9 @@
+{
+    "core": {
+      "changeLogMessages": [
+        "fix: re-populate request property when instantiating WebServiceRequestEventArgs"
+      ],
+      "type": "patch",
+      "updateMinimum": true
+    }
+  }
