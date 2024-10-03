@@ -32507,6 +32507,76 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyInstanceCpuOptions
+
+        /// <summary>
+        /// By default, all vCPUs for the instance type are active when you launch an instance.
+        /// When you configure the number of active vCPUs for the instance, it can help you save
+        /// on licensing costs and optimize performance. The base cost of the instance remains
+        /// unchanged.
+        /// 
+        ///  
+        /// <para>
+        /// The number of active vCPUs equals the number of threads per CPU core multiplied by
+        /// the number of cores.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Some instance type options do not support this capability. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cpu-options-supported-instances-values.html">Supported
+        /// CPU options</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceCpuOptions service method.</param>
+        /// 
+        /// <returns>The response from the ModifyInstanceCpuOptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCpuOptions">REST API Reference for ModifyInstanceCpuOptions Operation</seealso>
+        public virtual ModifyInstanceCpuOptionsResponse ModifyInstanceCpuOptions(ModifyInstanceCpuOptionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyInstanceCpuOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyInstanceCpuOptionsResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyInstanceCpuOptionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyInstanceCpuOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceCpuOptions operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyInstanceCpuOptions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCpuOptions">REST API Reference for ModifyInstanceCpuOptions Operation</seealso>
+        public virtual IAsyncResult BeginModifyInstanceCpuOptions(ModifyInstanceCpuOptionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyInstanceCpuOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyInstanceCpuOptionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyInstanceCpuOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyInstanceCpuOptions.</param>
+        /// 
+        /// <returns>Returns a  ModifyInstanceCpuOptionsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCpuOptions">REST API Reference for ModifyInstanceCpuOptions Operation</seealso>
+        public virtual ModifyInstanceCpuOptionsResponse EndModifyInstanceCpuOptions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyInstanceCpuOptionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ModifyInstanceCreditSpecification
 
         /// <summary>
