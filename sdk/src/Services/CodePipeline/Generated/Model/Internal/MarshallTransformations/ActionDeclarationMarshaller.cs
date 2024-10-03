@@ -59,6 +59,17 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetCommands())
+            {
+                context.Writer.WritePropertyName("commands");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCommandsListValue in requestObject.Commands)
+                {
+                        context.Writer.Write(requestObjectCommandsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetConfiguration())
             {
                 context.Writer.WritePropertyName("configuration");
@@ -113,6 +124,17 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                     marshaller.Marshall(requestObjectOutputArtifactsListValue, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetOutputVariables())
+            {
+                context.Writer.WritePropertyName("outputVariables");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectOutputVariablesListValue in requestObject.OutputVariables)
+                {
+                        context.Writer.Write(requestObjectOutputVariablesListValue);
                 }
                 context.Writer.WriteArrayEnd();
             }

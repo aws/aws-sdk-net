@@ -48,6 +48,17 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetFiles())
+            {
+                context.Writer.WritePropertyName("files");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectFilesListValue in requestObject.Files)
+                {
+                        context.Writer.Write(requestObjectFilesListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
