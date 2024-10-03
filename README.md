@@ -566,6 +566,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* AWS Marketplace Deployment is a new service that provides essential features that facilitate the deployment of software, data, and services procured through AWS Marketplace.
 * [AWSSDK.MarketplaceEntitlementService](https://www.nuget.org/packages/AWSSDK.MarketplaceEntitlementService/)
 	* AWS Marketplace Entitlement Service enables AWS Marketplace sellers to determine the capacity purchased by their customers.
+* [AWSSDK.MarketplaceReporting](https://www.nuget.org/packages/AWSSDK.MarketplaceReporting/)
+	* The AWS Marketplace Reporting service introduces the GetBuyerDashboard API. This API returns a dashboard that provides visibility into your organization's AWS Marketplace agreements and associated spend across the AWS accounts in your organization.
 * [AWSSDK.MediaConnect](https://www.nuget.org/packages/AWSSDK.MediaConnect/)
 	* This is the initial release for AWS Elemental MediaConnect, an ingest and transport service for live video. This new AWS service allows broadcasters and content owners to send high-value live content into the cloud, securely transmit it to partners for distribution, and replicate it to multiple destinations around the globe.
 * [AWSSDK.MediaConvert](https://www.nuget.org/packages/AWSSDK.MediaConvert/)

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-16"?>
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.MarketplaceReporting.Model.GetBuyerDashboardRequest.DashboardIdentifier</property>
+    <min>1</min>
+    <max>1023</max>
+    <pattern>arn:aws:aws-marketplace::[0-9]{12}:AWSMarketplace/ReportingData/(Agreement_V1/Dashboard/AgreementSummary_V1|BillingEvent_V1/Dashboard/CostAnalysis_V1)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceReporting.Model.GetBuyerDashboardResponse.DashboardIdentifier</property>
+    <min>1</min>
+    <max>1023</max>
+    <pattern>arn:aws:aws-marketplace::[0-9]{12}:AWSMarketplace/ReportingData/(Agreement_V1/Dashboard/AgreementSummary_V1|BillingEvent_V1/Dashboard/CostAnalysis_V1)</pattern>
+  </property-value-rule>
+</property-value-rules>
