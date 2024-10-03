@@ -236,7 +236,7 @@ namespace Amazon.Connect.Model
         /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=3)]
+        [AWSProperty(Max=4)]
         public List<string> Groupings
         {
             get { return this._groupings; }
