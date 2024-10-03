@@ -30,25 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// A specific package version artifact associated with a software package version.
+    /// An object that speciﬁes the client certificate conﬁguration for a domain.
     /// </summary>
-    public partial class PackageVersionArtifact
+    public partial class ClientCertificateConfig
     {
-        private S3Location _s3Location;
+        private string _clientCertificateCallbackArn;
 
         /// <summary>
-        /// Gets and sets the property S3Location.
+        /// Gets and sets the property ClientCertificateCallbackArn. 
+        /// <para>
+        /// The ARN of the Lambda function that IoT invokes after mutual TLS authentication during
+        /// the connection.
+        /// </para>
         /// </summary>
-        public S3Location S3Location
+        [AWSProperty(Max=2048)]
+        public string ClientCertificateCallbackArn
         {
-            get { return this._s3Location; }
-            set { this._s3Location = value; }
+            get { return this._clientCertificateCallbackArn; }
+            set { this._clientCertificateCallbackArn = value; }
         }
 
-        // Check to see if S3Location property is set
-        internal bool IsSetS3Location()
+        // Check to see if ClientCertificateCallbackArn property is set
+        internal bool IsSetClientCertificateCallbackArn()
         {
-            return this._s3Location != null;
+            return this._clientCertificateCallbackArn != null;
         }
 
     }

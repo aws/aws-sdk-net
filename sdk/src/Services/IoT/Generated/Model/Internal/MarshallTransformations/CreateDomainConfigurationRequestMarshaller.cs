@@ -70,6 +70,18 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetApplicationProtocol())
+                {
+                    context.Writer.WritePropertyName("applicationProtocol");
+                    context.Writer.Write(publicRequest.ApplicationProtocol);
+                }
+
+                if(publicRequest.IsSetAuthenticationType())
+                {
+                    context.Writer.WritePropertyName("authenticationType");
+                    context.Writer.Write(publicRequest.AuthenticationType);
+                }
+
                 if(publicRequest.IsSetAuthorizerConfig())
                 {
                     context.Writer.WritePropertyName("authorizerConfig");
@@ -77,6 +89,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
                     var marshaller = AuthorizerConfigMarshaller.Instance;
                     marshaller.Marshall(publicRequest.AuthorizerConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetClientCertificateConfig())
+                {
+                    context.Writer.WritePropertyName("clientCertificateConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ClientCertificateConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ClientCertificateConfig, context);
 
                     context.Writer.WriteObjectEnd();
                 }

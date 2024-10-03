@@ -481,7 +481,8 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Associates a software bill of materials (SBOM) with a specific software package version.
+        /// Associates the selected software bill of materials (SBOM) with a specific software
+        /// package version.
         /// 
         ///  
         /// <para>
@@ -1590,7 +1591,10 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Creates a billing group.
+        /// Creates a billing group. If this call is made multiple times using the same billing
+        /// group name and configuration, the call will succeed. If this call is made with the
+        /// same billing group name but different configuration a <c>ResourceAlreadyExistsException</c>
+        /// is thrown.
         /// 
         ///  
         /// <para>
@@ -3360,6 +3364,16 @@ namespace Amazon.IoT
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateRoleAlias</a>
         /// action.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// The value of <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CreateRoleAlias.html#iot-CreateRoleAlias-request-credentialDurationSeconds">
+        /// <c>credentialDurationSeconds</c> </a> must be less than or equal to the maximum session
+        /// duration of the IAM role that the role alias references. For more information, see
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-managingrole-editing-api.html#roles-modify_max-session-duration-api">
+        /// Modifying a role maximum session duration (Amazon Web Services API)</a> from the Amazon
+        /// Web Services Identity and Access Management User Guide.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRoleAlias service method.</param>
         /// <param name="cancellationToken">
@@ -3718,7 +3732,10 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Creates a new thing type.
+        /// Creates a new thing type. If this call is made multiple times using the same thing
+        /// type name and configuration, the call will succeed. If this call is made with the
+        /// same thing type name but different configuration a <c>ResourceAlreadyExistsException</c>
+        /// is thrown. 
         /// 
         ///  
         /// <para>
@@ -8525,8 +8542,8 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Disassociates a software bill of materials (SBOM) from a specific software package
-        /// version.
+        /// Disassociates the selected software bill of materials (SBOM) from a specific software
+        /// package version.
         /// 
         ///  
         /// <para>
@@ -16358,6 +16375,16 @@ namespace Amazon.IoT
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateRoleAlias</a>
         /// action.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// The value of <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateRoleAlias.html#iot-UpdateRoleAlias-request-credentialDurationSeconds">
+        /// <c>credentialDurationSeconds</c> </a> must be less than or equal to the maximum session
+        /// duration of the IAM role that the role alias references. For more information, see
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-managingrole-editing-api.html#roles-modify_max-session-duration-api">
+        /// Modifying a role maximum session duration (Amazon Web Services API)</a> from the Amazon
+        /// Web Services Identity and Access Management User Guide.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRoleAlias service method.</param>
         /// <param name="cancellationToken">

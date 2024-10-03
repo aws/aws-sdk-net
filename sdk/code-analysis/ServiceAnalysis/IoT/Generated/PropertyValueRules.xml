@@ -3464,6 +3464,11 @@
     <pattern>[\w=,@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.ClientCertificateConfig.ClientCertificateCallbackArn</property>
+    <max>2048</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.DetectMitigationActionExecution.ActionName</property>
     <max>128</max>
     <pattern>[a-zA-Z0-9_-]+</pattern>

@@ -31,7 +31,8 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateSbomWithPackageVersion operation.
-    /// Associates a software bill of materials (SBOM) with a specific software package version.
+    /// Associates the selected software bill of materials (SBOM) with a specific software
+    /// package version.
     /// 
     ///  
     /// <para>
