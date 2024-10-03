@@ -40,6 +40,7 @@ namespace Amazon.MediaPackageV2.Model
         private int? _manifestWindowSeconds;
         private int? _programDateTimeIntervalSeconds;
         private ScteHls _scteHls;
+        private StartTag _startTag;
 
         /// <summary>
         /// Gets and sets the property ChildManifestName. 
@@ -163,6 +164,21 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetScteHls()
         {
             return this._scteHls != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartTag.
+        /// </summary>
+        public StartTag StartTag
+        {
+            get { return this._startTag; }
+            set { this._startTag = value; }
+        }
+
+        // Check to see if StartTag property is set
+        internal bool IsSetStartTag()
+        {
+            return this._startTag != null;
         }
 
     }

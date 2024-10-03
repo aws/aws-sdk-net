@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// FilterConfiguration Marshaller
+    /// StartTag Marshaller
     /// </summary>
-    public class FilterConfigurationMarshaller : IRequestMarshaller<FilterConfiguration, JsonMarshallerContext> 
+    public class StartTagMarshaller : IRequestMarshaller<StartTag, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,38 +44,27 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(FilterConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(StartTag requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetClipStartTime())
+            if(requestObject.IsSetPrecise())
             {
-                context.Writer.WritePropertyName("ClipStartTime");
-                context.Writer.Write(requestObject.ClipStartTime);
+                context.Writer.WritePropertyName("Precise");
+                context.Writer.Write(requestObject.Precise);
             }
 
-            if(requestObject.IsSetEnd())
+            if(requestObject.IsSetTimeOffset())
             {
-                context.Writer.WritePropertyName("End");
-                context.Writer.Write(requestObject.End);
-            }
-
-            if(requestObject.IsSetManifestFilter())
-            {
-                context.Writer.WritePropertyName("ManifestFilter");
-                context.Writer.Write(requestObject.ManifestFilter);
-            }
-
-            if(requestObject.IsSetStart())
-            {
-                context.Writer.WritePropertyName("Start");
-                context.Writer.Write(requestObject.Start);
-            }
-
-            if(requestObject.IsSetTimeDelaySeconds())
-            {
-                context.Writer.WritePropertyName("TimeDelaySeconds");
-                context.Writer.Write(requestObject.TimeDelaySeconds);
+                context.Writer.WritePropertyName("TimeOffset");
+                if(StringUtils.IsSpecialFloatValue(requestObject.TimeOffset))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.TimeOffset));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.TimeOffset);
+                }
             }
 
         }
@@ -83,7 +72,7 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static FilterConfigurationMarshaller Instance = new FilterConfigurationMarshaller();
+        public readonly static StartTagMarshaller Instance = new StartTagMarshaller();
 
     }
 }

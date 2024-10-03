@@ -1001,6 +1001,10 @@ namespace Amazon.MediaPackageV2
         /// </summary>
         public static readonly ValidationExceptionType CENC_IV_INCOMPATIBLE = new ValidationExceptionType("CENC_IV_INCOMPATIBLE");
         /// <summary>
+        /// Constant CLIP_START_TIME_WITH_START_OR_END for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType CLIP_START_TIME_WITH_START_OR_END = new ValidationExceptionType("CLIP_START_TIME_WITH_START_OR_END");
+        /// <summary>
         /// Constant CONTAINER_TYPE_IMMUTABLE for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType CONTAINER_TYPE_IMMUTABLE = new ValidationExceptionType("CONTAINER_TYPE_IMMUTABLE");
@@ -1136,6 +1140,10 @@ namespace Amazon.MediaPackageV2
         /// Constant SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY = new ValidationExceptionType("SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY");
+        /// <summary>
+        /// Constant START_TAG_TIME_OFFSET_INVALID for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType START_TAG_TIME_OFFSET_INVALID = new ValidationExceptionType("START_TAG_TIME_OFFSET_INVALID");
         /// <summary>
         /// Constant TIMING_SOURCE_MISSING for ValidationExceptionType
         /// </summary>

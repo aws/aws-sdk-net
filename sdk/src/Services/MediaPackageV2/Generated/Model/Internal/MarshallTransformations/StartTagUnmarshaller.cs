@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FilterConfiguration Object
+    /// Response Unmarshaller for StartTag Object
     /// </summary>  
-    public class FilterConfigurationUnmarshaller : IUnmarshaller<FilterConfiguration, XmlUnmarshallerContext>, IUnmarshaller<FilterConfiguration, JsonUnmarshallerContext>
+    public class StartTagUnmarshaller : IUnmarshaller<StartTag, XmlUnmarshallerContext>, IUnmarshaller<StartTag, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        FilterConfiguration IUnmarshaller<FilterConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        StartTag IUnmarshaller<StartTag, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public FilterConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public StartTag Unmarshall(JsonUnmarshallerContext context)
         {
-            FilterConfiguration unmarshalledObject = new FilterConfiguration();
+            StartTag unmarshalledObject = new StartTag();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,16 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ClipStartTime", targetDepth))
+                if (context.TestExpression("Precise", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ClipStartTime = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Precise = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("End", targetDepth))
+                if (context.TestExpression("TimeOffset", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.End = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ManifestFilter", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ManifestFilter = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Start", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.Start = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TimeDelaySeconds", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.TimeDelaySeconds = unmarshaller.Unmarshall(context);
+                    var unmarshaller = FloatUnmarshaller.Instance;
+                    unmarshalledObject.TimeOffset = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +83,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static FilterConfigurationUnmarshaller _instance = new FilterConfigurationUnmarshaller();        
+        private static StartTagUnmarshaller _instance = new StartTagUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FilterConfigurationUnmarshaller Instance
+        public static StartTagUnmarshaller Instance
         {
             get
             {
