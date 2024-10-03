@@ -1,3 +1,22 @@
+### 3.7.898.0 (2024-10-03 18:21 UTC)
+* CodePipeline (3.7.402.0)
+	* AWS CodePipeline introduces Commands action that enables you to easily run shell commands as part of your pipeline execution.
+* Connect (3.7.406.0)
+	* Public GetMetricDataV2 Grouping increase from 3 to 4
+* EC2 (3.7.407.0)
+	* This release includes a new API for modifying instance cpu-options after launch.
+* IoT (3.7.402.0)
+	* This release adds support for Custom Authentication with X.509 Client Certificates, support for Custom Client Certificate validation, and support for selecting application protocol and authentication type without requiring TLS ALPN for customer's AWS IoT Domain Configurations.
+* MarketplaceReporting (3.7.400.0)
+	* The AWS Marketplace Reporting service introduces the GetBuyerDashboard API. This API returns a dashboard that provides visibility into your organization's AWS Marketplace agreements and associated spend across the AWS accounts in your organization.
+* MediaPackageV2 (3.7.401.0)
+	* Added support for ClipStartTime on the FilterConfiguration object on OriginEndpoint manifest settings objects. Added support for EXT-X-START tags on produced HLS child playlists.
+* QuickSight (3.7.406.0)
+	* QuickSight: Add support for exporting and importing folders in AssetBundle APIs
+* Core 3.7.400.29
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.897.0 (2024-10-02 18:29 UTC)
 * AppStream (3.7.403.0)
 	* Added support for Automatic Time Zone Redirection on Amazon AppStream 2.0
