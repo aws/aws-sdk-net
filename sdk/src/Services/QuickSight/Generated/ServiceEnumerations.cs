@@ -897,6 +897,56 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type AssetBundleExportJobFolderPropertyToOverride.
+    /// </summary>
+    public class AssetBundleExportJobFolderPropertyToOverride : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Name for AssetBundleExportJobFolderPropertyToOverride
+        /// </summary>
+        public static readonly AssetBundleExportJobFolderPropertyToOverride Name = new AssetBundleExportJobFolderPropertyToOverride("Name");
+        /// <summary>
+        /// Constant ParentFolderArn for AssetBundleExportJobFolderPropertyToOverride
+        /// </summary>
+        public static readonly AssetBundleExportJobFolderPropertyToOverride ParentFolderArn = new AssetBundleExportJobFolderPropertyToOverride("ParentFolderArn");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssetBundleExportJobFolderPropertyToOverride(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssetBundleExportJobFolderPropertyToOverride FindValue(string value)
+        {
+            return FindValue<AssetBundleExportJobFolderPropertyToOverride>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssetBundleExportJobFolderPropertyToOverride(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AssetBundleExportJobRefreshSchedulePropertyToOverride.
     /// </summary>
     public class AssetBundleExportJobRefreshSchedulePropertyToOverride : ConstantClass
@@ -5634,6 +5684,60 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator IdentityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IncludeFolderMembers.
+    /// </summary>
+    public class IncludeFolderMembers : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for IncludeFolderMembers
+        /// </summary>
+        public static readonly IncludeFolderMembers NONE = new IncludeFolderMembers("NONE");
+        /// <summary>
+        /// Constant ONE_LEVEL for IncludeFolderMembers
+        /// </summary>
+        public static readonly IncludeFolderMembers ONE_LEVEL = new IncludeFolderMembers("ONE_LEVEL");
+        /// <summary>
+        /// Constant RECURSE for IncludeFolderMembers
+        /// </summary>
+        public static readonly IncludeFolderMembers RECURSE = new IncludeFolderMembers("RECURSE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IncludeFolderMembers(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IncludeFolderMembers FindValue(string value)
+        {
+            return FindValue<IncludeFolderMembers>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IncludeFolderMembers(string value)
         {
             return FindValue(value);
         }

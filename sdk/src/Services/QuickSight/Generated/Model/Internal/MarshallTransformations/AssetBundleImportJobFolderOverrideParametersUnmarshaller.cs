@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TopicDetails Object
+    /// Response Unmarshaller for AssetBundleImportJobFolderOverrideParameters Object
     /// </summary>  
-    public class TopicDetailsUnmarshaller : IUnmarshaller<TopicDetails, XmlUnmarshallerContext>, IUnmarshaller<TopicDetails, JsonUnmarshallerContext>
+    public class AssetBundleImportJobFolderOverrideParametersUnmarshaller : IUnmarshaller<AssetBundleImportJobFolderOverrideParameters, XmlUnmarshallerContext>, IUnmarshaller<AssetBundleImportJobFolderOverrideParameters, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        TopicDetails IUnmarshaller<TopicDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AssetBundleImportJobFolderOverrideParameters IUnmarshaller<AssetBundleImportJobFolderOverrideParameters, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public TopicDetails Unmarshall(JsonUnmarshallerContext context)
+        public AssetBundleImportJobFolderOverrideParameters Unmarshall(JsonUnmarshallerContext context)
         {
-            TopicDetails unmarshalledObject = new TopicDetails();
+            AssetBundleImportJobFolderOverrideParameters unmarshalledObject = new AssetBundleImportJobFolderOverrideParameters();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,10 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ConfigOptions", targetDepth))
-                {
-                    var unmarshaller = TopicConfigOptionsUnmarshaller.Instance;
-                    unmarshalledObject.ConfigOptions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DataSets", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<DatasetMetadata, DatasetMetadataUnmarshaller>(DatasetMetadataUnmarshaller.Instance);
-                    unmarshalledObject.DataSets = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("FolderId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FolderId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Name", targetDepth))
@@ -90,10 +78,10 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("UserExperienceVersion", targetDepth))
+                if (context.TestExpression("ParentFolderArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UserExperienceVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ParentFolderArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +89,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static TopicDetailsUnmarshaller _instance = new TopicDetailsUnmarshaller();        
+        private static AssetBundleImportJobFolderOverrideParametersUnmarshaller _instance = new AssetBundleImportJobFolderOverrideParametersUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TopicDetailsUnmarshaller Instance
+        public static AssetBundleImportJobFolderOverrideParametersUnmarshaller Instance
         {
             get
             {

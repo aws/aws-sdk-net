@@ -3054,6 +3054,11 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.AssetBundleImportJobFolderOverrideParameters.Name</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.AssetBundleImportJobSummary.AssetBundleImportJobId</property>
     <min>1</min>
     <max>512</max>

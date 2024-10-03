@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TopicDetails Object
+    /// Response Unmarshaller for AssetBundleImportJobFolderOverrideTags Object
     /// </summary>  
-    public class TopicDetailsUnmarshaller : IUnmarshaller<TopicDetails, XmlUnmarshallerContext>, IUnmarshaller<TopicDetails, JsonUnmarshallerContext>
+    public class AssetBundleImportJobFolderOverrideTagsUnmarshaller : IUnmarshaller<AssetBundleImportJobFolderOverrideTags, XmlUnmarshallerContext>, IUnmarshaller<AssetBundleImportJobFolderOverrideTags, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        TopicDetails IUnmarshaller<TopicDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AssetBundleImportJobFolderOverrideTags IUnmarshaller<AssetBundleImportJobFolderOverrideTags, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public TopicDetails Unmarshall(JsonUnmarshallerContext context)
+        public AssetBundleImportJobFolderOverrideTags Unmarshall(JsonUnmarshallerContext context)
         {
-            TopicDetails unmarshalledObject = new TopicDetails();
+            AssetBundleImportJobFolderOverrideTags unmarshalledObject = new AssetBundleImportJobFolderOverrideTags();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,16 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ConfigOptions", targetDepth))
+                if (context.TestExpression("FolderIds", targetDepth))
                 {
-                    var unmarshaller = TopicConfigOptionsUnmarshaller.Instance;
-                    unmarshalledObject.ConfigOptions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.FolderIds = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DataSets", targetDepth))
+                if (context.TestExpression("Tags", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<DatasetMetadata, DatasetMetadataUnmarshaller>(DatasetMetadataUnmarshaller.Instance);
-                    unmarshalledObject.DataSets = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Description", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("UserExperienceVersion", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UserExperienceVersion = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
+                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +83,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static TopicDetailsUnmarshaller _instance = new TopicDetailsUnmarshaller();        
+        private static AssetBundleImportJobFolderOverrideTagsUnmarshaller _instance = new AssetBundleImportJobFolderOverrideTagsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TopicDetailsUnmarshaller Instance
+        public static AssetBundleImportJobFolderOverrideTagsUnmarshaller Instance
         {
             get
             {

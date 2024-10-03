@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// TopicDetails Marshaller
+    /// AssetBundleImportJobFolderOverrideParameters Marshaller
     /// </summary>
-    public class TopicDetailsMarshaller : IRequestMarshaller<TopicDetails, JsonMarshallerContext> 
+    public class AssetBundleImportJobFolderOverrideParametersMarshaller : IRequestMarshaller<AssetBundleImportJobFolderOverrideParameters, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,41 +44,14 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(TopicDetails requestObject, JsonMarshallerContext context)
+        public void Marshall(AssetBundleImportJobFolderOverrideParameters requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetConfigOptions())
+            if(requestObject.IsSetFolderId())
             {
-                context.Writer.WritePropertyName("ConfigOptions");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = TopicConfigOptionsMarshaller.Instance;
-                marshaller.Marshall(requestObject.ConfigOptions, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetDataSets())
-            {
-                context.Writer.WritePropertyName("DataSets");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectDataSetsListValue in requestObject.DataSets)
-                {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DatasetMetadataMarshaller.Instance;
-                    marshaller.Marshall(requestObjectDataSetsListValue, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-                context.Writer.WriteArrayEnd();
-            }
-
-            if(requestObject.IsSetDescription())
-            {
-                context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WritePropertyName("FolderId");
+                context.Writer.Write(requestObject.FolderId);
             }
 
             if(requestObject.IsSetName())
@@ -87,10 +60,10 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Name);
             }
 
-            if(requestObject.IsSetUserExperienceVersion())
+            if(requestObject.IsSetParentFolderArn())
             {
-                context.Writer.WritePropertyName("UserExperienceVersion");
-                context.Writer.Write(requestObject.UserExperienceVersion);
+                context.Writer.WritePropertyName("ParentFolderArn");
+                context.Writer.Write(requestObject.ParentFolderArn);
             }
 
         }
@@ -98,7 +71,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static TopicDetailsMarshaller Instance = new TopicDetailsMarshaller();
+        public readonly static AssetBundleImportJobFolderOverrideParametersMarshaller Instance = new AssetBundleImportJobFolderOverrideParametersMarshaller();
 
     }
 }

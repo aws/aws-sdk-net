@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TopicDetails Object
+    /// Response Unmarshaller for TopicConfigOptions Object
     /// </summary>  
-    public class TopicDetailsUnmarshaller : IUnmarshaller<TopicDetails, XmlUnmarshallerContext>, IUnmarshaller<TopicDetails, JsonUnmarshallerContext>
+    public class TopicConfigOptionsUnmarshaller : IUnmarshaller<TopicConfigOptions, XmlUnmarshallerContext>, IUnmarshaller<TopicConfigOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        TopicDetails IUnmarshaller<TopicDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TopicConfigOptions IUnmarshaller<TopicConfigOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public TopicDetails Unmarshall(JsonUnmarshallerContext context)
+        public TopicConfigOptions Unmarshall(JsonUnmarshallerContext context)
         {
-            TopicDetails unmarshalledObject = new TopicDetails();
+            TopicConfigOptions unmarshalledObject = new TopicConfigOptions();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,10 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ConfigOptions", targetDepth))
+                if (context.TestExpression("QBusinessInsightsEnabled", targetDepth))
                 {
-                    var unmarshaller = TopicConfigOptionsUnmarshaller.Instance;
-                    unmarshalledObject.ConfigOptions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DataSets", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<DatasetMetadata, DatasetMetadataUnmarshaller>(DatasetMetadataUnmarshaller.Instance);
-                    unmarshalledObject.DataSets = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Description", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("UserExperienceVersion", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UserExperienceVersion = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.QBusinessInsightsEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +77,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static TopicDetailsUnmarshaller _instance = new TopicDetailsUnmarshaller();        
+        private static TopicConfigOptionsUnmarshaller _instance = new TopicConfigOptionsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TopicDetailsUnmarshaller Instance
+        public static TopicConfigOptionsUnmarshaller Instance
         {
             get
             {

@@ -39,6 +39,7 @@ namespace Amazon.QuickSight.Model
         private List<AssetBundleImportJobDashboardOverrideTags> _dashboards = AWSConfigs.InitializeCollections ? new List<AssetBundleImportJobDashboardOverrideTags>() : null;
         private List<AssetBundleImportJobDataSetOverrideTags> _dataSets = AWSConfigs.InitializeCollections ? new List<AssetBundleImportJobDataSetOverrideTags>() : null;
         private List<AssetBundleImportJobDataSourceOverrideTags> _dataSources = AWSConfigs.InitializeCollections ? new List<AssetBundleImportJobDataSourceOverrideTags>() : null;
+        private List<AssetBundleImportJobFolderOverrideTags> _folders = AWSConfigs.InitializeCollections ? new List<AssetBundleImportJobFolderOverrideTags>() : null;
         private List<AssetBundleImportJobThemeOverrideTags> _themes = AWSConfigs.InitializeCollections ? new List<AssetBundleImportJobThemeOverrideTags>() : null;
         private List<AssetBundleImportJobVPCConnectionOverrideTags> _vpcConnections = AWSConfigs.InitializeCollections ? new List<AssetBundleImportJobVPCConnectionOverrideTags>() : null;
 
@@ -120,6 +121,26 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetDataSources()
         {
             return this._dataSources != null && (this._dataSources.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Folders. 
+        /// <para>
+        /// A list of tag overrides for any <c>Folder</c> resources that are present in the asset
+        /// bundle that is imported.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<AssetBundleImportJobFolderOverrideTags> Folders
+        {
+            get { return this._folders; }
+            set { this._folders = value; }
+        }
+
+        // Check to see if Folders property is set
+        internal bool IsSetFolders()
+        {
+            return this._folders != null && (this._folders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
