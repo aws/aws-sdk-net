@@ -517,10 +517,10 @@ namespace SDKDocGenerator.Writers
         {
             AddSectionHeader(writer, "Version Information");
             
-            var docs472 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("net472"), wrapper);
-            var docsCore20 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("netstandard2.0"), wrapper);
-            var docsNetCoreApp31 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("netcoreapp3.1"), wrapper);
-            var docsNet80 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("net8.0"), wrapper);
+            var docs472 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("net472"), wrapper, TypeProvider);
+            var docsCore20 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("netstandard2.0"), wrapper, TypeProvider);
+            var docsNetCoreApp31 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("netcoreapp3.1"), wrapper, TypeProvider);
+            var docsNet80 = NDocUtilities.FindDocumentation(Artifacts.NDocForPlatform("net8.0"), wrapper, TypeProvider);
 
             // If there is no documentation then assume it is available for all platforms.
             var boolNoDocs = docs472 == null && docsCore20 == null && docsNetCoreApp31 == null

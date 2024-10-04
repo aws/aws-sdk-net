@@ -29,7 +29,7 @@ namespace SDKDocGenerator.Writers
             if (_isFakeAsync || !this._methodInfo.Name.EndsWith("Async", StringComparison.Ordinal))
             {
                 //This is not an Async method. Lookup if an Async version exists for .NET Core.                
-                this._hasAsyncVersion = NDocUtilities.FindDocumentationAsync(Artifacts.NDocForPlatform("netcoreapp3.1"), methodInfo) != null;
+                this._hasAsyncVersion = NDocUtilities.FindDocumentationAsync(Artifacts.NDocForPlatform("netcoreapp3.1"), methodInfo, TypeProvider) != null;
             }                
         }
 
@@ -69,7 +69,7 @@ namespace SDKDocGenerator.Writers
 
         protected override XElement GetSummaryDocumentation()
         {
-            var element = NDocUtilities.FindDocumentation(this._methodInfo);
+            var element = NDocUtilities.FindDocumentation(this._methodInfo, TypeProvider);
             return element;
         }
 

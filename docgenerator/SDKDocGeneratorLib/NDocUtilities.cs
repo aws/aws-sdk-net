@@ -30,6 +30,7 @@ namespace SDKDocGenerator
         public const string hrefAttributeName = "href";
         public const string nameAttributeName = "name";
         public const string targetAttributeName = "target";
+        public const string pathAttributeName = "path";
 
         // inner attribute of a cross reference tag we're interested in
         public static readonly string innerCrefAttributeText = crefAttributeName + "=\"";
@@ -107,23 +108,23 @@ namespace SDKDocGenerator
         #endregion
 
 
-        public static XElement FindDocumentation(AbstractWrapper wrapper)
+        public static XElement FindDocumentation(AbstractWrapper wrapper, AbstractTypeProvider typeProvider)
         {
             var ndoc = GetDocumentationInstance(wrapper.DocId);
-            return FindDocumentation(ndoc, wrapper);
+            return FindDocumentation(ndoc, wrapper, typeProvider);
         }
 
-        public static XElement FindDocumentation(IDictionary<string, XElement> ndoc, AbstractWrapper wrapper)
+        public static XElement FindDocumentation(IDictionary<string, XElement> ndoc, AbstractWrapper wrapper, AbstractTypeProvider typeProvider)
         {
             if (ndoc == null)
                 return null;
 
             if (wrapper is TypeWrapper)
-                return FindDocumentation(ndoc, (TypeWrapper)wrapper);
+                return FindDocumentation(ndoc, (TypeWrapper)wrapper, typeProvider);
             if (wrapper is PropertyInfoWrapper)
-                return FindDocumentation(ndoc, (PropertyInfoWrapper)wrapper);
+                return FindDocumentation(ndoc, (PropertyInfoWrapper)wrapper, typeProvider);
             if (wrapper is MethodInfoWrapper)
-                return FindDocumentation(ndoc, (MethodInfoWrapper)wrapper);
+                return FindDocumentation(ndoc, (MethodInfoWrapper)wrapper, typeProvider);
             if (wrapper is ConstructorInfoWrapper)
                 return FindDocumentation(ndoc, (ConstructorInfoWrapper)wrapper);
             if (wrapper is FieldInfoWrapper)
@@ -158,7 +159,7 @@ namespace SDKDocGenerator
             return element;
         }
 
-        public static XElement FindDocumentation(IDictionary<string, XElement> ndoc, TypeWrapper type)
+        public static XElement FindDocumentation(IDictionary<string, XElement> ndoc, TypeWrapper type, AbstractTypeProvider typeProvider)
         {
             var signature = "T:" + type.FullName;
             XElement element;
@@ -170,36 +171,35 @@ namespace SDKDocGenerator
             if (inheritdocElement == null)
                 return element;
 
-            if (inheritdocElement.Attribute("cref") != null || inheritdocElement.Attribute("path") != null)
+            if (inheritdocElement.Attribute(crefAttributeName) != null)
             {
-                Trace.WriteLine($"Skipping following <inheritdoc> for {signature} since cref and/or path are not supported yet.");
-                return element;
+                return FindCrefDocumentation(ndoc, typeProvider, inheritdocElement);
             }
 
             if (type.BaseType.FullName != "System.Object") // we never expect to inherit class-level docs from here
             {
-                var baseTypeDocs = FindDocumentation(ndoc, type.BaseType);
+                var baseTypeDocs = FindDocumentation(ndoc, type.BaseType, typeProvider);
 
                 if (baseTypeDocs != null)
                 {
-                    return baseTypeDocs;
+                    return ExtractPathDocumentation(inheritdocElement, baseTypeDocs);
                 }
             }
 
             foreach (var baseInterface in type.GetInterfaces())
             {
-                var interfaceDocs = FindDocumentation(ndoc, baseInterface);
+                var interfaceDocs = FindDocumentation(ndoc, baseInterface, typeProvider);
 
                 if (interfaceDocs != null)
                 {
-                    return interfaceDocs;
+                    return ExtractPathDocumentation(inheritdocElement, interfaceDocs);
                 }
             }
 
             return element;
         }
 
-        public static XElement FindDocumentation(IDictionary<string, XElement> ndoc, PropertyInfoWrapper info)
+        public static XElement FindDocumentation(IDictionary<string, XElement> ndoc, PropertyInfoWrapper info, AbstractTypeProvider typeProvider)
         {
             var type = info.DeclaringType;
             var signature = string.Format("P:{0}.{1}", type.FullName, info.Name);
@@ -212,23 +212,22 @@ namespace SDKDocGenerator
             if (inheritdocElement == null)
                 return element;
 
-            if (inheritdocElement.Attribute("cref") != null || inheritdocElement.Attribute("path") != null)
+            if (inheritdocElement.Attribute(crefAttributeName) != null)
             {
-                Trace.WriteLine($"Skipping following <inheritdoc> for {signature} since cref and/or path are not supported yet.");
-                return element;
+                return FindCrefDocumentation(ndoc, typeProvider, inheritdocElement);
             }
 
             var baseTypeMatchingProperties = info.DeclaringType.BaseType.GetProperties().Where(property => property.Name.Equals(info.Name, StringComparison.OrdinalIgnoreCase));
 
             if (baseTypeMatchingProperties.Count() == 1)
-                return FindDocumentation(ndoc, baseTypeMatchingProperties.First());
+                return ExtractPathDocumentation(inheritdocElement, FindDocumentation(ndoc, baseTypeMatchingProperties.First(), typeProvider));
 
             foreach (var baseInterface in info.DeclaringType.GetInterfaces())
             {
                 var interfaceMatchingProperties = baseInterface.GetProperties().Where(property => property.Name.Equals(info.Name, StringComparison.OrdinalIgnoreCase));
 
                 if (interfaceMatchingProperties.Count() == 1)
-                    return FindDocumentation(ndoc, interfaceMatchingProperties.First());
+                    return ExtractPathDocumentation(inheritdocElement, FindDocumentation(ndoc, interfaceMatchingProperties.First(), typeProvider));
             }
 
             return element;
@@ -316,7 +315,7 @@ namespace SDKDocGenerator
             }
         }
 
-        public static XElement FindDocumentation(IDictionary<string, XElement> ndoc, MethodInfoWrapper info)
+        public static XElement FindDocumentation(IDictionary<string, XElement> ndoc, MethodInfoWrapper info, AbstractTypeProvider typeProvider)
         {
             var signature = DetermineNDocNameLookupSignature(info);
 
@@ -329,23 +328,22 @@ namespace SDKDocGenerator
             if (inheritdocElement == null)
                 return element;
 
-            if (inheritdocElement.Attribute("cref") != null || inheritdocElement.Attribute("path") != null)
+            if (inheritdocElement.Attribute(crefAttributeName) != null)
             {
-                Trace.WriteLine($"Skipping following <inheritdoc> for {signature} since cref and/or path are not supported yet.");
-                return element;
+                return FindCrefDocumentation(ndoc, typeProvider, inheritdocElement);
             }
 
             var baseTypeMatchingMethods = info.DeclaringType.BaseType.GetMethodsToDocument().Where(method => method.FullName.Equals(info.FullName, StringComparison.OrdinalIgnoreCase));
                 
             if (baseTypeMatchingMethods.Count() == 1)
-                return FindDocumentation(ndoc, baseTypeMatchingMethods.First());
+                return ExtractPathDocumentation(inheritdocElement, FindDocumentation(ndoc, baseTypeMatchingMethods.First(), typeProvider));
 
             foreach (var baseInterface in info.DeclaringType.GetInterfaces())
             {
                 var interfaceMatchingMethods = baseInterface.GetMethodsToDocument().Where(method => method.FullName.Equals(info.FullName, StringComparison.OrdinalIgnoreCase));
 
                 if (interfaceMatchingMethods.Count() == 1)
-                    return FindDocumentation(ndoc, interfaceMatchingMethods.First());
+                    return ExtractPathDocumentation(inheritdocElement, FindDocumentation(ndoc, interfaceMatchingMethods.First(), typeProvider));
             }
 
             return element;
@@ -410,7 +408,7 @@ namespace SDKDocGenerator
         /// <param name="ndoc"></param>
         /// <param name="info"></param>
         /// <returns></returns>
-        public static XElement FindDocumentationAsync(IDictionary<string, XElement> ndoc, MethodInfoWrapper info)
+        public static XElement FindDocumentationAsync(IDictionary<string, XElement> ndoc, MethodInfoWrapper info, AbstractTypeProvider typeProvider)
         {
             if (ndoc == null)
                 return null;
@@ -459,23 +457,22 @@ namespace SDKDocGenerator
             if (inheritdocElement == null)
                 return element;
 
-            if (inheritdocElement.Attribute("cref") != null || inheritdocElement.Attribute("path") != null)
+            if (inheritdocElement.Attribute(crefAttributeName) != null)
             {
-                Trace.WriteLine($"Skipping following <inheritdoc> for {signature} since cref and/or path are not supported yet.");
-                return element;
+                return FindCrefDocumentation(ndoc, typeProvider, inheritdocElement);
             }
 
             var baseTypeMatchingMethods = info.DeclaringType.BaseType.GetMethodsToDocument().Where(method => method.FullName.Equals(info.FullName, StringComparison.OrdinalIgnoreCase));
 
             if (baseTypeMatchingMethods.Count() == 1)
-                return FindDocumentation(ndoc, baseTypeMatchingMethods.First());
+                return ExtractPathDocumentation(inheritdocElement, FindDocumentation(ndoc, baseTypeMatchingMethods.First(), typeProvider));
 
             foreach (var baseInterface in info.DeclaringType.GetInterfaces())
             {
                 var interfaceMatchingMethods = baseInterface.GetMethodsToDocument().Where(method => method.FullName.Equals(info.FullName, StringComparison.OrdinalIgnoreCase));
 
                 if (interfaceMatchingMethods.Count() == 1)
-                    return FindDocumentation(ndoc, interfaceMatchingMethods.First());
+                    return ExtractPathDocumentation(inheritdocElement, FindDocumentation(ndoc, interfaceMatchingMethods.First(), typeProvider));
             }
 
             return element;
@@ -495,6 +492,80 @@ namespace SDKDocGenerator
                 return DocBlobToHTML(rootNode, typeProvider, version);
         }
 
+        private static XElement FindCrefDocumentation(IDictionary<string, XElement> ndoc, AbstractTypeProvider typeProvider, XElement inheritdocElement)
+        {
+            var crefValue = inheritdocElement.Attribute(crefAttributeName)?.Value;
+            if (crefValue == null)
+                return inheritdocElement;
+
+            var attributParts = crefValue.Split(':');
+            if (attributParts.Length != 2)
+                return inheritdocElement;
+
+            var attributePart = attributParts[1];
+            var targetType = typeProvider.GetType(attributePart);
+
+            XElement targetDocs = null;
+
+            if (targetType == null) // the cref attribute is pointing to a method or a property
+            {
+                if (attributePart.LastIndexOf('.') < 0)
+                    return inheritdocElement;
+
+                var typeName = attributePart.Substring(0, attributePart.LastIndexOf('.'));
+                targetType = typeProvider.GetType(typeName);
+
+                if (targetType == null)
+                    return inheritdocElement;
+
+                var typeMemberName = attributePart.Substring(attributePart.LastIndexOf('.') + 1);
+
+                var matchingMethods = targetType.GetMethodsToDocument().Where(method => method.FullName.Equals(attributePart, StringComparison.OrdinalIgnoreCase));
+                var matchingProperties = targetType.GetProperties().Where(property => property.Name.Equals(typeMemberName, StringComparison.OrdinalIgnoreCase));
+
+                if (matchingMethods.Count() == 1)
+                    targetDocs = FindDocumentation(ndoc, matchingMethods.First(), typeProvider);
+                else if (matchingProperties.Count() == 1)
+                    targetDocs = FindDocumentation(ndoc, matchingProperties.First(), typeProvider);
+                else 
+                    return inheritdocElement;
+            }
+            else
+            {
+                targetDocs = FindDocumentation(ndoc, targetType, typeProvider);
+            }
+
+            if (targetDocs != null)
+            {
+                return ExtractPathDocumentation(inheritdocElement, targetDocs);
+            }
+
+            return inheritdocElement;
+        }
+
+        private static XElement ExtractPathDocumentation(XElement inheritdocElement, XElement docElement)
+        {
+            if (inheritdocElement.Attribute(pathAttributeName) == null)
+                return docElement;
+
+            var pathValue = inheritdocElement.Attribute(pathAttributeName).Value;
+
+            var targetPathDocs = docElement.XPathSelectElement(pathValue);
+
+            if (targetPathDocs != null) 
+            {
+                var docElementCopy = new XElement(docElement);
+                docElementCopy.RemoveNodes();
+
+                // Wrap the targetPathDocs in summary tag to be picked up by the html transformer.
+                docElementCopy.Add(new XElement("summary", targetPathDocs));
+
+                return docElementCopy;
+            }
+
+            return docElement;
+        }
+
         private static string SeeAlsoElementToHTML(XElement rootNode, AbstractTypeProvider typeProvider, FrameworkVersion version)
         {
             var reader = rootNode.CreateReader();
@@ -508,7 +579,7 @@ namespace SDKDocGenerator
                 content += string.Format(@"<div><a href=""{0}"" target=""_parent"" rel=""noopener noreferrer"">{1}</a></div>", href.Value, innerXml);
             }
 
-            var cref = rootNode.Attribute("cref");
+            var cref = rootNode.Attribute(crefAttributeName);
             if (cref != null)
             {
                 content += BaseWriter.CreateCrossReferenceTagReplacement(typeProvider, cref.Value, version);

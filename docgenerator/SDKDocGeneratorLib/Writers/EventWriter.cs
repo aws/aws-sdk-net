@@ -49,7 +49,7 @@ namespace SDKDocGenerator.Writers
 
         protected override XElement GetSummaryDocumentation()
         {
-            var element = NDocUtilities.FindDocumentation(this._eventInfo);
+            var element = NDocUtilities.FindDocumentation(this._eventInfo, TypeProvider);
             return element;
         }
 

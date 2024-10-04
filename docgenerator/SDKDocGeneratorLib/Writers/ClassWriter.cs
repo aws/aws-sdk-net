@@ -83,7 +83,7 @@ namespace SDKDocGenerator.Writers
 
         protected override XElement GetSummaryDocumentation()
         {
-            var element = NDocUtilities.FindDocumentation(this._versionType);
+            var element = NDocUtilities.FindDocumentation(this._versionType, TypeProvider);
             return element;
         }
 
@@ -155,7 +155,7 @@ namespace SDKDocGenerator.Writers
 
             writer.WriteLine("<td>");
 
-            var docs = NDocUtilities.FindDocumentation(info);
+            var docs = NDocUtilities.FindDocumentation(info, TypeProvider);
             var html = NDocUtilities.TransformDocumentationToHTML(docs, "summary", this.Artifacts.ManifestAssemblyContext.SdkAssembly, this._version);
 
             writer.WriteLine(html);
@@ -206,7 +206,7 @@ namespace SDKDocGenerator.Writers
                 html = string.Format("Inherited from {0}.{1}.", propertyInfo.DeclaringType.Namespace, propertyInfo.DeclaringType.Name);
             }
             else {
-                var docs = NDocUtilities.FindDocumentation(propertyInfo);
+                var docs = NDocUtilities.FindDocumentation(propertyInfo, TypeProvider);
                 html = NDocUtilities.TransformDocumentationToHTML(docs, "summary", Artifacts.ManifestAssemblyContext.SdkAssembly, this._version);
             }
 
@@ -262,7 +262,7 @@ namespace SDKDocGenerator.Writers
                 html = string.Format("Inherited from {0}.{1}.", info.DeclaringType.Namespace, info.DeclaringType.Name);
             }
             else {
-                var docs = NDocUtilities.FindDocumentation(info);
+                var docs = NDocUtilities.FindDocumentation(info, TypeProvider);
                 html = NDocUtilities.TransformDocumentationToHTML(docs, "summary", Artifacts.ManifestAssemblyContext.SdkAssembly, this._version);
             }
             writer.WriteLine(html);
@@ -310,7 +310,7 @@ namespace SDKDocGenerator.Writers
                 html = string.Format("Inherited from {0}.{1}.", info.DeclaringType.Namespace, info.DeclaringType.Name);
             }
             else {
-                var docs = NDocUtilities.FindDocumentation(info);
+                var docs = NDocUtilities.FindDocumentation(info, TypeProvider);
                 html = NDocUtilities.TransformDocumentationToHTML(docs, "summary", Artifacts.ManifestAssemblyContext.SdkAssembly, this._version);
             }
 
@@ -360,7 +360,7 @@ namespace SDKDocGenerator.Writers
                 html = string.Format("Inherited from {0}.{1}.", info.DeclaringType.Namespace, info.DeclaringType.Name);
             }
             else {
-                var docs = NDocUtilities.FindDocumentation(info);
+                var docs = NDocUtilities.FindDocumentation(info, TypeProvider);
                 html = NDocUtilities.TransformDocumentationToHTML(docs, "summary", Artifacts.ManifestAssemblyContext.SdkAssembly, this._version);
             }
 
