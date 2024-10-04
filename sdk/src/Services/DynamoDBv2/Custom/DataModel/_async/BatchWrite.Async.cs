@@ -23,6 +23,7 @@ using Amazon.DynamoDBv2.DocumentModel;
 using System.Threading.Tasks;
 using Amazon.Runtime.Internal;
 using System.Threading;
+using AWSSDK.DynamoDBv2;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -43,9 +44,13 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// 
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return ExecuteHelperAsync(cancellationToken);
+            using (var span = TracerProvider.GetTracer(DynamoDBTelemetry.DynamoDBTracerScope)
+                .CreateSpan($"{nameof(BatchWrite)}.{nameof(ExecuteAsync)}", null, Runtime.Telemetry.Tracing.SpanKind.CLIENT))
+            {
+                await ExecuteHelperAsync(cancellationToken).ConfigureAwait(false);
+            }
         }
 
         #endregion
@@ -68,9 +73,13 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// 
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return ExecuteHelperAsync(cancellationToken);
+            using (var span = TracerProvider.GetTracer(DynamoDBTelemetry.DynamoDBTracerScope)
+                .CreateSpan($"{nameof(MultiTableBatchWrite)}.{nameof(ExecuteAsync)}", null, Runtime.Telemetry.Tracing.SpanKind.CLIENT))
+            {
+                await ExecuteHelperAsync(cancellationToken).ConfigureAwait(false);
+            }
         }
 
         #endregion

@@ -19,6 +19,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using Amazon.DynamoDBv2.Model;
 using Amazon.DynamoDBv2.DocumentModel;
+using AWSSDK.DynamoDBv2;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -38,7 +39,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         public void Execute()
         {
-            ExecuteHelper();
+            using (var span = TracerProvider.GetTracer(DynamoDBTelemetry.DynamoDBTracerScope)
+                .CreateSpan($"{nameof(BatchWrite)}.{nameof(Execute)}", null, Runtime.Telemetry.Tracing.SpanKind.CLIENT))
+            {
+                ExecuteHelper();
+            }
         }
 
         #endregion
@@ -60,7 +65,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         public void Execute()
         {
-            ExecuteHelper();
+            using (var span = TracerProvider.GetTracer(DynamoDBTelemetry.DynamoDBTracerScope)
+                .CreateSpan($"{nameof(MultiTableBatchWrite)}.{nameof(Execute)}", null, Runtime.Telemetry.Tracing.SpanKind.CLIENT))
+            {
+                ExecuteHelper();
+            }
         }
 
         #endregion

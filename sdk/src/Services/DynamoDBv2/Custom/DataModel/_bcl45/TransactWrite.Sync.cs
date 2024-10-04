@@ -13,6 +13,8 @@
  * permissions and limitations under the License.
  */
 
+using AWSSDK.DynamoDBv2;
+
 namespace Amazon.DynamoDBv2.DataModel
 {
     /// <summary>
@@ -28,7 +30,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         public void Execute()
         {
-            ExecuteHelper();
+            using (var span = TracerProvider.GetTracer(DynamoDBTelemetry.DynamoDBTracerScope)
+                .CreateSpan($"{nameof(TransactWrite)}.{nameof(Execute)}", null, Runtime.Telemetry.Tracing.SpanKind.CLIENT))
+            {
+                ExecuteHelper();
+            }
         }
 
         #endregion
@@ -47,7 +53,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         public void Execute()
         {
-            ExecuteHelper();
+            using (var span = TracerProvider.GetTracer(DynamoDBTelemetry.DynamoDBTracerScope)
+                .CreateSpan($"{nameof(MultiTableTransactWrite)}.{nameof(Execute)}", null, Runtime.Telemetry.Tracing.SpanKind.CLIENT))
+            {
+                ExecuteHelper();
+            }
         }
 
         #endregion
