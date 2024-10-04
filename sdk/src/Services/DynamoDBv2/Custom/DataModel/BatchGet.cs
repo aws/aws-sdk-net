@@ -19,6 +19,8 @@ using System.Collections.Generic;
 using System.Reflection;
 using Amazon.DynamoDBv2.Model;
 using Amazon.DynamoDBv2.DocumentModel;
+using Amazon.Runtime.Telemetry.Tracing;
+
 #if AWS_ASYNC_API
 using System.Threading.Tasks;
 #endif
@@ -43,6 +45,7 @@ namespace Amazon.DynamoDBv2.DataModel
         internal List<Key> Keys { get; set; }
         internal DocumentBatchGet DocumentBatch { get; set; }
         internal ItemStorageConfig ItemStorageConfig { get; set; }
+        internal TracerProvider TracerProvider { get; private set; }
 
         #endregion
 
@@ -54,6 +57,7 @@ namespace Amazon.DynamoDBv2.DataModel
             Context = context;
             Config = config;
             Keys = new List<Key>();
+            TracerProvider = context.Client.Config.TelemetryProvider.TracerProvider;
         }
 
         #endregion
@@ -247,6 +251,8 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #endregion
 
+        internal TracerProvider TracerProvider { get; private set; }
+
 
         #region Constructor
 
@@ -258,6 +264,7 @@ namespace Amazon.DynamoDBv2.DataModel
         public MultiTableBatchGet(params BatchGet[] batches)
         {
             allBatches = new List<BatchGet>(batches);
+            TracerProvider = allBatches[0].TracerProvider;
         }
 
         internal MultiTableBatchGet(BatchGet first, params BatchGet[] rest)
@@ -265,6 +272,7 @@ namespace Amazon.DynamoDBv2.DataModel
             allBatches = new List<BatchGet>();
             allBatches.Add(first);
             allBatches.AddRange(rest);
+            TracerProvider = allBatches[0].TracerProvider;
         }
 
         #endregion
