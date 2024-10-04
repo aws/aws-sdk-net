@@ -1229,7 +1229,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Assigns private IPv4 addresses to a private NAT gateway. For more information, see
-        /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-working-with">Work
+        /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-working-with.html">Work
         /// with NAT gateways</a> in the <i>Amazon VPC User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssignPrivateNatGatewayAddress service method.</param>
@@ -1248,7 +1248,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Assigns private IPv4 addresses to a private NAT gateway. For more information, see
-        /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-working-with">Work
+        /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-working-with.html">Work
         /// with NAT gateways</a> in the <i>Amazon VPC User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssignPrivateNatGatewayAddress service method.</param>
@@ -1788,7 +1788,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Associates Elastic IP addresses (EIPs) and private IPv4 addresses with a public NAT
-        /// gateway. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-working-with">Work
+        /// gateway. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-working-with.html">Work
         /// with NAT gateways</a> in the <i>Amazon VPC User Guide</i>.
         /// 
         ///  
@@ -1806,7 +1806,7 @@ namespace Amazon.EC2
         /// associate. You can see the network border group for the subnet's AZ by viewing the
         /// details of the subnet. Similarly, you can view the network border group of an EIP
         /// by viewing the details of the EIP address. For more information about network border
-        /// groups and EIPs, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#allocate-eip">Allocate
+        /// groups and EIPs, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/WorkWithEIPs.html">Allocate
         /// an Elastic IP address</a> in the <i>Amazon VPC User Guide</i>. 
         /// </para>
         ///  </important>
@@ -1827,7 +1827,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Associates Elastic IP addresses (EIPs) and private IPv4 addresses with a public NAT
-        /// gateway. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-working-with">Work
+        /// gateway. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-working-with.html">Work
         /// with NAT gateways</a> in the <i>Amazon VPC User Guide</i>.
         /// 
         ///  
@@ -1845,7 +1845,7 @@ namespace Amazon.EC2
         /// associate. You can see the network border group for the subnet's AZ by viewing the
         /// details of the subnet. Similarly, you can view the network border group of an EIP
         /// by viewing the details of the EIP address. For more information about network border
-        /// groups and EIPs, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#allocate-eip">Allocate
+        /// groups and EIPs, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/WorkWithEIPs.html">Allocate
         /// an Elastic IP address</a> in the <i>Amazon VPC User Guide</i>. 
         /// </para>
         ///  </important>
@@ -2580,8 +2580,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Attaches a virtual private gateway to a VPC. You can attach one virtual private gateway
-        /// to one VPC at a time.
+        /// Attaches an available virtual private gateway to a VPC. You can attach one virtual
+        /// private gateway to one VPC at a time.
         /// 
         ///  
         /// <para>
@@ -2605,8 +2605,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Attaches a virtual private gateway to a VPC. You can attach one virtual private gateway
-        /// to one VPC at a time.
+        /// Attaches an available virtual private gateway to a VPC. You can attach one virtual
+        /// private gateway to one VPC at a time.
         /// 
         ///  
         /// <para>
@@ -4278,7 +4278,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Creates a default subnet with a size <c>/20</c> IPv4 CIDR block in the specified Availability
         /// Zone in your default VPC. You can have only one default subnet per Availability Zone.
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#create-default-subnet">Create
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/work-with-default-vpc.html#create-default-subnet">Create
         /// a default subnet</a> in the <i>Amazon VPC User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDefaultSubnet service method.</param>
@@ -4298,7 +4298,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Creates a default subnet with a size <c>/20</c> IPv4 CIDR block in the specified Availability
         /// Zone in your default VPC. You can have only one default subnet per Availability Zone.
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#create-default-subnet">Create
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/work-with-default-vpc.html#create-default-subnet">Create
         /// a default subnet</a> in the <i>Amazon VPC User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDefaultSubnet service method.</param>
@@ -4658,7 +4658,7 @@ namespace Amazon.EC2
         /// <para>
         /// Flow log data for a monitored network interface is recorded as flow log records, which
         /// are log events consisting of fields that describe the traffic flow. For more information,
-        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
+        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-log-records.html">Flow
         /// log records</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         ///  
@@ -4696,7 +4696,7 @@ namespace Amazon.EC2
         /// <para>
         /// Flow log data for a monitored network interface is recorded as flow log records, which
         /// are log events consisting of fields that describe the traffic flow. For more information,
-        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
+        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-log-records.html">Flow
         /// log records</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         ///  
@@ -5962,7 +5962,7 @@ namespace Amazon.EC2
         /// fail to launch. You can see the network border group for the subnet's AZ by viewing
         /// the details of the subnet. Similarly, you can view the network border group of an
         /// EIP by viewing the details of the EIP address. For more information about network
-        /// border groups and EIPs, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#allocate-eip">Allocate
+        /// border groups and EIPs, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/WorkWithEIPs.html">Allocate
         /// an Elastic IP address</a> in the <i>Amazon VPC User Guide</i>. 
         /// </para>
         ///  </important>
@@ -6011,7 +6011,7 @@ namespace Amazon.EC2
         /// fail to launch. You can see the network border group for the subnet's AZ by viewing
         /// the details of the subnet. Similarly, you can view the network border group of an
         /// EIP by viewing the details of the EIP address. For more information about network
-        /// border groups and EIPs, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#allocate-eip">Allocate
+        /// border groups and EIPs, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/WorkWithEIPs.html">Allocate
         /// an Elastic IP address</a> in the <i>Amazon VPC User Guide</i>. 
         /// </para>
         ///  </important>
@@ -7462,8 +7462,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Creates a subnet CIDR reservation. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/subnet-cidr-reservation.html">Subnet
-        /// CIDR reservations</a> in the <i>Amazon VPC User Guide</i> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">Assign
-        /// prefixes to network interfaces</a> in the <i>Amazon EC2 User Guide</i>.
+        /// CIDR reservations</a> in the <i>Amazon VPC User Guide</i> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-prefixes.html">Manage
+        /// prefixes for your network interfaces</a> in the <i>Amazon EC2 User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSubnetCidrReservation service method.</param>
         /// 
@@ -7481,8 +7481,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Creates a subnet CIDR reservation. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/subnet-cidr-reservation.html">Subnet
-        /// CIDR reservations</a> in the <i>Amazon VPC User Guide</i> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">Assign
-        /// prefixes to network interfaces</a> in the <i>Amazon EC2 User Guide</i>.
+        /// CIDR reservations</a> in the <i>Amazon VPC User Guide</i> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-prefixes.html">Manage
+        /// prefixes for your network interfaces</a> in the <i>Amazon EC2 User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSubnetCidrReservation service method.</param>
         /// <param name="cancellationToken">
@@ -12456,8 +12456,14 @@ namespace Amazon.EC2
         /// are associated with the VPC before you can delete it. For example, you must terminate
         /// all instances running in the VPC, delete all security groups associated with the VPC
         /// (except the default one), delete all route tables associated with the VPC (except
-        /// the default one), and so on. When you delete the VPC, it deletes the VPC's default
-        /// security group, network ACL, and route table.
+        /// the default one), and so on. When you delete the VPC, it deletes the default security
+        /// group, network ACL, and route table for the VPC.
+        /// 
+        ///  
+        /// <para>
+        /// If you created a flow log for the VPC that you are deleting, note that flow logs for
+        /// deleted VPCs are eventually automatically removed.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpc service method.</param>
         /// 
@@ -12478,8 +12484,14 @@ namespace Amazon.EC2
         /// are associated with the VPC before you can delete it. For example, you must terminate
         /// all instances running in the VPC, delete all security groups associated with the VPC
         /// (except the default one), delete all route tables associated with the VPC (except
-        /// the default one), and so on. When you delete the VPC, it deletes the VPC's default
-        /// security group, network ACL, and route table.
+        /// the default one), and so on. When you delete the VPC, it deletes the default security
+        /// group, network ACL, and route table for the VPC.
+        /// 
+        ///  
+        /// <para>
+        /// If you created a flow log for the VPC that you are deleting, note that flow logs for
+        /// deleted VPCs are eventually automatically removed.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpc service method.</param>
         /// <param name="cancellationToken">
@@ -16954,7 +16966,7 @@ namespace Amazon.EC2
         ///  </li> <li> 
         /// <para>
         ///  <c>p3dn.24xlarge</c> | <c>p4d.24xlarge</c> | <c>p4de.24xlarge</c> | <c>p5.48xlarge</c>
-        /// 
+        /// | <c>p5e.48xlarge</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -17015,7 +17027,7 @@ namespace Amazon.EC2
         ///  </li> <li> 
         /// <para>
         ///  <c>p3dn.24xlarge</c> | <c>p4d.24xlarge</c> | <c>p4de.24xlarge</c> | <c>p5.48xlarge</c>
-        /// 
+        /// | <c>p5e.48xlarge</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -25256,7 +25268,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Disassociates secondary Elastic IP addresses (EIPs) from a public NAT gateway. You
-        /// cannot disassociate your primary EIP. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-edit-secondary">Edit
+        /// cannot disassociate your primary EIP. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-working-with.html#nat-gateway-edit-secondary">Edit
         /// secondary IP address associations</a> in the <i>Amazon VPC User Guide</i>.
         /// 
         ///  
@@ -25290,7 +25302,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Disassociates secondary Elastic IP addresses (EIPs) from a public NAT gateway. You
-        /// cannot disassociate your primary EIP. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-edit-secondary">Edit
+        /// cannot disassociate your primary EIP. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-working-with.html#nat-gateway-edit-secondary">Edit
         /// secondary IP address associations</a> in the <i>Amazon VPC User Guide</i>.
         /// 
         ///  
@@ -38203,7 +38215,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Unassigns secondary private IPv4 addresses from a private NAT gateway. You cannot
-        /// unassign your primary private IP. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-edit-secondary">Edit
+        /// unassign your primary private IP. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-working-with.html#nat-gateway-edit-secondary">Edit
         /// secondary IP address associations</a> in the <i>Amazon VPC User Guide</i>.
         /// 
         ///  
@@ -38237,7 +38249,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Unassigns secondary private IPv4 addresses from a private NAT gateway. You cannot
-        /// unassign your primary private IP. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-edit-secondary">Edit
+        /// unassign your primary private IP. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-working-with.html#nat-gateway-edit-secondary">Edit
         /// secondary IP address associations</a> in the <i>Amazon VPC User Guide</i>.
         /// 
         ///  

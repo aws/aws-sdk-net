@@ -65,7 +65,7 @@ namespace Amazon.EC2.Model
     ///  </li> <li> 
     /// <para>
     ///  <c>p3dn.24xlarge</c> | <c>p4d.24xlarge</c> | <c>p4de.24xlarge</c> | <c>p5.48xlarge</c>
-    /// 
+    /// | <c>p5e.48xlarge</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>

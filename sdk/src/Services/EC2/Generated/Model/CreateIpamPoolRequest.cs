@@ -297,7 +297,7 @@ namespace Amazon.EC2.Model
         ///  
         /// <para>
         /// Possible values: Any Amazon Web Services Region or supported Amazon Web Services Local
-        /// Zone.
+        /// Zone. Default is <c>none</c> and means any locale.
         /// </para>
         /// </summary>
         public string Locale
