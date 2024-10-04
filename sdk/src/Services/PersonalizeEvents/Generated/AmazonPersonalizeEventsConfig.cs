@@ -32,7 +32,7 @@ namespace Amazon.PersonalizeEvents
     public partial class AmazonPersonalizeEventsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Personalize Events", "3.7.400.29");
+            InternalSDKUtils.BuildUserAgentString("Personalize Events", "3.7.400.30");
 
         private string _userAgent = UserAgentString;
         ///<summary>

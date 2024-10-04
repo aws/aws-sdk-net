@@ -1,3 +1,12 @@
+### 3.7.899.0 (2024-10-04 18:17 UTC)
+* EC2 (3.7.408.0)
+	* Documentation updates for Amazon EC2.
+* IotData (3.7.401.0)
+	* Add v2 smoke tests and smithy smokeTests trait for SDK testing.
+* Core 3.7.400.30
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.898.0 (2024-10-03 18:21 UTC)
 * CodePipeline (3.7.402.0)
 	* AWS CodePipeline introduces Commands action that enables you to easily run shell commands as part of your pipeline execution.
