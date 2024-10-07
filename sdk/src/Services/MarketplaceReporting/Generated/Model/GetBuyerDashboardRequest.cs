@@ -33,7 +33,13 @@ namespace Amazon.MarketplaceReporting.Model
     /// Container for the parameters to the GetBuyerDashboard operation.
     /// Generates an embedding URL for an Amazon QuickSight dashboard for an anonymous user.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// This API is available only to Amazon Web Services Organization management accounts
+    /// or delegated administrators registered for the procurement insights (<c>procurement-insights.marketplace.amazonaws.com</c>)
+    /// feature.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// The following rules apply to a generated URL:
     /// </para>

@@ -39,59 +39,69 @@ namespace Amazon.MarketplaceReporting
     /// <summary>
     /// <para>Implementation for accessing MarketplaceReporting</para>
     ///
-    /// The AWS Marketplace <c>GetBuyerDashboard</c> API enables you to get a procurement
-    /// insights dashboard programmatically. The API gets the agreement and cost analysis
-    /// dashboards with data for all of the Amazon Web Services accounts in your Amazon Web
-    /// Services organization. 
+    /// The Amazon Web Services Marketplace <c>GetBuyerDashboard</c> API enables you to get
+    /// a procurement insights dashboard programmatically. The API gets the agreement and
+    /// cost analysis dashboards with data for all of the Amazon Web Services accounts in
+    /// your Amazon Web Services Organization. 
     /// 
     ///  
     /// <para>
-    /// To use the API, you must complete the following prerequisites:
+    /// To use the Amazon Web Services Marketplace Reporting API, you must complete the following
+    /// prerequisites:
     /// </para>
     ///  <ul> <li> 
     /// <para>
     /// Enable all features for your organization. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
-    /// all features for an organization with Amazon Web Services Organizations</a>, in the
-    /// <i>Amazon Web Services Organizations User Guide</i>.
+    /// all features for an organization with Organizations</a>, in the <i>Organizations User
+    /// Guide</i>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Call the service as the Amazon Web Services Organizations management account or an
-    /// account registered as a delegated administrator for the procurement insights service.
-    /// Users without management or delegated administrator accounts can use the dashboard,
-    /// but they only see data for their accounts.
+    /// Call the service as the Organizations management account or an account registered
+    /// as a delegated administrator for the procurement insights service.
     /// </para>
     ///  
     /// <para>
     /// For more information about management accounts, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tutorials_basic.html">Tutorial:
     /// Creating and configuring an organization</a> and <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs-manage_accounts_management.html">Managing
-    /// the management account with Amazon Web Services Organizations</a>, both in the <i>Amazon
-    /// Web Services Organizations User Guide</i>.
+    /// the management account with Organizations</a>, both in the <i>Organizations User Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// For more information about delegated administrators, see <a href="https://docs.aws.amazon.com/marketplace/latest/buyerguide/management-delegates.html">Using
-    /// delegated administrators</a>, in the <i>AWS Marketplace Buyer Guide</i>.
+    /// delegated administrators</a>, in the <i>Amazon Web Services Marketplace Buyer Guide</i>.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// Create an IAM policy that enables the <c>aws-marketplace:GetBuyerDashboard</c> and
     /// <c>organizations:DescribeOrganization</c> permissions. In addition, the management
     /// account requires the <c>organizations:EnableAWSServiceAccess</c> and <c>iam:CreateServiceLinkedRole</c>
-    /// permissions to create For more information about creating the policy, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">Policies
-    /// and permissions in Amazon Web Services Identity and Access Management</a>, in the
-    /// <i>IAM User Guide</i>.
+    /// permissions to create. For more information about creating the policy, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">Policies
+    /// and permissions in Identity and Access Management</a>, in the <i>IAM User Guide</i>.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// Access can be shared only by registering the desired linked account as a delegated
+    /// administrator. That requires <c>organizations:RegisterDelegatedAdministrator</c> <c>organizations:ListDelegatedAdministrators</c>
+    /// and <c>organizations:DeregisterDelegatedAdministrator</c> permissions.
+    /// </para>
+    ///  </note> </li> <li> 
+    /// <para>
+    /// Use the Amazon Web Services Marketplace console to create the <c>AWSServiceRoleForProcurementInsightsPolicy</c>
+    /// service-linked role. The role enables Amazon Web Services Marketplace procurement
+    /// visibility integration. The management account requires an IAM policy with the <c>organizations:EnableAWSServiceAccess</c>
+    /// and <c>iam:CreateServiceLinkedRole</c> permissions to create the service-linked role
+    /// and enable the service access. For more information, see <a href="https://docs.aws.amazon.com/marketplace/latest/buyerguide/orgs-access-slr.html">Granting
+    /// access to Organizations</a> and <a href="https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-service-linked-role-procurement.html">Service-linked
+    /// role to share procurement data</a> in the <i>Amazon Web Services Marketplace Buyer
+    /// Guide</i>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Use the Amazon Web Services Marketplace console to create the <c>AWSServiceRoleForProcurementInsightsPolicy</c>
-    /// service-linked role. The role enables AWS Marketplace procurement visibility integration.
-    /// The management account requires an IAM policy with the <c>organizations:EnableAWSServiceAccess</c>
-    /// and <c>iam:CreateServiceLinkedRole</c> permissions to create the service-linked role
-    /// and enable the service access. For more information, see <a href="https://docs.aws.amazon.com/marketplace/latest/buyerguide/orgs-access-slr.html">Granting
-    /// access to Amazon Web Services Organizations</a>, and <a href="https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-service-linked-role-procurement.html">Service-linked
-    /// role to share procurement data</a>, in the <i>Amazon Web Services Marketplace Buyer
-    /// Guide</i>.
+    /// After creating the service-linked role, you must enable trusted access that grants
+    /// Amazon Web Services Marketplace permission to access data from your Organizations.
+    /// For more information, see <a href="https://docs.aws.amazon.com/marketplace/latest/buyerguide/orgs-access-slr.html">Granting
+    /// access to Organizations</a> in the <i>Amazon Web Services Marketplace Buyer Guide</i>.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -320,7 +330,13 @@ namespace Amazon.MarketplaceReporting
         /// <summary>
         /// Generates an embedding URL for an Amazon QuickSight dashboard for an anonymous user.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// This API is available only to Amazon Web Services Organization management accounts
+        /// or delegated administrators registered for the procurement insights (<c>procurement-insights.marketplace.amazonaws.com</c>)
+        /// feature.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The following rules apply to a generated URL:
         /// </para>
