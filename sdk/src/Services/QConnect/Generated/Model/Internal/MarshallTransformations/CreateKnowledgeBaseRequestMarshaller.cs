@@ -143,6 +143,17 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetVectorIngestionConfiguration())
+                {
+                    context.Writer.WritePropertyName("vectorIngestionConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = VectorIngestionConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.VectorIngestionConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

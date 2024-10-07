@@ -73,6 +73,25 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAiAgentConfiguration())
+                {
+                    context.Writer.WritePropertyName("aiAgentConfiguration");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestAiAgentConfigurationKvp in publicRequest.AiAgentConfiguration)
+                    {
+                        context.Writer.WritePropertyName(publicRequestAiAgentConfigurationKvp.Key);
+                        var publicRequestAiAgentConfigurationValue = publicRequestAiAgentConfigurationKvp.Value;
+
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AIAgentConfigurationDataMarshaller.Instance;
+                        marshaller.Marshall(publicRequestAiAgentConfigurationValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("description");

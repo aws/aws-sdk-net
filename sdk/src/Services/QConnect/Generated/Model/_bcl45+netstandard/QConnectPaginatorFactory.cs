@@ -37,6 +37,38 @@ namespace Amazon.QConnect.Model
         }
 
         /// <summary>
+        /// Paginator for ListAIAgents operation
+        ///</summary>
+        public IListAIAgentsPaginator ListAIAgents(ListAIAgentsRequest request) 
+        {
+            return new ListAIAgentsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAIAgentVersions operation
+        ///</summary>
+        public IListAIAgentVersionsPaginator ListAIAgentVersions(ListAIAgentVersionsRequest request) 
+        {
+            return new ListAIAgentVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAIPrompts operation
+        ///</summary>
+        public IListAIPromptsPaginator ListAIPrompts(ListAIPromptsRequest request) 
+        {
+            return new ListAIPromptsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAIPromptVersions operation
+        ///</summary>
+        public IListAIPromptVersionsPaginator ListAIPromptVersions(ListAIPromptVersionsRequest request) 
+        {
+            return new ListAIPromptVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAssistantAssociations operation
         ///</summary>
         public IListAssistantAssociationsPaginator ListAssistantAssociations(ListAssistantAssociationsRequest request) 

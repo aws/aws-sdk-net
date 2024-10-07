@@ -74,7 +74,7 @@ namespace Amazon.QConnect.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  For <a href="https://aws.amazon.com/s3/">Amazon S3</a>, the ObjectConfiguration and
+        ///  For <a href="http://aws.amazon.com/s3/">Amazon S3</a>, the ObjectConfiguration and
         /// FileConfiguration of your AppIntegrations DataIntegration must be null. The <c>SourceURI</c>
         /// of your DataIntegration must use the following format: <c>s3://your_s3_bucket_name</c>.
         /// </para>

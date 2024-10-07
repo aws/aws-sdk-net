@@ -42,7 +42,7 @@ namespace Amazon.QConnect.Model
         /// The text associated with the recommendation trigger.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=0, Max=512)]
         public string Text
         {
             get { return this._text; }

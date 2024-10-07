@@ -59,6 +59,17 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetManagedSourceConfiguration())
+            {
+                context.Writer.WritePropertyName("managedSourceConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ManagedSourceConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ManagedSourceConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>
