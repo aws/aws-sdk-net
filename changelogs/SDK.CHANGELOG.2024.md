@@ -1,3 +1,16 @@
+### 3.7.900.0 (2024-10-07 18:21 UTC)
+* Deadline (3.7.402.0)
+	* Add support for using the template from a previous job during job creation and listing parameter definitions for a job.
+* MarketplaceReporting (3.7.400.2)
+	* Documentation-only update for AWS Marketplace Reporting API.
+* QConnect (3.7.401.0)
+	* This release adds support for the following capabilities: Configuration of the Gen AI system via AIAgent and AIPrompts. Integration support for Bedrock Knowledge Base.
+* Redshift (3.7.401.0)
+	* Add validation pattern to S3KeyPrefix on the EnableLogging API
+* Core 3.7.400.31
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.899.0 (2024-10-04 18:17 UTC)
 * EC2 (3.7.408.0)
 	* Documentation updates for Amazon EC2.

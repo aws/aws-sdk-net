@@ -32,7 +32,7 @@ namespace Amazon.ResilienceHub
     public partial class AmazonResilienceHubConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("resiliencehub", "3.7.401.28");
+            InternalSDKUtils.BuildUserAgentString("resiliencehub", "3.7.401.29");
 
         private string _userAgent = UserAgentString;
         ///<summary>
