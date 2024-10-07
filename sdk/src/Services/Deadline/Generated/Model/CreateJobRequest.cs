@@ -45,6 +45,7 @@ namespace Amazon.Deadline.Model
         private Dictionary<string, JobParameter> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, JobParameter>() : null;
         private int? _priority;
         private string _queueId;
+        private string _sourceJobId;
         private string _storageProfileId;
         private CreateJobTargetTaskRunStatus _targetTaskRunStatus;
         private string _template;
@@ -204,6 +205,24 @@ namespace Amazon.Deadline.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SourceJobId. 
+        /// <para>
+        /// The job ID for the source job.
+        /// </para>
+        /// </summary>
+        public string SourceJobId
+        {
+            get { return this._sourceJobId; }
+            set { this._sourceJobId = value; }
+        }
+
+        // Check to see if SourceJobId property is set
+        internal bool IsSetSourceJobId()
+        {
+            return this._sourceJobId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StorageProfileId. 
         /// <para>
         /// The storage profile ID for the storage profile to connect to the job.
@@ -246,7 +265,7 @@ namespace Amazon.Deadline.Model
         /// The job template to use for this job.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=300000)]
+        [AWSProperty(Sensitive=true, Min=1, Max=300000)]
         public string Template
         {
             get { return this._template; }
@@ -265,7 +284,6 @@ namespace Amazon.Deadline.Model
         /// The file type for the job template.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public JobTemplateType TemplateType
         {
             get { return this._templateType; }

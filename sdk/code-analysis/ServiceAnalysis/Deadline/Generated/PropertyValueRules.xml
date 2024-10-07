@@ -268,6 +268,10 @@
     <pattern>queue-[0-9a-f]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Deadline.Model.CreateJobRequest.SourceJobId</property>
+    <pattern>job-[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Deadline.Model.CreateJobRequest.StorageProfileId</property>
     <pattern>sp-[0-9a-f]{32}</pattern>
   </property-value-rule>
@@ -697,6 +701,10 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Deadline.Model.GetJobResponse.SourceJobId</property>
+    <pattern>job-[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Deadline.Model.GetJobResponse.StorageProfileId</property>
     <pattern>sp-[0-9a-f]{32}</pattern>
   </property-value-rule>
@@ -1111,6 +1119,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.ListJobMembersRequest.QueueId</property>
+    <pattern>queue-[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListJobParameterDefinitionsRequest.FarmId</property>
+    <pattern>farm-[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListJobParameterDefinitionsRequest.JobId</property>
+    <pattern>job-[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListJobParameterDefinitionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.ListJobParameterDefinitionsRequest.QueueId</property>
     <pattern>queue-[0-9a-f]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -2185,6 +2210,10 @@
     <pattern>queue-[0-9a-f]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Deadline.Model.JobSearchSummary.SourceJobId</property>
+    <pattern>job-[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Deadline.Model.JobSummary.JobId</property>
     <pattern>job-[0-9a-f]{32}</pattern>
   </property-value-rule>
@@ -2207,6 +2236,10 @@
     <property>Amazon.Deadline.Model.JobSummary.Priority</property>
     <min>0</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.JobSummary.SourceJobId</property>
+    <pattern>job-[0-9a-f]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.LicenseEndpointSummary.LicenseEndpointId</property>

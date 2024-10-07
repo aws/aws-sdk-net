@@ -4644,6 +4644,76 @@ namespace Amazon.Deadline
 
         #endregion
         
+        #region  ListJobParameterDefinitions
+
+        /// <summary>
+        /// Lists parameter definitions of a job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListJobParameterDefinitions service method.</param>
+        /// 
+        /// <returns>The response from the ListJobParameterDefinitions service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListJobParameterDefinitions">REST API Reference for ListJobParameterDefinitions Operation</seealso>
+        public virtual ListJobParameterDefinitionsResponse ListJobParameterDefinitions(ListJobParameterDefinitionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobParameterDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobParameterDefinitionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListJobParameterDefinitionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListJobParameterDefinitions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListJobParameterDefinitions operation on AmazonDeadlineClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListJobParameterDefinitions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListJobParameterDefinitions">REST API Reference for ListJobParameterDefinitions Operation</seealso>
+        public virtual IAsyncResult BeginListJobParameterDefinitions(ListJobParameterDefinitionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobParameterDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobParameterDefinitionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListJobParameterDefinitions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListJobParameterDefinitions.</param>
+        /// 
+        /// <returns>Returns a  ListJobParameterDefinitionsResult from Deadline.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListJobParameterDefinitions">REST API Reference for ListJobParameterDefinitions Operation</seealso>
+        public virtual ListJobParameterDefinitionsResponse EndListJobParameterDefinitions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListJobParameterDefinitionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListJobs
 
         /// <summary>

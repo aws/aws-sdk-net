@@ -44,6 +44,7 @@ namespace Amazon.Deadline.Model
         private int? _maxRetriesPerTask;
         private string _name;
         private int? _priority;
+        private string _sourceJobId;
         private DateTime? _startedAt;
         private JobTargetTaskRunStatus _targetTaskRunStatus;
         private TaskRunStatus _taskRunStatus;
@@ -238,6 +239,24 @@ namespace Amazon.Deadline.Model
         internal bool IsSetPriority()
         {
             return this._priority.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceJobId. 
+        /// <para>
+        /// The job ID for the source job.
+        /// </para>
+        /// </summary>
+        public string SourceJobId
+        {
+            get { return this._sourceJobId; }
+            set { this._sourceJobId = value; }
+        }
+
+        // Check to see if SourceJobId property is set
+        internal bool IsSetSourceJobId()
+        {
+            return this._sourceJobId != null;
         }
 
         /// <summary>

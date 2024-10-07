@@ -130,6 +130,12 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                     response.Priority = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("sourceJobId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SourceJobId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("startedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
