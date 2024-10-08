@@ -1,3 +1,14 @@
+### 3.7.901.0 (2024-10-08 18:16 UTC)
+* ElastiCache (3.7.401.0)
+	* AWS ElastiCache SDK now supports using APIs with newly launched Valkey engine. Please refer to updated AWS ElastiCache public documentation for detailed information on API usage.
+* MemoryDB (3.7.401.0)
+	* Amazon MemoryDB SDK now supports all APIs for newly launched Valkey engine. Please refer to the updated Amazon MemoryDB public documentation for detailed information on API usage.
+* S3 (3.7.404.4)
+	* Create traces using the SDK observability APIs for the S3 Transfer Utility
+* Core 3.7.400.32
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.900.0 (2024-10-07 18:21 UTC)
 * Deadline (3.7.402.0)
 	* Add support for using the template from a previous job during job creation and listing parameter definitions for a job.
