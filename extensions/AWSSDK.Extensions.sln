@@ -48,6 +48,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Extensions.CloudFron
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.Extensions.EC2.DecryptPassword.NetFramework", "src\AWSSDK.Extensions.EC2.DecryptPassword\AWSSDK.Extensions.EC2.DecryptPassword.NetFramework.csproj", "{3EC669E6-A541-445E-B68E-0A853715E39C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smithy.Identity.Abstractions", "src\Smithy.Identity.Abstractions\Smithy.Identity.Abstractions.csproj", "{326AC89B-35CC-4D68-86E4-90CF8F1E1EC5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -126,6 +128,10 @@ Global
 		{3EC669E6-A541-445E-B68E-0A853715E39C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EC669E6-A541-445E-B68E-0A853715E39C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EC669E6-A541-445E-B68E-0A853715E39C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{326AC89B-35CC-4D68-86E4-90CF8F1E1EC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{326AC89B-35CC-4D68-86E4-90CF8F1E1EC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{326AC89B-35CC-4D68-86E4-90CF8F1E1EC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{326AC89B-35CC-4D68-86E4-90CF8F1E1EC5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -149,6 +155,7 @@ Global
 		{0377B228-91F3-4A0B-BE66-221E7ECA6DF7} = {0BA39F07-84D6-420B-82D3-6DC3AF016C65}
 		{E195094D-5899-4FDF-969D-93C4432BA921} = {3D822DC2-ED2E-4434-BC4F-CE7FCD846B02}
 		{3EC669E6-A541-445E-B68E-0A853715E39C} = {3D822DC2-ED2E-4434-BC4F-CE7FCD846B02}
+		{326AC89B-35CC-4D68-86E4-90CF8F1E1EC5} = {3D822DC2-ED2E-4434-BC4F-CE7FCD846B02}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {949367A4-5683-4FD3-93F4-A2CEA6EECB21}
