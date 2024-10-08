@@ -28,6 +28,19 @@ namespace Amazon.Runtime
     {
         private Logger _logger = Logger.GetLogger(typeof(RefreshingAWSCredentials));
 
+        /// <inheritdoc />
+        public override DateTime? Expiration
+        {
+            get
+            {
+                if (currentState == null)
+                {
+                    return null;
+                }
+                return currentState.Expiration.ToUniversalTime();
+            }
+        }
+
         #region Refresh data
 
         /// <summary>
