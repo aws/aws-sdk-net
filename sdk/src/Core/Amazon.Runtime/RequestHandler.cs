@@ -57,7 +57,8 @@ namespace Amazon.Runtime
                 Headers = request.Headers,
                 ParameterCollection = request.ParameterCollection,
                 ServiceName = request.ServiceName,
-                Endpoint = request.Endpoint
+                Endpoint = request.Endpoint,
+                Request = request.OriginalRequest
             };
             return args;
         }
