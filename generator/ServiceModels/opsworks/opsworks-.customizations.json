@@ -10,7 +10,7 @@
 	"dataTypeSwap" : {
 		"CreateInstanceRequest" : {
 		  "VirtualizationType" : {
-			"Type" : "VirtualizationType",
+			"Type" : "VirtualizationType"
 		  }
 		}
 	}

@@ -78,7 +78,7 @@
 	    "Type" : "DateTime",
 		"Marshaller" : "Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds",
 		"Unmarshaller" : "DateTimeEpochLongMillisecondsUnmarshaller"
-	  },
+	  }
     }
   }
 }

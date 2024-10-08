@@ -96,6 +96,6 @@
 			"useWrappingResult": true,
             "wrappedResultShape": "Run",
             "wrappedResultMember": "Run"
-		},
+		}
 	}
 }
