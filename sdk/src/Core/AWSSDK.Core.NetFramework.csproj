@@ -78,4 +78,8 @@
     <PackageReference Include="System.Text.Json" Version="6.0.11" />
   </ItemGroup>
   <Import Project="overrides.targets"/>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\extensions\src\Smithy.Identity.Abstractions\Smithy.Identity.Abstractions.csproj" />
+  </ItemGroup>
 </Project>

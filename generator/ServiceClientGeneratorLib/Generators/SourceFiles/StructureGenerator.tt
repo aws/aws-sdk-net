@@ -235,8 +235,21 @@ namespace <#=this.Config.Namespace#>.Model
 
                     // Because some services have model properties named "Equals" which conflicts with .NET's Equals operation. Add the "new" keyword to override the behavior.
                     // The Retryable is there because the CloudHsmServiceException exception from CloudHSM models Retryable with a different return then what comes from the base class.
+                    var memberModifier = string.Empty;
+                    if (member.PropertyName.Equals("Equals") || (this.Structure is ExceptionShape && member.PropertyName.Equals("Retryable")))
+                    {
+                        memberModifier = "new ";
+                    }
+                    // Cognito and SecurityToken also have a modeled property named Expiration, which conflicts with the interface used in SRA.
+                    else if (
+                        member.PropertyName.Equals("Expiration") && 
+                        this.ClassName.Equals("Credentials") &&
+                        (this.Config.Namespace.Equals("Amazon.CognitoIdentity") || this.Config.Namespace.Equals("Amazon.SecurityToken")))
+                    {
+                        memberModifier = "override ";
+                    }
 #>
-        <#=member.AccessModifier#> <#=member.PropertyName.Equals("Equals") || (this.Structure is ExceptionShape && member.PropertyName.Equals("Retryable")) ? "new " : ""#><#=member.DetermineType()#> <#=member.PropertyName#>
+        <#=member.AccessModifier#> <#=memberModifier#><#=member.DetermineType()#> <#=member.PropertyName#>
         {
             get { return this.<#=member.VariableName#>; }
             set { this.<#=member.VariableName#> = value; }
