@@ -1,0 +1,9 @@
+{
+    "core": {
+        "updateMinimum": true,
+        "type": "Patch",
+        "changeLogMessages": [
+            "Placeholder message for the SRA"
+        ]
+    }
+}
