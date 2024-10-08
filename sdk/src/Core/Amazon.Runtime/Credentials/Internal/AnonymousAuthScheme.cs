@@ -1,0 +1,32 @@
+﻿/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ *
+ *  http://aws.amazon.com/apache2.0
+ *
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+using Smithy.Identity.Abstractions;
+
+namespace Amazon.Runtime.Credentials.Internal
+{
+    /// <summary>
+    /// The anonymous authentication scheme (which instructs the SDK not to sign requests).
+    /// </summary>
+    public class AnonymousAuthScheme : IAuthScheme<AnonymousAWSCredentials>
+    {
+        /// <inheritdoc/>
+        public string SchemeId => "smithy.api#noAuth";
+
+#pragma warning disable CA1065
+        public IIdentityResolver IdentityResolver => throw new System.NotImplementedException();
+#pragma warning restore CA1065
+    }
+}
