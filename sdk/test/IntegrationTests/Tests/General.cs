@@ -572,6 +572,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             AssertExtensions.ExpectException(() => client.ListBuckets(), typeof(ObjectDisposedException));
         }
         
+        [TestMethod]
+        [TestCategory("General")]
+        [TestCategory("RequiresIAMUser")]
         public void TestExpiringCredentials()
         {
             // test that non-expired credentials work
@@ -620,6 +623,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 {
                     client.ListBuckets();
                     Assert.IsFalse(expectFailure);
+                    Assert.IsNotNull(creds.Expiration);
                 }
                 catch (AmazonClientException ace)
                 {

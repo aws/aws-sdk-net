@@ -44,6 +44,9 @@ namespace ServiceClientGenerator
         private const string IntegrationTestUtilityName = "AWSSDK.IntegrationTestUtilities.NetFramework";
         private const string IntegrationTestUtilityGuid = "{7AB0DA1C-CA0E-4579-BA82-2B41A9DA15C7}";
 
+        private const string SmithyIdentityProjectGuid = "{D253C367-816E-4482-BD9F-514800601AA3}";
+        private const string SmithyIdentityProjectName = "Smithy.Identity.Abstractions";
+
         private static Regex ProjectReferenceRegex = new Regex("\"([^\"]*)\"");
 
         private static readonly ProjectFileCreator.ProjectConfigurationData GeneratorLibProjectConfig
@@ -96,6 +99,20 @@ namespace ServiceClientGenerator
             ProjectGuid = IntegrationTestUtilityGuid,
             ProjectPath = Utils.PathCombineAlt("..", "..", "..", "..", "sdk", "test", "IntegrationTests", $"{IntegrationTestUtilityName}.csproj"),
             RelativePath = Utils.PathCombineAlt("..", "..", "..", "test", "IntegrationTests", $"{IntegrationTestUtilityName}.csproj")
+        };
+
+        private static readonly Project SmithyIdentityProjectForCore = new Project
+        {
+            Name = SmithyIdentityProjectName,
+            ProjectGuid = SmithyIdentityProjectGuid,
+            ProjectPath = Utils.PathCombineAlt("..", "extensions", "src", SmithyIdentityProjectName, $"{SmithyIdentityProjectName}.csproj")
+        };
+
+        private static readonly Project SmithyIdentityProjectForServices = new Project
+        {
+            Name = SmithyIdentityProjectName,
+            ProjectGuid = SmithyIdentityProjectGuid,
+            ProjectPath = Utils.PathCombineAlt("..", "..", "..", "..", "extensions", "src", SmithyIdentityProjectName, $"{SmithyIdentityProjectName}.csproj")
         };
 
         private static readonly List<Project> CoreProjects = new List<Project>
@@ -318,6 +335,9 @@ namespace ServiceClientGenerator
                 }
             }
 
+            // Include a dependency on the identity and auth interfaces (as of now a project in the extensions folder, but may be moved to a separate package in the future).
+            coreProjects.Add(SmithyIdentityProjectForCore);
+
             IList<Project> testProjects = new List<Project>();
             IList<Project> integrationTestDependencies = new List<Project>();
             if (includeTests)
@@ -390,6 +410,12 @@ namespace ServiceClientGenerator
             var serviceProjectsRoot = Utils.PathCombineAlt(sdkSourceFolder, GeneratorDriver.ServicesSubFoldername);
             var coreProjectsRoot = Utils.PathCombineAlt(sdkSourceFolder, GeneratorDriver.CoreSubFoldername);
 
+            // In addition to the Core projects, also include the Smithy abstractions in each service solution. 
+            IList<Project> coreProjects = new List<Project>(CoreProjects)
+            {
+                SmithyIdentityProjectForServices
+            };
+
             // Iterating through each service in the service folder
             foreach (var servicePath in Directory.GetDirectories(serviceProjectsRoot).OrderBy(d => d))
             {
@@ -457,7 +483,7 @@ namespace ServiceClientGenerator
 
                 serviceSolutionFolders.Add(folder);
                 // Adding core projects to service solution
-                session["CoreProjects"] = CoreProjects;
+                session["CoreProjects"] = coreProjects;
                 // Adding service projects and its dependencies to the service solution
                 session["ServiceSolutionFolders"] = serviceSolutionFolders;
                 // Adding test projects to the service solution
