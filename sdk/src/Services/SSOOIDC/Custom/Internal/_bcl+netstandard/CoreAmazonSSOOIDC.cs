@@ -101,7 +101,7 @@ namespace Amazon.SSOOIDC.Internal
                 registerClientRequest.RedirectUris = new List<string> { request.PkceFlowOptions.RedirectUri };
             }
 
-            InternalSDKUtils.ApplyValues(registerClientRequest, request.AdditionalProperties);
+            InternalSDKUtils.ApplyValuesV2(registerClientRequest, request.AdditionalProperties);
             var registerClientResponse = client.RegisterClient(registerClientRequest);
 
             if (useDeviceCodeFlow)
@@ -112,7 +112,7 @@ namespace Amazon.SSOOIDC.Internal
                     ClientId = registerClientResponse.ClientId,
                     StartUrl = request.StartUrl,
                 };
-                InternalSDKUtils.ApplyValues(startDeviceAuthorizationRequest, request.AdditionalProperties);
+                InternalSDKUtils.ApplyValuesV2(startDeviceAuthorizationRequest, request.AdditionalProperties);
 
                 var startDeviceAuthorizationResponse = client.StartDeviceAuthorization(startDeviceAuthorizationRequest);
 
@@ -134,7 +134,7 @@ namespace Amazon.SSOOIDC.Internal
                     GrantType = CreateTokenDefaultGrantType,
                     DeviceCode = startDeviceAuthorizationResponse.DeviceCode,
                 };
-                InternalSDKUtils.ApplyValues(createTokenRequest, request.AdditionalProperties);
+                InternalSDKUtils.ApplyValuesV2(createTokenRequest, request.AdditionalProperties);
 
                 createTokenResponse = PollForSsoToken(client, createTokenRequest, startDeviceAuthorizationResponse.Interval.Value, deviceCodeExpiration, context);
             }
@@ -157,7 +157,7 @@ namespace Amazon.SSOOIDC.Internal
                     Code = authorizationCode,
                     CodeVerifier = codeVerifier,
                 };
-                InternalSDKUtils.ApplyValues(createTokenRequest, request.AdditionalProperties);
+                InternalSDKUtils.ApplyValuesV2(createTokenRequest, request.AdditionalProperties);
 
                 createTokenResponse = client.CreateToken(createTokenRequest);
             }
@@ -256,7 +256,7 @@ namespace Amazon.SSOOIDC.Internal
                 registerClientRequest.RedirectUris = new List<string> { request.PkceFlowOptions.RedirectUri };
             }
 
-            InternalSDKUtils.ApplyValues(registerClientRequest, request.AdditionalProperties);
+            InternalSDKUtils.ApplyValuesV2(registerClientRequest, request.AdditionalProperties);
             var registerClientResponse = await client.RegisterClientAsync(registerClientRequest, cancellationToken).ConfigureAwait(false);
 
             if (useDeviceCodeFlow)
@@ -267,7 +267,7 @@ namespace Amazon.SSOOIDC.Internal
                     ClientId = registerClientResponse.ClientId,
                     StartUrl = request.StartUrl,
                 };
-                InternalSDKUtils.ApplyValues(startDeviceAuthorizationRequest, request.AdditionalProperties);
+                InternalSDKUtils.ApplyValuesV2(startDeviceAuthorizationRequest, request.AdditionalProperties);
 
                 var startDeviceAuthorizationResponse =
                     await client.StartDeviceAuthorizationAsync(startDeviceAuthorizationRequest, cancellationToken).ConfigureAwait(false);
@@ -290,7 +290,7 @@ namespace Amazon.SSOOIDC.Internal
                     GrantType = CreateTokenDefaultGrantType,
                     DeviceCode = startDeviceAuthorizationResponse.DeviceCode,
                 };
-                InternalSDKUtils.ApplyValues(createTokenRequest, request.AdditionalProperties);
+                InternalSDKUtils.ApplyValuesV2(createTokenRequest, request.AdditionalProperties);
 
                 createTokenResponse = await PollForSsoTokenAsync(
                     client,
@@ -323,7 +323,7 @@ namespace Amazon.SSOOIDC.Internal
                     Code = authorizationCode,
                     CodeVerifier = codeVerifier,
                 };
-                InternalSDKUtils.ApplyValues(createTokenRequest, request.AdditionalProperties);
+                InternalSDKUtils.ApplyValuesV2(createTokenRequest, request.AdditionalProperties);
 
                 createTokenResponse = await client.CreateTokenAsync(createTokenRequest, cancellationToken).ConfigureAwait(false);
             }

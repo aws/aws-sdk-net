@@ -1,0 +1,9 @@
+{
+    "core": {
+      "changeLogMessages": [
+        "Fix #3497 make InternalSDKUtils aot compatible by removing the obsolete InternalSDKUtils.ApplyValues and refactoring SDK to use InternalSDKUtils.ApplyValuesV2"
+      ],
+      "type": "patch",
+      "updateMinimum": true
+    }
+  }
