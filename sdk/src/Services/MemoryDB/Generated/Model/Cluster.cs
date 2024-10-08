@@ -41,6 +41,7 @@ namespace Amazon.MemoryDB.Model
         private Endpoint _clusterEndpoint;
         private DataTieringStatus _dataTiering;
         private string _description;
+        private string _engine;
         private string _enginePatchVersion;
         private string _engineVersion;
         private string _kmsKeyId;
@@ -193,9 +194,27 @@ namespace Amazon.MemoryDB.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Engine. 
+        /// <para>
+        ///  The Redis OSS or Valkey engine used by the cluster.
+        /// </para>
+        /// </summary>
+        public string Engine
+        {
+            get { return this._engine; }
+            set { this._engine = value; }
+        }
+
+        // Check to see if Engine property is set
+        internal bool IsSetEngine()
+        {
+            return this._engine != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EnginePatchVersion. 
         /// <para>
-        /// The Redis OSS engine patch version used by the cluster
+        /// The engine patch version used by the cluster
         /// </para>
         /// </summary>
         public string EnginePatchVersion
@@ -213,7 +232,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The Redis OSS engine version used by the cluster
+        /// The Redis engine version used by the cluster
         /// </para>
         /// </summary>
         public string EngineVersion

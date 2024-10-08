@@ -39,12 +39,12 @@ namespace Amazon.MemoryDB
     /// <summary>
     /// <para>Implementation for accessing MemoryDB</para>
     ///
-    /// MemoryDB is a fully managed, Redis OSS-compatible, in-memory database that delivers
+    /// MemoryDB for Redis is a fully managed, Redis-compatible, in-memory database that delivers
     /// ultra-fast performance and Multi-AZ durability for modern applications built using
     /// microservices architectures. MemoryDB stores the entire database in-memory, enabling
-    /// low latency and high throughput data access. It is compatible with Redis OSS, a popular
-    /// open source data store, enabling you to leverage Redis OSS’ flexible and friendly
-    /// data structures, APIs, and commands.
+    /// low latency and high throughput data access. It is compatible with Redis, a popular
+    /// open source data store, enabling you to leverage Redis’ flexible and friendly data
+    /// structures, APIs, and commands.
     /// </summary>
     public partial class AmazonMemoryDBClient : AmazonServiceClient, IAmazonMemoryDB
     {
@@ -801,13 +801,6 @@ namespace Amazon.MemoryDB
 
         /// <summary>
         /// Deletes a cluster. It also deletes all associated nodes and node endpoints
-        /// 
-        ///  <note> 
-        /// <para>
-        ///  <c>CreateSnapshot</c> permission is required to create a final snapshot. Without
-        /// this permission, the API call will fail with an <c>Access Denied</c> exception.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCluster service method.</param>
         /// <param name="cancellationToken">
@@ -1136,7 +1129,7 @@ namespace Amazon.MemoryDB
 
 
         /// <summary>
-        /// Returns a list of the available Redis OSS engine versions.
+        /// Returns a list of the available engine versions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEngineVersions service method.</param>
         /// <param name="cancellationToken">

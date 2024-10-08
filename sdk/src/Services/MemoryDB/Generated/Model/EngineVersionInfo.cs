@@ -30,13 +30,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// Provides details of the Redis OSS engine version
+    /// Provides details of the engine version.
     /// </summary>
     public partial class EngineVersionInfo
     {
+        private string _engine;
         private string _enginePatchVersion;
         private string _engineVersion;
         private string _parameterGroupFamily;
+
+        /// <summary>
+        /// Gets and sets the property Engine. 
+        /// <para>
+        /// The version of the Redis OSS or Valkey engine used by the cluster.
+        /// </para>
+        /// </summary>
+        public string Engine
+        {
+            get { return this._engine; }
+            set { this._engine = value; }
+        }
+
+        // Check to see if Engine property is set
+        internal bool IsSetEngine()
+        {
+            return this._engine != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EnginePatchVersion. 

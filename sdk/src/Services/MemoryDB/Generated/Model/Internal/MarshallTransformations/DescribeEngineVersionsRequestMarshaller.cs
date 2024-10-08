@@ -75,6 +75,12 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DefaultOnly);
                 }
 
+                if(publicRequest.IsSetEngine())
+                {
+                    context.Writer.WritePropertyName("Engine");
+                    context.Writer.Write(publicRequest.Engine);
+                }
+
                 if(publicRequest.IsSetEngineVersion())
                 {
                     context.Writer.WritePropertyName("EngineVersion");
