@@ -23,9 +23,13 @@ using System.Text.RegularExpressions;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util.Internal.PlatformServices;
 using System.Text;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Amazon.Util.Internal
 {
+#if NET8_0_OR_GREATER
+    [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicProperties)]
+#endif
     public static partial class InternalSDKUtils
     {
         #region UserAgent
