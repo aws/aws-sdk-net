@@ -108,7 +108,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AuthTokenEnabled. 
         /// <para>
-        /// A flag that enables using an <c>AuthToken</c> (password) when issuing Redis OSS commands.
+        /// A flag that enables using an <c>AuthToken</c> (password) when issuing Valkey or Redis
+        /// OSS commands.
         /// </para>
         ///  
         /// <para>
@@ -166,7 +167,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The Elasticache engine. For Redis OSS only.
+        /// The ElastiCache engine. For Valkey or Redis OSS only.
         /// </para>
         /// </summary>
         public string Engine
@@ -184,7 +185,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The Elasticache (Redis OSS) engine version.
+        /// The ElastiCache engine version.
         /// </para>
         /// </summary>
         public string EngineVersion

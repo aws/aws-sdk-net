@@ -127,6 +127,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("Engine", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Engine = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("GlobalReplicationGroupInfo", targetDepth))
                     {
                         var unmarshaller = GlobalReplicationGroupInfoUnmarshaller.Instance;

@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// The resource representing a serverless cache snapshot. Available for Redis OSS and
-    /// Serverless Memcached only.
+    /// The resource representing a serverless cache snapshot. Available for Valkey, Redis
+    /// OSS and Serverless Memcached only.
     /// </summary>
     public partial class ServerlessCacheSnapshot
     {
@@ -48,8 +48,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property ARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of a serverless cache snapshot. Available for Redis
-        /// OSS and Serverless Memcached only.
+        /// The Amazon Resource Name (ARN) of a serverless cache snapshot. Available for Valkey,
+        /// Redis OSS and Serverless Memcached only.
         /// </para>
         /// </summary>
         public string ARN
@@ -67,8 +67,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property BytesUsedForCache. 
         /// <para>
-        /// The total size of a serverless cache snapshot, in bytes. Available for Redis OSS and
-        /// Serverless Memcached only.
+        /// The total size of a serverless cache snapshot, in bytes. Available for Valkey, Redis
+        /// OSS and Serverless Memcached only.
         /// </para>
         /// </summary>
         public string BytesUsedForCache
@@ -87,7 +87,8 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property CreateTime. 
         /// <para>
         /// The date and time that the source serverless cache's metadata and cache data set was
-        /// obtained for the snapshot. Available for Redis OSS and Serverless Memcached only.
+        /// obtained for the snapshot. Available for Valkey, Redis OSS and Serverless Memcached
+        /// only.
         /// </para>
         /// </summary>
         public DateTime CreateTime
@@ -105,8 +106,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property ExpiryTime. 
         /// <para>
-        /// The time that the serverless cache snapshot will expire. Available for Redis OSS and
-        /// Serverless Memcached only.
+        /// The time that the serverless cache snapshot will expire. Available for Valkey, Redis
+        /// OSS and Serverless Memcached only.
         /// </para>
         /// </summary>
         public DateTime ExpiryTime
@@ -125,7 +126,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// The ID of the Amazon Web Services Key Management Service (KMS) key of a serverless
-        /// cache snapshot. Available for Redis OSS and Serverless Memcached only.
+        /// cache snapshot. Available for Valkey, Redis OSS and Serverless Memcached only.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -144,7 +145,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property ServerlessCacheConfiguration. 
         /// <para>
         /// The configuration of the serverless cache, at the time the snapshot was taken. Available
-        /// for Redis OSS and Serverless Memcached only.
+        /// for Valkey, Redis OSS and Serverless Memcached only.
         /// </para>
         /// </summary>
         public ServerlessCacheConfiguration ServerlessCacheConfiguration
@@ -162,8 +163,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property ServerlessCacheSnapshotName. 
         /// <para>
-        /// The identifier of a serverless cache snapshot. Available for Redis OSS and Serverless
-        /// Memcached only.
+        /// The identifier of a serverless cache snapshot. Available for Valkey, Redis OSS and
+        /// Serverless Memcached only.
         /// </para>
         /// </summary>
         public string ServerlessCacheSnapshotName
@@ -181,8 +182,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property SnapshotType. 
         /// <para>
-        /// The type of snapshot of serverless cache. Available for Redis OSS and Serverless Memcached
-        /// only.
+        /// The type of snapshot of serverless cache. Available for Valkey, Redis OSS and Serverless
+        /// Memcached only.
         /// </para>
         /// </summary>
         public string SnapshotType
@@ -200,7 +201,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the serverless cache. Available for Redis OSS and Serverless
+        /// The current status of the serverless cache. Available for Valkey, Redis OSS and Serverless
         /// Memcached only.
         /// </para>
         /// </summary>

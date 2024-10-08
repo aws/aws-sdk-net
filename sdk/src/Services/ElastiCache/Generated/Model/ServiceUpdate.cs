@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// An update that you can apply to your Redis OSS clusters.
+    /// An update that you can apply to your Valkey or Redis OSS clusters.
     /// </summary>
     public partial class ServiceUpdate
     {
@@ -69,7 +69,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The Elasticache engine to which the update applies. Either Redis OSS or Memcached.
+        /// The Elasticache engine to which the update applies. Either Valkey, Redis OSS or Memcached.
         /// </para>
         /// </summary>
         public string Engine
@@ -87,8 +87,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The Elasticache engine version to which the update applies. Either Redis OSS or Memcached
-        /// engine version.
+        /// The Elasticache engine version to which the update applies. Either Valkey, Redis OSS
+        /// or Memcached engine version.
         /// </para>
         /// </summary>
         public string EngineVersion

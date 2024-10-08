@@ -39,6 +39,7 @@ namespace Amazon.ElastiCache.Model
         private bool? _automaticFailoverEnabled;
         private string _cacheNodeType;
         private string _cacheParameterGroupName;
+        private string _engine;
         private string _engineVersion;
         private string _globalReplicationGroupDescription;
         private string _globalReplicationGroupId;
@@ -118,6 +119,25 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetCacheParameterGroupName()
         {
             return this._cacheParameterGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Engine. 
+        /// <para>
+        /// Modifies the engine listed in a global replication group message. The options are
+        /// redis, memcached or valkey.
+        /// </para>
+        /// </summary>
+        public string Engine
+        {
+            get { return this._engine; }
+            set { this._engine = value; }
+        }
+
+        // Check to see if Engine property is set
+        internal bool IsSetEngine()
+        {
+            return this._engine != null;
         }
 
         /// <summary>

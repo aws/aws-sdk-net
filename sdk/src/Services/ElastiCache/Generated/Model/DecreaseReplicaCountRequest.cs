@@ -31,10 +31,10 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DecreaseReplicaCount operation.
-    /// Dynamically decreases the number of replicas in a Redis OSS (cluster mode disabled)
-    /// replication group or the number of replica nodes in one or more node groups (shards)
-    /// of a Redis OSS (cluster mode enabled) replication group. This operation is performed
-    /// with no cluster down time.
+    /// Dynamically decreases the number of replicas in a Valkey or Redis OSS (cluster mode
+    /// disabled) replication group or the number of replica nodes in one or more node groups
+    /// (shards) of a Valkey or Redis OSS (cluster mode enabled) replication group. This operation
+    /// is performed with no cluster down time.
     /// </summary>
     public partial class DecreaseReplicaCountRequest : AmazonElastiCacheRequest
     {
@@ -68,9 +68,10 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property NewReplicaCount. 
         /// <para>
         /// The number of read replica nodes you want at the completion of this operation. For
-        /// Redis OSS (cluster mode disabled) replication groups, this is the number of replica
-        /// nodes in the replication group. For Redis OSS (cluster mode enabled) replication groups,
-        /// this is the number of replica nodes in each of the replication group's node groups.
+        /// Valkey or Redis OSS (cluster mode disabled) replication groups, this is the number
+        /// of replica nodes in the replication group. For Valkey or Redis OSS (cluster mode enabled)
+        /// replication groups, this is the number of replica nodes in each of the replication
+        /// group's node groups.
         /// </para>
         ///  
         /// <para>
@@ -78,7 +79,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Redis OSS (cluster mode disabled)
+        /// Valkey or Redis OSS (cluster mode disabled)
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -90,8 +91,8 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Redis OSS (cluster mode enabled): 0 (though you will not be able to failover to a
-        /// replica if your primary node fails)
+        /// Valkey or Redis OSS (cluster mode enabled): 0 (though you will not be able to failover
+        /// to a replica if your primary node fails)
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -111,8 +112,8 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property ReplicaConfiguration. 
         /// <para>
         /// A list of <c>ConfigureShard</c> objects that can be used to configure each shard in
-        /// a Redis OSS (cluster mode enabled) replication group. The <c>ConfigureShard</c> has
-        /// three members: <c>NewReplicaCount</c>, <c>NodeGroupId</c>, and <c>PreferredAvailabilityZones</c>.
+        /// a Valkey or Redis OSS (cluster mode enabled) replication group. The <c>ConfigureShard</c>
+        /// has three members: <c>NewReplicaCount</c>, <c>NodeGroupId</c>, and <c>PreferredAvailabilityZones</c>.
         /// </para>
         /// </summary>
         public List<ConfigureShard> ReplicaConfiguration

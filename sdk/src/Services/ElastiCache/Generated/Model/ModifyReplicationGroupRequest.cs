@@ -31,14 +31,13 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyReplicationGroup operation.
-    /// Modifies the settings for a replication group. This is limited to Redis OSS 7 and
-    /// newer.
+    /// Modifies the settings for a replication group. This is limited to Valkey and Redis
+    /// OSS 7 and above.
     /// 
     ///  <ul> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/scaling-redis-cluster-mode-enabled.html">Scaling
-    /// for Amazon ElastiCache (Redis OSS) (cluster mode enabled)</a> in the ElastiCache User
-    /// Guide
+    /// for Valkey or Redis OSS (cluster mode enabled)</a> in the ElastiCache User Guide
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -47,7 +46,7 @@ namespace Amazon.ElastiCache.Model
     /// </para>
     ///  </li> </ul> <note> 
     /// <para>
-    /// This operation is valid for Redis OSS only.
+    /// This operation is valid for Valkey or Redis OSS only.
     /// </para>
     ///  </note>
     /// </summary>
@@ -62,6 +61,7 @@ namespace Amazon.ElastiCache.Model
         private string _cacheParameterGroupName;
         private List<string> _cacheSecurityGroupNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ClusterMode _clusterMode;
+        private string _engine;
         private string _engineVersion;
         private IpDiscovery _ipDiscovery;
         private List<LogDeliveryConfigurationRequest> _logDeliveryConfigurations = AWSConfigs.InitializeCollections ? new List<LogDeliveryConfigurationRequest>() : null;
@@ -173,7 +173,7 @@ namespace Amazon.ElastiCache.Model
         ///  </li> </ul> 
         /// <para>
         ///  For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating
-        /// Users with Redis OSS AUTH</a> 
+        /// Users with AUTH</a> 
         /// </para>
         /// </summary>
         public AuthTokenUpdateStrategyType AuthTokenUpdateStrategy
@@ -214,9 +214,9 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
-        ///  If you are running Redis OSS engine version 6.0 or later, set this parameter to yes
-        /// if you want to opt-in to the next auto minor version upgrade campaign. This parameter
-        /// is disabled for previous versions.  
+        ///  If you are running Valkey or Redis OSS engine version 6.0 or later, set this parameter
+        /// to yes if you want to opt-in to the next auto minor version upgrade campaign. This
+        /// parameter is disabled for previous versions.  
         /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
@@ -301,10 +301,10 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property ClusterMode. 
         /// <para>
         /// Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first
-        /// set the cluster mode to Compatible. Compatible mode allows your Redis OSS clients
-        /// to connect using both cluster mode enabled and cluster mode disabled. After you migrate
-        /// all Redis OSS clients to use cluster mode enabled, you can then complete cluster mode
-        /// configuration and set the cluster mode to Enabled.
+        /// set the cluster mode to Compatible. Compatible mode allows your Valkey or Redis OSS
+        /// clients to connect using both cluster mode enabled and cluster mode disabled. After
+        /// you migrate all Valkey or Redis OSS clients to use cluster mode enabled, you can then
+        /// complete cluster mode configuration and set the cluster mode to Enabled.
         /// </para>
         /// </summary>
         public ClusterMode ClusterMode
@@ -317,6 +317,25 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetClusterMode()
         {
             return this._clusterMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Engine. 
+        /// <para>
+        /// Modifies the engine listed in a replication group message. The options are redis,
+        /// memcached or valkey.
+        /// </para>
+        /// </summary>
+        public string Engine
+        {
+            get { return this._engine; }
+            set { this._engine = value; }
+        }
+
+        // Check to see if Engine property is set
+        internal bool IsSetEngine()
+        {
+            return this._engine != null;
         }
 
         /// <summary>
@@ -349,9 +368,9 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property IpDiscovery. 
         /// <para>
         /// The network type you choose when modifying a cluster, either <c>ipv4</c> | <c>ipv6</c>.
-        /// IPv6 is supported for workloads using Redis OSS engine version 6.2 onward or Memcached
-        /// engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
-        /// system</a>.
+        /// IPv6 is supported for workloads using Valkey 7.2 and above, Redis OSS engine version
+        /// 6.2 and above or Memcached engine version 1.6.6 and above on all instances built on
+        /// the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
         /// </para>
         /// </summary>
         public IpDiscovery IpDiscovery
@@ -652,7 +671,8 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property SnapshottingClusterId. 
         /// <para>
         /// The cluster ID that is used as the daily snapshot source for the replication group.
-        /// This parameter cannot be set for Redis OSS (cluster mode enabled) replication groups.
+        /// This parameter cannot be set for Valkey or Redis OSS (cluster mode enabled) replication
+        /// groups.
         /// </para>
         /// </summary>
         public string SnapshottingClusterId
@@ -726,8 +746,8 @@ namespace Amazon.ElastiCache.Model
         /// You must set <c>TransitEncryptionEnabled</c> to <c>true</c>, for your existing cluster,
         /// and set <c>TransitEncryptionMode</c> to <c>preferred</c> in the same request to allow
         /// both encrypted and unencrypted connections at the same time. Once you migrate all
-        /// your Redis OSS clients to use encrypted connections you can set the value to <c>required</c>
-        /// to allow encrypted connections only.
+        /// your Valkey or Redis OSS clients to use encrypted connections you can set the value
+        /// to <c>required</c> to allow encrypted connections only.
         /// </para>
         ///  
         /// <para>
