@@ -17,12 +17,10 @@ using Amazon.S3;
 using Amazon.S3.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 using AWSSDK.UnitTests.Mocking;
 using System.Collections.Generic;
 using static AWSSDK.UnitTests.Mocking.TestUtils;
-using S3Signer = Amazon.S3.Internal.S3Signer;
 
 namespace AWSSDK.UnitTests.S3
 {
@@ -45,10 +43,11 @@ namespace AWSSDK.UnitTests.S3
                 new NoopPipelineHandler(),
                 new Signer(),
                 new AmazonS3EndpointResolver(),
-                new Marshaller()
+                new AmazonS3AuthSchemeHandler(),
+                new Marshaller(),
             };
 
-            return TestUtils.RunMockRequest(pipeline, request, marshaller, null, config, new S3Signer());
+            return TestUtils.RunMockRequest(pipeline, request, marshaller, null, config, signer: null);
         }
     }
 }

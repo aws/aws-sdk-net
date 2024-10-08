@@ -19,6 +19,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using Amazon.Runtime.CredentialManagement;
+using Amazon.Runtime.Credentials;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util.Internal;
 
@@ -95,7 +96,7 @@ namespace Amazon.Runtime.Internal
         }
         public ProfileCSMConfigs(ICredentialProfileSource source, CSMFallbackConfigChain cSMFallbackConfigChain)
         {
-            ProfileName = FallbackCredentialsFactory.GetProfileName();
+            ProfileName = DefaultAWSCredentialsIdentityResolver.GetProfileName();
             CredentialProfile profile;
             if (!source.TryGetProfile(ProfileName, out profile))
             {

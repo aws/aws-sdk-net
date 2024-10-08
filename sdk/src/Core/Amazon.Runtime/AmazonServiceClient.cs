@@ -43,7 +43,6 @@ namespace Amazon.Runtime
         private Logger _logger;
         protected EndpointDiscoveryResolverBase EndpointDiscoveryResolver { get; private set; }
         protected RuntimePipeline RuntimePipeline { get; set; }
-        protected internal AWSCredentials Credentials { get; private set; }
         public IClientConfig Config => _config;
         private readonly ClientConfig _config;
         protected virtual IServiceMetadata ServiceMetadata { get; } = new ServiceMetadata();
@@ -160,21 +159,17 @@ namespace Amazon.Runtime
                 _logger = Logger.GetLogger(this.GetType());
 
             config.Validate();
-            this.Credentials = credentials;
+
+            if(credentials != null)
+                config.DefaultAWSCredentials = credentials;
+
             _config = config;
-            Signer = CreateSigner();
             EndpointDiscoveryResolver = new EndpointDiscoveryResolver(config, _logger);
             Initialize();
             UpdateSecurityProtocol();
             BuildRuntimePipeline();
 
             _uptimeMetricMeasurer = MetricsUtilities.MeasureDuration(config, TelemetryConstants.ClientUptimeMetricName);
-        }
-
-        protected AbstractAWSSigner Signer
-        {
-            get;
-            private set;
         }
 
         protected AmazonServiceClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, ClientConfig config)
@@ -184,6 +179,11 @@ namespace Amazon.Runtime
 
         protected AmazonServiceClient(string awsAccessKeyId, string awsSecretAccessKey, ClientConfig config)
             : this(new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey), config)
+        {
+        }
+
+        protected AmazonServiceClient(ClientConfig config)
+            : this(null, config)
         {
         }
 
@@ -202,7 +202,7 @@ namespace Amazon.Runtime
             ThrowIfDisposed();
 
             var executionContext = new ExecutionContext(
-                new RequestContext(this.Config.LogMetrics, Signer)
+                new RequestContext(this.Config.LogMetrics)
                 {
                     ClientConfig = this.Config,
                     Marshaller = options.RequestMarshaller,
@@ -233,7 +233,7 @@ namespace Amazon.Runtime
                 cancellationToken = _config.BuildDefaultCancellationToken();
 
             var executionContext = new ExecutionContext(
-                new RequestContext(this.Config.LogMetrics, Signer)
+                new RequestContext(this.Config.LogMetrics)
                 {
                     ClientConfig = this.Config,
                     Marshaller = options.RequestMarshaller,
@@ -302,7 +302,7 @@ namespace Amazon.Runtime
             mExceptionEvent(this, args);
         }
 
-#endregion
+        #endregion
 
         #region Dispose methods
 
@@ -335,9 +335,8 @@ namespace Amazon.Runtime
                 throw new ObjectDisposedException(GetType().FullName);
         }
 
-#endregion
+        #endregion
 
-        protected abstract AbstractAWSSigner CreateSigner();
         protected virtual void CustomizeRuntimePipeline(RuntimePipeline pipeline) { }
 
         private void BuildRuntimePipeline()
@@ -383,18 +382,15 @@ namespace Amazon.Runtime
                     new ErrorHandler(_logger),
                     postUnmarshallHandler,
                     new Signer(),
-                    // EndpointDiscoveryResolver must come after CredentialsRetriever, RetryHander, and EndpointResolver as it depends on
+                    // EndpointDiscoveryResolver must come after RetryHander, and EndpointResolver as it depends on
                     // credentials, retrying of requests for 421 web exceptions, and the current set regional endpoint.
                     new EndpointDiscoveryHandler(),
                     // ChecksumHandler must come after CompressionHandler because we must calculate the checksum of a payload after compression.
                     // ChecksumHandler must come after EndpointsResolver because of an upcoming project.
                     new ChecksumHandler(),
-                    // CredentialsRetriever must come after RetryHandler because of any credential related changes.
-                    new CredentialsRetriever(this.Credentials),
                     new RetryHandler(retryPolicy),
                     new CompressionHandler(),
                     postMarshallHandler,
-                    // EndpointResolver must come after CredentialsRetriever in an upcoming endpoint project.
                     new EndpointResolver(),
                     new Marshaller(),
                     preMarshallHandler,
@@ -469,7 +465,7 @@ namespace Amazon.Runtime
         /// <param name="skipEncodingValidPathChars">If true the accepted path characters {/+:} are not encoded.</param>
         /// <returns>Uri for the given SDK request</returns>
         public static Uri ComposeUrl(IRequest internalRequest, bool skipEncodingValidPathChars)
-        { 
+        {
             Uri url = internalRequest.Endpoint;
             var resourcePath = internalRequest.ResourcePath;
             if (resourcePath == null)
@@ -532,7 +528,7 @@ namespace Amazon.Runtime
             DontUnescapePathDotsAndSlashes(uri);
             return uri;
         }
- 
+
 
         /// <summary>
         /// Patches the in-flight uri to stop it unescaping the path etc (what Uri did before
@@ -625,6 +621,6 @@ namespace Amazon.Runtime
             {
                 requestContext.CSMCallEvent = new MonitoringAPICallEvent(requestContext);
             }
-        }        
+        }
     }
 }

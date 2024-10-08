@@ -12,6 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using Amazon.Runtime.Identity;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.SharedInterfaces;
 using Amazon.RuntimeDependencies;
@@ -119,17 +120,14 @@ namespace Amazon.Runtime.Internal.Auth
         /// <param name="metrics">
         /// Metrics for the request
         /// </param>
-        /// <param name="credentials">
+        /// <param name="identity">
         /// The AWS credentials for the account making the service call.
         /// </param>
-        public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, ImmutableCredentials credentials)
+        public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, BaseIdentity identity)
         {
-            _awsSigV4AProvider.Sign(request, clientConfig, metrics, credentials);
-        }
-
-        public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey)
-        {
-            throw new AWSCommonRuntimeException("SigV4a signing with only an access key and secret is not supported. Call the Sign override with ImmutableCredentials instead.");
+            var credentials = identity as AWSCredentials;
+            var immutableCredentials = credentials.GetCredentials();
+            _awsSigV4AProvider.Sign(request, clientConfig, metrics, immutableCredentials);
         }
 
         /// <summary>

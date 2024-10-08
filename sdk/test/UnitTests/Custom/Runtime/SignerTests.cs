@@ -24,14 +24,14 @@ namespace AWSSDK.UnitTests
         {            
             var pipeline = new RuntimePipeline(new MockHandler());
             pipeline.AddHandler(new Signer());
-            pipeline.AddHandler(new CredentialsRetriever(new AnonymousAWSCredentials()));
 
             var signer = new MockSigner();
             var context = CreateTestContext(signer);
+            context.RequestContext.Identity = new AnonymousAWSCredentials();
             pipeline.InvokeSync(context);
 
             Assert.IsTrue(context.RequestContext.IsSigned);
-            Assert.AreEqual(0, signer.SignCount);
+            Assert.AreEqual(1, signer.SignCount);
         }
 
         [TestMethod][TestCategory("UnitTest")]
@@ -40,10 +40,10 @@ namespace AWSSDK.UnitTests
         {
             var pipeline = new RuntimePipeline(new MockHandler());
             pipeline.AddHandler(new Signer());
-            pipeline.AddHandler(new CredentialsRetriever(new BasicAWSCredentials("accessKey", "secretKey")));
 
             var signer = new MockSigner();
             var context = CreateTestContext(signer);
+            context.RequestContext.Identity = new BasicAWSCredentials("accessKey", "secretKey");
             pipeline.InvokeSync(context);
 
             Assert.IsTrue(context.RequestContext.IsSigned);
@@ -56,10 +56,10 @@ namespace AWSSDK.UnitTests
         {
             var pipeline = new RuntimePipeline(new MockHandler());           
             pipeline.AddHandler(new Signer());
-            pipeline.AddHandler(new CredentialsRetriever(new BasicAWSCredentials("accessKey", "secretKey")));
 
             var signer = new AWS4Signer();
             var context = CreateTestContext(signer);
+            context.RequestContext.Identity = new BasicAWSCredentials("accessKey", "secretKey");
 
             // inject a mutable header that the signer should strip out
             context.RequestContext.Request.Headers[HeaderKeys.XAmznTraceIdHeader] = "stuff";
@@ -216,10 +216,10 @@ namespace AWSSDK.UnitTests
         {
             var pipeline = new RuntimePipeline(new MockHandler());            
             pipeline.AddHandler(new Signer());
-            pipeline.AddHandler(new CredentialsRetriever(new BasicAWSCredentials("accessKey", "secretKey")));
 
             var signer = new MockSigner();
             var context = CreateTestContext(signer);
+            context.RequestContext.Identity = new BasicAWSCredentials("accessKey", "secretKey");
             await pipeline.InvokeAsync<AmazonWebServiceResponse>(context);
 
             Assert.IsTrue(context.RequestContext.IsSigned);

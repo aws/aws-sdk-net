@@ -230,7 +230,7 @@ namespace AWSSDK.UnitTests
                 RegionEndpoint = RegionEndpoint.USEast1
             };
             var iRequest = S3ArnTestUtils.RunMockRequest(request, GetObjectRequestMarshaller.Instance, config);
-            signer.Sign(iRequest, config, new RequestMetrics(), new ImmutableCredentials("ACCESS", "SECRET", ""));
+            signer.Sign(iRequest, config, new RequestMetrics(), new BasicAWSCredentials("ACCESS", "SECRET"));
 
             Assert.IsTrue(iRequest.Headers.ContainsKey(HeaderKeys.AuthorizationHeader));
             Assert.IsTrue((iRequest.Headers["Authorization"]).Contains("s3-object-lambda"));
@@ -299,7 +299,7 @@ namespace AWSSDK.UnitTests
             };
 
             var iRequest = S3ArnTestUtils.RunMockRequest(request, WriteGetObjectResponseRequestMarshaller.Instance, config);
-            signer.Sign(iRequest, config, new RequestMetrics(), new ImmutableCredentials("ACCESS", "SECRET", ""));
+            signer.Sign(iRequest, config, new RequestMetrics(), new BasicAWSCredentials("ACCESS", "SECRET"));
 
             Assert.IsTrue(iRequest.Headers.ContainsKey(HeaderKeys.AuthorizationHeader));
             Assert.IsTrue((iRequest.Headers["Authorization"]).Contains("s3-object-lambda"));

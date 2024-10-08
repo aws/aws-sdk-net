@@ -64,7 +64,7 @@ namespace Amazon.S3
         ///
         /// </summary>
         public AmazonS3Client()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonS3Config()) { }
+            : base(new AmazonS3Config()) { }
 
         /// <summary>
         /// Constructs AmazonS3Client with the credentials loaded from the application's
@@ -83,7 +83,7 @@ namespace Amazon.S3
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonS3Client(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonS3Config{RegionEndpoint = region}) { }
+            : base(new AmazonS3Config{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonS3Client with the credentials loaded from the application's
@@ -102,7 +102,7 @@ namespace Amazon.S3
         /// </summary>
         /// <param name="config">The AmazonS3Client Configuration Object</param>
         public AmazonS3Client(AmazonS3Config config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -227,14 +227,6 @@ namespace Amazon.S3
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new Amazon.S3.Internal.S3Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -258,7 +250,9 @@ namespace Amazon.S3
             }
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonS3EndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonS3AuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

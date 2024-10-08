@@ -15,6 +15,8 @@
 
 using System;
 using System.Diagnostics;
+using Amazon.Runtime.Identity;
+using Amazon.Runtime.Internal.Auth;
 
 namespace Amazon.Runtime
 {
@@ -26,15 +28,20 @@ namespace Amazon.Runtime
     /// This class is the focused public projection of the internal class
     /// Amazon.Runtime.Credentials.Internal.SsoToken
     /// </remarks>
-    [DebuggerDisplay("{"+ nameof(Token) + "}")]
-    public class AWSToken
+    [DebuggerDisplay("{" + nameof(Token) + "}")]
+    public class AWSToken : BaseIdentity
     {
         public string Token { get; set; }
-        public DateTime? ExpiresAt { get; set; }
 
-        public override string ToString()
+        [Obsolete("This property is deprecated in favor of Expiration.")]
+        public DateTime? ExpiresAt
         {
-            return Token;
+            get { return Expiration; }
+            set { this.Expiration = value; }
         }
+
+        public override DateTime? Expiration { get; set; }
+
+        public override string ToString() => Token;
     }
 }

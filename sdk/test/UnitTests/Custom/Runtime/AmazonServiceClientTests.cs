@@ -14,6 +14,7 @@ using System.Threading;
 using System.Net;
 using Amazon.ElasticTranscoder;
 using Amazon.ElasticTranscoder.Model;
+using Amazon.ElasticTranscoder.Internal;
 using Amazon;
 using Amazon.Runtime.Internal;
 
@@ -77,6 +78,7 @@ namespace AWSSDK.UnitTests
             var httpHandler = new HttpHandler<Stream>(_requestFactory, this);
 
             pipeline.ReplaceHandler<HttpHandler<Stream>>(httpHandler);
+            pipeline.AddHandlerAfter<Marshaller>(new AmazonElasticTranscoderAuthSchemeHandler());
         }
     }
 }
