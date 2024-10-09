@@ -14,22 +14,18 @@
  */
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-
-using Amazon.Util.Internal;
-using System.Globalization;
-using System.Collections;
 using Amazon.DynamoDBv2.DocumentModel;
+using Amazon.Util.Internal;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
-#if NET8_0_OR_GREATER
-    [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
-#endif
     internal static class Utils
     {
         private static readonly Type[] EmptyTypes = new Type[0];
@@ -124,13 +120,42 @@ namespace Amazon.DynamoDBv2.DataModel
             return elementType;
         }
 
+#if NET8_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
         public static bool ItemsToCollection(Type targetType, IEnumerable<object> items, out object result)
         {
             return targetType.IsArray ?
-                ItemsToArray(targetType, items, out result):  //targetType is Array
+                ItemsToArray(targetType, items, out result) :  //targetType is Array
                 ItemsToIList(targetType, items, out result);  //targetType is IList or has Add method.
         }
 
+        public static bool ItemsToCollection<T, TCollection>(IEnumerable<T> items, out TCollection result) where TCollection : ICollection<T>
+        {
+            if (typeof(TCollection) == typeof(T[]))
+            {
+                result = (TCollection)(object)items.ToArray();
+                return true;
+            }
+            if (typeof(TCollection) == typeof(List<T>))
+            {
+                result = (TCollection)(object)items.ToList();
+                return true;
+            }
+            if (typeof(TCollection) == typeof(HashSet<T>))
+            {
+                result = (TCollection)(object)new HashSet<T>(items);
+                return true;
+            }
+
+            result = default;
+            return false;
+        }
+
+
+#if NET8_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
         private static bool ItemsToIList(Type targetType, IEnumerable<object> items, out object result)
         {
             result = Utils.Instantiate(targetType);
@@ -155,6 +180,9 @@ namespace Amazon.DynamoDBv2.DataModel
             return false;
         }
 
+#if NET8_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
         private static bool ItemsToArray(Type targetType, IEnumerable<object> items, out object result)
         {
             var itemlist = items.ToList();
@@ -244,7 +272,7 @@ namespace Amazon.DynamoDBv2.DataModel
         private static Type[][] validArrayConstructorInputs = new Type[][]
         {
             //supports one dimension Array only
-            new Type[] { typeof(int) } 
+            new Type[] { typeof(int) }
         };
         private static Type[][] validConverterConstructorInputs = new Type[][]
         {
@@ -252,18 +280,33 @@ namespace Amazon.DynamoDBv2.DataModel
             new Type[] { typeof(DynamoDBContext) }
         };
 
+#if NET8_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
         public static object InstantiateConverter(Type objectType, IDynamoDBContext context)
         {
             return InstantiateHelper(objectType, validConverterConstructorInputs, new object[] { context });
         }
-        public static object InstantiateArray(Type objectType,int length)
+
+#if NET8_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
+        public static object InstantiateArray(Type objectType, int length)
         {
             return InstantiateHelper(objectType, validArrayConstructorInputs, new object[] { length });
         }
+
+#if NET8_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
         public static object Instantiate(Type objectType)
         {
             return InstantiateHelper(objectType, validConstructorInputs, null);
         }
+
+#if NET8_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
         private static object InstantiateHelper(Type objectType, Type[][] validConstructorInputs, object[] optionalInput = null)
         {
             if (objectType == null)
@@ -287,9 +330,13 @@ namespace Amazon.DynamoDBv2.DataModel
 
             throw new InvalidOperationException("Unable to find valid constructor for type " + objectType.FullName);
         }
+
+#if NET8_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
         private static IEnumerable<ConstructorInfo> GetConstructors(Type typeInfo, Type[][] validConstructorInputs)
         {
-            foreach(var inputTypes in validConstructorInputs)
+            foreach (var inputTypes in validConstructorInputs)
             {
                 var constructor = typeInfo.GetConstructor(inputTypes);
                 if (constructor != null)
@@ -297,18 +344,33 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 
+#if NET8_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
         public static bool CanInstantiate(Type objectType)
         {
             return CanInstantiateHelper(objectType, validConstructorInputs);
         }
+
+#if NET8_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
         public static bool CanInstantiateArray(Type objectType)
         {
             return objectType.IsArray && CanInstantiateHelper(objectType, validArrayConstructorInputs);
         }
+
+#if NET8_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
         public static bool CanInstantiateConverter(Type objectType)
         {
             return CanInstantiateHelper(objectType, validConverterConstructorInputs);
         }
+
+#if NET8_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
         private static bool CanInstantiateHelper(Type objectType, Type[][] validConstructorInputs)
         {
             var objectTypeWrapper = objectType;
@@ -358,6 +420,10 @@ namespace Amazon.DynamoDBv2.DataModel
                 throw new ArgumentOutOfRangeException("member", "Member must be FieldInfo or PropertyInfo");
             }
         }
+
+#if NET8_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
         public static bool ImplementsInterface(Type targetType, Type interfaceType)
         {
             if (!interfaceType.IsInterface)
@@ -376,7 +442,7 @@ namespace Amazon.DynamoDBv2.DataModel
             }
             return false;
         }
-        
+
         /// <summary>
         /// Apply a set of filters to a determine whether a member should be returned.
         /// In terms of DynamoDb, we want to return members that are fields or properties
@@ -394,7 +460,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             return true;
         }
-        
+
         /// <summary>
         /// Retrieves a list of members that exist in a given type.
         /// The function goes over all the declared members of a given type
@@ -403,13 +469,16 @@ namespace Amazon.DynamoDBv2.DataModel
         /// members from the derived types will be used while ignoring same-name members
         /// in base types to avoid returning duplicate members.
         /// </summary>
+#if NET8_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(Amazon.DynamoDBv2.Custom.Internal.InternalConstants.RequiresUnreferencedCodeMessage)]
+#endif
         public static List<MemberInfo> GetMembersFromType(Type type)
         {
             Dictionary<string, MemberInfo> members = new Dictionary<string, MemberInfo>();
-        
+
             Type currentType = type;
             while (
-                currentType != null && 
+                currentType != null &&
                 currentType != typeof(object))
             {
                 // Previous implementation used GetMembers to return the valid members for a type, but in certain class configurations
@@ -420,7 +489,7 @@ namespace Amazon.DynamoDBv2.DataModel
                     .GetMembers(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.DeclaredOnly)
                     .Where(IsValidMemberInfo)
                     .ToList();
-        
+
                 foreach (var member in currentMembers)
                 {
                     if (!members.ContainsKey(member.Name))
@@ -428,14 +497,14 @@ namespace Amazon.DynamoDBv2.DataModel
                         members[member.Name] = member;
                     }
                 }
-        
+
                 currentType = currentType.BaseType;
             }
-        
+
             return members.Values.ToList();
         }
 
-#endregion
+        #endregion
 
     }
 }
