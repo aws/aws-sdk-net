@@ -1,3 +1,10 @@
+### 3.7.902.0 (2024-10-09 18:19 UTC)
+* CodePipeline (3.7.403.0)
+	* AWS CodePipeline introduces a Compute category
+* Core 3.7.400.33
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.901.0 (2024-10-08 18:16 UTC)
 * ElastiCache (3.7.401.0)
 	* AWS ElastiCache SDK now supports using APIs with newly launched Valkey engine. Please refer to updated AWS ElastiCache public documentation for detailed information on API usage.
