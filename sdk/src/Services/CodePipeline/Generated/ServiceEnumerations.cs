@@ -39,6 +39,10 @@ namespace Amazon.CodePipeline
         /// </summary>
         public static readonly ActionCategory Build = new ActionCategory("Build");
         /// <summary>
+        /// Constant Compute for ActionCategory
+        /// </summary>
+        public static readonly ActionCategory Compute = new ActionCategory("Compute");
+        /// <summary>
         /// Constant Deploy for ActionCategory
         /// </summary>
         public static readonly ActionCategory Deploy = new ActionCategory("Deploy");

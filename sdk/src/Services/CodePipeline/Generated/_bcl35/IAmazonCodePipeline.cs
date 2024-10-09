@@ -155,6 +155,10 @@ namespace Amazon.CodePipeline
     /// <para>
     /// Invoke
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Compute
+    /// </para>
     ///  </li> </ul> 
     /// <para>
     /// Pipelines also include <i>transitions</i>, which allow the transition of artifacts
