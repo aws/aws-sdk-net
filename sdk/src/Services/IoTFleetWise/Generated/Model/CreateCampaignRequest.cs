@@ -157,7 +157,7 @@ namespace Amazon.IoTFleetWise.Model
         /// Default: An empty array
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=5)]
+        [AWSProperty(Sensitive=true, Min=0, Max=5)]
         public List<string> DataExtraDimensions
         {
             get { return this._dataExtraDimensions; }
@@ -291,6 +291,7 @@ namespace Amazon.IoTFleetWise.Model
         /// Default: <c>0</c> 
         /// </para>
         /// </summary>
+        [Obsolete("priority is no longer used or needed as input")]
         [AWSProperty(Min=0)]
         public int Priority
         {
@@ -330,7 +331,7 @@ namespace Amazon.IoTFleetWise.Model
         /// (Optional) A list of information about signals to collect. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1000)]
+        [AWSProperty(Sensitive=true, Min=0, Max=1000)]
         public List<SignalInformation> SignalsToCollect
         {
             get { return this._signalsToCollect; }

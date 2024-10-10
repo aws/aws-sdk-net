@@ -100,6 +100,7 @@ namespace Amazon.IoTFleetWise.Model
         /// <c>RUNNING</c>, or <c>SUSPENDED</c>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=7, Max=20)]
         public string Status
         {
             get { return this._status; }
