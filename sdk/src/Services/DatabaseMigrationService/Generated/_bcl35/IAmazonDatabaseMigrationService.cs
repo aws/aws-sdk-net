@@ -72,6 +72,9 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="request">Container for the necessary parameters to execute the AddTagsToResource service method.</param>
         /// 
         /// <returns>The response from the AddTagsToResource service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
@@ -264,6 +267,61 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  CreateDataMigration
+
+
+        /// <summary>
+        /// Creates a data migration using the provided settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataMigration service method.</param>
+        /// 
+        /// <returns>The response from the CreateDataMigration service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.FailedDependencyException">
+        /// A dependency threw an exception.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidOperationException">
+        /// The action or operation requested isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
+        /// The resource you are attempting to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
+        /// The quota for this resource quota has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateDataMigration">REST API Reference for CreateDataMigration Operation</seealso>
+        CreateDataMigrationResponse CreateDataMigration(CreateDataMigrationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDataMigration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataMigration operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDataMigration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateDataMigration">REST API Reference for CreateDataMigration Operation</seealso>
+        IAsyncResult BeginCreateDataMigration(CreateDataMigrationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateDataMigration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDataMigration.</param>
+        /// 
+        /// <returns>Returns a  CreateDataMigrationResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateDataMigration">REST API Reference for CreateDataMigration Operation</seealso>
+        CreateDataMigrationResponse EndCreateDataMigration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateDataProvider
 
 
@@ -276,6 +334,9 @@ namespace Amazon.DatabaseMigrationService
         /// <returns>The response from the CreateDataProvider service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
         /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.FailedDependencyException">
+        /// A dependency threw an exception.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
         /// The resource you are attempting to create already exists.
@@ -543,6 +604,9 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
         /// DMS was denied access to the endpoint. Check that the role is correctly configured.
         /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.FailedDependencyException">
+        /// A dependency threw an exception.
+        /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
         /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
@@ -613,6 +677,9 @@ namespace Amazon.DatabaseMigrationService
         /// <returns>The response from the CreateMigrationProject service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
         /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.FailedDependencyException">
+        /// A dependency threw an exception.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceAlreadyExistsException">
         /// The resource you are attempting to create already exists.
@@ -1043,6 +1110,55 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  DeleteDataMigration
+
+
+        /// <summary>
+        /// Deletes the specified data migration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataMigration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDataMigration service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.FailedDependencyException">
+        /// A dependency threw an exception.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteDataMigration">REST API Reference for DeleteDataMigration Operation</seealso>
+        DeleteDataMigrationResponse DeleteDataMigration(DeleteDataMigrationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDataMigration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataMigration operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDataMigration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteDataMigration">REST API Reference for DeleteDataMigration Operation</seealso>
+        IAsyncResult BeginDeleteDataMigration(DeleteDataMigrationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteDataMigration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDataMigration.</param>
+        /// 
+        /// <returns>Returns a  DeleteDataMigrationResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteDataMigration">REST API Reference for DeleteDataMigration Operation</seealso>
+        DeleteDataMigrationResponse EndDeleteDataMigration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteDataProvider
 
 
@@ -1061,6 +1177,9 @@ namespace Amazon.DatabaseMigrationService
         /// <returns>The response from the DeleteDataProvider service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
         /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.FailedDependencyException">
+        /// A dependency threw an exception.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
         /// The resource is in a state that prevents it from being used for database migration.
@@ -1206,6 +1325,9 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="request">Container for the necessary parameters to execute the DeleteFleetAdvisorCollector service method.</param>
         /// 
         /// <returns>The response from the DeleteFleetAdvisorCollector service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.CollectorNotFoundException">
         /// The specified collector doesn't exist.
         /// </exception>
@@ -1252,6 +1374,9 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="request">Container for the necessary parameters to execute the DeleteFleetAdvisorDatabases service method.</param>
         /// 
         /// <returns>The response from the DeleteFleetAdvisorDatabases service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
+        /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidOperationException">
         /// The action or operation requested isn't valid.
         /// </exception>
@@ -1308,6 +1433,9 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
         /// DMS was denied access to the endpoint. Check that the role is correctly configured.
         /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.FailedDependencyException">
+        /// A dependency threw an exception.
+        /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
         /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
@@ -1362,6 +1490,9 @@ namespace Amazon.DatabaseMigrationService
         /// <returns>The response from the DeleteMigrationProject service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
         /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.FailedDependencyException">
+        /// A dependency threw an exception.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
         /// The resource is in a state that prevents it from being used for database migration.
@@ -1908,6 +2039,55 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  DescribeDataMigrations
+
+
+        /// <summary>
+        /// Returns information about data migrations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDataMigrations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDataMigrations service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.FailedDependencyException">
+        /// A dependency threw an exception.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeDataMigrations">REST API Reference for DescribeDataMigrations Operation</seealso>
+        DescribeDataMigrationsResponse DescribeDataMigrations(DescribeDataMigrationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDataMigrations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDataMigrations operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDataMigrations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeDataMigrations">REST API Reference for DescribeDataMigrations Operation</seealso>
+        IAsyncResult BeginDescribeDataMigrations(DescribeDataMigrationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDataMigrations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDataMigrations.</param>
+        /// 
+        /// <returns>Returns a  DescribeDataMigrationsResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeDataMigrations">REST API Reference for DescribeDataMigrations Operation</seealso>
+        DescribeDataMigrationsResponse EndDescribeDataMigrations(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeDataProviders
 
 
@@ -1919,6 +2099,9 @@ namespace Amazon.DatabaseMigrationService
         /// <returns>The response from the DescribeDataProviders service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
         /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.FailedDependencyException">
+        /// A dependency threw an exception.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
@@ -2523,6 +2706,9 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
         /// DMS was denied access to the endpoint. Check that the role is correctly configured.
         /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.FailedDependencyException">
+        /// A dependency threw an exception.
+        /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
@@ -2784,6 +2970,9 @@ namespace Amazon.DatabaseMigrationService
         /// <returns>The response from the DescribeMigrationProjects service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
         /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.FailedDependencyException">
+        /// A dependency threw an exception.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
@@ -3710,6 +3899,9 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
@@ -3790,6 +3982,55 @@ namespace Amazon.DatabaseMigrationService
 
         #endregion
         
+        #region  ModifyDataMigration
+
+
+        /// <summary>
+        /// Modifies an existing DMS data migration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDataMigration service method.</param>
+        /// 
+        /// <returns>The response from the ModifyDataMigration service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.FailedDependencyException">
+        /// A dependency threw an exception.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyDataMigration">REST API Reference for ModifyDataMigration Operation</seealso>
+        ModifyDataMigrationResponse ModifyDataMigration(ModifyDataMigrationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyDataMigration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyDataMigration operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyDataMigration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyDataMigration">REST API Reference for ModifyDataMigration Operation</seealso>
+        IAsyncResult BeginModifyDataMigration(ModifyDataMigrationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyDataMigration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyDataMigration.</param>
+        /// 
+        /// <returns>Returns a  ModifyDataMigrationResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyDataMigration">REST API Reference for ModifyDataMigration Operation</seealso>
+        ModifyDataMigrationResponse EndModifyDataMigration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ModifyDataProvider
 
 
@@ -3808,6 +4049,9 @@ namespace Amazon.DatabaseMigrationService
         /// <returns>The response from the ModifyDataProvider service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
         /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.FailedDependencyException">
+        /// A dependency threw an exception.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
         /// The resource is in a state that prevents it from being used for database migration.
@@ -3998,6 +4242,9 @@ namespace Amazon.DatabaseMigrationService
         /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
         /// DMS was denied access to the endpoint. Check that the role is correctly configured.
         /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.FailedDependencyException">
+        /// A dependency threw an exception.
+        /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
         /// The resource is in a state that prevents it from being used for database migration.
         /// </exception>
@@ -4061,6 +4308,9 @@ namespace Amazon.DatabaseMigrationService
         /// <returns>The response from the ModifyMigrationProject service method, as returned by DatabaseMigrationService.</returns>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.AccessDeniedException">
         /// DMS was denied access to the endpoint. Check that the role is correctly configured.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.FailedDependencyException">
+        /// A dependency threw an exception.
         /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
         /// The resource is in a state that prevents it from being used for database migration.
@@ -4638,6 +4888,9 @@ namespace Amazon.DatabaseMigrationService
         /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource service method.</param>
         /// 
         /// <returns>The response from the RemoveTagsFromResource service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
         /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
@@ -4716,6 +4969,61 @@ namespace Amazon.DatabaseMigrationService
         /// <returns>Returns a  RunFleetAdvisorLsaAnalysisResult from DatabaseMigrationService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RunFleetAdvisorLsaAnalysis">REST API Reference for RunFleetAdvisorLsaAnalysis Operation</seealso>
         RunFleetAdvisorLsaAnalysisResponse EndRunFleetAdvisorLsaAnalysis(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartDataMigration
+
+
+        /// <summary>
+        /// Starts the specified data migration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDataMigration service method.</param>
+        /// 
+        /// <returns>The response from the StartDataMigration service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.FailedDependencyException">
+        /// A dependency threw an exception.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidOperationException">
+        /// The action or operation requested isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceQuotaExceededException">
+        /// The quota for this resource quota has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartDataMigration">REST API Reference for StartDataMigration Operation</seealso>
+        StartDataMigrationResponse StartDataMigration(StartDataMigrationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartDataMigration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartDataMigration operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartDataMigration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartDataMigration">REST API Reference for StartDataMigration Operation</seealso>
+        IAsyncResult BeginStartDataMigration(StartDataMigrationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartDataMigration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartDataMigration.</param>
+        /// 
+        /// <returns>Returns a  StartDataMigrationResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartDataMigration">REST API Reference for StartDataMigration Operation</seealso>
+        StartDataMigrationResponse EndStartDataMigration(IAsyncResult asyncResult);
 
         #endregion
         
@@ -5431,6 +5739,55 @@ namespace Amazon.DatabaseMigrationService
         /// <returns>Returns a  StartReplicationTaskAssessmentRunResult from DatabaseMigrationService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTaskAssessmentRun">REST API Reference for StartReplicationTaskAssessmentRun Operation</seealso>
         StartReplicationTaskAssessmentRunResponse EndStartReplicationTaskAssessmentRun(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StopDataMigration
+
+
+        /// <summary>
+        /// Stops the specified data migration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopDataMigration service method.</param>
+        /// 
+        /// <returns>The response from the StopDataMigration service method, as returned by DatabaseMigrationService.</returns>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.FailedDependencyException">
+        /// A dependency threw an exception.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.InvalidResourceStateException">
+        /// The resource is in a state that prevents it from being used for database migration.
+        /// </exception>
+        /// <exception cref="Amazon.DatabaseMigrationService.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StopDataMigration">REST API Reference for StopDataMigration Operation</seealso>
+        StopDataMigrationResponse StopDataMigration(StopDataMigrationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopDataMigration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopDataMigration operation on AmazonDatabaseMigrationServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopDataMigration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StopDataMigration">REST API Reference for StopDataMigration Operation</seealso>
+        IAsyncResult BeginStopDataMigration(StopDataMigrationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopDataMigration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopDataMigration.</param>
+        /// 
+        /// <returns>Returns a  StopDataMigrationResult from DatabaseMigrationService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StopDataMigration">REST API Reference for StopDataMigration Operation</seealso>
+        StopDataMigrationResponse EndStopDataMigration(IAsyncResult asyncResult);
 
         #endregion
         
