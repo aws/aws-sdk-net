@@ -21,7 +21,7 @@
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbInstanceRequest.Name</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-zA-z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+    <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbInstanceRequest.Organization</property>
@@ -71,7 +71,7 @@
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbInstanceResponse.Name</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-zA-z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+    <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbInstanceResponse.Port</property>
@@ -87,7 +87,7 @@
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbParameterGroupRequest.Name</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+    <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbParameterGroupResponse.Arn</property>
@@ -105,7 +105,7 @@
     <property>Amazon.TimestreamInfluxDB.Model.CreateDbParameterGroupResponse.Name</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+    <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.DeleteDbInstanceRequest.Identifier</property>
@@ -140,7 +140,7 @@
     <property>Amazon.TimestreamInfluxDB.Model.DeleteDbInstanceResponse.Name</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-zA-z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+    <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.DeleteDbInstanceResponse.Port</property>
@@ -180,7 +180,7 @@
     <property>Amazon.TimestreamInfluxDB.Model.GetDbInstanceResponse.Name</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-zA-z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+    <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.GetDbInstanceResponse.Port</property>
@@ -209,7 +209,7 @@
     <property>Amazon.TimestreamInfluxDB.Model.GetDbParameterGroupResponse.Name</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+    <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.ListDbInstancesRequest.MaxResults</property>
@@ -299,7 +299,7 @@
     <property>Amazon.TimestreamInfluxDB.Model.UpdateDbInstanceResponse.Name</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-zA-z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+    <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.UpdateDbInstanceResponse.Port</property>
@@ -327,7 +327,7 @@
     <property>Amazon.TimestreamInfluxDB.Model.DbInstanceSummary.Name</property>
     <min>3</min>
     <max>40</max>
-    <pattern>[a-zA-z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+    <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.DbInstanceSummary.Port</property>
@@ -350,7 +350,7 @@
     <property>Amazon.TimestreamInfluxDB.Model.DbParameterGroupSummary.Name</property>
     <min>3</min>
     <max>64</max>
-    <pattern>[a-zA-z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
+    <pattern>[a-zA-Z][a-zA-Z0-9]*(-[a-zA-Z0-9]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TimestreamInfluxDB.Model.Duration.Value</property>
