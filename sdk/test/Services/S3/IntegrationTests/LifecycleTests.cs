@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 
- using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -97,9 +97,13 @@ namespace S3UnitTest
                 {
                     new LifecycleRule
                     {
-#pragma warning disable 618
-                        Prefix = "rule1-",
-#pragma warning restore 618
+                        Filter = new LifecycleFilter
+                        {
+                            LifecycleFilterPredicate = new LifecyclePrefixPredicate()
+                            {
+                                Prefix = "rule1-"
+                            }
+                        },
                         Status = LifecycleRuleStatus.Enabled,
                         Expiration = new LifecycleRuleExpiration
                         {
@@ -114,6 +118,7 @@ namespace S3UnitTest
                         NoncurrentVersionTransition = new LifecycleRuleNoncurrentVersionTransition
                         {
                             NoncurrentDays = 14,
+                            NewerNoncurrentVersions = 10,
                             StorageClass = S3StorageClass.Glacier
                         },
 #pragma warning restore 618
@@ -124,9 +129,13 @@ namespace S3UnitTest
                     },
                     new LifecycleRule
                     {
-#pragma warning disable 618
-                        Prefix = "rule2-",
-#pragma warning restore 618
+                        Filter = new LifecycleFilter
+                        {
+                            LifecycleFilterPredicate = new LifecyclePrefixPredicate()
+                            {
+                                Prefix = "rule2-"
+                            }
+                        },
                         Expiration = new LifecycleRuleExpiration
                         {
                             Days = 120
@@ -149,21 +158,27 @@ namespace S3UnitTest
                             new LifecycleRuleNoncurrentVersionTransition
                             {
                                 NoncurrentDays = 30,
+                                NewerNoncurrentVersions = 20,
                                 StorageClass = S3StorageClass.StandardInfrequentAccess
                             },
                             new LifecycleRuleNoncurrentVersionTransition
                             {
                                 NoncurrentDays = 90,
+                                NewerNoncurrentVersions = 50,
                                 StorageClass = S3StorageClass.Glacier
                             }
                         }
                     },
                     new LifecycleRule
                     {
-#pragma warning disable 618
-                        Prefix = "rule3-",
-#pragma warning restore 618
-                        Expiration = new LifecycleRuleExpiration 
+                        Filter = new LifecycleFilter
+                        {
+                            LifecycleFilterPredicate = new LifecyclePrefixPredicate()
+                            {
+                                Prefix = "rule3-"
+                            }
+                        },
+                        Expiration = new LifecycleRuleExpiration
                         {
                             ExpiredObjectDeleteMarker = true
                         },
@@ -185,11 +200,13 @@ namespace S3UnitTest
                             new LifecycleRuleNoncurrentVersionTransition
                             {
                                 NoncurrentDays = 30,
+                                NewerNoncurrentVersions = 60,
                                 StorageClass = S3StorageClass.StandardInfrequentAccess
                             },
                             new LifecycleRuleNoncurrentVersionTransition
                             {
                                 NoncurrentDays = 90,
+                                NewerNoncurrentVersions = 70,
                                 StorageClass = S3StorageClass.Glacier
                             }
                         }
@@ -202,7 +219,7 @@ namespace S3UnitTest
                 BucketName = bucketName,
                 Configuration = configuration
             });
-            
+
             s3Configuration = S3TestUtils.WaitForConsistency(() =>
             {
                 var res = Client.GetLifecycleConfiguration(bucketName);
@@ -213,7 +230,7 @@ namespace S3UnitTest
             Assert.IsNotNull(s3Configuration);
             Assert.IsNotNull(s3Configuration.Rules);
             Assert.AreEqual(configuration.Rules.Count, s3Configuration.Rules.Count);
-            for(int i=0;i<configuration.Rules.Count;i++)
+            for (int i = 0; i < configuration.Rules.Count; i++)
             {
                 var s3Rule = s3Configuration.Rules[i];
                 var rule = configuration.Rules[i];
@@ -414,7 +431,7 @@ namespace S3UnitTest
                     }
                 }
             });
-                        
+
             var actualConfig = S3TestUtils.WaitForConsistency(() =>
             {
                 var res = client.GetLifecycleConfiguration(bucketName);
@@ -475,6 +492,9 @@ namespace S3UnitTest
             {
                 Assert.AreEqual(expected.NoncurrentVersionTransition.NoncurrentDays,
                     actual.NoncurrentVersionTransition.NoncurrentDays);
+
+                Assert.AreEqual(expected.NoncurrentVersionTransition.NewerNoncurrentVersions,
+                    actual.NoncurrentVersionTransition.NewerNoncurrentVersions);
             }
 #pragma warning restore 618
         }
@@ -491,7 +511,7 @@ namespace S3UnitTest
             }
         }
 
-        private  static void AssertPredicatesAreEqual(LifecycleFilterPredicate expected, LifecycleFilterPredicate actual)
+        private static void AssertPredicatesAreEqual(LifecycleFilterPredicate expected, LifecycleFilterPredicate actual)
         {
             Assert.IsNotNull(expected);
             Assert.IsNotNull(actual);

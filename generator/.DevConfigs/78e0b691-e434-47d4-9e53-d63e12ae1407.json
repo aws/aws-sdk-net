@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "fix: Add missing NewerNoncurrentVersions to PutLifecycleConfigurationRequestMarshall"
+      ]
+    }
+  ]
+}
