@@ -39,7 +39,8 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// The number of active vCPUs equals the number of threads per CPU core multiplied by
-    /// the number of cores.
+    /// the number of cores. The instance must be in a <c>Stopped</c> state before you make
+    /// changes.
     /// </para>
     ///  <note> 
     /// <para>

@@ -281,10 +281,6 @@ namespace Amazon.EC2.Model
         /// <para>
         /// To include instance types with FPGA hardware, specify <c>fpga</c>.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// To include instance types with inference hardware, specify <c>inference</c>.
-        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// Default: Any accelerator type

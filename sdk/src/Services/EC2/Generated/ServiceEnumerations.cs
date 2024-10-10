@@ -2081,6 +2081,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type CallerRole.
+    /// </summary>
+    public class CallerRole : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OdcrOwner for CallerRole
+        /// </summary>
+        public static readonly CallerRole OdcrOwner = new CallerRole("odcr-owner");
+        /// <summary>
+        /// Constant UnusedReservationBillingOwner for CallerRole
+        /// </summary>
+        public static readonly CallerRole UnusedReservationBillingOwner = new CallerRole("unused-reservation-billing-owner");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CallerRole(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CallerRole FindValue(string value)
+        {
+            return FindValue<CallerRole>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CallerRole(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CancelBatchErrorCode.
     /// </summary>
     public class CancelBatchErrorCode : ConstantClass
@@ -2194,6 +2244,72 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CancelSpotInstanceRequestState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CapacityReservationBillingRequestStatus.
+    /// </summary>
+    public class CapacityReservationBillingRequestStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Accepted for CapacityReservationBillingRequestStatus
+        /// </summary>
+        public static readonly CapacityReservationBillingRequestStatus Accepted = new CapacityReservationBillingRequestStatus("accepted");
+        /// <summary>
+        /// Constant Cancelled for CapacityReservationBillingRequestStatus
+        /// </summary>
+        public static readonly CapacityReservationBillingRequestStatus Cancelled = new CapacityReservationBillingRequestStatus("cancelled");
+        /// <summary>
+        /// Constant Expired for CapacityReservationBillingRequestStatus
+        /// </summary>
+        public static readonly CapacityReservationBillingRequestStatus Expired = new CapacityReservationBillingRequestStatus("expired");
+        /// <summary>
+        /// Constant Pending for CapacityReservationBillingRequestStatus
+        /// </summary>
+        public static readonly CapacityReservationBillingRequestStatus Pending = new CapacityReservationBillingRequestStatus("pending");
+        /// <summary>
+        /// Constant Rejected for CapacityReservationBillingRequestStatus
+        /// </summary>
+        public static readonly CapacityReservationBillingRequestStatus Rejected = new CapacityReservationBillingRequestStatus("rejected");
+        /// <summary>
+        /// Constant Revoked for CapacityReservationBillingRequestStatus
+        /// </summary>
+        public static readonly CapacityReservationBillingRequestStatus Revoked = new CapacityReservationBillingRequestStatus("revoked");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapacityReservationBillingRequestStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityReservationBillingRequestStatus FindValue(string value)
+        {
+            return FindValue<CapacityReservationBillingRequestStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityReservationBillingRequestStatus(string value)
         {
             return FindValue(value);
         }

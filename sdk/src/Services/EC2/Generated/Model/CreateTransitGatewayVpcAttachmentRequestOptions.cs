@@ -103,8 +103,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// This option is enabled by default. However, security group referencing is disabled
-        /// by default at the transit gateway level.
+        /// This option is set to <c>enable</c> by default. However, at the transit gateway level
+        /// the default is set to <c>disable</c>.
         /// </para>
         ///  
         /// <para>

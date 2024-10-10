@@ -58,6 +58,7 @@ namespace Amazon.EC2.Model
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private CapacityReservationTenancy _tenancy;
         private int? _totalInstanceCount;
+        private string _unusedReservationBillingOwnerId;
 
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
@@ -568,6 +569,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetTotalInstanceCount()
         {
             return this._totalInstanceCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UnusedReservationBillingOwnerId. 
+        /// <para>
+        /// The ID of the Amazon Web Services account to which billing of the unused capacity
+        /// of the Capacity Reservation is assigned.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string UnusedReservationBillingOwnerId
+        {
+            get { return this._unusedReservationBillingOwnerId; }
+            set { this._unusedReservationBillingOwnerId = value; }
+        }
+
+        // Check to see if UnusedReservationBillingOwnerId property is set
+        internal bool IsSetUnusedReservationBillingOwnerId()
+        {
+            return this._unusedReservationBillingOwnerId != null;
         }
 
     }

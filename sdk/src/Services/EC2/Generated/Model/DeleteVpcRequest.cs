@@ -35,14 +35,8 @@ namespace Amazon.EC2.Model
     /// are associated with the VPC before you can delete it. For example, you must terminate
     /// all instances running in the VPC, delete all security groups associated with the VPC
     /// (except the default one), delete all route tables associated with the VPC (except
-    /// the default one), and so on. When you delete the VPC, it deletes the default security
-    /// group, network ACL, and route table for the VPC.
-    /// 
-    ///  
-    /// <para>
-    /// If you created a flow log for the VPC that you are deleting, note that flow logs for
-    /// deleted VPCs are eventually automatically removed.
-    /// </para>
+    /// the default one), and so on. When you delete the VPC, it deletes the VPC's default
+    /// security group, network ACL, and route table.
     /// </summary>
     public partial class DeleteVpcRequest : AmazonEC2Request
     {

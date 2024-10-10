@@ -91,6 +91,48 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  AcceptCapacityReservationBillingOwnership
+
+
+        /// <summary>
+        /// Accepts a request to assign billing of the available capacity of a shared Capacity
+        /// Reservation to your account. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/assign-billing.html">
+        /// Billing assignment for shared Amazon EC2 Capacity Reservations</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptCapacityReservationBillingOwnership service method.</param>
+        /// 
+        /// <returns>The response from the AcceptCapacityReservationBillingOwnership service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptCapacityReservationBillingOwnership">REST API Reference for AcceptCapacityReservationBillingOwnership Operation</seealso>
+        AcceptCapacityReservationBillingOwnershipResponse AcceptCapacityReservationBillingOwnership(AcceptCapacityReservationBillingOwnershipRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AcceptCapacityReservationBillingOwnership operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AcceptCapacityReservationBillingOwnership operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAcceptCapacityReservationBillingOwnership
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptCapacityReservationBillingOwnership">REST API Reference for AcceptCapacityReservationBillingOwnership Operation</seealso>
+        IAsyncResult BeginAcceptCapacityReservationBillingOwnership(AcceptCapacityReservationBillingOwnershipRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AcceptCapacityReservationBillingOwnership operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAcceptCapacityReservationBillingOwnership.</param>
+        /// 
+        /// <returns>Returns a  AcceptCapacityReservationBillingOwnershipResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptCapacityReservationBillingOwnership">REST API Reference for AcceptCapacityReservationBillingOwnership Operation</seealso>
+        AcceptCapacityReservationBillingOwnershipResponse EndAcceptCapacityReservationBillingOwnership(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  AcceptReservedInstancesExchangeQuote
 
 
@@ -793,7 +835,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Assigns private IPv4 addresses to a private NAT gateway. For more information, see
-        /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-working-with.html">Work
+        /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-working-with">Work
         /// with NAT gateways</a> in the <i>Amazon VPC User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssignPrivateNatGatewayAddress service method.</param>
@@ -895,6 +937,49 @@ namespace Amazon.EC2
         /// <returns>Returns a  AssociateAddressResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateAddress">REST API Reference for AssociateAddress Operation</seealso>
         AssociateAddressResponse EndAssociateAddress(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  AssociateCapacityReservationBillingOwner
+
+
+        /// <summary>
+        /// Initiates a request to assign billing of the unused capacity of a shared Capacity
+        /// Reservation to a consumer account that is consolidated under the same Amazon Web Services
+        /// organizations payer account. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/assign-billing.html">Billing
+        /// assignment for shared Amazon EC2 Capacity Reservations</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateCapacityReservationBillingOwner service method.</param>
+        /// 
+        /// <returns>The response from the AssociateCapacityReservationBillingOwner service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateCapacityReservationBillingOwner">REST API Reference for AssociateCapacityReservationBillingOwner Operation</seealso>
+        AssociateCapacityReservationBillingOwnerResponse AssociateCapacityReservationBillingOwner(AssociateCapacityReservationBillingOwnerRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateCapacityReservationBillingOwner operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateCapacityReservationBillingOwner operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateCapacityReservationBillingOwner
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateCapacityReservationBillingOwner">REST API Reference for AssociateCapacityReservationBillingOwner Operation</seealso>
+        IAsyncResult BeginAssociateCapacityReservationBillingOwner(AssociateCapacityReservationBillingOwnerRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateCapacityReservationBillingOwner operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateCapacityReservationBillingOwner.</param>
+        /// 
+        /// <returns>Returns a  AssociateCapacityReservationBillingOwnerResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateCapacityReservationBillingOwner">REST API Reference for AssociateCapacityReservationBillingOwner Operation</seealso>
+        AssociateCapacityReservationBillingOwnerResponse EndAssociateCapacityReservationBillingOwner(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1248,7 +1333,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Associates Elastic IP addresses (EIPs) and private IPv4 addresses with a public NAT
-        /// gateway. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-working-with.html">Work
+        /// gateway. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-working-with">Work
         /// with NAT gateways</a> in the <i>Amazon VPC User Guide</i>.
         /// 
         ///  
@@ -1266,7 +1351,7 @@ namespace Amazon.EC2
         /// associate. You can see the network border group for the subnet's AZ by viewing the
         /// details of the subnet. Similarly, you can view the network border group of an EIP
         /// by viewing the details of the EIP address. For more information about network border
-        /// groups and EIPs, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/WorkWithEIPs.html">Allocate
+        /// groups and EIPs, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#allocate-eip">Allocate
         /// an Elastic IP address</a> in the <i>Amazon VPC User Guide</i>. 
         /// </para>
         ///  </important>
@@ -3293,7 +3378,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Creates a default subnet with a size <c>/20</c> IPv4 CIDR block in the specified Availability
         /// Zone in your default VPC. You can have only one default subnet per Availability Zone.
-        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/work-with-default-vpc.html#create-default-subnet">Create
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#create-default-subnet">Create
         /// a default subnet</a> in the <i>Amazon VPC User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDefaultSubnet service method.</param>
@@ -3583,7 +3668,7 @@ namespace Amazon.EC2
         /// <para>
         /// Flow log data for a monitored network interface is recorded as flow log records, which
         /// are log events consisting of fields that describe the traffic flow. For more information,
-        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-log-records.html">Flow
+        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow
         /// log records</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         ///  
@@ -4631,7 +4716,7 @@ namespace Amazon.EC2
         /// fail to launch. You can see the network border group for the subnet's AZ by viewing
         /// the details of the subnet. Similarly, you can view the network border group of an
         /// EIP by viewing the details of the EIP address. For more information about network
-        /// border groups and EIPs, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/WorkWithEIPs.html">Allocate
+        /// border groups and EIPs, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#allocate-eip">Allocate
         /// an Elastic IP address</a> in the <i>Amazon VPC User Guide</i>. 
         /// </para>
         ///  </important>
@@ -5757,8 +5842,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Creates a subnet CIDR reservation. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/subnet-cidr-reservation.html">Subnet
-        /// CIDR reservations</a> in the <i>Amazon VPC User Guide</i> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-prefixes.html">Manage
-        /// prefixes for your network interfaces</a> in the <i>Amazon EC2 User Guide</i>.
+        /// CIDR reservations</a> in the <i>Amazon VPC User Guide</i> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">Assign
+        /// prefixes to network interfaces</a> in the <i>Amazon EC2 User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSubnetCidrReservation service method.</param>
         /// 
@@ -10142,14 +10227,8 @@ namespace Amazon.EC2
         /// are associated with the VPC before you can delete it. For example, you must terminate
         /// all instances running in the VPC, delete all security groups associated with the VPC
         /// (except the default one), delete all route tables associated with the VPC (except
-        /// the default one), and so on. When you delete the VPC, it deletes the default security
-        /// group, network ACL, and route table for the VPC.
-        /// 
-        ///  
-        /// <para>
-        /// If you created a flow log for the VPC that you are deleting, note that flow logs for
-        /// deleted VPCs are eventually automatically removed.
-        /// </para>
+        /// the default one), and so on. When you delete the VPC, it deletes the VPC's default
+        /// security group, network ACL, and route table.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpc service method.</param>
         /// 
@@ -11473,6 +11552,48 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeCapacityReservationBillingRequests
+
+
+        /// <summary>
+        /// Describes a request to assign the billing of the unused capacity of a Capacity Reservation.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/transfer-billing.html">
+        /// Billing assignment for shared Amazon EC2 Capacity Reservations</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityReservationBillingRequests service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCapacityReservationBillingRequests service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservationBillingRequests">REST API Reference for DescribeCapacityReservationBillingRequests Operation</seealso>
+        DescribeCapacityReservationBillingRequestsResponse DescribeCapacityReservationBillingRequests(DescribeCapacityReservationBillingRequestsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCapacityReservationBillingRequests operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityReservationBillingRequests operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCapacityReservationBillingRequests
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservationBillingRequests">REST API Reference for DescribeCapacityReservationBillingRequests Operation</seealso>
+        IAsyncResult BeginDescribeCapacityReservationBillingRequests(DescribeCapacityReservationBillingRequestsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeCapacityReservationBillingRequests operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCapacityReservationBillingRequests.</param>
+        /// 
+        /// <returns>Returns a  DescribeCapacityReservationBillingRequestsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservationBillingRequests">REST API Reference for DescribeCapacityReservationBillingRequests Operation</seealso>
+        DescribeCapacityReservationBillingRequestsResponse EndDescribeCapacityReservationBillingRequests(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeCapacityReservationFleets
 
 
@@ -12124,9 +12245,7 @@ namespace Amazon.EC2
         /// <summary>
         /// <note> 
         /// <para>
-        /// Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that
-        /// require graphics acceleration, we recommend that you use Amazon EC2 G4, G5, or G6
-        /// instances.
+        /// Amazon Elastic Graphics reached end of life on January 8, 2024.
         /// </para>
         ///  </note> 
         /// <para>
@@ -19929,6 +20048,49 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisassociateCapacityReservationBillingOwner
+
+
+        /// <summary>
+        /// Cancels a pending request to assign billing of the unused capacity of a Capacity Reservation
+        /// to a consumer account, or revokes a request that has already been accepted. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/assign-billing.html">Billing
+        /// assignment for shared Amazon EC2 Capacity Reservations</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateCapacityReservationBillingOwner service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateCapacityReservationBillingOwner service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateCapacityReservationBillingOwner">REST API Reference for DisassociateCapacityReservationBillingOwner Operation</seealso>
+        DisassociateCapacityReservationBillingOwnerResponse DisassociateCapacityReservationBillingOwner(DisassociateCapacityReservationBillingOwnerRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateCapacityReservationBillingOwner operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateCapacityReservationBillingOwner operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateCapacityReservationBillingOwner
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateCapacityReservationBillingOwner">REST API Reference for DisassociateCapacityReservationBillingOwner Operation</seealso>
+        IAsyncResult BeginDisassociateCapacityReservationBillingOwner(DisassociateCapacityReservationBillingOwnerRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateCapacityReservationBillingOwner operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateCapacityReservationBillingOwner.</param>
+        /// 
+        /// <returns>Returns a  DisassociateCapacityReservationBillingOwnerResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateCapacityReservationBillingOwner">REST API Reference for DisassociateCapacityReservationBillingOwner Operation</seealso>
+        DisassociateCapacityReservationBillingOwnerResponse EndDisassociateCapacityReservationBillingOwner(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DisassociateClientVpnTargetNetwork
 
 
@@ -20213,7 +20375,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Disassociates secondary Elastic IP addresses (EIPs) from a public NAT gateway. You
-        /// cannot disassociate your primary EIP. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-working-with.html#nat-gateway-edit-secondary">Edit
+        /// cannot disassociate your primary EIP. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-edit-secondary">Edit
         /// secondary IP address associations</a> in the <i>Amazon VPC User Guide</i>.
         /// 
         ///  
@@ -25093,7 +25255,8 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// The number of active vCPUs equals the number of threads per CPU core multiplied by
-        /// the number of cores.
+        /// the number of cores. The instance must be in a <c>Stopped</c> state before you make
+        /// changes.
         /// </para>
         ///  <note> 
         /// <para>
@@ -28463,6 +28626,48 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  RejectCapacityReservationBillingOwnership
+
+
+        /// <summary>
+        /// Rejects a request to assign billing of the available capacity of a shared Capacity
+        /// Reservation to your account. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/assign-billing.html">
+        /// Billing assignment for shared Amazon EC2 Capacity Reservations</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RejectCapacityReservationBillingOwnership service method.</param>
+        /// 
+        /// <returns>The response from the RejectCapacityReservationBillingOwnership service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectCapacityReservationBillingOwnership">REST API Reference for RejectCapacityReservationBillingOwnership Operation</seealso>
+        RejectCapacityReservationBillingOwnershipResponse RejectCapacityReservationBillingOwnership(RejectCapacityReservationBillingOwnershipRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RejectCapacityReservationBillingOwnership operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RejectCapacityReservationBillingOwnership operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRejectCapacityReservationBillingOwnership
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectCapacityReservationBillingOwnership">REST API Reference for RejectCapacityReservationBillingOwnership Operation</seealso>
+        IAsyncResult BeginRejectCapacityReservationBillingOwnership(RejectCapacityReservationBillingOwnershipRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RejectCapacityReservationBillingOwnership operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRejectCapacityReservationBillingOwnership.</param>
+        /// 
+        /// <returns>Returns a  RejectCapacityReservationBillingOwnershipResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectCapacityReservationBillingOwnership">REST API Reference for RejectCapacityReservationBillingOwnership Operation</seealso>
+        RejectCapacityReservationBillingOwnershipResponse EndRejectCapacityReservationBillingOwnership(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  RejectTransitGatewayMulticastDomainAssociations
 
 
@@ -30957,7 +31162,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Unassigns secondary private IPv4 addresses from a private NAT gateway. You cannot
-        /// unassign your primary private IP. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-working-with.html#nat-gateway-edit-secondary">Edit
+        /// unassign your primary private IP. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-edit-secondary">Edit
         /// secondary IP address associations</a> in the <i>Amazon VPC User Guide</i>.
         /// 
         ///  

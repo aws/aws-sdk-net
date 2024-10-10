@@ -32,8 +32,8 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the CreateSubnetCidrReservation operation.
     /// Creates a subnet CIDR reservation. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/subnet-cidr-reservation.html">Subnet
-    /// CIDR reservations</a> in the <i>Amazon VPC User Guide</i> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-prefixes.html">Manage
-    /// prefixes for your network interfaces</a> in the <i>Amazon EC2 User Guide</i>.
+    /// CIDR reservations</a> in the <i>Amazon VPC User Guide</i> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">Assign
+    /// prefixes to network interfaces</a> in the <i>Amazon EC2 User Guide</i>.
     /// </summary>
     public partial class CreateSubnetCidrReservationRequest : AmazonEC2Request
     {

@@ -30,7 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
+    /// <note> 
+    /// <para>
+    /// Amazon Elastic Inference is no longer available.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Describes the memory available to the inference accelerator.
+    /// </para>
     /// </summary>
     public partial class InferenceDeviceMemoryInfo
     {

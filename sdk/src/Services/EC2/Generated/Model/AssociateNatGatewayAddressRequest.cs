@@ -32,7 +32,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the AssociateNatGatewayAddress operation.
     /// Associates Elastic IP addresses (EIPs) and private IPv4 addresses with a public NAT
-    /// gateway. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-working-with.html">Work
+    /// gateway. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-working-with">Work
     /// with NAT gateways</a> in the <i>Amazon VPC User Guide</i>.
     /// 
     ///  
@@ -50,7 +50,7 @@ namespace Amazon.EC2.Model
     /// associate. You can see the network border group for the subnet's AZ by viewing the
     /// details of the subnet. Similarly, you can view the network border group of an EIP
     /// by viewing the details of the EIP address. For more information about network border
-    /// groups and EIPs, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/WorkWithEIPs.html">Allocate
+    /// groups and EIPs, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#allocate-eip">Allocate
     /// an Elastic IP address</a> in the <i>Amazon VPC User Guide</i>. 
     /// </para>
     ///  </important>
