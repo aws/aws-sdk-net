@@ -735,6 +735,10 @@ namespace Amazon.Outposts
         /// </summary>
         public static readonly OrderStatus COMPLETED = new OrderStatus("COMPLETED");
         /// <summary>
+        /// Constant DELIVERED for OrderStatus
+        /// </summary>
+        public static readonly OrderStatus DELIVERED = new OrderStatus("DELIVERED");
+        /// <summary>
         /// Constant ERROR for OrderStatus
         /// </summary>
         public static readonly OrderStatus ERROR = new OrderStatus("ERROR");
