@@ -1,9 +1,10 @@
 {
-    "core": {
-      "changeLogMessages": [
-        "fix: re-populate request property when instantiating WebServiceRequestEventArgs"
-      ],
-      "type": "patch",
-      "updateMinimum": true
-    }
-  }
+  "core": {
+    "changeLogMessages": [
+      "Re-populate request property when instantiating `WebServiceRequestEventArgs`",
+      "Update `System.Text.Json` dependency to version `8.0.5`"
+    ],
+    "updateMinimum": true
+  },
+  "overrideVersion": "4.0.0.0"
+}
