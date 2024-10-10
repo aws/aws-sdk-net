@@ -1,3 +1,27 @@
+### 3.7.903.0 (2024-10-10 18:26 UTC)
+* ACMPCA (3.7.400.34)
+	* Documentation updates for AWS Private CA.
+* DatabaseMigrationService (3.7.401.0)
+	* Introduces DescribeDataMigrations, CreateDataMigration, ModifyDataMigration, DeleteDataMigration, StartDataMigration, StopDataMigration operations to SDK. Provides FailedDependencyFault error message.
+* EC2 (3.7.409.0)
+	* This release adds support for assigning the billing of shared Amazon EC2 On-Demand Capacity Reservations.
+* ECS (3.7.402.29)
+	* This is a documentation only release that updates to documentation to let customers know that Amazon Elastic Inference is no longer available.
+* ElasticInference (3.7.400.34)
+	* Elastic Inference - Documentation update to add service shutdown notice.
+* IoTFleetWise (3.7.401.0)
+	* Refine campaign related API validations
+* NeptuneGraph (3.7.402.0)
+	* Support for 16 m-NCU graphs available through account allowlisting
+* Outposts (3.7.402.0)
+	* Adding new "DELIVERED" enum value for Outposts Order status
+* Route53Resolver (3.7.401.0)
+	* Route 53 Resolver Forwarding Rules can now include a server name indication (SNI) in the target address for rules that use the DNS-over-HTTPS (DoH) protocol. When a DoH-enabled Outbound Resolver Endpoint forwards a request to a DoH server, it will provide the SNI in the TLS handshake.
+* SocialMessaging (3.7.400.0)
+	* This release for AWS End User Messaging includes a public SDK, providing a suite of APIs that enable sending WhatsApp messages to end users.
+* TimestreamInfluxDB (3.7.403.0)
+	* This release updates our regex based validation rules in regards to valid DbInstance and DbParameterGroup name.
+
 ### 3.7.902.0 (2024-10-09 18:19 UTC)
 * CodePipeline (3.7.403.0)
 	* AWS CodePipeline introduces a Compute category
