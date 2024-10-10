@@ -470,7 +470,9 @@ namespace Amazon.DynamoDBv2.DataModel
         public MultiTableTransactWrite(params TransactWrite[] transactionParts)
         {
             allTransactionParts = new List<TransactWrite>(transactionParts);
-            TracerProvider = allTransactionParts[0].TracerProvider;
+            TracerProvider = allTransactionParts.Count > 0
+                ? allTransactionParts[0].TracerProvider
+                : AWSConfigs.TelemetryProvider.TracerProvider;
         }
 
         internal MultiTableTransactWrite(TransactWrite first, params TransactWrite[] rest)

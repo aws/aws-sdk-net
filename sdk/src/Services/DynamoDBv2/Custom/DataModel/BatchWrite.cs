@@ -262,7 +262,9 @@ namespace Amazon.DynamoDBv2.DataModel
         public MultiTableBatchWrite(params BatchWrite[] batches)
         {
             allBatches = new List<BatchWrite>(batches);
-            TracerProvider = allBatches[0].TracerProvider;
+            TracerProvider = allBatches.Count > 0
+                ? allBatches[0].TracerProvider
+                : AWSConfigs.TelemetryProvider.TracerProvider;
         }
 
         internal MultiTableBatchWrite(BatchWrite first, params BatchWrite[] rest)

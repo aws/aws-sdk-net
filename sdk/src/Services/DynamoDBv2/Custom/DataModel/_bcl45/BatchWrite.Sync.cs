@@ -20,6 +20,7 @@ using System.Reflection;
 using Amazon.DynamoDBv2.Model;
 using Amazon.DynamoDBv2.DocumentModel;
 using AWSSDK.DynamoDBv2;
+using Amazon.Runtime.Telemetry.Tracing;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -39,8 +40,8 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         public void Execute()
         {
-            using (var span = TracerProvider.GetTracer(DynamoDBTelemetry.DynamoDBTracerScope)
-                .CreateSpan($"{nameof(BatchWrite)}.{nameof(Execute)}", null, Runtime.Telemetry.Tracing.SpanKind.CLIENT))
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(BatchWrite), nameof(Execute));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
             {
                 ExecuteHelper();
             }
@@ -65,8 +66,8 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         public void Execute()
         {
-            using (var span = TracerProvider.GetTracer(DynamoDBTelemetry.DynamoDBTracerScope)
-                .CreateSpan($"{nameof(MultiTableBatchWrite)}.{nameof(Execute)}", null, Runtime.Telemetry.Tracing.SpanKind.CLIENT))
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(MultiTableBatchWrite), nameof(Execute));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
             {
                 ExecuteHelper();
             }

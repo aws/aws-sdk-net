@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.Runtime.Telemetry.Tracing;
 using AWSSDK.DynamoDBv2;
 using System.Threading;
 using System.Threading.Tasks;
@@ -34,8 +35,8 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public async Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            using (var span = TracerProvider.GetTracer(DynamoDBTelemetry.DynamoDBTracerScope)
-                .CreateSpan($"{nameof(TransactGet)}.{nameof(ExecuteAsync)}", null, Runtime.Telemetry.Tracing.SpanKind.CLIENT))
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(TransactGet), nameof(ExecuteAsync));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
             {
                 await ExecuteHelperAsync(cancellationToken).ConfigureAwait(false);
             }
@@ -61,8 +62,8 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         public async Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            using (var span = TracerProvider.GetTracer(DynamoDBTelemetry.DynamoDBTracerScope)
-                .CreateSpan($"{nameof(MultiTableTransactGet)}.{nameof(ExecuteAsync)}", null, Runtime.Telemetry.Tracing.SpanKind.CLIENT))
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(MultiTableTransactGet), nameof(ExecuteAsync));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
             {
                 await ExecuteHelperAsync(cancellationToken).ConfigureAwait(false);
             }

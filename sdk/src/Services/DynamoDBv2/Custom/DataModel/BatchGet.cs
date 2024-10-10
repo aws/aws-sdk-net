@@ -20,6 +20,8 @@ using System.Reflection;
 using Amazon.DynamoDBv2.Model;
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.Runtime.Telemetry.Tracing;
+using System.Linq;
+
 
 #if AWS_ASYNC_API
 using System.Threading.Tasks;
@@ -264,7 +266,9 @@ namespace Amazon.DynamoDBv2.DataModel
         public MultiTableBatchGet(params BatchGet[] batches)
         {
             allBatches = new List<BatchGet>(batches);
-            TracerProvider = allBatches[0].TracerProvider;
+            TracerProvider = allBatches.Count > 0
+                ? allBatches[0].TracerProvider
+                : AWSConfigs.TelemetryProvider.TracerProvider;
         }
 
         internal MultiTableBatchGet(BatchGet first, params BatchGet[] rest)

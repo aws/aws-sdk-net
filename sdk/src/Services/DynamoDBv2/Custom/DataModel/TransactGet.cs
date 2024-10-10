@@ -254,7 +254,9 @@ namespace Amazon.DynamoDBv2.DataModel
         public MultiTableTransactGet(params TransactGet[] transactionParts)
         {
             allTransactionParts = new List<TransactGet>(transactionParts);
-            TracerProvider = allTransactionParts[0].TracerProvider;
+            TracerProvider = allTransactionParts.Count > 0
+                ? allTransactionParts[0].TracerProvider
+                : AWSConfigs.TelemetryProvider.TracerProvider;
         }
 
         internal MultiTableTransactGet(TransactGet first, params TransactGet[] rest)
