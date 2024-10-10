@@ -355,7 +355,13 @@ namespace Amazon.Route53Resolver.Model
         /// For more information, see <a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List
         /// of DNS record types</a>.
         /// </para>
-        ///  </li> </ul>
+        ///  <note> 
+        /// <para>
+        /// If you set up a firewall BLOCK rule with action NXDOMAIN on query type equals AAAA,
+        /// this action will not be applied to synthetic IPv6 addresses generated when DNS64 is
+        /// enabled. 
+        /// </para>
+        ///  </note> </li> </ul>
         /// </summary>
         [AWSProperty(Min=1, Max=16)]
         public string Qtype

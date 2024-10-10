@@ -39,6 +39,7 @@ namespace Amazon.Route53Resolver.Model
         private string _ipv6;
         private int? _port;
         private Protocol _protocol;
+        private string _serverNameIndication;
 
         /// <summary>
         /// Gets and sets the property Ip. 
@@ -163,6 +164,26 @@ namespace Amazon.Route53Resolver.Model
         internal bool IsSetProtocol()
         {
             return this._protocol != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerNameIndication. 
+        /// <para>
+        ///  The Server Name Indication of the DoH server that you want to forward queries to.
+        /// This is only used if the Protocol of the <c>TargetAddress</c> is <c>DoH</c>. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=255)]
+        public string ServerNameIndication
+        {
+            get { return this._serverNameIndication; }
+            set { this._serverNameIndication = value; }
+        }
+
+        // Check to see if ServerNameIndication property is set
+        internal bool IsSetServerNameIndication()
+        {
+            return this._serverNameIndication != null;
         }
 
     }
