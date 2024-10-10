@@ -469,6 +469,10 @@ namespace Amazon.ECS
         /// authorization. When a task definition revision is not specified, authorization will
         /// occur using the latest revision of a task definition.
         /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// Amazon Elastic Inference (EI) is no longer available to customers.
+        /// </para>
         ///  </note> 
         /// <para>
         /// In addition to maintaining the desired count of tasks in your service, you can optionally
@@ -576,16 +580,6 @@ namespace Amazon.ECS
         /// about task placement and task placement strategies, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement.html">Amazon
         /// ECS task placement</a> in the <i>Amazon Elastic Container Service Developer Guide</i>
         /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon
-        /// Elastic Inference (EI), and will help current customers migrate their workloads to
-        /// options that offer better price and performance. After April 15, 2023, new customers
-        /// will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker,
-        /// Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once
-        /// during the past 30-day period are considered current customers and will be able to
-        /// continue using the service. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateService service method.</param>
@@ -3080,6 +3074,10 @@ namespace Amazon.ECS
         /// authorization. When a task definition revision is not specified, authorization will
         /// occur using the latest revision of a task definition.
         /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// Amazon Elastic Inference (EI) is no longer available to customers.
+        /// </para>
         ///  </note> 
         /// <para>
         /// You can allow Amazon ECS to place tasks for you, or you can customize how Amazon ECS
@@ -3091,16 +3089,6 @@ namespace Amazon.ECS
         /// <para>
         /// Alternatively, you can use <c>StartTask</c> to use your own scheduler or place tasks
         /// manually on specific container instances.
-        /// </para>
-        ///  
-        /// <para>
-        /// Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon
-        /// Elastic Inference (EI), and will help current customers migrate their workloads to
-        /// options that offer better price and performance. After April 15, 2023, new customers
-        /// will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker,
-        /// Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once
-        /// during the past 30-day period are considered current customers and will be able to
-        /// continue using the service. 
         /// </para>
         ///  
         /// <para>
@@ -3242,17 +3230,11 @@ namespace Amazon.ECS
         /// authorization. When a task definition revision is not specified, authorization will
         /// occur using the latest revision of a task definition.
         /// </para>
-        ///  </note> 
+        ///  </note> <note> 
         /// <para>
-        /// Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon
-        /// Elastic Inference (EI), and will help current customers migrate their workloads to
-        /// options that offer better price and performance. After April 15, 2023, new customers
-        /// will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker,
-        /// Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once
-        /// during the past 30-day period are considered current customers and will be able to
-        /// continue using the service. 
+        /// Amazon Elastic Inference (EI) is no longer available to customers.
         /// </para>
-        ///  
+        ///  </note> 
         /// <para>
         /// Alternatively, you can use<c>RunTask</c> to place tasks for you. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
