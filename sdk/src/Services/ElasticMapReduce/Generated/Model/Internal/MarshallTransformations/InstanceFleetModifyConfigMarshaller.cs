@@ -48,6 +48,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetContext())
+            {
+                context.Writer.WritePropertyName("Context");
+                context.Writer.Write(requestObject.Context);
+            }
+
             if(requestObject.IsSetInstanceFleetId())
             {
                 context.Writer.WritePropertyName("InstanceFleetId");
