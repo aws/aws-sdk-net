@@ -31,8 +31,20 @@ namespace Amazon.RoboMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSimulationJobBatches operation.
+    /// <important> 
+    /// <para>
+    /// End of support notice: On September 10, 2025, Amazon Web Services will discontinue
+    /// support for Amazon Web Services RoboMaker. After September 10, 2025, you will no longer
+    /// be able to access the Amazon Web Services RoboMaker console or Amazon Web Services
+    /// RoboMaker resources. For more information on transitioning to Batch to help run containerized
+    /// simulations, visit <a href="https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/">https://aws.amazon.com/blogs/hpc/run-simulations-using-multiple-containers-in-a-single-aws-batch-job/</a>.
+    /// 
+    /// </para>
+    ///  </important> 
+    /// <para>
     /// Returns a list simulation job batches. You can optionally provide filters to retrieve
-    /// specific simulation batch jobs.
+    /// specific simulation batch jobs. 
+    /// </para>
     /// </summary>
     public partial class ListSimulationJobBatchesRequest : AmazonRoboMakerRequest
     {

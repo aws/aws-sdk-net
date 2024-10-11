@@ -119,7 +119,7 @@ namespace Amazon.RoboMaker.Model
         /// Gets and sets the property LastUpdatedAt. 
         /// <para>
         /// The time, in milliseconds since the epoch, when the simulation job batch was last
-        /// updated.
+        /// updated. 
         /// </para>
         /// </summary>
         public DateTime LastUpdatedAt
