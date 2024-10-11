@@ -1,0 +1,9 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [ "Updated the documentation for TransferUtilityDownloadDirectoryRequest.LocalDirectory mentioning that it is case-sensitive." ]
+    }
+  ]
+}
