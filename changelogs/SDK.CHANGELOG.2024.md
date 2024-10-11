@@ -1,3 +1,15 @@
+### 3.7.904.0 (2024-10-11 18:35 UTC)
+* Appflow (3.7.400.34)
+	* Doc only updates for clarification around OAuth2GrantType for Salesforce.
+* ElasticLoadBalancingV2 (3.7.405.0)
+	* Add zonal_shift.config.enabled attribute. Add new AdministrativeOverride construct in the describe-target-health API response to include information about the override status applied to a target.
+* ElasticMapReduce (3.7.402.0)
+	* This release provides new parameter "Context" in instance fleet clusters.
+* GuardDuty (3.7.403.0)
+	* Added a new field for network connection details.
+* RoboMaker (3.7.400.34)
+	* Documentation update: added support notices to each API action.
+
 ### 3.7.903.0 (2024-10-10 18:26 UTC)
 * ACMPCA (3.7.400.34)
 	* Documentation updates for AWS Private CA.
