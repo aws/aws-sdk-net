@@ -13,6 +13,9 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.Runtime.Telemetry.Tracing;
+using AWSSDK.DynamoDBv2;
+
 namespace Amazon.DynamoDBv2.DataModel
 {
     /// <summary>
@@ -28,7 +31,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         public void Execute()
         {
-            ExecuteHelper();
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(TransactWrite), nameof(Execute));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                ExecuteHelper();
+            }
         }
 
         #endregion
@@ -47,7 +54,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         public void Execute()
         {
-            ExecuteHelper();
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(MultiTableTransactWrite), nameof(Execute));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                ExecuteHelper();
+            }
         }
 
         #endregion
