@@ -202,6 +202,11 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// with 100 percent zonal affinity, <c>partial_availability_zone_affinity</c> with 85
         /// percent zonal affinity, and <c>any_availability_zone</c> with 0 percent zonal affinity.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>zonal_shift.config.enabled</c> - Indicates whether zonal shift is enabled. The
+        /// possible values are <c>true</c> and <c>false</c>. The default is <c>false</c>.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Max=256)]
