@@ -1,3 +1,9 @@
+### 4.0.0.0-preview.4 (2024-10-11 12:30 UTC)
+* Core 4.0.0.0
+	* Re-populate request property when instantiating `WebServiceRequestEventArgs`
+	* Update `System.Text.Json` dependency to version `8.0.5`
+	* All services packages updated to require new Core
+
 ### 4.0.0.0-preview.3 (2024-10-01 12:51 UTC)
 * DynamoDBStreams (4.0.0.0)
 	* Move DynamoDBStreams to its own package.
