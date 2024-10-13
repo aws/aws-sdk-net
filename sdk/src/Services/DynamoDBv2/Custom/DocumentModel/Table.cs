@@ -27,6 +27,8 @@ using System.Collections.Generic;
 using System.Globalization;
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Runtime.Telemetry.Tracing;
+using AWSSDK.DynamoDBv2;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
@@ -54,6 +56,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         internal bool IsEmptyStringValueEnabled { get { return Config.IsEmptyStringValueEnabled; } }
         internal IEnumerable<string> StoreAsEpoch { get { return Config.AttributesToStoreAsEpoch; } }
         internal IEnumerable<string> KeyNames { get { return Keys.Keys; } }
+        internal TracerProvider TracerProvider { get; private set; }
 
 #if NETSTANDARD
         internal AmazonDynamoDBClient DDBClient { get; private set; }
@@ -419,6 +422,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
             DDBClient = ddbClient;
 #endif
             Config = config;
+            TracerProvider = DDBClient?.Config?.TelemetryProvider?.TracerProvider
+                ?? AWSConfigs.TelemetryProvider.TracerProvider;
         }
 
 
@@ -442,10 +447,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Table object representing the specified table.</returns>
         public static Table LoadTable(IAmazonDynamoDB ddbClient, TableConfig config)
         {
-            Table table = new Table(ddbClient, config);
-            var tableDescriptionCache = table.GetTableDescriptionCache();
-            table.LoadTableInfo(tableDescriptionCache);
-            return table;
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(LoadTable));
+            var tracerProvider = ddbClient.Config.TelemetryProvider.TracerProvider;
+            using(DynamoDBTelemetry.CreateSpan(tracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                Table table = new Table(ddbClient, config);
+                var tableDescriptionCache = table.GetTableDescriptionCache();
+                table.LoadTableInfo(tableDescriptionCache);
+                return table;
+            }
         }
 
         /// <summary>
@@ -647,7 +657,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Table object representing the specified table.</returns>
         public static Table LoadTable(IAmazonDynamoDB ddbClient, string tableName)
         {
-            return LoadTable(ddbClient, tableName, DynamoDBEntryConversion.CurrentConversion, false);
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(LoadTable));
+            var tracerProvider = ddbClient.Config.TelemetryProvider.TracerProvider;
+            using (DynamoDBTelemetry.CreateSpan(tracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                return LoadTable(ddbClient, tableName, DynamoDBEntryConversion.CurrentConversion, false);
+            }
         }
 
         /// <summary>
@@ -662,7 +677,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Table object representing the specified table.</returns>
         public static Table LoadTable(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion)
         {
-            return LoadTable(ddbClient, tableName, conversion, false);
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(LoadTable));
+            var tracerProvider = ddbClient.Config.TelemetryProvider.TracerProvider;
+            using (DynamoDBTelemetry.CreateSpan(tracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                return LoadTable(ddbClient, tableName, conversion, false);
+            }
         }
 
         /// <summary>
@@ -677,7 +697,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Table object representing the specified table.</returns>
         public static Table LoadTable(IAmazonDynamoDB ddbClient, string tableName, bool isEmptyStringValueEnabled)
         {
-            return LoadTable(ddbClient, tableName, DynamoDBEntryConversion.CurrentConversion, isEmptyStringValueEnabled);
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(LoadTable));
+            var tracerProvider = ddbClient.Config.TelemetryProvider.TracerProvider;
+            using (DynamoDBTelemetry.CreateSpan(tracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                return LoadTable(ddbClient, tableName, DynamoDBEntryConversion.CurrentConversion, isEmptyStringValueEnabled);
+            }
         }
 
         /// <summary>
@@ -693,9 +718,13 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Table object representing the specified table.</returns>
         public static Table LoadTable(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled)
         {
-            var config = new TableConfig(tableName, conversion, DynamoDBConsumer.DocumentModel, storeAsEpoch: null, isEmptyStringValueEnabled: isEmptyStringValueEnabled, metadataCachingMode: MetadataCachingMode.Default);
-
-            return LoadTable(ddbClient, config);
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(LoadTable));
+            var tracerProvider = ddbClient.Config.TelemetryProvider.TracerProvider;
+            using (DynamoDBTelemetry.CreateSpan(tracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                var config = new TableConfig(tableName, conversion, DynamoDBConsumer.DocumentModel, storeAsEpoch: null, isEmptyStringValueEnabled: isEmptyStringValueEnabled, metadataCachingMode: MetadataCachingMode.Default);
+                return LoadTable(ddbClient, config);
+            }
         }
 
         /// <summary>
@@ -714,9 +743,13 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Table object representing the specified table.</returns>
         public static Table LoadTable(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled, MetadataCachingMode metadataCachingMode)
         {
-            var config = new TableConfig(tableName, conversion, DynamoDBConsumer.DocumentModel, storeAsEpoch: null, isEmptyStringValueEnabled: isEmptyStringValueEnabled, metadataCachingMode: metadataCachingMode);
-
-            return LoadTable(ddbClient, config);
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(LoadTable));
+            var tracerProvider = ddbClient.Config.TelemetryProvider.TracerProvider;
+            using (DynamoDBTelemetry.CreateSpan(tracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                var config = new TableConfig(tableName, conversion, DynamoDBConsumer.DocumentModel, storeAsEpoch: null, isEmptyStringValueEnabled: isEmptyStringValueEnabled, metadataCachingMode: metadataCachingMode);
+                return LoadTable(ddbClient, config);
+            }
         }
 
         /// <summary>
@@ -735,7 +768,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </returns>
         public static bool TryLoadTable(IAmazonDynamoDB ddbClient, string tableName, out Table table)
         {
-            return TryLoadTable(ddbClient, tableName, DynamoDBEntryConversion.CurrentConversion, false, out table);
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(TryLoadTable));
+            var tracerProvider = ddbClient.Config.TelemetryProvider.TracerProvider;
+            using (DynamoDBTelemetry.CreateSpan(tracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                return TryLoadTable(ddbClient, tableName, DynamoDBEntryConversion.CurrentConversion, false, out table);
+            }
         }
 
         /// <summary>
@@ -753,7 +791,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </returns>
         public static bool TryLoadTable(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion, out Table table)
         {
-            return TryLoadTable(ddbClient, tableName, conversion, false, out table);
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(TryLoadTable));
+            var tracerProvider = ddbClient.Config.TelemetryProvider.TracerProvider;
+            using (DynamoDBTelemetry.CreateSpan(tracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                return TryLoadTable(ddbClient, tableName, conversion, false, out table);
+            }
         }
 
         /// <summary>
@@ -771,7 +814,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </returns>
         public static bool TryLoadTable(IAmazonDynamoDB ddbClient, string tableName, bool isEmptyStringValueEnabled, out Table table)
         {
-            return TryLoadTable(ddbClient, tableName, DynamoDBEntryConversion.CurrentConversion, isEmptyStringValueEnabled, out table);
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(TryLoadTable));
+            var tracerProvider = ddbClient.Config.TelemetryProvider.TracerProvider;
+            using (DynamoDBTelemetry.CreateSpan(tracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                return TryLoadTable(ddbClient, tableName, DynamoDBEntryConversion.CurrentConversion, isEmptyStringValueEnabled, out table);
+            }
         }
 
         /// <summary>
@@ -790,7 +838,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </returns>
         public static bool TryLoadTable(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled, out Table table)
         {
-            return TryLoadTable(ddbClient, tableName, conversion, isEmptyStringValueEnabled, MetadataCachingMode.Default, out table);
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(TryLoadTable));
+            var tracerProvider = ddbClient.Config.TelemetryProvider.TracerProvider;
+            using (DynamoDBTelemetry.CreateSpan(tracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                return TryLoadTable(ddbClient, tableName, conversion, isEmptyStringValueEnabled, MetadataCachingMode.Default, out table);
+            }
         }
 
         /// <summary>
@@ -817,14 +870,19 @@ namespace Amazon.DynamoDBv2.DocumentModel
                                         MetadataCachingMode? metadataCachingMode,
                                         out Table table)
         {
-            var config = new TableConfig(tableName,
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(TryLoadTable));
+            var tracerProvider = ddbClient.Config.TelemetryProvider.TracerProvider;
+            using (DynamoDBTelemetry.CreateSpan(tracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                var config = new TableConfig(tableName,
                                          conversion,
                                          DynamoDBConsumer.DocumentModel,
                                          storeAsEpoch: null,
                                          isEmptyStringValueEnabled: isEmptyStringValueEnabled,
                                          metadataCachingMode: metadataCachingMode);
 
-            return TryLoadTable(ddbClient, config, out table);
+                return TryLoadTable(ddbClient, config, out table);
+            }
         }
 
         /// <summary>
@@ -841,18 +899,23 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </returns>
         public static bool TryLoadTable(IAmazonDynamoDB ddbClient, TableConfig config, out Table table)
         {
-            if (config == null)
-                throw new ArgumentNullException("config");
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(TryLoadTable));
+            var tracerProvider = ddbClient.Config.TelemetryProvider.TracerProvider;
+            using (DynamoDBTelemetry.CreateSpan(tracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                if (config == null)
+                    throw new ArgumentNullException("config");
 
-            try
-            {
-                table = LoadTable(ddbClient, config);
-                return true;
-            }
-            catch
-            {
-                table = null;
-                return false;
+                try
+                {
+                    table = LoadTable(ddbClient, config);
+                    return true;
+                }
+                catch
+                {
+                    table = null;
+                    return false;
+                }
             }
         }
         #endregion

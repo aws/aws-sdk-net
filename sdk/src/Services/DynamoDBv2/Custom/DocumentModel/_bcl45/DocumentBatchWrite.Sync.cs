@@ -19,6 +19,8 @@ using System.IO;
 using System.Net;
 using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime;
+using Amazon.Runtime.Telemetry.Tracing;
+using AWSSDK.DynamoDBv2;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
@@ -37,7 +39,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         public void Execute()
         {
-            ExecuteHelper();
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(DocumentBatchWrite), nameof(Execute));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                ExecuteHelper();
+            }
         }
 
         #endregion
@@ -58,7 +64,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         public void Execute()
         {
-            ExecuteHelper();
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(MultiTableDocumentBatchWrite), nameof(Execute));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                ExecuteHelper();
+            }
         }
 
         #endregion

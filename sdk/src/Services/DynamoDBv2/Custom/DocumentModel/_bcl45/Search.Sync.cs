@@ -14,10 +14,13 @@
  */
 
 using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 
 using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime;
+using Amazon.Runtime.Telemetry.Tracing;
+using AWSSDK.DynamoDBv2;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
@@ -38,7 +41,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>Next set of Documents matching the search parameters</returns>
         public List<Document> GetNextSet()
         {
-            return GetNextSetHelper();
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Search), nameof(GetNextSet));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                return GetNextSetHelper();
+            }
         }
 
         /// <summary>
@@ -47,7 +54,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>List of Documents matching the search parameters</returns>
         public List<Document> GetRemaining()
         {
-            return GetRemainingHelper();
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Search), nameof(GetRemaining));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                return GetRemainingHelper();
+            }
         }
 
         #endregion
