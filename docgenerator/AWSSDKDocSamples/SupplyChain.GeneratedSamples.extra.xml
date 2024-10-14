@@ -97,6 +97,44 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.CreateInstance(Amazon.SupplyChain.Model.CreateInstanceRequest)" />
+            <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.CreateInstance(Amazon.SupplyChain.Model.CreateInstanceRequest)" />
+            <member name="T:Amazon.SupplyChain.Model.CreateInstanceRequest" />
+            <member name="T:Amazon.SupplyChain.Model.CreateInstanceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Successful CreateInstance request with all input data"
+                    source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.CreateInstance(Amazon.SupplyChain.Model.CreateInstanceRequest)" />
+            <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.CreateInstance(Amazon.SupplyChain.Model.CreateInstanceRequest)" />
+            <member name="T:Amazon.SupplyChain.Model.CreateInstanceRequest" />
+            <member name="T:Amazon.SupplyChain.Model.CreateInstanceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Successful CreateInstance request with no input data"
+                    source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.DeleteDataIntegrationFlow(Amazon.SupplyChain.Model.DeleteDataIntegrationFlowRequest)" />
             <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.DeleteDataIntegrationFlow(Amazon.SupplyChain.Model.DeleteDataIntegrationFlowRequest)" />
             <member name="T:Amazon.SupplyChain.Model.DeleteDataIntegrationFlowRequest" />
@@ -149,6 +187,25 @@
                     title="Delete a custom dataset"
                     source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
                     region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.DeleteInstance(Amazon.SupplyChain.Model.DeleteInstanceRequest)" />
+            <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.DeleteInstance(Amazon.SupplyChain.Model.DeleteInstanceRequest)" />
+            <member name="T:Amazon.SupplyChain.Model.DeleteInstanceRequest" />
+            <member name="T:Amazon.SupplyChain.Model.DeleteInstanceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Successful DeleteInstance request"
+                    source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
+                    region="example-1" />
             </example>
         </value>
     </doc>
@@ -249,6 +306,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.GetInstance(Amazon.SupplyChain.Model.GetInstanceRequest)" />
+            <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.GetInstance(Amazon.SupplyChain.Model.GetInstanceRequest)" />
+            <member name="T:Amazon.SupplyChain.Model.GetInstanceRequest" />
+            <member name="T:Amazon.SupplyChain.Model.GetInstanceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Successful GetInstance request"
+                    source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.ListDataIntegrationFlows(Amazon.SupplyChain.Model.ListDataIntegrationFlowsRequest)" />
             <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.ListDataIntegrationFlows(Amazon.SupplyChain.Model.ListDataIntegrationFlowsRequest)" />
             <member name="T:Amazon.SupplyChain.Model.ListDataIntegrationFlowsRequest" />
@@ -301,6 +377,82 @@
                     title="List custom datasets using pagination"
                     source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
                     region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.ListInstances(Amazon.SupplyChain.Model.ListInstancesRequest)" />
+            <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.ListInstances(Amazon.SupplyChain.Model.ListInstancesRequest)" />
+            <member name="T:Amazon.SupplyChain.Model.ListInstancesRequest" />
+            <member name="T:Amazon.SupplyChain.Model.ListInstancesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Successful ListInstance request with no input data"
+                    source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.ListInstances(Amazon.SupplyChain.Model.ListInstancesRequest)" />
+            <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.ListInstances(Amazon.SupplyChain.Model.ListInstancesRequest)" />
+            <member name="T:Amazon.SupplyChain.Model.ListInstancesRequest" />
+            <member name="T:Amazon.SupplyChain.Model.ListInstancesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Successful ListInstance request with filters"
+                    source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.ListInstances(Amazon.SupplyChain.Model.ListInstancesRequest)" />
+            <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.ListInstances(Amazon.SupplyChain.Model.ListInstancesRequest)" />
+            <member name="T:Amazon.SupplyChain.Model.ListInstancesRequest" />
+            <member name="T:Amazon.SupplyChain.Model.ListInstancesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Successful ListInstance request with maxResult override"
+                    source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.ListInstances(Amazon.SupplyChain.Model.ListInstancesRequest)" />
+            <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.ListInstances(Amazon.SupplyChain.Model.ListInstancesRequest)" />
+            <member name="T:Amazon.SupplyChain.Model.ListInstancesRequest" />
+            <member name="T:Amazon.SupplyChain.Model.ListInstancesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Successful ListInstance request with nextToken"
+                    source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
+                    region="example-4" />
             </example>
         </value>
     </doc>
@@ -719,6 +871,25 @@
                     title="Update description of an existing custom dataset"
                     source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
                     region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.UpdateInstance(Amazon.SupplyChain.Model.UpdateInstanceRequest)" />
+            <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.UpdateInstance(Amazon.SupplyChain.Model.UpdateInstanceRequest)" />
+            <member name="T:Amazon.SupplyChain.Model.UpdateInstanceRequest" />
+            <member name="T:Amazon.SupplyChain.Model.UpdateInstanceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Successful UpdateInstance request"
+                    source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
+                    region="example-1" />
             </example>
         </value>
     </doc>

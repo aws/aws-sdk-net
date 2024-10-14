@@ -288,6 +288,84 @@ namespace Amazon.SupplyChain
 
         #endregion
         
+        #region  CreateInstance
+
+
+        /// <summary>
+        /// Create a new instance for AWS Supply Chain. This is an asynchronous operation. Upon
+        /// receiving a CreateInstance request, AWS Supply Chain immediately returns the instance
+        /// resource, with instance ID, and the initializing state while simultaneously creating
+        /// all required Amazon Web Services resources for an instance creation. You can use GetInstance
+        /// to check the status of the instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInstance service method.</param>
+        /// 
+        /// <returns>The response from the CreateInstance service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/CreateInstance">REST API Reference for CreateInstance Operation</seealso>
+        CreateInstanceResponse CreateInstance(CreateInstanceRequest request);
+
+
+
+        /// <summary>
+        /// Create a new instance for AWS Supply Chain. This is an asynchronous operation. Upon
+        /// receiving a CreateInstance request, AWS Supply Chain immediately returns the instance
+        /// resource, with instance ID, and the initializing state while simultaneously creating
+        /// all required Amazon Web Services resources for an instance creation. You can use GetInstance
+        /// to check the status of the instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInstance service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateInstance service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/CreateInstance">REST API Reference for CreateInstance Operation</seealso>
+        Task<CreateInstanceResponse> CreateInstanceAsync(CreateInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteDataIntegrationFlow
 
 
@@ -425,6 +503,84 @@ namespace Amazon.SupplyChain
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/DeleteDataLakeDataset">REST API Reference for DeleteDataLakeDataset Operation</seealso>
         Task<DeleteDataLakeDatasetResponse> DeleteDataLakeDatasetAsync(DeleteDataLakeDatasetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteInstance
+
+
+        /// <summary>
+        /// Delete the instance. This is an asynchronous operation. Upon receiving a DeleteInstance
+        /// request, AWS Supply Chain immediately returns a response with the instance resource,
+        /// delete state while cleaning up all Amazon Web Services resources created during the
+        /// instance creation process. You can use the GetInstance action to check the instance
+        /// status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInstance service method.</param>
+        /// 
+        /// <returns>The response from the DeleteInstance service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/DeleteInstance">REST API Reference for DeleteInstance Operation</seealso>
+        DeleteInstanceResponse DeleteInstance(DeleteInstanceRequest request);
+
+
+
+        /// <summary>
+        /// Delete the instance. This is an asynchronous operation. Upon receiving a DeleteInstance
+        /// request, AWS Supply Chain immediately returns a response with the instance resource,
+        /// delete state while cleaning up all Amazon Web Services resources created during the
+        /// instance creation process. You can use the GetInstance action to check the instance
+        /// status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInstance service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteInstance service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/DeleteInstance">REST API Reference for DeleteInstance Operation</seealso>
+        Task<DeleteInstanceResponse> DeleteInstanceAsync(DeleteInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -638,6 +794,76 @@ namespace Amazon.SupplyChain
 
         #endregion
         
+        #region  GetInstance
+
+
+        /// <summary>
+        /// Get the AWS Supply Chain instance details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInstance service method.</param>
+        /// 
+        /// <returns>The response from the GetInstance service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetInstance">REST API Reference for GetInstance Operation</seealso>
+        GetInstanceResponse GetInstance(GetInstanceRequest request);
+
+
+
+        /// <summary>
+        /// Get the AWS Supply Chain instance details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInstance service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetInstance service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetInstance">REST API Reference for GetInstance Operation</seealso>
+        Task<GetInstanceResponse> GetInstanceAsync(GetInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListDataIntegrationFlows
 
 
@@ -775,6 +1001,76 @@ namespace Amazon.SupplyChain
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListDataLakeDatasets">REST API Reference for ListDataLakeDatasets Operation</seealso>
         Task<ListDataLakeDatasetsResponse> ListDataLakeDatasetsAsync(ListDataLakeDatasetsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListInstances
+
+
+        /// <summary>
+        /// List all the AWS Supply Chain instances in a paginated way.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInstances service method.</param>
+        /// 
+        /// <returns>The response from the ListInstances service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListInstances">REST API Reference for ListInstances Operation</seealso>
+        ListInstancesResponse ListInstances(ListInstancesRequest request);
+
+
+
+        /// <summary>
+        /// List all the AWS Supply Chain instances in a paginated way.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInstances service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListInstances service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListInstances">REST API Reference for ListInstances Operation</seealso>
+        Task<ListInstancesResponse> ListInstancesAsync(ListInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1203,6 +1499,76 @@ namespace Amazon.SupplyChain
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/UpdateDataLakeDataset">REST API Reference for UpdateDataLakeDataset Operation</seealso>
         Task<UpdateDataLakeDatasetResponse> UpdateDataLakeDatasetAsync(UpdateDataLakeDatasetRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateInstance
+
+
+        /// <summary>
+        /// Update the instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInstance service method.</param>
+        /// 
+        /// <returns>The response from the UpdateInstance service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/UpdateInstance">REST API Reference for UpdateInstance Operation</seealso>
+        UpdateInstanceResponse UpdateInstance(UpdateInstanceRequest request);
+
+
+
+        /// <summary>
+        /// Update the instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInstance service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateInstance service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/UpdateInstance">REST API Reference for UpdateInstance Operation</seealso>
+        Task<UpdateInstanceResponse> UpdateInstanceAsync(UpdateInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

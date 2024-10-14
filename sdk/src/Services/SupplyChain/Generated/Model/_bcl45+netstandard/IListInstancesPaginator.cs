@@ -16,29 +16,24 @@
 /*
  * Do not modify this file. This file is generated from the supplychain-2024-01-01.normal.json service model.
  */
+using Amazon.Runtime;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SupplyChain.Model
 {
     /// <summary>
-    /// Paginators for the SupplyChain service
+    /// Paginator for the ListInstances operation
     ///</summary>
-    public interface ISupplyChainPaginatorFactory
+    public interface IListInstancesPaginator
     {
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<ListInstancesResponse> Responses { get; }
 
         /// <summary>
-        /// Paginator for ListDataIntegrationFlows operation
-        ///</summary>
-        IListDataIntegrationFlowsPaginator ListDataIntegrationFlows(ListDataIntegrationFlowsRequest request);
-
-        /// <summary>
-        /// Paginator for ListDataLakeDatasets operation
-        ///</summary>
-        IListDataLakeDatasetsPaginator ListDataLakeDatasets(ListDataLakeDatasetsRequest request);
-
-        /// <summary>
-        /// Paginator for ListInstances operation
-        ///</summary>
-        IListInstancesPaginator ListInstances(ListInstancesRequest request);
+        /// Enumerable containing all of the Instances
+        /// </summary>
+        IPaginatedEnumerable<Instance> Instances { get; }
     }
 }

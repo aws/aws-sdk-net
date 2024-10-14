@@ -499,4 +499,70 @@ namespace Amazon.SupplyChain
         }
     }
 
+
+    /// <summary>
+    /// Constants used for properties of type InstanceState.
+    /// </summary>
+    public class InstanceState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for InstanceState
+        /// </summary>
+        public static readonly InstanceState Active = new InstanceState("Active");
+        /// <summary>
+        /// Constant CreateFailed for InstanceState
+        /// </summary>
+        public static readonly InstanceState CreateFailed = new InstanceState("CreateFailed");
+        /// <summary>
+        /// Constant Deleted for InstanceState
+        /// </summary>
+        public static readonly InstanceState Deleted = new InstanceState("Deleted");
+        /// <summary>
+        /// Constant DeleteFailed for InstanceState
+        /// </summary>
+        public static readonly InstanceState DeleteFailed = new InstanceState("DeleteFailed");
+        /// <summary>
+        /// Constant Deleting for InstanceState
+        /// </summary>
+        public static readonly InstanceState Deleting = new InstanceState("Deleting");
+        /// <summary>
+        /// Constant Initializing for InstanceState
+        /// </summary>
+        public static readonly InstanceState Initializing = new InstanceState("Initializing");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceState FindValue(string value)
+        {
+            return FindValue<InstanceState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 }

@@ -51,5 +51,13 @@ namespace Amazon.SupplyChain.Model
         {
             return new ListDataLakeDatasetsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListInstances operation
+        ///</summary>
+        public IListInstancesPaginator ListInstances(ListInstancesRequest request) 
+        {
+            return new ListInstancesPaginator(this.client, request);
+        }
     }
 }

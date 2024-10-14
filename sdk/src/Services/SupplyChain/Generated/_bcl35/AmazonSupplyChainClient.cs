@@ -514,6 +514,85 @@ namespace Amazon.SupplyChain
 
         #endregion
         
+        #region  CreateInstance
+
+        /// <summary>
+        /// Create a new instance for AWS Supply Chain. This is an asynchronous operation. Upon
+        /// receiving a CreateInstance request, AWS Supply Chain immediately returns the instance
+        /// resource, with instance ID, and the initializing state while simultaneously creating
+        /// all required Amazon Web Services resources for an instance creation. You can use GetInstance
+        /// to check the status of the instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInstance service method.</param>
+        /// 
+        /// <returns>The response from the CreateInstance service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/CreateInstance">REST API Reference for CreateInstance Operation</seealso>
+        public virtual CreateInstanceResponse CreateInstance(CreateInstanceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateInstanceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateInstance operation on AmazonSupplyChainClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateInstance
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/CreateInstance">REST API Reference for CreateInstance Operation</seealso>
+        public virtual IAsyncResult BeginCreateInstance(CreateInstanceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateInstance.</param>
+        /// 
+        /// <returns>Returns a  CreateInstanceResult from SupplyChain.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/CreateInstance">REST API Reference for CreateInstance Operation</seealso>
+        public virtual CreateInstanceResponse EndCreateInstance(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateInstanceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteDataIntegrationFlow
 
         /// <summary>
@@ -660,6 +739,85 @@ namespace Amazon.SupplyChain
         public virtual DeleteDataLakeDatasetResponse EndDeleteDataLakeDataset(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDataLakeDatasetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteInstance
+
+        /// <summary>
+        /// Delete the instance. This is an asynchronous operation. Upon receiving a DeleteInstance
+        /// request, AWS Supply Chain immediately returns a response with the instance resource,
+        /// delete state while cleaning up all Amazon Web Services resources created during the
+        /// instance creation process. You can use the GetInstance action to check the instance
+        /// status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInstance service method.</param>
+        /// 
+        /// <returns>The response from the DeleteInstance service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/DeleteInstance">REST API Reference for DeleteInstance Operation</seealso>
+        public virtual DeleteInstanceResponse DeleteInstance(DeleteInstanceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteInstanceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInstance operation on AmazonSupplyChainClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteInstance
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/DeleteInstance">REST API Reference for DeleteInstance Operation</seealso>
+        public virtual IAsyncResult BeginDeleteInstance(DeleteInstanceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteInstance.</param>
+        /// 
+        /// <returns>Returns a  DeleteInstanceResult from SupplyChain.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/DeleteInstance">REST API Reference for DeleteInstance Operation</seealso>
+        public virtual DeleteInstanceResponse EndDeleteInstance(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteInstanceResponse>(asyncResult);
         }
 
         #endregion
@@ -889,6 +1047,81 @@ namespace Amazon.SupplyChain
 
         #endregion
         
+        #region  GetInstance
+
+        /// <summary>
+        /// Get the AWS Supply Chain instance details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInstance service method.</param>
+        /// 
+        /// <returns>The response from the GetInstance service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetInstance">REST API Reference for GetInstance Operation</seealso>
+        public virtual GetInstanceResponse GetInstance(GetInstanceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<GetInstanceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetInstance operation on AmazonSupplyChainClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetInstance
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetInstance">REST API Reference for GetInstance Operation</seealso>
+        public virtual IAsyncResult BeginGetInstance(GetInstanceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetInstance.</param>
+        /// 
+        /// <returns>Returns a  GetInstanceResult from SupplyChain.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetInstance">REST API Reference for GetInstance Operation</seealso>
+        public virtual GetInstanceResponse EndGetInstance(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetInstanceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListDataIntegrationFlows
 
         /// <summary>
@@ -1035,6 +1268,81 @@ namespace Amazon.SupplyChain
         public virtual ListDataLakeDatasetsResponse EndListDataLakeDatasets(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDataLakeDatasetsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListInstances
+
+        /// <summary>
+        /// List all the AWS Supply Chain instances in a paginated way.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInstances service method.</param>
+        /// 
+        /// <returns>The response from the ListInstances service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListInstances">REST API Reference for ListInstances Operation</seealso>
+        public virtual ListInstancesResponse ListInstances(ListInstancesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<ListInstancesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListInstances operation on AmazonSupplyChainClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListInstances
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListInstances">REST API Reference for ListInstances Operation</seealso>
+        public virtual IAsyncResult BeginListInstances(ListInstancesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInstancesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListInstances.</param>
+        /// 
+        /// <returns>Returns a  ListInstancesResult from SupplyChain.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListInstances">REST API Reference for ListInstances Operation</seealso>
+        public virtual ListInstancesResponse EndListInstances(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListInstancesResponse>(asyncResult);
         }
 
         #endregion
@@ -1489,6 +1797,81 @@ namespace Amazon.SupplyChain
         public virtual UpdateDataLakeDatasetResponse EndUpdateDataLakeDataset(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDataLakeDatasetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateInstance
+
+        /// <summary>
+        /// Update the instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInstance service method.</param>
+        /// 
+        /// <returns>The response from the UpdateInstance service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/UpdateInstance">REST API Reference for UpdateInstance Operation</seealso>
+        public virtual UpdateInstanceResponse UpdateInstance(UpdateInstanceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateInstanceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInstance operation on AmazonSupplyChainClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateInstance
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/UpdateInstance">REST API Reference for UpdateInstance Operation</seealso>
+        public virtual IAsyncResult BeginUpdateInstance(UpdateInstanceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateInstanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateInstance operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateInstance.</param>
+        /// 
+        /// <returns>Returns a  UpdateInstanceResult from SupplyChain.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/UpdateInstance">REST API Reference for UpdateInstance Operation</seealso>
+        public virtual UpdateInstanceResponse EndUpdateInstance(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateInstanceResponse>(asyncResult);
         }
 
         #endregion

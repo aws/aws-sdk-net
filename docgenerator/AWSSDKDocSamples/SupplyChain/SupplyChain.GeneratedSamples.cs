@@ -175,6 +175,40 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
             #endregion
         }
 
+        public void SupplyChainCreateInstance()
+        {
+            #region example-1
+
+            var client = new AmazonSupplyChainClient();
+            var response = client.CreateInstance(new CreateInstanceRequest 
+            {
+                InstanceDescription = "example instance description",
+                InstanceName = "example instance name",
+                KmsKeyArn = "arn:aws:kms:us-west-2:123456789012:key/b14ffc39-b7d4-45ab-991a-6257a7f0d24d",
+                Tags = new Dictionary<string, string> {
+                    { "tagKey1", "tagValue1" }
+                }
+            });
+
+            Instance instance = response.Instance;
+
+            #endregion
+        }
+
+        public void SupplyChainCreateInstance()
+        {
+            #region example-2
+
+            var client = new AmazonSupplyChainClient();
+            var response = client.CreateInstance(new CreateInstanceRequest 
+            {
+            });
+
+            Instance instance = response.Instance;
+
+            #endregion
+        }
+
         public void SupplyChainDeleteDataIntegrationFlow()
         {
             #region example-1
@@ -226,6 +260,21 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
             string name = response.Name;
             string instanceId = response.InstanceId;
             string awsNamespace = response.Namespace;
+
+            #endregion
+        }
+
+        public void SupplyChainDeleteInstance()
+        {
+            #region example-1
+
+            var client = new AmazonSupplyChainClient();
+            var response = client.DeleteInstance(new DeleteInstanceRequest 
+            {
+                InstanceId = "9e193580-7cc5-45f7-9609-c43ba0ada793"
+            });
+
+            Instance instance = response.Instance;
 
             #endregion
         }
@@ -312,6 +361,21 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
             #endregion
         }
 
+        public void SupplyChainGetInstance()
+        {
+            #region example-1
+
+            var client = new AmazonSupplyChainClient();
+            var response = client.GetInstance(new GetInstanceRequest 
+            {
+                InstanceId = "9e193580-7cc5-45f7-9609-c43ba0ada793"
+            });
+
+            Instance instance = response.Instance;
+
+            #endregion
+        }
+
         public void SupplyChainListDataIntegrationFlows()
         {
             #region example-1
@@ -358,6 +422,72 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
             List<DataLakeDataset> datasets = response.Datasets;
             string nextToken = response.NextToken;
+
+            #endregion
+        }
+
+        public void SupplyChainListInstances()
+        {
+            #region example-1
+
+            var client = new AmazonSupplyChainClient();
+            var response = client.ListInstances(new ListInstancesRequest 
+            {
+            });
+
+            List<Instance> instances = response.Instances;
+
+            #endregion
+        }
+
+        public void SupplyChainListInstances()
+        {
+            #region example-2
+
+            var client = new AmazonSupplyChainClient();
+            var response = client.ListInstances(new ListInstancesRequest 
+            {
+                InstanceNameFilter = new List<string> {
+                    "example instance name"
+                },
+                InstanceStateFilter = new List<string> {
+                    "Active"
+                }
+            });
+
+            List<Instance> instances = response.Instances;
+
+            #endregion
+        }
+
+        public void SupplyChainListInstances()
+        {
+            #region example-3
+
+            var client = new AmazonSupplyChainClient();
+            var response = client.ListInstances(new ListInstancesRequest 
+            {
+                MaxResults = 1
+            });
+
+            List<Instance> instances = response.Instances;
+            string nextToken = response.NextToken;
+
+            #endregion
+        }
+
+        public void SupplyChainListInstances()
+        {
+            #region example-4
+
+            var client = new AmazonSupplyChainClient();
+            var response = client.ListInstances(new ListInstancesRequest 
+            {
+                MaxResults = 1,
+                NextToken = "AAQA-EFRSURBSGhtcng0c0dxbENwUHdnckVIbkFYNU1QVjRTZWN2ak5iMFVicC8zemlHOVF3SEpjSC9WTWJVVXBMV2Z1N3ZvZlQ0WEFBQUFmakI4QmdrcWhraUc5dzBCQndhZ2J6QnRBZ0VBTUdnR0NTcUdTSWIzRFFFSEFUQWVCZ2xnaGtnQlpRTUVBUzR3RVFRTTJibW9LemgrSWZTY0RaZEdBZ0VRZ0R2dDhsQnVGbGJ0dnFTZityWmNSWEVPbG93emJoSjhxOGNMbGQ1UGMvY0VRbWlTR3pQUFd4N2RraXY5Y0ovcS9vSmFYZVBGdWVHaU0zWmd0dz09n-rC1ejA5--7ltJxpDT2xP_i8xGqDPMOZfjpp8q6l5NuP9_bnBURvwwYhdqDriMK5_f96LuPEnPbuML-ItfgEiCcUy0p2tApvpZkZqOG5fbqP-4C5aDYPTffHLyq-MMqvfrGVJzL1nvkpZcnTkVR9VJsu5b8I0qqDW0H8EMKGgTo78U9lr4sj3Usi9VMwZxgKCBmr03HhFLYXOW--XMbIx0CTZF0fYIcRxmA_sVS6J7gpaB9yMcnzs5VUKokoA5JTcAPY5d1Y1VyE8KKxv51cfPgXw8OYCDbFQncw8mZPmE-VqxjFbksmk_FmghpPn9j2Ppoe-zr0LQ%3D"
+            });
+
+            List<Instance> instances = response.Instances;
 
             #endregion
         }
@@ -798,6 +928,23 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
             });
 
             DataLakeDataset dataset = response.Dataset;
+
+            #endregion
+        }
+
+        public void SupplyChainUpdateInstance()
+        {
+            #region example-1
+
+            var client = new AmazonSupplyChainClient();
+            var response = client.UpdateInstance(new UpdateInstanceRequest 
+            {
+                InstanceDescription = "updated example instance description",
+                InstanceId = "9e193580-7cc5-45f7-9609-c43ba0ada793",
+                InstanceName = "updated example instance name"
+            });
+
+            Instance instance = response.Instance;
 
             #endregion
         }

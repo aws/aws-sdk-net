@@ -70,6 +70,29 @@
     <pattern>[a-z]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SupplyChain.Model.CreateInstanceRequest.ClientToken</property>
+    <min>33</min>
+    <max>126</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.CreateInstanceRequest.InstanceDescription</property>
+    <min>0</min>
+    <max>501</max>
+    <pattern>([a-zA-Z0-9., _ʼ'%-]){0,500}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.CreateInstanceRequest.InstanceName</property>
+    <min>0</min>
+    <max>63</max>
+    <pattern>(?![ _ʼ'%-])[a-zA-Z0-9 _ʼ'%-]{0,62}[a-zA-Z0-9]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.CreateInstanceRequest.KmsKeyArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:[a-z0-9][-.a-z0-9]{0,62}:kms:([a-z0-9][-.a-z0-9]{0,62})?:([a-z0-9][-.a-z0-9]{0,62})?:key/.{0,1019}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SupplyChain.Model.DeleteDataIntegrationFlowRequest.InstanceId</property>
     <min>36</min>
     <max>36</max>
@@ -130,6 +153,12 @@
     <pattern>[a-z]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SupplyChain.Model.DeleteInstanceRequest.InstanceId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SupplyChain.Model.GetBillOfMaterialsImportJobRequest.InstanceId</property>
     <min>36</min>
     <max>36</max>
@@ -170,6 +199,12 @@
     <min>1</min>
     <max>50</max>
     <pattern>[a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.GetInstanceRequest.InstanceId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SupplyChain.Model.ListDataIntegrationFlowsRequest.InstanceId</property>
@@ -218,6 +253,21 @@
     <property>Amazon.SupplyChain.Model.ListDataLakeDatasetsResponse.NextToken</property>
     <min>1</min>
     <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.ListInstancesRequest.MaxResults</property>
+    <min>0</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.ListInstancesRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.ListInstancesResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SupplyChain.Model.ListTagsForResourceRequest.ResourceArn</property>
@@ -298,6 +348,24 @@
     <min>1</min>
     <max>50</max>
     <pattern>[a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.UpdateInstanceRequest.InstanceDescription</property>
+    <min>0</min>
+    <max>501</max>
+    <pattern>([a-zA-Z0-9., _ʼ'%-]){0,500}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.UpdateInstanceRequest.InstanceId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.UpdateInstanceRequest.InstanceName</property>
+    <min>0</min>
+    <max>63</max>
+    <pattern>(?![ _ʼ'%-])[a-zA-Z0-9 _ʼ'%-]{0,62}[a-zA-Z0-9]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SupplyChain.Model.BillOfMaterialsImportJob.InstanceId</property>
@@ -415,5 +483,37 @@
     <min>1</min>
     <max>100</max>
     <pattern>[a-z0-9_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.Instance.AwsAccountId</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.Instance.InstanceDescription</property>
+    <min>0</min>
+    <max>501</max>
+    <pattern>([a-zA-Z0-9., _ʼ'%-]){0,500}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.Instance.InstanceId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.Instance.InstanceName</property>
+    <min>0</min>
+    <max>63</max>
+    <pattern>(?![ _ʼ'%-])[a-zA-Z0-9 _ʼ'%-]{0,62}[a-zA-Z0-9]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.Instance.KmsKeyArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:[a-z0-9][-.a-z0-9]{0,62}:kms:([a-z0-9][-.a-z0-9]{0,62})?:([a-z0-9][-.a-z0-9]{0,62})?:key/.{0,1019}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SupplyChain.Model.Instance.WebAppDnsDomain</property>
+    <pattern>[A-Za-z0-9]+(.[A-Za-z0-9]+)+</pattern>
   </property-value-rule>
 </property-value-rules>
