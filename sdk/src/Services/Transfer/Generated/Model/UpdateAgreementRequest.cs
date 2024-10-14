@@ -126,7 +126,7 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property BaseDirectory. 
         /// <para>
         /// To change the landing directory (folder) for files that are transferred, provide the
-        /// bucket folder that you want to use; for example, <c>/<i>DOC-EXAMPLE-BUCKET</i>/<i>home</i>/<i>mydirectory</i>
+        /// bucket folder that you want to use; for example, <c>/<i>amzn-s3-demo-bucket</i>/<i>home</i>/<i>mydirectory</i>
         /// </c>.
         /// </para>
         /// </summary>

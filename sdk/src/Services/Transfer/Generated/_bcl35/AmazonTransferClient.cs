@@ -44,9 +44,9 @@ namespace Amazon.Transfer
     /// seamlessly migrate your file transfer workflows to Transfer Family by integrating
     /// with existing authentication systems, and providing DNS routing with Amazon Route
     /// 53 so nothing changes for your customers and partners, or their applications. With
-    /// your data in Amazon S3, you can use it with Amazon Web Services for processing, analytics,
-    /// machine learning, and archiving. Getting started with Transfer Family is easy since
-    /// there is no infrastructure to buy and set up.
+    /// your data in Amazon S3, you can use it with Amazon Web Services services for processing,
+    /// analytics, machine learning, and archiving. Getting started with Transfer Family is
+    /// easy since there is no infrastructure to buy and set up.
     /// </summary>
     public partial class AmazonTransferClient : AmazonServiceClient, IAmazonTransfer
     {
@@ -2916,6 +2916,82 @@ namespace Amazon.Transfer
         public virtual ListExecutionsResponse EndListExecutions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListExecutionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListFileTransferResults
+
+        /// <summary>
+        /// Returns real-time updates and detailed information on the status of each individual
+        /// file being transferred in a specific file transfer operation. You specify the file
+        /// transfer by providing its <c>ConnectorId</c> and its <c>TransferId</c>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// File transfer results are available up to 7 days after an operation has been requested.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFileTransferResults service method.</param>
+        /// 
+        /// <returns>The response from the ListFileTransferResults service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Transfer Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListFileTransferResults">REST API Reference for ListFileTransferResults Operation</seealso>
+        public virtual ListFileTransferResultsResponse ListFileTransferResults(ListFileTransferResultsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFileTransferResultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFileTransferResultsResponseUnmarshaller.Instance;
+
+            return Invoke<ListFileTransferResultsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFileTransferResults operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFileTransferResults operation on AmazonTransferClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListFileTransferResults
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListFileTransferResults">REST API Reference for ListFileTransferResults Operation</seealso>
+        public virtual IAsyncResult BeginListFileTransferResults(ListFileTransferResultsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFileTransferResultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFileTransferResultsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListFileTransferResults operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListFileTransferResults.</param>
+        /// 
+        /// <returns>Returns a  ListFileTransferResultsResult from Transfer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListFileTransferResults">REST API Reference for ListFileTransferResults Operation</seealso>
+        public virtual ListFileTransferResultsResponse EndListFileTransferResults(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListFileTransferResultsResponse>(asyncResult);
         }
 
         #endregion

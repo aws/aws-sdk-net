@@ -77,6 +77,14 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
+        /// Paginator for ListFileTransferResults operation
+        ///</summary>
+        public IListFileTransferResultsPaginator ListFileTransferResults(ListFileTransferResultsRequest request) 
+        {
+            return new ListFileTransferResultsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListProfiles operation
         ///</summary>
         public IListProfilesPaginator ListProfiles(ListProfilesRequest request) 
