@@ -1,3 +1,18 @@
+### 3.7.905.0 (2024-10-14 18:20 UTC)
+* CodePipeline (3.7.404.0)
+	* AWS CodePipeline V2 type pipelines now support automatically retrying failed stages and skipping stage for failed entry conditions.
+* MailManager (3.7.402.0)
+	* Mail Manager support for viewing and exporting metadata of archived messages.
+* SecurityLake (3.7.401.0)
+	* This release updates request validation regex for resource ARNs.
+* SupplyChain (3.7.402.0)
+	* This release adds AWS Supply Chain instance management functionality. Specifically adding CreateInstance, DeleteInstance, GetInstance, ListInstances, and UpdateInstance APIs.
+* Transfer (3.7.401.0)
+	* This release enables customers using SFTP connectors to query the transfer status of their files to meet their monitoring needs as well as orchestrate post transfer actions.
+* Core 3.7.400.34
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.904.0 (2024-10-11 18:35 UTC)
 * Appflow (3.7.400.34)
 	* Doc only updates for clarification around OAuth2GrantType for Salesforce.
