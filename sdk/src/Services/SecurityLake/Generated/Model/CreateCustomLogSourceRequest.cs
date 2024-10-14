@@ -49,7 +49,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// The configuration for the third-party custom source.
+        /// The configuration used for the third-party custom source.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -206,7 +206,11 @@ namespace Amazon.SecurityLake.Model
         /// Gets and sets the property SourceName. 
         /// <para>
         /// Specify the name for a third-party custom source. This must be a Regionally unique
-        /// value.
+        /// value. The <c>sourceName</c> you enter here, is used in the <c>LogProviderRole</c>
+        /// name which follows the convention <c>AmazonSecurityLake-Provider-{name of the custom
+        /// source}-{region}</c>. You must use a <c>CustomLogSource</c> name that is shorter than
+        /// or equal to 20 characters. This ensures that the <c>LogProviderRole</c> name is below
+        /// the 64 character limit.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

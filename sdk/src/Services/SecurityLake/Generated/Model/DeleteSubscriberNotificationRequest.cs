@@ -31,7 +31,7 @@ namespace Amazon.SecurityLake.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteSubscriberNotification operation.
-    /// Deletes the specified notification subscription in Amazon Security Lake for the organization
+    /// Deletes the specified subscription notification in Amazon Security Lake for the organization
     /// you specify.
     /// </summary>
     public partial class DeleteSubscriberNotificationRequest : AmazonSecurityLakeRequest

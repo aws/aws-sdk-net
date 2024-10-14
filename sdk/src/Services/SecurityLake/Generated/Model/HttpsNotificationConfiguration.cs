@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
-    /// The configurations for HTTPS subscriber notification.
+    /// The configurations used for HTTPS subscriber notification.
     /// </summary>
     public partial class HttpsNotificationConfiguration
     {

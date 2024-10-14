@@ -39,7 +39,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The id of KMS encryption key used by Amazon Security Lake to encrypt the Security
+        /// The identifier of KMS encryption key used by Amazon Security Lake to encrypt the Security
         /// Lake object.
         /// </para>
         /// </summary>
