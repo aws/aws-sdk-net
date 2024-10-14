@@ -35,13 +35,14 @@ namespace Amazon.S3
         private const string DefaultProfileName = "default";
         private const string AwsS3UsEast1RegionalEndpointsEnvironmentVariable = "AWS_S3_US_EAST_1_REGIONAL_ENDPOINT";
         private const string DisableMRAPEnvName = "AWS_S3_DISABLE_MULTIREGION_ACCESS_POINTS";
+        private const string AwsConfigFileEnvName = "AWS_CONFIG_FILE";
 
         private bool forcePathStyle = false;
         private bool useAccelerateEndpoint = false;
         private S3UsEast1RegionalEndpointValue? s3UsEast1RegionalEndpointValue;
         private readonly string legacyUSEast1GlobalRegionSystemName = RegionEndpoint.USEast1.SystemName;
 
-        private static CredentialProfileStoreChain credentialProfileChain = new CredentialProfileStoreChain();
+        private static CredentialProfileStoreChain credentialProfileChain = new CredentialProfileStoreChain(Environment.GetEnvironmentVariable(AwsConfigFileEnvName));
 
         // we cache this per execution process to avoid excessive file I/O
         private static CredentialProfile _profile;
@@ -114,14 +115,17 @@ namespace Amazon.S3
                         return _useArnRegion.Value;
                     }
 
-                    _useArnRegion = _profile?.S3UseArnRegion;
-
-                    if (!_useArnRegion.HasValue && !string.IsNullOrEmpty(Environment.GetEnvironmentVariable(UseArnRegionEnvName)))
+                    if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable(UseArnRegionEnvName)))
                     {
                         if (bool.TryParse(Environment.GetEnvironmentVariable(UseArnRegionEnvName), out var value))
                         {
                             _useArnRegion = value;
                         }
+                    }
+
+                    if (!_useArnRegion.HasValue)
+                    {
+                        _useArnRegion = _profile?.S3UseArnRegion;
                     }
 
                     if (!_useArnRegion.HasValue)
