@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FailureConditions Object
+    /// Response Unmarshaller for RetryConfiguration Object
     /// </summary>  
-    public class FailureConditionsUnmarshaller : IUnmarshaller<FailureConditions, XmlUnmarshallerContext>, IUnmarshaller<FailureConditions, JsonUnmarshallerContext>
+    public class RetryConfigurationUnmarshaller : IUnmarshaller<RetryConfiguration, XmlUnmarshallerContext>, IUnmarshaller<RetryConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        FailureConditions IUnmarshaller<FailureConditions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RetryConfiguration IUnmarshaller<RetryConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public FailureConditions Unmarshall(JsonUnmarshallerContext context)
+        public RetryConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            FailureConditions unmarshalledObject = new FailureConditions();
+            RetryConfiguration unmarshalledObject = new RetryConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,10 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("conditions", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Condition, ConditionUnmarshaller>(ConditionUnmarshaller.Instance);
-                    unmarshalledObject.Conditions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("result", targetDepth))
+                if (context.TestExpression("retryMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Result = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("retryConfiguration", targetDepth))
-                {
-                    var unmarshaller = RetryConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.RetryConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RetryMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +77,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         }
 
 
-        private static FailureConditionsUnmarshaller _instance = new FailureConditionsUnmarshaller();        
+        private static RetryConfigurationUnmarshaller _instance = new RetryConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FailureConditionsUnmarshaller Instance
+        public static RetryConfigurationUnmarshaller Instance
         {
             get
             {

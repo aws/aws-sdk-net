@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// FailureConditions Marshaller
+    /// RetryConfiguration Marshaller
     /// </summary>
-    public class FailureConditionsMarshaller : IRequestMarshaller<FailureConditions, JsonMarshallerContext> 
+    public class RetryConfigurationMarshaller : IRequestMarshaller<RetryConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,41 +44,14 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(FailureConditions requestObject, JsonMarshallerContext context)
+        public void Marshall(RetryConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetConditions())
+            if(requestObject.IsSetRetryMode())
             {
-                context.Writer.WritePropertyName("conditions");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectConditionsListValue in requestObject.Conditions)
-                {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ConditionMarshaller.Instance;
-                    marshaller.Marshall(requestObjectConditionsListValue, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-                context.Writer.WriteArrayEnd();
-            }
-
-            if(requestObject.IsSetResult())
-            {
-                context.Writer.WritePropertyName("result");
-                context.Writer.Write(requestObject.Result);
-            }
-
-            if(requestObject.IsSetRetryConfiguration())
-            {
-                context.Writer.WritePropertyName("retryConfiguration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = RetryConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.RetryConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("retryMode");
+                context.Writer.Write(requestObject.RetryMode);
             }
 
         }
@@ -86,7 +59,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static FailureConditionsMarshaller Instance = new FailureConditionsMarshaller();
+        public readonly static RetryConfigurationMarshaller Instance = new RetryConfigurationMarshaller();
 
     }
 }

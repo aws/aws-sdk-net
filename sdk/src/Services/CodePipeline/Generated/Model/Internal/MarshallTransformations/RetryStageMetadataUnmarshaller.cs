@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FailureConditions Object
+    /// Response Unmarshaller for RetryStageMetadata Object
     /// </summary>  
-    public class FailureConditionsUnmarshaller : IUnmarshaller<FailureConditions, XmlUnmarshallerContext>, IUnmarshaller<FailureConditions, JsonUnmarshallerContext>
+    public class RetryStageMetadataUnmarshaller : IUnmarshaller<RetryStageMetadata, XmlUnmarshallerContext>, IUnmarshaller<RetryStageMetadata, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        FailureConditions IUnmarshaller<FailureConditions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RetryStageMetadata IUnmarshaller<RetryStageMetadata, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public FailureConditions Unmarshall(JsonUnmarshallerContext context)
+        public RetryStageMetadata Unmarshall(JsonUnmarshallerContext context)
         {
-            FailureConditions unmarshalledObject = new FailureConditions();
+            RetryStageMetadata unmarshalledObject = new RetryStageMetadata();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,22 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("conditions", targetDepth))
+                if (context.TestExpression("autoStageRetryAttempt", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Condition, ConditionUnmarshaller>(ConditionUnmarshaller.Instance);
-                    unmarshalledObject.Conditions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.AutoStageRetryAttempt = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("result", targetDepth))
+                if (context.TestExpression("latestRetryTrigger", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Result = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LatestRetryTrigger = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("retryConfiguration", targetDepth))
+                if (context.TestExpression("manualStageRetryAttempt", targetDepth))
                 {
-                    var unmarshaller = RetryConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.RetryConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ManualStageRetryAttempt = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +89,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         }
 
 
-        private static FailureConditionsUnmarshaller _instance = new FailureConditionsUnmarshaller();        
+        private static RetryStageMetadataUnmarshaller _instance = new RetryStageMetadataUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FailureConditionsUnmarshaller Instance
+        public static RetryStageMetadataUnmarshaller Instance
         {
             get
             {

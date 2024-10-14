@@ -114,6 +114,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                     unmarshalledObject.OnSuccessConditionState = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("retryStageMetadata", targetDepth))
+                {
+                    var unmarshaller = RetryStageMetadataUnmarshaller.Instance;
+                    unmarshalledObject.RetryStageMetadata = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("stageName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

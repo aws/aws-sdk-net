@@ -1014,6 +1014,14 @@
     <pattern>[A-Za-z0-9@\-_]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodePipeline.Model.RetryStageMetadata.AutoStageRetryAttempt</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodePipeline.Model.RetryStageMetadata.ManualStageRetryAttempt</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodePipeline.Model.RuleConfigurationProperty.Description</property>
     <min>1</min>
     <max>160</max>
