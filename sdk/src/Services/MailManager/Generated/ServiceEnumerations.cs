@@ -281,6 +281,14 @@ namespace Amazon.MailManager
         /// </summary>
         public static readonly ArchiveStringEmailAttribute CC = new ArchiveStringEmailAttribute("CC");
         /// <summary>
+        /// Constant ENVELOPE_FROM for ArchiveStringEmailAttribute
+        /// </summary>
+        public static readonly ArchiveStringEmailAttribute ENVELOPE_FROM = new ArchiveStringEmailAttribute("ENVELOPE_FROM");
+        /// <summary>
+        /// Constant ENVELOPE_TO for ArchiveStringEmailAttribute
+        /// </summary>
+        public static readonly ArchiveStringEmailAttribute ENVELOPE_TO = new ArchiveStringEmailAttribute("ENVELOPE_TO");
+        /// <summary>
         /// Constant FROM for ArchiveStringEmailAttribute
         /// </summary>
         public static readonly ArchiveStringEmailAttribute FROM = new ArchiveStringEmailAttribute("FROM");

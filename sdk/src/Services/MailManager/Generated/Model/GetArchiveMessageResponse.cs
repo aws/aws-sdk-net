@@ -34,7 +34,27 @@ namespace Amazon.MailManager.Model
     /// </summary>
     public partial class GetArchiveMessageResponse : AmazonWebServiceResponse
     {
+        private Envelope _envelope;
         private string _messageDownloadLink;
+        private Metadata _metadata;
+
+        /// <summary>
+        /// Gets and sets the property Envelope. 
+        /// <para>
+        /// The SMTP envelope information of the email.
+        /// </para>
+        /// </summary>
+        public Envelope Envelope
+        {
+            get { return this._envelope; }
+            set { this._envelope = value; }
+        }
+
+        // Check to see if Envelope property is set
+        internal bool IsSetEnvelope()
+        {
+            return this._envelope != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MessageDownloadLink. 
@@ -52,6 +72,24 @@ namespace Amazon.MailManager.Model
         internal bool IsSetMessageDownloadLink()
         {
             return this._messageDownloadLink != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Metadata. 
+        /// <para>
+        /// The metadata about the email.
+        /// </para>
+        /// </summary>
+        public Metadata Metadata
+        {
+            get { return this._metadata; }
+            set { this._metadata = value; }
+        }
+
+        // Check to see if Metadata property is set
+        internal bool IsSetMetadata()
+        {
+            return this._metadata != null;
         }
 
     }
