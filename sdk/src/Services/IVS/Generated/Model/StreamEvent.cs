@@ -35,9 +35,48 @@ namespace Amazon.IVS.Model
     /// </summary>
     public partial class StreamEvent
     {
+        private string _code;
         private DateTime? _eventTime;
         private string _name;
         private string _type;
+
+        /// <summary>
+        /// Gets and sets the property Code. 
+        /// <para>
+        /// Provides additional details about the stream event. There are several values; note
+        /// that the long descriptions are provided in the IVS console but not delivered through
+        /// the IVS API or EventBridge:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>StreamTakeoverMediaMismatch</c> — The broadcast client attempted to take over
+        /// with different media properties (e.g., codec, resolution, or video track type) from
+        /// the original stream.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>StreamTakeoverInvalidPriority</c> — The broadcast client attempted a takeover
+        /// with either a priority integer value equal to or lower than the original stream's
+        /// value or a value outside the allowed range of 1 to 2,147,483,647.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>StreamTakeoverLimitBreached</c> — The broadcast client reached the maximum allowed
+        /// takeover attempts for this stream.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string Code
+        {
+            get { return this._code; }
+            set { this._code = value; }
+        }
+
+        // Check to see if Code property is set
+        internal bool IsSetCode()
+        {
+            return this._code != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EventTime. 
