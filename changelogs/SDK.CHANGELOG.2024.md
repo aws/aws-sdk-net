@@ -1,3 +1,27 @@
+### 3.7.906.0 (2024-10-15 18:19 UTC)
+* Amplify (3.7.402.0)
+	* Added sourceUrlType field to StartDeployment request
+* CloudFormation (3.7.400.35)
+	* Documentation update for AWS CloudFormation API Reference.
+* CodeBuild (3.7.404.0)
+	* Enable proxy for reserved capacity fleet.
+* IVS (3.7.401.0)
+	* On a channel that you own, you can now replace an ongoing stream with a new stream by streaming up with the priority parameter appended to the stream key.
+* QBusiness (3.7.402.0)
+	* Amazon Q Business now supports embedding the Amazon Q Business web experience on third-party websites.
+* Redshift (3.7.402.0)
+	* This release launches the CreateIntegration, DeleteIntegration, DescribeIntegrations and ModifyIntegration APIs to create and manage Amazon Redshift Zero-ETL Integrations.
+* ResilienceHub (3.7.402.0)
+	* AWS Resilience Hub now integrates with the myApplications platform, enabling customers to easily assess the resilience of applications defined in myApplications. The new Resiliency widget provides visibility into application resilience and actionable recommendations for improvement.
+* S3 (3.7.404.7)
+	* fix: Add missing NewerNoncurrentVersions to PutLifecycleConfigurationRequestMarshall
+* SimpleEmailV2 (3.7.403.0)
+	* This release adds support for email maximum delivery seconds that allows senders to control the time within which their emails are attempted for delivery.
+* Core 3.7.400.35
+	* Fix #3497, make InternalSDKUtils aot compatible.
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.905.0 (2024-10-14 18:20 UTC)
 * CodePipeline (3.7.404.0)
 	* AWS CodePipeline V2 type pipelines now support automatically retrying failed stages and skipping stage for failed entry conditions.

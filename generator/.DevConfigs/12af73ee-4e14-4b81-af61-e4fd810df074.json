@@ -1,9 +1,0 @@
-{
-    "core": {
-      "changeLogMessages": [
-        "Fix #3497, make InternalSDKUtils aot compatible."
-      ],
-      "type": "patch",
-      "updateMinimum": true
-    }
-  }
