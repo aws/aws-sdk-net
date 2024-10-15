@@ -78,12 +78,12 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// Any resources that don't currently support drift detection have a status of <c>NOT_CHECKED</c>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
-        /// that Support Drift Detection</a>. If you performed an <a>ContinueUpdateRollback</a>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resource
+        /// type support for imports and drift detection</a>. If you performed an <a>ContinueUpdateRollback</a>
         /// operation on a stack, any resources included in <c>ResourcesToSkip</c> will also have
         /// a status of <c>NOT_CHECKED</c>. For more information about skipping resources during
         /// rollback operations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html">Continue
-        /// Rolling Back an Update</a> in the CloudFormation User Guide.
+        /// rolling back an update</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>

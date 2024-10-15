@@ -157,15 +157,14 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// For public extensions that have been activated for this account and Region, the latest
         /// version of the public extension <i>that is available</i>. For any extensions other
-        /// than activated third-arty extensions, CloudFormation returns <c>null</c>.
+        /// than activated third-party extensions, CloudFormation returns <c>null</c>.
         /// </para>
         ///  
         /// <para>
         /// How you specified <c>AutoUpdate</c> when enabling the extension affects whether CloudFormation
         /// automatically updates the extension in this account and Region when a new version
-        /// is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting
-        /// CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation
-        /// User Guide</i>.
+        /// is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Automatically
+        /// use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5)]
@@ -192,7 +191,7 @@ namespace Amazon.CloudFormation.Model
         /// If you specified a <c>TypeNameAlias</c> when enabling the extension in this account
         /// and Region, CloudFormation treats that alias as the extension's type name within the
         /// account and Region, not the type name of the public extension. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying
+        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Use
         /// aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
@@ -220,9 +219,8 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// How you specified <c>AutoUpdate</c> when enabling the extension affects whether CloudFormation
         /// automatically updates the extension in this account and Region when a new version
-        /// is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting
-        /// CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation
-        /// User Guide</i>.
+        /// is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Automatically
+        /// use new versions of extensions</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5)]
@@ -265,9 +263,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Registering
-        /// your account to publish CloudFormation extensions</a> in the <i> CFN-CLI User Guide
-        /// for Extension Development</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing
+        /// extensions to make them available for public use</a> in the <i>CloudFormation Command
+        /// Line Interface (CLI) User Guide</i>.
         /// </para>
         /// </summary>
         public IdentityProvider PublisherIdentity

@@ -35,9 +35,9 @@ namespace Amazon.CloudFormation.Model
     /// 
     ///  
     /// <para>
-    /// For more information about modules, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/modules.html">Using
-    /// modules to encapsulate and reuse resource configurations</a> in the <i>CloudFormation
-    /// User Guide</i>.
+    /// For more information about modules, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/modules.html">Create
+    /// reusable resource configurations that can be included across templates with CloudFormation
+    /// modules</a> in the <i>CloudFormation User Guide</i>.
     /// </para>
     /// </summary>
     public partial class ModuleInfo
@@ -62,8 +62,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/modules.html#module-ref-resources">Referencing
-        /// resources in a module</a> in the <i>CloudFormation User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/module-ref-resources.html">Reference
+        /// module resources in CloudFormation templates</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
         public string LogicalIdHierarchy

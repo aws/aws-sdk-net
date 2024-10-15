@@ -33,14 +33,14 @@ namespace Amazon.CloudFormation.Model
     /// Contains the drift information for a resource that has been checked for drift. This
     /// includes actual and expected property values for resources in which CloudFormation
     /// has detected drift. Only resource properties explicitly defined in the stack template
-    /// are checked for drift. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
-    /// Unregulated Configuration Changes to Stacks and Resources</a>.
+    /// are checked for drift. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detect
+    /// unmanaged configuration changes to stacks and resources with drift detection</a>.
     /// 
     ///  
     /// <para>
     /// Resources that don't currently support drift detection can't be checked. For a list
-    /// of resources that support drift detection, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
-    /// that Support Drift Detection</a>.
+    /// of resources that support drift detection, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resource
+    /// type support for imports and drift detection</a>.
     /// </para>
     ///  
     /// <para>

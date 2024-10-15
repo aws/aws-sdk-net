@@ -120,8 +120,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an Identity and Access Management role that CloudFormation
-        /// assumes to rollback the stack.
+        /// The Amazon Resource Name (ARN) of an IAM role that CloudFormation assumes to rollback
+        /// the stack.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

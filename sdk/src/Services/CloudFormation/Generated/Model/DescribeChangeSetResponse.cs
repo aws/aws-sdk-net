@@ -257,8 +257,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property NotificationARNs. 
         /// <para>
-        /// The ARNs of the Amazon Simple Notification Service (Amazon SNS) topics that will be
-        /// associated with the stack if you execute the change set.
+        /// The ARNs of the Amazon SNS topics that will be associated with the stack if you execute
+        /// the change set.
         /// </para>
         /// </summary>
         [AWSProperty(Max=5)]
