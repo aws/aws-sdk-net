@@ -22,7 +22,6 @@ using System.Linq;
 using System.Threading;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using AWSSDK.DynamoDBv2;
 using System.CodeDom.Compiler;
 using Amazon.Runtime.Telemetry.Tracing;
 

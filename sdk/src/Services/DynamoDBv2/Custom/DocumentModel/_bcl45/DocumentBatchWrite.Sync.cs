@@ -20,7 +20,6 @@ using System.Net;
 using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Telemetry.Tracing;
-using AWSSDK.DynamoDBv2;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {

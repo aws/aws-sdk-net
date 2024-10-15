@@ -14,7 +14,6 @@
  */
 
 using Amazon.Runtime.Telemetry.Tracing;
-using AWSSDK.DynamoDBv2;
 using System.Threading;
 using System.Threading.Tasks;
 
