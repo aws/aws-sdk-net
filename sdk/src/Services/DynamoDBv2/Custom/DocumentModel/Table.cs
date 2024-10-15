@@ -903,7 +903,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             using (DynamoDBTelemetry.CreateSpan(tracerProvider, operationName, spanKind: SpanKind.CLIENT))
             {
                 if (config == null)
-                    throw new ArgumentNullException("config");
+                    throw new ArgumentNullException(nameof(config));
 
                 try
                 {
