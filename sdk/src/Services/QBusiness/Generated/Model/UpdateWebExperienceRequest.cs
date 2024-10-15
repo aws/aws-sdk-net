@@ -38,6 +38,7 @@ namespace Amazon.QBusiness.Model
         private string _applicationId;
         private WebExperienceAuthConfiguration _authenticationConfiguration;
         private IdentityProviderConfiguration _identityProviderConfiguration;
+        private List<string> _origins = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _roleArn;
         private WebExperienceSamplePromptsControlMode _samplePromptsControlMode;
         private string _subtitle;
@@ -100,6 +101,32 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetIdentityProviderConfiguration()
         {
             return this._identityProviderConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Origins. 
+        /// <para>
+        /// Updates the website domain origins that are allowed to embed the Amazon Q Business
+        /// web experience. <pre><c> The &lt;i&gt;domain origin&lt;/i&gt; refers to the &lt;i&gt;base
+        /// URL&lt;/i&gt; for accessing a website including the protocol (&lt;code&gt;http/https&lt;/code&gt;),
+        /// the domain name, and the port number (if specified).&lt;/p&gt; &lt;note&gt; &lt;ul&gt;
+        /// &lt;li&gt; &lt;p&gt;Any values except &lt;code&gt;null&lt;/code&gt; submitted as part
+        /// of this update will replace all previous values.&lt;/p&gt; &lt;/li&gt; &lt;li&gt;
+        /// &lt;p&gt;You must only submit a &lt;i&gt;base URL&lt;/i&gt; and not a full path. For
+        /// example, &lt;code&gt;https://docs.aws.amazon.com&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt;
+        /// &lt;/ul&gt; &lt;/note&gt; </c></pre>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<string> Origins
+        {
+            get { return this._origins; }
+            set { this._origins = value; }
+        }
+
+        // Check to see if Origins property is set
+        internal bool IsSetOrigins()
+        {
+            return this._origins != null && (this._origins.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

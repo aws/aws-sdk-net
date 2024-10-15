@@ -92,6 +92,17 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetOrigins())
+                {
+                    context.Writer.WritePropertyName("origins");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestOriginsListValue in publicRequest.Origins)
+                    {
+                            context.Writer.Write(publicRequestOriginsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetRoleArn())
                 {
                     context.Writer.WritePropertyName("roleArn");
