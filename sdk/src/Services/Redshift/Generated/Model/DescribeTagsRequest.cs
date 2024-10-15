@@ -185,7 +185,16 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// Snapshot copy grant
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> <li> 
+        /// <para>
+        /// Integration (zero-ETL integration)
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// To describe the tags associated with an <c>integration</c>, don't specify <c>ResourceType</c>,
+        /// instead specify the <c>ResourceName</c> of the integration.
+        /// </para>
+        ///  </note> </li> </ul> 
         /// <para>
         /// For more information about Amazon Redshift resource types and constructing ARNs, go
         /// to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Specifying

@@ -1636,6 +1636,69 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  CreateIntegration
+
+        internal virtual CreateIntegrationResponse CreateIntegration(CreateIntegrationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIntegrationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateIntegrationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a zero-ETL integration with Amazon Redshift.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIntegration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateIntegration service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationAlreadyExistsException">
+        /// The integration you are trying to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationConflictOperationException">
+        /// A conflicting conditional operation is currently in progress against this resource.
+        /// This typically occurs when there are multiple requests being made to the same resource
+        /// at the same time, and these requests conflict with each other.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationQuotaExceededException">
+        /// You can't create any more zero-ETL integrations because the quota has been reached.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationSourceNotFoundException">
+        /// The specified integration source can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationTargetNotFoundException">
+        /// The specified integration target can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <c>available</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.TagLimitExceededException">
+        /// You have exceeded the number of tags allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateIntegration">REST API Reference for CreateIntegration Operation</seealso>
+        public virtual Task<CreateIntegrationResponse> CreateIntegrationAsync(CreateIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIntegrationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateIntegrationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateRedshiftIdcApplication
 
         internal virtual CreateRedshiftIdcApplicationResponse CreateRedshiftIdcApplication(CreateRedshiftIdcApplicationRequest request)
@@ -2538,6 +2601,54 @@ namespace Amazon.Redshift
             options.ResponseUnmarshaller = DeleteHsmConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteHsmConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteIntegration
+
+        internal virtual DeleteIntegrationResponse DeleteIntegration(DeleteIntegrationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIntegrationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteIntegrationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a zero-ETL integration with Amazon Redshift.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIntegration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteIntegration service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationConflictOperationException">
+        /// A conflicting conditional operation is currently in progress against this resource.
+        /// This typically occurs when there are multiple requests being made to the same resource
+        /// at the same time, and these requests conflict with each other.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationConflictStateException">
+        /// The integration is in an invalid state and can't perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationNotFoundException">
+        /// The integration can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteIntegration">REST API Reference for DeleteIntegration Operation</seealso>
+        public virtual Task<DeleteIntegrationResponse> DeleteIntegrationAsync(DeleteIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIntegrationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteIntegrationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4399,6 +4510,46 @@ namespace Amazon.Redshift
             options.ResponseUnmarshaller = DescribeInboundIntegrationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeInboundIntegrationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeIntegrations
+
+        internal virtual DescribeIntegrationsResponse DescribeIntegrations(DescribeIntegrationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeIntegrationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIntegrationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeIntegrationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes one or more zero-ETL integrations with Amazon Redshift.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIntegrations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeIntegrations service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationNotFoundException">
+        /// The integration can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeIntegrations">REST API Reference for DescribeIntegrations Operation</seealso>
+        public virtual Task<DescribeIntegrationsResponse> DescribeIntegrationsAsync(DescribeIntegrationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeIntegrationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIntegrationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeIntegrationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6614,6 +6765,57 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  ModifyIntegration
+
+        internal virtual ModifyIntegrationResponse ModifyIntegration(ModifyIntegrationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyIntegrationResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyIntegrationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Modifies a zero-ETL integration with Amazon Redshift.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIntegration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyIntegration service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationAlreadyExistsException">
+        /// The integration you are trying to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationConflictOperationException">
+        /// A conflicting conditional operation is currently in progress against this resource.
+        /// This typically occurs when there are multiple requests being made to the same resource
+        /// at the same time, and these requests conflict with each other.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationConflictStateException">
+        /// The integration is in an invalid state and can't perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationNotFoundException">
+        /// The integration can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyIntegration">REST API Reference for ModifyIntegration Operation</seealso>
+        public virtual Task<ModifyIntegrationResponse> ModifyIntegrationAsync(ModifyIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyIntegrationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyIntegrationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ModifyRedshiftIdcApplication
 
         internal virtual ModifyRedshiftIdcApplicationResponse ModifyRedshiftIdcApplication(ModifyRedshiftIdcApplicationRequest request)
@@ -7171,6 +7373,10 @@ namespace Amazon.Redshift
         ///  </li> <li> 
         /// <para>
         /// dc2.8xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ra3.large
         /// </para>
         ///  </li> <li> 
         /// <para>
