@@ -31,7 +31,7 @@ namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAppAssessmentComplianceDrifts operation.
-    /// List of compliance drifts that were detected while running an assessment.
+    /// Indicates the list of compliance drifts that were detected while running an assessment.
     /// </summary>
     public partial class ListAppAssessmentComplianceDriftsRequest : AmazonResilienceHubRequest
     {
