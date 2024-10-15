@@ -23,7 +23,6 @@ using Amazon.DynamoDBv2.DocumentModel;
 using System.Threading.Tasks;
 using Amazon.Runtime.Internal;
 using System.Threading;
-using AWSSDK.DynamoDBv2;
 using Amazon.Runtime.Telemetry.Tracing;
 
 namespace Amazon.DynamoDBv2.DataModel

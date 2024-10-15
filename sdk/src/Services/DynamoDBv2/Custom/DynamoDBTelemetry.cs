@@ -3,7 +3,7 @@ using Amazon.Runtime.Telemetry;
 using Amazon.Runtime.Telemetry.Tracing;
 using Attributes = Amazon.Runtime.Telemetry.Attributes;
 
-namespace AWSSDK.DynamoDBv2
+namespace Amazon.DynamoDBv2
 {
     internal static class DynamoDBTelemetry
     {

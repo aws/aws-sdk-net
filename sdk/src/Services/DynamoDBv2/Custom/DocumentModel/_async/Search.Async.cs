@@ -21,6 +21,7 @@ using System.Threading.Tasks;
 using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.Telemetry.Tracing;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
@@ -42,9 +43,13 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task<List<Document>> GetNextSetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<List<Document>> GetNextSetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return GetNextSetHelperAsync(cancellationToken);
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Search), nameof(GetNextSetAsync));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                return await GetNextSetHelperAsync(cancellationToken).ConfigureAwait(false);
+            }
         }
 
         /// <summary>
@@ -53,9 +58,13 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// </summary>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task<List<Document>> GetRemainingAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<List<Document>> GetRemainingAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return GetRemainingHelperAsync(cancellationToken);
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Search), nameof(GetRemainingAsync));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                return await GetRemainingHelperAsync(cancellationToken).ConfigureAwait(false);
+            }
         }
 
         #endregion

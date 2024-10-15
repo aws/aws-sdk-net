@@ -524,6 +524,8 @@ namespace AWSSDK_DotNet35.UnitTests
                     request.Key.ContainsKey("CreationDate") && 
                     request.Key["CreationDate"].S == "0001-01-01T00:00:00.000Z")));
 
+            mock.Verify(x => x.Config, Times.AtLeastOnce());
+
             mock.VerifyNoOtherCalls();
         }
 
@@ -548,6 +550,8 @@ namespace AWSSDK_DotNet35.UnitTests
                 x.GetItem(It.Is<GetItemRequest>(request =>
                     request.Key.ContainsKey("CreationDate") &&
                     request.Key["CreationDate"].N == "1024")));
+
+            mock.Verify(x => x.Config, Times.AtLeastOnce());
 
             mock.VerifyNoOtherCalls();
         }
@@ -574,6 +578,8 @@ namespace AWSSDK_DotNet35.UnitTests
                     request.Key.ContainsKey("CreationDate") &&
                     BitConverter.ToString(request.Key["CreationDate"].B.ToArray()) == "00-04-00-00-00-00-00-40")));
 
+            mock.Verify(x => x.Config, Times.AtLeastOnce());
+
             mock.VerifyNoOtherCalls();
         }
 
@@ -590,6 +596,8 @@ namespace AWSSDK_DotNet35.UnitTests
             // A boolean isn't valid as a primary key, so we expect an exception 
             Assert.ThrowsException<InvalidOperationException>(() => 
                 context.Load<HashKeyConverter_DateTimeToBool>(new DateTime(1024, DateTimeKind.Utc)));
+
+            mock.Verify(x => x.Config, Times.AtLeastOnce());
 
             mock.VerifyNoOtherCalls();
         }
