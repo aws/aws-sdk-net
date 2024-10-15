@@ -59,7 +59,8 @@ namespace Amazon.DynamoDBv2.DataModel
             Context = context;
             Config = config;
             Keys = new List<Key>();
-            TracerProvider = context.Client.Config.TelemetryProvider.TracerProvider;
+            TracerProvider = context?.Client?.Config?.TelemetryProvider?.TracerProvider
+                ?? AWSConfigs.TelemetryProvider.TracerProvider;
         }
 
         #endregion

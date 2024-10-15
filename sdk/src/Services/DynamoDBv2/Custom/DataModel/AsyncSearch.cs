@@ -40,7 +40,8 @@ namespace Amazon.DynamoDBv2.DataModel
             SourceContext = source;
             DocumentSearch = contextSearch.Search;
             Config = contextSearch.FlatConfig;
-            TracerProvider = source.Client.Config.TelemetryProvider.TracerProvider;
+            TracerProvider = source?.Client?.Config?.TelemetryProvider?.TracerProvider
+                ?? AWSConfigs.TelemetryProvider.TracerProvider;
         }
 
         #endregion

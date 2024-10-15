@@ -22,6 +22,7 @@ using System.Threading.Tasks;
 #endif
 using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime;
+using Amazon.Runtime.Telemetry.Tracing;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
@@ -34,6 +35,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         internal Table TargetTable { get; private set; }
         internal List<Key> Keys { get; private set; }
+        internal TracerProvider TracerProvider { get; private set; }
 
         #endregion
 
@@ -69,6 +71,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             TargetTable = targetTable;
             Keys = new List<Key>();
+            TracerProvider = targetTable?.DDBClient?.Config?.TelemetryProvider?.TracerProvider 
+                ?? AWSConfigs.TelemetryProvider.TracerProvider;
         }
 
         #endregion
@@ -185,6 +189,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
     {
         #region Properties
 
+        internal TracerProvider TracerProvider { get; private set; }
+
         /// <summary>
         /// List of DocumentBatchGet objects to include in the multi-table
         /// batch request.
@@ -223,6 +229,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 throw new ArgumentNullException("batches");
 
             Batches = new List<DocumentBatchGet>(batches);
+            TracerProvider = batches.Length > 0
+                ? batches[0].TracerProvider
+                : AWSConfigs.TelemetryProvider.TracerProvider;
         }
 
         #endregion
