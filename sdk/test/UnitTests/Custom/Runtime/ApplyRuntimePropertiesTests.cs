@@ -28,7 +28,7 @@ namespace AWSSDK.UnitTests.Runtime
             var request = new GetPreSignedUrlRequest();
             var values = new Dictionary<string, object> { { "Verb", "DELETE" } };
 
-            InternalSDKUtils.ApplyValues(request, values);
+            InternalSDKUtils.ApplyValuesV2(request, values);
 
             Assert.AreEqual(request.Verb, HttpVerb.DELETE);
         }
@@ -40,14 +40,14 @@ namespace AWSSDK.UnitTests.Runtime
             var request = new PutObjectRequest();
             var values = new Dictionary<string, object> { { "AutoCloseStream", false } };
 
-            InternalSDKUtils.ApplyValues(request, values);
+            InternalSDKUtils.ApplyValuesV2(request, values);
 
             Assert.AreEqual(request.AutoCloseStream, false);
 
             request = new PutObjectRequest();
             values = new Dictionary<string, object> { { "AutoCloseStream", true } };
 
-            InternalSDKUtils.ApplyValues(request, values);
+            InternalSDKUtils.ApplyValuesV2(request, values);
 
             Assert.AreEqual(request.AutoCloseStream, true);
         }

@@ -1,7 +1,7 @@
 {
     "core": {
       "changeLogMessages": [
-        "Fix #3497, make InternalSDKUtils aot compatible."
+        "Fix #3497, make InternalSDKUtils aot compatible in V4."
       ],
       "type": "patch",
       "updateMinimum": true
