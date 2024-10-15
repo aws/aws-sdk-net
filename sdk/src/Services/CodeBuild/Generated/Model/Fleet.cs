@@ -45,6 +45,7 @@ namespace Amazon.CodeBuild.Model
         private DateTime? _lastModified;
         private string _name;
         private FleetOverflowBehavior _overflowBehavior;
+        private ProxyConfiguration _proxyConfiguration;
         private ScalingConfigurationOutput _scalingConfiguration;
         private FleetStatus _status;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -388,6 +389,24 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetOverflowBehavior()
         {
             return this._overflowBehavior != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProxyConfiguration. 
+        /// <para>
+        /// The proxy configuration of the compute fleet.
+        /// </para>
+        /// </summary>
+        public ProxyConfiguration ProxyConfiguration
+        {
+            get { return this._proxyConfiguration; }
+            set { this._proxyConfiguration = value; }
+        }
+
+        // Check to see if ProxyConfiguration property is set
+        internal bool IsSetProxyConfiguration()
+        {
+            return this._proxyConfiguration != null;
         }
 
         /// <summary>

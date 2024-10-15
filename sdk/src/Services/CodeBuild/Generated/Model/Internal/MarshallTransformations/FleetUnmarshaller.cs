@@ -132,6 +132,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.OverflowBehavior = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("proxyConfiguration", targetDepth))
+                {
+                    var unmarshaller = ProxyConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ProxyConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("scalingConfiguration", targetDepth))
                 {
                     var unmarshaller = ScalingConfigurationOutputUnmarshaller.Instance;

@@ -111,6 +111,17 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.OverflowBehavior);
                 }
 
+                if(publicRequest.IsSetProxyConfiguration())
+                {
+                    context.Writer.WritePropertyName("proxyConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ProxyConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ProxyConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetScalingConfiguration())
                 {
                     context.Writer.WritePropertyName("scalingConfiguration");

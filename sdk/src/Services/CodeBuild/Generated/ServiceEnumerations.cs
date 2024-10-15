@@ -1023,6 +1023,156 @@ namespace Amazon.CodeBuild
 
 
     /// <summary>
+    /// Constants used for properties of type FleetProxyRuleBehavior.
+    /// </summary>
+    public class FleetProxyRuleBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALLOW_ALL for FleetProxyRuleBehavior
+        /// </summary>
+        public static readonly FleetProxyRuleBehavior ALLOW_ALL = new FleetProxyRuleBehavior("ALLOW_ALL");
+        /// <summary>
+        /// Constant DENY_ALL for FleetProxyRuleBehavior
+        /// </summary>
+        public static readonly FleetProxyRuleBehavior DENY_ALL = new FleetProxyRuleBehavior("DENY_ALL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FleetProxyRuleBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FleetProxyRuleBehavior FindValue(string value)
+        {
+            return FindValue<FleetProxyRuleBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FleetProxyRuleBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FleetProxyRuleEffectType.
+    /// </summary>
+    public class FleetProxyRuleEffectType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALLOW for FleetProxyRuleEffectType
+        /// </summary>
+        public static readonly FleetProxyRuleEffectType ALLOW = new FleetProxyRuleEffectType("ALLOW");
+        /// <summary>
+        /// Constant DENY for FleetProxyRuleEffectType
+        /// </summary>
+        public static readonly FleetProxyRuleEffectType DENY = new FleetProxyRuleEffectType("DENY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FleetProxyRuleEffectType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FleetProxyRuleEffectType FindValue(string value)
+        {
+            return FindValue<FleetProxyRuleEffectType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FleetProxyRuleEffectType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FleetProxyRuleType.
+    /// </summary>
+    public class FleetProxyRuleType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DOMAIN for FleetProxyRuleType
+        /// </summary>
+        public static readonly FleetProxyRuleType DOMAIN = new FleetProxyRuleType("DOMAIN");
+        /// <summary>
+        /// Constant IP for FleetProxyRuleType
+        /// </summary>
+        public static readonly FleetProxyRuleType IP = new FleetProxyRuleType("IP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FleetProxyRuleType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FleetProxyRuleType FindValue(string value)
+        {
+            return FindValue<FleetProxyRuleType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FleetProxyRuleType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FleetScalingMetricType.
     /// </summary>
     public class FleetScalingMetricType : ConstantClass
@@ -2524,6 +2674,10 @@ namespace Amazon.CodeBuild
         /// Constant RELEASE_NAME for WebhookFilterType
         /// </summary>
         public static readonly WebhookFilterType RELEASE_NAME = new WebhookFilterType("RELEASE_NAME");
+        /// <summary>
+        /// Constant REPOSITORY_NAME for WebhookFilterType
+        /// </summary>
+        public static readonly WebhookFilterType REPOSITORY_NAME = new WebhookFilterType("REPOSITORY_NAME");
         /// <summary>
         /// Constant TAG_NAME for WebhookFilterType
         /// </summary>
