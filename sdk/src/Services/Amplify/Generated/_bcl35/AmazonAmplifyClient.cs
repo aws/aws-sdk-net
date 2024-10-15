@@ -491,7 +491,7 @@ namespace Amazon.Amplify
 
         /// <summary>
         /// Creates a deployment for a manually deployed Amplify app. Manually deployed apps are
-        /// not connected to a repository. 
+        /// not connected to a Git repository. 
         /// 
         ///  
         /// <para>
@@ -2198,7 +2198,7 @@ namespace Amazon.Amplify
 
         /// <summary>
         /// Starts a deployment for a manually deployed app. Manually deployed apps are not connected
-        /// to a repository. 
+        /// to a Git repository. 
         /// 
         ///  
         /// <para>
