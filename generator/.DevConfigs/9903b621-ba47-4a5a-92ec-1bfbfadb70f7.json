@@ -1,0 +1,11 @@
+{
+    "services": [
+        {
+            "serviceName": "DynamoDBv2",
+            "type": "minor",
+            "changeLogMessages": [
+                "Added the ability to create observability traces during DynamoDB operations"
+            ]
+        }
+    ]
+}
