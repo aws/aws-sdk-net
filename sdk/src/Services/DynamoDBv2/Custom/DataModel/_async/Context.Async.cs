@@ -41,9 +41,12 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="value">Object to save.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task SaveAsync<T>(T value, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task SaveAsync<T>(T value, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return SaveHelperAsync(value, null, cancellationToken);
+            using (DynamoDBTelemetry.CreateSpan(this, nameof(SaveAsync)))
+            {
+                await SaveHelperAsync(value, null, cancellationToken).ConfigureAwait(false);
+            }
         }
 
         /// <summary>
@@ -55,9 +58,12 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="operationConfig">Overriding configuration.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task SaveAsync<T>(T value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task SaveAsync<T>(T value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return SaveHelperAsync(value, operationConfig, cancellationToken);
+            using (DynamoDBTelemetry.CreateSpan(this, nameof(SaveAsync)))
+            {
+                await SaveHelperAsync(value, operationConfig, cancellationToken).ConfigureAwait(false);
+            }
         }
 
         /// <summary>
@@ -68,9 +74,12 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="value">Object to save.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task SaveAsync(Type valueType, object value, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task SaveAsync(Type valueType, object value, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return SaveHelperAsync(valueType, value, null, cancellationToken);
+            using (DynamoDBTelemetry.CreateSpan(this, nameof(SaveAsync)))
+            {
+                await SaveHelperAsync(valueType, value, null, cancellationToken).ConfigureAwait(false);
+            }
         }
 
         /// <summary>
@@ -82,9 +91,12 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="operationConfig">Overriding configuration.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task SaveAsync(Type valueType, object value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task SaveAsync(Type valueType, object value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return SaveHelperAsync(valueType, value, operationConfig, cancellationToken);
+            using (DynamoDBTelemetry.CreateSpan(this, nameof(SaveAsync)))
+            {
+                await SaveHelperAsync(valueType, value, operationConfig, cancellationToken).ConfigureAwait(false);
+            }
         }
 
         #endregion
@@ -102,9 +114,12 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="hashKey">Hash key element of the target item.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>Object of type T, populated with the properties of the item loaded from DynamoDB.</returns>
-        public Task<T> LoadAsync<T>(object hashKey, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<T> LoadAsync<T>(object hashKey, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return LoadHelperAsync<T>(hashKey, null, null, cancellationToken);
+            using (DynamoDBTelemetry.CreateSpan(this, nameof(LoadAsync)))
+            {
+                return await LoadHelperAsync<T>(hashKey, null, null, cancellationToken).ConfigureAwait(false);
+            }
         }
 
         /// <summary>
@@ -121,9 +136,12 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>Object of type T, populated with the properties of the item loaded from DynamoDB.</returns>
-        public Task<T> LoadAsync<T>(object hashKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<T> LoadAsync<T>(object hashKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return LoadHelperAsync<T>(hashKey, null, operationConfig, cancellationToken);
+            using (DynamoDBTelemetry.CreateSpan(this, nameof(LoadAsync)))
+            {
+                return await LoadHelperAsync<T>(hashKey, null, operationConfig, cancellationToken).ConfigureAwait(false);
+            }
         }
 
         /// <summary>
@@ -138,9 +156,12 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="rangeKey">Range key element of the target item.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>Object of type T, populated with the properties of the item loaded from DynamoDB.</returns>
-        public Task<T> LoadAsync<T>(object hashKey, object rangeKey, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<T> LoadAsync<T>(object hashKey, object rangeKey, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return LoadHelperAsync<T>(hashKey, rangeKey, null, cancellationToken);
+            using (DynamoDBTelemetry.CreateSpan(this, nameof(LoadAsync)))
+            {
+                return await LoadHelperAsync<T>(hashKey, rangeKey, null, cancellationToken).ConfigureAwait(false);
+            }
         }
 
         /// <summary>
@@ -159,9 +180,12 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>Object of type T, populated with the properties of the item loaded from DynamoDB.</returns>
-        public Task<T> LoadAsync<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<T> LoadAsync<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return LoadHelperAsync<T>(hashKey, rangeKey, operationConfig, cancellationToken);
+            using (DynamoDBTelemetry.CreateSpan(this, nameof(LoadAsync)))
+            {
+                return await LoadHelperAsync<T>(hashKey, rangeKey, operationConfig, cancellationToken).ConfigureAwait(false);
+            }
         }
 
         /// <summary>
@@ -177,9 +201,12 @@ namespace Amazon.DynamoDBv2.DataModel
         /// want to load.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>Object of type T, populated with the properties of the item loaded from DynamoDB.</returns>
-        public Task<T> LoadAsync<T>(T keyObject, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<T> LoadAsync<T>(T keyObject, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return LoadHelperAsync(keyObject, null, cancellationToken);
+            using (DynamoDBTelemetry.CreateSpan(this, nameof(LoadAsync)))
+            {
+                return await LoadHelperAsync(keyObject, null, cancellationToken).ConfigureAwait(false);
+            }
         }
 
         /// <summary>
@@ -199,9 +226,12 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>Object of type T, populated with the properties of the item loaded from DynamoDB.</returns>
-        public Task<T> LoadAsync<T>(T keyObject, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<T> LoadAsync<T>(T keyObject, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return LoadHelperAsync(keyObject, operationConfig, cancellationToken);
+            using (DynamoDBTelemetry.CreateSpan(this, nameof(LoadAsync)))
+            {
+                return await LoadHelperAsync(keyObject, operationConfig, cancellationToken).ConfigureAwait(false);
+            }
         }
 
         #endregion
@@ -215,9 +245,12 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="value">Object to delete.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task DeleteAsync<T>(T value, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task DeleteAsync<T>(T value, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return DeleteHelperAsync(value, null, cancellationToken);
+            using (DynamoDBTelemetry.CreateSpan(this, nameof(DeleteAsync)))
+            {
+                await DeleteHelperAsync(value, null, cancellationToken).ConfigureAwait(false);
+            }
         }
 
         /// <summary>
@@ -228,9 +261,12 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="operationConfig">Overriding configuration.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task DeleteAsync<T>(T value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task DeleteAsync<T>(T value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return DeleteHelperAsync(value, operationConfig, cancellationToken);
+            using (DynamoDBTelemetry.CreateSpan(this, nameof(DeleteAsync)))
+            {
+                await DeleteHelperAsync(value, operationConfig, cancellationToken).ConfigureAwait(false);
+            }
         }
 
         /// <summary>
@@ -240,9 +276,12 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="hashKey">Hash key element of the object to delete.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task DeleteAsync<T>(object hashKey, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task DeleteAsync<T>(object hashKey, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return DeleteHelperAsync<T>(hashKey, null, null, cancellationToken);
+            using (DynamoDBTelemetry.CreateSpan(this, nameof(DeleteAsync)))
+            {
+                await DeleteHelperAsync<T>(hashKey, null, null, cancellationToken).ConfigureAwait(false);
+            }
         }
 
         /// <summary>
@@ -253,9 +292,12 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task DeleteAsync<T>(object hashKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task DeleteAsync<T>(object hashKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return DeleteHelperAsync<T>(hashKey, null, operationConfig, cancellationToken);
+            using (DynamoDBTelemetry.CreateSpan(this, nameof(DeleteAsync)))
+            {
+                await DeleteHelperAsync<T>(hashKey, null, operationConfig, cancellationToken).ConfigureAwait(false);
+            }
         }
 
         /// <summary>
@@ -266,9 +308,12 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="rangeKey">Range key element of the object to delete.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task DeleteAsync<T>(object hashKey, object rangeKey, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task DeleteAsync<T>(object hashKey, object rangeKey, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return DeleteHelperAsync<T>(hashKey, rangeKey, null, cancellationToken);
+            using (DynamoDBTelemetry.CreateSpan(this, nameof(DeleteAsync)))
+            {
+                await DeleteHelperAsync<T>(hashKey, rangeKey, null, cancellationToken).ConfigureAwait(false);
+            }
         }
 
         /// <summary>
@@ -280,9 +325,12 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task DeleteAsync<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task DeleteAsync<T>(object hashKey, object rangeKey, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return DeleteHelperAsync<T>(hashKey, rangeKey, operationConfig, cancellationToken);
+            using (DynamoDBTelemetry.CreateSpan(this, nameof(DeleteAsync)))
+            {
+                await DeleteHelperAsync<T>(hashKey, rangeKey, operationConfig, cancellationToken).ConfigureAwait(false);
+            }
         }
 
         #endregion
@@ -297,9 +345,12 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="batches">
         /// Configured BatchGet objects
         /// </param>
-        public Task ExecuteBatchGetAsync(params BatchGet[] batches)
+        public async Task ExecuteBatchGetAsync(params BatchGet[] batches)
         {
-            return ExecuteBatchGetAsync(batches, default(CancellationToken));
+            using (DynamoDBTelemetry.CreateSpan(this, nameof(ExecuteBatchGetAsync)))
+            {
+                await ExecuteBatchGetAsync(batches, default(CancellationToken)).ConfigureAwait(false);
+            }
         }
 
         /// <summary>
@@ -313,10 +364,13 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        public Task ExecuteBatchGetAsync(BatchGet[] batches, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task ExecuteBatchGetAsync(BatchGet[] batches, CancellationToken cancellationToken = default(CancellationToken))
         {
-            MultiTableBatchGet superBatch = new MultiTableBatchGet(batches);
-            return superBatch.ExecuteAsync(cancellationToken);
+            using (DynamoDBTelemetry.CreateSpan(this, nameof(ExecuteBatchGetAsync)))
+            {
+                MultiTableBatchGet superBatch = new MultiTableBatchGet(batches);
+                await superBatch.ExecuteAsync(cancellationToken).ConfigureAwait(false);
+            }
         }
 
         #endregion
@@ -332,10 +386,13 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
-        public Task ExecuteBatchWriteAsync(BatchWrite[] batches, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task ExecuteBatchWriteAsync(BatchWrite[] batches, CancellationToken cancellationToken = default(CancellationToken))
         {
-            MultiTableBatchWrite superBatch = new MultiTableBatchWrite(batches);
-            return superBatch.ExecuteAsync(cancellationToken);
+            using (DynamoDBTelemetry.CreateSpan(this, nameof(ExecuteBatchWriteAsync)))
+            {
+                MultiTableBatchWrite superBatch = new MultiTableBatchWrite(batches);
+                await superBatch.ExecuteAsync(cancellationToken).ConfigureAwait(false);
+            }
         }
 
         #endregion
@@ -349,10 +406,13 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="transactionParts">Configured TransactGet objects.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task ExecuteTransactGetAsync(TransactGet[] transactionParts, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task ExecuteTransactGetAsync(TransactGet[] transactionParts, CancellationToken cancellationToken = default(CancellationToken))
         {
-            MultiTableTransactGet transaction = new MultiTableTransactGet(transactionParts);
-            return transaction.ExecuteAsync(cancellationToken);
+            using (DynamoDBTelemetry.CreateSpan(this, nameof(ExecuteTransactGetAsync)))
+            {
+                MultiTableTransactGet transaction = new MultiTableTransactGet(transactionParts);
+                await transaction.ExecuteAsync(cancellationToken).ConfigureAwait(false);
+            }
         }
 
         #endregion
@@ -365,10 +425,13 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="transactionParts">Configured TransactWrite objects.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
-        public Task ExecuteTransactWriteAsync(TransactWrite[] transactionParts, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task ExecuteTransactWriteAsync(TransactWrite[] transactionParts, CancellationToken cancellationToken = default(CancellationToken))
         {
-            MultiTableTransactWrite transaction = new MultiTableTransactWrite(transactionParts);
-            return transaction.ExecuteAsync(cancellationToken);
+            using (DynamoDBTelemetry.CreateSpan(this, nameof(ExecuteTransactWriteAsync)))
+            {
+                MultiTableTransactWrite transaction = new MultiTableTransactWrite(transactionParts);
+                await transaction.ExecuteAsync(cancellationToken).ConfigureAwait(false);
+            }
         }
 
         #endregion
@@ -387,8 +450,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
         public AsyncSearch<T> ScanAsync<T>(IEnumerable<ScanCondition> conditions, DynamoDBOperationConfig operationConfig = null)
         {
-            var scan = ConvertScan<T>(conditions, operationConfig);
-            return FromSearchAsync<T>(scan);
+            using (DynamoDBTelemetry.CreateSpan(this, nameof(ScanAsync)))
+            {
+                var scan = ConvertScan<T>(conditions, operationConfig);
+                return FromSearchAsync<T>(scan);
+            }
         }
 
         /// <summary>
@@ -401,10 +467,13 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
         public AsyncSearch<T> FromScanAsync<T>(ScanOperationConfig scanConfig, DynamoDBOperationConfig operationConfig = null)
         {
-            if (scanConfig == null) throw new ArgumentNullException("scanConfig");
+            using (DynamoDBTelemetry.CreateSpan(this, nameof(FromScanAsync)))
+            {
+                if (scanConfig == null) throw new ArgumentNullException(nameof(scanConfig));
 
-            var search = ConvertFromScan<T>(scanConfig, operationConfig);
-            return FromSearchAsync<T>(search);
+                var search = ConvertFromScan<T>(scanConfig, operationConfig);
+                return FromSearchAsync<T>(search);
+            }
         }
 
         #endregion
@@ -421,8 +490,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
         public AsyncSearch<T> QueryAsync<T>(object hashKeyValue, DynamoDBOperationConfig operationConfig = null)
         {
-            var query = ConvertQueryByValue<T>(hashKeyValue, null, operationConfig);
-            return FromSearchAsync<T>(query);
+            using (DynamoDBTelemetry.CreateSpan(this, nameof(QueryAsync)))
+            {
+                var query = ConvertQueryByValue<T>(hashKeyValue, null, operationConfig);
+                return FromSearchAsync<T>(query);
+            }
         }
 
         /// <summary>
@@ -441,11 +513,14 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
         public AsyncSearch<T> QueryAsync<T>(object hashKeyValue, QueryOperator op, IEnumerable<object> values, DynamoDBOperationConfig operationConfig = null)
         {
-            if (values == null)
-                throw new ArgumentNullException("values");
+            using (DynamoDBTelemetry.CreateSpan(this, nameof(QueryAsync)))
+            {
+                if (values == null)
+                    throw new ArgumentNullException(nameof(values));
 
-            var query = ConvertQueryByValue<T>(hashKeyValue, op, values, operationConfig);
-            return FromSearchAsync<T>(query);
+                var query = ConvertQueryByValue<T>(hashKeyValue, op, values, operationConfig);
+                return FromSearchAsync<T>(query);
+            }
         }
 
         /// <summary>
@@ -458,10 +533,13 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>AsyncSearch which can be used to retrieve DynamoDB data.</returns>
         public AsyncSearch<T> FromQueryAsync<T>(QueryOperationConfig queryConfig, DynamoDBOperationConfig operationConfig = null)
         {
-            if (queryConfig == null) throw new ArgumentNullException("queryConfig");
+            using (DynamoDBTelemetry.CreateSpan(this, nameof(FromQueryAsync)))
+            {
+                if (queryConfig == null) throw new ArgumentNullException(nameof(queryConfig));
 
-            var search = ConvertFromQuery<T>(queryConfig, operationConfig);
-            return FromSearchAsync<T>(search);
+                var search = ConvertFromQuery<T>(queryConfig, operationConfig);
+                return FromSearchAsync<T>(search);
+            }
         }
 
         #endregion
