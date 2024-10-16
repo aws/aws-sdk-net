@@ -1,3 +1,11 @@
+### 3.7.907.0 (2024-10-16 18:14 UTC)
+* S3 (3.7.405.0)
+	* Add support for the new optional bucket-region and prefix query parameters in the ListBuckets API. For ListBuckets requests that express pagination, Amazon S3 will now return both the bucket names and associated AWS regions in the response.
+	* Updated the documentation for TransferUtilityDownloadDirectoryRequest.LocalDirectory mentioning that it is case-sensitive.
+* Core 3.7.400.36
+	* Updates to support building and running netstandard project core only based UnitTests from service solutions.
+	* All services packages updated to require new Core
+
 ### 3.7.906.0 (2024-10-15 18:19 UTC)
 * Amplify (3.7.402.0)
 	* Added sourceUrlType field to StartDeployment request
