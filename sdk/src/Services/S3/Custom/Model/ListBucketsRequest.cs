@@ -43,6 +43,8 @@ namespace Amazon.S3.Model
     {
         private string _continuationToken;
         private int? _maxBuckets;
+        private string _prefix;
+        private string _bucketRegion;
 
         /// <summary>
         /// Gets and sets the property ContinuationToken. 
@@ -82,6 +84,36 @@ namespace Amazon.S3.Model
         internal bool IsSetMaxBuckets()
         {
             return this._maxBuckets.HasValue;
+        }
+
+        /// <summary>
+        /// <para>Limits the response to bucket names that begin with the specified bucket name prefix.</para>
+        /// </summary>
+        public string Prefix
+        {
+            get { return this._prefix; }
+            set { this._prefix = value; }
+        }
+
+        // Check to see if Prefix property is set
+        internal bool IsSetPrefix()
+        {
+            return this._prefix != null;
+        }
+
+        /// <summary>
+        /// <para>Limits the response to buckets that are located in the specified Amazon Web Services region.</para> <note> <para>Requests made to an endpoint in a region that is different from the bucket-region parameter are not supported. For example, if you want to limit the response to your buckets in us-west-2 region, the request must be made to an endpoint in us-west-2.</para> </note>
+        /// </summary>
+        public string BucketRegion
+        {
+            get { return this._bucketRegion; }
+            set { this._bucketRegion = value; }
+        }
+
+        // Check to see if BucketRegion property is set
+        internal bool IsSetBucketRegion()
+        {
+            return this._bucketRegion != null;
         }
     }
 }

@@ -82,6 +82,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         response.ContinuationToken = StringUnmarshaller.Instance.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("Prefix", targetDepth))
+                    {
+                        response.Prefix = StringUnmarshaller.Instance.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

@@ -29,6 +29,7 @@ namespace Amazon.S3.Model
         
         private DateTime? creationDate;
         private string bucketName;
+        private string _bucketRegion;
 
         /// <summary>
         /// <para>Date the bucket was created. This date can change when making changes to your bucket, such as editing its bucket policy.</para>
@@ -59,6 +60,21 @@ namespace Amazon.S3.Model
         internal bool IsSetBucketName()
         {
             return this.bucketName != null;
+        }
+
+        /// <summary>
+        /// <para> <c>BucketRegion</c> indicates the Amazon Web Services region where the bucket is located. If the request contains at least one valid parameter, it is included in the response.</para>
+        /// </summary>
+        public string BucketRegion
+        {
+            get { return this._bucketRegion; }
+            set { this._bucketRegion = value; }
+        }
+
+        // Check to see if BucketRegion property is set
+        internal bool IsSetBucketRegion()
+        {
+            return this._bucketRegion != null;
         }
     }
 }
