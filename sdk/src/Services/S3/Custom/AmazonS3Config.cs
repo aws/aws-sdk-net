@@ -35,7 +35,6 @@ namespace Amazon.S3
         private const string DefaultProfileName = "default";
         private const string AwsS3UsEast1RegionalEndpointsEnvironmentVariable = "AWS_S3_US_EAST_1_REGIONAL_ENDPOINT";
         private const string DisableMRAPEnvName = "AWS_S3_DISABLE_MULTIREGION_ACCESS_POINTS";
-        private const string AwsConfigFileEnvName = "AWS_CONFIG_FILE";
 
         private bool forcePathStyle = false;
         private bool useAccelerateEndpoint = false;
