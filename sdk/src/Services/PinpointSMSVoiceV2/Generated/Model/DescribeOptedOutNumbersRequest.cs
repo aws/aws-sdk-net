@@ -44,7 +44,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// </para>
     ///  
     /// <para>
-    /// If you specify an opted out number that isn't valid, an error is returned.
+    /// If you specify an opted out number that isn't valid, an exception is returned.
     /// </para>
     /// </summary>
     public partial class DescribeOptedOutNumbersRequest : AmazonPinpointSMSVoiceV2Request
@@ -117,6 +117,10 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// Gets and sets the property OptedOutNumbers. 
         /// <para>
         /// An array of phone numbers to search for in the OptOutList.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify an opted out number that isn't valid, an exception is returned.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]

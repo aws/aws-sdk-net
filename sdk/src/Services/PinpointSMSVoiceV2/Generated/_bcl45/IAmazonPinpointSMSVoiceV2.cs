@@ -920,9 +920,15 @@ namespace Amazon.PinpointSMSVoiceV2
 
         /// <summary>
         /// Create a new registration attachment to use for uploading a file or a URL to a file.
-        /// The maximum file size is 1MiB and valid file extensions are PDF, JPEG and PNG. For
+        /// The maximum file size is 500KB and valid file extensions are PDF, JPEG and PNG. For
         /// example, many sender ID registrations require a signed “letter of authorization” (LOA)
         /// to be submitted.
+        /// 
+        ///  
+        /// <para>
+        /// Use either <c>AttachmentUrl</c> or <c>AttachmentBody</c> to upload your attachment.
+        /// If both are specified then an exception is returned.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRegistrationAttachment service method.</param>
         /// 
@@ -957,9 +963,15 @@ namespace Amazon.PinpointSMSVoiceV2
 
         /// <summary>
         /// Create a new registration attachment to use for uploading a file or a URL to a file.
-        /// The maximum file size is 1MiB and valid file extensions are PDF, JPEG and PNG. For
+        /// The maximum file size is 500KB and valid file extensions are PDF, JPEG and PNG. For
         /// example, many sender ID registrations require a signed “letter of authorization” (LOA)
         /// to be submitted.
+        /// 
+        ///  
+        /// <para>
+        /// Use either <c>AttachmentUrl</c> or <c>AttachmentBody</c> to upload your attachment.
+        /// If both are specified then an exception is returned.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRegistrationAttachment service method.</param>
         /// <param name="cancellationToken">
@@ -2908,7 +2920,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// </para>
         ///  
         /// <para>
-        /// If you specify an opted out number that isn't valid, an error is returned.
+        /// If you specify an opted out number that isn't valid, an exception is returned.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOptedOutNumbers service method.</param>
@@ -2951,7 +2963,7 @@ namespace Amazon.PinpointSMSVoiceV2
         /// </para>
         ///  
         /// <para>
-        /// If you specify an opted out number that isn't valid, an error is returned.
+        /// If you specify an opted out number that isn't valid, an exception is returned.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOptedOutNumbers service method.</param>

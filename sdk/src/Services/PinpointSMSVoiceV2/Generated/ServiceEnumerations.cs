@@ -2073,6 +2073,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// </summary>
         public static readonly RegistrationStatus PROVISIONING = new RegistrationStatus("PROVISIONING");
         /// <summary>
+        /// Constant REQUIRES_AUTHENTICATION for RegistrationStatus
+        /// </summary>
+        public static readonly RegistrationStatus REQUIRES_AUTHENTICATION = new RegistrationStatus("REQUIRES_AUTHENTICATION");
+        /// <summary>
         /// Constant REQUIRES_UPDATES for RegistrationStatus
         /// </summary>
         public static readonly RegistrationStatus REQUIRES_UPDATES = new RegistrationStatus("REQUIRES_UPDATES");
@@ -2242,6 +2246,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// Constant DRAFT for RegistrationVersionStatus
         /// </summary>
         public static readonly RegistrationVersionStatus DRAFT = new RegistrationVersionStatus("DRAFT");
+        /// <summary>
+        /// Constant REQUIRES_AUTHENTICATION for RegistrationVersionStatus
+        /// </summary>
+        public static readonly RegistrationVersionStatus REQUIRES_AUTHENTICATION = new RegistrationVersionStatus("REQUIRES_AUTHENTICATION");
         /// <summary>
         /// Constant REVIEWING for RegistrationVersionStatus
         /// </summary>
@@ -2850,6 +2858,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// Constant UNKNOWN_REGISTRATION_VERSION for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason UNKNOWN_REGISTRATION_VERSION = new ValidationExceptionReason("UNKNOWN_REGISTRATION_VERSION");
+        /// <summary>
+        /// Constant UNSPECIFIED_PARAMETER_NOT_SUPPORTED for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason UNSPECIFIED_PARAMETER_NOT_SUPPORTED = new ValidationExceptionReason("UNSPECIFIED_PARAMETER_NOT_SUPPORTED");
         /// <summary>
         /// Constant VERIFICATION_CODE_MISMATCH for ValidationExceptionReason
         /// </summary>
