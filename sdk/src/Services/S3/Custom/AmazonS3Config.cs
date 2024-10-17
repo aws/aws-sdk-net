@@ -42,7 +42,7 @@ namespace Amazon.S3
         private S3UsEast1RegionalEndpointValue? s3UsEast1RegionalEndpointValue;
         private readonly string legacyUSEast1GlobalRegionSystemName = RegionEndpoint.USEast1.SystemName;
 
-        private static CredentialProfileStoreChain credentialProfileChain = new CredentialProfileStoreChain(Environment.GetEnvironmentVariable(AwsConfigFileEnvName));
+        private static CredentialProfileStoreChain credentialProfileChain = new CredentialProfileStoreChain();
 
         // we cache this per execution process to avoid excessive file I/O
         private static CredentialProfile _profile;

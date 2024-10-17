@@ -67,9 +67,12 @@ namespace AWSSDK.UnitTests
             // Then clear the current value so every test is starting from a clean slate
             Environment.SetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE, "");
             // set credentials file and use it to load CredentialProfileStoreChain
+
+            // set credentials file and use it to load CredentialProfileStoreChain
             _tempCredentialsFilePath = Path.GetTempFileName();
-            Environment.SetEnvironmentVariable(AWS_CONFIG_ENVIRONMENT_VARIABLE, _tempCredentialsFilePath);
             File.WriteAllText(_tempCredentialsFilePath, ProfileText);
+            ReflectionHelpers.Invoke(typeof(AmazonS3Config), "credentialProfileChain", new CredentialProfileStoreChain(_tempCredentialsFilePath));
+            ReflectionHelpers.Invoke(typeof(AmazonS3Config), "_triedToResolveProfile", false);
         }
 
         [TestCleanup]
@@ -96,73 +99,117 @@ namespace AWSSDK.UnitTests
         [TestCategory("S3")]
         public void EnvironmentVariableEnable()
         {
-            Environment.SetEnvironmentVariable(AWS_S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE, "true");
-
-            var config = new AmazonS3Config
+            var beginningS3UseArnRegionEnvValue = Environment.GetEnvironmentVariable(AWS_S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE);
+            try
             {
-            };
+                Environment.SetEnvironmentVariable(AWS_S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE, "true");
 
-            Assert.IsTrue(config.UseArnRegion);
+                var config = new AmazonS3Config
+                {
+                };
 
-
-            Environment.SetEnvironmentVariable(AWS_S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE, "");
+                Assert.IsTrue(config.UseArnRegion);
+            }
+            finally
+            {
+                Environment.SetEnvironmentVariable(AWS_S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE, beginningS3UseArnRegionEnvValue);
+            }
         }
 
         [TestMethod]
         [TestCategory("S3")]
         public void ExplicitDisableOverridesEnvironmentVariable()
         {
-            Environment.SetEnvironmentVariable(AWS_S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE, "true");
-
-            var config = new AmazonS3Config
+            var beginningS3UseArnRegionEnvValue = Environment.GetEnvironmentVariable(AWS_S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE);
+            try
             {
-                UseArnRegion = false
-            };
+                Environment.SetEnvironmentVariable(AWS_S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE, "true");
 
-            Assert.IsFalse(config.UseArnRegion);
+                var config = new AmazonS3Config
+                {
+                    UseArnRegion = false
+                };
 
-            Environment.SetEnvironmentVariable(AWS_S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE, "");
+                Assert.IsFalse(config.UseArnRegion);
+            }
+
+            finally
+            {
+                Environment.SetEnvironmentVariable(AWS_S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE, beginningS3UseArnRegionEnvValue);
+            }
+
         }
 
         [TestMethod]
         [TestCategory("S3")]
         public void ProfileValueIsUsedIfSet()
         {
-            Environment.SetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE, "use-arn-region-enabled");
-
-            var config = new AmazonS3Config
+            var beginningS3UseArnRegionEnvValue = Environment.GetEnvironmentVariable(AWS_S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE);
+            try
             {
-            };
+                Environment.SetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE, "use-arn-region-enabled");
 
-            Assert.IsTrue(config.UseArnRegion);
+                var config = new AmazonS3Config
+                {
+                };
+
+                Assert.IsTrue(config.UseArnRegion);
+            }
+            finally
+            {
+                Environment.SetEnvironmentVariable(AWS_S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE, beginningS3UseArnRegionEnvValue);
+            }
+
         }
 
         [TestMethod]
         [TestCategory("S3")]
         public void EnvironmentVariableTakesPrecedenceOverProfileValue()
         {
-            Environment.SetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE, "use-arn-region-enabled");
-            Environment.SetEnvironmentVariable(AWS_S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE, "false");
+            var beginningAwsProfileEnvValue = Environment.GetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE);
+            var beginningS3UseArnRegionEnvValue = Environment.GetEnvironmentVariable(AWS_S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE);
 
-            var config = new AmazonS3Config
+            try
             {
-            };
+                Environment.SetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE, "use-arn-region-enabled");
+                Environment.SetEnvironmentVariable(AWS_S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE, "false");
 
-            Assert.IsFalse(config.UseArnRegion);
-            Environment.SetEnvironmentVariable(AWS_S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE, "");
+                var config = new AmazonS3Config
+                {
+                };
+
+                Assert.IsFalse(config.UseArnRegion);
+                Environment.SetEnvironmentVariable(AWS_S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE, "");
+            }
+            finally
+            {
+
+                Environment.SetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE, beginningAwsProfileEnvValue);
+                Environment.SetEnvironmentVariable(AWS_S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE, beginningS3UseArnRegionEnvValue);
+            }
         }
 
         [TestMethod]
         [TestCategory("S3")]
         public void ConfigValueTakesPrecedenceOverAllValues()
         {
-            Environment.SetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE, "use-arn-region-disabled");
-            Environment.SetEnvironmentVariable(AWS_S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE, "false");
-            var config = new AmazonS3Config
+            var beginningAwsProfileEnvValue = Environment.GetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE);
+            var beginningS3UseArnRegionEnvValue = Environment.GetEnvironmentVariable(AWS_S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE);
+            try
             {
-                UseArnRegion = true
-            };
-            Assert.IsTrue(config.UseArnRegion);
+                Environment.SetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE, "use-arn-region-disabled");
+                Environment.SetEnvironmentVariable(AWS_S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE, "false");
+                var config = new AmazonS3Config
+                {
+                    UseArnRegion = true
+                };
+                Assert.IsTrue(config.UseArnRegion);
+            }
+            finally
+            {
+                Environment.SetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE, beginningAwsProfileEnvValue);
+                Environment.SetEnvironmentVariable(AWS_S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE, beginningS3UseArnRegionEnvValue);
+            }
         }
     }
 }

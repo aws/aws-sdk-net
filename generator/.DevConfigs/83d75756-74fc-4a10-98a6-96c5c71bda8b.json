@@ -4,7 +4,7 @@
             "serviceName": "S3",
             "type": "patch",
             "changeLogMessages": [
-                "Fix: Fix AmazonS3Config so that AWS_S3_USE_ARN_REGION takes precedence over s3_use_arn_region set in config file."
+                "Update `AWS_S3_USE_ARN_REGION` environment variable to take precedence over `s3_use_arn_region` option in the config file."
             ]
         }
     ]
