@@ -16,12 +16,9 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Text;
-
-using Amazon.DynamoDBv2.Model;
-using Amazon.Util;
-using ThirdParty.Json.LitJson;
 using System.IO;
+using System.Text;
+using System.Text.Json;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
@@ -40,11 +37,18 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns></returns>
         public static Document FromJson(string jsonText)
         {
-            var json = JsonMapper.ToObject(jsonText);
-            if (!json.IsObject)
-                throw new InvalidOperationException("Expected object at JSON root.");
+            var json = JsonDocument.Parse(jsonText, new JsonDocumentOptions
+            {
+                AllowTrailingCommas = true,
+                CommentHandling = JsonCommentHandling.Skip
+            });
 
-            var document = ToEntry(json, DynamoDBEntryConversion.V2) as Document;
+            if (json.RootElement.ValueKind != JsonValueKind.Object)
+            {
+                throw new InvalidOperationException("Expected object at JSON root.");
+            }
+
+            var document = ToEntry(json.RootElement, DynamoDBEntryConversion.V2) as Document;
             if (document == null)
                 throw new InvalidOperationException();
 
@@ -58,15 +62,15 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns>An <see cref="IEnumerable{T}"/> of type <see cref="Document"/></returns>
         public static IEnumerable<Document> FromJsonArray(string jsonText)
         {
-            var json = JsonMapper.ToObject(jsonText);
-            if (!json.IsArray)
+            var json = JsonDocument.Parse(jsonText);
+            if (json.RootElement.ValueKind != JsonValueKind.Array)
                 throw new InvalidOperationException("Expected array at JSON root.");
             
             var array = new List<Document>();
-            for(int i=0;i<json.Count;i++)
+
+            foreach (var element in json.RootElement.EnumerateArray())
             {
-                var item = json[i];
-                var entry = ToEntry(item, DynamoDBEntryConversion.V2) as Document;
+                var entry = ToEntry(element, DynamoDBEntryConversion.V2) as Document;
                 if (entry == null)
                     throw new InvalidOperationException();
                 array.Add(entry);
@@ -83,19 +87,16 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <returns></returns>
         public static string ToJson(Document document, bool prettyPrint)
         {
-            var sb = new StringBuilder();
-            var writer = new JsonWriter(sb);
-            writer.PrettyPrint = prettyPrint;
+            using var stream = new MemoryStream();
+            using var writer = new Utf8JsonWriter(stream, new JsonWriterOptions
+            {
+                Indented = prettyPrint
+            });
 
             WriteJson(document, writer, DynamoDBEntryConversion.V2);
 
-            // Trim everything before the first '{' character
-            var jsonIndex = FirstIndex(sb, '{');
-            if (jsonIndex > 0)
-                sb.Remove(0, jsonIndex);
-
-            var jsonText = sb.ToString();
-            return jsonText;
+            writer.Flush();
+            return Encoding.UTF8.GetString(stream.ToArray());
         }
 
 
@@ -227,70 +228,79 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
         }
 
-        // Returns a DynamoDB entry for the given JSON data
-        private static DynamoDBEntry ToEntry(JsonData data, DynamoDBEntryConversion conversion)
+        /// <summary>
+        /// Returns a DynamoDB entry for the given JSON data
+        /// </summary>
+        private static DynamoDBEntry ToEntry(JsonElement data, DynamoDBEntryConversion conversion)
         {
-            if (data == null)
+            if (data.ValueKind == JsonValueKind.Null)
                 return new DynamoDBNull();
 
-            if (data.IsObject)
+            if (data.ValueKind == JsonValueKind.Object)
             {
                 var document = new Document();
-                foreach (var propertyName in data.PropertyNames)
+                foreach (var property in data.EnumerateObject())
                 {
-                    var nestedData = data[propertyName];
-                    var entry = ToEntry(nestedData, conversion);
-                    document[propertyName] = entry;
+                    var entry = ToEntry(property.Value, conversion);
+                    document[property.Name] = entry;
                 }
                 return document;
             }
 
-            if (data.IsArray)
+            if (data.ValueKind == JsonValueKind.Array)
             {
                 var list = new DynamoDBList();
-                for(int i=0;i<data.Count;i++)
+                foreach (var property in data.EnumerateArray())
                 {
-                    var item = data[i];
-                    var entry = ToEntry(item, conversion);
+                    var entry = ToEntry(property, conversion);
                     list.Add(entry);
                 }
                 return list;
             }
 
-            if (data.IsBoolean)
-                return new UnconvertedDynamoDBEntry((bool)data).Convert(conversion);
+            if (data.ValueKind == JsonValueKind.False)
+                return new UnconvertedDynamoDBEntry(false).Convert(conversion);
 
-            if (data.IsDouble)
-                return new UnconvertedDynamoDBEntry((double)data).Convert(conversion);
+            if (data.ValueKind == JsonValueKind.True)
+                return new UnconvertedDynamoDBEntry(true).Convert(conversion);
 
-            if (data.IsInt)
-                return new UnconvertedDynamoDBEntry((int)data).Convert(conversion);
+            if (data.ValueKind == JsonValueKind.Number)
+            {
+                if (data.TryGetDecimal(out decimal decimalValue))
+                    return new UnconvertedDynamoDBEntry(decimalValue).Convert(conversion);
+                if (data.TryGetDouble(out double doubleValue))
+                    return new UnconvertedDynamoDBEntry(doubleValue).Convert(conversion);
+                if (data.TryGetInt32(out int intValue))
+                    return new UnconvertedDynamoDBEntry(intValue).Convert(conversion);
+                if (data.TryGetUInt32(out uint uintValue))
+                    return new UnconvertedDynamoDBEntry(uintValue).Convert(conversion);
+                if (data.TryGetInt64(out long int64Value))
+                    return new UnconvertedDynamoDBEntry(int64Value).Convert(conversion);
+                if (data.TryGetUInt64(out ulong uint64Value))
+                    return new UnconvertedDynamoDBEntry(uint64Value).Convert(conversion);
 
-            if (data.IsUInt)
-                return new UnconvertedDynamoDBEntry((uint)data).Convert(conversion);
+                // This preserves existing fallback behavior we had with LitJson
+                return new UnconvertedDynamoDBEntry(default(long)).Convert(conversion);
+            }
 
-            if (data.IsLong)
-                return new UnconvertedDynamoDBEntry((long)data).Convert(conversion);
-
-            if (data.IsULong)
-                return new UnconvertedDynamoDBEntry((ulong)data).Convert(conversion);
-
-            if (data.IsString)
-                return new UnconvertedDynamoDBEntry((string)data).Convert(conversion);
+            if (data.ValueKind == JsonValueKind.String)
+                return new UnconvertedDynamoDBEntry(data.ToString()).Convert(conversion);
 
             throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
-                "Unable to convert JSON data of type {0} to DynamoDB type.", data.GetJsonType()));
+                "Unable to convert JSON data of type {0} with value {1} to DynamoDB type.", data.ValueKind, data.GetRawText()));
         }
 
-        // Writes a JSON representation of the given DynamoDBEntry
-        internal static void WriteJson(DynamoDBEntry entry, JsonWriter writer, DynamoDBEntryConversion conversion)
+        /// <summary>
+        /// Writes a JSON representation of the given DynamoDBEntry
+        /// </summary>
+        internal static void WriteJson(DynamoDBEntry entry, Utf8JsonWriter writer, DynamoDBEntryConversion conversion)
         {
             entry = entry.ToConvertedEntry(conversion);
 
             var document = entry as Document;
             if (document != null)
             {
-                writer.WriteObjectStart();
+                writer.WriteStartObject();
 
                 // Both item attributes and entries in M type are unordered, so sorting by key
                 // http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModel.DataTypes
@@ -302,7 +312,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                     writer.WritePropertyName(name);
                     WriteJson(value, writer, conversion);
                 }
-                writer.WriteObjectEnd();
+                writer.WriteEndObject();
                 return;
             }
 
@@ -320,39 +330,39 @@ namespace Amazon.DynamoDBv2.DocumentModel
             {
                 var itemType = primitiveList.Type;
 
-                writer.WriteArrayStart();
+                writer.WriteStartArray();
                 foreach (var item in primitiveList.Entries)
                 {
                     var itemValue = item.Value;
                     WritePrimitive(writer, itemType, itemValue);
                 }
-                writer.WriteArrayEnd();
+                writer.WriteEndArray();
                 return;
             }
 
             var ddbList = entry as DynamoDBList;
             if (ddbList != null)
             {
-                writer.WriteArrayStart();
-                foreach(var item in ddbList.Entries)
+                writer.WriteStartArray();
+                foreach (var item in ddbList.Entries)
                 {
                     WriteJson(item, writer, conversion);
                 }
-                writer.WriteArrayEnd();
+                writer.WriteEndArray();
                 return;
             }
 
             var ddbBool = entry as DynamoDBBool;
             if (ddbBool != null)
             {
-                writer.Write(ddbBool.Value);
+                writer.WriteBooleanValue(ddbBool.Value);
                 return;
             }
 
             var ddbNull = entry as DynamoDBNull;
             if (ddbNull != null)
             {
-                writer.Write((string)null);
+                writer.WriteNullValue();
                 return;
             }
 
@@ -360,23 +370,31 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 "Unable to convert entry of type {0} to JSON", entry.GetType().FullName));
         }
 
-        // Write the contents of a Primitive object as JSON data
-        private static void WritePrimitive(JsonWriter writer, DynamoDBEntryType type, object value)
+        /// <summary>
+        /// Write the contents of a Primitive object as JSON data
+        /// </summary>
+        private static void WritePrimitive(Utf8JsonWriter writer, DynamoDBEntryType type, object value)
         {
             var stringValue = value as string;
 
             switch (type)
             {
                 case DynamoDBEntryType.Numeric:
-                    writer.WriteRaw(stringValue);
-                    break;
+                    {
+#if NETCOREAPP3_1  // WriteRawValue was added in .NET 6, but we need to write out Number values without quotes
+                        using var document = JsonDocument.Parse(stringValue);
+                        document.WriteTo(writer);
+#else
+                        writer.WriteRawValue(stringValue);
+#endif
+                        break;
+                    }
                 case DynamoDBEntryType.String:
-                    writer.Write(stringValue);
+                    writer.WriteStringValue(stringValue);
                     break;
                 case DynamoDBEntryType.Binary:
                     var bytes = value as byte[];
-                    var base64 = Convert.ToBase64String(bytes);
-                    writer.Write(base64);
+                    writer.WriteBase64StringValue(bytes);
                     break;
                 default:
                     throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
@@ -384,7 +402,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
             }
         }
 
-        // Finds first instance of a character
+        /// <summary>
+        /// Finds first instance of a character
+        /// </summary>
         private static int FirstIndex(StringBuilder sb, char toMatch)
         {
             for(int i=0;i<sb.Length;i++)
