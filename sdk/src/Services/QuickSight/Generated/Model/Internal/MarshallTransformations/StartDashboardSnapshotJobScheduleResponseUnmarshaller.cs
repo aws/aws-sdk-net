@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RestoreAnalysis operation
+    /// Response Unmarshaller for StartDashboardSnapshotJobSchedule operation
     /// </summary>  
-    public class RestoreAnalysisResponseUnmarshaller : JsonResponseUnmarshaller
+    public class StartDashboardSnapshotJobScheduleResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,34 +46,16 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            RestoreAnalysisResponse response = new RestoreAnalysisResponse();
+            StartDashboardSnapshotJobScheduleResponse response = new StartDashboardSnapshotJobScheduleResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AnalysisId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.AnalysisId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Arn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Arn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("RequestId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.RequestId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RestorationFailedFolderArns", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.RestorationFailedFolderArns = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,9 +82,9 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
                 {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalFailureException"))
                 {
@@ -115,10 +97,6 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
                 {
                     return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("PreconditionNotMetException"))
-                {
-                    return PreconditionNotMetExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
@@ -136,9 +114,9 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             return new AmazonQuickSightException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static RestoreAnalysisResponseUnmarshaller _instance = new RestoreAnalysisResponseUnmarshaller();        
+        private static StartDashboardSnapshotJobScheduleResponseUnmarshaller _instance = new StartDashboardSnapshotJobScheduleResponseUnmarshaller();        
 
-        internal static RestoreAnalysisResponseUnmarshaller GetInstance()
+        internal static StartDashboardSnapshotJobScheduleResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -146,7 +124,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RestoreAnalysisResponseUnmarshaller Instance
+        public static StartDashboardSnapshotJobScheduleResponseUnmarshaller Instance
         {
             get
             {

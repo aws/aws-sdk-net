@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RestoreAnalysis Request Marshaller
+    /// StartDashboardSnapshotJobSchedule Request Marshaller
     /// </summary>       
-    public class RestoreAnalysisRequestMarshaller : IMarshaller<IRequest, RestoreAnalysisRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class StartDashboardSnapshotJobScheduleRequestMarshaller : IMarshaller<IRequest, StartDashboardSnapshotJobScheduleRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((RestoreAnalysisRequest)input);
+            return this.Marshall((StartDashboardSnapshotJobScheduleRequest)input);
         }
 
         /// <summary>
@@ -53,29 +53,28 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(RestoreAnalysisRequest publicRequest)
+        public IRequest Marshall(StartDashboardSnapshotJobScheduleRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.QuickSight");
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-01";
             request.HttpMethod = "POST";
 
-            if (!publicRequest.IsSetAnalysisId())
-                throw new AmazonQuickSightException("Request object does not have required field AnalysisId set");
-            request.AddPathResource("{AnalysisId}", StringUtils.FromString(publicRequest.AnalysisId));
             if (!publicRequest.IsSetAwsAccountId())
                 throw new AmazonQuickSightException("Request object does not have required field AwsAccountId set");
             request.AddPathResource("{AwsAccountId}", StringUtils.FromString(publicRequest.AwsAccountId));
-            
-            if (publicRequest.IsSetRestoreToFolders())
-                request.Parameters.Add("restore-to-folders", StringUtils.FromBool(publicRequest.RestoreToFolders));
-            request.ResourcePath = "/accounts/{AwsAccountId}/restore/analyses/{AnalysisId}";
-            request.UseQueryString = true;
+            if (!publicRequest.IsSetDashboardId())
+                throw new AmazonQuickSightException("Request object does not have required field DashboardId set");
+            request.AddPathResource("{DashboardId}", StringUtils.FromString(publicRequest.DashboardId));
+            if (!publicRequest.IsSetScheduleId())
+                throw new AmazonQuickSightException("Request object does not have required field ScheduleId set");
+            request.AddPathResource("{ScheduleId}", StringUtils.FromString(publicRequest.ScheduleId));
+            request.ResourcePath = "/accounts/{AwsAccountId}/dashboards/{DashboardId}/schedules/{ScheduleId}";
 
             return request;
         }
-        private static RestoreAnalysisRequestMarshaller _instance = new RestoreAnalysisRequestMarshaller();        
+        private static StartDashboardSnapshotJobScheduleRequestMarshaller _instance = new StartDashboardSnapshotJobScheduleRequestMarshaller();        
 
-        internal static RestoreAnalysisRequestMarshaller GetInstance()
+        internal static StartDashboardSnapshotJobScheduleRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -83,7 +82,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RestoreAnalysisRequestMarshaller Instance
+        public static StartDashboardSnapshotJobScheduleRequestMarshaller Instance
         {
             get
             {
