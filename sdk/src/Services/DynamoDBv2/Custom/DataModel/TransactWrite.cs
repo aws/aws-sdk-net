@@ -21,6 +21,7 @@ using System.Threading;
 using System.Threading.Tasks;
 #endif
 using Amazon.DynamoDBv2.DocumentModel;
+using Amazon.Runtime.Telemetry.Tracing;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -35,6 +36,7 @@ namespace Amazon.DynamoDBv2.DataModel
         internal DynamoDBContext Context { get; set; }
         internal DynamoDBFlatConfig Config { get; set; }
         internal DocumentTransactWrite DocumentTransaction { get; set; }
+        internal TracerProvider TracerProvider { get; private set; }
 
         #endregion
 
@@ -45,6 +47,8 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             Context = context;
             Config = config;
+            TracerProvider = context?.Client?.Config?.TelemetryProvider?.TracerProvider
+                ?? AWSConfigs.TelemetryProvider.TracerProvider;
         }
 
         #endregion
@@ -455,6 +459,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #endregion
 
+        internal TracerProvider TracerProvider { get; private set; }
 
         #region Constructor
 
@@ -466,6 +471,9 @@ namespace Amazon.DynamoDBv2.DataModel
         public MultiTableTransactWrite(params TransactWrite[] transactionParts)
         {
             allTransactionParts = new List<TransactWrite>(transactionParts);
+            TracerProvider = allTransactionParts.Count > 0
+                ? allTransactionParts[0].TracerProvider
+                : AWSConfigs.TelemetryProvider.TracerProvider;
         }
 
         internal MultiTableTransactWrite(TransactWrite first, params TransactWrite[] rest)
@@ -473,6 +481,7 @@ namespace Amazon.DynamoDBv2.DataModel
             allTransactionParts = new List<TransactWrite>();
             allTransactionParts.Add(first);
             allTransactionParts.AddRange(rest);
+            TracerProvider = allTransactionParts[0].TracerProvider;
         }
 
         #endregion

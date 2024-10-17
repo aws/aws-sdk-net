@@ -1,0 +1,11 @@
+{
+    "services": [
+        {
+            "serviceName": "DynamoDBv2",
+            "type": "minor",
+            "changeLogMessages": [
+                "Added support for creating observability traces from the DataModel and DocumentModel abstractions for DynamoDB"
+            ]
+        }
+    ]
+}
