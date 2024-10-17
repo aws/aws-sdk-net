@@ -495,11 +495,13 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
-        /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.
+        /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
+        /// IAM database authentication for MariaDB, MySQL, and PostgreSQL</a> in the <i>Amazon
+        /// RDS User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// Valid for: Aurora DB clusters only
+        /// Valid for: Aurora DB clusters and Multi-AZ DB clusters
         /// </para>
         /// </summary>
         public bool EnableIAMDatabaseAuthentication
