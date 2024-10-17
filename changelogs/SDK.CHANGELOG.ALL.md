@@ -1,3 +1,23 @@
+### 3.7.908.0 (2024-10-17 18:27 UTC)
+* BedrockAgent (3.7.406.0)
+	* Removing support for topK property in PromptModelInferenceConfiguration object, Making PromptTemplateConfiguration property as required, Limiting the maximum PromptVariant to 1
+* DataExchange (3.7.401.0)
+	* This release adds Data Grant support, through which customers can programmatically create data grants to share with other AWS accounts and accept data grants from other AWS accounts.
+* DynamoDBv2 (3.7.402.0)
+	* Added support for creating observability traces from the DataModel and DocumentModel abstractions for DynamoDB
+* ECS (3.7.402.33)
+	* This is an Amazon ECS documentation only update to address tickets.
+* PinpointSMSVoiceV2 (3.7.402.0)
+	* Added the registrations status of REQUIRES_AUTHENTICATION
+* Pipes (3.7.402.0)
+	* This release adds validation to require specifying a SecurityGroup and Subnets in the Vpc object under PipesSourceSelfManagedKafkaParameters. It also adds support for iso-e, iso-f, and other non-commercial partitions in ARN parameters.
+* QuickSight (3.7.407.0)
+	* Add StartDashboardSnapshotJobSchedule API. RestoreAnalysis now supports restoring analysis to folders.
+* RDS (3.7.404.10)
+	* Updates Amazon RDS documentation for TAZ IAM support
+* WorkSpaces (3.7.404.0)
+	* Updated the DomainName pattern for Active Directory
+
 ### 3.7.907.0 (2024-10-16 18:14 UTC)
 * S3 (3.7.405.0)
 	* Add support for the new optional bucket-region and prefix query parameters in the ListBuckets API. For ListBuckets requests that express pagination, Amazon S3 will now return both the bucket names and associated AWS regions in the response.
