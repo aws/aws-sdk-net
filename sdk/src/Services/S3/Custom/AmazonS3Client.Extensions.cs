@@ -574,7 +574,7 @@ namespace Amazon.S3
                 Key = objectKey,
                 Expires = expiration
             };
-            InternalSDKUtils.ApplyValues(request, additionalProperties);
+            InternalSDKUtils.ApplyValuesV2(request, additionalProperties);
 
 
             return this.GetPreSignedURL(request);

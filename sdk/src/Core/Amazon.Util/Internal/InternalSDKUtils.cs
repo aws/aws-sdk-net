@@ -23,6 +23,7 @@ using System.Text.RegularExpressions;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util.Internal.PlatformServices;
 using System.Text;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Amazon.Util.Internal
 {
@@ -142,13 +143,16 @@ namespace Amazon.Util.Internal
         }
 
         #endregion
-
-        public static void ApplyValues(object target, IDictionary<string, object> propertyValues)
+#if NET8_0_OR_GREATER
+        public static void ApplyValuesV2<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicProperties)] T>(T target, IDictionary<string, object> propertyValues)
+#else
+        public static void ApplyValuesV2<T>(T target, IDictionary<string, object> propertyValues)
+#endif
         {
             if (propertyValues == null || propertyValues.Count == 0)
                 return;
 
-            var targetType = target.GetType();
+            var targetType = typeof(T);
             
             foreach(var kvp in propertyValues)
             {

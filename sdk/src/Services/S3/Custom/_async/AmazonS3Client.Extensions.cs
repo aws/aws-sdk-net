@@ -42,7 +42,7 @@ namespace Amazon.S3
                     Prefix = prefix,
                     Marker = marker
                 };
-                InternalSDKUtils.ApplyValues(request, additionalProperties);
+                InternalSDKUtils.ApplyValuesV2(request, additionalProperties);
 
                 var listResponse = await this.ListObjectsAsync(request).ConfigureAwait(false);
                 if (listResponse.S3Objects != null)
@@ -61,7 +61,7 @@ namespace Amazon.S3
                 BucketName = bucketName,
                 Key = objectKey
             };
-            InternalSDKUtils.ApplyValues(request, additionalProperties);
+            InternalSDKUtils.ApplyValuesV2(request, additionalProperties);
             return this.DeleteObjectAsync(request, cancellationToken);
         }
 
@@ -76,7 +76,7 @@ namespace Amazon.S3
             {
                 request.AddKey(key);
             }
-            InternalSDKUtils.ApplyValues(request, additionalProperties);
+            InternalSDKUtils.ApplyValuesV2(request, additionalProperties);
             return this.DeleteObjectsAsync(request, cancellationToken);
         }
 
@@ -89,7 +89,7 @@ namespace Amazon.S3
                 Key = objectKey,
                 InputStream = stream
             };
-            InternalSDKUtils.ApplyValues(request, additionalProperties);
+            InternalSDKUtils.ApplyValuesV2(request, additionalProperties);
             return transfer.UploadAsync(request, cancellationToken);
         }
 
@@ -100,7 +100,7 @@ namespace Amazon.S3
                 BucketName = bucketName,
                 Key = objectKey
             };
-            InternalSDKUtils.ApplyValues(request, additionalProperties);
+            InternalSDKUtils.ApplyValuesV2(request, additionalProperties);
 
             return (await this.GetObjectAsync(request, cancellationToken).ConfigureAwait(false)).ResponseStream;
         }
@@ -114,7 +114,7 @@ namespace Amazon.S3
                 Key = objectKey,
                 FilePath = filepath
             };
-            InternalSDKUtils.ApplyValues(request, additionalProperties);
+            InternalSDKUtils.ApplyValuesV2(request, additionalProperties);
 
             return transfer.UploadAsync(request, cancellationToken);
         }
@@ -129,7 +129,7 @@ namespace Amazon.S3
                 Key = objectKey,
                 FilePath = filepath
             };
-            InternalSDKUtils.ApplyValues(request, additionalProperties);
+            InternalSDKUtils.ApplyValuesV2(request, additionalProperties);
 
             return transfer.DownloadAsync(request, cancellationToken);
         }
