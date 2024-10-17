@@ -27,6 +27,11 @@ namespace Amazon.DataExchange.Model
     {
 
         /// <summary>
+        /// Paginator for ListDataGrants operation
+        ///</summary>
+        IListDataGrantsPaginator ListDataGrants(ListDataGrantsRequest request);
+
+        /// <summary>
         /// Paginator for ListDataSetRevisions operation
         ///</summary>
         IListDataSetRevisionsPaginator ListDataSetRevisions(ListDataSetRevisionsRequest request);
@@ -45,6 +50,11 @@ namespace Amazon.DataExchange.Model
         /// Paginator for ListJobs operation
         ///</summary>
         IListJobsPaginator ListJobs(ListJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListReceivedDataGrants operation
+        ///</summary>
+        IListReceivedDataGrantsPaginator ListReceivedDataGrants(ListReceivedDataGrantsRequest request);
 
         /// <summary>
         /// Paginator for ListRevisionAssets operation

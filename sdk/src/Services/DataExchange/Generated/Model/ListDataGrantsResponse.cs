@@ -30,47 +30,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataExchange.Model
 {
     /// <summary>
-    /// Details about the origin of the data set.
+    /// This is the response object from the ListDataGrants operation.
     /// </summary>
-    public partial class OriginDetails
+    public partial class ListDataGrantsResponse : AmazonWebServiceResponse
     {
-        private string _dataGrantId;
-        private string _productId;
+        private List<DataGrantSummaryEntry> _dataGrantSummaries = AWSConfigs.InitializeCollections ? new List<DataGrantSummaryEntry>() : null;
+        private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property DataGrantId. 
+        /// Gets and sets the property DataGrantSummaries. 
         /// <para>
-        /// The ID of the data grant.
+        /// An object that contains a list of data grant information.
         /// </para>
         /// </summary>
-        public string DataGrantId
+        public List<DataGrantSummaryEntry> DataGrantSummaries
         {
-            get { return this._dataGrantId; }
-            set { this._dataGrantId = value; }
+            get { return this._dataGrantSummaries; }
+            set { this._dataGrantSummaries = value; }
         }
 
-        // Check to see if DataGrantId property is set
-        internal bool IsSetDataGrantId()
+        // Check to see if DataGrantSummaries property is set
+        internal bool IsSetDataGrantSummaries()
         {
-            return this._dataGrantId != null;
+            return this._dataGrantSummaries != null && (this._dataGrantSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
-        /// Gets and sets the property ProductId. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The product ID of the origin of the data set.
+        /// The pagination token used to retrieve the next page of results for this operation.
         /// </para>
         /// </summary>
-        public string ProductId
+        public string NextToken
         {
-            get { return this._productId; }
-            set { this._productId = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if ProductId property is set
-        internal bool IsSetProductId()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._productId != null;
+            return this._nextToken != null;
         }
 
     }

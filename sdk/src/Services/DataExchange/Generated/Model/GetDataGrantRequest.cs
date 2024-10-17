@@ -30,12 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataExchange.Model
 {
     /// <summary>
-    /// Details about the origin of the data set.
+    /// Container for the parameters to the GetDataGrant operation.
+    /// This operation returns information about a data grant.
     /// </summary>
-    public partial class OriginDetails
+    public partial class GetDataGrantRequest : AmazonDataExchangeRequest
     {
         private string _dataGrantId;
-        private string _productId;
 
         /// <summary>
         /// Gets and sets the property DataGrantId. 
@@ -43,6 +43,7 @@ namespace Amazon.DataExchange.Model
         /// The ID of the data grant.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DataGrantId
         {
             get { return this._dataGrantId; }
@@ -53,24 +54,6 @@ namespace Amazon.DataExchange.Model
         internal bool IsSetDataGrantId()
         {
             return this._dataGrantId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ProductId. 
-        /// <para>
-        /// The product ID of the origin of the data set.
-        /// </para>
-        /// </summary>
-        public string ProductId
-        {
-            get { return this._productId; }
-            set { this._productId = value; }
-        }
-
-        // Check to see if ProductId property is set
-        internal bool IsSetProductId()
-        {
-            return this._productId != null;
         }
 
     }

@@ -30,47 +30,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataExchange.Model
 {
     /// <summary>
-    /// Details about the origin of the data set.
+    /// Container for the parameters to the ListDataGrants operation.
+    /// This operation returns information about all data grants.
     /// </summary>
-    public partial class OriginDetails
+    public partial class ListDataGrantsRequest : AmazonDataExchangeRequest
     {
-        private string _dataGrantId;
-        private string _productId;
+        private int? _maxResults;
+        private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property DataGrantId. 
+        /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The ID of the data grant.
+        /// The maximum number of results to be included in the next page.
         /// </para>
         /// </summary>
-        public string DataGrantId
+        [AWSProperty(Min=1, Max=200)]
+        public int MaxResults
         {
-            get { return this._dataGrantId; }
-            set { this._dataGrantId = value; }
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
         }
 
-        // Check to see if DataGrantId property is set
-        internal bool IsSetDataGrantId()
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
         {
-            return this._dataGrantId != null;
+            return this._maxResults.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property ProductId. 
+        /// Gets and sets the property NextToken. 
         /// <para>
-        /// The product ID of the origin of the data set.
+        /// The pagination token used to retrieve the next page of results for this operation.
         /// </para>
         /// </summary>
-        public string ProductId
+        public string NextToken
         {
-            get { return this._productId; }
-            set { this._productId = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if ProductId property is set
-        internal bool IsSetProductId()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._productId != null;
+            return this._nextToken != null;
         }
 
     }

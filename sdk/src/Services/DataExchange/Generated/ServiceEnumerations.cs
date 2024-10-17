@@ -25,6 +25,56 @@ namespace Amazon.DataExchange
 {
 
     /// <summary>
+    /// Constants used for properties of type AcceptanceStateFilterValue.
+    /// </summary>
+    public class AcceptanceStateFilterValue : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCEPTED for AcceptanceStateFilterValue
+        /// </summary>
+        public static readonly AcceptanceStateFilterValue ACCEPTED = new AcceptanceStateFilterValue("ACCEPTED");
+        /// <summary>
+        /// Constant PENDING_RECEIVER_ACCEPTANCE for AcceptanceStateFilterValue
+        /// </summary>
+        public static readonly AcceptanceStateFilterValue PENDING_RECEIVER_ACCEPTANCE = new AcceptanceStateFilterValue("PENDING_RECEIVER_ACCEPTANCE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AcceptanceStateFilterValue(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AcceptanceStateFilterValue FindValue(string value)
+        {
+            return FindValue<AcceptanceStateFilterValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AcceptanceStateFilterValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AssetType.
     /// </summary>
     public class AssetType : ConstantClass
@@ -203,6 +253,56 @@ namespace Amazon.DataExchange
 
 
     /// <summary>
+    /// Constants used for properties of type DataGrantAcceptanceState.
+    /// </summary>
+    public class DataGrantAcceptanceState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCEPTED for DataGrantAcceptanceState
+        /// </summary>
+        public static readonly DataGrantAcceptanceState ACCEPTED = new DataGrantAcceptanceState("ACCEPTED");
+        /// <summary>
+        /// Constant PENDING_RECEIVER_ACCEPTANCE for DataGrantAcceptanceState
+        /// </summary>
+        public static readonly DataGrantAcceptanceState PENDING_RECEIVER_ACCEPTANCE = new DataGrantAcceptanceState("PENDING_RECEIVER_ACCEPTANCE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataGrantAcceptanceState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataGrantAcceptanceState FindValue(string value)
+        {
+            return FindValue<DataGrantAcceptanceState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataGrantAcceptanceState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ExceptionCause.
     /// </summary>
     public class ExceptionCause : ConstantClass
@@ -246,6 +346,56 @@ namespace Amazon.DataExchange
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ExceptionCause(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GrantDistributionScope.
+    /// </summary>
+    public class GrantDistributionScope : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_ORGANIZATION for GrantDistributionScope
+        /// </summary>
+        public static readonly GrantDistributionScope AWS_ORGANIZATION = new GrantDistributionScope("AWS_ORGANIZATION");
+        /// <summary>
+        /// Constant NONE for GrantDistributionScope
+        /// </summary>
+        public static readonly GrantDistributionScope NONE = new GrantDistributionScope("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GrantDistributionScope(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GrantDistributionScope FindValue(string value)
+        {
+            return FindValue<GrantDistributionScope>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GrantDistributionScope(string value)
         {
             return FindValue(value);
         }
@@ -521,6 +671,10 @@ namespace Amazon.DataExchange
     {
 
         /// <summary>
+        /// Constant ActiveAndPendingDataGrants for LimitName
+        /// </summary>
+        public static readonly LimitName ActiveAndPendingDataGrants = new LimitName("Active and pending data grants");
+        /// <summary>
         /// Constant AmazonAPIGatewayAPIAssetsPerRevision for LimitName
         /// </summary>
         public static readonly LimitName AmazonAPIGatewayAPIAssetsPerRevision = new LimitName("Amazon API Gateway API assets per revision");
@@ -608,6 +762,10 @@ namespace Amazon.DataExchange
         /// Constant EventActionsPerAccount for LimitName
         /// </summary>
         public static readonly LimitName EventActionsPerAccount = new LimitName("Event actions per account");
+        /// <summary>
+        /// Constant PendingDataGrantsPerConsumer for LimitName
+        /// </summary>
+        public static readonly LimitName PendingDataGrantsPerConsumer = new LimitName("Pending data grants per consumer");
         /// <summary>
         /// Constant ProductsPerAccount for LimitName
         /// </summary>
@@ -832,6 +990,10 @@ namespace Amazon.DataExchange
         /// Constant ASSET for ResourceType
         /// </summary>
         public static readonly ResourceType ASSET = new ResourceType("ASSET");
+        /// <summary>
+        /// Constant DATA_GRANT for ResourceType
+        /// </summary>
+        public static readonly ResourceType DATA_GRANT = new ResourceType("DATA_GRANT");
         /// <summary>
         /// Constant DATA_SET for ResourceType
         /// </summary>

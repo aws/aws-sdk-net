@@ -30,39 +30,35 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataExchange.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListDataSets operation.
-    /// This operation lists your data sets. When listing by origin OWNED, results are sorted
-    /// by CreatedAt in descending order. When listing by origin ENTITLED, there is no order.
+    /// This is the response object from the ListReceivedDataGrants operation.
     /// </summary>
-    public partial class ListDataSetsRequest : AmazonDataExchangeRequest
+    public partial class ListReceivedDataGrantsResponse : AmazonWebServiceResponse
     {
-        private int? _maxResults;
+        private List<ReceivedDataGrantSummariesEntry> _dataGrantSummaries = AWSConfigs.InitializeCollections ? new List<ReceivedDataGrantSummariesEntry>() : null;
         private string _nextToken;
-        private string _origin;
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
+        /// Gets and sets the property DataGrantSummaries. 
         /// <para>
-        /// The maximum number of results returned by a single call.
+        /// An object that contains a list of received data grant information.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=200)]
-        public int MaxResults
+        public List<ReceivedDataGrantSummariesEntry> DataGrantSummaries
         {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
+            get { return this._dataGrantSummaries; }
+            set { this._dataGrantSummaries = value; }
         }
 
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
+        // Check to see if DataGrantSummaries property is set
+        internal bool IsSetDataGrantSummaries()
         {
-            return this._maxResults.HasValue; 
+            return this._dataGrantSummaries != null && (this._dataGrantSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token value retrieved from a previous call to access the next page of results.
+        /// The pagination token used to retrieve the next page of results for this operation.
         /// </para>
         /// </summary>
         public string NextToken
@@ -75,25 +71,6 @@ namespace Amazon.DataExchange.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Origin. 
-        /// <para>
-        /// A property that defines the data set as OWNED by the account (for providers) or ENTITLED
-        /// to the account (for subscribers).
-        /// </para>
-        /// </summary>
-        public string Origin
-        {
-            get { return this._origin; }
-            set { this._origin = value; }
-        }
-
-        // Check to see if Origin property is set
-        internal bool IsSetOrigin()
-        {
-            return this._origin != null;
         }
 
     }

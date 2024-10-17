@@ -30,47 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataExchange.Model
 {
     /// <summary>
-    /// Details about the origin of the data set.
+    /// Container for the parameters to the AcceptDataGrant operation.
+    /// This operation accepts a data grant.
     /// </summary>
-    public partial class OriginDetails
+    public partial class AcceptDataGrantRequest : AmazonDataExchangeRequest
     {
-        private string _dataGrantId;
-        private string _productId;
+        private string _dataGrantArn;
 
         /// <summary>
-        /// Gets and sets the property DataGrantId. 
+        /// Gets and sets the property DataGrantArn. 
         /// <para>
-        /// The ID of the data grant.
+        /// The Amazon Resource Name (ARN) of the data grant to accept.
         /// </para>
         /// </summary>
-        public string DataGrantId
+        [AWSProperty(Required=true)]
+        public string DataGrantArn
         {
-            get { return this._dataGrantId; }
-            set { this._dataGrantId = value; }
+            get { return this._dataGrantArn; }
+            set { this._dataGrantArn = value; }
         }
 
-        // Check to see if DataGrantId property is set
-        internal bool IsSetDataGrantId()
+        // Check to see if DataGrantArn property is set
+        internal bool IsSetDataGrantArn()
         {
-            return this._dataGrantId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ProductId. 
-        /// <para>
-        /// The product ID of the origin of the data set.
-        /// </para>
-        /// </summary>
-        public string ProductId
-        {
-            get { return this._productId; }
-            set { this._productId = value; }
-        }
-
-        // Check to see if ProductId property is set
-        internal bool IsSetProductId()
-        {
-            return this._productId != null;
+            return this._dataGrantArn != null;
         }
 
     }
