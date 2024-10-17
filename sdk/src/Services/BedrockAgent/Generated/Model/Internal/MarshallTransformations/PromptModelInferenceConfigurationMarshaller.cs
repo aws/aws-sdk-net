@@ -78,12 +78,6 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 }
             }
 
-            if(requestObject.IsSetTopK())
-            {
-                context.Writer.WritePropertyName("topK");
-                context.Writer.Write(requestObject.TopK);
-            }
-
             if(requestObject.IsSetTopP())
             {
                 context.Writer.WritePropertyName("topP");

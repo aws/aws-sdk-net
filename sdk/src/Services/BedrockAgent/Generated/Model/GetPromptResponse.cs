@@ -205,7 +205,7 @@ namespace Amazon.BedrockAgent.Model
         /// A list of objects, each containing details about a variant of the prompt.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=3)]
+        [AWSProperty(Sensitive=true, Min=0, Max=1)]
         public List<PromptVariant> Variants
         {
             get { return this._variants; }

@@ -2182,11 +2182,6 @@
     <max>1</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.BedrockAgent.Model.PromptModelInferenceConfiguration.TopK</property>
-    <min>0</min>
-    <max>500</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.BedrockAgent.Model.PromptModelInferenceConfiguration.TopP</property>
     <min>0</min>
     <max>1</max>

@@ -125,6 +125,7 @@ namespace Amazon.BedrockAgent.Model
         /// Contains configurations for the prompt template.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public PromptTemplateConfiguration TemplateConfiguration
         {
             get { return this._templateConfiguration; }

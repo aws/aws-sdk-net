@@ -32,7 +32,7 @@ namespace Amazon.BedrockAgent.Model
     /// <summary>
     /// Container for the parameters to the GetIngestionJob operation.
     /// Gets information about a data ingestion job. Data sources are ingested into your knowledge
-    /// base so that Large Lanaguage Models (LLMs) can use your data.
+    /// base so that Large Language Models (LLMs) can use your data.
     /// </summary>
     public partial class GetIngestionJobRequest : AmazonBedrockAgentRequest
     {

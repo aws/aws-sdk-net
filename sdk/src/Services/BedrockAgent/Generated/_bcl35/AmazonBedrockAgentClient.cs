@@ -2675,7 +2675,7 @@ namespace Amazon.BedrockAgent
 
         /// <summary>
         /// Gets information about a data ingestion job. Data sources are ingested into your knowledge
-        /// base so that Large Lanaguage Models (LLMs) can use your data.
+        /// base so that Large Language Models (LLMs) can use your data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIngestionJob service method.</param>
         /// 
