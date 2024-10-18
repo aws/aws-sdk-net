@@ -1,3 +1,15 @@
+### 3.7.909.0 (2024-10-18 18:20 UTC)
+* Athena (3.7.402.0)
+	* Removing FEDERATED from Create/List/Delete/GetDataCatalog API
+* Bedrock (3.7.408.0)
+	* Adding converse support to CMI API's
+* BedrockRuntime (3.7.405.0)
+	* Added converse support for custom imported models
+* DataZone (3.7.406.0)
+	* Adding the following project member designations: PROJECT_CATALOG_VIEWER, PROJECT_CATALOG_CONSUMER and PROJECT_CATALOG_STEWARD in the CreateProjectMembership API and PROJECT_CATALOG_STEWARD designation in the AddPolicyGrant API.
+* EC2 (3.7.410.0)
+	* RequestSpotInstances and RequestSpotFleet feature release.
+
 ### 3.7.908.0 (2024-10-17 18:27 UTC)
 * BedrockAgent (3.7.406.0)
 	* Removing support for topK property in PromptModelInferenceConfiguration object, Making PromptTemplateConfiguration property as required, Limiting the maximum PromptVariant to 1
