@@ -165,7 +165,7 @@ namespace Amazon.Runtime
         /// <summary>
         /// Gets and sets the connection limit set on the ServicePoint for the WebRequest.
         /// Default value is 50 connections unless ServicePointManager.DefaultConnectionLimit is set in 
-        /// which case ServicePointManager.DefaultConnectionLimit will be used as the default.
+        /// which case ServicePointManager.DefaultConnectionLimit will be used as the default. This property is only available in .NET Framework: 4.5 and newer, 3.5. 
         /// </summary>
         public int ConnectionLimit
         {
