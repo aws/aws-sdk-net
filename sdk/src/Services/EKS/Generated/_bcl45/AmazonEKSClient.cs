@@ -4778,6 +4778,11 @@ namespace Amazon.EKS
         /// </para>
         ///  
         /// <para>
+        /// You can also use this API operation to enable or disable ARC zonal shift. If zonal
+        /// shift is enabled, Amazon Web Services configures zonal autoshift for the cluster.
+        /// </para>
+        ///  
+        /// <para>
         /// Cluster updates are asynchronous, and they should finish within a few minutes. During
         /// an update, the cluster status moves to <c>UPDATING</c> (this status transition is
         /// eventually consistent). When the update is complete (either <c>Failed</c> or <c>Successful</c>),
@@ -4855,6 +4860,11 @@ namespace Amazon.EKS
         /// same VPC as the subnets that the cluster was created with. For more information about
         /// the VPC requirements, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html</a>
         /// in the <i> <i>Amazon EKS User Guide</i> </i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can also use this API operation to enable or disable ARC zonal shift. If zonal
+        /// shift is enabled, Amazon Web Services configures zonal autoshift for the cluster.
         /// </para>
         ///  
         /// <para>

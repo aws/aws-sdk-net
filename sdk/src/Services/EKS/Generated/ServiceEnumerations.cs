@@ -1896,6 +1896,10 @@ namespace Amazon.EKS
         /// Constant Version for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType Version = new UpdateParamType("Version");
+        /// <summary>
+        /// Constant ZonalShiftConfig for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType ZonalShiftConfig = new UpdateParamType("ZonalShiftConfig");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2040,6 +2044,10 @@ namespace Amazon.EKS
         /// Constant VpcConfigUpdate for UpdateType
         /// </summary>
         public static readonly UpdateType VpcConfigUpdate = new UpdateType("VpcConfigUpdate");
+        /// <summary>
+        /// Constant ZonalShiftConfigUpdate for UpdateType
+        /// </summary>
+        public static readonly UpdateType ZonalShiftConfigUpdate = new UpdateType("ZonalShiftConfigUpdate");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
