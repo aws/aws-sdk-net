@@ -119,10 +119,11 @@ namespace Amazon.ApplicationInsights.Model
         /// <summary>
         /// Gets and sets the property WorkloadName. 
         /// <para>
-        /// The name of the workload.
+        /// The name of the workload. The name of the workload is required when the tier of the
+        /// application component is <c>SAP_ASE_SINGLE_NODE</c> or <c>SAP_ASE_HIGH_AVAILABILITY</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=8)]
+        [AWSProperty(Min=1, Max=12)]
         public string WorkloadName
         {
             get { return this._workloadName; }

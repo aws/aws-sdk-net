@@ -44,7 +44,7 @@ namespace Amazon.ApplicationInsights.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The AWS account ID of the owner of the workload.
+        /// The Amazon Web Services account ID of the owner of the workload.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]

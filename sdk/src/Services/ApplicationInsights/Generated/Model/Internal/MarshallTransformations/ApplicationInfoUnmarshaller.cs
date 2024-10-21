@@ -126,6 +126,12 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
                     unmarshalledObject.ResourceGroupName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SNSNotificationArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SNSNotificationArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
