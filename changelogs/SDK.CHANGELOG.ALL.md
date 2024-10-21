@@ -1,3 +1,23 @@
+### 3.7.910.0 (2024-10-21 18:24 UTC)
+* ApplicationInsights (3.7.401.0)
+	* This feature enables customers to specify SNS Topic ARN. CloudWatch Application Insights (CWAI) will utilize this ARN to send problem notifications.
+* AutoScaling (3.7.402.0)
+	* Adds support for removing the PlacementGroup setting on an Auto Scaling Group through the UpdateAutoScalingGroup API.
+* BedrockAgentRuntime (3.7.406.0)
+	* Knowledge Bases for Amazon Bedrock now supports custom prompts and model parameters in the orchestrationConfiguration of the RetrieveAndGenerate API. The modelArn field accepts Custom Models and Imported Models ARNs.
+* DatabaseMigrationService (3.7.402.0)
+	* Added support for tagging in StartReplicationTaskAssessmentRun API and introduced IsLatestTaskAssessmentRun and ResultStatistic fields for enhanced tracking and assessment result statistics.
+* EC2 (3.7.411.0)
+	* Amazon EC2 now allows you to create network interfaces with just the EFA driver and no ENA driver by specifying the network interface type as efa-only.
+* EKS (3.7.403.0)
+	* This release adds support for Amazon Application Recovery Controller (ARC) zonal shift and zonal autoshift with EKS that enhances the resiliency of multi-AZ cluster environments
+* FMS (3.7.401.0)
+	* Update AWS WAF policy - add the option to retrofit existing web ACLs instead of creating all new web ACLs.
+* PaymentCryptographyData (3.7.401.0)
+	* Adding new API to generate authenticated scripts for EMV pin change use cases.
+* WAFV2 (3.7.402.0)
+	* Add a property to WebACL to indicate whether it's been retrofitted by Firewall Manager.
+
 ### 3.7.909.0 (2024-10-18 18:20 UTC)
 * Athena (3.7.402.0)
 	* Removing FEDERATED from Create/List/Delete/GetDataCatalog API
