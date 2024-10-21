@@ -41,7 +41,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
-        /// Contains information about the foundation model output.
+        /// Contains information about the foundation model output from the orchestration step.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]

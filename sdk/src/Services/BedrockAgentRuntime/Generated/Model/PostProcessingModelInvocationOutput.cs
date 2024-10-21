@@ -40,7 +40,11 @@ namespace Amazon.BedrockAgentRuntime.Model
         private string _traceId;
 
         /// <summary>
-        /// Gets and sets the property Metadata.
+        /// Gets and sets the property Metadata. 
+        /// <para>
+        ///  Contains information about the foundation model output from the post-processing step.
+        /// 
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public Metadata Metadata
@@ -76,7 +80,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RawResponse.
+        /// Gets and sets the property RawResponse. 
+        /// <para>
+        ///  Details of the raw response from the foundation model output. 
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public RawResponse RawResponse
