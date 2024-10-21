@@ -562,8 +562,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current state of the group when the <a>DeleteAutoScalingGroup</a> operation is
-        /// in progress.
+        /// The current state of the group when the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DeleteAutoScalingGroup.html">DeleteAutoScalingGroup</a>
+        /// operation is in progress.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

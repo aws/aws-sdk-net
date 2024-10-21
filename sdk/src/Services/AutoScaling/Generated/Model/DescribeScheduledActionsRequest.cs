@@ -37,7 +37,8 @@ namespace Amazon.AutoScaling.Model
     ///  
     /// <para>
     /// To describe the scaling activities for scheduled actions that have already run, call
-    /// the <a>DescribeScalingActivities</a> API.
+    /// the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeScalingActivities.html">DescribeScalingActivities</a>
+    /// API.
     /// </para>
     /// </summary>
     public partial class DescribeScheduledActionsRequest : AmazonAutoScalingRequest

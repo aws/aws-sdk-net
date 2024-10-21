@@ -40,9 +40,10 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// You can view the scheduled actions for an Auto Scaling group using the <a>DescribeScheduledActions</a>
+    /// You can view the scheduled actions for an Auto Scaling group using the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeScheduledActions.html">DescribeScheduledActions</a>
     /// API call. If you are no longer using a scheduled action, you can delete it by calling
-    /// the <a>DeleteScheduledAction</a> API.
+    /// the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DeleteScheduledAction.html">DeleteScheduledAction</a>
+    /// API.
     /// </para>
     ///  
     /// <para>

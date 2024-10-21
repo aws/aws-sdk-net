@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Describes information used for one or more scheduled scaling action updates in a <a>BatchPutScheduledUpdateGroupAction</a>
+    /// Describes information used for one or more scheduled scaling action updates in a <a
+    /// href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_BatchPutScheduledUpdateGroupAction.html">BatchPutScheduledUpdateGroupAction</a>
     /// operation.
     /// </summary>
     public partial class ScheduledUpdateGroupActionRequest

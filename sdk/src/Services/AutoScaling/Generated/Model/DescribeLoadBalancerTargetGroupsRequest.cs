@@ -33,9 +33,9 @@ namespace Amazon.AutoScaling.Model
     /// Container for the parameters to the DescribeLoadBalancerTargetGroups operation.
     /// <note> 
     /// <para>
-    /// This API operation is superseded by <a>DescribeTrafficSources</a>, which can describe
-    /// multiple traffic sources types. We recommend using <c>DetachTrafficSources</c> to
-    /// simplify how you manage traffic sources. However, we continue to support <c>DescribeLoadBalancerTargetGroups</c>.
+    /// This API operation is superseded by <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeTrafficSources.html">DescribeTrafficSources</a>,
+    /// which can describe multiple traffic sources types. We recommend using <c>DetachTrafficSources</c>
+    /// to simplify how you manage traffic sources. However, we continue to support <c>DescribeLoadBalancerTargetGroups</c>.
     /// You can use both the original <c>DescribeLoadBalancerTargetGroups</c> API operation
     /// and <c>DescribeTrafficSources</c> on the same Auto Scaling group.
     /// </para>
@@ -58,10 +58,10 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// Target groups also have an <c>InService</c> state if you attach them in the <a>CreateAutoScalingGroup</a>
+    /// Target groups also have an <c>InService</c> state if you attach them in the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CreateAutoScalingGroup.html">CreateAutoScalingGroup</a>
     /// API call. If your target group state is <c>InService</c>, but it is not working properly,
-    /// check the scaling activities by calling <a>DescribeScalingActivities</a> and take
-    /// any corrective actions necessary.
+    /// check the scaling activities by calling <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeScalingActivities.html">DescribeScalingActivities</a>
+    /// and take any corrective actions necessary.
     /// </para>
     ///  
     /// <para>
@@ -73,8 +73,9 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// You can use this operation to describe target groups that were attached by using <a>AttachLoadBalancerTargetGroups</a>,
-    /// but not for target groups that were attached by using <a>AttachTrafficSources</a>.
+    /// You can use this operation to describe target groups that were attached by using <a
+    /// href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_AttachLoadBalancerTargetGroups.html">AttachLoadBalancerTargetGroups</a>,
+    /// but not for target groups that were attached by using <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_AttachTrafficSources.html">AttachTrafficSources</a>.
     /// </para>
     ///  </note>
     /// </summary>

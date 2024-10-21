@@ -83,9 +83,9 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// To see which properties have been set, call the <a>DescribeAutoScalingGroups</a> API.
-    /// To view the scaling policies for an Auto Scaling group, call the <a>DescribePolicies</a>
-    /// API. If the group has scaling policies, you can update them by calling the <a>PutScalingPolicy</a>
+    /// To see which properties have been set, call the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAutoScalingGroups.html">DescribeAutoScalingGroups</a>
+    /// API. To view the scaling policies for an Auto Scaling group, call the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribePolicies.html">DescribePolicies</a>
+    /// API. If the group has scaling policies, you can update them by calling the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PutScalingPolicy.html">PutScalingPolicy</a>
     /// API.
     /// </para>
     /// </summary>
@@ -530,8 +530,9 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property PlacementGroup. 
         /// <para>
-        /// The name of an existing placement group into which to launch your instances. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+        /// The name of an existing placement group into which to launch your instances. To remove
+        /// the placement group setting, pass an empty string for <c>placement-group</c>. For
+        /// more information about placement groups, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
         /// groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         ///  <note> 
@@ -542,7 +543,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Min=0, Max=255)]
         public string PlacementGroup
         {
             get { return this._placementGroup; }

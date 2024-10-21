@@ -32,7 +32,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// Container for the parameters to the RecordLifecycleActionHeartbeat operation.
     /// Records a heartbeat for the lifecycle action associated with the specified token or
-    /// instance. This extends the timeout by the length of time defined using the <a>PutLifecycleHook</a>
+    /// instance. This extends the timeout by the length of time defined using the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PutLifecycleHook.html">PutLifecycleHook</a>
     /// API call.
     /// 
     ///  
@@ -69,7 +69,7 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If you finish before the timeout period ends, send a callback by using the <a>CompleteLifecycleAction</a>
+    /// If you finish before the timeout period ends, send a callback by using the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CompleteLifecycleAction.html">CompleteLifecycleAction</a>
     /// API call.
     /// </para>
     ///  </li> </ol> 
