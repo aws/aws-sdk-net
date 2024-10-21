@@ -35,8 +35,8 @@ namespace Amazon.WAFV2.Model
     /// 
     ///  
     /// <para>
-    /// You can only use this if <c>ManagedByFirewallManager</c> is false in the specified
-    /// <a>WebACL</a>. 
+    /// You can only use this if <c>ManagedByFirewallManager</c> is false in the web ACL.
+    /// 
     /// </para>
     ///  <note> 
     /// <para>

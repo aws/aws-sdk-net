@@ -57,6 +57,7 @@ namespace Amazon.WAFV2.Model
         private string _name;
         private List<FirewallManagerRuleGroup> _postProcessFirewallManagerRuleGroups = AWSConfigs.InitializeCollections ? new List<FirewallManagerRuleGroup>() : null;
         private List<FirewallManagerRuleGroup> _preProcessFirewallManagerRuleGroups = AWSConfigs.InitializeCollections ? new List<FirewallManagerRuleGroup>() : null;
+        private bool? _retrofittedByFirewallManager;
         private List<Rule> _rules = AWSConfigs.InitializeCollections ? new List<Rule>() : null;
         private List<string> _tokenDomains = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private VisibilityConfig _visibilityConfig;
@@ -322,9 +323,11 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property ManagedByFirewallManager. 
         /// <para>
-        /// Indicates whether this web ACL is managed by Firewall Manager. If true, then only
-        /// Firewall Manager can delete the web ACL or any Firewall Manager rule groups in the
-        /// web ACL. 
+        /// Indicates whether this web ACL was created by Firewall Manager and is being managed
+        /// by Firewall Manager. If true, then only Firewall Manager can delete the web ACL or
+        /// any Firewall Manager rule groups in the web ACL. See also the properties <c>RetrofittedByFirewallManager</c>,
+        /// <c>PreProcessFirewallManagerRuleGroups</c>, and <c>PostProcessFirewallManagerRuleGroups</c>.
+        /// 
         /// </para>
         /// </summary>
         public bool ManagedByFirewallManager
@@ -413,6 +416,28 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetPreProcessFirewallManagerRuleGroups()
         {
             return this._preProcessFirewallManagerRuleGroups != null && (this._preProcessFirewallManagerRuleGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetrofittedByFirewallManager. 
+        /// <para>
+        /// Indicates whether this web ACL was created by a customer account and then retrofitted
+        /// by Firewall Manager. If true, then the web ACL is currently being managed by a Firewall
+        /// Manager WAF policy, and only Firewall Manager can manage any Firewall Manager rule
+        /// groups in the web ACL. See also the properties <c>ManagedByFirewallManager</c>, <c>PreProcessFirewallManagerRuleGroups</c>,
+        /// and <c>PostProcessFirewallManagerRuleGroups</c>. 
+        /// </para>
+        /// </summary>
+        public bool RetrofittedByFirewallManager
+        {
+            get { return this._retrofittedByFirewallManager.GetValueOrDefault(); }
+            set { this._retrofittedByFirewallManager = value; }
+        }
+
+        // Check to see if RetrofittedByFirewallManager property is set
+        internal bool IsSetRetrofittedByFirewallManager()
+        {
+            return this._retrofittedByFirewallManager.HasValue; 
         }
 
         /// <summary>
