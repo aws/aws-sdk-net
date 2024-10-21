@@ -63,7 +63,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UnusedReservationBillingOwnerId. 
         /// <para>
-        /// The ID of the consumer account to which assign billing.
+        /// The ID of the consumer account to which to assign billing.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

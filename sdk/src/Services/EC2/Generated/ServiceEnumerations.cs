@@ -15103,6 +15103,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly NetworkInterfaceCreationType Efa = new NetworkInterfaceCreationType("efa");
         /// <summary>
+        /// Constant EfaOnly for NetworkInterfaceCreationType
+        /// </summary>
+        public static readonly NetworkInterfaceCreationType EfaOnly = new NetworkInterfaceCreationType("efa-only");
+        /// <summary>
         /// Constant Trunk for NetworkInterfaceCreationType
         /// </summary>
         public static readonly NetworkInterfaceCreationType Trunk = new NetworkInterfaceCreationType("trunk");
@@ -15284,6 +15288,10 @@ namespace Amazon.EC2
         /// Constant Efa for NetworkInterfaceType
         /// </summary>
         public static readonly NetworkInterfaceType Efa = new NetworkInterfaceType("efa");
+        /// <summary>
+        /// Constant EfaOnly for NetworkInterfaceType
+        /// </summary>
+        public static readonly NetworkInterfaceType EfaOnly = new NetworkInterfaceType("efa-only");
         /// <summary>
         /// Constant Gateway_load_balancer for NetworkInterfaceType
         /// </summary>
