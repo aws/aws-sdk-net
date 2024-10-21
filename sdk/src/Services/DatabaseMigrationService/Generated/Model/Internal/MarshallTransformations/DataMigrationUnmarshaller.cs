@@ -72,6 +72,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.DataMigrationArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DataMigrationCidrBlocks", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.DataMigrationCidrBlocks = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DataMigrationCreateTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

@@ -35,6 +35,7 @@ namespace Amazon.DatabaseMigrationService.Model
     public partial class DataMigration
     {
         private string _dataMigrationArn;
+        private List<string> _dataMigrationCidrBlocks = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _dataMigrationCreateTime;
         private DateTime? _dataMigrationEndTime;
         private string _dataMigrationName;
@@ -66,6 +67,24 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetDataMigrationArn()
         {
             return this._dataMigrationArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataMigrationCidrBlocks. 
+        /// <para>
+        /// The CIDR blocks of the endpoints for the data migration.
+        /// </para>
+        /// </summary>
+        public List<string> DataMigrationCidrBlocks
+        {
+            get { return this._dataMigrationCidrBlocks; }
+            set { this._dataMigrationCidrBlocks = value; }
+        }
+
+        // Check to see if DataMigrationCidrBlocks property is set
+        internal bool IsSetDataMigrationCidrBlocks()
+        {
+            return this._dataMigrationCidrBlocks != null && (this._dataMigrationCidrBlocks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
