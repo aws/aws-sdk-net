@@ -68,6 +68,10 @@ namespace Amazon.FMS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// WAF
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// DNS Firewall
         /// </para>
         ///  </li> <li> 
@@ -128,9 +132,9 @@ namespace Amazon.FMS.Model
         /// Gets and sets the property ResourceType. 
         /// <para>
         /// The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
-        /// Web Services Resource Types Reference</a>. Supported resource types are: <c>AWS::EC2::Instance</c>,
-        /// <c>AWS::EC2::NetworkInterface</c>, <c>AWS::EC2::SecurityGroup</c>, <c>AWS::NetworkFirewall::FirewallPolicy</c>,
-        /// and <c>AWS::EC2::Subnet</c>. 
+        /// Web Services Resource Types Reference</a>. Supported resource types are: <c>AWS::WAFv2::WebACL</c>,
+        /// <c>AWS::EC2::Instance</c>, <c>AWS::EC2::NetworkInterface</c>, <c>AWS::EC2::SecurityGroup</c>,
+        /// <c>AWS::NetworkFirewall::FirewallPolicy</c>, and <c>AWS::EC2::Subnet</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

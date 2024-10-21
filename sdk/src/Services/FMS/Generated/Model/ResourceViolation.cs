@@ -58,6 +58,8 @@ namespace Amazon.FMS.Model
         private ThirdPartyFirewallMissingExpectedRouteTableViolation _thirdPartyFirewallMissingExpectedRouteTableViolation;
         private ThirdPartyFirewallMissingFirewallViolation _thirdPartyFirewallMissingFirewallViolation;
         private ThirdPartyFirewallMissingSubnetViolation _thirdPartyFirewallMissingSubnetViolation;
+        private WebACLHasIncompatibleConfigurationViolation _webACLHasIncompatibleConfigurationViolation;
+        private WebACLHasOutOfScopeResourcesViolation _webACLHasOutOfScopeResourcesViolation;
 
         /// <summary>
         /// Gets and sets the property AwsEc2InstanceViolation. 
@@ -500,6 +502,44 @@ namespace Amazon.FMS.Model
         internal bool IsSetThirdPartyFirewallMissingSubnetViolation()
         {
             return this._thirdPartyFirewallMissingSubnetViolation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WebACLHasIncompatibleConfigurationViolation. 
+        /// <para>
+        /// The violation details for a web ACL whose configuration is incompatible with the Firewall
+        /// Manager policy. 
+        /// </para>
+        /// </summary>
+        public WebACLHasIncompatibleConfigurationViolation WebACLHasIncompatibleConfigurationViolation
+        {
+            get { return this._webACLHasIncompatibleConfigurationViolation; }
+            set { this._webACLHasIncompatibleConfigurationViolation = value; }
+        }
+
+        // Check to see if WebACLHasIncompatibleConfigurationViolation property is set
+        internal bool IsSetWebACLHasIncompatibleConfigurationViolation()
+        {
+            return this._webACLHasIncompatibleConfigurationViolation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WebACLHasOutOfScopeResourcesViolation. 
+        /// <para>
+        /// The violation details for a web ACL that's associated with at least one resource that's
+        /// out of scope of the Firewall Manager policy. 
+        /// </para>
+        /// </summary>
+        public WebACLHasOutOfScopeResourcesViolation WebACLHasOutOfScopeResourcesViolation
+        {
+            get { return this._webACLHasOutOfScopeResourcesViolation; }
+            set { this._webACLHasOutOfScopeResourcesViolation = value; }
+        }
+
+        // Check to see if WebACLHasOutOfScopeResourcesViolation property is set
+        internal bool IsSetWebACLHasOutOfScopeResourcesViolation()
+        {
+            return this._webACLHasOutOfScopeResourcesViolation != null;
         }
 
     }
