@@ -593,6 +593,60 @@ namespace Amazon.PaymentCryptographyData
 
 
     /// <summary>
+    /// Constants used for properties of type PinBlockFormatForEmvPinChange.
+    /// </summary>
+    public class PinBlockFormatForEmvPinChange : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ISO_FORMAT_0 for PinBlockFormatForEmvPinChange
+        /// </summary>
+        public static readonly PinBlockFormatForEmvPinChange ISO_FORMAT_0 = new PinBlockFormatForEmvPinChange("ISO_FORMAT_0");
+        /// <summary>
+        /// Constant ISO_FORMAT_1 for PinBlockFormatForEmvPinChange
+        /// </summary>
+        public static readonly PinBlockFormatForEmvPinChange ISO_FORMAT_1 = new PinBlockFormatForEmvPinChange("ISO_FORMAT_1");
+        /// <summary>
+        /// Constant ISO_FORMAT_3 for PinBlockFormatForEmvPinChange
+        /// </summary>
+        public static readonly PinBlockFormatForEmvPinChange ISO_FORMAT_3 = new PinBlockFormatForEmvPinChange("ISO_FORMAT_3");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PinBlockFormatForEmvPinChange(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PinBlockFormatForEmvPinChange FindValue(string value)
+        {
+            return FindValue<PinBlockFormatForEmvPinChange>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PinBlockFormatForEmvPinChange(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PinBlockFormatForPinData.
     /// </summary>
     public class PinBlockFormatForPinData : ConstantClass
@@ -636,6 +690,106 @@ namespace Amazon.PaymentCryptographyData
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PinBlockFormatForPinData(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PinBlockLengthPosition.
+    /// </summary>
+    public class PinBlockLengthPosition : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FRONT_OF_PIN_BLOCK for PinBlockLengthPosition
+        /// </summary>
+        public static readonly PinBlockLengthPosition FRONT_OF_PIN_BLOCK = new PinBlockLengthPosition("FRONT_OF_PIN_BLOCK");
+        /// <summary>
+        /// Constant NONE for PinBlockLengthPosition
+        /// </summary>
+        public static readonly PinBlockLengthPosition NONE = new PinBlockLengthPosition("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PinBlockLengthPosition(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PinBlockLengthPosition FindValue(string value)
+        {
+            return FindValue<PinBlockLengthPosition>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PinBlockLengthPosition(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PinBlockPaddingType.
+    /// </summary>
+    public class PinBlockPaddingType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ISO_IEC_7816_4 for PinBlockPaddingType
+        /// </summary>
+        public static readonly PinBlockPaddingType ISO_IEC_7816_4 = new PinBlockPaddingType("ISO_IEC_7816_4");
+        /// <summary>
+        /// Constant NO_PADDING for PinBlockPaddingType
+        /// </summary>
+        public static readonly PinBlockPaddingType NO_PADDING = new PinBlockPaddingType("NO_PADDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PinBlockPaddingType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PinBlockPaddingType FindValue(string value)
+        {
+            return FindValue<PinBlockPaddingType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PinBlockPaddingType(string value)
         {
             return FindValue(value);
         }

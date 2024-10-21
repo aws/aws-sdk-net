@@ -30,46 +30,44 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PaymentCryptographyData.Model
 {
     /// <summary>
-    /// Parameters for plaintext encryption using EMV keys.
+    /// Parameters to derive the confidentiality and integrity keys for a payment card using
+    /// EMV2000 deruv.
     /// </summary>
-    public partial class EmvEncryptionAttributes
+    public partial class Emv2000Attributes
     {
-        private string _initializationVector;
-        private EmvMajorKeyDerivationMode _majorKeyDerivationMode;
-        private EmvEncryptionMode _mode;
+        private string _applicationTransactionCounter;
+        private MajorKeyDerivationMode _majorKeyDerivationMode;
         private string _panSequenceNumber;
         private string _primaryAccountNumber;
-        private string _sessionDerivationData;
 
         /// <summary>
-        /// Gets and sets the property InitializationVector. 
+        /// Gets and sets the property ApplicationTransactionCounter. 
         /// <para>
-        /// An input used to provide the intial state. If no value is provided, Amazon Web Services
-        /// Payment Cryptography defaults it to zero.
+        /// The transaction counter of the current transaction that is provided by the terminal
+        /// during transaction processing.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=16, Max=32)]
-        public string InitializationVector
+        [AWSProperty(Required=true, Min=4, Max=4)]
+        public string ApplicationTransactionCounter
         {
-            get { return this._initializationVector; }
-            set { this._initializationVector = value; }
+            get { return this._applicationTransactionCounter; }
+            set { this._applicationTransactionCounter = value; }
         }
 
-        // Check to see if InitializationVector property is set
-        internal bool IsSetInitializationVector()
+        // Check to see if ApplicationTransactionCounter property is set
+        internal bool IsSetApplicationTransactionCounter()
         {
-            return this._initializationVector != null;
+            return this._applicationTransactionCounter != null;
         }
 
         /// <summary>
         /// Gets and sets the property MajorKeyDerivationMode. 
         /// <para>
-        /// The EMV derivation mode to use for ICC master key derivation as per EMV version 4.3
-        /// book 2.
+        /// The method to use when deriving the master key for the payment card.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public EmvMajorKeyDerivationMode MajorKeyDerivationMode
+        public MajorKeyDerivationMode MajorKeyDerivationMode
         {
             get { return this._majorKeyDerivationMode; }
             set { this._majorKeyDerivationMode = value; }
@@ -79,24 +77,6 @@ namespace Amazon.PaymentCryptographyData.Model
         internal bool IsSetMajorKeyDerivationMode()
         {
             return this._majorKeyDerivationMode != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Mode. 
-        /// <para>
-        /// The block cipher method to use for encryption.
-        /// </para>
-        /// </summary>
-        public EmvEncryptionMode Mode
-        {
-            get { return this._mode; }
-            set { this._mode = value; }
-        }
-
-        // Check to see if Mode property is set
-        internal bool IsSetMode()
-        {
-            return this._mode != null;
         }
 
         /// <summary>
@@ -122,8 +102,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// <summary>
         /// Gets and sets the property PrimaryAccountNumber. 
         /// <para>
-        /// The Primary Account Number (PAN), a unique identifier for a payment credit or debit
-        /// card and associates the card to a specific account holder.
+        /// The Primary Account Number (PAN) of the cardholder.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=12, Max=19)]
@@ -137,27 +116,6 @@ namespace Amazon.PaymentCryptographyData.Model
         internal bool IsSetPrimaryAccountNumber()
         {
             return this._primaryAccountNumber != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SessionDerivationData. 
-        /// <para>
-        /// The derivation value used to derive the ICC session key. It is typically the application
-        /// transaction counter value padded with zeros or previous ARQC value padded with zeros
-        /// as per EMV version 4.3 book 2.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=16, Max=16)]
-        public string SessionDerivationData
-        {
-            get { return this._sessionDerivationData; }
-            set { this._sessionDerivationData = value; }
-        }
-
-        // Check to see if SessionDerivationData property is set
-        internal bool IsSetSessionDerivationData()
-        {
-            return this._sessionDerivationData != null;
         }
 
     }

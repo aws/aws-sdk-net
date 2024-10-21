@@ -30,18 +30,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PaymentCryptographyData.Model
 {
     /// <summary>
-    /// Parameters to derive session key for an Emv2000 payment card for ARQC verification.
+    /// Parameters to derive the confidentiality and integrity keys for a payment card using
+    /// Amex derivation method.
     /// </summary>
-    public partial class SessionKeyEmv2000
+    public partial class AmexAttributes
     {
         private string _applicationTransactionCounter;
+        private string _authorizationRequestKeyIdentifier;
+        private CurrentPinAttributes _currentPinAttributes;
+        private MajorKeyDerivationMode _majorKeyDerivationMode;
         private string _panSequenceNumber;
         private string _primaryAccountNumber;
 
         /// <summary>
         /// Gets and sets the property ApplicationTransactionCounter. 
         /// <para>
-        /// The transaction counter that is provided by the terminal during transaction processing.
+        /// The transaction counter of the current transaction that is provided by the terminal
+        /// during transaction processing.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=4, Max=4)]
@@ -58,10 +63,67 @@ namespace Amazon.PaymentCryptographyData.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AuthorizationRequestKeyIdentifier. 
+        /// <para>
+        /// The <c>keyArn</c> of the issuer master key for cryptogram (IMK-AC) for the payment
+        /// card.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=7, Max=322)]
+        public string AuthorizationRequestKeyIdentifier
+        {
+            get { return this._authorizationRequestKeyIdentifier; }
+            set { this._authorizationRequestKeyIdentifier = value; }
+        }
+
+        // Check to see if AuthorizationRequestKeyIdentifier property is set
+        internal bool IsSetAuthorizationRequestKeyIdentifier()
+        {
+            return this._authorizationRequestKeyIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CurrentPinAttributes. 
+        /// <para>
+        /// The encrypted pinblock of the old pin stored on the chip card.
+        /// </para>
+        /// </summary>
+        public CurrentPinAttributes CurrentPinAttributes
+        {
+            get { return this._currentPinAttributes; }
+            set { this._currentPinAttributes = value; }
+        }
+
+        // Check to see if CurrentPinAttributes property is set
+        internal bool IsSetCurrentPinAttributes()
+        {
+            return this._currentPinAttributes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MajorKeyDerivationMode. 
+        /// <para>
+        /// The method to use when deriving the master key for a payment card using Amex derivation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public MajorKeyDerivationMode MajorKeyDerivationMode
+        {
+            get { return this._majorKeyDerivationMode; }
+            set { this._majorKeyDerivationMode = value; }
+        }
+
+        // Check to see if MajorKeyDerivationMode property is set
+        internal bool IsSetMajorKeyDerivationMode()
+        {
+            return this._majorKeyDerivationMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PanSequenceNumber. 
         /// <para>
         /// A number that identifies and differentiates payment cards with the same Primary Account
-        /// Number (PAN).
+        /// Number (PAN). Typically 00 is used, if no value is provided by the terminal.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=2)]
@@ -80,8 +142,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// <summary>
         /// Gets and sets the property PrimaryAccountNumber. 
         /// <para>
-        /// The Primary Account Number (PAN) of the cardholder. A PAN is a unique identifier for
-        /// a payment credit or debit card and associates the card to a specific account holder.
+        /// The Primary Account Number (PAN) of the cardholder.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=12, Max=19)]
