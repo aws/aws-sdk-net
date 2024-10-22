@@ -114,14 +114,17 @@ namespace Amazon.S3
                         return _useArnRegion.Value;
                     }
 
-                    _useArnRegion = _profile?.S3UseArnRegion;
-
-                    if (!_useArnRegion.HasValue && !string.IsNullOrEmpty(Environment.GetEnvironmentVariable(UseArnRegionEnvName)))
+                    if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable(UseArnRegionEnvName)))
                     {
                         if (bool.TryParse(Environment.GetEnvironmentVariable(UseArnRegionEnvName), out var value))
                         {
                             _useArnRegion = value;
                         }
+                    }
+
+                    if (!_useArnRegion.HasValue)
+                    {
+                        _useArnRegion = _profile?.S3UseArnRegion;
                     }
 
                     if (!_useArnRegion.HasValue)
