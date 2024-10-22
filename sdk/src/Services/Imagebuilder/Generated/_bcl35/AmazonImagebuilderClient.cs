@@ -3346,21 +3346,8 @@ namespace Amazon.Imagebuilder
         #region  ListComponentBuildVersions
 
         /// <summary>
-        /// Returns the list of component build versions for the specified semantic version.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// The semantic version has four nodes: &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;.
-        /// You can assign values for the first three, and can filter on all of them.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards
-        /// (x) to specify the most recent versions or nodes when selecting the base image or
-        /// components for your recipe. When you use a wildcard in any node, all nodes to the
-        /// right of the first wildcard must also be wildcards.
-        /// </para>
-        ///  </note>
+        /// Returns the list of component build versions for the specified component version Amazon
+        /// Resource Name (ARN).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListComponentBuildVersions service method.</param>
         /// 
