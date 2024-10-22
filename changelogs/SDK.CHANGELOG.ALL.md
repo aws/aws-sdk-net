@@ -1,3 +1,20 @@
+### 3.7.911.0 (2024-10-22 18:46 UTC)
+* BedrockRuntime (3.7.406.0)
+	* Updating invoke regex to support imported models for converse API
+* Imagebuilder (3.7.401.0)
+	* Add macOS platform and instance placement options
+* MainframeModernization (3.7.401.0)
+	* Add AuthSecretsManagerArn optional parameter to batch job APIs, expand batch parameter limits, and introduce clientToken constraints.
+* RDS (3.7.405.0)
+	* Global clusters now expose the Endpoint attribute as one of its fields. It is a Read/Write endpoint for the global cluster which resolves to the Global Cluster writer instance.
+* Repostspace (3.7.401.0)
+	* Adds the BatchAddRole and BatchRemoveRole APIs.
+* TimestreamQuery (3.7.401.0)
+	* This release adds support for Query Insights, a feature that provides details of query execution, enabling users to identify areas for improvement to optimize their queries, resulting in improved query performance and lower query costs.
+* Core 3.7.400.37
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.910.0 (2024-10-21 18:24 UTC)
 * ApplicationInsights (3.7.401.0)
 	* This feature enables customers to specify SNS Topic ARN. CloudWatch Application Insights (CWAI) will utilize this ARN to send problem notifications.
