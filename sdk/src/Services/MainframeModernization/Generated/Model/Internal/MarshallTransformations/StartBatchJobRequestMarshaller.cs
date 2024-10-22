@@ -70,6 +70,12 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAuthSecretsManagerArn())
+                {
+                    context.Writer.WritePropertyName("authSecretsManagerArn");
+                    context.Writer.Write(publicRequest.AuthSecretsManagerArn);
+                }
+
                 if(publicRequest.IsSetBatchJobIdentifier())
                 {
                     context.Writer.WritePropertyName("batchJobIdentifier");

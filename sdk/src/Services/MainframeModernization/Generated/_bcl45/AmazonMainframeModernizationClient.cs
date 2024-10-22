@@ -1763,7 +1763,7 @@ namespace Amazon.MainframeModernization
 
 
         /// <summary>
-        /// Lists all the job steps for JCL files to restart a batch job. This is only applicable
+        /// Lists all the job steps for a JCL file to restart a batch job. This is only applicable
         /// for Micro Focus engine with versions 8.0.6 and above.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBatchJobRestartPoints service method.</param>
@@ -1799,7 +1799,7 @@ namespace Amazon.MainframeModernization
 
 
         /// <summary>
-        /// Lists all the job steps for JCL files to restart a batch job. This is only applicable
+        /// Lists all the job steps for a JCL file to restart a batch job. This is only applicable
         /// for Micro Focus engine with versions 8.0.6 and above.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBatchJobRestartPoints service method.</param>

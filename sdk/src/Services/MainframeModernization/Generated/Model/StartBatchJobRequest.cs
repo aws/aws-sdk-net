@@ -37,6 +37,7 @@ namespace Amazon.MainframeModernization.Model
     public partial class StartBatchJobRequest : AmazonMainframeModernizationRequest
     {
         private string _applicationId;
+        private string _authSecretsManagerArn;
         private BatchJobIdentifier _batchJobIdentifier;
         private Dictionary<string, string> _jobParams = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
@@ -57,6 +58,26 @@ namespace Amazon.MainframeModernization.Model
         internal bool IsSetApplicationId()
         {
             return this._applicationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AuthSecretsManagerArn. 
+        /// <para>
+        /// The Amazon Web Services Secrets Manager containing user's credentials for authentication
+        /// and authorization for Start Batch Job execution operation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string AuthSecretsManagerArn
+        {
+            get { return this._authSecretsManagerArn; }
+            set { this._authSecretsManagerArn = value; }
+        }
+
+        // Check to see if AuthSecretsManagerArn property is set
+        internal bool IsSetAuthSecretsManagerArn()
+        {
+            return this._authSecretsManagerArn != null;
         }
 
         /// <summary>

@@ -161,7 +161,7 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property JobStepRestartMarker. 
         /// <para>
-        /// The restart steps information for the most recent restart operation.
+        /// The step/procedure step information for the restart batch job operation.
         /// </para>
         /// </summary>
         public JobStepRestartMarker JobStepRestartMarker
