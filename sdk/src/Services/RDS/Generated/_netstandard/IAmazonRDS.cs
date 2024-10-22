@@ -1657,8 +1657,8 @@ namespace Amazon.RDS
         /// <c>DBClusterIdentifier</c> doesn't refer to an existing DB cluster.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.GlobalClusterAlreadyExistsException">
-        /// The <c>GlobalClusterIdentifier</c> already exists. Choose a new global database identifier
-        /// (unique name) to create a new global database cluster.
+        /// The <c>GlobalClusterIdentifier</c> already exists. Specify a new global database identifier
+        /// (unique name) to create a new global database cluster or to rename an existing one.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.GlobalClusterQuotaExceededException">
         /// The number of global database clusters for this account is already at the maximum
@@ -5223,6 +5223,10 @@ namespace Amazon.RDS
         /// </param>
         /// 
         /// <returns>The response from the ModifyGlobalCluster service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.GlobalClusterAlreadyExistsException">
+        /// The <c>GlobalClusterIdentifier</c> already exists. Specify a new global database identifier
+        /// (unique name) to create a new global database cluster or to rename an existing one.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.GlobalClusterNotFoundException">
         /// The <c>GlobalClusterIdentifier</c> doesn't refer to an existing global database cluster.
         /// </exception>

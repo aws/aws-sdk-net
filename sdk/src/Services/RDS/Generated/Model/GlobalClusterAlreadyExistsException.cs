@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// The <c>GlobalClusterIdentifier</c> already exists. Choose a new global database identifier
-    /// (unique name) to create a new global database cluster.
+    /// The <c>GlobalClusterIdentifier</c> already exists. Specify a new global database identifier
+    /// (unique name) to create a new global database cluster or to rename an existing one.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
