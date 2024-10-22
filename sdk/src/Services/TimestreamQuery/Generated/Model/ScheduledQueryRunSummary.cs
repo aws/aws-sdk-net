@@ -38,6 +38,7 @@ namespace Amazon.TimestreamQuery.Model
         private ExecutionStats _executionStats;
         private string _failureReason;
         private DateTime? _invocationTime;
+        private ScheduledQueryInsightsResponse _queryInsightsResponse;
         private ScheduledQueryRunStatus _runStatus;
         private DateTime? _triggerTime;
 
@@ -113,6 +114,25 @@ namespace Amazon.TimestreamQuery.Model
         internal bool IsSetInvocationTime()
         {
             return this._invocationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueryInsightsResponse. 
+        /// <para>
+        /// Provides various insights and metrics related to the run summary of the scheduled
+        /// query.
+        /// </para>
+        /// </summary>
+        public ScheduledQueryInsightsResponse QueryInsightsResponse
+        {
+            get { return this._queryInsightsResponse; }
+            set { this._queryInsightsResponse = value; }
+        }
+
+        // Check to see if QueryInsightsResponse property is set
+        internal bool IsSetQueryInsightsResponse()
+        {
+            return this._queryInsightsResponse != null;
         }
 
         /// <summary>

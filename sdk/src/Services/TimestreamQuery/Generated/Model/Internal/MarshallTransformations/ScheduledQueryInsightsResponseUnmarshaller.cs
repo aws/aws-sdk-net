@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ScheduledQueryRunSummary Object
+    /// Response Unmarshaller for ScheduledQueryInsightsResponse Object
     /// </summary>  
-    public class ScheduledQueryRunSummaryUnmarshaller : IUnmarshaller<ScheduledQueryRunSummary, XmlUnmarshallerContext>, IUnmarshaller<ScheduledQueryRunSummary, JsonUnmarshallerContext>
+    public class ScheduledQueryInsightsResponseUnmarshaller : IUnmarshaller<ScheduledQueryInsightsResponse, XmlUnmarshallerContext>, IUnmarshaller<ScheduledQueryInsightsResponse, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ScheduledQueryRunSummary IUnmarshaller<ScheduledQueryRunSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ScheduledQueryInsightsResponse IUnmarshaller<ScheduledQueryInsightsResponse, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ScheduledQueryRunSummary Unmarshall(JsonUnmarshallerContext context)
+        public ScheduledQueryInsightsResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ScheduledQueryRunSummary unmarshalledObject = new ScheduledQueryRunSummary();
+            ScheduledQueryInsightsResponse unmarshalledObject = new ScheduledQueryInsightsResponse();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,46 +66,34 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ErrorReportLocation", targetDepth))
+                if (context.TestExpression("OutputBytes", targetDepth))
                 {
-                    var unmarshaller = ErrorReportLocationUnmarshaller.Instance;
-                    unmarshalledObject.ErrorReportLocation = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.OutputBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ExecutionStats", targetDepth))
+                if (context.TestExpression("OutputRows", targetDepth))
                 {
-                    var unmarshaller = ExecutionStatsUnmarshaller.Instance;
-                    unmarshalledObject.ExecutionStats = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.OutputRows = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("FailureReason", targetDepth))
+                if (context.TestExpression("QuerySpatialCoverage", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context);
+                    var unmarshaller = QuerySpatialCoverageUnmarshaller.Instance;
+                    unmarshalledObject.QuerySpatialCoverage = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("InvocationTime", targetDepth))
+                if (context.TestExpression("QueryTableCount", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.InvocationTime = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.QueryTableCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("QueryInsightsResponse", targetDepth))
+                if (context.TestExpression("QueryTemporalRange", targetDepth))
                 {
-                    var unmarshaller = ScheduledQueryInsightsResponseUnmarshaller.Instance;
-                    unmarshalledObject.QueryInsightsResponse = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RunStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RunStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TriggerTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.TriggerTime = unmarshaller.Unmarshall(context);
+                    var unmarshaller = QueryTemporalRangeUnmarshaller.Instance;
+                    unmarshalledObject.QueryTemporalRange = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -113,12 +101,12 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
         }
 
 
-        private static ScheduledQueryRunSummaryUnmarshaller _instance = new ScheduledQueryRunSummaryUnmarshaller();        
+        private static ScheduledQueryInsightsResponseUnmarshaller _instance = new ScheduledQueryInsightsResponseUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ScheduledQueryRunSummaryUnmarshaller Instance
+        public static ScheduledQueryInsightsResponseUnmarshaller Instance
         {
             get
             {

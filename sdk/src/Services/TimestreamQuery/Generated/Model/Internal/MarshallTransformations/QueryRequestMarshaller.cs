@@ -92,6 +92,17 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
+                if(publicRequest.IsSetQueryInsights())
+                {
+                    context.Writer.WritePropertyName("QueryInsights");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = QueryInsightsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.QueryInsights, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetQueryString())
                 {
                     context.Writer.WritePropertyName("QueryString");

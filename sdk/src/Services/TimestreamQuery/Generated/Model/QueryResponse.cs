@@ -37,6 +37,7 @@ namespace Amazon.TimestreamQuery.Model
         private List<ColumnInfo> _columnInfo = AWSConfigs.InitializeCollections ? new List<ColumnInfo>() : null;
         private string _nextToken;
         private string _queryId;
+        private QueryInsightsResponse _queryInsightsResponse;
         private QueryStatus _queryStatus;
         private List<Row> _rows = AWSConfigs.InitializeCollections ? new List<Row>() : null;
 
@@ -96,6 +97,25 @@ namespace Amazon.TimestreamQuery.Model
         internal bool IsSetQueryId()
         {
             return this._queryId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueryInsightsResponse. 
+        /// <para>
+        /// Encapsulates <c>QueryInsights</c> containing insights and metrics related to the query
+        /// that you executed.
+        /// </para>
+        /// </summary>
+        public QueryInsightsResponse QueryInsightsResponse
+        {
+            get { return this._queryInsightsResponse; }
+            set { this._queryInsightsResponse = value; }
+        }
+
+        // Check to see if QueryInsightsResponse property is set
+        internal bool IsSetQueryInsightsResponse()
+        {
+            return this._queryInsightsResponse != null;
         }
 
         /// <summary>

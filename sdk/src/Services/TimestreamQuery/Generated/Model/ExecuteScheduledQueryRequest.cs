@@ -31,12 +31,20 @@ namespace Amazon.TimestreamQuery.Model
 {
     /// <summary>
     /// Container for the parameters to the ExecuteScheduledQuery operation.
-    /// You can use this API to run a scheduled query manually.
+    /// You can use this API to run a scheduled query manually. 
+    /// 
+    ///  
+    /// <para>
+    /// If you enabled <c>QueryInsights</c>, this API also returns insights and metrics related
+    /// to the query that you executed as part of an Amazon SNS notification. <c>QueryInsights</c>
+    /// helps with performance tuning of your query.
+    /// </para>
     /// </summary>
     public partial class ExecuteScheduledQueryRequest : AmazonTimestreamQueryRequest
     {
         private string _clientToken;
         private DateTime? _invocationTime;
+        private ScheduledQueryInsights _queryInsights;
         private string _scheduledQueryArn;
 
         /// <summary>
@@ -75,6 +83,30 @@ namespace Amazon.TimestreamQuery.Model
         internal bool IsSetInvocationTime()
         {
             return this._invocationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueryInsights. 
+        /// <para>
+        /// Encapsulates settings for enabling <c>QueryInsights</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Enabling <c>QueryInsights</c> returns insights and metrics as a part of the Amazon
+        /// SNS notification for the query that you executed. You can use <c>QueryInsights</c>
+        /// to tune your query performance and cost.
+        /// </para>
+        /// </summary>
+        public ScheduledQueryInsights QueryInsights
+        {
+            get { return this._queryInsights; }
+            set { this._queryInsights = value; }
+        }
+
+        // Check to see if QueryInsights property is set
+        internal bool IsSetQueryInsights()
+        {
+            return this._queryInsights != null;
         }
 
         /// <summary>
