@@ -1,9 +1,0 @@
-{
-    "core": {
-      "changeLogMessages": [
-        "Updates the documentation for ConnectionLimit."
-      ],
-      "type": "patch",
-      "updateMinimum": false
-    }
-  }

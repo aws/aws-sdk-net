@@ -32,7 +32,7 @@ namespace Amazon.IoTThingsGraph
     public partial class AmazonIoTThingsGraphConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("IoTThingsGraph", "3.7.400.37");
+            InternalSDKUtils.BuildUserAgentString("IoTThingsGraph", "3.7.400.38");
 
         private string _userAgent = UserAgentString;
         ///<summary>

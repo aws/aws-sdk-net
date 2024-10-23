@@ -1,3 +1,21 @@
+### 3.7.912.0 (2024-10-23 18:20 UTC)
+* Bedrock (3.7.408.2)
+	* Doc updates for supporting converse
+* Connect (3.7.407.0)
+	* Amazon Connect Service Feature: Add support to start screen sharing for a web calling contact.
+* EC2 (3.7.412.0)
+	* Amazon EC2 X8g, C8g and M8g instances are powered by AWS Graviton4 processors. X8g provide the lowest cost per GiB of memory among Graviton4 instances. C8g provide the best price performance for compute-intensive workloads. M8g provide the best price performance in for general purpose workloads.
+* MWAA (3.7.401.0)
+	* Introducing InvokeRestApi which allows users to invoke the Apache Airflow REST API on the webserver with the specified inputs.
+* PaymentCryptography (3.7.401.0)
+	* Add support for ECC P-256 and P-384 Keys.
+* PaymentCryptographyData (3.7.402.0)
+	* Add ECDH support on PIN operations.
+* Core 3.7.400.38
+	* Updates the documentation for ConnectionLimit.
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.911.0 (2024-10-22 18:46 UTC)
 * BedrockRuntime (3.7.406.0)
 	* Updating invoke regex to support imported models for converse API
