@@ -62,7 +62,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property InstructSupported. 
         /// <para>
-        /// Specifies if the imported model supports fine tuning.
+        /// Specifies if the imported model supports converse.
         /// </para>
         /// </summary>
         public bool InstructSupported
