@@ -48,6 +48,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetScreenShare())
+            {
+                context.Writer.WritePropertyName("ScreenShare");
+                context.Writer.Write(requestObject.ScreenShare);
+            }
+
             if(requestObject.IsSetVideo())
             {
                 context.Writer.WritePropertyName("Video");

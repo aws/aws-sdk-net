@@ -32,7 +32,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Container for the parameters to the CreateTrafficDistributionGroup operation.
     /// Creates a traffic distribution group given an Amazon Connect instance that has been
-    /// replicated. 
+    /// replicated.
     /// 
     ///  <note> 
     /// <para>

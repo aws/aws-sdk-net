@@ -5439,6 +5439,52 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type ScreenShareCapability.
+    /// </summary>
+    public class ScreenShareCapability : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SEND for ScreenShareCapability
+        /// </summary>
+        public static readonly ScreenShareCapability SEND = new ScreenShareCapability("SEND");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScreenShareCapability(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScreenShareCapability FindValue(string value)
+        {
+            return FindValue<ScreenShareCapability>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScreenShareCapability(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SearchableQueueType.
     /// </summary>
     public class SearchableQueueType : ConstantClass

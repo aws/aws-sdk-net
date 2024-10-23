@@ -897,7 +897,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Associates an agent with a traffic distribution group.
+        /// Associates an agent with a traffic distribution group. This API can be called only
+        /// in the Region where the traffic distribution group is created.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateTrafficDistributionGroupUser service method.</param>
         /// 
@@ -2573,7 +2574,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Creates a traffic distribution group given an Amazon Connect instance that has been
-        /// replicated. 
+        /// replicated.
         /// 
         ///  <note> 
         /// <para>
@@ -6667,7 +6668,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Disassociates an agent from a traffic distribution group.
+        /// Disassociates an agent from a traffic distribution group. This API can be called only
+        /// in the Region where the traffic distribution group is created.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateTrafficDistributionGroupUser service method.</param>
         /// 
@@ -7280,7 +7282,7 @@ namespace Amazon.Connect
         /// the previous version of this API. It has new metrics, offers filtering at a metric
         /// level, and offers the ability to filter and group data by channels, queues, routing
         /// profiles, agents, and agent hierarchy levels. It can retrieve historical data for
-        /// the last 3 months, at varying intervals. 
+        /// the last 3 months, at varying intervals. It does not support agent queues.
         /// </para>
         ///  
         /// <para>
@@ -12287,6 +12289,67 @@ namespace Amazon.Connect
         /// <returns>Returns a  StartOutboundVoiceContactResult from Connect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartOutboundVoiceContact">REST API Reference for StartOutboundVoiceContact Operation</seealso>
         StartOutboundVoiceContactResponse EndStartOutboundVoiceContact(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartScreenSharing
+
+
+        /// <summary>
+        /// Starts screen sharing for a contact. For more information about screen sharing, see
+        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/inapp-calling.html">Set
+        /// up in-app, web, video calling, and screen sharing capabilities</a> in the <i>Amazon
+        /// Connect Administrator Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartScreenSharing service method.</param>
+        /// 
+        /// <returns>The response from the StartScreenSharing service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartScreenSharing">REST API Reference for StartScreenSharing Operation</seealso>
+        StartScreenSharingResponse StartScreenSharing(StartScreenSharingRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartScreenSharing operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartScreenSharing operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartScreenSharing
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartScreenSharing">REST API Reference for StartScreenSharing Operation</seealso>
+        IAsyncResult BeginStartScreenSharing(StartScreenSharingRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartScreenSharing operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartScreenSharing.</param>
+        /// 
+        /// <returns>Returns a  StartScreenSharingResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartScreenSharing">REST API Reference for StartScreenSharing Operation</seealso>
+        StartScreenSharingResponse EndStartScreenSharing(IAsyncResult asyncResult);
 
         #endregion
         
