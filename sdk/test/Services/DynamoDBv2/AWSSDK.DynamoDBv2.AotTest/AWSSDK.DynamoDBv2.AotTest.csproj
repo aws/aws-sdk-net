@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PublishAot>true</PublishAot>
+    <IsTrimmable>false</IsTrimmable>
+    <InvariantGlobalization>true</InvariantGlobalization>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\src\Core\AWSSDK.Core.NetStandard.csproj" />
+    <ProjectReference Include="..\..\..\..\src\Services\DynamoDBv2\AWSSDK.DynamoDBv2.NetStandard.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+	<!--DynamoDbContext is still not AOT-compatible, so this property is needed-->  
+    <TrimmerRootAssembly Include="AWSSDK.DynamoDBv2.AotTest" />
+  </ItemGroup>
+
+</Project>
