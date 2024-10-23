@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.IO;
 using System.Text;
-using ThirdParty.Json.LitJson;
+using System.Text.Json;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
@@ -59,11 +59,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         private static string SerializeEnumerable(IEnumerable<Document> documents, bool prettyPrint)
         {
-            var sb = new StringBuilder();
-            var writer = new JsonWriter(sb);
-            writer.PrettyPrint = prettyPrint;
+            using var stream = new MemoryStream();
+            using var writer = new Utf8JsonWriter(stream, new JsonWriterOptions { 
+                Indented = prettyPrint 
+            });
 
-            writer.WriteArrayStart();
+            writer.WriteStartArray();
             if (documents != null)
             {
                 foreach (var document in documents)
@@ -74,10 +75,10 @@ namespace Amazon.DynamoDBv2.DocumentModel
                     }
                 }
             }
-            writer.WriteArrayEnd();
+            writer.WriteEndArray();
 
-            var jsonText = sb.ToString();
-            return jsonText;
+            writer.Flush();
+            return Encoding.UTF8.GetString(stream.ToArray());
         }
     }
 }
