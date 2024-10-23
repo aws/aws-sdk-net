@@ -102,6 +102,11 @@ namespace Amazon.MWAA
     ///  <a href="https://docs.aws.amazon.com/mwaa/latest/API/API_CreateWebLoginToken.html">CreateWebLoginToken</a>
     /// 
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/mwaa/latest/API/API_InvokeRestApi.html">InvokeRestApi</a>
+    /// 
+    /// </para>
     ///  </li> </ul> </li> </ul> 
     /// <para>
     ///  <b>Regions</b> 
@@ -150,7 +155,7 @@ namespace Amazon.MWAA
 
 
         /// <summary>
-        /// Creates an Amazon Managed Workflows for Apache Airflow (MWAA) environment.
+        /// Creates an Amazon Managed Workflows for Apache Airflow (Amazon MWAA) environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEnvironment service method.</param>
         /// <param name="cancellationToken">
@@ -207,7 +212,7 @@ namespace Amazon.MWAA
 
 
         /// <summary>
-        /// Deletes an Amazon Managed Workflows for Apache Airflow (MWAA) environment.
+        /// Deletes an Amazon Managed Workflows for Apache Airflow (Amazon MWAA) environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironment service method.</param>
         /// <param name="cancellationToken">
@@ -253,6 +258,48 @@ namespace Amazon.MWAA
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/GetEnvironment">REST API Reference for GetEnvironment Operation</seealso>
         Task<GetEnvironmentResponse> GetEnvironmentAsync(GetEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  InvokeRestApi
+
+
+
+        /// <summary>
+        /// Invokes the Apache Airflow REST API on the webserver with the specified inputs. To
+        /// learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-mwaa-apache-airflow-rest-api.html">Using
+        /// the Apache Airflow REST API</a>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InvokeRestApi service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the InvokeRestApi service method, as returned by MWAA.</returns>
+        /// <exception cref="Amazon.MWAA.Model.AccessDeniedException">
+        /// Access to the Apache Airflow Web UI or CLI has been denied due to insufficient permissions.
+        /// To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-policies.html">Accessing
+        /// an Amazon MWAA environment</a>.
+        /// </exception>
+        /// <exception cref="Amazon.MWAA.Model.InternalServerException">
+        /// InternalServerException: An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.MWAA.Model.ResourceNotFoundException">
+        /// ResourceNotFoundException: The resource is not available.
+        /// </exception>
+        /// <exception cref="Amazon.MWAA.Model.RestApiClientException">
+        /// An exception indicating that a client-side error occurred during the Apache Airflow
+        /// REST API call.
+        /// </exception>
+        /// <exception cref="Amazon.MWAA.Model.RestApiServerException">
+        /// An exception indicating that a server-side error occurred during the Apache Airflow
+        /// REST API call.
+        /// </exception>
+        /// <exception cref="Amazon.MWAA.Model.ValidationException">
+        /// ValidationException: The provided input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/InvokeRestApi">REST API Reference for InvokeRestApi Operation</seealso>
+        Task<InvokeRestApiResponse> InvokeRestApiAsync(InvokeRestApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
