@@ -1,0 +1,9 @@
+{
+    "core": {
+      "changeLogMessages": [
+        "Updated EventBridge and SESV2 to use AWSEndpointAuthSchemeSigner to select either SigV4 or SigV4a signing based on endpoint rules."
+      ],
+      "type": "patch",
+      "updateMinimum": true
+    }
+  }

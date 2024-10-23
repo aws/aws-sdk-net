@@ -15,16 +15,14 @@
 
 using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
-using System;
 
 namespace Amazon.Runtime.Internal.Auth
 {
     /// <summary>
     /// AWS4/AWS4a protocol signer for service calls that transmit authorization in the header field "Authorization".
-    /// Specific for EventBridge
+    /// Specific for services that have been allow listed to use signing specified by the endpoint rules AuthScheme.
     /// </summary>
-    [Obsolete("Use AWSEndpointAuthSchemeSigner instead.")]
-    public class EventBridgeSigner : AbstractAWSSigner
+    public class AWSEndpointAuthSchemeSigner : AbstractAWSSigner
     {
         public override ClientProtocol Protocol
         {
@@ -57,7 +55,7 @@ namespace Amazon.Runtime.Internal.Auth
             }
             else
             {
-                throw new AmazonClientException("EventBridge supports only SigV4 and SigV4a signature versions");
+                throw new AmazonClientException($"{request.ServiceName} supports only SigV4 and SigV4a signature versions.");
             }
 
             request.Headers[HeaderKeys.AuthorizationHeader] = signingResult.ForAuthorizationHeader;
