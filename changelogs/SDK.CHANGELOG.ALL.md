@@ -37,7 +37,7 @@
 
 ### 3.7.909.0 (2024-10-18 18:20 UTC)
 * Athena (3.7.402.0)
-	* Removing FEDERATED from Create/List/Delete/GetDataCatalog API
+	* Remove DataCatalog from Create/DeleteDataCatalog. Remove Status, ConnectionType, and Error from DataCatalog and DataCatalogSummary. These were released inadvertently with no functionality. They were not populated or populated with a default value. Code related to these changes can be safely removed.
 * Bedrock (3.7.408.0)
 	* Adding converse support to CMI API's
 * BedrockRuntime (3.7.405.0)
