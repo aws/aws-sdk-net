@@ -66,7 +66,8 @@ namespace Amazon.PaymentCryptographyData.Model
         /// Gets and sets the property EncryptionKeyArn. 
         /// <para>
         /// The <c>keyARN</c> of the PEK that Amazon Web Services Payment Cryptography uses for
-        /// encrypted pin block generation.
+        /// encrypted pin block generation. For ECDH, it is the <c>keyARN</c> of the asymmetric
+        /// ECC key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=70, Max=150)]

@@ -45,6 +45,15 @@ namespace Amazon.PaymentCryptographyData.Model
     /// </para>
     ///  
     /// <para>
+    /// Using ECDH key exchange, you can receive cardholder selectable PINs into Amazon Web
+    /// Services Payment Cryptography. The ECDH derived key protects the incoming PIN block.
+    /// You can also use it for reveal PIN, wherein the generated PIN block is protected by
+    /// the ECDH derived key before transmission from Amazon Web Services Payment Cryptography.
+    /// For more information on establishing ECDH derived keys, see the <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/create-keys.html">Generating
+    /// keys</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
     /// For information about valid keys for this operation, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-validattributes.html">Understanding
     /// key attributes</a> and <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/crypto-ops-validkeys-ops.html">Key
     /// types for specific data operations</a> in the <i>Amazon Web Services Payment Cryptography
@@ -76,6 +85,7 @@ namespace Amazon.PaymentCryptographyData.Model
     public partial class GeneratePinDataRequest : AmazonPaymentCryptographyDataRequest
     {
         private string _encryptionKeyIdentifier;
+        private WrappedKey _encryptionWrappedKey;
         private PinGenerationAttributes _generationAttributes;
         private string _generationKeyIdentifier;
         private PinBlockFormatForPinData _pinBlockFormat;
@@ -86,7 +96,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// Gets and sets the property EncryptionKeyIdentifier. 
         /// <para>
         /// The <c>keyARN</c> of the PEK that Amazon Web Services Payment Cryptography uses to
-        /// encrypt the PIN Block.
+        /// encrypt the PIN Block. For ECDH, it is the <c>keyARN</c> of the asymmetric ECC key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=7, Max=322)]
@@ -100,6 +110,21 @@ namespace Amazon.PaymentCryptographyData.Model
         internal bool IsSetEncryptionKeyIdentifier()
         {
             return this._encryptionKeyIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionWrappedKey.
+        /// </summary>
+        public WrappedKey EncryptionWrappedKey
+        {
+            get { return this._encryptionWrappedKey; }
+            set { this._encryptionWrappedKey = value; }
+        }
+
+        // Check to see if EncryptionWrappedKey property is set
+        internal bool IsSetEncryptionWrappedKey()
+        {
+            return this._encryptionWrappedKey != null;
         }
 
         /// <summary>

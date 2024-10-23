@@ -74,6 +74,7 @@ namespace Amazon.PaymentCryptographyData.Model
         private DukptAttributes _dukptAttributes;
         private string _encryptedPinBlock;
         private string _encryptionKeyIdentifier;
+        private WrappedKey _encryptionWrappedKey;
         private PinBlockFormatForPinData _pinBlockFormat;
         private int? _pinDataLength;
         private string _primaryAccountNumber;
@@ -135,6 +136,21 @@ namespace Amazon.PaymentCryptographyData.Model
         internal bool IsSetEncryptionKeyIdentifier()
         {
             return this._encryptionKeyIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionWrappedKey.
+        /// </summary>
+        public WrappedKey EncryptionWrappedKey
+        {
+            get { return this._encryptionWrappedKey; }
+            set { this._encryptionWrappedKey = value; }
+        }
+
+        // Check to see if EncryptionWrappedKey property is set
+        internal bool IsSetEncryptionWrappedKey()
+        {
+            return this._encryptionWrappedKey != null;
         }
 
         /// <summary>

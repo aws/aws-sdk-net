@@ -415,6 +415,110 @@ namespace Amazon.PaymentCryptographyData
 
 
     /// <summary>
+    /// Constants used for properties of type KeyDerivationFunction.
+    /// </summary>
+    public class KeyDerivationFunction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ANSI_X963 for KeyDerivationFunction
+        /// </summary>
+        public static readonly KeyDerivationFunction ANSI_X963 = new KeyDerivationFunction("ANSI_X963");
+        /// <summary>
+        /// Constant NIST_SP800 for KeyDerivationFunction
+        /// </summary>
+        public static readonly KeyDerivationFunction NIST_SP800 = new KeyDerivationFunction("NIST_SP800");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public KeyDerivationFunction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KeyDerivationFunction FindValue(string value)
+        {
+            return FindValue<KeyDerivationFunction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KeyDerivationFunction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type KeyDerivationHashAlgorithm.
+    /// </summary>
+    public class KeyDerivationHashAlgorithm : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SHA_256 for KeyDerivationHashAlgorithm
+        /// </summary>
+        public static readonly KeyDerivationHashAlgorithm SHA_256 = new KeyDerivationHashAlgorithm("SHA_256");
+        /// <summary>
+        /// Constant SHA_384 for KeyDerivationHashAlgorithm
+        /// </summary>
+        public static readonly KeyDerivationHashAlgorithm SHA_384 = new KeyDerivationHashAlgorithm("SHA_384");
+        /// <summary>
+        /// Constant SHA_512 for KeyDerivationHashAlgorithm
+        /// </summary>
+        public static readonly KeyDerivationHashAlgorithm SHA_512 = new KeyDerivationHashAlgorithm("SHA_512");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public KeyDerivationHashAlgorithm(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static KeyDerivationHashAlgorithm FindValue(string value)
+        {
+            return FindValue<KeyDerivationHashAlgorithm>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator KeyDerivationHashAlgorithm(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MacAlgorithm.
     /// </summary>
     public class MacAlgorithm : ConstantClass
@@ -660,6 +764,10 @@ namespace Amazon.PaymentCryptographyData
         /// Constant ISO_FORMAT_3 for PinBlockFormatForPinData
         /// </summary>
         public static readonly PinBlockFormatForPinData ISO_FORMAT_3 = new PinBlockFormatForPinData("ISO_FORMAT_3");
+        /// <summary>
+        /// Constant ISO_FORMAT_4 for PinBlockFormatForPinData
+        /// </summary>
+        public static readonly PinBlockFormatForPinData ISO_FORMAT_4 = new PinBlockFormatForPinData("ISO_FORMAT_4");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -852,6 +960,68 @@ namespace Amazon.PaymentCryptographyData
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SessionKeyDerivationMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SymmetricKeyAlgorithm.
+    /// </summary>
+    public class SymmetricKeyAlgorithm : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AES_128 for SymmetricKeyAlgorithm
+        /// </summary>
+        public static readonly SymmetricKeyAlgorithm AES_128 = new SymmetricKeyAlgorithm("AES_128");
+        /// <summary>
+        /// Constant AES_192 for SymmetricKeyAlgorithm
+        /// </summary>
+        public static readonly SymmetricKeyAlgorithm AES_192 = new SymmetricKeyAlgorithm("AES_192");
+        /// <summary>
+        /// Constant AES_256 for SymmetricKeyAlgorithm
+        /// </summary>
+        public static readonly SymmetricKeyAlgorithm AES_256 = new SymmetricKeyAlgorithm("AES_256");
+        /// <summary>
+        /// Constant TDES_2KEY for SymmetricKeyAlgorithm
+        /// </summary>
+        public static readonly SymmetricKeyAlgorithm TDES_2KEY = new SymmetricKeyAlgorithm("TDES_2KEY");
+        /// <summary>
+        /// Constant TDES_3KEY for SymmetricKeyAlgorithm
+        /// </summary>
+        public static readonly SymmetricKeyAlgorithm TDES_3KEY = new SymmetricKeyAlgorithm("TDES_3KEY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SymmetricKeyAlgorithm(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SymmetricKeyAlgorithm FindValue(string value)
+        {
+            return FindValue<SymmetricKeyAlgorithm>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SymmetricKeyAlgorithm(string value)
         {
             return FindValue(value);
         }
