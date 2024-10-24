@@ -1,3 +1,20 @@
+### 3.7.913.0 (2024-10-24 18:20 UTC)
+* AppConfig (3.7.402.0)
+	* This release improves deployment safety by granting customers the ability to REVERT completed deployments, to the last known good state.In the StopDeployment API revert case the status of a COMPLETE deployment will be REVERTED. AppConfig only allows a revert within 72 hours of deployment completion.
+* EC2 (3.7.413.0)
+	* This release includes a new API to describe some details of the Amazon Machine Images (AMIs) that were used to launch EC2 instances, even if those AMIs are no longer available for use.
+* ECS (3.7.403.0)
+	* This release adds support for EBS volumes attached to Amazon ECS Windows tasks running on EC2 instances.
+* NimbleStudio (Removed)
+	* Nimble Studio has been removed from the SDK because it has been discontinued.
+* PCS (3.7.400.27)
+	* Documentation update: added the default value of the Slurm configuration parameter scaleDownIdleTimeInSeconds to its description.
+* QBusiness (3.7.403.0)
+	* Add a new field in chat response. This field can be used to support nested schemas in array fields
+* Core 3.7.400.39
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.912.0 (2024-10-23 18:20 UTC)
 * Bedrock (3.7.408.2)
 	* Doc updates for supporting converse
