@@ -30,5 +30,45 @@ namespace ServiceClientGenerator.Generators.AuthResolvers
         /// </summary>
         private IEnumerable<Operation> GetOperationsWithAuthSchemes() => 
             Config.ServiceModel.Operations.Where(o => o.AuthSchemes != null);
+
+        /// <summary>
+        /// If the provided authentication schemes are known, we'll use one of the static lists defined in the Core project.
+        /// </summary>
+        private bool IsKnownSchemeList(IEnumerable<string> authSchemes, out string content)
+        {
+            content = string.Empty;
+
+            if (Enumerable.SequenceEqual(authSchemes, AuthenticationScheme.SigV4Schemes))
+            {
+                content = "AuthSchemeOption.DEFAULT_SIGV4";
+                return true;
+            }
+
+            if (Enumerable.SequenceEqual(authSchemes, AuthenticationScheme.SigV4ASchemes))
+            {
+                content = "AuthSchemeOption.DEFAULT_SIGV4A";
+                return true;
+            }
+
+            if (Enumerable.SequenceEqual(authSchemes, AuthenticationScheme.SigV4AndSigV4ASchemes))
+            {
+                content = "AuthSchemeOption.DEFAULT_SIGV4_SIGV4A";
+                return true;
+            }
+
+            if (Enumerable.SequenceEqual(authSchemes, AuthenticationScheme.BearerSchemes))
+            {
+                content = "AuthSchemeOption.DEFAULT_BEARER";
+                return true;
+            }
+
+            if (Enumerable.SequenceEqual(authSchemes, AuthenticationScheme.NoAuthSchemes))
+            {
+                content = "AuthSchemeOption.DEFAULT_NOAUTH";
+                return true;
+            }
+
+            return false;
+        }
     }
 }

@@ -45,7 +45,7 @@ namespace Amazon.AutoScaling.Internal
         /// <summary>
         /// Auth scheme resolver for AutoScaling.
         /// </summary>
-        public AmazonAutoScalingAuthSchemeResolver AuthSchemeResolver { get; set; } = new();
+        public AmazonAutoScalingAuthSchemeResolver AuthSchemeResolver { get; } = new();
 
         /// <inheritdoc/>
         protected override List<IAuthSchemeOption> ResolveAuthOptions(IRequestContext requestContext)
@@ -66,17 +66,12 @@ namespace Amazon.AutoScaling.Internal
         /// <inheritdoc />
         public List<IAuthSchemeOption> ResolveAuthScheme(AmazonAutoScalingAuthSchemeParameters authParameters)
         {
-            var options = new List<IAuthSchemeOption>();
-
             switch (authParameters.Operation)
             {
                 default:
                     // Default for the service, applies to all remaining operations.
-                    options.Add(new AuthSchemeOption { SchemeId = "aws.auth#sigv4" });
-                    break;
+                    return AuthSchemeOption.DEFAULT_SIGV4;
             }
-
-            return options;
         }
     }
 }

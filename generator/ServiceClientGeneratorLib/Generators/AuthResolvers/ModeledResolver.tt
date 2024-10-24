@@ -38,7 +38,7 @@ namespace <#=this.Config.Namespace#>.Internal
         /// <summary>
         /// Auth scheme resolver for AutoScaling.
         /// </summary>
-        public Amazon<#=this.Config.ClassName#>AuthSchemeResolver AuthSchemeResolver { get; set; } = new();
+        public Amazon<#=this.Config.ClassName#>AuthSchemeResolver AuthSchemeResolver { get; } = new();
 
         /// <inheritdoc/>
         protected override List<IAuthSchemeOption> ResolveAuthOptions(IRequestContext requestContext)
@@ -61,26 +61,33 @@ namespace <#=this.Config.Namespace#>.Internal
         /// <inheritdoc />
         public List<IAuthSchemeOption> ResolveAuthScheme(Amazon<#=this.Config.ClassName#>AuthSchemeParameters authParameters)
         {
-            var options = new List<IAuthSchemeOption>();
-
             switch (authParameters.Operation)
             {
 <# foreach (var operation in GetOperationsWithAuthSchemes()) { #>
 				case "<#=operation.Name#>Request":
+<# if (IsKnownSchemeList(operation.AuthSchemes, out string operationSchemesContent)) { #>
+                    return <#=operationSchemesContent#>;
+<# } else { #>
+                    return new List<IAuthSchemeOption> 
+                    {
 <# foreach (var operationScheme in operation.AuthSchemes) { #>
-                    options.Add(new AuthSchemeOption { SchemeId = "<#=operationScheme#>" });
+                        new AuthSchemeOption { SchemeId = "<#=operationScheme#>" },
 <# } #>
-                    break;
-<# } #>
+                    };
+<# }} #>
                 default:
                     // Default for the service, applies to all remaining operations.
+<# if (IsKnownSchemeList(GetServiceAuthSchemes(), out string serviceSchemesContent)) { #>
+                    return <#=serviceSchemesContent#>;
+<# } else { #>
+                    return new List<IAuthSchemeOption> 
+                    {
 <# foreach (var serviceScheme in GetServiceAuthSchemes()) { #>
-                    options.Add(new AuthSchemeOption { SchemeId = "<#=serviceScheme#>" });
+    		            new AuthSchemeOption { SchemeId = "<#=serviceScheme#>" },
 <# } #>
-                    break;
+                    };
+<# } #>
             }
-
-            return options;
         }
     }
 }
