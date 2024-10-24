@@ -291,11 +291,6 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you do not choose a locale, resources in Regions others than the IPAM's home region
-        /// cannot use CIDRs from this pool.
-        /// </para>
-        ///  
-        /// <para>
         /// Possible values: Any Amazon Web Services Region or supported Amazon Web Services Local
         /// Zone. Default is <c>none</c> and means any locale.
         /// </para>
@@ -339,8 +334,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PubliclyAdvertisable. 
         /// <para>
-        /// Determines if the pool is publicly advertisable. This option is not available for
-        /// pools with AddressFamily set to <c>ipv4</c>.
+        /// Determines if the pool is publicly advertisable. The request can only contain <c>PubliclyAdvertisable</c>
+        /// if <c>AddressFamily</c> is <c>ipv6</c> and <c>PublicIpSource</c> is <c>byoip</c>.
         /// </para>
         /// </summary>
         public bool PubliclyAdvertisable

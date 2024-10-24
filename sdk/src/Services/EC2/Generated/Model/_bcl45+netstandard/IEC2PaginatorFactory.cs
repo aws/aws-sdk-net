@@ -197,6 +197,11 @@ namespace Amazon.EC2.Model
         IDescribeInstanceEventWindowsPaginator DescribeInstanceEventWindows(DescribeInstanceEventWindowsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeInstanceImageMetadata operation
+        ///</summary>
+        IDescribeInstanceImageMetadataPaginator DescribeInstanceImageMetadata(DescribeInstanceImageMetadataRequest request);
+
+        /// <summary>
         /// Paginator for DescribeInstances operation
         ///</summary>
         IDescribeInstancesPaginator DescribeInstances(DescribeInstancesRequest request);

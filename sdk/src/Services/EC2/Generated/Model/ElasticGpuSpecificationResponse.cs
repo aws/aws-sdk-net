@@ -30,14 +30,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <note> 
+    /// Deprecated.
+    /// 
+    ///  <note> 
     /// <para>
-    /// Amazon Elastic Graphics reached end of life on January 8, 2024.
+    /// Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that
+    /// require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or
+    /// G5 instances.
     /// </para>
-    ///  </note> 
-    /// <para>
-    /// Describes an elastic GPU.
-    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ElasticGpuSpecificationResponse
     {
@@ -46,8 +47,15 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The elastic GPU type.
+        /// Deprecated.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that
+        /// require graphics acceleration, we recommend that you use Amazon EC2 G4ad, G4dn, or
+        /// G5 instances.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string Type
         {

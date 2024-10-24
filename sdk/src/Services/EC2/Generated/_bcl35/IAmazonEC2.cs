@@ -13532,6 +13532,78 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeInstanceImageMetadata
+
+
+        /// <summary>
+        /// Describes the AMI that was used to launch an instance, even if the AMI is deprecated,
+        /// deregistered, or made private (no longer public or shared with your account).
+        /// 
+        ///  
+        /// <para>
+        /// If you specify instance IDs, the output includes information for only the specified
+        /// instances. If you specify filters, the output includes information for only those
+        /// instances that meet the filter criteria. If you do not specify instance IDs or filters,
+        /// the output includes information for all instances, which can affect performance.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify an instance ID that is not valid, an instance that doesn't exist, or
+        /// an instance that you do not own, an error (<c>InvalidInstanceID.NotFound</c>) is returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// Recently terminated instances might appear in the returned results. This interval
+        /// is usually less than one hour.
+        /// </para>
+        ///  
+        /// <para>
+        /// In the rare case where an Availability Zone is experiencing a service disruption and
+        /// you specify instance IDs that are in the affected Availability Zone, or do not specify
+        /// any instance IDs at all, the call fails. If you specify only instance IDs that are
+        /// in an unaffected Availability Zone, the call works normally.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary. Applications should not assume the elements appear in a particular order.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceImageMetadata service method.</param>
+        /// 
+        /// <returns>The response from the DescribeInstanceImageMetadata service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceImageMetadata">REST API Reference for DescribeInstanceImageMetadata Operation</seealso>
+        DescribeInstanceImageMetadataResponse DescribeInstanceImageMetadata(DescribeInstanceImageMetadataRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeInstanceImageMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceImageMetadata operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeInstanceImageMetadata
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceImageMetadata">REST API Reference for DescribeInstanceImageMetadata Operation</seealso>
+        IAsyncResult BeginDescribeInstanceImageMetadata(DescribeInstanceImageMetadataRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeInstanceImageMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeInstanceImageMetadata.</param>
+        /// 
+        /// <returns>Returns a  DescribeInstanceImageMetadataResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceImageMetadata">REST API Reference for DescribeInstanceImageMetadata Operation</seealso>
+        DescribeInstanceImageMetadataResponse EndDescribeInstanceImageMetadata(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeInstances
 
 

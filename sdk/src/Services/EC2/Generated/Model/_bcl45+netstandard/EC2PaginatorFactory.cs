@@ -309,6 +309,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeInstanceImageMetadata operation
+        ///</summary>
+        public IDescribeInstanceImageMetadataPaginator DescribeInstanceImageMetadata(DescribeInstanceImageMetadataRequest request) 
+        {
+            return new DescribeInstanceImageMetadataPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeInstances operation
         ///</summary>
         public IDescribeInstancesPaginator DescribeInstances(DescribeInstancesRequest request) 

@@ -36,7 +36,7 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  </note> 
     /// <para>
-    ///  Describes an elastic inference accelerator.
+    ///  Describes an elastic inference accelerator. 
     /// </para>
     /// </summary>
     public partial class LaunchTemplateElasticInferenceAccelerator
