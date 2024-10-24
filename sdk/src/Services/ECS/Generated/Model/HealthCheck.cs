@@ -231,7 +231,7 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// An exit code of 0 indicates success, and non-zero exit code indicates failure. For
-        /// more information, see <c>HealthCheck</c> in the docker container create command
+        /// more information, see <c>HealthCheck</c> in the docker container create command.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

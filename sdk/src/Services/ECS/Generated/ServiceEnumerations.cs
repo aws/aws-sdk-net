@@ -3045,6 +3045,10 @@ namespace Amazon.ECS
         /// </summary>
         public static readonly TaskFilesystemType Ext4 = new TaskFilesystemType("ext4");
         /// <summary>
+        /// Constant Ntfs for TaskFilesystemType
+        /// </summary>
+        public static readonly TaskFilesystemType Ntfs = new TaskFilesystemType("ntfs");
+        /// <summary>
         /// Constant Xfs for TaskFilesystemType
         /// </summary>
         public static readonly TaskFilesystemType Xfs = new TaskFilesystemType("xfs");
