@@ -40,7 +40,11 @@ namespace Amazon.PCS.Model
         /// <summary>
         /// Gets and sets the property ScaleDownIdleTimeInSeconds. 
         /// <para>
-        /// The time before an idle node is scaled down.
+        /// The time (in seconds) before an idle node is scaled down.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <c>600</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
