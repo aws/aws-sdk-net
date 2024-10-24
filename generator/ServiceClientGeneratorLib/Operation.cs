@@ -1072,5 +1072,28 @@ namespace ServiceClientGenerator
             }
         }
 
+        /// <summary>
+        /// List of authentication schemes supported by this operation.
+        /// </summary>
+        public IEnumerable<string> AuthSchemes
+        {
+            get
+            {
+                var schemes = this.data[ServiceModel.AuthSchemeKey];
+                if (schemes != null && schemes.IsArray)
+                {
+                    return schemes.Cast<JsonData>().Select(x => x.ToString());
+                }
+
+                // Not all service models have been updated to include the auth key yet, so we'll check
+                // the auth type property as a fallback.
+                if (AuthType != null && AuthType == OperationAuthType.None)
+                {
+                    return new List<string> { AuthenticationScheme.NoAuth };
+                }
+
+                return null;
+            }
+        }
     }
 }
