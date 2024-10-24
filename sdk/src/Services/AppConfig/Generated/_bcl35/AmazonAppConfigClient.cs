@@ -2930,7 +2930,10 @@ namespace Amazon.AppConfig
 
         /// <summary>
         /// Stops a deployment. This API action works only on deployments that have a status of
-        /// <c>DEPLOYING</c>. This action moves the deployment to a status of <c>ROLLED_BACK</c>.
+        /// <c>DEPLOYING</c>, unless an <c>AllowRevert</c> parameter is supplied. If the <c>AllowRevert</c>
+        /// parameter is supplied, the status of an in-progress deployment will be <c>ROLLED_BACK</c>.
+        /// The status of a completed deployment will be <c>REVERTED</c>. AppConfig only allows
+        /// a revert within 72 hours of deployment completion.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopDeployment service method.</param>
         /// 
