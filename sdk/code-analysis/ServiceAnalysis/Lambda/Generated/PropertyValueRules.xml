@@ -1849,4 +1849,16 @@
     <max>200</max>
     <pattern>[a-zA-Z0-9-\/*:_+=.@-]*</pattern>
   </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.TagsError.ErrorCode</property>
+    <min>10</min>
+    <max>21</max>
+    <pattern>[A-Za-z]+Exception</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.TagsError.Message</property>
+    <min>84</min>
+    <max>1000</max>
+    <pattern>^.*$</pattern>
+  </property-value-rule>
 </property-value-rules>
