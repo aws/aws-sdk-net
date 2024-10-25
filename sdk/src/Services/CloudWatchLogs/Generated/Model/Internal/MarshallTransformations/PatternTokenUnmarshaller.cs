@@ -78,6 +78,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     unmarshalledObject.Enumerations = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("inferredTokenName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InferredTokenName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("isDynamic", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

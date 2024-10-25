@@ -43,7 +43,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  
     /// <para>
-    /// You can't update an existing delivery. You can only create and delete deliveries.
+    /// To update an existing delivery configuration, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UpdateDeliveryConfiguration.html">UpdateDeliveryConfiguration</a>.
     /// </para>
     /// </summary>
     public partial class Delivery
