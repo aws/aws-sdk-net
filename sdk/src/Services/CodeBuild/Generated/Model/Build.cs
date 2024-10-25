@@ -36,6 +36,7 @@ namespace Amazon.CodeBuild.Model
     {
         private string _arn;
         private BuildArtifacts _artifacts;
+        private AutoRetryConfig _autoRetryConfig;
         private string _buildBatchArn;
         private bool? _buildComplete;
         private long? _buildNumber;
@@ -102,6 +103,24 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetArtifacts()
         {
             return this._artifacts != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoRetryConfig. 
+        /// <para>
+        /// Information about the auto-retry configuration for the build.
+        /// </para>
+        /// </summary>
+        public AutoRetryConfig AutoRetryConfig
+        {
+            get { return this._autoRetryConfig; }
+            set { this._autoRetryConfig = value; }
+        }
+
+        // Check to see if AutoRetryConfig property is set
+        internal bool IsSetAutoRetryConfig()
+        {
+            return this._autoRetryConfig != null;
         }
 
         /// <summary>
