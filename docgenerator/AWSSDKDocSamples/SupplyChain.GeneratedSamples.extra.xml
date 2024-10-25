@@ -325,6 +325,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.GetInstance(Amazon.SupplyChain.Model.GetInstanceRequest)" />
+            <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.GetInstance(Amazon.SupplyChain.Model.GetInstanceRequest)" />
+            <member name="T:Amazon.SupplyChain.Model.GetInstanceRequest" />
+            <member name="T:Amazon.SupplyChain.Model.GetInstanceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Successful GetInstance request with error message"
+                    source=".\AWSSDKDocSamples\SupplyChain\SupplyChain.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.SupplyChain.IAmazonSupplyChain.ListDataIntegrationFlows(Amazon.SupplyChain.Model.ListDataIntegrationFlowsRequest)" />
             <member name="M:Amazon.SupplyChain.AmazonSupplyChainClient.ListDataIntegrationFlows(Amazon.SupplyChain.Model.ListDataIntegrationFlowsRequest)" />
             <member name="T:Amazon.SupplyChain.Model.ListDataIntegrationFlowsRequest" />

@@ -31,7 +31,8 @@ namespace Amazon.SupplyChain.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDataIntegrationFlow operation.
-    /// Delete the DataIntegrationFlow.
+    /// Enable you to programmatically delete an existing data pipeline for the provided Amazon
+    /// Web Services Supply Chain instance and DataIntegrationFlow name.
     /// </summary>
     public partial class DeleteDataIntegrationFlowRequest : AmazonSupplyChainRequest
     {

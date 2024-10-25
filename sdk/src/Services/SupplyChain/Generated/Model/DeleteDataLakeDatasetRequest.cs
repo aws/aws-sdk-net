@@ -31,7 +31,9 @@ namespace Amazon.SupplyChain.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDataLakeDataset operation.
-    /// Delete a data lake dataset.
+    /// Enables you to programmatically delete an Amazon Web Services Supply Chain data lake
+    /// dataset. Developers can delete the existing datasets for a given instance ID, namespace,
+    /// and instance name.
     /// </summary>
     public partial class DeleteDataLakeDatasetRequest : AmazonSupplyChainRequest
     {

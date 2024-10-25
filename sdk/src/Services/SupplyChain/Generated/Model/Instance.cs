@@ -36,6 +36,7 @@ namespace Amazon.SupplyChain.Model
     {
         private string _awsAccountId;
         private DateTime? _createdTime;
+        private string _errorMessage;
         private string _instanceDescription;
         private string _instanceId;
         private string _instanceName;
@@ -80,6 +81,26 @@ namespace Amazon.SupplyChain.Model
         internal bool IsSetCreatedTime()
         {
             return this._createdTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ErrorMessage. 
+        /// <para>
+        /// The Amazon Web Services Supply Chain instance error message. If the instance results
+        /// in an unhealthy state, customers need to check the error message, delete the current
+        /// instance, and recreate a new one based on the mitigation from the error message.
+        /// </para>
+        /// </summary>
+        public string ErrorMessage
+        {
+            get { return this._errorMessage; }
+            set { this._errorMessage = value; }
+        }
+
+        // Check to see if ErrorMessage property is set
+        internal bool IsSetErrorMessage()
+        {
+            return this._errorMessage != null;
         }
 
         /// <summary>

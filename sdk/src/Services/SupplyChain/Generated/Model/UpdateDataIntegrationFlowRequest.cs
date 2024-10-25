@@ -31,7 +31,10 @@ namespace Amazon.SupplyChain.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDataIntegrationFlow operation.
-    /// Update the DataIntegrationFlow.
+    /// Enables you to programmatically update an existing data pipeline to ingest data from
+    /// the source systems such as, Amazon S3 buckets, to a predefined Amazon Web Services
+    /// Supply Chain dataset (product, inbound_order) or a temporary dataset along with the
+    /// data transformation query provided with the API.
     /// </summary>
     public partial class UpdateDataIntegrationFlowRequest : AmazonSupplyChainRequest
     {

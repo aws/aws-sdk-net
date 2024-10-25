@@ -376,6 +376,21 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
             #endregion
         }
 
+        public void SupplyChainGetInstance()
+        {
+            #region example-2
+
+            var client = new AmazonSupplyChainClient();
+            var response = client.GetInstance(new GetInstanceRequest 
+            {
+                InstanceId = "9e193580-7cc5-45f7-9609-c43ba0ada793"
+            });
+
+            Instance instance = response.Instance;
+
+            #endregion
+        }
+
         public void SupplyChainListDataIntegrationFlows()
         {
             #region example-1

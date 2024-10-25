@@ -31,7 +31,8 @@ namespace Amazon.SupplyChain.Model
 {
     /// <summary>
     /// Container for the parameters to the GetInstance operation.
-    /// Get the AWS Supply Chain instance details.
+    /// Enables you to programmatically retrieve the information related to an Amazon Web
+    /// Services Supply Chain instance ID.
     /// </summary>
     public partial class GetInstanceRequest : AmazonSupplyChainRequest
     {

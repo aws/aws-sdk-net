@@ -31,7 +31,8 @@ namespace Amazon.SupplyChain.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDataIntegrationFlow operation.
-    /// View the DataIntegrationFlow details.
+    /// Enables you to programmatically view a specific data pipeline for the provided Amazon
+    /// Web Services Supply Chain instance and DataIntegrationFlow name.
     /// </summary>
     public partial class GetDataIntegrationFlowRequest : AmazonSupplyChainRequest
     {

@@ -31,8 +31,10 @@ namespace Amazon.SupplyChain.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDataIntegrationFlow operation.
-    /// Create DataIntegrationFlow to map one or more different sources to one target using
-    /// the SQL transformation query.
+    /// Enables you to programmatically create a data pipeline to ingest data from source
+    /// systems such as Amazon S3 buckets, to a predefined Amazon Web Services Supply Chain
+    /// dataset (product, inbound_order) or a temporary dataset along with the data transformation
+    /// query provided with the API.
     /// </summary>
     public partial class CreateDataIntegrationFlowRequest : AmazonSupplyChainRequest
     {

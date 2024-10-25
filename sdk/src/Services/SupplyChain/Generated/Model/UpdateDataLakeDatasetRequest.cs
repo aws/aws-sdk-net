@@ -31,7 +31,9 @@ namespace Amazon.SupplyChain.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDataLakeDataset operation.
-    /// Update a data lake dataset.
+    /// Enables you to programmatically update an Amazon Web Services Supply Chain data lake
+    /// dataset. Developers can update the description of a data lake dataset for a given
+    /// instance ID, namespace, and dataset name.
     /// </summary>
     public partial class UpdateDataLakeDatasetRequest : AmazonSupplyChainRequest
     {

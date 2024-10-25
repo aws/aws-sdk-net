@@ -31,7 +31,8 @@ namespace Amazon.SupplyChain.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDataIntegrationFlows operation.
-    /// Lists all the DataIntegrationFlows in a paginated way.
+    /// Enables you to programmatically list all data pipelines for the provided Amazon Web
+    /// Services Supply Chain instance.
     /// </summary>
     public partial class ListDataIntegrationFlowsRequest : AmazonSupplyChainRequest
     {
