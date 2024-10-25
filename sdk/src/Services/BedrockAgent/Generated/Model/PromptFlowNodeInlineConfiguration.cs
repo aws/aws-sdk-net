@@ -34,10 +34,31 @@ namespace Amazon.BedrockAgent.Model
     /// </summary>
     public partial class PromptFlowNodeInlineConfiguration
     {
+        private Amazon.Runtime.Documents.Document _additionalModelRequestFields;
         private PromptInferenceConfiguration _inferenceConfiguration;
         private string _modelId;
         private PromptTemplateConfiguration _templateConfiguration;
         private PromptTemplateType _templateType;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalModelRequestFields. 
+        /// <para>
+        /// Contains model-specific inference configurations that aren't in the <c>inferenceConfiguration</c>
+        /// field. To see model-specific inference parameters, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference
+        /// request parameters and response fields for foundation models</a>.
+        /// </para>
+        /// </summary>
+        public Amazon.Runtime.Documents.Document AdditionalModelRequestFields
+        {
+            get { return this._additionalModelRequestFields; }
+            set { this._additionalModelRequestFields = value; }
+        }
+
+        // Check to see if AdditionalModelRequestFields property is set
+        internal bool IsSetAdditionalModelRequestFields()
+        {
+            return !this._additionalModelRequestFields.IsNull();
+        }
 
         /// <summary>
         /// Gets and sets the property InferenceConfiguration. 
