@@ -1,3 +1,19 @@
+### 3.7.914.0 (2024-10-25 18:21 UTC)
+* BedrockAgent (3.7.407.0)
+	* Add support of new model types for Bedrock Agents, Adding inference profile support for Flows and Prompt Management, Adding new field to configure additional inference configurations for Flows and Prompt Management
+* CloudWatchLogs (3.7.404.0)
+	* Adding inferred token name for dynamic tokens in Anomalies.
+* CodeBuild (3.7.405.0)
+	* AWS CodeBuild now supports automatically retrying failed builds
+* Lambda (3.7.406.0)
+	* Add TagsError field in Lambda GetFunctionResponse. The TagsError field contains details related to errors retrieving tags.
+* SupplyChain (3.7.403.0)
+	* API doc updates, and also support showing error message on a failed instance
+* Core 3.7.400.40
+	* Updated EventBridge and SESV2 to use AWSEndpointAuthSchemeSigner to select either SigV4 or SigV4a signing based on endpoint rules.
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.913.0 (2024-10-24 18:20 UTC)
 * AppConfig (3.7.402.0)
 	* This release improves deployment safety by granting customers the ability to REVERT completed deployments, to the last known good state.In the StopDeployment API revert case the status of a COMPLETE deployment will be REVERTED. AppConfig only allows a revert within 72 hours of deployment completion.

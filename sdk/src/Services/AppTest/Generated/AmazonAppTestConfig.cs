@@ -32,7 +32,7 @@ namespace Amazon.AppTest
     public partial class AmazonAppTestConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("AppTest", "3.7.400.39");
+            InternalSDKUtils.BuildUserAgentString("AppTest", "3.7.400.40");
 
         private string _userAgent = UserAgentString;
         ///<summary>
