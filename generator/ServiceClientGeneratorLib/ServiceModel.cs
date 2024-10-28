@@ -88,6 +88,9 @@ namespace ServiceClientGenerator
         // client context params
         public const string ClientContextParams = "clientContextParams";
 
+        // authentication schemes
+        public const string AuthSchemeKey = "auth";
+
         /// <summary>
         /// This model contains information about customizations needed during the generation process
         /// </summary>
@@ -575,6 +578,36 @@ namespace ServiceClientGenerator
         public string APIVersion
         {
             get { return this.DocumentRoot[MetadataKey][ApiVersionKey].ToString(); }
+        }
+
+        /// <summary>
+        /// List of authentication schemes supported by the service.
+        /// </summary>
+        public IEnumerable<string> AuthSchemes
+        {
+            get
+            {
+                var schemes = this._metadata[AuthSchemeKey];
+                if (schemes != null && schemes.IsArray)
+                {
+                    return schemes.Cast<JsonData>().Select(x => x.ToString());
+                }
+
+                // Not all service models have been updated to include the auth key yet, so we'll check
+                // the signature version property as a fallback.
+                if (!string.IsNullOrEmpty(SignatureVersion))
+                {
+                    switch (SignatureVersion)
+                    {
+                        case "bearer":
+                            return new List<string> { AuthenticationScheme.Bearer };
+                        default:
+                            return new List<string> { AuthenticationScheme.SigV4 };
+                    }
+                }
+
+                return null;   
+            }
         }
 
         /// <summary>
