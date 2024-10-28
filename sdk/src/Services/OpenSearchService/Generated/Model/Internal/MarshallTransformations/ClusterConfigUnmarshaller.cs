@@ -108,6 +108,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     unmarshalledObject.MultiAZWithStandbyEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("NodeOptions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<NodeOption, NodeOptionUnmarshaller>(NodeOptionUnmarshaller.Instance);
+                    unmarshalledObject.NodeOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("WarmCount", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
