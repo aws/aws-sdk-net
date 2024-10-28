@@ -226,6 +226,11 @@ namespace Amazon.StorageGateway.Model
         ///  <c>FileShareName</c> must be set if an S3 prefix name is set in <c>LocationARN</c>,
         /// or if an access point or access point alias is used.
         /// </para>
+        ///  
+        /// <para>
+        /// A valid NFS file share name can only contain the following characters: <c>a</c>-<c>z</c>,
+        /// <c>A</c>-<c>Z</c>, <c>0</c>-<c>9</c>, <c>-</c>, <c>.</c>, and <c>_</c>.
+        /// </para>
         ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

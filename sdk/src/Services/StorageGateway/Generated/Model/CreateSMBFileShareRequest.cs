@@ -322,6 +322,11 @@ namespace Amazon.StorageGateway.Model
         ///  <c>FileShareName</c> must be set if an S3 prefix name is set in <c>LocationARN</c>,
         /// or if an access point or access point alias is used.
         /// </para>
+        ///  
+        /// <para>
+        /// A valid SMB file share name cannot contain the following characters: <c>[</c>,<c>]</c>,<c>#</c>,<c>;</c>,<c>&lt;</c>,<c>&gt;</c>,<c>:</c>,<c>"</c>,<c>\</c>,<c>/</c>,<c>|</c>,<c>?</c>,<c>*</c>,<c>+</c>,
+        /// or ASCII control characters <c>1-31</c>.
+        /// </para>
         ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -479,7 +484,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  
         /// <para>
-        ///  <c>arn:aws:s3:::my-bucket/prefix/</c> 
+        ///  <c>arn:aws:s3:::amzn-s3-demo-bucket/prefix/</c> 
         /// </para>
         ///  
         /// <para>
