@@ -14,6 +14,7 @@
 */
 
 using Smithy.Identity.Abstractions;
+using System.Collections.Generic;
 
 namespace Amazon.Runtime.Credentials.Internal
 {
@@ -21,5 +22,46 @@ namespace Amazon.Runtime.Credentials.Internal
     {
         /// <inheritdoc/>
         public string SchemeId { get; set; }
+
+        /// <summary>
+        /// Default auth scheme options for services / operations that only support SigV4.
+        /// </summary>
+        public static readonly List<IAuthSchemeOption> DEFAULT_SIGV4 = new()
+        {
+            new AuthSchemeOption { SchemeId = "aws.auth#sigv4" },
+        };
+
+        /// <summary>
+        /// Default auth scheme options for services / operations that only support SigV4A.
+        /// </summary>
+        public static readonly List<IAuthSchemeOption> DEFAULT_SIGV4A = new()
+        {
+            new AuthSchemeOption { SchemeId = "aws.auth#sigv4a" },
+        };
+
+        /// <summary>
+        /// Default auth scheme options for services / operations that support both SigV4 and SigV4A.
+        /// </summary>
+        public static readonly List<IAuthSchemeOption> DEFAULT_SIGV4_SIGV4A = new()
+        {
+            new AuthSchemeOption { SchemeId = "aws.auth#sigv4" },
+            new AuthSchemeOption { SchemeId = "aws.auth#sigv4a" },
+        };
+
+        /// <summary>
+        /// Default auth scheme options for services / operations that that only support SigV4A.
+        /// </summary>
+        public static readonly List<IAuthSchemeOption> DEFAULT_BEARER = new()
+        {
+            new AuthSchemeOption { SchemeId = "smithy.api#httpBearerAuth" },
+        };
+
+        /// <summary>
+        /// Default auth scheme options for services / operations that don't require credentials.
+        /// </summary>
+        public static readonly List<IAuthSchemeOption> DEFAULT_NOAUTH = new()
+        {
+            new AuthSchemeOption { SchemeId = "smithy.api#noAuth" },
+        };
     }
 }
