@@ -1,3 +1,16 @@
+### 3.7.915.0 (2024-10-28 18:18 UTC)
+* MediaPackageV2 (3.7.402.0)
+	* MediaPackage V2 Live to VOD Harvester is a MediaPackage V2 feature, which is used to export content from an origin endpoint to a S3 bucket.
+* OpenSearchService (3.7.401.0)
+	* Adds support for provisioning dedicated coordinator nodes. Coordinator nodes can be specified using the new NodeOptions parameter in ClusterConfig.
+* RDS (3.7.406.0)
+	* This release adds support for Enhanced Monitoring and Performance Insights when restoring Aurora Limitless Database DB clusters. It also adds support for the os-upgrade pending maintenance action.
+* StorageGateway (3.7.401.22)
+	* Documentation update: Amazon FSx File Gateway will no longer be available to new customers.
+* Core 3.7.400.41
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.914.0 (2024-10-25 18:21 UTC)
 * BedrockAgent (3.7.407.0)
 	* Add support of new model types for Bedrock Agents, Adding inference profile support for Flows and Prompt Management, Adding new field to configure additional inference configurations for Flows and Prompt Management
