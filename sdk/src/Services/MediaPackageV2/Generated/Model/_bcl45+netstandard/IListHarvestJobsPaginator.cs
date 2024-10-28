@@ -16,34 +16,24 @@
 /*
  * Do not modify this file. This file is generated from the mediapackagev2-2022-12-25.normal.json service model.
  */
+using Amazon.Runtime;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaPackageV2.Model
 {
     /// <summary>
-    /// Paginators for the MediaPackageV2 service
+    /// Paginator for the ListHarvestJobs operation
     ///</summary>
-    public interface IMediaPackageV2PaginatorFactory
+    public interface IListHarvestJobsPaginator
     {
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<ListHarvestJobsResponse> Responses { get; }
 
         /// <summary>
-        /// Paginator for ListChannelGroups operation
-        ///</summary>
-        IListChannelGroupsPaginator ListChannelGroups(ListChannelGroupsRequest request);
-
-        /// <summary>
-        /// Paginator for ListChannels operation
-        ///</summary>
-        IListChannelsPaginator ListChannels(ListChannelsRequest request);
-
-        /// <summary>
-        /// Paginator for ListHarvestJobs operation
-        ///</summary>
-        IListHarvestJobsPaginator ListHarvestJobs(ListHarvestJobsRequest request);
-
-        /// <summary>
-        /// Paginator for ListOriginEndpoints operation
-        ///</summary>
-        IListOriginEndpointsPaginator ListOriginEndpoints(ListOriginEndpointsRequest request);
+        /// Enumerable containing all of the Items
+        /// </summary>
+        IPaginatedEnumerable<HarvestJob> Items { get; }
     }
 }
