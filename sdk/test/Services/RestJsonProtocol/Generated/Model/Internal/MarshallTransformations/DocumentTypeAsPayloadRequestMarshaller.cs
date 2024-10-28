@@ -28,8 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
 {
@@ -61,18 +61,25 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/DocumentTypeAsPayload";
-            using (MemoryStream memoryStream = new MemoryStream())
-            {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    var context = new JsonMarshallerContext(request, writer);
-                    Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, publicRequest.DocumentValue);
-                }
-
-                request.Content = memoryStream.ToArray();
-            }
+#if !NETCOREAPP3_1_OR_GREATER
+            MemoryStream memoryStream = new MemoryStream();
+#endif
+#if NETCOREAPP3_1_OR_GREATER
+            ArrayBufferWriter<byte> arrayBufferWriter = new ArrayBufferWriter<byte>();
+            Utf8JsonWriter writer = new Utf8JsonWriter(arrayBufferWriter);
+#else
+            Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            var context = new JsonMarshallerContext(request, writer);
+            Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, publicRequest.DocumentValue);
+            writer.Flush();
+#if !NETCOREAPP3_1_OR_GREATER
+            request.Content = memoryStream.ToArray();
+            memoryStream.Dispose();
+#else
+            request.Content = arrayBufferWriter.WrittenMemory.ToArray();
+#endif
+            
 
 
             return request;

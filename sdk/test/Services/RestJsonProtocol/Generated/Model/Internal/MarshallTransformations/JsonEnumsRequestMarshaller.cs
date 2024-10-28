@@ -28,8 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
 {
@@ -61,73 +61,80 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/JsonEnums";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETCOREAPP3_1_OR_GREATER
+            MemoryStream memoryStream = new MemoryStream();
+#endif
+#if NETCOREAPP3_1_OR_GREATER
+            ArrayBufferWriter<byte> arrayBufferWriter = new ArrayBufferWriter<byte>();
+            Utf8JsonWriter writer = new Utf8JsonWriter(arrayBufferWriter);
+#else
+            Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetFooEnum1())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetFooEnum1())
-                    {
-                        context.Writer.WritePropertyName("fooEnum1");
-                        context.Writer.Write(publicRequest.FooEnum1);
-                    }
-
-                    if(publicRequest.IsSetFooEnum2())
-                    {
-                        context.Writer.WritePropertyName("fooEnum2");
-                        context.Writer.Write(publicRequest.FooEnum2);
-                    }
-
-                    if(publicRequest.IsSetFooEnum3())
-                    {
-                        context.Writer.WritePropertyName("fooEnum3");
-                        context.Writer.Write(publicRequest.FooEnum3);
-                    }
-
-                    if(publicRequest.IsSetFooEnumList())
-                    {
-                        context.Writer.WritePropertyName("fooEnumList");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestFooEnumListListValue in publicRequest.FooEnumList)
-                        {
-                                context.Writer.Write(publicRequestFooEnumListListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetFooEnumMap())
-                    {
-                        context.Writer.WritePropertyName("fooEnumMap");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestFooEnumMapKvp in publicRequest.FooEnumMap)
-                        {
-                            context.Writer.WritePropertyName(publicRequestFooEnumMapKvp.Key);
-                            var publicRequestFooEnumMapValue = publicRequestFooEnumMapKvp.Value;
-
-                                context.Writer.Write(publicRequestFooEnumMapValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetFooEnumSet())
-                    {
-                        context.Writer.WritePropertyName("fooEnumSet");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestFooEnumSetListValue in publicRequest.FooEnumSet)
-                        {
-                                context.Writer.Write(publicRequestFooEnumSetListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("fooEnum1");
+                context.Writer.WriteStringValue(publicRequest.FooEnum1);
             }
+
+            if(publicRequest.IsSetFooEnum2())
+            {
+                context.Writer.WritePropertyName("fooEnum2");
+                context.Writer.WriteStringValue(publicRequest.FooEnum2);
+            }
+
+            if(publicRequest.IsSetFooEnum3())
+            {
+                context.Writer.WritePropertyName("fooEnum3");
+                context.Writer.WriteStringValue(publicRequest.FooEnum3);
+            }
+
+            if(publicRequest.IsSetFooEnumList())
+            {
+                context.Writer.WritePropertyName("fooEnumList");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestFooEnumListListValue in publicRequest.FooEnumList)
+                {
+                        context.Writer.WriteStringValue(publicRequestFooEnumListListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetFooEnumMap())
+            {
+                context.Writer.WritePropertyName("fooEnumMap");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestFooEnumMapKvp in publicRequest.FooEnumMap)
+                {
+                    context.Writer.WritePropertyName(publicRequestFooEnumMapKvp.Key);
+                    var publicRequestFooEnumMapValue = publicRequestFooEnumMapKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestFooEnumMapValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetFooEnumSet())
+            {
+                context.Writer.WritePropertyName("fooEnumSet");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestFooEnumSetListValue in publicRequest.FooEnumSet)
+                {
+                        context.Writer.WriteStringValue(publicRequestFooEnumSetListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if !NETCOREAPP3_1_OR_GREATER
+            request.Content = memoryStream.ToArray();
+            memoryStream.Dispose();
+#else
+            request.Content = arrayBufferWriter.WrittenMemory.ToArray();
+#endif
+            
 
 
             return request;

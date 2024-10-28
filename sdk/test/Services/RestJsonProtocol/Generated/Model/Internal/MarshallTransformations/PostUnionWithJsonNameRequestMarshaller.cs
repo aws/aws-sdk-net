@@ -28,8 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
 {
@@ -61,30 +61,37 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/PostUnionWithJsonName";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETCOREAPP3_1_OR_GREATER
+            MemoryStream memoryStream = new MemoryStream();
+#endif
+#if NETCOREAPP3_1_OR_GREATER
+            ArrayBufferWriter<byte> arrayBufferWriter = new ArrayBufferWriter<byte>();
+            Utf8JsonWriter writer = new Utf8JsonWriter(arrayBufferWriter);
+#else
+            Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetValue())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetValue())
-                    {
-                        context.Writer.WritePropertyName("value");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("value");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = UnionWithJsonNameMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Value, context);
+                var marshaller = UnionWithJsonNameMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Value, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if !NETCOREAPP3_1_OR_GREATER
+            request.Content = memoryStream.ToArray();
+            memoryStream.Dispose();
+#else
+            request.Content = arrayBufferWriter.WrittenMemory.ToArray();
+#endif
+            
 
 
             return request;
