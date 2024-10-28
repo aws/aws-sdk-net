@@ -15,6 +15,8 @@ using System.Collections.Concurrent;
 using ServiceClientGenerator.Generators.Endpoints;
 using ServiceClientGenerator.Endpoints.Partitions;
 using EventStreamExceptionGenerator = ServiceClientGenerator.Generators.SourceFiles.Exceptions.EventStreamExceptions;
+using ServiceClientGenerator.Generators.AuthResolvers;
+
 namespace ServiceClientGenerator
 {
     public class GeneratorDriver
@@ -109,6 +111,19 @@ namespace ServiceClientGenerator
         public HashSet<string> FilesWrittenToGeneratorFolder { get; private set; }
 
         private static ConcurrentBag<string> codeGeneratedServiceNames = new ConcurrentBag<string>();
+
+        /// <summary>
+        /// Collection of services for which modeled auth resolvers (i.e. using information from their model files) should be generated.
+        /// </summary>
+        /// <remarks>
+        /// This is an allow-list for now (to prevent creating >400 files), but will be updated to a deny-list in the future (only a handful
+        /// of services such as S3 and EventBridge won't use modeled auth resolvers).
+        /// </remarks>
+        private static readonly HashSet<string> _allowListModeledAuthResolvers = new HashSet<string>
+        {
+            "AutoScaling",
+        };
+
         public GeneratorDriver(ServiceConfiguration config, GenerationManifest generationManifest, GeneratorOptions options)
         {
             FilesWrittenToGeneratorFolder = new HashSet<string>();
@@ -192,6 +207,11 @@ namespace ServiceClientGenerator
             if (Configuration.EndpointTests != null)
             {
                 ExecuteTestGenerator(new EndpointProviderTests(), Configuration.ClassName + "EndpointProviderTests.cs", "Endpoints");
+            }
+
+            if (_allowListModeledAuthResolvers.Contains(Configuration.ClassName))
+            {
+                ExecuteGenerator(new ModeledResolver(), "Amazon" + Configuration.ClassName + "AuthResolver.cs", "Internal");
             }
 
             if (Configuration.Namespace == "Amazon.S3")
