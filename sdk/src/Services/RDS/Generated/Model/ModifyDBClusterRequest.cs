@@ -753,6 +753,12 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Valid for: Aurora DB clusters only
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This setting is no longer used. Instead use the <c>ClusterScalabilityType</c> setting
+        /// when you create your Aurora Limitless Database DB cluster.
+        /// </para>
+        ///  </note>
         /// </summary>
         public bool EnableLimitlessDatabase
         {
