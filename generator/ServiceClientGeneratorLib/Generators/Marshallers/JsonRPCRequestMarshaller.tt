@@ -8,8 +8,8 @@
 
 	AddCommonUsingStatements();
 #>
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
 #pragma warning disable CS0612,CS0618
 namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 {
@@ -93,39 +93,48 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 	if (this.Operation.RequestHasBodyMembers || shouldMarshallPayload)
 	{
 #>
-            using (MemoryStream memoryStream = new MemoryStream())
-            {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-				    writer.Validate = false;
+#if !NETCOREAPP3_1_OR_GREATER
+            MemoryStream memoryStream = new MemoryStream();
+#endif
+#if NETCOREAPP3_1_OR_GREATER
+			ArrayBufferWriter<byte> arrayBufferWriter = new ArrayBufferWriter<byte>();
+			Utf8JsonWriter writer = new Utf8JsonWriter(arrayBufferWriter);
+#else
+			Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
 <#		
 		if (shouldMarshallPayload)
 		{
 #>
-				    var context = new JsonMarshallerContext(request, writer);
+			var context = new JsonMarshallerContext(request, writer);
 <#		
-			ProcessStructure(1, "publicRequest." + payload.PropertyName, payload.Shape);
+			ProcessStructure(0, "publicRequest." + payload.PropertyName, payload.Shape);
+#>
+			writer.Flush();
+<#
 		}
 		else
 		{
 #>
-				    writer.WriteObjectStart();
-				    var context = new JsonMarshallerContext(request, writer);
+			writer.WriteStartObject();
+			var context = new JsonMarshallerContext(request, writer);
 <#		
-				ProcessMembers(2, "publicRequest", this.Operation.RequestBodyMembers);
+			ProcessMembers(0, "publicRequest", this.Operation.RequestBodyMembers);
 #>
-				    writer.WriteObjectEnd();
+			writer.WriteEndObject();
+			writer.Flush();
 <#
 		}
 #>
-                }
-
-                request.Content = memoryStream.ToArray();
+#if !NETCOREAPP3_1_OR_GREATER
+			request.Content = memoryStream.ToArray();
+			memoryStream.Dispose();
+#else
+            request.Content = arrayBufferWriter.WrittenMemory.ToArray();
+#endif
 <#
-					GenerateRequestChecksumHandling(this.Operation, "snippet");
-#>
-			}
+			GenerateRequestChecksumHandling(this.Operation, "snippet");
+#>			
 
 <#
 	}

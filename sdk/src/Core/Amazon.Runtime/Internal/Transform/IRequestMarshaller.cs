@@ -16,7 +16,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Xml;
-using ThirdParty.Json.LitJson;
+using System.Text.Json;
 
 namespace Amazon.Runtime.Internal.Transform
 {
@@ -49,9 +49,9 @@ namespace Amazon.Runtime.Internal.Transform
 
     public class JsonMarshallerContext : MarshallerContext
     {
-        public JsonWriter Writer { get; private set; }
+        public Utf8JsonWriter Writer { get; private set; }
 
-        public JsonMarshallerContext(IRequest request, JsonWriter writer)
+        public JsonMarshallerContext(IRequest request, Utf8JsonWriter writer)
             : base(request)
         {
             Writer = writer;
