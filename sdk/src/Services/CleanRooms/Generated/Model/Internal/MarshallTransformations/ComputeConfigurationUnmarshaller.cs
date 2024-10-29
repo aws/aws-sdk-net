@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ProtectedQueryStatistics Object
+    /// Response Unmarshaller for ComputeConfiguration Object
     /// </summary>  
-    public class ProtectedQueryStatisticsUnmarshaller : IUnmarshaller<ProtectedQueryStatistics, XmlUnmarshallerContext>, IUnmarshaller<ProtectedQueryStatistics, JsonUnmarshallerContext>
+    public class ComputeConfigurationUnmarshaller : IUnmarshaller<ComputeConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ComputeConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ProtectedQueryStatistics IUnmarshaller<ProtectedQueryStatistics, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ComputeConfiguration IUnmarshaller<ComputeConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ProtectedQueryStatistics Unmarshall(JsonUnmarshallerContext context)
+        public ComputeConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            ProtectedQueryStatistics unmarshalledObject = new ProtectedQueryStatistics();
+            ComputeConfiguration unmarshalledObject = new ComputeConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,10 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("billedResourceUtilization", targetDepth))
+                if (context.TestExpression("worker", targetDepth))
                 {
-                    var unmarshaller = BilledResourceUtilizationUnmarshaller.Instance;
-                    unmarshalledObject.BilledResourceUtilization = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("totalDurationInMillis", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.TotalDurationInMillis = unmarshaller.Unmarshall(context);
+                    var unmarshaller = WorkerComputeConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.Worker = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +77,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         }
 
 
-        private static ProtectedQueryStatisticsUnmarshaller _instance = new ProtectedQueryStatisticsUnmarshaller();        
+        private static ComputeConfigurationUnmarshaller _instance = new ComputeConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ProtectedQueryStatisticsUnmarshaller Instance
+        public static ComputeConfigurationUnmarshaller Instance
         {
             get
             {

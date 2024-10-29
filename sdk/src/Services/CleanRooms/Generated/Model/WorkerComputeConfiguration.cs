@@ -30,47 +30,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
-    /// Contains statistics about the execution of the protected query.
+    /// The configuration of the compute resources for workers running an analysis with the
+    /// Clean Rooms SQL analytics engine.
     /// </summary>
-    public partial class ProtectedQueryStatistics
+    public partial class WorkerComputeConfiguration
     {
-        private BilledResourceUtilization _billedResourceUtilization;
-        private long? _totalDurationInMillis;
+        private int? _number;
+        private WorkerComputeType _type;
 
         /// <summary>
-        /// Gets and sets the property BilledResourceUtilization. 
+        /// Gets and sets the property Number. 
         /// <para>
-        ///  The billed resource utilization.
+        ///  The number of workers.
         /// </para>
         /// </summary>
-        public BilledResourceUtilization BilledResourceUtilization
+        [AWSProperty(Min=2, Max=400)]
+        public int Number
         {
-            get { return this._billedResourceUtilization; }
-            set { this._billedResourceUtilization = value; }
+            get { return this._number.GetValueOrDefault(); }
+            set { this._number = value; }
         }
 
-        // Check to see if BilledResourceUtilization property is set
-        internal bool IsSetBilledResourceUtilization()
+        // Check to see if Number property is set
+        internal bool IsSetNumber()
         {
-            return this._billedResourceUtilization != null;
+            return this._number.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property TotalDurationInMillis. 
+        /// Gets and sets the property Type. 
         /// <para>
-        /// The duration of the protected query, from creation until query completion.
+        ///  The worker compute configuration type.
         /// </para>
         /// </summary>
-        public long TotalDurationInMillis
+        public WorkerComputeType Type
         {
-            get { return this._totalDurationInMillis.GetValueOrDefault(); }
-            set { this._totalDurationInMillis = value; }
+            get { return this._type; }
+            set { this._type = value; }
         }
 
-        // Check to see if TotalDurationInMillis property is set
-        internal bool IsSetTotalDurationInMillis()
+        // Check to see if Type property is set
+        internal bool IsSetType()
         {
-            return this._totalDurationInMillis.HasValue; 
+            return this._type != null;
         }
 
     }

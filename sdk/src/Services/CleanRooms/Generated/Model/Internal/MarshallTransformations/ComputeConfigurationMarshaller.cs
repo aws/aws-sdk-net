@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ProtectedQueryS3OutputConfiguration Marshaller
+    /// ComputeConfiguration Marshaller
     /// </summary>
-    public class ProtectedQueryS3OutputConfigurationMarshaller : IRequestMarshaller<ProtectedQueryS3OutputConfiguration, JsonMarshallerContext> 
+    public class ComputeConfigurationMarshaller : IRequestMarshaller<ComputeConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,32 +44,19 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ProtectedQueryS3OutputConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(ComputeConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetBucket())
+            if(requestObject.IsSetWorker())
             {
-                context.Writer.WritePropertyName("bucket");
-                context.Writer.Write(requestObject.Bucket);
-            }
+                context.Writer.WritePropertyName("worker");
+                context.Writer.WriteObjectStart();
 
-            if(requestObject.IsSetKeyPrefix())
-            {
-                context.Writer.WritePropertyName("keyPrefix");
-                context.Writer.Write(requestObject.KeyPrefix);
-            }
+                var marshaller = WorkerComputeConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Worker, context);
 
-            if(requestObject.IsSetResultFormat())
-            {
-                context.Writer.WritePropertyName("resultFormat");
-                context.Writer.Write(requestObject.ResultFormat);
-            }
-
-            if(requestObject.IsSetSingleFileOutput())
-            {
-                context.Writer.WritePropertyName("singleFileOutput");
-                context.Writer.Write(requestObject.SingleFileOutput);
+                context.Writer.WriteObjectEnd();
             }
 
         }
@@ -77,7 +64,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ProtectedQueryS3OutputConfigurationMarshaller Instance = new ProtectedQueryS3OutputConfigurationMarshaller();
+        public readonly static ComputeConfigurationMarshaller Instance = new ComputeConfigurationMarshaller();
 
     }
 }
