@@ -47,8 +47,7 @@ namespace SDKDocGenerator
         public GenerationManifest(string assemblyPath,
                                   string outputFolderRoot,
                                   IEnumerable<string> allPlatforms,
-                                  GeneratorOptions options,
-                                  bool useAppDomain)
+                                  GeneratorOptions options)
         {
             AssemblyPath = Path.GetFullPath(assemblyPath);
             AssemblyName = Path.GetFileNameWithoutExtension(AssemblyPath);
@@ -60,7 +59,6 @@ namespace SDKDocGenerator
             Options = options;
             OutputFolder = Path.GetFullPath(outputFolderRoot);
             AllPlatforms = allPlatforms;
-            UseAppDomain = useAppDomain;
 
             if (Options.Verbose)
             {
@@ -97,12 +95,6 @@ namespace SDKDocGenerator
         public GeneratorOptions Options { get; }
 
         /// <summary>
-        /// If true, sdk assemblies are loaded into a separate app domain prior to doc
-        /// generation.
-        /// </summary>
-        public bool UseAppDomain { get; }
-
-        /// <summary>
         /// Returns the discovered NDoc table for a given platform, if it existed. If platform
         /// is not specified, we attempt to return the NDoc for the primary platform specified
         /// in the generator options.
@@ -137,7 +129,7 @@ namespace SDKDocGenerator
             {
                 if (_manifestAssemblyWrapper == null)
                 {
-                    _manifestAssemblyWrapper = new ManifestAssemblyWrapper(ServiceName, Options.Platform, AssemblyPath, UseAppDomain);
+                    _manifestAssemblyWrapper = new ManifestAssemblyWrapper(ServiceName, Options.Platform, AssemblyPath);
                 }
 
                 return _manifestAssemblyWrapper;
@@ -308,26 +300,11 @@ namespace SDKDocGenerator
             public AssemblyWrapper SdkAssembly { get; private set; }
             public AppDomain Domain { get; private set; }
 
-            public ManifestAssemblyWrapper(string serviceName, string platform, string assemblyPath, bool useNewAppDomain)
+            public ManifestAssemblyWrapper(string serviceName, string platform, string assemblyPath)
             {
                 var docId = NDocUtilities.GenerateDocId(serviceName, platform);
-                if (useNewAppDomain)
-                {
-                    Domain = AppDomain.CreateDomain(assemblyPath);
-                    var inst = Domain.CreateInstance(this.GetType().Assembly.FullName,
-                                                     typeof(AssemblyWrapper).FullName,
-                                                     true,
-                                                     BindingFlags.CreateInstance | BindingFlags.Public | BindingFlags.Instance,
-                                                     null,
-                                                     new object[] { docId }, null, null);
-                    SdkAssembly = (AssemblyWrapper)inst.Unwrap();
-                    SdkAssembly.LoadAssembly(assemblyPath);
-                }
-                else
-                {
-                    SdkAssembly = new AssemblyWrapper(docId);
-                    SdkAssembly.LoadAssembly(assemblyPath);
-                }
+                SdkAssembly = new AssemblyWrapper(docId);
+                SdkAssembly.LoadAssembly(assemblyPath);
             }
 
             #region IDisposable Support
