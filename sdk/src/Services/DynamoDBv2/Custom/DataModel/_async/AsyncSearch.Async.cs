@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.Runtime.Telemetry.Tracing;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -52,17 +53,25 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <inheritdoc/>
         public virtual async Task<List<T>> GetNextSetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            var documents = await _documentSearch.GetNextSetHelperAsync(cancellationToken).ConfigureAwait(false);
-            List<T> items = _sourceContext.FromDocumentsHelper<T>(documents, this._config).ToList();
-            return items;
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(AsyncSearch<T>), nameof(GetNextSetAsync));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                var documents = await _documentSearch.GetNextSetHelperAsync(cancellationToken).ConfigureAwait(false);
+                List<T> items = _sourceContext.FromDocumentsHelper<T>(documents, this._config).ToList();
+                return items;
+            }
         }
 
         /// <inheritdoc/>
         public virtual async Task<List<T>> GetRemainingAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            var documents = await _documentSearch.GetRemainingHelperAsync(cancellationToken).ConfigureAwait(false);
-            List<T> items = _sourceContext.FromDocumentsHelper<T>(documents, this._config).ToList();
-            return items;
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(AsyncSearch<T>), nameof(GetRemainingAsync));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                var documents = await _documentSearch.GetRemainingHelperAsync(cancellationToken).ConfigureAwait(false);
+                List<T> items = _sourceContext.FromDocumentsHelper<T>(documents, this._config).ToList();
+                return items;
+            }
         }
     }
 }

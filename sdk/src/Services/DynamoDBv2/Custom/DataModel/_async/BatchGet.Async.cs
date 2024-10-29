@@ -14,6 +14,7 @@
  */
 #pragma warning disable 1574
 
+using Amazon.Runtime.Telemetry.Tracing;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -39,9 +40,13 @@ namespace Amazon.DynamoDBv2.DataModel
     public partial class BatchGet<T> : BatchGet, IBatchGet<T>
     {
         /// <inheritdoc/>
-        public override Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public override async Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return ExecuteHelperAsync(cancellationToken);
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(BatchGet), nameof(ExecuteAsync));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                await ExecuteHelperAsync(cancellationToken).ConfigureAwait(false);
+            }
         }
     }
 
@@ -60,9 +65,13 @@ namespace Amazon.DynamoDBv2.DataModel
     public partial class MultiTableBatchGet : IMultiTableBatchGet
     {
         /// <inheritdoc/>
-        public Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return ExecuteHelperAsync(cancellationToken);
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(MultiTableBatchGet), nameof(ExecuteAsync));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                await ExecuteHelperAsync(cancellationToken).ConfigureAwait(false);
+            }
         }
     }
 }

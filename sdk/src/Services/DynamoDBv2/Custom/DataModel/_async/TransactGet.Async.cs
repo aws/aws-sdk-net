@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.Runtime.Telemetry.Tracing;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -37,9 +38,13 @@ namespace Amazon.DynamoDBv2.DataModel
     public partial class  TransactGet<T> : TransactGet, ITransactGet<T>
     {
         /// <inheritdoc/>
-        public override Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public override async Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return ExecuteHelperAsync(cancellationToken);
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(TransactGet), nameof(ExecuteAsync));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                await ExecuteHelperAsync(cancellationToken).ConfigureAwait(false);
+            }
         }
     }
 
@@ -58,9 +63,13 @@ namespace Amazon.DynamoDBv2.DataModel
     public partial class MultiTableTransactGet : IMultiTableTransactGet
     {
         /// <inheritdoc/>
-        public Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task ExecuteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return ExecuteHelperAsync(cancellationToken);
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(MultiTableTransactGet), nameof(ExecuteAsync));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                await ExecuteHelperAsync(cancellationToken).ConfigureAwait(false);
+            }
         }
     }
 }
