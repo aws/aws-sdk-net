@@ -30,11 +30,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RedshiftDataAPIService.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetStatementResult operation.
-    /// Fetches the temporarily cached result of an SQL statement in JSON format. The <c>ExecuteStatement</c>
+    /// Container for the parameters to the GetStatementResultV2 operation.
+    /// Fetches the temporarily cached result of an SQL statement in CSV format. The <c>ExecuteStatement</c>
     /// or <c>BatchExecuteStatement</c> operation that ran the SQL statement must have specified
-    /// <c>ResultFormat</c> as <c>JSON</c> , or let the format default to JSON. A token is
-    /// returned to page through the statement results.
+    /// <c>ResultFormat</c> as <c>CSV</c>. A token is returned to page through the statement
+    /// results.
     /// 
     ///  
     /// <para>
@@ -43,7 +43,7 @@ namespace Amazon.RedshiftDataAPIService.Model
     /// Amazon Redshift Data API</a> in the <i>Amazon Redshift Management Guide</i>. 
     /// </para>
     /// </summary>
-    public partial class GetStatementResultRequest : AmazonRedshiftDataAPIServiceRequest
+    public partial class GetStatementResultV2Request : AmazonRedshiftDataAPIServiceRequest
     {
         private string _id;
         private string _nextToken;
@@ -79,7 +79,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// a subsequent request. If a value is returned in a response, you can retrieve the next
         /// set of records by providing this returned NextToken value in the next NextToken parameter
         /// and retrying the command. If the NextToken field is empty, all response records have
-        /// been retrieved for the request. 
+        /// been retrieved for the request.
         /// </para>
         /// </summary>
         public string NextToken

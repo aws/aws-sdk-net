@@ -30,19 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RedshiftDataAPIService.Model
 {
     /// <summary>
-    /// This is the response object from the GetStatementResult operation.
+    /// This is the response object from the GetStatementResultV2 operation.
     /// </summary>
-    public partial class GetStatementResultResponse : AmazonWebServiceResponse
+    public partial class GetStatementResultV2Response : AmazonWebServiceResponse
     {
         private List<ColumnMetadata> _columnMetadata = AWSConfigs.InitializeCollections ? new List<ColumnMetadata>() : null;
         private string _nextToken;
-        private List<List<Field>> _records = AWSConfigs.InitializeCollections ? new List<List<Field>>() : null;
+        private List<QueryRecords> _records = AWSConfigs.InitializeCollections ? new List<QueryRecords>() : null;
+        private ResultFormatString _resultFormat;
         private long? _totalNumRows;
 
         /// <summary>
         /// Gets and sets the property ColumnMetadata. 
         /// <para>
-        /// The properties (metadata) of a column. 
+        /// The properties (metadata) of a column.
         /// </para>
         /// </summary>
         public List<ColumnMetadata> ColumnMetadata
@@ -82,11 +83,11 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// <summary>
         /// Gets and sets the property Records. 
         /// <para>
-        /// The results of the SQL statement in JSON format.
+        /// The results of the SQL statement in CSV format.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public List<List<Field>> Records
+        public List<QueryRecords> Records
         {
             get { return this._records; }
             set { this._records = value; }
@@ -99,10 +100,28 @@ namespace Amazon.RedshiftDataAPIService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ResultFormat. 
+        /// <para>
+        /// The data format of the result of the SQL statement.
+        /// </para>
+        /// </summary>
+        public ResultFormatString ResultFormat
+        {
+            get { return this._resultFormat; }
+            set { this._resultFormat = value; }
+        }
+
+        // Check to see if ResultFormat property is set
+        internal bool IsSetResultFormat()
+        {
+            return this._resultFormat != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property TotalNumRows. 
         /// <para>
         /// The total number of rows in the result set returned from a query. You can use this
-        /// number to estimate the number of calls to the <c>GetStatementResult</c> operation
+        /// number to estimate the number of calls to the <c>GetStatementResultV2</c> operation
         /// needed to page through the results. 
         /// </para>
         /// </summary>

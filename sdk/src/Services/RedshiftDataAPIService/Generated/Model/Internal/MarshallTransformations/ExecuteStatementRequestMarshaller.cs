@@ -114,6 +114,12 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetResultFormat())
+                {
+                    context.Writer.WritePropertyName("ResultFormat");
+                    context.Writer.Write(publicRequest.ResultFormat);
+                }
+
                 if(publicRequest.IsSetSecretArn())
                 {
                     context.Writer.WritePropertyName("SecretArn");

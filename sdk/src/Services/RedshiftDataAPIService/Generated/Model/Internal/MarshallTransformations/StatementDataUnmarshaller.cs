@@ -102,6 +102,12 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
                     unmarshalledObject.QueryStrings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ResultFormat", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResultFormat = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SecretArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

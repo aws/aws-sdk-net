@@ -40,6 +40,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         private List<SqlParameter> _queryParameters = AWSConfigs.InitializeCollections ? new List<SqlParameter>() : null;
         private string _queryString;
         private List<string> _queryStrings = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private ResultFormatString _resultFormat;
         private string _secretArn;
         private string _sessionId;
         private string _statementName;
@@ -156,6 +157,24 @@ namespace Amazon.RedshiftDataAPIService.Model
         internal bool IsSetQueryStrings()
         {
             return this._queryStrings != null && (this._queryStrings.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResultFormat. 
+        /// <para>
+        /// The data format of the result of the SQL statement.
+        /// </para>
+        /// </summary>
+        public ResultFormatString ResultFormat
+        {
+            get { return this._resultFormat; }
+            set { this._resultFormat = value; }
+        }
+
+        // Check to see if ResultFormat property is set
+        internal bool IsSetResultFormat()
+        {
+            return this._resultFormat != null;
         }
 
         /// <summary>
