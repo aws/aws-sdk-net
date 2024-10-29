@@ -1,3 +1,22 @@
+### 3.7.916.0 (2024-10-29 18:28 UTC)
+* Bedrock (3.7.409.0)
+	* Update Application Inference Profile
+* BedrockRuntime (3.7.407.0)
+	* Update Application Inference Profile
+* CleanRooms (3.7.401.0)
+	* This release adds the option for customers to configure analytics engine when creating a collaboration, and introduces the new SPARK analytics engine type in addition to maintaining the legacy CLEAN_ROOMS_SQL engine type.
+* CloudWatchLogs (3.7.405.0)
+	* Added support for new optional baseline parameter in the UpdateAnomaly API. For UpdateAnomaly requests with baseline set to True, The anomaly behavior is then treated as baseline behavior. However, more severe occurrences of this behavior will still be reported as anomalies.
+* IoTFleetWise (3.7.402.0)
+	* Updated BatchCreateVehicle and BatchUpdateVehicle APIs: LimitExceededException has been added and the maximum number of vehicles in a batch has been set to 10 explicitly
+* RedshiftDataAPIService (3.7.402.0)
+	* Adding a new API GetStatementResultV2 that supports CSV formatted results from ExecuteStatement and BatchExecuteStatement calls.
+* SageMaker (3.7.412.0)
+	* Adding `notebook-al2-v3` as allowed value to SageMaker NotebookInstance PlatformIdentifier attribute
+* Core 3.7.400.42
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.915.0 (2024-10-28 18:18 UTC)
 * MediaPackageV2 (3.7.402.0)
 	* MediaPackage V2 Live to VOD Harvester is a MediaPackage V2 feature, which is used to export content from an origin endpoint to a S3 bucket.

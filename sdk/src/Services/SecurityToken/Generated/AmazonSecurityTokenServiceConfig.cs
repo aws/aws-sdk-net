@@ -32,7 +32,7 @@ namespace Amazon.SecurityToken
     public partial class AmazonSecurityTokenServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("STS", "3.7.400.41");
+            InternalSDKUtils.BuildUserAgentString("STS", "3.7.400.42");
 
         private string _userAgent = UserAgentString;
         ///<summary>
