@@ -937,7 +937,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateNotebookInstanceRequest.PlatformIdentifier</property>
     <max>15</max>
-    <pattern>^(notebook-al1-v1|notebook-al2-v1|notebook-al2-v2)$</pattern>
+    <pattern>^(notebook-al1-v1|notebook-al2-v1|notebook-al2-v2|notebook-al2-v3)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateNotebookInstanceRequest.RoleArn</property>
@@ -3234,7 +3234,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeNotebookInstanceResponse.PlatformIdentifier</property>
     <max>15</max>
-    <pattern>^(notebook-al1-v1|notebook-al2-v1|notebook-al2-v2)$</pattern>
+    <pattern>^(notebook-al1-v1|notebook-al2-v1|notebook-al2-v2|notebook-al2-v3)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeNotebookInstanceResponse.RoleArn</property>

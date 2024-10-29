@@ -157,31 +157,7 @@ namespace Amazon.SageMaker.Model
         /// file. For example, <c>{"class_labels": "imagenet_labels_1000.txt"}</c>. Labels inside
         /// the txt file should be separated by newlines.
         /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <c>EIA</c>: Compilation for the Elastic Inference Accelerator supports the following
-        /// compiler options:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>precision_mode</c>: Specifies the precision of compiled artifacts. Supported values
-        /// are <c>"FP16"</c> and <c>"FP32"</c>. Default is <c>"FP32"</c>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>signature_def_key</c>: Specifies the signature to use for models in SavedModel
-        /// format. Defaults is TensorFlow's default signature def key.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>output_names</c>: Specifies a list of output tensor names for models in FrozenGraph
-        /// format. Set at most one API field, either: <c>signature_def_key</c> or <c>output_names</c>.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For example: <c>{"precision_mode": "FP32", "output_names": ["output:0"]}</c> 
-        /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </li> </ul>
         /// </summary>
         [AWSProperty(Min=3, Max=1024)]
         public string CompilerOptions

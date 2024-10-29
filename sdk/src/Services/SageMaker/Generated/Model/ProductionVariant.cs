@@ -57,10 +57,12 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AcceleratorType. 
         /// <para>
-        /// The size of the Elastic Inference (EI) instance to use for the production variant.
-        /// EI instances provide on-demand GPU computing for inference. For more information,
-        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic
-        /// Inference in Amazon SageMaker</a>.
+        /// This parameter is no longer supported. Elastic Inference (EI) is no longer available.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter was used to specify the size of the EI instance to use for the production
+        /// variant.
         /// </para>
         /// </summary>
         public ProductionVariantAcceleratorType AcceleratorType

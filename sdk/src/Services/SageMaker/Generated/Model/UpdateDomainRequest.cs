@@ -103,7 +103,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DefaultSpaceSettings. 
         /// <para>
-        /// The default settings used to create a space within the domain.
+        /// The default settings for shared spaces that users create in the domain.
         /// </para>
         /// </summary>
         public DefaultSpaceSettings DefaultSpaceSettings

@@ -69,6 +69,11 @@ namespace Amazon.SageMaker.Model
         /// The <c>DefaultAsDomain</c> value is only supported for user profiles. Do not use the
         /// <c>DefaultAsDomain</c> value when setting this parameter for a domain.
         /// </para>
+        ///  
+        /// <para>
+        /// SageMaker applies this setting only to private spaces that the user creates in the
+        /// domain. SageMaker doesn't apply this setting to shared spaces.
+        /// </para>
         /// </summary>
         public AutoMountHomeEFS AutoMountHomeEFS
         {
@@ -87,6 +92,11 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The Canvas app settings.
         /// </para>
+        ///  
+        /// <para>
+        /// SageMaker applies these settings only to private spaces that SageMaker creates for
+        /// the Canvas app.
+        /// </para>
         /// </summary>
         public CanvasAppSettings CanvasAppSettings
         {
@@ -104,6 +114,11 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property CodeEditorAppSettings. 
         /// <para>
         /// The Code Editor application settings.
+        /// </para>
+        ///  
+        /// <para>
+        /// SageMaker applies these settings only to private spaces that the user creates in the
+        /// domain. SageMaker doesn't apply these settings to shared spaces.
         /// </para>
         /// </summary>
         public CodeEditorAppSettings CodeEditorAppSettings
@@ -124,6 +139,11 @@ namespace Amazon.SageMaker.Model
         /// The settings for assigning a custom file system to a user profile. Permitted users
         /// can access this file system in Amazon SageMaker Studio.
         /// </para>
+        ///  
+        /// <para>
+        /// SageMaker applies these settings only to private spaces that the user creates in the
+        /// domain. SageMaker doesn't apply these settings to shared spaces.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=10)]
         public List<CustomFileSystemConfig> CustomFileSystemConfigs
@@ -142,6 +162,11 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property CustomPosixUserConfig. 
         /// <para>
         /// Details about the POSIX identity that is used for file system operations.
+        /// </para>
+        ///  
+        /// <para>
+        /// SageMaker applies these settings only to private spaces that the user creates in the
+        /// domain. SageMaker doesn't apply these settings to shared spaces.
         /// </para>
         /// </summary>
         public CustomPosixUserConfig CustomPosixUserConfig
@@ -191,6 +216,11 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The execution role for the user.
         /// </para>
+        ///  
+        /// <para>
+        /// SageMaker applies this setting only to private spaces that the user creates in the
+        /// domain. SageMaker doesn't apply this setting to shared spaces.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
         public string ExecutionRole
@@ -209,6 +239,11 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property JupyterLabAppSettings. 
         /// <para>
         /// The settings for the JupyterLab application.
+        /// </para>
+        ///  
+        /// <para>
+        /// SageMaker applies these settings only to private spaces that the user creates in the
+        /// domain. SageMaker doesn't apply these settings to shared spaces.
         /// </para>
         /// </summary>
         public JupyterLabAppSettings JupyterLabAppSettings
@@ -317,6 +352,11 @@ namespace Amazon.SageMaker.Model
         /// Studio. Therefore, the number of security groups that you can specify is one less
         /// than the maximum number shown.
         /// </para>
+        ///  
+        /// <para>
+        /// SageMaker applies these settings only to private spaces that the user creates in the
+        /// domain. SageMaker doesn't apply these settings to shared spaces.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=5)]
         public List<string> SecurityGroups
@@ -353,6 +393,11 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property SpaceStorageSettings. 
         /// <para>
         /// The storage settings for a space.
+        /// </para>
+        ///  
+        /// <para>
+        /// SageMaker applies these settings only to private spaces that the user creates in the
+        /// domain. SageMaker doesn't apply these settings to shared spaces.
         /// </para>
         /// </summary>
         public DefaultSpaceStorageSettings SpaceStorageSettings
