@@ -432,6 +432,9 @@ namespace Amazon.IoTFleetWise
         /// <exception cref="Amazon.IoTFleetWise.Model.InternalServerException">
         /// The request couldn't be completed because the server temporarily failed.
         /// </exception>
+        /// <exception cref="Amazon.IoTFleetWise.Model.LimitExceededException">
+        /// A service quota was exceeded.
+        /// </exception>
         /// <exception cref="Amazon.IoTFleetWise.Model.ThrottlingException">
         /// The request couldn't be completed due to throttling.
         /// </exception>
@@ -3209,6 +3212,9 @@ namespace Amazon.IoTFleetWise
         /// </exception>
         /// <exception cref="Amazon.IoTFleetWise.Model.InternalServerException">
         /// The request couldn't be completed because the server temporarily failed.
+        /// </exception>
+        /// <exception cref="Amazon.IoTFleetWise.Model.LimitExceededException">
+        /// A service quota was exceeded.
         /// </exception>
         /// <exception cref="Amazon.IoTFleetWise.Model.ResourceNotFoundException">
         /// The resource wasn't found.
