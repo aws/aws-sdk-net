@@ -1,0 +1,11 @@
+{
+    "services": [
+        {
+            "serviceName": "S3",
+            "type": "patch",
+            "changeLogMessages": [
+                "Remove the DisableTrimmingLeadingSlash flag for CopyObject and CopyPart operations. The SDK will no longer trim leading slashes."
+            ]
+        }
+    ]
+}

@@ -245,7 +245,6 @@ namespace Amazon.S3.Model
         private string copySourceServerSideEncryptionCustomerProvidedKeyMD5;
         private TaggingDirective taggingDirective;
 
-        private bool disableTrimmingLeadingSlash = false;
 
         /// <summary>
         /// A canned access control list (CACL) to apply to the object.
@@ -1187,16 +1186,6 @@ namespace Amazon.S3.Model
         internal bool IsSetChecksumAlgorithm()
         {
             return this._checksumAlgorithm != null;
-        }
-
-        /// <summary>
-        /// If this is set to true then the Amazon S3 client will not remove leading slashes from <see cref="SourceKey"/> and <see cref="DestinationKey"/>. 
-        /// The default value is false.
-        /// </summary>
-        public bool DisableTrimmingLeadingSlash
-        {
-            get { return this.disableTrimmingLeadingSlash; }
-            set { this.disableTrimmingLeadingSlash = value; }
         }
 
         /// <summary>
