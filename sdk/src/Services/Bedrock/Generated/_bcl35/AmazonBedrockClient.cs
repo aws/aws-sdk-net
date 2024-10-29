@@ -619,6 +619,94 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  CreateInferenceProfile
+
+        /// <summary>
+        /// Creates an application inference profile to track metrics and costs when invoking
+        /// a model. To create an application inference profile for a foundation model in one
+        /// region, specify the ARN of the model in that region. To create an application inference
+        /// profile for a foundation model across multiple regions, specify the ARN of the system-defined
+        /// inference profile that contains the regions that you want to route requests to. For
+        /// more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">Increase
+        /// throughput and resilience with cross-region inference in Amazon Bedrock</a>. in the
+        /// Amazon Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInferenceProfile service method.</param>
+        /// 
+        /// <returns>The response from the CreateInferenceProfile service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateInferenceProfile">REST API Reference for CreateInferenceProfile Operation</seealso>
+        public virtual CreateInferenceProfileResponse CreateInferenceProfile(CreateInferenceProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateInferenceProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateInferenceProfileResponseUnmarshaller.Instance;
+
+            return Invoke<CreateInferenceProfileResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateInferenceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateInferenceProfile operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateInferenceProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateInferenceProfile">REST API Reference for CreateInferenceProfile Operation</seealso>
+        public virtual IAsyncResult BeginCreateInferenceProfile(CreateInferenceProfileRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateInferenceProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateInferenceProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateInferenceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateInferenceProfile.</param>
+        /// 
+        /// <returns>Returns a  CreateInferenceProfileResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateInferenceProfile">REST API Reference for CreateInferenceProfile Operation</seealso>
+        public virtual CreateInferenceProfileResponse EndCreateInferenceProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateInferenceProfileResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateModelCopyJob
 
         /// <summary>
@@ -1283,6 +1371,81 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  DeleteInferenceProfile
+
+        /// <summary>
+        /// Deletes an application inference profile. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">Increase
+        /// throughput and resilience with cross-region inference in Amazon Bedrock</a>. in the
+        /// Amazon Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInferenceProfile service method.</param>
+        /// 
+        /// <returns>The response from the DeleteInferenceProfile service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteInferenceProfile">REST API Reference for DeleteInferenceProfile Operation</seealso>
+        public virtual DeleteInferenceProfileResponse DeleteInferenceProfile(DeleteInferenceProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInferenceProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInferenceProfileResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteInferenceProfileResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteInferenceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInferenceProfile operation on AmazonBedrockClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteInferenceProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteInferenceProfile">REST API Reference for DeleteInferenceProfile Operation</seealso>
+        public virtual IAsyncResult BeginDeleteInferenceProfile(DeleteInferenceProfileRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteInferenceProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteInferenceProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteInferenceProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteInferenceProfile.</param>
+        /// 
+        /// <returns>Returns a  DeleteInferenceProfileResult from Bedrock.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteInferenceProfile">REST API Reference for DeleteInferenceProfile Operation</seealso>
+        public virtual DeleteInferenceProfileResponse EndDeleteInferenceProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteInferenceProfileResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteModelInvocationLoggingConfiguration
 
         /// <summary>
@@ -1781,8 +1944,9 @@ namespace Amazon.Bedrock
         #region  GetInferenceProfile
 
         /// <summary>
-        /// Gets information about an inference profile. For more information, see the Amazon
-        /// Bedrock User Guide.
+        /// Gets information about an inference profile. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">Increase
+        /// throughput and resilience with cross-region inference in Amazon Bedrock</a>. in the
+        /// Amazon Bedrock User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetInferenceProfile service method.</param>
         /// 
@@ -2635,7 +2799,10 @@ namespace Amazon.Bedrock
         #region  ListInferenceProfiles
 
         /// <summary>
-        /// Returns a list of inference profiles that you can use.
+        /// Returns a list of inference profiles that you can use. For more information, see <a
+        /// href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">Increase
+        /// throughput and resilience with cross-region inference in Amazon Bedrock</a>. in the
+        /// Amazon Bedrock User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInferenceProfiles service method.</param>
         /// 
@@ -3056,7 +3223,7 @@ namespace Amazon.Bedrock
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html">Tagging
+        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Tagging
         /// resources</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
         /// Bedrock User Guide</a>.
         /// </para>
@@ -3418,7 +3585,7 @@ namespace Amazon.Bedrock
         #region  TagResource
 
         /// <summary>
-        /// Associate tags with a resource. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html">Tagging
+        /// Associate tags with a resource. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Tagging
         /// resources</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
         /// Bedrock User Guide</a>.
         /// </summary>
@@ -3495,7 +3662,7 @@ namespace Amazon.Bedrock
         #region  UntagResource
 
         /// <summary>
-        /// Remove one or more tags from a resource. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html">Tagging
+        /// Remove one or more tags from a resource. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Tagging
         /// resources</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
         /// Bedrock User Guide</a>.
         /// </summary>

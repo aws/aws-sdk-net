@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListInferenceProfiles Request Marshaller
+    /// DeleteInferenceProfile Request Marshaller
     /// </summary>       
-    public class ListInferenceProfilesRequestMarshaller : IMarshaller<IRequest, ListInferenceProfilesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DeleteInferenceProfileRequestMarshaller : IMarshaller<IRequest, DeleteInferenceProfileRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListInferenceProfilesRequest)input);
+            return this.Marshall((DeleteInferenceProfileRequest)input);
         }
 
         /// <summary>
@@ -53,29 +53,22 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListInferenceProfilesRequest publicRequest)
+        public IRequest Marshall(DeleteInferenceProfileRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Bedrock");
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2023-04-20";
-            request.HttpMethod = "GET";
+            request.HttpMethod = "DELETE";
 
-            
-            if (publicRequest.IsSetMaxResults())
-                request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
-            
-            if (publicRequest.IsSetNextToken())
-                request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
-            
-            if (publicRequest.IsSetTypeEquals())
-                request.Parameters.Add("type", StringUtils.FromString(publicRequest.TypeEquals));
-            request.ResourcePath = "/inference-profiles";
-            request.UseQueryString = true;
+            if (!publicRequest.IsSetInferenceProfileIdentifier())
+                throw new AmazonBedrockException("Request object does not have required field InferenceProfileIdentifier set");
+            request.AddPathResource("{inferenceProfileIdentifier}", StringUtils.FromString(publicRequest.InferenceProfileIdentifier));
+            request.ResourcePath = "/inference-profiles/{inferenceProfileIdentifier}";
 
             return request;
         }
-        private static ListInferenceProfilesRequestMarshaller _instance = new ListInferenceProfilesRequestMarshaller();        
+        private static DeleteInferenceProfileRequestMarshaller _instance = new DeleteInferenceProfileRequestMarshaller();        
 
-        internal static ListInferenceProfilesRequestMarshaller GetInstance()
+        internal static DeleteInferenceProfileRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -83,7 +76,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListInferenceProfilesRequestMarshaller Instance
+        public static DeleteInferenceProfileRequestMarshaller Instance
         {
             get
             {

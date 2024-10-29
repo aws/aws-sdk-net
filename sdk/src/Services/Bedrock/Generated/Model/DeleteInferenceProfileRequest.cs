@@ -30,37 +30,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListTagsForResource operation.
-    /// List the tags associated with the specified resource.
-    /// 
-    ///  
-    /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Tagging
-    /// resources</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
-    /// Bedrock User Guide</a>.
-    /// </para>
+    /// Container for the parameters to the DeleteInferenceProfile operation.
+    /// Deletes an application inference profile. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">Increase
+    /// throughput and resilience with cross-region inference in Amazon Bedrock</a>. in the
+    /// Amazon Bedrock User Guide.
     /// </summary>
-    public partial class ListTagsForResourceRequest : AmazonBedrockRequest
+    public partial class DeleteInferenceProfileRequest : AmazonBedrockRequest
     {
-        private string _resourcearn;
+        private string _inferenceProfileIdentifier;
 
         /// <summary>
-        /// Gets and sets the property ResourceARN. 
+        /// Gets and sets the property InferenceProfileIdentifier. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource.
+        /// The Amazon Resource Name (ARN) or ID of the application inference profile to delete.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=20, Max=1011)]
-        public string ResourceARN
+        [AWSProperty(Required=true, Min=1, Max=2048)]
+        public string InferenceProfileIdentifier
         {
-            get { return this._resourcearn; }
-            set { this._resourcearn = value; }
+            get { return this._inferenceProfileIdentifier; }
+            set { this._inferenceProfileIdentifier = value; }
         }
 
-        // Check to see if ResourceARN property is set
-        internal bool IsSetResourceARN()
+        // Check to see if InferenceProfileIdentifier property is set
+        internal bool IsSetInferenceProfileIdentifier()
         {
-            return this._resourcearn != null;
+            return this._inferenceProfileIdentifier != null;
         }
 
     }

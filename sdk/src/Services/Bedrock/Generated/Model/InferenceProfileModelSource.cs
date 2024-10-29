@@ -30,37 +30,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListTagsForResource operation.
-    /// List the tags associated with the specified resource.
-    /// 
-    ///  
-    /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Tagging
-    /// resources</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
-    /// Bedrock User Guide</a>.
-    /// </para>
+    /// Contains information about the model or system-defined inference profile that is the
+    /// source for an inference profile..
     /// </summary>
-    public partial class ListTagsForResourceRequest : AmazonBedrockRequest
+    public partial class InferenceProfileModelSource
     {
-        private string _resourcearn;
+        private string _copyFrom;
 
         /// <summary>
-        /// Gets and sets the property ResourceARN. 
+        /// Gets and sets the property CopyFrom. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource.
+        /// The ARN of the model or system-defined inference profile that is the source for the
+        /// inference profile.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=20, Max=1011)]
-        public string ResourceARN
+        [AWSProperty(Min=1, Max=2048)]
+        public string CopyFrom
         {
-            get { return this._resourcearn; }
-            set { this._resourcearn = value; }
+            get { return this._copyFrom; }
+            set { this._copyFrom = value; }
         }
 
-        // Check to see if ResourceARN property is set
-        internal bool IsSetResourceARN()
+        // Check to see if CopyFrom property is set
+        internal bool IsSetCopyFrom()
         {
-            return this._resourcearn != null;
+            return this._copyFrom != null;
         }
 
     }
