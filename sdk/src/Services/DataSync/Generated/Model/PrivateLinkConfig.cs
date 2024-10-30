@@ -44,7 +44,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property PrivateLinkEndpoint. 
         /// <para>
-        /// Specifies the VPC endpoint provided by <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">Amazon
+        /// Specifies the VPC endpoint provided by <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/privatelink-share-your-services.html">Amazon
         /// Web Services PrivateLink</a> that your agent connects to.
         /// </para>
         /// </summary>

@@ -53,7 +53,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property AgentArns. 
         /// <para>
-        /// The ARNs of the agents that are used to connect to the HDFS cluster. 
+        /// The Amazon Resource Names (ARNs) of the DataSync agents that can connect to your HDFS
+        /// cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4)]

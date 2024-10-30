@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TaskListEntry Object
+    /// Response Unmarshaller for TaskExecutionFilesFailedDetail Object
     /// </summary>  
-    public class TaskListEntryUnmarshaller : IUnmarshaller<TaskListEntry, XmlUnmarshallerContext>, IUnmarshaller<TaskListEntry, JsonUnmarshallerContext>
+    public class TaskExecutionFilesFailedDetailUnmarshaller : IUnmarshaller<TaskExecutionFilesFailedDetail, XmlUnmarshallerContext>, IUnmarshaller<TaskExecutionFilesFailedDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        TaskListEntry IUnmarshaller<TaskListEntry, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TaskExecutionFilesFailedDetail IUnmarshaller<TaskExecutionFilesFailedDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public TaskListEntry Unmarshall(JsonUnmarshallerContext context)
+        public TaskExecutionFilesFailedDetail Unmarshall(JsonUnmarshallerContext context)
         {
-            TaskListEntry unmarshalledObject = new TaskListEntry();
+            TaskExecutionFilesFailedDetail unmarshalledObject = new TaskExecutionFilesFailedDetail();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,28 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("Delete", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.Delete = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Prepare", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.Prepare = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("TaskArn", targetDepth))
+                if (context.TestExpression("Transfer", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TaskArn = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.Transfer = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("TaskMode", targetDepth))
+                if (context.TestExpression("Verify", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TaskMode = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.Verify = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +95,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         }
 
 
-        private static TaskListEntryUnmarshaller _instance = new TaskListEntryUnmarshaller();        
+        private static TaskExecutionFilesFailedDetailUnmarshaller _instance = new TaskExecutionFilesFailedDetailUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TaskListEntryUnmarshaller Instance
+        public static TaskExecutionFilesFailedDetailUnmarshaller Instance
         {
             get
             {

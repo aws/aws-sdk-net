@@ -109,7 +109,7 @@ namespace Amazon.DataSync.Model
         /// manifest.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=156)]
+        [AWSProperty(Required=true, Max=268)]
         public string S3BucketArn
         {
             get { return this._s3BucketArn; }

@@ -118,29 +118,14 @@ namespace Amazon.DataSync
 
 
         /// <summary>
-        /// Activates an DataSync agent that you've deployed in your storage environment. The
-        /// activation process associates the agent with your Amazon Web Services account.
+        /// Activates an DataSync agent that you deploy in your storage environment. The activation
+        /// process associates the agent with your Amazon Web Services account.
         /// 
         ///  
         /// <para>
-        /// If you haven't deployed an agent yet, see the following topics to learn more:
+        /// If you haven't deployed an agent yet, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/do-i-need-datasync-agent.html">Do
+        /// I need a DataSync agent?</a> 
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/datasync/latest/userguide/agent-requirements.html">Agent
-        /// requirements</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-agent.html">Create
-        /// an agent</a> 
-        /// </para>
-        ///  </li> </ul> <note> 
-        /// <para>
-        /// If you're transferring between Amazon Web Services storage services, you don't need
-        /// a DataSync agent. 
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAgent service method.</param>
         /// <param name="cancellationToken">
@@ -1092,7 +1077,17 @@ namespace Amazon.DataSync
 
         /// <summary>
         /// Provides information about an execution of your DataSync task. You can use this operation
-        /// to help monitor the progress of an ongoing transfer or check the results of the transfer.
+        /// to help monitor the progress of an ongoing data transfer or check the results of the
+        /// transfer.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Some <c>DescribeTaskExecution</c> response elements are only relevant to a specific
+        /// task mode. For information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html#task-mode-differences">Understanding
+        /// task mode differences</a> and <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transfer-performance-metrics.html">Understanding
+        /// data transfer performance metrics</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTaskExecution service method.</param>
         /// <param name="cancellationToken">
@@ -1398,7 +1393,7 @@ namespace Amazon.DataSync
         /// 
         ///  
         /// <para>
-        /// There are several phases to a task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/working-with-task-executions.html#understand-task-execution-statuses">Task
+        /// There are several steps to a task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/working-with-task-executions.html#understand-task-execution-statuses">Task
         /// execution statuses</a>.
         /// </para>
         ///  <important> 

@@ -78,7 +78,7 @@ namespace Amazon.DataSync.Model
         ///  </note> <ul> <li> 
         /// <para>
         ///  <c>BEST_EFFORT</c> (default) - DataSync attempts to preserve the original <c>Atime</c>
-        /// attribute on all source files (that is, the version before the <c>PREPARING</c> phase
+        /// attribute on all source files (that is, the version before the <c>PREPARING</c> steps
         /// of the task execution). This option is recommended.
         /// </para>
         ///  </li> <li> 
@@ -114,6 +114,12 @@ namespace Amazon.DataSync.Model
         /// Limits the bandwidth used by a DataSync task. For example, if you want DataSync to
         /// use a maximum of 1 MB, set this value to <c>1048576</c> (<c>=1024*1024</c>).
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Not applicable to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
+        /// mode tasks</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=-1)]
         public long BytesPerSecond
@@ -144,8 +150,8 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
-        /// copied by DataSync</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/metadata-copied.html">Understanding
+        /// how DataSync handles file and object metadata</a>.
         /// </para>
         /// </summary>
         public Gid Gid
@@ -197,7 +203,7 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property Mtime. 
         /// <para>
         /// Specifies whether to preserve metadata indicating the last time that a file was written
-        /// to before the <c>PREPARING</c> phase of your task execution. This option is required
+        /// to before the <c>PREPARING</c> step of your task execution. This option is required
         /// when you need to run the a task more than once.
         /// </para>
         ///  <ul> <li> 
@@ -296,8 +302,8 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
-        /// copied by DataSync</a>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/metadata-copied.html">Understanding
+        /// how DataSync handles file and object metadata</a>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -408,8 +414,8 @@ namespace Amazon.DataSync.Model
         /// <para>
         /// This value is only used for transfers between SMB and Amazon FSx for Windows File
         /// Server locations or between two FSx for Windows File Server locations. For more information,
-        /// see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html">how
-        /// DataSync handles metadata</a>.
+        /// see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/metadata-copied.html">Understanding
+        /// how DataSync handles file and object metadata</a>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -498,14 +504,15 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property TransferMode. 
         /// <para>
-        /// Determines whether DataSync transfers only the data and metadata that differ between
-        /// the source and the destination location or transfers all the content from the source
-        /// (without comparing what's in the destination).
+        /// Specifies whether DataSync transfers only the data (including metadata) that differs
+        /// between locations following an initial copy or transfers all data every time you run
+        /// the task. If you're planning on recurring transfers, you might only want to transfer
+        /// what's changed since your previous task execution.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>CHANGED</c> (default) - DataSync copies only data or metadata that is new or different
-        /// content from the source location to the destination location.
+        ///  <c>CHANGED</c> (default) - After your initial full transfer, DataSync copies only
+        /// the data and metadata that differs between the source and destination location.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -561,16 +568,22 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property VerifyMode. 
         /// <para>
-        /// Specifies how and when DataSync checks the integrity of your data during a transfer.
+        /// Specifies if and how DataSync checks the integrity of your data at the end of your
+        /// transfer.
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <c>ONLY_FILES_TRANSFERRED</c> (recommended) - DataSync calculates the checksum of
-        /// transferred files and metadata at the source location. At the end of the transfer,
-        /// DataSync then compares this checksum to the checksum calculated on those files at
-        /// the destination.
+        /// transferred data (including metadata) at the source location. At the end of the transfer,
+        /// DataSync then compares this checksum to the checksum calculated on that data at the
+        /// destination.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// This is the default option for <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
+        /// mode tasks</a>.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// We recommend this option when transferring to S3 Glacier Flexible Retrieval or S3
         /// Glacier Deep Archive storage classes. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Storage
@@ -578,10 +591,15 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>POINT_IN_TIME_CONSISTENT</c> (default) - At the end of the transfer, DataSync
-        /// scans the entire source and destination to verify that both locations are fully synchronized.
+        ///  <c>POINT_IN_TIME_CONSISTENT</c> - At the end of the transfer, DataSync checks the
+        /// entire source and destination to verify that both locations are fully synchronized.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// The is the default option for <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Basic
+        /// mode tasks</a> and isn't currently supported with Enhanced mode tasks.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// If you use a <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">manifest</a>,
         /// DataSync only scans and verifies what's listed in the manifest.
@@ -594,9 +612,8 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>NONE</c> - DataSync doesn't run additional verification at the end of the transfer.
-        /// All data transmissions are still integrity-checked with checksum verification during
-        /// the transfer.
+        ///  <c>NONE</c> - DataSync performs data integrity checks only during your transfer.
+        /// Unlike other options, there's no additional verification at the end of your transfer.
         /// </para>
         ///  </li> </ul>
         /// </summary>

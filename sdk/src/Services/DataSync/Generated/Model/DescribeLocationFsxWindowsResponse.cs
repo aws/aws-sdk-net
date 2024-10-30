@@ -120,8 +120,14 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupArns. 
         /// <para>
-        /// The ARNs of the security groups that are configured for the FSx for Windows File Server
-        /// file system.
+        /// The ARNs of the Amazon EC2 security groups that provide access to your file system's
+        /// preferred subnet.
+        /// </para>
+        ///  
+        /// <para>
+        /// For information about configuring security groups for file system access, see the
+        /// <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/limit-access-security-groups.html">
+        /// <i>Amazon FSx for Windows File Server User Guide</i> </a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]

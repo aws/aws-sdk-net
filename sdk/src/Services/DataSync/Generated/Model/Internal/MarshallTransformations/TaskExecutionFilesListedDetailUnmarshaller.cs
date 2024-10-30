@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TaskListEntry Object
+    /// Response Unmarshaller for TaskExecutionFilesListedDetail Object
     /// </summary>  
-    public class TaskListEntryUnmarshaller : IUnmarshaller<TaskListEntry, XmlUnmarshallerContext>, IUnmarshaller<TaskListEntry, JsonUnmarshallerContext>
+    public class TaskExecutionFilesListedDetailUnmarshaller : IUnmarshaller<TaskExecutionFilesListedDetail, XmlUnmarshallerContext>, IUnmarshaller<TaskExecutionFilesListedDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        TaskListEntry IUnmarshaller<TaskListEntry, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TaskExecutionFilesListedDetail IUnmarshaller<TaskExecutionFilesListedDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public TaskListEntry Unmarshall(JsonUnmarshallerContext context)
+        public TaskExecutionFilesListedDetail Unmarshall(JsonUnmarshallerContext context)
         {
-            TaskListEntry unmarshalledObject = new TaskListEntry();
+            TaskExecutionFilesListedDetail unmarshalledObject = new TaskExecutionFilesListedDetail();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,16 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("AtDestinationForDelete", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.AtDestinationForDelete = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("AtSource", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TaskArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TaskArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TaskMode", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TaskMode = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.AtSource = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +83,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
         }
 
 
-        private static TaskListEntryUnmarshaller _instance = new TaskListEntryUnmarshaller();        
+        private static TaskExecutionFilesListedDetailUnmarshaller _instance = new TaskExecutionFilesListedDetailUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TaskListEntryUnmarshaller Instance
+        public static TaskExecutionFilesListedDetailUnmarshaller Instance
         {
             get
             {
