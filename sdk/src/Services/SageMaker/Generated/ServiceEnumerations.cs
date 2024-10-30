@@ -18043,10 +18043,6 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly TrainingInstanceType MlP5e48xlarge = new TrainingInstanceType("ml.p5e.48xlarge");
         /// <summary>
-        /// Constant MlP5en48xlarge for TrainingInstanceType
-        /// </summary>
-        public static readonly TrainingInstanceType MlP5en48xlarge = new TrainingInstanceType("ml.p5en.48xlarge");
-        /// <summary>
         /// Constant MlR512xlarge for TrainingInstanceType
         /// </summary>
         public static readonly TrainingInstanceType MlR512xlarge = new TrainingInstanceType("ml.r5.12xlarge");
@@ -18138,10 +18134,6 @@ namespace Amazon.SageMaker
         /// Constant MlTrn1n32xlarge for TrainingInstanceType
         /// </summary>
         public static readonly TrainingInstanceType MlTrn1n32xlarge = new TrainingInstanceType("ml.trn1n.32xlarge");
-        /// <summary>
-        /// Constant MlTrn248xlarge for TrainingInstanceType
-        /// </summary>
-        public static readonly TrainingInstanceType MlTrn248xlarge = new TrainingInstanceType("ml.trn2.48xlarge");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -3546,14 +3546,19 @@ namespace Amazon.SageMaker
         /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-interface-endpoint.html">Connect
         /// to Amazon SageMaker Studio Through an Interface VPC Endpoint</a> .
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
         /// <para>
         /// The URL that you get from a call to <c>CreatePresignedDomainUrl</c> has a default
         /// timeout of 5 minutes. You can configure this value using <c>ExpiresInSeconds</c>.
         /// If you try to use the URL after the timeout limit expires, you are directed to the
         /// Amazon Web Services console sign-in page.
         /// </para>
-        ///  </note>
+        ///  </li> <li> 
+        /// <para>
+        /// The JupyterLab session default expiration time is 12 hours. You can configure this
+        /// value using SessionExpirationDurationInSeconds.
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePresignedDomainUrl service method.</param>
         /// 
@@ -3586,14 +3591,19 @@ namespace Amazon.SageMaker
         /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-interface-endpoint.html">Connect
         /// to Amazon SageMaker Studio Through an Interface VPC Endpoint</a> .
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
         /// <para>
         /// The URL that you get from a call to <c>CreatePresignedDomainUrl</c> has a default
         /// timeout of 5 minutes. You can configure this value using <c>ExpiresInSeconds</c>.
         /// If you try to use the URL after the timeout limit expires, you are directed to the
         /// Amazon Web Services console sign-in page.
         /// </para>
-        ///  </note>
+        ///  </li> <li> 
+        /// <para>
+        /// The JupyterLab session default expiration time is 12 hours. You can configure this
+        /// value using SessionExpirationDurationInSeconds.
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePresignedDomainUrl service method.</param>
         /// <param name="cancellationToken">
