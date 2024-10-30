@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TagResource operation
+    /// Response Unmarshaller for ListTypes operation
     /// </summary>  
-    public class TagResourceResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListTypesResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,8 +46,25 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            TagResourceResponse response = new TagResourceResponse();
+            ListTypesResponse response = new ListTypesResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("nextToken", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextToken = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("types", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.Types = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -74,10 +91,6 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
-                {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -98,9 +111,9 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
             return new AmazonKeyspacesException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static TagResourceResponseUnmarshaller _instance = new TagResourceResponseUnmarshaller();        
+        private static ListTypesResponseUnmarshaller _instance = new ListTypesResponseUnmarshaller();        
 
-        internal static TagResourceResponseUnmarshaller GetInstance()
+        internal static ListTypesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -108,7 +121,7 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TagResourceResponseUnmarshaller Instance
+        public static ListTypesResponseUnmarshaller Instance
         {
             get
             {

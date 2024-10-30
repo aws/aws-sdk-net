@@ -30,25 +30,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Keyspaces.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetTable operation.
-    /// Returns information about the table, including the table's name and current status,
-    /// the keyspace name, configuration settings, and metadata.
+    /// Container for the parameters to the GetType operation.
+    /// The <c>GetType</c> operation returns information about the type, for example the
+    /// field definitions, the timestamp when the type was last modified, the level of nesting,
+    /// the status, and details about if the type is used in other types and tables. 
     /// 
     ///  
     /// <para>
-    /// To read table metadata using <c>GetTable</c>, the IAM principal needs <c>Select</c>
-    /// action permissions for the table and the system keyspace.
+    /// To read keyspace metadata using <c>GetType</c>, the IAM principal needs <c>Select</c>
+    /// action permissions for the system keyspace.
     /// </para>
     /// </summary>
-    public partial class GetTableRequest : AmazonKeyspacesRequest
+    public partial class GetTypeRequest : AmazonKeyspacesRequest
     {
         private string _keyspaceName;
-        private string _tableName;
+        private string _typeName;
 
         /// <summary>
         /// Gets and sets the property KeyspaceName. 
         /// <para>
-        /// The name of the keyspace that the table is stored in.
+        ///  The name of the keyspace that contains this type. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=48)]
@@ -65,22 +66,25 @@ namespace Amazon.Keyspaces.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TableName. 
+        /// Gets and sets the property TypeName. 
         /// <para>
-        /// The name of the table.
+        /// The formatted name of the type. For example, if the name of the type was created without
+        /// double quotes, Amazon Keyspaces saved the name in lower-case characters. If the name
+        /// was created in double quotes, you must use double quotes to specify the type name.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=48)]
-        public string TableName
+        public string TypeName
         {
-            get { return this._tableName; }
-            set { this._tableName = value; }
+            get { return this._typeName; }
+            set { this._typeName = value; }
         }
 
-        // Check to see if TableName property is set
-        internal bool IsSetTableName()
+        // Check to see if TypeName property is set
+        internal bool IsSetTypeName()
         {
-            return this._tableName != null;
+            return this._typeName != null;
         }
 
     }

@@ -16,34 +16,24 @@
 /*
  * Do not modify this file. This file is generated from the keyspaces-2022-02-10.normal.json service model.
  */
+using Amazon.Runtime;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Keyspaces.Model
 {
     /// <summary>
-    /// Paginators for the Keyspaces service
+    /// Paginator for the ListTypes operation
     ///</summary>
-    public interface IKeyspacesPaginatorFactory
+    public interface IListTypesPaginator
     {
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<ListTypesResponse> Responses { get; }
 
         /// <summary>
-        /// Paginator for ListKeyspaces operation
-        ///</summary>
-        IListKeyspacesPaginator ListKeyspaces(ListKeyspacesRequest request);
-
-        /// <summary>
-        /// Paginator for ListTables operation
-        ///</summary>
-        IListTablesPaginator ListTables(ListTablesRequest request);
-
-        /// <summary>
-        /// Paginator for ListTagsForResource operation
-        ///</summary>
-        IListTagsForResourcePaginator ListTagsForResource(ListTagsForResourceRequest request);
-
-        /// <summary>
-        /// Paginator for ListTypes operation
-        ///</summary>
-        IListTypesPaginator ListTypes(ListTypesRequest request);
+        /// Enumerable containing all of the Types
+        /// </summary>
+        IPaginatedEnumerable<string> Types { get; }
     }
 }

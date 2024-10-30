@@ -30,25 +30,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Keyspaces.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetTable operation.
-    /// Returns information about the table, including the table's name and current status,
-    /// the keyspace name, configuration settings, and metadata.
-    /// 
-    ///  
-    /// <para>
-    /// To read table metadata using <c>GetTable</c>, the IAM principal needs <c>Select</c>
-    /// action permissions for the table and the system keyspace.
-    /// </para>
+    /// Container for the parameters to the DeleteType operation.
+    /// The <c>DeleteType</c> operation deletes a user-defined type (UDT). You can only delete
+    /// a type that is not used in a table or another UDT.
     /// </summary>
-    public partial class GetTableRequest : AmazonKeyspacesRequest
+    public partial class DeleteTypeRequest : AmazonKeyspacesRequest
     {
         private string _keyspaceName;
-        private string _tableName;
+        private string _typeName;
 
         /// <summary>
         /// Gets and sets the property KeyspaceName. 
         /// <para>
-        /// The name of the keyspace that the table is stored in.
+        ///  The name of the keyspace of the to be deleted type. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=48)]
@@ -65,22 +59,22 @@ namespace Amazon.Keyspaces.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TableName. 
+        /// Gets and sets the property TypeName. 
         /// <para>
-        /// The name of the table.
+        ///  The name of the type to be deleted. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=48)]
-        public string TableName
+        public string TypeName
         {
-            get { return this._tableName; }
-            set { this._tableName = value; }
+            get { return this._typeName; }
+            set { this._typeName = value; }
         }
 
-        // Check to see if TableName property is set
-        internal bool IsSetTableName()
+        // Check to see if TypeName property is set
+        internal bool IsSetTypeName()
         {
-            return this._tableName != null;
+            return this._typeName != null;
         }
 
     }

@@ -30,21 +30,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Keyspaces.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListKeyspaces operation.
-    /// The <c>ListKeyspaces</c> operation returns a list of keyspaces.
+    /// Container for the parameters to the ListTypes operation.
+    /// The <c>ListTypes</c> operation returns a list of types for a specified keyspace.
+    /// 
+    /// 
+    ///  
+    /// <para>
+    /// To read keyspace metadata using <c>ListTypes</c>, the IAM principal needs <c>Select</c>
+    /// action permissions for the system keyspace.
+    /// </para>
     /// </summary>
-    public partial class ListKeyspacesRequest : AmazonKeyspacesRequest
+    public partial class ListTypesRequest : AmazonKeyspacesRequest
     {
+        private string _keyspaceName;
         private int? _maxResults;
         private string _nextToken;
 
         /// <summary>
+        /// Gets and sets the property KeyspaceName. 
+        /// <para>
+        ///  The name of the keyspace that contains the listed types. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=48)]
+        public string KeyspaceName
+        {
+            get { return this._keyspaceName; }
+            set { this._keyspaceName = value; }
+        }
+
+        // Check to see if KeyspaceName property is set
+        internal bool IsSetKeyspaceName()
+        {
+            return this._keyspaceName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The total number of keyspaces to return in the output. If the total number of keyspaces
-        /// available is more than the value specified, a <c>NextToken</c> is provided in the
-        /// output. To resume pagination, provide the <c>NextToken</c> value as an argument of
-        /// a subsequent API invocation.
+        ///  The total number of types to return in the output. If the total number of types available
+        /// is more than the value specified, a <c>NextToken</c> is provided in the output. To
+        /// resume pagination, provide the <c>NextToken</c> value as an argument of a subsequent
+        /// API invocation. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -63,8 +90,8 @@ namespace Amazon.Keyspaces.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The pagination token. To resume pagination, provide the <c>NextToken</c> value as
-        /// argument of a subsequent API invocation.
+        ///  The pagination token. To resume pagination, provide the <c>NextToken</c> value as
+        /// an argument of a subsequent API invocation. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
