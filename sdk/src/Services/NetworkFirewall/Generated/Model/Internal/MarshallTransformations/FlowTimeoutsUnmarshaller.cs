@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StatefulEngineOptions Object
+    /// Response Unmarshaller for FlowTimeouts Object
     /// </summary>  
-    public class StatefulEngineOptionsUnmarshaller : IUnmarshaller<StatefulEngineOptions, XmlUnmarshallerContext>, IUnmarshaller<StatefulEngineOptions, JsonUnmarshallerContext>
+    public class FlowTimeoutsUnmarshaller : IUnmarshaller<FlowTimeouts, XmlUnmarshallerContext>, IUnmarshaller<FlowTimeouts, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        StatefulEngineOptions IUnmarshaller<StatefulEngineOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        FlowTimeouts IUnmarshaller<FlowTimeouts, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public StatefulEngineOptions Unmarshall(JsonUnmarshallerContext context)
+        public FlowTimeouts Unmarshall(JsonUnmarshallerContext context)
         {
-            StatefulEngineOptions unmarshalledObject = new StatefulEngineOptions();
+            FlowTimeouts unmarshalledObject = new FlowTimeouts();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,10 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("FlowTimeouts", targetDepth))
+                if (context.TestExpression("TcpIdleTimeoutSeconds", targetDepth))
                 {
-                    var unmarshaller = FlowTimeoutsUnmarshaller.Instance;
-                    unmarshalledObject.FlowTimeouts = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RuleOrder", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RuleOrder = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("StreamExceptionPolicy", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StreamExceptionPolicy = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.TcpIdleTimeoutSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +77,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         }
 
 
-        private static StatefulEngineOptionsUnmarshaller _instance = new StatefulEngineOptionsUnmarshaller();        
+        private static FlowTimeoutsUnmarshaller _instance = new FlowTimeoutsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StatefulEngineOptionsUnmarshaller Instance
+        public static FlowTimeoutsUnmarshaller Instance
         {
             get
             {

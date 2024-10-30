@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// StatefulEngineOptions Marshaller
+    /// FlowTimeouts Marshaller
     /// </summary>
-    public class StatefulEngineOptionsMarshaller : IRequestMarshaller<StatefulEngineOptions, JsonMarshallerContext> 
+    public class FlowTimeoutsMarshaller : IRequestMarshaller<FlowTimeouts, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,31 +44,14 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(StatefulEngineOptions requestObject, JsonMarshallerContext context)
+        public void Marshall(FlowTimeouts requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetFlowTimeouts())
+            if(requestObject.IsSetTcpIdleTimeoutSeconds())
             {
-                context.Writer.WritePropertyName("FlowTimeouts");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = FlowTimeoutsMarshaller.Instance;
-                marshaller.Marshall(requestObject.FlowTimeouts, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetRuleOrder())
-            {
-                context.Writer.WritePropertyName("RuleOrder");
-                context.Writer.Write(requestObject.RuleOrder);
-            }
-
-            if(requestObject.IsSetStreamExceptionPolicy())
-            {
-                context.Writer.WritePropertyName("StreamExceptionPolicy");
-                context.Writer.Write(requestObject.StreamExceptionPolicy);
+                context.Writer.WritePropertyName("TcpIdleTimeoutSeconds");
+                context.Writer.Write(requestObject.TcpIdleTimeoutSeconds);
             }
 
         }
@@ -76,7 +59,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static StatefulEngineOptionsMarshaller Instance = new StatefulEngineOptionsMarshaller();
+        public readonly static FlowTimeoutsMarshaller Instance = new FlowTimeoutsMarshaller();
 
     }
 }
