@@ -182,7 +182,7 @@ namespace Amazon.Route53.Model
         ///  <important> 
         /// <para>
         /// If you specify <c>HTTPS</c> for the value of <c>Type</c>, the endpoint must support
-        /// TLS v1.0 or later.
+        /// TLS v1.0, v1.1, or v1.2.
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
