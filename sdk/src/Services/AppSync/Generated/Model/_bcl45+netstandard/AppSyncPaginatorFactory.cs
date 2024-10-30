@@ -45,6 +45,22 @@ namespace Amazon.AppSync.Model
         }
 
         /// <summary>
+        /// Paginator for ListApis operation
+        ///</summary>
+        public IListApisPaginator ListApis(ListApisRequest request) 
+        {
+            return new ListApisPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListChannelNamespaces operation
+        ///</summary>
+        public IListChannelNamespacesPaginator ListChannelNamespaces(ListChannelNamespacesRequest request) 
+        {
+            return new ListChannelNamespacesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDataSources operation
         ///</summary>
         public IListDataSourcesPaginator ListDataSources(ListDataSourcesRequest request) 

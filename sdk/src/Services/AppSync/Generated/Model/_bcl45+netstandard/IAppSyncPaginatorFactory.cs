@@ -32,6 +32,16 @@ namespace Amazon.AppSync.Model
         IListApiKeysPaginator ListApiKeys(ListApiKeysRequest request);
 
         /// <summary>
+        /// Paginator for ListApis operation
+        ///</summary>
+        IListApisPaginator ListApis(ListApisRequest request);
+
+        /// <summary>
+        /// Paginator for ListChannelNamespaces operation
+        ///</summary>
+        IListChannelNamespacesPaginator ListChannelNamespaces(ListChannelNamespacesRequest request);
+
+        /// <summary>
         /// Paginator for ListDataSources operation
         ///</summary>
         IListDataSourcesPaginator ListDataSources(ListDataSourcesRequest request);

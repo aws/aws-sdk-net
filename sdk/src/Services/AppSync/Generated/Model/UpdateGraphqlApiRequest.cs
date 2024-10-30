@@ -94,7 +94,6 @@ namespace Amazon.AppSync.Model
         /// The new authentication type for the <c>GraphqlApi</c> object.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public AuthenticationType AuthenticationType
         {
             get { return this._authenticationType; }
