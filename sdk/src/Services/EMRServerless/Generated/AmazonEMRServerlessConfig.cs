@@ -32,7 +32,7 @@ namespace Amazon.EMRServerless
     public partial class AmazonEMRServerlessConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("EMR Serverless", "3.7.401.20");
+            InternalSDKUtils.BuildUserAgentString("EMR Serverless", "3.7.401.21");
 
         private string _userAgent = UserAgentString;
         ///<summary>

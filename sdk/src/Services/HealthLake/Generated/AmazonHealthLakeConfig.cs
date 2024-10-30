@@ -32,7 +32,7 @@ namespace Amazon.HealthLake
     public partial class AmazonHealthLakeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("HealthLake", "3.7.400.42");
+            InternalSDKUtils.BuildUserAgentString("HealthLake", "3.7.400.43");
 
         private string _userAgent = UserAgentString;
         ///<summary>

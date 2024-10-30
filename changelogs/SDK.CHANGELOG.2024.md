@@ -1,3 +1,44 @@
+### 3.7.917.0 (2024-10-30 18:39 UTC)
+* AppSync (3.7.402.0)
+	* This release adds support for AppSync Event APIs.
+* Connect (3.7.408.0)
+	* Updated the public documentation for the UserIdentityInfo object to accurately reflect the character limits for the FirstName and LastName fields, which were previously listed as 1-100 characters.
+* DataSync (3.7.401.0)
+	* AWS DataSync now supports Enhanced mode tasks. This task mode supports transfer of virtually unlimited numbers of objects with enhanced metrics, more detailed logs, and higher performance than Basic mode. This mode currently supports transfers between Amazon S3 locations.
+* EC2 (3.7.414.0)
+	* This release adds two new capabilities to VPC Security Groups: Security Group VPC Associations and Shared Security Groups.
+* ECS (3.7.404.0)
+	* This release supports service deployments and service revisions which provide a comprehensive view of your Amazon ECS service history.
+* GeoMaps (3.7.400.0)
+	* Release of Amazon Location Maps API. Maps enables you to build digital maps that showcase your locations, visualize your data, and unlock insights to drive your business
+* GeoPlaces (3.7.400.0)
+	* Release of Amazon Location Places API. Places enables you to quickly search, display, and filter places, businesses, and locations based on proximity, category, and name
+* GeoRoutes (3.7.400.0)
+	* Release of Amazon Location Routes API. Routes enables you to plan efficient routes and streamline deliveries by leveraging real-time traffic, vehicle restrictions, and turn-by-turn directions.
+* Keyspaces (3.7.401.0)
+	* Adds support for interacting with user-defined types (UDTs) through the following new operations: Create-Type, Delete-Type, List-Types, Get-Type.
+* NetworkFirewall (3.7.402.0)
+	* AWS Network Firewall now supports configuring TCP idle timeout
+* OpenSearchServerless (3.7.402.0)
+	* Neo Integration via IAM Identity Center (IdC)
+* OpenSearchService (3.7.402.0)
+	* This release introduces the new OpenSearch user interface (Dashboards), a new web-based application that can be associated with multiple data sources across OpenSearch managed clusters, serverless collections, and Amazon S3, so that users can gain a comprehensive insights in an unified interface.
+* Redshift (3.7.403.0)
+	* This release launches S3 event integrations to create and manage integrations from an Amazon S3 source into an Amazon Redshift database.
+* RedshiftServerless (3.7.401.0)
+	* Adds and updates API members for the Redshift Serverless AI-driven scaling and optimization feature using the price-performance target setting.
+* Route53 (3.7.403.0)
+	* This release adds support for TLSA, SSHFP, SVCB, and HTTPS record types.
+* S3 (3.7.405.7)
+	* Fixes issue [#3201](https://github.com/aws/aws-sdk-net/issues/3201). Provides workaround for uploading nonseekable streams where the length may be set to 0. In Net7+ some nonseekable streams will have their length set to 0 rather than throwing a NotSupportedException or having their length correctly populated. This provides a workaround for those scenarios.
+* SageMaker (3.7.413.0)
+	* Added support for Model Registry Staging construct. Users can define series of stages that models can progress through for model workflows and lifecycle. This simplifies tracking and managing models as they transition through development, testing, and production stages.
+* WorkMail (3.7.401.0)
+	* This release adds support for Multi-Factor Authentication (MFA) and Personal Access Tokens through integration with AWS IAM Identity Center.
+* Core 3.7.400.43
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.916.0 (2024-10-29 18:28 UTC)
 * Bedrock (3.7.409.0)
 	* Update Application Inference Profile
