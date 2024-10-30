@@ -653,6 +653,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeSecurityGroupVpcAssociations operation
+        ///</summary>
+        public IDescribeSecurityGroupVpcAssociationsPaginator DescribeSecurityGroupVpcAssociations(DescribeSecurityGroupVpcAssociationsRequest request) 
+        {
+            return new DescribeSecurityGroupVpcAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeSnapshots operation
         ///</summary>
         public IDescribeSnapshotsPaginator DescribeSnapshots(DescribeSnapshotsRequest request) 

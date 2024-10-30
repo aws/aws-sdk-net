@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SecurityGroup Object
+    /// Response Unmarshaller for SecurityGroupVpcAssociation Object
     /// </summary>  
-    public class SecurityGroupUnmarshaller : IUnmarshaller<SecurityGroup, XmlUnmarshallerContext>, IUnmarshaller<SecurityGroup, JsonUnmarshallerContext>
+    public class SecurityGroupVpcAssociationUnmarshaller : IUnmarshaller<SecurityGroupVpcAssociation, XmlUnmarshallerContext>, IUnmarshaller<SecurityGroupVpcAssociation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SecurityGroup Unmarshall(XmlUnmarshallerContext context)
+        public SecurityGroupVpcAssociation Unmarshall(XmlUnmarshallerContext context)
         {
-            SecurityGroup unmarshalledObject = new SecurityGroup();
+            SecurityGroupVpcAssociation unmarshalledObject = new SecurityGroupVpcAssociation();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -55,73 +55,34 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("groupDescription", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Description = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
                     if (context.TestExpression("groupId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.GroupId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("groupName", targetDepth))
+                    if (context.TestExpression("state", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.GroupName = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.State = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("ipPermissions/item", targetDepth))
-                    {
-                        var unmarshaller = IpPermissionUnmarshaller.Instance;
-                        if (unmarshalledObject.IpPermissions == null)
-                        {
-                            unmarshalledObject.IpPermissions = new List<IpPermission>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.IpPermissions.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("ipPermissionsEgress/item", targetDepth))
-                    {
-                        var unmarshaller = IpPermissionUnmarshaller.Instance;
-                        if (unmarshalledObject.IpPermissionsEgress == null)
-                        {
-                            unmarshalledObject.IpPermissionsEgress = new List<IpPermission>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.IpPermissionsEgress.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("ownerId", targetDepth))
+                    if (context.TestExpression("stateReason", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("securityGroupArn", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.SecurityGroupArn = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("tagSet/item", targetDepth))
-                    {
-                        var unmarshaller = TagUnmarshaller.Instance;
-                        if (unmarshalledObject.Tags == null)
-                        {
-                            unmarshalledObject.Tags = new List<Tag>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.Tags.Add(item);
+                        unmarshalledObject.StateReason = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("vpcId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.VpcId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("vpcOwnerId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.VpcOwnerId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -139,18 +100,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SecurityGroup Unmarshall(JsonUnmarshallerContext context)
+        public SecurityGroupVpcAssociation Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static SecurityGroupUnmarshaller _instance = new SecurityGroupUnmarshaller();        
+        private static SecurityGroupVpcAssociationUnmarshaller _instance = new SecurityGroupVpcAssociationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SecurityGroupUnmarshaller Instance
+        public static SecurityGroupVpcAssociationUnmarshaller Instance
         {
             get
             {

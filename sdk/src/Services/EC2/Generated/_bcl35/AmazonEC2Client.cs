@@ -2055,6 +2055,85 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  AssociateSecurityGroupVpc
+
+        /// <summary>
+        /// Associates a security group with another VPC in the same Region. This enables you
+        /// to use the same security group with network interfaces and instances in the specified
+        /// VPC.
+        /// 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// The VPC you want to associate the security group with must be in the same Region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can associate the security group with another VPC if your account owns the VPC
+        /// or if the VPC was shared with you.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must own the security group and the VPC that it was created in.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You cannot use this feature with default security groups.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You cannot use this feature with the default VPC.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSecurityGroupVpc service method.</param>
+        /// 
+        /// <returns>The response from the AssociateSecurityGroupVpc service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateSecurityGroupVpc">REST API Reference for AssociateSecurityGroupVpc Operation</seealso>
+        public virtual AssociateSecurityGroupVpcResponse AssociateSecurityGroupVpc(AssociateSecurityGroupVpcRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateSecurityGroupVpcRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateSecurityGroupVpcResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateSecurityGroupVpcResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateSecurityGroupVpc operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSecurityGroupVpc operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateSecurityGroupVpc
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateSecurityGroupVpc">REST API Reference for AssociateSecurityGroupVpc Operation</seealso>
+        public virtual IAsyncResult BeginAssociateSecurityGroupVpc(AssociateSecurityGroupVpcRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateSecurityGroupVpcRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateSecurityGroupVpcResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateSecurityGroupVpc operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateSecurityGroupVpc.</param>
+        /// 
+        /// <returns>Returns a  AssociateSecurityGroupVpcResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateSecurityGroupVpc">REST API Reference for AssociateSecurityGroupVpc Operation</seealso>
+        public virtual AssociateSecurityGroupVpcResponse EndAssociateSecurityGroupVpc(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateSecurityGroupVpcResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  AssociateSubnetCidrBlock
 
         /// <summary>
@@ -7902,7 +7981,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// By default, no traffic is mirrored. Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorFilter.htm">CreateTrafficMirrorFilter</a>
+        /// By default, no traffic is mirrored. Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorFilter.html">CreateTrafficMirrorFilter</a>
         /// to create filter rules that specify the traffic to mirror.
         /// </para>
         /// </summary>
@@ -11907,8 +11986,8 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// If you attempt to delete a security group that is associated with an instance or network
-        /// interface or is referenced by another security group in the same VPC, the operation
-        /// fails with <c>DependencyViolation</c>.
+        /// interface, is referenced by another security group in the same VPC, or has a VPC association,
+        /// the operation fails with <c>DependencyViolation</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSecurityGroup service method.</param>
@@ -21104,8 +21183,8 @@ namespace Amazon.EC2
         #region  DescribeSecurityGroupReferences
 
         /// <summary>
-        /// Describes the VPCs on the other side of a VPC peering connection that are referencing
-        /// the security groups you've specified in this request.
+        /// Describes the VPCs on the other side of a VPC peering or Transit Gateway connection
+        /// that are referencing the security groups you've specified in this request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityGroupReferences service method.</param>
         /// 
@@ -21271,6 +21350,60 @@ namespace Amazon.EC2
         public virtual DescribeSecurityGroupsResponse EndDescribeSecurityGroups(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeSecurityGroupsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeSecurityGroupVpcAssociations
+
+        /// <summary>
+        /// Describes security group VPC associations made with <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateSecurityGroupVpc.html">AssociateSecurityGroupVpc</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityGroupVpcAssociations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSecurityGroupVpcAssociations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroupVpcAssociations">REST API Reference for DescribeSecurityGroupVpcAssociations Operation</seealso>
+        public virtual DescribeSecurityGroupVpcAssociationsResponse DescribeSecurityGroupVpcAssociations(DescribeSecurityGroupVpcAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSecurityGroupVpcAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSecurityGroupVpcAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSecurityGroupVpcAssociationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSecurityGroupVpcAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityGroupVpcAssociations operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSecurityGroupVpcAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroupVpcAssociations">REST API Reference for DescribeSecurityGroupVpcAssociations Operation</seealso>
+        public virtual IAsyncResult BeginDescribeSecurityGroupVpcAssociations(DescribeSecurityGroupVpcAssociationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeSecurityGroupVpcAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeSecurityGroupVpcAssociationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeSecurityGroupVpcAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSecurityGroupVpcAssociations.</param>
+        /// 
+        /// <returns>Returns a  DescribeSecurityGroupVpcAssociationsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroupVpcAssociations">REST API Reference for DescribeSecurityGroupVpcAssociations Operation</seealso>
+        public virtual DescribeSecurityGroupVpcAssociationsResponse EndDescribeSecurityGroupVpcAssociations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeSecurityGroupVpcAssociationsResponse>(asyncResult);
         }
 
         #endregion
@@ -22047,10 +22180,14 @@ namespace Amazon.EC2
         #region  DescribeStaleSecurityGroups
 
         /// <summary>
-        /// Describes the stale security group rules for security groups in a specified VPC. Rules
-        /// are stale when they reference a deleted security group in a peered VPC. Rules can
-        /// also be stale if they reference a security group in a peer VPC for which the VPC peering
-        /// connection has been deleted.
+        /// Describes the stale security group rules for security groups referenced across a VPC
+        /// peering connection, transit gateway connection, or with a security group VPC association.
+        /// Rules are stale when they reference a deleted security group. Rules can also be stale
+        /// if they reference a security group in a peer VPC for which the VPC peering connection
+        /// has been deleted, across a transit gateway where the transit gateway has been deleted
+        /// (or <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-vpc-attachments.html#vpc-attachment-security">the
+        /// transit gateway security group referencing feature</a> has been disabled), or if a
+        /// security group VPC association has been disassociated.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStaleSecurityGroups service method.</param>
         /// 
@@ -26637,6 +26774,63 @@ namespace Amazon.EC2
         public virtual DisassociateRouteTableResponse EndDisassociateRouteTable(IAsyncResult asyncResult)
         {
             return EndInvoke<DisassociateRouteTableResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DisassociateSecurityGroupVpc
+
+        /// <summary>
+        /// Disassociates a security group from a VPC. You cannot disassociate the security group
+        /// if any Elastic network interfaces in the associated VPC are still associated with
+        /// the security group. Note that the disassociation is asynchronous and you can check
+        /// the status of the request with <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroupVpcAssociations.html">DescribeSecurityGroupVpcAssociations</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSecurityGroupVpc service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateSecurityGroupVpc service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateSecurityGroupVpc">REST API Reference for DisassociateSecurityGroupVpc Operation</seealso>
+        public virtual DisassociateSecurityGroupVpcResponse DisassociateSecurityGroupVpc(DisassociateSecurityGroupVpcRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateSecurityGroupVpcRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateSecurityGroupVpcResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateSecurityGroupVpcResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateSecurityGroupVpc operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSecurityGroupVpc operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateSecurityGroupVpc
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateSecurityGroupVpc">REST API Reference for DisassociateSecurityGroupVpc Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateSecurityGroupVpc(DisassociateSecurityGroupVpcRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateSecurityGroupVpcRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateSecurityGroupVpcResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateSecurityGroupVpc operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateSecurityGroupVpc.</param>
+        /// 
+        /// <returns>Returns a  DisassociateSecurityGroupVpcResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateSecurityGroupVpc">REST API Reference for DisassociateSecurityGroupVpc Operation</seealso>
+        public virtual DisassociateSecurityGroupVpcResponse EndDisassociateSecurityGroupVpc(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateSecurityGroupVpcResponse>(asyncResult);
         }
 
         #endregion

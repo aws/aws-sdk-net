@@ -225,7 +225,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property InterfaceType. 
         /// <para>
         /// The type of network interface. To create an Elastic Fabric Adapter (EFA), specify
-        /// <c>efa</c>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
+        /// <c>efa</c> or <c>efa</c>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
         /// Fabric Adapter</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
@@ -234,7 +234,12 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <c>interface</c> | <c>efa</c> 
+        /// If you specify <c>efa-only</c>, do not assign any IP addresses to the network interface.
+        /// EFA-only network interfaces do not support IP addresses.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <c>interface</c> | <c>efa</c> | <c>efa-only</c> 
         /// </para>
         /// </summary>
         public string InterfaceType

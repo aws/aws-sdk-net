@@ -30,20 +30,46 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the CreateSecurityGroup operation.
+    /// Container for the parameters to the AssociateSecurityGroupVpc operation.
+    /// Associates a security group with another VPC in the same Region. This enables you
+    /// to use the same security group with network interfaces and instances in the specified
+    /// VPC.
+    /// 
+    ///  <note> <ul> <li> 
+    /// <para>
+    /// The VPC you want to associate the security group with must be in the same Region.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// You can associate the security group with another VPC if your account owns the VPC
+    /// or if the VPC was shared with you.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// You must own the security group and the VPC that it was created in.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// You cannot use this feature with default security groups.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// You cannot use this feature with the default VPC.
+    /// </para>
+    ///  </li> </ul> </note>
     /// </summary>
-    public partial class CreateSecurityGroupResponse : AmazonWebServiceResponse
+    public partial class AssociateSecurityGroupVpcRequest : AmazonEC2Request
     {
         private string _groupId;
-        private string _securityGroupArn;
-        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private string _vpcId;
 
         /// <summary>
         /// Gets and sets the property GroupId. 
         /// <para>
-        /// The ID of the security group.
+        /// A security group ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string GroupId
         {
             get { return this._groupId; }
@@ -57,39 +83,22 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SecurityGroupArn. 
+        /// Gets and sets the property VpcId. 
         /// <para>
-        /// The security group ARN.
+        /// A VPC ID.
         /// </para>
         /// </summary>
-        public string SecurityGroupArn
+        [AWSProperty(Required=true)]
+        public string VpcId
         {
-            get { return this._securityGroupArn; }
-            set { this._securityGroupArn = value; }
+            get { return this._vpcId; }
+            set { this._vpcId = value; }
         }
 
-        // Check to see if SecurityGroupArn property is set
-        internal bool IsSetSecurityGroupArn()
+        // Check to see if VpcId property is set
+        internal bool IsSetVpcId()
         {
-            return this._securityGroupArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// The tags assigned to the security group.
-        /// </para>
-        /// </summary>
-        public List<Tag> Tags
-        {
-            get { return this._tags; }
-            set { this._tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._vpcId != null;
         }
 
     }

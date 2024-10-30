@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SecurityGroup Object
+    /// Response Unmarshaller for RevokedSecurityGroupRule Object
     /// </summary>  
-    public class SecurityGroupUnmarshaller : IUnmarshaller<SecurityGroup, XmlUnmarshallerContext>, IUnmarshaller<SecurityGroup, JsonUnmarshallerContext>
+    public class RevokedSecurityGroupRuleUnmarshaller : IUnmarshaller<RevokedSecurityGroupRule, XmlUnmarshallerContext>, IUnmarshaller<RevokedSecurityGroupRule, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SecurityGroup Unmarshall(XmlUnmarshallerContext context)
+        public RevokedSecurityGroupRule Unmarshall(XmlUnmarshallerContext context)
         {
-            SecurityGroup unmarshalledObject = new SecurityGroup();
+            RevokedSecurityGroupRule unmarshalledObject = new RevokedSecurityGroupRule();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -55,10 +55,28 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("groupDescription", targetDepth))
+                    if (context.TestExpression("cidrIpv4", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CidrIpv4 = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("cidrIpv6", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CidrIpv6 = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("description", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("fromPort", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.FromPort = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("groupId", targetDepth))
@@ -67,61 +85,40 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.GroupId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("groupName", targetDepth))
+                    if (context.TestExpression("ipProtocol", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.GroupName = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.IpProtocol = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("ipPermissions/item", targetDepth))
+                    if (context.TestExpression("isEgress", targetDepth))
                     {
-                        var unmarshaller = IpPermissionUnmarshaller.Instance;
-                        if (unmarshalledObject.IpPermissions == null)
-                        {
-                            unmarshalledObject.IpPermissions = new List<IpPermission>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.IpPermissions.Add(item);
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.IsEgress = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("ipPermissionsEgress/item", targetDepth))
-                    {
-                        var unmarshaller = IpPermissionUnmarshaller.Instance;
-                        if (unmarshalledObject.IpPermissionsEgress == null)
-                        {
-                            unmarshalledObject.IpPermissionsEgress = new List<IpPermission>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.IpPermissionsEgress.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("ownerId", targetDepth))
+                    if (context.TestExpression("prefixListId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.PrefixListId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("securityGroupArn", targetDepth))
+                    if (context.TestExpression("referencedGroupId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.SecurityGroupArn = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ReferencedGroupId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("tagSet/item", targetDepth))
-                    {
-                        var unmarshaller = TagUnmarshaller.Instance;
-                        if (unmarshalledObject.Tags == null)
-                        {
-                            unmarshalledObject.Tags = new List<Tag>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.Tags.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("vpcId", targetDepth))
+                    if (context.TestExpression("securityGroupRuleId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.VpcId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.SecurityGroupRuleId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("toPort", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.ToPort = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -139,18 +136,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SecurityGroup Unmarshall(JsonUnmarshallerContext context)
+        public RevokedSecurityGroupRule Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static SecurityGroupUnmarshaller _instance = new SecurityGroupUnmarshaller();        
+        private static RevokedSecurityGroupRuleUnmarshaller _instance = new RevokedSecurityGroupRuleUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SecurityGroupUnmarshaller Instance
+        public static RevokedSecurityGroupRuleUnmarshaller Instance
         {
             get
             {

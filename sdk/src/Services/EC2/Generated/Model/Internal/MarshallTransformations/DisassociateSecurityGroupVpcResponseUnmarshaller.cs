@@ -33,9 +33,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RevokeSecurityGroupIngress operation
+    /// Response Unmarshaller for DisassociateSecurityGroupVpc operation
     /// </summary>  
-    public class RevokeSecurityGroupIngressResponseUnmarshaller : EC2ResponseUnmarshaller
+    public class DisassociateSecurityGroupVpcResponseUnmarshaller : EC2ResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,7 +44,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            RevokeSecurityGroupIngressResponse response = new RevokeSecurityGroupIngressResponse();
+            DisassociateSecurityGroupVpcResponse response = new DisassociateSecurityGroupVpcResponse();
 
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
@@ -56,32 +56,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("return", targetDepth))
+                    if (context.TestExpression("state", targetDepth))
                     {
-                        var unmarshaller = BoolUnmarshaller.Instance;
-                        response.Return = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("revokedSecurityGroupRuleSet/item", targetDepth))
-                    {
-                        var unmarshaller = RevokedSecurityGroupRuleUnmarshaller.Instance;
-                        if (response.RevokedSecurityGroupRules == null)
-                        {
-                            response.RevokedSecurityGroupRules = new List<RevokedSecurityGroupRule>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        response.RevokedSecurityGroupRules.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("unknownIpPermissionSet/item", targetDepth))
-                    {
-                        var unmarshaller = IpPermissionUnmarshaller.Instance;
-                        if (response.UnknownIpPermissions == null)
-                        {
-                            response.UnknownIpPermissions = new List<IpPermission>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        response.UnknownIpPermissions.Add(item);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.State = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 
@@ -102,9 +80,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             return new AmazonEC2Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static RevokeSecurityGroupIngressResponseUnmarshaller _instance = new RevokeSecurityGroupIngressResponseUnmarshaller();        
+        private static DisassociateSecurityGroupVpcResponseUnmarshaller _instance = new DisassociateSecurityGroupVpcResponseUnmarshaller();        
 
-        internal static RevokeSecurityGroupIngressResponseUnmarshaller GetInstance()
+        internal static DisassociateSecurityGroupVpcResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -112,7 +90,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RevokeSecurityGroupIngressResponseUnmarshaller Instance
+        public static DisassociateSecurityGroupVpcResponseUnmarshaller Instance
         {
             get
             {

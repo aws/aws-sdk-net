@@ -412,6 +412,11 @@ namespace Amazon.EC2.Model
         IDescribeSecurityGroupsPaginator DescribeSecurityGroups(DescribeSecurityGroupsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeSecurityGroupVpcAssociations operation
+        ///</summary>
+        IDescribeSecurityGroupVpcAssociationsPaginator DescribeSecurityGroupVpcAssociations(DescribeSecurityGroupVpcAssociationsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeSnapshots operation
         ///</summary>
         IDescribeSnapshotsPaginator DescribeSnapshots(DescribeSnapshotsRequest request);

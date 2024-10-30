@@ -239,7 +239,12 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <c>interface</c> | <c>efa</c> 
+        /// If you specify <c>efa-only</c>, do not assign any IP addresses to the network interface.
+        /// EFA-only network interfaces do not support IP addresses.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <c>interface</c> | <c>efa</c> | <c>efa-only</c> 
         /// </para>
         /// </summary>
         public string InterfaceType

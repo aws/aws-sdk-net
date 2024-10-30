@@ -30,12 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeStaleSecurityGroups operation.
+    /// This is the response object from the DescribeSecurityGroupVpcAssociations operation.
     /// </summary>
-    public partial class DescribeStaleSecurityGroupsResponse : AmazonWebServiceResponse
+    public partial class DescribeSecurityGroupVpcAssociationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<StaleSecurityGroup> _staleSecurityGroupSet = AWSConfigs.InitializeCollections ? new List<StaleSecurityGroup>() : null;
+        private List<SecurityGroupVpcAssociation> _securityGroupVpcAssociations = AWSConfigs.InitializeCollections ? new List<SecurityGroupVpcAssociation>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -57,21 +57,21 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StaleSecurityGroupSet. 
+        /// Gets and sets the property SecurityGroupVpcAssociations. 
         /// <para>
-        /// Information about the stale security groups.
+        /// The security group VPC associations.
         /// </para>
         /// </summary>
-        public List<StaleSecurityGroup> StaleSecurityGroupSet
+        public List<SecurityGroupVpcAssociation> SecurityGroupVpcAssociations
         {
-            get { return this._staleSecurityGroupSet; }
-            set { this._staleSecurityGroupSet = value; }
+            get { return this._securityGroupVpcAssociations; }
+            set { this._securityGroupVpcAssociations = value; }
         }
 
-        // Check to see if StaleSecurityGroupSet property is set
-        internal bool IsSetStaleSecurityGroupSet()
+        // Check to see if SecurityGroupVpcAssociations property is set
+        internal bool IsSetSecurityGroupVpcAssociations()
         {
-            return this._staleSecurityGroupSet != null && (this._staleSecurityGroupSet.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._securityGroupVpcAssociations != null && (this._securityGroupVpcAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

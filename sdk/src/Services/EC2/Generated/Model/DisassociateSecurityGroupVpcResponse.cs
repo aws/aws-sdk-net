@@ -30,31 +30,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeSecurityGroupReferences operation.
-    /// Describes the VPCs on the other side of a VPC peering or Transit Gateway connection
-    /// that are referencing the security groups you've specified in this request.
+    /// This is the response object from the DisassociateSecurityGroupVpc operation.
     /// </summary>
-    public partial class DescribeSecurityGroupReferencesRequest : AmazonEC2Request
+    public partial class DisassociateSecurityGroupVpcResponse : AmazonWebServiceResponse
     {
-        private List<string> _groupId = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private SecurityGroupVpcAssociationState _state;
 
         /// <summary>
-        /// Gets and sets the property GroupId. 
+        /// Gets and sets the property State. 
         /// <para>
-        /// The IDs of the security groups in your account.
+        /// The state of the disassociation.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public List<string> GroupId
+        public SecurityGroupVpcAssociationState State
         {
-            get { return this._groupId; }
-            set { this._groupId = value; }
+            get { return this._state; }
+            set { this._state = value; }
         }
 
-        // Check to see if GroupId property is set
-        internal bool IsSetGroupId()
+        // Check to see if State property is set
+        internal bool IsSetState()
         {
-            return this._groupId != null && (this._groupId.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._state != null;
         }
 
     }

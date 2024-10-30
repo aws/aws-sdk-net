@@ -30,29 +30,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes a security group rule.
+    /// A security group rule removed with <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RevokeSecurityGroupEgress.html">RevokeSecurityGroupEgress</a>
+    /// or <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RevokeSecurityGroupIngress.html">RevokeSecurityGroupIngress</a>.
     /// </summary>
-    public partial class SecurityGroupRule
+    public partial class RevokedSecurityGroupRule
     {
         private string _cidrIpv4;
         private string _cidrIpv6;
         private string _description;
         private int? _fromPort;
         private string _groupId;
-        private string _groupOwnerId;
         private string _ipProtocol;
         private bool? _isEgress;
         private string _prefixListId;
-        private ReferencedSecurityGroup _referencedGroupInfo;
-        private string _securityGroupRuleArn;
+        private string _referencedGroupId;
         private string _securityGroupRuleId;
-        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private int? _toPort;
 
         /// <summary>
         /// Gets and sets the property CidrIpv4. 
         /// <para>
-        /// The IPv4 CIDR range.
+        /// The IPv4 CIDR of the traffic source.
         /// </para>
         /// </summary>
         public string CidrIpv4
@@ -70,7 +68,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CidrIpv6. 
         /// <para>
-        /// The IPv6 CIDR range.
+        /// The IPv6 CIDR of the traffic source.
         /// </para>
         /// </summary>
         public string CidrIpv6
@@ -88,7 +86,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The security group rule description.
+        /// A description of the revoked security group rule.
         /// </para>
         /// </summary>
         public string Description
@@ -106,8 +104,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property FromPort. 
         /// <para>
-        /// If the protocol is TCP or UDP, this is the start of the port range. If the protocol
-        /// is ICMP or ICMPv6, this is the ICMP type or -1 (all ICMP types).
+        /// The 'from' port number of the security group rule.
         /// </para>
         /// </summary>
         public int FromPort
@@ -125,7 +122,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property GroupId. 
         /// <para>
-        /// The ID of the security group.
+        /// A security group ID.
         /// </para>
         /// </summary>
         public string GroupId
@@ -141,33 +138,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GroupOwnerId. 
-        /// <para>
-        /// The ID of the Amazon Web Services account that owns the security group. 
-        /// </para>
-        /// </summary>
-        public string GroupOwnerId
-        {
-            get { return this._groupOwnerId; }
-            set { this._groupOwnerId = value; }
-        }
-
-        // Check to see if GroupOwnerId property is set
-        internal bool IsSetGroupOwnerId()
-        {
-            return this._groupOwnerId != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property IpProtocol. 
         /// <para>
-        /// The IP protocol name (<c>tcp</c>, <c>udp</c>, <c>icmp</c>, <c>icmpv6</c>) or number
-        /// (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
-        /// Numbers</a>). 
-        /// </para>
-        ///  
-        /// <para>
-        /// Use <c>-1</c> to specify all protocols.
+        /// The security group rule's protocol.
         /// </para>
         /// </summary>
         public string IpProtocol
@@ -185,7 +158,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IsEgress. 
         /// <para>
-        /// Indicates whether the security group rule is an outbound rule.
+        /// Defines if a security group rule is an outbound rule.
         /// </para>
         /// </summary>
         public bool IsEgress
@@ -203,7 +176,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PrefixListId. 
         /// <para>
-        /// The ID of the prefix list.
+        /// The ID of a prefix list that's the traffic source.
         /// </para>
         /// </summary>
         public string PrefixListId
@@ -219,45 +192,27 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReferencedGroupInfo. 
+        /// Gets and sets the property ReferencedGroupId. 
         /// <para>
-        /// Describes the security group that is referenced in the rule.
+        /// The ID of a referenced security group.
         /// </para>
         /// </summary>
-        public ReferencedSecurityGroup ReferencedGroupInfo
+        public string ReferencedGroupId
         {
-            get { return this._referencedGroupInfo; }
-            set { this._referencedGroupInfo = value; }
+            get { return this._referencedGroupId; }
+            set { this._referencedGroupId = value; }
         }
 
-        // Check to see if ReferencedGroupInfo property is set
-        internal bool IsSetReferencedGroupInfo()
+        // Check to see if ReferencedGroupId property is set
+        internal bool IsSetReferencedGroupId()
         {
-            return this._referencedGroupInfo != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SecurityGroupRuleArn. 
-        /// <para>
-        /// The ARN of the security group rule.
-        /// </para>
-        /// </summary>
-        public string SecurityGroupRuleArn
-        {
-            get { return this._securityGroupRuleArn; }
-            set { this._securityGroupRuleArn = value; }
-        }
-
-        // Check to see if SecurityGroupRuleArn property is set
-        internal bool IsSetSecurityGroupRuleArn()
-        {
-            return this._securityGroupRuleArn != null;
+            return this._referencedGroupId != null;
         }
 
         /// <summary>
         /// Gets and sets the property SecurityGroupRuleId. 
         /// <para>
-        /// The ID of the security group rule.
+        /// A security group rule ID.
         /// </para>
         /// </summary>
         public string SecurityGroupRuleId
@@ -273,29 +228,9 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// The tags applied to the security group rule.
-        /// </para>
-        /// </summary>
-        public List<Tag> Tags
-        {
-            get { return this._tags; }
-            set { this._tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
-
-        /// <summary>
         /// Gets and sets the property ToPort. 
         /// <para>
-        /// If the protocol is TCP or UDP, this is the end of the port range. If the protocol
-        /// is ICMP or ICMPv6, this is the ICMP code or -1 (all ICMP codes). If the start port
-        /// is -1 (all ICMP types), then the end port must be -1 (all ICMP codes).
+        /// The 'to' port number of the security group rule.
         /// </para>
         /// </summary>
         public int ToPort

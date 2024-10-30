@@ -30,21 +30,61 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeStaleSecurityGroups operation.
-    /// Describes the stale security group rules for security groups referenced across a VPC
-    /// peering connection, transit gateway connection, or with a security group VPC association.
-    /// Rules are stale when they reference a deleted security group. Rules can also be stale
-    /// if they reference a security group in a peer VPC for which the VPC peering connection
-    /// has been deleted, across a transit gateway where the transit gateway has been deleted
-    /// (or <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-vpc-attachments.html#vpc-attachment-security">the
-    /// transit gateway security group referencing feature</a> has been disabled), or if a
-    /// security group VPC association has been disassociated.
+    /// Container for the parameters to the DescribeSecurityGroupVpcAssociations operation.
+    /// Describes security group VPC associations made with <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateSecurityGroupVpc.html">AssociateSecurityGroupVpc</a>.
     /// </summary>
-    public partial class DescribeStaleSecurityGroupsRequest : AmazonEC2Request
+    public partial class DescribeSecurityGroupVpcAssociationsRequest : AmazonEC2Request
     {
+        private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
         private int? _maxResults;
         private string _nextToken;
-        private string _vpcId;
+
+        /// <summary>
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// Security group VPC association filters.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>group-id</c>: The security group ID.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>vpc-id</c>: The ID of the associated VPC.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>vpc-owner-id</c>: The account ID of the VPC owner.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>state</c>: The state of the association.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>tag:&lt;key&gt;</c>: The key/value combination of a tag assigned to the resource.
+        /// Use the tag key in the filter name and the tag value as the filter value. For example,
+        /// to find all resources that have a tag with the key <c>Owner</c> and the value <c>TeamA</c>,
+        /// specify <c>tag:Owner</c> for the filter name and <c>TeamA</c> for the filter value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>tag-key</c>: The key of a tag assigned to the resource. Use this filter to find
+        /// all resources assigned a tag with a specific key, regardless of the tag value.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public List<Filter> Filters
+        {
+            get { return this._filters; }
+            set { this._filters = value; }
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -54,7 +94,7 @@ namespace Amazon.EC2.Model
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=5, Max=255)]
+        [AWSProperty(Min=5, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -74,7 +114,6 @@ namespace Amazon.EC2.Model
         /// end of the items returned by the previous request.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -85,25 +124,6 @@ namespace Amazon.EC2.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property VpcId. 
-        /// <para>
-        /// The ID of the VPC.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string VpcId
-        {
-            get { return this._vpcId; }
-            set { this._vpcId = value; }
-        }
-
-        // Check to see if VpcId property is set
-        internal bool IsSetVpcId()
-        {
-            return this._vpcId != null;
         }
 
     }

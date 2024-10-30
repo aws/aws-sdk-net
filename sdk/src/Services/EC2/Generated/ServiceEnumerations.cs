@@ -17995,6 +17995,72 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type SecurityGroupVpcAssociationState.
+    /// </summary>
+    public class SecurityGroupVpcAssociationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Associated for SecurityGroupVpcAssociationState
+        /// </summary>
+        public static readonly SecurityGroupVpcAssociationState Associated = new SecurityGroupVpcAssociationState("associated");
+        /// <summary>
+        /// Constant Associating for SecurityGroupVpcAssociationState
+        /// </summary>
+        public static readonly SecurityGroupVpcAssociationState Associating = new SecurityGroupVpcAssociationState("associating");
+        /// <summary>
+        /// Constant AssociationFailed for SecurityGroupVpcAssociationState
+        /// </summary>
+        public static readonly SecurityGroupVpcAssociationState AssociationFailed = new SecurityGroupVpcAssociationState("association-failed");
+        /// <summary>
+        /// Constant Disassociated for SecurityGroupVpcAssociationState
+        /// </summary>
+        public static readonly SecurityGroupVpcAssociationState Disassociated = new SecurityGroupVpcAssociationState("disassociated");
+        /// <summary>
+        /// Constant Disassociating for SecurityGroupVpcAssociationState
+        /// </summary>
+        public static readonly SecurityGroupVpcAssociationState Disassociating = new SecurityGroupVpcAssociationState("disassociating");
+        /// <summary>
+        /// Constant DisassociationFailed for SecurityGroupVpcAssociationState
+        /// </summary>
+        public static readonly SecurityGroupVpcAssociationState DisassociationFailed = new SecurityGroupVpcAssociationState("disassociation-failed");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SecurityGroupVpcAssociationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SecurityGroupVpcAssociationState FindValue(string value)
+        {
+            return FindValue<SecurityGroupVpcAssociationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SecurityGroupVpcAssociationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SelfServicePortal.
     /// </summary>
     public class SelfServicePortal : ConstantClass
