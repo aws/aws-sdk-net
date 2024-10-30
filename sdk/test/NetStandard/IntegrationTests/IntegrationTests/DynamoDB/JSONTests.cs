@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json;
 using Xunit;
 
 namespace Amazon.DNXCore.IntegrationTests.DynamoDB
@@ -17,8 +18,8 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
 ""CompanyName"" : ""Big River"" ,
 ""CurrentStatus"" : ""Active"",
 ""CompanyInfo"" : {
-    ""Name"" : ""Big River"" ,
-    ""Year Founded"" : 1998,
+    ""Name"" : ""Big River"",
+    ""Year Founded"" : 1998
 } ,
 ""Aliases"" :
     [ ""Al"" , ""Steve"" , ""Alan-san"" ],
@@ -230,7 +231,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
             var aRt = Encoding.UTF8.GetString(streamA.ToArray());
             var bRt = Encoding.UTF8.GetString(streamB.ToArray());
 
-            Assert.AreEqual(aRt, bRt);
+            Assert.Equal(aRt, bRt);
         }
     }
 }
