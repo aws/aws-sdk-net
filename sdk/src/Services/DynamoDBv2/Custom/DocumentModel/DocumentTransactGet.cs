@@ -21,6 +21,7 @@ using System.Threading;
 using System.Threading.Tasks;
 #endif
 using Amazon.DynamoDBv2.Model;
+using Amazon.Runtime.Telemetry.Tracing;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
@@ -108,6 +109,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         internal Table TargetTable { get; private set; }
         internal List<TransactGetRequestItem> Items { get; private set; }
+        internal TracerProvider TracerProvider { get; private set; }
 
         #endregion
 
@@ -130,6 +132,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             TargetTable = targetTable;
             Items = new List<TransactGetRequestItem>();
+            TracerProvider = targetTable?.DDBClient?.Config?.TelemetryProvider?.TracerProvider
+                ?? AWSConfigs.TelemetryProvider.TracerProvider;
         }
 
         #endregion
@@ -244,6 +248,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
     {
         #region Properties
 
+        internal TracerProvider TracerProvider { get; private set; }
+
         /// <inheritdoc/>
         public List<IDocumentTransactGet> TransactionParts { get; private set; }
 
@@ -263,6 +269,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 throw new ArgumentNullException(nameof(transactionParts));
 
             TransactionParts = new List<IDocumentTransactGet>(transactionParts);
+            TracerProvider = GetTracerProvider(TransactionParts);
         }
 
         #endregion
@@ -320,6 +327,19 @@ namespace Amazon.DynamoDBv2.DocumentModel
                     return docTransactGet.Items;
                 }).ToList()
             };
+        }
+
+        private TracerProvider GetTracerProvider(List<IDocumentTransactGet> batches)
+        {
+            var tracerProvider = AWSConfigs.TelemetryProvider.TracerProvider;
+            if (batches.Count > 0)
+            {
+                if (batches[0] is DocumentTransactGet documentTransactGet)
+                {
+                    tracerProvider = documentTransactGet.TracerProvider;
+                }
+            }
+            return tracerProvider;
         }
 
         #endregion

@@ -22,6 +22,7 @@ using System.Threading;
 using System.Threading.Tasks;
 #endif
 using Amazon.DynamoDBv2.Model;
+using Amazon.Runtime.Telemetry.Tracing;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
@@ -83,6 +84,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         internal Table TargetTable { get; private set; }
         internal List<Key> ToDelete { get; private set; }
         internal List<Document> ToPut { get; private set; }
+        internal TracerProvider TracerProvider { get; private set; }
 
         #endregion
 
@@ -98,6 +100,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
             TargetTable = targetTable;
             ToDelete = new List<Key>();
             ToPut = new List<Document>();
+            TracerProvider = targetTable?.DDBClient?.Config?.TelemetryProvider?.TracerProvider
+                ?? AWSConfigs.TelemetryProvider.TracerProvider;
         }
 
         #endregion
@@ -209,6 +213,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
     {
         #region Properties
 
+        internal TracerProvider TracerProvider { get; private set; }
+
         /// <inheritdoc/>
         public List<IDocumentBatchWrite> Batches { get; private set; }
 
@@ -228,6 +234,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 throw new ArgumentNullException("batches");
 
             Batches = new List<IDocumentBatchWrite>(batches);
+            TracerProvider = GetTracerProvider(Batches);
         }
 
         #endregion
@@ -269,6 +276,19 @@ namespace Amazon.DynamoDBv2.DocumentModel
 #endif
 
         #endregion
+
+        private TracerProvider GetTracerProvider(List<IDocumentBatchWrite> batches)
+        {
+            var tracerProvider = AWSConfigs.TelemetryProvider.TracerProvider;
+            if (batches.Count > 0)
+            {
+                if (batches[0] is DocumentBatchWrite documentBatchWrite)
+                {
+                    tracerProvider = documentBatchWrite.TracerProvider;
+                }
+            }
+            return tracerProvider;
+        }
     }
 
 
