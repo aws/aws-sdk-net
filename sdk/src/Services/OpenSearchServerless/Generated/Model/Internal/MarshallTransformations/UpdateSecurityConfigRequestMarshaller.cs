@@ -92,6 +92,17 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetIamIdentityCenterOptionsUpdates())
+                {
+                    context.Writer.WritePropertyName("iamIdentityCenterOptionsUpdates");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = UpdateIamIdentityCenterConfigOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.IamIdentityCenterOptionsUpdates, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetId())
                 {
                     context.Writer.WritePropertyName("id");

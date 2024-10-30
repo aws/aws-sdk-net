@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SecurityConfigDetail Object
+    /// Response Unmarshaller for IamIdentityCenterConfigOptions Object
     /// </summary>  
-    public class SecurityConfigDetailUnmarshaller : IUnmarshaller<SecurityConfigDetail, XmlUnmarshallerContext>, IUnmarshaller<SecurityConfigDetail, JsonUnmarshallerContext>
+    public class IamIdentityCenterConfigOptionsUnmarshaller : IUnmarshaller<IamIdentityCenterConfigOptions, XmlUnmarshallerContext>, IUnmarshaller<IamIdentityCenterConfigOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SecurityConfigDetail IUnmarshaller<SecurityConfigDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        IamIdentityCenterConfigOptions IUnmarshaller<IamIdentityCenterConfigOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public SecurityConfigDetail Unmarshall(JsonUnmarshallerContext context)
+        public IamIdentityCenterConfigOptions Unmarshall(JsonUnmarshallerContext context)
         {
-            SecurityConfigDetail unmarshalledObject = new SecurityConfigDetail();
+            IamIdentityCenterConfigOptions unmarshalledObject = new IamIdentityCenterConfigOptions();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,52 +66,40 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("configVersion", targetDepth))
+                if (context.TestExpression("applicationArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConfigVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ApplicationArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("createdDate", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.CreatedDate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("applicationDescription", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ApplicationDescription = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("iamIdentityCenterOptions", targetDepth))
-                {
-                    var unmarshaller = IamIdentityCenterConfigOptionsUnmarshaller.Instance;
-                    unmarshalledObject.IamIdentityCenterOptions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("id", targetDepth))
+                if (context.TestExpression("applicationName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ApplicationName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("lastModifiedDate", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.LastModifiedDate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("samlOptions", targetDepth))
-                {
-                    var unmarshaller = SamlConfigOptionsUnmarshaller.Instance;
-                    unmarshalledObject.SamlOptions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("type", targetDepth))
+                if (context.TestExpression("groupAttribute", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GroupAttribute = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("instanceArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InstanceArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("userAttribute", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UserAttribute = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -119,12 +107,12 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
         }
 
 
-        private static SecurityConfigDetailUnmarshaller _instance = new SecurityConfigDetailUnmarshaller();        
+        private static IamIdentityCenterConfigOptionsUnmarshaller _instance = new IamIdentityCenterConfigOptionsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SecurityConfigDetailUnmarshaller Instance
+        public static IamIdentityCenterConfigOptionsUnmarshaller Instance
         {
             get
             {
