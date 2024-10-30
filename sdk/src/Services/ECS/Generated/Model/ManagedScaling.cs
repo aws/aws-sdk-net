@@ -98,8 +98,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property MinimumScalingStepSize. 
         /// <para>
         /// The minimum number of Amazon EC2 instances that Amazon ECS will scale out at one time.
-        /// The scale in process is not affected by this parameter If this parameter is omitted,
-        /// the default value of <c>1</c> is used.
+        /// If this parameter is omitted, the default value of <c>1</c> is used.
         /// </para>
         ///  
         /// <para>

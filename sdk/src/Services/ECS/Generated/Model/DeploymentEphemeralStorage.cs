@@ -39,7 +39,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// Specify an Key Management Service key ID to encrypt the ephemeral storage for deployment.
+        /// Specify an Amazon Web Services Key Management Service key ID to encrypt the ephemeral
+        /// storage for deployment.
         /// </para>
         /// </summary>
         public string KmsKeyId

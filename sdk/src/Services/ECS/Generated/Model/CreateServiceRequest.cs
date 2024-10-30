@@ -34,7 +34,7 @@ namespace Amazon.ECS.Model
     /// Runs and maintains your desired number of tasks from a specified task definition.
     /// If the number of tasks running in a service drops below the <c>desiredCount</c>, Amazon
     /// ECS runs another copy of the task in the specified cluster. To update an existing
-    /// service, use <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html">UpdateService</a>.
+    /// service, see the <a>UpdateService</a> action.
     /// 
     ///  <note> 
     /// <para>
@@ -253,7 +253,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property DeploymentConfiguration. 
         /// <para>
         /// Optional deployment parameters that control how many tasks run during the deployment
-        /// and the ordering of stopping and starting tasks.
+        /// and the failure detection methods.
         /// </para>
         /// </summary>
         public DeploymentConfiguration DeploymentConfiguration

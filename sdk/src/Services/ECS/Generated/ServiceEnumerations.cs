@@ -2465,6 +2465,138 @@ namespace Amazon.ECS
 
 
     /// <summary>
+    /// Constants used for properties of type ServiceDeploymentRollbackMonitorsStatus.
+    /// </summary>
+    public class ServiceDeploymentRollbackMonitorsStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for ServiceDeploymentRollbackMonitorsStatus
+        /// </summary>
+        public static readonly ServiceDeploymentRollbackMonitorsStatus DISABLED = new ServiceDeploymentRollbackMonitorsStatus("DISABLED");
+        /// <summary>
+        /// Constant MONITORING for ServiceDeploymentRollbackMonitorsStatus
+        /// </summary>
+        public static readonly ServiceDeploymentRollbackMonitorsStatus MONITORING = new ServiceDeploymentRollbackMonitorsStatus("MONITORING");
+        /// <summary>
+        /// Constant MONITORING_COMPLETE for ServiceDeploymentRollbackMonitorsStatus
+        /// </summary>
+        public static readonly ServiceDeploymentRollbackMonitorsStatus MONITORING_COMPLETE = new ServiceDeploymentRollbackMonitorsStatus("MONITORING_COMPLETE");
+        /// <summary>
+        /// Constant TRIGGERED for ServiceDeploymentRollbackMonitorsStatus
+        /// </summary>
+        public static readonly ServiceDeploymentRollbackMonitorsStatus TRIGGERED = new ServiceDeploymentRollbackMonitorsStatus("TRIGGERED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServiceDeploymentRollbackMonitorsStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServiceDeploymentRollbackMonitorsStatus FindValue(string value)
+        {
+            return FindValue<ServiceDeploymentRollbackMonitorsStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServiceDeploymentRollbackMonitorsStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ServiceDeploymentStatus.
+    /// </summary>
+    public class ServiceDeploymentStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IN_PROGRESS for ServiceDeploymentStatus
+        /// </summary>
+        public static readonly ServiceDeploymentStatus IN_PROGRESS = new ServiceDeploymentStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant PENDING for ServiceDeploymentStatus
+        /// </summary>
+        public static readonly ServiceDeploymentStatus PENDING = new ServiceDeploymentStatus("PENDING");
+        /// <summary>
+        /// Constant ROLLBACK_FAILED for ServiceDeploymentStatus
+        /// </summary>
+        public static readonly ServiceDeploymentStatus ROLLBACK_FAILED = new ServiceDeploymentStatus("ROLLBACK_FAILED");
+        /// <summary>
+        /// Constant ROLLBACK_IN_PROGRESS for ServiceDeploymentStatus
+        /// </summary>
+        public static readonly ServiceDeploymentStatus ROLLBACK_IN_PROGRESS = new ServiceDeploymentStatus("ROLLBACK_IN_PROGRESS");
+        /// <summary>
+        /// Constant ROLLBACK_SUCCESSFUL for ServiceDeploymentStatus
+        /// </summary>
+        public static readonly ServiceDeploymentStatus ROLLBACK_SUCCESSFUL = new ServiceDeploymentStatus("ROLLBACK_SUCCESSFUL");
+        /// <summary>
+        /// Constant STOP_REQUESTED for ServiceDeploymentStatus
+        /// </summary>
+        public static readonly ServiceDeploymentStatus STOP_REQUESTED = new ServiceDeploymentStatus("STOP_REQUESTED");
+        /// <summary>
+        /// Constant STOPPED for ServiceDeploymentStatus
+        /// </summary>
+        public static readonly ServiceDeploymentStatus STOPPED = new ServiceDeploymentStatus("STOPPED");
+        /// <summary>
+        /// Constant SUCCESSFUL for ServiceDeploymentStatus
+        /// </summary>
+        public static readonly ServiceDeploymentStatus SUCCESSFUL = new ServiceDeploymentStatus("SUCCESSFUL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServiceDeploymentStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServiceDeploymentStatus FindValue(string value)
+        {
+            return FindValue<ServiceDeploymentStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServiceDeploymentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ServiceField.
     /// </summary>
     public class ServiceField : ConstantClass

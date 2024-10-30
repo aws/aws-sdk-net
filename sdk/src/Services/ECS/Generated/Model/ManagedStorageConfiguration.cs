@@ -58,7 +58,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// Specify a Key Management Service key ID to encrypt the managed storage.
+        /// Specify a Amazon Web Services Key Management Service key ID to encrypt the managed
+        /// storage.
         /// </para>
         /// </summary>
         public string KmsKeyId
