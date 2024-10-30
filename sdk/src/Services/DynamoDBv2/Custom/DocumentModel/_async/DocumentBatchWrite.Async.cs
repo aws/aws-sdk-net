@@ -14,6 +14,7 @@
  */
 #pragma warning disable 1574
 
+using Amazon.Runtime.Telemetry.Tracing;
 using System.Threading;
 using System.Threading.Tasks;
 
