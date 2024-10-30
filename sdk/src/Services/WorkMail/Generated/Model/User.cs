@@ -39,6 +39,8 @@ namespace Amazon.WorkMail.Model
         private string _email;
         private DateTime? _enabledDate;
         private string _id;
+        private string _identityProviderIdentityStoreId;
+        private string _identityProviderUserId;
         private string _name;
         private EntityState _state;
         private UserRole _userRole;
@@ -134,6 +136,48 @@ namespace Amazon.WorkMail.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdentityProviderIdentityStoreId. 
+        /// <para>
+        /// Identity store ID from the IAM Identity Center. If this parameter is empty it will
+        /// be updated automatically when the user logs in for the first time to the mailbox associated
+        /// with WorkMail.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=36)]
+        public string IdentityProviderIdentityStoreId
+        {
+            get { return this._identityProviderIdentityStoreId; }
+            set { this._identityProviderIdentityStoreId = value; }
+        }
+
+        // Check to see if IdentityProviderIdentityStoreId property is set
+        internal bool IsSetIdentityProviderIdentityStoreId()
+        {
+            return this._identityProviderIdentityStoreId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdentityProviderUserId. 
+        /// <para>
+        /// User ID from the IAM Identity Center. If this parameter is empty it will be updated
+        /// automatically when the user logs in for the first time to the mailbox associated with
+        /// WorkMail.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=47)]
+        public string IdentityProviderUserId
+        {
+            get { return this._identityProviderUserId; }
+            set { this._identityProviderUserId = value; }
+        }
+
+        // Check to see if IdentityProviderUserId property is set
+        internal bool IsSetIdentityProviderUserId()
+        {
+            return this._identityProviderUserId != null;
         }
 
         /// <summary>

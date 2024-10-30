@@ -87,6 +87,12 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.HiddenFromGlobalAddressList);
                 }
 
+                if(publicRequest.IsSetIdentityProviderUserId())
+                {
+                    context.Writer.WritePropertyName("IdentityProviderUserId");
+                    context.Writer.Write(publicRequest.IdentityProviderUserId);
+                }
+
                 if(publicRequest.IsSetLastName())
                 {
                     context.Writer.WritePropertyName("LastName");

@@ -399,6 +399,56 @@ namespace Amazon.WorkMail
 
 
     /// <summary>
+    /// Constants used for properties of type IdentityProviderAuthenticationMode.
+    /// </summary>
+    public class IdentityProviderAuthenticationMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IDENTITY_PROVIDER_AND_DIRECTORY for IdentityProviderAuthenticationMode
+        /// </summary>
+        public static readonly IdentityProviderAuthenticationMode IDENTITY_PROVIDER_AND_DIRECTORY = new IdentityProviderAuthenticationMode("IDENTITY_PROVIDER_AND_DIRECTORY");
+        /// <summary>
+        /// Constant IDENTITY_PROVIDER_ONLY for IdentityProviderAuthenticationMode
+        /// </summary>
+        public static readonly IdentityProviderAuthenticationMode IDENTITY_PROVIDER_ONLY = new IdentityProviderAuthenticationMode("IDENTITY_PROVIDER_ONLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IdentityProviderAuthenticationMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IdentityProviderAuthenticationMode FindValue(string value)
+        {
+            return FindValue<IdentityProviderAuthenticationMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IdentityProviderAuthenticationMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ImpersonationRoleType.
     /// </summary>
     public class ImpersonationRoleType : ConstantClass
@@ -654,6 +704,56 @@ namespace Amazon.WorkMail
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PermissionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PersonalAccessTokenConfigurationStatus.
+    /// </summary>
+    public class PersonalAccessTokenConfigurationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for PersonalAccessTokenConfigurationStatus
+        /// </summary>
+        public static readonly PersonalAccessTokenConfigurationStatus ACTIVE = new PersonalAccessTokenConfigurationStatus("ACTIVE");
+        /// <summary>
+        /// Constant INACTIVE for PersonalAccessTokenConfigurationStatus
+        /// </summary>
+        public static readonly PersonalAccessTokenConfigurationStatus INACTIVE = new PersonalAccessTokenConfigurationStatus("INACTIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PersonalAccessTokenConfigurationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PersonalAccessTokenConfigurationStatus FindValue(string value)
+        {
+            return FindValue<PersonalAccessTokenConfigurationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PersonalAccessTokenConfigurationStatus(string value)
         {
             return FindValue(value);
         }
