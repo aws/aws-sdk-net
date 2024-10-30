@@ -190,6 +190,17 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetIdentityCenterOptions())
+                {
+                    context.Writer.WritePropertyName("IdentityCenterOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = IdentityCenterOptionsInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.IdentityCenterOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetIPAddressType())
                 {
                     context.Writer.WritePropertyName("IPAddressType");

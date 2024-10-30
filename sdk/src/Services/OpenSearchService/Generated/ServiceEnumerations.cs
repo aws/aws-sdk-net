@@ -199,6 +199,118 @@ namespace Amazon.OpenSearchService
 
 
     /// <summary>
+    /// Constants used for properties of type AppConfigType.
+    /// </summary>
+    public class AppConfigType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OpensearchDashboardsDashboardAdminGroups for AppConfigType
+        /// </summary>
+        public static readonly AppConfigType OpensearchDashboardsDashboardAdminGroups = new AppConfigType("opensearchDashboards.dashboardAdmin.groups");
+        /// <summary>
+        /// Constant OpensearchDashboardsDashboardAdminUsers for AppConfigType
+        /// </summary>
+        public static readonly AppConfigType OpensearchDashboardsDashboardAdminUsers = new AppConfigType("opensearchDashboards.dashboardAdmin.users");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AppConfigType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AppConfigType FindValue(string value)
+        {
+            return FindValue<AppConfigType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AppConfigType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ApplicationStatus.
+    /// </summary>
+    public class ApplicationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ApplicationStatus
+        /// </summary>
+        public static readonly ApplicationStatus ACTIVE = new ApplicationStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for ApplicationStatus
+        /// </summary>
+        public static readonly ApplicationStatus CREATING = new ApplicationStatus("CREATING");
+        /// <summary>
+        /// Constant DELETING for ApplicationStatus
+        /// </summary>
+        public static readonly ApplicationStatus DELETING = new ApplicationStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for ApplicationStatus
+        /// </summary>
+        public static readonly ApplicationStatus FAILED = new ApplicationStatus("FAILED");
+        /// <summary>
+        /// Constant UPDATING for ApplicationStatus
+        /// </summary>
+        public static readonly ApplicationStatus UPDATING = new ApplicationStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ApplicationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApplicationStatus FindValue(string value)
+        {
+            return FindValue<ApplicationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApplicationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AutoTuneDesiredState.
     /// </summary>
     public class AutoTuneDesiredState : ConstantClass
@@ -366,6 +478,52 @@ namespace Amazon.OpenSearchService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AutoTuneType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AWSServicePrincipal.
+    /// </summary>
+    public class AWSServicePrincipal : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ApplicationOpensearchserviceAmazonawsCom for AWSServicePrincipal
+        /// </summary>
+        public static readonly AWSServicePrincipal ApplicationOpensearchserviceAmazonawsCom = new AWSServicePrincipal("application.opensearchservice.amazonaws.com");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AWSServicePrincipal(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AWSServicePrincipal FindValue(string value)
+        {
+            return FindValue<AWSServicePrincipal>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AWSServicePrincipal(string value)
         {
             return FindValue(value);
         }
@@ -2667,6 +2825,56 @@ namespace Amazon.OpenSearchService
 
 
     /// <summary>
+    /// Constants used for properties of type RolesKeyIdCOption.
+    /// </summary>
+    public class RolesKeyIdCOption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GroupId for RolesKeyIdCOption
+        /// </summary>
+        public static readonly RolesKeyIdCOption GroupId = new RolesKeyIdCOption("GroupId");
+        /// <summary>
+        /// Constant GroupName for RolesKeyIdCOption
+        /// </summary>
+        public static readonly RolesKeyIdCOption GroupName = new RolesKeyIdCOption("GroupName");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RolesKeyIdCOption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RolesKeyIdCOption FindValue(string value)
+        {
+            return FindValue<RolesKeyIdCOption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RolesKeyIdCOption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RollbackOnDisable.
     /// </summary>
     public class RollbackOnDisable : ConstantClass
@@ -2968,6 +3176,60 @@ namespace Amazon.OpenSearchService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SkipUnavailableStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SubjectKeyIdCOption.
+    /// </summary>
+    public class SubjectKeyIdCOption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Email for SubjectKeyIdCOption
+        /// </summary>
+        public static readonly SubjectKeyIdCOption Email = new SubjectKeyIdCOption("Email");
+        /// <summary>
+        /// Constant UserId for SubjectKeyIdCOption
+        /// </summary>
+        public static readonly SubjectKeyIdCOption UserId = new SubjectKeyIdCOption("UserId");
+        /// <summary>
+        /// Constant UserName for SubjectKeyIdCOption
+        /// </summary>
+        public static readonly SubjectKeyIdCOption UserName = new SubjectKeyIdCOption("UserName");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SubjectKeyIdCOption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SubjectKeyIdCOption FindValue(string value)
+        {
+            return FindValue<SubjectKeyIdCOption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SubjectKeyIdCOption(string value)
         {
             return FindValue(value);
         }
