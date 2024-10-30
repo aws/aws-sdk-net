@@ -1,0 +1,11 @@
+{
+    "services": [
+        {
+            "serviceName": "S3",
+            "type": "patch",
+            "changeLogMessages": [
+                "Fixes issue [#3201](https://github.com/aws/aws-sdk-net/issues/3201). Provides workaround for uploading nonseekable streams where the length may be set to 0. In Net7+ some nonseekable streams will have their length set to 0 rather than throwing a NotSupportedException or having their length correctly populated. This provides a workaround for those scenarios."
+            ]
+        }
+    ]
+}
