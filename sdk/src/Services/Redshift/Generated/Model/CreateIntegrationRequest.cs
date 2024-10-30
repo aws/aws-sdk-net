@@ -31,7 +31,7 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateIntegration operation.
-    /// Creates a zero-ETL integration with Amazon Redshift.
+    /// Creates a zero-ETL integration or S3 event integration with Amazon Redshift.
     /// </summary>
     public partial class CreateIntegrationRequest : AmazonRedshiftRequest
     {
@@ -132,7 +132,7 @@ namespace Amazon.Redshift.Model
         /// The Amazon Resource Name (ARN) of the database to use as the source for replication.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=2147483647)]
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string SourceArn
         {
             get { return this._sourceArn; }
@@ -170,7 +170,7 @@ namespace Amazon.Redshift.Model
         /// target for replication.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=2147483647)]
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string TargetArn
         {
             get { return this._targetArn; }

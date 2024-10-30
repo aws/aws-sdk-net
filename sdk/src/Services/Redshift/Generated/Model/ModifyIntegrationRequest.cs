@@ -31,7 +31,7 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyIntegration operation.
-    /// Modifies a zero-ETL integration with Amazon Redshift.
+    /// Modifies a zero-ETL integration or S3 event integration with Amazon Redshift.
     /// </summary>
     public partial class ModifyIntegrationRequest : AmazonRedshiftRequest
     {

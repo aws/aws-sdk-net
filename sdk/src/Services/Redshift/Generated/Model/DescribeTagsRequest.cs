@@ -187,7 +187,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Integration (zero-ETL integration)
+        /// Integration (zero-ETL integration or S3 event integration)
         /// </para>
         ///  <note> 
         /// <para>

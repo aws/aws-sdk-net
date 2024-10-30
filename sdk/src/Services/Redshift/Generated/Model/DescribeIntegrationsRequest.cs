@@ -31,7 +31,7 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeIntegrations operation.
-    /// Describes one or more zero-ETL integrations with Amazon Redshift.
+    /// Describes one or more zero-ETL or S3 event integrations with Amazon Redshift.
     /// </summary>
     public partial class DescribeIntegrationsRequest : AmazonRedshiftRequest
     {

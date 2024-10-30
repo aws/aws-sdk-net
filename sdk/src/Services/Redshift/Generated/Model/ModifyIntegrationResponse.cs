@@ -126,7 +126,7 @@ namespace Amazon.Redshift.Model
         /// The Amazon Resource Name (ARN) of the integration.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2147483647)]
+        [AWSProperty(Min=1, Max=255)]
         public string IntegrationArn
         {
             get { return this._integrationArn; }
@@ -183,7 +183,7 @@ namespace Amazon.Redshift.Model
         /// The Amazon Resource Name (ARN) of the database used as the source for replication.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2147483647)]
+        [AWSProperty(Min=1, Max=255)]
         public string SourceArn
         {
             get { return this._sourceArn; }
@@ -239,7 +239,7 @@ namespace Amazon.Redshift.Model
         /// target for replication.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2147483647)]
+        [AWSProperty(Min=20, Max=2048)]
         public string TargetArn
         {
             get { return this._targetArn; }

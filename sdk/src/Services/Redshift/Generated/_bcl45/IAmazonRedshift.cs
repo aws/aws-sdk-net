@@ -1869,7 +1869,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Creates a zero-ETL integration with Amazon Redshift.
+        /// Creates a zero-ETL integration or S3 event integration with Amazon Redshift.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIntegration service method.</param>
         /// 
@@ -1883,7 +1883,8 @@ namespace Amazon.Redshift
         /// at the same time, and these requests conflict with each other.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.IntegrationQuotaExceededException">
-        /// You can't create any more zero-ETL integrations because the quota has been reached.
+        /// You can't create any more zero-ETL or S3 event integrations because the quota has
+        /// been reached.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.IntegrationSourceNotFoundException">
         /// The specified integration source can't be found.
@@ -1909,7 +1910,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Creates a zero-ETL integration with Amazon Redshift.
+        /// Creates a zero-ETL integration or S3 event integration with Amazon Redshift.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIntegration service method.</param>
         /// <param name="cancellationToken">
@@ -1926,7 +1927,8 @@ namespace Amazon.Redshift
         /// at the same time, and these requests conflict with each other.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.IntegrationQuotaExceededException">
-        /// You can't create any more zero-ETL integrations because the quota has been reached.
+        /// You can't create any more zero-ETL or S3 event integrations because the quota has
+        /// been reached.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.IntegrationSourceNotFoundException">
         /// The specified integration source can't be found.
@@ -3047,7 +3049,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Deletes a zero-ETL integration with Amazon Redshift.
+        /// Deletes a zero-ETL integration or S3 event integration with Amazon Redshift.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIntegration service method.</param>
         /// 
@@ -3072,7 +3074,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Deletes a zero-ETL integration with Amazon Redshift.
+        /// Deletes a zero-ETL integration or S3 event integration with Amazon Redshift.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIntegration service method.</param>
         /// <param name="cancellationToken">
@@ -5358,7 +5360,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Describes one or more zero-ETL integrations with Amazon Redshift.
+        /// Describes one or more zero-ETL or S3 event integrations with Amazon Redshift.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeIntegrations service method.</param>
         /// 
@@ -5375,7 +5377,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Describes one or more zero-ETL integrations with Amazon Redshift.
+        /// Describes one or more zero-ETL or S3 event integrations with Amazon Redshift.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeIntegrations service method.</param>
         /// <param name="cancellationToken">
@@ -8129,7 +8131,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Modifies a zero-ETL integration with Amazon Redshift.
+        /// Modifies a zero-ETL integration or S3 event integration with Amazon Redshift.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyIntegration service method.</param>
         /// 
@@ -8157,7 +8159,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Modifies a zero-ETL integration with Amazon Redshift.
+        /// Modifies a zero-ETL integration or S3 event integration with Amazon Redshift.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyIntegration service method.</param>
         /// <param name="cancellationToken">

@@ -459,11 +459,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateIntegrationRequest.SourceArn</property>
-    <max>2147483647</max>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^arn:aws[a-z\-]*:(s3|dynamodb):.*:.*:[a-zA-Z0-9._\-\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateIntegrationRequest.TargetArn</property>
-    <max>2147483647</max>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:redshift(-serverless)?:[a-z0-9\-]+:[0-9]{12}:(namespace\/|namespace:)[a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateIntegrationResponse.Description</property>
@@ -473,7 +477,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateIntegrationResponse.IntegrationArn</property>
-    <max>2147483647</max>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^arn:aws[a-z\-]*:redshift:[a-z0-9\-]*:[0-9]*:integration:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateIntegrationResponse.IntegrationName</property>
@@ -487,11 +493,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateIntegrationResponse.SourceArn</property>
-    <max>2147483647</max>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^arn:aws[a-z\-]*:(s3|dynamodb):.*:.*:[a-zA-Z0-9._\-\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateIntegrationResponse.TargetArn</property>
-    <max>2147483647</max>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:redshift(-serverless)?:[a-z0-9\-]+:[0-9]{12}:(namespace\/|namespace:)[a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.CreateRedshiftIdcApplicationRequest.IamRoleArn</property>
@@ -703,7 +713,7 @@
     <property>Amazon.Redshift.Model.DeleteIntegrationRequest.IntegrationArn</property>
     <min>1</min>
     <max>255</max>
-    <pattern>arn:aws[a-z\-]*:redshift:[a-z0-9\-]*:[0-9]*:integration:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^arn:aws[a-z\-]*:redshift:[a-z0-9\-]*:[0-9]*:integration:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteIntegrationResponse.Description</property>
@@ -713,7 +723,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteIntegrationResponse.IntegrationArn</property>
-    <max>2147483647</max>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^arn:aws[a-z\-]*:redshift:[a-z0-9\-]*:[0-9]*:integration:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteIntegrationResponse.IntegrationName</property>
@@ -727,11 +739,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteIntegrationResponse.SourceArn</property>
-    <max>2147483647</max>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^arn:aws[a-z\-]*:(s3|dynamodb):.*:.*:[a-zA-Z0-9._\-\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeleteIntegrationResponse.TargetArn</property>
-    <max>2147483647</max>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:redshift(-serverless)?:[a-z0-9\-]+:[0-9]{12}:(namespace\/|namespace:)[a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DeletePartnerRequest.AccountId</property>
@@ -1087,7 +1103,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeInboundIntegrationsRequest.IntegrationArn</property>
-    <max>2147483647</max>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^arn:aws[a-z\-]*:.+:[a-z0-9\-]*:[0-9]*:integration:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeInboundIntegrationsRequest.Marker</property>
@@ -1095,7 +1113,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeInboundIntegrationsRequest.TargetArn</property>
-    <max>2147483647</max>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:redshift(-serverless)?:[a-z0-9\-]+:[0-9]{12}:(namespace\/|namespace:)[a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeInboundIntegrationsResponse.Marker</property>
@@ -1105,7 +1125,7 @@
     <property>Amazon.Redshift.Model.DescribeIntegrationsRequest.IntegrationArn</property>
     <min>1</min>
     <max>255</max>
-    <pattern>arn:aws[a-z\-]*:redshift:[a-z0-9\-]*:[0-9]*:integration:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^arn:aws[a-z\-]*:redshift:[a-z0-9\-]*:[0-9]*:integration:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.DescribeIntegrationsRequest.Marker</property>
@@ -1760,7 +1780,7 @@
     <property>Amazon.Redshift.Model.ModifyIntegrationRequest.IntegrationArn</property>
     <min>1</min>
     <max>255</max>
-    <pattern>arn:aws[a-z\-]*:redshift:[a-z0-9\-]*:[0-9]*:integration:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^arn:aws[a-z\-]*:redshift:[a-z0-9\-]*:[0-9]*:integration:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyIntegrationRequest.IntegrationName</property>
@@ -1776,7 +1796,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyIntegrationResponse.IntegrationArn</property>
-    <max>2147483647</max>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^arn:aws[a-z\-]*:redshift:[a-z0-9\-]*:[0-9]*:integration:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyIntegrationResponse.IntegrationName</property>
@@ -1790,11 +1812,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyIntegrationResponse.SourceArn</property>
-    <max>2147483647</max>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^arn:aws[a-z\-]*:(s3|dynamodb):.*:.*:[a-zA-Z0-9._\-\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyIntegrationResponse.TargetArn</property>
-    <max>2147483647</max>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:redshift(-serverless)?:[a-z0-9\-]+:[0-9]{12}:(namespace\/|namespace:)[a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.ModifyRedshiftIdcApplicationRequest.IamRoleArn</property>
@@ -2579,7 +2605,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.InboundIntegration.IntegrationArn</property>
-    <max>2147483647</max>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^arn:aws[a-z\-]*:.+:[a-z0-9\-]*:[0-9]*:integration:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.InboundIntegration.SourceArn</property>
@@ -2587,7 +2615,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.InboundIntegration.TargetArn</property>
-    <max>2147483647</max>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\-]*:redshift(-serverless)?:[a-z0-9\-]+:[0-9]{12}:(namespace\/|namespace:)[a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Redshift.Model.IntegrationError.ErrorCode</property>

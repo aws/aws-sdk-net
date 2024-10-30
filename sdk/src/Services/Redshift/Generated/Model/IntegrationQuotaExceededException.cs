@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// You can't create any more zero-ETL integrations because the quota has been reached.
+    /// You can't create any more zero-ETL or S3 event integrations because the quota has
+    /// been reached.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
