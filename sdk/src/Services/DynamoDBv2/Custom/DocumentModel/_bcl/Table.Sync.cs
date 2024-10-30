@@ -14,6 +14,7 @@
  */
 
 using Amazon.DynamoDBv2.Model;
+using Amazon.Runtime.Telemetry.Tracing;
 using System.Collections.Generic;
 
 namespace Amazon.DynamoDBv2.DocumentModel
@@ -246,20 +247,28 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <inheritdoc/>
         public Document PutItem(Document doc, PutItemOperationConfig config = null)
         {
-            return PutItemHelper(doc, config);
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(PutItem));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                return PutItemHelper(doc, config);
+            }
         }
 
         /// <inheritdoc/>
         public bool TryPutItem(Document doc, PutItemOperationConfig config = null)
         {
-            try
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(TryPutItem));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
             {
-                PutItemHelper(doc, config);
-                return true;
-            }
-            catch (ConditionalCheckFailedException)
-            {
-                return false;
+                try
+                {
+                    PutItemHelper(doc, config);
+                    return true;
+                }
+                catch (ConditionalCheckFailedException)
+                {
+                    return false;
+                }
             }
         }
 
@@ -271,19 +280,32 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <inheritdoc/>
         public Document GetItem(Primitive hashKey, GetItemOperationConfig config = null)
         {
-            return GetItem(hashKey, null, config);
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(GetItem));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                return GetItem(hashKey, null, config);
+            }
         }
 
         /// <inheritdoc/>
         public Document GetItem(Primitive hashKey, Primitive rangeKey, GetItemOperationConfig config = null)
         {
-            return GetItemHelper(MakeKey(hashKey, rangeKey), config);
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(GetItem));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                return GetItemHelper(MakeKey(hashKey, rangeKey), config);
+            }
         }
 
         /// <inheritdoc/>
         public Document GetItem(IDictionary<string, DynamoDBEntry> key, GetItemOperationConfig config = null)
         {
-            return GetItemHelper(MakeKey(key), config);
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(GetItem));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                return GetItemHelper(MakeKey(key), config);
+            }
+
         }
 
         #endregion
@@ -294,80 +316,112 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <inheritdoc/>
         public Document UpdateItem(Document doc, UpdateItemOperationConfig config = null)
         {
-            return UpdateHelper(doc, MakeKey(doc), config);
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(UpdateItem));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                return UpdateHelper(doc, MakeKey(doc), config);
+            }
         }
 
         /// <inheritdoc/>
         public bool TryUpdateItem(Document doc, UpdateItemOperationConfig config = null)
         {
-            try
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(TryUpdateItem));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
             {
-                UpdateHelper(doc, MakeKey(doc), config);
-                return true;
-            }
-            catch (ConditionalCheckFailedException)
-            {
-                return false;
+                try
+                {
+                    UpdateHelper(doc, MakeKey(doc), config);
+                    return true;
+                }
+                catch (ConditionalCheckFailedException)
+                {
+                    return false;
+                }
             }
         }
 
         /// <inheritdoc/>
         public Document UpdateItem(Document doc, IDictionary<string, DynamoDBEntry> key, UpdateItemOperationConfig config = null)
         {
-            return UpdateHelper(doc, MakeKey(key), config);
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(UpdateItem));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                return UpdateHelper(doc, MakeKey(key), config);
+            }
         }
 
         /// <inheritdoc/>
         public bool TryUpdateItem(Document doc, IDictionary<string, DynamoDBEntry> key, UpdateItemOperationConfig config = null)
         {
-            try
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(TryUpdateItem));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
             {
-                UpdateHelper(doc, MakeKey(key), config);
-                return true;
-            }
-            catch (ConditionalCheckFailedException)
-            {
-                return false;
+                try
+                {
+                    UpdateHelper(doc, MakeKey(key), config);
+                    return true;
+                }
+                catch (ConditionalCheckFailedException)
+                {
+                    return false;
+                }
             }
         }
 
         /// <inheritdoc/>
         public Document UpdateItem(Document doc, Primitive hashKey, UpdateItemOperationConfig config = null)
         {
-            return UpdateHelper(doc, MakeKey(hashKey, null), config);
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(UpdateItem));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                return UpdateHelper(doc, MakeKey(hashKey, null), config);
+            }
         }
 
         /// <inheritdoc/>
         public bool TryUpdateItem(Document doc, Primitive hashKey, UpdateItemOperationConfig config = null)
         {
-            try
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(TryUpdateItem));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
             {
-                UpdateHelper(doc, MakeKey(hashKey, null), config);
-                return true;
-            }
-            catch (ConditionalCheckFailedException)
-            {
-                return false;
+                try
+                {
+                    UpdateHelper(doc, MakeKey(hashKey, null), config);
+                    return true;
+                }
+                catch (ConditionalCheckFailedException)
+                {
+                    return false;
+                }
             }
         }
 
         /// <inheritdoc/>
         public Document UpdateItem(Document doc, Primitive hashKey, Primitive rangeKey, UpdateItemOperationConfig config = null)
         {
-            return UpdateHelper(doc, MakeKey(hashKey, rangeKey), config);
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(UpdateItem));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                return UpdateHelper(doc, MakeKey(hashKey, rangeKey), config);
+            }
         }
 
         /// <inheritdoc/>
         public bool TryUpdateItem(Document doc, Primitive hashKey, Primitive rangeKey, UpdateItemOperationConfig config = null)
         {
-            try
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(TryUpdateItem));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
             {
-                UpdateHelper(doc, MakeKey(hashKey, rangeKey), config);
-                return true;
-            }
-            catch (ConditionalCheckFailedException)
-            {
-                return false;
+                try
+                {
+                    UpdateHelper(doc, MakeKey(hashKey, rangeKey), config);
+                    return true;
+                }
+                catch (ConditionalCheckFailedException)
+                {
+                    return false;
+                }
             }
         }
 
@@ -379,80 +433,112 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <inheritdoc/>
         public Document DeleteItem(Document document, DeleteItemOperationConfig config = null)
         {
-            return DeleteHelper(MakeKey(document), config);
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(DeleteItem));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                return DeleteHelper(MakeKey(document), config);
+            }
         }
 
         /// <inheritdoc/>
         public bool TryDeleteItem(Document document, DeleteItemOperationConfig config = null)
         {
-            try
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(TryDeleteItem));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
             {
-                DeleteItem(document, config);
-                return true;
-            }
-            catch (ConditionalCheckFailedException)
-            {
-                return false;
+                try
+                {
+                    DeleteItem(document, config);
+                    return true;
+                }
+                catch (ConditionalCheckFailedException)
+                {
+                    return false;
+                }
             }
         }
 
         /// <inheritdoc/>
         public Document DeleteItem(Primitive hashKey, DeleteItemOperationConfig config = null)
         {
-            return DeleteHelper(MakeKey(hashKey, null), config);
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(DeleteItem));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                return DeleteHelper(MakeKey(hashKey, null), config);
+            }
         }
 
         /// <inheritdoc/>
         public bool TryDeleteItem(Primitive hashKey, DeleteItemOperationConfig config = null)
         {
-            try
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(TryDeleteItem));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
             {
-                DeleteItem(hashKey, config);
-                return true;
-            }
-            catch (ConditionalCheckFailedException)
-            {
-                return false;
+                try
+                {
+                    DeleteItem(hashKey, config);
+                    return true;
+                }
+                catch (ConditionalCheckFailedException)
+                {
+                    return false;
+                }
             }
         }
 
         /// <inheritdoc/>
         public Document DeleteItem(Primitive hashKey, Primitive rangeKey, DeleteItemOperationConfig config = null)
         {
-            return DeleteHelper(MakeKey(hashKey, rangeKey), config);
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(DeleteItem));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                return DeleteHelper(MakeKey(hashKey, rangeKey), config);
+            }
         }
 
         /// <inheritdoc/>
         public bool TryDeleteItem(Primitive hashKey, Primitive rangeKey, DeleteItemOperationConfig config = null)
         {
-            try
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(TryDeleteItem));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
             {
-                DeleteItem(hashKey, rangeKey, config);
-                return true;
-            }
-            catch (ConditionalCheckFailedException)
-            {
-                return false;
+                try
+                {
+                    DeleteItem(hashKey, rangeKey, config);
+                    return true;
+                }
+                catch (ConditionalCheckFailedException)
+                {
+                    return false;
+                }
             }
         }
 
         /// <inheritdoc/>
         public Document DeleteItem(IDictionary<string, DynamoDBEntry> key, DeleteItemOperationConfig config = null)
         {
-            return DeleteHelper(MakeKey(key), config);
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(DeleteItem));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                return DeleteHelper(MakeKey(key), config);
+            }
         }
 
         /// <inheritdoc/>
         public bool TryDeleteItem(IDictionary<string, DynamoDBEntry> key, DeleteItemOperationConfig config = null)
         {
-            try
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Table), nameof(TryDeleteItem));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
             {
-                DeleteHelper(MakeKey(key), config);
-                return true;
-            }
-            catch (ConditionalCheckFailedException)
-            {
-                return false;
+                try
+                {
+                    DeleteHelper(MakeKey(key), config);
+                    return true;
+                }
+                catch (ConditionalCheckFailedException)
+                {
+                    return false;
+                }
             }
         }
 

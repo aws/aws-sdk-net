@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.Runtime.Telemetry.Tracing;
 using System.Collections.Generic;
 
 namespace Amazon.DynamoDBv2.DocumentModel
@@ -41,13 +42,21 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <inheritdoc/>
         public List<Document> GetNextSet()
         {
-            return GetNextSetHelper();
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Search), nameof(GetNextSet));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                return GetNextSetHelper();
+            }
         }
 
         /// <inheritdoc/>
         public List<Document> GetRemaining()
         {
-            return GetRemainingHelper();
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Search), nameof(GetRemaining));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                return GetRemainingHelper();
+            }
         }
     }
 }
