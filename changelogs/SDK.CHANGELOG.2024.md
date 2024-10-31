@@ -1,3 +1,22 @@
+### 3.7.918.0 (2024-10-31 20:17 UTC)
+* AutoScaling (3.7.403.0)
+	* Adds bake time for Auto Scaling group Instance Refresh
+* Batch (3.7.402.0)
+	* Add `podNamespace` to `EksAttemptDetail` and `containerID` to `EksAttemptContainerDetail`.
+* ElasticLoadBalancingV2 (3.7.406.0)
+	* Add UDP support for AWS PrivateLink and dual-stack Network Load Balancers
+* Glue (3.7.409.0)
+	* Add schedule support for AWS Glue column statistics
+* PrometheusService (3.7.401.0)
+	* Added support for UpdateScraper API, to enable updating collector configuration in-place
+* SageMaker (3.7.414.0)
+	* SageMaker HyperPod adds scale-down at instance level via BatchDeleteClusterNodes API and group level via UpdateCluster API. SageMaker Training exposes secondary job status in TrainingJobSummary from ListTrainingJobs API. SageMaker now supports G6, G6e, P5e instances for HyperPod and Training.
+* SimpleEmailV2 (3.7.404.0)
+	* This release enables customers to provide the email template content in the SESv2 SendEmail and SendBulkEmail APIs instead of the name or the ARN of a stored email template.
+* Core 3.7.400.44
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.917.0 (2024-10-30 18:39 UTC)
 * AppSync (3.7.402.0)
 	* This release adds support for AppSync Event APIs.
