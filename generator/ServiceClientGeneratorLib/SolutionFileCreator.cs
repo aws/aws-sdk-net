@@ -523,11 +523,11 @@ namespace ServiceClientGenerator
                         });
                     }
 
+                    testProjects.Add(GeneratorLibProject);
+                    SelectBuildConfigurationsForProject(GeneratorLibProjectName, buildConfigurations);
+
                     if (configuration.Name.Equals(ProjectTypes.Net35, StringComparison.Ordinal) || configuration.Name.Equals(ProjectTypes.Net45, StringComparison.Ordinal))
                     {
-                        testProjects.Add(GeneratorLibProject);
-                        SelectBuildConfigurationsForProject(GeneratorLibProjectName, buildConfigurations);
-
                         testProjects.Add(CommonTestProject);
                         SelectBuildConfigurationsForProject(CommonTestProjectName, buildConfigurations);
                     }
