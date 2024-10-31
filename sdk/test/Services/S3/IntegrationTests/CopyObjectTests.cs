@@ -157,7 +157,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             Assert.IsTrue(taggingMetadata.Tagging.Any(tag => tag.Key == "newtag1" && tag.Value == "1"));
         }
 
-        [DataRow(testKey, "/destinationTestKey1.txt", "/destinationTestKey1.txt")]
+        [DataRow(testKey, "destinationTestKey1.txt", "destinationTestKey1.txt")]
         [DataRow(testKeyWithSlash, "/destinationTestKey2.txt", "/destinationTestKey2.txt")]
         [DataRow(testKeyWithSlash, "/", "/")]
         [DataTestMethod]
