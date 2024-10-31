@@ -38,15 +38,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(copyPartRequest, "AmazonS3");
 
-            var sourceKey =
-                copyPartRequest.DisableTrimmingLeadingSlash ?
-                copyPartRequest.SourceKey :
-                AmazonS3Util.RemoveLeadingSlash(copyPartRequest.SourceKey);
+            var sourceKey = copyPartRequest.SourceKey;
 
-            var destinationKey =
-                copyPartRequest.DisableTrimmingLeadingSlash ?
-                copyPartRequest.DestinationKey :
-                AmazonS3Util.RemoveLeadingSlash(copyPartRequest.DestinationKey);
+            var destinationKey = copyPartRequest.DestinationKey;
 
             request.HttpMethod = "PUT";
 

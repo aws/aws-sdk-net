@@ -63,7 +63,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     UploadId = uploadId,
                     PartNumber = 1,
 
-                    DisableTrimmingLeadingSlash = true
                 });
                 Assert.IsNotNull(copyPartResponse.ETag);
                 Assert.IsTrue(copyPartResponse.ETag != null && copyPartResponse.ETag.Length > 0);
