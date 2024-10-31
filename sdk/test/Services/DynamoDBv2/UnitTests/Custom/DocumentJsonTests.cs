@@ -149,13 +149,14 @@ namespace AWSSDK_DotNet.UnitTests
         [TestMethod]
         public void ToJson_Long()
         {
+            var longValue = long.MaxValue - 100;
             var document = new Document();
-            document["key"] = 9223372036854775806L;
+            document["key"] = longValue;
 
             var json = document.ToJsonPretty();
 
             var expectedJson = $@"{{
-  ""key"": 9223372036854775806
+  ""key"": {longValue}
 }}";
 
             Assert.AreEqual(expectedJson, json);
