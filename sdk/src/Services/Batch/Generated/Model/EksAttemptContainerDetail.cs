@@ -35,9 +35,28 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class EksAttemptContainerDetail
     {
+        private string _containerid;
         private int? _exitCode;
         private string _name;
         private string _reason;
+
+        /// <summary>
+        /// Gets and sets the property ContainerID. 
+        /// <para>
+        /// The ID for the container.
+        /// </para>
+        /// </summary>
+        public string ContainerID
+        {
+            get { return this._containerid; }
+            set { this._containerid = value; }
+        }
+
+        // Check to see if ContainerID property is set
+        internal bool IsSetContainerID()
+        {
+            return this._containerid != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ExitCode. 

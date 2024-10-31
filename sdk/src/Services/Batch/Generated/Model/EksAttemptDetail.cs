@@ -40,6 +40,7 @@ namespace Amazon.Batch.Model
         private List<EksAttemptContainerDetail> _initContainers = AWSConfigs.InitializeCollections ? new List<EksAttemptContainerDetail>() : null;
         private string _nodeName;
         private string _podName;
+        private string _podNamespace;
         private long? _startedAt;
         private string _statusReason;
         private long? _stoppedAt;
@@ -132,6 +133,24 @@ namespace Amazon.Batch.Model
         internal bool IsSetPodName()
         {
             return this._podName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PodNamespace. 
+        /// <para>
+        /// The namespace of the Amazon EKS cluster that the pod exists in.
+        /// </para>
+        /// </summary>
+        public string PodNamespace
+        {
+            get { return this._podNamespace; }
+            set { this._podNamespace = value; }
+        }
+
+        // Check to see if PodNamespace property is set
+        internal bool IsSetPodNamespace()
+        {
+            return this._podNamespace != null;
         }
 
         /// <summary>
