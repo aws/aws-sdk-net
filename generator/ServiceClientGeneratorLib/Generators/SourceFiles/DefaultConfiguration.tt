@@ -4,6 +4,7 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Globalization" #>
 
 <#@ import namespace="ServiceClientGenerator.DefaultConfiguration" #>
 
@@ -54,7 +55,7 @@ namespace <#= base.Config.Namespace#>
             if (mode.ConnectTimeout.HasValue)
             {
 #>
-            // <#= mode.ConnectTimeout.Value.ToString("g") #>
+            // <#= mode.ConnectTimeout.Value.ToString("g", CultureInfo.InvariantCulture) #>
             ConnectTimeout = TimeSpan.FromMilliseconds(<#= mode.ConnectTimeout.Value.TotalMilliseconds #>L),
 <#
             }
@@ -62,13 +63,13 @@ namespace <#= base.Config.Namespace#>
             {
 #>
             ConnectTimeout = null,
-<# 
+<#
             }
 
             if (mode.TlsNegotiationTimeout.HasValue)
             {
 #>
-            // <#= mode.TlsNegotiationTimeout.Value.ToString("g") #>
+            // <#= mode.TlsNegotiationTimeout.Value.ToString("g", CultureInfo.InvariantCulture) #>
             TlsNegotiationTimeout = TimeSpan.FromMilliseconds(<#= mode.TlsNegotiationTimeout.Value.TotalMilliseconds #>L),
 <#
             }
@@ -76,13 +77,13 @@ namespace <#= base.Config.Namespace#>
             {
 #>
             TlsNegotiationTimeout = null,
-<# 
+<#
             }
 
             if (mode.TimeToFirstByteTimeout.HasValue)
             {
 #>
-            // <#= mode.TimeToFirstByteTimeout.Value.ToString("g") #>
+            // <#= mode.TimeToFirstByteTimeout.Value.ToString("g", CultureInfo.InvariantCulture) #>
             TimeToFirstByteTimeout = TimeSpan.FromMilliseconds(<#= mode.TimeToFirstByteTimeout.Value.TotalMilliseconds #>L),
 <#
             }
@@ -96,7 +97,7 @@ namespace <#= base.Config.Namespace#>
             if (mode.HttpRequestTimeout.HasValue)
             {
 #>
-            // <#= mode.HttpRequestTimeout.Value.ToString("g") #>
+            // <#= mode.HttpRequestTimeout.Value.ToString("g", CultureInfo.InvariantCulture) #>
             HttpRequestTimeout = TimeSpan.FromMilliseconds(<#= mode.HttpRequestTimeout.Value.TotalMilliseconds #>L)
 <#
             }
