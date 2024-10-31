@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// The details of an alert manager definition.
+    /// The details of an alert manager definition. It is the configuration for the alert
+    /// manager, including information about receivers for routing alerts.
     /// </summary>
     public partial class AlertManagerDefinitionDescription
     {

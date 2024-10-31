@@ -30,54 +30,79 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
-    /// Container for the parameters to the TagResource operation.
-    /// The <c>TagResource</c> operation associates tags with an Amazon Managed Service for
-    /// Prometheus resource. The only resources that can be tagged are rule groups namespaces,
-    /// scrapers, and workspaces.
-    /// 
-    ///  
-    /// <para>
-    /// If you specify a new tag key for the resource, this tag is appended to the list of
-    /// tags associated with the resource. If you specify a tag key that is already associated
-    /// with the resource, the new tag value that you specify replaces the previous value
-    /// for that tag. To remove a tag, use <c>UntagResource</c>.
-    /// </para>
+    /// This is the response object from the UpdateScraper operation.
     /// </summary>
-    public partial class TagResourceRequest : AmazonPrometheusServiceRequest
+    public partial class UpdateScraperResponse : AmazonWebServiceResponse
     {
-        private string _resourceArn;
+        private string _arn;
+        private string _scraperId;
+        private ScraperStatus _status;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
-        /// Gets and sets the property ResourceArn. 
+        /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the resource to apply tags to.
+        /// The Amazon Resource Name (ARN) of the updated scraper.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string ResourceArn
+        public string Arn
         {
-            get { return this._resourceArn; }
-            set { this._resourceArn = value; }
+            get { return this._arn; }
+            set { this._arn = value; }
         }
 
-        // Check to see if ResourceArn property is set
-        internal bool IsSetResourceArn()
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
         {
-            return this._resourceArn != null;
+            return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScraperId. 
+        /// <para>
+        /// The ID of the updated scraper.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
+        public string ScraperId
+        {
+            get { return this._scraperId; }
+            set { this._scraperId = value; }
+        }
+
+        // Check to see if ScraperId property is set
+        internal bool IsSetScraperId()
+        {
+            return this._scraperId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// A structure that displays the current status of the scraper.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public ScraperStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The list of tag keys and values to associate with the resource.
-        /// </para>
-        ///  
-        /// <para>
-        /// Keys must not begin with <c>aws:</c>.
+        /// The list of tag keys and values that are associated with the scraper.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=50)]
+        [AWSProperty(Min=0, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }
