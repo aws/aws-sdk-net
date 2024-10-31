@@ -2839,6 +2839,60 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type BatchDeleteClusterNodesErrorCode.
+    /// </summary>
+    public class BatchDeleteClusterNodesErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant InvalidNodeStatus for BatchDeleteClusterNodesErrorCode
+        /// </summary>
+        public static readonly BatchDeleteClusterNodesErrorCode InvalidNodeStatus = new BatchDeleteClusterNodesErrorCode("InvalidNodeStatus");
+        /// <summary>
+        /// Constant NodeIdInUse for BatchDeleteClusterNodesErrorCode
+        /// </summary>
+        public static readonly BatchDeleteClusterNodesErrorCode NodeIdInUse = new BatchDeleteClusterNodesErrorCode("NodeIdInUse");
+        /// <summary>
+        /// Constant NodeIdNotFound for BatchDeleteClusterNodesErrorCode
+        /// </summary>
+        public static readonly BatchDeleteClusterNodesErrorCode NodeIdNotFound = new BatchDeleteClusterNodesErrorCode("NodeIdNotFound");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BatchDeleteClusterNodesErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BatchDeleteClusterNodesErrorCode FindValue(string value)
+        {
+            return FindValue<BatchDeleteClusterNodesErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BatchDeleteClusterNodesErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BatchStrategy.
     /// </summary>
     public class BatchStrategy : ConstantClass
@@ -3809,6 +3863,78 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly ClusterInstanceType MlG5Xlarge = new ClusterInstanceType("ml.g5.xlarge");
         /// <summary>
+        /// Constant MlG612xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlG612xlarge = new ClusterInstanceType("ml.g6.12xlarge");
+        /// <summary>
+        /// Constant MlG616xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlG616xlarge = new ClusterInstanceType("ml.g6.16xlarge");
+        /// <summary>
+        /// Constant MlG624xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlG624xlarge = new ClusterInstanceType("ml.g6.24xlarge");
+        /// <summary>
+        /// Constant MlG62xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlG62xlarge = new ClusterInstanceType("ml.g6.2xlarge");
+        /// <summary>
+        /// Constant MlG648xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlG648xlarge = new ClusterInstanceType("ml.g6.48xlarge");
+        /// <summary>
+        /// Constant MlG64xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlG64xlarge = new ClusterInstanceType("ml.g6.4xlarge");
+        /// <summary>
+        /// Constant MlG68xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlG68xlarge = new ClusterInstanceType("ml.g6.8xlarge");
+        /// <summary>
+        /// Constant MlG6e12xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlG6e12xlarge = new ClusterInstanceType("ml.g6e.12xlarge");
+        /// <summary>
+        /// Constant MlG6e16xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlG6e16xlarge = new ClusterInstanceType("ml.g6e.16xlarge");
+        /// <summary>
+        /// Constant MlG6e24xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlG6e24xlarge = new ClusterInstanceType("ml.g6e.24xlarge");
+        /// <summary>
+        /// Constant MlG6e2xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlG6e2xlarge = new ClusterInstanceType("ml.g6e.2xlarge");
+        /// <summary>
+        /// Constant MlG6e48xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlG6e48xlarge = new ClusterInstanceType("ml.g6e.48xlarge");
+        /// <summary>
+        /// Constant MlG6e4xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlG6e4xlarge = new ClusterInstanceType("ml.g6e.4xlarge");
+        /// <summary>
+        /// Constant MlG6e8xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlG6e8xlarge = new ClusterInstanceType("ml.g6e.8xlarge");
+        /// <summary>
+        /// Constant MlG6eXlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlG6eXlarge = new ClusterInstanceType("ml.g6e.xlarge");
+        /// <summary>
+        /// Constant MlG6Xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlG6Xlarge = new ClusterInstanceType("ml.g6.xlarge");
+        /// <summary>
+        /// Constant MlGr64xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlGr64xlarge = new ClusterInstanceType("ml.gr6.4xlarge");
+        /// <summary>
+        /// Constant MlGr68xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlGr68xlarge = new ClusterInstanceType("ml.gr6.8xlarge");
+        /// <summary>
         /// Constant MlM512xlarge for ClusterInstanceType
         /// </summary>
         public static readonly ClusterInstanceType MlM512xlarge = new ClusterInstanceType("ml.m5.12xlarge");
@@ -3852,6 +3978,10 @@ namespace Amazon.SageMaker
         /// Constant MlP548xlarge for ClusterInstanceType
         /// </summary>
         public static readonly ClusterInstanceType MlP548xlarge = new ClusterInstanceType("ml.p5.48xlarge");
+        /// <summary>
+        /// Constant MlP5e48xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlP5e48xlarge = new ClusterInstanceType("ml.p5e.48xlarge");
         /// <summary>
         /// Constant MlT32xlarge for ClusterInstanceType
         /// </summary>
@@ -17918,6 +18048,70 @@ namespace Amazon.SageMaker
         /// Constant MlG5Xlarge for TrainingInstanceType
         /// </summary>
         public static readonly TrainingInstanceType MlG5Xlarge = new TrainingInstanceType("ml.g5.xlarge");
+        /// <summary>
+        /// Constant MlG612xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG612xlarge = new TrainingInstanceType("ml.g6.12xlarge");
+        /// <summary>
+        /// Constant MlG616xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG616xlarge = new TrainingInstanceType("ml.g6.16xlarge");
+        /// <summary>
+        /// Constant MlG624xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG624xlarge = new TrainingInstanceType("ml.g6.24xlarge");
+        /// <summary>
+        /// Constant MlG62xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG62xlarge = new TrainingInstanceType("ml.g6.2xlarge");
+        /// <summary>
+        /// Constant MlG648xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG648xlarge = new TrainingInstanceType("ml.g6.48xlarge");
+        /// <summary>
+        /// Constant MlG64xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG64xlarge = new TrainingInstanceType("ml.g6.4xlarge");
+        /// <summary>
+        /// Constant MlG68xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG68xlarge = new TrainingInstanceType("ml.g6.8xlarge");
+        /// <summary>
+        /// Constant MlG6e12xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG6e12xlarge = new TrainingInstanceType("ml.g6e.12xlarge");
+        /// <summary>
+        /// Constant MlG6e16xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG6e16xlarge = new TrainingInstanceType("ml.g6e.16xlarge");
+        /// <summary>
+        /// Constant MlG6e24xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG6e24xlarge = new TrainingInstanceType("ml.g6e.24xlarge");
+        /// <summary>
+        /// Constant MlG6e2xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG6e2xlarge = new TrainingInstanceType("ml.g6e.2xlarge");
+        /// <summary>
+        /// Constant MlG6e48xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG6e48xlarge = new TrainingInstanceType("ml.g6e.48xlarge");
+        /// <summary>
+        /// Constant MlG6e4xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG6e4xlarge = new TrainingInstanceType("ml.g6e.4xlarge");
+        /// <summary>
+        /// Constant MlG6e8xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG6e8xlarge = new TrainingInstanceType("ml.g6e.8xlarge");
+        /// <summary>
+        /// Constant MlG6eXlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG6eXlarge = new TrainingInstanceType("ml.g6e.xlarge");
+        /// <summary>
+        /// Constant MlG6Xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG6Xlarge = new TrainingInstanceType("ml.g6.xlarge");
         /// <summary>
         /// Constant MlM410xlarge for TrainingInstanceType
         /// </summary>

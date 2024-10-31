@@ -247,6 +247,76 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  BatchDeleteClusterNodes
+
+
+        /// <summary>
+        /// Deletes specific nodes within a SageMaker HyperPod cluster. <c>BatchDeleteClusterNodes</c>
+        /// accepts a cluster name and a list of node IDs.
+        /// 
+        ///  <important> <ul> <li> 
+        /// <para>
+        /// To safeguard your work, back up your data to Amazon S3 or an FSx for Lustre file system
+        /// before invoking the API on a worker node group. This will help prevent any potential
+        /// data loss from the instance root volume. For more information about backup, see <a
+        /// href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-operate-cli-command.html#sagemaker-hyperpod-operate-cli-command-update-cluster-software-backup">Use
+        /// the backup script provided by SageMaker HyperPod</a>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you want to invoke this API on an existing cluster, you'll first need to patch
+        /// the cluster by running the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateClusterSoftware.html">UpdateClusterSoftware
+        /// API</a>. For more information about patching a cluster, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-operate-cli-command.html#sagemaker-hyperpod-operate-cli-command-update-cluster-software">Update
+        /// the SageMaker HyperPod platform software of a cluster</a>.
+        /// </para>
+        ///  </li> </ul> </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteClusterNodes service method.</param>
+        /// 
+        /// <returns>The response from the BatchDeleteClusterNodes service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/BatchDeleteClusterNodes">REST API Reference for BatchDeleteClusterNodes Operation</seealso>
+        BatchDeleteClusterNodesResponse BatchDeleteClusterNodes(BatchDeleteClusterNodesRequest request);
+
+
+
+        /// <summary>
+        /// Deletes specific nodes within a SageMaker HyperPod cluster. <c>BatchDeleteClusterNodes</c>
+        /// accepts a cluster name and a list of node IDs.
+        /// 
+        ///  <important> <ul> <li> 
+        /// <para>
+        /// To safeguard your work, back up your data to Amazon S3 or an FSx for Lustre file system
+        /// before invoking the API on a worker node group. This will help prevent any potential
+        /// data loss from the instance root volume. For more information about backup, see <a
+        /// href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-operate-cli-command.html#sagemaker-hyperpod-operate-cli-command-update-cluster-software-backup">Use
+        /// the backup script provided by SageMaker HyperPod</a>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you want to invoke this API on an existing cluster, you'll first need to patch
+        /// the cluster by running the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateClusterSoftware.html">UpdateClusterSoftware
+        /// API</a>. For more information about patching a cluster, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-operate-cli-command.html#sagemaker-hyperpod-operate-cli-command-update-cluster-software">Update
+        /// the SageMaker HyperPod platform software of a cluster</a>.
+        /// </para>
+        ///  </li> </ul> </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteClusterNodes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchDeleteClusterNodes service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/BatchDeleteClusterNodes">REST API Reference for BatchDeleteClusterNodes Operation</seealso>
+        Task<BatchDeleteClusterNodesResponse> BatchDeleteClusterNodesAsync(BatchDeleteClusterNodesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  BatchDescribeModelPackage
 
 
@@ -13236,6 +13306,14 @@ namespace Amazon.SageMaker
         /// Updates the platform software of a SageMaker HyperPod cluster for security patching.
         /// To learn how to use this API, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-operate.html#sagemaker-hyperpod-operate-cli-command-update-cluster-software">Update
         /// the SageMaker HyperPod platform software of a cluster</a>.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// The <c>UpgradeClusterSoftware</c> API call may impact your SageMaker HyperPod cluster
+        /// uptime and availability. Plan accordingly to mitigate potential disruptions to your
+        /// workloads.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateClusterSoftware service method.</param>
         /// 
@@ -13256,6 +13334,14 @@ namespace Amazon.SageMaker
         /// Updates the platform software of a SageMaker HyperPod cluster for security patching.
         /// To learn how to use this API, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-operate.html#sagemaker-hyperpod-operate-cli-command-update-cluster-software">Update
         /// the SageMaker HyperPod platform software of a cluster</a>.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// The <c>UpgradeClusterSoftware</c> API call may impact your SageMaker HyperPod cluster
+        /// uptime and availability. Plan accordingly to mitigate potential disruptions to your
+        /// workloads.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateClusterSoftware service method.</param>
         /// <param name="cancellationToken">
