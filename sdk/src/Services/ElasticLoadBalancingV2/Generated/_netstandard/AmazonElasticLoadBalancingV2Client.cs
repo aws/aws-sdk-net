@@ -1084,7 +1084,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         /// <returns>The response from the DeleteSharedTrustStoreAssociation service method, as returned by ElasticLoadBalancingV2.</returns>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.DeleteAssociationSameAccountException">
-        /// The specified association cannot be within the same account.
+        /// The specified association can't be within the same account.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TrustStoreAssociationNotFoundException">
         /// The specified association does not exist.
@@ -2497,7 +2497,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// </para>
         ///  
         /// <para>
-        /// With a Network Load Balancer, you cannot register instances by instance ID if they
+        /// With a Network Load Balancer, you can't register instances by instance ID if they
         /// have the following instance types: C1, CC1, CC2, CG1, CG2, CR1, CS1, G1, G2, HI1,
         /// HS1, M1, M2, M3, and T1. You can register instances of these types by IP address.
         /// </para>

@@ -39,6 +39,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         private DateTime? _createdTime;
         private string _customerOwnedIpv4Pool;
         private string _dnsName;
+        private EnablePrefixForIpv6SourceNatEnum _enablePrefixForIpv6SourceNat;
         private string _enforceSecurityGroupInboundRulesOnPrivateLinkTraffic;
         private IpAddressType _ipAddressType;
         private string _loadBalancerArn;
@@ -141,6 +142,26 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnablePrefixForIpv6SourceNat. 
+        /// <para>
+        /// [Network Load Balancers with UDP listeners] Indicates whether to use an IPv6 prefix
+        /// from each subnet for source NAT. The IP address type must be <c>dualstack</c>. The
+        /// default value is <c>off</c>.
+        /// </para>
+        /// </summary>
+        public EnablePrefixForIpv6SourceNatEnum EnablePrefixForIpv6SourceNat
+        {
+            get { return this._enablePrefixForIpv6SourceNat; }
+            set { this._enablePrefixForIpv6SourceNat = value; }
+        }
+
+        // Check to see if EnablePrefixForIpv6SourceNat property is set
+        internal bool IsSetEnablePrefixForIpv6SourceNat()
+        {
+            return this._enablePrefixForIpv6SourceNat != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic. 
         /// <para>
         /// Indicates whether to evaluate inbound security group rules for traffic sent to a Network
@@ -162,17 +183,19 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property IpAddressType. 
         /// <para>
-        /// [Application Load Balancers] The type of IP addresses used for public or private connections
-        /// by the subnets attached to your load balancer. The possible values are <c>ipv4</c>
-        /// (for only IPv4 addresses), <c>dualstack</c> (for IPv4 and IPv6 addresses), and <c>dualstack-without-public-ipv4</c>
-        /// (for IPv6 only public addresses, with private IPv4 and IPv6 addresses).
+        /// The type of IP addresses used for public or private connections by the subnets attached
+        /// to your load balancer.
         /// </para>
         ///  
         /// <para>
-        /// [Network Load Balancers and Gateway Load Balancers] The type of IP addresses used
-        /// for public or private connections by the subnets attached to your load balancer. The
-        /// possible values are <c>ipv4</c> (for only IPv4 addresses) and <c>dualstack</c> (for
-        /// IPv4 and IPv6 addresses).
+        /// [Application Load Balancers] The possible values are <c>ipv4</c> (IPv4 addresses),
+        /// <c>dualstack</c> (IPv4 and IPv6 addresses), and <c>dualstack-without-public-ipv4</c>
+        /// (public IPv6 addresses and private IPv4 and IPv6 addresses).
+        /// </para>
+        ///  
+        /// <para>
+        /// [Network Load Balancers and Gateway Load Balancers] The possible values are <c>ipv4</c>
+        /// (IPv4 addresses) and <c>dualstack</c> (IPv4 and IPv6 addresses).
         /// </para>
         /// </summary>
         public IpAddressType IpAddressType

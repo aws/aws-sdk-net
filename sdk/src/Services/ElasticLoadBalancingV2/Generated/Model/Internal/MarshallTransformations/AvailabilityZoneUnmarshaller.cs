@@ -72,6 +72,17 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                         unmarshalledObject.OutpostId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("SourceNatIpv6Prefixes/member", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.SourceNatIpv6Prefixes == null)
+                        {
+                            unmarshalledObject.SourceNatIpv6Prefixes = new List<string>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.SourceNatIpv6Prefixes.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("SubnetId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

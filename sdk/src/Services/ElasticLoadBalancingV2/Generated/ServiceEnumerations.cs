@@ -295,6 +295,56 @@ namespace Amazon.ElasticLoadBalancingV2
 
 
     /// <summary>
+    /// Constants used for properties of type EnablePrefixForIpv6SourceNatEnum.
+    /// </summary>
+    public class EnablePrefixForIpv6SourceNatEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Off for EnablePrefixForIpv6SourceNatEnum
+        /// </summary>
+        public static readonly EnablePrefixForIpv6SourceNatEnum Off = new EnablePrefixForIpv6SourceNatEnum("off");
+        /// <summary>
+        /// Constant On for EnablePrefixForIpv6SourceNatEnum
+        /// </summary>
+        public static readonly EnablePrefixForIpv6SourceNatEnum On = new EnablePrefixForIpv6SourceNatEnum("on");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EnablePrefixForIpv6SourceNatEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EnablePrefixForIpv6SourceNatEnum FindValue(string value)
+        {
+            return FindValue<EnablePrefixForIpv6SourceNatEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EnablePrefixForIpv6SourceNatEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum.
     /// </summary>
     public class EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum : ConstantClass

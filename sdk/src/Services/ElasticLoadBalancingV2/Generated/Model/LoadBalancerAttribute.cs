@@ -56,7 +56,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         ///  <c>load_balancing.cross_zone.enabled</c> - Indicates whether cross-zone load balancing
         /// is enabled. The possible values are <c>true</c> and <c>false</c>. The default for
         /// Network Load Balancers and Gateway Load Balancers is <c>false</c>. The default for
-        /// Application Load Balancers is <c>true</c>, and cannot be changed.
+        /// Application Load Balancers is <c>true</c>, and can't be changed.
         /// </para>
         ///  </li> </ul> 
         /// <para>
