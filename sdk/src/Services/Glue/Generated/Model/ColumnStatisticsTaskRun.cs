@@ -37,6 +37,7 @@ namespace Amazon.Glue.Model
         private string _catalogID;
         private List<string> _columnNameList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _columnStatisticsTaskRunId;
+        private ComputationType _computationType;
         private DateTime? _creationTime;
         private string _customerId;
         private string _databaseName;
@@ -109,6 +110,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetColumnStatisticsTaskRunId()
         {
             return this._columnStatisticsTaskRunId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComputationType. 
+        /// <para>
+        /// The type of column statistics computation.
+        /// </para>
+        /// </summary>
+        public ComputationType ComputationType
+        {
+            get { return this._computationType; }
+            set { this._computationType = value; }
+        }
+
+        // Check to see if ComputationType property is set
+        internal bool IsSetComputationType()
+        {
+            return this._computationType != null;
         }
 
         /// <summary>
