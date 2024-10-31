@@ -70,6 +70,17 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.TemplateArn);
             }
 
+            if(requestObject.IsSetTemplateContent())
+            {
+                context.Writer.WritePropertyName("TemplateContent");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EmailTemplateContentMarshaller.Instance;
+                marshaller.Marshall(requestObject.TemplateContent, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTemplateData())
             {
                 context.Writer.WritePropertyName("TemplateData");
