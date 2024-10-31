@@ -290,6 +290,11 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         ///  <c>RollbackSuccessful</c> - The rollback completed successfully.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Baking</c> - Waiting the specified bake time after an instance refresh has finished
+        /// updating instances.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public InstanceRefreshStatus Status

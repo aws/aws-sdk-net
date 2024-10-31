@@ -1214,6 +1214,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AutoScaling.Model.RefreshPreferences.BakeTime</property>
+    <min>0</min>
+    <max>172800</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AutoScaling.Model.RefreshPreferences.CheckpointDelay</property>
     <min>0</min>
     <max>172800</max>

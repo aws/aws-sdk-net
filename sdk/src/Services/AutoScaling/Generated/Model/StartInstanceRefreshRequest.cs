@@ -151,6 +151,10 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// Skip matching
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Bake time
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public RefreshPreferences Preferences

@@ -525,6 +525,10 @@ namespace Amazon.AutoScaling
     {
 
         /// <summary>
+        /// Constant Baking for InstanceRefreshStatus
+        /// </summary>
+        public static readonly InstanceRefreshStatus Baking = new InstanceRefreshStatus("Baking");
+        /// <summary>
         /// Constant Cancelled for InstanceRefreshStatus
         /// </summary>
         public static readonly InstanceRefreshStatus Cancelled = new InstanceRefreshStatus("Cancelled");
