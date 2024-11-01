@@ -1,3 +1,16 @@
+### 3.7.919.0 (2024-11-01 18:22 UTC)
+* BedrockAgent (3.7.408.0)
+	* Amazon Bedrock Knowledge Bases now supports using application inference profiles to increase throughput and improve resilience.
+* CloudWatchLogs (3.7.406.0)
+	* This release introduces an improvement in PutLogEvents
+* DocDBElastic (3.7.401.0)
+	* Amazon DocumentDB Elastic Clusters adds support for pending maintenance actions feature with APIs GetPendingMaintenanceAction, ListPendingMaintenanceActions and ApplyPendingMaintenanceAction
+* TaxSettings (3.7.401.0)
+	* Add support for supplemental tax registrations via these new APIs: PutSupplementalTaxRegistration, ListSupplementalTaxRegistrations, and DeleteSupplementalTaxRegistration.
+* Core 3.7.400.45
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.918.0 (2024-10-31 20:17 UTC)
 * AutoScaling (3.7.403.0)
 	* Adds bake time for Auto Scaling group Instance Refresh

@@ -32,7 +32,7 @@ namespace Amazon.IoTAnalytics
     public partial class AmazonIoTAnalyticsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("IoTAnalytics", "3.7.400.44");
+            InternalSDKUtils.BuildUserAgentString("IoTAnalytics", "3.7.400.45");
 
         private string _userAgent = UserAgentString;
         ///<summary>

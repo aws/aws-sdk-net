@@ -32,7 +32,7 @@ namespace Amazon.CloudWatchEvidently
     public partial class AmazonCloudWatchEvidentlyConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Evidently", "3.7.400.44");
+            InternalSDKUtils.BuildUserAgentString("Evidently", "3.7.400.45");
 
         private string _userAgent = UserAgentString;
         ///<summary>
