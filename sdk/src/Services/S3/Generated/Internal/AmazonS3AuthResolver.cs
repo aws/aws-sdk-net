@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the autoscaling-2011-01-01.normal.json service model.
+ * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
  */
 
 using Amazon.Runtime;
@@ -23,10 +23,10 @@ using Amazon.Runtime.Internal;
 using Smithy.Identity.Abstractions;
 using System.Collections.Generic;
 
-namespace Amazon.AutoScaling.Internal
+namespace Amazon.S3.Internal
 {
     /// <inheritdoc cref="IAuthSchemeParameters" />
-    public class AmazonAutoScalingAuthSchemeParameters : IAuthSchemeParameters
+    public class AmazonS3AuthSchemeParameters : IAuthSchemeParameters
     {
         /// <inheritdoc />
         public string Operation { get; set; }
@@ -40,18 +40,32 @@ namespace Amazon.AutoScaling.Internal
     /// <summary>
     /// Handler responsible for converting the request context into the parameters expected by the auth scheme resolver.
     /// </summary>
-    public class AmazonAutoScalingAuthSchemeHandler : BaseAuthResolverHandler
+    public class AmazonS3AuthSchemeHandler : BaseAuthResolverHandler
     {
+        private readonly AmazonS3EndpointResolver _endpointResolver = new();
+
         /// <summary>
-        /// Modeled auth scheme resolver for AutoScaling.
+        /// Modeled auth scheme resolver for S3.
         /// </summary>
-        public AmazonAutoScalingAuthSchemeResolver AuthSchemeResolver { get; } = new();
+        public AmazonS3AuthSchemeResolver AuthSchemeResolver { get; } = new();
 
         /// <inheritdoc/>
         protected override List<IAuthSchemeOption> ResolveAuthOptions(IExecutionContext executionContext)
         {
+            // Since S3 includes auth schemes in its endpoint rules, we'll attempt to delegate resolution to the endpoint
+            // resolver first (falling back to the modeled resolver if no options are returned).
+            var endpoint = _endpointResolver.GetEndpoint(executionContext);
+
+            // This means the endpoints resolver is executed twice intentionally (at this point and then later in the pipeline
+            // to determine which endpoint the SDK should use for the request).
+            var endpointAuthSchemes = RetrieveSchemesFromEndpoint(endpoint);
+            if (endpointAuthSchemes != null)
+            {
+                return endpointAuthSchemes;
+            }
+
             var requestContext = executionContext.RequestContext;
-            var mappedParameters = new AmazonAutoScalingAuthSchemeParameters
+            var mappedParameters = new AmazonS3AuthSchemeParameters
             {
                 Operation = requestContext.Request.RequestName,
                 Region = requestContext.ClientConfig.RegionEndpoint?.SystemName,
@@ -62,10 +76,10 @@ namespace Amazon.AutoScaling.Internal
     }
 
     /// <inheritdoc cref="IAuthSchemeResolver{T}" />
-    public class AmazonAutoScalingAuthSchemeResolver : IAuthSchemeResolver<AmazonAutoScalingAuthSchemeParameters>
+    public class AmazonS3AuthSchemeResolver : IAuthSchemeResolver<AmazonS3AuthSchemeParameters>
     {
         /// <inheritdoc />
-        public List<IAuthSchemeOption> ResolveAuthScheme(AmazonAutoScalingAuthSchemeParameters authParameters)
+        public List<IAuthSchemeOption> ResolveAuthScheme(AmazonS3AuthSchemeParameters authParameters)
         {
             switch (authParameters.Operation)
             {

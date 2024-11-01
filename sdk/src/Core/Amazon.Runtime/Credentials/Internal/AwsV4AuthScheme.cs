@@ -24,7 +24,7 @@ namespace Amazon.Runtime.Credentials.Internal
     public class AwsV4AuthScheme : IAuthScheme<AWSCredentials>
     {
         /// <inheritdoc/>
-        public string SchemeId => "aws.auth#sigv4";
+        public string SchemeId => AuthSchemeOption.SigV4;
 
         /// <inheritdoc/>
         public IIdentityResolver GetIdentityResolver(IIdentityResolverConfiguration configuration)
