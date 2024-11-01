@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// MalaysiaAdditionalInfo Marshaller
+    /// SupplementalTaxRegistrationEntry Marshaller
     /// </summary>
-    public class MalaysiaAdditionalInfoMarshaller : IRequestMarshaller<MalaysiaAdditionalInfo, JsonMarshallerContext> 
+    public class SupplementalTaxRegistrationEntryMarshaller : IRequestMarshaller<SupplementalTaxRegistrationEntry, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,31 +44,37 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MalaysiaAdditionalInfo requestObject, JsonMarshallerContext context)
+        public void Marshall(SupplementalTaxRegistrationEntry requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetBusinessRegistrationNumber())
+            if(requestObject.IsSetAddress())
             {
-                context.Writer.WritePropertyName("businessRegistrationNumber");
-                context.Writer.Write(requestObject.BusinessRegistrationNumber);
+                context.Writer.WritePropertyName("address");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AddressMarshaller.Instance;
+                marshaller.Marshall(requestObject.Address, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetServiceTaxCodes())
+            if(requestObject.IsSetLegalName())
             {
-                context.Writer.WritePropertyName("serviceTaxCodes");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectServiceTaxCodesListValue in requestObject.ServiceTaxCodes)
-                {
-                        context.Writer.Write(requestObjectServiceTaxCodesListValue);
-                }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WritePropertyName("legalName");
+                context.Writer.Write(requestObject.LegalName);
             }
 
-            if(requestObject.IsSetTaxInformationNumber())
+            if(requestObject.IsSetRegistrationId())
             {
-                context.Writer.WritePropertyName("taxInformationNumber");
-                context.Writer.Write(requestObject.TaxInformationNumber);
+                context.Writer.WritePropertyName("registrationId");
+                context.Writer.Write(requestObject.RegistrationId);
+            }
+
+            if(requestObject.IsSetRegistrationType())
+            {
+                context.Writer.WritePropertyName("registrationType");
+                context.Writer.Write(requestObject.RegistrationType);
             }
 
         }
@@ -76,7 +82,7 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static MalaysiaAdditionalInfoMarshaller Instance = new MalaysiaAdditionalInfoMarshaller();
+        public readonly static SupplementalTaxRegistrationEntryMarshaller Instance = new SupplementalTaxRegistrationEntryMarshaller();
 
     }
 }

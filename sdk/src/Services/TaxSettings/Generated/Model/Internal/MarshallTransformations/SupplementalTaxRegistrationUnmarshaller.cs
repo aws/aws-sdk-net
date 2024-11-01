@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MalaysiaAdditionalInfo Object
+    /// Response Unmarshaller for SupplementalTaxRegistration Object
     /// </summary>  
-    public class MalaysiaAdditionalInfoUnmarshaller : IUnmarshaller<MalaysiaAdditionalInfo, XmlUnmarshallerContext>, IUnmarshaller<MalaysiaAdditionalInfo, JsonUnmarshallerContext>
+    public class SupplementalTaxRegistrationUnmarshaller : IUnmarshaller<SupplementalTaxRegistration, XmlUnmarshallerContext>, IUnmarshaller<SupplementalTaxRegistration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        MalaysiaAdditionalInfo IUnmarshaller<MalaysiaAdditionalInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SupplementalTaxRegistration IUnmarshaller<SupplementalTaxRegistration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public MalaysiaAdditionalInfo Unmarshall(JsonUnmarshallerContext context)
+        public SupplementalTaxRegistration Unmarshall(JsonUnmarshallerContext context)
         {
-            MalaysiaAdditionalInfo unmarshalledObject = new MalaysiaAdditionalInfo();
+            SupplementalTaxRegistration unmarshalledObject = new SupplementalTaxRegistration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,40 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("businessRegistrationNumber", targetDepth))
+                if (context.TestExpression("address", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BusinessRegistrationNumber = unmarshaller.Unmarshall(context);
+                    var unmarshaller = AddressUnmarshaller.Instance;
+                    unmarshalledObject.Address = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("serviceTaxCodes", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.ServiceTaxCodes = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("taxInformationNumber", targetDepth))
+                if (context.TestExpression("authorityId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TaxInformationNumber = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AuthorityId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("legalName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LegalName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("registrationId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RegistrationId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("registrationType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RegistrationType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +107,12 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
         }
 
 
-        private static MalaysiaAdditionalInfoUnmarshaller _instance = new MalaysiaAdditionalInfoUnmarshaller();        
+        private static SupplementalTaxRegistrationUnmarshaller _instance = new SupplementalTaxRegistrationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MalaysiaAdditionalInfoUnmarshaller Instance
+        public static SupplementalTaxRegistrationUnmarshaller Instance
         {
             get
             {

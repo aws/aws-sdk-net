@@ -16,24 +16,24 @@
 /*
  * Do not modify this file. This file is generated from the taxsettings-2018-05-10.normal.json service model.
  */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
 
-#pragma warning disable CS0612,CS0618
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.TaxSettings.Model
 {
     /// <summary>
-    /// Paginators for the TaxSettings service
-    ///</summary>
-    public interface ITaxSettingsPaginatorFactory
+    /// This is the response object from the DeleteSupplementalTaxRegistration operation.
+    /// </summary>
+    public partial class DeleteSupplementalTaxRegistrationResponse : AmazonWebServiceResponse
     {
 
-        /// <summary>
-        /// Paginator for ListSupplementalTaxRegistrations operation
-        ///</summary>
-        IListSupplementalTaxRegistrationsPaginator ListSupplementalTaxRegistrations(ListSupplementalTaxRegistrationsRequest request);
-
-        /// <summary>
-        /// Paginator for ListTaxRegistrations operation
-        ///</summary>
-        IListTaxRegistrationsPaginator ListTaxRegistrations(ListTaxRegistrationsRequest request);
     }
 }

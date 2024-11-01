@@ -427,30 +427,42 @@ namespace Amazon.TaxSettings
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you use this operation to set a tax registration number (TRN) in Malaysia, only
-        /// resellers with a valid sales and service tax (SST) number are required to provide
-        /// tax registration information.
+        /// The sector valid values are <c>Business</c> and <c>Individual</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// By using this API operation to set a TRN in Malaysia, Amazon Web Services will regard
-        /// you as self-declaring that you're an authorized business reseller registered with
-        /// the Royal Malaysia Customs Department (RMCD) and have a valid SST number.
+        ///  <c>RegistrationType</c> valid values are <c>NRIC</c> for individual, and TIN and
+        /// sales and service tax (SST) for Business.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For individual, you can specify the <c>taxInformationNumber</c> in <c>MalaysiaAdditionalInfo</c>
+        /// with NRIC type, and a valid <c>MyKad</c> or NRIC number.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For business, you must specify a <c>businessRegistrationNumber</c> in <c>MalaysiaAdditionalInfo</c>
+        /// with a TIN type and tax identification number.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For business resellers, you must specify a <c>businessRegistrationNumber</c> and <c>taxInformationNumber</c>
+        /// in <c>MalaysiaAdditionalInfo</c> with a sales and service tax (SST) type and a valid
+        /// SST number.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For business resellers with service codes, you must specify <c>businessRegistrationNumber</c>,
+        /// <c>taxInformationNumber</c>, and distinct <c>serviceTaxCodes</c> in <c>MalaysiaAdditionalInfo</c>
+        /// with a SST type and valid sales and service tax (SST) number. By using this API operation,
+        /// Amazon Web Services registers your self-declaration that you’re an authorized business
+        /// reseller registered with the Royal Malaysia Customs Department (RMCD), and have a
+        /// valid SST number.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Amazon Web Services reserves the right to seek additional information and/or take
         /// other actions to support your self-declaration as appropriate.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If you're not a reseller of Amazon Web Services, we don't recommend that you use this
-        /// operation to set the TRN in Malaysia.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Only use this API operation to upload the TRNs for accounts through which you're reselling
-        /// Amazon Web Services.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -667,30 +679,42 @@ namespace Amazon.TaxSettings
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you use this operation to set a tax registration number (TRN) in Malaysia, only
-        /// resellers with a valid sales and service tax (SST) number are required to provide
-        /// tax registration information.
+        /// The sector valid values are <c>Business</c> and <c>Individual</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// By using this API operation to set a TRN in Malaysia, Amazon Web Services will regard
-        /// you as self-declaring that you're an authorized business reseller registered with
-        /// the Royal Malaysia Customs Department (RMCD) and have a valid SST number.
+        ///  <c>RegistrationType</c> valid values are <c>NRIC</c> for individual, and TIN and
+        /// sales and service tax (SST) for Business.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For individual, you can specify the <c>taxInformationNumber</c> in <c>MalaysiaAdditionalInfo</c>
+        /// with NRIC type, and a valid <c>MyKad</c> or NRIC number.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For business, you must specify a <c>businessRegistrationNumber</c> in <c>MalaysiaAdditionalInfo</c>
+        /// with a TIN type and tax identification number.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For business resellers, you must specify a <c>businessRegistrationNumber</c> and <c>taxInformationNumber</c>
+        /// in <c>MalaysiaAdditionalInfo</c> with a sales and service tax (SST) type and a valid
+        /// SST number.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For business resellers with service codes, you must specify <c>businessRegistrationNumber</c>,
+        /// <c>taxInformationNumber</c>, and distinct <c>serviceTaxCodes</c> in <c>MalaysiaAdditionalInfo</c>
+        /// with a SST type and valid sales and service tax (SST) number. By using this API operation,
+        /// Amazon Web Services registers your self-declaration that you’re an authorized business
+        /// reseller registered with the Royal Malaysia Customs Department (RMCD), and have a
+        /// valid SST number.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Amazon Web Services reserves the right to seek additional information and/or take
         /// other actions to support your self-declaration as appropriate.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If you're not a reseller of Amazon Web Services, we don't recommend that you use this
-        /// operation to set the TRN in Malaysia.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Only use this API operation to upload the TRNs for accounts through which you're reselling
-        /// Amazon Web Services.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -844,6 +868,73 @@ namespace Amazon.TaxSettings
             options.ResponseUnmarshaller = BatchPutTaxRegistrationResponseUnmarshaller.Instance;
             
             return InvokeAsync<BatchPutTaxRegistrationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteSupplementalTaxRegistration
+
+
+        /// <summary>
+        /// Deletes a supplemental tax registration for a single account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSupplementalTaxRegistration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSupplementalTaxRegistration service method, as returned by TaxSettings.</returns>
+        /// <exception cref="Amazon.TaxSettings.Model.ConflictException">
+        /// The exception when the input is creating conflict with the given state.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.InternalServerException">
+        /// The exception thrown when an unexpected error occurs when processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ResourceNotFoundException">
+        /// The exception thrown when the input doesn't have a resource associated to it.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ValidationException">
+        /// The exception when the input doesn't pass validation for at least one of the input
+        /// parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/DeleteSupplementalTaxRegistration">REST API Reference for DeleteSupplementalTaxRegistration Operation</seealso>
+        public virtual DeleteSupplementalTaxRegistrationResponse DeleteSupplementalTaxRegistration(DeleteSupplementalTaxRegistrationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSupplementalTaxRegistrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSupplementalTaxRegistrationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSupplementalTaxRegistrationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a supplemental tax registration for a single account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSupplementalTaxRegistration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteSupplementalTaxRegistration service method, as returned by TaxSettings.</returns>
+        /// <exception cref="Amazon.TaxSettings.Model.ConflictException">
+        /// The exception when the input is creating conflict with the given state.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.InternalServerException">
+        /// The exception thrown when an unexpected error occurs when processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ResourceNotFoundException">
+        /// The exception thrown when the input doesn't have a resource associated to it.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ValidationException">
+        /// The exception when the input doesn't pass validation for at least one of the input
+        /// parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/DeleteSupplementalTaxRegistration">REST API Reference for DeleteSupplementalTaxRegistration Operation</seealso>
+        public virtual Task<DeleteSupplementalTaxRegistrationResponse> DeleteSupplementalTaxRegistrationAsync(DeleteSupplementalTaxRegistrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteSupplementalTaxRegistrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSupplementalTaxRegistrationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteSupplementalTaxRegistrationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1047,6 +1138,67 @@ namespace Amazon.TaxSettings
 
         #endregion
         
+        #region  ListSupplementalTaxRegistrations
+
+
+        /// <summary>
+        /// Retrieves supplemental tax registrations for a single account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSupplementalTaxRegistrations service method.</param>
+        /// 
+        /// <returns>The response from the ListSupplementalTaxRegistrations service method, as returned by TaxSettings.</returns>
+        /// <exception cref="Amazon.TaxSettings.Model.InternalServerException">
+        /// The exception thrown when an unexpected error occurs when processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ResourceNotFoundException">
+        /// The exception thrown when the input doesn't have a resource associated to it.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ValidationException">
+        /// The exception when the input doesn't pass validation for at least one of the input
+        /// parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/ListSupplementalTaxRegistrations">REST API Reference for ListSupplementalTaxRegistrations Operation</seealso>
+        public virtual ListSupplementalTaxRegistrationsResponse ListSupplementalTaxRegistrations(ListSupplementalTaxRegistrationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSupplementalTaxRegistrationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSupplementalTaxRegistrationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSupplementalTaxRegistrationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves supplemental tax registrations for a single account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSupplementalTaxRegistrations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSupplementalTaxRegistrations service method, as returned by TaxSettings.</returns>
+        /// <exception cref="Amazon.TaxSettings.Model.InternalServerException">
+        /// The exception thrown when an unexpected error occurs when processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ResourceNotFoundException">
+        /// The exception thrown when the input doesn't have a resource associated to it.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ValidationException">
+        /// The exception when the input doesn't pass validation for at least one of the input
+        /// parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/ListSupplementalTaxRegistrations">REST API Reference for ListSupplementalTaxRegistrations Operation</seealso>
+        public virtual Task<ListSupplementalTaxRegistrationsResponse> ListSupplementalTaxRegistrationsAsync(ListSupplementalTaxRegistrationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSupplementalTaxRegistrationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSupplementalTaxRegistrationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListSupplementalTaxRegistrationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTaxRegistrations
 
 
@@ -1108,6 +1260,67 @@ namespace Amazon.TaxSettings
             options.ResponseUnmarshaller = ListTaxRegistrationsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListTaxRegistrationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutSupplementalTaxRegistration
+
+
+        /// <summary>
+        /// Stores supplemental tax registration for a single account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutSupplementalTaxRegistration service method.</param>
+        /// 
+        /// <returns>The response from the PutSupplementalTaxRegistration service method, as returned by TaxSettings.</returns>
+        /// <exception cref="Amazon.TaxSettings.Model.ConflictException">
+        /// The exception when the input is creating conflict with the given state.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.InternalServerException">
+        /// The exception thrown when an unexpected error occurs when processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ValidationException">
+        /// The exception when the input doesn't pass validation for at least one of the input
+        /// parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/PutSupplementalTaxRegistration">REST API Reference for PutSupplementalTaxRegistration Operation</seealso>
+        public virtual PutSupplementalTaxRegistrationResponse PutSupplementalTaxRegistration(PutSupplementalTaxRegistrationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutSupplementalTaxRegistrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutSupplementalTaxRegistrationResponseUnmarshaller.Instance;
+
+            return Invoke<PutSupplementalTaxRegistrationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Stores supplemental tax registration for a single account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutSupplementalTaxRegistration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutSupplementalTaxRegistration service method, as returned by TaxSettings.</returns>
+        /// <exception cref="Amazon.TaxSettings.Model.ConflictException">
+        /// The exception when the input is creating conflict with the given state.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.InternalServerException">
+        /// The exception thrown when an unexpected error occurs when processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ValidationException">
+        /// The exception when the input doesn't pass validation for at least one of the input
+        /// parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/PutSupplementalTaxRegistration">REST API Reference for PutSupplementalTaxRegistration Operation</seealso>
+        public virtual Task<PutSupplementalTaxRegistrationResponse> PutSupplementalTaxRegistrationAsync(PutSupplementalTaxRegistrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutSupplementalTaxRegistrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutSupplementalTaxRegistrationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutSupplementalTaxRegistrationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1177,30 +1390,42 @@ namespace Amazon.TaxSettings
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you use this operation to set a tax registration number (TRN) in Malaysia, only
-        /// resellers with a valid sales and service tax (SST) number are required to provide
-        /// tax registration information.
+        /// The sector valid values are <c>Business</c> and <c>Individual</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// By using this API operation to set a TRN in Malaysia, Amazon Web Services will regard
-        /// you as self-declaring that you're an authorized business reseller registered with
-        /// the Royal Malaysia Customs Department (RMCD) and have a valid SST number.
+        ///  <c>RegistrationType</c> valid values are <c>NRIC</c> for individual, and TIN and
+        /// sales and service tax (SST) for Business.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For individual, you can specify the <c>taxInformationNumber</c> in <c>MalaysiaAdditionalInfo</c>
+        /// with NRIC type, and a valid <c>MyKad</c> or NRIC number.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For business, you must specify a <c>businessRegistrationNumber</c> in <c>MalaysiaAdditionalInfo</c>
+        /// with a TIN type and tax identification number.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For business resellers, you must specify a <c>businessRegistrationNumber</c> and <c>taxInformationNumber</c>
+        /// in <c>MalaysiaAdditionalInfo</c> with a sales and service tax (SST) type and a valid
+        /// SST number.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For business resellers with service codes, you must specify <c>businessRegistrationNumber</c>,
+        /// <c>taxInformationNumber</c>, and distinct <c>serviceTaxCodes</c> in <c>MalaysiaAdditionalInfo</c>
+        /// with a SST type and valid sales and service tax (SST) number. By using this API operation,
+        /// Amazon Web Services registers your self-declaration that you’re an authorized business
+        /// reseller registered with the Royal Malaysia Customs Department (RMCD), and have a
+        /// valid SST number.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Amazon Web Services reserves the right to seek additional information and/or take
         /// other actions to support your self-declaration as appropriate.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If you're not a reseller of Amazon Web Services, we don't recommend that you use this
-        /// operation to set the TRN in Malaysia.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Only use this API operation to upload the TRNs for accounts through which you're reselling
-        /// Amazon Web Services.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1416,30 +1641,42 @@ namespace Amazon.TaxSettings
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you use this operation to set a tax registration number (TRN) in Malaysia, only
-        /// resellers with a valid sales and service tax (SST) number are required to provide
-        /// tax registration information.
+        /// The sector valid values are <c>Business</c> and <c>Individual</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// By using this API operation to set a TRN in Malaysia, Amazon Web Services will regard
-        /// you as self-declaring that you're an authorized business reseller registered with
-        /// the Royal Malaysia Customs Department (RMCD) and have a valid SST number.
+        ///  <c>RegistrationType</c> valid values are <c>NRIC</c> for individual, and TIN and
+        /// sales and service tax (SST) for Business.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For individual, you can specify the <c>taxInformationNumber</c> in <c>MalaysiaAdditionalInfo</c>
+        /// with NRIC type, and a valid <c>MyKad</c> or NRIC number.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For business, you must specify a <c>businessRegistrationNumber</c> in <c>MalaysiaAdditionalInfo</c>
+        /// with a TIN type and tax identification number.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For business resellers, you must specify a <c>businessRegistrationNumber</c> and <c>taxInformationNumber</c>
+        /// in <c>MalaysiaAdditionalInfo</c> with a sales and service tax (SST) type and a valid
+        /// SST number.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For business resellers with service codes, you must specify <c>businessRegistrationNumber</c>,
+        /// <c>taxInformationNumber</c>, and distinct <c>serviceTaxCodes</c> in <c>MalaysiaAdditionalInfo</c>
+        /// with a SST type and valid sales and service tax (SST) number. By using this API operation,
+        /// Amazon Web Services registers your self-declaration that you’re an authorized business
+        /// reseller registered with the Royal Malaysia Customs Department (RMCD), and have a
+        /// valid SST number.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Amazon Web Services reserves the right to seek additional information and/or take
         /// other actions to support your self-declaration as appropriate.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If you're not a reseller of Amazon Web Services, we don't recommend that you use this
-        /// operation to set the TRN in Malaysia.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Only use this API operation to upload the TRNs for accounts through which you're reselling
-        /// Amazon Web Services.
         /// </para>
         ///  </li> <li> 
         /// <para>
