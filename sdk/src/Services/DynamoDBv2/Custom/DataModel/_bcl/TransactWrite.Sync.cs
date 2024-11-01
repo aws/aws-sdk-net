@@ -13,6 +13,8 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.Runtime.Telemetry.Tracing;
+
 namespace Amazon.DynamoDBv2.DataModel
 {
     public partial interface ITransactWrite
@@ -34,7 +36,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <inheritdoc/>
         public override void Execute()
         {
-            ExecuteHelper();
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(TransactWrite), nameof(Execute));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                ExecuteHelper();
+            }
         }
     }
 
@@ -51,7 +57,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <inheritdoc/>
         public void Execute()
         {
-            ExecuteHelper();
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(MultiTableTransactWrite), nameof(Execute));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                ExecuteHelper();
+            }
         }
     }
 }

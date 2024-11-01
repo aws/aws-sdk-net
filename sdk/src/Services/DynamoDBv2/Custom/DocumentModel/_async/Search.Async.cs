@@ -14,6 +14,7 @@
  */
 #pragma warning disable 1574
 
+using Amazon.Runtime.Telemetry.Tracing;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
@@ -46,15 +47,23 @@ namespace Amazon.DynamoDBv2.DocumentModel
     public partial class Search : ISearch
     {
         /// <inheritdoc/>
-        public Task<List<Document>> GetNextSetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<List<Document>> GetNextSetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return GetNextSetHelperAsync(cancellationToken);
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Search), nameof(GetNextSetAsync));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                return await GetNextSetHelperAsync(cancellationToken).ConfigureAwait(false);
+            }
         }
 
         /// <inheritdoc/>
-        public Task<List<Document>> GetRemainingAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<List<Document>> GetRemainingAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            return GetRemainingHelperAsync(cancellationToken);
+            var operationName = DynamoDBTelemetry.ExtractOperationName(nameof(Search), nameof(GetRemainingAsync));
+            using (DynamoDBTelemetry.CreateSpan(TracerProvider, operationName, spanKind: SpanKind.CLIENT))
+            {
+                return await GetRemainingHelperAsync(cancellationToken).ConfigureAwait(false);
+            }
         }
     }
 }

@@ -21,6 +21,7 @@ using System.Threading;
 using System.Threading.Tasks;
 #endif
 using Amazon.DynamoDBv2.Model;
+using Amazon.Runtime.Telemetry.Tracing;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
@@ -90,6 +91,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         internal Table TargetTable { get; private set; }
         internal List<Key> Keys { get; private set; }
+        internal TracerProvider TracerProvider { get; private set; }
 
         #endregion
 
@@ -121,6 +123,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             TargetTable = targetTable;
             Keys = new List<Key>();
+            TracerProvider = targetTable?.DDBClient?.Config?.TelemetryProvider?.TracerProvider
+                ?? AWSConfigs.TelemetryProvider.TracerProvider;
         }
 
         #endregion
@@ -242,6 +246,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
     {
         #region Properties
 
+        internal TracerProvider TracerProvider { get; private set; }
+
         /// <inheritdoc/>
         public List<IDocumentBatchGet> Batches { get; private set; }
 
@@ -275,6 +281,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 throw new ArgumentNullException("batches");
 
             Batches = new List<IDocumentBatchGet>(batches);
+            TracerProvider = GetTracerProvider(Batches);
         }
 
         #endregion
@@ -295,7 +302,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         internal void ExecuteHelper()
         {
             var errMsg = $"All {nameof(IDocumentBatchGet)} objects must be of type {nameof(DocumentBatchGet)}";
-            var docBatches = Batches.Select( x => x as DocumentBatchGet ?? throw new InvalidOperationException(errMsg)).ToList();
+            var docBatches = Batches.Select(x => x as DocumentBatchGet ?? throw new InvalidOperationException(errMsg)).ToList();
             MultiBatchGet resultsObject = new MultiBatchGet
             {
                 Batches = docBatches
@@ -345,6 +352,19 @@ namespace Amazon.DynamoDBv2.DocumentModel
 #endif
 
         #endregion
+
+        private TracerProvider GetTracerProvider(List<IDocumentBatchGet> batches)
+        {
+            var tracerProvider = AWSConfigs.TelemetryProvider.TracerProvider;
+            if (batches.Count > 0)
+            {
+                if (batches[0] is DocumentBatchGet documentBatchGet)
+                {
+                    tracerProvider = documentBatchGet.TracerProvider;
+                }
+            }
+            return tracerProvider;
+        }
     }
 
     /// <summary>

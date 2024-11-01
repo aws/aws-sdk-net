@@ -17,6 +17,8 @@ using System;
 using System.Collections.Generic;
 using Amazon.DynamoDBv2.DocumentModel;
 using System.Globalization;
+using Amazon.Runtime.Telemetry.Tracing;
+
 #if AWS_ASYNC_API
 using System.Threading.Tasks;
 #endif
@@ -96,6 +98,8 @@ namespace Amazon.DynamoDBv2.DataModel
     public abstract partial class BatchWrite : IBatchWrite
     {
         internal DocumentBatchWrite DocumentBatch { get; set; }
+
+        internal TracerProvider TracerProvider { get; set; }
     }
 
     /// <summary>
@@ -132,6 +136,9 @@ namespace Amazon.DynamoDBv2.DataModel
             // Table.CreateBatchWrite() returns the IDocumentBatchWrite interface.
             // But since we rely on the internal behavior of DocumentBatchWrite, we instantiate it via the constructor.
             DocumentBatch = new DocumentBatchWrite(table);
+
+            TracerProvider = context?.Client?.Config?.TelemetryProvider?.TracerProvider
+                ?? AWSConfigs.TelemetryProvider.TracerProvider;
         }
 
         /// <inheritdoc/>
@@ -228,6 +235,8 @@ namespace Amazon.DynamoDBv2.DataModel
     {
         private List<IBatchWrite> allBatches = new();
 
+        internal TracerProvider TracerProvider { get; set; }
+
         /// <summary>
         /// Constructs a MultiTableBatchWrite object from a number of
         /// BatchWrite objects
@@ -236,6 +245,7 @@ namespace Amazon.DynamoDBv2.DataModel
         public MultiTableBatchWrite(params IBatchWrite[] batches)
         {
             allBatches = new List<IBatchWrite>(batches);
+            TracerProvider = GetTracerProvider(allBatches);
         }
 
         internal MultiTableBatchWrite(IBatchWrite first, params IBatchWrite[] rest)
@@ -243,6 +253,7 @@ namespace Amazon.DynamoDBv2.DataModel
             allBatches = new List<IBatchWrite>();
             allBatches.Add(first);
             allBatches.AddRange(rest);
+            TracerProvider = GetTracerProvider(allBatches);
         }
 
         /// <inheritdoc/>
@@ -276,5 +287,19 @@ namespace Amazon.DynamoDBv2.DataModel
             return superBatch.ExecuteHelperAsync(cancellationToken);
         }
 #endif
+
+        private TracerProvider GetTracerProvider(List<IBatchWrite> allBatches)
+        {
+            var tracerProvider = AWSConfigs.TelemetryProvider.TracerProvider;
+            if (allBatches.Count > 0)
+            {
+                var firstBatch = allBatches[0];
+                if (firstBatch is BatchWrite batchWrite)
+                {
+                    tracerProvider = batchWrite.TracerProvider;
+                }
+            }
+            return tracerProvider;
+        }
     }
 }

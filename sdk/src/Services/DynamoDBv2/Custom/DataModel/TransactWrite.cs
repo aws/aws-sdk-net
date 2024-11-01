@@ -21,6 +21,7 @@ using System.Threading;
 using System.Threading.Tasks;
 #endif
 using Amazon.DynamoDBv2.DocumentModel;
+using Amazon.Runtime.Telemetry.Tracing;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -165,6 +166,8 @@ namespace Amazon.DynamoDBv2.DataModel
     {
         internal DocumentTransactWrite DocumentTransaction { get; set; }
 
+        internal TracerProvider TracerProvider { get; set; }
+
         internal abstract void PopulateObjects();
     }
 
@@ -192,6 +195,9 @@ namespace Amazon.DynamoDBv2.DataModel
             // table.CreateTransactWrite() return the IDocumentTransactWrite interface.
             // But since we rely on the internal behavior of DocumentTransactWrite, we instatiate it via the constructor.
             DocumentTransaction = new DocumentTransactWrite(table);
+
+            TracerProvider = context?.Client?.Config?.TelemetryProvider?.TracerProvider
+                ?? AWSConfigs.TelemetryProvider.TracerProvider;
         }
 
         /// <inheritdoc/>
@@ -457,6 +463,8 @@ namespace Amazon.DynamoDBv2.DataModel
     {
         private readonly List<ITransactWrite> allTransactionParts;
 
+        internal TracerProvider TracerProvider { get; set; }
+
         /// <summary>
         /// Constructs a MultiTableTransactWrite object from a number of
         /// TransactWrite objects
@@ -465,6 +473,7 @@ namespace Amazon.DynamoDBv2.DataModel
         public MultiTableTransactWrite(params ITransactWrite[] transactionParts)
         {
             allTransactionParts = new List<ITransactWrite>(transactionParts);
+            TracerProvider = GetTracerProvider(allTransactionParts);
         }
 
         internal MultiTableTransactWrite(ITransactWrite first, params ITransactWrite[] rest)
@@ -472,6 +481,7 @@ namespace Amazon.DynamoDBv2.DataModel
             allTransactionParts = new List<ITransactWrite>();
             allTransactionParts.Add(first);
             allTransactionParts.AddRange(rest);
+            TracerProvider = GetTracerProvider(allTransactionParts);
         }
 
         /// <inheritdoc/>
@@ -513,6 +523,20 @@ namespace Amazon.DynamoDBv2.DataModel
                 var abstractTransactWrite = transactionPart as TransactWrite ?? throw new InvalidOperationException(errMsg);
                 abstractTransactWrite.PopulateObjects();
             }
+        }
+
+        private TracerProvider GetTracerProvider(List<ITransactWrite> allTransactionParts)
+        {
+            var tracerProvider = AWSConfigs.TelemetryProvider.TracerProvider;
+            if (allTransactionParts.Count > 0)
+            {
+                var firstTransactionPart = allTransactionParts[0];
+                if (firstTransactionPart is TransactWrite transactWrite)
+                {
+                    tracerProvider = transactWrite.TracerProvider;
+                }
+            }
+            return tracerProvider;
         }
 #endif
     }
