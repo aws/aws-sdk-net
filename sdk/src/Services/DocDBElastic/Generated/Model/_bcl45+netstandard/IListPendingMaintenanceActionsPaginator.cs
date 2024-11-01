@@ -16,29 +16,24 @@
 /*
  * Do not modify this file. This file is generated from the docdb-elastic-2022-11-28.normal.json service model.
  */
+using Amazon.Runtime;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DocDBElastic.Model
 {
     /// <summary>
-    /// Paginators for the DocDBElastic service
+    /// Paginator for the ListPendingMaintenanceActions operation
     ///</summary>
-    public interface IDocDBElasticPaginatorFactory
+    public interface IListPendingMaintenanceActionsPaginator
     {
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<ListPendingMaintenanceActionsResponse> Responses { get; }
 
         /// <summary>
-        /// Paginator for ListClusters operation
-        ///</summary>
-        IListClustersPaginator ListClusters(ListClustersRequest request);
-
-        /// <summary>
-        /// Paginator for ListClusterSnapshots operation
-        ///</summary>
-        IListClusterSnapshotsPaginator ListClusterSnapshots(ListClusterSnapshotsRequest request);
-
-        /// <summary>
-        /// Paginator for ListPendingMaintenanceActions operation
-        ///</summary>
-        IListPendingMaintenanceActionsPaginator ListPendingMaintenanceActions(ListPendingMaintenanceActionsRequest request);
+        /// Enumerable containing all of the ResourcePendingMaintenanceActions
+        /// </summary>
+        IPaginatedEnumerable<ResourcePendingMaintenanceAction> ResourcePendingMaintenanceActions { get; }
     }
 }

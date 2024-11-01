@@ -69,6 +69,42 @@ namespace Amazon.DocDBElastic
         IDocDBElasticPaginatorFactory Paginators { get; }
 #endif
                 
+        #region  ApplyPendingMaintenanceAction
+
+
+
+        /// <summary>
+        /// The type of pending maintenance action to be applied to the resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ApplyPendingMaintenanceAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ApplyPendingMaintenanceAction service method, as returned by DocDBElastic.</returns>
+        /// <exception cref="Amazon.DocDBElastic.Model.AccessDeniedException">
+        /// An exception that occurs when there are not sufficient permissions to perform an action.
+        /// </exception>
+        /// <exception cref="Amazon.DocDBElastic.Model.ConflictException">
+        /// There was an access conflict.
+        /// </exception>
+        /// <exception cref="Amazon.DocDBElastic.Model.InternalServerException">
+        /// There was an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.DocDBElastic.Model.ResourceNotFoundException">
+        /// The specified resource could not be located.
+        /// </exception>
+        /// <exception cref="Amazon.DocDBElastic.Model.ThrottlingException">
+        /// ThrottlingException will be thrown when request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DocDBElastic.Model.ValidationException">
+        /// A structure defining a validation exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/ApplyPendingMaintenanceAction">REST API Reference for ApplyPendingMaintenanceAction Operation</seealso>
+        Task<ApplyPendingMaintenanceActionResponse> ApplyPendingMaintenanceActionAsync(ApplyPendingMaintenanceActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CopyClusterSnapshot
 
 
@@ -321,6 +357,42 @@ namespace Amazon.DocDBElastic
 
         #endregion
                 
+        #region  GetPendingMaintenanceAction
+
+
+
+        /// <summary>
+        /// Retrieves all maintenance actions that are pending.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPendingMaintenanceAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPendingMaintenanceAction service method, as returned by DocDBElastic.</returns>
+        /// <exception cref="Amazon.DocDBElastic.Model.AccessDeniedException">
+        /// An exception that occurs when there are not sufficient permissions to perform an action.
+        /// </exception>
+        /// <exception cref="Amazon.DocDBElastic.Model.ConflictException">
+        /// There was an access conflict.
+        /// </exception>
+        /// <exception cref="Amazon.DocDBElastic.Model.InternalServerException">
+        /// There was an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.DocDBElastic.Model.ResourceNotFoundException">
+        /// The specified resource could not be located.
+        /// </exception>
+        /// <exception cref="Amazon.DocDBElastic.Model.ThrottlingException">
+        /// ThrottlingException will be thrown when request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DocDBElastic.Model.ValidationException">
+        /// A structure defining a validation exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/GetPendingMaintenanceAction">REST API Reference for GetPendingMaintenanceAction Operation</seealso>
+        Task<GetPendingMaintenanceActionResponse> GetPendingMaintenanceActionAsync(GetPendingMaintenanceActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListClusters
 
 
@@ -378,6 +450,36 @@ namespace Amazon.DocDBElastic
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/ListClusterSnapshots">REST API Reference for ListClusterSnapshots Operation</seealso>
         Task<ListClusterSnapshotsResponse> ListClusterSnapshotsAsync(ListClusterSnapshotsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListPendingMaintenanceActions
+
+
+
+        /// <summary>
+        /// Retrieves a list of all maintenance actions that are pending.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPendingMaintenanceActions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPendingMaintenanceActions service method, as returned by DocDBElastic.</returns>
+        /// <exception cref="Amazon.DocDBElastic.Model.AccessDeniedException">
+        /// An exception that occurs when there are not sufficient permissions to perform an action.
+        /// </exception>
+        /// <exception cref="Amazon.DocDBElastic.Model.InternalServerException">
+        /// There was an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.DocDBElastic.Model.ThrottlingException">
+        /// ThrottlingException will be thrown when request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DocDBElastic.Model.ValidationException">
+        /// A structure defining a validation exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/docdb-elastic-2022-11-28/ListPendingMaintenanceActions">REST API Reference for ListPendingMaintenanceActions Operation</seealso>
+        Task<ListPendingMaintenanceActionsResponse> ListPendingMaintenanceActionsAsync(ListPendingMaintenanceActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
