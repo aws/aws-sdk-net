@@ -710,13 +710,7 @@
   <ItemGroup>
 	<PackageReference Include="Microsoft.CSharp" Version="4.4.1" />
   </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
-	<PackageReference Include="System.CodeDom" Version="6.0.0" />
-  </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
-	<PackageReference Include="System.CodeDom" Version="6.0.0" />
-  </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
+  <ItemGroup Condition="'$(TargetFramework)' != 'net45'">
 	<PackageReference Include="System.CodeDom" Version="6.0.0" />
   </ItemGroup>
 </Project>
