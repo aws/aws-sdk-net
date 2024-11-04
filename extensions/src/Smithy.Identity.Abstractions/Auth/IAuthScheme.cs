@@ -22,7 +22,7 @@
         /// <summary>
         /// Retrieves the identity resolver associated with this authentication scheme.
         /// </summary>
-        IIdentityResolver IdentityResolver { get; }
+        IIdentityResolver GetIdentityResolver(IIdentityResolverConfiguration configuration);
 
         // TODO: Include methods to retrieve signer for the current scheme.
     }
