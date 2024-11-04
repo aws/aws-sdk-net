@@ -78,7 +78,7 @@ namespace Amazon.Runtime.Internal
                 return null;
             }
 
-            var authSchemes = (IList)endpoint.Attributes["authSchemes"];
+            var authSchemes = endpoint.Attributes["authSchemes"] as IList;
             if (authSchemes == null)
             {
                 return null;
