@@ -13,22 +13,19 @@
  * permissions and limitations under the License.
  */
 
-using Smithy.Identity.Abstractions;
-
-namespace Amazon.Runtime.Credentials.Internal
+namespace Smithy.Identity.Abstractions
 {
     /// <summary>
-    /// The anonymous authentication scheme (which instructs the SDK not to sign requests).
+    /// The identity resolvers configured in the SDK.
     /// </summary>
-    public class AnonymousAuthScheme : IAuthScheme<AnonymousAWSCredentials>
+    public interface IIdentityResolverConfiguration
     {
-        /// <inheritdoc/>
-        public string SchemeId => "smithy.api#noAuth";
-
-        /// <inheritdoc/>
-        public IIdentityResolver GetIdentityResolver(IIdentityResolverConfiguration configuration)
-        {
-            return configuration.GetIdentityResolver<AnonymousAWSCredentials>();       
-        }
+        /// <summary>
+        /// Retrieves an identity resolver for the specified identity type.
+        /// </summary>
+        /// <typeparam name="T">
+        /// The type of the identity, which must inherit from <see cref="BaseIdentity"/>.
+        /// </typeparam>
+        IIdentityResolver GetIdentityResolver<T>() where T : BaseIdentity;
     }
 }

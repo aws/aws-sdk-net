@@ -15,14 +15,19 @@
 
 using Smithy.Identity.Abstractions;
 
-namespace Amazon.Runtime.Credentials.Internal
+namespace Amazon.Runtime.Credentials.Internal.IdentityResolvers
 {
-    public class DefaultAWSCredentialsIdentityResolver : IIdentityResolver
+    /// <summary>
+    /// A resolver that provides an anonymous identity. 
+    /// </summary>
+    public class AnonymousIdentityResolver : IIdentityResolver
     {
+        /// <summary>
+        /// Resolves the identity by returning an instance of <see cref="AnonymousAWSCredentials"/>.
+        /// </summary>
         public BaseIdentity ResolveIdentity()
         {
-            // TODO: This solves the same problem as the FallbackCredentialsFactory.
-            throw new System.NotImplementedException();
+            return new AnonymousAWSCredentials();
         }
     }
 }
