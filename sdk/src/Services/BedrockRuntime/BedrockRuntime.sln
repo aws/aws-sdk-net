@@ -26,6 +26,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IntegrationTests.Bed
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IntegrationTests.BedrockRuntime.Net45", "../../../test/Services/BedrockRuntime/IntegrationTests/AWSSDK.IntegrationTests.BedrockRuntime.Net45.csproj", "{086FF208-3CD6-40EC-9309-43F2EAA2F4D8}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.IntegrationTests.BedrockRuntime.NetStandard", "../../../test/Services/BedrockRuntime/IntegrationTests/AWSSDK.IntegrationTests.BedrockRuntime.NetStandard.csproj", "{9F726137-4C28-4FEA-9A6C-962DEA25951D}"
+EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.UnitTests.BedrockRuntime.Net35", "../../../test/Services/BedrockRuntime/UnitTests/AWSSDK.UnitTests.BedrockRuntime.Net35.csproj", "{AF460DBB-A029-440B-8C04-974E78043F09}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWSSDK.UnitTests.BedrockRuntime.Net45", "../../../test/Services/BedrockRuntime/UnitTests/AWSSDK.UnitTests.BedrockRuntime.Net45.csproj", "{8F243F98-2E75-4C9C-B4B3-61EC51BEF835}"
@@ -186,6 +188,10 @@ Global
 		{A657D500-DDA4-45FF-9459-8351CDD96B78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A657D500-DDA4-45FF-9459-8351CDD96B78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A657D500-DDA4-45FF-9459-8351CDD96B78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F726137-4C28-4FEA-9A6C-962DEA25951D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F726137-4C28-4FEA-9A6C-962DEA25951D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F726137-4C28-4FEA-9A6C-962DEA25951D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F726137-4C28-4FEA-9A6C-962DEA25951D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -220,6 +226,7 @@ Global
 		{7BD5B7F3-2ED9-4747-9FCE-8F5622BFCC36} = {939EC5C2-8345-43E2-8F97-72EEEBEEA0AC}
 		{EE034587-0A31-4841-A4BB-055DB990990F} = {939EC5C2-8345-43E2-8F97-72EEEBEEA0AC}
 		{A657D500-DDA4-45FF-9459-8351CDD96B78} = {939EC5C2-8345-43E2-8F97-72EEEBEEA0AC}
+		{9F726137-4C28-4FEA-9A6C-962DEA25951D} = {12EC4E4B-7E2C-4B63-8EF9-7B959F82A89B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CE2F2305-8E72-44B6-9FAD-AA2E347C2B6A}

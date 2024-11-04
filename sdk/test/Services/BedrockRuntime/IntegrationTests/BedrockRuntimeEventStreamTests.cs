@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon.BedrockRuntime;
 using Amazon.BedrockRuntime.Model;
 using System.Threading.Tasks;
@@ -8,6 +8,9 @@ using ThirdParty.Json.LitJson;
 using System.Threading;
 using System;
 using System.Diagnostics.Contracts;
+using System.Collections.Generic;
+using Amazon;
+using Amazon.Runtime;
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
     /// <summary>
@@ -22,7 +25,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     /// </summary>
     [Ignore]
     [TestClass]
+#if NETSTANDARD
+    public class BedrockRuntimeEventStreamTests
+#else
     public class BedrockRuntimeEventStreamTests : TestBase<AmazonBedrockRuntimeClient>
+#endif
     {
 #if BCL35
         [TestMethod]
@@ -145,6 +152,48 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
     
 #endif
+
+#if AWS_ASYNC_ENUMERABLES_API
+        [TestMethod]
+        public async Task ConverseStreamCanBeEnumeratedAsynchronously()
+        {
+            // configure with credentials and region
+            var client = new AmazonBedrockRuntimeClient();
+
+            var request = new ConverseStreamRequest
+            {
+                ModelId = "meta.llama3-1-8b-instruct-v1:0"
+            };
+
+            request.Messages.Add(new Message
+            {
+                Content = new List<ContentBlock> { new ContentBlock { Text = "Who was the first US president" } },
+                Role = ConversationRole.User
+            });
+
+            var response = await client.ConverseStreamAsync(request);
+
+            Assert.IsNotNull(response);
+            Assert.IsNotNull(response.Stream);
+
+            using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(20));
+
+            var contentStringBuilder = new StringBuilder();
+            await foreach (var item in response.Stream.WithCancellation(cts.Token))
+            {
+                if (item is ContentBlockDeltaEvent deltaEvent)
+                {
+                    contentStringBuilder.Append(deltaEvent.Delta.Text);
+                }
+            }
+
+            var responseContent = contentStringBuilder.ToString();
+
+            // Since we don't know the contents of the response from Bedrock, we just assert that we received a response
+            Assert.IsTrue(responseContent.Length > 10);
+        }
+#endif
+
         static MemoryStream CreateStream(string query, bool createInvalidInput = false)
         {
             StringBuilder promptValueBuilder = new StringBuilder();

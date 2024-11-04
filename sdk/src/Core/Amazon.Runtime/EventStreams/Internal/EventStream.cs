@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -17,10 +17,9 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
+using System.Threading;
 #if AWS_ASYNC_API
 using System.Threading.Tasks;
-#else
-using System.Threading;
 #endif
 
 namespace Amazon.Runtime.EventStreams.Internal
@@ -55,7 +54,7 @@ namespace Amazon.Runtime.EventStreams.Internal
         /// 
         /// The Task will be completed when all of the events from the stream have been processed.
         /// </summary>
-        Task StartProcessingAsync();
+        Task StartProcessingAsync(CancellationToken cancellationToken = default);
 #endif
     }
 
@@ -262,7 +261,7 @@ namespace Amazon.Runtime.EventStreams.Internal
         {
 #if AWS_ASYNC_API
             // Task only exists in framework 4.5 and up, and Standard.
-            Task.Run(() => ProcessLoopAsync());
+            Task.Run(() => ProcessLoopAsync(CancellationToken.None));
 #else
             // ThreadPool only exists in 3.5 and below. These implementations do not have the Task library.
             ThreadPool.QueueUserWorkItem(ProcessLoop);
@@ -270,7 +269,7 @@ namespace Amazon.Runtime.EventStreams.Internal
         }
 
 #if AWS_ASYNC_API
-        private async Task ProcessLoopAsync()
+        private async Task ProcessLoopAsync(CancellationToken cancellationToken)
         {
             var buffer = new byte[BufferSize];
 
@@ -278,7 +277,7 @@ namespace Amazon.Runtime.EventStreams.Internal
             {
                 while (IsProcessing)
                 {
-                    await ReadFromStreamAsync(buffer).ConfigureAwait(false);
+                    await ReadFromStreamAsync(buffer, cancellationToken).ConfigureAwait(false);
                 }
             }
             // These exceptions are raised on the background thread. They are fired as events for visibility.
@@ -351,9 +350,10 @@ namespace Amazon.Runtime.EventStreams.Internal
         /// each message it decodes.
         /// </summary>
         /// <param name="buffer">The buffer to store the read bytes from the stream.</param>
-        protected async Task ReadFromStreamAsync(byte[] buffer)
+        /// <param name="cancellationToken">A cancellation token.</param>
+        protected async Task ReadFromStreamAsync(byte[] buffer, CancellationToken cancellationToken)
         {
-            var bytesRead = await NetworkStream.ReadAsync(buffer, 0, buffer.Length).ConfigureAwait(false);
+            var bytesRead = await NetworkStream.ReadAsync(buffer, 0, buffer.Length, cancellationToken).ConfigureAwait(false);
             if (bytesRead > 0)
             {
                 // Decoder raises MessageReceived for every message it encounters.
@@ -408,13 +408,13 @@ namespace Amazon.Runtime.EventStreams.Internal
         /// 
         /// The Task will be completed when all of the events from the stream have been processed.
         /// </summary>
-        public virtual async Task StartProcessingAsync()
+        public virtual async Task StartProcessingAsync(CancellationToken cancellationToken = default)
         {
             if (IsProcessing) 
                 return;
 
             IsProcessing = true;
-            await ProcessLoopAsync().ConfigureAwait(false);
+            await ProcessLoopAsync(cancellationToken).ConfigureAwait(false);
         }
 #endif
 

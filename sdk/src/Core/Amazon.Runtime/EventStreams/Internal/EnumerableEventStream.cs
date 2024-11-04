@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  *  Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
  *  this file except in compliance with the License. A copy of the License is located at
@@ -25,6 +25,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 #if AWS_ASYNC_API
+using System.Threading;
 using System.Threading.Tasks;
 #endif
 
@@ -36,7 +37,12 @@ namespace Amazon.Runtime.EventStreams.Internal
     /// <typeparam name="T">An implementation of IEventStreamEvent (e.g. IS3Event).</typeparam>
     /// <typeparam name="TE">An implementation of EventStreamException (e.g. S3EventStreamException).</typeparam>
     [SuppressMessage("Microsoft.Naming", "CA1710", Justification = "IEventStreamCollection is not descriptive.")]
+#if AWS_ASYNC_ENUMERABLES_API
+
+    public interface IEnumerableEventStream<T, TE> : IEventStream<T, TE>, IEnumerable<T>, IAsyncEnumerable<T> where T : IEventStreamEvent where TE : EventStreamException, new()
+#else
     public interface IEnumerableEventStream<T, TE> : IEventStream<T, TE>, IEnumerable<T> where T : IEventStreamEvent where TE : EventStreamException, new()
+#endif
     {
     }
 
@@ -171,12 +177,71 @@ namespace Amazon.Runtime.EventStreams.Internal
         /// 
         /// The Task will be completed when all of the events from the stream have been processed.
         /// </summary>
-        public override async Task StartProcessingAsync()
+        public override async Task StartProcessingAsync(CancellationToken cancellationToken = default)
         {
             // If they are/have enumerated, the event-driven mode should be disabled
             if (IsEnumerated) throw new InvalidOperationException(MutuallyExclusiveExceptionMessage);
 
-            await base.StartProcessingAsync().ConfigureAwait(false);
+            await base.StartProcessingAsync(cancellationToken).ConfigureAwait(false);
+        }
+#endif
+
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Returns an async enumerator that iterates through the collection.
+        /// </summary>
+        /// <returns>An async enumerator that can be used to iterate through the collection.</returns>
+        public async IAsyncEnumerator<T> GetAsyncEnumerator(CancellationToken cancellationToken)
+        {
+            if (IsProcessing)
+            {
+                // If the queue has already begun processing, refuse to enumerate.
+                throw new InvalidOperationException(MutuallyExclusiveExceptionMessage);
+            }
+
+            // There could be more than 1 message created per decoder cycle.
+            var events = new Queue<T>();
+
+            // Opting out of events - letting the enumeration handle everything.
+            IsEnumerated = true;
+            IsProcessing = true;
+
+            // Enumeration is just magic over the event driven mechanism.
+            EventReceived += (sender, args) => events.Enqueue(args.EventStreamEvent);
+
+            var buffer = new byte[BufferSize];
+
+            while (IsProcessing)
+            {
+                // If there are already events ready to be served, do not ask for more.
+                if (events.Count > 0)
+                {
+                    var ev = events.Dequeue();
+                    // Enumeration handles terminal events on behalf of the user.
+                    if (ev is IEventStreamTerminalEvent)
+                    {
+                        IsProcessing = false;
+                        Dispose();
+                    }
+
+                    yield return ev;
+                }
+                else
+                {
+                    try
+                    {
+                        await ReadFromStreamAsync(buffer, cancellationToken).ConfigureAwait(false);
+                    }
+                    catch (Exception ex)
+                    {
+                        IsProcessing = false;
+                        Dispose();
+
+                        // Wrap exceptions as needed to match event-driven behavior.
+                        throw WrapException(ex);
+                    }
+                }
+            }
         }
 #endif
     }
