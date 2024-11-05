@@ -1,0 +1,18 @@
+{
+    "core": {
+        "changeLogMessages": [
+          "Add S3ForcePathStyle as a config option for credential profiles."
+        ],
+        "type": "patch",
+        "updateMinimum": true
+      },
+    "services": [
+        {
+            "serviceName": "S3",
+            "type": "patch",
+            "changeLogMessages": [
+                "Fixes [issue 3479](https://github.com/aws/aws-sdk-net/issues/3479) where ForcePathStyle is unable to be read from the config file"
+            ]
+        }
+    ]
+}

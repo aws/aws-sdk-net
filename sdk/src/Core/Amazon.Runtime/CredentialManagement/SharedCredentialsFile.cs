@@ -71,6 +71,7 @@ namespace Amazon.Runtime.CredentialManagement
         private const string RequestMinCompressionSizeBytesField = "request_min_compression_size_bytes";
         private const string ClientAppIdField = "sdk_ua_app_id";
         private const string AccountIdEndpointModeField = "account_id_endpoint_mode";
+        private const string S3ForcePathStyleField = "s3_force_path_style";
         private readonly Logger _logger = Logger.GetLogger(typeof(SharedCredentialsFile));
 
         private static readonly HashSet<string> ReservedPropertyNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
@@ -104,7 +105,8 @@ namespace Amazon.Runtime.CredentialManagement
             DisableRequestCompressionField,
             RequestMinCompressionSizeBytesField,
             ClientAppIdField,
-            AccountIdEndpointModeField
+            AccountIdEndpointModeField,
+            S3ForcePathStyleField
         };
 
         /// <summary>
@@ -443,8 +445,12 @@ namespace Amazon.Runtime.CredentialManagement
 
             if (profile.ClientAppId != null)
                 reservedProperties[ClientAppIdField] = profile.ClientAppId;
+
             if (profile.AccountIdEndpointMode != null)
                 reservedProperties[AccountIdEndpointModeField] = profile.AccountIdEndpointMode.ToString().ToLowerInvariant();
+
+            if (profile.S3ForcePathStyle != null)
+                reservedProperties[S3ForcePathStyleField] = profile.S3ForcePathStyle.ToString().ToLowerInvariant();
 
             var profileDictionary = PropertyMapping.CombineProfileParts(
                 profile.Options, ReservedPropertyNames, reservedProperties, profile.Properties);
@@ -966,6 +972,21 @@ namespace Amazon.Runtime.CredentialManagement
                 
 #endif
                 }
+
+                string s3ForcePathStyleString;
+                bool? s3ForcePathStyle = null;
+                if (reservedProperties.TryGetValue(S3ForcePathStyleField, out s3ForcePathStyleString))
+                {
+                    bool s3ForcePathStyleOut;
+                    if (!bool.TryParse(s3ForcePathStyleString, out s3ForcePathStyleOut))
+                    {
+                        Logger.GetLogger(GetType()).InfoFormat("Invalid value {0} for {1} in profile {2}. A boolean true/false is expected.", s3ForcePathStyleString, S3ForcePathStyleField, profileName);
+                        profile = null;
+                        return false;
+                    }
+                    s3ForcePathStyle = s3ForcePathStyleOut;
+                }
+
                     profile = new CredentialProfile(profileName, profileOptions)
                 {
                     UniqueKey = toolkitArtifactGuid,
@@ -992,7 +1013,8 @@ namespace Amazon.Runtime.CredentialManagement
                     DisableRequestCompression = disableRequestCompression,
                     RequestMinCompressionSizeBytes = requestMinCompressionSizeBytes,
                     ClientAppId = clientAppId,
-                    AccountIdEndpointMode = accountIdEndpointMode
+                    AccountIdEndpointMode = accountIdEndpointMode,
+                    S3ForcePathStyle = s3ForcePathStyle
                 };
 
                 if (!IsSupportedProfileType(profile.ProfileType))

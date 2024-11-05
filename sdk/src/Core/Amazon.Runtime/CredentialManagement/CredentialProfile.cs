@@ -93,6 +93,11 @@ namespace Amazon.Runtime.CredentialManagement
         /// If true, the use of multi-region access points is disabled.
         /// </summary>
         public bool? S3DisableMultiRegionAccessPoints { get; set; }
+
+        /// <summary>
+        /// When true, S3 requests will always use path style addressing.
+        /// </summary>
+        public bool? S3ForcePathStyle { get; set; }
         
         /// <summary>
         /// The Sts Regional Endpoints Value as either legacy or regional

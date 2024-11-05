@@ -36,7 +36,7 @@ namespace Amazon.S3
         private const string AwsS3UsEast1RegionalEndpointsEnvironmentVariable = "AWS_S3_US_EAST_1_REGIONAL_ENDPOINT";
         private const string DisableMRAPEnvName = "AWS_S3_DISABLE_MULTIREGION_ACCESS_POINTS";
 
-        private bool forcePathStyle = false;
+        private bool? _forcePathStyle;
         private bool useAccelerateEndpoint = false;
         private S3UsEast1RegionalEndpointValue? s3UsEast1RegionalEndpointValue;
         private readonly string legacyUSEast1GlobalRegionSystemName = RegionEndpoint.USEast1.SystemName;
@@ -61,13 +61,40 @@ namespace Amazon.S3
             set { s3ExpressCredentialProvider = value; }
         }
 
+        private object _forcePathStyleLock = new object();
         /// <summary>
         /// When true, requests will always use path style addressing.
         /// </summary>
         public bool ForcePathStyle
         {
-            get { return forcePathStyle; }
-            set { forcePathStyle = value; }
+            get
+            {
+                if (_forcePathStyle.HasValue)
+                {
+                    return _forcePathStyle.GetValueOrDefault();
+                }
+
+                ResolveCredentialProfile();
+
+                lock (_forcePathStyleLock)
+                {
+                    if (_forcePathStyle.HasValue)
+                    {
+                        return _forcePathStyle.Value;
+                    }
+
+                    _forcePathStyle = _profile?.S3ForcePathStyle;
+                    return _forcePathStyle.GetValueOrDefault();
+                }
+            }
+
+            set
+            {
+                lock (_forcePathStyleLock)
+                {
+                    _forcePathStyle = value;
+                }
+            }
         }
 
         /// <summary>
