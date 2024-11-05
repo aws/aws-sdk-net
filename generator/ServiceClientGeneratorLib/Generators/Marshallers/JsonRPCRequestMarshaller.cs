@@ -241,17 +241,18 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line default
             #line hidden
             this.Write(@"#if !NETCOREAPP3_1_OR_GREATER
-            MemoryStream memoryStream = new MemoryStream();
+			
+            using var memoryStream = new MemoryStream();
 #endif
 #if NETCOREAPP3_1_OR_GREATER
 			ArrayBufferWriter<byte> arrayBufferWriter = new ArrayBufferWriter<byte>();
-			Utf8JsonWriter writer = new Utf8JsonWriter(arrayBufferWriter);
+			using Utf8JsonWriter writer = new Utf8JsonWriter(arrayBufferWriter);
 #else
-			Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+			using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
 #endif
 ");
             
-            #line 105 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 106 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
 		
 		if (shouldMarshallPayload)
 		{
@@ -261,7 +262,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\t\t\tvar context = new JsonMarshallerContext(request, writer);\r\n");
             
-            #line 110 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 111 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
 		
 			ProcessStructure(0, "publicRequest." + payload.PropertyName, payload.Shape);
 
@@ -270,7 +271,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\t\t\twriter.Flush();\r\n");
             
-            #line 114 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 115 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
 
 		}
 		else
@@ -282,7 +283,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             this.Write("\t\t\twriter.WriteStartObject();\r\n\t\t\tvar context = new JsonMarshallerContext(request" +
                     ", writer);\r\n");
             
-            #line 121 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 122 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
 		
 			ProcessMembers(0, "publicRequest", this.Operation.RequestBodyMembers);
 
@@ -291,16 +292,16 @@ namespace ServiceClientGenerator.Generators.Marshallers
             #line hidden
             this.Write("\t\t\twriter.WriteEndObject();\r\n\t\t\twriter.Flush();\r\n");
             
-            #line 126 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
+            #line 127 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
 
 		}
 
             
             #line default
             #line hidden
-            this.Write("#if !NETCOREAPP3_1_OR_GREATER\r\n\t\t\trequest.Content = memoryStream.ToArray();\r\n\t\t\tm" +
-                    "emoryStream.Dispose();\r\n#else\r\n            request.Content = arrayBufferWriter.W" +
-                    "rittenMemory.ToArray();\r\n#endif\r\n");
+            this.Write("#if !NETCOREAPP3_1_OR_GREATER\r\n\t\t\trequest.Content = memoryStream.ToArray();\r\n#els" +
+                    "e\r\n            request.Content = arrayBufferWriter.WrittenMemory.ToArray();\r\n#en" +
+                    "dif\r\n");
             
             #line 135 "C:\Dev\Repos\aws-sdk-net-staging\generator\ServiceClientGeneratorLib\Generators\Marshallers\JsonRPCRequestMarshaller.tt"
 

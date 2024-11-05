@@ -62,13 +62,14 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
 
             request.ResourcePath = "/JsonBlobs";
 #if !NETCOREAPP3_1_OR_GREATER
-            MemoryStream memoryStream = new MemoryStream();
+            
+            using var memoryStream = new MemoryStream();
 #endif
 #if NETCOREAPP3_1_OR_GREATER
             ArrayBufferWriter<byte> arrayBufferWriter = new ArrayBufferWriter<byte>();
-            Utf8JsonWriter writer = new Utf8JsonWriter(arrayBufferWriter);
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayBufferWriter);
 #else
-            Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
@@ -82,7 +83,6 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             writer.Flush();
 #if !NETCOREAPP3_1_OR_GREATER
             request.Content = memoryStream.ToArray();
-            memoryStream.Dispose();
 #else
             request.Content = arrayBufferWriter.WrittenMemory.ToArray();
 #endif
