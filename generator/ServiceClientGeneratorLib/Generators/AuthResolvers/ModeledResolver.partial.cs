@@ -5,6 +5,20 @@ namespace ServiceClientGenerator.Generators.AuthResolvers
 {
     public partial class ModeledResolver
     {
+        private readonly HashSet<string> _allowListedServices = new HashSet<string>
+        {
+            "S3",
+            "EventBridge",
+            "SimpleEmailServiceV2",
+            "CloudFrontKeyValueStore",
+        };
+
+        /// <summary>
+        /// Returns whether the generated resolver should delegate auth scheme resolution to the endpoints resolver.
+        /// </summary>
+        private bool IsServiceAllowListedForRulesBasedResolver() => 
+            _allowListedServices.Contains(Config.ClassName);
+
         /// <summary>
         /// Returns whether this service supports SigV4 (and therefore should include region in its auth scheme parameters).
         /// </summary>
