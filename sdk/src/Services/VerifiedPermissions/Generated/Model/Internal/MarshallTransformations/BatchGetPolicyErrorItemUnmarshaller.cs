@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AttributeValue Object
+    /// Response Unmarshaller for BatchGetPolicyErrorItem Object
     /// </summary>  
-    public class AttributeValueUnmarshaller : IUnmarshaller<AttributeValue, XmlUnmarshallerContext>, IUnmarshaller<AttributeValue, JsonUnmarshallerContext>
+    public class BatchGetPolicyErrorItemUnmarshaller : IUnmarshaller<BatchGetPolicyErrorItem, XmlUnmarshallerContext>, IUnmarshaller<BatchGetPolicyErrorItem, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AttributeValue IUnmarshaller<AttributeValue, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        BatchGetPolicyErrorItem IUnmarshaller<BatchGetPolicyErrorItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public AttributeValue Unmarshall(JsonUnmarshallerContext context)
+        public BatchGetPolicyErrorItem Unmarshall(JsonUnmarshallerContext context)
         {
-            AttributeValue unmarshalledObject = new AttributeValue();
+            BatchGetPolicyErrorItem unmarshalledObject = new BatchGetPolicyErrorItem();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,52 +66,28 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("boolean", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.Boolean = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("decimal", targetDepth))
+                if (context.TestExpression("code", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Decimal = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Code = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("entityIdentifier", targetDepth))
-                {
-                    var unmarshaller = EntityIdentifierUnmarshaller.Instance;
-                    unmarshalledObject.EntityIdentifier = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ipaddr", targetDepth))
+                if (context.TestExpression("message", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Ipaddr = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Message = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("long", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.Long = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("record", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, AttributeValue, StringUnmarshaller, AttributeValueUnmarshaller>(StringUnmarshaller.Instance, AttributeValueUnmarshaller.Instance);
-                    unmarshalledObject.Record = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("set", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<AttributeValue, AttributeValueUnmarshaller>(AttributeValueUnmarshaller.Instance);
-                    unmarshalledObject.Set = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("string", targetDepth))
+                if (context.TestExpression("policyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.String = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PolicyId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("policyStoreId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PolicyStoreId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -119,12 +95,12 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         }
 
 
-        private static AttributeValueUnmarshaller _instance = new AttributeValueUnmarshaller();        
+        private static BatchGetPolicyErrorItemUnmarshaller _instance = new BatchGetPolicyErrorItemUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AttributeValueUnmarshaller Instance
+        public static BatchGetPolicyErrorItemUnmarshaller Instance
         {
             get
             {

@@ -49,7 +49,9 @@ namespace Amazon.VerifiedPermissions.Model
     public partial class AttributeValue
     {
         private bool? _boolean;
+        private string _decimal;
         private EntityIdentifier _entityIdentifier;
+        private string _ipaddr;
         private long? _long;
         private Dictionary<string, AttributeValue> _record = AWSConfigs.InitializeCollections ? new Dictionary<string, AttributeValue>() : null;
         private List<AttributeValue> _set = AWSConfigs.InitializeCollections ? new List<AttributeValue>() : null;
@@ -80,6 +82,30 @@ namespace Amazon.VerifiedPermissions.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Decimal. 
+        /// <para>
+        /// An attribute value of <a href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#datatype-decimal">decimal</a>
+        /// type.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <c>{"decimal": "1.1"}</c> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=3, Max=23)]
+        public string Decimal
+        {
+            get { return this._decimal; }
+            set { this._decimal = value; }
+        }
+
+        // Check to see if Decimal property is set
+        internal bool IsSetDecimal()
+        {
+            return this._decimal != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EntityIdentifier. 
         /// <para>
         /// An attribute value of type <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_EntityIdentifier.html">EntityIdentifier</a>.
@@ -100,6 +126,30 @@ namespace Amazon.VerifiedPermissions.Model
         internal bool IsSetEntityIdentifier()
         {
             return this._entityIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ipaddr. 
+        /// <para>
+        /// An attribute value of <a href="https://docs.cedarpolicy.com/policies/syntax-datatypes.html#datatype-ipaddr">ipaddr</a>
+        /// type.
+        /// </para>
+        ///  
+        /// <para>
+        /// Example: <c>{"ip": "192.168.1.100"}</c> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=1, Max=44)]
+        public string Ipaddr
+        {
+            get { return this._ipaddr; }
+            set { this._ipaddr = value; }
+        }
+
+        // Check to see if Ipaddr property is set
+        internal bool IsSetIpaddr()
+        {
+            return this._ipaddr != null;
         }
 
         /// <summary>

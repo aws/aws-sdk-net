@@ -11,6 +11,35 @@ namespace AWSSDKDocSamples.Amazon.VerifiedPermissions.Generated
 {
     class VerifiedPermissionsSamples : ISample
     {
+        public void VerifiedPermissionsBatchGetPolicy()
+        {
+            #region example-1
+
+            var client = new AmazonVerifiedPermissionsClient();
+            var response = client.BatchGetPolicy(new BatchGetPolicyRequest 
+            {
+                Requests = new List<BatchGetPolicyInputItem> {
+                    new BatchGetPolicyInputItem {
+                        PolicyId = "PWv5M6d5HePx3gVVLKY1nK",
+                        PolicyStoreId = "ERZeDpRc34dkYZeb6FZRVC"
+                    },
+                    new BatchGetPolicyInputItem {
+                        PolicyId = "LzFn6KgLWvv4Mbegus35jn",
+                        PolicyStoreId = "ERZeDpRc34dkYZeb6FZRVC"
+                    },
+                    new BatchGetPolicyInputItem {
+                        PolicyId = "77gLjer8H5o3mvrnMGrSL5",
+                        PolicyStoreId = "ERZeDpRc34dkYZeb6FZRVC"
+                    }
+                }
+            });
+
+            List<BatchGetPolicyErrorItem> errors = response.Errors;
+            List<BatchGetPolicyOutputItem> results = response.Results;
+
+            #endregion
+        }
+
         public void VerifiedPermissionsBatchIsAuthorized()
         {
             #region example-1

@@ -127,6 +127,165 @@ namespace Amazon.VerifiedPermissions
 
 
         
+        #region  BatchGetPolicy
+
+
+        /// <summary>
+        /// Retrieves information about a group (batch) of policies.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The <c>BatchGetPolicy</c> operation doesn't have its own IAM permission. To authorize
+        /// this operation for Amazon Web Services principals, include the permission <c>verifiedpermissions:GetPolicy</c>
+        /// in their IAM policies.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetPolicy service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetPolicy service method, as returned by VerifiedPermissions.</returns>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.InternalServerException">
+        /// The request failed because of an internal error. Try your request again later
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ThrottlingException">
+        /// The request failed because it exceeded a throttling quota.
+        /// </exception>
+        /// <exception cref="Amazon.VerifiedPermissions.Model.ValidationException">
+        /// The request failed because one or more input parameters don't satisfy their constraint
+        /// requirements. The output is provided as a list of fields and a reason for each field
+        /// that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The possible reasons include the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>UnrecognizedEntityType</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy includes an entity type that isn't found in the schema.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>UnrecognizedActionId</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy includes an action id that isn't found in the schema.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>InvalidActionApplication</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy includes an action that, according to the schema, doesn't support the specified
+        /// principal and resource.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>UnexpectedType</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy included an operand that isn't a valid type for the specified operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>IncompatibleTypes</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The types of elements included in a <c>set</c>, or the types of expressions used in
+        /// an <c>if...then...else</c> clause aren't compatible in this context.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>MissingAttribute</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy attempts to access a record or entity attribute that isn't specified in
+        /// the schema. Test for the existence of the attribute first before attempting to access
+        /// its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+        /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>UnsafeOptionalAttributeAccess</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy attempts to access a record or entity attribute that is optional and isn't
+        /// guaranteed to be present. Test for the existence of the attribute first before attempting
+        /// to access its value. For more information, see the <a href="https://docs.cedarpolicy.com/policies/syntax-operators.html#has-presence-of-attribute-test">has
+        /// (presence of attribute test) operator</a> in the <i>Cedar Policy Language Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>ImpossiblePolicy</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Cedar has determined that a policy condition always evaluates to false. If the policy
+        /// is always false, it can never apply to any query, and so it can never affect an authorization
+        /// decision.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>WrongNumberArguments</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The policy references an extension type with the wrong number of arguments.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>FunctionArgumentValidationError</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Cedar couldn't parse the argument passed to an extension type. For example, a string
+        /// that is to be parsed as an IPv4 address can contain only digits and the period character.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/BatchGetPolicy">REST API Reference for BatchGetPolicy Operation</seealso>
+        BatchGetPolicyResponse BatchGetPolicy(BatchGetPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetPolicy operation on AmazonVerifiedPermissionsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/BatchGetPolicy">REST API Reference for BatchGetPolicy Operation</seealso>
+        IAsyncResult BeginBatchGetPolicy(BatchGetPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchGetPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetPolicy.</param>
+        /// 
+        /// <returns>Returns a  BatchGetPolicyResult from VerifiedPermissions.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/BatchGetPolicy">REST API Reference for BatchGetPolicy Operation</seealso>
+        BatchGetPolicyResponse EndBatchGetPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  BatchIsAuthorized
 
 

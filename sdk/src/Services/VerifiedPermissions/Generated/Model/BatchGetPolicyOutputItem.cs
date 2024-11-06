@@ -30,46 +30,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.VerifiedPermissions.Model
 {
     /// <summary>
-    /// Contains information about a policy.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is used as a response parameter for the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListPolicies.html">ListPolicies</a>
-    /// operation.
-    /// </para>
+    /// Contains information about a policy returned from a <c>BatchGetPolicy</c> API request.
     /// </summary>
-    public partial class PolicyItem
+    public partial class BatchGetPolicyOutputItem
     {
-        private List<ActionIdentifier> _actions = AWSConfigs.InitializeCollections ? new List<ActionIdentifier>() : null;
         private DateTime? _createdDate;
-        private PolicyDefinitionItem _definition;
-        private PolicyEffect _effect;
+        private PolicyDefinitionDetail _definition;
         private DateTime? _lastUpdatedDate;
         private string _policyId;
         private string _policyStoreId;
         private PolicyType _policyType;
-        private EntityIdentifier _principal;
-        private EntityIdentifier _resource;
-
-        /// <summary>
-        /// Gets and sets the property Actions. 
-        /// <para>
-        /// The action that a policy permits or forbids. For example, <c>{"actions": [{"actionId":
-        /// "ViewPhoto", "actionType": "PhotoFlash::Action"}, {"entityID": "SharePhoto", "entityType":
-        /// "PhotoFlash::Action"}]}</c>.
-        /// </para>
-        /// </summary>
-        public List<ActionIdentifier> Actions
-        {
-            get { return this._actions; }
-            set { this._actions = value; }
-        }
-
-        // Check to see if Actions property is set
-        internal bool IsSetActions()
-        {
-            return this._actions != null && (this._actions.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
 
         /// <summary>
         /// Gets and sets the property CreatedDate. 
@@ -97,7 +67,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public PolicyDefinitionItem Definition
+        public PolicyDefinitionDetail Definition
         {
             get { return this._definition; }
             set { this._definition = value; }
@@ -107,25 +77,6 @@ namespace Amazon.VerifiedPermissions.Model
         internal bool IsSetDefinition()
         {
             return this._definition != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Effect. 
-        /// <para>
-        /// The effect of the decision that a policy returns to an authorization request. For
-        /// example, <c>"effect": "Permit"</c>.
-        /// </para>
-        /// </summary>
-        public PolicyEffect Effect
-        {
-            get { return this._effect; }
-            set { this._effect = value; }
-        }
-
-        // Check to see if Effect property is set
-        internal bool IsSetEffect()
-        {
-            return this._effect != null;
         }
 
         /// <summary>
@@ -212,42 +163,6 @@ namespace Amazon.VerifiedPermissions.Model
         internal bool IsSetPolicyType()
         {
             return this._policyType != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Principal. 
-        /// <para>
-        /// The principal associated with the policy.
-        /// </para>
-        /// </summary>
-        public EntityIdentifier Principal
-        {
-            get { return this._principal; }
-            set { this._principal = value; }
-        }
-
-        // Check to see if Principal property is set
-        internal bool IsSetPrincipal()
-        {
-            return this._principal != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Resource. 
-        /// <para>
-        /// The resource associated with the policy.
-        /// </para>
-        /// </summary>
-        public EntityIdentifier Resource
-        {
-            get { return this._resource; }
-            set { this._resource = value; }
-        }
-
-        // Check to see if Resource property is set
-        internal bool IsSetResource()
-        {
-            return this._resource != null;
         }
 
     }

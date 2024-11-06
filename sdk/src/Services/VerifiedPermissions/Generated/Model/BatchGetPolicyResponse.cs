@@ -30,21 +30,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.VerifiedPermissions.Model
 {
     /// <summary>
-    /// This is the response object from the BatchIsAuthorized operation.
+    /// This is the response object from the BatchGetPolicy operation.
     /// </summary>
-    public partial class BatchIsAuthorizedResponse : AmazonWebServiceResponse
+    public partial class BatchGetPolicyResponse : AmazonWebServiceResponse
     {
-        private List<BatchIsAuthorizedOutputItem> _results = AWSConfigs.InitializeCollections ? new List<BatchIsAuthorizedOutputItem>() : null;
+        private List<BatchGetPolicyErrorItem> _errors = AWSConfigs.InitializeCollections ? new List<BatchGetPolicyErrorItem>() : null;
+        private List<BatchGetPolicyOutputItem> _results = AWSConfigs.InitializeCollections ? new List<BatchGetPolicyOutputItem>() : null;
+
+        /// <summary>
+        /// Gets and sets the property Errors. 
+        /// <para>
+        /// Information about the policies from the request that resulted in an error. These results
+        /// are returned in the order they were requested.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public List<BatchGetPolicyErrorItem> Errors
+        {
+            get { return this._errors; }
+            set { this._errors = value; }
+        }
+
+        // Check to see if Errors property is set
+        internal bool IsSetErrors()
+        {
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Results. 
         /// <para>
-        /// A series of <c>Allow</c> or <c>Deny</c> decisions for each request, and the policies
-        /// that produced them. These results are returned in the order they were requested.
+        /// Information about the policies listed in the request that were successfully returned.
+        /// These results are returned in the order they were requested.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public List<BatchIsAuthorizedOutputItem> Results
+        public List<BatchGetPolicyOutputItem> Results
         {
             get { return this._results; }
             set { this._results = value; }

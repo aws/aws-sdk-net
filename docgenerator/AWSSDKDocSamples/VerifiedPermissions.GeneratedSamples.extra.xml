@@ -2,6 +2,25 @@
 <docs>
     <doc>
         <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.BatchGetPolicy(Amazon.VerifiedPermissions.Model.BatchGetPolicyRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.BatchGetPolicy(Amazon.VerifiedPermissions.Model.BatchGetPolicyRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.BatchGetPolicyRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.BatchGetPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves information about the specified policy contained in the specified policy store. In this example, the requested policy is a template-linked policy, so it returns the ID of the policy template, and the specific principal and resource used by this policy.
+                </para>
+                <code
+                    title="To retrieve details about a policy"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.BatchIsAuthorized(Amazon.VerifiedPermissions.Model.BatchIsAuthorizedRequest)" />
             <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.BatchIsAuthorized(Amazon.VerifiedPermissions.Model.BatchIsAuthorizedRequest)" />
             <member name="T:Amazon.VerifiedPermissions.Model.BatchIsAuthorizedRequest" />
