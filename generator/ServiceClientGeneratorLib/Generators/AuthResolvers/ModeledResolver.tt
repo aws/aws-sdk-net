@@ -35,14 +35,33 @@ namespace <#=this.Config.Namespace#>.Internal
     /// </summary>
     public class Amazon<#=this.Config.ClassName#>AuthSchemeHandler : BaseAuthResolverHandler
     {
+<# if (IsServiceAllowListedForRulesBasedResolver()) { #>
+        private readonly Amazon<#=this.Config.ClassName#>EndpointResolver _endpointResolver = new();
+
+<# } #>
         /// <summary>
-        /// Auth scheme resolver for AutoScaling.
+        /// Modeled auth scheme resolver for <#=this.Config.ClassName#>.
         /// </summary>
         public Amazon<#=this.Config.ClassName#>AuthSchemeResolver AuthSchemeResolver { get; } = new();
 
         /// <inheritdoc/>
-        protected override List<IAuthSchemeOption> ResolveAuthOptions(IRequestContext requestContext)
+        protected override List<IAuthSchemeOption> ResolveAuthOptions(IExecutionContext executionContext)
         {
+<# if (IsServiceAllowListedForRulesBasedResolver()) { #>
+            // Since <#=this.Config.ClassName#> includes auth schemes in its endpoint rules, we'll attempt to delegate resolution to the endpoint
+            // resolver first (falling back to the modeled resolver if no options are returned).
+            var endpoint = _endpointResolver.GetEndpoint(executionContext);
+
+            // This means the endpoints resolver is executed twice intentionally (at this point and then later in the pipeline
+            // to determine which endpoint the SDK should use for the request).
+            var endpointAuthSchemes = RetrieveSchemesFromEndpoint(endpoint);
+            if (endpointAuthSchemes != null)
+            {
+                return endpointAuthSchemes;
+            }
+
+<# } #>
+            var requestContext = executionContext.RequestContext;
             var mappedParameters = new Amazon<#=this.Config.ClassName#>AuthSchemeParameters
             {
                 Operation = requestContext.Request.RequestName,
