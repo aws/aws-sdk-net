@@ -1,50 +1,35 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using System.Linq;
-
-using Amazon.DynamoDBv2;
-using Amazon.DynamoDBv2.Model;
-using Amazon;
-using Amazon.DynamoDBv2.DataModel;
+﻿using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DocumentModel;
-using ThirdParty.Json.LitJson;
+using System;
+using System.Collections.Generic;
 using System.IO;
-
+using System.Text;
+using System.Threading.Tasks;
+using System.Text.Json;
 using Xunit;
 
 namespace Amazon.DNXCore.IntegrationTests.DynamoDB
 {
     public partial class DynamoDBTests : IClassFixture<DynamoDBTestsFixture>
     {
-        const string sampleJson = @"{
+        const string _sampleJson = @"{
 ""Name"" : ""Alan"" ,
 ""Age"" : 31,
 ""CompanyName"" : ""Big River"" ,
-""CurrentStatus"" : ""Active""
+""CurrentStatus"" : ""Active"",
 ""CompanyInfo"" : {
-    ""Name"" : ""Big River"" ,
-    ""Year Founded"" : 1998,
+    ""Name"" : ""Big River"",
+    ""Year Founded"" : 1998
 } ,
 ""Aliases"" :
     [ ""Al"" , ""Steve"" , ""Alan-san"" ],
 ""IsActive"" : true,
 ""RetirementInfo"" : null
 }";
-        
+
         [Fact]
         [Trait(CategoryAttribute, "DynamoDB")]
-        public async Task TestJSON()
-        {
-            TestJsonConversions();
-
-            TestBinaryDecoding();
-
-            await TestPutGet();
-        }
-
-        private async Task TestPutGet()
+        public async Task TestDocumentPutGet()
         {
             // Clear tables
             await SharedTestFixture.CleanupTables();
@@ -56,13 +41,13 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
             LoadTables(DynamoDBEntryConversion.V2, out hashTable, out hashRangeTable);
 
             // JSON as top-level data
-            var doc = Document.FromJson(sampleJson);
+            var doc = Document.FromJson(_sampleJson);
             await hashRangeTable.PutItemAsync(doc);
             var retrievedDoc = await hashRangeTable.GetItemAsync("Alan", 31);
             Assert.True(doc.Equals(retrievedDoc));
 
             // JSON as nested data
-            var nestedDoc = Document.FromJson(sampleJson);
+            var nestedDoc = Document.FromJson(_sampleJson);
             doc = new Document();
             doc["Name"] = "Jim";
             doc["Age"] = 29;
@@ -72,13 +57,15 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
             Assert.True(doc.ForceConversion(DynamoDBEntryConversion.V2).Equals(retrievedDoc));
         }
 
-        private static void TestJsonConversions()
+        [Fact]
+        [Trait(CategoryAttribute, "DynamoDB")]
+        public static void TestDocumentJsonConversions()
         {
             // Create Document from JSON
-            var doc = Document.FromJson(sampleJson);
+            var doc = Document.FromJson(_sampleJson);
 
             // Verify types
-            Assert.True(doc["Name"] is Primitive);            
+            Assert.True(doc["Name"] is Primitive);
             Assert.True(doc["CompanyInfo"] is Document);
             Assert.True(doc["Aliases"] is DynamoDBList);
             Assert.True(doc["IsActive"] is DynamoDBBool);
@@ -86,13 +73,15 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
 
             // Verify conversions produce identical JSON
             var json = doc.ToJson();
-            CompareJson(sampleJson, json);
+            CompareJson(_sampleJson, json);
             var prettyJson = doc.ToJsonPretty();
-            CompareJson(sampleJson, prettyJson);
+            CompareJson(_sampleJson, prettyJson);
             CompareJson(json, prettyJson);
         }
 
-        private static void TestBinaryDecoding()
+        [Fact]
+        [Trait(CategoryAttribute, "DynamoDB")]
+        public static void TestDocumentBinaryDecoding()
         {
             // Test data
             var data = "Hello world!";
@@ -223,14 +212,24 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
             AssertExtensions.ExpectException(() => rt.DecodeBase64Attributes("FakeBinaryData"));
         }
 
-        // Compares two JSON strings by converting text->JSON->text and comparing the final forms
+        /// <summary>
+        /// Compares two JSON strings by converting text->JSON->text and comparing the final forms
+        /// </summary>
         private static void CompareJson(string jsonA, string jsonB)
         {
-            var a = JsonMapper.ToObject(jsonA);
-            var b = JsonMapper.ToObject(jsonB);
+            var a = JsonDocument.Parse(jsonA);
+            var b = JsonDocument.Parse(jsonB);
 
-            var aRt = a.ToJson();
-            var bRt = b.ToJson();
+            var streamA = new MemoryStream();
+            var writerA = new Utf8JsonWriter(streamA);
+            a.WriteTo(writerA);
+
+            var streamB = new MemoryStream();
+            var writerB = new Utf8JsonWriter(streamA);
+            b.WriteTo(writerB);
+
+            var aRt = Encoding.UTF8.GetString(streamA.ToArray());
+            var bRt = Encoding.UTF8.GetString(streamB.ToArray());
 
             Assert.Equal(aRt, bRt);
         }
