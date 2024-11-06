@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LFTagPolicyResource Object
+    /// Response Unmarshaller for LFTagExpression Object
     /// </summary>  
-    public class LFTagPolicyResourceUnmarshaller : IUnmarshaller<LFTagPolicyResource, XmlUnmarshallerContext>, IUnmarshaller<LFTagPolicyResource, JsonUnmarshallerContext>
+    public class LFTagExpressionUnmarshaller : IUnmarshaller<LFTagExpression, XmlUnmarshallerContext>, IUnmarshaller<LFTagExpression, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        LFTagPolicyResource IUnmarshaller<LFTagPolicyResource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LFTagExpression IUnmarshaller<LFTagExpression, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public LFTagPolicyResource Unmarshall(JsonUnmarshallerContext context)
+        public LFTagExpression Unmarshall(JsonUnmarshallerContext context)
         {
-            LFTagPolicyResource unmarshalledObject = new LFTagPolicyResource();
+            LFTagExpression unmarshalledObject = new LFTagExpression();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -72,22 +72,22 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                     unmarshalledObject.CatalogId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Description", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Expression", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<LFTag, LFTagUnmarshaller>(LFTagUnmarshaller.Instance);
                     unmarshalledObject.Expression = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ExpressionName", targetDepth))
+                if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExpressionName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ResourceType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +95,12 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         }
 
 
-        private static LFTagPolicyResourceUnmarshaller _instance = new LFTagPolicyResourceUnmarshaller();        
+        private static LFTagExpressionUnmarshaller _instance = new LFTagExpressionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LFTagPolicyResourceUnmarshaller Instance
+        public static LFTagExpressionUnmarshaller Instance
         {
             get
             {

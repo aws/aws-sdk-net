@@ -628,6 +628,77 @@ namespace Amazon.LakeFormation
 
         #endregion
         
+        #region  CreateLFTagExpression
+
+
+        /// <summary>
+        /// Creates a new LF-Tag expression with the provided name, description, catalog ID, and
+        /// expression body. This call fails if a LF-Tag expression with the same name already
+        /// exists in the caller’s account or if the underlying LF-Tags don't exist. To call this
+        /// API operation, caller needs the following Lake Formation permissions:
+        /// 
+        ///  
+        /// <para>
+        ///  <c>CREATE_LF_TAG_EXPRESSION</c> on the root catalog resource.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>GRANT_WITH_LF_TAG_EXPRESSION</c> on all underlying LF-Tag key:value pairs included
+        /// in the expression. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLFTagExpression service method.</param>
+        /// 
+        /// <returns>The response from the CreateLFTagExpression service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CreateLFTagExpression">REST API Reference for CreateLFTagExpression Operation</seealso>
+        CreateLFTagExpressionResponse CreateLFTagExpression(CreateLFTagExpressionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateLFTagExpression operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateLFTagExpression operation on AmazonLakeFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateLFTagExpression
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CreateLFTagExpression">REST API Reference for CreateLFTagExpression Operation</seealso>
+        IAsyncResult BeginCreateLFTagExpression(CreateLFTagExpressionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateLFTagExpression operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateLFTagExpression.</param>
+        /// 
+        /// <returns>Returns a  CreateLFTagExpressionResult from LakeFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CreateLFTagExpression">REST API Reference for CreateLFTagExpression Operation</seealso>
+        CreateLFTagExpressionResponse EndCreateLFTagExpression(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteDataCellsFilter
 
 
@@ -856,6 +927,63 @@ namespace Amazon.LakeFormation
         /// <returns>Returns a  DeleteLFTagResult from LakeFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteLFTag">REST API Reference for DeleteLFTag Operation</seealso>
         DeleteLFTagResponse EndDeleteLFTag(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteLFTagExpression
+
+
+        /// <summary>
+        /// Deletes the LF-Tag expression. The caller must be a data lake admin or have <c>DROP</c>
+        /// permissions on the LF-Tag expression. Deleting a LF-Tag expression will also delete
+        /// all <c>LFTagPolicy</c> permissions referencing the LF-Tag expression.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLFTagExpression service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLFTagExpression service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteLFTagExpression">REST API Reference for DeleteLFTagExpression Operation</seealso>
+        DeleteLFTagExpressionResponse DeleteLFTagExpression(DeleteLFTagExpressionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLFTagExpression operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLFTagExpression operation on AmazonLakeFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteLFTagExpression
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteLFTagExpression">REST API Reference for DeleteLFTagExpression Operation</seealso>
+        IAsyncResult BeginDeleteLFTagExpression(DeleteLFTagExpressionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteLFTagExpression operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteLFTagExpression.</param>
+        /// 
+        /// <returns>Returns a  DeleteLFTagExpressionResult from LakeFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteLFTagExpression">REST API Reference for DeleteLFTagExpression Operation</seealso>
+        DeleteLFTagExpressionResponse EndDeleteLFTagExpression(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1484,6 +1612,62 @@ namespace Amazon.LakeFormation
 
         #endregion
         
+        #region  GetLFTagExpression
+
+
+        /// <summary>
+        /// Returns the details about the LF-Tag expression. The caller must be a data lake admin
+        /// or must have <c>DESCRIBE</c> permission on the LF-Tag expression resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLFTagExpression service method.</param>
+        /// 
+        /// <returns>The response from the GetLFTagExpression service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetLFTagExpression">REST API Reference for GetLFTagExpression Operation</seealso>
+        GetLFTagExpressionResponse GetLFTagExpression(GetLFTagExpressionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLFTagExpression operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLFTagExpression operation on AmazonLakeFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetLFTagExpression
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetLFTagExpression">REST API Reference for GetLFTagExpression Operation</seealso>
+        IAsyncResult BeginGetLFTagExpression(GetLFTagExpressionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetLFTagExpression operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetLFTagExpression.</param>
+        /// 
+        /// <returns>Returns a  GetLFTagExpressionResult from LakeFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetLFTagExpression">REST API Reference for GetLFTagExpression Operation</seealso>
+        GetLFTagExpressionResponse EndGetLFTagExpression(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetQueryState
 
 
@@ -1786,6 +1970,12 @@ namespace Amazon.LakeFormation
         /// Amazon S3. In order to vend such credentials, Lake Formation assumes the role associated
         /// with a registered location, for example an Amazon S3 bucket, with a scope down policy
         /// which restricts the access to a single prefix.
+        /// 
+        ///  
+        /// <para>
+        /// To call this API, the role that the service assumes must have <c>lakeformation:GetDataAccess</c>
+        /// permission on the resource.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTemporaryGlueTableCredentials service method.</param>
         /// 
@@ -2111,6 +2301,63 @@ namespace Amazon.LakeFormation
         /// <returns>Returns a  ListLakeFormationOptInsResult from LakeFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListLakeFormationOptIns">REST API Reference for ListLakeFormationOptIns Operation</seealso>
         ListLakeFormationOptInsResponse EndListLakeFormationOptIns(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListLFTagExpressions
+
+
+        /// <summary>
+        /// Returns the LF-Tag expressions in caller’s account filtered based on caller's permissions.
+        /// Data Lake and read only admins implicitly can see all tag expressions in their account,
+        /// else caller needs DESCRIBE permissions on tag expression.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLFTagExpressions service method.</param>
+        /// 
+        /// <returns>The response from the ListLFTagExpressions service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListLFTagExpressions">REST API Reference for ListLFTagExpressions Operation</seealso>
+        ListLFTagExpressionsResponse ListLFTagExpressions(ListLFTagExpressionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListLFTagExpressions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListLFTagExpressions operation on AmazonLakeFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListLFTagExpressions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListLFTagExpressions">REST API Reference for ListLFTagExpressions Operation</seealso>
+        IAsyncResult BeginListLFTagExpressions(ListLFTagExpressionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListLFTagExpressions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListLFTagExpressions.</param>
+        /// 
+        /// <returns>Returns a  ListLFTagExpressionsResult from LakeFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListLFTagExpressions">REST API Reference for ListLFTagExpressions Operation</seealso>
+        ListLFTagExpressionsResponse EndListLFTagExpressions(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2465,7 +2712,7 @@ namespace Amazon.LakeFormation
         /// </para>
         ///  
         /// <para>
-        ///  <c>ResourceArn = arn:aws:s3:::my-bucket UseServiceLinkedRole = true</c> 
+        ///  <c>ResourceArn = arn:aws:s3:::my-bucket/ UseServiceLinkedRole = true</c> 
         /// </para>
         ///  
         /// <para>
@@ -3048,6 +3295,67 @@ namespace Amazon.LakeFormation
         /// <returns>Returns a  UpdateLFTagResult from LakeFormation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateLFTag">REST API Reference for UpdateLFTag Operation</seealso>
         UpdateLFTagResponse EndUpdateLFTag(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateLFTagExpression
+
+
+        /// <summary>
+        /// Updates the name of the LF-Tag expression to the new description and expression body
+        /// provided. Updating a LF-Tag expression immediately changes the permission boundaries
+        /// of all existing <c>LFTagPolicy</c> permission grants that reference the given LF-Tag
+        /// expression.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLFTagExpression service method.</param>
+        /// 
+        /// <returns>The response from the UpdateLFTagExpression service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateLFTagExpression">REST API Reference for UpdateLFTagExpression Operation</seealso>
+        UpdateLFTagExpressionResponse UpdateLFTagExpression(UpdateLFTagExpressionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateLFTagExpression operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLFTagExpression operation on AmazonLakeFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateLFTagExpression
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateLFTagExpression">REST API Reference for UpdateLFTagExpression Operation</seealso>
+        IAsyncResult BeginUpdateLFTagExpression(UpdateLFTagExpressionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateLFTagExpression operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateLFTagExpression.</param>
+        /// 
+        /// <returns>Returns a  UpdateLFTagExpressionResult from LakeFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateLFTagExpression">REST API Reference for UpdateLFTagExpression Operation</seealso>
+        UpdateLFTagExpressionResponse EndUpdateLFTagExpression(IAsyncResult asyncResult);
 
         #endregion
         

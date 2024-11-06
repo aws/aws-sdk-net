@@ -30,15 +30,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LakeFormation.Model
 {
     /// <summary>
-    /// A structure containing a list of LF-tag conditions or saved LF-Tag expressions that
-    /// apply to a resource's LF-tag policy.
+    /// Container for the parameters to the CreateLFTagExpression operation.
+    /// Creates a new LF-Tag expression with the provided name, description, catalog ID, and
+    /// expression body. This call fails if a LF-Tag expression with the same name already
+    /// exists in the caller’s account or if the underlying LF-Tags don't exist. To call this
+    /// API operation, caller needs the following Lake Formation permissions:
+    /// 
+    ///  
+    /// <para>
+    ///  <c>CREATE_LF_TAG_EXPRESSION</c> on the root catalog resource.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <c>GRANT_WITH_LF_TAG_EXPRESSION</c> on all underlying LF-Tag key:value pairs included
+    /// in the expression. 
+    /// </para>
     /// </summary>
-    public partial class LFTagPolicyResource
+    public partial class CreateLFTagExpressionRequest : AmazonLakeFormationRequest
     {
         private string _catalogId;
+        private string _description;
         private List<LFTag> _expression = AWSConfigs.InitializeCollections ? new List<LFTag>() : null;
-        private string _expressionName;
-        private ResourceType _resourceType;
+        private string _name;
 
         /// <summary>
         /// Gets and sets the property CatalogId. 
@@ -62,12 +75,31 @@ namespace Amazon.LakeFormation.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Expression. 
+        /// Gets and sets the property Description. 
         /// <para>
-        /// A list of LF-tag conditions or a saved expression that apply to the resource's LF-tag
-        /// policy.
+        /// A description with information about the LF-Tag expression.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Expression. 
+        /// <para>
+        /// A list of LF-Tag conditions (key-value pairs).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
         public List<LFTag> Expression
         {
             get { return this._expression; }
@@ -81,42 +113,22 @@ namespace Amazon.LakeFormation.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExpressionName. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// If provided, permissions are granted to the Data Catalog resources whose assigned
-        /// LF-Tags match the expression body of the saved expression under the provided <c>ExpressionName</c>.
+        /// A name for the expression.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
-        public string ExpressionName
+        [AWSProperty(Required=true, Min=1, Max=255)]
+        public string Name
         {
-            get { return this._expressionName; }
-            set { this._expressionName = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if ExpressionName property is set
-        internal bool IsSetExpressionName()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._expressionName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ResourceType. 
-        /// <para>
-        /// The resource type for which the LF-tag policy applies.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public ResourceType ResourceType
-        {
-            get { return this._resourceType; }
-            set { this._resourceType = value; }
-        }
-
-        // Check to see if ResourceType property is set
-        internal bool IsSetResourceType()
-        {
-            return this._resourceType != null;
+            return this._name != null;
         }
 
     }

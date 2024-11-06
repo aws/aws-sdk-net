@@ -406,6 +406,55 @@ namespace Amazon.LakeFormation
 
         #endregion
                 
+        #region  CreateLFTagExpression
+
+
+
+        /// <summary>
+        /// Creates a new LF-Tag expression with the provided name, description, catalog ID, and
+        /// expression body. This call fails if a LF-Tag expression with the same name already
+        /// exists in the caller’s account or if the underlying LF-Tags don't exist. To call this
+        /// API operation, caller needs the following Lake Formation permissions:
+        /// 
+        ///  
+        /// <para>
+        ///  <c>CREATE_LF_TAG_EXPRESSION</c> on the root catalog resource.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>GRANT_WITH_LF_TAG_EXPRESSION</c> on all underlying LF-Tag key:value pairs included
+        /// in the expression. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLFTagExpression service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLFTagExpression service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CreateLFTagExpression">REST API Reference for CreateLFTagExpression Operation</seealso>
+        Task<CreateLFTagExpressionResponse> CreateLFTagExpressionAsync(CreateLFTagExpressionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteDataCellsFilter
 
 
@@ -546,6 +595,41 @@ namespace Amazon.LakeFormation
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteLFTag">REST API Reference for DeleteLFTag Operation</seealso>
         Task<DeleteLFTagResponse> DeleteLFTagAsync(DeleteLFTagRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteLFTagExpression
+
+
+
+        /// <summary>
+        /// Deletes the LF-Tag expression. The caller must be a data lake admin or have <c>DROP</c>
+        /// permissions on the LF-Tag expression. Deleting a LF-Tag expression will also delete
+        /// all <c>LFTagPolicy</c> permissions referencing the LF-Tag expression.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLFTagExpression service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteLFTagExpression service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteLFTagExpression">REST API Reference for DeleteLFTagExpression Operation</seealso>
+        Task<DeleteLFTagExpressionResponse> DeleteLFTagExpressionAsync(DeleteLFTagExpressionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -932,6 +1016,40 @@ namespace Amazon.LakeFormation
 
         #endregion
                 
+        #region  GetLFTagExpression
+
+
+
+        /// <summary>
+        /// Returns the details about the LF-Tag expression. The caller must be a data lake admin
+        /// or must have <c>DESCRIBE</c> permission on the LF-Tag expression resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLFTagExpression service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetLFTagExpression service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetLFTagExpression">REST API Reference for GetLFTagExpression Operation</seealso>
+        Task<GetLFTagExpressionResponse> GetLFTagExpressionAsync(GetLFTagExpressionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetQueryState
 
 
@@ -1125,6 +1243,12 @@ namespace Amazon.LakeFormation
         /// Amazon S3. In order to vend such credentials, Lake Formation assumes the role associated
         /// with a registered location, for example an Amazon S3 bucket, with a scope down policy
         /// which restricts the access to a single prefix.
+        /// 
+        ///  
+        /// <para>
+        /// To call this API, the role that the service assumes must have <c>lakeformation:GetDataAccess</c>
+        /// permission on the resource.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTemporaryGlueTableCredentials service method.</param>
         /// <param name="cancellationToken">
@@ -1317,6 +1441,41 @@ namespace Amazon.LakeFormation
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListLakeFormationOptIns">REST API Reference for ListLakeFormationOptIns Operation</seealso>
         Task<ListLakeFormationOptInsResponse> ListLakeFormationOptInsAsync(ListLakeFormationOptInsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListLFTagExpressions
+
+
+
+        /// <summary>
+        /// Returns the LF-Tag expressions in caller’s account filtered based on caller's permissions.
+        /// Data Lake and read only admins implicitly can see all tag expressions in their account,
+        /// else caller needs DESCRIBE permissions on tag expression.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLFTagExpressions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListLFTagExpressions service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListLFTagExpressions">REST API Reference for ListLFTagExpressions Operation</seealso>
+        Task<ListLFTagExpressionsResponse> ListLFTagExpressionsAsync(ListLFTagExpressionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1540,7 +1699,7 @@ namespace Amazon.LakeFormation
         /// </para>
         ///  
         /// <para>
-        ///  <c>ResourceArn = arn:aws:s3:::my-bucket UseServiceLinkedRole = true</c> 
+        ///  <c>ResourceArn = arn:aws:s3:::my-bucket/ UseServiceLinkedRole = true</c> 
         /// </para>
         ///  
         /// <para>
@@ -1902,6 +2061,45 @@ namespace Amazon.LakeFormation
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateLFTag">REST API Reference for UpdateLFTag Operation</seealso>
         Task<UpdateLFTagResponse> UpdateLFTagAsync(UpdateLFTagRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateLFTagExpression
+
+
+
+        /// <summary>
+        /// Updates the name of the LF-Tag expression to the new description and expression body
+        /// provided. Updating a LF-Tag expression immediately changes the permission boundaries
+        /// of all existing <c>LFTagPolicy</c> permission grants that reference the given LF-Tag
+        /// expression.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLFTagExpression service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateLFTagExpression service method, as returned by LakeFormation.</returns>
+        /// <exception cref="Amazon.LakeFormation.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
+        /// A specified entity does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.LakeFormation.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateLFTagExpression">REST API Reference for UpdateLFTagExpression Operation</seealso>
+        Task<UpdateLFTagExpressionResponse> UpdateLFTagExpressionAsync(UpdateLFTagExpressionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// LFTagPolicyResource Marshaller
+    /// LFTagExpressionResource Marshaller
     /// </summary>
-    public class LFTagPolicyResourceMarshaller : IRequestMarshaller<LFTagPolicyResource, JsonMarshallerContext> 
+    public class LFTagExpressionResourceMarshaller : IRequestMarshaller<LFTagExpressionResource, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,7 +44,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(LFTagPolicyResource requestObject, JsonMarshallerContext context)
+        public void Marshall(LFTagExpressionResource requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
@@ -54,32 +54,10 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CatalogId);
             }
 
-            if(requestObject.IsSetExpression())
+            if(requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("Expression");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectExpressionListValue in requestObject.Expression)
-                {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LFTagMarshaller.Instance;
-                    marshaller.Marshall(requestObjectExpressionListValue, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-                context.Writer.WriteArrayEnd();
-            }
-
-            if(requestObject.IsSetExpressionName())
-            {
-                context.Writer.WritePropertyName("ExpressionName");
-                context.Writer.Write(requestObject.ExpressionName);
-            }
-
-            if(requestObject.IsSetResourceType())
-            {
-                context.Writer.WritePropertyName("ResourceType");
-                context.Writer.Write(requestObject.ResourceType);
+                context.Writer.WritePropertyName("Name");
+                context.Writer.Write(requestObject.Name);
             }
 
         }
@@ -87,7 +65,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static LFTagPolicyResourceMarshaller Instance = new LFTagPolicyResourceMarshaller();
+        public readonly static LFTagExpressionResourceMarshaller Instance = new LFTagExpressionResourceMarshaller();
 
     }
 }

@@ -30,20 +30,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LakeFormation.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateTableStorageOptimizer operation.
-    /// Updates the configuration of the storage optimizers for a table.
+    /// Container for the parameters to the UpdateLFTagExpression operation.
+    /// Updates the name of the LF-Tag expression to the new description and expression body
+    /// provided. Updating a LF-Tag expression immediately changes the permission boundaries
+    /// of all existing <c>LFTagPolicy</c> permission grants that reference the given LF-Tag
+    /// expression.
     /// </summary>
-    public partial class UpdateTableStorageOptimizerRequest : AmazonLakeFormationRequest
+    public partial class UpdateLFTagExpressionRequest : AmazonLakeFormationRequest
     {
         private string _catalogId;
-        private string _databaseName;
-        private Dictionary<string, Dictionary<string, string>> _storageOptimizerConfig = AWSConfigs.InitializeCollections ? new Dictionary<string, Dictionary<string, string>>() : null;
-        private string _tableName;
+        private string _description;
+        private List<LFTag> _expression = AWSConfigs.InitializeCollections ? new List<LFTag>() : null;
+        private string _name;
 
         /// <summary>
         /// Gets and sets the property CatalogId. 
         /// <para>
-        /// The Catalog ID of the table.
+        /// The identifier for the Data Catalog. By default, the account ID. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -60,60 +63,60 @@ namespace Amazon.LakeFormation.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DatabaseName. 
+        /// Gets and sets the property Description. 
         /// <para>
-        /// Name of the database where the table is present.
+        /// The description with information about the saved LF-Tag expression.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
-        public string DatabaseName
+        [AWSProperty(Min=0, Max=2048)]
+        public string Description
         {
-            get { return this._databaseName; }
-            set { this._databaseName = value; }
+            get { return this._description; }
+            set { this._description = value; }
         }
 
-        // Check to see if DatabaseName property is set
-        internal bool IsSetDatabaseName()
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
         {
-            return this._databaseName != null;
+            return this._description != null;
         }
 
         /// <summary>
-        /// Gets and sets the property StorageOptimizerConfig. 
+        /// Gets and sets the property Expression. 
         /// <para>
-        /// Name of the configuration for the storage optimizer.
+        /// The LF-Tag expression body composed of one more LF-Tag key-value pairs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public Dictionary<string, Dictionary<string, string>> StorageOptimizerConfig
+        public List<LFTag> Expression
         {
-            get { return this._storageOptimizerConfig; }
-            set { this._storageOptimizerConfig = value; }
+            get { return this._expression; }
+            set { this._expression = value; }
         }
 
-        // Check to see if StorageOptimizerConfig property is set
-        internal bool IsSetStorageOptimizerConfig()
+        // Check to see if Expression property is set
+        internal bool IsSetExpression()
         {
-            return this._storageOptimizerConfig != null && (this._storageOptimizerConfig.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._expression != null && (this._expression.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
-        /// Gets and sets the property TableName. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the table for which to enable the storage optimizer.
+        /// The name for the LF-Tag expression.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
-        public string TableName
+        public string Name
         {
-            get { return this._tableName; }
-            set { this._tableName = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if TableName property is set
-        internal bool IsSetTableName()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._tableName != null;
+            return this._name != null;
         }
 
     }
