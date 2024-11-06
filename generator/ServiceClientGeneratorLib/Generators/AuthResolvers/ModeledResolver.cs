@@ -79,21 +79,80 @@ namespace ServiceClientGenerator.Generators.AuthResolvers
             
             #line default
             #line hidden
-            this.Write("AuthSchemeHandler : BaseAuthResolverHandler\r\n    {\r\n        /// <summary>\r\n      " +
-                    "  /// Auth scheme resolver for AutoScaling.\r\n        /// </summary>\r\n        pub" +
-                    "lic Amazon");
+            this.Write("AuthSchemeHandler : BaseAuthResolverHandler\r\n    {\r\n");
+            
+            #line 38 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
+ if (IsServiceAllowListedForRulesBasedResolver()) { 
+            
+            #line default
+            #line hidden
+            this.Write("        private readonly Amazon");
+            
+            #line 39 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
+            
+            #line default
+            #line hidden
+            this.Write("EndpointResolver _endpointResolver = new();\r\n\r\n");
             
             #line 41 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
+ } 
+            
+            #line default
+            #line hidden
+            this.Write("        /// <summary>\r\n        /// Modeled auth scheme resolver for ");
+            
+            #line 43 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
+            
+            #line default
+            #line hidden
+            this.Write(".\r\n        /// </summary>\r\n        public Amazon");
+            
+            #line 45 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write("AuthSchemeResolver AuthSchemeResolver { get; } = new();\r\n\r\n        /// <inheritdo" +
-                    "c/>\r\n        protected override List<IAuthSchemeOption> ResolveAuthOptions(IRequ" +
-                    "estContext requestContext)\r\n        {\r\n            var mappedParameters = new Am" +
-                    "azon");
+                    "c/>\r\n        protected override List<IAuthSchemeOption> ResolveAuthOptions(IExec" +
+                    "utionContext executionContext)\r\n        {\r\n");
             
-            #line 46 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
+            #line 50 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
+ if (IsServiceAllowListedForRulesBasedResolver()) { 
+            
+            #line default
+            #line hidden
+            this.Write("            // Since ");
+            
+            #line 51 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
+            
+            #line default
+            #line hidden
+            this.Write(@" includes auth schemes in its endpoint rules, we'll attempt to delegate resolution to the endpoint
+            // resolver first (falling back to the modeled resolver if no options are returned).
+            var endpoint = _endpointResolver.GetEndpoint(executionContext);
+
+            // This means the endpoints resolver is executed twice intentionally (at this point and then later in the pipeline
+            // to determine which endpoint the SDK should use for the request).
+            var endpointAuthSchemes = RetrieveSchemesFromEndpoint(endpoint);
+            if (endpointAuthSchemes != null)
+            {
+                return endpointAuthSchemes;
+            }
+
+");
+            
+            #line 63 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
+ } 
+            
+            #line default
+            #line hidden
+            this.Write("            var requestContext = executionContext.RequestContext;\r\n            va" +
+                    "r mappedParameters = new Amazon");
+            
+            #line 65 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -101,7 +160,7 @@ namespace ServiceClientGenerator.Generators.AuthResolvers
             this.Write("AuthSchemeParameters\r\n            {\r\n                Operation = requestContext.R" +
                     "equest.RequestName,\r\n");
             
-            #line 49 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
+            #line 68 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
  if (IsSigV4Supported()) { 
             
             #line default
@@ -109,7 +168,7 @@ namespace ServiceClientGenerator.Generators.AuthResolvers
             this.Write("                Region = requestContext.ClientConfig.RegionEndpoint?.SystemName,\r" +
                     "\n");
             
-            #line 51 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
+            #line 70 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
  } 
             
             #line default
@@ -118,14 +177,14 @@ namespace ServiceClientGenerator.Generators.AuthResolvers
                     "arameters);\r\n        }\r\n    }\r\n\r\n    /// <inheritdoc cref=\"IAuthSchemeResolver{T" +
                     "}\" />\r\n    public class Amazon");
             
-            #line 59 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
+            #line 78 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write("AuthSchemeResolver : IAuthSchemeResolver<Amazon");
             
-            #line 59 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
+            #line 78 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -133,7 +192,7 @@ namespace ServiceClientGenerator.Generators.AuthResolvers
             this.Write("AuthSchemeParameters>\r\n    {\r\n        /// <inheritdoc />\r\n        public List<IAu" +
                     "thSchemeOption> ResolveAuthScheme(Amazon");
             
-            #line 62 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
+            #line 81 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -141,63 +200,63 @@ namespace ServiceClientGenerator.Generators.AuthResolvers
             this.Write("AuthSchemeParameters authParameters)\r\n        {\r\n            switch (authParamete" +
                     "rs.Operation)\r\n            {\r\n");
             
-            #line 66 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
+            #line 85 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
  foreach (var operation in GetOperationsWithAuthSchemes()) { 
             
             #line default
             #line hidden
             this.Write("\t\t\t\tcase \"");
             
-            #line 67 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
+            #line 86 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request\":\r\n");
             
-            #line 68 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
+            #line 87 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
  if (IsKnownSchemeList(operation.AuthSchemes, out string operationSchemesContent)) { 
             
             #line default
             #line hidden
             this.Write("                    return ");
             
-            #line 69 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
+            #line 88 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operationSchemesContent));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 70 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
+            #line 89 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
  } else { 
             
             #line default
             #line hidden
             this.Write("                    return new List<IAuthSchemeOption> \r\n                    {\r\n");
             
-            #line 73 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
+            #line 92 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
  foreach (var operationScheme in operation.AuthSchemes) { 
             
             #line default
             #line hidden
             this.Write("                        new AuthSchemeOption { SchemeId = \"");
             
-            #line 74 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
+            #line 93 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operationScheme));
             
             #line default
             #line hidden
             this.Write("\" },\r\n");
             
-            #line 75 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
+            #line 94 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
  } 
             
             #line default
             #line hidden
             this.Write("                    };\r\n");
             
-            #line 77 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
+            #line 96 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
  }} 
             
             #line default
@@ -205,49 +264,49 @@ namespace ServiceClientGenerator.Generators.AuthResolvers
             this.Write("                default:\r\n                    // Default for the service, applies" +
                     " to all remaining operations.\r\n");
             
-            #line 80 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
+            #line 99 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
  if (IsKnownSchemeList(GetServiceAuthSchemes(), out string serviceSchemesContent)) { 
             
             #line default
             #line hidden
             this.Write("                    return ");
             
-            #line 81 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
+            #line 100 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(serviceSchemesContent));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 82 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
+            #line 101 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
  } else { 
             
             #line default
             #line hidden
             this.Write("                    return new List<IAuthSchemeOption> \r\n                    {\r\n");
             
-            #line 85 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
+            #line 104 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
  foreach (var serviceScheme in GetServiceAuthSchemes()) { 
             
             #line default
             #line hidden
             this.Write("    \t\t            new AuthSchemeOption { SchemeId = \"");
             
-            #line 86 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
+            #line 105 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(serviceScheme));
             
             #line default
             #line hidden
             this.Write("\" },\r\n");
             
-            #line 87 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
+            #line 106 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
  } 
             
             #line default
             #line hidden
             this.Write("                    };\r\n");
             
-            #line 89 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
+            #line 108 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
  } 
             
             #line default

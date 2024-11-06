@@ -23,12 +23,17 @@ namespace Amazon.Runtime.Credentials.Internal
         /// <inheritdoc/>
         public string SchemeId { get; set; }
 
+        internal const string SigV4 = "aws.auth#sigv4";
+        internal const string SigV4A = "aws.auth#sigv4a";
+        internal const string Bearer = "smithy.api#httpBearerAuth";
+        internal const string NoAuth = "smithy.api#noAuth";
+
         /// <summary>
         /// Default auth scheme options for services / operations that only support SigV4.
         /// </summary>
         public static readonly List<IAuthSchemeOption> DEFAULT_SIGV4 = new()
         {
-            new AuthSchemeOption { SchemeId = "aws.auth#sigv4" },
+            new AuthSchemeOption { SchemeId = SigV4 },
         };
 
         /// <summary>
@@ -36,7 +41,7 @@ namespace Amazon.Runtime.Credentials.Internal
         /// </summary>
         public static readonly List<IAuthSchemeOption> DEFAULT_SIGV4A = new()
         {
-            new AuthSchemeOption { SchemeId = "aws.auth#sigv4a" },
+            new AuthSchemeOption { SchemeId = SigV4A },
         };
 
         /// <summary>
@@ -44,8 +49,8 @@ namespace Amazon.Runtime.Credentials.Internal
         /// </summary>
         public static readonly List<IAuthSchemeOption> DEFAULT_SIGV4_SIGV4A = new()
         {
-            new AuthSchemeOption { SchemeId = "aws.auth#sigv4" },
-            new AuthSchemeOption { SchemeId = "aws.auth#sigv4a" },
+            new AuthSchemeOption { SchemeId = SigV4 },
+            new AuthSchemeOption { SchemeId = SigV4A },
         };
 
         /// <summary>
@@ -53,7 +58,7 @@ namespace Amazon.Runtime.Credentials.Internal
         /// </summary>
         public static readonly List<IAuthSchemeOption> DEFAULT_BEARER = new()
         {
-            new AuthSchemeOption { SchemeId = "smithy.api#httpBearerAuth" },
+            new AuthSchemeOption { SchemeId = Bearer },
         };
 
         /// <summary>
@@ -61,7 +66,7 @@ namespace Amazon.Runtime.Credentials.Internal
         /// </summary>
         public static readonly List<IAuthSchemeOption> DEFAULT_NOAUTH = new()
         {
-            new AuthSchemeOption { SchemeId = "smithy.api#noAuth" },
+            new AuthSchemeOption { SchemeId = NoAuth },
         };
     }
 }

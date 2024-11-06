@@ -112,18 +112,6 @@ namespace ServiceClientGenerator
 
         private static ConcurrentBag<string> codeGeneratedServiceNames = new ConcurrentBag<string>();
 
-        /// <summary>
-        /// Collection of services for which modeled auth resolvers (i.e. using information from their model files) should be generated.
-        /// </summary>
-        /// <remarks>
-        /// This is an allow-list for now (to prevent creating >400 files), but will be updated to a deny-list in the future (only a handful
-        /// of services such as S3 and EventBridge won't use modeled auth resolvers).
-        /// </remarks>
-        private static readonly HashSet<string> _allowListModeledAuthResolvers = new HashSet<string>
-        {
-            "AutoScaling",
-        };
-
         public GeneratorDriver(ServiceConfiguration config, GenerationManifest generationManifest, GeneratorOptions options)
         {
             FilesWrittenToGeneratorFolder = new HashSet<string>();
@@ -209,7 +197,9 @@ namespace ServiceClientGenerator
                 ExecuteTestGenerator(new EndpointProviderTests(), Configuration.ClassName + "EndpointProviderTests.cs", "Endpoints");
             }
 
-            if (_allowListModeledAuthResolvers.Contains(Configuration.ClassName))
+            // TODO: We'll eventually generate auth resolvers for all services, but only including a couple for now to keep
+            // the number of generated changes low.
+            if (Configuration.ClassName == "AutoScaling" || Configuration.ClassName == "S3")
             {
                 ExecuteGenerator(new ModeledResolver(), "Amazon" + Configuration.ClassName + "AuthResolver.cs", "Internal");
             }
