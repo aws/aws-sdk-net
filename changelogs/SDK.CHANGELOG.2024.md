@@ -1,3 +1,17 @@
+### 3.7.920.0 (2024-11-06 19:19 UTC)
+* CodeBuild (3.7.406.0)
+	* AWS CodeBuild now adds additional compute types for reserved capacity fleet.
+* GuardDuty (3.7.404.0)
+	* GuardDuty RDS Protection expands support for Amazon Aurora PostgreSQL Limitless Databases.
+* LakeFormation (3.7.401.0)
+	* API changes for new named tag expressions feature.
+* QApps (3.7.402.0)
+	* Introduces category apis in AmazonQApps. Web experience users use Categories to tag and filter library items.
+* S3Control (3.7.402.0)
+	* Fix ListStorageLensConfigurations and ListStorageLensGroups deserialization for Smithy SDKs.
+* VerifiedPermissions (3.7.401.0)
+	* Adding BatchGetPolicy API which supports the retrieval of multiple policies across multiple policy stores within a single request.
+
 ### 3.7.919.0 (2024-11-01 18:22 UTC)
 * BedrockAgent (3.7.408.0)
 	* Amazon Bedrock Knowledge Bases now supports using application inference profiles to increase throughput and improve resilience.
