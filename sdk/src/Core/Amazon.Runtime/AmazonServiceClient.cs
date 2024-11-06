@@ -43,7 +43,7 @@ namespace Amazon.Runtime
         private Logger _logger;
         protected EndpointDiscoveryResolverBase EndpointDiscoveryResolver { get; private set; }
         protected RuntimePipeline RuntimePipeline { get; set; }
-        protected internal AWSCredentials Credentials { get; private set; }
+        protected internal AWSCredentials DefaultAWSCredentials { get; private set; }
         public IClientConfig Config => _config;
         private readonly ClientConfig _config;
         protected virtual IServiceMetadata ServiceMetadata { get; } = new ServiceMetadata();
@@ -160,7 +160,7 @@ namespace Amazon.Runtime
                 _logger = Logger.GetLogger(this.GetType());
 
             config.Validate();
-            this.Credentials = credentials;
+            this.DefaultAWSCredentials = credentials;
             _config = config;
             Signer = CreateSigner();
             EndpointDiscoveryResolver = new EndpointDiscoveryResolver(config, _logger);
@@ -390,7 +390,7 @@ namespace Amazon.Runtime
                     // ChecksumHandler must come after EndpointsResolver because of an upcoming project.
                     new ChecksumHandler(),
                     // CredentialsRetriever must come after RetryHandler because of any credential related changes.
-                    new CredentialsRetriever(this.Credentials),
+                    new CredentialsRetriever(this.DefaultAWSCredentials),
                     new RetryHandler(retryPolicy),
                     new CompressionHandler(),
                     postMarshallHandler,
