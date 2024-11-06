@@ -23,7 +23,7 @@ namespace Amazon.Runtime.Credentials.Internal
     public class AnonymousAuthScheme : IAuthScheme<AnonymousAWSCredentials>
     {
         /// <inheritdoc/>
-        public string SchemeId => "smithy.api#noAuth";
+        public string SchemeId => AuthSchemeOption.NoAuth;
 
         /// <inheritdoc/>
         public IIdentityResolver GetIdentityResolver(IIdentityResolverConfiguration configuration)
