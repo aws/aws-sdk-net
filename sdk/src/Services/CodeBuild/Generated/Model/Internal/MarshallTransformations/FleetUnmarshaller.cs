@@ -78,6 +78,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.BaseCapacity = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("computeConfiguration", targetDepth))
+                {
+                    var unmarshaller = ComputeConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ComputeConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("computeType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
