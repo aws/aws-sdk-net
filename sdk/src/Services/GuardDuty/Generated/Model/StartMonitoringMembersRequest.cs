@@ -65,6 +65,12 @@ namespace Amazon.GuardDuty.Model
         /// The unique ID of the detector of the GuardDuty administrator account associated with
         /// the member accounts to monitor.
         /// </para>
+        ///  
+        /// <para>
+        /// To find the <c>detectorId</c> in the current Region, see the Settings page in the
+        /// GuardDuty console, or run the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListDetectors.html">ListDetectors</a>
+        /// API.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]
         public string DetectorId

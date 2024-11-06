@@ -30,14 +30,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Contains information about the resource type <c>RDSDBInstance</c> involved in a GuardDuty
-    /// finding.
+    /// Contains information about the resource type <c>RDSLimitlessDB</c> that is involved
+    /// in a GuardDuty finding.
     /// </summary>
-    public partial class RdsDbInstanceDetails
+    public partial class RdsLimitlessDbDetails
     {
         private string _dbClusterIdentifier;
-        private string _dbInstanceArn;
-        private string _dbInstanceIdentifier;
+        private string _dbShardGroupArn;
+        private string _dbShardGroupIdentifier;
+        private string _dbShardGroupResourceId;
         private string _engine;
         private string _engineVersion;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -45,8 +46,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DbClusterIdentifier. 
         /// <para>
-        /// The identifier of the database cluster that contains the database instance ID involved
-        /// in the finding.
+        /// The name of the database cluster that is a part of the Limitless Database.
         /// </para>
         /// </summary>
         public string DbClusterIdentifier
@@ -62,40 +62,57 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DbInstanceArn. 
+        /// Gets and sets the property DbShardGroupArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that identifies the database instance involved in the
-        /// finding.
+        /// The Amazon Resource Name (ARN) that identifies the DB shard group.
         /// </para>
         /// </summary>
-        public string DbInstanceArn
+        public string DbShardGroupArn
         {
-            get { return this._dbInstanceArn; }
-            set { this._dbInstanceArn = value; }
+            get { return this._dbShardGroupArn; }
+            set { this._dbShardGroupArn = value; }
         }
 
-        // Check to see if DbInstanceArn property is set
-        internal bool IsSetDbInstanceArn()
+        // Check to see if DbShardGroupArn property is set
+        internal bool IsSetDbShardGroupArn()
         {
-            return this._dbInstanceArn != null;
+            return this._dbShardGroupArn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property DbInstanceIdentifier. 
+        /// Gets and sets the property DbShardGroupIdentifier. 
         /// <para>
-        /// The identifier associated to the database instance that was involved in the finding.
+        /// The name associated with the Limitless DB shard group.
         /// </para>
         /// </summary>
-        public string DbInstanceIdentifier
+        public string DbShardGroupIdentifier
         {
-            get { return this._dbInstanceIdentifier; }
-            set { this._dbInstanceIdentifier = value; }
+            get { return this._dbShardGroupIdentifier; }
+            set { this._dbShardGroupIdentifier = value; }
         }
 
-        // Check to see if DbInstanceIdentifier property is set
-        internal bool IsSetDbInstanceIdentifier()
+        // Check to see if DbShardGroupIdentifier property is set
+        internal bool IsSetDbShardGroupIdentifier()
         {
-            return this._dbInstanceIdentifier != null;
+            return this._dbShardGroupIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DbShardGroupResourceId. 
+        /// <para>
+        /// The resource identifier of the DB shard group within the Limitless Database.
+        /// </para>
+        /// </summary>
+        public string DbShardGroupResourceId
+        {
+            get { return this._dbShardGroupResourceId; }
+            set { this._dbShardGroupResourceId = value; }
+        }
+
+        // Check to see if DbShardGroupResourceId property is set
+        internal bool IsSetDbShardGroupResourceId()
+        {
+            return this._dbShardGroupResourceId != null;
         }
 
         /// <summary>
@@ -119,7 +136,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The version of the database engine that was involved in the finding.
+        /// The version of the database engine.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -137,7 +154,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Information about the tag key-value pairs.
+        /// Information about the tag-key value pair.
         /// </para>
         /// </summary>
         public List<Tag> Tags
