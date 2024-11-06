@@ -2,15 +2,15 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.QApps.Model.AssociateLibraryItemReviewRequest.LibraryItemId</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.AssociateQAppWithUserRequest.AppId</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.CreateLibraryItemRequest.AppId</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.CreateLibraryItemRequest.AppVersion</property>
@@ -19,7 +19,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.CreateLibraryItemResponse.LibraryItemId</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.CreateQAppRequest.Description</property>
@@ -34,7 +34,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.CreateQAppResponse.AppId</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.CreateQAppResponse.AppVersion</property>
@@ -59,31 +59,31 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.DeleteLibraryItemRequest.LibraryItemId</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.DeleteQAppRequest.AppId</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.DisassociateLibraryItemReviewRequest.LibraryItemId</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.DisassociateQAppFromUserRequest.AppId</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.GetLibraryItemRequest.AppId</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.GetLibraryItemRequest.LibraryItemId</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.GetLibraryItemResponse.AppId</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.GetLibraryItemResponse.AppVersion</property>
@@ -92,15 +92,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.GetLibraryItemResponse.LibraryItemId</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.GetQAppRequest.AppId</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.GetQAppResponse.AppId</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.GetQAppResponse.AppVersion</property>
@@ -125,15 +125,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.GetQAppSessionRequest.SessionId</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.ImportDocumentRequest.AppId</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.ImportDocumentRequest.CardId</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.ImportDocumentRequest.FileName</property>
@@ -142,11 +142,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.ImportDocumentRequest.SessionId</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.ListLibraryItemsRequest.CategoryId</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.ListLibraryItemsRequest.Limit</property>
@@ -175,7 +175,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.StartQAppSessionRequest.AppId</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.StartQAppSessionRequest.AppVersion</property>
@@ -184,7 +184,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.StopQAppSessionRequest.SessionId</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.TagResourceRequest.ResourceARN</property>
@@ -198,11 +198,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.UpdateLibraryItemRequest.LibraryItemId</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.UpdateLibraryItemResponse.AppId</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.UpdateLibraryItemResponse.AppVersion</property>
@@ -211,15 +211,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.UpdateLibraryItemResponse.LibraryItemId</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.UpdateLibraryItemMetadataRequest.LibraryItemId</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.UpdateQAppRequest.AppId</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.UpdateQAppRequest.Description</property>
@@ -234,7 +234,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.UpdateQAppResponse.AppId</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.UpdateQAppResponse.AppVersion</property>
@@ -259,7 +259,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.UpdateQAppSessionRequest.SessionId</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.AppDefinitionInput.InitialPrompt</property>
@@ -267,8 +267,24 @@
     <max>10000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QApps.Model.BatchCreateCategoryInputCategory.Color</property>
+    <min>4</min>
+    <max>7</max>
+    <pattern>#([A-Fa-f0-9]{3}|[A-Fa-f0-9]{6})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QApps.Model.BatchCreateCategoryInputCategory.Id</property>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QApps.Model.BatchCreateCategoryInputCategory.Title</property>
+    <min>1</min>
+    <max>30</max>
+    <pattern>[a-zA-Z0-9_]+( [a-zA-Z0-9_]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QApps.Model.CardValue.CardId</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.CardValue.Value</property>
@@ -277,7 +293,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.Category.Id</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QApps.Model.CategoryInput.Color</property>
+    <min>4</min>
+    <max>7</max>
+    <pattern>#([A-Fa-f0-9]{3}|[A-Fa-f0-9]{6})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QApps.Model.CategoryInput.Id</property>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QApps.Model.CategoryInput.Title</property>
+    <min>1</min>
+    <max>30</max>
+    <pattern>[a-zA-Z0-9_]+( [a-zA-Z0-9_]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.ConversationMessage.Body</property>
@@ -297,7 +329,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.FileUploadCard.Id</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.FileUploadCard.Title</property>
@@ -307,7 +339,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.FileUploadCardInput.FileId</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.FileUploadCardInput.Filename</property>
@@ -316,7 +348,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.FileUploadCardInput.Id</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.FileUploadCardInput.Title</property>
@@ -326,7 +358,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.LibraryItemMember.AppId</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.LibraryItemMember.AppVersion</property>
@@ -335,7 +367,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.LibraryItemMember.LibraryItemId</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.PredictAppDefinition.Description</property>
@@ -355,7 +387,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.QPluginCard.Id</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.QPluginCard.Prompt</property>
@@ -370,7 +402,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.QPluginCardInput.Id</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.QPluginCardInput.PluginId</property>
@@ -390,7 +422,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.QQueryCard.Id</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.QQueryCard.Prompt</property>
@@ -405,7 +437,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.QQueryCardInput.Id</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.QQueryCardInput.Prompt</property>
@@ -425,7 +457,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.TextInputCard.Id</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.TextInputCard.Placeholder</property>
@@ -445,7 +477,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.TextInputCardInput.Id</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.TextInputCardInput.Placeholder</property>
@@ -460,7 +492,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.UserAppItem.AppId</property>
-    <pattern>[\da-f]{8}-[\da-f]{4}-4[\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
+    <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.UserAppItem.Description</property>

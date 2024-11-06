@@ -30,39 +30,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QApps.Model
 {
     /// <summary>
-    /// A category used to classify and filter library items for Amazon Q Apps.
+    /// The category object to be created.
     /// </summary>
-    public partial class Category
+    public partial class BatchCreateCategoryInputCategory
     {
-        private int? _appCount;
         private string _color;
         private string _id;
         private string _title;
 
         /// <summary>
-        /// Gets and sets the property AppCount. 
-        /// <para>
-        /// The number of published Amazon Q Apps associated with a category
-        /// </para>
-        /// </summary>
-        public int AppCount
-        {
-            get { return this._appCount.GetValueOrDefault(); }
-            set { this._appCount = value; }
-        }
-
-        // Check to see if AppCount property is set
-        internal bool IsSetAppCount()
-        {
-            return this._appCount.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property Color. 
         /// <para>
-        /// The color of the category
+        /// The color to be associated with a category. The color must be a hexadecimal value
+        /// of either 3 or 6 digits.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=4, Max=7)]
         public string Color
         {
             get { return this._color; }
@@ -78,10 +61,10 @@ namespace Amazon.QApps.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The unique identifier of the category.
+        /// The unique identifier to be associated with a category. If you don't include a value,
+        /// the category is automatically assigned a unique identifier.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string Id
         {
             get { return this._id; }
@@ -97,10 +80,10 @@ namespace Amazon.QApps.Model
         /// <summary>
         /// Gets and sets the property Title. 
         /// <para>
-        /// The title or name of the category.
+        /// The name of the category.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=30)]
         public string Title
         {
             get { return this._title; }

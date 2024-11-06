@@ -446,6 +446,246 @@ namespace Amazon.QApps
 
         #endregion
         
+        #region  BatchCreateCategory
+
+        /// <summary>
+        /// Creates Categories for the Amazon Q Business application environment instance. Web
+        /// experience users use Categories to tag and filter library items. For more information,
+        /// see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/qapps-custom-labels.html">Custom
+        /// labels for Amazon Q Apps</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchCreateCategory service method.</param>
+        /// 
+        /// <returns>The response from the BatchCreateCategory service method, as returned by QApps.</returns>
+        /// <exception cref="Amazon.QApps.Model.AccessDeniedException">
+        /// The client is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ConflictException">
+        /// The requested operation could not be completed due to a conflict with the current
+        /// state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.InternalServerException">
+        /// An internal service error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ThrottlingException">
+        /// The requested operation could not be completed because too many requests were sent
+        /// at once. Wait a bit and try again later.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.UnauthorizedException">
+        /// The client is not authenticated or authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/BatchCreateCategory">REST API Reference for BatchCreateCategory Operation</seealso>
+        public virtual BatchCreateCategoryResponse BatchCreateCategory(BatchCreateCategoryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchCreateCategoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchCreateCategoryResponseUnmarshaller.Instance;
+
+            return Invoke<BatchCreateCategoryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchCreateCategory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchCreateCategory operation on AmazonQAppsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchCreateCategory
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/BatchCreateCategory">REST API Reference for BatchCreateCategory Operation</seealso>
+        public virtual IAsyncResult BeginBatchCreateCategory(BatchCreateCategoryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchCreateCategoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchCreateCategoryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchCreateCategory operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchCreateCategory.</param>
+        /// 
+        /// <returns>Returns a  BatchCreateCategoryResult from QApps.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/BatchCreateCategory">REST API Reference for BatchCreateCategory Operation</seealso>
+        public virtual BatchCreateCategoryResponse EndBatchCreateCategory(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchCreateCategoryResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  BatchDeleteCategory
+
+        /// <summary>
+        /// Deletes Categories for the Amazon Q Business application environment instance. Web
+        /// experience users use Categories to tag and filter library items. For more information,
+        /// see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/qapps-custom-labels.html">Custom
+        /// labels for Amazon Q Apps</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteCategory service method.</param>
+        /// 
+        /// <returns>The response from the BatchDeleteCategory service method, as returned by QApps.</returns>
+        /// <exception cref="Amazon.QApps.Model.AccessDeniedException">
+        /// The client is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ConflictException">
+        /// The requested operation could not be completed due to a conflict with the current
+        /// state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.InternalServerException">
+        /// An internal service error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ThrottlingException">
+        /// The requested operation could not be completed because too many requests were sent
+        /// at once. Wait a bit and try again later.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.UnauthorizedException">
+        /// The client is not authenticated or authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/BatchDeleteCategory">REST API Reference for BatchDeleteCategory Operation</seealso>
+        public virtual BatchDeleteCategoryResponse BatchDeleteCategory(BatchDeleteCategoryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteCategoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteCategoryResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDeleteCategoryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchDeleteCategory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteCategory operation on AmazonQAppsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchDeleteCategory
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/BatchDeleteCategory">REST API Reference for BatchDeleteCategory Operation</seealso>
+        public virtual IAsyncResult BeginBatchDeleteCategory(BatchDeleteCategoryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteCategoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteCategoryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchDeleteCategory operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchDeleteCategory.</param>
+        /// 
+        /// <returns>Returns a  BatchDeleteCategoryResult from QApps.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/BatchDeleteCategory">REST API Reference for BatchDeleteCategory Operation</seealso>
+        public virtual BatchDeleteCategoryResponse EndBatchDeleteCategory(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchDeleteCategoryResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  BatchUpdateCategory
+
+        /// <summary>
+        /// Updates Categories for the Amazon Q Business application environment instance. Web
+        /// experience users use Categories to tag and filter library items. For more information,
+        /// see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/qapps-custom-labels.html">Custom
+        /// labels for Amazon Q Apps</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateCategory service method.</param>
+        /// 
+        /// <returns>The response from the BatchUpdateCategory service method, as returned by QApps.</returns>
+        /// <exception cref="Amazon.QApps.Model.AccessDeniedException">
+        /// The client is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ConflictException">
+        /// The requested operation could not be completed due to a conflict with the current
+        /// state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.InternalServerException">
+        /// An internal service error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ThrottlingException">
+        /// The requested operation could not be completed because too many requests were sent
+        /// at once. Wait a bit and try again later.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.UnauthorizedException">
+        /// The client is not authenticated or authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/BatchUpdateCategory">REST API Reference for BatchUpdateCategory Operation</seealso>
+        public virtual BatchUpdateCategoryResponse BatchUpdateCategory(BatchUpdateCategoryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchUpdateCategoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateCategoryResponseUnmarshaller.Instance;
+
+            return Invoke<BatchUpdateCategoryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchUpdateCategory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateCategory operation on AmazonQAppsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchUpdateCategory
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/BatchUpdateCategory">REST API Reference for BatchUpdateCategory Operation</seealso>
+        public virtual IAsyncResult BeginBatchUpdateCategory(BatchUpdateCategoryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchUpdateCategoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateCategoryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchUpdateCategory operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchUpdateCategory.</param>
+        /// 
+        /// <returns>Returns a  BatchUpdateCategoryResult from QApps.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/BatchUpdateCategory">REST API Reference for BatchUpdateCategory Operation</seealso>
+        public virtual BatchUpdateCategoryResponse EndBatchUpdateCategory(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchUpdateCategoryResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateLibraryItem
 
         /// <summary>
@@ -1219,6 +1459,81 @@ namespace Amazon.QApps
         public virtual ImportDocumentResponse EndImportDocument(IAsyncResult asyncResult)
         {
             return EndInvoke<ImportDocumentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListCategories
+
+        /// <summary>
+        /// Lists the categories of a Amazon Q Business application environment instance. For
+        /// more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/qapps-custom-labels.html">Custom
+        /// labels for Amazon Q Apps</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCategories service method.</param>
+        /// 
+        /// <returns>The response from the ListCategories service method, as returned by QApps.</returns>
+        /// <exception cref="Amazon.QApps.Model.AccessDeniedException">
+        /// The client is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.InternalServerException">
+        /// An internal service error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ThrottlingException">
+        /// The requested operation could not be completed because too many requests were sent
+        /// at once. Wait a bit and try again later.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.UnauthorizedException">
+        /// The client is not authenticated or authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/ListCategories">REST API Reference for ListCategories Operation</seealso>
+        public virtual ListCategoriesResponse ListCategories(ListCategoriesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCategoriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCategoriesResponseUnmarshaller.Instance;
+
+            return Invoke<ListCategoriesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCategories operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCategories operation on AmazonQAppsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCategories
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/ListCategories">REST API Reference for ListCategories Operation</seealso>
+        public virtual IAsyncResult BeginListCategories(ListCategoriesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCategoriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCategoriesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCategories operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCategories.</param>
+        /// 
+        /// <returns>Returns a  ListCategoriesResult from QApps.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/ListCategories">REST API Reference for ListCategories Operation</seealso>
+        public virtual ListCategoriesResponse EndListCategories(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListCategoriesResponse>(asyncResult);
         }
 
         #endregion
