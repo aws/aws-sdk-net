@@ -30,12 +30,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Contains the message for a prompt. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management.html">Prompt
-    /// management in Amazon Bedrock</a>.
+    /// Contains the message for a prompt. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management.html">Construct
+    /// and store reusable prompts with Prompt management in Amazon Bedrock</a>.
     /// </summary>
     public partial class PromptTemplateConfiguration
     {
+        private ChatPromptTemplateConfiguration _chat;
         private TextPromptTemplateConfiguration _text;
+
+        /// <summary>
+        /// Gets and sets the property Chat. 
+        /// <para>
+        /// Contains configurations to use the prompt in a conversational format.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public ChatPromptTemplateConfiguration Chat
+        {
+            get { return this._chat; }
+            set { this._chat = value; }
+        }
+
+        // Check to see if Chat property is set
+        internal bool IsSetChat()
+        {
+            return this._chat != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Text. 

@@ -72,6 +72,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.AdditionalModelRequestFields = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("genAiResource", targetDepth))
+                {
+                    var unmarshaller = PromptGenAiResourceUnmarshaller.Instance;
+                    unmarshalledObject.GenAiResource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("inferenceConfiguration", targetDepth))
                 {
                     var unmarshaller = PromptInferenceConfigurationUnmarshaller.Instance;

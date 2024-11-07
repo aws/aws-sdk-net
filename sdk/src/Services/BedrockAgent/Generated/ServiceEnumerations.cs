@@ -415,6 +415,56 @@ namespace Amazon.BedrockAgent
 
 
     /// <summary>
+    /// Constants used for properties of type ConversationRole.
+    /// </summary>
+    public class ConversationRole : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Assistant for ConversationRole
+        /// </summary>
+        public static readonly ConversationRole Assistant = new ConversationRole("assistant");
+        /// <summary>
+        /// Constant User for ConversationRole
+        /// </summary>
+        public static readonly ConversationRole User = new ConversationRole("user");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConversationRole(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConversationRole FindValue(string value)
+        {
+            return FindValue<ConversationRole>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConversationRole(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CrawlFilterConfigurationType.
     /// </summary>
     public class CrawlFilterConfigurationType : ConstantClass
@@ -1033,6 +1083,148 @@ namespace Amazon.BedrockAgent
 
 
     /// <summary>
+    /// Constants used for properties of type FlowValidationType.
+    /// </summary>
+    public class FlowValidationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CyclicConnection for FlowValidationType
+        /// </summary>
+        public static readonly FlowValidationType CyclicConnection = new FlowValidationType("CyclicConnection");
+        /// <summary>
+        /// Constant DuplicateConditionExpression for FlowValidationType
+        /// </summary>
+        public static readonly FlowValidationType DuplicateConditionExpression = new FlowValidationType("DuplicateConditionExpression");
+        /// <summary>
+        /// Constant DuplicateConnections for FlowValidationType
+        /// </summary>
+        public static readonly FlowValidationType DuplicateConnections = new FlowValidationType("DuplicateConnections");
+        /// <summary>
+        /// Constant IncompatibleConnectionDataType for FlowValidationType
+        /// </summary>
+        public static readonly FlowValidationType IncompatibleConnectionDataType = new FlowValidationType("IncompatibleConnectionDataType");
+        /// <summary>
+        /// Constant MalformedConditionExpression for FlowValidationType
+        /// </summary>
+        public static readonly FlowValidationType MalformedConditionExpression = new FlowValidationType("MalformedConditionExpression");
+        /// <summary>
+        /// Constant MalformedNodeInputExpression for FlowValidationType
+        /// </summary>
+        public static readonly FlowValidationType MalformedNodeInputExpression = new FlowValidationType("MalformedNodeInputExpression");
+        /// <summary>
+        /// Constant MismatchedNodeInputType for FlowValidationType
+        /// </summary>
+        public static readonly FlowValidationType MismatchedNodeInputType = new FlowValidationType("MismatchedNodeInputType");
+        /// <summary>
+        /// Constant MismatchedNodeOutputType for FlowValidationType
+        /// </summary>
+        public static readonly FlowValidationType MismatchedNodeOutputType = new FlowValidationType("MismatchedNodeOutputType");
+        /// <summary>
+        /// Constant MissingConnectionConfiguration for FlowValidationType
+        /// </summary>
+        public static readonly FlowValidationType MissingConnectionConfiguration = new FlowValidationType("MissingConnectionConfiguration");
+        /// <summary>
+        /// Constant MissingDefaultCondition for FlowValidationType
+        /// </summary>
+        public static readonly FlowValidationType MissingDefaultCondition = new FlowValidationType("MissingDefaultCondition");
+        /// <summary>
+        /// Constant MissingEndingNodes for FlowValidationType
+        /// </summary>
+        public static readonly FlowValidationType MissingEndingNodes = new FlowValidationType("MissingEndingNodes");
+        /// <summary>
+        /// Constant MissingNodeConfiguration for FlowValidationType
+        /// </summary>
+        public static readonly FlowValidationType MissingNodeConfiguration = new FlowValidationType("MissingNodeConfiguration");
+        /// <summary>
+        /// Constant MissingNodeInput for FlowValidationType
+        /// </summary>
+        public static readonly FlowValidationType MissingNodeInput = new FlowValidationType("MissingNodeInput");
+        /// <summary>
+        /// Constant MissingNodeOutput for FlowValidationType
+        /// </summary>
+        public static readonly FlowValidationType MissingNodeOutput = new FlowValidationType("MissingNodeOutput");
+        /// <summary>
+        /// Constant MissingStartingNodes for FlowValidationType
+        /// </summary>
+        public static readonly FlowValidationType MissingStartingNodes = new FlowValidationType("MissingStartingNodes");
+        /// <summary>
+        /// Constant MultipleNodeInputConnections for FlowValidationType
+        /// </summary>
+        public static readonly FlowValidationType MultipleNodeInputConnections = new FlowValidationType("MultipleNodeInputConnections");
+        /// <summary>
+        /// Constant UnfulfilledNodeInput for FlowValidationType
+        /// </summary>
+        public static readonly FlowValidationType UnfulfilledNodeInput = new FlowValidationType("UnfulfilledNodeInput");
+        /// <summary>
+        /// Constant UnknownConnectionCondition for FlowValidationType
+        /// </summary>
+        public static readonly FlowValidationType UnknownConnectionCondition = new FlowValidationType("UnknownConnectionCondition");
+        /// <summary>
+        /// Constant UnknownConnectionSource for FlowValidationType
+        /// </summary>
+        public static readonly FlowValidationType UnknownConnectionSource = new FlowValidationType("UnknownConnectionSource");
+        /// <summary>
+        /// Constant UnknownConnectionSourceOutput for FlowValidationType
+        /// </summary>
+        public static readonly FlowValidationType UnknownConnectionSourceOutput = new FlowValidationType("UnknownConnectionSourceOutput");
+        /// <summary>
+        /// Constant UnknownConnectionTarget for FlowValidationType
+        /// </summary>
+        public static readonly FlowValidationType UnknownConnectionTarget = new FlowValidationType("UnknownConnectionTarget");
+        /// <summary>
+        /// Constant UnknownConnectionTargetInput for FlowValidationType
+        /// </summary>
+        public static readonly FlowValidationType UnknownConnectionTargetInput = new FlowValidationType("UnknownConnectionTargetInput");
+        /// <summary>
+        /// Constant UnreachableNode for FlowValidationType
+        /// </summary>
+        public static readonly FlowValidationType UnreachableNode = new FlowValidationType("UnreachableNode");
+        /// <summary>
+        /// Constant UnsatisfiedConnectionConditions for FlowValidationType
+        /// </summary>
+        public static readonly FlowValidationType UnsatisfiedConnectionConditions = new FlowValidationType("UnsatisfiedConnectionConditions");
+        /// <summary>
+        /// Constant Unspecified for FlowValidationType
+        /// </summary>
+        public static readonly FlowValidationType Unspecified = new FlowValidationType("Unspecified");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FlowValidationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FlowValidationType FindValue(string value)
+        {
+            return FindValue<FlowValidationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FlowValidationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IngestionJobFilterAttribute.
     /// </summary>
     public class IngestionJobFilterAttribute : ConstantClass
@@ -1612,6 +1804,10 @@ namespace Amazon.BedrockAgent
     public class PromptTemplateType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant CHAT for PromptTemplateType
+        /// </summary>
+        public static readonly PromptTemplateType CHAT = new PromptTemplateType("CHAT");
         /// <summary>
         /// Constant TEXT for PromptTemplateType
         /// </summary>

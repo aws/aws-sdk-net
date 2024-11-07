@@ -3870,6 +3870,58 @@ namespace Amazon.BedrockAgent
         UpdatePromptResponse EndUpdatePrompt(IAsyncResult asyncResult);
 
         #endregion
+        
+        #region  ValidateFlowDefinition
+
+
+        /// <summary>
+        /// Validates the definition of a flow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ValidateFlowDefinition service method.</param>
+        /// 
+        /// <returns>The response from the ValidateFlowDefinition service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ValidateFlowDefinition">REST API Reference for ValidateFlowDefinition Operation</seealso>
+        ValidateFlowDefinitionResponse ValidateFlowDefinition(ValidateFlowDefinitionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ValidateFlowDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ValidateFlowDefinition operation on AmazonBedrockAgentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndValidateFlowDefinition
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ValidateFlowDefinition">REST API Reference for ValidateFlowDefinition Operation</seealso>
+        IAsyncResult BeginValidateFlowDefinition(ValidateFlowDefinitionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ValidateFlowDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginValidateFlowDefinition.</param>
+        /// 
+        /// <returns>Returns a  ValidateFlowDefinitionResult from BedrockAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ValidateFlowDefinition">REST API Reference for ValidateFlowDefinition Operation</seealso>
+        ValidateFlowDefinitionResponse EndValidateFlowDefinition(IAsyncResult asyncResult);
+
+        #endregion
                 
         #region DetermineServiceOperationEndpoint
 

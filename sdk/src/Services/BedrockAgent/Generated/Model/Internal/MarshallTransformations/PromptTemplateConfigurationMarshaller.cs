@@ -48,6 +48,17 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetChat())
+            {
+                context.Writer.WritePropertyName("chat");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ChatPromptTemplateConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Chat, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetText())
             {
                 context.Writer.WritePropertyName("text");

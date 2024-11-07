@@ -3722,6 +3722,52 @@ namespace Amazon.BedrockAgent
 
         #endregion
         
+        #region  ValidateFlowDefinition
+
+        internal virtual ValidateFlowDefinitionResponse ValidateFlowDefinition(ValidateFlowDefinitionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ValidateFlowDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ValidateFlowDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<ValidateFlowDefinitionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Validates the definition of a flow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ValidateFlowDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ValidateFlowDefinition service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ValidateFlowDefinition">REST API Reference for ValidateFlowDefinition Operation</seealso>
+        public virtual Task<ValidateFlowDefinitionResponse> ValidateFlowDefinitionAsync(ValidateFlowDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ValidateFlowDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ValidateFlowDefinitionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ValidateFlowDefinitionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region DetermineServiceOperationEndpoint
 
         /// <summary>

@@ -35,6 +35,7 @@ namespace Amazon.BedrockAgent.Model
     public partial class PromptVariant
     {
         private Amazon.Runtime.Documents.Document _additionalModelRequestFields;
+        private PromptGenAiResource _genAiResource;
         private PromptInferenceConfiguration _inferenceConfiguration;
         private List<PromptMetadataEntry> _metadata = AWSConfigs.InitializeCollections ? new List<PromptMetadataEntry>() : null;
         private string _modelId;
@@ -63,6 +64,25 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GenAiResource. 
+        /// <para>
+        /// Specifies a generative AI resource with which to use the prompt.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public PromptGenAiResource GenAiResource
+        {
+            get { return this._genAiResource; }
+            set { this._genAiResource = value; }
+        }
+
+        // Check to see if GenAiResource property is set
+        internal bool IsSetGenAiResource()
+        {
+            return this._genAiResource != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InferenceConfiguration. 
         /// <para>
         /// Contains inference configurations for the prompt variant.
@@ -84,8 +104,7 @@ namespace Amazon.BedrockAgent.Model
         /// Gets and sets the property Metadata. 
         /// <para>
         /// An array of objects, each containing a key-value pair that defines a metadata tag
-        /// and value to attach to a prompt variant. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-create.html">Create
-        /// a prompt using Prompt management</a>.
+        /// and value to attach to a prompt variant.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=50)]

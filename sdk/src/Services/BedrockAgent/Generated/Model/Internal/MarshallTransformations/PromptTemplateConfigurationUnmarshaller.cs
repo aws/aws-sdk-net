@@ -66,6 +66,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("chat", targetDepth))
+                {
+                    var unmarshaller = ChatPromptTemplateConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.Chat = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("text", targetDepth))
                 {
                     var unmarshaller = TextPromptTemplateConfigurationUnmarshaller.Instance;

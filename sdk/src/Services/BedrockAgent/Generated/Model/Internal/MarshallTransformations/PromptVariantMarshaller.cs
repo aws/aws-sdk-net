@@ -54,6 +54,17 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, requestObject.AdditionalModelRequestFields);
             }
 
+            if(requestObject.IsSetGenAiResource())
+            {
+                context.Writer.WritePropertyName("genAiResource");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = PromptGenAiResourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.GenAiResource, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetInferenceConfiguration())
             {
                 context.Writer.WritePropertyName("inferenceConfiguration");
