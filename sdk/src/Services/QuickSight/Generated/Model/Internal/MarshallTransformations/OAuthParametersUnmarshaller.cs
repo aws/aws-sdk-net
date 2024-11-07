@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SnowflakeParameters Object
+    /// Response Unmarshaller for OAuthParameters Object
     /// </summary>  
-    public class SnowflakeParametersUnmarshaller : IUnmarshaller<SnowflakeParameters, XmlUnmarshallerContext>, IUnmarshaller<SnowflakeParameters, JsonUnmarshallerContext>
+    public class OAuthParametersUnmarshaller : IUnmarshaller<OAuthParameters, XmlUnmarshallerContext>, IUnmarshaller<OAuthParameters, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SnowflakeParameters IUnmarshaller<SnowflakeParameters, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        OAuthParameters IUnmarshaller<OAuthParameters, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public SnowflakeParameters Unmarshall(JsonUnmarshallerContext context)
+        public OAuthParameters Unmarshall(JsonUnmarshallerContext context)
         {
-            SnowflakeParameters unmarshalledObject = new SnowflakeParameters();
+            OAuthParameters unmarshalledObject = new OAuthParameters();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,40 +66,28 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AuthenticationType", targetDepth))
+                if (context.TestExpression("IdentityProviderResourceUri", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AuthenticationType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IdentityProviderResourceUri = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Database", targetDepth))
+                if (context.TestExpression("IdentityProviderVpcConnectionProperties", targetDepth))
+                {
+                    var unmarshaller = VpcConnectionPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.IdentityProviderVpcConnectionProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OAuthScope", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Database = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OAuthScope = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DatabaseAccessControlRole", targetDepth))
+                if (context.TestExpression("TokenProviderUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DatabaseAccessControlRole = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Host", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Host = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("OAuthParameters", targetDepth))
-                {
-                    var unmarshaller = OAuthParametersUnmarshaller.Instance;
-                    unmarshalledObject.OAuthParameters = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Warehouse", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Warehouse = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TokenProviderUrl = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -107,12 +95,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static SnowflakeParametersUnmarshaller _instance = new SnowflakeParametersUnmarshaller();        
+        private static OAuthParametersUnmarshaller _instance = new OAuthParametersUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SnowflakeParametersUnmarshaller Instance
+        public static OAuthParametersUnmarshaller Instance
         {
             get
             {

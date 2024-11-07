@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// StarburstParameters Marshaller
+    /// OAuthParameters Marshaller
     /// </summary>
-    public class StarburstParametersMarshaller : IRequestMarshaller<StarburstParameters, JsonMarshallerContext> 
+    public class OAuthParametersMarshaller : IRequestMarshaller<OAuthParameters, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,55 +44,37 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(StarburstParameters requestObject, JsonMarshallerContext context)
+        public void Marshall(OAuthParameters requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAuthenticationType())
+            if(requestObject.IsSetIdentityProviderResourceUri())
             {
-                context.Writer.WritePropertyName("AuthenticationType");
-                context.Writer.Write(requestObject.AuthenticationType);
+                context.Writer.WritePropertyName("IdentityProviderResourceUri");
+                context.Writer.Write(requestObject.IdentityProviderResourceUri);
             }
 
-            if(requestObject.IsSetCatalog())
+            if(requestObject.IsSetIdentityProviderVpcConnectionProperties())
             {
-                context.Writer.WritePropertyName("Catalog");
-                context.Writer.Write(requestObject.Catalog);
-            }
-
-            if(requestObject.IsSetDatabaseAccessControlRole())
-            {
-                context.Writer.WritePropertyName("DatabaseAccessControlRole");
-                context.Writer.Write(requestObject.DatabaseAccessControlRole);
-            }
-
-            if(requestObject.IsSetHost())
-            {
-                context.Writer.WritePropertyName("Host");
-                context.Writer.Write(requestObject.Host);
-            }
-
-            if(requestObject.IsSetOAuthParameters())
-            {
-                context.Writer.WritePropertyName("OAuthParameters");
+                context.Writer.WritePropertyName("IdentityProviderVpcConnectionProperties");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = OAuthParametersMarshaller.Instance;
-                marshaller.Marshall(requestObject.OAuthParameters, context);
+                var marshaller = VpcConnectionPropertiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.IdentityProviderVpcConnectionProperties, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetPort())
+            if(requestObject.IsSetOAuthScope())
             {
-                context.Writer.WritePropertyName("Port");
-                context.Writer.Write(requestObject.Port);
+                context.Writer.WritePropertyName("OAuthScope");
+                context.Writer.Write(requestObject.OAuthScope);
             }
 
-            if(requestObject.IsSetProductType())
+            if(requestObject.IsSetTokenProviderUrl())
             {
-                context.Writer.WritePropertyName("ProductType");
-                context.Writer.Write(requestObject.ProductType);
+                context.Writer.WritePropertyName("TokenProviderUrl");
+                context.Writer.Write(requestObject.TokenProviderUrl);
             }
 
         }
@@ -100,7 +82,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static StarburstParametersMarshaller Instance = new StarburstParametersMarshaller();
+        public readonly static OAuthParametersMarshaller Instance = new OAuthParametersMarshaller();
 
     }
 }

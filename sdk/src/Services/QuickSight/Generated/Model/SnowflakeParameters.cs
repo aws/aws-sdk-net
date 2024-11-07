@@ -34,9 +34,31 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class SnowflakeParameters
     {
+        private AuthenticationType _authenticationType;
         private string _database;
+        private string _databaseAccessControlRole;
         private string _host;
+        private OAuthParameters _oAuthParameters;
         private string _warehouse;
+
+        /// <summary>
+        /// Gets and sets the property AuthenticationType. 
+        /// <para>
+        /// The authentication type that you want to use for your connection. This parameter accepts
+        /// OAuth and non-OAuth authentication types.
+        /// </para>
+        /// </summary>
+        public AuthenticationType AuthenticationType
+        {
+            get { return this._authenticationType; }
+            set { this._authenticationType = value; }
+        }
+
+        // Check to see if AuthenticationType property is set
+        internal bool IsSetAuthenticationType()
+        {
+            return this._authenticationType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Database. 
@@ -58,6 +80,25 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DatabaseAccessControlRole. 
+        /// <para>
+        /// The database access control role.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=128)]
+        public string DatabaseAccessControlRole
+        {
+            get { return this._databaseAccessControlRole; }
+            set { this._databaseAccessControlRole = value; }
+        }
+
+        // Check to see if DatabaseAccessControlRole property is set
+        internal bool IsSetDatabaseAccessControlRole()
+        {
+            return this._databaseAccessControlRole != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Host. 
         /// <para>
         /// Host.
@@ -74,6 +115,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetHost()
         {
             return this._host != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OAuthParameters. 
+        /// <para>
+        /// An object that contains information needed to create a data source connection between
+        /// an Amazon QuickSight account and Snowflake.
+        /// </para>
+        /// </summary>
+        public OAuthParameters OAuthParameters
+        {
+            get { return this._oAuthParameters; }
+            set { this._oAuthParameters = value; }
+        }
+
+        // Check to see if OAuthParameters property is set
+        internal bool IsSetOAuthParameters()
+        {
+            return this._oAuthParameters != null;
         }
 
         /// <summary>

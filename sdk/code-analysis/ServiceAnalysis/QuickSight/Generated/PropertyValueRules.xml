@@ -4492,6 +4492,21 @@
     <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.OAuthParameters.IdentityProviderResourceUri</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.OAuthParameters.OAuthScope</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.OAuthParameters.TokenProviderUrl</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.OracleParameters.Database</property>
     <min>1</min>
     <max>128</max>
@@ -5114,6 +5129,10 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.SnowflakeParameters.DatabaseAccessControlRole</property>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.SnowflakeParameters.Host</property>
     <min>1</min>
     <max>256</max>
@@ -5149,6 +5168,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.StarburstParameters.Catalog</property>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.StarburstParameters.DatabaseAccessControlRole</property>
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
