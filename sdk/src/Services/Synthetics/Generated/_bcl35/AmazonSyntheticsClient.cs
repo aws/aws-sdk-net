@@ -542,14 +542,14 @@ namespace Amazon.Synthetics
         /// 
         ///  
         /// <para>
-        /// If you specify <c>DeleteLambda</c> to <c>true</c>, CloudWatch Synthetics also deletes
-        /// the Lambda functions and layers that are used by the canary.
+        /// If the canary's <c>ProvisionedResourceCleanup</c> field is set to <c>AUTOMATIC</c>
+        /// or you specify <c>DeleteLambda</c> in this operation as <c>true</c>, CloudWatch Synthetics
+        /// also deletes the Lambda functions and layers that are used by the canary.
         /// </para>
         ///  
         /// <para>
         /// Other resources used and created by the canary are not automatically deleted. After
-        /// you delete a canary that you do not intend to use again, you should also delete the
-        /// following:
+        /// you delete a canary, you should also delete the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>

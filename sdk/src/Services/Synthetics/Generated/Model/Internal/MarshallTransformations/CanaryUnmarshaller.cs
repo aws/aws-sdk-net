@@ -114,6 +114,12 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ProvisionedResourceCleanup", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ProvisionedResourceCleanup = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RunConfig", targetDepth))
                 {
                     var unmarshaller = CanaryRunConfigOutputUnmarshaller.Instance;

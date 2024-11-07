@@ -65,6 +65,7 @@ namespace Amazon.Synthetics.Model
         private string _executionRoleArn;
         private int? _failureRetentionPeriodInDays;
         private string _name;
+        private ProvisionedResourceCleanupSetting _provisionedResourceCleanup;
         private List<string> _resourcesToReplicateTags = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private CanaryRunConfigInput _runConfig;
         private string _runtimeVersion;
@@ -229,6 +230,33 @@ namespace Amazon.Synthetics.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProvisionedResourceCleanup. 
+        /// <para>
+        /// Specifies whether to also delete the Lambda functions and layers used by this canary
+        /// when the canary is deleted. If you omit this parameter, the default of <c>AUTOMATIC</c>
+        /// is used, which means that the Lambda functions and layers will be deleted when the
+        /// canary is deleted.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the value of this parameter is <c>OFF</c>, then the value of the <c>DeleteLambda</c>
+        /// parameter of the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DeleteCanary.html">DeleteCanary</a>
+        /// operation determines whether the Lambda functions and layers will be deleted.
+        /// </para>
+        /// </summary>
+        public ProvisionedResourceCleanupSetting ProvisionedResourceCleanup
+        {
+            get { return this._provisionedResourceCleanup; }
+            set { this._provisionedResourceCleanup = value; }
+        }
+
+        // Check to see if ProvisionedResourceCleanup property is set
+        internal bool IsSetProvisionedResourceCleanup()
+        {
+            return this._provisionedResourceCleanup != null;
         }
 
         /// <summary>

@@ -113,6 +113,12 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetProvisionedResourceCleanup())
+                {
+                    context.Writer.WritePropertyName("ProvisionedResourceCleanup");
+                    context.Writer.Write(publicRequest.ProvisionedResourceCleanup);
+                }
+
                 if(publicRequest.IsSetResourcesToReplicateTags())
                 {
                     context.Writer.WritePropertyName("ResourcesToReplicateTags");
