@@ -67,6 +67,110 @@ namespace Amazon.CleanRoomsML
 
 
         
+        #region  CancelTrainedModel
+
+
+        /// <summary>
+        /// Submits a request to cancel the trained model job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelTrainedModel service method.</param>
+        /// 
+        /// <returns>The response from the CancelTrainedModel service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
+        /// You can't complete this action because another resource depends on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CancelTrainedModel">REST API Reference for CancelTrainedModel Operation</seealso>
+        CancelTrainedModelResponse CancelTrainedModel(CancelTrainedModelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelTrainedModel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelTrainedModel operation on AmazonCleanRoomsMLClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelTrainedModel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CancelTrainedModel">REST API Reference for CancelTrainedModel Operation</seealso>
+        IAsyncResult BeginCancelTrainedModel(CancelTrainedModelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelTrainedModel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelTrainedModel.</param>
+        /// 
+        /// <returns>Returns a  CancelTrainedModelResult from CleanRoomsML.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CancelTrainedModel">REST API Reference for CancelTrainedModel Operation</seealso>
+        CancelTrainedModelResponse EndCancelTrainedModel(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CancelTrainedModelInferenceJob
+
+
+        /// <summary>
+        /// Submits a request to cancel a trained model inference job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelTrainedModelInferenceJob service method.</param>
+        /// 
+        /// <returns>The response from the CancelTrainedModelInferenceJob service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
+        /// You can't complete this action because another resource depends on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CancelTrainedModelInferenceJob">REST API Reference for CancelTrainedModelInferenceJob Operation</seealso>
+        CancelTrainedModelInferenceJobResponse CancelTrainedModelInferenceJob(CancelTrainedModelInferenceJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelTrainedModelInferenceJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelTrainedModelInferenceJob operation on AmazonCleanRoomsMLClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelTrainedModelInferenceJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CancelTrainedModelInferenceJob">REST API Reference for CancelTrainedModelInferenceJob Operation</seealso>
+        IAsyncResult BeginCancelTrainedModelInferenceJob(CancelTrainedModelInferenceJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelTrainedModelInferenceJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelTrainedModelInferenceJob.</param>
+        /// 
+        /// <returns>Returns a  CancelTrainedModelInferenceJobResult from CleanRoomsML.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CancelTrainedModelInferenceJob">REST API Reference for CancelTrainedModelInferenceJob Operation</seealso>
+        CancelTrainedModelInferenceJobResponse EndCancelTrainedModelInferenceJob(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateAudienceModel
 
 
@@ -177,6 +281,226 @@ namespace Amazon.CleanRoomsML
         /// <returns>Returns a  CreateConfiguredAudienceModelResult from CleanRoomsML.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CreateConfiguredAudienceModel">REST API Reference for CreateConfiguredAudienceModel Operation</seealso>
         CreateConfiguredAudienceModelResponse EndCreateConfiguredAudienceModel(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateConfiguredModelAlgorithm
+
+
+        /// <summary>
+        /// Creates a configured model algorithm using a container image stored in an ECR repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConfiguredModelAlgorithm service method.</param>
+        /// 
+        /// <returns>The response from the CreateConfiguredModelAlgorithm service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
+        /// You can't complete this action because another resource depends on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ServiceQuotaExceededException">
+        /// You have exceeded your service quota.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CreateConfiguredModelAlgorithm">REST API Reference for CreateConfiguredModelAlgorithm Operation</seealso>
+        CreateConfiguredModelAlgorithmResponse CreateConfiguredModelAlgorithm(CreateConfiguredModelAlgorithmRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateConfiguredModelAlgorithm operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateConfiguredModelAlgorithm operation on AmazonCleanRoomsMLClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateConfiguredModelAlgorithm
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CreateConfiguredModelAlgorithm">REST API Reference for CreateConfiguredModelAlgorithm Operation</seealso>
+        IAsyncResult BeginCreateConfiguredModelAlgorithm(CreateConfiguredModelAlgorithmRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateConfiguredModelAlgorithm operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateConfiguredModelAlgorithm.</param>
+        /// 
+        /// <returns>Returns a  CreateConfiguredModelAlgorithmResult from CleanRoomsML.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CreateConfiguredModelAlgorithm">REST API Reference for CreateConfiguredModelAlgorithm Operation</seealso>
+        CreateConfiguredModelAlgorithmResponse EndCreateConfiguredModelAlgorithm(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateConfiguredModelAlgorithmAssociation
+
+
+        /// <summary>
+        /// Associates a configured model algorithm to a collaboration for use by any member of
+        /// the collaboration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConfiguredModelAlgorithmAssociation service method.</param>
+        /// 
+        /// <returns>The response from the CreateConfiguredModelAlgorithmAssociation service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
+        /// You can't complete this action because another resource depends on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ServiceQuotaExceededException">
+        /// You have exceeded your service quota.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CreateConfiguredModelAlgorithmAssociation">REST API Reference for CreateConfiguredModelAlgorithmAssociation Operation</seealso>
+        CreateConfiguredModelAlgorithmAssociationResponse CreateConfiguredModelAlgorithmAssociation(CreateConfiguredModelAlgorithmAssociationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateConfiguredModelAlgorithmAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateConfiguredModelAlgorithmAssociation operation on AmazonCleanRoomsMLClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateConfiguredModelAlgorithmAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CreateConfiguredModelAlgorithmAssociation">REST API Reference for CreateConfiguredModelAlgorithmAssociation Operation</seealso>
+        IAsyncResult BeginCreateConfiguredModelAlgorithmAssociation(CreateConfiguredModelAlgorithmAssociationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateConfiguredModelAlgorithmAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateConfiguredModelAlgorithmAssociation.</param>
+        /// 
+        /// <returns>Returns a  CreateConfiguredModelAlgorithmAssociationResult from CleanRoomsML.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CreateConfiguredModelAlgorithmAssociation">REST API Reference for CreateConfiguredModelAlgorithmAssociation Operation</seealso>
+        CreateConfiguredModelAlgorithmAssociationResponse EndCreateConfiguredModelAlgorithmAssociation(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateMLInputChannel
+
+
+        /// <summary>
+        /// Provides the information to create an ML input channel. An ML input channel is the
+        /// result of a query that can be used for ML modeling.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMLInputChannel service method.</param>
+        /// 
+        /// <returns>The response from the CreateMLInputChannel service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
+        /// You can't complete this action because another resource depends on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ServiceQuotaExceededException">
+        /// You have exceeded your service quota.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CreateMLInputChannel">REST API Reference for CreateMLInputChannel Operation</seealso>
+        CreateMLInputChannelResponse CreateMLInputChannel(CreateMLInputChannelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateMLInputChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateMLInputChannel operation on AmazonCleanRoomsMLClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateMLInputChannel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CreateMLInputChannel">REST API Reference for CreateMLInputChannel Operation</seealso>
+        IAsyncResult BeginCreateMLInputChannel(CreateMLInputChannelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateMLInputChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateMLInputChannel.</param>
+        /// 
+        /// <returns>Returns a  CreateMLInputChannelResult from CleanRoomsML.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CreateMLInputChannel">REST API Reference for CreateMLInputChannel Operation</seealso>
+        CreateMLInputChannelResponse EndCreateMLInputChannel(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateTrainedModel
+
+
+        /// <summary>
+        /// Creates a trained model from an associated configured model algorithm using data from
+        /// any member of the collaboration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrainedModel service method.</param>
+        /// 
+        /// <returns>The response from the CreateTrainedModel service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
+        /// You can't complete this action because another resource depends on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ServiceQuotaExceededException">
+        /// You have exceeded your service quota.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CreateTrainedModel">REST API Reference for CreateTrainedModel Operation</seealso>
+        CreateTrainedModelResponse CreateTrainedModel(CreateTrainedModelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTrainedModel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrainedModel operation on AmazonCleanRoomsMLClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTrainedModel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CreateTrainedModel">REST API Reference for CreateTrainedModel Operation</seealso>
+        IAsyncResult BeginCreateTrainedModel(CreateTrainedModelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTrainedModel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTrainedModel.</param>
+        /// 
+        /// <returns>Returns a  CreateTrainedModelResult from CleanRoomsML.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/CreateTrainedModel">REST API Reference for CreateTrainedModel Operation</seealso>
+        CreateTrainedModelResponse EndCreateTrainedModel(IAsyncResult asyncResult);
 
         #endregion
         
@@ -441,6 +765,263 @@ namespace Amazon.CleanRoomsML
 
         #endregion
         
+        #region  DeleteConfiguredModelAlgorithm
+
+
+        /// <summary>
+        /// Deletes a configured model algorithm.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConfiguredModelAlgorithm service method.</param>
+        /// 
+        /// <returns>The response from the DeleteConfiguredModelAlgorithm service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
+        /// You can't complete this action because another resource depends on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteConfiguredModelAlgorithm">REST API Reference for DeleteConfiguredModelAlgorithm Operation</seealso>
+        DeleteConfiguredModelAlgorithmResponse DeleteConfiguredModelAlgorithm(DeleteConfiguredModelAlgorithmRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteConfiguredModelAlgorithm operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConfiguredModelAlgorithm operation on AmazonCleanRoomsMLClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteConfiguredModelAlgorithm
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteConfiguredModelAlgorithm">REST API Reference for DeleteConfiguredModelAlgorithm Operation</seealso>
+        IAsyncResult BeginDeleteConfiguredModelAlgorithm(DeleteConfiguredModelAlgorithmRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteConfiguredModelAlgorithm operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteConfiguredModelAlgorithm.</param>
+        /// 
+        /// <returns>Returns a  DeleteConfiguredModelAlgorithmResult from CleanRoomsML.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteConfiguredModelAlgorithm">REST API Reference for DeleteConfiguredModelAlgorithm Operation</seealso>
+        DeleteConfiguredModelAlgorithmResponse EndDeleteConfiguredModelAlgorithm(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteConfiguredModelAlgorithmAssociation
+
+
+        /// <summary>
+        /// Deletes a configured model algorithm association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConfiguredModelAlgorithmAssociation service method.</param>
+        /// 
+        /// <returns>The response from the DeleteConfiguredModelAlgorithmAssociation service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
+        /// You can't complete this action because another resource depends on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteConfiguredModelAlgorithmAssociation">REST API Reference for DeleteConfiguredModelAlgorithmAssociation Operation</seealso>
+        DeleteConfiguredModelAlgorithmAssociationResponse DeleteConfiguredModelAlgorithmAssociation(DeleteConfiguredModelAlgorithmAssociationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteConfiguredModelAlgorithmAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConfiguredModelAlgorithmAssociation operation on AmazonCleanRoomsMLClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteConfiguredModelAlgorithmAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteConfiguredModelAlgorithmAssociation">REST API Reference for DeleteConfiguredModelAlgorithmAssociation Operation</seealso>
+        IAsyncResult BeginDeleteConfiguredModelAlgorithmAssociation(DeleteConfiguredModelAlgorithmAssociationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteConfiguredModelAlgorithmAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteConfiguredModelAlgorithmAssociation.</param>
+        /// 
+        /// <returns>Returns a  DeleteConfiguredModelAlgorithmAssociationResult from CleanRoomsML.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteConfiguredModelAlgorithmAssociation">REST API Reference for DeleteConfiguredModelAlgorithmAssociation Operation</seealso>
+        DeleteConfiguredModelAlgorithmAssociationResponse EndDeleteConfiguredModelAlgorithmAssociation(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteMLConfiguration
+
+
+        /// <summary>
+        /// Deletes a ML modeling configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMLConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMLConfiguration service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteMLConfiguration">REST API Reference for DeleteMLConfiguration Operation</seealso>
+        DeleteMLConfigurationResponse DeleteMLConfiguration(DeleteMLConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteMLConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMLConfiguration operation on AmazonCleanRoomsMLClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMLConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteMLConfiguration">REST API Reference for DeleteMLConfiguration Operation</seealso>
+        IAsyncResult BeginDeleteMLConfiguration(DeleteMLConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteMLConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMLConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteMLConfigurationResult from CleanRoomsML.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteMLConfiguration">REST API Reference for DeleteMLConfiguration Operation</seealso>
+        DeleteMLConfigurationResponse EndDeleteMLConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteMLInputChannelData
+
+
+        /// <summary>
+        /// Provides the information necessary to delete an ML input channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMLInputChannelData service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMLInputChannelData service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
+        /// You can't complete this action because another resource depends on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteMLInputChannelData">REST API Reference for DeleteMLInputChannelData Operation</seealso>
+        DeleteMLInputChannelDataResponse DeleteMLInputChannelData(DeleteMLInputChannelDataRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteMLInputChannelData operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMLInputChannelData operation on AmazonCleanRoomsMLClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMLInputChannelData
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteMLInputChannelData">REST API Reference for DeleteMLInputChannelData Operation</seealso>
+        IAsyncResult BeginDeleteMLInputChannelData(DeleteMLInputChannelDataRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteMLInputChannelData operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMLInputChannelData.</param>
+        /// 
+        /// <returns>Returns a  DeleteMLInputChannelDataResult from CleanRoomsML.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteMLInputChannelData">REST API Reference for DeleteMLInputChannelData Operation</seealso>
+        DeleteMLInputChannelDataResponse EndDeleteMLInputChannelData(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteTrainedModelOutput
+
+
+        /// <summary>
+        /// Deletes the output of a trained model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrainedModelOutput service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTrainedModelOutput service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
+        /// You can't complete this action because another resource depends on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteTrainedModelOutput">REST API Reference for DeleteTrainedModelOutput Operation</seealso>
+        DeleteTrainedModelOutputResponse DeleteTrainedModelOutput(DeleteTrainedModelOutputRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTrainedModelOutput operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTrainedModelOutput operation on AmazonCleanRoomsMLClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTrainedModelOutput
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteTrainedModelOutput">REST API Reference for DeleteTrainedModelOutput Operation</seealso>
+        IAsyncResult BeginDeleteTrainedModelOutput(DeleteTrainedModelOutputRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTrainedModelOutput operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTrainedModelOutput.</param>
+        /// 
+        /// <returns>Returns a  DeleteTrainedModelOutputResult from CleanRoomsML.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/DeleteTrainedModelOutput">REST API Reference for DeleteTrainedModelOutput Operation</seealso>
+        DeleteTrainedModelOutputResponse EndDeleteTrainedModelOutput(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteTrainingDataset
 
 
@@ -594,6 +1175,153 @@ namespace Amazon.CleanRoomsML
 
         #endregion
         
+        #region  GetCollaborationConfiguredModelAlgorithmAssociation
+
+
+        /// <summary>
+        /// Returns information about the configured model algorithm association in a collaboration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCollaborationConfiguredModelAlgorithmAssociation service method.</param>
+        /// 
+        /// <returns>The response from the GetCollaborationConfiguredModelAlgorithmAssociation service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetCollaborationConfiguredModelAlgorithmAssociation">REST API Reference for GetCollaborationConfiguredModelAlgorithmAssociation Operation</seealso>
+        GetCollaborationConfiguredModelAlgorithmAssociationResponse GetCollaborationConfiguredModelAlgorithmAssociation(GetCollaborationConfiguredModelAlgorithmAssociationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCollaborationConfiguredModelAlgorithmAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCollaborationConfiguredModelAlgorithmAssociation operation on AmazonCleanRoomsMLClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCollaborationConfiguredModelAlgorithmAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetCollaborationConfiguredModelAlgorithmAssociation">REST API Reference for GetCollaborationConfiguredModelAlgorithmAssociation Operation</seealso>
+        IAsyncResult BeginGetCollaborationConfiguredModelAlgorithmAssociation(GetCollaborationConfiguredModelAlgorithmAssociationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCollaborationConfiguredModelAlgorithmAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCollaborationConfiguredModelAlgorithmAssociation.</param>
+        /// 
+        /// <returns>Returns a  GetCollaborationConfiguredModelAlgorithmAssociationResult from CleanRoomsML.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetCollaborationConfiguredModelAlgorithmAssociation">REST API Reference for GetCollaborationConfiguredModelAlgorithmAssociation Operation</seealso>
+        GetCollaborationConfiguredModelAlgorithmAssociationResponse EndGetCollaborationConfiguredModelAlgorithmAssociation(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetCollaborationMLInputChannel
+
+
+        /// <summary>
+        /// Returns information about a specific ML input channel in a collaboration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCollaborationMLInputChannel service method.</param>
+        /// 
+        /// <returns>The response from the GetCollaborationMLInputChannel service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetCollaborationMLInputChannel">REST API Reference for GetCollaborationMLInputChannel Operation</seealso>
+        GetCollaborationMLInputChannelResponse GetCollaborationMLInputChannel(GetCollaborationMLInputChannelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCollaborationMLInputChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCollaborationMLInputChannel operation on AmazonCleanRoomsMLClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCollaborationMLInputChannel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetCollaborationMLInputChannel">REST API Reference for GetCollaborationMLInputChannel Operation</seealso>
+        IAsyncResult BeginGetCollaborationMLInputChannel(GetCollaborationMLInputChannelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCollaborationMLInputChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCollaborationMLInputChannel.</param>
+        /// 
+        /// <returns>Returns a  GetCollaborationMLInputChannelResult from CleanRoomsML.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetCollaborationMLInputChannel">REST API Reference for GetCollaborationMLInputChannel Operation</seealso>
+        GetCollaborationMLInputChannelResponse EndGetCollaborationMLInputChannel(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetCollaborationTrainedModel
+
+
+        /// <summary>
+        /// Returns information about a trained model in a collaboration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCollaborationTrainedModel service method.</param>
+        /// 
+        /// <returns>The response from the GetCollaborationTrainedModel service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetCollaborationTrainedModel">REST API Reference for GetCollaborationTrainedModel Operation</seealso>
+        GetCollaborationTrainedModelResponse GetCollaborationTrainedModel(GetCollaborationTrainedModelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCollaborationTrainedModel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCollaborationTrainedModel operation on AmazonCleanRoomsMLClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCollaborationTrainedModel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetCollaborationTrainedModel">REST API Reference for GetCollaborationTrainedModel Operation</seealso>
+        IAsyncResult BeginGetCollaborationTrainedModel(GetCollaborationTrainedModelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCollaborationTrainedModel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCollaborationTrainedModel.</param>
+        /// 
+        /// <returns>Returns a  GetCollaborationTrainedModelResult from CleanRoomsML.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetCollaborationTrainedModel">REST API Reference for GetCollaborationTrainedModel Operation</seealso>
+        GetCollaborationTrainedModelResponse EndGetCollaborationTrainedModel(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetConfiguredAudienceModel
 
 
@@ -689,6 +1417,300 @@ namespace Amazon.CleanRoomsML
         /// <returns>Returns a  GetConfiguredAudienceModelPolicyResult from CleanRoomsML.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetConfiguredAudienceModelPolicy">REST API Reference for GetConfiguredAudienceModelPolicy Operation</seealso>
         GetConfiguredAudienceModelPolicyResponse EndGetConfiguredAudienceModelPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetConfiguredModelAlgorithm
+
+
+        /// <summary>
+        /// Returns information about a configured model algorithm.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConfiguredModelAlgorithm service method.</param>
+        /// 
+        /// <returns>The response from the GetConfiguredModelAlgorithm service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetConfiguredModelAlgorithm">REST API Reference for GetConfiguredModelAlgorithm Operation</seealso>
+        GetConfiguredModelAlgorithmResponse GetConfiguredModelAlgorithm(GetConfiguredModelAlgorithmRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetConfiguredModelAlgorithm operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetConfiguredModelAlgorithm operation on AmazonCleanRoomsMLClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetConfiguredModelAlgorithm
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetConfiguredModelAlgorithm">REST API Reference for GetConfiguredModelAlgorithm Operation</seealso>
+        IAsyncResult BeginGetConfiguredModelAlgorithm(GetConfiguredModelAlgorithmRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetConfiguredModelAlgorithm operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetConfiguredModelAlgorithm.</param>
+        /// 
+        /// <returns>Returns a  GetConfiguredModelAlgorithmResult from CleanRoomsML.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetConfiguredModelAlgorithm">REST API Reference for GetConfiguredModelAlgorithm Operation</seealso>
+        GetConfiguredModelAlgorithmResponse EndGetConfiguredModelAlgorithm(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetConfiguredModelAlgorithmAssociation
+
+
+        /// <summary>
+        /// Returns information about a configured model algorithm association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConfiguredModelAlgorithmAssociation service method.</param>
+        /// 
+        /// <returns>The response from the GetConfiguredModelAlgorithmAssociation service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetConfiguredModelAlgorithmAssociation">REST API Reference for GetConfiguredModelAlgorithmAssociation Operation</seealso>
+        GetConfiguredModelAlgorithmAssociationResponse GetConfiguredModelAlgorithmAssociation(GetConfiguredModelAlgorithmAssociationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetConfiguredModelAlgorithmAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetConfiguredModelAlgorithmAssociation operation on AmazonCleanRoomsMLClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetConfiguredModelAlgorithmAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetConfiguredModelAlgorithmAssociation">REST API Reference for GetConfiguredModelAlgorithmAssociation Operation</seealso>
+        IAsyncResult BeginGetConfiguredModelAlgorithmAssociation(GetConfiguredModelAlgorithmAssociationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetConfiguredModelAlgorithmAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetConfiguredModelAlgorithmAssociation.</param>
+        /// 
+        /// <returns>Returns a  GetConfiguredModelAlgorithmAssociationResult from CleanRoomsML.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetConfiguredModelAlgorithmAssociation">REST API Reference for GetConfiguredModelAlgorithmAssociation Operation</seealso>
+        GetConfiguredModelAlgorithmAssociationResponse EndGetConfiguredModelAlgorithmAssociation(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetMLConfiguration
+
+
+        /// <summary>
+        /// Returns information about a specific ML configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMLConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetMLConfiguration service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetMLConfiguration">REST API Reference for GetMLConfiguration Operation</seealso>
+        GetMLConfigurationResponse GetMLConfiguration(GetMLConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMLConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMLConfiguration operation on AmazonCleanRoomsMLClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMLConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetMLConfiguration">REST API Reference for GetMLConfiguration Operation</seealso>
+        IAsyncResult BeginGetMLConfiguration(GetMLConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMLConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMLConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetMLConfigurationResult from CleanRoomsML.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetMLConfiguration">REST API Reference for GetMLConfiguration Operation</seealso>
+        GetMLConfigurationResponse EndGetMLConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetMLInputChannel
+
+
+        /// <summary>
+        /// Returns information about an ML input channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMLInputChannel service method.</param>
+        /// 
+        /// <returns>The response from the GetMLInputChannel service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetMLInputChannel">REST API Reference for GetMLInputChannel Operation</seealso>
+        GetMLInputChannelResponse GetMLInputChannel(GetMLInputChannelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMLInputChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMLInputChannel operation on AmazonCleanRoomsMLClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMLInputChannel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetMLInputChannel">REST API Reference for GetMLInputChannel Operation</seealso>
+        IAsyncResult BeginGetMLInputChannel(GetMLInputChannelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMLInputChannel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMLInputChannel.</param>
+        /// 
+        /// <returns>Returns a  GetMLInputChannelResult from CleanRoomsML.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetMLInputChannel">REST API Reference for GetMLInputChannel Operation</seealso>
+        GetMLInputChannelResponse EndGetMLInputChannel(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetTrainedModel
+
+
+        /// <summary>
+        /// Returns information about a trained model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTrainedModel service method.</param>
+        /// 
+        /// <returns>The response from the GetTrainedModel service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetTrainedModel">REST API Reference for GetTrainedModel Operation</seealso>
+        GetTrainedModelResponse GetTrainedModel(GetTrainedModelRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTrainedModel operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTrainedModel operation on AmazonCleanRoomsMLClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTrainedModel
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetTrainedModel">REST API Reference for GetTrainedModel Operation</seealso>
+        IAsyncResult BeginGetTrainedModel(GetTrainedModelRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTrainedModel operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTrainedModel.</param>
+        /// 
+        /// <returns>Returns a  GetTrainedModelResult from CleanRoomsML.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetTrainedModel">REST API Reference for GetTrainedModel Operation</seealso>
+        GetTrainedModelResponse EndGetTrainedModel(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetTrainedModelInferenceJob
+
+
+        /// <summary>
+        /// Returns information about a trained model inference job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTrainedModelInferenceJob service method.</param>
+        /// 
+        /// <returns>The response from the GetTrainedModelInferenceJob service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetTrainedModelInferenceJob">REST API Reference for GetTrainedModelInferenceJob Operation</seealso>
+        GetTrainedModelInferenceJobResponse GetTrainedModelInferenceJob(GetTrainedModelInferenceJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTrainedModelInferenceJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTrainedModelInferenceJob operation on AmazonCleanRoomsMLClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTrainedModelInferenceJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetTrainedModelInferenceJob">REST API Reference for GetTrainedModelInferenceJob Operation</seealso>
+        IAsyncResult BeginGetTrainedModelInferenceJob(GetTrainedModelInferenceJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTrainedModelInferenceJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTrainedModelInferenceJob.</param>
+        /// 
+        /// <returns>Returns a  GetTrainedModelInferenceJobResult from CleanRoomsML.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/GetTrainedModelInferenceJob">REST API Reference for GetTrainedModelInferenceJob Operation</seealso>
+        GetTrainedModelInferenceJobResponse EndGetTrainedModelInferenceJob(IAsyncResult asyncResult);
 
         #endregion
         
@@ -879,6 +1901,236 @@ namespace Amazon.CleanRoomsML
 
         #endregion
         
+        #region  ListCollaborationConfiguredModelAlgorithmAssociations
+
+
+        /// <summary>
+        /// Returns a list of the configured model algorithm associations in a collaboration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCollaborationConfiguredModelAlgorithmAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListCollaborationConfiguredModelAlgorithmAssociations service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListCollaborationConfiguredModelAlgorithmAssociations">REST API Reference for ListCollaborationConfiguredModelAlgorithmAssociations Operation</seealso>
+        ListCollaborationConfiguredModelAlgorithmAssociationsResponse ListCollaborationConfiguredModelAlgorithmAssociations(ListCollaborationConfiguredModelAlgorithmAssociationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCollaborationConfiguredModelAlgorithmAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCollaborationConfiguredModelAlgorithmAssociations operation on AmazonCleanRoomsMLClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCollaborationConfiguredModelAlgorithmAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListCollaborationConfiguredModelAlgorithmAssociations">REST API Reference for ListCollaborationConfiguredModelAlgorithmAssociations Operation</seealso>
+        IAsyncResult BeginListCollaborationConfiguredModelAlgorithmAssociations(ListCollaborationConfiguredModelAlgorithmAssociationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCollaborationConfiguredModelAlgorithmAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCollaborationConfiguredModelAlgorithmAssociations.</param>
+        /// 
+        /// <returns>Returns a  ListCollaborationConfiguredModelAlgorithmAssociationsResult from CleanRoomsML.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListCollaborationConfiguredModelAlgorithmAssociations">REST API Reference for ListCollaborationConfiguredModelAlgorithmAssociations Operation</seealso>
+        ListCollaborationConfiguredModelAlgorithmAssociationsResponse EndListCollaborationConfiguredModelAlgorithmAssociations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListCollaborationMLInputChannels
+
+
+        /// <summary>
+        /// Returns a list of the ML input channels in a collaboration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCollaborationMLInputChannels service method.</param>
+        /// 
+        /// <returns>The response from the ListCollaborationMLInputChannels service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListCollaborationMLInputChannels">REST API Reference for ListCollaborationMLInputChannels Operation</seealso>
+        ListCollaborationMLInputChannelsResponse ListCollaborationMLInputChannels(ListCollaborationMLInputChannelsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCollaborationMLInputChannels operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCollaborationMLInputChannels operation on AmazonCleanRoomsMLClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCollaborationMLInputChannels
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListCollaborationMLInputChannels">REST API Reference for ListCollaborationMLInputChannels Operation</seealso>
+        IAsyncResult BeginListCollaborationMLInputChannels(ListCollaborationMLInputChannelsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCollaborationMLInputChannels operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCollaborationMLInputChannels.</param>
+        /// 
+        /// <returns>Returns a  ListCollaborationMLInputChannelsResult from CleanRoomsML.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListCollaborationMLInputChannels">REST API Reference for ListCollaborationMLInputChannels Operation</seealso>
+        ListCollaborationMLInputChannelsResponse EndListCollaborationMLInputChannels(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListCollaborationTrainedModelExportJobs
+
+
+        /// <summary>
+        /// Returns a list of the export jobs for a trained model in a collaboration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCollaborationTrainedModelExportJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListCollaborationTrainedModelExportJobs service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListCollaborationTrainedModelExportJobs">REST API Reference for ListCollaborationTrainedModelExportJobs Operation</seealso>
+        ListCollaborationTrainedModelExportJobsResponse ListCollaborationTrainedModelExportJobs(ListCollaborationTrainedModelExportJobsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCollaborationTrainedModelExportJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCollaborationTrainedModelExportJobs operation on AmazonCleanRoomsMLClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCollaborationTrainedModelExportJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListCollaborationTrainedModelExportJobs">REST API Reference for ListCollaborationTrainedModelExportJobs Operation</seealso>
+        IAsyncResult BeginListCollaborationTrainedModelExportJobs(ListCollaborationTrainedModelExportJobsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCollaborationTrainedModelExportJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCollaborationTrainedModelExportJobs.</param>
+        /// 
+        /// <returns>Returns a  ListCollaborationTrainedModelExportJobsResult from CleanRoomsML.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListCollaborationTrainedModelExportJobs">REST API Reference for ListCollaborationTrainedModelExportJobs Operation</seealso>
+        ListCollaborationTrainedModelExportJobsResponse EndListCollaborationTrainedModelExportJobs(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListCollaborationTrainedModelInferenceJobs
+
+
+        /// <summary>
+        /// Returns a list of trained model inference jobs in a specified collaboration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCollaborationTrainedModelInferenceJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListCollaborationTrainedModelInferenceJobs service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListCollaborationTrainedModelInferenceJobs">REST API Reference for ListCollaborationTrainedModelInferenceJobs Operation</seealso>
+        ListCollaborationTrainedModelInferenceJobsResponse ListCollaborationTrainedModelInferenceJobs(ListCollaborationTrainedModelInferenceJobsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCollaborationTrainedModelInferenceJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCollaborationTrainedModelInferenceJobs operation on AmazonCleanRoomsMLClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCollaborationTrainedModelInferenceJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListCollaborationTrainedModelInferenceJobs">REST API Reference for ListCollaborationTrainedModelInferenceJobs Operation</seealso>
+        IAsyncResult BeginListCollaborationTrainedModelInferenceJobs(ListCollaborationTrainedModelInferenceJobsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCollaborationTrainedModelInferenceJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCollaborationTrainedModelInferenceJobs.</param>
+        /// 
+        /// <returns>Returns a  ListCollaborationTrainedModelInferenceJobsResult from CleanRoomsML.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListCollaborationTrainedModelInferenceJobs">REST API Reference for ListCollaborationTrainedModelInferenceJobs Operation</seealso>
+        ListCollaborationTrainedModelInferenceJobsResponse EndListCollaborationTrainedModelInferenceJobs(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListCollaborationTrainedModels
+
+
+        /// <summary>
+        /// Returns a list of the trained models in a collaboration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCollaborationTrainedModels service method.</param>
+        /// 
+        /// <returns>The response from the ListCollaborationTrainedModels service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListCollaborationTrainedModels">REST API Reference for ListCollaborationTrainedModels Operation</seealso>
+        ListCollaborationTrainedModelsResponse ListCollaborationTrainedModels(ListCollaborationTrainedModelsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCollaborationTrainedModels operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCollaborationTrainedModels operation on AmazonCleanRoomsMLClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCollaborationTrainedModels
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListCollaborationTrainedModels">REST API Reference for ListCollaborationTrainedModels Operation</seealso>
+        IAsyncResult BeginListCollaborationTrainedModels(ListCollaborationTrainedModelsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCollaborationTrainedModels operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCollaborationTrainedModels.</param>
+        /// 
+        /// <returns>Returns a  ListCollaborationTrainedModelsResult from CleanRoomsML.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListCollaborationTrainedModels">REST API Reference for ListCollaborationTrainedModels Operation</seealso>
+        ListCollaborationTrainedModelsResponse EndListCollaborationTrainedModels(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListConfiguredAudienceModels
 
 
@@ -922,6 +2174,144 @@ namespace Amazon.CleanRoomsML
         /// <returns>Returns a  ListConfiguredAudienceModelsResult from CleanRoomsML.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListConfiguredAudienceModels">REST API Reference for ListConfiguredAudienceModels Operation</seealso>
         ListConfiguredAudienceModelsResponse EndListConfiguredAudienceModels(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListConfiguredModelAlgorithmAssociations
+
+
+        /// <summary>
+        /// Returns a list of configured model algorithm associations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConfiguredModelAlgorithmAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListConfiguredModelAlgorithmAssociations service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListConfiguredModelAlgorithmAssociations">REST API Reference for ListConfiguredModelAlgorithmAssociations Operation</seealso>
+        ListConfiguredModelAlgorithmAssociationsResponse ListConfiguredModelAlgorithmAssociations(ListConfiguredModelAlgorithmAssociationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListConfiguredModelAlgorithmAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListConfiguredModelAlgorithmAssociations operation on AmazonCleanRoomsMLClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListConfiguredModelAlgorithmAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListConfiguredModelAlgorithmAssociations">REST API Reference for ListConfiguredModelAlgorithmAssociations Operation</seealso>
+        IAsyncResult BeginListConfiguredModelAlgorithmAssociations(ListConfiguredModelAlgorithmAssociationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListConfiguredModelAlgorithmAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListConfiguredModelAlgorithmAssociations.</param>
+        /// 
+        /// <returns>Returns a  ListConfiguredModelAlgorithmAssociationsResult from CleanRoomsML.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListConfiguredModelAlgorithmAssociations">REST API Reference for ListConfiguredModelAlgorithmAssociations Operation</seealso>
+        ListConfiguredModelAlgorithmAssociationsResponse EndListConfiguredModelAlgorithmAssociations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListConfiguredModelAlgorithms
+
+
+        /// <summary>
+        /// Returns a list of configured model algorithms.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConfiguredModelAlgorithms service method.</param>
+        /// 
+        /// <returns>The response from the ListConfiguredModelAlgorithms service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListConfiguredModelAlgorithms">REST API Reference for ListConfiguredModelAlgorithms Operation</seealso>
+        ListConfiguredModelAlgorithmsResponse ListConfiguredModelAlgorithms(ListConfiguredModelAlgorithmsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListConfiguredModelAlgorithms operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListConfiguredModelAlgorithms operation on AmazonCleanRoomsMLClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListConfiguredModelAlgorithms
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListConfiguredModelAlgorithms">REST API Reference for ListConfiguredModelAlgorithms Operation</seealso>
+        IAsyncResult BeginListConfiguredModelAlgorithms(ListConfiguredModelAlgorithmsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListConfiguredModelAlgorithms operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListConfiguredModelAlgorithms.</param>
+        /// 
+        /// <returns>Returns a  ListConfiguredModelAlgorithmsResult from CleanRoomsML.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListConfiguredModelAlgorithms">REST API Reference for ListConfiguredModelAlgorithms Operation</seealso>
+        ListConfiguredModelAlgorithmsResponse EndListConfiguredModelAlgorithms(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListMLInputChannels
+
+
+        /// <summary>
+        /// Returns a list of ML input channels.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMLInputChannels service method.</param>
+        /// 
+        /// <returns>The response from the ListMLInputChannels service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListMLInputChannels">REST API Reference for ListMLInputChannels Operation</seealso>
+        ListMLInputChannelsResponse ListMLInputChannels(ListMLInputChannelsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMLInputChannels operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMLInputChannels operation on AmazonCleanRoomsMLClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMLInputChannels
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListMLInputChannels">REST API Reference for ListMLInputChannels Operation</seealso>
+        IAsyncResult BeginListMLInputChannels(ListMLInputChannelsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMLInputChannels operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMLInputChannels.</param>
+        /// 
+        /// <returns>Returns a  ListMLInputChannelsResult from CleanRoomsML.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListMLInputChannels">REST API Reference for ListMLInputChannels Operation</seealso>
+        ListMLInputChannelsResponse EndListMLInputChannels(IAsyncResult asyncResult);
 
         #endregion
         
@@ -971,6 +2361,98 @@ namespace Amazon.CleanRoomsML
         /// <returns>Returns a  ListTagsForResourceResult from CleanRoomsML.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListTrainedModelInferenceJobs
+
+
+        /// <summary>
+        /// Returns a list of trained model inference jobs that match the request parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTrainedModelInferenceJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListTrainedModelInferenceJobs service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListTrainedModelInferenceJobs">REST API Reference for ListTrainedModelInferenceJobs Operation</seealso>
+        ListTrainedModelInferenceJobsResponse ListTrainedModelInferenceJobs(ListTrainedModelInferenceJobsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTrainedModelInferenceJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTrainedModelInferenceJobs operation on AmazonCleanRoomsMLClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTrainedModelInferenceJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListTrainedModelInferenceJobs">REST API Reference for ListTrainedModelInferenceJobs Operation</seealso>
+        IAsyncResult BeginListTrainedModelInferenceJobs(ListTrainedModelInferenceJobsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTrainedModelInferenceJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTrainedModelInferenceJobs.</param>
+        /// 
+        /// <returns>Returns a  ListTrainedModelInferenceJobsResult from CleanRoomsML.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListTrainedModelInferenceJobs">REST API Reference for ListTrainedModelInferenceJobs Operation</seealso>
+        ListTrainedModelInferenceJobsResponse EndListTrainedModelInferenceJobs(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListTrainedModels
+
+
+        /// <summary>
+        /// Returns a list of trained models.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTrainedModels service method.</param>
+        /// 
+        /// <returns>The response from the ListTrainedModels service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListTrainedModels">REST API Reference for ListTrainedModels Operation</seealso>
+        ListTrainedModelsResponse ListTrainedModels(ListTrainedModelsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTrainedModels operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTrainedModels operation on AmazonCleanRoomsMLClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTrainedModels
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListTrainedModels">REST API Reference for ListTrainedModels Operation</seealso>
+        IAsyncResult BeginListTrainedModels(ListTrainedModelsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTrainedModels operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTrainedModels.</param>
+        /// 
+        /// <returns>Returns a  ListTrainedModelsResult from CleanRoomsML.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/ListTrainedModels">REST API Reference for ListTrainedModels Operation</seealso>
+        ListTrainedModelsResponse EndListTrainedModels(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1066,6 +2548,52 @@ namespace Amazon.CleanRoomsML
         /// <returns>Returns a  PutConfiguredAudienceModelPolicyResult from CleanRoomsML.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/PutConfiguredAudienceModelPolicy">REST API Reference for PutConfiguredAudienceModelPolicy Operation</seealso>
         PutConfiguredAudienceModelPolicyResponse EndPutConfiguredAudienceModelPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutMLConfiguration
+
+
+        /// <summary>
+        /// Assigns information about an ML configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutMLConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutMLConfiguration service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/PutMLConfiguration">REST API Reference for PutMLConfiguration Operation</seealso>
+        PutMLConfigurationResponse PutMLConfiguration(PutMLConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutMLConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutMLConfiguration operation on AmazonCleanRoomsMLClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutMLConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/PutMLConfiguration">REST API Reference for PutMLConfiguration Operation</seealso>
+        IAsyncResult BeginPutMLConfiguration(PutMLConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutMLConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutMLConfiguration.</param>
+        /// 
+        /// <returns>Returns a  PutMLConfigurationResult from CleanRoomsML.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/PutMLConfiguration">REST API Reference for PutMLConfiguration Operation</seealso>
+        PutMLConfigurationResponse EndPutMLConfiguration(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1176,6 +2704,113 @@ namespace Amazon.CleanRoomsML
         /// <returns>Returns a  StartAudienceGenerationJobResult from CleanRoomsML.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/StartAudienceGenerationJob">REST API Reference for StartAudienceGenerationJob Operation</seealso>
         StartAudienceGenerationJobResponse EndStartAudienceGenerationJob(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartTrainedModelExportJob
+
+
+        /// <summary>
+        /// Provides the information necessary to start a trained model export job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartTrainedModelExportJob service method.</param>
+        /// 
+        /// <returns>The response from the StartTrainedModelExportJob service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
+        /// You can't complete this action because another resource depends on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/StartTrainedModelExportJob">REST API Reference for StartTrainedModelExportJob Operation</seealso>
+        StartTrainedModelExportJobResponse StartTrainedModelExportJob(StartTrainedModelExportJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartTrainedModelExportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartTrainedModelExportJob operation on AmazonCleanRoomsMLClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartTrainedModelExportJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/StartTrainedModelExportJob">REST API Reference for StartTrainedModelExportJob Operation</seealso>
+        IAsyncResult BeginStartTrainedModelExportJob(StartTrainedModelExportJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartTrainedModelExportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartTrainedModelExportJob.</param>
+        /// 
+        /// <returns>Returns a  StartTrainedModelExportJobResult from CleanRoomsML.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/StartTrainedModelExportJob">REST API Reference for StartTrainedModelExportJob Operation</seealso>
+        StartTrainedModelExportJobResponse EndStartTrainedModelExportJob(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartTrainedModelInferenceJob
+
+
+        /// <summary>
+        /// Defines the information necessary to begin a trained model inference job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartTrainedModelInferenceJob service method.</param>
+        /// 
+        /// <returns>The response from the StartTrainedModelInferenceJob service method, as returned by CleanRoomsML.</returns>
+        /// <exception cref="Amazon.CleanRoomsML.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ConflictException">
+        /// You can't complete this action because another resource depends on this resource.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ResourceNotFoundException">
+        /// The resource you are requesting does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ServiceQuotaExceededException">
+        /// You have exceeded your service quota.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRoomsML.Model.ValidationException">
+        /// The request parameters for this request are incorrect.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/StartTrainedModelInferenceJob">REST API Reference for StartTrainedModelInferenceJob Operation</seealso>
+        StartTrainedModelInferenceJobResponse StartTrainedModelInferenceJob(StartTrainedModelInferenceJobRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartTrainedModelInferenceJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartTrainedModelInferenceJob operation on AmazonCleanRoomsMLClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartTrainedModelInferenceJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/StartTrainedModelInferenceJob">REST API Reference for StartTrainedModelInferenceJob Operation</seealso>
+        IAsyncResult BeginStartTrainedModelInferenceJob(StartTrainedModelInferenceJobRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartTrainedModelInferenceJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartTrainedModelInferenceJob.</param>
+        /// 
+        /// <returns>Returns a  StartTrainedModelInferenceJobResult from CleanRoomsML.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanroomsml-2023-09-06/StartTrainedModelInferenceJob">REST API Reference for StartTrainedModelInferenceJob Operation</seealso>
+        StartTrainedModelInferenceJobResponse EndStartTrainedModelInferenceJob(IAsyncResult asyncResult);
 
         #endregion
         
