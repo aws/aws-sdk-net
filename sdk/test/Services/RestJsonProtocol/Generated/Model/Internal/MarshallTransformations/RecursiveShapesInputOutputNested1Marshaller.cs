@@ -51,18 +51,18 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFoo())
             {
                 context.Writer.WritePropertyName("foo");
-                context.Writer.Write(requestObject.Foo);
+                context.Writer.WriteStringValue(requestObject.Foo);
             }
 
             if(requestObject.IsSetNested())
             {
                 context.Writer.WritePropertyName("nested");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RecursiveShapesInputOutputNested2Marshaller.Instance;
                 marshaller.Marshall(requestObject.Nested, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

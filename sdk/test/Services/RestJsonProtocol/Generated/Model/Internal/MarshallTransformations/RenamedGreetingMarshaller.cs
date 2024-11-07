@@ -51,7 +51,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSalutation())
             {
                 context.Writer.WritePropertyName("salutation");
-                context.Writer.Write(requestObject.Salutation);
+                context.Writer.WriteStringValue(requestObject.Salutation);
             }
 
         }

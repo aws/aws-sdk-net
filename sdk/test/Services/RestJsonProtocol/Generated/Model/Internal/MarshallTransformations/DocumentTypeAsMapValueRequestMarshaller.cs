@@ -28,8 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
 {
@@ -61,33 +61,40 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/DocumentTypeAsMapValue";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETCOREAPP3_1_OR_GREATER
+            
+            using var memoryStream = new MemoryStream();
+#endif
+#if NETCOREAPP3_1_OR_GREATER
+            ArrayBufferWriter<byte> arrayBufferWriter = new ArrayBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayBufferWriter);
+#else
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDocValuedMap())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("docValuedMap");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestDocValuedMapKvp in publicRequest.DocValuedMap)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDocValuedMap())
-                    {
-                        context.Writer.WritePropertyName("docValuedMap");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestDocValuedMapKvp in publicRequest.DocValuedMap)
-                        {
-                            context.Writer.WritePropertyName(publicRequestDocValuedMapKvp.Key);
-                            var publicRequestDocValuedMapValue = publicRequestDocValuedMapKvp.Value;
+                    context.Writer.WritePropertyName(publicRequestDocValuedMapKvp.Key);
+                    var publicRequestDocValuedMapValue = publicRequestDocValuedMapKvp.Value;
 
-                            Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, publicRequestDocValuedMapValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                    Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, publicRequestDocValuedMapValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if !NETCOREAPP3_1_OR_GREATER
+            request.Content = memoryStream.ToArray();
+#else
+            request.Content = arrayBufferWriter.WrittenMemory.ToArray();
+#endif
+            
 
 
             return request;
