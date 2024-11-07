@@ -117,6 +117,23 @@ namespace Amazon.BedrockRuntime
         /// </para>
         ///  
         /// <para>
+        /// You can submit a prompt by including it in the <c>messages</c> field, specifying the
+        /// <c>modelId</c> of a foundation model or inference profile to run inference on it,
+        /// and including any other fields that are relevant to your use case.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can also submit a prompt from Prompt management by specifying the ARN of the prompt
+        /// version and including a map of variables to values in the <c>promptVariables</c> field.
+        /// You can append more messages to the prompt by using the <c>messages</c> field. If
+        /// you use a prompt from Prompt management, you can't include the following fields in
+        /// the request: <c>additionalModelRequestFields</c>, <c>inferenceConfig</c>, <c>system</c>,
+        /// or <c>toolConfig</c>. Instead, these fields must be defined through Prompt management.
+        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-use.html">Use
+        /// a prompt from Prompt management</a>.
+        /// </para>
+        ///  
+        /// <para>
         /// For information about the Converse API, see <i>Use the Converse API</i> in the <i>Amazon
         /// Bedrock User Guide</i>. To use a guardrail, see <i>Use a guardrail with the Converse
         /// API</i> in the <i>Amazon Bedrock User Guide</i>. To use a tool with a model, see <i>Tool
@@ -221,6 +238,23 @@ namespace Amazon.BedrockRuntime
         /// <para>
         /// Amazon Bedrock doesn't store any text, images, or documents that you provide as content.
         /// The data is only used to generate the response.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can submit a prompt by including it in the <c>messages</c> field, specifying the
+        /// <c>modelId</c> of a foundation model or inference profile to run inference on it,
+        /// and including any other fields that are relevant to your use case.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can also submit a prompt from Prompt management by specifying the ARN of the prompt
+        /// version and including a map of variables to values in the <c>promptVariables</c> field.
+        /// You can append more messages to the prompt by using the <c>messages</c> field. If
+        /// you use a prompt from Prompt management, you can't include the following fields in
+        /// the request: <c>additionalModelRequestFields</c>, <c>inferenceConfig</c>, <c>system</c>,
+        /// or <c>toolConfig</c>. Instead, these fields must be defined through Prompt management.
+        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-use.html">Use
+        /// a prompt from Prompt management</a>.
         /// </para>
         ///  
         /// <para>
