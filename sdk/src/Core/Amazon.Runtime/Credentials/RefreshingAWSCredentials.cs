@@ -58,9 +58,7 @@ namespace Amazon.Runtime
 
             internal TimeSpan GetTimeToLive(TimeSpan preemptExpiryTime)
             {
-#pragma warning disable CS0612,CS0618 // Type or member is obsolete
                 var now = AWSSDKUtils.CorrectedUtcNow;
-#pragma warning restore CS0612,CS0618 // Type or member is obsolete
                 var exp = Expiration.ToUniversalTime();
 
                 return exp - now + preemptExpiryTime;
