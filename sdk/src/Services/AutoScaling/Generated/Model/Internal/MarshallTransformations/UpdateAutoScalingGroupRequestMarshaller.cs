@@ -63,6 +63,13 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(publicRequest.AutoScalingGroupName));
                 }
+                if(publicRequest.IsSetAvailabilityZoneDistribution())
+                {
+                    if(publicRequest.AvailabilityZoneDistribution.IsSetCapacityDistributionStrategy())
+                    {
+                        request.Parameters.Add("AvailabilityZoneDistribution" + "." + "CapacityDistributionStrategy", StringUtils.FromString(publicRequest.AvailabilityZoneDistribution.CapacityDistributionStrategy));
+                    }
+                }
                 if(publicRequest.IsSetAvailabilityZones())
                 {
                     int publicRequestlistValueIndex = 1;
