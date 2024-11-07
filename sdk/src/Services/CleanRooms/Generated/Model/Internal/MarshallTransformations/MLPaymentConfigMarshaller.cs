@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// MembershipPaymentConfiguration Marshaller
+    /// MLPaymentConfig Marshaller
     /// </summary>
-    public class MembershipPaymentConfigurationMarshaller : IRequestMarshaller<MembershipPaymentConfiguration, JsonMarshallerContext> 
+    public class MLPaymentConfigMarshaller : IRequestMarshaller<MLPaymentConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,28 +44,28 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MembershipPaymentConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(MLPaymentConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetMachineLearning())
+            if(requestObject.IsSetModelInference())
             {
-                context.Writer.WritePropertyName("machineLearning");
+                context.Writer.WritePropertyName("modelInference");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = MembershipMLPaymentConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.MachineLearning, context);
+                var marshaller = ModelInferencePaymentConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.ModelInference, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetQueryCompute())
+            if(requestObject.IsSetModelTraining())
             {
-                context.Writer.WritePropertyName("queryCompute");
+                context.Writer.WritePropertyName("modelTraining");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = MembershipQueryComputePaymentConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.QueryCompute, context);
+                var marshaller = ModelTrainingPaymentConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.ModelTraining, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -75,7 +75,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static MembershipPaymentConfigurationMarshaller Instance = new MembershipPaymentConfigurationMarshaller();
+        public readonly static MLPaymentConfigMarshaller Instance = new MLPaymentConfigMarshaller();
 
     }
 }

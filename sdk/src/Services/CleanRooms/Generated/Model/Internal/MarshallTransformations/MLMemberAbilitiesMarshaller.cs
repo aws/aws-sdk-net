@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// MembershipPaymentConfiguration Marshaller
+    /// MLMemberAbilities Marshaller
     /// </summary>
-    public class MembershipPaymentConfigurationMarshaller : IRequestMarshaller<MembershipPaymentConfiguration, JsonMarshallerContext> 
+    public class MLMemberAbilitiesMarshaller : IRequestMarshaller<MLMemberAbilities, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,30 +44,19 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MembershipPaymentConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(MLMemberAbilities requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetMachineLearning())
+            if(requestObject.IsSetCustomMLMemberAbilities())
             {
-                context.Writer.WritePropertyName("machineLearning");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = MembershipMLPaymentConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.MachineLearning, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetQueryCompute())
-            {
-                context.Writer.WritePropertyName("queryCompute");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = MembershipQueryComputePaymentConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.QueryCompute, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("customMLMemberAbilities");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCustomMLMemberAbilitiesListValue in requestObject.CustomMLMemberAbilities)
+                {
+                        context.Writer.Write(requestObjectCustomMLMemberAbilitiesListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }
@@ -75,7 +64,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static MembershipPaymentConfigurationMarshaller Instance = new MembershipPaymentConfigurationMarshaller();
+        public readonly static MLMemberAbilitiesMarshaller Instance = new MLMemberAbilitiesMarshaller();
 
     }
 }

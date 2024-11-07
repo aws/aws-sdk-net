@@ -38,6 +38,7 @@ namespace Amazon.CleanRooms.Model
         private AnalyticsEngine _analyticsEngine;
         private string _creatorDisplayName;
         private List<string> _creatorMemberAbilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private MLMemberAbilities _creatormlMemberAbilities;
         private PaymentConfiguration _creatorPaymentConfiguration;
         private DataEncryptionMetadata _dataEncryptionMetadata;
         private string _description;
@@ -100,6 +101,30 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetCreatorMemberAbilities()
         {
             return this._creatorMemberAbilities != null && (this._creatorMemberAbilities.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatorMLMemberAbilities. 
+        /// <para>
+        /// The ML abilities granted to the collaboration creator.
+        /// </para>
+        ///  
+        /// <para>
+        /// Custom ML modeling is in beta release and is subject to change. For beta terms and
+        /// conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon
+        /// Web Services Service Terms</a>.
+        /// </para>
+        /// </summary>
+        public MLMemberAbilities CreatorMLMemberAbilities
+        {
+            get { return this._creatormlMemberAbilities; }
+            set { this._creatormlMemberAbilities = value; }
+        }
+
+        // Check to see if CreatorMLMemberAbilities property is set
+        internal bool IsSetCreatorMLMemberAbilities()
+        {
+            return this._creatormlMemberAbilities != null;
         }
 
         /// <summary>

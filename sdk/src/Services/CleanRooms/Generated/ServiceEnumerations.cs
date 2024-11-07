@@ -795,6 +795,56 @@ namespace Amazon.CleanRooms
 
 
     /// <summary>
+    /// Constants used for properties of type CustomMLMemberAbility.
+    /// </summary>
+    public class CustomMLMemberAbility : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CAN_RECEIVE_INFERENCE_OUTPUT for CustomMLMemberAbility
+        /// </summary>
+        public static readonly CustomMLMemberAbility CAN_RECEIVE_INFERENCE_OUTPUT = new CustomMLMemberAbility("CAN_RECEIVE_INFERENCE_OUTPUT");
+        /// <summary>
+        /// Constant CAN_RECEIVE_MODEL_OUTPUT for CustomMLMemberAbility
+        /// </summary>
+        public static readonly CustomMLMemberAbility CAN_RECEIVE_MODEL_OUTPUT = new CustomMLMemberAbility("CAN_RECEIVE_MODEL_OUTPUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CustomMLMemberAbility(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CustomMLMemberAbility FindValue(string value)
+        {
+            return FindValue<CustomMLMemberAbility>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CustomMLMemberAbility(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DifferentialPrivacyAggregationType.
     /// </summary>
     public class DifferentialPrivacyAggregationType : ConstantClass

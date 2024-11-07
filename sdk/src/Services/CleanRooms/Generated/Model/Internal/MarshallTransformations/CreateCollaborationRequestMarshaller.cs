@@ -90,6 +90,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetCreatorMLMemberAbilities())
+                {
+                    context.Writer.WritePropertyName("creatorMLMemberAbilities");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MLMemberAbilitiesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CreatorMLMemberAbilities, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetCreatorPaymentConfiguration())
                 {
                     context.Writer.WritePropertyName("creatorPaymentConfiguration");
