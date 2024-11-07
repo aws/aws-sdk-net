@@ -37,6 +37,11 @@ namespace Amazon.ResourceExplorer2.Model
         IListIndexesForMembersPaginator ListIndexesForMembers(ListIndexesForMembersRequest request);
 
         /// <summary>
+        /// Paginator for ListManagedViews operation
+        ///</summary>
+        IListManagedViewsPaginator ListManagedViews(ListManagedViewsRequest request);
+
+        /// <summary>
         /// Paginator for ListResources operation
         ///</summary>
         IListResourcesPaginator ListResources(ListResourcesRequest request);

@@ -159,7 +159,7 @@ namespace Amazon.ResourceExplorer2.Model
         /// <summary>
         /// Gets and sets the property Service. 
         /// <para>
-        /// The Amazon Web Servicesservice that owns the resource and is responsible for creating
+        /// The Amazon Web Services service that owns the resource and is responsible for creating
         /// and updating it.
         /// </para>
         /// </summary>
