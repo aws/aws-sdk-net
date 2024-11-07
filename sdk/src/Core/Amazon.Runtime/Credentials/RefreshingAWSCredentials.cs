@@ -51,18 +51,14 @@ namespace Amazon.Runtime
 
             internal bool IsExpiredWithin(TimeSpan preemptExpiryTime)
             {
-#pragma warning disable CS0612,CS0618 // Type or member is obsolete
                 var now = AWSSDKUtils.CorrectedUtcNow;
-#pragma warning restore CS0612,CS0618 // Type or member is obsolete
                 var exp = Expiration.ToUniversalTime();
                 return (now > exp - preemptExpiryTime);
             }
 
             internal TimeSpan GetTimeToLive(TimeSpan preemptExpiryTime)
             {
-#pragma warning disable CS0612,CS0618 // Type or member is obsolete
                 var now = AWSSDKUtils.CorrectedUtcNow;
-#pragma warning restore CS0612,CS0618 // Type or member is obsolete
                 var exp = Expiration.ToUniversalTime();
 
                 return exp - now + preemptExpiryTime;
@@ -240,9 +236,7 @@ namespace Amazon.Runtime
                 {
                     errorMessage = string.Format(CultureInfo.InvariantCulture,
                         "The retrieved credentials have already expired: Now = {0}, Credentials expiration = {1}",
-#pragma warning disable CS0612,CS0618 // Type or member is obsolete
                         AWSSDKUtils.CorrectedUtcNow.ToLocalTime(), state.Expiration);
-#pragma warning restore CS0612,CS0618 // Type or member is obsolete
                 }
 
                 throw new AmazonClientException(errorMessage);
@@ -259,9 +253,7 @@ namespace Amazon.Runtime
                 var logger = Logger.GetLogger(typeof(RefreshingAWSCredentials));
                 logger.InfoFormat(
                     "The preempt expiry time is set too high: Current time = {0}, Credentials expiry time = {1}, Preempt expiry time = {2}.",
-#pragma warning disable CS0612,CS0618 // Type or member is obsolete
                     AWSSDKUtils.CorrectedUtcNow.ToLocalTime(),
-#pragma warning restore CS0612,CS0618 // Type or member is obsolete
                     state.Expiration, preemptExpiryTime);
             }
         }
@@ -298,12 +290,10 @@ namespace Amazon.Runtime
             var isExpired = state?.IsExpiredWithin(TimeSpan.Zero);
             if (isExpired == true)
             {
-#pragma warning disable CS0612,CS0618 // Type or member is obsolete
                 var logger = Logger.GetLogger(typeof(RefreshingAWSCredentials));
                 logger.InfoFormat("Determined refreshing credentials should update. Expiration time: {0}, Current time: {1}",
                                 state.Expiration.Add(preemptExpiryTime).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture),
                                 AWSSDKUtils.CorrectedUtcNow.ToString("yyyy-MM-ddTHH:mm:ss.fffffffK", CultureInfo.InvariantCulture));
-#pragma warning restore CS0612,CS0618 // Type or member is obsolete
             }
 
             return isExpired ?? true;
