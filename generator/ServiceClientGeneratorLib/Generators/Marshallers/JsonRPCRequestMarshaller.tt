@@ -93,14 +93,11 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 	if (this.Operation.RequestHasBodyMembers || shouldMarshallPayload)
 	{
 #>
-#if !NETCOREAPP3_1_OR_GREATER
-			
-            using var memoryStream = new MemoryStream();
-#endif
 #if NETCOREAPP3_1_OR_GREATER
 			ArrayBufferWriter<byte> arrayBufferWriter = new ArrayBufferWriter<byte>();
 			using Utf8JsonWriter writer = new Utf8JsonWriter(arrayBufferWriter);
 #else
+            using var memoryStream = new MemoryStream();
 			using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
 #endif
 <#		
@@ -127,10 +124,10 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 <#
 		}
 #>
-#if !NETCOREAPP3_1_OR_GREATER
-			request.Content = memoryStream.ToArray();
-#else
+#if NETCOREAPP3_1_OR_GREATER
             request.Content = arrayBufferWriter.WrittenMemory.ToArray();
+#else
+			request.Content = memoryStream.ToArray();
 #endif
 <#
 			GenerateRequestChecksumHandling(this.Operation, "snippet");
