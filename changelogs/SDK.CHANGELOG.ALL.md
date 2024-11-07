@@ -1,3 +1,24 @@
+### 3.7.921.0 (2024-11-07 19:40 UTC)
+* AutoScaling (3.7.404.0)
+	* Auto Scaling groups now support the ability to strictly balance instances across Availability Zones by configuring the AvailabilityZoneDistribution parameter. If balanced-only is configured for a group, launches will always be attempted in the under scaled Availability Zone even if it is unhealthy.
+* BedrockAgent (3.7.409.0)
+	* Add prompt support for chat template configuration and agent generative AI resource. Add support for configuring an optional guardrail in Prompt and Knowledge Base nodes in Prompt Flows. Add API to validate flow definition
+* BedrockRuntime (3.7.408.0)
+	* Add Prompt management support to Bedrock runtime APIs: Converse, ConverseStream, InvokeModel, InvokeModelWithStreamingResponse
+* CleanRooms (3.7.402.0)
+	* This release introduces support for Custom Models in AWS Clean Rooms ML.
+* CleanRoomsML (3.7.401.0)
+	* This release introduces support for Custom Models in AWS Clean Rooms ML.
+* QuickSight (3.7.408.0)
+	* Add Client Credentials based OAuth support for Snowflake and Starburst
+* ResourceExplorer2 (3.7.402.0)
+	* Add GetManagedView, ListManagedViews APIs.
+* Synthetics (3.7.402.0)
+	* Add support to toggle if a canary will automatically delete provisioned canary resources such as Lambda functions and layers when a canary is deleted.  This behavior can be controlled via the new ProvisionedResourceCleanup property exposed in the CreateCanary and UpdateCanary APIs.
+* Core 3.7.400.46
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.920.0 (2024-11-06 19:19 UTC)
 * CodeBuild (3.7.406.0)
 	* AWS CodeBuild now adds additional compute types for reserved capacity fleet.
