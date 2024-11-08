@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// An object that represents a launch template that's associated with a compute resource.
-    /// You must specify either the launch template ID or launch template name in the request,
-    /// but not both.
+    /// An object that represents a launch template to use in place of the default launch
+    /// template. You must specify either the launch template ID or launch template name in
+    /// the request, but not both.
     /// 
     ///  
     /// <para>
@@ -40,23 +40,39 @@ namespace Amazon.Batch.Model
     /// of <c>CreateComputeEnvironment</c> and the launch template, the values in the <c>securityGroupIds</c>
     /// parameter of <c>CreateComputeEnvironment</c> will be used.
     /// </para>
+    ///  
+    /// <para>
+    /// You can define up to ten (10) overrides for each compute environment.
+    /// </para>
     ///  <note> 
     /// <para>
     /// This object isn't applicable to jobs that are running on Fargate resources.
     /// </para>
+    ///  </note> <note> 
+    /// <para>
+    /// To unset all override templates for a compute environment, you can pass an empty array
+    /// to the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateComputeEnvironment.html">UpdateComputeEnvironment.overrides</a>
+    /// parameter, or not include the <c>overrides</c> parameter when submitting the <c>UpdateComputeEnvironment</c>
+    /// API operation.
+    /// </para>
     ///  </note>
     /// </summary>
-    public partial class LaunchTemplateSpecification
+    public partial class LaunchTemplateSpecificationOverride
     {
         private string _launchTemplateId;
         private string _launchTemplateName;
-        private List<LaunchTemplateSpecificationOverride> _overrides = AWSConfigs.InitializeCollections ? new List<LaunchTemplateSpecificationOverride>() : null;
+        private List<string> _targetInstanceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _version;
 
         /// <summary>
         /// Gets and sets the property LaunchTemplateId. 
         /// <para>
         /// The ID of the launch template.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Note:</b> If you specify the <c>launchTemplateId</c> you can't specify the <c>launchTemplateName</c>
+        /// as well.
         /// </para>
         /// </summary>
         public string LaunchTemplateId
@@ -76,6 +92,11 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The name of the launch template.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Note:</b> If you specify the <c>launchTemplateName</c> you can't specify the <c>launchTemplateId</c>
+        /// as well.
+        /// </para>
         /// </summary>
         public string LaunchTemplateName
         {
@@ -90,35 +111,56 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Overrides. 
+        /// Gets and sets the property TargetInstanceTypes. 
         /// <para>
-        /// A launch template to use in place of the default launch template. You must specify
-        /// either the launch template ID or launch template name in the request, but not both.
+        /// The instance type or family that this this override launch template should be applied
+        /// to.
         /// </para>
         ///  
         /// <para>
-        /// You can specify up to ten (10) launch template overrides that are associated to unique
-        /// instance types or families for each compute environment.
+        /// This parameter is required when defining a launch template override.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
-        /// To unset all override templates for a compute environment, you can pass an empty array
-        /// to the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateComputeEnvironment.html">UpdateComputeEnvironment.overrides</a>
-        /// parameter, or not include the <c>overrides</c> parameter when submitting the <c>UpdateComputeEnvironment</c>
-        /// API operation.
+        /// Information included in this parameter must meet the following requirements:
         /// </para>
-        ///  </note>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must be a valid Amazon EC2 instance type or family.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>optimal</c> isn't allowed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>targetInstanceTypes</c> can target only instance types and families that are included
+        /// within the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_ComputeResource.html#Batch-Type-ComputeResource-instanceTypes">
+        /// <c>ComputeResource.instanceTypes</c> </a> set. <c>targetInstanceTypes</c> doesn't
+        /// need to include all of the instances from the <c>instanceType</c> set, but at least
+        /// a subset. For example, if <c>ComputeResource.instanceTypes</c> includes <c>[m5, g5]</c>,
+        /// <c>targetInstanceTypes</c> can include <c>[m5.2xlarge]</c> and <c>[m5.large]</c> but
+        /// not <c>[c5.large]</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>targetInstanceTypes</c> included within the same launch template override or across
+        /// launch template overrides can't overlap for the same compute environment. For example,
+        /// you can't define one launch template override to target an instance family and another
+        /// define an instance type within this same family.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
-        public List<LaunchTemplateSpecificationOverride> Overrides
+        public List<string> TargetInstanceTypes
         {
-            get { return this._overrides; }
-            set { this._overrides = value; }
+            get { return this._targetInstanceTypes; }
+            set { this._targetInstanceTypes = value; }
         }
 
-        // Check to see if Overrides property is set
-        internal bool IsSetOverrides()
+        // Check to see if TargetInstanceTypes property is set
+        internal bool IsSetTargetInstanceTypes()
         {
-            return this._overrides != null && (this._overrides.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._targetInstanceTypes != null && (this._targetInstanceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

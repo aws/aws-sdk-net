@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LaunchTemplateSpecification Object
+    /// Response Unmarshaller for LaunchTemplateSpecificationOverride Object
     /// </summary>  
-    public class LaunchTemplateSpecificationUnmarshaller : IUnmarshaller<LaunchTemplateSpecification, XmlUnmarshallerContext>, IUnmarshaller<LaunchTemplateSpecification, JsonUnmarshallerContext>
+    public class LaunchTemplateSpecificationOverrideUnmarshaller : IUnmarshaller<LaunchTemplateSpecificationOverride, XmlUnmarshallerContext>, IUnmarshaller<LaunchTemplateSpecificationOverride, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        LaunchTemplateSpecification IUnmarshaller<LaunchTemplateSpecification, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        LaunchTemplateSpecificationOverride IUnmarshaller<LaunchTemplateSpecificationOverride, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public LaunchTemplateSpecification Unmarshall(JsonUnmarshallerContext context)
+        public LaunchTemplateSpecificationOverride Unmarshall(JsonUnmarshallerContext context)
         {
-            LaunchTemplateSpecification unmarshalledObject = new LaunchTemplateSpecification();
+            LaunchTemplateSpecificationOverride unmarshalledObject = new LaunchTemplateSpecificationOverride();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -78,10 +78,10 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.LaunchTemplateName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("overrides", targetDepth))
+                if (context.TestExpression("targetInstanceTypes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<LaunchTemplateSpecificationOverride, LaunchTemplateSpecificationOverrideUnmarshaller>(LaunchTemplateSpecificationOverrideUnmarshaller.Instance);
-                    unmarshalledObject.Overrides = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.TargetInstanceTypes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("version", targetDepth))
@@ -95,12 +95,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         }
 
 
-        private static LaunchTemplateSpecificationUnmarshaller _instance = new LaunchTemplateSpecificationUnmarshaller();        
+        private static LaunchTemplateSpecificationOverrideUnmarshaller _instance = new LaunchTemplateSpecificationOverrideUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LaunchTemplateSpecificationUnmarshaller Instance
+        public static LaunchTemplateSpecificationOverrideUnmarshaller Instance
         {
             get
             {

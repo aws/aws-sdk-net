@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// LaunchTemplateSpecification Marshaller
+    /// LaunchTemplateSpecificationOverride Marshaller
     /// </summary>
-    public class LaunchTemplateSpecificationMarshaller : IRequestMarshaller<LaunchTemplateSpecification, JsonMarshallerContext> 
+    public class LaunchTemplateSpecificationOverrideMarshaller : IRequestMarshaller<LaunchTemplateSpecificationOverride, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,7 +44,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(LaunchTemplateSpecification requestObject, JsonMarshallerContext context)
+        public void Marshall(LaunchTemplateSpecificationOverride requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
@@ -60,18 +60,13 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.LaunchTemplateName);
             }
 
-            if(requestObject.IsSetOverrides())
+            if(requestObject.IsSetTargetInstanceTypes())
             {
-                context.Writer.WritePropertyName("overrides");
+                context.Writer.WritePropertyName("targetInstanceTypes");
                 context.Writer.WriteArrayStart();
-                foreach(var requestObjectOverridesListValue in requestObject.Overrides)
+                foreach(var requestObjectTargetInstanceTypesListValue in requestObject.TargetInstanceTypes)
                 {
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LaunchTemplateSpecificationOverrideMarshaller.Instance;
-                    marshaller.Marshall(requestObjectOverridesListValue, context);
-
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.Write(requestObjectTargetInstanceTypesListValue);
                 }
                 context.Writer.WriteArrayEnd();
             }
@@ -87,7 +82,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static LaunchTemplateSpecificationMarshaller Instance = new LaunchTemplateSpecificationMarshaller();
+        public readonly static LaunchTemplateSpecificationOverrideMarshaller Instance = new LaunchTemplateSpecificationOverrideMarshaller();
 
     }
 }
