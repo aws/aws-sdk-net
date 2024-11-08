@@ -64,19 +64,16 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>DRAFT</c>: The initial status of a registration version after it’s created.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>SUBMITTED</c>: Your registration has been submitted.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>REVIEWING</c>: Your registration has been accepted and is being reviewed.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <c>APPROVED</c>: Your registration has been approved.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ARCHIVED</c>: Your previously approved registration version moves into this status
+        /// when a more recently submitted version is approved.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DENIED</c>: You must fix your registration and resubmit it.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -85,7 +82,15 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>DENIED</c>: You must fix your registration and resubmit it.
+        ///  <c>DRAFT</c>: The initial status of a registration version after it’s created.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>REQUIRES_AUTHENTICATION</c>: You need to complete email authentication.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>REVIEWING</c>: Your registration has been accepted and is being reviewed.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -93,8 +98,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ARCHIVED</c>: Your previously approved registration version moves into this status
-        /// when a more recently submitted version is approved.
+        ///  <c>SUBMITTED</c>: Your registration has been submitted.
         /// </para>
         ///  </li> </ul>
         /// </summary>
