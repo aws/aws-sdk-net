@@ -89,7 +89,7 @@ namespace Amazon.AutoScaling
         ///
         /// </summary>
         public AmazonAutoScalingClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAutoScalingConfig()) { }
+            : base(new AmazonAutoScalingConfig()) { }
 
         /// <summary>
         /// Constructs AmazonAutoScalingClient with the credentials loaded from the application's
@@ -108,7 +108,7 @@ namespace Amazon.AutoScaling
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonAutoScalingClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAutoScalingConfig{RegionEndpoint = region}) { }
+            : base(new AmazonAutoScalingConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonAutoScalingClient with the credentials loaded from the application's
@@ -127,7 +127,7 @@ namespace Amazon.AutoScaling
         /// </summary>
         /// <param name="config">The AmazonAutoScalingClient Configuration Object</param>
         public AmazonAutoScalingClient(AmazonAutoScalingConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonAutoScalingClient with AWS Credentials
