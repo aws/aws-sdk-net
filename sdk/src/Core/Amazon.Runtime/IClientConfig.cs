@@ -60,6 +60,7 @@ namespace Amazon.Runtime
         /// <summary>
         /// Gets the configuration for identity resolvers used by the service client, which manages
         /// the resolvers used to obtain various types of identities.
+        /// Use this to retrieve and manage specific identity resolvers based on the required identity type.
         /// <para />
         /// See <see cref="DefaultIdentityResolverConfiguration"/> for additional information.
         /// </summary>
