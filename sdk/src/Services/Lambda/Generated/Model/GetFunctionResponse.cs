@@ -99,7 +99,7 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.
-        /// Lambda returns tag data only if you have explicit allow permissions for <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/lambda/latest/api/API_ListTags.html">lambda:ListTags</a>.
+        /// Lambda returns tag data only if you have explicit allow permissions for <a href="https://docs.aws.amazon.com/lambda/latest/api/API_ListTags.html">lambda:ListTags</a>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
