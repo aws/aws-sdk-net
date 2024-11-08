@@ -14,11 +14,13 @@
  */
 using System;
 using System.Net;
+using Smithy.Identity.Abstractions;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Endpoints;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Util;
 using Amazon.Runtime.Telemetry;
+using Amazon.Runtime.Credentials.Internal.IdentityResolvers;
 #if NETSTANDARD
 using System.Net.Http;
 #endif
@@ -54,6 +56,15 @@ namespace Amazon.Runtime
         /// If set, this will override AWS_PROFILE and AWSConfigs.ProfileName.
         /// </summary>
         Profile Profile { get; }
+
+        /// <summary>
+        /// Gets the configuration for identity resolvers used by the service client, which manages
+        /// the resolvers used to obtain various types of identities.
+        /// Use this to retrieve and manage specific identity resolvers based on the required identity type.
+        /// <para />
+        /// See <see cref="DefaultIdentityResolverConfiguration"/> for additional information.
+        /// </summary>
+        IIdentityResolverConfiguration IdentityResolverConfiguration { get; }
 
         /// <summary>
         /// For Services using Bearer authentication, this controls how <see cref="BearerTokenSigner"/>
