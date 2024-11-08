@@ -16,10 +16,11 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading;
-
-
-using Amazon.Util;
 using System.Globalization;
+
+
+using Smithy.Identity.Abstractions;
+using Amazon.Util;
 using Amazon.Internal;
 using Amazon.Runtime.Endpoints;
 using Amazon.Runtime.Internal;
@@ -27,6 +28,7 @@ using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.CredentialManagement;
 using Amazon.Runtime.Internal.Settings;
 using Amazon.Runtime.Telemetry;
+using Amazon.Runtime.Credentials.Internal.IdentityResolvers;
 
 #if NETSTANDARD
 using System.Runtime.InteropServices;
@@ -88,6 +90,7 @@ namespace Amazon.Runtime
         private const int MaxRetriesDefault = 2;
         private const long DefaultMinCompressionSizeBytes = 10240;
         private bool didProcessServiceURL = false;
+        private IIdentityResolverConfiguration _identityResolverConfiguration = DefaultIdentityResolverConfiguration.Instance;
         private IAWSTokenProvider _awsTokenProvider = new DefaultAWSTokenProviderChain();
         private TelemetryProvider telemetryProvider = AWSConfigs.TelemetryProvider;
         private AccountIdEndpointMode? accountIdEndpointMode = null;
@@ -179,8 +182,15 @@ namespace Amazon.Runtime
 
             return null;
         }
+        /// <inheritdoc />
+        public IIdentityResolverConfiguration IdentityResolverConfiguration
+        {
+            get { return this._identityResolverConfiguration; }
+            set { this._identityResolverConfiguration = value; }
+        }
 
         /// <inheritdoc />
+        [Obsolete("This property is deprecated in favor of the new Identity resolvers configured through IdentityResolverConfiguration.")]
         public IAWSTokenProvider AWSTokenProvider
         {
             get { return this._awsTokenProvider; }
@@ -335,7 +345,7 @@ namespace Amazon.Runtime
                         }
                         else
                         {
-                            CredentialProfileStoreChain.TryGetProfile(FallbackCredentialsFactory.GetProfileName(), out profile);
+                            CredentialProfileStoreChain.TryGetProfile(DefaultAWSCredentialsIdentityResolver.GetProfileName(), out profile);
                         }
                         if(profile != null)
                         {
