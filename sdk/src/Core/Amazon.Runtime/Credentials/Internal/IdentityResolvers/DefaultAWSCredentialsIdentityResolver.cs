@@ -150,7 +150,7 @@ namespace Amazon.Runtime.Credentials.Internal.IdentityResolvers
             throw new AmazonClientException($"Unable to find the \"{profileName}\" profile in CredentialProfileStoreChain.");
         }
 
-        private static string GetProfileName()
+        internal static string GetProfileName()
         {
             var profileName = AWSConfigs.AWSProfileName;
 
