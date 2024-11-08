@@ -109,6 +109,12 @@
     <pattern>arn:(aws(?:[-a-z]*)?):controlcatalog:::domain/[0-9a-z]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ControlCatalog.Model.ImplementationDetails.Type</property>
+    <min>7</min>
+    <max>2048</max>
+    <pattern>[A-Za-z0-9]+(::[A-Za-z0-9_]+){2,3}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ControlCatalog.Model.ObjectiveResourceFilter.Arn</property>
     <min>36</min>
     <max>2048</max>
