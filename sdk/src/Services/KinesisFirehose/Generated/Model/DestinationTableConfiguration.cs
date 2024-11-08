@@ -30,17 +30,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// Describes the configuration of a destination in Apache Iceberg Tables. 
-    /// 
-    ///  
-    /// <para>
-    /// Amazon Data Firehose is in preview release and is subject to change.
-    /// </para>
+    /// Describes the configuration of a destination in Apache Iceberg Tables.
     /// </summary>
     public partial class DestinationTableConfiguration
     {
         private string _destinationDatabaseName;
         private string _destinationTableName;
+        private PartitionSpec _partitionSpec;
         private string _s3ErrorOutputPrefix;
         private List<string> _uniqueKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
@@ -49,12 +45,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <para>
         ///  The name of the Apache Iceberg database. 
         /// </para>
-        ///  
-        /// <para>
-        /// Amazon Data Firehose is in preview release and is subject to change.
-        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string DestinationDatabaseName
         {
             get { return this._destinationDatabaseName; }
@@ -72,12 +64,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <para>
         ///  Specifies the name of the Apache Iceberg Table. 
         /// </para>
-        ///  
-        /// <para>
-        /// Amazon Data Firehose is in preview release and is subject to change.
-        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string DestinationTableName
         {
             get { return this._destinationTableName; }
@@ -91,14 +79,32 @@ namespace Amazon.KinesisFirehose.Model
         }
 
         /// <summary>
-        /// Gets and sets the property S3ErrorOutputPrefix. 
+        /// Gets and sets the property PartitionSpec. 
         /// <para>
-        ///  The table specific S3 error output prefix. All the errors that occurred while delivering
-        /// to this table will be prefixed with this value in S3 destination. 
+        ///  
         /// </para>
         ///  
         /// <para>
         /// Amazon Data Firehose is in preview release and is subject to change.
+        /// </para>
+        /// </summary>
+        public PartitionSpec PartitionSpec
+        {
+            get { return this._partitionSpec; }
+            set { this._partitionSpec = value; }
+        }
+
+        // Check to see if PartitionSpec property is set
+        internal bool IsSetPartitionSpec()
+        {
+            return this._partitionSpec != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3ErrorOutputPrefix. 
+        /// <para>
+        ///  The table specific S3 error output prefix. All the errors that occurred while delivering
+        /// to this table will be prefixed with this value in S3 destination. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -118,11 +124,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property UniqueKeys. 
         /// <para>
         ///  A list of unique keys for a given Apache Iceberg table. Firehose will use these for
-        /// running Create/Update/Delete operations on the given Iceberg table. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Amazon Data Firehose is in preview release and is subject to change.
+        /// running Create, Update, or Delete operations on the given Iceberg table. 
         /// </para>
         /// </summary>
         public List<string> UniqueKeys

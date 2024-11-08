@@ -61,8 +61,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property SizeInMBs. 
         /// <para>
-        ///  Buffer incoming data to the specified size, in MBs, before delivering it to the destination.
-        /// The default value is 1. 
+        /// Buffer incoming data to the specified size, in MBs, before delivering it to the destination.
+        /// The default value is 128. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// The unit of data in a delivery stream.
+    /// The unit of data in a Firehose stream.
     /// </summary>
     public partial class Record
     {

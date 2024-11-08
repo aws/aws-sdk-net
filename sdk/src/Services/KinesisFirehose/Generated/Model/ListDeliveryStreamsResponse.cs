@@ -40,7 +40,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property DeliveryStreamNames. 
         /// <para>
-        /// The names of the delivery streams.
+        /// The names of the Firehose streams.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +59,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property HasMoreDeliveryStreams. 
         /// <para>
-        /// Indicates whether there are more delivery streams available to list.
+        /// Indicates whether there are more Firehose streams available to list.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -91,6 +91,17 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetDatabaseSourceConfiguration())
+                {
+                    context.Writer.WritePropertyName("DatabaseSourceConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DatabaseSourceConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DatabaseSourceConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDeliveryStreamEncryptionConfigurationInput())
                 {
                     context.Writer.WritePropertyName("DeliveryStreamEncryptionConfigurationInput");

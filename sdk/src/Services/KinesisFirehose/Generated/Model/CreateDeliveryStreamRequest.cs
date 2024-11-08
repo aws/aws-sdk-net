@@ -31,45 +31,44 @@ namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDeliveryStream operation.
-    /// Creates a Firehose delivery stream.
+    /// Creates a Firehose stream.
     /// 
     ///  
     /// <para>
-    /// By default, you can create up to 50 delivery streams per Amazon Web Services Region.
+    /// By default, you can create up to 50 Firehose streams per Amazon Web Services Region.
     /// </para>
     ///  
     /// <para>
     /// This is an asynchronous operation that immediately returns. The initial status of
-    /// the delivery stream is <c>CREATING</c>. After the delivery stream is created, its
-    /// status is <c>ACTIVE</c> and it now accepts data. If the delivery stream creation fails,
+    /// the Firehose stream is <c>CREATING</c>. After the Firehose stream is created, its
+    /// status is <c>ACTIVE</c> and it now accepts data. If the Firehose stream creation fails,
     /// the status transitions to <c>CREATING_FAILED</c>. Attempts to send data to a delivery
     /// stream that is not in the <c>ACTIVE</c> state cause an exception. To check the state
-    /// of a delivery stream, use <a>DescribeDeliveryStream</a>.
+    /// of a Firehose stream, use <a>DescribeDeliveryStream</a>.
     /// </para>
     ///  
     /// <para>
-    /// If the status of a delivery stream is <c>CREATING_FAILED</c>, this status doesn't
+    /// If the status of a Firehose stream is <c>CREATING_FAILED</c>, this status doesn't
     /// change, and you can't invoke <c>CreateDeliveryStream</c> again on it. However, you
     /// can invoke the <a>DeleteDeliveryStream</a> operation to delete it.
     /// </para>
     ///  
     /// <para>
-    /// A Firehose delivery stream can be configured to receive records directly from providers
-    /// using <a>PutRecord</a> or <a>PutRecordBatch</a>, or it can be configured to use an
-    /// existing Kinesis stream as its source. To specify a Kinesis data stream as input,
-    /// set the <c>DeliveryStreamType</c> parameter to <c>KinesisStreamAsSource</c>, and provide
-    /// the Kinesis stream Amazon Resource Name (ARN) and role ARN in the <c>KinesisStreamSourceConfiguration</c>
-    /// parameter.
+    /// A Firehose stream can be configured to receive records directly from providers using
+    /// <a>PutRecord</a> or <a>PutRecordBatch</a>, or it can be configured to use an existing
+    /// Kinesis stream as its source. To specify a Kinesis data stream as input, set the <c>DeliveryStreamType</c>
+    /// parameter to <c>KinesisStreamAsSource</c>, and provide the Kinesis stream Amazon Resource
+    /// Name (ARN) and role ARN in the <c>KinesisStreamSourceConfiguration</c> parameter.
     /// </para>
     ///  
     /// <para>
-    /// To create a delivery stream with server-side encryption (SSE) enabled, include <a>DeliveryStreamEncryptionConfigurationInput</a>
+    /// To create a Firehose stream with server-side encryption (SSE) enabled, include <a>DeliveryStreamEncryptionConfigurationInput</a>
     /// in your request. This is optional. You can also invoke <a>StartDeliveryStreamEncryption</a>
-    /// to turn on SSE for an existing delivery stream that doesn't have SSE enabled.
+    /// to turn on SSE for an existing Firehose stream that doesn't have SSE enabled.
     /// </para>
     ///  
     /// <para>
-    /// A delivery stream is configured with a single destination, such as Amazon Simple Storage
+    /// A Firehose stream is configured with a single destination, such as Amazon Simple Storage
     /// Service (Amazon S3), Amazon Redshift, Amazon OpenSearch Service, Amazon OpenSearch
     /// Serverless, Splunk, and any custom HTTP endpoint or HTTP endpoints owned by or supported
     /// by third-party service providers, including Datadog, Dynatrace, LogicMonitor, MongoDB,
@@ -126,6 +125,7 @@ namespace Amazon.KinesisFirehose.Model
     {
         private AmazonOpenSearchServerlessDestinationConfiguration _amazonOpenSearchServerlessDestinationConfiguration;
         private AmazonopensearchserviceDestinationConfiguration _amazonopensearchserviceDestinationConfiguration;
+        private DatabaseSourceConfiguration _databaseSourceConfiguration;
         private DeliveryStreamEncryptionConfigurationInput _deliveryStreamEncryptionConfigurationInput;
         private string _deliveryStreamName;
         private DeliveryStreamType _deliveryStreamType;
@@ -179,6 +179,28 @@ namespace Amazon.KinesisFirehose.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DatabaseSourceConfiguration. 
+        /// <para>
+        ///  
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Data Firehose is in preview release and is subject to change.
+        /// </para>
+        /// </summary>
+        public DatabaseSourceConfiguration DatabaseSourceConfiguration
+        {
+            get { return this._databaseSourceConfiguration; }
+            set { this._databaseSourceConfiguration = value; }
+        }
+
+        // Check to see if DatabaseSourceConfiguration property is set
+        internal bool IsSetDatabaseSourceConfiguration()
+        {
+            return this._databaseSourceConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DeliveryStreamEncryptionConfigurationInput. 
         /// <para>
         /// Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for
@@ -200,9 +222,9 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property DeliveryStreamName. 
         /// <para>
-        /// The name of the delivery stream. This name must be unique per Amazon Web Services
-        /// account in the same Amazon Web Services Region. If the delivery streams are in different
-        /// accounts or different Regions, you can have multiple delivery streams with the same
+        /// The name of the Firehose stream. This name must be unique per Amazon Web Services
+        /// account in the same Amazon Web Services Region. If the Firehose streams are in different
+        /// accounts or different Regions, you can have multiple Firehose streams with the same
         /// name.
         /// </para>
         /// </summary>
@@ -222,15 +244,15 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property DeliveryStreamType. 
         /// <para>
-        /// The delivery stream type. This parameter can be one of the following values:
+        /// The Firehose stream type. This parameter can be one of the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>DirectPut</c>: Provider applications access the delivery stream directly.
+        ///  <c>DirectPut</c>: Provider applications access the Firehose stream directly.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>KinesisStreamAsSource</c>: The delivery stream uses a Kinesis data stream as a
+        ///  <c>KinesisStreamAsSource</c>: The Firehose stream uses a Kinesis data stream as a
         /// source.
         /// </para>
         ///  </li> </ul>
@@ -307,10 +329,6 @@ namespace Amazon.KinesisFirehose.Model
         /// <para>
         ///  Configure Apache Iceberg Tables destination. 
         /// </para>
-        ///  
-        /// <para>
-        /// Amazon Data Firehose is in preview release and is subject to change.
-        /// </para>
         /// </summary>
         public IcebergDestinationConfiguration IcebergDestinationConfiguration
         {
@@ -327,7 +345,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property KinesisStreamSourceConfiguration. 
         /// <para>
-        /// When a Kinesis data stream is used as the source for the delivery stream, a <a>KinesisStreamSourceConfiguration</a>
+        /// When a Kinesis data stream is used as the source for the Firehose stream, a <a>KinesisStreamSourceConfiguration</a>
         /// containing the Kinesis data stream Amazon Resource Name (ARN) and the role ARN for
         /// the source stream.
         /// </para>
@@ -435,24 +453,24 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A set of tags to assign to the delivery stream. A tag is a key-value pair that you
+        /// A set of tags to assign to the Firehose stream. A tag is a key-value pair that you
         /// can define and assign to Amazon Web Services resources. Tags are metadata. For example,
         /// you can add friendly names and descriptions or other types of information that can
-        /// help you distinguish the delivery stream. For more information about tags, see <a
+        /// help you distinguish the Firehose stream. For more information about tags, see <a
         /// href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
         /// Cost Allocation Tags</a> in the Amazon Web Services Billing and Cost Management User
         /// Guide.
         /// </para>
         ///  
         /// <para>
-        /// You can specify up to 50 tags when creating a delivery stream.
+        /// You can specify up to 50 tags when creating a Firehose stream.
         /// </para>
         ///  
         /// <para>
         /// If you specify tags in the <c>CreateDeliveryStream</c> action, Amazon Data Firehose
         /// performs an additional authorization on the <c>firehose:TagDeliveryStream</c> action
         /// to verify if users have permissions to create tags. If you do not provide this permission,
-        /// requests to create new Firehose delivery streams with IAM resource tags will fail
+        /// requests to create new Firehose Firehose streams with IAM resource tags will fail
         /// with an <c>AccessDeniedException</c> such as following.
         /// </para>
         ///  
