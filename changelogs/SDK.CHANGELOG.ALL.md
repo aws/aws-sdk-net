@@ -1,3 +1,26 @@
+### 3.7.922.0 (2024-11-08 19:30 UTC)
+* Batch (3.7.403.0)
+	* This feature allows override LaunchTemplates to be specified in an AWS Batch Compute Environment.
+* BedrockAgentRuntime (3.7.407.0)
+	* This release adds trace functionality to Bedrock Prompt Flows
+* ChimeSDKMediaPipelines (3.7.401.0)
+	* Added support for Media Capture Pipeline and Media Concatenation Pipeline for customer managed server side encryption. Now Media Capture Pipeline can use IAM sink role to get access to KMS key and encrypt/decrypt recorded artifacts. KMS key ID can also be supplied with encryption context.
+* ControlCatalog (3.7.402.0)
+	* AWS Control Catalog GetControl public API returns additional data in output, including Implementation and Parameters
+* EKS (3.7.404.0)
+	* Adds new error code `Ec2InstanceTypeDoesNotExist` for Amazon EKS managed node groups
+* KinesisFirehose (3.7.401.0)
+	* Amazon Data Firehose / Features : Adds support for a new DeliveryStreamType, DatabaseAsSource. DatabaseAsSource hoses allow customers to stream CDC events from their RDS and Amazon EC2 hosted databases, running MySQL and PostgreSQL database engines, to Iceberg Table destinations.
+* Lambda (3.7.407.0)
+	* This release adds support for using AWS KMS customer managed keys to encrypt AWS Lambda .zip deployment packages.
+* PinpointSMSVoiceV2 (3.7.403.0)
+	* Added the RequiresAuthenticationTimestamp field to the RegistrationVersionStatusHistory data type.
+* QBusiness (3.7.404.0)
+	* Adds S3 path option to pass group member list for PutGroup API.
+* Core 3.7.400.47
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.921.0 (2024-11-07 19:40 UTC)
 * AutoScaling (3.7.404.0)
 	* Auto Scaling groups now support the ability to strictly balance instances across Availability Zones by configuring the AvailabilityZoneDistribution parameter. If balanced-only is configured for a group, launches will always be attempted in the under scaled Availability Zone even if it is unhealthy.
