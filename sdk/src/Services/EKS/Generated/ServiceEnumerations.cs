@@ -1407,6 +1407,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly NodegroupIssueCode ClusterUnreachable = new NodegroupIssueCode("ClusterUnreachable");
         /// <summary>
+        /// Constant Ec2InstanceTypeDoesNotExist for NodegroupIssueCode
+        /// </summary>
+        public static readonly NodegroupIssueCode Ec2InstanceTypeDoesNotExist = new NodegroupIssueCode("Ec2InstanceTypeDoesNotExist");
+        /// <summary>
         /// Constant Ec2LaunchTemplateDeletionFailure for NodegroupIssueCode
         /// </summary>
         public static readonly NodegroupIssueCode Ec2LaunchTemplateDeletionFailure = new NodegroupIssueCode("Ec2LaunchTemplateDeletionFailure");
