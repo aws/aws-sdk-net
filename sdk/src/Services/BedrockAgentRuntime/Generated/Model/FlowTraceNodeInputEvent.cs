@@ -25,47 +25,43 @@ using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.EventStreams;
-using Amazon.Runtime.EventStreams.Internal;
-using Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations;
-using Amazon.Runtime.EventStreams.Utils;
 
 #pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Contains information about an output from prompt flow invoction.
+    /// Contains information about the input into a node. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-trace.html">Track
+    /// each step in your prompt flow by viewing its trace in Amazon Bedrock</a>.
     /// </summary>
-    public partial class FlowOutputEvent
-        : IEventStreamEvent
+    public partial class FlowTraceNodeInputEvent
     {
-        private FlowOutputContent _content;
+        private List<FlowTraceNodeInputField> _fields = AWSConfigs.InitializeCollections ? new List<FlowTraceNodeInputField>() : null;
         private string _nodeName;
-        private NodeType _nodeType;
+        private DateTime? _timestamp;
 
         /// <summary>
-        /// Gets and sets the property Content. 
+        /// Gets and sets the property Fields. 
         /// <para>
-        /// The content in the output.
+        /// An array of objects containing information about each field in the input.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public FlowOutputContent Content
+        [AWSProperty(Required=true, Min=1, Max=5)]
+        public List<FlowTraceNodeInputField> Fields
         {
-            get { return this._content; }
-            set { this._content = value; }
+            get { return this._fields; }
+            set { this._fields = value; }
         }
 
-        // Check to see if Content property is set
-        internal bool IsSetContent()
+        // Check to see if Fields property is set
+        internal bool IsSetFields()
         {
-            return this._content != null;
+            return this._fields != null && (this._fields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property NodeName. 
         /// <para>
-        /// The name of the flow output node that the output is from.
+        /// The name of the node that received the input.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -82,22 +78,22 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NodeType. 
+        /// Gets and sets the property Timestamp. 
         /// <para>
-        /// The type of the node that the output is from.
+        /// The date and time that the trace was returned.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public NodeType NodeType
+        public DateTime Timestamp
         {
-            get { return this._nodeType; }
-            set { this._nodeType = value; }
+            get { return this._timestamp.GetValueOrDefault(); }
+            set { this._timestamp = value; }
         }
 
-        // Check to see if NodeType property is set
-        internal bool IsSetNodeType()
+        // Check to see if Timestamp property is set
+        internal bool IsSetTimestamp()
         {
-            return this._nodeType != null;
+            return this._timestamp.HasValue; 
         }
 
     }

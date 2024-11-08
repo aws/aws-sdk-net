@@ -30,28 +30,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Contains information about an input into the flow.
+    /// Contains information about a condition that was satisfied. For more information, see
+    /// <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-trace.html">Track
+    /// each step in your prompt flow by viewing its trace in Amazon Bedrock</a>.
     /// </summary>
-    public partial class FlowInputContent
+    public partial class FlowTraceCondition
     {
-        private Amazon.Runtime.Documents.Document _document;
+        private string _conditionName;
 
         /// <summary>
-        /// Gets and sets the property Document. 
+        /// Gets and sets the property ConditionName. 
         /// <para>
-        /// The input to send to the prompt flow input node.
+        /// The name of the condition.
         /// </para>
         /// </summary>
-        public Amazon.Runtime.Documents.Document Document
+        [AWSProperty(Required=true)]
+        public string ConditionName
         {
-            get { return this._document; }
-            set { this._document = value; }
+            get { return this._conditionName; }
+            set { this._conditionName = value; }
         }
 
-        // Check to see if Document property is set
-        internal bool IsSetDocument()
+        // Check to see if ConditionName property is set
+        internal bool IsSetConditionName()
         {
-            return !this._document.IsNull();
+            return this._conditionName != null;
         }
 
     }

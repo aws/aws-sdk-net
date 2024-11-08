@@ -81,7 +81,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property PromptTemplate. 
         /// <para>
-        /// Contains the template for the prompt that's sent to the model for response generation.
+        /// Contains the template for the prompt that's sent to the model. Orchestration prompts
+        /// must include the <c>$conversation_history$</c> and <c>$output_format_instructions$</c>
+        /// variables. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Use
+        /// placeholder variables</a> in the user guide.
         /// </para>
         /// </summary>
         public PromptTemplate PromptTemplate

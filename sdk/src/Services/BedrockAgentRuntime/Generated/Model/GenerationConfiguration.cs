@@ -112,6 +112,9 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// Gets and sets the property PromptTemplate. 
         /// <para>
         /// Contains the template for the prompt that's sent to the model for response generation.
+        /// Generation prompts must include the <c>$search_results$</c> variable. For more information,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Use
+        /// placeholder variables</a> in the user guide.
         /// </para>
         /// </summary>
         public PromptTemplate PromptTemplate

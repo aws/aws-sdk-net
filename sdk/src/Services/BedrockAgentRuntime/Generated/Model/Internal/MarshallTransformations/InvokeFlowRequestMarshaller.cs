@@ -73,6 +73,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetEnableTrace())
+                {
+                    context.Writer.WritePropertyName("enableTrace");
+                    context.Writer.Write(publicRequest.EnableTrace);
+                }
+
                 if(publicRequest.IsSetInputs())
                 {
                     context.Writer.WritePropertyName("inputs");

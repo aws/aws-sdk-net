@@ -167,7 +167,7 @@
     <property>Amazon.BedrockAgentRuntime.Model.ExternalSourcesRetrieveAndGenerateConfiguration.ModelArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^(arn:aws(-[^:]{1,10})?:bedrock:[a-z0-9-]{1,20}:([0-9]{12})?:([a-z-]{1,20}/)?)?([a-z0-9.-]{1,63}){0,2}(([:][a-z0-9-]{1,63}){0,2})?(/[a-z0-9]{1,12})?$</pattern>
+    <pattern>^(arn:aws(-[^:]+)?:(bedrock|sagemaker):[a-z0-9-]{1,20}:([0-9]{12})?:([a-z-]+/)?)?([a-z0-9.-]{1,63}){0,2}(([:][a-z0-9-]{1,63}){0,2})?(/[a-z0-9]{1,12})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentRuntime.Model.FailureTrace.TraceId</property>
@@ -189,6 +189,26 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentRuntime.Model.FlowOutputEvent.NodeName</property>
+    <pattern>^[a-zA-Z]([_]?[0-9a-zA-Z]){0,99}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.FlowTraceConditionNodeResultEvent.NodeName</property>
+    <pattern>^[a-zA-Z]([_]?[0-9a-zA-Z]){0,99}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.FlowTraceNodeInputEvent.NodeName</property>
+    <pattern>^[a-zA-Z]([_]?[0-9a-zA-Z]){0,99}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.FlowTraceNodeInputField.NodeInputName</property>
+    <pattern>^[a-zA-Z]([_]?[0-9a-zA-Z]){0,99}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.FlowTraceNodeOutputEvent.NodeName</property>
+    <pattern>^[a-zA-Z]([_]?[0-9a-zA-Z]){0,99}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.FlowTraceNodeOutputField.NodeOutputName</property>
     <pattern>^[a-zA-Z]([_]?[0-9a-zA-Z]){0,99}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -254,7 +274,7 @@
     <property>Amazon.BedrockAgentRuntime.Model.KnowledgeBaseRetrieveAndGenerateConfiguration.ModelArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>^(arn:aws(-[^:]{1,10})?:bedrock:[a-z0-9-]{1,20}:([0-9]{12})?:([a-z-]{1,20}/)?)?([a-z0-9.-]{1,63}){0,2}(([:][a-z0-9-]{1,63}){0,2})?(/[a-z0-9]{1,12})?$</pattern>
+    <pattern>^(arn:aws(-[^:]+)?:(bedrock|sagemaker):[a-z0-9-]{1,20}:([0-9]{12})?:([a-z-]+/)?)?([a-z0-9.-]{1,63}){0,2}(([:][a-z0-9-]{1,63}){0,2})?(/[a-z0-9]{1,12})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentRuntime.Model.KnowledgeBaseVectorSearchConfiguration.NumberOfResults</property>

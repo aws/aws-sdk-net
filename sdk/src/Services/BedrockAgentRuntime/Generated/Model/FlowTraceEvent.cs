@@ -25,33 +25,42 @@ using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.EventStreams;
+using Amazon.Runtime.EventStreams.Internal;
+using Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations;
+using Amazon.Runtime.EventStreams.Utils;
 
 #pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Contains information about an input into the flow.
+    /// Contains information about a trace, which tracks an input or output for a node in
+    /// the flow. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-trace.html">Track
+    /// each step in your prompt flow by viewing its trace in Amazon Bedrock</a>.
     /// </summary>
-    public partial class FlowInputContent
+    public partial class FlowTraceEvent
+        : IEventStreamEvent
     {
-        private Amazon.Runtime.Documents.Document _document;
+        private FlowTrace _trace;
 
         /// <summary>
-        /// Gets and sets the property Document. 
+        /// Gets and sets the property Trace. 
         /// <para>
-        /// The input to send to the prompt flow input node.
+        /// The trace object containing information about an input or output for a node in the
+        /// flow.
         /// </para>
         /// </summary>
-        public Amazon.Runtime.Documents.Document Document
+        [AWSProperty(Required=true, Sensitive=true)]
+        public FlowTrace Trace
         {
-            get { return this._document; }
-            set { this._document = value; }
+            get { return this._trace; }
+            set { this._trace = value; }
         }
 
-        // Check to see if Document property is set
-        internal bool IsSetDocument()
+        // Check to see if Trace property is set
+        internal bool IsSetTrace()
         {
-            return !this._document.IsNull();
+            return this._trace != null;
         }
 
     }

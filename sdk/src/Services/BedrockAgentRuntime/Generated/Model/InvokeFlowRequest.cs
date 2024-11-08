@@ -44,9 +44,30 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// </summary>
     public partial class InvokeFlowRequest : AmazonBedrockAgentRuntimeRequest
     {
+        private bool? _enableTrace;
         private string _flowAliasIdentifier;
         private string _flowIdentifier;
         private List<FlowInput> _inputs = AWSConfigs.InitializeCollections ? new List<FlowInput>() : null;
+
+        /// <summary>
+        /// Gets and sets the property EnableTrace. 
+        /// <para>
+        /// Specifies whether to return the trace for the flow or not. Traces track inputs and
+        /// outputs for nodes in the flow. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-trace.html">Track
+        /// each step in your prompt flow by viewing its trace in Amazon Bedrock</a>.
+        /// </para>
+        /// </summary>
+        public bool EnableTrace
+        {
+            get { return this._enableTrace.GetValueOrDefault(); }
+            set { this._enableTrace = value; }
+        }
+
+        // Check to see if EnableTrace property is set
+        internal bool IsSetEnableTrace()
+        {
+            return this._enableTrace.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property FlowAliasIdentifier. 

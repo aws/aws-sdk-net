@@ -30,16 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Contains information about an input into the flow.
+    /// Contains the content of the node input. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-trace.html">Track
+    /// each step in your prompt flow by viewing its trace in Amazon Bedrock</a>.
     /// </summary>
-    public partial class FlowInputContent
+    public partial class FlowTraceNodeInputContent
     {
         private Amazon.Runtime.Documents.Document _document;
 
         /// <summary>
         /// Gets and sets the property Document. 
         /// <para>
-        /// The input to send to the prompt flow input node.
+        /// The content of the node input.
         /// </para>
         /// </summary>
         public Amazon.Runtime.Documents.Document Document

@@ -25,32 +25,28 @@ using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.EventStreams;
-using Amazon.Runtime.EventStreams.Internal;
-using Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations;
-using Amazon.Runtime.EventStreams.Utils;
 
 #pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Contains information about an output from prompt flow invoction.
+    /// Contains information about a field in the output from a node. For more information,
+    /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-trace.html">Track
+    /// each step in your prompt flow by viewing its trace in Amazon Bedrock</a>.
     /// </summary>
-    public partial class FlowOutputEvent
-        : IEventStreamEvent
+    public partial class FlowTraceNodeOutputField
     {
-        private FlowOutputContent _content;
-        private string _nodeName;
-        private NodeType _nodeType;
+        private FlowTraceNodeOutputContent _content;
+        private string _nodeOutputName;
 
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// The content in the output.
+        /// The content of the node output.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public FlowOutputContent Content
+        public FlowTraceNodeOutputContent Content
         {
             get { return this._content; }
             set { this._content = value; }
@@ -63,41 +59,22 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NodeName. 
+        /// Gets and sets the property NodeOutputName. 
         /// <para>
-        /// The name of the flow output node that the output is from.
+        /// The name of the node output.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string NodeName
+        public string NodeOutputName
         {
-            get { return this._nodeName; }
-            set { this._nodeName = value; }
+            get { return this._nodeOutputName; }
+            set { this._nodeOutputName = value; }
         }
 
-        // Check to see if NodeName property is set
-        internal bool IsSetNodeName()
+        // Check to see if NodeOutputName property is set
+        internal bool IsSetNodeOutputName()
         {
-            return this._nodeName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property NodeType. 
-        /// <para>
-        /// The type of the node that the output is from.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public NodeType NodeType
-        {
-            get { return this._nodeType; }
-            set { this._nodeType = value; }
-        }
-
-        // Check to see if NodeType property is set
-        internal bool IsSetNodeType()
-        {
-            return this._nodeType != null;
+            return this._nodeOutputName != null;
         }
 
     }
