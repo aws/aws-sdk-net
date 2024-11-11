@@ -1,3 +1,18 @@
+### 3.7.923.0 (2024-11-11 19:17 UTC)
+* CloudFront (3.7.401.0)
+	* No API changes from previous release. This release migrated the model to Smithy keeping all features unchanged.
+* Inspector2 (3.7.403.0)
+	* Adds support for filePath filter.
+* Lambda (3.7.408.0)
+	* Add Python 3.13 (python3.13) support to AWS Lambda
+* OpenSearchService (3.7.403.0)
+	* Adds Support for new AssociatePackages and DissociatePackages API in Amazon OpenSearch Service that allows association and dissociation operations to be carried out on multiple packages at the same time.
+* Outposts (3.7.403.0)
+	* This release updates StartCapacityTask to allow an active Outpost to be modified. It also adds a new API to list all running EC2 instances on the Outpost.
+* Core 3.7.400.48
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.922.0 (2024-11-08 19:30 UTC)
 * Batch (3.7.403.0)
 	* This feature allows override LaunchTemplates to be specified in an AWS Batch Compute Environment.
