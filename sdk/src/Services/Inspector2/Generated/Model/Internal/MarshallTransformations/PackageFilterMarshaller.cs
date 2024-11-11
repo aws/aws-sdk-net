@@ -70,6 +70,17 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetFilePath())
+            {
+                context.Writer.WritePropertyName("filePath");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = StringFilterMarshaller.Instance;
+                marshaller.Marshall(requestObject.FilePath, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
