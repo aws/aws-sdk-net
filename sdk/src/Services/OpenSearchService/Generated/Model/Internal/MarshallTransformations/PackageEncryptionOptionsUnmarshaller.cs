@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PackageVersionHistory Object
+    /// Response Unmarshaller for PackageEncryptionOptions Object
     /// </summary>  
-    public class PackageVersionHistoryUnmarshaller : IUnmarshaller<PackageVersionHistory, XmlUnmarshallerContext>, IUnmarshaller<PackageVersionHistory, JsonUnmarshallerContext>
+    public class PackageEncryptionOptionsUnmarshaller : IUnmarshaller<PackageEncryptionOptions, XmlUnmarshallerContext>, IUnmarshaller<PackageEncryptionOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PackageVersionHistory IUnmarshaller<PackageVersionHistory, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PackageEncryptionOptions IUnmarshaller<PackageEncryptionOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public PackageVersionHistory Unmarshall(JsonUnmarshallerContext context)
+        public PackageEncryptionOptions Unmarshall(JsonUnmarshallerContext context)
         {
-            PackageVersionHistory unmarshalledObject = new PackageVersionHistory();
+            PackageEncryptionOptions unmarshalledObject = new PackageEncryptionOptions();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,16 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CommitMessage", targetDepth))
+                if (context.TestExpression("EncryptionEnabled", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.EncryptionEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("KmsKeyIdentifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CommitMessage = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("CreatedAt", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PackageConfiguration", targetDepth))
-                {
-                    var unmarshaller = PackageConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.PackageConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PackageVersion", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PackageVersion = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("PluginProperties", targetDepth))
-                {
-                    var unmarshaller = PluginPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.PluginProperties = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KmsKeyIdentifier = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +83,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         }
 
 
-        private static PackageVersionHistoryUnmarshaller _instance = new PackageVersionHistoryUnmarshaller();        
+        private static PackageEncryptionOptionsUnmarshaller _instance = new PackageEncryptionOptionsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PackageVersionHistoryUnmarshaller Instance
+        public static PackageEncryptionOptionsUnmarshaller Instance
         {
             get
             {

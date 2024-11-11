@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdatePackage Request Marshaller
+    /// UpdatePackageScope Request Marshaller
     /// </summary>       
-    public class UpdatePackageRequestMarshaller : IMarshaller<IRequest, UpdatePackageRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdatePackageScopeRequestMarshaller : IMarshaller<IRequest, UpdatePackageScopeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdatePackageRequest)input);
+            return this.Marshall((UpdatePackageScopeRequest)input);
         }
 
         /// <summary>
@@ -53,52 +53,24 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdatePackageRequest publicRequest)
+        public IRequest Marshall(UpdatePackageScopeRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.OpenSearchService");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-01-01";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/2021-01-01/packages/update";
+            request.ResourcePath = "/2021-01-01/packages/updateScope";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCommitMessage())
+                if(publicRequest.IsSetOperation())
                 {
-                    context.Writer.WritePropertyName("CommitMessage");
-                    context.Writer.Write(publicRequest.CommitMessage);
-                }
-
-                if(publicRequest.IsSetPackageConfiguration())
-                {
-                    context.Writer.WritePropertyName("PackageConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PackageConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PackageConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPackageDescription())
-                {
-                    context.Writer.WritePropertyName("PackageDescription");
-                    context.Writer.Write(publicRequest.PackageDescription);
-                }
-
-                if(publicRequest.IsSetPackageEncryptionOptions())
-                {
-                    context.Writer.WritePropertyName("PackageEncryptionOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PackageEncryptionOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PackageEncryptionOptions, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("Operation");
+                    context.Writer.Write(publicRequest.Operation);
                 }
 
                 if(publicRequest.IsSetPackageID())
@@ -107,15 +79,15 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PackageID);
                 }
 
-                if(publicRequest.IsSetPackageSource())
+                if(publicRequest.IsSetPackageUserList())
                 {
-                    context.Writer.WritePropertyName("PackageSource");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PackageSourceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PackageSource, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("PackageUserList");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestPackageUserListListValue in publicRequest.PackageUserList)
+                    {
+                            context.Writer.Write(publicRequestPackageUserListListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 writer.WriteObjectEnd();
@@ -126,9 +98,9 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static UpdatePackageRequestMarshaller _instance = new UpdatePackageRequestMarshaller();        
+        private static UpdatePackageScopeRequestMarshaller _instance = new UpdatePackageScopeRequestMarshaller();        
 
-        internal static UpdatePackageRequestMarshaller GetInstance()
+        internal static UpdatePackageScopeRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -136,7 +108,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdatePackageRequestMarshaller Instance
+        public static UpdatePackageScopeRequestMarshaller Instance
         {
             get
             {

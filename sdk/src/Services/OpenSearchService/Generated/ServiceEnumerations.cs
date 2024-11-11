@@ -785,6 +785,10 @@ namespace Amazon.OpenSearchService
         /// </summary>
         public static readonly DescribePackagesFilterName PackageName = new DescribePackagesFilterName("PackageName");
         /// <summary>
+        /// Constant PackageOwner for DescribePackagesFilterName
+        /// </summary>
+        public static readonly DescribePackagesFilterName PackageOwner = new DescribePackagesFilterName("PackageOwner");
+        /// <summary>
         /// Constant PackageStatus for DescribePackagesFilterName
         /// </summary>
         public static readonly DescribePackagesFilterName PackageStatus = new DescribePackagesFilterName("PackageStatus");
@@ -2547,6 +2551,60 @@ namespace Amazon.OpenSearchService
 
 
     /// <summary>
+    /// Constants used for properties of type PackageScopeOperationEnum.
+    /// </summary>
+    public class PackageScopeOperationEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADD for PackageScopeOperationEnum
+        /// </summary>
+        public static readonly PackageScopeOperationEnum ADD = new PackageScopeOperationEnum("ADD");
+        /// <summary>
+        /// Constant OVERRIDE for PackageScopeOperationEnum
+        /// </summary>
+        public static readonly PackageScopeOperationEnum OVERRIDE = new PackageScopeOperationEnum("OVERRIDE");
+        /// <summary>
+        /// Constant REMOVE for PackageScopeOperationEnum
+        /// </summary>
+        public static readonly PackageScopeOperationEnum REMOVE = new PackageScopeOperationEnum("REMOVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PackageScopeOperationEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PackageScopeOperationEnum FindValue(string value)
+        {
+            return FindValue<PackageScopeOperationEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PackageScopeOperationEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PackageStatus.
     /// </summary>
     public class PackageStatus : ConstantClass
@@ -2626,6 +2684,14 @@ namespace Amazon.OpenSearchService
     public class PackageType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant PACKAGECONFIG for PackageType
+        /// </summary>
+        public static readonly PackageType PACKAGECONFIG = new PackageType("PACKAGE-CONFIG");
+        /// <summary>
+        /// Constant PACKAGELICENSE for PackageType
+        /// </summary>
+        public static readonly PackageType PACKAGELICENSE = new PackageType("PACKAGE-LICENSE");
         /// <summary>
         /// Constant TXTDICTIONARY for PackageType
         /// </summary>
@@ -2764,6 +2830,60 @@ namespace Amazon.OpenSearchService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PropertyValueType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RequirementLevel.
+    /// </summary>
+    public class RequirementLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for RequirementLevel
+        /// </summary>
+        public static readonly RequirementLevel NONE = new RequirementLevel("NONE");
+        /// <summary>
+        /// Constant OPTIONAL for RequirementLevel
+        /// </summary>
+        public static readonly RequirementLevel OPTIONAL = new RequirementLevel("OPTIONAL");
+        /// <summary>
+        /// Constant REQUIRED for RequirementLevel
+        /// </summary>
+        public static readonly RequirementLevel REQUIRED = new RequirementLevel("REQUIRED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RequirementLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RequirementLevel FindValue(string value)
+        {
+            return FindValue<RequirementLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RequirementLevel(string value)
         {
             return FindValue(value);
         }

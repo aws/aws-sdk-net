@@ -30,22 +30,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Container for the parameters to the AssociatePackage operation.
-    /// Associates a package with an Amazon OpenSearch Service domain. For more information,
-    /// see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
-    /// packages for Amazon OpenSearch Service</a>.
+    /// Details of a package that is associated with a domain.
     /// </summary>
-    public partial class AssociatePackageRequest : AmazonOpenSearchServiceRequest
+    public partial class PackageDetailsForAssociation
     {
         private PackageAssociationConfiguration _associationConfiguration;
-        private string _domainName;
         private string _packageID;
         private List<string> _prerequisitePackageIDList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AssociationConfiguration. 
         /// <para>
-        /// The configuration for associating a package with an Amazon OpenSearch Service domain.
+        /// The configuration parameters for associating the package with a domain.
         /// </para>
         /// </summary>
         public PackageAssociationConfiguration AssociationConfiguration
@@ -61,29 +57,9 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DomainName. 
-        /// <para>
-        /// Name of the domain to associate the package with.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=28)]
-        public string DomainName
-        {
-            get { return this._domainName; }
-            set { this._domainName = value; }
-        }
-
-        // Check to see if DomainName property is set
-        internal bool IsSetDomainName()
-        {
-            return this._domainName != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property PackageID. 
         /// <para>
-        /// Internal ID of the package to associate with a domain. Use <c>DescribePackages</c>
-        /// to find this value. 
+        /// Internal ID of the package that you want to associate with a domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -102,8 +78,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property PrerequisitePackageIDList. 
         /// <para>
-        /// A list of package IDs that must be associated with the domain before the package specified
-        /// in the request can be associated.
+        /// List of package IDs that must be associated with the domain with or before the package
+        /// can be associated.
         /// </para>
         /// </summary>
         public List<string> PrerequisitePackageIDList
