@@ -29,32 +29,32 @@ using Amazon.Runtime;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// Base class for ListInvalidations paginators.
+    /// Base class for ListPublicKeys paginators.
     /// </summary>
-    internal sealed partial class ListInvalidationsPaginator : IPaginator<ListInvalidationsResponse>, IListInvalidationsPaginator
+    internal sealed partial class ListPublicKeysPaginator : IPaginator<ListPublicKeysResponse>, IListPublicKeysPaginator
     {
         private readonly IAmazonCloudFront _client;
-        private readonly ListInvalidationsRequest _request;
+        private readonly ListPublicKeysRequest _request;
         private int _isPaginatorInUse = 0;
         
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
-        public IPaginatedEnumerable<ListInvalidationsResponse> Responses => new PaginatedResponse<ListInvalidationsResponse>(this);
+        public IPaginatedEnumerable<ListPublicKeysResponse> Responses => new PaginatedResponse<ListPublicKeysResponse>(this);
 
         /// <summary>
         /// Enumerable containing all of the Items
         /// </summary>
-        public IPaginatedEnumerable<InvalidationSummary> Items => 
-            new PaginatedResultKeyResponse<ListInvalidationsResponse, InvalidationSummary>(this, (i) => i.InvalidationList.Items ?? new List<InvalidationSummary>());
+        public IPaginatedEnumerable<PublicKeySummary> Items => 
+            new PaginatedResultKeyResponse<ListPublicKeysResponse, PublicKeySummary>(this, (i) => i.PublicKeyList.Items ?? new List<PublicKeySummary>());
 
-        internal ListInvalidationsPaginator(IAmazonCloudFront client, ListInvalidationsRequest request)
+        internal ListPublicKeysPaginator(IAmazonCloudFront client, ListPublicKeysRequest request)
         {
             this._client = client;
             this._request = request;
         }
 #if BCL
-        IEnumerable<ListInvalidationsResponse> IPaginator<ListInvalidationsResponse>.Paginate()
+        IEnumerable<ListPublicKeysResponse> IPaginator<ListPublicKeysResponse>.Paginate()
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
@@ -62,19 +62,19 @@ namespace Amazon.CloudFront.Model
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var marker = _request.Marker;
-            ListInvalidationsResponse response;
+            ListPublicKeysResponse response;
             do
             {
                 _request.Marker = marker;
-                response = _client.ListInvalidations(_request);
-                marker = response.InvalidationList.NextMarker;
+                response = _client.ListPublicKeys(_request);
+                marker = response.PublicKeyList.NextMarker;
                 yield return response;
             }
             while (!string.IsNullOrEmpty(marker));
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListInvalidationsResponse> IPaginator<ListInvalidationsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
+        async IAsyncEnumerable<ListPublicKeysResponse> IPaginator<ListPublicKeysResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
@@ -82,12 +82,12 @@ namespace Amazon.CloudFront.Model
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var marker = _request.Marker;
-            ListInvalidationsResponse response;
+            ListPublicKeysResponse response;
             do
             {
                 _request.Marker = marker;
-                response = await _client.ListInvalidationsAsync(_request, cancellationToken).ConfigureAwait(false);
-                marker = response.InvalidationList.NextMarker;
+                response = await _client.ListPublicKeysAsync(_request, cancellationToken).ConfigureAwait(false);
+                marker = response.PublicKeyList.NextMarker;
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;
             }

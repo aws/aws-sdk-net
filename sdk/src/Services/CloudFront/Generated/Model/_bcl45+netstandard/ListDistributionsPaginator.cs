@@ -70,7 +70,7 @@ namespace Amazon.CloudFront.Model
                 marker = response.DistributionList.NextMarker;
                 yield return response;
             }
-            while (response.DistributionList.IsTruncated);
+            while (!string.IsNullOrEmpty(marker));
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
@@ -91,7 +91,7 @@ namespace Amazon.CloudFront.Model
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;
             }
-            while (response.DistributionList.IsTruncated);
+            while (!string.IsNullOrEmpty(marker));
         }
 #endif
     }

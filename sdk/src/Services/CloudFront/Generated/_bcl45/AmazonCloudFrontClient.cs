@@ -45,6 +45,8 @@ namespace Amazon.CloudFront
     /// need detailed information about CloudFront API actions, data types, and errors. For
     /// detailed information about CloudFront features, see the <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html">Amazon
     /// CloudFront Developer Guide</a>.
+    /// 
+    /// 
     /// </para>
     /// </summary>
     public partial class AmazonCloudFrontClient : AmazonServiceClient, IAmazonCloudFront
@@ -8966,7 +8968,8 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Gets the list of CloudFront origin access controls in this Amazon Web Services account.
+        /// Gets the list of CloudFront origin access controls (OACs) in this Amazon Web Services
+        /// account.
         /// 
         ///  
         /// <para>
@@ -8976,6 +8979,13 @@ namespace Amazon.CloudFront
         /// another request that specifies the <c>NextMarker</c> value from the current response
         /// as the <c>Marker</c> value in the next request.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you're not using origin access controls for your Amazon Web Services account, the
+        /// <c>ListOriginAccessControls</c> operation doesn't return the <c>Items</c> element
+        /// in the response.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOriginAccessControls service method.</param>
         /// 
@@ -8995,7 +9005,8 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Gets the list of CloudFront origin access controls in this Amazon Web Services account.
+        /// Gets the list of CloudFront origin access controls (OACs) in this Amazon Web Services
+        /// account.
         /// 
         ///  
         /// <para>
@@ -9005,6 +9016,13 @@ namespace Amazon.CloudFront
         /// another request that specifies the <c>NextMarker</c> value from the current response
         /// as the <c>Marker</c> value in the next request.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you're not using origin access controls for your Amazon Web Services account, the
+        /// <c>ListOriginAccessControls</c> operation doesn't return the <c>Items</c> element
+        /// in the response.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOriginAccessControls service method.</param>
         /// <param name="cancellationToken">
@@ -10222,9 +10240,9 @@ namespace Amazon.CloudFront
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You must rename the <c>ETag</c> field to <c>IfMatch</c>, leaving the value unchanged.
-        /// (Set the value of <c>IfMatch</c> to the value of <c>ETag</c>, then remove the <c>ETag</c>
-        /// field.)
+        /// You must copy the <c>ETag</c> field value from the response. (You'll use it for the
+        /// <c>IfMatch</c> parameter in your request.) Then, remove the <c>ETag</c> field from
+        /// the distribution configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10232,7 +10250,7 @@ namespace Amazon.CloudFront
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Submit an <c>UpdateDistribution</c> request, providing the distribution configuration.
+        /// Submit an <c>UpdateDistribution</c> request, providing the updated distribution configuration.
         /// The new configuration replaces the existing configuration. The values that you specify
         /// in an <c>UpdateDistribution</c> request are not merged into your existing configuration.
         /// Make sure to include all fields: the ones that you modified and also the ones that
@@ -10520,9 +10538,9 @@ namespace Amazon.CloudFront
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You must rename the <c>ETag</c> field to <c>IfMatch</c>, leaving the value unchanged.
-        /// (Set the value of <c>IfMatch</c> to the value of <c>ETag</c>, then remove the <c>ETag</c>
-        /// field.)
+        /// You must copy the <c>ETag</c> field value from the response. (You'll use it for the
+        /// <c>IfMatch</c> parameter in your request.) Then, remove the <c>ETag</c> field from
+        /// the distribution configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10530,7 +10548,7 @@ namespace Amazon.CloudFront
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Submit an <c>UpdateDistribution</c> request, providing the distribution configuration.
+        /// Submit an <c>UpdateDistribution</c> request, providing the updated distribution configuration.
         /// The new configuration replaces the existing configuration. The values that you specify
         /// in an <c>UpdateDistribution</c> request are not merged into your existing configuration.
         /// Make sure to include all fields: the ones that you modified and also the ones that
