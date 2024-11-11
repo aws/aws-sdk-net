@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Outposts.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ComputeAttributes Object
+    /// Response Unmarshaller for InstancesToExclude Object
     /// </summary>  
-    public class ComputeAttributesUnmarshaller : IUnmarshaller<ComputeAttributes, XmlUnmarshallerContext>, IUnmarshaller<ComputeAttributes, JsonUnmarshallerContext>
+    public class InstancesToExcludeUnmarshaller : IUnmarshaller<InstancesToExclude, XmlUnmarshallerContext>, IUnmarshaller<InstancesToExclude, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ComputeAttributes IUnmarshaller<ComputeAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        InstancesToExclude IUnmarshaller<InstancesToExclude, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ComputeAttributes Unmarshall(JsonUnmarshallerContext context)
+        public InstancesToExclude Unmarshall(JsonUnmarshallerContext context)
         {
-            ComputeAttributes unmarshalledObject = new ComputeAttributes();
+            InstancesToExclude unmarshalledObject = new InstancesToExclude();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,22 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("HostId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HostId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("InstanceFamilies", targetDepth))
+                if (context.TestExpression("AccountIds", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.InstanceFamilies = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccountIds = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("InstanceTypeCapacities", targetDepth))
+                if (context.TestExpression("Instances", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AssetInstanceTypeCapacity, AssetInstanceTypeCapacityUnmarshaller>(AssetInstanceTypeCapacityUnmarshaller.Instance);
-                    unmarshalledObject.InstanceTypeCapacities = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Instances = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("MaxVcpus", targetDepth))
+                if (context.TestExpression("Services", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.MaxVcpus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("State", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Services = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +89,12 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
         }
 
 
-        private static ComputeAttributesUnmarshaller _instance = new ComputeAttributesUnmarshaller();        
+        private static InstancesToExcludeUnmarshaller _instance = new InstancesToExcludeUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ComputeAttributesUnmarshaller Instance
+        public static InstancesToExcludeUnmarshaller Instance
         {
             get
             {

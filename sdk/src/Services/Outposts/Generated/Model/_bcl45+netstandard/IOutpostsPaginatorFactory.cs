@@ -37,9 +37,19 @@ namespace Amazon.Outposts.Model
         IGetOutpostSupportedInstanceTypesPaginator GetOutpostSupportedInstanceTypes(GetOutpostSupportedInstanceTypesRequest request);
 
         /// <summary>
+        /// Paginator for ListAssetInstances operation
+        ///</summary>
+        IListAssetInstancesPaginator ListAssetInstances(ListAssetInstancesRequest request);
+
+        /// <summary>
         /// Paginator for ListAssets operation
         ///</summary>
         IListAssetsPaginator ListAssets(ListAssetsRequest request);
+
+        /// <summary>
+        /// Paginator for ListBlockingInstancesForCapacityTask operation
+        ///</summary>
+        IListBlockingInstancesForCapacityTaskPaginator ListBlockingInstancesForCapacityTask(ListBlockingInstancesForCapacityTaskRequest request);
 
         /// <summary>
         /// Paginator for ListCapacityTasks operation

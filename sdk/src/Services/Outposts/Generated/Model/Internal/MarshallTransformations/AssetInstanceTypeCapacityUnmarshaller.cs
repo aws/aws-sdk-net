@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Outposts.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ComputeAttributes Object
+    /// Response Unmarshaller for AssetInstanceTypeCapacity Object
     /// </summary>  
-    public class ComputeAttributesUnmarshaller : IUnmarshaller<ComputeAttributes, XmlUnmarshallerContext>, IUnmarshaller<ComputeAttributes, JsonUnmarshallerContext>
+    public class AssetInstanceTypeCapacityUnmarshaller : IUnmarshaller<AssetInstanceTypeCapacity, XmlUnmarshallerContext>, IUnmarshaller<AssetInstanceTypeCapacity, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ComputeAttributes IUnmarshaller<ComputeAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AssetInstanceTypeCapacity IUnmarshaller<AssetInstanceTypeCapacity, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ComputeAttributes Unmarshall(JsonUnmarshallerContext context)
+        public AssetInstanceTypeCapacity Unmarshall(JsonUnmarshallerContext context)
         {
-            ComputeAttributes unmarshalledObject = new ComputeAttributes();
+            AssetInstanceTypeCapacity unmarshalledObject = new AssetInstanceTypeCapacity();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,16 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("HostId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HostId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("InstanceFamilies", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.InstanceFamilies = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("InstanceTypeCapacities", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<AssetInstanceTypeCapacity, AssetInstanceTypeCapacityUnmarshaller>(AssetInstanceTypeCapacityUnmarshaller.Instance);
-                    unmarshalledObject.InstanceTypeCapacities = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MaxVcpus", targetDepth))
+                if (context.TestExpression("Count", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.MaxVcpus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Count = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("State", targetDepth))
+                if (context.TestExpression("InstanceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +83,12 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
         }
 
 
-        private static ComputeAttributesUnmarshaller _instance = new ComputeAttributesUnmarshaller();        
+        private static AssetInstanceTypeCapacityUnmarshaller _instance = new AssetInstanceTypeCapacityUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ComputeAttributesUnmarshaller Instance
+        public static AssetInstanceTypeCapacityUnmarshaller Instance
         {
             get
             {

@@ -30,17 +30,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Outposts.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetOutpostSupportedInstanceTypes operation.
-    /// Gets the instance types that an Outpost can support in <c>InstanceTypeCapacity</c>.
-    /// This will generally include instance types that are not currently configured and therefore
-    /// cannot be launched with the current Outpost capacity configuration.
+    /// Container for the parameters to the ListBlockingInstancesForCapacityTask operation.
+    /// A list of Amazon EC2 instances running on the Outpost and belonging to the account
+    /// that initiated the capacity task. Use this list to specify the instances you cannot
+    /// stop to free up capacity to run the capacity task.
     /// </summary>
-    public partial class GetOutpostSupportedInstanceTypesRequest : AmazonOutpostsRequest
+    public partial class ListBlockingInstancesForCapacityTaskRequest : AmazonOutpostsRequest
     {
+        private string _capacityTaskId;
         private int? _maxResults;
         private string _nextToken;
-        private string _orderId;
         private string _outpostIdentifier;
+
+        /// <summary>
+        /// Gets and sets the property CapacityTaskId. 
+        /// <para>
+        /// The ID of the capacity task.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=21, Max=21)]
+        public string CapacityTaskId
+        {
+            get { return this._capacityTaskId; }
+            set { this._capacityTaskId = value; }
+        }
+
+        // Check to see if CapacityTaskId property is set
+        internal bool IsSetCapacityTaskId()
+        {
+            return this._capacityTaskId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults.
@@ -75,28 +94,9 @@ namespace Amazon.Outposts.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OrderId. 
-        /// <para>
-        /// The ID for the Amazon Web Services Outposts order.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=20)]
-        public string OrderId
-        {
-            get { return this._orderId; }
-            set { this._orderId = value; }
-        }
-
-        // Check to see if OrderId property is set
-        internal bool IsSetOrderId()
-        {
-            return this._orderId != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property OutpostIdentifier. 
         /// <para>
-        /// The ID or ARN of the Outpost.
+        /// The ID or ARN of the Outpost associated with the specified capacity task.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=180)]

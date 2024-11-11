@@ -1368,6 +1368,73 @@ namespace Amazon.Outposts
 
         #endregion
         
+        #region  ListAssetInstances
+
+        /// <summary>
+        /// A list of Amazon EC2 instances, belonging to all accounts, running on the specified
+        /// Outpost. Does not include Amazon EBS or Amazon S3 instances.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssetInstances service method.</param>
+        /// 
+        /// <returns>The response from the ListAssetInstances service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListAssetInstances">REST API Reference for ListAssetInstances Operation</seealso>
+        public virtual ListAssetInstancesResponse ListAssetInstances(ListAssetInstancesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssetInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssetInstancesResponseUnmarshaller.Instance;
+
+            return Invoke<ListAssetInstancesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAssetInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAssetInstances operation on AmazonOutpostsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAssetInstances
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListAssetInstances">REST API Reference for ListAssetInstances Operation</seealso>
+        public virtual IAsyncResult BeginListAssetInstances(ListAssetInstancesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssetInstancesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssetInstancesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAssetInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAssetInstances.</param>
+        /// 
+        /// <returns>Returns a  ListAssetInstancesResult from Outposts.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListAssetInstances">REST API Reference for ListAssetInstances Operation</seealso>
+        public virtual ListAssetInstancesResponse EndListAssetInstances(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAssetInstancesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListAssets
 
         /// <summary>
@@ -1438,6 +1505,74 @@ namespace Amazon.Outposts
         public virtual ListAssetsResponse EndListAssets(IAsyncResult asyncResult)
         {
             return EndInvoke<ListAssetsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListBlockingInstancesForCapacityTask
+
+        /// <summary>
+        /// A list of Amazon EC2 instances running on the Outpost and belonging to the account
+        /// that initiated the capacity task. Use this list to specify the instances you cannot
+        /// stop to free up capacity to run the capacity task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBlockingInstancesForCapacityTask service method.</param>
+        /// 
+        /// <returns>The response from the ListBlockingInstancesForCapacityTask service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListBlockingInstancesForCapacityTask">REST API Reference for ListBlockingInstancesForCapacityTask Operation</seealso>
+        public virtual ListBlockingInstancesForCapacityTaskResponse ListBlockingInstancesForCapacityTask(ListBlockingInstancesForCapacityTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBlockingInstancesForCapacityTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBlockingInstancesForCapacityTaskResponseUnmarshaller.Instance;
+
+            return Invoke<ListBlockingInstancesForCapacityTaskResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBlockingInstancesForCapacityTask operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBlockingInstancesForCapacityTask operation on AmazonOutpostsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBlockingInstancesForCapacityTask
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListBlockingInstancesForCapacityTask">REST API Reference for ListBlockingInstancesForCapacityTask Operation</seealso>
+        public virtual IAsyncResult BeginListBlockingInstancesForCapacityTask(ListBlockingInstancesForCapacityTaskRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListBlockingInstancesForCapacityTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBlockingInstancesForCapacityTaskResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListBlockingInstancesForCapacityTask operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBlockingInstancesForCapacityTask.</param>
+        /// 
+        /// <returns>Returns a  ListBlockingInstancesForCapacityTaskResult from Outposts.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListBlockingInstancesForCapacityTask">REST API Reference for ListBlockingInstancesForCapacityTask Operation</seealso>
+        public virtual ListBlockingInstancesForCapacityTaskResponse EndListBlockingInstancesForCapacityTask(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListBlockingInstancesForCapacityTaskResponse>(asyncResult);
         }
 
         #endregion
@@ -1862,7 +1997,8 @@ namespace Amazon.Outposts
         #region  StartCapacityTask
 
         /// <summary>
-        /// Starts the specified capacity task. You can have one active capacity task for an order.
+        /// Starts the specified capacity task. You can have one active capacity task per order
+        /// or Outpost.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartCapacityTask service method.</param>
         /// 

@@ -53,11 +53,27 @@ namespace Amazon.Outposts.Model
         }
 
         /// <summary>
+        /// Paginator for ListAssetInstances operation
+        ///</summary>
+        public IListAssetInstancesPaginator ListAssetInstances(ListAssetInstancesRequest request) 
+        {
+            return new ListAssetInstancesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAssets operation
         ///</summary>
         public IListAssetsPaginator ListAssets(ListAssetsRequest request) 
         {
             return new ListAssetsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListBlockingInstancesForCapacityTask operation
+        ///</summary>
+        public IListBlockingInstancesForCapacityTaskPaginator ListBlockingInstancesForCapacityTask(ListBlockingInstancesForCapacityTaskRequest request) 
+        {
+            return new ListBlockingInstancesForCapacityTaskPaginator(this.client, request);
         }
 
         /// <summary>

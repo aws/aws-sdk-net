@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Outposts.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ComputeAttributes Object
+    /// Response Unmarshaller for AssetInstance Object
     /// </summary>  
-    public class ComputeAttributesUnmarshaller : IUnmarshaller<ComputeAttributes, XmlUnmarshallerContext>, IUnmarshaller<ComputeAttributes, JsonUnmarshallerContext>
+    public class AssetInstanceUnmarshaller : IUnmarshaller<AssetInstance, XmlUnmarshallerContext>, IUnmarshaller<AssetInstance, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ComputeAttributes IUnmarshaller<ComputeAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AssetInstance IUnmarshaller<AssetInstance, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ComputeAttributes Unmarshall(JsonUnmarshallerContext context)
+        public AssetInstance Unmarshall(JsonUnmarshallerContext context)
         {
-            ComputeAttributes unmarshalledObject = new ComputeAttributes();
+            AssetInstance unmarshalledObject = new AssetInstance();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,34 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("HostId", targetDepth))
+                if (context.TestExpression("AccountId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HostId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("InstanceFamilies", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.InstanceFamilies = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("InstanceTypeCapacities", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<AssetInstanceTypeCapacity, AssetInstanceTypeCapacityUnmarshaller>(AssetInstanceTypeCapacityUnmarshaller.Instance);
-                    unmarshalledObject.InstanceTypeCapacities = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MaxVcpus", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.MaxVcpus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("State", targetDepth))
+                if (context.TestExpression("AssetId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AssetId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AwsServiceName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AwsServiceName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("InstanceId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("InstanceType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +101,12 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
         }
 
 
-        private static ComputeAttributesUnmarshaller _instance = new ComputeAttributesUnmarshaller();        
+        private static AssetInstanceUnmarshaller _instance = new AssetInstanceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ComputeAttributesUnmarshaller Instance
+        public static AssetInstanceUnmarshaller Instance
         {
             get
             {

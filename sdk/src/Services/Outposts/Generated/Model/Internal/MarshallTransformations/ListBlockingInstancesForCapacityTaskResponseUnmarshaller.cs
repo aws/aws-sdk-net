@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Outposts.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StartCapacityTask operation
+    /// Response Unmarshaller for ListBlockingInstancesForCapacityTask operation
     /// </summary>  
-    public class StartCapacityTaskResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListBlockingInstancesForCapacityTaskResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,82 +46,22 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            StartCapacityTaskResponse response = new StartCapacityTaskResponse();
+            ListBlockingInstancesForCapacityTaskResponse response = new ListBlockingInstancesForCapacityTaskResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CapacityTaskId", targetDepth))
+                if (context.TestExpression("BlockingInstances", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<BlockingInstance, BlockingInstanceUnmarshaller>(BlockingInstanceUnmarshaller.Instance);
+                    response.BlockingInstances = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.CapacityTaskId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("CapacityTaskStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.CapacityTaskStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("CompletionDate", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CompletionDate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("CreationDate", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreationDate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DryRun", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.DryRun = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Failed", targetDepth))
-                {
-                    var unmarshaller = CapacityTaskFailureUnmarshaller.Instance;
-                    response.Failed = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("InstancesToExclude", targetDepth))
-                {
-                    var unmarshaller = InstancesToExcludeUnmarshaller.Instance;
-                    response.InstancesToExclude = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LastModifiedDate", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.LastModifiedDate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("OrderId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.OrderId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("OutpostId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.OutpostId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RequestedInstancePools", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<InstanceTypeCapacity, InstanceTypeCapacityUnmarshaller>(InstanceTypeCapacityUnmarshaller.Instance);
-                    response.RequestedInstancePools = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TaskActionOnBlockingInstances", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.TaskActionOnBlockingInstances = unmarshaller.Unmarshall(context);
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -151,10 +91,6 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
-                {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -171,9 +107,9 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
             return new AmazonOutpostsException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static StartCapacityTaskResponseUnmarshaller _instance = new StartCapacityTaskResponseUnmarshaller();        
+        private static ListBlockingInstancesForCapacityTaskResponseUnmarshaller _instance = new ListBlockingInstancesForCapacityTaskResponseUnmarshaller();        
 
-        internal static StartCapacityTaskResponseUnmarshaller GetInstance()
+        internal static ListBlockingInstancesForCapacityTaskResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -181,7 +117,7 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StartCapacityTaskResponseUnmarshaller Instance
+        public static ListBlockingInstancesForCapacityTaskResponseUnmarshaller Instance
         {
             get
             {
