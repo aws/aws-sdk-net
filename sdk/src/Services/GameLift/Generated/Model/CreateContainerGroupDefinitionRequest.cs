@@ -31,48 +31,59 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateContainerGroupDefinition operation.
-    /// <b>This operation is used with the Amazon GameLift containers feature, which is currently
-    /// in public preview. </b> 
+    /// Creates a <c>ContainerGroupDefinition</c> that describes a set of containers for hosting
+    /// your game server with Amazon GameLift managed containers hosting. An Amazon GameLift
+    /// container group is similar to a container task or pod. Use container group definitions
+    /// when you create a container fleet with <a>CreateContainerFleet</a>. 
     /// 
     ///  
     /// <para>
-    /// Creates a <c>ContainerGroupDefinition</c> resource that describes a set of containers
-    /// for hosting your game server with Amazon GameLift managed EC2 hosting. An Amazon GameLift
-    /// container group is similar to a container "task" and "pod". Each container group can
-    /// have one or more containers. 
+    /// A container group definition determines how Amazon GameLift deploys your containers
+    /// to each instance in a container fleet. You can maintain multiple versions of a container
+    /// group definition.
     /// </para>
     ///  
     /// <para>
-    /// Use container group definitions when you create a container fleet. Container group
-    /// definitions determine how Amazon GameLift deploys your containers to each instance
-    /// in a container fleet. 
-    /// </para>
-    ///  
-    /// <para>
-    /// You can create two types of container groups, based on scheduling strategy:
+    /// There are two types of container groups:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// A <b>replica container group</b> manages the containers that run your game server
-    /// application and supporting software. Replica container groups might be replicated
-    /// multiple times on each fleet instance, depending on instance resources. 
+    /// A <b>game server container group</b> has the containers that run your game server
+    /// application and supporting software. A game server container group can have these
+    /// container types:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Game server container. This container runs your game server. You can define one game
+    /// server container in a game server container group.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A <b>daemon container group</b> manages containers that run other software, such as
-    /// background services, logging, or test processes. You might use a daemon container
-    /// group for processes that need to run only once per fleet instance, or processes that
-    /// need to persist independently of the replica container group. 
+    /// Support container. This container runs software in parallel with your game server.
+    /// You can define up to 8 support containers in a game server group.
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// To create a container group definition, specify a group name, a list of container
-    /// definitions, and maximum total CPU and memory requirements for the container group.
-    /// Specify an operating system and scheduling strategy or use the default values. When
-    /// using the Amazon Web Services CLI tool, you can pass in your container definitions
-    /// as a JSON file.
+    /// When building a game server container group definition, you can choose to bundle your
+    /// game server executable and all dependent software into a single game server container.
+    /// Alternatively, you can separate the software into one game server container and one
+    /// or more support containers.
     /// </para>
-    ///  <note> 
+    ///  
+    /// <para>
+    /// On a container fleet instance, a game server container group can be deployed multiple
+    /// times (depending on the compute resources of the instance). This means that all containers
+    /// in the container group are replicated together.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// A <b>per-instance container group</b> has containers for processes that aren't replicated
+    /// on a container fleet instance. This might include background services, logging, test
+    /// processes, or processes that need to persist independently of the game server container
+    /// group. When building a per-instance container group, you can define up to 10 support
+    /// containers.
+    /// </para>
+    ///  </li> </ul> <note> 
     /// <para>
     /// This operation requires Identity and Access Management (IAM) permissions to access
     /// container images in Amazon ECR repositories. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-iam-policy-examples.html">
@@ -80,61 +91,161 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// If successful, this operation creates a new <c>ContainerGroupDefinition</c> resource
-    /// with an ARN value assigned. You can't change the properties of a container group definition.
-    /// Instead, create a new one. 
+    ///  <b>Request options</b> 
     /// </para>
     ///  
     /// <para>
-    ///  <b>Learn more</b> 
+    /// Use this operation to make the following types of requests. You can specify values
+    /// for the minimum required parameters and customize optional values later.
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-create-groups.html">Create
-    /// a container group definition</a> 
+    /// Create a game server container group definition. Provide the following required parameter
+    /// values:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>Name</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-design-fleet.html">Container
-    /// fleet design guide</a> 
+    ///  <c>ContainerGroupType</c> (<c>GAME_SERVER</c>)
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-definitions.html#containers-definitions-create">Create
-    /// a container definition as a JSON file</a> 
+    ///  <c>OperatingSystem</c> (omit to use default value)
     /// </para>
-    ///  </li> </ul>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>TotalMemoryLimitMebibytes</c> (omit to use default value)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>TotalVcpuLimit </c>(omit to use default value)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// At least one <c>GameServerContainerDefinition</c> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>ContainerName</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>ImageUrl</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>PortConfiguration</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>ServerSdkVersion</c> (omit to use default value)
+    /// </para>
+    ///  </li> </ul> </li> </ul> </li> <li> 
+    /// <para>
+    /// Create a per-instance container group definition. Provide the following required parameter
+    /// values:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>Name</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>ContainerGroupType</c> (<c>PER_INSTANCE</c>)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>OperatingSystem</c> (omit to use default value)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>TotalMemoryLimitMebibytes</c> (omit to use default value)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>TotalVcpuLimit </c>(omit to use default value)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// At least one <c>SupportContainerDefinition</c> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>ContainerName</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>ImageUrl</c> 
+    /// </para>
+    ///  </li> </ul> </li> </ul> </li> </ul> 
+    /// <para>
+    ///  <b>Results</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// If successful, this request creates a <c>ContainerGroupDefinition</c> resource and
+    /// assigns a unique ARN value. You can update most properties of a container group definition
+    /// by calling <a>UpdateContainerGroupDefinition</a>, and optionally save the update as
+    /// a new version.
+    /// </para>
     /// </summary>
     public partial class CreateContainerGroupDefinitionRequest : AmazonGameLiftRequest
     {
-        private List<ContainerDefinitionInput> _containerDefinitions = AWSConfigs.InitializeCollections ? new List<ContainerDefinitionInput>() : null;
+        private ContainerGroupType _containerGroupType;
+        private GameServerContainerDefinitionInput _gameServerContainerDefinition;
         private string _name;
         private ContainerOperatingSystem _operatingSystem;
-        private ContainerSchedulingStrategy _schedulingStrategy;
+        private List<SupportContainerDefinitionInput> _supportContainerDefinitions = AWSConfigs.InitializeCollections ? new List<SupportContainerDefinitionInput>() : null;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
-        private int? _totalCpuLimit;
-        private int? _totalMemoryLimit;
+        private int? _totalMemoryLimitMebibytes;
+        private double? _totalVcpuLimit;
+        private string _versionDescription;
 
         /// <summary>
-        /// Gets and sets the property ContainerDefinitions. 
+        /// Gets and sets the property ContainerGroupType. 
         /// <para>
-        /// Definitions for all containers in this group. Each container definition identifies
-        /// the container image and specifies configuration settings for the container. See the
-        /// <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-design-fleet.html">
-        /// Container fleet design guide</a> for container guidelines.
+        /// The type of container group being defined. Container group type determines how Amazon
+        /// GameLift deploys the container group on each fleet instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default value: <c>GAME_SERVER</c> 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=10)]
-        public List<ContainerDefinitionInput> ContainerDefinitions
+        public ContainerGroupType ContainerGroupType
         {
-            get { return this._containerDefinitions; }
-            set { this._containerDefinitions = value; }
+            get { return this._containerGroupType; }
+            set { this._containerGroupType = value; }
         }
 
-        // Check to see if ContainerDefinitions property is set
-        internal bool IsSetContainerDefinitions()
+        // Check to see if ContainerGroupType property is set
+        internal bool IsSetContainerGroupType()
         {
-            return this._containerDefinitions != null && (this._containerDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._containerGroupType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GameServerContainerDefinition. 
+        /// <para>
+        /// The definition for the game server container in this group. Define a game server container
+        /// only when the container group type is <c>GAME_SERVER</c>. Game server containers specify
+        /// a container image with your game server build. You can pass in your container definitions
+        /// as a JSON file.
+        /// </para>
+        /// </summary>
+        public GameServerContainerDefinitionInput GameServerContainerDefinition
+        {
+            get { return this._gameServerContainerDefinition; }
+            set { this._gameServerContainerDefinition = value; }
+        }
+
+        // Check to see if GameServerContainerDefinition property is set
+        internal bool IsSetGameServerContainerDefinition()
+        {
+            return this._gameServerContainerDefinition != null;
         }
 
         /// <summary>
@@ -160,14 +271,18 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property OperatingSystem. 
         /// <para>
-        /// The platform that is used by containers in the container group definition. All containers
-        /// in a group must run on the same operating system.
+        /// The platform that all containers in the group use. Containers in a group must run
+        /// on the same operating system.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default value: <c>AMAZON_LINUX_2023</c> 
         /// </para>
         ///  <note> 
         /// <para>
         /// Amazon Linux 2 (AL2) will reach end of support on 6/30/2025. See more details in the
         /// <a href="https://aws.amazon.com/amazon-linux-2/faqs/">Amazon Linux 2 FAQs</a>. For
-        /// game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x., first
+        /// game servers that are hosted on AL2 and use Amazon GameLift server SDK 4.x, first
         /// update the game server build to server SDK 5.x, and then deploy to AL2023 instances.
         /// See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk5-migration.html">
         /// Migrate to Amazon GameLift server SDK version 5.</a> 
@@ -188,23 +303,24 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SchedulingStrategy. 
+        /// Gets and sets the property SupportContainerDefinitions. 
         /// <para>
-        /// The method for deploying the container group across fleet instances. A replica container
-        /// group might have multiple copies on each fleet instance. A daemon container group
-        /// has one copy per fleet instance. Default value is <c>REPLICA</c>.
+        /// One or more definition for support containers in this group. You can define a support
+        /// container in any type of container group. You can pass in your container definitions
+        /// as a JSON file.
         /// </para>
         /// </summary>
-        public ContainerSchedulingStrategy SchedulingStrategy
+        [AWSProperty(Min=0, Max=10)]
+        public List<SupportContainerDefinitionInput> SupportContainerDefinitions
         {
-            get { return this._schedulingStrategy; }
-            set { this._schedulingStrategy = value; }
+            get { return this._supportContainerDefinitions; }
+            set { this._supportContainerDefinitions = value; }
         }
 
-        // Check to see if SchedulingStrategy property is set
-        internal bool IsSetSchedulingStrategy()
+        // Check to see if SupportContainerDefinitions property is set
+        internal bool IsSetSupportContainerDefinitions()
         {
-            return this._schedulingStrategy != null;
+            return this._supportContainerDefinitions != null && (this._supportContainerDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -231,49 +347,73 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TotalCpuLimit. 
-        /// <para>
-        /// The maximum amount of CPU units to allocate to the container group. Set this parameter
-        /// to an integer value in CPU units (1 vCPU is equal to 1024 CPU units). All containers
-        /// in the group share this memory. If you specify CPU limits for individual containers,
-        /// set this parameter based on the following guidelines. The value must be equal to or
-        /// greater than the sum of the CPU limits for all containers in the group.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=128, Max=10240)]
-        public int TotalCpuLimit
-        {
-            get { return this._totalCpuLimit.GetValueOrDefault(); }
-            set { this._totalCpuLimit = value; }
-        }
-
-        // Check to see if TotalCpuLimit property is set
-        internal bool IsSetTotalCpuLimit()
-        {
-            return this._totalCpuLimit.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property TotalMemoryLimit. 
+        /// Gets and sets the property TotalMemoryLimitMebibytes. 
         /// <para>
         /// The maximum amount of memory (in MiB) to allocate to the container group. All containers
-        /// in the group share this memory. If you specify memory limits for individual containers,
-        /// set this parameter based on the following guidelines. The value must be (1) greater
-        /// than the sum of the soft memory limits for all containers in the group, and (2) greater
-        /// than any individual container's hard memory limit.
+        /// in the group share this memory. If you specify memory limits for an individual container,
+        /// the total value must be greater than any individual container's memory limit.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default value: 1024
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=4, Max=1024000)]
-        public int TotalMemoryLimit
+        public int TotalMemoryLimitMebibytes
         {
-            get { return this._totalMemoryLimit.GetValueOrDefault(); }
-            set { this._totalMemoryLimit = value; }
+            get { return this._totalMemoryLimitMebibytes.GetValueOrDefault(); }
+            set { this._totalMemoryLimitMebibytes = value; }
         }
 
-        // Check to see if TotalMemoryLimit property is set
-        internal bool IsSetTotalMemoryLimit()
+        // Check to see if TotalMemoryLimitMebibytes property is set
+        internal bool IsSetTotalMemoryLimitMebibytes()
         {
-            return this._totalMemoryLimit.HasValue; 
+            return this._totalMemoryLimitMebibytes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TotalVcpuLimit. 
+        /// <para>
+        /// The maximum amount of vCPU units to allocate to the container group (1 vCPU is equal
+        /// to 1024 CPU units). All containers in the group share this memory. If you specify
+        /// vCPU limits for individual containers, the total value must be equal to or greater
+        /// than the sum of the CPU limits for all containers in the group.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default value: 1
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Max=10)]
+        public double TotalVcpuLimit
+        {
+            get { return this._totalVcpuLimit.GetValueOrDefault(); }
+            set { this._totalVcpuLimit = value; }
+        }
+
+        // Check to see if TotalVcpuLimit property is set
+        internal bool IsSetTotalVcpuLimit()
+        {
+            return this._totalVcpuLimit.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionDescription. 
+        /// <para>
+        /// A description for the initial version of this container group definition. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string VersionDescription
+        {
+            get { return this._versionDescription; }
+            set { this._versionDescription = value; }
+        }
+
+        // Check to see if VersionDescription property is set
+        internal bool IsSetVersionDescription()
+        {
+            return this._versionDescription != null;
         }
 
     }

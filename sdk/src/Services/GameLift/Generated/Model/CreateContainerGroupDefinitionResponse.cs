@@ -39,8 +39,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ContainerGroupDefinition. 
         /// <para>
-        /// The properties of the newly created container group definition resource. You use this
-        /// resource to create a container fleet.
+        /// The properties of the new container group definition resource. You can use this resource
+        /// to create a container fleet.
         /// </para>
         /// </summary>
         public ContainerGroupDefinition ContainerGroupDefinition

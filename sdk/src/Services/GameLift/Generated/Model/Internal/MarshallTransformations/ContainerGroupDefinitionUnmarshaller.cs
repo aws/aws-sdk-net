@@ -66,22 +66,28 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ContainerDefinitions", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ContainerDefinition, ContainerDefinitionUnmarshaller>(ContainerDefinitionUnmarshaller.Instance);
-                    unmarshalledObject.ContainerDefinitions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("ContainerGroupDefinitionArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ContainerGroupDefinitionArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ContainerGroupType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ContainerGroupType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("GameServerContainerDefinition", targetDepth))
+                {
+                    var unmarshaller = GameServerContainerDefinitionUnmarshaller.Instance;
+                    unmarshalledObject.GameServerContainerDefinition = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Name", targetDepth))
@@ -96,12 +102,6 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.OperatingSystem = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("SchedulingStrategy", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SchedulingStrategy = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -114,16 +114,34 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     unmarshalledObject.StatusReason = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("TotalCpuLimit", targetDepth))
+                if (context.TestExpression("SupportContainerDefinitions", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.TotalCpuLimit = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<SupportContainerDefinition, SupportContainerDefinitionUnmarshaller>(SupportContainerDefinitionUnmarshaller.Instance);
+                    unmarshalledObject.SupportContainerDefinitions = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("TotalMemoryLimit", targetDepth))
+                if (context.TestExpression("TotalMemoryLimitMebibytes", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.TotalMemoryLimit = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalMemoryLimitMebibytes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TotalVcpuLimit", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.TotalVcpuLimit = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VersionDescription", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VersionDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VersionNumber", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.VersionNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

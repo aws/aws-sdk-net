@@ -31,14 +31,9 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateFleet operation.
-    /// <b>This operation has been expanded to use with the Amazon GameLift containers feature,
-    /// which is currently in public preview.</b> 
-    /// 
-    ///  
-    /// <para>
     /// Creates a fleet of compute resources to host your game servers. Use this operation
     /// to set up the following types of fleets based on compute type: 
-    /// </para>
+    /// 
     ///  
     /// <para>
     ///  <b>Managed EC2 fleet</b> 
@@ -99,62 +94,6 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <b>Managed container fleet</b> 
-    /// </para>
-    ///  
-    /// <para>
-    /// A container fleet is a set of Amazon Elastic Compute Cloud (Amazon EC2) instances.
-    /// Your container architecture is deployed to each fleet instance based on the fleet
-    /// configuration. Amazon GameLift manages the containers on each fleet instance and controls
-    /// the lifecycle of game server processes, which host game sessions for players. Container
-    /// fleets can have instances in multiple locations. Each container on an instance that
-    /// runs game server processes is registered as a <c>Compute</c>.
-    /// </para>
-    ///  
-    /// <para>
-    /// To create a container fleet, provide these required parameters:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <c>ComputeType</c> set to <c>CONTAINER</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>ContainerGroupsConfiguration</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>EC2InboundPermissions</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>EC2InstanceType</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>FleetType</c> set to <c>ON_DEMAND</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>Name</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>RuntimeConfiguration</c> with at least one <c>ServerProcesses</c> configuration
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// If successful, this operation creates a new fleet resource and places it in <c>NEW</c>
-    /// status while Amazon GameLift initiates the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-all.html#fleets-creation-workflow">fleet
-    /// creation workflow</a>. 
-    /// </para>
-    ///  
-    /// <para>
-    /// When the fleet status is ACTIVE, you can adjust capacity settings and turn autoscaling
-    /// on/off for each location.
-    /// </para>
-    ///  
-    /// <para>
     ///  <b>Anywhere fleet</b> 
     /// </para>
     ///  
@@ -196,11 +135,6 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-build-fleet.html">Setting
-    /// up a container fleet</a> 
-    /// </para>
-    ///  
-    /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html#fleets-creating-debug-creation">Debug
     /// fleet creation issues</a> 
     /// </para>
@@ -216,7 +150,6 @@ namespace Amazon.GameLift.Model
         private string _buildId;
         private CertificateConfiguration _certificateConfiguration;
         private ComputeType _computeType;
-        private ContainerGroupsConfiguration _containerGroupsConfiguration;
         private string _description;
         private List<IpPermission> _ec2InboundPermissions = AWSConfigs.InitializeCollections ? new List<IpPermission>() : null;
         private EC2InstanceType _ec2InstanceType;
@@ -324,15 +257,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>CONTAINER</c> – Container images with your game server build and supporting software
-        /// are deployed to Amazon EC2 instances for cloud hosting. With this compute type, you
-        /// must specify the <c>ContainerGroupsConfiguration</c> parameter.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>ANYWHERE</c> – Game servers or container images with your game server and supporting
-        /// software are deployed to compute resources that are provided and managed by you. With
-        /// this compute type, you can also set the <c>AnywhereConfiguration</c> parameter.
+        ///  <c>ANYWHERE</c> – Your game server and supporting software is deployed to compute
+        /// resources that are provided and managed by you. With this compute type, you can also
+        /// set the <c>AnywhereConfiguration</c> parameter.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -346,28 +273,6 @@ namespace Amazon.GameLift.Model
         internal bool IsSetComputeType()
         {
             return this._computeType != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ContainerGroupsConfiguration. 
-        /// <para>
-        /// The container groups to deploy to instances in the container fleet and other fleet-level
-        /// configuration settings. Use the <a>CreateContainerGroupDefinition</a> action to create
-        /// container groups. A container fleet must have exactly one replica container group,
-        /// and can optionally have one daemon container group. You can't change this property
-        /// after you create the fleet.
-        /// </para>
-        /// </summary>
-        public ContainerGroupsConfiguration ContainerGroupsConfiguration
-        {
-            get { return this._containerGroupsConfiguration; }
-            set { this._containerGroupsConfiguration = value; }
-        }
-
-        // Check to see if ContainerGroupsConfiguration property is set
-        internal bool IsSetContainerGroupsConfiguration()
-        {
-            return this._containerGroupsConfiguration != null;
         }
 
         /// <summary>
@@ -393,19 +298,12 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property EC2InboundPermissions. 
         /// <para>
         /// The IP address ranges and port settings that allow inbound traffic to access game
-        /// server processes and other processes on this fleet. Set this parameter for EC2 and
-        /// container fleets. You can leave this parameter empty when creating the fleet, but
-        /// you must call <a>UpdateFleetPortSettings</a> to set it before players can connect
-        /// to game sessions. As a best practice, we recommend opening ports for remote access
-        /// only when you need them and closing them when you're finished. For Realtime Servers
-        /// fleets, Amazon GameLift automatically sets TCP and UDP ranges.
-        /// </para>
-        ///  
-        /// <para>
-        /// To manage inbound access for a container fleet, set this parameter to the same port
-        /// numbers that you set for the fleet's connection port range. During the life of the
-        /// fleet, update this parameter to control which connection ports are open to inbound
-        /// traffic.
+        /// server processes and other processes on this fleet. Set this parameter for managed
+        /// EC2 fleets. You can leave this parameter empty when creating the fleet, but you must
+        /// call <a>UpdateFleetPortSettings</a> to set it before players can connect to game sessions.
+        /// As a best practice, we recommend opening ports for remote access only when you need
+        /// them and closing them when you're finished. For Realtime Servers fleets, Amazon GameLift
+        /// automatically sets TCP and UDP ranges.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]
@@ -424,11 +322,11 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property EC2InstanceType. 
         /// <para>
-        /// The Amazon GameLift-supported Amazon EC2 instance type to use with EC2 and container
-        /// fleets. Instance type determines the computing resources that will be used to host
-        /// your game servers, including CPU, memory, storage, and networking capacity. See <a
-        /// href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance
-        /// Types</a> for detailed descriptions of Amazon EC2 instance types.
+        /// The Amazon GameLift-supported Amazon EC2 instance type to use with managed EC2 fleets.
+        /// Instance type determines the computing resources that will be used to host your game
+        /// servers, including CPU, memory, storage, and networking capacity. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon
+        /// Elastic Compute Cloud Instance Types</a> for detailed descriptions of Amazon EC2 instance
+        /// types.
         /// </para>
         /// </summary>
         public EC2InstanceType EC2InstanceType
@@ -467,13 +365,15 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property InstanceRoleArn. 
         /// <para>
-        /// A unique identifier for an IAM role with access permissions to other Amazon Web Services
-        /// services. Any application that runs on an instance in the fleet--including install
-        /// scripts, server processes, and other processes--can use these permissions to interact
-        /// with Amazon Web Services resources that you own or have access to. For more information
-        /// about using the role with your game server builds, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
-        /// Communicate with other Amazon Web Services resources from your fleets</a>. This fleet
-        /// property can't be changed after the fleet is created.
+        /// A unique identifier for an IAM role that manages access to your Amazon Web Services
+        /// services. With an instance role ARN set, any application that runs on an instance
+        /// in this fleet can assume the role, including install scripts, server processes, and
+        /// daemons (background processes). Create a role or look up a role's ARN by using the
+        /// <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the Amazon Web
+        /// Services Management Console. Learn more about using on-box credentials for your game
+        /// servers at <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+        /// Access external resources from a game server</a>. This fleet property can't be changed
+        /// after the fleet is created.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -701,11 +601,10 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property RuntimeConfiguration. 
         /// <para>
         /// Instructions for how to launch and run server processes on the fleet. Set runtime
-        /// configuration for EC2 fleets and container fleets. For an Anywhere fleets, set this
-        /// parameter only if the fleet is running the Amazon GameLift Agent. The runtime configuration
-        /// defines one or more server process configurations. Each server process identifies
-        /// a game executable or Realtime script file and the number of processes to run concurrently.
-        /// 
+        /// configuration for managed EC2 fleets. For an Anywhere fleets, set this parameter only
+        /// if the fleet is running the Amazon GameLift Agent. The runtime configuration defines
+        /// one or more server process configurations. Each server process identifies a game executable
+        /// or Realtime script file and the number of processes to run concurrently. 
         /// </para>
         ///  <note> 
         /// <para>

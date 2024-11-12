@@ -30,16 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// <b>This data type has been expanded to use with the Amazon GameLift containers feature,
-    /// which is currently in public preview.</b> 
-    /// 
-    ///  
-    /// <para>
     /// Determines whether a TLS/SSL certificate is generated for a fleet. This feature must
     /// be enabled when creating the fleet. All instances in a fleet share the same certificate.
     /// The certificate can be retrieved by calling the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">Amazon
-    /// GameLift Server SDK</a> operation <c>GetInstanceCertificate</c>. 
-    /// </para>
+    /// GameLift Server SDK</a> operation <c>GetInstanceCertificate</c>.
     /// </summary>
     public partial class CertificateConfiguration
     {
@@ -56,11 +50,11 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>GENERATED</b> - Generate a TLS/SSL certificate for this fleet.
+        ///  <b>GENERATED</b> -- Generate a TLS/SSL certificate for this fleet.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>DISABLED</b> - (default) Do not generate a TLS/SSL certificate for this fleet.
+        ///  <b>DISABLED</b> -- (default) Do not generate a TLS/SSL certificate for this fleet.
         /// 
         /// </para>
         ///  </li> </ul>

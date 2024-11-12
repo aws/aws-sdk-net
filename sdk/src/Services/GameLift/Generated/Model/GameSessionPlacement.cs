@@ -161,9 +161,9 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property GameSessionData. 
         /// <para>
         /// A set of custom game session properties, formatted as a single string value. This
-        /// data is passed to a game server process in the <c>GameSession</c> object with a request
-        /// to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
-        /// a Game Session</a>).
+        /// data is passed to a game server process with a request to start a new game session.
+        /// For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+        /// a game session</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=262144)]
@@ -367,7 +367,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property PlayerLatencies. 
         /// <para>
         /// A set of values, expressed in milliseconds, that indicates the amount of latency that
-        /// a player experiences when connected to Amazon Web Services Regions.
+        /// a player experiences when connected to @aws; Regions.
         /// </para>
         /// </summary>
         public List<PlayerLatency> PlayerLatencies
@@ -444,7 +444,7 @@ namespace Amazon.GameLift.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>TIMED_OUT</b> -- A new game session was not successfully created before the time
-        /// limit expired. You can resubmit the placement request as needed.
+        /// limit expired. You can resubmit as a new placement request as needed.
         /// </para>
         ///  </li> <li> 
         /// <para>

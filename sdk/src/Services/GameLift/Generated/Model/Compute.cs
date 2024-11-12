@@ -30,28 +30,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// <b>This data type has been expanded to use with the Amazon GameLift containers feature,
-    /// which is currently in public preview.</b> 
-    /// 
-    ///  
-    /// <para>
     /// An Amazon GameLift compute resource for hosting your game servers. Computes in an
     /// Amazon GameLift fleet differs depending on the fleet's compute type property as follows:
     /// 
-    /// </para>
+    /// 
     ///  <ul> <li> 
     /// <para>
-    /// For <c>EC2</c> fleets, a compute is an EC2 instance.
+    /// For managed EC2 fleets, a compute is an EC2 instance.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For <c>ANYWHERE</c> fleets, a compute is a computing resource that you provide and
-    /// is registered to the fleet.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// For <c>CONTAINER</c> fleets, a compute is a container that's registered to the fleet.
-    /// 
+    /// For Anywhere fleets, a compute is a computing resource that you provide and is registered
+    /// to the fleet.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -60,13 +50,14 @@ namespace Amazon.GameLift.Model
         private string _computeArn;
         private string _computeName;
         private ComputeStatus _computeStatus;
-        private ContainerAttributes _containerAttributes;
+        private List<ContainerAttribute> _containerAttributes = AWSConfigs.InitializeCollections ? new List<ContainerAttribute>() : null;
         private DateTime? _creationTime;
         private string _dnsName;
         private string _fleetArn;
         private string _fleetId;
         private string _gameLiftAgentEndpoint;
         private string _gameLiftServiceSdkEndpoint;
+        private string _gameServerContainerGroupDefinitionArn;
         private string _instanceId;
         private string _ipAddress;
         private string _location;
@@ -136,10 +127,11 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ContainerAttributes. 
         /// <para>
-        ///  Some attributes of a container. 
+        /// A set of attributes for each container in the compute. 
         /// </para>
         /// </summary>
-        public ContainerAttributes ContainerAttributes
+        [AWSProperty(Min=1, Max=10)]
+        public List<ContainerAttribute> ContainerAttributes
         {
             get { return this._containerAttributes; }
             set { this._containerAttributes = value; }
@@ -148,7 +140,7 @@ namespace Amazon.GameLift.Model
         // Check to see if ContainerAttributes property is set
         internal bool IsSetContainerAttributes()
         {
-            return this._containerAttributes != null;
+            return this._containerAttributes != null && (this._containerAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -195,6 +187,7 @@ namespace Amazon.GameLift.Model
         /// The Amazon Resource Name (ARN) of the fleet that the compute belongs to.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string FleetArn
         {
             get { return this._fleetArn; }
@@ -213,6 +206,7 @@ namespace Amazon.GameLift.Model
         /// A unique identifier for the fleet that the compute belongs to.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string FleetId
         {
             get { return this._fleetId; }
@@ -266,10 +260,28 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GameServerContainerGroupDefinitionArn. 
+        /// <para>
+        /// The game server container group definition for the compute.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=512)]
+        public string GameServerContainerGroupDefinitionArn
+        {
+            get { return this._gameServerContainerGroupDefinitionArn; }
+            set { this._gameServerContainerGroupDefinitionArn = value; }
+        }
+
+        // Check to see if GameServerContainerGroupDefinitionArn property is set
+        internal bool IsSetGameServerContainerGroupDefinitionArn()
+        {
+            return this._gameServerContainerGroupDefinitionArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        ///  The <c>InstanceID</c> of the <c>Instance</c> hosting the compute for Container and
-        /// Managed EC2 fleets. 
+        ///  The <c>InstanceID</c> of the EC2 instance that is hosting the compute. 
         /// </para>
         /// </summary>
         public string InstanceId

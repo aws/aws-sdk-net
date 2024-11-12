@@ -69,6 +69,18 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetComputeStatus())
+                {
+                    context.Writer.WritePropertyName("ComputeStatus");
+                    context.Writer.Write(publicRequest.ComputeStatus);
+                }
+
+                if(publicRequest.IsSetContainerGroupDefinitionName())
+                {
+                    context.Writer.WritePropertyName("ContainerGroupDefinitionName");
+                    context.Writer.Write(publicRequest.ContainerGroupDefinitionName);
+                }
+
                 if(publicRequest.IsSetFleetId())
                 {
                     context.Writer.WritePropertyName("FleetId");

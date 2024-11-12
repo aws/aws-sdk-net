@@ -31,19 +31,30 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteContainerGroupDefinition operation.
-    /// <b>This operation is used with the Amazon GameLift containers feature, which is currently
-    /// in public preview. </b> 
+    /// Deletes a container group definition. You can delete a container group definition
+    /// if there are no fleets using the definition. 
     /// 
     ///  
     /// <para>
-    /// Deletes a container group definition resource. You can delete a container group definition
-    /// if there are no fleets using the definition. 
+    ///  <b>Request options:</b> 
     /// </para>
-    ///  
+    ///  <ul> <li> 
     /// <para>
-    /// To delete a container group definition, identify the resource to delete.
+    /// Delete an entire container group definition, including all versions. Specify the container
+    /// group definition name, or use an ARN value without the version number.
     /// </para>
-    ///  
+    ///  </li> <li> 
+    /// <para>
+    /// Delete a particular version. Specify the container group definition name and a version
+    /// number, or use an ARN value that includes the version number.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Keep the newest versions and delete all older versions. Specify the container group
+    /// definition name and the number of versions to retain. For example, set <c>VersionCountToRetain</c>
+    /// to 5 to delete all but the five most recent versions.
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     ///  <b>Learn more</b> 
     /// </para>
@@ -57,6 +68,8 @@ namespace Amazon.GameLift.Model
     public partial class DeleteContainerGroupDefinitionRequest : AmazonGameLiftRequest
     {
         private string _name;
+        private int? _versionCountToRetain;
+        private int? _versionNumber;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -76,6 +89,44 @@ namespace Amazon.GameLift.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionCountToRetain. 
+        /// <para>
+        /// The number of most recent versions to keep while deleting all older versions.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int VersionCountToRetain
+        {
+            get { return this._versionCountToRetain.GetValueOrDefault(); }
+            set { this._versionCountToRetain = value; }
+        }
+
+        // Check to see if VersionCountToRetain property is set
+        internal bool IsSetVersionCountToRetain()
+        {
+            return this._versionCountToRetain.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionNumber. 
+        /// <para>
+        /// The specific version to delete.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int VersionNumber
+        {
+            get { return this._versionNumber.GetValueOrDefault(); }
+            set { this._versionNumber = value; }
+        }
+
+        // Check to see if VersionNumber property is set
+        internal bool IsSetVersionNumber()
+        {
+            return this._versionNumber.HasValue; 
         }
 
     }

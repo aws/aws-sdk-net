@@ -66,6 +66,7 @@ namespace Amazon.GameLift.Model
         /// A unique identifier for the fleet containing the instance to be accessed.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string FleetId
         {
             get { return this._fleetId; }
