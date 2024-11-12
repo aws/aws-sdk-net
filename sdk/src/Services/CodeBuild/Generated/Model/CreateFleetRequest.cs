@@ -223,10 +223,24 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// The environment type <c>ARM_EC2</c> is available only in regions US East (N. Virginia),
+        /// US East (Ohio), US West (Oregon), EU (Ireland), EU (Frankfurt), Asia Pacific (Tokyo),
+        /// Asia Pacific (Singapore), Asia Pacific (Sydney), South America (São Paulo), and Asia
+        /// Pacific (Mumbai).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// The environment type <c>LINUX_CONTAINER</c> is available only in regions US East (N.
         /// Virginia), US East (Ohio), US West (Oregon), EU (Ireland), EU (Frankfurt), Asia Pacific
         /// (Tokyo), Asia Pacific (Singapore), Asia Pacific (Sydney), South America (São Paulo),
         /// and Asia Pacific (Mumbai).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The environment type <c>LINUX_EC2</c> is available only in regions US East (N. Virginia),
+        /// US East (Ohio), US West (Oregon), EU (Ireland), EU (Frankfurt), Asia Pacific (Tokyo),
+        /// Asia Pacific (Singapore), Asia Pacific (Sydney), South America (São Paulo), and Asia
+        /// Pacific (Mumbai).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -244,6 +258,13 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         /// The environment type <c>MAC_ARM</c> is available for Large fleets only in regions
         /// US East (N. Virginia), US East (Ohio), US West (Oregon), and Asia Pacific (Sydney).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The environment type <c>WINDOWS_EC2</c> is available only in regions US East (N. Virginia),
+        /// US East (Ohio), US West (Oregon), EU (Ireland), EU (Frankfurt), Asia Pacific (Tokyo),
+        /// Asia Pacific (Singapore), Asia Pacific (Sydney), South America (São Paulo), and Asia
+        /// Pacific (Mumbai).
         /// </para>
         ///  </li> <li> 
         /// <para>

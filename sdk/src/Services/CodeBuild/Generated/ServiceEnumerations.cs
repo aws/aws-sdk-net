@@ -751,6 +751,10 @@ namespace Amazon.CodeBuild
         /// </summary>
         public static readonly EnvironmentType ARM_CONTAINER = new EnvironmentType("ARM_CONTAINER");
         /// <summary>
+        /// Constant ARM_EC2 for EnvironmentType
+        /// </summary>
+        public static readonly EnvironmentType ARM_EC2 = new EnvironmentType("ARM_EC2");
+        /// <summary>
         /// Constant ARM_LAMBDA_CONTAINER for EnvironmentType
         /// </summary>
         public static readonly EnvironmentType ARM_LAMBDA_CONTAINER = new EnvironmentType("ARM_LAMBDA_CONTAINER");
@@ -758,6 +762,10 @@ namespace Amazon.CodeBuild
         /// Constant LINUX_CONTAINER for EnvironmentType
         /// </summary>
         public static readonly EnvironmentType LINUX_CONTAINER = new EnvironmentType("LINUX_CONTAINER");
+        /// <summary>
+        /// Constant LINUX_EC2 for EnvironmentType
+        /// </summary>
+        public static readonly EnvironmentType LINUX_EC2 = new EnvironmentType("LINUX_EC2");
         /// <summary>
         /// Constant LINUX_GPU_CONTAINER for EnvironmentType
         /// </summary>
@@ -774,6 +782,10 @@ namespace Amazon.CodeBuild
         /// Constant WINDOWS_CONTAINER for EnvironmentType
         /// </summary>
         public static readonly EnvironmentType WINDOWS_CONTAINER = new EnvironmentType("WINDOWS_CONTAINER");
+        /// <summary>
+        /// Constant WINDOWS_EC2 for EnvironmentType
+        /// </summary>
+        public static readonly EnvironmentType WINDOWS_EC2 = new EnvironmentType("WINDOWS_EC2");
         /// <summary>
         /// Constant WINDOWS_SERVER_2019_CONTAINER for EnvironmentType
         /// </summary>
