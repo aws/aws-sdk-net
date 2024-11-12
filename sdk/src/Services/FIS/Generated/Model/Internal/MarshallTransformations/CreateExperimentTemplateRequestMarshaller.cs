@@ -114,6 +114,17 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetExperimentReportConfiguration())
+                {
+                    context.Writer.WritePropertyName("experimentReportConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CreateExperimentTemplateReportConfigurationInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ExperimentReportConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetLogConfiguration())
                 {
                     context.Writer.WritePropertyName("logConfiguration");
