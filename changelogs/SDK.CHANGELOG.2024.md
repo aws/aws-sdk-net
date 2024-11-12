@@ -1,3 +1,20 @@
+### 3.7.924.0 (2024-11-12 19:42 UTC)
+* CodeBuild (3.7.407.0)
+	* AWS CodeBuild now supports non-containerized Linux and Windows builds on Reserved Capacity.
+* ControlTower (3.7.401.0)
+	* Added ResetEnabledControl API.
+* FIS (3.7.403.0)
+	* This release adds support for generating experiment reports with the experiment report configuration
+* GameLift (3.7.402.0)
+	* Amazon GameLift releases container fleets support for general availability. Deploy Linux-based containerized game server software for hosting on Amazon GameLift.
+* PaymentCryptography (3.7.402.0)
+	* Updated ListAliases API with KeyArn filter.
+* RDS (3.7.406.8)
+	* Updates Amazon RDS documentation for Amazon RDS Extended Support for Amazon Aurora MySQL.
+* Core 3.7.400.49
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.923.0 (2024-11-11 19:17 UTC)
 * CloudFront (3.7.401.0)
 	* No API changes from previous release. This release migrated the model to Smithy keeping all features unchanged.
