@@ -162,19 +162,12 @@ namespace Amazon.Runtime
             config.Validate();
             this.DefaultAWSCredentials = credentials;
             _config = config;
-            Signer = CreateSigner();
             EndpointDiscoveryResolver = new EndpointDiscoveryResolver(config, _logger);
             Initialize();
             UpdateSecurityProtocol();
             BuildRuntimePipeline();
 
             _uptimeMetricMeasurer = MetricsUtilities.MeasureDuration(config, TelemetryConstants.ClientUptimeMetricName);
-        }
-
-        protected AbstractAWSSigner Signer
-        {
-            get;
-            private set;
         }
 
         protected AmazonServiceClient(string awsAccessKeyId, string awsSecretAccessKey, string awsSessionToken, ClientConfig config)
@@ -184,6 +177,11 @@ namespace Amazon.Runtime
 
         protected AmazonServiceClient(string awsAccessKeyId, string awsSecretAccessKey, ClientConfig config)
             : this(new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey), config)
+        {
+        }
+
+        protected AmazonServiceClient(ClientConfig config)
+            : this(null, config)
         {
         }
 
@@ -202,7 +200,7 @@ namespace Amazon.Runtime
             ThrowIfDisposed();
 
             var executionContext = new ExecutionContext(
-                new RequestContext(this.Config.LogMetrics, Signer)
+                new RequestContext(this.Config.LogMetrics)
                 {
                     ClientConfig = this.Config,
                     Marshaller = options.RequestMarshaller,
@@ -233,7 +231,7 @@ namespace Amazon.Runtime
                 cancellationToken = _config.BuildDefaultCancellationToken();
 
             var executionContext = new ExecutionContext(
-                new RequestContext(this.Config.LogMetrics, Signer)
+                new RequestContext(this.Config.LogMetrics)
                 {
                     ClientConfig = this.Config,
                     Marshaller = options.RequestMarshaller,
@@ -302,7 +300,7 @@ namespace Amazon.Runtime
             mExceptionEvent(this, args);
         }
 
-#endregion
+        #endregion
 
         #region Dispose methods
 
@@ -335,9 +333,8 @@ namespace Amazon.Runtime
                 throw new ObjectDisposedException(GetType().FullName);
         }
 
-#endregion
+        #endregion
 
-        protected abstract AbstractAWSSigner CreateSigner();
         protected virtual void CustomizeRuntimePipeline(RuntimePipeline pipeline) { }
 
         private void BuildRuntimePipeline()
@@ -469,7 +466,7 @@ namespace Amazon.Runtime
         /// <param name="skipEncodingValidPathChars">If true the accepted path characters {/+:} are not encoded.</param>
         /// <returns>Uri for the given SDK request</returns>
         public static Uri ComposeUrl(IRequest internalRequest, bool skipEncodingValidPathChars)
-        { 
+        {
             Uri url = internalRequest.Endpoint;
             var resourcePath = internalRequest.ResourcePath;
             if (resourcePath == null)
@@ -532,7 +529,7 @@ namespace Amazon.Runtime
             DontUnescapePathDotsAndSlashes(uri);
             return uri;
         }
- 
+
 
         /// <summary>
         /// Patches the in-flight uri to stop it unescaping the path etc (what Uri did before
@@ -625,6 +622,6 @@ namespace Amazon.Runtime
             {
                 requestContext.CSMCallEvent = new MonitoringAPICallEvent(requestContext);
             }
-        }        
+        }
     }
 }

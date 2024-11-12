@@ -9,7 +9,7 @@
                 "operation":"addBefore",
                 "newType":"Amazon.CognitoSync.Internal.CognitoCredentialsRetriever",
                 "targetType":"Amazon.Runtime.Internal.Marshaller",
-                "constructorInput":"this.Credentials"
+                "constructorInput":"this.DefaultAWSCredentials"
             }
         ]
     },
