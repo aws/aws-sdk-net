@@ -1,0 +1,11 @@
+{
+    "services": [
+        {
+            "serviceName": "DynamoDBv2",
+            "type": "patch",
+            "changeLogMessages": [
+                "Pull Request [#3547](https://github.com/aws/aws-sdk-net/pull/3547): Correct XML docs for DataModel attributes"
+            ]
+        }
+    ]
+}
