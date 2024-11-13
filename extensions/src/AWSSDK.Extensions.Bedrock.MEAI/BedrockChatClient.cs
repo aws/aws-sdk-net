@@ -27,8 +27,6 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Nodes;
-using System.Text.Json.Serialization;
-using System.Text.Json.Serialization.Metadata;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -268,7 +266,7 @@ internal sealed partial class BedrockChatClient : IChatClient
         {
             try
             {
-                return (Dictionary<string, object?>?)JsonSerializer.Deserialize(jsonInput, JsonContext.DefaultOptions.GetTypeInfo(typeof(Dictionary<string, object?>)));
+                return (Dictionary<string, object?>?)JsonSerializer.Deserialize(jsonInput, BedrockJsonContext.DefaultOptions.GetTypeInfo(typeof(Dictionary<string, object?>)));
             }
             catch (Exception e)
             {
@@ -354,7 +352,7 @@ internal sealed partial class BedrockChatClient : IChatClient
                         string s => s,
                         bool b => b,
                         JsonElement json => ToDocument(json),
-                        { } other => ToDocument(JsonSerializer.SerializeToElement(other, JsonContext.DefaultOptions.GetTypeInfo(other.GetType()))),
+                        { } other => ToDocument(JsonSerializer.SerializeToElement(other, BedrockJsonContext.DefaultOptions.GetTypeInfo(other.GetType()))),
                         _ => default,
                     };
 
@@ -404,7 +402,7 @@ internal sealed partial class BedrockChatClient : IChatClient
         {
             return (Dictionary<string, object?>?)
                 DocumentDictionaryToNode(d.AsDictionary())
-                .Deserialize(JsonContext.DefaultOptions.GetTypeInfo(typeof(Dictionary<string, object?>)));
+                .Deserialize(BedrockJsonContext.DefaultOptions.GetTypeInfo(typeof(Dictionary<string, object?>)));
         }
 
         return null;
@@ -580,7 +578,7 @@ internal sealed partial class BedrockChatClient : IChatClient
                         default:
                             try
                             {
-                                d.Add(prop.Key, ToDocument(JsonSerializer.SerializeToElement(prop.Value, JsonContext.DefaultOptions.GetTypeInfo(prop.Value.GetType()))));
+                                d.Add(prop.Key, ToDocument(JsonSerializer.SerializeToElement(prop.Value, BedrockJsonContext.DefaultOptions.GetTypeInfo(prop.Value.GetType()))));
                             }
                             catch { }
                             break;
@@ -590,55 +588,5 @@ internal sealed partial class BedrockChatClient : IChatClient
         }
 
         return d;
-    }
-
-    /// <summary>Provides type information for use with <see cref="JsonSerializer"/>.</summary>
-    [JsonSourceGenerationOptions(JsonSerializerDefaults.Web,
-        UseStringEnumConverter = true,
-        DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
-        WriteIndented = true)]
-    [JsonSerializable(typeof(Dictionary<string, object>))]
-    [JsonSerializable(typeof(IDictionary<string, object>))]
-    [JsonSerializable(typeof(bool))]
-    [JsonSerializable(typeof(int))]
-    [JsonSerializable(typeof(long))]
-    [JsonSerializable(typeof(float))]
-    [JsonSerializable(typeof(double))]
-    [JsonSerializable(typeof(string))]
-    [JsonSerializable(typeof(JsonElement))]
-    [JsonSerializable(typeof(JsonNode))]
-    private partial class JsonContext : JsonSerializerContext
-    {
-        /// <summary>Gets the <see cref="JsonSerializerOptions"/> singleton used as the default in JSON serialization operations.</summary>
-        public static readonly JsonSerializerOptions DefaultOptions = CreateDefaultToolJsonOptions();
-
-        /// <summary>Creates the default <see cref="JsonSerializerOptions"/> to use for serialization-related operations.</summary>
-#if NET8_0_OR_GREATER
-        [UnconditionalSuppressMessage("AotAnalysis", "IL3050", Justification = "DefaultJsonTypeInfoResolver is only used when reflection-based serialization is enabled")]
-        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2026", Justification = "DefaultJsonTypeInfoResolver is only used when reflection-based serialization is enabled")]
-#endif
-        private static JsonSerializerOptions CreateDefaultToolJsonOptions()
-        {
-            // If reflection-based serialization is enabled by default, use it, as it's the most permissive in terms of what it can serialize,
-            // and we want to be flexible in terms of what can be put into the various collections in the object model.
-            // Otherwise, use the source-generated options to enable trimming and Native AOT.
-
-            if (JsonSerializer.IsReflectionEnabledByDefault)
-            {
-                // Keep in sync with the JsonSourceGenerationOptions attribute on JsonContext above.
-                JsonSerializerOptions options = new(JsonSerializerDefaults.Web)
-                {
-                    TypeInfoResolver = new DefaultJsonTypeInfoResolver(),
-                    Converters = { new JsonStringEnumConverter() },
-                    DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
-                    WriteIndented = true,
-                };
-
-                options.MakeReadOnly();
-                return options;
-            }
-
-            return Default.Options;
-        }
     }
 }
