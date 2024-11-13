@@ -94,12 +94,16 @@ namespace Amazon.CloudTrail.Model
         ///  
         /// <para>
         /// For CloudTrail management events, supported fields include <c>eventCategory</c> (required),
-        /// <c>eventSource</c>, and <c>readOnly</c>.
+        /// <c>eventSource</c>, and <c>readOnly</c>. The following additional fields are available
+        /// for event data stores: <c>eventName</c>, <c>eventType</c>, <c>sessionCredentialFromConsole</c>,
+        /// and <c>userIdentity.arn</c>.
         /// </para>
         ///  
         /// <para>
         /// For CloudTrail data events, supported fields include <c>eventCategory</c> (required),
         /// <c>resources.type</c> (required), <c>eventName</c>, <c>readOnly</c>, and <c>resources.ARN</c>.
+        /// The following additional fields are available for event data stores: <c>eventSource</c>,
+        /// <c>eventType</c>, <c>sessionCredentialFromConsole</c>, and <c>userIdentity.arn</c>.
         /// </para>
         ///  
         /// <para>
@@ -123,14 +127,19 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <c>eventSource</c> </b> - This field is only used for management events and network
-        /// activity events.
+        ///  <b> <c>eventSource</c> </b> - This field is only used for management events, data
+        /// events (for event data stores only), and network activity events.
         /// </para>
         ///  
         /// <para>
-        /// For management events, this is an optional field that can be set to <c>NotEquals</c>
+        /// For management events for trails, this is an optional field that can be set to <c>NotEquals</c>
         /// <c>kms.amazonaws.com</c> to exclude KMS management events, or <c>NotEquals</c> <c>rdsdata.amazonaws.com</c>
         /// to exclude RDS management events.
+        /// </para>
+        ///  
+        /// <para>
+        /// For management and data events for event data stores, you can use it to include or
+        /// exclude any event source and can use any operator.
         /// </para>
         ///  
         /// <para>
@@ -162,9 +171,9 @@ namespace Amazon.CloudTrail.Model
         ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <b> <c>eventName</c> </b> - This is an optional field that is only used for data
-        /// events and network activity events. You can use any operator with <c>eventName</c>.
-        /// You can use it to ﬁlter in or ﬁlter out specific events. You can have multiple values
-        /// for this ﬁeld, separated by commas.
+        /// events, management events (for event data stores only), and network activity events.
+        /// You can use any operator with <c>eventName</c>. You can use it to ﬁlter in or ﬁlter
+        /// out specific events. You can have multiple values for this ﬁeld, separated by commas.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -202,9 +211,17 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  For non-Amazon Web Services events, the value must be <c>ActivityAuditLog</c>. 
+        ///  For events outside of Amazon Web Services, the value must be <c>ActivityAuditLog</c>.
+        /// 
         /// </para>
         ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <b> <c>eventType</c> </b> - This is an optional field available only for event data
+        /// stores, which is used to filter management and data events on the event type. For
+        /// information about available event types, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-record-contents.html#ct-event-type">CloudTrail
+        /// record contents</a> in the <i>CloudTrail user guide</i>.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <b> <c>errorCode</c> </b> - This ﬁeld is only used to filter CloudTrail network activity
         /// events and is optional. This is the error code to filter on. Currently, the only valid
@@ -213,314 +230,23 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <b> <c>sessionCredentialFromConsole</c> </b> - This is an optional field available
+        /// only for event data stores, which is used to filter management and data events based
+        /// on whether the events originated from an Amazon Web Services Management Console session.
+        /// <c>sessionCredentialFromConsole</c> can only use the <c>Equals</c> and <c>NotEquals</c>
+        /// operators.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <b> <c>resources.type</c> </b> - This ﬁeld is required for CloudTrail data events.
         /// <c>resources.type</c> can only use the <c>Equals</c> operator.
         /// </para>
         ///  
         /// <para>
-        /// The value can be one of the following:
+        /// For a list of available resource types for data events, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html#logging-data-events">Data
+        /// events</a> in the <i>CloudTrail User Guide</i>.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>AWS::AppConfig::Configuration</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::B2BI::Transformer</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::Bedrock::AgentAlias</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::Bedrock::FlowAlias</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::Bedrock::Guardrail</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::Bedrock::KnowledgeBase</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::Cassandra::Table</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::CloudFront::KeyValueStore</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::CloudTrail::Channel</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::CloudWatch::Metric</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::CodeWhisperer::Customization</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::CodeWhisperer::Profile</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::Cognito::IdentityPool</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::DynamoDB::Stream</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::DynamoDB::Table</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::EC2::Snapshot</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::EMRWAL::Workspace</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::FinSpace::Environment</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::Glue::Table</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::GreengrassV2::ComponentVersion</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::GreengrassV2::Deployment</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::GuardDuty::Detector</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::IoT::Certificate</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::IoT::Thing</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::IoTSiteWise::Asset</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::IoTSiteWise::TimeSeries</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::IoTTwinMaker::Entity</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::IoTTwinMaker::Workspace</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::KendraRanking::ExecutionPlan</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::Kinesis::Stream</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::Kinesis::StreamConsumer</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::KinesisVideo::Stream</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::Lambda::Function</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::MachineLearning::MlModel</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::ManagedBlockchain::Network</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::ManagedBlockchain::Node</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::MedicalImaging::Datastore</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::NeptuneGraph::Graph</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::One::UKey</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::One::User</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::PaymentCryptography::Alias</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::PaymentCryptography::Key</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::PCAConnectorAD::Connector</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::PCAConnectorSCEP::Connector</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::QApps:QApp</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::QBusiness::Application</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::QBusiness::DataSource</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::QBusiness::Index</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::QBusiness::WebExperience</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::RDS::DBCluster</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::RUM::AppMonitor</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::S3::AccessPoint</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::S3::Object</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::S3Express::Object</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::S3ObjectLambda::AccessPoint</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::S3Outposts::Object</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::SageMaker::Endpoint</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::SageMaker::ExperimentTrialComponent</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::SageMaker::FeatureGroup</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::ServiceDiscovery::Namespace </c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::ServiceDiscovery::Service</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::SCN::Instance</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::SNS::PlatformEndpoint</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::SNS::Topic</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::SQS::Queue</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::SSM::ManagedNode</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::SSMMessages::ControlChannel</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::StepFunctions::StateMachine</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::SWF::Domain</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::ThinClient::Device</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::ThinClient::Environment</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::Timestream::Database</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::Timestream::Table</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::VerifiedPermissions::PolicyStore</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::XRay::Trace</c> 
-        /// </para>
-        ///  </li> </ul> 
+        ///  
         /// <para>
         ///  You can have only one <c>resources.type</c> ﬁeld per selector. To log events on more
         /// than one resource type, add another selector.
@@ -546,6 +272,14 @@ namespace Amazon.CloudTrail.Model
         /// have ARNs.
         /// </para>
         ///  </note> </li> <li> 
+        /// <para>
+        ///  <b> <c>userIdentity.arn</c> </b> - This is an optional field available only for event
+        /// data stores, which is used to filter management and data events on the userIdentity
+        /// ARN. You can use any operator with <c>userIdentity.arn</c>. For more information on
+        /// the userIdentity element, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-user-identity.html">CloudTrail
+        /// userIdentity element</a> in the <i>CloudTrail User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <b> <c>vpcEndpointId</c> </b> - This ﬁeld is only used to filter CloudTrail network
         /// activity events and is optional. This field identifies the VPC endpoint that the request

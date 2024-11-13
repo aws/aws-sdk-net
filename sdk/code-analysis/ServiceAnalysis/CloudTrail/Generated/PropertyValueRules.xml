@@ -142,6 +142,12 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudTrail.Model.DescribeQueryResponse.Prompt</property>
+    <min>3</min>
+    <max>500</max>
+    <pattern>^[ -~\n]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudTrail.Model.DescribeQueryResponse.QueryId</property>
     <min>36</min>
     <max>36</max>
@@ -188,6 +194,24 @@
     <min>3</min>
     <max>125</max>
     <pattern>^[a-zA-Z0-9._/\-:@=\+,\.]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.GenerateQueryRequest.Prompt</property>
+    <min>3</min>
+    <max>500</max>
+    <pattern>^[ -~\n]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.GenerateQueryResponse.QueryAlias</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9._\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.GenerateQueryResponse.QueryStatement</property>
+    <min>1</min>
+    <max>10000</max>
+    <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudTrail.Model.GetChannelRequest.Channel</property>
