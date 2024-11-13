@@ -41,6 +41,7 @@ namespace Amazon.ApplicationSignals.Model
     public partial class ServiceLevelObjective
     {
         private string _arn;
+        private List<BurnRateConfiguration> _burnRateConfigurations = AWSConfigs.InitializeCollections ? new List<BurnRateConfiguration>() : null;
         private DateTime? _createdTime;
         private string _description;
         private EvaluationType _evaluationType;
@@ -67,6 +68,27 @@ namespace Amazon.ApplicationSignals.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BurnRateConfigurations. 
+        /// <para>
+        /// Each object in this array defines the length of the look-back window used to calculate
+        /// one burn rate metric for this SLO. The burn rate measures how fast the service is
+        /// consuming the error budget, relative to the attainment goal of the SLO.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<BurnRateConfiguration> BurnRateConfigurations
+        {
+            get { return this._burnRateConfigurations; }
+            set { this._burnRateConfigurations = value; }
+        }
+
+        // Check to see if BurnRateConfigurations property is set
+        internal bool IsSetBurnRateConfigurations()
+        {
+            return this._burnRateConfigurations != null && (this._burnRateConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
