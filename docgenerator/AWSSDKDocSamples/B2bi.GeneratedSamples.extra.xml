@@ -173,6 +173,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.B2bi.IAmazonB2bi.GenerateMapping(Amazon.B2bi.Model.GenerateMappingRequest)" />
+            <member name="M:Amazon.B2bi.AmazonB2biClient.GenerateMapping(Amazon.B2bi.Model.GenerateMappingRequest)" />
+            <member name="T:Amazon.B2bi.Model.GenerateMappingRequest" />
+            <member name="T:Amazon.B2bi.Model.GenerateMappingResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample GenerateMapping call"
+                    source=".\AWSSDKDocSamples\B2bi\B2bi.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.B2bi.IAmazonB2bi.GetCapability(Amazon.B2bi.Model.GetCapabilityRequest)" />
             <member name="M:Amazon.B2bi.AmazonB2biClient.GetCapability(Amazon.B2bi.Model.GetCapabilityRequest)" />
             <member name="T:Amazon.B2bi.Model.GetCapabilityRequest" />

@@ -237,8 +237,8 @@ namespace Amazon.B2bi.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Specifies the transformer's status. You can update the state of the transformer, from
-        /// <c>active</c> to <c>inactive</c>, or <c>inactive</c> to <c>active</c>.
+        /// Specifies the transformer's status. You can update the state of the transformer from
+        /// <c>inactive</c> to <c>active</c>.
         /// </para>
         /// </summary>
         public TransformerStatus Status

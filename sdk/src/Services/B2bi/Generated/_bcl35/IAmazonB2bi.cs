@@ -703,6 +703,71 @@ namespace Amazon.B2bi
 
         #endregion
         
+        #region  GenerateMapping
+
+
+        /// <summary>
+        /// Takes sample input and output documents and uses Amazon Bedrock to generate a mapping
+        /// automatically. Depending on the accuracy and other factors, you can then edit the
+        /// mapping for your needs.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Before you can use the AI-assisted feature for Amazon Web Services B2B Data Interchange
+        /// you must enable models in Amazon Bedrock. For details, see <a href="https://docs.aws.amazon.com/b2bi/latest/userguide/ai-assisted-mapping.html#ai-assist-prereq">AI-assisted
+        /// template mapping prerequisites</a> in the <i>Amazon Web Services B2B Data Interchange
+        /// User guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GenerateMapping service method.</param>
+        /// 
+        /// <returns>The response from the GenerateMapping service method, as returned by B2bi.</returns>
+        /// <exception cref="Amazon.B2bi.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.InternalServerException">
+        /// This exception is thrown when an error occurs in the Amazon Web Services B2B Data
+        /// Interchange service.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.ThrottlingException">
+        /// The request was denied due to throttling: the data speed and rendering may be limited
+        /// depending on various parameters and conditions.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.ValidationException">
+        /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/GenerateMapping">REST API Reference for GenerateMapping Operation</seealso>
+        GenerateMappingResponse GenerateMapping(GenerateMappingRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GenerateMapping operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GenerateMapping operation on AmazonB2biClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGenerateMapping
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/GenerateMapping">REST API Reference for GenerateMapping Operation</seealso>
+        IAsyncResult BeginGenerateMapping(GenerateMappingRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GenerateMapping operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGenerateMapping.</param>
+        /// 
+        /// <returns>Returns a  GenerateMappingResult from B2bi.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/GenerateMapping">REST API Reference for GenerateMapping Operation</seealso>
+        GenerateMappingResponse EndGenerateMapping(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetCapability
 
 

@@ -256,6 +256,24 @@ namespace AWSSDKDocSamples.Amazon.B2bi.Generated
             #endregion
         }
 
+        public void B2biGenerateMapping()
+        {
+            #region example-1
+
+            var client = new AmazonB2biClient();
+            var response = client.GenerateMapping(new GenerateMappingRequest 
+            {
+                InputFileContent = "Sample input file content",
+                MappingType = "JSONATA",
+                OutputFileContent = "Sample output file content"
+            });
+
+            float mappingAccuracy = response.MappingAccuracy;
+            string mappingTemplate = response.MappingTemplate;
+
+            #endregion
+        }
+
         public void B2biGetCapability()
         {
             #region example-1
