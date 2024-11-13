@@ -64,10 +64,6 @@
     <ProjectReference Include="../../Core/AWSSDK.Core.NetFramework.csproj"/>
   </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.AI.Abstractions" Version="9.0.0-preview.9.24525.1" />
-  </ItemGroup>
-
   <ItemGroup Condition="$(RunAnalyzersDuringBuild)">
         <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.3">
             <PrivateAssets>all</PrivateAssets>
