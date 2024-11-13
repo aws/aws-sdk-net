@@ -104,7 +104,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <c>amazon</c> | <c>aws-marketplace</c> 
+        /// Valid values: <c>amazon</c> | <c>aws-backup-vault</c> | <c>aws-marketplace</c> 
         /// </para>
         /// </summary>
         public string ImageOwnerAlias

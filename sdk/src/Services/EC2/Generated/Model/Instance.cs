@@ -555,7 +555,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LaunchTime. 
         /// <para>
-        /// The time the instance was launched.
+        /// The time that the instance was last launched. To determine the time that instance
+        /// was first launched, see the attachment time for the primary network interface.
         /// </para>
         /// </summary>
         public DateTime LaunchTime

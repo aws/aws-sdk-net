@@ -59,6 +59,8 @@ namespace Amazon.EC2.Model
         private string _ramdiskId;
         private string _rootDeviceName;
         private DeviceType _rootDeviceType;
+        private string _sourceImageId;
+        private string _sourceImageRegion;
         private string _sourceInstanceId;
         private string _sriovNetSupport;
         private ImageState _state;
@@ -273,7 +275,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ImageOwnerAlias. 
         /// <para>
-        /// The owner alias (<c>amazon</c> | <c>aws-marketplace</c>).
+        /// The owner alias (<c>amazon</c> | <c>aws-backup-vault</c> | <c>aws-marketplace</c>).
         /// </para>
         /// </summary>
         public string ImageOwnerAlias
@@ -537,6 +539,58 @@ namespace Amazon.EC2.Model
         internal bool IsSetRootDeviceType()
         {
             return this._rootDeviceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceImageId. 
+        /// <para>
+        /// The ID of the source AMI from which the AMI was created.
+        /// </para>
+        ///  
+        /// <para>
+        /// The ID only appears if the AMI was created using <a>CreateImage</a>, <a>CopyImage</a>,
+        /// or <a>CreateRestoreImageTask</a>. The ID does not appear if the AMI was created using
+        /// any other API. For some older AMIs, the ID might not be available. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/identify-source-ami-used-to-create-new-ami.html">Identify
+        /// the source AMI used to create a new AMI</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string SourceImageId
+        {
+            get { return this._sourceImageId; }
+            set { this._sourceImageId = value; }
+        }
+
+        // Check to see if SourceImageId property is set
+        internal bool IsSetSourceImageId()
+        {
+            return this._sourceImageId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceImageRegion. 
+        /// <para>
+        /// The Region of the source AMI. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The Region only appears if the AMI was created using <a>CreateImage</a>, <a>CopyImage</a>,
+        /// or <a>CreateRestoreImageTask</a>. The Region does not appear if the AMI was created
+        /// using any other API. For some older AMIs, the Region might not be available. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/identify-source-ami-used-to-create-new-ami.html">Identify
+        /// the source AMI used to create a new AMI</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public string SourceImageRegion
+        {
+            get { return this._sourceImageRegion; }
+            set { this._sourceImageRegion = value; }
+        }
+
+        // Check to see if SourceImageRegion property is set
+        internal bool IsSetSourceImageRegion()
+        {
+            return this._sourceImageRegion != null;
         }
 
         /// <summary>
