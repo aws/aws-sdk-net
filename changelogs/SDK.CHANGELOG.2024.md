@@ -1,3 +1,29 @@
+### 3.7.925.0 (2024-11-13 19:24 UTC)
+* AccessAnalyzer (3.7.401.0)
+	* This release adds support for policy validation and external access findings for resource control policies (RCP). IAM Access Analyzer helps you author functional and secure RCPs and awareness that a RCP may restrict external access. Updated service API, documentation, and paginators.
+* ApplicationSignals (3.7.403.0)
+	* Amazon CloudWatch Application Signals now supports creating Service Level Objectives with burn rates. Users can now create or update SLOs with burn rate configurations to meet their specific business requirements.
+* B2bi (3.7.402.0)
+	* This release adds a GenerateMapping API to allow generation of JSONata or XSLT transformer code based on input and output samples.
+* Billing (3.7.400.0)
+	* Today, AWS announces the general availability of ListBillingViews API in the AWS SDKs, to enable AWS Billing Conductor (ABC) users to create proforma Cost and Usage Reports (CUR) programmatically.
+* CloudTrail (3.7.401.0)
+	* This release adds a new API GenerateQuery that generates a query from a natural language prompt about the event data in your event data store. This operation uses generative artificial intelligence (generative AI) to produce a ready-to-use SQL query from the prompt.
+* DynamoDBv2 (3.7.403.0)
+	* This release includes supports the new WarmThroughput feature for DynamoDB. You can now provide an optional WarmThroughput attribute for CreateTable or UpdateTable APIs to pre-warm your table or global secondary index. You can also use DescribeTable to see the latest WarmThroughput value.
+	* Pull Request [#3547](https://github.com/aws/aws-sdk-net/pull/3547): Correct XML docs for DataModel attributes
+* EC2 (3.7.415.0)
+	* This release adds the source AMI details in DescribeImages API
+* InternetMonitor (3.7.402.0)
+	* Add new query type Routing_Suggestions regarding querying interface
+* MediaConvert (3.7.403.0)
+	* This release adds support for ARN inputs in the Kantar credentials secrets name field and the MSPR field to the manifests for PlayReady DRM protected outputs.
+* Organizations (3.7.403.0)
+	* Add support for policy operations on the Resource Control Polices.
+* Core 3.7.400.50
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.924.0 (2024-11-12 19:42 UTC)
 * CodeBuild (3.7.407.0)
 	* AWS CodeBuild now supports non-containerized Linux and Windows builds on Reserved Capacity.
