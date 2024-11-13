@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ReplicaGlobalSecondaryIndexDescription Object
+    /// Response Unmarshaller for TableWarmThroughputDescription Object
     /// </summary>  
-    public class ReplicaGlobalSecondaryIndexDescriptionUnmarshaller : IUnmarshaller<ReplicaGlobalSecondaryIndexDescription, XmlUnmarshallerContext>, IUnmarshaller<ReplicaGlobalSecondaryIndexDescription, JsonUnmarshallerContext>
+    public class TableWarmThroughputDescriptionUnmarshaller : IUnmarshaller<TableWarmThroughputDescription, XmlUnmarshallerContext>, IUnmarshaller<TableWarmThroughputDescription, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ReplicaGlobalSecondaryIndexDescription IUnmarshaller<ReplicaGlobalSecondaryIndexDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TableWarmThroughputDescription IUnmarshaller<TableWarmThroughputDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ReplicaGlobalSecondaryIndexDescription Unmarshall(JsonUnmarshallerContext context)
+        public TableWarmThroughputDescription Unmarshall(JsonUnmarshallerContext context)
         {
-            ReplicaGlobalSecondaryIndexDescription unmarshalledObject = new ReplicaGlobalSecondaryIndexDescription();
+            TableWarmThroughputDescription unmarshalledObject = new TableWarmThroughputDescription();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,22 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("IndexName", targetDepth))
+                if (context.TestExpression("ReadUnitsPerSecond", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ReadUnitsPerSecond = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IndexName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("OnDemandThroughputOverride", targetDepth))
+                if (context.TestExpression("WriteUnitsPerSecond", targetDepth))
                 {
-                    var unmarshaller = OnDemandThroughputOverrideUnmarshaller.Instance;
-                    unmarshalledObject.OnDemandThroughputOverride = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ProvisionedThroughputOverride", targetDepth))
-                {
-                    var unmarshaller = ProvisionedThroughputOverrideUnmarshaller.Instance;
-                    unmarshalledObject.ProvisionedThroughputOverride = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("WarmThroughput", targetDepth))
-                {
-                    var unmarshaller = GlobalSecondaryIndexWarmThroughputDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.WarmThroughput = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.WriteUnitsPerSecond = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +89,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
         }
 
 
-        private static ReplicaGlobalSecondaryIndexDescriptionUnmarshaller _instance = new ReplicaGlobalSecondaryIndexDescriptionUnmarshaller();        
+        private static TableWarmThroughputDescriptionUnmarshaller _instance = new TableWarmThroughputDescriptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ReplicaGlobalSecondaryIndexDescriptionUnmarshaller Instance
+        public static TableWarmThroughputDescriptionUnmarshaller Instance
         {
             get
             {
