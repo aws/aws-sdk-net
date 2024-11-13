@@ -38,6 +38,7 @@ namespace Amazon.AccessAnalyzer.Model
         private Dictionary<string, string> _condition = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private bool? _isPublic;
         private Dictionary<string, string> _principal = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private ResourceControlPolicyRestriction _resourceControlPolicyRestriction;
         private List<FindingSource> _sources = AWSConfigs.InitializeCollections ? new List<FindingSource>() : null;
 
         /// <summary>
@@ -113,6 +114,25 @@ namespace Amazon.AccessAnalyzer.Model
         internal bool IsSetPrincipal()
         {
             return this._principal != null && (this._principal.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceControlPolicyRestriction. 
+        /// <para>
+        /// The type of restriction applied to the finding by the resource owner with an Organizations
+        /// resource control policy (RCP).
+        /// </para>
+        /// </summary>
+        public ResourceControlPolicyRestriction ResourceControlPolicyRestriction
+        {
+            get { return this._resourceControlPolicyRestriction; }
+            set { this._resourceControlPolicyRestriction = value; }
+        }
+
+        // Check to see if ResourceControlPolicyRestriction property is set
+        internal bool IsSetResourceControlPolicyRestriction()
+        {
+            return this._resourceControlPolicyRestriction != null;
         }
 
         /// <summary>
