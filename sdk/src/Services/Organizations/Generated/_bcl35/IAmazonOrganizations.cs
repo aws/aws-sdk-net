@@ -359,6 +359,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -403,6 +407,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -470,6 +478,11 @@ namespace Amazon.Organizations
         ///  <ul> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">SERVICE_CONTROL_POLICY</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_rcps.html">RESOURCE_CONTROL_POLICY</a>
         /// 
         /// </para>
         ///  </li> <li> 
@@ -814,6 +827,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -858,6 +875,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1043,6 +1064,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -1087,6 +1112,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1521,6 +1550,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -1565,6 +1598,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2036,6 +2073,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -2080,6 +2121,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2611,6 +2656,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -2655,6 +2704,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3055,6 +3108,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -3099,6 +3156,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3496,6 +3557,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -3540,6 +3605,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3938,6 +4007,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -3982,6 +4055,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4164,6 +4241,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -4208,6 +4289,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4354,6 +4439,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -4398,6 +4487,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4553,6 +4646,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -4597,6 +4694,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4756,6 +4857,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -4800,6 +4905,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5524,6 +5633,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -5568,6 +5681,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5723,6 +5840,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -5767,6 +5888,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5918,6 +6043,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -5962,6 +6091,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6360,6 +6493,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -6404,6 +6541,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6567,6 +6708,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -6611,6 +6756,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6838,6 +6987,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -6882,6 +7035,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7032,6 +7189,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -7076,6 +7237,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7787,6 +7952,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -7831,6 +8000,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8294,6 +8467,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -8338,6 +8515,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8739,6 +8920,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -8783,6 +8968,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9048,6 +9237,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -9092,6 +9285,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9495,6 +9692,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -9539,6 +9740,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9937,6 +10142,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -9981,6 +10190,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10490,6 +10703,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -10534,6 +10751,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10989,6 +11210,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -11033,6 +11258,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11193,6 +11422,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -11237,6 +11470,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11395,6 +11632,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -11439,6 +11680,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11828,6 +12073,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -11872,6 +12121,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12031,6 +12284,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -12075,6 +12332,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12233,6 +12494,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -12277,6 +12542,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12658,6 +12927,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -12702,6 +12975,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13092,6 +13369,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -13136,6 +13417,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13299,6 +13584,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -13343,6 +13632,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13509,6 +13802,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -13553,6 +13850,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13707,6 +14008,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -13751,6 +14056,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13919,6 +14228,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -13963,6 +14276,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -14117,6 +14434,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -14161,6 +14482,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -14320,6 +14645,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -14364,6 +14693,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -14533,6 +14866,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -14577,6 +14914,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -14744,6 +15085,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -14788,6 +15133,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -14946,6 +15295,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -14990,6 +15343,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -15159,6 +15516,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -15203,6 +15564,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -15586,6 +15951,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -15630,6 +15999,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -16033,6 +16406,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -16077,6 +16454,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -16496,6 +16877,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -16540,6 +16925,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -16946,6 +17335,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -16990,6 +17383,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -17394,6 +17791,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -17438,6 +17839,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -17595,6 +18000,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -17639,6 +18048,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -18027,6 +18440,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// INVALID_PRINCIPAL: You specified an invalid principal element in the policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
         /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
@@ -18071,6 +18488,10 @@ namespace Amazon.Organizations
         /// <para>
         /// MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities
         /// in the same root.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// NON_DETACHABLE_POLICY: You can't detach this Amazon Web Services Managed Policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
