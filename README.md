@@ -190,6 +190,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* This release introduces Agents for Amazon Bedrock Runtime
 * [AWSSDK.BedrockRuntime](https://www.nuget.org/packages/AWSSDK.BedrockRuntime/)
 	* Run Inference: Added support to run the inference on models.  Includes set of APIs for running inference in streaming and non-streaming mode.
+* [AWSSDK.Billing](https://www.nuget.org/packages/AWSSDK.Billing/)
+	* Today, AWS announces the general availability of ListBillingViews API in the AWS SDKs, to enable AWS Billing Conductor (ABC) users to create proforma Cost and Usage Reports (CUR) programmatically.
 * [AWSSDK.BillingConductor](https://www.nuget.org/packages/AWSSDK.BillingConductor/)
 	* This is the initial SDK release for AWS Billing Conductor. The AWS Billing Conductor is a customizable billing service, allowing you to customize your billing data to match your desired business structure.
 * [AWSSDK.Braket](https://www.nuget.org/packages/AWSSDK.Braket/)
