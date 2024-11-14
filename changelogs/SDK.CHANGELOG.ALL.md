@@ -1,3 +1,34 @@
+### 3.7.926.0 (2024-11-14 19:27 UTC)
+* AccessAnalyzer (3.7.402.0)
+	* Expand analyzer configuration capabilities for unused access analyzers. Unused access analyzer configurations now support the ability to exclude accounts and resource tags from analysis providing more granular control over the scope of analysis.
+* CloudControlApi (3.7.401.0)
+	* Added support for CloudFormation Hooks with Cloud Control API. The GetResourceRequestStatus API response now includes an optional HooksProgressEvent and HooksRequestToken parameter for Hooks Invocation Progress as part of resource operation with Cloud Control.
+* Deadline (3.7.403.0)
+	* Adds support for select GPU accelerated instance types when creating new service-managed fleets.
+* IdentityManagement (3.7.403.0)
+	* This release includes support for five new APIs and changes to existing APIs that give AWS Organizations customers the ability to use temporary root credentials, targeted to member accounts in the organization.
+* IoTWireless (3.7.401.0)
+	* New FuotaTask resource type to enable logging for your FUOTA tasks. A ParticipatingGatewaysforMulticast parameter to choose the list of gateways to receive the multicast downlink message and the transmission interval between them. Descriptor field which will be sent to devices during FUOTA transfer.
+* IVS (3.7.402.0)
+	* IVS now offers customers the ability to stream multitrack video to Channels.
+* LicenseManagerUserSubscriptions (3.7.401.0)
+	* New and updated API operations to support License Included User-based Subscription of Microsoft Remote Desktop Services (RDS).
+* PartnerCentralSelling (3.7.400.0)
+	* Announcing AWS Partner Central API for Selling: This service launch Introduces new APIs for co-selling opportunity management and related functions. Key features include notifications, a dynamic sandbox for testing, and streamlined validations.
+* QuickSight (3.7.409.0)
+	* This release adds APIs for Custom Permissions management in QuickSight, and APIs to support QuickSight Branding.
+* Redshift (3.7.404.0)
+	* Adds support for Amazon Redshift S3AccessGrants
+* S3 (3.7.406.0)
+	* This release updates the ListBuckets API Reference documentation in support of the new 10,000 general purpose bucket default quota on all AWS accounts. To increase your bucket quota from 10,000 to up to 1 million buckets, simply request a quota increase via Service Quotas.
+* SageMaker (3.7.415.0)
+	* Add support for Neuron instance types [ trn1/trn1n/inf2 ] on SageMaker Notebook Instances Platform.
+* SecurityToken (3.7.401.0)
+	* This release introduces the new API 'AssumeRoot', which returns short-term credentials that you can use to perform privileged tasks.
+* Core 3.7.400.51
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.925.0 (2024-11-13 19:24 UTC)
 * AccessAnalyzer (3.7.401.0)
 	* This release adds support for policy validation and external access findings for resource control policies (RCP). IAM Access Analyzer helps you author functional and secure RCPs and awareness that a RCP may restrict external access. Updated service API, documentation, and paginators.
