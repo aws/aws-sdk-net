@@ -4386,6 +4386,140 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  DisableOrganizationsRootCredentialsManagement
+
+
+        /// <summary>
+        /// Disables the management of privileged root user credentials across member accounts
+        /// in your organization. When you disable this feature, the management account and the
+        /// delegated admininstrator for IAM can no longer manage root user credentials for member
+        /// accounts in your organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableOrganizationsRootCredentialsManagement service method.</param>
+        /// 
+        /// <returns>The response from the DisableOrganizationsRootCredentialsManagement service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.AccountNotManagementOrDelegatedAdministratorException">
+        /// The request was rejected because the account making the request is not the management
+        /// account or delegated administrator account for <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user-access-management">centralized
+        /// root access</a>.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.OrganizationNotFoundException">
+        /// The request was rejected because no organization is associated with your account.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.OrganizationNotInAllFeaturesModeException">
+        /// The request was rejected because your organization does not have All features enabled.
+        /// For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set">Available
+        /// feature sets</a> in the <i>Organizations User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceAccessNotEnabledException">
+        /// The request was rejected because trusted access is not enabled for IAM in Organizations.
+        /// For details, see IAM and Organizations in the <i>Organizations User Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DisableOrganizationsRootCredentialsManagement">REST API Reference for DisableOrganizationsRootCredentialsManagement Operation</seealso>
+        DisableOrganizationsRootCredentialsManagementResponse DisableOrganizationsRootCredentialsManagement(DisableOrganizationsRootCredentialsManagementRequest request);
+
+
+
+        /// <summary>
+        /// Disables the management of privileged root user credentials across member accounts
+        /// in your organization. When you disable this feature, the management account and the
+        /// delegated admininstrator for IAM can no longer manage root user credentials for member
+        /// accounts in your organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableOrganizationsRootCredentialsManagement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableOrganizationsRootCredentialsManagement service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.AccountNotManagementOrDelegatedAdministratorException">
+        /// The request was rejected because the account making the request is not the management
+        /// account or delegated administrator account for <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user-access-management">centralized
+        /// root access</a>.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.OrganizationNotFoundException">
+        /// The request was rejected because no organization is associated with your account.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.OrganizationNotInAllFeaturesModeException">
+        /// The request was rejected because your organization does not have All features enabled.
+        /// For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set">Available
+        /// feature sets</a> in the <i>Organizations User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceAccessNotEnabledException">
+        /// The request was rejected because trusted access is not enabled for IAM in Organizations.
+        /// For details, see IAM and Organizations in the <i>Organizations User Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DisableOrganizationsRootCredentialsManagement">REST API Reference for DisableOrganizationsRootCredentialsManagement Operation</seealso>
+        Task<DisableOrganizationsRootCredentialsManagementResponse> DisableOrganizationsRootCredentialsManagementAsync(DisableOrganizationsRootCredentialsManagementRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DisableOrganizationsRootSessions
+
+
+        /// <summary>
+        /// Disables root user sessions for privileged tasks across member accounts in your organization.
+        /// When you disable this feature, the management account and the delegated admininstrator
+        /// for IAM can no longer perform privileged tasks on member accounts in your organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableOrganizationsRootSessions service method.</param>
+        /// 
+        /// <returns>The response from the DisableOrganizationsRootSessions service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.AccountNotManagementOrDelegatedAdministratorException">
+        /// The request was rejected because the account making the request is not the management
+        /// account or delegated administrator account for <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user-access-management">centralized
+        /// root access</a>.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.OrganizationNotFoundException">
+        /// The request was rejected because no organization is associated with your account.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.OrganizationNotInAllFeaturesModeException">
+        /// The request was rejected because your organization does not have All features enabled.
+        /// For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set">Available
+        /// feature sets</a> in the <i>Organizations User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceAccessNotEnabledException">
+        /// The request was rejected because trusted access is not enabled for IAM in Organizations.
+        /// For details, see IAM and Organizations in the <i>Organizations User Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DisableOrganizationsRootSessions">REST API Reference for DisableOrganizationsRootSessions Operation</seealso>
+        DisableOrganizationsRootSessionsResponse DisableOrganizationsRootSessions(DisableOrganizationsRootSessionsRequest request);
+
+
+
+        /// <summary>
+        /// Disables root user sessions for privileged tasks across member accounts in your organization.
+        /// When you disable this feature, the management account and the delegated admininstrator
+        /// for IAM can no longer perform privileged tasks on member accounts in your organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableOrganizationsRootSessions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableOrganizationsRootSessions service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.AccountNotManagementOrDelegatedAdministratorException">
+        /// The request was rejected because the account making the request is not the management
+        /// account or delegated administrator account for <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user-access-management">centralized
+        /// root access</a>.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.OrganizationNotFoundException">
+        /// The request was rejected because no organization is associated with your account.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.OrganizationNotInAllFeaturesModeException">
+        /// The request was rejected because your organization does not have All features enabled.
+        /// For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set">Available
+        /// feature sets</a> in the <i>Organizations User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceAccessNotEnabledException">
+        /// The request was rejected because trusted access is not enabled for IAM in Organizations.
+        /// For details, see IAM and Organizations in the <i>Organizations User Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DisableOrganizationsRootSessions">REST API Reference for DisableOrganizationsRootSessions Operation</seealso>
+        Task<DisableOrganizationsRootSessionsResponse> DisableOrganizationsRootSessionsAsync(DisableOrganizationsRootSessionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  EnableMFADevice
 
 
@@ -4471,6 +4605,226 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/EnableMFADevice">REST API Reference for EnableMFADevice Operation</seealso>
         Task<EnableMFADeviceResponse> EnableMFADeviceAsync(EnableMFADeviceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  EnableOrganizationsRootCredentialsManagement
+
+
+        /// <summary>
+        /// Enables the management of privileged root user credentials across member accounts
+        /// in your organization. When you enable root credentials management for <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user-access-management">centralized
+        /// root access</a>, the management account and the delegated admininstrator for IAM can
+        /// manage root user credentials for member accounts in your organization.
+        /// 
+        ///  
+        /// <para>
+        /// Before you enable centralized root access, you must have an account configured with
+        /// the following settings:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must manage your Amazon Web Services accounts in <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">Organizations</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Enable trusted access for Identity and Access Management in Organizations. For details,
+        /// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/services-that-can-integrate-ra.html">IAM
+        /// and Organizations</a> in the <i>Organizations User Guide</i>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableOrganizationsRootCredentialsManagement service method.</param>
+        /// 
+        /// <returns>The response from the EnableOrganizationsRootCredentialsManagement service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.AccountNotManagementOrDelegatedAdministratorException">
+        /// The request was rejected because the account making the request is not the management
+        /// account or delegated administrator account for <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user-access-management">centralized
+        /// root access</a>.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.CallerIsNotManagementAccountException">
+        /// The request was rejected because the account making the request is not the management
+        /// account for the organization.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.OrganizationNotFoundException">
+        /// The request was rejected because no organization is associated with your account.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.OrganizationNotInAllFeaturesModeException">
+        /// The request was rejected because your organization does not have All features enabled.
+        /// For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set">Available
+        /// feature sets</a> in the <i>Organizations User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceAccessNotEnabledException">
+        /// The request was rejected because trusted access is not enabled for IAM in Organizations.
+        /// For details, see IAM and Organizations in the <i>Organizations User Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/EnableOrganizationsRootCredentialsManagement">REST API Reference for EnableOrganizationsRootCredentialsManagement Operation</seealso>
+        EnableOrganizationsRootCredentialsManagementResponse EnableOrganizationsRootCredentialsManagement(EnableOrganizationsRootCredentialsManagementRequest request);
+
+
+
+        /// <summary>
+        /// Enables the management of privileged root user credentials across member accounts
+        /// in your organization. When you enable root credentials management for <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user-access-management">centralized
+        /// root access</a>, the management account and the delegated admininstrator for IAM can
+        /// manage root user credentials for member accounts in your organization.
+        /// 
+        ///  
+        /// <para>
+        /// Before you enable centralized root access, you must have an account configured with
+        /// the following settings:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must manage your Amazon Web Services accounts in <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">Organizations</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Enable trusted access for Identity and Access Management in Organizations. For details,
+        /// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/services-that-can-integrate-ra.html">IAM
+        /// and Organizations</a> in the <i>Organizations User Guide</i>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableOrganizationsRootCredentialsManagement service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableOrganizationsRootCredentialsManagement service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.AccountNotManagementOrDelegatedAdministratorException">
+        /// The request was rejected because the account making the request is not the management
+        /// account or delegated administrator account for <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user-access-management">centralized
+        /// root access</a>.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.CallerIsNotManagementAccountException">
+        /// The request was rejected because the account making the request is not the management
+        /// account for the organization.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.OrganizationNotFoundException">
+        /// The request was rejected because no organization is associated with your account.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.OrganizationNotInAllFeaturesModeException">
+        /// The request was rejected because your organization does not have All features enabled.
+        /// For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set">Available
+        /// feature sets</a> in the <i>Organizations User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceAccessNotEnabledException">
+        /// The request was rejected because trusted access is not enabled for IAM in Organizations.
+        /// For details, see IAM and Organizations in the <i>Organizations User Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/EnableOrganizationsRootCredentialsManagement">REST API Reference for EnableOrganizationsRootCredentialsManagement Operation</seealso>
+        Task<EnableOrganizationsRootCredentialsManagementResponse> EnableOrganizationsRootCredentialsManagementAsync(EnableOrganizationsRootCredentialsManagementRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  EnableOrganizationsRootSessions
+
+
+        /// <summary>
+        /// Allows the management account or delegated administrator to perform privileged tasks
+        /// on member accounts in your organization. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user-access-management">Centrally
+        /// manage root access for member accounts</a> in the <i>Identity and Access Management
+        /// User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// Before you enable this feature, you must have an account configured with the following
+        /// settings:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must manage your Amazon Web Services accounts in <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">Organizations</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Enable trusted access for Identity and Access Management in Organizations. For details,
+        /// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/services-that-can-integrate-ra.html">IAM
+        /// and Organizations</a> in the <i>Organizations User Guide</i>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableOrganizationsRootSessions service method.</param>
+        /// 
+        /// <returns>The response from the EnableOrganizationsRootSessions service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.AccountNotManagementOrDelegatedAdministratorException">
+        /// The request was rejected because the account making the request is not the management
+        /// account or delegated administrator account for <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user-access-management">centralized
+        /// root access</a>.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.CallerIsNotManagementAccountException">
+        /// The request was rejected because the account making the request is not the management
+        /// account for the organization.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.OrganizationNotFoundException">
+        /// The request was rejected because no organization is associated with your account.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.OrganizationNotInAllFeaturesModeException">
+        /// The request was rejected because your organization does not have All features enabled.
+        /// For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set">Available
+        /// feature sets</a> in the <i>Organizations User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceAccessNotEnabledException">
+        /// The request was rejected because trusted access is not enabled for IAM in Organizations.
+        /// For details, see IAM and Organizations in the <i>Organizations User Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/EnableOrganizationsRootSessions">REST API Reference for EnableOrganizationsRootSessions Operation</seealso>
+        EnableOrganizationsRootSessionsResponse EnableOrganizationsRootSessions(EnableOrganizationsRootSessionsRequest request);
+
+
+
+        /// <summary>
+        /// Allows the management account or delegated administrator to perform privileged tasks
+        /// on member accounts in your organization. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user-access-management">Centrally
+        /// manage root access for member accounts</a> in the <i>Identity and Access Management
+        /// User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// Before you enable this feature, you must have an account configured with the following
+        /// settings:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must manage your Amazon Web Services accounts in <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">Organizations</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Enable trusted access for Identity and Access Management in Organizations. For details,
+        /// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/services-that-can-integrate-ra.html">IAM
+        /// and Organizations</a> in the <i>Organizations User Guide</i>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableOrganizationsRootSessions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableOrganizationsRootSessions service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.AccountNotManagementOrDelegatedAdministratorException">
+        /// The request was rejected because the account making the request is not the management
+        /// account or delegated administrator account for <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user-access-management">centralized
+        /// root access</a>.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.CallerIsNotManagementAccountException">
+        /// The request was rejected because the account making the request is not the management
+        /// account for the organization.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.OrganizationNotFoundException">
+        /// The request was rejected because no organization is associated with your account.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.OrganizationNotInAllFeaturesModeException">
+        /// The request was rejected because your organization does not have All features enabled.
+        /// For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set">Available
+        /// feature sets</a> in the <i>Organizations User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceAccessNotEnabledException">
+        /// The request was rejected because trusted access is not enabled for IAM in Organizations.
+        /// For details, see IAM and Organizations in the <i>Organizations User Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/EnableOrganizationsRootSessions">REST API Reference for EnableOrganizationsRootSessions Operation</seealso>
+        Task<EnableOrganizationsRootSessionsResponse> EnableOrganizationsRootSessionsAsync(EnableOrganizationsRootSessionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -7503,9 +7857,9 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Lists the account alias associated with the Amazon Web Services account (Note: you
         /// can have only one). For information about using an Amazon Web Services account alias,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html#CreateAccountAlias">Creating,
-        /// deleting, and listing an Amazon Web Services account alias</a> in the <i>IAM User
-        /// Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/signin/latest/userguide/CreateAccountAlias.html">Creating,
+        /// deleting, and listing an Amazon Web Services account alias</a> in the <i>Amazon Web
+        /// Services Sign-In User Guide</i>.
         /// </summary>
         /// 
         /// <returns>The response from the ListAccountAliases service method, as returned by IdentityManagementService.</returns>
@@ -7519,9 +7873,9 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Lists the account alias associated with the Amazon Web Services account (Note: you
         /// can have only one). For information about using an Amazon Web Services account alias,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html#CreateAccountAlias">Creating,
-        /// deleting, and listing an Amazon Web Services account alias</a> in the <i>IAM User
-        /// Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/signin/latest/userguide/CreateAccountAlias.html">Creating,
+        /// deleting, and listing an Amazon Web Services account alias</a> in the <i>Amazon Web
+        /// Services Sign-In User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccountAliases service method.</param>
         /// 
@@ -7536,9 +7890,9 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Lists the account alias associated with the Amazon Web Services account (Note: you
         /// can have only one). For information about using an Amazon Web Services account alias,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html#CreateAccountAlias">Creating,
-        /// deleting, and listing an Amazon Web Services account alias</a> in the <i>IAM User
-        /// Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/signin/latest/userguide/CreateAccountAlias.html">Creating,
+        /// deleting, and listing an Amazon Web Services account alias</a> in the <i>Amazon Web
+        /// Services Sign-In User Guide</i>.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -7556,9 +7910,9 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Lists the account alias associated with the Amazon Web Services account (Note: you
         /// can have only one). For information about using an Amazon Web Services account alias,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html#CreateAccountAlias">Creating,
-        /// deleting, and listing an Amazon Web Services account alias</a> in the <i>IAM User
-        /// Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/signin/latest/userguide/CreateAccountAlias.html">Creating,
+        /// deleting, and listing an Amazon Web Services account alias</a> in the <i>Amazon Web
+        /// Services Sign-In User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccountAliases service method.</param>
         /// <param name="cancellationToken">
@@ -8602,6 +8956,72 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListOpenIDConnectProviderTags">REST API Reference for ListOpenIDConnectProviderTags Operation</seealso>
         Task<ListOpenIDConnectProviderTagsResponse> ListOpenIDConnectProviderTagsAsync(ListOpenIDConnectProviderTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListOrganizationsFeatures
+
+
+        /// <summary>
+        /// Lists the centralized root access features enabled for your organization. For more
+        /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user-access-management">Centrally
+        /// manage root access for member accounts</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOrganizationsFeatures service method.</param>
+        /// 
+        /// <returns>The response from the ListOrganizationsFeatures service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.AccountNotManagementOrDelegatedAdministratorException">
+        /// The request was rejected because the account making the request is not the management
+        /// account or delegated administrator account for <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user-access-management">centralized
+        /// root access</a>.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.OrganizationNotFoundException">
+        /// The request was rejected because no organization is associated with your account.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.OrganizationNotInAllFeaturesModeException">
+        /// The request was rejected because your organization does not have All features enabled.
+        /// For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set">Available
+        /// feature sets</a> in the <i>Organizations User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceAccessNotEnabledException">
+        /// The request was rejected because trusted access is not enabled for IAM in Organizations.
+        /// For details, see IAM and Organizations in the <i>Organizations User Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListOrganizationsFeatures">REST API Reference for ListOrganizationsFeatures Operation</seealso>
+        ListOrganizationsFeaturesResponse ListOrganizationsFeatures(ListOrganizationsFeaturesRequest request);
+
+
+
+        /// <summary>
+        /// Lists the centralized root access features enabled for your organization. For more
+        /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user-access-management">Centrally
+        /// manage root access for member accounts</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOrganizationsFeatures service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListOrganizationsFeatures service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.AccountNotManagementOrDelegatedAdministratorException">
+        /// The request was rejected because the account making the request is not the management
+        /// account or delegated administrator account for <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user-access-management">centralized
+        /// root access</a>.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.OrganizationNotFoundException">
+        /// The request was rejected because no organization is associated with your account.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.OrganizationNotInAllFeaturesModeException">
+        /// The request was rejected because your organization does not have All features enabled.
+        /// For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set">Available
+        /// feature sets</a> in the <i>Organizations User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceAccessNotEnabledException">
+        /// The request was rejected because trusted access is not enabled for IAM in Organizations.
+        /// For details, see IAM and Organizations in the <i>Organizations User Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListOrganizationsFeatures">REST API Reference for ListOrganizationsFeatures Operation</seealso>
+        Task<ListOrganizationsFeaturesResponse> ListOrganizationsFeaturesAsync(ListOrganizationsFeaturesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

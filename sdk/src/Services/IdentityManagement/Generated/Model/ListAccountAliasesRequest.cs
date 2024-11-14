@@ -33,9 +33,9 @@ namespace Amazon.IdentityManagement.Model
     /// Container for the parameters to the ListAccountAliases operation.
     /// Lists the account alias associated with the Amazon Web Services account (Note: you
     /// can have only one). For information about using an Amazon Web Services account alias,
-    /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html#CreateAccountAlias">Creating,
-    /// deleting, and listing an Amazon Web Services account alias</a> in the <i>IAM User
-    /// Guide</i>.
+    /// see <a href="https://docs.aws.amazon.com/signin/latest/userguide/CreateAccountAlias.html">Creating,
+    /// deleting, and listing an Amazon Web Services account alias</a> in the <i>Amazon Web
+    /// Services Sign-In User Guide</i>.
     /// </summary>
     public partial class ListAccountAliasesRequest : AmazonIdentityManagementServiceRequest
     {
