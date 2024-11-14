@@ -36,8 +36,8 @@ namespace Amazon.SecurityToken.Model
     /// secret access key, and a security token. Typically, you use <c>AssumeRole</c> within
     /// your account or for cross-account access. For a comparison of <c>AssumeRole</c> with
     /// other API operations that produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
-    /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
-    /// the Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.
+    /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_sts-comparison.html">Compare
+    /// STS credentials</a> in the <i>IAM User Guide</i>.
     /// 
     ///  
     /// <para>
@@ -52,17 +52,17 @@ namespace Amazon.SecurityToken.Model
     /// </para>
     ///  
     /// <para>
-    /// (Optional) You can pass inline or managed <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
-    /// policies</a> to this operation. You can pass a single JSON policy document to use
-    /// as an inline session policy. You can also specify up to 10 managed policy Amazon Resource
-    /// Names (ARNs) to use as managed session policies. The plaintext that you use for both
-    /// inline and managed session policies can't exceed 2,048 characters. Passing policies
-    /// to this operation returns new temporary credentials. The resulting session's permissions
-    /// are the intersection of the role's identity-based policy and the session policies.
-    /// You can use the role's temporary credentials in subsequent Amazon Web Services API
-    /// calls to access resources in the account that owns the role. You cannot use session
-    /// policies to grant more permissions than those allowed by the identity-based policy
-    /// of the role that is being assumed. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+    /// (Optional) You can pass inline or managed session policies to this operation. You
+    /// can pass a single JSON policy document to use as an inline session policy. You can
+    /// also specify up to 10 managed policy Amazon Resource Names (ARNs) to use as managed
+    /// session policies. The plaintext that you use for both inline and managed session policies
+    /// can't exceed 2,048 characters. Passing policies to this operation returns new temporary
+    /// credentials. The resulting session's permissions are the intersection of the role's
+    /// identity-based policy and the session policies. You can use the role's temporary credentials
+    /// in subsequent Amazon Web Services API calls to access resources in the account that
+    /// owns the role. You cannot use session policies to grant more permissions than those
+    /// allowed by the identity-based policy of the role that is being assumed. For more information,
+    /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
     /// Policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  
@@ -196,8 +196,8 @@ namespace Amazon.SecurityToken.Model
         /// on the maximum session duration setting for your role. However, if you assume a role
         /// using role chaining and provide a <c>DurationSeconds</c> parameter value greater than
         /// one hour, the operation fails. To learn how to view the maximum value for your role,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
-        /// the Maximum Session Duration Setting for a Role</a> in the <i>IAM User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_update-role-settings.html#id_roles_update-session-duration">Update
+        /// the maximum session duration for a role</a>.
         /// </para>
         ///  
         /// <para>
@@ -293,7 +293,11 @@ namespace Amazon.SecurityToken.Model
         /// The <c>PackedPolicySize</c> response element indicates by percentage how close the
         /// policies and tags for your request are to the upper size limit.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// For more information about role session permissions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+        /// policies</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
         public string Policy
@@ -419,6 +423,14 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  
         /// <para>
+        /// For security purposes, administrators can view this field in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html#cloudtrail-integration_signin-tempcreds">CloudTrail
+        /// logs</a> to help identify who performed an action in Amazon Web Services. Your administrator
+        /// might require that you specify your user name as the session name when you assume
+        /// the role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_rolesessionname">
+        /// <c>sts:RoleSessionName</c> </a>.
+        /// </para>
+        ///  
+        /// <para>
         /// The regex used to validate this parameter is a string of characters consisting of
         /// upper- and lower-case alphanumeric characters with no spaces. You can also include
         /// underscores or any of the following characters: =,.@-
@@ -470,16 +482,18 @@ namespace Amazon.SecurityToken.Model
         /// Gets and sets the property SourceIdentity. 
         /// <para>
         /// The source identity specified by the principal that is calling the <c>AssumeRole</c>
-        /// operation.
+        /// operation. The source identity value persists across <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html#iam-term-role-chaining">chained
+        /// role</a> sessions.
         /// </para>
         ///  
         /// <para>
         /// You can require users to specify a source identity when they assume a role. You do
-        /// this by using the <c>sts:SourceIdentity</c> condition key in a role trust policy.
-        /// You can use source identity information in CloudTrail logs to determine who took actions
-        /// with a role. You can use the <c>aws:SourceIdentity</c> condition key to further control
-        /// access to Amazon Web Services resources based on the value of source identity. For
-        /// more information about using source identity, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor
+        /// this by using the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourceidentity">
+        /// <c>sts:SourceIdentity</c> </a> condition key in a role trust policy. You can use source
+        /// identity information in CloudTrail logs to determine who took actions with a role.
+        /// You can use the <c>aws:SourceIdentity</c> condition key to further control access
+        /// to Amazon Web Services resources based on the value of source identity. For more information
+        /// about using source identity, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor
         /// and control actions taken with assumed roles</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
@@ -599,8 +613,8 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter is optional. When you set session tags as transitive, the session policy
-        /// and session tags packed binary limit is not affected.
+        /// This parameter is optional. The transitive status of a session tag does not impact
+        /// its packed binary size.
         /// </para>
         ///  
         /// <para>

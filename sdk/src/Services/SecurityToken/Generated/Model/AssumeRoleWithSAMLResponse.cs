@@ -194,7 +194,9 @@ namespace Amazon.SecurityToken.Model
         /// <summary>
         /// Gets and sets the property SourceIdentity. 
         /// <para>
-        /// The value in the <c>SourceIdentity</c> attribute in the SAML assertion. 
+        /// The value in the <c>SourceIdentity</c> attribute in the SAML assertion. The source
+        /// identity value persists across <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html#iam-term-role-chaining">chained
+        /// role</a> sessions.
         /// </para>
         ///  
         /// <para>
@@ -202,7 +204,7 @@ namespace Amazon.SecurityToken.Model
         /// do this by using the <c>sts:SourceIdentity</c> condition key in a role trust policy.
         /// That way, actions that are taken with the role are associated with that user. After
         /// the source identity is set, the value cannot be changed. It is present in the request
-        /// for all actions that are taken by the role and persists across <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts#iam-term-role-chaining">chained
+        /// for all actions that are taken by the role and persists across <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html#id_roles_terms-and-concepts">chained
         /// role</a> sessions. You can configure your SAML identity provider to use an attribute
         /// associated with your users, like user name or email, as the source identity when calling
         /// <c>AssumeRoleWithSAML</c>. You do this by adding an attribute to the SAML assertion.

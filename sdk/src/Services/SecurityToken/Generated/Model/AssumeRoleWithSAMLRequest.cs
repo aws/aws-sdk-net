@@ -36,8 +36,8 @@ namespace Amazon.SecurityToken.Model
     /// an enterprise identity store or directory to role-based Amazon Web Services access
     /// without user-specific credentials or configuration. For a comparison of <c>AssumeRoleWithSAML</c>
     /// with the other API operations that produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
-    /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
-    /// the Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.
+    /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_sts-comparison.html">Compare
+    /// STS credentials</a> in the <i>IAM User Guide</i>.
     /// 
     ///  
     /// <para>
@@ -274,6 +274,11 @@ namespace Amazon.SecurityToken.Model
         /// 2,048 characters. The JSON policy characters can be any ASCII character from the space
         /// character to the end of the valid character list (\u0020 through \u00FF). It can also
         /// include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about role session permissions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+        /// policies</a>.
         /// </para>
         ///  <note> 
         /// <para>

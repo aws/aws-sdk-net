@@ -59,6 +59,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.SecurityToken.IAmazonSecurityTokenService.AssumeRoot(Amazon.SecurityToken.Model.AssumeRootRequest)" />
+            <member name="M:Amazon.SecurityToken.AmazonSecurityTokenServiceClient.AssumeRoot(Amazon.SecurityToken.Model.AssumeRootRequest)" />
+            <member name="T:Amazon.SecurityToken.Model.AssumeRootRequest" />
+            <member name="T:Amazon.SecurityToken.Model.AssumeRootResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command retrieves a set of short-term credentials you can use to unlock an S3 bucket for a member account by removing the bucket policy.
+                </para>
+                <code
+                    title="To launch a privileged session"
+                    source=".\AWSSDKDocSamples\SecurityToken\SecurityToken.GeneratedSamples.cs"
+                    region="to-launch-a-privileged-session-1731335424565" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.SecurityToken.IAmazonSecurityTokenService.DecodeAuthorizationMessage(Amazon.SecurityToken.Model.DecodeAuthorizationMessageRequest)" />
             <member name="M:Amazon.SecurityToken.AmazonSecurityTokenServiceClient.DecodeAuthorizationMessage(Amazon.SecurityToken.Model.DecodeAuthorizationMessageRequest)" />
             <member name="T:Amazon.SecurityToken.Model.DecodeAuthorizationMessageRequest" />
