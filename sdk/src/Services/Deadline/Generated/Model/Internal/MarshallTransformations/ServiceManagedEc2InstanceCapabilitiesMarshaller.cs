@@ -48,6 +48,17 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAcceleratorCapabilities())
+            {
+                context.Writer.WritePropertyName("acceleratorCapabilities");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AcceleratorCapabilitiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.AcceleratorCapabilities, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAllowedInstanceTypes())
             {
                 context.Writer.WritePropertyName("allowedInstanceTypes");

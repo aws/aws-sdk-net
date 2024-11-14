@@ -30,50 +30,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Deadline.Model
 {
     /// <summary>
-    /// The range for the GPU fleet acceleration.
+    /// Values that you can use to select a particular Amazon EC2 instance type.
     /// </summary>
-    public partial class AcceleratorCountRange
+    public partial class AcceleratorSelection
     {
-        private int? _max;
-        private int? _min;
+        private AcceleratorName _name;
+        private string _runtime;
 
         /// <summary>
-        /// Gets and sets the property Max. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// The maximum number of GPUs for the accelerator.
+        /// The name of the GPU accelerator.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=2147483647)]
-        public int Max
+        [AWSProperty(Required=true)]
+        public AcceleratorName Name
         {
-            get { return this._max.GetValueOrDefault(); }
-            set { this._max = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if Max property is set
-        internal bool IsSetMax()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._max.HasValue; 
+            return this._name != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Min. 
+        /// Gets and sets the property Runtime. 
         /// <para>
-        /// The minimum number of GPUs for the accelerator. If you set the value to 0, a worker
-        /// will still have 1 GPU.
+        /// The driver version that the GPU accelerator uses. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=2147483647)]
-        public int Min
+        [AWSProperty(Min=1, Max=100)]
+        public string Runtime
         {
-            get { return this._min.GetValueOrDefault(); }
-            set { this._min = value; }
+            get { return this._runtime; }
+            set { this._runtime = value; }
         }
 
-        // Check to see if Min property is set
-        internal bool IsSetMin()
+        // Check to see if Runtime property is set
+        internal bool IsSetRuntime()
         {
-            return this._min.HasValue; 
+            return this._runtime != null;
         }
 
     }

@@ -1847,6 +1847,11 @@
     <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Deadline.Model.AcceleratorSelection.Runtime</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Deadline.Model.AcceleratorTotalMemoryMiBRange.Max</property>
     <min>0</min>
     <max>2147483647</max>

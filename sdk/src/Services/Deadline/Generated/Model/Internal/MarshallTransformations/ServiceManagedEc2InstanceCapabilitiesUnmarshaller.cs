@@ -66,6 +66,12 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("acceleratorCapabilities", targetDepth))
+                {
+                    var unmarshaller = AcceleratorCapabilitiesUnmarshaller.Instance;
+                    unmarshalledObject.AcceleratorCapabilities = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("allowedInstanceTypes", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
