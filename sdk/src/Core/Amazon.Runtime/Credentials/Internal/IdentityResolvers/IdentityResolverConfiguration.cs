@@ -36,7 +36,14 @@ namespace Amazon.Runtime.Credentials.Internal.IdentityResolvers
                 return identityResolver;
 
             throw new NotImplementedException($"{typeof(T).Name} is not supported");
+        }
 
+        public static T ResolveDefaultIdentity<T>() where T : BaseIdentity
+        {
+            var identityResolver = Instance.GetIdentityResolver<T>();
+            var credentials = identityResolver.ResolveIdentity();
+
+            return credentials as T;
         }
     }
 }
