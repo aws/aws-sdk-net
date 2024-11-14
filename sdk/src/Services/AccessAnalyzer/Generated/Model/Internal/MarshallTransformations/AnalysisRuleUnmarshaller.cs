@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UnusedAccessConfiguration Object
+    /// Response Unmarshaller for AnalysisRule Object
     /// </summary>  
-    public class UnusedAccessConfigurationUnmarshaller : IUnmarshaller<UnusedAccessConfiguration, XmlUnmarshallerContext>, IUnmarshaller<UnusedAccessConfiguration, JsonUnmarshallerContext>
+    public class AnalysisRuleUnmarshaller : IUnmarshaller<AnalysisRule, XmlUnmarshallerContext>, IUnmarshaller<AnalysisRule, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        UnusedAccessConfiguration IUnmarshaller<UnusedAccessConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AnalysisRule IUnmarshaller<AnalysisRule, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public UnusedAccessConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public AnalysisRule Unmarshall(JsonUnmarshallerContext context)
         {
-            UnusedAccessConfiguration unmarshalledObject = new UnusedAccessConfiguration();
+            AnalysisRule unmarshalledObject = new AnalysisRule();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,10 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("analysisRule", targetDepth))
+                if (context.TestExpression("exclusions", targetDepth))
                 {
-                    var unmarshaller = AnalysisRuleUnmarshaller.Instance;
-                    unmarshalledObject.AnalysisRule = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("unusedAccessAge", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.UnusedAccessAge = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<AnalysisRuleCriteria, AnalysisRuleCriteriaUnmarshaller>(AnalysisRuleCriteriaUnmarshaller.Instance);
+                    unmarshalledObject.Exclusions = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +77,12 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         }
 
 
-        private static UnusedAccessConfigurationUnmarshaller _instance = new UnusedAccessConfigurationUnmarshaller();        
+        private static AnalysisRuleUnmarshaller _instance = new AnalysisRuleUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UnusedAccessConfigurationUnmarshaller Instance
+        public static AnalysisRuleUnmarshaller Instance
         {
             get
             {

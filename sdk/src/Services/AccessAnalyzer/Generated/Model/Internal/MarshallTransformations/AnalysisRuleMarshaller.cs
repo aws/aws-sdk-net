@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UnusedAccessConfiguration Marshaller
+    /// AnalysisRule Marshaller
     /// </summary>
-    public class UnusedAccessConfigurationMarshaller : IRequestMarshaller<UnusedAccessConfiguration, JsonMarshallerContext> 
+    public class AnalysisRuleMarshaller : IRequestMarshaller<AnalysisRule, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,25 +44,24 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(UnusedAccessConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(AnalysisRule requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAnalysisRule())
+            if(requestObject.IsSetExclusions())
             {
-                context.Writer.WritePropertyName("analysisRule");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("exclusions");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectExclusionsListValue in requestObject.Exclusions)
+                {
+                    context.Writer.WriteObjectStart();
 
-                var marshaller = AnalysisRuleMarshaller.Instance;
-                marshaller.Marshall(requestObject.AnalysisRule, context);
+                    var marshaller = AnalysisRuleCriteriaMarshaller.Instance;
+                    marshaller.Marshall(requestObjectExclusionsListValue, context);
 
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetUnusedAccessAge())
-            {
-                context.Writer.WritePropertyName("unusedAccessAge");
-                context.Writer.Write(requestObject.UnusedAccessAge);
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }
@@ -70,7 +69,7 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static UnusedAccessConfigurationMarshaller Instance = new UnusedAccessConfigurationMarshaller();
+        public readonly static AnalysisRuleMarshaller Instance = new AnalysisRuleMarshaller();
 
     }
 }

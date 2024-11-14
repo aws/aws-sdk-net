@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UnusedAccessConfiguration Object
+    /// Response Unmarshaller for AnalysisRuleCriteria Object
     /// </summary>  
-    public class UnusedAccessConfigurationUnmarshaller : IUnmarshaller<UnusedAccessConfiguration, XmlUnmarshallerContext>, IUnmarshaller<UnusedAccessConfiguration, JsonUnmarshallerContext>
+    public class AnalysisRuleCriteriaUnmarshaller : IUnmarshaller<AnalysisRuleCriteria, XmlUnmarshallerContext>, IUnmarshaller<AnalysisRuleCriteria, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        UnusedAccessConfiguration IUnmarshaller<UnusedAccessConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AnalysisRuleCriteria IUnmarshaller<AnalysisRuleCriteria, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public UnusedAccessConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public AnalysisRuleCriteria Unmarshall(JsonUnmarshallerContext context)
         {
-            UnusedAccessConfiguration unmarshalledObject = new UnusedAccessConfiguration();
+            AnalysisRuleCriteria unmarshalledObject = new AnalysisRuleCriteria();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,16 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("analysisRule", targetDepth))
+                if (context.TestExpression("accountIds", targetDepth))
                 {
-                    var unmarshaller = AnalysisRuleUnmarshaller.Instance;
-                    unmarshalledObject.AnalysisRule = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AccountIds = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("unusedAccessAge", targetDepth))
+                if (context.TestExpression("resourceTags", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.UnusedAccessAge = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<Dictionary<string, string>, DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>>(new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance));
+                    unmarshalledObject.ResourceTags = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +83,12 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         }
 
 
-        private static UnusedAccessConfigurationUnmarshaller _instance = new UnusedAccessConfigurationUnmarshaller();        
+        private static AnalysisRuleCriteriaUnmarshaller _instance = new AnalysisRuleCriteriaUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UnusedAccessConfigurationUnmarshaller Instance
+        public static AnalysisRuleCriteriaUnmarshaller Instance
         {
             get
             {

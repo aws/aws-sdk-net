@@ -30,30 +30,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AccessAnalyzer.Model
 {
     /// <summary>
-    /// Contains information about the configuration of an analyzer for an Amazon Web Services
-    /// organization or account.
+    /// Contains information about analysis rules for the analyzer. Analysis rules determine
+    /// which entities will generate findings based on the criteria you define when you create
+    /// the rule.
     /// </summary>
-    public partial class AnalyzerConfiguration
+    public partial class AnalysisRule
     {
-        private UnusedAccessConfiguration _unusedAccess;
+        private List<AnalysisRuleCriteria> _exclusions = AWSConfigs.InitializeCollections ? new List<AnalysisRuleCriteria>() : null;
 
         /// <summary>
-        /// Gets and sets the property UnusedAccess. 
+        /// Gets and sets the property Exclusions. 
         /// <para>
-        /// Specifies the configuration of an unused access analyzer for an Amazon Web Services
-        /// organization or account.
+        /// A list of rules for the analyzer containing criteria to exclude from analysis. Entities
+        /// that meet the rule criteria will not generate findings.
         /// </para>
         /// </summary>
-        public UnusedAccessConfiguration UnusedAccess
+        public List<AnalysisRuleCriteria> Exclusions
         {
-            get { return this._unusedAccess; }
-            set { this._unusedAccess = value; }
+            get { return this._exclusions; }
+            set { this._exclusions = value; }
         }
 
-        // Check to see if UnusedAccess property is set
-        internal bool IsSetUnusedAccess()
+        // Check to see if Exclusions property is set
+        internal bool IsSetExclusions()
         {
-            return this._unusedAccess != null;
+            return this._exclusions != null && (this._exclusions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

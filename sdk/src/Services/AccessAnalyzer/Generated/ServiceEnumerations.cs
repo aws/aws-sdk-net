@@ -1483,6 +1483,10 @@ namespace Amazon.AccessAnalyzer
         /// </summary>
         public static readonly ResourceType AWSIAMRole = new ResourceType("AWS::IAM::Role");
         /// <summary>
+        /// Constant AWSIAMUser for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSIAMUser = new ResourceType("AWS::IAM::User");
+        /// <summary>
         /// Constant AWSKMSKey for ResourceType
         /// </summary>
         public static readonly ResourceType AWSKMSKey = new ResourceType("AWS::KMS::Key");

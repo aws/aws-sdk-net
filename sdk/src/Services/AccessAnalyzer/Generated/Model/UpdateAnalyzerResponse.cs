@@ -30,30 +30,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AccessAnalyzer.Model
 {
     /// <summary>
-    /// Contains information about the configuration of an analyzer for an Amazon Web Services
-    /// organization or account.
+    /// This is the response object from the UpdateAnalyzer operation.
     /// </summary>
-    public partial class AnalyzerConfiguration
+    public partial class UpdateAnalyzerResponse : AmazonWebServiceResponse
     {
-        private UnusedAccessConfiguration _unusedAccess;
+        private AnalyzerConfiguration _configuration;
 
         /// <summary>
-        /// Gets and sets the property UnusedAccess. 
-        /// <para>
-        /// Specifies the configuration of an unused access analyzer for an Amazon Web Services
-        /// organization or account.
-        /// </para>
+        /// Gets and sets the property Configuration.
         /// </summary>
-        public UnusedAccessConfiguration UnusedAccess
+        public AnalyzerConfiguration Configuration
         {
-            get { return this._unusedAccess; }
-            set { this._unusedAccess = value; }
+            get { return this._configuration; }
+            set { this._configuration = value; }
         }
 
-        // Check to see if UnusedAccess property is set
-        internal bool IsSetUnusedAccess()
+        // Check to see if Configuration property is set
+        internal bool IsSetConfiguration()
         {
-            return this._unusedAccess != null;
+            return this._configuration != null;
         }
 
     }
