@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ServiceIntegrationsUnion Object
+    /// Response Unmarshaller for ReadWriteAccess Object
     /// </summary>  
-    public class ServiceIntegrationsUnionUnmarshaller : IUnmarshaller<ServiceIntegrationsUnion, XmlUnmarshallerContext>, IUnmarshaller<ServiceIntegrationsUnion, JsonUnmarshallerContext>
+    public class ReadWriteAccessUnmarshaller : IUnmarshaller<ReadWriteAccess, XmlUnmarshallerContext>, IUnmarshaller<ReadWriteAccess, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ServiceIntegrationsUnion Unmarshall(XmlUnmarshallerContext context)
+        public ReadWriteAccess Unmarshall(XmlUnmarshallerContext context)
         {
-            ServiceIntegrationsUnion unmarshalledObject = new ServiceIntegrationsUnion();
+            ReadWriteAccess unmarshalledObject = new ReadWriteAccess();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -55,26 +55,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("LakeFormation/member", targetDepth))
+                    if (context.TestExpression("Authorization", targetDepth))
                     {
-                        var unmarshaller = LakeFormationScopeUnionUnmarshaller.Instance;
-                        if (unmarshalledObject.LakeFormation == null)
-                        {
-                            unmarshalledObject.LakeFormation = new List<LakeFormationScopeUnion>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.LakeFormation.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("S3AccessGrants/member", targetDepth))
-                    {
-                        var unmarshaller = S3AccessGrantsScopeUnionUnmarshaller.Instance;
-                        if (unmarshalledObject.S3AccessGrants == null)
-                        {
-                            unmarshalledObject.S3AccessGrants = new List<S3AccessGrantsScopeUnion>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.S3AccessGrants.Add(item);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Authorization = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -92,18 +76,18 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ServiceIntegrationsUnion Unmarshall(JsonUnmarshallerContext context)
+        public ReadWriteAccess Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static ServiceIntegrationsUnionUnmarshaller _instance = new ServiceIntegrationsUnionUnmarshaller();        
+        private static ReadWriteAccessUnmarshaller _instance = new ReadWriteAccessUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ServiceIntegrationsUnionUnmarshaller Instance
+        public static ReadWriteAccessUnmarshaller Instance
         {
             get
             {
