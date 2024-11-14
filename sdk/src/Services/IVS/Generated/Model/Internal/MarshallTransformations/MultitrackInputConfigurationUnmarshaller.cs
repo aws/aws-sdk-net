@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IVS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AudioConfiguration Object
+    /// Response Unmarshaller for MultitrackInputConfiguration Object
     /// </summary>  
-    public class AudioConfigurationUnmarshaller : IUnmarshaller<AudioConfiguration, XmlUnmarshallerContext>, IUnmarshaller<AudioConfiguration, JsonUnmarshallerContext>
+    public class MultitrackInputConfigurationUnmarshaller : IUnmarshaller<MultitrackInputConfiguration, XmlUnmarshallerContext>, IUnmarshaller<MultitrackInputConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AudioConfiguration IUnmarshaller<AudioConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MultitrackInputConfiguration IUnmarshaller<MultitrackInputConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public AudioConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public MultitrackInputConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            AudioConfiguration unmarshalledObject = new AudioConfiguration();
+            MultitrackInputConfiguration unmarshalledObject = new MultitrackInputConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,22 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("channels", targetDepth))
+                if (context.TestExpression("enabled", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.Channels = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("codec", targetDepth))
+                if (context.TestExpression("maximumResolution", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Codec = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaximumResolution = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("sampleRate", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.SampleRate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("targetBitrate", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.TargetBitrate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("track", targetDepth))
+                if (context.TestExpression("policy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Track = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Policy = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +89,12 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
         }
 
 
-        private static AudioConfigurationUnmarshaller _instance = new AudioConfigurationUnmarshaller();        
+        private static MultitrackInputConfigurationUnmarshaller _instance = new MultitrackInputConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AudioConfigurationUnmarshaller Instance
+        public static MultitrackInputConfigurationUnmarshaller Instance
         {
             get
             {
