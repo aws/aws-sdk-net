@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CloudControlApi.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ProgressEvent Object
+    /// Response Unmarshaller for HookProgressEvent Object
     /// </summary>  
-    public class ProgressEventUnmarshaller : IUnmarshaller<ProgressEvent, XmlUnmarshallerContext>, IUnmarshaller<ProgressEvent, JsonUnmarshallerContext>
+    public class HookProgressEventUnmarshaller : IUnmarshaller<HookProgressEvent, XmlUnmarshallerContext>, IUnmarshaller<HookProgressEvent, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ProgressEvent IUnmarshaller<ProgressEvent, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        HookProgressEvent IUnmarshaller<HookProgressEvent, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.CloudControlApi.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ProgressEvent Unmarshall(JsonUnmarshallerContext context)
+        public HookProgressEvent Unmarshall(JsonUnmarshallerContext context)
         {
-            ProgressEvent unmarshalledObject = new ProgressEvent();
+            HookProgressEvent unmarshalledObject = new HookProgressEvent();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,70 +66,52 @@ namespace Amazon.CloudControlApi.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ErrorCode", targetDepth))
+                if (context.TestExpression("FailureMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ErrorCode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FailureMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EventTime", targetDepth))
+                if (context.TestExpression("HookEventTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.EventTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HookEventTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("HooksRequestToken", targetDepth))
+                if (context.TestExpression("HookStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HooksRequestToken = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HookStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Identifier", targetDepth))
+                if (context.TestExpression("HookStatusMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Identifier = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HookStatusMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Operation", targetDepth))
+                if (context.TestExpression("HookTypeArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Operation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HookTypeArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("OperationStatus", targetDepth))
+                if (context.TestExpression("HookTypeName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OperationStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HookTypeName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("RequestToken", targetDepth))
+                if (context.TestExpression("HookTypeVersionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RequestToken = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HookTypeVersionId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ResourceModel", targetDepth))
+                if (context.TestExpression("InvocationPoint", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceModel = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RetryAfter", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.RetryAfter = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("StatusMessage", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StatusMessage = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TypeName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TypeName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InvocationPoint = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -137,12 +119,12 @@ namespace Amazon.CloudControlApi.Model.Internal.MarshallTransformations
         }
 
 
-        private static ProgressEventUnmarshaller _instance = new ProgressEventUnmarshaller();        
+        private static HookProgressEventUnmarshaller _instance = new HookProgressEventUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ProgressEventUnmarshaller Instance
+        public static HookProgressEventUnmarshaller Instance
         {
             get
             {
