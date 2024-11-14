@@ -31,17 +31,45 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
 {
     /// <summary>
     /// Container for the parameters to the ListIdentityProviders operation.
-    /// Lists the identity providers for user-based subscriptions.
+    /// Lists the Active Directory identity providers for user-based subscriptions.
     /// </summary>
     public partial class ListIdentityProvidersRequest : AmazonLicenseManagerUserSubscriptionsRequest
     {
+        private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
         private int? _maxResults;
         private string _nextToken;
 
         /// <summary>
+        /// Gets and sets the property Filters. 
+        /// <para>
+        /// You can use the following filters to streamline results:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Product
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DirectoryId
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public List<Filter> Filters
+        {
+            get { return this._filters; }
+            set { this._filters = value; }
+        }
+
+        // Check to see if Filters property is set
+        internal bool IsSetFilters()
+        {
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Maximum number of results to return in a single call.
+        /// The maximum number of results to return from a single request.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -59,7 +87,8 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Token for the next set of results.
+        /// A token to specify where to start paginating. This is the nextToken from a previously
+        /// truncated response.
         /// </para>
         /// </summary>
         public string NextToken

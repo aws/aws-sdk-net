@@ -30,13 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LicenseManagerUserSubscriptions.Model
 {
     /// <summary>
-    /// The summary of the user-based subscription products for a user.
+    /// A summary of the user-based subscription products for a specific user.
     /// </summary>
     public partial class ProductUserSummary
     {
         private string _domain;
         private IdentityProvider _identityProvider;
         private string _product;
+        private string _productUserArn;
         private string _status;
         private string _statusMessage;
         private string _subscriptionEndDate;
@@ -46,7 +47,8 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// The domain name of the user.
+        /// The domain name of the Active Directory that contains the user information for the
+        /// product subscription.
         /// </para>
         /// </summary>
         public string Domain
@@ -100,9 +102,27 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ProductUserArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for this product user.
+        /// </para>
+        /// </summary>
+        public string ProductUserArn
+        {
+            get { return this._productUserArn; }
+            set { this._productUserArn = value; }
+        }
+
+        // Check to see if ProductUserArn property is set
+        internal bool IsSetProductUserArn()
+        {
+            return this._productUserArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of a product for a user.
+        /// The status of a product for this user.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -121,7 +141,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         /// <summary>
         /// Gets and sets the property StatusMessage. 
         /// <para>
-        /// The status message for a product for a user.
+        /// The status message for a product for this user.
         /// </para>
         /// </summary>
         public string StatusMessage
@@ -175,7 +195,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// The user name from the identity provider of the user.
+        /// The user name from the identity provider for this product user.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

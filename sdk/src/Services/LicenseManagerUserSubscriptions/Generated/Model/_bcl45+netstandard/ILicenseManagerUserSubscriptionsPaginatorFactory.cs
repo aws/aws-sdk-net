@@ -37,6 +37,11 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         IListInstancesPaginator ListInstances(ListInstancesRequest request);
 
         /// <summary>
+        /// Paginator for ListLicenseServerEndpoints operation
+        ///</summary>
+        IListLicenseServerEndpointsPaginator ListLicenseServerEndpoints(ListLicenseServerEndpointsRequest request);
+
+        /// <summary>
         /// Paginator for ListProductSubscriptions operation
         ///</summary>
         IListProductSubscriptionsPaginator ListProductSubscriptions(ListProductSubscriptionsRequest request);

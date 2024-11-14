@@ -31,20 +31,21 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
 {
     /// <summary>
     /// Container for the parameters to the DeregisterIdentityProvider operation.
-    /// Deregisters the identity provider from providing user-based subscriptions.
+    /// Deregisters the Active Directory identity provider from License Manager user-based
+    /// subscriptions.
     /// </summary>
     public partial class DeregisterIdentityProviderRequest : AmazonLicenseManagerUserSubscriptionsRequest
     {
         private IdentityProvider _identityProvider;
+        private string _identityProviderArn;
         private string _product;
 
         /// <summary>
         /// Gets and sets the property IdentityProvider. 
         /// <para>
-        /// An object that specifies details for the identity provider.
+        /// An object that specifies details for the Active Directory identity provider.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public IdentityProvider IdentityProvider
         {
             get { return this._identityProvider; }
@@ -58,12 +59,34 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IdentityProviderArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) that identifies the identity provider to deregister.
+        /// </para>
+        /// </summary>
+        public string IdentityProviderArn
+        {
+            get { return this._identityProviderArn; }
+            set { this._identityProviderArn = value; }
+        }
+
+        // Check to see if IdentityProviderArn property is set
+        internal bool IsSetIdentityProviderArn()
+        {
+            return this._identityProviderArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Product. 
         /// <para>
         /// The name of the user-based subscription product.
         /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <c>VISUAL_STUDIO_ENTERPRISE</c> | <c>VISUAL_STUDIO_PROFESSIONAL</c>
+        /// | <c>OFFICE_PROFESSIONAL_PLUS</c> 
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string Product
         {
             get { return this._product; }

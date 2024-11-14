@@ -34,7 +34,48 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
     /// </summary>
     public partial class ActiveDirectoryIdentityProvider
     {
+        private ActiveDirectorySettings _activeDirectorySettings;
+        private ActiveDirectoryType _activeDirectoryType;
         private string _directoryId;
+
+        /// <summary>
+        /// Gets and sets the property ActiveDirectorySettings. 
+        /// <para>
+        /// The <c>ActiveDirectorySettings</c> resource contains details about the Active Directory,
+        /// including network access details such as domain name and IP addresses, and the credential
+        /// provider for user administration.
+        /// </para>
+        /// </summary>
+        public ActiveDirectorySettings ActiveDirectorySettings
+        {
+            get { return this._activeDirectorySettings; }
+            set { this._activeDirectorySettings = value; }
+        }
+
+        // Check to see if ActiveDirectorySettings property is set
+        internal bool IsSetActiveDirectorySettings()
+        {
+            return this._activeDirectorySettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ActiveDirectoryType. 
+        /// <para>
+        /// The type of Active Directory – either a self-managed Active Directory or an Amazon
+        /// Web Services Managed Active Directory.
+        /// </para>
+        /// </summary>
+        public ActiveDirectoryType ActiveDirectoryType
+        {
+            get { return this._activeDirectoryType; }
+            set { this._activeDirectoryType = value; }
+        }
+
+        // Check to see if ActiveDirectoryType property is set
+        internal bool IsSetActiveDirectoryType()
+        {
+            return this._activeDirectoryType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DirectoryId. 

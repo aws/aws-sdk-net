@@ -38,11 +38,12 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         private IdentityProvider _identityProvider;
         private string _product;
         private Settings _settings;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property IdentityProvider. 
         /// <para>
-        /// An object that specifies details for the identity provider.
+        /// An object that specifies details for the identity provider to register.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,6 +63,11 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         /// Gets and sets the property Product. 
         /// <para>
         /// The name of the user-based subscription product.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <c>VISUAL_STUDIO_ENTERPRISE</c> | <c>VISUAL_STUDIO_PROFESSIONAL</c>
+        /// | <c>OFFICE_PROFESSIONAL_PLUS</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -94,6 +100,25 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         internal bool IsSetSettings()
         {
             return this._settings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags that apply to the identity provider's registration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

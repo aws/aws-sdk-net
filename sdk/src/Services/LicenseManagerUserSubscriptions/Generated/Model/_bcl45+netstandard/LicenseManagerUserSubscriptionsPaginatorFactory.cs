@@ -53,6 +53,14 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         }
 
         /// <summary>
+        /// Paginator for ListLicenseServerEndpoints operation
+        ///</summary>
+        public IListLicenseServerEndpointsPaginator ListLicenseServerEndpoints(ListLicenseServerEndpointsRequest request) 
+        {
+            return new ListLicenseServerEndpointsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListProductSubscriptions operation
         ///</summary>
         public IListProductSubscriptionsPaginator ListProductSubscriptions(ListProductSubscriptionsRequest request) 
