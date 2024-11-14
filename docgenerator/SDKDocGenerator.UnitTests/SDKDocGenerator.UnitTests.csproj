@@ -6,6 +6,7 @@
     <RootNamespace>SDKDocGenerator.UnitTests</RootNamespace>
     <AssemblyName>SDKDocGenerator.UnitTests</AssemblyName>
     <NoWarn>CS1591</NoWarn>
+    <NuGetAuditMode>direct</NuGetAuditMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DocumentationFile>bin\Debug\SDKDocGenerator.UnitTests.XML</DocumentationFile>

@@ -1,6 +1,6 @@
-
 <Project>
  <PropertyGroup>
    <BaseIntermediateOutputPath>$(MSBuildProjectDirectory)\obj\$(MSBuildProjectName)</BaseIntermediateOutputPath>
+   <NuGetAuditMode>direct</NuGetAuditMode>
  </PropertyGroup>
 </Project>
