@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LoRaWANMulticastGet Object
+    /// Response Unmarshaller for FuotaTaskLogOption Object
     /// </summary>  
-    public class LoRaWANMulticastGetUnmarshaller : IUnmarshaller<LoRaWANMulticastGet, XmlUnmarshallerContext>, IUnmarshaller<LoRaWANMulticastGet, JsonUnmarshallerContext>
+    public class FuotaTaskLogOptionUnmarshaller : IUnmarshaller<FuotaTaskLogOption, XmlUnmarshallerContext>, IUnmarshaller<FuotaTaskLogOption, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        LoRaWANMulticastGet IUnmarshaller<LoRaWANMulticastGet, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        FuotaTaskLogOption IUnmarshaller<FuotaTaskLogOption, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public LoRaWANMulticastGet Unmarshall(JsonUnmarshallerContext context)
+        public FuotaTaskLogOption Unmarshall(JsonUnmarshallerContext context)
         {
-            LoRaWANMulticastGet unmarshalledObject = new LoRaWANMulticastGet();
+            FuotaTaskLogOption unmarshalledObject = new FuotaTaskLogOption();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,22 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DlClass", targetDepth))
+                if (context.TestExpression("Events", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<FuotaTaskEventLogOption, FuotaTaskEventLogOptionUnmarshaller>(FuotaTaskEventLogOptionUnmarshaller.Instance);
+                    unmarshalledObject.Events = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("LogLevel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DlClass = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LogLevel = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("NumberOfDevicesInGroup", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfDevicesInGroup = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("NumberOfDevicesRequested", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfDevicesRequested = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ParticipatingGateways", targetDepth))
-                {
-                    var unmarshaller = ParticipatingGatewaysMulticastUnmarshaller.Instance;
-                    unmarshalledObject.ParticipatingGateways = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RfRegion", targetDepth))
+                if (context.TestExpression("Type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RfRegion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +89,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         }
 
 
-        private static LoRaWANMulticastGetUnmarshaller _instance = new LoRaWANMulticastGetUnmarshaller();        
+        private static FuotaTaskLogOptionUnmarshaller _instance = new FuotaTaskLogOptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LoRaWANMulticastGetUnmarshaller Instance
+        public static FuotaTaskLogOptionUnmarshaller Instance
         {
             get
             {

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// LoRaWANMulticast Marshaller
+    /// FuotaTaskEventLogOption Marshaller
     /// </summary>
-    public class LoRaWANMulticastMarshaller : IRequestMarshaller<LoRaWANMulticast, JsonMarshallerContext> 
+    public class FuotaTaskEventLogOptionMarshaller : IRequestMarshaller<FuotaTaskEventLogOption, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,31 +44,20 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(LoRaWANMulticast requestObject, JsonMarshallerContext context)
+        public void Marshall(FuotaTaskEventLogOption requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetDlClass())
+            if(requestObject.IsSetEvent())
             {
-                context.Writer.WritePropertyName("DlClass");
-                context.Writer.Write(requestObject.DlClass);
+                context.Writer.WritePropertyName("Event");
+                context.Writer.Write(requestObject.Event);
             }
 
-            if(requestObject.IsSetParticipatingGateways())
+            if(requestObject.IsSetLogLevel())
             {
-                context.Writer.WritePropertyName("ParticipatingGateways");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ParticipatingGatewaysMulticastMarshaller.Instance;
-                marshaller.Marshall(requestObject.ParticipatingGateways, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetRfRegion())
-            {
-                context.Writer.WritePropertyName("RfRegion");
-                context.Writer.Write(requestObject.RfRegion);
+                context.Writer.WritePropertyName("LogLevel");
+                context.Writer.Write(requestObject.LogLevel);
             }
 
         }
@@ -76,7 +65,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static LoRaWANMulticastMarshaller Instance = new LoRaWANMulticastMarshaller();
+        public readonly static FuotaTaskEventLogOptionMarshaller Instance = new FuotaTaskEventLogOptionMarshaller();
 
     }
 }

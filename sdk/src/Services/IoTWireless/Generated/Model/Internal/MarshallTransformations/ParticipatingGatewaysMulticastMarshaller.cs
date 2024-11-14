@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// LoRaWANMulticast Marshaller
+    /// ParticipatingGatewaysMulticast Marshaller
     /// </summary>
-    public class LoRaWANMulticastMarshaller : IRequestMarshaller<LoRaWANMulticast, JsonMarshallerContext> 
+    public class ParticipatingGatewaysMulticastMarshaller : IRequestMarshaller<ParticipatingGatewaysMulticast, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,31 +44,25 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(LoRaWANMulticast requestObject, JsonMarshallerContext context)
+        public void Marshall(ParticipatingGatewaysMulticast requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetDlClass())
+            if(requestObject.IsSetGatewayList())
             {
-                context.Writer.WritePropertyName("DlClass");
-                context.Writer.Write(requestObject.DlClass);
+                context.Writer.WritePropertyName("GatewayList");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectGatewayListListValue in requestObject.GatewayList)
+                {
+                        context.Writer.Write(requestObjectGatewayListListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
-            if(requestObject.IsSetParticipatingGateways())
+            if(requestObject.IsSetTransmissionInterval())
             {
-                context.Writer.WritePropertyName("ParticipatingGateways");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ParticipatingGatewaysMulticastMarshaller.Instance;
-                marshaller.Marshall(requestObject.ParticipatingGateways, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetRfRegion())
-            {
-                context.Writer.WritePropertyName("RfRegion");
-                context.Writer.Write(requestObject.RfRegion);
+                context.Writer.WritePropertyName("TransmissionInterval");
+                context.Writer.Write(requestObject.TransmissionInterval);
             }
 
         }
@@ -76,7 +70,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static LoRaWANMulticastMarshaller Instance = new LoRaWANMulticastMarshaller();
+        public readonly static ParticipatingGatewaysMulticastMarshaller Instance = new ParticipatingGatewaysMulticastMarshaller();
 
     }
 }

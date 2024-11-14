@@ -58,6 +58,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     response.DefaultLogLevel = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FuotaTaskLogOptions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<FuotaTaskLogOption, FuotaTaskLogOptionUnmarshaller>(FuotaTaskLogOptionUnmarshaller.Instance);
+                    response.FuotaTaskLogOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("WirelessDeviceLogOptions", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<WirelessDeviceLogOption, WirelessDeviceLogOptionUnmarshaller>(WirelessDeviceLogOptionUnmarshaller.Instance);
