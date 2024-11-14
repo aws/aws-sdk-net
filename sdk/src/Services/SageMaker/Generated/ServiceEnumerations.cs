@@ -8279,6 +8279,22 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly InstanceType MlInf1Xlarge = new InstanceType("ml.inf1.xlarge");
         /// <summary>
+        /// Constant MlInf224xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlInf224xlarge = new InstanceType("ml.inf2.24xlarge");
+        /// <summary>
+        /// Constant MlInf248xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlInf248xlarge = new InstanceType("ml.inf2.48xlarge");
+        /// <summary>
+        /// Constant MlInf28xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlInf28xlarge = new InstanceType("ml.inf2.8xlarge");
+        /// <summary>
+        /// Constant MlInf2Xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlInf2Xlarge = new InstanceType("ml.inf2.xlarge");
+        /// <summary>
         /// Constant MlM410xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType MlM410xlarge = new InstanceType("ml.m4.10xlarge");
@@ -8670,6 +8686,18 @@ namespace Amazon.SageMaker
         /// Constant MlT3Xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType MlT3Xlarge = new InstanceType("ml.t3.xlarge");
+        /// <summary>
+        /// Constant MlTrn12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlTrn12xlarge = new InstanceType("ml.trn1.2xlarge");
+        /// <summary>
+        /// Constant MlTrn132xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlTrn132xlarge = new InstanceType("ml.trn1.32xlarge");
+        /// <summary>
+        /// Constant MlTrn1n32xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlTrn1n32xlarge = new InstanceType("ml.trn1n.32xlarge");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -18754,6 +18782,22 @@ namespace Amazon.SageMaker
         /// Constant MlG5Xlarge for TransformInstanceType
         /// </summary>
         public static readonly TransformInstanceType MlG5Xlarge = new TransformInstanceType("ml.g5.xlarge");
+        /// <summary>
+        /// Constant MlInf224xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlInf224xlarge = new TransformInstanceType("ml.inf2.24xlarge");
+        /// <summary>
+        /// Constant MlInf248xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlInf248xlarge = new TransformInstanceType("ml.inf2.48xlarge");
+        /// <summary>
+        /// Constant MlInf28xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlInf28xlarge = new TransformInstanceType("ml.inf2.8xlarge");
+        /// <summary>
+        /// Constant MlInf2Xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlInf2Xlarge = new TransformInstanceType("ml.inf2.xlarge");
         /// <summary>
         /// Constant MlM410xlarge for TransformInstanceType
         /// </summary>
