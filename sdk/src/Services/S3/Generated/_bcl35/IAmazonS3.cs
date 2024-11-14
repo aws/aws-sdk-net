@@ -67,7 +67,7 @@ namespace Amazon.S3
         ///  <b>Directory buckets</b> - If multipart uploads in a directory bucket are in progress,
         /// you can't delete the bucket until all the in-progress multipart uploads are aborted
         /// or completed. To delete these in-progress multipart uploads, use the <c>ListMultipartUploads</c>
-        /// operation to list the in-progress multipart uploads in the bucket and use the <c>AbortMultupartUpload</c>
+        /// operation to list the in-progress multipart uploads in the bucket and use the <c>AbortMultipartUpload</c>
         /// operation to abort all the in-progress multipart uploads. 
         /// </para>
         ///  </li> <li> 
@@ -161,7 +161,7 @@ namespace Amazon.S3
         ///  <b>Directory buckets</b> - If multipart uploads in a directory bucket are in progress,
         /// you can't delete the bucket until all the in-progress multipart uploads are aborted
         /// or completed. To delete these in-progress multipart uploads, use the <c>ListMultipartUploads</c>
-        /// operation to list the in-progress multipart uploads in the bucket and use the <c>AbortMultupartUpload</c>
+        /// operation to list the in-progress multipart uploads in the bucket and use the <c>AbortMultipartUpload</c>
         /// operation to abort all the in-progress multipart uploads. 
         /// </para>
         ///  </li> <li> 
@@ -9067,6 +9067,16 @@ namespace Amazon.S3
         /// For information about Amazon S3 buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-buckets-s3.html">Creating,
         /// configuring, and working with Amazon S3 buckets</a>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// We strongly recommend using only paginated requests. Unpaginated requests are only
+        /// supported for Amazon Web Services accounts set to the default general purpose bucket
+        /// quota of 10,000. If you have an approved general purpose bucket quota above 10,000,
+        /// you must send paginated requests to list your account’s buckets. All unpaginated ListBuckets
+        /// requests will be rejected for Amazon Web Services accounts with a general purpose
+        /// bucket quota greater than 10,000. 
+        /// </para>
+        ///  </important>
         /// </summary>
         /// 
         /// <returns>The response from the ListBuckets service method, as returned by S3.</returns>
@@ -9088,6 +9098,16 @@ namespace Amazon.S3
         /// For information about Amazon S3 buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-buckets-s3.html">Creating,
         /// configuring, and working with Amazon S3 buckets</a>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// We strongly recommend using only paginated requests. Unpaginated requests are only
+        /// supported for Amazon Web Services accounts set to the default general purpose bucket
+        /// quota of 10,000. If you have an approved general purpose bucket quota above 10,000,
+        /// you must send paginated requests to list your account’s buckets. All unpaginated ListBuckets
+        /// requests will be rejected for Amazon Web Services accounts with a general purpose
+        /// bucket quota greater than 10,000. 
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBuckets service method.</param>
         /// 
@@ -9154,7 +9174,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <note> 
+        /// <para>
+        ///  The <c>BucketRegion</c> response element is not part of the <c>ListDirectoryBuckets</c>
+        /// Response Syntax.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDirectoryBuckets service method.</param>
         /// 
@@ -9203,7 +9228,7 @@ namespace Amazon.S3
         ///  <b>Directory buckets</b> - If multipart uploads in a directory bucket are in progress,
         /// you can't delete the bucket until all the in-progress multipart uploads are aborted
         /// or completed. To delete these in-progress multipart uploads, use the <c>ListMultipartUploads</c>
-        /// operation to list the in-progress multipart uploads in the bucket and use the <c>AbortMultupartUpload</c>
+        /// operation to list the in-progress multipart uploads in the bucket and use the <c>AbortMultipartUpload</c>
         /// operation to abort all the in-progress multipart uploads. 
         /// </para>
         ///  </note> 
@@ -9335,7 +9360,7 @@ namespace Amazon.S3
         ///  <b>Directory buckets</b> - If multipart uploads in a directory bucket are in progress,
         /// you can't delete the bucket until all the in-progress multipart uploads are aborted
         /// or completed. To delete these in-progress multipart uploads, use the <c>ListMultipartUploads</c>
-        /// operation to list the in-progress multipart uploads in the bucket and use the <c>AbortMultupartUpload</c>
+        /// operation to list the in-progress multipart uploads in the bucket and use the <c>AbortMultipartUpload</c>
         /// operation to abort all the in-progress multipart uploads. 
         /// </para>
         ///  </note> 
@@ -9468,7 +9493,7 @@ namespace Amazon.S3
         ///  <b>Directory buckets</b> - If multipart uploads in a directory bucket are in progress,
         /// you can't delete the bucket until all the in-progress multipart uploads are aborted
         /// or completed. To delete these in-progress multipart uploads, use the <c>ListMultipartUploads</c>
-        /// operation to list the in-progress multipart uploads in the bucket and use the <c>AbortMultupartUpload</c>
+        /// operation to list the in-progress multipart uploads in the bucket and use the <c>AbortMultipartUpload</c>
         /// operation to abort all the in-progress multipart uploads. 
         /// </para>
         ///  </note> 
