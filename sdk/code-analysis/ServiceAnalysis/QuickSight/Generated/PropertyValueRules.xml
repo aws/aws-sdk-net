@@ -108,6 +108,30 @@
     <pattern>[\w\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.CreateBrandRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.CreateBrandRequest.BrandId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.CreateCustomPermissionsRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.CreateCustomPermissionsRequest.CustomPermissionsName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9+=,.@_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.CreateDashboardRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
@@ -525,6 +549,36 @@
     <pattern>[\w\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.DeleteBrandRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DeleteBrandRequest.BrandId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DeleteBrandAssignmentRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DeleteCustomPermissionsRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DeleteCustomPermissionsRequest.CustomPermissionsName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9+=,.@_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.DeleteDashboardRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
@@ -873,6 +927,22 @@
     <pattern>^[a-zA-Z0-9._-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.DeleteUserCustomPermissionRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DeleteUserCustomPermissionRequest.Namespace</property>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DeleteUserCustomPermissionRequest.UserName</property>
+    <min>1</min>
+    <pattern>[\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.DeleteVPCConnectionRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
@@ -1034,6 +1104,54 @@
   <property-value-rule>
     <property>Amazon.QuickSight.Model.DescribeAssetBundleImportJobResponse.RequestId</property>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeBrandRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeBrandRequest.BrandId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeBrandRequest.VersionId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeBrandAssignmentRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeBrandPublishedVersionRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeBrandPublishedVersionRequest.BrandId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeCustomPermissionsRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeCustomPermissionsRequest.CustomPermissionsName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9+=,.@_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.DescribeDashboardRequest.AliasName</property>
@@ -1742,6 +1860,28 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.ListBrandsRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ListBrandsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ListCustomPermissionsRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ListCustomPermissionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.ListDashboardsRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
@@ -2432,6 +2572,60 @@
     <pattern>[\w\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateBrandRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateBrandRequest.BrandId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateBrandAssignmentRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateBrandPublishedVersionRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateBrandPublishedVersionRequest.BrandId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateBrandPublishedVersionRequest.VersionId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateBrandPublishedVersionResponse.VersionId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateCustomPermissionsRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateCustomPermissionsRequest.CustomPermissionsName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9+=,.@_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.UpdateDashboardRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
@@ -2910,6 +3104,28 @@
     <pattern>[\u0020-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateUserCustomPermissionRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateUserCustomPermissionRequest.CustomPermissionsName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9+=,.@_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateUserCustomPermissionRequest.Namespace</property>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateUserCustomPermissionRequest.UserName</property>
+    <min>1</min>
+    <pattern>[\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.UpdateVPCConnectionRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
@@ -3229,6 +3445,48 @@
     <pattern>[\w\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.BrandDefinition.BrandName</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[ -ÿ]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.BrandDefinition.Description</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[ -ÿ]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.BrandDetail.BrandId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.BrandDetail.VersionId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.BrandSummary.BrandId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.BrandSummary.BrandName</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[ -ÿ]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.BrandSummary.Description</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[ -ÿ]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.CalculatedColumn.ColumnId</property>
     <min>1</min>
     <max>64</max>
@@ -3443,6 +3701,12 @@
   <property-value-rule>
     <property>Amazon.QuickSight.Model.CustomNarrativeOptions.Narrative</property>
     <max>150000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.CustomPermissions.CustomPermissionsName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9+=,.@_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.CustomSql.Name</property>
@@ -4313,6 +4577,12 @@
     <pattern>[0-9a-zA-Z-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.Logo.AltText</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[ -ÿ]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.LongFormatText.PlainText</property>
     <min>1</min>
     <max>1024</max>
@@ -4546,6 +4816,14 @@
   <property-value-rule>
     <property>Amazon.QuickSight.Model.PaginationConfiguration.PageNumber</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.Palette.Background</property>
+    <pattern>^#[A-F0-9]{6}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.Palette.Foreground</property>
+    <pattern>^#[A-F0-9]{6}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.PanelConfiguration.BackgroundColor</property>

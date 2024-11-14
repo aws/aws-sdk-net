@@ -1789,6 +1789,168 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type BrandStatus.
+    /// </summary>
+    public class BrandStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE_FAILED for BrandStatus
+        /// </summary>
+        public static readonly BrandStatus CREATE_FAILED = new BrandStatus("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATE_IN_PROGRESS for BrandStatus
+        /// </summary>
+        public static readonly BrandStatus CREATE_IN_PROGRESS = new BrandStatus("CREATE_IN_PROGRESS");
+        /// <summary>
+        /// Constant CREATE_SUCCEEDED for BrandStatus
+        /// </summary>
+        public static readonly BrandStatus CREATE_SUCCEEDED = new BrandStatus("CREATE_SUCCEEDED");
+        /// <summary>
+        /// Constant DELETE_FAILED for BrandStatus
+        /// </summary>
+        public static readonly BrandStatus DELETE_FAILED = new BrandStatus("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETE_IN_PROGRESS for BrandStatus
+        /// </summary>
+        public static readonly BrandStatus DELETE_IN_PROGRESS = new BrandStatus("DELETE_IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BrandStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BrandStatus FindValue(string value)
+        {
+            return FindValue<BrandStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BrandStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BrandVersionStatus.
+    /// </summary>
+    public class BrandVersionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE_FAILED for BrandVersionStatus
+        /// </summary>
+        public static readonly BrandVersionStatus CREATE_FAILED = new BrandVersionStatus("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATE_IN_PROGRESS for BrandVersionStatus
+        /// </summary>
+        public static readonly BrandVersionStatus CREATE_IN_PROGRESS = new BrandVersionStatus("CREATE_IN_PROGRESS");
+        /// <summary>
+        /// Constant CREATE_SUCCEEDED for BrandVersionStatus
+        /// </summary>
+        public static readonly BrandVersionStatus CREATE_SUCCEEDED = new BrandVersionStatus("CREATE_SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BrandVersionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BrandVersionStatus FindValue(string value)
+        {
+            return FindValue<BrandVersionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BrandVersionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CapabilityState.
+    /// </summary>
+    public class CapabilityState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DENY for CapabilityState
+        /// </summary>
+        public static readonly CapabilityState DENY = new CapabilityState("DENY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapabilityState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapabilityState FindValue(string value)
+        {
+            return FindValue<CapabilityState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapabilityState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CategoricalAggregationFunction.
     /// </summary>
     public class CategoricalAggregationFunction : ConstantClass
