@@ -1,0 +1,11 @@
+{
+    "services": [
+        {
+            "serviceName": "ElasticTranscoder",
+            "type": "patch",
+            "changeLogMessages": [
+                "Remove integration tests for Amazon Elastic Transcoder as the service has been discontinued: https://aws.amazon.com/blogs/media/how-to-migrate-workflows-from-amazon-elastic-transcoder-to-aws-elemental-mediaconvert"
+            ]
+        }
+    ]
+}
