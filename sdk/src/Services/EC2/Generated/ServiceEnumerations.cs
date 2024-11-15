@@ -5715,17 +5715,9 @@ namespace Amazon.EC2
     {
 
         /// <summary>
-        /// Constant None for FleetCapacityReservationUsageStrategy
-        /// </summary>
-        public static readonly FleetCapacityReservationUsageStrategy None = new FleetCapacityReservationUsageStrategy("none");
-        /// <summary>
         /// Constant UseCapacityReservationsFirst for FleetCapacityReservationUsageStrategy
         /// </summary>
         public static readonly FleetCapacityReservationUsageStrategy UseCapacityReservationsFirst = new FleetCapacityReservationUsageStrategy("use-capacity-reservations-first");
-        /// <summary>
-        /// Constant UseCapacityReservationsOnly for FleetCapacityReservationUsageStrategy
-        /// </summary>
-        public static readonly FleetCapacityReservationUsageStrategy UseCapacityReservationsOnly = new FleetCapacityReservationUsageStrategy("use-capacity-reservations-only");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
