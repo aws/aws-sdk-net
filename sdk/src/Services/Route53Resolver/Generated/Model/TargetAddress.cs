@@ -101,58 +101,9 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property Protocol. 
         /// <para>
-        ///  The protocols for the Resolver endpoints. DoH-FIPS is applicable for inbound endpoints
-        /// only. 
+        ///  The protocols for the target address. The protocol you choose needs to be supported
+        /// by the outbound endpoint of the Resolver rule.
         /// </para>
-        ///  
-        /// <para>
-        /// For an inbound endpoint you can apply the protocols as follows:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  Do53 and DoH in combination.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Do53 and DoH-FIPS in combination.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Do53 alone.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DoH alone.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DoH-FIPS alone.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// None, which is treated as Do53.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For an outbound endpoint you can apply the protocols as follows:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  Do53 and DoH in combination.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Do53 alone.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// DoH alone.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// None, which is treated as Do53.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public Protocol Protocol
         {

@@ -37,6 +37,7 @@ namespace Amazon.Route53Resolver.Model
     {
         private string _firewallDomainListId;
         private string _firewallRuleGroupId;
+        private string _firewallThreatProtectionId;
         private string _qtype;
 
         /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Route53Resolver.Model
         /// The ID of the domain list that's used in the rule. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Min=1, Max=64)]
         public string FirewallDomainListId
         {
             get { return this._firewallDomainListId; }
@@ -76,6 +77,25 @@ namespace Amazon.Route53Resolver.Model
         internal bool IsSetFirewallRuleGroupId()
         {
             return this._firewallRuleGroupId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FirewallThreatProtectionId. 
+        /// <para>
+        ///  The ID that is created for a DNS Firewall Advanced rule. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string FirewallThreatProtectionId
+        {
+            get { return this._firewallThreatProtectionId; }
+            set { this._firewallThreatProtectionId = value; }
+        }
+
+        // Check to see if FirewallThreatProtectionId property is set
+        internal bool IsSetFirewallThreatProtectionId()
+        {
+            return this._firewallThreatProtectionId != null;
         }
 
         /// <summary>

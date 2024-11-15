@@ -199,6 +199,11 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.DeleteFirewallRuleRequest.FirewallThreatProtectionId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53Resolver.Model.DeleteFirewallRuleRequest.Qtype</property>
     <min>1</min>
     <max>16</max>
@@ -597,6 +602,11 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.UpdateFirewallRuleRequest.FirewallThreatProtectionId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Route53Resolver.Model.UpdateFirewallRuleRequest.Name</property>
     <max>64</max>
     <pattern>(?!^[0-9]+$)([a-zA-Z0-9\-_' ']+)</pattern>
@@ -762,6 +772,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53Resolver.Model.FirewallRule.FirewallRuleGroupId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Route53Resolver.Model.FirewallRule.FirewallThreatProtectionId</property>
     <min>1</min>
     <max>64</max>
   </property-value-rule>

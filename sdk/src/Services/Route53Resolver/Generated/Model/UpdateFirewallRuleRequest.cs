@@ -40,9 +40,12 @@ namespace Amazon.Route53Resolver.Model
         private string _blockOverrideDomain;
         private int? _blockOverrideTtl;
         private BlockResponse _blockResponse;
+        private ConfidenceThreshold _confidenceThreshold;
+        private DnsThreatProtection _dnsThreatProtection;
         private string _firewallDomainListId;
         private FirewallDomainRedirectionAction _firewallDomainRedirectionAction;
         private string _firewallRuleGroupId;
+        private string _firewallThreatProtectionId;
         private string _name;
         private int? _priority;
         private string _qtype;
@@ -51,11 +54,12 @@ namespace Amazon.Route53Resolver.Model
         /// Gets and sets the property Action. 
         /// <para>
         /// The action that DNS Firewall should take on a DNS query when it matches one of the
-        /// domains in the rule's domain list:
+        /// domains in the rule's domain list, or a threat in a DNS Firewall Advanced rule:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>ALLOW</c> - Permit the request to go through.
+        ///  <c>ALLOW</c> - Permit the request to go through. Not available for DNS Firewall Advanced
+        /// rules.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -177,12 +181,76 @@ namespace Amazon.Route53Resolver.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ConfidenceThreshold. 
+        /// <para>
+        ///  The confidence threshold for DNS Firewall Advanced. You must provide this value when
+        /// you create a DNS Firewall Advanced rule. The confidence level values mean: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>LOW</c>: Provides the highest detection rate for threats, but also increases false
+        /// positives.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>MEDIUM</c>: Provides a balance between detecting threats and false positives.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>HIGH</c>: Detects only the most well corroborated threats with a low rate of false
+        /// positives. 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ConfidenceThreshold ConfidenceThreshold
+        {
+            get { return this._confidenceThreshold; }
+            set { this._confidenceThreshold = value; }
+        }
+
+        // Check to see if ConfidenceThreshold property is set
+        internal bool IsSetConfidenceThreshold()
+        {
+            return this._confidenceThreshold != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DnsThreatProtection. 
+        /// <para>
+        ///  The type of the DNS Firewall Advanced rule. Valid values are: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>DGA</c>: Domain generation algorithms detection. DGAs are used by attackers to
+        /// generate a large number of domains to to launch malware attacks.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DNS_TUNNELING</c>: DNS tunneling detection. DNS tunneling is used by attackers
+        /// to exfiltrate data from the client by using the DNS tunnel without making a network
+        /// connection to the client.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public DnsThreatProtection DnsThreatProtection
+        {
+            get { return this._dnsThreatProtection; }
+            set { this._dnsThreatProtection = value; }
+        }
+
+        // Check to see if DnsThreatProtection property is set
+        internal bool IsSetDnsThreatProtection()
+        {
+            return this._dnsThreatProtection != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FirewallDomainListId. 
         /// <para>
         /// The ID of the domain list to use in the rule. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Min=1, Max=64)]
         public string FirewallDomainListId
         {
             get { return this._firewallDomainListId; }
@@ -203,13 +271,13 @@ namespace Amazon.Route53Resolver.Model
         /// </para>
         ///  
         /// <para>
-        ///  <c>Inspect_Redirection_Domain </c>(Default) inspects all domains in the redirection
+        ///  <c>INSPECT_REDIRECTION_DOMAIN</c>: (Default) inspects all domains in the redirection
         /// chain. The individual domains in the redirection chain must be added to the domain
         /// list.
         /// </para>
         ///  
         /// <para>
-        ///  <c>Trust_Redirection_Domain </c> inspects only the first domain in the redirection
+        ///  <c>TRUST_REDIRECTION_DOMAIN</c>: Inspects only the first domain in the redirection
         /// chain. You don't need to add the subsequent domains in the domain in the redirection
         /// list to the domain list.
         /// </para>
@@ -243,6 +311,25 @@ namespace Amazon.Route53Resolver.Model
         internal bool IsSetFirewallRuleGroupId()
         {
             return this._firewallRuleGroupId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FirewallThreatProtectionId. 
+        /// <para>
+        ///  The DNS Firewall Advanced rule ID. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string FirewallThreatProtectionId
+        {
+            get { return this._firewallThreatProtectionId; }
+            set { this._firewallThreatProtectionId = value; }
+        }
+
+        // Check to see if FirewallThreatProtectionId property is set
+        internal bool IsSetFirewallThreatProtectionId()
+        {
+            return this._firewallThreatProtectionId != null;
         }
 
         /// <summary>

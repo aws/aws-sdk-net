@@ -188,7 +188,7 @@ namespace Amazon.Route53Resolver.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>CREATED</c>: The association between an Amazon VPC and a query logging configuration
+        ///  <c>ACTIVE</c>: The association between an Amazon VPC and a query logging configuration
         /// was successfully created. Resolver is logging queries that originate in the specified
         /// VPC.
         /// </para>
