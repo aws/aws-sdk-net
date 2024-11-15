@@ -77,7 +77,7 @@ namespace AWSSDKDocSamples.Amazon.Polly.Generated
             var client = new AmazonPollyClient();
             var response = client.PutLexicon(new PutLexiconRequest 
             {
-                Content = "file://example.pls",
+                Content = "<Lexicon Content>",
                 Name = "W3C"
             });
 
