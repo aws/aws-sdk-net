@@ -30,44 +30,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PinpointSMSVoiceV2.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeVerifiedDestinationNumbers operation.
-    /// Retrieves the specified verified destination numbers.
+    /// Container for the parameters to the ListProtectConfigurationRuleSetNumberOverrides operation.
+    /// Retrieve all of the protect configuration rule set number overrides that match the
+    /// filters.
     /// </summary>
-    public partial class DescribeVerifiedDestinationNumbersRequest : AmazonPinpointSMSVoiceV2Request
+    public partial class ListProtectConfigurationRuleSetNumberOverridesRequest : AmazonPinpointSMSVoiceV2Request
     {
-        private List<string> _destinationPhoneNumbers = AWSConfigs.InitializeCollections ? new List<string>() : null;
-        private List<VerifiedDestinationNumberFilter> _filters = AWSConfigs.InitializeCollections ? new List<VerifiedDestinationNumberFilter>() : null;
+        private List<ProtectConfigurationRuleSetNumberOverrideFilterItem> _filters = AWSConfigs.InitializeCollections ? new List<ProtectConfigurationRuleSetNumberOverrideFilterItem>() : null;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _verifiedDestinationNumberIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
-
-        /// <summary>
-        /// Gets and sets the property DestinationPhoneNumbers. 
-        /// <para>
-        /// An array of verified destination phone number, in E.164 format.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0, Max=5)]
-        public List<string> DestinationPhoneNumbers
-        {
-            get { return this._destinationPhoneNumbers; }
-            set { this._destinationPhoneNumbers = value; }
-        }
-
-        // Check to see if DestinationPhoneNumbers property is set
-        internal bool IsSetDestinationPhoneNumbers()
-        {
-            return this._destinationPhoneNumbers != null && (this._destinationPhoneNumbers.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
+        private string _protectConfigurationId;
 
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// An array of VerifiedDestinationNumberFilter objects to filter the results.
+        /// An array of ProtectConfigurationRuleSetNumberOverrideFilterItem objects to filter
+        /// the results.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=20)]
-        public List<VerifiedDestinationNumberFilter> Filters
+        [AWSProperty(Min=0, Max=100)]
+        public List<ProtectConfigurationRuleSetNumberOverrideFilterItem> Filters
         {
             get { return this._filters; }
             set { this._filters = value; }
@@ -119,22 +101,22 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VerifiedDestinationNumberIds. 
+        /// Gets and sets the property ProtectConfigurationId. 
         /// <para>
-        /// An array of VerifiedDestinationNumberid to retrieve.
+        /// The unique identifier for the protect configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=5)]
-        public List<string> VerifiedDestinationNumberIds
+        [AWSProperty(Required=true, Min=1, Max=256)]
+        public string ProtectConfigurationId
         {
-            get { return this._verifiedDestinationNumberIds; }
-            set { this._verifiedDestinationNumberIds = value; }
+            get { return this._protectConfigurationId; }
+            set { this._protectConfigurationId = value; }
         }
 
-        // Check to see if VerifiedDestinationNumberIds property is set
-        internal bool IsSetVerifiedDestinationNumberIds()
+        // Check to see if ProtectConfigurationId property is set
+        internal bool IsSetProtectConfigurationId()
         {
-            return this._verifiedDestinationNumberIds != null && (this._verifiedDestinationNumberIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._protectConfigurationId != null;
         }
 
     }

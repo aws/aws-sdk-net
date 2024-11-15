@@ -127,6 +127,11 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         IListPoolOriginationIdentitiesPaginator ListPoolOriginationIdentities(ListPoolOriginationIdentitiesRequest request);
 
         /// <summary>
+        /// Paginator for ListProtectConfigurationRuleSetNumberOverrides operation
+        ///</summary>
+        IListProtectConfigurationRuleSetNumberOverridesPaginator ListProtectConfigurationRuleSetNumberOverrides(ListProtectConfigurationRuleSetNumberOverridesRequest request);
+
+        /// <summary>
         /// Paginator for ListRegistrationAssociations operation
         ///</summary>
         IListRegistrationAssociationsPaginator ListRegistrationAssociations(ListRegistrationAssociationsRequest request);

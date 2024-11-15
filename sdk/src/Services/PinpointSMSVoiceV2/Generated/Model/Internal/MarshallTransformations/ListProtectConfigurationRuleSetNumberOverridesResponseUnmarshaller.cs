@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeleteConfigurationSet operation
+    /// Response Unmarshaller for ListProtectConfigurationRuleSetNumberOverrides operation
     /// </summary>  
-    public class DeleteConfigurationSetResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListProtectConfigurationRuleSetNumberOverridesResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,52 +46,34 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DeleteConfigurationSetResponse response = new DeleteConfigurationSetResponse();
+            ListProtectConfigurationRuleSetNumberOverridesResponse response = new ListProtectConfigurationRuleSetNumberOverridesResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ConfigurationSetArn", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ConfigurationSetArn = unmarshaller.Unmarshall(context);
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ConfigurationSetName", targetDepth))
+                if (context.TestExpression("ProtectConfigurationArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ConfigurationSetName = unmarshaller.Unmarshall(context);
+                    response.ProtectConfigurationArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("CreatedTimestamp", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreatedTimestamp = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DefaultMessageFeedbackEnabled", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.DefaultMessageFeedbackEnabled = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DefaultMessageType", targetDepth))
+                if (context.TestExpression("ProtectConfigurationId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.DefaultMessageType = unmarshaller.Unmarshall(context);
+                    response.ProtectConfigurationId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DefaultSenderId", targetDepth))
+                if (context.TestExpression("RuleSetNumberOverrides", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DefaultSenderId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EventDestinations", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<EventDestination, EventDestinationUnmarshaller>(EventDestinationUnmarshaller.Instance);
-                    response.EventDestinations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<ProtectConfigurationRuleSetNumberOverride, ProtectConfigurationRuleSetNumberOverrideUnmarshaller>(ProtectConfigurationRuleSetNumberOverrideUnmarshaller.Instance);
+                    response.RuleSetNumberOverrides = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -141,9 +123,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
             return new AmazonPinpointSMSVoiceV2Exception(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DeleteConfigurationSetResponseUnmarshaller _instance = new DeleteConfigurationSetResponseUnmarshaller();        
+        private static ListProtectConfigurationRuleSetNumberOverridesResponseUnmarshaller _instance = new ListProtectConfigurationRuleSetNumberOverridesResponseUnmarshaller();        
 
-        internal static DeleteConfigurationSetResponseUnmarshaller GetInstance()
+        internal static ListProtectConfigurationRuleSetNumberOverridesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -151,7 +133,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteConfigurationSetResponseUnmarshaller Instance
+        public static ListProtectConfigurationRuleSetNumberOverridesResponseUnmarshaller Instance
         {
             get
             {

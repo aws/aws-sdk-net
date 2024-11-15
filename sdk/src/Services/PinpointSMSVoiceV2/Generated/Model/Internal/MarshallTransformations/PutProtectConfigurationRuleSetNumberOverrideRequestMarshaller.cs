@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SendMediaMessage Request Marshaller
+    /// PutProtectConfigurationRuleSetNumberOverride Request Marshaller
     /// </summary>       
-    public class SendMediaMessageRequestMarshaller : IMarshaller<IRequest, SendMediaMessageRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class PutProtectConfigurationRuleSetNumberOverrideRequestMarshaller : IMarshaller<IRequest, PutProtectConfigurationRuleSetNumberOverrideRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((SendMediaMessageRequest)input);
+            return this.Marshall((PutProtectConfigurationRuleSetNumberOverrideRequest)input);
         }
 
         /// <summary>
@@ -53,10 +53,10 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(SendMediaMessageRequest publicRequest)
+        public IRequest Marshall(PutProtectConfigurationRuleSetNumberOverrideRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.PinpointSMSVoiceV2");
-            string target = "PinpointSMSVoiceV2.SendMediaMessage";
+            string target = "PinpointSMSVoiceV2.PutProtectConfigurationRuleSetNumberOverride";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2022-03-31";
@@ -69,83 +69,39 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConfigurationSetName())
+                if(publicRequest.IsSetAction())
                 {
-                    context.Writer.WritePropertyName("ConfigurationSetName");
-                    context.Writer.Write(publicRequest.ConfigurationSetName);
+                    context.Writer.WritePropertyName("Action");
+                    context.Writer.Write(publicRequest.Action);
                 }
 
-                if(publicRequest.IsSetContext())
+                if(publicRequest.IsSetClientToken())
                 {
-                    context.Writer.WritePropertyName("Context");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestContextKvp in publicRequest.Context)
-                    {
-                        context.Writer.WritePropertyName(publicRequestContextKvp.Key);
-                        var publicRequestContextValue = publicRequestContextKvp.Value;
-
-                            context.Writer.Write(publicRequestContextValue);
-                    }
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("ClientToken");
+                    context.Writer.Write(publicRequest.ClientToken);
                 }
 
+                else if(!(publicRequest.IsSetClientToken()))
+                {
+                    context.Writer.WritePropertyName("ClientToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());
+                }
                 if(publicRequest.IsSetDestinationPhoneNumber())
                 {
                     context.Writer.WritePropertyName("DestinationPhoneNumber");
                     context.Writer.Write(publicRequest.DestinationPhoneNumber);
                 }
 
-                if(publicRequest.IsSetDryRun())
+                if(publicRequest.IsSetExpirationTimestamp())
                 {
-                    context.Writer.WritePropertyName("DryRun");
-                    context.Writer.Write(publicRequest.DryRun);
-                }
-
-                if(publicRequest.IsSetMaxPrice())
-                {
-                    context.Writer.WritePropertyName("MaxPrice");
-                    context.Writer.Write(publicRequest.MaxPrice);
-                }
-
-                if(publicRequest.IsSetMediaUrls())
-                {
-                    context.Writer.WritePropertyName("MediaUrls");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMediaUrlsListValue in publicRequest.MediaUrls)
-                    {
-                            context.Writer.Write(publicRequestMediaUrlsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetMessageBody())
-                {
-                    context.Writer.WritePropertyName("MessageBody");
-                    context.Writer.Write(publicRequest.MessageBody);
-                }
-
-                if(publicRequest.IsSetMessageFeedbackEnabled())
-                {
-                    context.Writer.WritePropertyName("MessageFeedbackEnabled");
-                    context.Writer.Write(publicRequest.MessageFeedbackEnabled);
-                }
-
-                if(publicRequest.IsSetOriginationIdentity())
-                {
-                    context.Writer.WritePropertyName("OriginationIdentity");
-                    context.Writer.Write(publicRequest.OriginationIdentity);
+                    context.Writer.WritePropertyName("ExpirationTimestamp");
+                    context.Writer.Write(publicRequest.ExpirationTimestamp);
                 }
 
                 if(publicRequest.IsSetProtectConfigurationId())
                 {
                     context.Writer.WritePropertyName("ProtectConfigurationId");
                     context.Writer.Write(publicRequest.ProtectConfigurationId);
-                }
-
-                if(publicRequest.IsSetTimeToLive())
-                {
-                    context.Writer.WritePropertyName("TimeToLive");
-                    context.Writer.Write(publicRequest.TimeToLive);
                 }
 
                 writer.WriteObjectEnd();
@@ -156,9 +112,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static SendMediaMessageRequestMarshaller _instance = new SendMediaMessageRequestMarshaller();        
+        private static PutProtectConfigurationRuleSetNumberOverrideRequestMarshaller _instance = new PutProtectConfigurationRuleSetNumberOverrideRequestMarshaller();        
 
-        internal static SendMediaMessageRequestMarshaller GetInstance()
+        internal static PutProtectConfigurationRuleSetNumberOverrideRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -166,7 +122,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SendMediaMessageRequestMarshaller Instance
+        public static PutProtectConfigurationRuleSetNumberOverrideRequestMarshaller Instance
         {
             get
             {

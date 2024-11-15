@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeleteConfigurationSet operation
+    /// Response Unmarshaller for PutProtectConfigurationRuleSetNumberOverride operation
     /// </summary>  
-    public class DeleteConfigurationSetResponseUnmarshaller : JsonResponseUnmarshaller
+    public class PutProtectConfigurationRuleSetNumberOverrideResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,22 +46,16 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DeleteConfigurationSetResponse response = new DeleteConfigurationSetResponse();
+            PutProtectConfigurationRuleSetNumberOverrideResponse response = new PutProtectConfigurationRuleSetNumberOverrideResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ConfigurationSetArn", targetDepth))
+                if (context.TestExpression("Action", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ConfigurationSetArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ConfigurationSetName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ConfigurationSetName = unmarshaller.Unmarshall(context);
+                    response.Action = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CreatedTimestamp", targetDepth))
@@ -70,28 +64,34 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                     response.CreatedTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DefaultMessageFeedbackEnabled", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.DefaultMessageFeedbackEnabled = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DefaultMessageType", targetDepth))
+                if (context.TestExpression("DestinationPhoneNumber", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.DefaultMessageType = unmarshaller.Unmarshall(context);
+                    response.DestinationPhoneNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DefaultSenderId", targetDepth))
+                if (context.TestExpression("ExpirationTimestamp", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.ExpirationTimestamp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IsoCountryCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.DefaultSenderId = unmarshaller.Unmarshall(context);
+                    response.IsoCountryCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EventDestinations", targetDepth))
+                if (context.TestExpression("ProtectConfigurationArn", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<EventDestination, EventDestinationUnmarshaller>(EventDestinationUnmarshaller.Instance);
-                    response.EventDestinations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ProtectConfigurationArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ProtectConfigurationId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ProtectConfigurationId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -121,13 +121,17 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                {
+                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceQuotaExceededException"))
                 {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ServiceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
@@ -141,9 +145,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
             return new AmazonPinpointSMSVoiceV2Exception(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DeleteConfigurationSetResponseUnmarshaller _instance = new DeleteConfigurationSetResponseUnmarshaller();        
+        private static PutProtectConfigurationRuleSetNumberOverrideResponseUnmarshaller _instance = new PutProtectConfigurationRuleSetNumberOverrideResponseUnmarshaller();        
 
-        internal static DeleteConfigurationSetResponseUnmarshaller GetInstance()
+        internal static PutProtectConfigurationRuleSetNumberOverrideResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -151,7 +155,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteConfigurationSetResponseUnmarshaller Instance
+        public static PutProtectConfigurationRuleSetNumberOverrideResponseUnmarshaller Instance
         {
             get
             {

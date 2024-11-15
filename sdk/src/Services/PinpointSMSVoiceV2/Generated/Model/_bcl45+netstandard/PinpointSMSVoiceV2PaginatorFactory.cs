@@ -197,6 +197,14 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         }
 
         /// <summary>
+        /// Paginator for ListProtectConfigurationRuleSetNumberOverrides operation
+        ///</summary>
+        public IListProtectConfigurationRuleSetNumberOverridesPaginator ListProtectConfigurationRuleSetNumberOverrides(ListProtectConfigurationRuleSetNumberOverridesRequest request) 
+        {
+            return new ListProtectConfigurationRuleSetNumberOverridesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListRegistrationAssociations operation
         ///</summary>
         public IListRegistrationAssociationsPaginator ListRegistrationAssociations(ListRegistrationAssociationsRequest request) 

@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeleteConfigurationSet operation
+    /// Response Unmarshaller for SetDefaultMessageFeedbackEnabled operation
     /// </summary>  
-    public class DeleteConfigurationSetResponseUnmarshaller : JsonResponseUnmarshaller
+    public class SetDefaultMessageFeedbackEnabledResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,7 +46,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DeleteConfigurationSetResponse response = new DeleteConfigurationSetResponse();
+            SetDefaultMessageFeedbackEnabledResponse response = new SetDefaultMessageFeedbackEnabledResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -64,34 +64,10 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                     response.ConfigurationSetName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("CreatedTimestamp", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreatedTimestamp = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DefaultMessageFeedbackEnabled", targetDepth))
+                if (context.TestExpression("MessageFeedbackEnabled", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
-                    response.DefaultMessageFeedbackEnabled = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DefaultMessageType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DefaultMessageType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DefaultSenderId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.DefaultSenderId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EventDestinations", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<EventDestination, EventDestinationUnmarshaller>(EventDestinationUnmarshaller.Instance);
-                    response.EventDestinations = unmarshaller.Unmarshall(context);
+                    response.MessageFeedbackEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -141,9 +117,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
             return new AmazonPinpointSMSVoiceV2Exception(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DeleteConfigurationSetResponseUnmarshaller _instance = new DeleteConfigurationSetResponseUnmarshaller();        
+        private static SetDefaultMessageFeedbackEnabledResponseUnmarshaller _instance = new SetDefaultMessageFeedbackEnabledResponseUnmarshaller();        
 
-        internal static DeleteConfigurationSetResponseUnmarshaller GetInstance()
+        internal static SetDefaultMessageFeedbackEnabledResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -151,7 +127,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteConfigurationSetResponseUnmarshaller Instance
+        public static SetDefaultMessageFeedbackEnabledResponseUnmarshaller Instance
         {
             get
             {
