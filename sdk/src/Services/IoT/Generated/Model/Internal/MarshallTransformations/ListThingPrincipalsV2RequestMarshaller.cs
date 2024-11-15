@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AttachThingPrincipal Request Marshaller
+    /// ListThingPrincipalsV2 Request Marshaller
     /// </summary>       
-    public class AttachThingPrincipalRequestMarshaller : IMarshaller<IRequest, AttachThingPrincipalRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListThingPrincipalsV2RequestMarshaller : IMarshaller<IRequest, ListThingPrincipalsV2Request> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((AttachThingPrincipalRequest)input);
+            return this.Marshall((ListThingPrincipalsV2Request)input);
         }
 
         /// <summary>
@@ -53,31 +53,32 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(AttachThingPrincipalRequest publicRequest)
+        public IRequest Marshall(ListThingPrincipalsV2Request publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoT");
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";
-            request.HttpMethod = "PUT";
+            request.HttpMethod = "GET";
 
             if (!publicRequest.IsSetThingName())
                 throw new AmazonIoTException("Request object does not have required field ThingName set");
             request.AddPathResource("{thingName}", StringUtils.FromString(publicRequest.ThingName));
             
+            if (publicRequest.IsSetMaxResults())
+                request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
+            
+            if (publicRequest.IsSetNextToken())
+                request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            
             if (publicRequest.IsSetThingPrincipalType())
                 request.Parameters.Add("thingPrincipalType", StringUtils.FromString(publicRequest.ThingPrincipalType));
-            request.ResourcePath = "/things/{thingName}/principals";
-        
-            if (publicRequest.IsSetPrincipal()) 
-            {
-                request.Headers["x-amzn-principal"] = publicRequest.Principal;
-            }
+            request.ResourcePath = "/things/{thingName}/principals-v2";
             request.UseQueryString = true;
 
             return request;
         }
-        private static AttachThingPrincipalRequestMarshaller _instance = new AttachThingPrincipalRequestMarshaller();        
+        private static ListThingPrincipalsV2RequestMarshaller _instance = new ListThingPrincipalsV2RequestMarshaller();        
 
-        internal static AttachThingPrincipalRequestMarshaller GetInstance()
+        internal static ListThingPrincipalsV2RequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -85,7 +86,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AttachThingPrincipalRequestMarshaller Instance
+        public static ListThingPrincipalsV2RequestMarshaller Instance
         {
             get
             {

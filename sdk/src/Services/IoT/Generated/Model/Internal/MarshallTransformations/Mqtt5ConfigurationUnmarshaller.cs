@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ThingTypeProperties Object
+    /// Response Unmarshaller for Mqtt5Configuration Object
     /// </summary>  
-    public class ThingTypePropertiesUnmarshaller : IUnmarshaller<ThingTypeProperties, XmlUnmarshallerContext>, IUnmarshaller<ThingTypeProperties, JsonUnmarshallerContext>
+    public class Mqtt5ConfigurationUnmarshaller : IUnmarshaller<Mqtt5Configuration, XmlUnmarshallerContext>, IUnmarshaller<Mqtt5Configuration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ThingTypeProperties IUnmarshaller<ThingTypeProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Mqtt5Configuration IUnmarshaller<Mqtt5Configuration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ThingTypeProperties Unmarshall(JsonUnmarshallerContext context)
+        public Mqtt5Configuration Unmarshall(JsonUnmarshallerContext context)
         {
-            ThingTypeProperties unmarshalledObject = new ThingTypeProperties();
+            Mqtt5Configuration unmarshalledObject = new Mqtt5Configuration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,10 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("mqtt5Configuration", targetDepth))
+                if (context.TestExpression("propagatingAttributes", targetDepth))
                 {
-                    var unmarshaller = Mqtt5ConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Mqtt5Configuration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("searchableAttributes", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SearchableAttributes = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("thingTypeDescription", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ThingTypeDescription = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<PropagatingAttribute, PropagatingAttributeUnmarshaller>(PropagatingAttributeUnmarshaller.Instance);
+                    unmarshalledObject.PropagatingAttributes = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +77,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         }
 
 
-        private static ThingTypePropertiesUnmarshaller _instance = new ThingTypePropertiesUnmarshaller();        
+        private static Mqtt5ConfigurationUnmarshaller _instance = new Mqtt5ConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ThingTypePropertiesUnmarshaller Instance
+        public static Mqtt5ConfigurationUnmarshaller Instance
         {
             get
             {

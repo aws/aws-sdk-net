@@ -35,6 +35,8 @@ namespace Amazon.IoT.Model
     public partial class ServerCertificateConfig
     {
         private bool? _enableocspCheck;
+        private string _ocspAuthorizedResponderArn;
+        private string _ocspLambdaArn;
 
         /// <summary>
         /// Gets and sets the property EnableOCSPCheck. 
@@ -44,9 +46,9 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-custom-endpoints-cert-config.html">Configuring
-        /// OCSP server-certificate stapling in domain configuration</a> from Amazon Web Services
-        /// IoT Core Developer Guide.
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-custom-endpoints-cert-config.html">
+        /// Server certificate configuration for OCSP stapling</a> from Amazon Web Services IoT
+        /// Core Developer Guide.
         /// </para>
         /// </summary>
         public bool EnableOCSPCheck
@@ -59,6 +61,57 @@ namespace Amazon.IoT.Model
         internal bool IsSetEnableOCSPCheck()
         {
             return this._enableocspCheck.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OcspAuthorizedResponderArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for an X.509 certificate stored in Amazon Web Services
+        /// Certificate Manager (ACM). If provided, Amazon Web Services IoT Core will use this
+        /// certificate to validate the signature of the received OCSP response. The OCSP responder
+        /// must sign responses using either this authorized responder certificate or the issuing
+        /// certificate, depending on whether the ARN is provided or not. The certificate must
+        /// be in the same Amazon Web Services region and account as the domain configuration.
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string OcspAuthorizedResponderArn
+        {
+            get { return this._ocspAuthorizedResponderArn; }
+            set { this._ocspAuthorizedResponderArn = value; }
+        }
+
+        // Check to see if OcspAuthorizedResponderArn property is set
+        internal bool IsSetOcspAuthorizedResponderArn()
+        {
+            return this._ocspAuthorizedResponderArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OcspLambdaArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for a Lambda function that acts as a Request for Comments
+        /// (RFC) 6960-compliant Online Certificate Status Protocol (OCSP) responder, supporting
+        /// basic OCSP responses. The Lambda function accepts a JSON string that's Base64-encoded.
+        /// Therefore, you must convert your OCSP response, which is typically in the Distinguished
+        /// Encoding Rules (DER) format, into a JSON string that's Base64-encoded. The Lambda
+        /// function's response is also a Base64-encoded JSON string and the response payload
+        /// must not exceed 8 kilobytes (KiB) in size. The Lambda function must be in the same
+        /// Amazon Web Services region and account as the domain configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=140)]
+        public string OcspLambdaArn
+        {
+            get { return this._ocspLambdaArn; }
+            set { this._ocspLambdaArn = value; }
+        }
+
+        // Check to see if OcspLambdaArn property is set
+        internal bool IsSetOcspLambdaArn()
+        {
+            return this._ocspLambdaArn != null;
         }
 
     }

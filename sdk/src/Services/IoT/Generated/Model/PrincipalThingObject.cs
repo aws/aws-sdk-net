@@ -30,41 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Container for the parameters to the AttachThingPrincipal operation.
-    /// Attaches the specified principal to the specified thing. A principal can be X.509
-    /// certificates, Amazon Cognito identities or federated identities.
-    /// 
-    ///  
-    /// <para>
-    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AttachThingPrincipal</a>
-    /// action.
-    /// </para>
+    /// An object that represents the thing and the type of relation it has with the principal.
     /// </summary>
-    public partial class AttachThingPrincipalRequest : AmazonIoTRequest
+    public partial class PrincipalThingObject
     {
-        private string _principal;
         private string _thingName;
         private ThingPrincipalType _thingPrincipalType;
-
-        /// <summary>
-        /// Gets and sets the property Principal. 
-        /// <para>
-        /// The principal, which can be a certificate ARN (as returned from the CreateCertificate
-        /// operation) or an Amazon Cognito ID.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string Principal
-        {
-            get { return this._principal; }
-            set { this._principal = value; }
-        }
-
-        // Check to see if Principal property is set
-        internal bool IsSetPrincipal()
-        {
-            return !string.IsNullOrEmpty(this._principal);
-        }
 
         /// <summary>
         /// Gets and sets the property ThingName. 
@@ -89,6 +60,7 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property ThingPrincipalType. 
         /// <para>
         /// The type of the relation you want to specify when you attach a principal to a thing.
+        /// The value defaults to <c>NON_EXCLUSIVE_THING</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>

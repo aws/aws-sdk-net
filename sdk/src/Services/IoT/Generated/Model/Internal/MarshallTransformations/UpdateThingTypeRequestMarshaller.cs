@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AttachThingPrincipal Request Marshaller
+    /// UpdateThingType Request Marshaller
     /// </summary>       
-    public class AttachThingPrincipalRequestMarshaller : IMarshaller<IRequest, AttachThingPrincipalRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateThingTypeRequestMarshaller : IMarshaller<IRequest, UpdateThingTypeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((AttachThingPrincipalRequest)input);
+            return this.Marshall((UpdateThingTypeRequest)input);
         }
 
         /// <summary>
@@ -53,31 +53,45 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(AttachThingPrincipalRequest publicRequest)
+        public IRequest Marshall(UpdateThingTypeRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IoT");
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-05-28";
-            request.HttpMethod = "PUT";
+            request.HttpMethod = "PATCH";
 
-            if (!publicRequest.IsSetThingName())
-                throw new AmazonIoTException("Request object does not have required field ThingName set");
-            request.AddPathResource("{thingName}", StringUtils.FromString(publicRequest.ThingName));
-            
-            if (publicRequest.IsSetThingPrincipalType())
-                request.Parameters.Add("thingPrincipalType", StringUtils.FromString(publicRequest.ThingPrincipalType));
-            request.ResourcePath = "/things/{thingName}/principals";
-        
-            if (publicRequest.IsSetPrincipal()) 
+            if (!publicRequest.IsSetThingTypeName())
+                throw new AmazonIoTException("Request object does not have required field ThingTypeName set");
+            request.AddPathResource("{thingTypeName}", StringUtils.FromString(publicRequest.ThingTypeName));
+            request.ResourcePath = "/thing-types/{thingTypeName}";
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
-                request.Headers["x-amzn-principal"] = publicRequest.Principal;
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetThingTypeProperties())
+                {
+                    context.Writer.WritePropertyName("thingTypeProperties");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ThingTypePropertiesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ThingTypeProperties, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-            request.UseQueryString = true;
+
 
             return request;
         }
-        private static AttachThingPrincipalRequestMarshaller _instance = new AttachThingPrincipalRequestMarshaller();        
+        private static UpdateThingTypeRequestMarshaller _instance = new UpdateThingTypeRequestMarshaller();        
 
-        internal static AttachThingPrincipalRequestMarshaller GetInstance()
+        internal static UpdateThingTypeRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -85,7 +99,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AttachThingPrincipalRequestMarshaller Instance
+        public static UpdateThingTypeRequestMarshaller Instance
         {
             get
             {

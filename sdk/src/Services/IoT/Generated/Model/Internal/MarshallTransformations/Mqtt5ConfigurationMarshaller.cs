@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ServerCertificateConfig Marshaller
+    /// Mqtt5Configuration Marshaller
     /// </summary>
-    public class ServerCertificateConfigMarshaller : IRequestMarshaller<ServerCertificateConfig, JsonMarshallerContext> 
+    public class Mqtt5ConfigurationMarshaller : IRequestMarshaller<Mqtt5Configuration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,26 +44,24 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ServerCertificateConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(Mqtt5Configuration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetEnableOCSPCheck())
+            if(requestObject.IsSetPropagatingAttributes())
             {
-                context.Writer.WritePropertyName("enableOCSPCheck");
-                context.Writer.Write(requestObject.EnableOCSPCheck);
-            }
+                context.Writer.WritePropertyName("propagatingAttributes");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectPropagatingAttributesListValue in requestObject.PropagatingAttributes)
+                {
+                    context.Writer.WriteObjectStart();
 
-            if(requestObject.IsSetOcspAuthorizedResponderArn())
-            {
-                context.Writer.WritePropertyName("ocspAuthorizedResponderArn");
-                context.Writer.Write(requestObject.OcspAuthorizedResponderArn);
-            }
+                    var marshaller = PropagatingAttributeMarshaller.Instance;
+                    marshaller.Marshall(requestObjectPropagatingAttributesListValue, context);
 
-            if(requestObject.IsSetOcspLambdaArn())
-            {
-                context.Writer.WritePropertyName("ocspLambdaArn");
-                context.Writer.Write(requestObject.OcspLambdaArn);
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
         }
@@ -71,7 +69,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ServerCertificateConfigMarshaller Instance = new ServerCertificateConfigMarshaller();
+        public readonly static Mqtt5ConfigurationMarshaller Instance = new Mqtt5ConfigurationMarshaller();
 
     }
 }

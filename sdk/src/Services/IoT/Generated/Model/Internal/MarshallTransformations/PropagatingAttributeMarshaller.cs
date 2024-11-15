@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ServerCertificateConfig Marshaller
+    /// PropagatingAttribute Marshaller
     /// </summary>
-    public class ServerCertificateConfigMarshaller : IRequestMarshaller<ServerCertificateConfig, JsonMarshallerContext> 
+    public class PropagatingAttributeMarshaller : IRequestMarshaller<PropagatingAttribute, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,26 +44,26 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ServerCertificateConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(PropagatingAttribute requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetEnableOCSPCheck())
+            if(requestObject.IsSetConnectionAttribute())
             {
-                context.Writer.WritePropertyName("enableOCSPCheck");
-                context.Writer.Write(requestObject.EnableOCSPCheck);
+                context.Writer.WritePropertyName("connectionAttribute");
+                context.Writer.Write(requestObject.ConnectionAttribute);
             }
 
-            if(requestObject.IsSetOcspAuthorizedResponderArn())
+            if(requestObject.IsSetThingAttribute())
             {
-                context.Writer.WritePropertyName("ocspAuthorizedResponderArn");
-                context.Writer.Write(requestObject.OcspAuthorizedResponderArn);
+                context.Writer.WritePropertyName("thingAttribute");
+                context.Writer.Write(requestObject.ThingAttribute);
             }
 
-            if(requestObject.IsSetOcspLambdaArn())
+            if(requestObject.IsSetUserPropertyKey())
             {
-                context.Writer.WritePropertyName("ocspLambdaArn");
-                context.Writer.Write(requestObject.OcspLambdaArn);
+                context.Writer.WritePropertyName("userPropertyKey");
+                context.Writer.Write(requestObject.UserPropertyKey);
             }
 
         }
@@ -71,7 +71,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ServerCertificateConfigMarshaller Instance = new ServerCertificateConfigMarshaller();
+        public readonly static PropagatingAttributeMarshaller Instance = new PropagatingAttributeMarshaller();
 
     }
 }
