@@ -1,3 +1,28 @@
+### 3.7.928.0 (2024-11-15 19:23 UTC)
+* CloudWatch (3.7.402.0)
+	* Adds support for adding related Entity information to metrics ingested through PutMetricData.
+* ConnectCampaignsV2 (3.7.400.0)
+	* Added Amazon Connect Outbound Campaigns V2 SDK.
+* DataSync (3.7.401.10)
+	* Doc-only updates and enhancements related to creating DataSync tasks and describing task executions.
+* EC2 (3.7.416.0)
+	* Remove non-functional enum variants for FleetCapacityReservationUsageStrategy
+* ElasticTranscoder (3.7.400.53)
+	* Remove integration tests for Amazon Elastic Transcoder as the service has been discontinued: https://aws.amazon.com/blogs/media/how-to-migrate-workflows-from-amazon-elastic-transcoder-to-aws-elemental-mediaconvert
+* IoT (3.7.403.0)
+	* This release allows AWS IoT Core users to enrich MQTT messages with propagating attributes, to associate a thing to a connection, and to enable Online Certificate Status Protocol (OCSP) stapling for TLS X.509 server certificates through private endpoints.
+* Outposts (3.7.404.0)
+	* You can now purchase AWS Outposts rack or server capacity for a 5-year term with one of  the following payment options: All Upfront, Partial Upfront, and No Upfront.
+* PinpointSMSVoiceV2 (3.7.404.0)
+	* Use rule overrides to always allow or always block messages to specific phone numbers. Use message feedback to monitor if a customer interacts with your message.
+* Polly (3.7.401.42)
+	* Fixes PutLexicon usage example.
+* Route53Resolver (3.7.402.0)
+	* Route 53 Resolver DNS Firewall Advanced Rules allows you to monitor and block suspicious DNS traffic based on anomalies detected in the queries, such as DNS tunneling and Domain Generation Algorithms (DGAs).
+* Core 3.7.400.53
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.927.0 (2024-11-15 02:02 UTC)
 * PartnerCentralSelling (3.7.401.0)
 	* Announcing AWS Partner Central API for Selling: This service launch Introduces new APIs for co-selling opportunity management and related functions. Key features include notifications, a dynamic sandbox for testing, and streamlined validations.
