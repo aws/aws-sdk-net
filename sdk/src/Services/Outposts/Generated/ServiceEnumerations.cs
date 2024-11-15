@@ -1007,6 +1007,10 @@ namespace Amazon.Outposts
     {
 
         /// <summary>
+        /// Constant FIVE_YEARS for PaymentTerm
+        /// </summary>
+        public static readonly PaymentTerm FIVE_YEARS = new PaymentTerm("FIVE_YEARS");
+        /// <summary>
         /// Constant ONE_YEAR for PaymentTerm
         /// </summary>
         public static readonly PaymentTerm ONE_YEAR = new PaymentTerm("ONE_YEAR");
