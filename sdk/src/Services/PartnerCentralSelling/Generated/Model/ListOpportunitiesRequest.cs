@@ -31,8 +31,8 @@ namespace Amazon.PartnerCentralSelling.Model
 {
     /// <summary>
     /// Container for the parameters to the ListOpportunities operation.
-    /// This request accepts a list of filters to use to retrieve a specific subset of opportunities,
-    /// as well as sort options. This feature is available to partners from <a href="https://partnercentral.awspartner.com/">Partner
+    /// This request accepts a list of filters that retrieve opportunity subsets as well as
+    /// sort options. This feature is available to partners from <a href="https://partnercentral.awspartner.com/">Partner
     /// Central</a> using the <c>ListOpportunities</c> API action. 
     /// 
     ///  
@@ -81,8 +81,8 @@ namespace Amazon.PartnerCentralSelling.Model
         ///  Specifies the catalog associated with the request. This field takes a string value
         /// from a predefined list: <c>AWS</c> or <c>Sandbox</c>. The catalog determines which
         /// environment the opportunities are listed in. Use <c>AWS</c> for listing real opportunities
-        /// in the Amazon Web Services catalog, and <c>Sandbox</c> for to test in a secure and
-        /// isolated environment. 
+        /// in the Amazon Web Services catalog, and <c>Sandbox</c> for testing in secure, isolated
+        /// environments. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -206,8 +206,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         ///  Specifies the maximum number of results to return in a single call. This limits the
-        /// number of opportunities returned in the response to avoid overloading with too many
-        /// results at once. 
+        /// number of opportunities returned in the response to avoid providing too many results
+        /// at once. 
         /// </para>
         ///  
         /// <para>

@@ -50,10 +50,9 @@ namespace Amazon.PartnerCentralSelling.Internal
         {
             var config = (AmazonPartnerCentralSellingConfig)requestContext.ClientConfig;
             var result = new PartnerCentralSellingEndpointParameters();
-            result.Region = config.RegionEndpoint?.SystemName;
-            result.UseDualStack = config.UseDualstackEndpoint;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.Endpoint = config.ServiceURL;
+            result.Region = config.RegionEndpoint?.SystemName;
 
 
             // The region needs to be determined from the ServiceURL if not set.

@@ -35,7 +35,7 @@ namespace Amazon.PartnerCentralSelling.Model
     /// 
     ///  
     /// <para>
-    /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">quotas</a>
+    /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
     /// and retry after the provided delay. 
     /// </para>
     /// </summary>

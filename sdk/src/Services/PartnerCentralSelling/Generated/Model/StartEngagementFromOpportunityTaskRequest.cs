@@ -82,8 +82,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A unique token provided by the client to ensure the idempotency of the request. It
-        /// helps prevent the same task from being performed multiple times.
+        /// A unique token provided by the client to help ensure the idempotency of the request.
+        /// It helps prevent the same task from being performed multiple times.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -103,7 +103,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property Identifier. 
         /// <para>
         /// The unique identifier of the opportunity from which the engagement task is to be initiated.
-        /// This ensures the task is applied to the correct opportunity.
+        /// This helps ensure that the task is applied to the correct opportunity.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

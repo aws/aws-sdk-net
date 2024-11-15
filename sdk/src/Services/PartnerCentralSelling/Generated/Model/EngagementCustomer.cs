@@ -31,7 +31,7 @@ namespace Amazon.PartnerCentralSelling.Model
 {
     /// <summary>
     /// Contains details about the customer associated with the Engagement Invitation, including
-    /// key company information and industry.
+    /// company information and industry.
     /// </summary>
     public partial class EngagementCustomer
     {

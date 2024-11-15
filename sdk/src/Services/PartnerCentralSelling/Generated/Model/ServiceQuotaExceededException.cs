@@ -36,9 +36,8 @@ namespace Amazon.PartnerCentralSelling.Model
     /// 
     ///  
     /// <para>
-    /// Suggested action: Review the <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">service
-    /// quotas</a> for the specific resource, and reduce the usage or request a quota increase
-    /// through support if necessary. 
+    /// Suggested action: Review the <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+    /// for the resource, and either reduce usage or request a quota increase. 
     /// </para>
     /// </summary>
     #if !NETSTANDARD

@@ -124,7 +124,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property Industry. 
         /// <para>
         /// Specifies the industry the end <c>Customer</c> belongs to that's associated with the
-        /// <c>Opportunity</c> . It refers to the category or sector where the customer's business
+        /// <c>Opportunity</c>. It refers to the category or sector where the customer's business
         /// operates. This is a required field. 
         /// </para>
         /// </summary>

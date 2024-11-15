@@ -40,9 +40,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property EngagementInvitationSummaries. 
         /// <para>
-        /// An array containing summaries of engagement invitations. Each summary includes key
-        /// information such as the invitation title, invitation date, and the current status
-        /// of the invitation.
+        /// An array containing summaries of engagement invitations. Each summary includes information
+        /// such as the invitation title, invitation date, and the current status of the invitation.
         /// </para>
         /// </summary>
         public List<EngagementInvitationSummary> EngagementInvitationSummaries

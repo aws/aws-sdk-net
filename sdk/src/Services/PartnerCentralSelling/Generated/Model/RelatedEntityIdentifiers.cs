@@ -103,14 +103,14 @@ namespace Amazon.PartnerCentralSelling.Model
         ///  
         /// <para>
         ///  If the specific solution identifier is not available, you can use the value <c>Other</c>
-        /// and provide details about the solution in the <c>otherSolutionOffered</c> field. However,
-        /// once the opportunity reaches the <c>Committed</c> stage or beyond, the <c>Other</c>
+        /// and provide details about the solution in the <c>otherSolutionOffered</c> field. But
+        /// when the opportunity reaches the <c>Committed</c> stage or beyond, the <c>Other</c>
         /// value cannot be used, and a valid solution identifier must be provided. 
         /// </para>
         ///  
         /// <para>
-        ///  By associating the relevant solutions with the opportunity, you can clearly communicate
-        /// the offerings that are being considered or implemented to address the customer's business
+        ///  By associating the relevant solutions with the opportunity, you can communicate the
+        /// offerings that are being considered or implemented to address the customer's business
         /// problem. 
         /// </para>
         /// </summary>

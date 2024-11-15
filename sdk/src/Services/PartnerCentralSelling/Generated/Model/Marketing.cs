@@ -62,12 +62,11 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property CampaignName. 
         /// <para>
-        /// Specifies the <c>Opportunity</c>'s unique marketing campaign name. The Amazon Web
-        /// Services campaign name serves as a reference to specific marketing initiatives, promotions,
-        /// or activities related to the <c>Opportunity</c>. This field captures the identifier
-        /// used to track and categorize the <c>Opportunity</c> within Amazon Web Services's marketing
-        /// campaigns. If you don't have a campaign name, reach out to your Amazon Web Services
-        /// point of contact to obtain one. 
+        /// Specifies the <c>Opportunity</c> marketing campaign code. The Amazon Web Services
+        /// campaign code is a reference to specific marketing initiatives, promotions, or activities.
+        /// This field captures the identifier used to track and categorize the <c>Opportunity</c>
+        /// within marketing campaigns. If you don't have a campaign code, contact your Amazon
+        /// Web Services point of contact to obtain one. 
         /// </para>
         /// </summary>
         public string CampaignName

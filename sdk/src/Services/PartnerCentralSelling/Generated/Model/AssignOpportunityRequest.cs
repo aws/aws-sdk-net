@@ -78,8 +78,8 @@ namespace Amazon.PartnerCentralSelling.Model
         ///  Specifies the catalog associated with the request. This field takes a string value
         /// from a predefined list: <c>AWS</c> or <c>Sandbox</c>. The catalog determines which
         /// environment the opportunity is assigned in. Use <c>AWS</c> to assign real opportunities
-        /// in the Amazon Web Services catalog, and <c>Sandbox</c> to test in a secure and isolated
-        /// environment. 
+        /// in the Amazon Web Services catalog, and <c>Sandbox</c> for testing in secure, isolated
+        /// environments. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

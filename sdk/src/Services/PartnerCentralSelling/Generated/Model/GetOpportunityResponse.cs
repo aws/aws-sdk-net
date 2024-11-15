@@ -242,13 +242,13 @@ namespace Amazon.PartnerCentralSelling.Model
         ///  </li> <li> 
         /// <para>
         ///  Renewal opportunity: Represents an opportunity to renew an existing contract or subscription
-        /// with a current customer, ensuring continuity of service. 
+        /// with a current customer, which helps to ensure service continuity. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Expansion opportunity: Represents an opportunity to expand the scope of an existing
+        ///  Expansion opportunity: Represents an opportunity to expand the scope of a customer's
         /// contract or subscription, either by adding new services or increasing the volume of
-        /// existing services for a current customer. 
+        /// existing services. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -296,52 +296,52 @@ namespace Amazon.PartnerCentralSelling.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  Co-Sell - Architectural Validation: Confirmation from Amazon Web Services that the
-        /// partner's proposed solution architecture is aligned with Amazon Web Services best
-        /// practices and poses minimal architectural risks. 
+        ///  Cosell—Architectural Validation: Confirmation from Amazon Web Services that the partner's
+        /// proposed solution architecture is aligned with Amazon Web Services best practices
+        /// and poses minimal architectural risks. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Co-Sell - Business Presentation: Request Amazon Web Services seller's participation
+        ///  Cosell—Business Presentation: Request Amazon Web Services seller's participation
         /// in a joint customer presentation. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Co-Sell - Competitive Information: Access to Amazon Web Services competitive resources
+        ///  Cosell—Competitive Information: Access to Amazon Web Services competitive resources
         /// and support for the partner's proposed solution. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Co-Sell - Pricing Assistance: Connect with an Amazon Web Services seller for support
+        ///  Cosell—Pricing Assistance: Connect with an Amazon Web Services seller for support
         /// situations where a partner may be receiving an upfront discount on a service (for
         /// example: EDP deals). 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Co-Sell - Technical Consultation: Connect with an Amazon Web Services Solutions Architect
+        ///  Cosell—Technical Consultation: Connect with an Amazon Web Services Solutions Architect
         /// to address the partner's questions about the proposed solution. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Co-Sell - Total Cost of Ownership Evaluation: Assistance with quoting different cost
+        ///  Cosell—Total Cost of Ownership Evaluation: Assistance with quoting different cost
         /// savings of proposed solutions on Amazon Web Services versus on-premises or a traditional
         /// hosting environment. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Co-Sell - Deal Support: Request Amazon Web Services seller's support to progress
-        /// the opportunity (for example: joint customer call, strategic positioning). 
+        ///  Cosell—Deal Support: Request Amazon Web Services seller's support to progress the
+        /// opportunity (for example: joint customer call, strategic positioning). 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Co-Sell - Support for Public Tender / RFx: Opportunity related to the public sector
-        /// where the partner needs Amazon Web Services RFx support. 
+        ///  Cosell—Support for Public Tender/RFx: Opportunity related to the public sector where
+        /// the partner needs Amazon Web Services RFx support. 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  Do Not Need Support from Amazon Web Services Sales Rep: Indicates that a partner
         /// doesn't need support from an Amazon Web Services sales representative, and the partner
-        /// solely manages the opportunity. It's possible to request co-selling support on these
+        /// solely manages the opportunity. It's possible to request coselling support on these
         /// opportunities at any stage during their lifecycle. Also known as, for-visibility-only
         /// (FVO) opportunity. 
         /// </para>

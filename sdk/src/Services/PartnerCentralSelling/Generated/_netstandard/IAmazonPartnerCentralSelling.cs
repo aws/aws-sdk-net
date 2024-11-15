@@ -38,22 +38,20 @@ namespace Amazon.PartnerCentralSelling
     /// 
     ///  
     /// <para>
-    ///  Amazon Web Services (AWS) Partner Central API reference guide is designed to help
-    /// <a href="https://docs.aws.amazon.com/partners/programs/">AWS Partners</a> programmatically
-    /// integrate their Customer Relationship Management (CRM) systems with AWS Partner Central.
-    /// Through the Partner Central APIs, partners can automate and streamline their interactions
-    /// with AWS Partner Central, ensuring a more efficient and effective engagement in joint
-    /// business activities. 
+    /// This Amazon Web Services (AWS) Partner Central API reference is designed to help <a
+    /// href="http://aws.amazon.com/partners/programs/">AWS Partners</a> integrate Customer
+    /// Relationship Management (CRM) systems with AWS Partner Central. Partners can automate
+    /// interactions with AWS Partner Central, which helps to ensure effective engagements
+    /// in joint business activities.
     /// </para>
     ///  
     /// <para>
-    ///  The AWS Partner Central API service provides standard AWS API functionality. You
-    /// can directly use the API <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/API_Operations.html">Actions</a>,
-    /// or you can use an AWS SDK to access an API that's tailored to the programming language
-    /// or platform that you're using. For more information about AWS application development,
-    /// see <a href="https://docs.aws.amazon.com/getting-started">Getting Started with AWS</a>.
-    /// For more information about using AWS SDKs, see <a href="https://docs.aws.amazon.com/aws-sdk">AWS
-    /// SDKs</a>. 
+    /// The API provides standard AWS API functionality. Access it by either using API <a
+    /// href="https://docs.aws.amazon.com/partner-central/latest/selling-api/API_Operations.html">Actions</a>
+    /// or by using an AWS SDK that's tailored to your programming language or platform. For
+    /// more information, see <a href="http://aws.amazon.com/getting-started">Getting Started
+    /// with AWS</a> and <a href="http://aws.amazon.com/developer/tools/">Tools to Build on
+    /// AWS</a>.
     /// </para>
     ///  
     /// <para>
@@ -61,38 +59,37 @@ namespace Amazon.PartnerCentralSelling
     /// </para>
     ///  <ol> <li> 
     /// <para>
-    ///  <b>Opportunity management:</b> Facilitates the management of co-selling opportunities
-    /// with AWS using API actions such as <c>CreateOpportunity</c>, <c>UpdateOpportunity</c>,
-    /// <c>ListOpportunities</c>, <c>GetOpportunity</c>, and <c>AssignOpportunity</c>.
+    ///  <b>Opportunity management:</b> Manages coselling opportunities through API actions
+    /// such as <c>CreateOpportunity</c>, <c>UpdateOpportunity</c>, <c>ListOpportunities</c>,
+    /// <c>GetOpportunity</c>, and <c>AssignOpportunity</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>AWS referral management:</b> Facilitates receiving referrals shared by AWS using
-    /// actions like <c>ListEngagementInvitations</c>, <c>GetEngagementInvitation</c>, <c>StartEngagementByAcceptingInvitation</c>,
+    ///  <b>AWS referral management:</b> Manages referrals shared by AWS using actions such
+    /// as <c>ListEngagementInvitations</c>, <c>GetEngagementInvitation</c>, <c>StartEngagementByAcceptingInvitation</c>,
     /// and <c>RejectEngagementInvitation</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Entity association:</b> Associate related entities such as <i>AWS Products</i>,
+    ///  <b>Entity association:</b> Associates related entities such as <i>AWS Products</i>,
     /// <i>Partner Solutions</i>, and <i>AWS Marketplace Private Offers</i> with opportunities
-    /// using the actions <c>AssociateOpportunity</c> and <c>DisassociateOpportunity</c>.
+    /// using the actions <c>AssociateOpportunity</c>, and <c>DisassociateOpportunity</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>View AWS opportunity details:</b> Use the <c>GetAWSOpportunitySummary</c> action
-    /// to retrieve real-time summaries of AWS opportunities that are linked to your opportunities.
+    ///  <b>View AWS opportunity details:</b> Retrieves real-time summaries of AWS opportunities
+    /// using the <c>GetAWSOpportunitySummary</c> action.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>List solutions:</b> Provides list APIs for listing solutions partners offer using
-    /// <c>ListSolutions</c>.
+    ///  <b>List solutions:</b> Provides list APIs for listing partner offers using <c>ListSolutions</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Event subscription:</b> Partners can subscribe to real-time updates on opportunities
-    /// by listening to events such as <i>Opportunity Created</i>, <i>Opportunity Updated</i>,
-    /// <i>Engagement Invitation Accepted</i>, <i>Engagement Invitation Rejected</i> and <i>Engagement
-    /// Invitation Created</i> using AWS EventBridge.
+    ///  <b>Event subscription:</b> Subscribe to real-time opportunity updates through AWS
+    /// EventBridge by using actions such as <i>Opportunity Created</i>, <i>Opportunity Updated</i>,
+    /// <i>Engagement Invitation Accepted</i>, <i>Engagement Invitation Rejected</i>, and
+    /// <i>Engagement Invitation Created</i>.
     /// </para>
     ///  </li> </ol>
     /// </para>
@@ -166,7 +163,7 @@ namespace Amazon.PartnerCentralSelling
         /// 
         ///  
         /// <para>
-        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">quotas</a>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
         /// and retry after the provided delay. 
         /// </para>
         /// </exception>
@@ -192,20 +189,20 @@ namespace Amazon.PartnerCentralSelling
         /// <summary>
         /// Enables you to create a formal association between an <c>Opportunity</c> and various
         /// related entities, enriching the context and details of the opportunity for better
-        /// collaboration and decision-making. You can associate an opportunity with the following
-        /// types of entities: 
+        /// collaboration and decision making. You can associate an opportunity with the following
+        /// entity types: 
         /// 
         ///  <ul> <li> 
         /// <para>
         ///  Partner Solution: A software product or consulting practice created and delivered
-        /// by Partners. Partner Solutions help customers address specific business challenges
-        /// or achieve particular goals using Amazon Web Services services. 
+        /// by Partners. Partner Solutions help customers address business challenges using Amazon
+        /// Web Services services. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Amazon Web Services Product: Amazon Web Services offers a wide range of products
-        /// and services designed to provide scalable, reliable, and cost-effective infrastructure
-        /// solutions. For the latest list of Amazon Web Services products, refer to <a href="https://github.com/aws-samples/partner-crm-integration-samples/blob/main/resources/aws_products.json">Amazon
+        ///  Amazon Web Services Products: Amazon Web Services offers many products and services
+        /// that provide scalable, reliable, and cost-effective infrastructure solutions. For
+        /// the latest list of Amazon Web Services products, see <a href="https://github.com/aws-samples/partner-crm-integration-samples/blob/main/resources/aws_products.json">Amazon
         /// Web Services products</a>. 
         /// </para>
         ///  </li> <li> 
@@ -214,7 +211,7 @@ namespace Amazon.PartnerCentralSelling
         /// sellers to extend custom pricing and terms to individual Amazon Web Services customers.
         /// Sellers can negotiate custom prices, payment schedules, and end user license terms
         /// through private offers, enabling Amazon Web Services customers to acquire software
-        /// solutions tailored to their specific needs. For more information, refer to <a href="https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-private-offers.html">Private
+        /// solutions tailored to their specific needs. For more information, see <a href="https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-private-offers.html">Private
         /// offers in Amazon Web Services Marketplace</a>. 
         /// </para>
         ///  </li> </ul> 
@@ -227,16 +224,15 @@ namespace Amazon.PartnerCentralSelling
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  AWS products: For the latest list of Amazon Web Services products, refer to the Amazon
-        /// Web Services products list.
+        ///  AWS Products: For the latest list of Amazon Web Services products, see <a href="https://github.com/aws-samples/partner-crm-integration-samples/blob/main/resources/aws_products.json">Amazon
+        /// Web Services products</a>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Amazon Web Services Marketplace private offer: Use the <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html">AWS
-        /// Marketplace Catalog API</a> to list entities. Specifically, use the <c>ListEntities</c>
-        /// operation to retrieve a list of private offers. The request to the <c>ListEntities</c>
-        /// API returns the details of the private offers available to you. For more information,
-        /// refer to <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_ListEntities.html">ListEntities</a>.
+        ///  Amazon Web Services Marketplace private offer: Use the <a href="https://docs.aws.amazon.com/marketplace/latest/APIReference/catalog-apis.html">Using
+        /// the Amazon Web Services Marketplace Catalog API</a> to list entities. Specifically,
+        /// use the <c>ListEntities</c> operation to retrieve a list of private offers. The request
+        /// returns the details of available private offers. For more information, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_ListEntities.html">ListEntities</a>.
         /// 
         /// </para>
         ///  </li> </ul>
@@ -283,7 +279,7 @@ namespace Amazon.PartnerCentralSelling
         /// 
         ///  
         /// <para>
-        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">quotas</a>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
         /// and retry after the provided delay. 
         /// </para>
         /// </exception>
@@ -308,13 +304,12 @@ namespace Amazon.PartnerCentralSelling
 
         /// <summary>
         /// Creates an <c>Opportunity</c> record in Partner Central. Use this operation to create
-        /// a potential business opportunity intended to be submitted to Amazon Web Services.
-        /// Creating an opportunity sets its <c>Lifecycle.ReviewStatus</c> to <c>Pending Submission</c>.
-        /// 
+        /// a potential business opportunity for submission to Amazon Web Services. Creating an
+        /// opportunity sets <c>Lifecycle.ReviewStatus</c> to <c>Pending Submission</c>. 
         /// 
         ///  
         /// <para>
-        ///  To fully submit an opportunity, follow these steps: 
+        ///  To submit an opportunity, follow these steps: 
         /// </para>
         ///  <ol> <li> 
         /// <para>
@@ -326,19 +321,18 @@ namespace Amazon.PartnerCentralSelling
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To submit the opportunity, use <c>SubmitOpportunity</c>.
+        /// To submit the opportunity, use <c>StartEngagementFromOpportunityTask</c>.
         /// </para>
         ///  </li> </ol> 
         /// <para>
-        ///  After submission, you can't edit the opportunity until the review is complete. However,
-        /// opportunities in the <c>Pending Submission</c> state still need all details completed.
-        /// You can update the opportunity while it's in the <c>Pending Submission</c> state.
-        /// 
+        ///  After submission, you can't edit the opportunity until the review is complete. But
+        /// opportunities in the <c>Pending Submission</c> state must have complete details. You
+        /// can update the opportunity while it's in the <c>Pending Submission</c> state. 
         /// </para>
         ///  
         /// <para>
-        ///  There's a set of mandatory fields required to create opportunities, but consider
-        /// providing optional fields to enrich the opportunity record. 
+        ///  There's a set of mandatory fields to create opportunities, but consider providing
+        /// optional fields to enrich the opportunity record. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateOpportunity service method.</param>
@@ -394,7 +388,7 @@ namespace Amazon.PartnerCentralSelling
         /// 
         ///  
         /// <para>
-        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">quotas</a>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
         /// and retry after the provided delay. 
         /// </para>
         /// </exception>
@@ -419,7 +413,7 @@ namespace Amazon.PartnerCentralSelling
 
         /// <summary>
         /// Allows you to remove an existing association between an <c>Opportunity</c> and related
-        /// entities such as a Partner Solution, Amazon Web Services product, or an Amazon Web
+        /// entities, such as a Partner Solution, Amazon Web Services product, or an Amazon Web
         /// Services Marketplace offer. This operation is the counterpart to <c>AssociateOpportunity</c>,
         /// and it provides flexibility to manage associations as business needs change. 
         /// 
@@ -429,8 +423,7 @@ namespace Amazon.PartnerCentralSelling
         /// in the related entities, or if an association was made in error. Ensuring accurate
         /// associations helps maintain clarity and accuracy to track and manage business opportunities.
         /// When you replace an entity, first attach the new entity and then disassociate the
-        /// one to be removed, especially if it's the last remaining related entity that's required.
-        /// 
+        /// one to be removed, especially if it's the last remaining entity that's required. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateOpportunity service method.</param>
@@ -475,7 +468,7 @@ namespace Amazon.PartnerCentralSelling
         /// 
         ///  
         /// <para>
-        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">quotas</a>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
         /// and retry after the provided delay. 
         /// </para>
         /// </exception>
@@ -546,7 +539,7 @@ namespace Amazon.PartnerCentralSelling
         /// 
         ///  
         /// <para>
-        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">quotas</a>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
         /// and retry after the provided delay. 
         /// </para>
         /// </exception>
@@ -571,8 +564,9 @@ namespace Amazon.PartnerCentralSelling
 
         /// <summary>
         /// Retrieves the details of an engagement invitation shared by AWS with a partner. The
-        /// information includes key aspects such as the customer, project details, and lifecycle
-        /// information related to the engagement.
+        /// information includes aspects such as customer, project details, and lifecycle information.
+        /// To connect an engagement invitation with an opportunity, match the invitation’s <c>Payload.Project.Title</c>
+        /// with opportunity <c>Project.Title</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEngagementInvitation service method.</param>
         /// <param name="cancellationToken">
@@ -616,7 +610,7 @@ namespace Amazon.PartnerCentralSelling
         /// 
         ///  
         /// <para>
-        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">quotas</a>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
         /// and retry after the provided delay. 
         /// </para>
         /// </exception>
@@ -691,7 +685,7 @@ namespace Amazon.PartnerCentralSelling
         /// 
         ///  
         /// <para>
-        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">quotas</a>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
         /// and retry after the provided delay. 
         /// </para>
         /// </exception>
@@ -761,7 +755,7 @@ namespace Amazon.PartnerCentralSelling
         /// 
         ///  
         /// <para>
-        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">quotas</a>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
         /// and retry after the provided delay. 
         /// </para>
         /// </exception>
@@ -785,8 +779,8 @@ namespace Amazon.PartnerCentralSelling
 
 
         /// <summary>
-        /// This request accepts a list of filters to use to retrieve a specific subset of opportunities,
-        /// as well as sort options. This feature is available to partners from <a href="https://partnercentral.awspartner.com/">Partner
+        /// This request accepts a list of filters that retrieve opportunity subsets as well as
+        /// sort options. This feature is available to partners from <a href="https://partnercentral.awspartner.com/">Partner
         /// Central</a> using the <c>ListOpportunities</c> API action. 
         /// 
         ///  
@@ -859,7 +853,7 @@ namespace Amazon.PartnerCentralSelling
         /// 
         ///  
         /// <para>
-        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">quotas</a>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
         /// and retry after the provided delay. 
         /// </para>
         /// </exception>
@@ -943,9 +937,9 @@ namespace Amazon.PartnerCentralSelling
 
 
         /// <summary>
-        /// Use this action to reject an <c>EngagementInvitation</c> that has been shared by AWS.
-        /// Rejecting the engagement invitation indicates that the partner does not wish to pursue
-        /// the opportunity, and all related data will be inaccessible after the rejection.
+        /// This action rejects an <c>EngagementInvitation</c> that AWS shared. Rejecting an invitation
+        /// indicates that the partner doesn't want to pursue the opportunity, and all related
+        /// data will become inaccessible thereafter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RejectEngagementInvitation service method.</param>
         /// <param name="cancellationToken">
@@ -989,7 +983,7 @@ namespace Amazon.PartnerCentralSelling
         /// 
         ///  
         /// <para>
-        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">quotas</a>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
         /// and retry after the provided delay. 
         /// </para>
         /// </exception>
@@ -1014,10 +1008,10 @@ namespace Amazon.PartnerCentralSelling
 
         /// <summary>
         /// This action starts the engagement by accepting an <c>EngagementInvitation</c>. The
-        /// task is asynchronous and involves several steps: accepting the invitation, creating
-        /// an opportunity in the partner’s account from the AWS Opportunity, and copying over
-        /// key details for tracking. Once completed, an <c>Opportunity Created</c> event is generated,
-        /// indicating that the opportunity has been successfully created in the partner's account.
+        /// task is asynchronous and involves the following steps: accepting the invitation, creating
+        /// an opportunity in the partner’s account from the AWS opportunity, and copying details
+        /// for tracking. When completed, an <c>Opportunity Created</c> event is generated, indicating
+        /// that the opportunity has been successfully created in the partner's account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartEngagementByAcceptingInvitationTask service method.</param>
         /// <param name="cancellationToken">
@@ -1073,9 +1067,8 @@ namespace Amazon.PartnerCentralSelling
         /// 
         ///  
         /// <para>
-        /// Suggested action: Review the <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">service
-        /// quotas</a> for the specific resource, and reduce the usage or request a quota increase
-        /// through support if necessary. 
+        /// Suggested action: Review the <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// for the resource, and either reduce usage or request a quota increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
@@ -1084,7 +1077,7 @@ namespace Amazon.PartnerCentralSelling
         /// 
         ///  
         /// <para>
-        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">quotas</a>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
         /// and retry after the provided delay. 
         /// </para>
         /// </exception>
@@ -1167,9 +1160,8 @@ namespace Amazon.PartnerCentralSelling
         /// 
         ///  
         /// <para>
-        /// Suggested action: Review the <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">service
-        /// quotas</a> for the specific resource, and reduce the usage or request a quota increase
-        /// through support if necessary. 
+        /// Suggested action: Review the <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// for the resource, and either reduce usage or request a quota increase. 
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
@@ -1178,7 +1170,7 @@ namespace Amazon.PartnerCentralSelling
         /// 
         ///  
         /// <para>
-        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">quotas</a>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
         /// and retry after the provided delay. 
         /// </para>
         /// </exception>
@@ -1268,7 +1260,7 @@ namespace Amazon.PartnerCentralSelling
         /// 
         ///  
         /// <para>
-        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">quotas</a>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
         /// and retry after the provided delay. 
         /// </para>
         /// </exception>

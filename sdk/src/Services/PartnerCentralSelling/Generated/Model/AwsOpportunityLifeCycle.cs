@@ -66,7 +66,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property NextSteps. 
         /// <para>
         /// Specifies the immediate next steps required to progress the opportunity. These steps
-        /// are based on AWS's guidance and the current stage of the opportunity.
+        /// are based on AWS guidance and the current stage of the opportunity.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=255)]

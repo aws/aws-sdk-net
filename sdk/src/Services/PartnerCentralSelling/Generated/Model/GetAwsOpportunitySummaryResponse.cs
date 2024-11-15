@@ -71,7 +71,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property Customer. 
         /// <para>
         ///  Provides details about the customer associated with the AWS Opportunity, including
-        /// account information, industry, and other key customer data. These details help partners
+        /// account information, industry, and other customer data. These details help partners
         /// understand the business context of the opportunity. 
         /// </para>
         /// </summary>
@@ -109,9 +109,9 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property InvolvementType. 
         /// <para>
-        ///  Specifies the type of involvement AWS has in the opportunity, such as direct co-sell
-        /// or advisory support. This field helps partners understand the role AWS will play in
-        /// advancing the opportunity. 
+        ///  Specifies the type of involvement AWS has in the opportunity, such as direct cosell
+        /// or advisory support. This field helps partners understand the role AWS plays in advancing
+        /// the opportunity. 
         /// </para>
         /// </summary>
         public SalesInvolvementType InvolvementType
@@ -170,9 +170,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property OpportunityTeam. 
         /// <para>
-        ///  Details the AWS Opportunity team, including key members involved in the opportunity.
-        /// This information helps partners know who from AWS is engaged and their roles in the
-        /// opportunity. 
+        ///  Details the AWS opportunity team, including members involved. This information helps
+        /// partners know who from AWS is engaged and what their role is. 
         /// </para>
         /// </summary>
         public List<AwsTeamMember> OpportunityTeam

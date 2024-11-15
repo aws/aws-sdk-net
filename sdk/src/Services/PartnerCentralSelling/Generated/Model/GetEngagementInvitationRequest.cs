@@ -32,8 +32,9 @@ namespace Amazon.PartnerCentralSelling.Model
     /// <summary>
     /// Container for the parameters to the GetEngagementInvitation operation.
     /// Retrieves the details of an engagement invitation shared by AWS with a partner. The
-    /// information includes key aspects such as the customer, project details, and lifecycle
-    /// information related to the engagement.
+    /// information includes aspects such as customer, project details, and lifecycle information.
+    /// To connect an engagement invitation with an opportunity, match the invitation’s <c>Payload.Project.Title</c>
+    /// with opportunity <c>Project.Title</c>.
     /// </summary>
     public partial class GetEngagementInvitationRequest : AmazonPartnerCentralSellingRequest
     {
@@ -63,7 +64,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
-        /// Specifies the unique identifier for the engagement invitation being retrieved.
+        /// Specifies the unique identifier for the retrieved engagement invitation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

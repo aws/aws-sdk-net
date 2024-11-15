@@ -31,9 +31,9 @@ namespace Amazon.PartnerCentralSelling.Model
 {
     /// <summary>
     /// Container for the parameters to the RejectEngagementInvitation operation.
-    /// Use this action to reject an <c>EngagementInvitation</c> that has been shared by AWS.
-    /// Rejecting the engagement invitation indicates that the partner does not wish to pursue
-    /// the opportunity, and all related data will be inaccessible after the rejection.
+    /// This action rejects an <c>EngagementInvitation</c> that AWS shared. Rejecting an invitation
+    /// indicates that the partner doesn't want to pursue the opportunity, and all related
+    /// data will become inaccessible thereafter.
     /// </summary>
     public partial class RejectEngagementInvitationRequest : AmazonPartnerCentralSellingRequest
     {
@@ -44,8 +44,9 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Catalog. 
         /// <para>
-        /// Specifies the catalog related to the engagement invitation. Accepted values are <c>AWS</c>
-        /// and <c>Sandbox</c>, which determine the environment in which the opportunity is managed.
+        /// This is the catalog that's associated with the engagement invitation. Acceptable values
+        /// are <c>AWS</c> or <c>Sandbox</c>, and these values determine the environment in which
+        /// the opportunity is managed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -64,8 +65,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
-        /// Specifies the unique identifier of the <c>EngagementInvitation</c> to be rejected.
-        /// Providing the correct identifier ensures that the intended invitation is rejected.
+        /// This is the unique identifier of the rejected <c>EngagementInvitation</c>. Providing
+        /// the correct identifier helps to ensure that the intended invitation is rejected.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -84,17 +85,16 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property RejectionReason. 
         /// <para>
-        /// Specifies the reason for rejecting the engagement invitation. Providing a reason helps
-        /// document the rationale behind the rejection and assists AWS in tracking patterns or
-        /// issues. Possible values include:
+        /// This describes the reason for rejecting the engagement invitation, which helps AWS
+        /// track usage patterns. Acceptable values include the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <i>Customer problem unclear:</i> The customer's problem is not clearly defined.
+        ///  <i>Customer problem unclear:</i> The customer's problem isn't understood.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>Next steps unclear:</i> The next steps required to proceed are not clear.
+        ///  <i>Next steps unclear:</i> The next steps required to proceed aren't understood.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -103,12 +103,12 @@ namespace Amazon.PartnerCentralSelling.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>Duplicate of Partner Referral:</i> The opportunity is a duplicate of an existing
+        ///  <i>Duplicate of partner referral:</i> The opportunity is a duplicate of an existing
         /// referral.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>Other:</i> Any other reason not covered by the specified values.
+        ///  <i>Other:</i> Any reason not covered by other values.
         /// </para>
         ///  </li> </ul>
         /// </summary>

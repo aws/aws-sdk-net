@@ -104,7 +104,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property SenderContacts. 
         /// <para>
         /// Represents the contact details of the AWS representatives involved in sending the
-        /// Engagement Invitation. These contacts are key stakeholders for the opportunity.
+        /// Engagement Invitation. These contacts are opportunity stakeholders.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=3)]

@@ -52,7 +52,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// from a predefined list: <c>AWS</c> or <c>Sandbox</c>. The catalog determines which
         /// environment the opportunity is fetched from. Use <c>AWS</c> to retrieve opportunities
         /// in the Amazon Web Services catalog, and <c>Sandbox</c> to retrieve opportunities in
-        /// a secure and isolated testing environment. 
+        /// a secure, isolated testing environment. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

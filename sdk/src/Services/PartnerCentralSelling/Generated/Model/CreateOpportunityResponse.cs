@@ -42,9 +42,9 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property Id. 
         /// <para>
         ///  Read-only, system-generated <c>Opportunity</c> unique identifier. Amazon Web Services
-        /// creates this identifier, and it's used for all subsequent actions on the opportunity,
-        /// such as updates, associations, and submissions. It ensures that each opportunity can
-        /// be accurately tracked and managed within the system. 
+        /// creates this identifier, and it's used for all subsequent opportunity actions, such
+        /// as updates, associations, and submissions. It helps to ensure that each opportunity
+        /// is accurately tracked and managed. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -64,7 +64,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property LastModifiedDate. 
         /// <para>
         ///  <c>DateTime</c> when the opportunity was last modified. When the <c>Opportunity</c>
-        /// is created, its value is equal to <c>CreatedDate</c>. 
+        /// is created, its value is <c>CreatedDate</c>. 
         /// </para>
         /// </summary>
         public DateTime LastModifiedDate

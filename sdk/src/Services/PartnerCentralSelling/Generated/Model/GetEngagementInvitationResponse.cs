@@ -51,7 +51,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that uniquely identifies the engagement invitation.
+        /// The Amazon Resource Name (ARN) that identifies the engagement invitation.
         /// </para>
         /// </summary>
         public string Arn
@@ -90,8 +90,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property EngagementTitle. 
         /// <para>
-        /// The title of the engagement invitation, summarizing the purpose or key objectives
-        /// of the opportunity shared by AWS.
+        /// The title of the engagement invitation, summarizing the purpose or objectives of the
+        /// opportunity shared by AWS.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=40)]
@@ -281,8 +281,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the engagement invitation (e.g., <c>Accepted</c>, <c>Pending</c>,
-        /// or <c>Rejected</c>).
+        /// The current status of the engagement invitation.
         /// </para>
         /// </summary>
         public InvitationStatus Status

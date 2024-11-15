@@ -65,8 +65,8 @@ namespace Amazon.PartnerCentralSelling.Model
         ///  Specifies the catalog associated with the request. This field takes a string value
         /// from a predefined list: <c>AWS</c> or <c>Sandbox</c>. The catalog determines which
         /// environment the opportunity is updated in. Use <c>AWS</c> to update real opportunities
-        /// in the production environment, and <c>Sandbox</c> to test in a secure and isolated
-        /// environment. When you use the <c>Sandbox</c> catalog, it allows you to simulate and
+        /// in the production environment, and <c>Sandbox</c> for testing in secure, isolated
+        /// environments. When you use the <c>Sandbox</c> catalog, it allows you to simulate and
         /// validate your interactions with Amazon Web Services services without affecting live
         /// data or operations. 
         /// </para>
@@ -87,7 +87,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Customer. 
         /// <para>
-        /// Specifies details of the customer associated with the <c>Opportunity</c> . 
+        /// Specifies details of the customer associated with the <c>Opportunity</c>. 
         /// </para>
         /// </summary>
         public Customer Customer
@@ -180,8 +180,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property NationalSecurity. 
         /// <para>
         /// Specifies if the opportunity is associated with national security concerns. This flag
-        /// is only applicable when the industry is <c>Government</c>. For national security-related
-        /// opportunities, specific validation and compliance rules may apply, impacting the opportunity's
+        /// is only applicable when the industry is <c>Government</c>. For national-security-related
+        /// opportunities, validation and compliance rules may apply, impacting the opportunity's
         /// visibility and processing.
         /// </para>
         /// </summary>
@@ -268,52 +268,52 @@ namespace Amazon.PartnerCentralSelling.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  Co-Sell - Architectural Validation: Confirmation from Amazon Web Services that the
-        /// partner's proposed solution architecture is aligned with Amazon Web Services best
-        /// practices and poses minimal architectural risks. 
+        ///  Cosell—Architectural Validation: Confirmation from Amazon Web Services that the partner's
+        /// proposed solution architecture is aligned with Amazon Web Services best practices
+        /// and poses minimal architectural risks. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Co-Sell - Business Presentation: Request Amazon Web Services seller's participation
+        ///  Cosell—Business Presentation: Request Amazon Web Services seller's participation
         /// in a joint customer presentation. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Co-Sell - Competitive Information: Access to Amazon Web Services competitive resources
+        ///  Cosell—Competitive Information: Access to Amazon Web Services competitive resources
         /// and support for the partner's proposed solution. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Co-Sell - Pricing Assistance: Connect with an AWS seller for support situations where
+        ///  Cosell—Pricing Assistance: Connect with an AWS seller for support situations where
         /// a partner may be receiving an upfront discount on a service (for example: EDP deals).
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Co-Sell - Technical Consultation: Connection with an Amazon Web Services Solutions
-        /// Architect to address the partner's questions about the proposed solution. 
+        ///  Cosell—Technical Consultation: Connection with an Amazon Web Services Solutions Architect
+        /// to address the partner's questions about the proposed solution. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Co-Sell - Total Cost of Ownership Evaluation: Assistance with quoting different cost
+        ///  Cosell—Total Cost of Ownership Evaluation: Assistance with quoting different cost
         /// savings of proposed solutions on Amazon Web Services versus on-premises or a traditional
         /// hosting environment. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Co-Sell - Deal Support: Request Amazon Web Services seller's support to progress
-        /// the opportunity (for example: joint customer call, strategic positioning). 
+        ///  Cosell—Deal Support: Request Amazon Web Services seller's support to progress the
+        /// opportunity (for example: joint customer call, strategic positioning). 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Co-Sell - Support for Public Tender / RFx: Opportunity related to the public sector
-        /// where the partner needs RFx support from Amazon Web Services. 
+        ///  Cosell—Support for Public Tender/RFx: Opportunity related to the public sector where
+        /// the partner needs RFx support from Amazon Web Services. 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  Do Not Need Support from AWS Sales Rep: Indicates that a partner doesn't need support
         /// from an Amazon Web Services Sales representative. The opportunity is managed solely
-        /// by the partner. It's possible to request co-selling support on these opportunities
+        /// by the partner. It's possible to request coselling support on these opportunities
         /// at any stage during their lifecycle. Also known as, for-visibility-only (FVO) opportunity.
         /// 
         /// </para>

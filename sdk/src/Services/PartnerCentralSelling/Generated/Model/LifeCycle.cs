@@ -65,23 +65,23 @@ namespace Amazon.PartnerCentralSelling.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Lost to Competitor - Google: The opportunity was lost to Google.
+        /// Lost to Competitor—Google: The opportunity was lost to Google.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Lost to Competitor - Microsoft: The opportunity was lost to Microsoft.
+        /// Lost to Competitor—Microsoft: The opportunity was lost to Microsoft.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Lost to Competitor - SoftLayer: The opportunity was lost to SoftLayer.
+        /// Lost to Competitor—SoftLayer: The opportunity was lost to SoftLayer.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Lost to Competitor - VMWare: The opportunity was lost to VMWare.
+        /// Lost to Competitor—VMWare: The opportunity was lost to VMWare.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Lost to Competitor - Other: The opportunity was lost to a competitor not listed above.
+        /// Lost to Competitor—Other: The opportunity was lost to a competitor not listed above.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -144,8 +144,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property NextSteps. 
         /// <para>
-        /// Specifies the upcoming actions or tasks for the <c>Opportunity</c>. This field is
-        /// utilized to communicate to Amazon Web Services the next actions required for the <c>Opportunity</c>.
+        /// Specifies the upcoming actions or tasks for the <c>Opportunity</c>. Use this field
+        /// to communicate with Amazon Web Services about the next actions required for the <c>Opportunity</c>.
         /// 
         /// </para>
         /// </summary>
@@ -185,7 +185,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ReviewComments. 
         /// <para>
-        /// Indicates why an opportuntiy was sent back for further details. Partners must take
+        /// Indicates why an opportunity was sent back for further details. Partners must take
         /// corrective action based on the <c>ReviewComments</c>.
         /// </para>
         /// </summary>
@@ -223,9 +223,9 @@ namespace Amazon.PartnerCentralSelling.Model
         ///  </li> <li> 
         /// <para>
         ///  Action Required: Issues that Amazon Web Services highlights need to be addressed.
-        /// Partners should use the <c>UpdateOpportunity</c> API action to update the opportunity,
-        /// and ensure all required changes are made. Only these fields are editable when the
-        /// <c>Lifecycle.ReviewStatus</c> is <c>Action Required</c>: 
+        /// Partners should use the <c>UpdateOpportunity</c> API action to update the opportunity
+        /// and helps to ensure that all required changes are made. Only the following fields
+        /// are editable when the <c>Lifecycle.ReviewStatus</c> is <c>Action Required</c>: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -347,9 +347,9 @@ namespace Amazon.PartnerCentralSelling.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Qualified: Your account team engaged with the prospect/end customer to discuss viability
-        /// and understand requirements. The prospect/end customer agreed that the opportunity
-        /// is real, of interest, and may solve key business/technical needs. 
+        ///  Qualified: Your account team engaged with the customer to discuss viability and requirements.
+        /// The customer agreed that the opportunity is real, of interest, and may solve business/technical
+        /// needs. 
         /// </para>
         ///  </li> <li> 
         /// <para>

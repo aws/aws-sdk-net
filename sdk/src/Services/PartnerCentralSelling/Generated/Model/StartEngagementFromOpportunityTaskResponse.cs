@@ -83,9 +83,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ReasonCode. 
         /// <para>
-        /// Indicates the reason for task failure using an enumerated code. Possible values are:
-        /// <c>ACCEPT_ENGAGEMENT_INVITATION_FAILED</c>, <c>GET_ENGAGEMENT_INVITATION_FAILED</c>,
-        /// <c>CREATE_OPPORTUNITY_FAILED</c>, <c>CREATE_RESOURCE_VIEW_AUTOMATION_FAILED</c>, <c>SUBMIT_OPPORTUNITY_FAILED</c>.
+        /// Indicates the reason for task failure using an enumerated code.
         /// </para>
         /// </summary>
         public ReasonCode ReasonCode

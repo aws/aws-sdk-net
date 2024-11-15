@@ -4229,6 +4229,10 @@ namespace Amazon.PartnerCentralSelling
         /// </summary>
         public static readonly ReasonCode OpportunityValidationFailed = new ReasonCode("OpportunityValidationFailed");
         /// <summary>
+        /// Constant ResourceSnapshotAccessDenied for ReasonCode
+        /// </summary>
+        public static readonly ReasonCode ResourceSnapshotAccessDenied = new ReasonCode("ResourceSnapshotAccessDenied");
+        /// <summary>
         /// Constant ResourceSnapshotJobAccessDenied for ReasonCode
         /// </summary>
         public static readonly ReasonCode ResourceSnapshotJobAccessDenied = new ReasonCode("ResourceSnapshotJobAccessDenied");

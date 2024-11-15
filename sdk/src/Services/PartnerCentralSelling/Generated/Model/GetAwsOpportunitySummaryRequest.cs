@@ -66,8 +66,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property RelatedOpportunityIdentifier. 
         /// <para>
         ///  The unique identifier for the related partner opportunity. Use this field to correlate
-        /// an AWS opportunity with its corresponding partner opportunity in your CRM system.
-        /// 
+        /// an AWS opportunity with its corresponding partner opportunity. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

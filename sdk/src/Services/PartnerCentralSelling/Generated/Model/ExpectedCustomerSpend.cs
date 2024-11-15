@@ -68,7 +68,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// the financial impact across different markets.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public ExpectedCustomerSpendCurrencyCodeEnum CurrencyCode
         {
             get { return this._currencyCode; }

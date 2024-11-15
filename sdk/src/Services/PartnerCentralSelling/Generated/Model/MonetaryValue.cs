@@ -62,7 +62,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Specifies the payment currency.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public CurrencyCode CurrencyCode
         {
             get { return this._currencyCode; }

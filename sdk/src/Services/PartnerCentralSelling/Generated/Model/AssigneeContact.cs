@@ -31,8 +31,8 @@ namespace Amazon.PartnerCentralSelling.Model
 {
     /// <summary>
     /// Represents the contact details of the individual assigned to manage the opportunity
-    /// within the partner organization. This ensures that there is a clear point of contact
-    /// for the opportunity's progress and updates.
+    /// within the partner organization. This helps to ensure that there is a point of contact
+    /// for the opportunity's progress.
     /// </summary>
     public partial class AssigneeContact
     {
@@ -45,7 +45,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property BusinessTitle. 
         /// <para>
         /// Specifies the business title of the assignee managing the opportunity. This helps
-        /// clarify the individual's role and responsibilities within the organization.
+        /// clarify the individual's role and responsibilities within the organization. Use the
+        /// value <c>PartnerAccountManager</c> to update details of the opportunity owner.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=0, Max=80)]
@@ -84,7 +85,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property FirstName. 
         /// <para>
-        /// Specifies the first name of the assignee managing the opportunity.
+        /// Specifies the first name of the assignee managing the opportunity. The system automatically
+        /// retrieves this value from the user profile by referencing the associated email address.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=0, Max=80)]
@@ -103,7 +105,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property LastName. 
         /// <para>
-        /// Specifies the last name of the assignee managing the opportunity.
+        /// Specifies the last name of the assignee managing the opportunity. The system automatically
+        /// retrieves this value from the user profile by referencing the associated email address.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=0, Max=80)]

@@ -175,9 +175,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Filters the solutions based on their status. This filter helps retrieve solutions
-        /// with statuses such as <c>Active</c>, <c>Inactive</c>, or <c>Pending Approval</c>,
-        /// allowing partners to manage their solution portfolios effectively.
+        /// Filters solutions based on their status. This filter helps partners manage their solution
+        /// portfolios effectively.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]

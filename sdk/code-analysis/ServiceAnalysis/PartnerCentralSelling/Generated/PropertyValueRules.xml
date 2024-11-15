@@ -174,6 +174,7 @@
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.StartEngagementByAcceptingInvitationTaskRequest.ClientToken</property>
     <min>1</min>
+    <pattern>^[!-~]{1,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.StartEngagementByAcceptingInvitationTaskRequest.Identifier</property>
@@ -204,6 +205,7 @@
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.StartEngagementFromOpportunityTaskRequest.ClientToken</property>
     <min>1</min>
+    <pattern>^[!-~]{1,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.StartEngagementFromOpportunityTaskRequest.Identifier</property>
@@ -419,10 +421,6 @@
     <property>Amazon.PartnerCentralSelling.Model.EngagementInvitationSummary.SenderCompanyName</property>
     <min>0</min>
     <max>120</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.PartnerCentralSelling.Model.ExpectedCustomerSpend.Amount</property>
-    <pattern>^(0|([1-9][0-9]{0,30}))(\.[0-9]{0,2})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ExpectedCustomerSpend.CurrencyCode</property>

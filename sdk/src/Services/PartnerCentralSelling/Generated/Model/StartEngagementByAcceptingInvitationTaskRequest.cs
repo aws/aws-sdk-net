@@ -32,10 +32,10 @@ namespace Amazon.PartnerCentralSelling.Model
     /// <summary>
     /// Container for the parameters to the StartEngagementByAcceptingInvitationTask operation.
     /// This action starts the engagement by accepting an <c>EngagementInvitation</c>. The
-    /// task is asynchronous and involves several steps: accepting the invitation, creating
-    /// an opportunity in the partner’s account from the AWS Opportunity, and copying over
-    /// key details for tracking. Once completed, an <c>Opportunity Created</c> event is generated,
-    /// indicating that the opportunity has been successfully created in the partner's account.
+    /// task is asynchronous and involves the following steps: accepting the invitation, creating
+    /// an opportunity in the partner’s account from the AWS opportunity, and copying details
+    /// for tracking. When completed, an <c>Opportunity Created</c> event is generated, indicating
+    /// that the opportunity has been successfully created in the partner's account.
     /// </summary>
     public partial class StartEngagementByAcceptingInvitationTaskRequest : AmazonPartnerCentralSellingRequest
     {
@@ -66,9 +66,9 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A unique, case-sensitive identifier provided by the client to ensure the idempotency
-        /// of the request. Can be a random or meaningful string, but must be unique for each
-        /// request.
+        /// A unique, case-sensitive identifier provided by the client that helps to ensure the
+        /// idempotency of the request. This can be a random or meaningful string but must be
+        /// unique for each request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -88,7 +88,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property Identifier. 
         /// <para>
         /// Specifies the unique identifier of the <c>EngagementInvitation</c> to be accepted.
-        /// Providing the correct identifier ensures the right engagement invitation is processed.
+        /// Providing the correct identifier helps ensure that the correct engagement is processed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

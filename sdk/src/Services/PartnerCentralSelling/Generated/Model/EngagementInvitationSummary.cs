@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PartnerCentralSelling.Model
 {
     /// <summary>
-    /// Provides a summarized view of the Engagement Invitation, including key details like
-    /// the identifier, status, and sender information. This summary helps partners track
-    /// and manage AWS-originated opportunities.
+    /// Provides a summarized view of the Engagement Invitation, including details like the
+    /// identifier, status, and sender. This summary helps partners track and manage AWS originated
+    /// opportunities.
     /// </summary>
     public partial class EngagementInvitationSummary
     {
@@ -112,8 +112,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property ExpirationDate. 
         /// <para>
         /// Indicates the date and time when the Engagement Invitation will expire. After this
-        /// date, the invitation can no longer be accepted, and the opportunity will no longer
-        /// be available for the partner to engage.
+        /// date, the invitation can no longer be accepted, and the opportunity will be unavailable
+        /// to the partner.
         /// </para>
         /// </summary>
         public DateTime ExpirationDate

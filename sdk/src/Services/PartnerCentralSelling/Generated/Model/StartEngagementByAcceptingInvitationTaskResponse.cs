@@ -103,9 +103,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ReasonCode. 
         /// <para>
-        /// Indicates the reason for task failure using an enumerated code. Possible values are:
-        /// <c>ACCEPT_ENGAGEMENT_INVITATION_FAILED</c>, <c>GET_ENGAGEMENT_INVITATION_FAILED</c>,
-        /// <c>CREATE_OPPORTUNITY_FAILED</c>, <c>CREATE_RESOURCE_VIEW_AUTOMATION_FAILED</c>, <c>SUBMIT_OPPORTUNITY_FAILED</c>.
+        /// Indicates the reason for task failure using an enumerated code.
         /// </para>
         /// </summary>
         public ReasonCode ReasonCode
@@ -161,8 +159,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property TaskId. 
         /// <para>
-        /// The unique identifier of the task, used to track the task’s progress. This value follows
-        /// a specific pattern: <c>^oit-[0-9a-z]{13}$</c>.
+        /// The unique identifier of the task, used to track the task’s progress.
         /// </para>
         /// </summary>
         public string TaskId
@@ -180,8 +177,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property TaskStatus. 
         /// <para>
-        /// Indicates the current status of the task. Valid values include <c>IN_PROGRESS</c>,
-        /// <c>COMPLETE</c>, and <c>FAILED</c>.
+        /// Indicates the current status of the task.
         /// </para>
         /// </summary>
         public TaskStatus TaskStatus

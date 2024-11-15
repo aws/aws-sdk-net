@@ -82,8 +82,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Industry. 
         /// <para>
-        /// Specifies which industry the end <c>Customer</c> belongs to associated with the <c>Opportunity</c>
-        /// . It refers to the category or sector that the customer's business operates in. 
+        /// Specifies which industry the end <c>Customer</c> belongs to associated with the <c>Opportunity</c>.
+        /// It refers to the category or sector that the customer's business operates in. 
         /// </para>
         ///  
         /// <para>

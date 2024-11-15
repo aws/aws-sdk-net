@@ -31,8 +31,8 @@ namespace Amazon.PartnerCentralSelling.Model
 {
     /// <summary>
     /// Indicates the level of AWS involvement in the opportunity. This field helps track
-    /// AWS's role and participation throughout the engagement, such as providing technical
-    /// support, deal assistance, or sales support.
+    /// AWS participation throughout the engagement, such as providing technical support,
+    /// deal assistance, and sales support.
     /// </summary>
     public partial class AwsSubmission
     {
@@ -42,8 +42,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property InvolvementType. 
         /// <para>
-        /// Specifies the type of AWS involvement in the opportunity, such as co-selling, deal
-        /// support, or technical consultation. This helps categorize the nature of AWS's participation.
+        /// Specifies the type of AWS involvement in the opportunity, such as coselling, deal
+        /// support, or technical consultation. This helps categorize the nature of AWS participation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,7 +62,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Visibility. 
         /// <para>
-        /// Determines who can view AWS's involvement in the opportunity. Typically, this field
+        /// Determines who can view AWS involvement in the opportunity. Typically, this field
         /// is set to <c>Full</c> for most cases, but it may be restricted based on special program
         /// requirements or confidentiality needs.
         /// </para>

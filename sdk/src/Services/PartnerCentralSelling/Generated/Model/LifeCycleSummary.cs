@@ -87,7 +87,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ReviewComments. 
         /// <para>
-        /// Indicates why an opportuntiy was sent back for further details. Partners must take
+        /// Indicates why an opportunity was sent back for further details. Partners must take
         /// corrective action based on the <c>ReviewComments</c>.
         /// </para>
         /// </summary>
@@ -249,9 +249,9 @@ namespace Amazon.PartnerCentralSelling.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Qualified: Your account team engaged with the prospect/end customer to discuss viability
-        /// and understand requirements. The prospect/end customer agreed that the opportunity
-        /// is real, of interest, and may solve key business/technical needs. 
+        ///  Qualified: Your account team engaged with the customer to discuss viability and understand
+        /// requirements. The customer agreed that the opportunity is real, of interest, and may
+        /// solve business/technical needs. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -259,8 +259,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Business Validation: Pricing has been proposed, Pricing was proposed, and all parties
-        /// agree to the steps to close. 
+        ///  Business Validation: Pricing was proposed, and all parties agree to the steps to
+        /// close. 
         /// </para>
         ///  </li> <li> 
         /// <para>

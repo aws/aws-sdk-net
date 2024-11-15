@@ -44,6 +44,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property BusinessTitle. 
         /// <para>
         /// The partner contact's title (job title or role) associated with the <c>Opportunity</c>.
+        /// <c>BusinessTitle</c> supports either <c>PartnerAccountManager</c> or <c>OpportunityOwner</c>.
         /// 
         /// </para>
         /// </summary>

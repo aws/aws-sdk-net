@@ -41,7 +41,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property Contacts. 
         /// <para>
         /// Provides a list of customer contacts involved in the opportunity. These contacts may
-        /// include decision-makers, influencers, and other key stakeholders within the customer's
+        /// include decision makers, influencers, and other stakeholders within the customer's
         /// organization.
         /// </para>
         /// </summary>
