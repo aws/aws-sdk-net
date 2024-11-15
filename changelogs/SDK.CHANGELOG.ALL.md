@@ -1,3 +1,10 @@
+### 3.7.927.0 (2024-11-15 02:02 UTC)
+* PartnerCentralSelling (3.7.401.0)
+	* Announcing AWS Partner Central API for Selling: This service launch Introduces new APIs for co-selling opportunity management and related functions. Key features include notifications, a dynamic sandbox for testing, and streamlined validations.
+* Core 3.7.400.52
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.926.0 (2024-11-14 19:27 UTC)
 * AccessAnalyzer (3.7.402.0)
 	* Expand analyzer configuration capabilities for unused access analyzers. Unused access analyzer configurations now support the ability to exclude accounts and resource tags from analysis providing more granular control over the scope of analysis.

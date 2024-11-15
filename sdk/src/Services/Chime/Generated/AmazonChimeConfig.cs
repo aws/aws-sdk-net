@@ -32,7 +32,7 @@ namespace Amazon.Chime
     public partial class AmazonChimeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Chime", "3.7.400.51");
+            InternalSDKUtils.BuildUserAgentString("Chime", "3.7.400.52");
 
         private string _userAgent = UserAgentString;
         ///<summary>
