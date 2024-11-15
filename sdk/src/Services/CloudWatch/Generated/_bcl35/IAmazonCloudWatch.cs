@@ -2175,25 +2175,34 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Publishes metric data points to Amazon CloudWatch. CloudWatch associates the data
-        /// points with the specified metric. If the specified metric does not exist, CloudWatch
-        /// creates the metric. When CloudWatch creates a metric, it can take up to fifteen minutes
-        /// for the metric to appear in calls to <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.
+        /// Publishes metric data to Amazon CloudWatch. CloudWatch associates the data with the
+        /// specified metric. If the specified metric does not exist, CloudWatch creates the metric.
+        /// When CloudWatch creates a metric, it can take up to fifteen minutes for the metric
+        /// to appear in calls to <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.
         /// 
         ///  
         /// <para>
-        /// You can publish either individual data points in the <c>Value</c> field, or arrays
-        /// of values and the number of times each value occurred during the period by using the
-        /// <c>Values</c> and <c>Counts</c> fields in the <c>MetricData</c> structure. Using the
-        /// <c>Values</c> and <c>Counts</c> method enables you to publish up to 150 values per
-        /// metric with one <c>PutMetricData</c> request, and supports retrieving percentile statistics
-        /// on this data.
+        /// You can publish metrics with associated entity data (so that related telemetry can
+        /// be found and viewed together), or publish metric data by itself. To send entity data
+        /// with your metrics, use the <c>EntityMetricData</c> parameter. To send metrics without
+        /// entity data, use the <c>MetricData</c> parameter. The <c>EntityMetricData</c> structure
+        /// includes <c>MetricData</c> structures for the metric data.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can publish either individual values in the <c>Value</c> field, or arrays of values
+        /// and the number of times each value occurred during the period by using the <c>Values</c>
+        /// and <c>Counts</c> fields in the <c>MetricData</c> structure. Using the <c>Values</c>
+        /// and <c>Counts</c> method enables you to publish up to 150 values per metric with one
+        /// <c>PutMetricData</c> request, and supports retrieving percentile statistics on this
+        /// data.
         /// </para>
         ///  
         /// <para>
         /// Each <c>PutMetricData</c> request is limited to 1 MB in size for HTTP POST requests.
         /// You can send a payload compressed by gzip. Each request is also limited to no more
-        /// than 1000 different metrics.
+        /// than 1000 different metrics (across both the <c>MetricData</c> and <c>EntityMetricData</c>
+        /// properties).
         /// </para>
         ///  
         /// <para>
@@ -2221,7 +2230,7 @@ namespace Amazon.CloudWatch
         /// to become available for <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
         /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>
         /// from the time they are submitted. Data points with time stamps between 3 and 24 hours
-        /// ago can take as much as 2 hours to become available for for <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+        /// ago can take as much as 2 hours to become available for <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
         /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.
         /// </para>
         ///  
