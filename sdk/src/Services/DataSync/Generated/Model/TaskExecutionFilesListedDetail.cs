@@ -47,7 +47,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property AtDestinationForDelete. 
         /// <para>
-        /// The number of objects that DataSync finds at your destination location. This metric
+        /// The number of objects that DataSync finds at your destination location. This counter
         /// is only applicable if you <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html#task-option-file-object-handling">configure
         /// your task</a> to delete data in the destination that isn't in the source.
         /// </para>

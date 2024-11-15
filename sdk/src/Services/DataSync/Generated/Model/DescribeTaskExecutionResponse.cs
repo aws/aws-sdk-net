@@ -66,12 +66,6 @@ namespace Amazon.DataSync.Model
         /// (if compression is possible). This number is typically less than <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeTaskExecution.html#DataSync-DescribeTaskExecution-response-BytesTransferred">BytesTransferred</a>
         /// unless the data isn't compressible.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Not currently supported with <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
-        /// mode tasks</a>.
-        /// </para>
-        ///  </note>
         /// </summary>
         public long BytesCompressed
         {
@@ -145,9 +139,8 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property EstimatedFilesToDelete. 
         /// <para>
         /// The number of files, objects, and directories that DataSync expects to delete in your
-        /// destination location. If you don't <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html">configure
-        /// your task</a> to delete data in the destination that isn't in the source, the value
-        /// is always <c>0</c>.
+        /// destination location. If you don't configure your task to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html">delete
+        /// data in the destination that isn't in the source</a>, the value is always <c>0</c>.
         /// </para>
         /// </summary>
         public long EstimatedFilesToDelete
@@ -166,9 +159,8 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property EstimatedFilesToTransfer. 
         /// <para>
         /// The number of files, objects, and directories that DataSync expects to transfer over
-        /// the network. This value is calculated during the task execution's <c>PREPARING</c>
-        /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#understand-task-execution-statuses">step</a>
-        /// before the <c>TRANSFERRING</c> step.
+        /// the network. This value is calculated while DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#understand-task-execution-statuses">prepares</a>
+        /// the transfer.
         /// </para>
         ///  
         /// <para>
@@ -241,9 +233,8 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property FilesDeleted. 
         /// <para>
         /// The number of files, objects, and directories that DataSync actually deletes in your
-        /// destination location. If you don't <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html">configure
-        /// your task</a> to delete data in the destination that isn't in the source, the value
-        /// is always <c>0</c>.
+        /// destination location. If you don't configure your task to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html">delete
+        /// data in the destination that isn't in the source</a>, the value is always <c>0</c>.
         /// </para>
         /// </summary>
         public long FilesDeleted
@@ -320,7 +311,7 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// This metric isn't applicable if you configure your task to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html#task-option-transfer-mode">transfer
+        /// This counter isn't applicable if you configure your task to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html#task-option-transfer-mode">transfer
         /// all data</a>. In that scenario, DataSync copies everything from the source to the
         /// destination without comparing differences between the locations.
         /// </para>
@@ -359,9 +350,8 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property FilesTransferred. 
         /// <para>
         /// The number of files, objects, and directories that DataSync actually transfers over
-        /// the network. This value is updated periodically during the task execution's <c>TRANSFERRING</c>
-        /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#understand-task-execution-statuses">step</a>
-        /// when something is read from the source and sent over the network.
+        /// the network. This value is updated periodically during your task execution when something
+        /// is read from the source and sent over the network.
         /// </para>
         ///  
         /// <para>

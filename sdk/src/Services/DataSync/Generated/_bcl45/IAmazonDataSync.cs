@@ -1820,8 +1820,8 @@ namespace Amazon.DataSync
         /// <para>
         /// Some <c>DescribeTaskExecution</c> response elements are only relevant to a specific
         /// task mode. For information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html#task-mode-differences">Understanding
-        /// task mode differences</a> and <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transfer-performance-metrics.html">Understanding
-        /// data transfer performance metrics</a>.
+        /// task mode differences</a> and <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transfer-performance-counters.html">Understanding
+        /// data transfer performance counters</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1848,8 +1848,8 @@ namespace Amazon.DataSync
         /// <para>
         /// Some <c>DescribeTaskExecution</c> response elements are only relevant to a specific
         /// task mode. For information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html#task-mode-differences">Understanding
-        /// task mode differences</a> and <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transfer-performance-metrics.html">Understanding
-        /// data transfer performance metrics</a>.
+        /// task mode differences</a> and <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transfer-performance-counters.html">Understanding
+        /// data transfer performance counters</a>.
         /// </para>
         ///  </note>
         /// </summary>

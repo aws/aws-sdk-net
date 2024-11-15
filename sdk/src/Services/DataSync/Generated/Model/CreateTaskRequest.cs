@@ -283,9 +283,10 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>ENHANCED</c> - Transfer virtually unlimited numbers of objects with enhanced metrics,
-        /// more detailed logs, and higher performance than Basic mode. Currently available for
-        /// transfers between Amazon S3 locations.
+        ///  <c>ENHANCED</c> - Transfer virtually unlimited numbers of objects with higher performance
+        /// than Basic mode. Enhanced mode tasks optimize the data transfer process by listing,
+        /// preparing, transferring, and verifying data in parallel. Enhanced mode is currently
+        /// available for transfers between Amazon S3 locations.
         /// </para>
         ///  <note> 
         /// <para>
@@ -295,8 +296,10 @@ namespace Amazon.DataSync.Model
         ///  </note> </li> <li> 
         /// <para>
         ///  <c>BASIC</c> (default) - Transfer files or objects between Amazon Web Services storage
-        /// and on-premises, edge, or other cloud storage. DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-limits.html">quotas</a>
-        /// apply.
+        /// and all other supported DataSync locations. Basic mode tasks are subject to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-limits.html">quotas</a>
+        /// on the number of files, objects, and directories in a dataset. Basic mode sequentially
+        /// prepares, transfers, and verifies data, making it slower than Enhanced mode for most
+        /// workloads.
         /// </para>
         ///  </li> </ul> 
         /// <para>
