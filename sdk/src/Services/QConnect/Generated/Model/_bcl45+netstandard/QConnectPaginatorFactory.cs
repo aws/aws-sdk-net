@@ -117,6 +117,22 @@ namespace Amazon.QConnect.Model
         }
 
         /// <summary>
+        /// Paginator for ListMessageTemplates operation
+        ///</summary>
+        public IListMessageTemplatesPaginator ListMessageTemplates(ListMessageTemplatesRequest request) 
+        {
+            return new ListMessageTemplatesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListMessageTemplateVersions operation
+        ///</summary>
+        public IListMessageTemplateVersionsPaginator ListMessageTemplateVersions(ListMessageTemplateVersionsRequest request) 
+        {
+            return new ListMessageTemplateVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListQuickResponses operation
         ///</summary>
         public IListQuickResponsesPaginator ListQuickResponses(ListQuickResponsesRequest request) 
@@ -138,6 +154,14 @@ namespace Amazon.QConnect.Model
         public ISearchContentPaginator SearchContent(SearchContentRequest request) 
         {
             return new SearchContentPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchMessageTemplates operation
+        ///</summary>
+        public ISearchMessageTemplatesPaginator SearchMessageTemplates(SearchMessageTemplatesRequest request) 
+        {
+            return new SearchMessageTemplatesPaginator(this.client, request);
         }
 
         /// <summary>

@@ -479,6 +479,56 @@ namespace Amazon.QConnect
 
 
     /// <summary>
+    /// Constants used for properties of type ChannelSubtype.
+    /// </summary>
+    public class ChannelSubtype : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EMAIL for ChannelSubtype
+        /// </summary>
+        public static readonly ChannelSubtype EMAIL = new ChannelSubtype("EMAIL");
+        /// <summary>
+        /// Constant SMS for ChannelSubtype
+        /// </summary>
+        public static readonly ChannelSubtype SMS = new ChannelSubtype("SMS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ChannelSubtype(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChannelSubtype FindValue(string value)
+        {
+            return FindValue<ChannelSubtype>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChannelSubtype(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ChunkingStrategy.
     /// </summary>
     public class ChunkingStrategy : ConstantClass
@@ -576,6 +626,52 @@ namespace Amazon.QConnect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ContentAssociationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ContentDisposition.
+    /// </summary>
+    public class ContentDisposition : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ATTACHMENT for ContentDisposition
+        /// </summary>
+        public static readonly ContentDisposition ATTACHMENT = new ContentDisposition("ATTACHMENT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContentDisposition(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContentDisposition FindValue(string value)
+        {
+            return FindValue<ContentDisposition>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContentDisposition(string value)
         {
             return FindValue(value);
         }
@@ -1074,6 +1170,164 @@ namespace Amazon.QConnect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator KnowledgeBaseType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MessageTemplateAttributeType.
+    /// </summary>
+    public class MessageTemplateAttributeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AGENT for MessageTemplateAttributeType
+        /// </summary>
+        public static readonly MessageTemplateAttributeType AGENT = new MessageTemplateAttributeType("AGENT");
+        /// <summary>
+        /// Constant CUSTOM for MessageTemplateAttributeType
+        /// </summary>
+        public static readonly MessageTemplateAttributeType CUSTOM = new MessageTemplateAttributeType("CUSTOM");
+        /// <summary>
+        /// Constant CUSTOMER_PROFILE for MessageTemplateAttributeType
+        /// </summary>
+        public static readonly MessageTemplateAttributeType CUSTOMER_PROFILE = new MessageTemplateAttributeType("CUSTOMER_PROFILE");
+        /// <summary>
+        /// Constant SYSTEM for MessageTemplateAttributeType
+        /// </summary>
+        public static readonly MessageTemplateAttributeType SYSTEM = new MessageTemplateAttributeType("SYSTEM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MessageTemplateAttributeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MessageTemplateAttributeType FindValue(string value)
+        {
+            return FindValue<MessageTemplateAttributeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MessageTemplateAttributeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MessageTemplateFilterOperator.
+    /// </summary>
+    public class MessageTemplateFilterOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EQUALS for MessageTemplateFilterOperator
+        /// </summary>
+        public static readonly MessageTemplateFilterOperator EQUALS = new MessageTemplateFilterOperator("EQUALS");
+        /// <summary>
+        /// Constant PREFIX for MessageTemplateFilterOperator
+        /// </summary>
+        public static readonly MessageTemplateFilterOperator PREFIX = new MessageTemplateFilterOperator("PREFIX");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MessageTemplateFilterOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MessageTemplateFilterOperator FindValue(string value)
+        {
+            return FindValue<MessageTemplateFilterOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MessageTemplateFilterOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MessageTemplateQueryOperator.
+    /// </summary>
+    public class MessageTemplateQueryOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTAINS for MessageTemplateQueryOperator
+        /// </summary>
+        public static readonly MessageTemplateQueryOperator CONTAINS = new MessageTemplateQueryOperator("CONTAINS");
+        /// <summary>
+        /// Constant CONTAINS_AND_PREFIX for MessageTemplateQueryOperator
+        /// </summary>
+        public static readonly MessageTemplateQueryOperator CONTAINS_AND_PREFIX = new MessageTemplateQueryOperator("CONTAINS_AND_PREFIX");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MessageTemplateQueryOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MessageTemplateQueryOperator FindValue(string value)
+        {
+            return FindValue<MessageTemplateQueryOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MessageTemplateQueryOperator(string value)
         {
             return FindValue(value);
         }

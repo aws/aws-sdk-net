@@ -305,6 +305,81 @@ namespace Amazon.QConnect
         #endregion
 
 
+        #region  ActivateMessageTemplate
+
+        /// <summary>
+        /// Activates a specific version of the Amazon Q in Connect message template. After the
+        /// version is activated, the previous active version will be deactivated automatically.
+        /// You can use the <c>$ACTIVE_VERSION</c> qualifier later to reference the version that
+        /// is in active status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ActivateMessageTemplate service method.</param>
+        /// 
+        /// <returns>The response from the ActivateMessageTemplate service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ActivateMessageTemplate">REST API Reference for ActivateMessageTemplate Operation</seealso>
+        public virtual ActivateMessageTemplateResponse ActivateMessageTemplate(ActivateMessageTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ActivateMessageTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ActivateMessageTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<ActivateMessageTemplateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ActivateMessageTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ActivateMessageTemplate operation on AmazonQConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndActivateMessageTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ActivateMessageTemplate">REST API Reference for ActivateMessageTemplate Operation</seealso>
+        public virtual IAsyncResult BeginActivateMessageTemplate(ActivateMessageTemplateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ActivateMessageTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ActivateMessageTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ActivateMessageTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginActivateMessageTemplate.</param>
+        /// 
+        /// <returns>Returns a  ActivateMessageTemplateResult from QConnect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ActivateMessageTemplate">REST API Reference for ActivateMessageTemplate Operation</seealso>
+        public virtual ActivateMessageTemplateResponse EndActivateMessageTemplate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ActivateMessageTemplateResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateAIAgent
 
         /// <summary>
@@ -1034,6 +1109,251 @@ namespace Amazon.QConnect
 
         #endregion
         
+        #region  CreateMessageTemplate
+
+        /// <summary>
+        /// Creates an Amazon Q in Connect message template. The name of the message template
+        /// has to be unique for each knowledge base. The channel subtype of the message template
+        /// is immutable and cannot be modified after creation. After the message template is
+        /// created, you can use the <c>$LATEST</c> qualifier to reference the created message
+        /// template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMessageTemplate service method.</param>
+        /// 
+        /// <returns>The response from the CreateMessageTemplate service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ServiceQuotaExceededException">
+        /// You've exceeded your service quota. To perform the requested action, remove some of
+        /// the relevant resources, or use service quotas to request a service quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateMessageTemplate">REST API Reference for CreateMessageTemplate Operation</seealso>
+        public virtual CreateMessageTemplateResponse CreateMessageTemplate(CreateMessageTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMessageTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMessageTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<CreateMessageTemplateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateMessageTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateMessageTemplate operation on AmazonQConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateMessageTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateMessageTemplate">REST API Reference for CreateMessageTemplate Operation</seealso>
+        public virtual IAsyncResult BeginCreateMessageTemplate(CreateMessageTemplateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMessageTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMessageTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateMessageTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateMessageTemplate.</param>
+        /// 
+        /// <returns>Returns a  CreateMessageTemplateResult from QConnect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateMessageTemplate">REST API Reference for CreateMessageTemplate Operation</seealso>
+        public virtual CreateMessageTemplateResponse EndCreateMessageTemplate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateMessageTemplateResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateMessageTemplateAttachment
+
+        /// <summary>
+        /// Uploads an attachment file to the specified Amazon Q in Connect message template.
+        /// The name of the message template attachment has to be unique for each message template
+        /// referenced by the <c>$LATEST</c> qualifier. The body of the attachment file should
+        /// be encoded using base64 encoding. After the file is uploaded, you can use the pre-signed
+        /// Amazon S3 URL returned in response to download the uploaded file.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMessageTemplateAttachment service method.</param>
+        /// 
+        /// <returns>The response from the CreateMessageTemplateAttachment service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ServiceQuotaExceededException">
+        /// You've exceeded your service quota. To perform the requested action, remove some of
+        /// the relevant resources, or use service quotas to request a service quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateMessageTemplateAttachment">REST API Reference for CreateMessageTemplateAttachment Operation</seealso>
+        public virtual CreateMessageTemplateAttachmentResponse CreateMessageTemplateAttachment(CreateMessageTemplateAttachmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMessageTemplateAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMessageTemplateAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<CreateMessageTemplateAttachmentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateMessageTemplateAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateMessageTemplateAttachment operation on AmazonQConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateMessageTemplateAttachment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateMessageTemplateAttachment">REST API Reference for CreateMessageTemplateAttachment Operation</seealso>
+        public virtual IAsyncResult BeginCreateMessageTemplateAttachment(CreateMessageTemplateAttachmentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMessageTemplateAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMessageTemplateAttachmentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateMessageTemplateAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateMessageTemplateAttachment.</param>
+        /// 
+        /// <returns>Returns a  CreateMessageTemplateAttachmentResult from QConnect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateMessageTemplateAttachment">REST API Reference for CreateMessageTemplateAttachment Operation</seealso>
+        public virtual CreateMessageTemplateAttachmentResponse EndCreateMessageTemplateAttachment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateMessageTemplateAttachmentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateMessageTemplateVersion
+
+        /// <summary>
+        /// Creates a new Amazon Q in Connect message template version from the current content
+        /// and configuration of a message template. Versions are immutable and monotonically
+        /// increasing. Once a version is created, you can reference a specific version of the
+        /// message template by passing in <c>&lt;message-template-id&gt;:&lt;versionNumber&gt;</c>
+        /// as the message template identifier. An error is displayed if the supplied <c>messageTemplateContentSha256</c>
+        /// is different from the <c>messageTemplateContentSha256</c> of the message template
+        /// with <c>$LATEST</c> qualifier. If multiple <c>CreateMessageTemplateVersion</c> requests
+        /// are made while the message template remains the same, only the first invocation creates
+        /// a new version and the succeeding requests will return the same response as the first
+        /// invocation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMessageTemplateVersion service method.</param>
+        /// 
+        /// <returns>The response from the CreateMessageTemplateVersion service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ServiceQuotaExceededException">
+        /// You've exceeded your service quota. To perform the requested action, remove some of
+        /// the relevant resources, or use service quotas to request a service quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateMessageTemplateVersion">REST API Reference for CreateMessageTemplateVersion Operation</seealso>
+        public virtual CreateMessageTemplateVersionResponse CreateMessageTemplateVersion(CreateMessageTemplateVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMessageTemplateVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMessageTemplateVersionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateMessageTemplateVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateMessageTemplateVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateMessageTemplateVersion operation on AmazonQConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateMessageTemplateVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateMessageTemplateVersion">REST API Reference for CreateMessageTemplateVersion Operation</seealso>
+        public virtual IAsyncResult BeginCreateMessageTemplateVersion(CreateMessageTemplateVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMessageTemplateVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMessageTemplateVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateMessageTemplateVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateMessageTemplateVersion.</param>
+        /// 
+        /// <returns>Returns a  CreateMessageTemplateVersionResult from QConnect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/CreateMessageTemplateVersion">REST API Reference for CreateMessageTemplateVersion Operation</seealso>
+        public virtual CreateMessageTemplateVersionResponse EndCreateMessageTemplateVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateMessageTemplateVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateQuickResponse
 
         /// <summary>
@@ -1174,6 +1494,80 @@ namespace Amazon.QConnect
         public virtual CreateSessionResponse EndCreateSession(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateSessionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeactivateMessageTemplate
+
+        /// <summary>
+        /// Deactivates a specific version of the Amazon Q in Connect message template . After
+        /// the version is deactivated, you can no longer use the <c>$ACTIVE_VERSION</c> qualifier
+        /// to reference the version in active status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeactivateMessageTemplate service method.</param>
+        /// 
+        /// <returns>The response from the DeactivateMessageTemplate service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeactivateMessageTemplate">REST API Reference for DeactivateMessageTemplate Operation</seealso>
+        public virtual DeactivateMessageTemplateResponse DeactivateMessageTemplate(DeactivateMessageTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeactivateMessageTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeactivateMessageTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<DeactivateMessageTemplateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeactivateMessageTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeactivateMessageTemplate operation on AmazonQConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeactivateMessageTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeactivateMessageTemplate">REST API Reference for DeactivateMessageTemplate Operation</seealso>
+        public virtual IAsyncResult BeginDeactivateMessageTemplate(DeactivateMessageTemplateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeactivateMessageTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeactivateMessageTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeactivateMessageTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeactivateMessageTemplate.</param>
+        /// 
+        /// <returns>Returns a  DeactivateMessageTemplateResult from QConnect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeactivateMessageTemplate">REST API Reference for DeactivateMessageTemplate Operation</seealso>
+        public virtual DeactivateMessageTemplateResponse EndDeactivateMessageTemplate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeactivateMessageTemplateResponse>(asyncResult);
         }
 
         #endregion
@@ -1864,6 +2258,156 @@ namespace Amazon.QConnect
 
         #endregion
         
+        #region  DeleteMessageTemplate
+
+        /// <summary>
+        /// Deletes an Amazon Q in Connect message template entirely or a specific version of
+        /// the message template if version is supplied in the request. You can provide the message
+        /// template identifier as <c>&lt;message-template-id&gt;:&lt;versionNumber&gt;</c> to
+        /// delete a specific version of the message template. If it is not supplied, the message
+        /// template and all available versions will be deleted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMessageTemplate service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMessageTemplate service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeleteMessageTemplate">REST API Reference for DeleteMessageTemplate Operation</seealso>
+        public virtual DeleteMessageTemplateResponse DeleteMessageTemplate(DeleteMessageTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMessageTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMessageTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteMessageTemplateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteMessageTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMessageTemplate operation on AmazonQConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMessageTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeleteMessageTemplate">REST API Reference for DeleteMessageTemplate Operation</seealso>
+        public virtual IAsyncResult BeginDeleteMessageTemplate(DeleteMessageTemplateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMessageTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMessageTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteMessageTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMessageTemplate.</param>
+        /// 
+        /// <returns>Returns a  DeleteMessageTemplateResult from QConnect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeleteMessageTemplate">REST API Reference for DeleteMessageTemplate Operation</seealso>
+        public virtual DeleteMessageTemplateResponse EndDeleteMessageTemplate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteMessageTemplateResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteMessageTemplateAttachment
+
+        /// <summary>
+        /// Deletes the attachment file from the Amazon Q in Connect message template that is
+        /// referenced by <c>$LATEST</c> qualifier. Attachments on available message template
+        /// versions will remain unchanged.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMessageTemplateAttachment service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMessageTemplateAttachment service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeleteMessageTemplateAttachment">REST API Reference for DeleteMessageTemplateAttachment Operation</seealso>
+        public virtual DeleteMessageTemplateAttachmentResponse DeleteMessageTemplateAttachment(DeleteMessageTemplateAttachmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMessageTemplateAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMessageTemplateAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteMessageTemplateAttachmentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteMessageTemplateAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMessageTemplateAttachment operation on AmazonQConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMessageTemplateAttachment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeleteMessageTemplateAttachment">REST API Reference for DeleteMessageTemplateAttachment Operation</seealso>
+        public virtual IAsyncResult BeginDeleteMessageTemplateAttachment(DeleteMessageTemplateAttachmentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMessageTemplateAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMessageTemplateAttachmentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteMessageTemplateAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMessageTemplateAttachment.</param>
+        /// 
+        /// <returns>Returns a  DeleteMessageTemplateAttachmentResult from QConnect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/DeleteMessageTemplateAttachment">REST API Reference for DeleteMessageTemplateAttachment Operation</seealso>
+        public virtual DeleteMessageTemplateAttachmentResponse EndDeleteMessageTemplateAttachment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteMessageTemplateAttachmentResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteQuickResponse
 
         /// <summary>
@@ -2504,6 +3048,76 @@ namespace Amazon.QConnect
         public virtual GetKnowledgeBaseResponse EndGetKnowledgeBase(IAsyncResult asyncResult)
         {
             return EndInvoke<GetKnowledgeBaseResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetMessageTemplate
+
+        /// <summary>
+        /// Retrieves the Amazon Q in Connect message template. The message template identifier
+        /// can contain an optional qualifier, for example, <c>&lt;message-template-id&gt;:&lt;qualifier&gt;</c>,
+        /// which is either an actual version number or an Amazon Q Connect managed qualifier
+        /// <c>$ACTIVE_VERSION</c> | <c>$LATEST</c>. If it is not supplied, then <c>$LATEST</c>
+        /// is assumed implicitly.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMessageTemplate service method.</param>
+        /// 
+        /// <returns>The response from the GetMessageTemplate service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/GetMessageTemplate">REST API Reference for GetMessageTemplate Operation</seealso>
+        public virtual GetMessageTemplateResponse GetMessageTemplate(GetMessageTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMessageTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMessageTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<GetMessageTemplateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMessageTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMessageTemplate operation on AmazonQConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMessageTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/GetMessageTemplate">REST API Reference for GetMessageTemplate Operation</seealso>
+        public virtual IAsyncResult BeginGetMessageTemplate(GetMessageTemplateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMessageTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMessageTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMessageTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMessageTemplate.</param>
+        /// 
+        /// <returns>Returns a  GetMessageTemplateResult from QConnect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/GetMessageTemplate">REST API Reference for GetMessageTemplate Operation</seealso>
+        public virtual GetMessageTemplateResponse EndGetMessageTemplate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetMessageTemplateResponse>(asyncResult);
         }
 
         #endregion
@@ -3355,6 +3969,139 @@ namespace Amazon.QConnect
 
         #endregion
         
+        #region  ListMessageTemplates
+
+        /// <summary>
+        /// Lists all the available Amazon Q in Connect message templates for the specified knowledge
+        /// base.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMessageTemplates service method.</param>
+        /// 
+        /// <returns>The response from the ListMessageTemplates service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListMessageTemplates">REST API Reference for ListMessageTemplates Operation</seealso>
+        public virtual ListMessageTemplatesResponse ListMessageTemplates(ListMessageTemplatesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMessageTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMessageTemplatesResponseUnmarshaller.Instance;
+
+            return Invoke<ListMessageTemplatesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMessageTemplates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMessageTemplates operation on AmazonQConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMessageTemplates
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListMessageTemplates">REST API Reference for ListMessageTemplates Operation</seealso>
+        public virtual IAsyncResult BeginListMessageTemplates(ListMessageTemplatesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMessageTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMessageTemplatesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMessageTemplates operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMessageTemplates.</param>
+        /// 
+        /// <returns>Returns a  ListMessageTemplatesResult from QConnect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListMessageTemplates">REST API Reference for ListMessageTemplates Operation</seealso>
+        public virtual ListMessageTemplatesResponse EndListMessageTemplates(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListMessageTemplatesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListMessageTemplateVersions
+
+        /// <summary>
+        /// Lists all the available versions for the specified Amazon Q in Connect message template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMessageTemplateVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListMessageTemplateVersions service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListMessageTemplateVersions">REST API Reference for ListMessageTemplateVersions Operation</seealso>
+        public virtual ListMessageTemplateVersionsResponse ListMessageTemplateVersions(ListMessageTemplateVersionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMessageTemplateVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMessageTemplateVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListMessageTemplateVersionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMessageTemplateVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMessageTemplateVersions operation on AmazonQConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMessageTemplateVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListMessageTemplateVersions">REST API Reference for ListMessageTemplateVersions Operation</seealso>
+        public virtual IAsyncResult BeginListMessageTemplateVersions(ListMessageTemplateVersionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMessageTemplateVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMessageTemplateVersionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMessageTemplateVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMessageTemplateVersions.</param>
+        /// 
+        /// <returns>Returns a  ListMessageTemplateVersionsResult from QConnect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/ListMessageTemplateVersions">REST API Reference for ListMessageTemplateVersions Operation</seealso>
+        public virtual ListMessageTemplateVersionsResponse EndListMessageTemplateVersions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListMessageTemplateVersionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListQuickResponses
 
         /// <summary>
@@ -3817,6 +4564,76 @@ namespace Amazon.QConnect
 
         #endregion
         
+        #region  RenderMessageTemplate
+
+        /// <summary>
+        /// Renders the Amazon Q in Connect message template based on the attribute values provided
+        /// and generates the message content. For any variable present in the message template,
+        /// if the attribute value is neither provided in the attribute request parameter nor
+        /// the default attribute of the message template, the rendered message content will keep
+        /// the variable placeholder as it is and return the attribute keys that are missing.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RenderMessageTemplate service method.</param>
+        /// 
+        /// <returns>The response from the RenderMessageTemplate service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/RenderMessageTemplate">REST API Reference for RenderMessageTemplate Operation</seealso>
+        public virtual RenderMessageTemplateResponse RenderMessageTemplate(RenderMessageTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RenderMessageTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RenderMessageTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<RenderMessageTemplateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RenderMessageTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RenderMessageTemplate operation on AmazonQConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRenderMessageTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/RenderMessageTemplate">REST API Reference for RenderMessageTemplate Operation</seealso>
+        public virtual IAsyncResult BeginRenderMessageTemplate(RenderMessageTemplateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RenderMessageTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RenderMessageTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RenderMessageTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRenderMessageTemplate.</param>
+        /// 
+        /// <returns>Returns a  RenderMessageTemplateResult from QConnect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/RenderMessageTemplate">REST API Reference for RenderMessageTemplate Operation</seealso>
+        public virtual RenderMessageTemplateResponse EndRenderMessageTemplate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RenderMessageTemplateResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  SearchContent
 
         /// <summary>
@@ -3877,6 +4694,72 @@ namespace Amazon.QConnect
         public virtual SearchContentResponse EndSearchContent(IAsyncResult asyncResult)
         {
             return EndInvoke<SearchContentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  SearchMessageTemplates
+
+        /// <summary>
+        /// Searches for Amazon Q in Connect message templates in the specified knowledge base.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchMessageTemplates service method.</param>
+        /// 
+        /// <returns>The response from the SearchMessageTemplates service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/SearchMessageTemplates">REST API Reference for SearchMessageTemplates Operation</seealso>
+        public virtual SearchMessageTemplatesResponse SearchMessageTemplates(SearchMessageTemplatesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchMessageTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchMessageTemplatesResponseUnmarshaller.Instance;
+
+            return Invoke<SearchMessageTemplatesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchMessageTemplates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchMessageTemplates operation on AmazonQConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchMessageTemplates
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/SearchMessageTemplates">REST API Reference for SearchMessageTemplates Operation</seealso>
+        public virtual IAsyncResult BeginSearchMessageTemplates(SearchMessageTemplatesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchMessageTemplatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchMessageTemplatesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchMessageTemplates operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchMessageTemplates.</param>
+        /// 
+        /// <returns>Returns a  SearchMessageTemplatesResult from QConnect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/SearchMessageTemplates">REST API Reference for SearchMessageTemplates Operation</seealso>
+        public virtual SearchMessageTemplatesResponse EndSearchMessageTemplates(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SearchMessageTemplatesResponse>(asyncResult);
         }
 
         #endregion
@@ -4622,6 +5505,158 @@ namespace Amazon.QConnect
         public virtual UpdateKnowledgeBaseTemplateUriResponse EndUpdateKnowledgeBaseTemplateUri(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateKnowledgeBaseTemplateUriResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateMessageTemplate
+
+        /// <summary>
+        /// Updates the Amazon Q in Connect message template. Partial update is supported. If
+        /// any field is not supplied, it will remain unchanged for the message template that
+        /// is referenced by the <c>$LATEST</c> qualifier. Any modification will only apply to
+        /// the message template that is referenced by the <c>$LATEST</c> qualifier. The fields
+        /// for all available versions will remain unchanged.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMessageTemplate service method.</param>
+        /// 
+        /// <returns>The response from the UpdateMessageTemplate service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/UpdateMessageTemplate">REST API Reference for UpdateMessageTemplate Operation</seealso>
+        public virtual UpdateMessageTemplateResponse UpdateMessageTemplate(UpdateMessageTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMessageTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMessageTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMessageTemplateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateMessageTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMessageTemplate operation on AmazonQConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateMessageTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/UpdateMessageTemplate">REST API Reference for UpdateMessageTemplate Operation</seealso>
+        public virtual IAsyncResult BeginUpdateMessageTemplate(UpdateMessageTemplateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMessageTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMessageTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateMessageTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateMessageTemplate.</param>
+        /// 
+        /// <returns>Returns a  UpdateMessageTemplateResult from QConnect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/UpdateMessageTemplate">REST API Reference for UpdateMessageTemplate Operation</seealso>
+        public virtual UpdateMessageTemplateResponse EndUpdateMessageTemplate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateMessageTemplateResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateMessageTemplateMetadata
+
+        /// <summary>
+        /// Updates the Amazon Q in Connect message template metadata. Note that any modification
+        /// to the message template’s name, description and grouping configuration will applied
+        /// to the message template pointed by the <c>$LATEST</c> qualifier and all available
+        /// versions. Partial update is supported. If any field is not supplied, it will remain
+        /// unchanged for the message template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMessageTemplateMetadata service method.</param>
+        /// 
+        /// <returns>The response from the UpdateMessageTemplateMetadata service method, as returned by QConnect.</returns>
+        /// <exception cref="Amazon.QConnect.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
+        /// that accepts name, a conflicting resource (usually with the same name) is being created
+        /// or mutated.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QConnect.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by a service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/UpdateMessageTemplateMetadata">REST API Reference for UpdateMessageTemplateMetadata Operation</seealso>
+        public virtual UpdateMessageTemplateMetadataResponse UpdateMessageTemplateMetadata(UpdateMessageTemplateMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMessageTemplateMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMessageTemplateMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMessageTemplateMetadataResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateMessageTemplateMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMessageTemplateMetadata operation on AmazonQConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateMessageTemplateMetadata
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/UpdateMessageTemplateMetadata">REST API Reference for UpdateMessageTemplateMetadata Operation</seealso>
+        public virtual IAsyncResult BeginUpdateMessageTemplateMetadata(UpdateMessageTemplateMetadataRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateMessageTemplateMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMessageTemplateMetadataResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateMessageTemplateMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateMessageTemplateMetadata.</param>
+        /// 
+        /// <returns>Returns a  UpdateMessageTemplateMetadataResult from QConnect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/UpdateMessageTemplateMetadata">REST API Reference for UpdateMessageTemplateMetadata Operation</seealso>
+        public virtual UpdateMessageTemplateMetadataResponse EndUpdateMessageTemplateMetadata(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateMessageTemplateMetadataResponse>(asyncResult);
         }
 
         #endregion

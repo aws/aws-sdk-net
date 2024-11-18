@@ -77,6 +77,16 @@ namespace Amazon.QConnect.Model
         IListKnowledgeBasesPaginator ListKnowledgeBases(ListKnowledgeBasesRequest request);
 
         /// <summary>
+        /// Paginator for ListMessageTemplates operation
+        ///</summary>
+        IListMessageTemplatesPaginator ListMessageTemplates(ListMessageTemplatesRequest request);
+
+        /// <summary>
+        /// Paginator for ListMessageTemplateVersions operation
+        ///</summary>
+        IListMessageTemplateVersionsPaginator ListMessageTemplateVersions(ListMessageTemplateVersionsRequest request);
+
+        /// <summary>
         /// Paginator for ListQuickResponses operation
         ///</summary>
         IListQuickResponsesPaginator ListQuickResponses(ListQuickResponsesRequest request);
@@ -90,6 +100,11 @@ namespace Amazon.QConnect.Model
         /// Paginator for SearchContent operation
         ///</summary>
         ISearchContentPaginator SearchContent(SearchContentRequest request);
+
+        /// <summary>
+        /// Paginator for SearchMessageTemplates operation
+        ///</summary>
+        ISearchMessageTemplatesPaginator SearchMessageTemplates(SearchMessageTemplatesRequest request);
 
         /// <summary>
         /// Paginator for SearchQuickResponses operation
