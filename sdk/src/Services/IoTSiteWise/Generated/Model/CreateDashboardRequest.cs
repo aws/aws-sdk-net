@@ -65,9 +65,21 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property DashboardDefinition. 
         /// <para>
-        /// The dashboard definition specified in a JSON literal. For detailed information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating
-        /// dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
+        /// The dashboard definition specified in a JSON literal.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// IoT SiteWise Monitor (Classic) see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Create
+        /// dashboards (CLI)</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// IoT SiteWise Monitor (AI-aware) see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-ai-dashboard-cli.html">Create
+        /// dashboards (CLI)</a> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// in the <i>IoT SiteWise User Guide</i> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=204800)]

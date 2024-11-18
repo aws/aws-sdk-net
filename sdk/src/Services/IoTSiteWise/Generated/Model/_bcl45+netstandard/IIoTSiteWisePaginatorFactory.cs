@@ -122,6 +122,11 @@ namespace Amazon.IoTSiteWise.Model
         IListDashboardsPaginator ListDashboards(ListDashboardsRequest request);
 
         /// <summary>
+        /// Paginator for ListDatasets operation
+        ///</summary>
+        IListDatasetsPaginator ListDatasets(ListDatasetsRequest request);
+
+        /// <summary>
         /// Paginator for ListGateways operation
         ///</summary>
         IListGatewaysPaginator ListGateways(ListGatewaysRequest request);

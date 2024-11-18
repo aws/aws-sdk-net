@@ -48,6 +48,11 @@ namespace Amazon.IoTSiteWise.Model
         /// <para>
         /// The data type of the asset model property.
         /// </para>
+        ///  
+        /// <para>
+        /// If you specify <c>STRUCT</c>, you must also specify <c>dataTypeSpec</c> to identify
+        /// the type of the structure for this property.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public PropertyDataType DataType

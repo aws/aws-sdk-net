@@ -130,6 +130,31 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.PortalName);
                 }
 
+                if(publicRequest.IsSetPortalType())
+                {
+                    context.Writer.WritePropertyName("portalType");
+                    context.Writer.Write(publicRequest.PortalType);
+                }
+
+                if(publicRequest.IsSetPortalTypeConfiguration())
+                {
+                    context.Writer.WritePropertyName("portalTypeConfiguration");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestPortalTypeConfigurationKvp in publicRequest.PortalTypeConfiguration)
+                    {
+                        context.Writer.WritePropertyName(publicRequestPortalTypeConfigurationKvp.Key);
+                        var publicRequestPortalTypeConfigurationValue = publicRequestPortalTypeConfigurationKvp.Value;
+
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PortalTypeEntryMarshaller.Instance;
+                        marshaller.Marshall(publicRequestPortalTypeConfigurationValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetRoleArn())
                 {
                     context.Writer.WritePropertyName("roleArn");

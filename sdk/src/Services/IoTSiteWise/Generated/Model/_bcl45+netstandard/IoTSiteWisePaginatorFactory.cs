@@ -189,6 +189,14 @@ namespace Amazon.IoTSiteWise.Model
         }
 
         /// <summary>
+        /// Paginator for ListDatasets operation
+        ///</summary>
+        public IListDatasetsPaginator ListDatasets(ListDatasetsRequest request) 
+        {
+            return new ListDatasetsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListGateways operation
         ///</summary>
         public IListGatewaysPaginator ListGateways(ListGatewaysRequest request) 
