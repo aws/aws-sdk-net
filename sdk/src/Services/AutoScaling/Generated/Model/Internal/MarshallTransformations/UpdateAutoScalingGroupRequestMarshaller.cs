@@ -70,6 +70,17 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         request.Parameters.Add("AvailabilityZoneDistribution" + "." + "CapacityDistributionStrategy", StringUtils.FromString(publicRequest.AvailabilityZoneDistribution.CapacityDistributionStrategy));
                     }
                 }
+                if(publicRequest.IsSetAvailabilityZoneImpairmentPolicy())
+                {
+                    if(publicRequest.AvailabilityZoneImpairmentPolicy.IsSetImpairedZoneHealthCheckBehavior())
+                    {
+                        request.Parameters.Add("AvailabilityZoneImpairmentPolicy" + "." + "ImpairedZoneHealthCheckBehavior", StringUtils.FromString(publicRequest.AvailabilityZoneImpairmentPolicy.ImpairedZoneHealthCheckBehavior));
+                    }
+                    if(publicRequest.AvailabilityZoneImpairmentPolicy.IsSetZonalShiftEnabled())
+                    {
+                        request.Parameters.Add("AvailabilityZoneImpairmentPolicy" + "." + "ZonalShiftEnabled", StringUtils.FromBool(publicRequest.AvailabilityZoneImpairmentPolicy.ZonalShiftEnabled));
+                    }
+                }
                 if(publicRequest.IsSetAvailabilityZones())
                 {
                     int publicRequestlistValueIndex = 1;
@@ -445,6 +456,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetServiceLinkedRoleARN())
                 {
                     request.Parameters.Add("ServiceLinkedRoleARN", StringUtils.FromString(publicRequest.ServiceLinkedRoleARN));
+                }
+                if(publicRequest.IsSetSkipZonalShiftValidation())
+                {
+                    request.Parameters.Add("SkipZonalShiftValidation", StringUtils.FromBool(publicRequest.SkipZonalShiftValidation));
                 }
                 if(publicRequest.IsSetTerminationPolicies())
                 {

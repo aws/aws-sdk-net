@@ -93,6 +93,7 @@ namespace Amazon.AutoScaling.Model
     {
         private string _autoScalingGroupName;
         private AvailabilityZoneDistribution _availabilityZoneDistribution;
+        private AvailabilityZoneImpairmentPolicy _availabilityZoneImpairmentPolicy;
         private List<string> _availabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _capacityRebalance;
         private string _context;
@@ -112,6 +113,7 @@ namespace Amazon.AutoScaling.Model
         private bool? _newInstancesProtectedFromScaleIn;
         private string _placementGroup;
         private string _serviceLinkedRoleARN;
+        private bool? _skipZonalShiftValidation;
         private List<string> _terminationPolicies = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _vpcZoneIdentifier;
 
@@ -150,6 +152,24 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetAvailabilityZoneDistribution()
         {
             return this._availabilityZoneDistribution != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneImpairmentPolicy. 
+        /// <para>
+        ///  The policy for Availability Zone impairment. 
+        /// </para>
+        /// </summary>
+        public AvailabilityZoneImpairmentPolicy AvailabilityZoneImpairmentPolicy
+        {
+            get { return this._availabilityZoneImpairmentPolicy; }
+            set { this._availabilityZoneImpairmentPolicy = value; }
+        }
+
+        // Check to see if AvailabilityZoneImpairmentPolicy property is set
+        internal bool IsSetAvailabilityZoneImpairmentPolicy()
+        {
+            return this._availabilityZoneImpairmentPolicy != null;
         }
 
         /// <summary>
@@ -595,6 +615,27 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetServiceLinkedRoleARN()
         {
             return this._serviceLinkedRoleARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SkipZonalShiftValidation. 
+        /// <para>
+        ///  If you enable zonal shift with cross-zone disabled load balancers, capacity could
+        /// become imbalanced across Availability Zones. To skip the validation, specify <c>true</c>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-zonal-shift.html">Auto
+        /// Scaling group zonal shift</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. 
+        /// </para>
+        /// </summary>
+        public bool SkipZonalShiftValidation
+        {
+            get { return this._skipZonalShiftValidation.GetValueOrDefault(); }
+            set { this._skipZonalShiftValidation = value; }
+        }
+
+        // Check to see if SkipZonalShiftValidation property is set
+        internal bool IsSetSkipZonalShiftValidation()
+        {
+            return this._skipZonalShiftValidation.HasValue; 
         }
 
         /// <summary>
