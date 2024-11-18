@@ -125,6 +125,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListContactFlowVersions operation
+        ///</summary>
+        public IListContactFlowVersionsPaginator ListContactFlowVersions(ListContactFlowVersionsRequest request) 
+        {
+            return new ListContactFlowVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListContactReferences operation
         ///</summary>
         public IListContactReferencesPaginator ListContactReferences(ListContactReferencesRequest request) 

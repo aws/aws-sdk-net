@@ -1662,6 +1662,72 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  CreateContactFlowVersion
+
+
+        /// <summary>
+        /// Publishes a new version of the flow provided. Versions are immutable and monotonically
+        /// increasing. If a version of the same flow content already exists, no new version is
+        /// created and instead the existing version number is returned. If the <c>FlowContentSha256</c>
+        /// provided is different from the <c>FlowContentSha256</c> of the <c>$LATEST</c> published
+        /// flow content, then an error is returned. This API only supports creating versions
+        /// for flows of type <c>Campaign</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContactFlowVersion service method.</param>
+        /// 
+        /// <returns>The response from the CreateContactFlowVersion service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowVersion">REST API Reference for CreateContactFlowVersion Operation</seealso>
+        CreateContactFlowVersionResponse CreateContactFlowVersion(CreateContactFlowVersionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateContactFlowVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateContactFlowVersion operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateContactFlowVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowVersion">REST API Reference for CreateContactFlowVersion Operation</seealso>
+        IAsyncResult BeginCreateContactFlowVersion(CreateContactFlowVersionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateContactFlowVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateContactFlowVersion.</param>
+        /// 
+        /// <returns>Returns a  CreateContactFlowVersionResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowVersion">REST API Reference for CreateContactFlowVersion Operation</seealso>
+        CreateContactFlowVersionResponse EndCreateContactFlowVersion(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateEvaluationForm
 
 
@@ -8063,6 +8129,65 @@ namespace Amazon.Connect
         /// <returns>Returns a  ListContactFlowsResult from Connect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlows">REST API Reference for ListContactFlows Operation</seealso>
         ListContactFlowsResponse EndListContactFlows(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListContactFlowVersions
+
+
+        /// <summary>
+        /// Returns all the available versions for the specified Amazon Connect instance and flow
+        /// identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContactFlowVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListContactFlowVersions service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlowVersions">REST API Reference for ListContactFlowVersions Operation</seealso>
+        ListContactFlowVersionsResponse ListContactFlowVersions(ListContactFlowVersionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListContactFlowVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListContactFlowVersions operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListContactFlowVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlowVersions">REST API Reference for ListContactFlowVersions Operation</seealso>
+        IAsyncResult BeginListContactFlowVersions(ListContactFlowVersionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListContactFlowVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListContactFlowVersions.</param>
+        /// 
+        /// <returns>Returns a  ListContactFlowVersionsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlowVersions">REST API Reference for ListContactFlowVersions Operation</seealso>
+        ListContactFlowVersionsResponse EndListContactFlowVersions(IAsyncResult asyncResult);
 
         #endregion
         

@@ -232,6 +232,12 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.CreateContactFlowResponse.FlowContentSha256</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9]{64}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.CreateContactFlowModuleRequest.ClientToken</property>
     <max>500</max>
   </property-value-rule>
@@ -261,6 +267,25 @@
     <property>Amazon.Connect.Model.CreateContactFlowModuleResponse.Id</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateContactFlowVersionRequest.FlowContentSha256</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9]{64}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateContactFlowVersionRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateContactFlowVersionRequest.LastModifiedRegion</property>
+    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateContactFlowVersionResponse.Version</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateEvaluationFormRequest.ClientToken</property>
@@ -1452,6 +1477,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListContactFlowsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListContactFlowVersionsRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListContactFlowVersionsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
   </property-value-rule>
@@ -3618,11 +3653,25 @@
     <max>80</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.ContactFlow.FlowContentSha256</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9]{64}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.ContactFlow.Id</property>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.ContactFlow.LastModifiedRegion</property>
+    <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.ContactFlow.Name</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ContactFlow.Version</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -3664,6 +3713,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ContactFlowSummary.Name</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ContactFlowVersionSummary.Version</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>

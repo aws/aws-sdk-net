@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateContactFlow operation
+    /// Response Unmarshaller for ListContactFlowVersions operation
     /// </summary>  
-    public class CreateContactFlowResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListContactFlowVersionsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,28 +46,22 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateContactFlowResponse response = new CreateContactFlowResponse();
+            ListContactFlowVersionsResponse response = new ListContactFlowVersionsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ContactFlowArn", targetDepth))
+                if (context.TestExpression("ContactFlowVersionSummaryList", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ContactFlowArn = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<ContactFlowVersionSummary, ContactFlowVersionSummaryUnmarshaller>(ContactFlowVersionSummaryUnmarshaller.Instance);
+                    response.ContactFlowVersionSummaryList = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ContactFlowId", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ContactFlowId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("FlowContentSha256", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.FlowContentSha256 = unmarshaller.Unmarshall(context);
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -93,17 +87,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("DuplicateResourceException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
                 {
-                    return DuplicateResourceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServiceException"))
                 {
                     return InternalServiceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidContactFlowException"))
-                {
-                    return InvalidContactFlowExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterException"))
                 {
@@ -112,10 +102,6 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestException"))
                 {
                     return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
-                {
-                    return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
@@ -129,9 +115,9 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             return new AmazonConnectException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateContactFlowResponseUnmarshaller _instance = new CreateContactFlowResponseUnmarshaller();        
+        private static ListContactFlowVersionsResponseUnmarshaller _instance = new ListContactFlowVersionsResponseUnmarshaller();        
 
-        internal static CreateContactFlowResponseUnmarshaller GetInstance()
+        internal static ListContactFlowVersionsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -139,7 +125,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateContactFlowResponseUnmarshaller Instance
+        public static ListContactFlowVersionsResponseUnmarshaller Instance
         {
             get
             {

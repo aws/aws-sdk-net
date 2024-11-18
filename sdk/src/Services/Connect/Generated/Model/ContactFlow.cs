@@ -37,12 +37,18 @@ namespace Amazon.Connect.Model
         private string _arn;
         private string _content;
         private string _description;
+        private string _flowContentSha256;
         private string _id;
+        private bool? _isDefault;
+        private string _lastModifiedRegion;
+        private DateTime? _lastModifiedTime;
         private string _name;
         private ContactFlowState _state;
         private ContactFlowStatus _status;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ContactFlowType _type;
+        private long? _version;
+        private string _versionDescription;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -104,6 +110,25 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FlowContentSha256. 
+        /// <para>
+        /// Indicates the checksum value of the flow content.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string FlowContentSha256
+        {
+            get { return this._flowContentSha256; }
+            set { this._flowContentSha256 = value; }
+        }
+
+        // Check to see if FlowContentSha256 property is set
+        internal bool IsSetFlowContentSha256()
+        {
+            return this._flowContentSha256 != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
         /// The identifier of the flow.
@@ -120,6 +145,61 @@ namespace Amazon.Connect.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsDefault. 
+        /// <para>
+        /// Amazon Connect includes a set of default flows that have already been published. It
+        /// uses them to power your contact center.
+        /// </para>
+        /// </summary>
+        public bool IsDefault
+        {
+            get { return this._isDefault.GetValueOrDefault(); }
+            set { this._isDefault = value; }
+        }
+
+        // Check to see if IsDefault property is set
+        internal bool IsSetIsDefault()
+        {
+            return this._isDefault.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastModifiedRegion. 
+        /// <para>
+        /// The region in which the contact flow was last modified
+        /// </para>
+        /// </summary>
+        public string LastModifiedRegion
+        {
+            get { return this._lastModifiedRegion; }
+            set { this._lastModifiedRegion = value; }
+        }
+
+        // Check to see if LastModifiedRegion property is set
+        internal bool IsSetLastModifiedRegion()
+        {
+            return this._lastModifiedRegion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastModifiedTime. 
+        /// <para>
+        /// The time at which the contact flow was last modified.
+        /// </para>
+        /// </summary>
+        public DateTime LastModifiedTime
+        {
+            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            set { this._lastModifiedTime = value; }
+        }
+
+        // Check to see if LastModifiedTime property is set
+        internal bool IsSetLastModifiedTime()
+        {
+            return this._lastModifiedTime.HasValue; 
         }
 
         /// <summary>
@@ -214,6 +294,43 @@ namespace Amazon.Connect.Model
         internal bool IsSetType()
         {
             return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Version. 
+        /// <para>
+        /// The identifier of the flow version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public long Version
+        {
+            get { return this._version.GetValueOrDefault(); }
+            set { this._version = value; }
+        }
+
+        // Check to see if Version property is set
+        internal bool IsSetVersion()
+        {
+            return this._version.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionDescription. 
+        /// <para>
+        /// The description of the flow version.
+        /// </para>
+        /// </summary>
+        public string VersionDescription
+        {
+            get { return this._versionDescription; }
+            set { this._versionDescription = value; }
+        }
+
+        // Check to see if VersionDescription property is set
+        internal bool IsSetVersionDescription()
+        {
+            return this._versionDescription != null;
         }
 
     }

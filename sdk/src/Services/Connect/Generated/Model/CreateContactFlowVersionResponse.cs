@@ -30,13 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// This is the response object from the CreateContactFlow operation.
+    /// This is the response object from the CreateContactFlowVersion operation.
     /// </summary>
-    public partial class CreateContactFlowResponse : AmazonWebServiceResponse
+    public partial class CreateContactFlowVersionResponse : AmazonWebServiceResponse
     {
         private string _contactFlowArn;
-        private string _contactFlowId;
-        private string _flowContentSha256;
+        private long? _version;
 
         /// <summary>
         /// Gets and sets the property ContactFlowArn. 
@@ -57,41 +56,22 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ContactFlowId. 
+        /// Gets and sets the property Version. 
         /// <para>
-        /// The identifier of the flow.
+        /// The identifier of the flow version.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=500)]
-        public string ContactFlowId
+        [AWSProperty(Min=1)]
+        public long Version
         {
-            get { return this._contactFlowId; }
-            set { this._contactFlowId = value; }
+            get { return this._version.GetValueOrDefault(); }
+            set { this._version = value; }
         }
 
-        // Check to see if ContactFlowId property is set
-        internal bool IsSetContactFlowId()
+        // Check to see if Version property is set
+        internal bool IsSetVersion()
         {
-            return this._contactFlowId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property FlowContentSha256. 
-        /// <para>
-        /// Indicates the checksum value of the flow content.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=64)]
-        public string FlowContentSha256
-        {
-            get { return this._flowContentSha256; }
-            set { this._flowContentSha256 = value; }
-        }
-
-        // Check to see if FlowContentSha256 property is set
-        internal bool IsSetFlowContentSha256()
-        {
-            return this._flowContentSha256 != null;
+            return this._version.HasValue; 
         }
 
     }

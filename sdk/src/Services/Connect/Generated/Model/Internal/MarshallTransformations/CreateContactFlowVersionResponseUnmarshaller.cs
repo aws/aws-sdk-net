@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateContactFlow operation
+    /// Response Unmarshaller for CreateContactFlowVersion operation
     /// </summary>  
-    public class CreateContactFlowResponseUnmarshaller : JsonResponseUnmarshaller
+    public class CreateContactFlowVersionResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,7 +46,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateContactFlowResponse response = new CreateContactFlowResponse();
+            CreateContactFlowVersionResponse response = new CreateContactFlowVersionResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -58,16 +58,10 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     response.ContactFlowArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ContactFlowId", targetDepth))
+                if (context.TestExpression("Version", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ContactFlowId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("FlowContentSha256", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.FlowContentSha256 = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    response.Version = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -93,17 +87,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("DuplicateResourceException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
                 {
-                    return DuplicateResourceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServiceException"))
                 {
                     return InternalServiceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidContactFlowException"))
-                {
-                    return InvalidContactFlowExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterException"))
                 {
@@ -129,9 +119,9 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             return new AmazonConnectException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateContactFlowResponseUnmarshaller _instance = new CreateContactFlowResponseUnmarshaller();        
+        private static CreateContactFlowVersionResponseUnmarshaller _instance = new CreateContactFlowVersionResponseUnmarshaller();        
 
-        internal static CreateContactFlowResponseUnmarshaller GetInstance()
+        internal static CreateContactFlowVersionResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -139,7 +129,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateContactFlowResponseUnmarshaller Instance
+        public static CreateContactFlowVersionResponseUnmarshaller Instance
         {
             get
             {

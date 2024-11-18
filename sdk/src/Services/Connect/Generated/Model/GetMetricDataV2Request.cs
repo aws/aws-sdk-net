@@ -142,8 +142,8 @@ namespace Amazon.Connect.Model
         ///  <b>Filter keys</b>: A maximum of 5 filter keys are supported in a single request.
         /// Valid filter keys: <c>AGENT</c> | <c>AGENT_HIERARCHY_LEVEL_ONE</c> | <c>AGENT_HIERARCHY_LEVEL_TWO</c>
         /// | <c>AGENT_HIERARCHY_LEVEL_THREE</c> | <c>AGENT_HIERARCHY_LEVEL_FOUR</c> | <c>AGENT_HIERARCHY_LEVEL_FIVE</c>
-        /// | <c>ANSWERING_MACHINE_DETECTION_STATUS</c> | <c>CAMPAIGN</c> | <c>CASE_TEMPLATE_ARN</c>
-        /// | <c>CASE_STATUS</c> | <c>CHANNEL</c> | <c>contact/segmentAttributes/connect:Subtype</c>
+        /// | <c>ANSWERING_MACHINE_DETECTION_STATUS</c> | <c>CAMPAIGN</c> | <c>CAMPAIGN_DELIVERY_EVENT_TYPE</c>
+        /// |<c>CASE_TEMPLATE_ARN</c> | <c>CASE_STATUS</c> | <c>CHANNEL</c> | <c>contact/segmentAttributes/connect:Subtype</c>
         /// | <c>DISCONNECT_REASON</c> | <c>FEATURE</c> | <c>FLOW_TYPE</c> | <c>FLOWS_NEXT_RESOURCE_ID</c>
         /// | <c>FLOWS_NEXT_RESOURCE_QUEUE_ID</c> | <c>FLOWS_OUTCOME_TYPE</c> | <c>FLOWS_RESOURCE_ID</c>
         /// | <c>INITIATION_METHOD</c> | <c>RESOURCE_PUBLISHED_TIMESTAMP</c> | <c>ROUTING_PROFILE</c>
@@ -228,8 +228,8 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Valid grouping keys: <c>AGENT</c> | <c>AGENT_HIERARCHY_LEVEL_ONE</c> | <c>AGENT_HIERARCHY_LEVEL_TWO</c>
         /// | <c>AGENT_HIERARCHY_LEVEL_THREE</c> | <c>AGENT_HIERARCHY_LEVEL_FOUR</c> | <c>AGENT_HIERARCHY_LEVEL_FIVE</c>
-        /// | <c>ANSWERING_MACHINE_DETECTION_STATUS</c> | <c>CAMPAIGN</c> | <c>CASE_TEMPLATE_ARN</c>
-        /// | <c>CASE_STATUS</c> | <c>CHANNEL</c> | <c>contact/segmentAttributes/connect:Subtype</c>
+        /// | <c>ANSWERING_MACHINE_DETECTION_STATUS</c> | <c>CAMPAIGN</c> | <c>CAMPAIGN_DELIVERY_EVENT_TYPE</c>
+        /// | <c>CASE_TEMPLATE_ARN</c> | <c>CASE_STATUS</c> | <c>CHANNEL</c> | <c>contact/segmentAttributes/connect:Subtype</c>
         /// | <c>DISCONNECT_REASON</c> | <c>FLOWS_RESOURCE_ID</c> | <c>FLOWS_MODULE_RESOURCE_ID</c>
         /// | <c>FLOW_TYPE</c> | <c>FLOWS_OUTCOME_TYPE</c> | <c>INITIATION_METHOD</c> | <c>Q_CONNECT_ENABLED</c>
         /// | <c>QUEUE</c> | <c>RESOURCE_PUBLISHED_TIMESTAMP</c> | <c>ROUTING_PROFILE</c> | <c>ROUTING_STEP_EXPRESSION</c>
@@ -641,7 +641,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  </dd> <dt>AVG_DIALS_PER_MINUTE</dt> <dd> 
         /// <para>
-        /// This metric is available only for contacts analyzed by outbound campaigns analytics.
+        /// This metric is available only for outbound campaigns that use the agent assisted voice
+        /// and automated voice delivery modes.
         /// </para>
         ///  
         /// <para>
@@ -649,7 +650,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Campaign, Agent, Queue, Routing Profile
+        /// Valid groupings and filters: Agent, Campaign, Queue, Routing Profile
         /// </para>
         ///  
         /// <para>
@@ -942,7 +943,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  </dd> <dt>AVG_WAIT_TIME_AFTER_CUSTOMER_CONNECTION</dt> <dd> 
         /// <para>
-        /// This metric is available only for contacts analyzed by outbound campaigns analytics.
+        /// This metric is available only for outbound campaigns that use the agent assisted voice
+        /// and automated voice delivery modes.
         /// </para>
         ///  
         /// <para>
@@ -959,7 +961,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  </dd> <dt>CAMPAIGN_CONTACTS_ABANDONED_AFTER_X</dt> <dd> 
         /// <para>
-        /// This metric is available only for contacts analyzed by outbound campaigns analytics.
+        /// This metric is available only for outbound campaigns using the agent assisted voice
+        /// and automated voice delivery modes.
         /// </para>
         ///  
         /// <para>
@@ -967,7 +970,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Campaign, Agent 
+        /// Valid groupings and filters: Agent, Campaign
         /// </para>
         ///  
         /// <para>
@@ -981,7 +984,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  </dd> <dt>CAMPAIGN_CONTACTS_ABANDONED_AFTER_X_RATE</dt> <dd> 
         /// <para>
-        /// This metric is available only for contacts analyzed by outbound campaigns analytics.
+        /// This metric is available only for outbound campaigns using the agent assisted voice
+        /// and automated voice delivery modes.
         /// </para>
         ///  
         /// <para>
@@ -989,7 +993,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Campaign, Agent 
+        /// Valid groupings and filters: Agent, Campaign
         /// </para>
         ///  
         /// <para>
@@ -1000,6 +1004,46 @@ namespace Amazon.Connect.Model
         /// <para>
         /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#campaign-contacts-abandoned-rate-historical">Campaign
         /// contacts abandoned after X rate</a> 
+        /// </para>
+        ///  </dd> <dt>CAMPAIGN_INTERACTIONS</dt> <dd> 
+        /// <para>
+        /// This metric is available only for outbound campaigns using the email delivery mode.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Unit: Count
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid metric filter key: CAMPAIGN_INTERACTION_EVENT_TYPE
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Campaign
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#campaign-interactions-historical">Campaign
+        /// interactions</a> 
+        /// </para>
+        ///  </dd> <dt>CAMPAIGN_SEND_ATTEMPTS</dt> <dd> 
+        /// <para>
+        /// This metric is available only for outbound campaigns.
+        /// </para>
+        ///  
+        /// <para>
+        /// Unit: Count
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid groupings and filters: Campaign, Channel, contact/segmentAttributes/connect:Subtype
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#campaign-send-attempts-historical">Campaign
+        /// send attempts</a> 
         /// </para>
         ///  </dd> <dt>CASES_CREATED</dt> <dd> 
         /// <para>
@@ -1295,7 +1339,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  </dd> <dt>DELIVERY_ATTEMPTS</dt> <dd> 
         /// <para>
-        /// This metric is available only for contacts analyzed by outbound campaigns analytics.
+        /// This metric is available only for outbound campaigns.
         /// </para>
         ///  
         /// <para>
@@ -1303,23 +1347,32 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid metric filter key: <c>ANSWERING_MACHINE_DETECTION_STATUS</c>, <c>DISCONNECT_REASON</c>
-        /// 
+        /// Valid metric filter key: <c>ANSWERING_MACHINE_DETECTION_STATUS</c>, <c>CAMPAIGN_DELIVERY_EVENT_TYPE</c>,
+        /// <c>DISCONNECT_REASON</c> 
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Campaign, Agent, Queue, Routing Profile, Answering Machine
-        /// Detection Status, Disconnect Reason
+        /// Valid groupings and filters: Agent, Answering Machine Detection Status, Campaign,
+        /// Campaign Delivery EventType, Channel, contact/segmentAttributes/connect:Subtype, Disconnect
+        /// Reason, Queue, Routing Profile
         /// </para>
         ///  
         /// <para>
         /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#delivery-attempts-historical">Delivery
         /// attempts</a> 
         /// </para>
-        ///  </dd> <dt>DELIVERY_ATTEMPT_DISPOSITION_RATE</dt> <dd> 
+        ///  <note> 
         /// <para>
-        /// This metric is available only for contacts analyzed by outbound campaigns analytics,
-        /// and with the answering machine detection enabled.
+        /// Campaign Delivery EventType filter and grouping are only available for SMS and Email
+        /// campaign delivery modes. Agent, Queue, Routing Profile, Answering Machine Detection
+        /// Status and Disconnect Reason are only available for agent assisted voice and automated
+        /// voice delivery modes. 
+        /// </para>
+        ///  </note> </dd> <dt>DELIVERY_ATTEMPT_DISPOSITION_RATE</dt> <dd> 
+        /// <para>
+        /// This metric is available only for outbound campaigns. Dispositions for the agent assisted
+        /// voice and automated voice delivery modes are only available with answering machine
+        /// detection enabled.
         /// </para>
         ///  
         /// <para>
@@ -1327,25 +1380,28 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid metric filter key: <c>ANSWERING_MACHINE_DETECTION_STATUS</c>, <c>DISCONNECT_REASON</c>
-        /// 
+        /// Valid metric filter key: <c>ANSWERING_MACHINE_DETECTION_STATUS</c>, <c>CAMPAIGN_DELIVERY_EVENT_TYPE</c>,
+        /// <c>DISCONNECT_REASON</c> 
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Campaign, Agent, Answering Machine Detection Status,
-        /// Disconnect Reason
+        /// Valid groupings and filters: Agent, Answering Machine Detection Status, Campaign,
+        /// Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Queue, Routing
+        /// Profile
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Answering Machine Detection Status and Disconnect Reason are valid filters but not
-        /// valid groupings.
-        /// </para>
-        ///  </note> 
+        ///  
         /// <para>
         /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#delivery-attempt-disposition-rate-historical">Delivery
         /// attempt disposition rate</a> 
         /// </para>
-        ///  </dd> <dt>FLOWS_OUTCOME</dt> <dd> 
+        ///  <note> 
+        /// <para>
+        /// Campaign Delivery Event Type filter and grouping are only available for SMS and Email
+        /// campaign delivery modes. Agent, Queue, Routing Profile, Answering Machine Detection
+        /// Status and Disconnect Reason are only available for agent assisted voice and automated
+        /// voice delivery modes. 
+        /// </para>
+        ///  </note> </dd> <dt>FLOWS_OUTCOME</dt> <dd> 
         /// <para>
         /// Unit: Count
         /// </para>
@@ -1377,8 +1433,9 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  </dd> <dt>HUMAN_ANSWERED_CALLS</dt> <dd> 
         /// <para>
-        /// This metric is available only for contacts analyzed by outbound campaigns analytics,
-        /// and with the answering machine detection enabled.
+        /// This metric is available only for outbound campaigns. Dispositions for the agent assisted
+        /// voice and automated voice delivery modes are only available with answering machine
+        /// detection enabled. 
         /// </para>
         ///  
         /// <para>
@@ -1386,7 +1443,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid groupings and filters: Campaign, Agent
+        /// Valid groupings and filters: Agent, Campaign
         /// </para>
         ///  
         /// <para>

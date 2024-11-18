@@ -2613,6 +2613,10 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly IntegrationType PINPOINT_APP = new IntegrationType("PINPOINT_APP");
         /// <summary>
+        /// Constant Q_MESSAGE_TEMPLATES for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType Q_MESSAGE_TEMPLATES = new IntegrationType("Q_MESSAGE_TEMPLATES");
+        /// <summary>
         /// Constant VOICE_ID for IntegrationType
         /// </summary>
         public static readonly IntegrationType VOICE_ID = new IntegrationType("VOICE_ID");
