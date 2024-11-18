@@ -6532,6 +6532,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <c>DBInstanceIdentifier</c> doesn't refer to an existing DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotReadyException">
+        /// An attempt to download or examine log files didn't succeed because an Aurora Serverless
+        /// v2 instance was paused.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBLogFiles">REST API Reference for DescribeDBLogFiles Operation</seealso>
         public virtual DescribeDBLogFilesResponse DescribeDBLogFiles(DescribeDBLogFilesRequest request)
         {
@@ -6559,6 +6563,10 @@ namespace Amazon.RDS
         /// <returns>The response from the DescribeDBLogFiles service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <c>DBInstanceIdentifier</c> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotReadyException">
+        /// An attempt to download or examine log files didn't succeed because an Aurora Serverless
+        /// v2 instance was paused.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBLogFiles">REST API Reference for DescribeDBLogFiles Operation</seealso>
         public virtual Task<DescribeDBLogFilesResponse> DescribeDBLogFilesAsync(DescribeDBLogFilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -8756,6 +8764,10 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <c>DBInstanceIdentifier</c> doesn't refer to an existing DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotReadyException">
+        /// An attempt to download or examine log files didn't succeed because an Aurora Serverless
+        /// v2 instance was paused.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBLogFileNotFoundException">
         /// <c>LogFileName</c> doesn't refer to an existing DB log file.
         /// </exception>
@@ -8786,6 +8798,10 @@ namespace Amazon.RDS
         /// <returns>The response from the DownloadDBLogFilePortion service method, as returned by RDS.</returns>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <c>DBInstanceIdentifier</c> doesn't refer to an existing DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceNotReadyException">
+        /// An attempt to download or examine log files didn't succeed because an Aurora Serverless
+        /// v2 instance was paused.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBLogFileNotFoundException">
         /// <c>LogFileName</c> doesn't refer to an existing DB log file.

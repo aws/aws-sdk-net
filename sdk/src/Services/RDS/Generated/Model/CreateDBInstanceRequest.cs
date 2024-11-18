@@ -694,6 +694,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Must begin with a letter. Subsequent characters can be letters, underscores, or digits
+        /// (0-9).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Can't be a word reserved by the database engine.
         /// </para>
         ///  </li> </ul> </dd> <dt>Amazon Aurora PostgreSQL</dt> <dd> 

@@ -156,6 +156,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.MajorEngineVersion = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ServerlessV2FeaturesSupport", targetDepth))
+                    {
+                        var unmarshaller = ServerlessV2FeaturesSupportUnmarshaller.Instance;
+                        unmarshalledObject.ServerlessV2FeaturesSupport = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Status", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

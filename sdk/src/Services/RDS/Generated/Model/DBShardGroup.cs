@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// 
+    /// Contains the details for an Amazon RDS DB shard group.
     /// </summary>
     public partial class DBShardGroup
     {

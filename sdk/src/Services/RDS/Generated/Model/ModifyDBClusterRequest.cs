@@ -185,10 +185,10 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ApplyImmediately. 
         /// <para>
-        /// Specifies whether the modifications in this request and any pending modifications
-        /// are asynchronously applied as soon as possible, regardless of the <c>PreferredMaintenanceWindow</c>
-        /// setting for the DB cluster. If this parameter is disabled, changes to the DB cluster
-        /// are applied during the next maintenance window.
+        /// Specifies whether the modifications in this request are asynchronously applied as
+        /// soon as possible, regardless of the <c>PreferredMaintenanceWindow</c> setting for
+        /// the DB cluster. If this parameter is disabled, changes to the DB cluster are applied
+        /// during the next maintenance window.
         /// </para>
         ///  
         /// <para>

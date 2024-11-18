@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ServerlessV2ScalingConfigurationInfo Object
+    /// Response Unmarshaller for ServerlessV2FeaturesSupport Object
     /// </summary>  
-    public class ServerlessV2ScalingConfigurationInfoUnmarshaller : IUnmarshaller<ServerlessV2ScalingConfigurationInfo, XmlUnmarshallerContext>, IUnmarshaller<ServerlessV2ScalingConfigurationInfo, JsonUnmarshallerContext>
+    public class ServerlessV2FeaturesSupportUnmarshaller : IUnmarshaller<ServerlessV2FeaturesSupport, XmlUnmarshallerContext>, IUnmarshaller<ServerlessV2FeaturesSupport, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ServerlessV2ScalingConfigurationInfo Unmarshall(XmlUnmarshallerContext context)
+        public ServerlessV2FeaturesSupport Unmarshall(XmlUnmarshallerContext context)
         {
-            ServerlessV2ScalingConfigurationInfo unmarshalledObject = new ServerlessV2ScalingConfigurationInfo();
+            ServerlessV2FeaturesSupport unmarshalledObject = new ServerlessV2FeaturesSupport();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -67,12 +67,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.MinCapacity = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("SecondsUntilAutoPause", targetDepth))
-                    {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.SecondsUntilAutoPause = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -88,18 +82,18 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ServerlessV2ScalingConfigurationInfo Unmarshall(JsonUnmarshallerContext context)
+        public ServerlessV2FeaturesSupport Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static ServerlessV2ScalingConfigurationInfoUnmarshaller _instance = new ServerlessV2ScalingConfigurationInfoUnmarshaller();        
+        private static ServerlessV2FeaturesSupportUnmarshaller _instance = new ServerlessV2FeaturesSupportUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ServerlessV2ScalingConfigurationInfoUnmarshaller Instance
+        public static ServerlessV2FeaturesSupportUnmarshaller Instance
         {
             get
             {
