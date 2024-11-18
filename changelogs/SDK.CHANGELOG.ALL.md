@@ -1,3 +1,27 @@
+### 3.7.929.0 (2024-11-18 19:31 UTC)
+* AppConfig (3.7.403.0)
+	* AWS AppConfig has added a new extension action point, AT_DEPLOYMENT_TICK, to support third-party monitors to trigger an automatic rollback during a deployment.
+* AutoScaling (3.7.405.0)
+	* Amazon EC2 Auto Scaling now supports Amazon Application Recovery Controller (ARC) zonal shift and zonal autoshift to help you quickly recover an impaired application from failures in an Availability Zone (AZ).
+* CloudFormation (3.7.401.0)
+	* This release adds a new API, ListHookResults, that allows retrieving CloudFormation Hooks invocation results for hooks invoked during a create change set operation or Cloud Control API operation
+* Connect (3.7.409.0)
+	* Adds CreateContactFlowVersion and ListContactFlowVersions APIs to create and view the versions of a contact flow.
+* CustomerProfiles (3.7.402.0)
+	* This release introduces Segmentation APIs and new Calculated Attribute Event Filters as part of Amazon Connect Customer Profiles service.
+* EC2 (3.7.417.0)
+	* Adding request and response elements for managed resources.
+* ECS (3.7.405.0)
+	* This release adds support for adding VPC Lattice configurations in ECS CreateService/UpdateService APIs. The configuration allows for associating VPC Lattice target groups with ECS Services.
+* IoTSiteWise (3.7.402.0)
+	* The release introduces a generative AI Assistant in AWS IoT SiteWise. It includes: 1) InvokeAssistant API - Invoke the Assistant to get alarm summaries and ask questions. 2) Dataset APIs - Manage knowledge base configuration for the Assistant. 3) Portal APIs enhancement - Manage AI-aware dashboards.
+* QConnect (3.7.402.0)
+	* This release introduces MessageTemplate as a resource in Amazon Q in Connect, along with APIs to create, read, search, update, and delete MessageTemplate resources.
+* RDS (3.7.407.0)
+	* Add support for the automatic pause/resume feature of Aurora Serverless v2.
+* RDSDataService (3.7.401.0)
+	* Add support for the automatic pause/resume feature of Aurora Serverless v2.
+
 ### 3.7.928.0 (2024-11-15 19:23 UTC)
 * CloudWatch (3.7.402.0)
 	* Adds support for adding related Entity information to metrics ingested through PutMetricData.
