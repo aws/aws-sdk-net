@@ -15,6 +15,7 @@
 
 using Amazon.Runtime.Credentials.Internal;
 using Amazon.Runtime.Endpoints;
+using Amazon.Runtime.Internal.Auth;
 using Smithy.Identity.Abstractions;
 using System.Collections;
 using System.Collections.Generic;
@@ -32,12 +33,31 @@ namespace Amazon.Runtime.Internal
             new AwsV4AuthScheme()
         };
 
-        // Actual pipeline handler implementation will include other methods (such as InvokeAsync) too.
+        public BaseAuthResolverHandler(BaseIdentity identity)
+        {
+            this.Identity = identity;
+        }
+
+        protected BaseIdentity Identity
+        {
+            get;
+            private set;
+        }
+
+
         public override void InvokeSync(IExecutionContext executionContext)
         {
             PreInvoke(executionContext);
             base.InvokeSync(executionContext);
         }
+
+#if AWS_ASYNC_API
+        public override System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)
+        {
+            PreInvoke(executionContext);
+            return base.InvokeAsync<T>(executionContext);
+        }
+#endif
 
         protected void PreInvoke(IExecutionContext executionContext)
         {
@@ -56,15 +76,20 @@ namespace Amazon.Runtime.Internal
                     continue;
                 }
 
-                // TODO: Retrieve identity resolver and signer for the current scheme and attach them to request context.
-                // Interfaces haven't been defined yet, but code will be similar to:
-                // var identityResolver = scheme.IdentityResolver();
-                // var identity = identityResolver.GetIdentity();
-                // var signer = scheme.Signer();
+                executionContext.RequestContext.Identity = this.Identity;
+                if (executionContext.RequestContext.Identity == null)
+                {
+                    var identityResolver = scheme.GetIdentityResolver(executionContext.RequestContext.ClientConfig.IdentityResolverConfiguration);
+                    executionContext.RequestContext.Identity = identityResolver.ResolveIdentity();
+                }
 
-                // This code would also need to handle existing scenarios, such as:
-                // - Customer explicitly set credentials on their service client (i.e. new AmazonS3Client(new BasicAWSCredentials))
+                executionContext.RequestContext.Signer = GetSigner(scheme);
             }
+        }
+
+        protected virtual AbstractAWSSigner GetSigner(IAuthScheme<BaseIdentity> scheme)
+        {
+            return scheme.Signer() as AbstractAWSSigner;
         }
 
         /// <summary>

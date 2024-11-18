@@ -11,6 +11,7 @@
 using Amazon.Runtime;
 using Amazon.Runtime.Credentials.Internal;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Auth;
 using Smithy.Identity.Abstractions;
 using System.Collections.Generic;
 
@@ -35,6 +36,13 @@ namespace <#=this.Config.Namespace#>.Internal
     /// </summary>
     public class Amazon<#=this.Config.ClassName#>AuthSchemeHandler : BaseAuthResolverHandler
     {
+        /// <summary>
+        /// Construct an instance of Amazon<#=this.Config.ClassName#>AuthSchemeHandler
+        /// </summary>
+        public Amazon<#=this.Config.ClassName#>AuthSchemeHandler(BaseIdentity identity)
+            : base(identity)
+        { }
+
 <# if (IsServiceAllowListedForRulesBasedResolver()) { #>
         private readonly Amazon<#=this.Config.ClassName#>EndpointResolver _endpointResolver = new();
 
@@ -72,6 +80,14 @@ namespace <#=this.Config.Namespace#>.Internal
 
             return AuthSchemeResolver.ResolveAuthScheme(mappedParameters);
         }
+<# if (GeneratorHelpers.DetermineSignerOverride(this.Config.ServiceModel.SignatureVersion) != null) { #>
+
+        /// <inheritdoc/>
+        protected override AbstractAWSSigner GetSigner(IAuthScheme<BaseIdentity> scheme)
+        {
+            return new <#=GeneratorHelpers.DetermineSignerOverride(this.Config.ServiceModel.SignatureVersion)#>();
+        }
+<# } #>
     }
 
     /// <inheritdoc cref="IAuthSchemeResolver{T}" />

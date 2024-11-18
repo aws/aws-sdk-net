@@ -20,6 +20,7 @@
 using Amazon.Runtime;
 using Amazon.Runtime.Credentials.Internal;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Auth;
 using Smithy.Identity.Abstractions;
 using System.Collections.Generic;
 
@@ -42,6 +43,13 @@ namespace Amazon.S3.Internal
     /// </summary>
     public class AmazonS3AuthSchemeHandler : BaseAuthResolverHandler
     {
+        /// <summary>
+        /// Construct an instance of AmazonS3AuthSchemeHandler
+        /// </summary>
+        public AmazonS3AuthSchemeHandler(BaseIdentity identity)
+            : base(identity)
+        { }
+
         private readonly AmazonS3EndpointResolver _endpointResolver = new();
 
         /// <summary>
@@ -72,6 +80,12 @@ namespace Amazon.S3.Internal
             };
 
             return AuthSchemeResolver.ResolveAuthScheme(mappedParameters);
+        }
+
+        /// <inheritdoc/>
+        protected override AbstractAWSSigner GetSigner(IAuthScheme<BaseIdentity> scheme)
+        {
+            return new Amazon.S3.Internal.S3Signer();
         }
     }
 

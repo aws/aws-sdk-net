@@ -14,6 +14,7 @@
  */
 
 using Smithy.Identity.Abstractions;
+using Amazon.Runtime.Internal.Auth;
 
 namespace Amazon.Runtime.Credentials.Internal
 {
@@ -29,6 +30,12 @@ namespace Amazon.Runtime.Credentials.Internal
         public IIdentityResolver GetIdentityResolver(IIdentityResolverConfiguration configuration)
         {
             return configuration.GetIdentityResolver<AnonymousAWSCredentials>();       
+        }
+
+        /// <inheritdoc/>
+        public ISigner Signer()
+        {
+            return new NullSigner();
         }
     }
 }

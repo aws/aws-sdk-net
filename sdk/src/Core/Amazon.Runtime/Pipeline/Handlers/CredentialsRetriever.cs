@@ -30,21 +30,6 @@ namespace Amazon.Runtime.Internal
     public class CredentialsRetriever : PipelineHandler
     {
         /// <summary>
-        /// The constructor for CredentialsRetriever.
-        /// </summary>
-        /// <param name="credentials">An AWSCredentials instance.</param>
-        public CredentialsRetriever(AWSCredentials credentials)
-        {
-            this.Credentials = credentials;
-        }
-
-        protected AWSCredentials Credentials
-        {
-            get;
-            private set;
-        }
-
-        /// <summary>
         /// Retrieves the credentials to be used for the current call before 
         /// invoking the next handler.
         /// </summary>
@@ -52,13 +37,15 @@ namespace Amazon.Runtime.Internal
         protected virtual void PreInvoke(IExecutionContext executionContext)
         {
             ImmutableCredentials ic = null;
-            if (Credentials != null && !(Credentials is AnonymousAWSCredentials) && !(executionContext.RequestContext.Signer is BearerTokenSigner))
+            var identity = executionContext.RequestContext.Identity as AWSCredentials;
+
+            if (identity != null && !(identity is AnonymousAWSCredentials) && !(executionContext.RequestContext.Signer is BearerTokenSigner))
             {
                 using (TracingUtilities.CreateSpan(executionContext.RequestContext, TelemetryConstants.CredentialsRetrievalSpanName))
                 using (MetricsUtilities.MeasureDuration(executionContext.RequestContext, TelemetryConstants.ResolveIdentityDurationMetricName))
                 using (executionContext.RequestContext.Metrics.StartEvent(Metric.CredentialsRequestTime))
                 {
-                    ic = Credentials.GetCredentials();
+                    ic = identity.GetCredentials();
                 }
             }
 
@@ -89,13 +76,15 @@ namespace Amazon.Runtime.Internal
         public override async System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)
         {
             ImmutableCredentials ic = null;
-            if (Credentials != null && !(Credentials is AnonymousAWSCredentials))
+            var identity = executionContext.RequestContext.Identity as AWSCredentials;
+
+            if (identity != null && !(identity is AnonymousAWSCredentials))
             {
                 using (TracingUtilities.CreateSpan(executionContext.RequestContext, TelemetryConstants.CredentialsRetrievalSpanName))
                 using (MetricsUtilities.MeasureDuration(executionContext.RequestContext, TelemetryConstants.ResolveIdentityDurationMetricName))
                 using(executionContext.RequestContext.Metrics.StartEvent(Metric.CredentialsRequestTime))
                 {
-                    ic = await Credentials.GetCredentialsAsync().ConfigureAwait(false);
+                    ic = await identity.GetCredentialsAsync().ConfigureAwait(false);
                 }
             }
 

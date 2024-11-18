@@ -46,9 +46,8 @@ namespace Amazon.CognitoSync.Internal
         /// <summary>
         /// Construct an instance of CognitoCredentialsRetriever
         /// </summary>
-        /// <param name="credentials"></param>
-        public CognitoCredentialsRetriever(AWSCredentials credentials)
-            : base(credentials)
+        public CognitoCredentialsRetriever()
+            : base()
         { }
 
 #if BCL
@@ -61,7 +60,7 @@ namespace Amazon.CognitoSync.Internal
             base.PreInvoke(executionContext);
 
             // Only configure IdentityPoolId and IdentityId when using CognitoAWSCredentials
-            var cognitoCredentials = Credentials as CognitoAWSCredentials;
+            var cognitoCredentials = executionContext.RequestContext.Identity as CognitoAWSCredentials;
             if (cognitoCredentials != null)
             {
                 SetIdentity(executionContext, cognitoCredentials.GetIdentityId(), cognitoCredentials.IdentityPoolId);       
@@ -79,7 +78,7 @@ namespace Amazon.CognitoSync.Internal
             T result = await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);
 
             // Only configure IdentityPoolId and IdentityId when using CognitoAWSCredentials
-            var cognitoCredentials = Credentials as CognitoAWSCredentials;
+            var cognitoCredentials = executionContext.RequestContext.Identity as CognitoAWSCredentials;
             if (cognitoCredentials != null)
             {
                 string identityId = await cognitoCredentials.GetIdentityIdAsync().ConfigureAwait(false);

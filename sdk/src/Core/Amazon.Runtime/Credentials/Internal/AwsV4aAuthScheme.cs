@@ -13,6 +13,7 @@
 * permissions and limitations under the License.
 */
 
+using Amazon.Runtime.Internal.Auth;
 using Smithy.Identity.Abstractions;
 
 namespace Amazon.Runtime.Credentials.Internal
@@ -30,6 +31,12 @@ namespace Amazon.Runtime.Credentials.Internal
         public IIdentityResolver GetIdentityResolver(IIdentityResolverConfiguration configuration)
         {
             return configuration.GetIdentityResolver<AWSCredentials>();
+        }
+
+        /// <inheritdoc/>
+        public ISigner Signer()
+        {
+            return new AWS4aSignerCRTWrapper();
         }
     }
 }
