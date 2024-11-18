@@ -31,6 +31,10 @@ namespace Amazon.AppConfig
     {
 
         /// <summary>
+        /// Constant AT_DEPLOYMENT_TICK for ActionPoint
+        /// </summary>
+        public static readonly ActionPoint AT_DEPLOYMENT_TICK = new ActionPoint("AT_DEPLOYMENT_TICK");
+        /// <summary>
         /// Constant ON_DEPLOYMENT_BAKING for ActionPoint
         /// </summary>
         public static readonly ActionPoint ON_DEPLOYMENT_BAKING = new ActionPoint("ON_DEPLOYMENT_BAKING");
