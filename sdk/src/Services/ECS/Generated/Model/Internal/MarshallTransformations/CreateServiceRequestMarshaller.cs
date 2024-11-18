@@ -303,6 +303,22 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetVpcLatticeConfigurations())
+                {
+                    context.Writer.WritePropertyName("vpcLatticeConfigurations");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestVpcLatticeConfigurationsListValue in publicRequest.VpcLatticeConfigurations)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = VpcLatticeConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestVpcLatticeConfigurationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

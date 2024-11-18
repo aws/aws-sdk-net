@@ -54,10 +54,6 @@ namespace Amazon.ECS.Model
         /// This option is available for tasks that run on Linux Amazon EC2 instance or Linux
         /// containers on Fargate.
         /// </para>
-        ///  
-        /// <para>
-        /// The default is <c>X86_64</c>.
-        /// </para>
         /// </summary>
         public CPUArchitecture CpuArchitecture
         {
@@ -75,10 +71,6 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property OperatingSystemFamily. 
         /// <para>
         /// The operating system.
-        /// </para>
-        ///  
-        /// <para>
-        /// The default is <c>Linux</c>.
         /// </para>
         /// </summary>
         public OSFamily OperatingSystemFamily

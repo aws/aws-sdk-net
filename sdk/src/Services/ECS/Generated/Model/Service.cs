@@ -69,7 +69,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property CapacityProviderStrategy. 
         /// <para>
-        /// The capacity provider strategy the service uses. When using <c>DescribeServices</c>,
+        /// The capacity provider strategy the service uses. When using the DescribeServices API,
         /// this field is omitted if the service was created using a launch type.
         /// </para>
         /// </summary>
@@ -631,7 +631,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// The metadata that you apply to the service to help you categorize and organize them.
-        /// Each tag consists of a key and an optional value. You define both the key and value.
+        /// Each tag consists of a key and an optional value. You define bot the key and value.
         /// </para>
         ///  
         /// <para>
