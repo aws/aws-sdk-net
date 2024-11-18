@@ -53,6 +53,7 @@ namespace Amazon.EC2.Model
         private string _clientToken;
         private RequestLaunchTemplateData _launchTemplateData;
         private string _launchTemplateName;
+        private OperatorRequest _operator;
         private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
         private string _versionDescription;
 
@@ -116,6 +117,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetLaunchTemplateName()
         {
             return this._launchTemplateName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Operator. 
+        /// <para>
+        /// Reserved for internal use.
+        /// </para>
+        /// </summary>
+        public OperatorRequest Operator
+        {
+            get { return this._operator; }
+            set { this._operator = value; }
+        }
+
+        // Check to see if Operator property is set
+        internal bool IsSetOperator()
+        {
+            return this._operator != null;
         }
 
         /// <summary>

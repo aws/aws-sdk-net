@@ -684,6 +684,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             publicRequestLaunchTemplateDatalistValueIndex++;
                         }
                     }
+                    if(publicRequest.LaunchTemplateData.IsSetOperator())
+                    {
+                        if(publicRequest.LaunchTemplateData.Operator.IsSetPrincipal())
+                        {
+                            request.Parameters.Add("LaunchTemplateData" + "." + "Operator" + "." + "Principal", StringUtils.FromString(publicRequest.LaunchTemplateData.Operator.Principal));
+                        }
+                    }
                     if(publicRequest.LaunchTemplateData.IsSetPlacement())
                     {
                         if(publicRequest.LaunchTemplateData.Placement.IsSetAffinity())
@@ -796,6 +803,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetLaunchTemplateName())
                 {
                     request.Parameters.Add("LaunchTemplateName", StringUtils.FromString(publicRequest.LaunchTemplateName));
+                }
+                if(publicRequest.IsSetOperator())
+                {
+                    if(publicRequest.Operator.IsSetPrincipal())
+                    {
+                        request.Parameters.Add("Operator" + "." + "Principal", StringUtils.FromString(publicRequest.Operator.Principal));
+                    }
                 }
                 if(publicRequest.IsSetTagSpecifications())
                 {

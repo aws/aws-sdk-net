@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EbsInstanceBlockDevice Object
+    /// Response Unmarshaller for OperatorResponse Object
     /// </summary>  
-    public class EbsInstanceBlockDeviceUnmarshaller : IUnmarshaller<EbsInstanceBlockDevice, XmlUnmarshallerContext>, IUnmarshaller<EbsInstanceBlockDevice, JsonUnmarshallerContext>
+    public class OperatorResponseUnmarshaller : IUnmarshaller<OperatorResponse, XmlUnmarshallerContext>, IUnmarshaller<OperatorResponse, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public EbsInstanceBlockDevice Unmarshall(XmlUnmarshallerContext context)
+        public OperatorResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            EbsInstanceBlockDevice unmarshalledObject = new EbsInstanceBlockDevice();
+            OperatorResponse unmarshalledObject = new OperatorResponse();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -55,46 +55,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("associatedResource", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.AssociatedResource = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("attachTime", targetDepth))
-                    {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
-                        unmarshalledObject.AttachTime = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("deleteOnTermination", targetDepth))
+                    if (context.TestExpression("managed", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
-                        unmarshalledObject.DeleteOnTermination = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Managed = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("operator", targetDepth))
-                    {
-                        var unmarshaller = OperatorResponseUnmarshaller.Instance;
-                        unmarshalledObject.Operator = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("status", targetDepth))
+                    if (context.TestExpression("principal", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("volumeId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.VolumeId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("volumeOwnerId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.VolumeOwnerId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Principal = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -112,18 +82,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public EbsInstanceBlockDevice Unmarshall(JsonUnmarshallerContext context)
+        public OperatorResponse Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static EbsInstanceBlockDeviceUnmarshaller _instance = new EbsInstanceBlockDeviceUnmarshaller();        
+        private static OperatorResponseUnmarshaller _instance = new OperatorResponseUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EbsInstanceBlockDeviceUnmarshaller Instance
+        public static OperatorResponseUnmarshaller Instance
         {
             get
             {

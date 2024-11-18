@@ -39,6 +39,7 @@ namespace Amazon.EC2.Model
         private List<InstanceStatusEvent> _events = AWSConfigs.InitializeCollections ? new List<InstanceStatusEvent>() : null;
         private string _instanceId;
         private InstanceState _instanceState;
+        private OperatorResponse _operator;
         private string _outpostArn;
         private InstanceStatusSummary _status;
         private InstanceStatusSummary _systemStatus;
@@ -133,6 +134,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetInstanceState()
         {
             return this._instanceState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Operator. 
+        /// <para>
+        /// The entity that manages the instance.
+        /// </para>
+        /// </summary>
+        public OperatorResponse Operator
+        {
+            get { return this._operator; }
+            set { this._operator = value; }
+        }
+
+        // Check to see if Operator property is set
+        internal bool IsSetOperator()
+        {
+            return this._operator != null;
         }
 
         /// <summary>
