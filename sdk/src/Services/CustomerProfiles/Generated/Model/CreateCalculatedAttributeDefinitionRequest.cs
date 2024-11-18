@@ -46,6 +46,7 @@ namespace Amazon.CustomerProfiles.Model
         private string _description;
         private string _displayName;
         private string _domainName;
+        private Filter _filter;
         private Statistic _statistic;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
@@ -161,6 +162,24 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetDomainName()
         {
             return this._domainName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Filter. 
+        /// <para>
+        /// Defines how to filter incoming objects to include part of the Calculated Attribute.
+        /// </para>
+        /// </summary>
+        public Filter Filter
+        {
+            get { return this._filter; }
+            set { this._filter = value; }
+        }
+
+        // Check to see if Filter property is set
+        internal bool IsSetFilter()
+        {
+            return this._filter != null;
         }
 
         /// <summary>

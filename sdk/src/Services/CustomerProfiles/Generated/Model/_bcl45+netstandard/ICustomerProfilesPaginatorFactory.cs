@@ -27,8 +27,28 @@ namespace Amazon.CustomerProfiles.Model
     {
 
         /// <summary>
+        /// Paginator for GetSimilarProfiles operation
+        ///</summary>
+        IGetSimilarProfilesPaginator GetSimilarProfiles(GetSimilarProfilesRequest request);
+
+        /// <summary>
         /// Paginator for ListEventStreams operation
         ///</summary>
         IListEventStreamsPaginator ListEventStreams(ListEventStreamsRequest request);
+
+        /// <summary>
+        /// Paginator for ListObjectTypeAttributes operation
+        ///</summary>
+        IListObjectTypeAttributesPaginator ListObjectTypeAttributes(ListObjectTypeAttributesRequest request);
+
+        /// <summary>
+        /// Paginator for ListRuleBasedMatches operation
+        ///</summary>
+        IListRuleBasedMatchesPaginator ListRuleBasedMatches(ListRuleBasedMatchesRequest request);
+
+        /// <summary>
+        /// Paginator for ListSegmentDefinitions operation
+        ///</summary>
+        IListSegmentDefinitionsPaginator ListSegmentDefinitions(ListSegmentDefinitionsRequest request);
     }
 }

@@ -88,6 +88,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     response.DisplayName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Filter", targetDepth))
+                {
+                    var unmarshaller = FilterUnmarshaller.Instance;
+                    response.Filter = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastUpdatedAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
