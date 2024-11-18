@@ -1679,6 +1679,64 @@ namespace Amazon.CloudFormation
 
 
     /// <summary>
+    /// Constants used for properties of type ListHookResultsTargetType.
+    /// </summary>
+    public class ListHookResultsTargetType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CHANGE_SET for ListHookResultsTargetType
+        /// </summary>
+        public static readonly ListHookResultsTargetType CHANGE_SET = new ListHookResultsTargetType("CHANGE_SET");
+        /// <summary>
+        /// Constant CLOUD_CONTROL for ListHookResultsTargetType
+        /// </summary>
+        public static readonly ListHookResultsTargetType CLOUD_CONTROL = new ListHookResultsTargetType("CLOUD_CONTROL");
+        /// <summary>
+        /// Constant RESOURCE for ListHookResultsTargetType
+        /// </summary>
+        public static readonly ListHookResultsTargetType RESOURCE = new ListHookResultsTargetType("RESOURCE");
+        /// <summary>
+        /// Constant STACK for ListHookResultsTargetType
+        /// </summary>
+        public static readonly ListHookResultsTargetType STACK = new ListHookResultsTargetType("STACK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ListHookResultsTargetType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ListHookResultsTargetType FindValue(string value)
+        {
+            return FindValue<ListHookResultsTargetType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ListHookResultsTargetType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OnFailure.
     /// </summary>
     public class OnFailure : ConstantClass

@@ -2776,6 +2776,50 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  ListHookResults
+
+
+        /// <summary>
+        /// Returns summaries of invoked Hooks when a change set or Cloud Control API operation
+        /// target is provided.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHookResults service method.</param>
+        /// 
+        /// <returns>The response from the ListHookResults service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.HookResultNotFoundException">
+        /// The specified target doesn't have any requested Hook invocations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListHookResults">REST API Reference for ListHookResults Operation</seealso>
+        ListHookResultsResponse ListHookResults(ListHookResultsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListHookResults operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListHookResults operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListHookResults
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListHookResults">REST API Reference for ListHookResults Operation</seealso>
+        IAsyncResult BeginListHookResults(ListHookResultsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListHookResults operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListHookResults.</param>
+        /// 
+        /// <returns>Returns a  ListHookResultsResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListHookResults">REST API Reference for ListHookResults Operation</seealso>
+        ListHookResultsResponse EndListHookResults(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListImports
 
 

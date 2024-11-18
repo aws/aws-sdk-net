@@ -1700,6 +1700,28 @@ namespace Amazon.CloudFormation
 
         #endregion
                 
+        #region  ListHookResults
+
+
+
+        /// <summary>
+        /// Returns summaries of invoked Hooks when a change set or Cloud Control API operation
+        /// target is provided.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHookResults service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListHookResults service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.HookResultNotFoundException">
+        /// The specified target doesn't have any requested Hook invocations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListHookResults">REST API Reference for ListHookResults Operation</seealso>
+        Task<ListHookResultsResponse> ListHookResultsAsync(ListHookResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListImports
 
 
