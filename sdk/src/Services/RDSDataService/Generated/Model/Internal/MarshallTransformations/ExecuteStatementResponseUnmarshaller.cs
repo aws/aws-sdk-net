@@ -121,6 +121,10 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
                 {
                     return DatabaseNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("DatabaseResumingException"))
+                {
+                    return DatabaseResumingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("DatabaseUnavailableException"))
                 {
                     return DatabaseUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

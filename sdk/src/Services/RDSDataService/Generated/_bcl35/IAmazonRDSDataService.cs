@@ -111,6 +111,11 @@ namespace Amazon.RDSDataService
         /// <exception cref="Amazon.RDSDataService.Model.DatabaseNotFoundException">
         /// The DB cluster doesn't have a DB instance.
         /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.DatabaseResumingException">
+        /// A request was canceled because the Aurora Serverless v2 DB instance was in a paused
+        /// state. The Data API request automatically causes the DB instance to begin resuming.
+        /// Wait a few seconds and try again.
+        /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.DatabaseUnavailableException">
         /// The writer instance in the DB cluster isn't available.
         /// </exception>
@@ -223,6 +228,11 @@ namespace Amazon.RDSDataService
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.DatabaseNotFoundException">
         /// The DB cluster doesn't have a DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.DatabaseResumingException">
+        /// A request was canceled because the Aurora Serverless v2 DB instance was in a paused
+        /// state. The Data API request automatically causes the DB instance to begin resuming.
+        /// Wait a few seconds and try again.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.DatabaseUnavailableException">
         /// The writer instance in the DB cluster isn't available.
@@ -495,6 +505,11 @@ namespace Amazon.RDSDataService
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.DatabaseNotFoundException">
         /// The DB cluster doesn't have a DB instance.
+        /// </exception>
+        /// <exception cref="Amazon.RDSDataService.Model.DatabaseResumingException">
+        /// A request was canceled because the Aurora Serverless v2 DB instance was in a paused
+        /// state. The Data API request automatically causes the DB instance to begin resuming.
+        /// Wait a few seconds and try again.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.DatabaseUnavailableException">
         /// The writer instance in the DB cluster isn't available.
