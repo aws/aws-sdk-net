@@ -74,6 +74,7 @@ namespace Amazon.ECS.Model
         private List<SystemControl> _systemControls = AWSConfigs.InitializeCollections ? new List<SystemControl>() : null;
         private List<Ulimit> _ulimits = AWSConfigs.InitializeCollections ? new List<Ulimit>() : null;
         private string _user;
+        private VersionConsistency _versionConsistency;
         private List<VolumeFrom> _volumesFrom = AWSConfigs.InitializeCollections ? new List<VolumeFrom>() : null;
         private string _workingDirectory;
 
@@ -1405,6 +1406,30 @@ namespace Amazon.ECS.Model
         internal bool IsSetUser()
         {
             return this._user != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionConsistency. 
+        /// <para>
+        /// Specifies whether Amazon ECS will resolve the container image tag provided in the
+        /// container definition to an image digest. By default, the value is <c>enabled</c>.
+        /// If you set the value for a container as <c>disabled</c>, Amazon ECS will not resolve
+        /// the provided container image tag to a digest and will use the original image URI specified
+        /// in the container definition for deployment. For more information about container image
+        /// resolution, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html#deployment-container-image-stability">Container
+        /// image resolution</a> in the <i>Amazon ECS Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public VersionConsistency VersionConsistency
+        {
+            get { return this._versionConsistency; }
+            set { this._versionConsistency = value; }
+        }
+
+        // Check to see if VersionConsistency property is set
+        internal bool IsSetVersionConsistency()
+        {
+            return this._versionConsistency != null;
         }
 
         /// <summary>

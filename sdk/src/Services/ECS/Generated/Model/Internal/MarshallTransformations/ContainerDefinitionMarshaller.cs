@@ -455,6 +455,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.User);
             }
 
+            if(requestObject.IsSetVersionConsistency())
+            {
+                context.Writer.WritePropertyName("versionConsistency");
+                context.Writer.Write(requestObject.VersionConsistency);
+            }
+
             if(requestObject.IsSetVolumesFrom())
             {
                 context.Writer.WritePropertyName("volumesFrom");
