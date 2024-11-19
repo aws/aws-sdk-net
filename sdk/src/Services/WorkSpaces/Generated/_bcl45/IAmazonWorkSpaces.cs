@@ -1221,8 +1221,8 @@ namespace Amazon.WorkSpaces
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You don't need to specify the <c>PCOIP</c> protocol for Linux bundles because <c>DCV</c>
-        /// (formerly WSP) is the default protocol for those bundles.
+        /// You don't need to specify the <c>PCOIP</c> protocol for Linux bundles because <c>WSP</c>
+        /// is the default protocol for those bundles.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1265,8 +1265,8 @@ namespace Amazon.WorkSpaces
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You don't need to specify the <c>PCOIP</c> protocol for Linux bundles because <c>DCV</c>
-        /// (formerly WSP) is the default protocol for those bundles.
+        /// You don't need to specify the <c>PCOIP</c> protocol for Linux bundles because <c>WSP</c>
+        /// is the default protocol for those bundles.
         /// </para>
         ///  </li> <li> 
         /// <para>

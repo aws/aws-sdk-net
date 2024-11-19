@@ -91,8 +91,7 @@ namespace Amazon.WorkSpaces.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <c>Protocols</c> property is case sensitive. Ensure you use <c>PCOIP</c> or <c>DCV</c>
-        /// (formerly WSP).
+        /// The <c>Protocols</c> property is case sensitive. Ensure you use <c>PCOIP</c> or <c>WSP</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>

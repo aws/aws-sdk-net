@@ -2881,6 +2881,14 @@ namespace Amazon.WorkSpaces
         /// </summary>
         public static readonly WorkspaceImageErrorDetailCode AdditionalDrivesAttached = new WorkspaceImageErrorDetailCode("AdditionalDrivesAttached");
         /// <summary>
+        /// Constant AdditionalDrivesPresent for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode AdditionalDrivesPresent = new WorkspaceImageErrorDetailCode("AdditionalDrivesPresent");
+        /// <summary>
+        /// Constant AmazonSsmAgentEnabled for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode AmazonSsmAgentEnabled = new WorkspaceImageErrorDetailCode("AmazonSsmAgentEnabled");
+        /// <summary>
         /// Constant AntiVirusInstalled for WorkspaceImageErrorDetailCode
         /// </summary>
         public static readonly WorkspaceImageErrorDetailCode AntiVirusInstalled = new WorkspaceImageErrorDetailCode("AntiVirusInstalled");
@@ -2913,9 +2921,17 @@ namespace Amazon.WorkSpaces
         /// </summary>
         public static readonly WorkspaceImageErrorDetailCode DiskSizeExceeded = new WorkspaceImageErrorDetailCode("DiskSizeExceeded");
         /// <summary>
+        /// Constant DomainAccountServicesFound for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode DomainAccountServicesFound = new WorkspaceImageErrorDetailCode("DomainAccountServicesFound");
+        /// <summary>
         /// Constant DomainJoined for WorkspaceImageErrorDetailCode
         /// </summary>
         public static readonly WorkspaceImageErrorDetailCode DomainJoined = new WorkspaceImageErrorDetailCode("DomainJoined");
+        /// <summary>
+        /// Constant EnvironmentVariablesPathMissingEntries for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode EnvironmentVariablesPathMissingEntries = new WorkspaceImageErrorDetailCode("EnvironmentVariablesPathMissingEntries");
         /// <summary>
         /// Constant FirewallEnabled for WorkspaceImageErrorDetailCode
         /// </summary>
@@ -2929,9 +2945,25 @@ namespace Amazon.WorkSpaces
         /// </summary>
         public static readonly WorkspaceImageErrorDetailCode InPlaceUpgrade = new WorkspaceImageErrorDetailCode("InPlaceUpgrade");
         /// <summary>
+        /// Constant InsufficientDiskSpace for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode InsufficientDiskSpace = new WorkspaceImageErrorDetailCode("InsufficientDiskSpace");
+        /// <summary>
+        /// Constant InsufficientRearmCount for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode InsufficientRearmCount = new WorkspaceImageErrorDetailCode("InsufficientRearmCount");
+        /// <summary>
+        /// Constant InvalidIp for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode InvalidIp = new WorkspaceImageErrorDetailCode("InvalidIp");
+        /// <summary>
         /// Constant MultipleBootPartition for WorkspaceImageErrorDetailCode
         /// </summary>
         public static readonly WorkspaceImageErrorDetailCode MultipleBootPartition = new WorkspaceImageErrorDetailCode("MultipleBootPartition");
+        /// <summary>
+        /// Constant MultipleUserProfiles for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode MultipleUserProfiles = new WorkspaceImageErrorDetailCode("MultipleUserProfiles");
         /// <summary>
         /// Constant OfficeInstalled for WorkspaceImageErrorDetailCode
         /// </summary>
@@ -2957,6 +2989,10 @@ namespace Amazon.WorkSpaces
         /// </summary>
         public static readonly WorkspaceImageErrorDetailCode RealTimeUniversalDisabled = new WorkspaceImageErrorDetailCode("RealTimeUniversalDisabled");
         /// <summary>
+        /// Constant RemoteDesktopServicesDisabled for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode RemoteDesktopServicesDisabled = new WorkspaceImageErrorDetailCode("RemoteDesktopServicesDisabled");
+        /// <summary>
         /// Constant Requires64BitOS for WorkspaceImageErrorDetailCode
         /// </summary>
         public static readonly WorkspaceImageErrorDetailCode Requires64BitOS = new WorkspaceImageErrorDetailCode("Requires64BitOS");
@@ -2964,6 +3000,14 @@ namespace Amazon.WorkSpaces
         /// Constant ReservedStorageInUse for WorkspaceImageErrorDetailCode
         /// </summary>
         public static readonly WorkspaceImageErrorDetailCode ReservedStorageInUse = new WorkspaceImageErrorDetailCode("ReservedStorageInUse");
+        /// <summary>
+        /// Constant StagedAppxPackage for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode StagedAppxPackage = new WorkspaceImageErrorDetailCode("StagedAppxPackage");
+        /// <summary>
+        /// Constant SysPrepFileMissing for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode SysPrepFileMissing = new WorkspaceImageErrorDetailCode("SysPrepFileMissing");
         /// <summary>
         /// Constant UEFINotSupported for WorkspaceImageErrorDetailCode
         /// </summary>
@@ -2973,13 +3017,33 @@ namespace Amazon.WorkSpaces
         /// </summary>
         public static readonly WorkspaceImageErrorDetailCode UnknownError = new WorkspaceImageErrorDetailCode("UnknownError");
         /// <summary>
+        /// Constant UnsupportedOsUpgrade for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode UnsupportedOsUpgrade = new WorkspaceImageErrorDetailCode("UnsupportedOsUpgrade");
+        /// <summary>
+        /// Constant UnsupportedSecurityProtocol for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode UnsupportedSecurityProtocol = new WorkspaceImageErrorDetailCode("UnsupportedSecurityProtocol");
+        /// <summary>
+        /// Constant UserProfileMissing for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode UserProfileMissing = new WorkspaceImageErrorDetailCode("UserProfileMissing");
+        /// <summary>
         /// Constant VMWareToolsInstalled for WorkspaceImageErrorDetailCode
         /// </summary>
         public static readonly WorkspaceImageErrorDetailCode VMWareToolsInstalled = new WorkspaceImageErrorDetailCode("VMWareToolsInstalled");
         /// <summary>
+        /// Constant WindowsModulesInstallerDisabled for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode WindowsModulesInstallerDisabled = new WorkspaceImageErrorDetailCode("WindowsModulesInstallerDisabled");
+        /// <summary>
         /// Constant WindowsUpdatesEnabled for WorkspaceImageErrorDetailCode
         /// </summary>
         public static readonly WorkspaceImageErrorDetailCode WindowsUpdatesEnabled = new WorkspaceImageErrorDetailCode("WindowsUpdatesEnabled");
+        /// <summary>
+        /// Constant WindowsUpdatesRequired for WorkspaceImageErrorDetailCode
+        /// </summary>
+        public static readonly WorkspaceImageErrorDetailCode WindowsUpdatesRequired = new WorkspaceImageErrorDetailCode("WindowsUpdatesRequired");
         /// <summary>
         /// Constant WorkspacesBYOLAccountDisabled for WorkspaceImageErrorDetailCode
         /// </summary>
