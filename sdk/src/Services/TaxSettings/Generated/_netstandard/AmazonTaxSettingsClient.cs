@@ -339,6 +339,50 @@ namespace Amazon.TaxSettings
 
         #endregion
         
+        #region  BatchGetTaxExemptions
+
+        internal virtual BatchGetTaxExemptionsResponse BatchGetTaxExemptions(BatchGetTaxExemptionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetTaxExemptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetTaxExemptionsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetTaxExemptionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get the active tax exemptions for a given list of accounts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetTaxExemptions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetTaxExemptions service method, as returned by TaxSettings.</returns>
+        /// <exception cref="Amazon.TaxSettings.Model.InternalServerException">
+        /// The exception thrown when an unexpected error occurs when processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ResourceNotFoundException">
+        /// The exception thrown when the input doesn't have a resource associated to it.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ValidationException">
+        /// The exception when the input doesn't pass validation for at least one of the input
+        /// parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/BatchGetTaxExemptions">REST API Reference for BatchGetTaxExemptions Operation</seealso>
+        public virtual Task<BatchGetTaxExemptionsResponse> BatchGetTaxExemptionsAsync(BatchGetTaxExemptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetTaxExemptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetTaxExemptionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchGetTaxExemptionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchPutTaxRegistration
 
         internal virtual BatchPutTaxRegistrationResponse BatchPutTaxRegistration(BatchPutTaxRegistrationRequest request)
@@ -710,6 +754,94 @@ namespace Amazon.TaxSettings
 
         #endregion
         
+        #region  GetTaxExemptionTypes
+
+        internal virtual GetTaxExemptionTypesResponse GetTaxExemptionTypes(GetTaxExemptionTypesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTaxExemptionTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTaxExemptionTypesResponseUnmarshaller.Instance;
+
+            return Invoke<GetTaxExemptionTypesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get supported tax exemption types.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTaxExemptionTypes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTaxExemptionTypes service method, as returned by TaxSettings.</returns>
+        /// <exception cref="Amazon.TaxSettings.Model.InternalServerException">
+        /// The exception thrown when an unexpected error occurs when processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ResourceNotFoundException">
+        /// The exception thrown when the input doesn't have a resource associated to it.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ValidationException">
+        /// The exception when the input doesn't pass validation for at least one of the input
+        /// parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/GetTaxExemptionTypes">REST API Reference for GetTaxExemptionTypes Operation</seealso>
+        public virtual Task<GetTaxExemptionTypesResponse> GetTaxExemptionTypesAsync(GetTaxExemptionTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTaxExemptionTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTaxExemptionTypesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetTaxExemptionTypesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetTaxInheritance
+
+        internal virtual GetTaxInheritanceResponse GetTaxInheritance(GetTaxInheritanceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTaxInheritanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTaxInheritanceResponseUnmarshaller.Instance;
+
+            return Invoke<GetTaxInheritanceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// The get account tax inheritance status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTaxInheritance service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTaxInheritance service method, as returned by TaxSettings.</returns>
+        /// <exception cref="Amazon.TaxSettings.Model.InternalServerException">
+        /// The exception thrown when an unexpected error occurs when processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ResourceNotFoundException">
+        /// The exception thrown when the input doesn't have a resource associated to it.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ValidationException">
+        /// The exception when the input doesn't pass validation for at least one of the input
+        /// parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/GetTaxInheritance">REST API Reference for GetTaxInheritance Operation</seealso>
+        public virtual Task<GetTaxInheritanceResponse> GetTaxInheritanceAsync(GetTaxInheritanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTaxInheritanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTaxInheritanceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetTaxInheritanceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetTaxRegistration
 
         internal virtual GetTaxRegistrationResponse GetTaxRegistration(GetTaxRegistrationRequest request)
@@ -839,6 +971,50 @@ namespace Amazon.TaxSettings
 
         #endregion
         
+        #region  ListTaxExemptions
+
+        internal virtual ListTaxExemptionsResponse ListTaxExemptions(ListTaxExemptionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTaxExemptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTaxExemptionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListTaxExemptionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the tax exemption of accounts listed in a consolidated billing family.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTaxExemptions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTaxExemptions service method, as returned by TaxSettings.</returns>
+        /// <exception cref="Amazon.TaxSettings.Model.InternalServerException">
+        /// The exception thrown when an unexpected error occurs when processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ResourceNotFoundException">
+        /// The exception thrown when the input doesn't have a resource associated to it.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ValidationException">
+        /// The exception when the input doesn't pass validation for at least one of the input
+        /// parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/ListTaxExemptions">REST API Reference for ListTaxExemptions Operation</seealso>
+        public virtual Task<ListTaxExemptionsResponse> ListTaxExemptionsAsync(ListTaxExemptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTaxExemptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTaxExemptionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTaxExemptionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTaxRegistrations
 
         internal virtual ListTaxRegistrationsResponse ListTaxRegistrations(ListTaxRegistrationsRequest request)
@@ -925,6 +1101,107 @@ namespace Amazon.TaxSettings
             options.ResponseUnmarshaller = PutSupplementalTaxRegistrationResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutSupplementalTaxRegistrationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutTaxExemption
+
+        internal virtual PutTaxExemptionResponse PutTaxExemption(PutTaxExemptionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutTaxExemptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutTaxExemptionResponseUnmarshaller.Instance;
+
+            return Invoke<PutTaxExemptionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Adds the tax exemption for a single account or all accounts listed in a consolidated
+        /// billing family.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutTaxExemption service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutTaxExemption service method, as returned by TaxSettings.</returns>
+        /// <exception cref="Amazon.TaxSettings.Model.AccessDeniedException">
+        /// The access is denied for the Amazon Web Services Support API.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.AttachmentUploadException">
+        /// Failed to upload the tax exemption document to Amazon Web Services Support case.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.CaseCreationLimitExceededException">
+        /// You've exceeded the Amazon Web Services Support case creation limit for your account.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.InternalServerException">
+        /// The exception thrown when an unexpected error occurs when processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ResourceNotFoundException">
+        /// The exception thrown when the input doesn't have a resource associated to it.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ValidationException">
+        /// The exception when the input doesn't pass validation for at least one of the input
+        /// parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/PutTaxExemption">REST API Reference for PutTaxExemption Operation</seealso>
+        public virtual Task<PutTaxExemptionResponse> PutTaxExemptionAsync(PutTaxExemptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutTaxExemptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutTaxExemptionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutTaxExemptionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutTaxInheritance
+
+        internal virtual PutTaxInheritanceResponse PutTaxInheritance(PutTaxInheritanceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutTaxInheritanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutTaxInheritanceResponseUnmarshaller.Instance;
+
+            return Invoke<PutTaxInheritanceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// The updated tax inheritance status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutTaxInheritance service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutTaxInheritance service method, as returned by TaxSettings.</returns>
+        /// <exception cref="Amazon.TaxSettings.Model.ConflictException">
+        /// The exception when the input is creating conflict with the given state.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.InternalServerException">
+        /// The exception thrown when an unexpected error occurs when processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ResourceNotFoundException">
+        /// The exception thrown when the input doesn't have a resource associated to it.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ValidationException">
+        /// The exception when the input doesn't pass validation for at least one of the input
+        /// parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/PutTaxInheritance">REST API Reference for PutTaxInheritance Operation</seealso>
+        public virtual Task<PutTaxInheritanceResponse> PutTaxInheritanceAsync(PutTaxInheritanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutTaxInheritanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutTaxInheritanceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutTaxInheritanceResponse>(request, options, cancellationToken);
         }
 
         #endregion

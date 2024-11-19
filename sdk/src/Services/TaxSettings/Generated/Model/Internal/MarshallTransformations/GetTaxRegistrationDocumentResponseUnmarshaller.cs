@@ -58,6 +58,12 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
                     response.DestinationFilePath = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("presignedS3Url", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.PresignedS3Url = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

@@ -101,7 +101,7 @@ namespace Amazon.TaxSettings.Model
         ///  The supplemental TRN unique identifier. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=20)]
+        [AWSProperty(Required=true, Min=1, Max=200)]
         public string RegistrationId
         {
             get { return this._registrationId; }

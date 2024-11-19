@@ -355,6 +355,70 @@ namespace Amazon.TaxSettings
 
         #endregion
         
+        #region  BatchGetTaxExemptions
+
+        /// <summary>
+        /// Get the active tax exemptions for a given list of accounts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetTaxExemptions service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetTaxExemptions service method, as returned by TaxSettings.</returns>
+        /// <exception cref="Amazon.TaxSettings.Model.InternalServerException">
+        /// The exception thrown when an unexpected error occurs when processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ResourceNotFoundException">
+        /// The exception thrown when the input doesn't have a resource associated to it.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ValidationException">
+        /// The exception when the input doesn't pass validation for at least one of the input
+        /// parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/BatchGetTaxExemptions">REST API Reference for BatchGetTaxExemptions Operation</seealso>
+        public virtual BatchGetTaxExemptionsResponse BatchGetTaxExemptions(BatchGetTaxExemptionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetTaxExemptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetTaxExemptionsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetTaxExemptionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetTaxExemptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetTaxExemptions operation on AmazonTaxSettingsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetTaxExemptions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/BatchGetTaxExemptions">REST API Reference for BatchGetTaxExemptions Operation</seealso>
+        public virtual IAsyncResult BeginBatchGetTaxExemptions(BatchGetTaxExemptionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetTaxExemptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetTaxExemptionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchGetTaxExemptions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetTaxExemptions.</param>
+        /// 
+        /// <returns>Returns a  BatchGetTaxExemptionsResult from TaxSettings.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/BatchGetTaxExemptions">REST API Reference for BatchGetTaxExemptions Operation</seealso>
+        public virtual BatchGetTaxExemptionsResponse EndBatchGetTaxExemptions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchGetTaxExemptionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  BatchPutTaxRegistration
 
         /// <summary>
@@ -786,6 +850,134 @@ namespace Amazon.TaxSettings
 
         #endregion
         
+        #region  GetTaxExemptionTypes
+
+        /// <summary>
+        /// Get supported tax exemption types.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTaxExemptionTypes service method.</param>
+        /// 
+        /// <returns>The response from the GetTaxExemptionTypes service method, as returned by TaxSettings.</returns>
+        /// <exception cref="Amazon.TaxSettings.Model.InternalServerException">
+        /// The exception thrown when an unexpected error occurs when processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ResourceNotFoundException">
+        /// The exception thrown when the input doesn't have a resource associated to it.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ValidationException">
+        /// The exception when the input doesn't pass validation for at least one of the input
+        /// parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/GetTaxExemptionTypes">REST API Reference for GetTaxExemptionTypes Operation</seealso>
+        public virtual GetTaxExemptionTypesResponse GetTaxExemptionTypes(GetTaxExemptionTypesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTaxExemptionTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTaxExemptionTypesResponseUnmarshaller.Instance;
+
+            return Invoke<GetTaxExemptionTypesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTaxExemptionTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTaxExemptionTypes operation on AmazonTaxSettingsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTaxExemptionTypes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/GetTaxExemptionTypes">REST API Reference for GetTaxExemptionTypes Operation</seealso>
+        public virtual IAsyncResult BeginGetTaxExemptionTypes(GetTaxExemptionTypesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTaxExemptionTypesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTaxExemptionTypesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTaxExemptionTypes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTaxExemptionTypes.</param>
+        /// 
+        /// <returns>Returns a  GetTaxExemptionTypesResult from TaxSettings.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/GetTaxExemptionTypes">REST API Reference for GetTaxExemptionTypes Operation</seealso>
+        public virtual GetTaxExemptionTypesResponse EndGetTaxExemptionTypes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetTaxExemptionTypesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetTaxInheritance
+
+        /// <summary>
+        /// The get account tax inheritance status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTaxInheritance service method.</param>
+        /// 
+        /// <returns>The response from the GetTaxInheritance service method, as returned by TaxSettings.</returns>
+        /// <exception cref="Amazon.TaxSettings.Model.InternalServerException">
+        /// The exception thrown when an unexpected error occurs when processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ResourceNotFoundException">
+        /// The exception thrown when the input doesn't have a resource associated to it.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ValidationException">
+        /// The exception when the input doesn't pass validation for at least one of the input
+        /// parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/GetTaxInheritance">REST API Reference for GetTaxInheritance Operation</seealso>
+        public virtual GetTaxInheritanceResponse GetTaxInheritance(GetTaxInheritanceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTaxInheritanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTaxInheritanceResponseUnmarshaller.Instance;
+
+            return Invoke<GetTaxInheritanceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTaxInheritance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTaxInheritance operation on AmazonTaxSettingsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTaxInheritance
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/GetTaxInheritance">REST API Reference for GetTaxInheritance Operation</seealso>
+        public virtual IAsyncResult BeginGetTaxInheritance(GetTaxInheritanceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetTaxInheritanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetTaxInheritanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTaxInheritance operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTaxInheritance.</param>
+        /// 
+        /// <returns>Returns a  GetTaxInheritanceResult from TaxSettings.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/GetTaxInheritance">REST API Reference for GetTaxInheritance Operation</seealso>
+        public virtual GetTaxInheritanceResponse EndGetTaxInheritance(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetTaxInheritanceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetTaxRegistration
 
         /// <summary>
@@ -975,6 +1167,70 @@ namespace Amazon.TaxSettings
 
         #endregion
         
+        #region  ListTaxExemptions
+
+        /// <summary>
+        /// Retrieves the tax exemption of accounts listed in a consolidated billing family.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTaxExemptions service method.</param>
+        /// 
+        /// <returns>The response from the ListTaxExemptions service method, as returned by TaxSettings.</returns>
+        /// <exception cref="Amazon.TaxSettings.Model.InternalServerException">
+        /// The exception thrown when an unexpected error occurs when processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ResourceNotFoundException">
+        /// The exception thrown when the input doesn't have a resource associated to it.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ValidationException">
+        /// The exception when the input doesn't pass validation for at least one of the input
+        /// parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/ListTaxExemptions">REST API Reference for ListTaxExemptions Operation</seealso>
+        public virtual ListTaxExemptionsResponse ListTaxExemptions(ListTaxExemptionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTaxExemptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTaxExemptionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListTaxExemptionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTaxExemptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTaxExemptions operation on AmazonTaxSettingsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTaxExemptions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/ListTaxExemptions">REST API Reference for ListTaxExemptions Operation</seealso>
+        public virtual IAsyncResult BeginListTaxExemptions(ListTaxExemptionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTaxExemptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTaxExemptionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTaxExemptions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTaxExemptions.</param>
+        /// 
+        /// <returns>Returns a  ListTaxExemptionsResult from TaxSettings.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/ListTaxExemptions">REST API Reference for ListTaxExemptions Operation</seealso>
+        public virtual ListTaxExemptionsResponse EndListTaxExemptions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTaxExemptionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListTaxRegistrations
 
         /// <summary>
@@ -1101,6 +1357,147 @@ namespace Amazon.TaxSettings
         public virtual PutSupplementalTaxRegistrationResponse EndPutSupplementalTaxRegistration(IAsyncResult asyncResult)
         {
             return EndInvoke<PutSupplementalTaxRegistrationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutTaxExemption
+
+        /// <summary>
+        /// Adds the tax exemption for a single account or all accounts listed in a consolidated
+        /// billing family.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutTaxExemption service method.</param>
+        /// 
+        /// <returns>The response from the PutTaxExemption service method, as returned by TaxSettings.</returns>
+        /// <exception cref="Amazon.TaxSettings.Model.AccessDeniedException">
+        /// The access is denied for the Amazon Web Services Support API.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.AttachmentUploadException">
+        /// Failed to upload the tax exemption document to Amazon Web Services Support case.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.CaseCreationLimitExceededException">
+        /// You've exceeded the Amazon Web Services Support case creation limit for your account.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.InternalServerException">
+        /// The exception thrown when an unexpected error occurs when processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ResourceNotFoundException">
+        /// The exception thrown when the input doesn't have a resource associated to it.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ValidationException">
+        /// The exception when the input doesn't pass validation for at least one of the input
+        /// parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/PutTaxExemption">REST API Reference for PutTaxExemption Operation</seealso>
+        public virtual PutTaxExemptionResponse PutTaxExemption(PutTaxExemptionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutTaxExemptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutTaxExemptionResponseUnmarshaller.Instance;
+
+            return Invoke<PutTaxExemptionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutTaxExemption operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutTaxExemption operation on AmazonTaxSettingsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutTaxExemption
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/PutTaxExemption">REST API Reference for PutTaxExemption Operation</seealso>
+        public virtual IAsyncResult BeginPutTaxExemption(PutTaxExemptionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutTaxExemptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutTaxExemptionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutTaxExemption operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutTaxExemption.</param>
+        /// 
+        /// <returns>Returns a  PutTaxExemptionResult from TaxSettings.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/PutTaxExemption">REST API Reference for PutTaxExemption Operation</seealso>
+        public virtual PutTaxExemptionResponse EndPutTaxExemption(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutTaxExemptionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutTaxInheritance
+
+        /// <summary>
+        /// The updated tax inheritance status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutTaxInheritance service method.</param>
+        /// 
+        /// <returns>The response from the PutTaxInheritance service method, as returned by TaxSettings.</returns>
+        /// <exception cref="Amazon.TaxSettings.Model.ConflictException">
+        /// The exception when the input is creating conflict with the given state.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.InternalServerException">
+        /// The exception thrown when an unexpected error occurs when processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ResourceNotFoundException">
+        /// The exception thrown when the input doesn't have a resource associated to it.
+        /// </exception>
+        /// <exception cref="Amazon.TaxSettings.Model.ValidationException">
+        /// The exception when the input doesn't pass validation for at least one of the input
+        /// parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/PutTaxInheritance">REST API Reference for PutTaxInheritance Operation</seealso>
+        public virtual PutTaxInheritanceResponse PutTaxInheritance(PutTaxInheritanceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutTaxInheritanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutTaxInheritanceResponseUnmarshaller.Instance;
+
+            return Invoke<PutTaxInheritanceResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutTaxInheritance operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutTaxInheritance operation on AmazonTaxSettingsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutTaxInheritance
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/PutTaxInheritance">REST API Reference for PutTaxInheritance Operation</seealso>
+        public virtual IAsyncResult BeginPutTaxInheritance(PutTaxInheritanceRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutTaxInheritanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutTaxInheritanceResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutTaxInheritance operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutTaxInheritance.</param>
+        /// 
+        /// <returns>Returns a  PutTaxInheritanceResult from TaxSettings.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/taxsettings-2018-05-10/PutTaxInheritance">REST API Reference for PutTaxInheritance Operation</seealso>
+        public virtual PutTaxInheritanceResponse EndPutTaxInheritance(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutTaxInheritanceResponse>(asyncResult);
         }
 
         #endregion
