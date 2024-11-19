@@ -42,7 +42,7 @@ namespace Amazon.KinesisVideoMedia
         /// </summary>
         /// <param name="serviceUrl">The URL of the search or document service.</param>
         public AmazonKinesisVideoMediaClient(string serviceUrl)
-            : base(FallbackCredentialsFactory.GetCredentials(true), new AmazonKinesisVideoMediaConfig { ServiceURL = serviceUrl })
+            : base(new AmazonKinesisVideoMediaConfig { ServiceURL = serviceUrl })
         {
         }
 
@@ -63,7 +63,7 @@ namespace Amazon.KinesisVideoMedia
         /// </summary>
         /// <param name="config">The AmazonKinesisVideoMediaClient Configuration Object</param>
         public AmazonKinesisVideoMediaClient(AmazonKinesisVideoMediaConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(true), config)
+            : base(config)
         {
         }
 

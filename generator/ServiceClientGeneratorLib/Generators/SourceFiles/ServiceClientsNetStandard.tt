@@ -57,11 +57,7 @@ namespace <#=this.Config.Namespace#>
         ///
         /// </summary>
         public Amazon<#=this.Config.ClassName#>Client()
-<# if (this.Config.ClassName == "AutoScaling") { #>
             : base(new Amazon<#=this.Config.ClassName#>Config()) { }
-<#} else {#>
-            : base(FallbackCredentialsFactory.GetCredentials(<#= fallbackToAnonymousCredentials ? "fallbackToAnonymous: true" : ""#>), new Amazon<#=this.Config.ClassName#>Config()) { }
-<#}#>
 
         /// <summary>
         /// Constructs Amazon<#=this.Config.ClassName#>Client with the credentials loaded from the application's
@@ -80,11 +76,7 @@ namespace <#=this.Config.Namespace#>
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public Amazon<#=this.Config.ClassName#>Client(RegionEndpoint region)
-<# if (this.Config.ClassName == "AutoScaling") { #>
             : base(new Amazon<#=this.Config.ClassName#>Config{RegionEndpoint = region}) { }
-<#} else {#>
-            : base(FallbackCredentialsFactory.GetCredentials(<#= fallbackToAnonymousCredentials ? "fallbackToAnonymous: true" : ""#>), new Amazon<#=this.Config.ClassName#>Config{RegionEndpoint = region}) { }
-<#}#>
 
         /// <summary>
         /// Constructs Amazon<#=this.Config.ClassName#>Client with the credentials loaded from the application's
@@ -103,11 +95,7 @@ namespace <#=this.Config.Namespace#>
         /// </summary>
         /// <param name="config">The Amazon<#=this.Config.ClassName#>Client Configuration Object</param>
         public Amazon<#=this.Config.ClassName#>Client(Amazon<#=this.Config.ClassName#>Config config)
-<# if (this.Config.ClassName == "AutoScaling") { #>
             : base(config) { }
-<#} else {#>
-            : base(FallbackCredentialsFactory.GetCredentials(config<#= fallbackToAnonymousCredentials ? ", fallbackToAnonymous: true" : ""#>), config){}
-<#}#>
 
 
         /// <summary>
@@ -241,14 +229,6 @@ namespace <#=this.Config.Namespace#>
 #>
 
         #region Overrides
-
-		/// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new <#=GeneratorHelpers.DetermineSigner(this.Config.ServiceModel.SignatureVersion, this.Config.ClassName)#>();
-        } 
 
 <# if(this.Config.ServiceModel.Customizations.PipelineOverride != null || this.Config.EndpointsRuleSet != null) { #>
         /// <summary>

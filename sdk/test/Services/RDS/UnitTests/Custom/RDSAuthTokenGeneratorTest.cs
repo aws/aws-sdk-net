@@ -17,12 +17,16 @@ using Amazon;
 using Amazon.RDS;
 using Amazon.RDS.Util;
 using Amazon.Runtime;
+using Amazon.Runtime.Credentials.Internal.IdentityResolvers;
 using Amazon.Util;
 using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
+using Smithy.Identity.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Reflection;
 using System.Text.RegularExpressions;
 
 namespace AWSSDK.UnitTests.RDS
@@ -41,26 +45,34 @@ namespace AWSSDK.UnitTests.RDS
         private static readonly AWSCredentials BasicCredentials = new BasicAWSCredentials(AccessKey, SecretKey);
         private static readonly AWSCredentials SessionCredentials = new SessionAWSCredentials(AccessKey, SecretKey, SessionToken);
 
-        private List<FallbackCredentialsFactory.CredentialsGenerator> originalFallbackList;
+        private Dictionary<Type, IIdentityResolver> originalIdentityResolvers;
 
         [TestInitialize]
         public void Initialize()
         {
-            originalFallbackList = FallbackCredentialsFactory.CredentialsGenerators;
-
-            FallbackCredentialsFactory.Reset();
-            FallbackCredentialsFactory.CredentialsGenerators = new List<FallbackCredentialsFactory.CredentialsGenerator>()
-            {
-                () => { return BasicCredentials; }
-            };
             AWSConfigs.AWSRegion = AWSRegion.SystemName;
+
+            FieldInfo field = typeof(DefaultIdentityResolverConfiguration).GetField
+                ("identityResolvers", BindingFlags.Static | BindingFlags.NonPublic);
+
+            originalIdentityResolvers = field.GetValue(null) as Dictionary<Type, IIdentityResolver>;
+
+            var mockIdentityResolver = new Mock<IIdentityResolver>();
+            mockIdentityResolver.Setup(i => i.ResolveIdentity()).Returns(BasicCredentials);
+
+            field.SetValue(null, new Dictionary<Type, IIdentityResolver>()
+            {
+                { typeof(AWSCredentials), mockIdentityResolver.Object },
+            });
         }
 
         [TestCleanup]
         public void Cleanup()
         {
-            FallbackCredentialsFactory.Reset();
-            FallbackCredentialsFactory.CredentialsGenerators = originalFallbackList;
+            FieldInfo field = typeof(DefaultIdentityResolverConfiguration).GetField
+                ("identityResolvers", BindingFlags.Static | BindingFlags.NonPublic);
+
+            field.SetValue(null, originalIdentityResolvers);
         }
 
 #if ASYNC_AWAIT
