@@ -24,7 +24,7 @@ using System.Threading;
 
 namespace Amazon.Runtime
 {
-    // Credentials fallback mechanism
+    [Obsolete("This class is deprecated. Please use DefaultAWSCredentialsIdentityResolver instead to obtain AWSCredentials.")]
     public static class FallbackCredentialsFactory
     {
         // Lock to control caching credentials across multiple threads.
