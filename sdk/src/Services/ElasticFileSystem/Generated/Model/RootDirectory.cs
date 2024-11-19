@@ -33,7 +33,7 @@ namespace Amazon.ElasticFileSystem.Model
     /// Specifies the directory on the Amazon EFS file system that the access point provides
     /// access to. The access point exposes the specified file system path as the root directory
     /// of your file system to applications using the access point. NFS clients using the
-    /// access point can only access data in the access point's <c>RootDirectory</c> and it's
+    /// access point can only access data in the access point's <c>RootDirectory</c> and its
     /// subdirectories.
     /// </summary>
     public partial class RootDirectory

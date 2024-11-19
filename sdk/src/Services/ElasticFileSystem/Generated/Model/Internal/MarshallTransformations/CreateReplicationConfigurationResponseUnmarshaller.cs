@@ -82,6 +82,12 @@ namespace Amazon.ElasticFileSystem.Model.Internal.MarshallTransformations
                     response.SourceFileSystemId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SourceFileSystemOwnerId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SourceFileSystemOwnerId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SourceFileSystemRegion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

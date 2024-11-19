@@ -203,21 +203,16 @@ namespace Amazon.ElasticFileSystem
         ///  </note> 
         /// <para>
         /// This operation accepts an optional <c>PerformanceMode</c> parameter that you choose
-        /// for your file system. We recommend <c>generalPurpose</c> performance mode for all
-        /// file systems. File systems using the <c>maxIO</c> mode is a previous generation performance
-        /// type that is designed for highly parallelized workloads that can tolerate higher latencies
-        /// than the General Purpose mode. Max I/O mode is not supported for One Zone file systems
-        /// or file systems that use Elastic throughput.
+        /// for your file system. We recommend <c>generalPurpose</c> <c>PerformanceMode</c> for
+        /// all file systems. The <c>maxIO</c> mode is a previous generation performance type
+        /// that is designed for highly parallelized workloads that can tolerate higher latencies
+        /// than the <c>generalPurpose</c> mode. <c>MaxIO</c> mode is not supported for One Zone
+        /// file systems or file systems that use Elastic throughput.
         /// </para>
-        ///  <important> 
+        ///  
         /// <para>
-        /// Due to the higher per-operation latencies with Max I/O, we recommend using General
-        /// Purpose performance mode for all file systems.
-        /// </para>
-        ///  </important> 
-        /// <para>
-        /// The performance mode can't be changed after the file system has been created. For
-        /// more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#performancemodes.html">Amazon
+        /// The <c>PerformanceMode</c> can't be changed after the file system has been created.
+        /// For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#performancemodes.html">Amazon
         /// EFS performance modes</a>.
         /// </para>
         ///  
@@ -335,21 +330,16 @@ namespace Amazon.ElasticFileSystem
         ///  </note> 
         /// <para>
         /// This operation accepts an optional <c>PerformanceMode</c> parameter that you choose
-        /// for your file system. We recommend <c>generalPurpose</c> performance mode for all
-        /// file systems. File systems using the <c>maxIO</c> mode is a previous generation performance
-        /// type that is designed for highly parallelized workloads that can tolerate higher latencies
-        /// than the General Purpose mode. Max I/O mode is not supported for One Zone file systems
-        /// or file systems that use Elastic throughput.
+        /// for your file system. We recommend <c>generalPurpose</c> <c>PerformanceMode</c> for
+        /// all file systems. The <c>maxIO</c> mode is a previous generation performance type
+        /// that is designed for highly parallelized workloads that can tolerate higher latencies
+        /// than the <c>generalPurpose</c> mode. <c>MaxIO</c> mode is not supported for One Zone
+        /// file systems or file systems that use Elastic throughput.
         /// </para>
-        ///  <important> 
+        ///  
         /// <para>
-        /// Due to the higher per-operation latencies with Max I/O, we recommend using General
-        /// Purpose performance mode for all file systems.
-        /// </para>
-        ///  </important> 
-        /// <para>
-        /// The performance mode can't be changed after the file system has been created. For
-        /// more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#performancemodes.html">Amazon
+        /// The <c>PerformanceMode</c> can't be changed after the file system has been created.
+        /// For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#performancemodes.html">Amazon
         /// EFS performance modes</a>.
         /// </para>
         ///  
@@ -708,97 +698,38 @@ namespace Amazon.ElasticFileSystem
 
 
         /// <summary>
-        /// Creates a replication configuration that replicates an existing EFS file system to
-        /// a new, read-only file system. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-replication.html">Amazon
+        /// Creates a replication conﬁguration to either a new or existing EFS file system. For
+        /// more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-replication.html">Amazon
         /// EFS replication</a> in the <i>Amazon EFS User Guide</i>. The replication configuration
         /// specifies the following:
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Source file system</b> – The EFS file system that you want replicated. The source
-        /// file system cannot be a destination file system in an existing replication configuration.
+        ///  <b>Source file system</b> – The EFS file system that you want to replicate. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Amazon Web Services Region</b> – The Amazon Web Services Region in which the destination
-        /// file system is created. Amazon EFS replication is available in all Amazon Web Services
-        /// Regions in which EFS is available. The Region must be enabled. For more information,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing
-        /// Amazon Web Services Regions</a> in the <i>Amazon Web Services General Reference Reference
-        /// Guide</i>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Destination file system configuration</b> – The configuration of the destination
-        /// file system to which the source file system will be replicated. There can only be
-        /// one destination file system in a replication configuration. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Parameters for the replication configuration include:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <b>File system ID</b> – The ID of the destination file system for the replication.
-        /// If no ID is provided, then EFS creates a new file system with the default settings.
-        /// For existing file systems, the file system's replication overwrite protection must
-        /// be disabled. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-replication#replicate-existing-destination">
-        /// Replicating to an existing file system</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Availability Zone</b> – If you want the destination file system to use One Zone
-        /// storage, you must specify the Availability Zone to create the file system in. For
-        /// more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">
-        /// EFS file system types</a> in the <i>Amazon EFS User Guide</i>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Encryption</b> – All destination file systems are created with encryption at rest
-        /// enabled. You can specify the Key Management Service (KMS) key that is used to encrypt
-        /// the destination file system. If you don't specify a KMS key, your service-managed
-        /// KMS key for Amazon EFS is used. 
+        ///  <b>Destination file system</b> – The destination file system to which the source
+        /// file system is replicated. There can only be one destination file system in a replication
+        /// configuration. 
         /// </para>
         ///  <note> 
         /// <para>
-        /// After the file system is created, you cannot change the KMS key.
-        /// </para>
-        ///  </note> </li> </ul> </li> </ul> <note> 
-        /// <para>
-        /// After the file system is created, you cannot change the KMS key.
+        /// A file system can be part of only one replication configuration. 
         /// </para>
         ///  </note> 
         /// <para>
-        /// For new destination file systems, the following properties are set by default:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <b>Performance mode</b> - The destination file system's performance mode matches
-        /// that of the source file system, unless the destination file system uses EFS One Zone
-        /// storage. In that case, the General Purpose performance mode is used. The performance
-        /// mode cannot be changed.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Throughput mode</b> - The destination file system's throughput mode matches that
-        /// of the source file system. After the file system is created, you can modify the throughput
-        /// mode.
-        /// </para>
-        ///  </li> </ul> <ul> <li> 
-        /// <para>
-        ///  <b>Lifecycle management</b> – Lifecycle management is not enabled on the destination
-        /// file system. After the destination file system is created, you can enable lifecycle
-        /// management.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Automatic backups</b> – Automatic daily backups are enabled on the destination
-        /// file system. After the file system is created, you can change this setting.
+        /// The destination parameters for the replication configuration depend on whether you
+        /// are replicating to a new file system or to an existing file system, and if you are
+        /// replicating across Amazon Web Services accounts. See <a>DestinationToCreate</a> for
+        /// more information.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-replication.html">Amazon
-        /// EFS replication</a> in the <i>Amazon EFS User Guide</i>.
+        /// This operation requires permissions for the <c>elasticfilesystem:CreateReplicationConfiguration</c>
+        /// action. Additionally, other permissions are required depending on how you are replicating
+        /// file systems. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-replication.html#efs-replication-permissions">Required
+        /// permissions for replication</a> in the <i>Amazon EFS User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateReplicationConfiguration service method.</param>
@@ -1024,7 +955,7 @@ namespace Amazon.ElasticFileSystem
         /// </para>
         ///  <note> 
         /// <para>
-        /// You cannot delete a file system that is part of an EFS Replication configuration.
+        /// You cannot delete a file system that is part of an EFS replication configuration.
         /// You need to delete the replication configuration first.
         /// </para>
         ///  </note> 
@@ -1080,7 +1011,7 @@ namespace Amazon.ElasticFileSystem
         /// </para>
         ///  <note> 
         /// <para>
-        /// You cannot delete a file system that is part of an EFS Replication configuration.
+        /// You cannot delete a file system that is part of an EFS replication configuration.
         /// You need to delete the replication configuration first.
         /// </para>
         ///  </note> 
@@ -2528,8 +2459,8 @@ namespace Amazon.ElasticFileSystem
         /// policy or an explicit policy set or updated using this API operation. EFS file system
         /// policies have a 20,000 character limit. When an explicit policy is set, it overrides
         /// the default policy. For more information about the default file system policy, see
-        /// <a href="https://docs.aws.amazon.com/efs/latest/ug/iam-access-control-nfs-efs.html#default-filesystempolicy">Default
-        /// EFS File System Policy</a>. 
+        /// <a href="https://docs.aws.amazon.com/efs/latest/ug/iam-access-control-nfs-efs.html#default-filesystempolicy">
+        /// Default EFS file system policy</a>. 
         /// 
         ///  <note> 
         /// <para>
@@ -2619,7 +2550,7 @@ namespace Amazon.ElasticFileSystem
         ///  <note> 
         /// <para>
         ///  The Archive storage class is available only for file systems that use the Elastic
-        /// Throughput mode and the General Purpose Performance mode. 
+        /// throughput mode and the General Purpose performance mode. 
         /// </para>
         ///  </note> </li> </ul> <ul> <li> 
         /// <para>
@@ -2643,7 +2574,7 @@ namespace Amazon.ElasticFileSystem
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The ID for the file system for which you are enabling, disabling, or modifying Lifecycle
+        /// The ID for the file system for which you are enabling, disabling, or modifying lifecycle
         /// management.
         /// </para>
         ///  </li> <li> 
