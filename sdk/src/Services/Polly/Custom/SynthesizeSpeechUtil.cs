@@ -21,6 +21,7 @@ using Amazon.Runtime.Internal.Util;
 using System;
 using System.Globalization;
 using Amazon.Internal;
+using Amazon.Runtime.Credentials.Internal.IdentityResolvers;
 
 namespace Amazon.Polly
 {
@@ -44,7 +45,7 @@ namespace Amazon.Polly
         /// <returns></returns>
         public static string GeneratePresignedUrl(RegionEndpoint region, SynthesizeSpeechRequest request)
         {
-            AWSCredentials credentials = FallbackCredentialsFactory.GetCredentials();
+            AWSCredentials credentials = DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
             return GeneratePresignedUrl(credentials, region, request);
         }
 

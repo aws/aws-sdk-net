@@ -18,6 +18,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Runtime.Credentials.Internal.IdentityResolvers;
 using System;
 using System.Globalization;
 
@@ -85,7 +86,7 @@ namespace Amazon.RDS.Util
         /// <returns></returns>
         public static string GenerateAuthToken(RegionEndpoint region, string hostname, int port, string dbUser)
         {
-            AWSCredentials credentials = FallbackCredentialsFactory.GetCredentials();
+            AWSCredentials credentials = DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
             return GenerateAuthToken(credentials, region, hostname, port, dbUser);
         }
 

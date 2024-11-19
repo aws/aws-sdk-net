@@ -15,6 +15,7 @@
 
 using Amazon.Runtime.CredentialManagement;
 using Amazon.Runtime.Credentials.Internal;
+using Amazon.Runtime.Credentials.Internal.IdentityResolvers;
 using Amazon.Util;
 using Amazon.Util.Internal;
 #if AWS_ASYNC_API 
@@ -101,7 +102,7 @@ namespace Amazon.Runtime
             var profileName =
                 !string.IsNullOrEmpty(_profileName)
                     ? _profileName
-                    : FallbackCredentialsFactory.GetProfileName();
+                    : DefaultAWSCredentialsIdentityResolver.GetProfileName();
 
             if (!_credentialProfileSource.TryGetProfile(profileName, out profile))
                 return false;

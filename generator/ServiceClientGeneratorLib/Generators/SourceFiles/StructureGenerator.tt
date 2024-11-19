@@ -20,12 +20,6 @@ using Amazon.Runtime.Internal;
 bool structureIsNotEventStream = this.Structure != null && !this.Structure.IsEventStream;
 bool structureIsEventStream = this.Structure != null && this.Structure.IsEventStream;
 bool structureIsEvent = this.Structure != null && this.Structure.IsEvent;
-if(this.StructureType == StructureType.Request && this.Operation.AuthType.HasValue)
-{
-#>
-using Amazon.Runtime.Internal.Auth;
-<#
-}
 #>
 <#
 if(structureIsEvent || structureIsEventStream)
@@ -351,45 +345,6 @@ namespace <#=this.Config.Namespace#>.Model
 <#
                 }
 
-                if (this.StructureType == StructureType.Request && this.Operation.AuthType.HasValue)
-                {
-#>
-        /// <summary>
-        /// Get the signer to use for this request.
-        /// </summary>
-        /// <returns>A signer for this request.</returns>
-        override protected AbstractAWSSigner CreateSigner()
-        {
-<#
-                    switch (this.Operation.AuthType.Value)
-                    {
-                        case OperationAuthType.None:
-#>
-            return new NullSigner();
-<#
-                        break;
-                        case OperationAuthType.V4:
-#>
-            return new AWS4Signer();
-<#
-                        break;
-                        case OperationAuthType.V4UnsignedBody:
-#>
-            return new AWS4Signer(false);
-<#
-                        break;
-                        case OperationAuthType.Bearer:
-#>
-            return new BearerTokenSigner();
-<#
-                        break;
-                        default:
-                            throw new ArgumentException("Unhandled value for operation authtype:" + this.Operation.AuthType.Value);
-                    }
-#>
-        }
-<#
-                }
                 // Flexible checksum overrides to allow response validation configuration on the request
                 if (this.StructureType == StructureType.Request && !string.IsNullOrEmpty(this.Operation.ChecksumConfiguration?.RequestValidationModeMember))
                 {

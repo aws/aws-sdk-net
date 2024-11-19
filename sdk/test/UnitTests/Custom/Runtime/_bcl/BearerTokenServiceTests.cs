@@ -19,7 +19,7 @@ namespace AWSSDK.UnitTests.Runtime
     /// <see cref="Signer.SignRequest"/>.  These tests combine as much real plumbing together as possible
     /// to ensure the plumbing is working.
     /// <para />
-    /// A Bearer Auth Service is when <see cref="AmazonServiceClient.CreateSigner"/> returns
+    /// A Bearer Auth Service is when <see cref="BaseAuthResolverHandler"/> resolves
     /// <see cref="BearerTokenSigner"/>.
     /// </summary>
     [TestClass]

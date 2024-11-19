@@ -17,6 +17,7 @@ using System;
 using Amazon.Runtime.Internal.Util;
 using System.Collections.Generic;
 using System.Linq;
+using Amazon.Runtime.Credentials.Internal.IdentityResolvers;
 #if BCL || NETSTANDARD
 using Amazon.Runtime.CredentialManagement;
 #endif
@@ -310,7 +311,7 @@ namespace Amazon.Runtime.Internal
         /// <param name="source">The ICredentialProfileSource to read the profile from.</param>
         public ProfileInternalConfiguration(ICredentialProfileSource source)
         {
-            var profileName = FallbackCredentialsFactory.GetProfileName();
+            var profileName = DefaultAWSCredentialsIdentityResolver.GetProfileName();
             Setup(source, profileName);
         }
 
