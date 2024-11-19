@@ -237,8 +237,9 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property EnvironmentClass. 
         /// <para>
-        /// The environment class type. Valid values: <c>mw1.small</c>, <c>mw1.medium</c>, <c>mw1.large</c>,
-        /// <c>mw1.xlarge</c>, and <c>mw1.2xlarge</c>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon
+        /// The environment class type. Valid values: <c>mw1.micro</c>, <c>mw1.small</c>, <c>mw1.medium</c>,
+        /// <c>mw1.large</c>, <c>mw1.xlarge</c>, and <c>mw1.2xlarge</c>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon
         /// MWAA environment class</a>.
         /// </para>
         /// </summary>
@@ -346,10 +347,12 @@ namespace Amazon.MWAA.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: Accepts between <c>2</c> and <c>5</c>. Defaults to <c>2</c>.
+        /// Valid values: For environments larger than mw1.micro, accepts values from <c>2</c>
+        /// to <c>5</c>. Defaults to <c>2</c> for all environment sizes except mw1.micro, which
+        /// defaults to <c>1</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2)]
+        [AWSProperty(Min=1)]
         public int MaxWebservers
         {
             get { return this._maxWebservers.GetValueOrDefault(); }
@@ -393,10 +396,12 @@ namespace Amazon.MWAA.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: Accepts between <c>2</c> and <c>5</c>. Defaults to <c>2</c>.
+        /// Valid values: For environments larger than mw1.micro, accepts values from <c>2</c>
+        /// to <c>5</c>. Defaults to <c>2</c> for all environment sizes except mw1.micro, which
+        /// defaults to <c>1</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2)]
+        [AWSProperty(Min=1)]
         public int MinWebservers
         {
             get { return this._minWebservers.GetValueOrDefault(); }

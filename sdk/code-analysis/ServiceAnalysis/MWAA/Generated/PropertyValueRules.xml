@@ -43,7 +43,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAA.Model.CreateEnvironmentRequest.MaxWebservers</property>
-    <min>2</min>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAA.Model.CreateEnvironmentRequest.MaxWorkers</property>
@@ -51,7 +51,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAA.Model.CreateEnvironmentRequest.MinWebservers</property>
-    <min>2</min>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAA.Model.CreateEnvironmentRequest.MinWorkers</property>
@@ -222,7 +222,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAA.Model.UpdateEnvironmentRequest.MaxWebservers</property>
-    <min>2</min>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAA.Model.UpdateEnvironmentRequest.MaxWorkers</property>
@@ -230,7 +230,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAA.Model.UpdateEnvironmentRequest.MinWebservers</property>
-    <min>2</min>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAA.Model.UpdateEnvironmentRequest.MinWorkers</property>
@@ -346,7 +346,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAA.Model.Environment.MaxWebservers</property>
-    <min>2</min>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAA.Model.Environment.MaxWorkers</property>
@@ -354,7 +354,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAA.Model.Environment.MinWebservers</property>
-    <min>2</min>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAA.Model.Environment.MinWorkers</property>
