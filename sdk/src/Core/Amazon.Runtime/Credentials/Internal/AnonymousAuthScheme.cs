@@ -23,6 +23,7 @@ namespace Amazon.Runtime.Credentials.Internal
     /// </summary>
     public class AnonymousAuthScheme : IAuthScheme<AnonymousAWSCredentials>
     {
+        private static readonly ISigner _signer = new NullSigner();
         /// <inheritdoc/>
         public string SchemeId => AuthSchemeOption.NoAuth;
 
@@ -35,7 +36,7 @@ namespace Amazon.Runtime.Credentials.Internal
         /// <inheritdoc/>
         public ISigner Signer()
         {
-            return new NullSigner();
+            return _signer;
         }
     }
 }

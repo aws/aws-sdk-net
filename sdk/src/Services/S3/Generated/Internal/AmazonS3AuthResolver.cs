@@ -46,8 +46,8 @@ namespace Amazon.S3.Internal
         /// <summary>
         /// Construct an instance of AmazonS3AuthSchemeHandler
         /// </summary>
-        public AmazonS3AuthSchemeHandler(BaseIdentity identity)
-            : base(identity)
+        public AmazonS3AuthSchemeHandler(AWSCredentials credentials)
+            : base(credentials)
         { }
 
         private readonly AmazonS3EndpointResolver _endpointResolver = new();

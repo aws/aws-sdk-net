@@ -94,8 +94,8 @@ namespace ServiceClientGenerator.Generators.AuthResolvers
             
             #line default
             #line hidden
-            this.Write("AuthSchemeHandler(BaseIdentity identity)\r\n            : base(identity)\r\n        {" +
-                    " }\r\n\r\n");
+            this.Write("AuthSchemeHandler(AWSCredentials credentials)\r\n            : base(credentials)\r\n " +
+                    "       { }\r\n\r\n");
             
             #line 46 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\AuthResolvers\ModeledResolver.tt"
  if (IsServiceAllowListedForRulesBasedResolver()) { 

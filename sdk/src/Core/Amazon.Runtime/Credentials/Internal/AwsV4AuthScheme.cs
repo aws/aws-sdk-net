@@ -24,6 +24,7 @@ namespace Amazon.Runtime.Credentials.Internal
     /// </summary>
     public class AwsV4AuthScheme : IAuthScheme<AWSCredentials>
     {
+        private static readonly ISigner _signer = new AWS4Signer();
         /// <inheritdoc/>
         public string SchemeId => AuthSchemeOption.SigV4;
 
@@ -36,7 +37,7 @@ namespace Amazon.Runtime.Credentials.Internal
         /// <inheritdoc/>
         public ISigner Signer()
         {
-            return new AWS4Signer();
+            return _signer;
         }
     }
 }

@@ -33,12 +33,12 @@ namespace Amazon.Runtime.Internal
             new AwsV4AuthScheme()
         };
 
-        public BaseAuthResolverHandler(BaseIdentity identity)
+        public BaseAuthResolverHandler(AWSCredentials credentials)
         {
-            this.Identity = identity;
+            this.DefaultAWSCredentials = credentials;
         }
 
-        protected BaseIdentity Identity
+        protected AWSCredentials DefaultAWSCredentials
         {
             get;
             private set;
@@ -76,7 +76,12 @@ namespace Amazon.Runtime.Internal
                     continue;
                 }
 
-                executionContext.RequestContext.Identity = this.Identity;
+                if (scheme is AwsV4aAuthScheme || scheme is AwsV4AuthScheme)
+                {
+                    // We can use DefaultAWSCredentials if it was set by the user for these schemes.
+                    executionContext.RequestContext.Identity = this.DefaultAWSCredentials;
+                }
+
                 if (executionContext.RequestContext.Identity == null)
                 {
                     var identityResolver = scheme.GetIdentityResolver(executionContext.RequestContext.ClientConfig.IdentityResolverConfiguration);

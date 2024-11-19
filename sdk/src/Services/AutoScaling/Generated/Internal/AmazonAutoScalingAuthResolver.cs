@@ -46,8 +46,8 @@ namespace Amazon.AutoScaling.Internal
         /// <summary>
         /// Construct an instance of AmazonAutoScalingAuthSchemeHandler
         /// </summary>
-        public AmazonAutoScalingAuthSchemeHandler(BaseIdentity identity)
-            : base(identity)
+        public AmazonAutoScalingAuthSchemeHandler(AWSCredentials credentials)
+            : base(credentials)
         { }
 
         /// <summary>
