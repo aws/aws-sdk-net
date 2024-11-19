@@ -42,7 +42,7 @@ namespace Amazon.IotData
         /// </summary>
         /// <param name="serviceUrl">The URL of the search or document service.</param>
         public AmazonIotDataClient(string serviceUrl)
-            : base(FallbackCredentialsFactory.GetCredentials(true), new AmazonIotDataConfig { ServiceURL = serviceUrl })
+            : base(new AmazonIotDataConfig { ServiceURL = serviceUrl })
         {
         }
 
@@ -63,7 +63,7 @@ namespace Amazon.IotData
         /// </summary>
         /// <param name="config">The AmazonIotDataClient Configuration Object</param>
         public AmazonIotDataClient(AmazonIotDataConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(true), config)
+            : base(config)
         {
         }
 
