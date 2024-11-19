@@ -20,7 +20,7 @@ using System.Reflection;
 using System.Xml.Linq;
 using Amazon.Runtime;
 using Amazon.Runtime.CredentialManagement;
-
+using Amazon.Runtime.Credentials.Internal.IdentityResolvers;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -197,7 +197,7 @@ namespace Amazon.Extensions.NETCore.Setup
                 }
             }
 
-            var credentials = FallbackCredentialsFactory.GetCredentials();
+            var credentials = DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
             if (credentials == null)
             {
                 logger?.LogError("Last effort to find AWS Credentials with AWS SDK's default credential search failed");
