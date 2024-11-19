@@ -32,7 +32,13 @@ namespace Amazon.Keyspaces.Model
     /// <summary>
     /// Container for the parameters to the DeleteType operation.
     /// The <c>DeleteType</c> operation deletes a user-defined type (UDT). You can only delete
-    /// a type that is not used in a table or another UDT.
+    /// a type that is not used in a table or another UDT. 
+    /// 
+    ///  
+    /// <para>
+    /// To configure the required permissions, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/configure-udt-permissions.html#udt-permissions-drop">Permissions
+    /// to delete a UDT</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class DeleteTypeRequest : AmazonKeyspacesRequest
     {

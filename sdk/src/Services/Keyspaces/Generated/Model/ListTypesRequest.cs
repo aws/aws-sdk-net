@@ -37,7 +37,9 @@ namespace Amazon.Keyspaces.Model
     ///  
     /// <para>
     /// To read keyspace metadata using <c>ListTypes</c>, the IAM principal needs <c>Select</c>
-    /// action permissions for the system keyspace.
+    /// action permissions for the system keyspace. To configure the required permissions,
+    /// see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/configure-udt-permissions.html#udt-permissions-view">Permissions
+    /// to view a UDT</a> in the <i>Amazon Keyspaces Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class ListTypesRequest : AmazonKeyspacesRequest

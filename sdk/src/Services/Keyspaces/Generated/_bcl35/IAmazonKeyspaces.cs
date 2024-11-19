@@ -235,6 +235,11 @@ namespace Amazon.Keyspaces
         /// 
         ///  
         /// <para>
+        /// To configure the required permissions, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/configure-udt-permissions.html#udt-permissions-create">Permissions
+        /// to create a UDT</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/udts.html">User-defined
         /// types (UDTs)</a> in the <i>Amazon Keyspaces Developer Guide</i>. 
         /// </para>
@@ -436,7 +441,13 @@ namespace Amazon.Keyspaces
 
         /// <summary>
         /// The <c>DeleteType</c> operation deletes a user-defined type (UDT). You can only delete
-        /// a type that is not used in a table or another UDT.
+        /// a type that is not used in a table or another UDT. 
+        /// 
+        ///  
+        /// <para>
+        /// To configure the required permissions, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/configure-udt-permissions.html#udt-permissions-drop">Permissions
+        /// to delete a UDT</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteType service method.</param>
         /// 
@@ -500,7 +511,9 @@ namespace Amazon.Keyspaces
 
 
         /// <summary>
-        /// Returns the name and the Amazon Resource Name (ARN) of the specified table.
+        /// Returns the name of the specified keyspace, the Amazon Resource Name (ARN), the replication
+        /// strategy, the Amazon Web Services Regions of a multi-Region keyspace, and the status
+        /// of newly added Regions after an <c>UpdateKeyspace</c> operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetKeyspace service method.</param>
         /// 
@@ -720,7 +733,9 @@ namespace Amazon.Keyspaces
         ///  
         /// <para>
         /// To read keyspace metadata using <c>GetType</c>, the IAM principal needs <c>Select</c>
-        /// action permissions for the system keyspace.
+        /// action permissions for the system keyspace. To configure the required permissions,
+        /// see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/configure-udt-permissions.html#udt-permissions-view">Permissions
+        /// to view a UDT</a> in the <i>Amazon Keyspaces Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetType service method.</param>
@@ -975,7 +990,9 @@ namespace Amazon.Keyspaces
         ///  
         /// <para>
         /// To read keyspace metadata using <c>ListTypes</c>, the IAM principal needs <c>Select</c>
-        /// action permissions for the system keyspace.
+        /// action permissions for the system keyspace. To configure the required permissions,
+        /// see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/configure-udt-permissions.html#udt-permissions-view">Permissions
+        /// to view a UDT</a> in the <i>Amazon Keyspaces Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTypes service method.</param>
@@ -1297,6 +1314,81 @@ namespace Amazon.Keyspaces
         /// <returns>Returns a  UntagResourceResult from Keyspaces.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateKeyspace
+
+
+        /// <summary>
+        /// Adds a new Amazon Web Services Region to the keyspace. You can add a new Region to
+        /// a keyspace that is either a single or a multi-Region keyspace. The new replica Region
+        /// is applied to all tables in the keyspace. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/keyspaces-multi-region-add-replica.html">Add
+        /// an Amazon Web Services Region to a keyspace in Amazon Keyspaces</a> in the <i>Amazon
+        /// Keyspaces Developer Guide</i>. 
+        /// 
+        ///  
+        /// <para>
+        /// To change a single-Region to a multi-Region keyspace, you have to enable client-side
+        /// timestamps for all tables in the keyspace. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/client-side-timestamps.html">Client-side
+        /// timestamps in Amazon Keyspaces</a> in the <i>Amazon Keyspaces Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateKeyspace service method.</param>
+        /// 
+        /// <returns>The response from the UpdateKeyspace service method, as returned by Keyspaces.</returns>
+        /// <exception cref="Amazon.Keyspaces.Model.AccessDeniedException">
+        /// You don't have sufficient access permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ConflictException">
+        /// Amazon Keyspaces couldn't complete the requested action. This error may occur if you
+        /// try to perform an action and the same or a different action is already in progress,
+        /// or if you try to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.InternalServerException">
+        /// Amazon Keyspaces was unable to fully process this request because of an internal server
+        /// error.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
+        /// The operation tried to access a keyspace, table, or type that doesn't exist. The resource
+        /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
+        /// The operation exceeded the service quota for this resource. For more information on
+        /// service quotas, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/quotas.html">Quotas</a>
+        /// in the <i>Amazon Keyspaces Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Keyspaces.Model.ValidationException">
+        /// The operation failed due to an invalid or malformed request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/UpdateKeyspace">REST API Reference for UpdateKeyspace Operation</seealso>
+        UpdateKeyspaceResponse UpdateKeyspace(UpdateKeyspaceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateKeyspace operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateKeyspace operation on AmazonKeyspacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateKeyspace
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/UpdateKeyspace">REST API Reference for UpdateKeyspace Operation</seealso>
+        IAsyncResult BeginUpdateKeyspace(UpdateKeyspaceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateKeyspace operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateKeyspace.</param>
+        /// 
+        /// <returns>Returns a  UpdateKeyspaceResult from Keyspaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/keyspaces-2022-02-10/UpdateKeyspace">REST API Reference for UpdateKeyspace Operation</seealso>
+        UpdateKeyspaceResponse EndUpdateKeyspace(IAsyncResult asyncResult);
 
         #endregion
         

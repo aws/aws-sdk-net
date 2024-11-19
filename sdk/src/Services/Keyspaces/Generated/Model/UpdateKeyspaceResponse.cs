@@ -30,32 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Keyspaces.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetKeyspace operation.
-    /// Returns the name of the specified keyspace, the Amazon Resource Name (ARN), the replication
-    /// strategy, the Amazon Web Services Regions of a multi-Region keyspace, and the status
-    /// of newly added Regions after an <c>UpdateKeyspace</c> operation.
+    /// This is the response object from the UpdateKeyspace operation.
     /// </summary>
-    public partial class GetKeyspaceRequest : AmazonKeyspacesRequest
+    public partial class UpdateKeyspaceResponse : AmazonWebServiceResponse
     {
-        private string _keyspaceName;
+        private string _resourceArn;
 
         /// <summary>
-        /// Gets and sets the property KeyspaceName. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The name of the keyspace.
+        ///  The unique identifier of the keyspace in the format of an Amazon Resource Name (ARN).
+        /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=48)]
-        public string KeyspaceName
+        [AWSProperty(Required=true, Min=20, Max=1000)]
+        public string ResourceArn
         {
-            get { return this._keyspaceName; }
-            set { this._keyspaceName = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if KeyspaceName property is set
-        internal bool IsSetKeyspaceName()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._keyspaceName != null;
+            return this._resourceArn != null;
         }
 
     }

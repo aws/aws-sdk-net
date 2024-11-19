@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetKeyspace operation
+    /// Response Unmarshaller for UpdateKeyspace operation
     /// </summary>  
-    public class GetKeyspaceResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdateKeyspaceResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,36 +46,12 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetKeyspaceResponse response = new GetKeyspaceResponse();
+            UpdateKeyspaceResponse response = new UpdateKeyspaceResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("keyspaceName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.KeyspaceName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("replicationGroupStatuses", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ReplicationGroupStatus, ReplicationGroupStatusUnmarshaller>(ReplicationGroupStatusUnmarshaller.Instance);
-                    response.ReplicationGroupStatuses = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("replicationRegions", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.ReplicationRegions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("replicationStrategy", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ReplicationStrategy = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("resourceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -109,6 +85,10 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                {
+                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -129,9 +109,9 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
             return new AmazonKeyspacesException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetKeyspaceResponseUnmarshaller _instance = new GetKeyspaceResponseUnmarshaller();        
+        private static UpdateKeyspaceResponseUnmarshaller _instance = new UpdateKeyspaceResponseUnmarshaller();        
 
-        internal static GetKeyspaceResponseUnmarshaller GetInstance()
+        internal static UpdateKeyspaceResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -139,7 +119,7 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetKeyspaceResponseUnmarshaller Instance
+        public static UpdateKeyspaceResponseUnmarshaller Instance
         {
             get
             {
