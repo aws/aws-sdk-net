@@ -2439,8 +2439,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Creates a new table optimizer for a specific function. <c>compaction</c> is the only
-        /// currently supported optimizer type.
+        /// Creates a new table optimizer for a specific function.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTableOptimizer service method.</param>
         /// <param name="cancellationToken">

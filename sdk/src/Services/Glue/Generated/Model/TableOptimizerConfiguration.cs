@@ -39,6 +39,7 @@ namespace Amazon.Glue.Model
         private OrphanFileDeletionConfiguration _orphanFileDeletionConfiguration;
         private RetentionConfiguration _retentionConfiguration;
         private string _roleArn;
+        private TableOptimizerVpcConfiguration _vpcConfiguration;
 
         /// <summary>
         /// Gets and sets the property Enabled. 
@@ -112,6 +113,30 @@ namespace Amazon.Glue.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConfiguration. 
+        /// <para>
+        /// A <c>TableOptimizerVpcConfiguration</c> object representing the VPC configuration
+        /// for a table optimizer.
+        /// </para>
+        ///  
+        /// <para>
+        /// This configuration is necessary to perform optimization on tables that are in a customer
+        /// VPC.
+        /// </para>
+        /// </summary>
+        public TableOptimizerVpcConfiguration VpcConfiguration
+        {
+            get { return this._vpcConfiguration; }
+            set { this._vpcConfiguration = value; }
+        }
+
+        // Check to see if VpcConfiguration property is set
+        internal bool IsSetVpcConfiguration()
+        {
+            return this._vpcConfiguration != null;
         }
 
     }
