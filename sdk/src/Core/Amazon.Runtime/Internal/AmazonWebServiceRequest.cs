@@ -59,22 +59,6 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
-        /// Gets the signer to use for this request.
-        /// A null return value indicates to use the configured
-        /// signer for the service that this request is part of.
-        /// </summary>
-        /// <returns>A signer for this request, or null.</returns>
-        protected virtual AbstractAWSSigner CreateSigner()
-        {
-            return null;
-        }
-
-        internal AbstractAWSSigner GetSigner()
-        {
-            return CreateSigner();
-        }
-
-        /// <summary>
         /// Checksum validation behavior for validating the integrity of this request's response
         /// </summary>
         protected internal virtual CoreChecksumResponseBehavior CoreChecksumMode => CoreChecksumResponseBehavior.DISABLED;
