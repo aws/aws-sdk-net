@@ -1,3 +1,26 @@
+### 3.7.930.0 (2024-11-19 20:46 UTC)
+* B2bi (3.7.403.0)
+	* Add new X12 transactions sets and versions
+* EC2 (3.7.418.0)
+	* This release adds VPC Block Public Access (VPC BPA), a new declarative control which blocks resources in VPCs and subnets that you own in a Region from reaching or being reached from the internet through internet gateways and egress-only internet gateways.
+* ECS (3.7.406.0)
+	* This release introduces support for configuring the version consistency feature for individual containers defined within a task definition. The configuration allows to specify whether ECS should resolve the container image tag specified in the container definition to an image digest.
+* ElasticFileSystem (3.7.401.0)
+	* Add support for the new parameters in EFS replication APIs
+* Glue (3.7.410.0)
+	* AWS Glue Data Catalog now enhances managed table optimizations of Apache Iceberg tables that can be accessed only from a specific Amazon Virtual Private Cloud (VPC) environment.
+* Keyspaces (3.7.402.0)
+	* Amazon Keyspaces Multi-Region Replication: Adds support to add new regions to multi and single-region keyspaces.
+* MWAA (3.7.402.0)
+	* Amazon MWAA now supports a new environment class, mw1.micro, ideal for workloads requiring fewer resources than mw1.small. This class supports a single instance of each Airflow component: Scheduler, Worker, and Webserver.
+* TaxSettings (3.7.402.0)
+	* Release Tax Inheritance APIs,  Tax Exemption APIs, and functionality update for some existing Tax Registration APIs
+* WorkSpaces (3.7.405.0)
+	* Releasing new ErrorCodes for Image Validation failure during CreateWorkspaceImage process
+* Core 3.7.400.54
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.929.0 (2024-11-18 19:31 UTC)
 * AppConfig (3.7.403.0)
 	* AWS AppConfig has added a new extension action point, AT_DEPLOYMENT_TICK, to support third-party monitors to trigger an automatic rollback during a deployment.
