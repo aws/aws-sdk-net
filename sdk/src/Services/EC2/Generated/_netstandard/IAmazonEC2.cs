@@ -4057,6 +4057,30 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  CreateVpcBlockPublicAccessExclusion
+
+
+
+        /// <summary>
+        /// Create a VPC Block Public Access (BPA) exclusion. A VPC BPA exclusion is a mode that
+        /// can be applied to a single VPC or subnet that exempts it from the account’s BPA mode
+        /// and will allow bidirectional or egress-only access. You can create BPA exclusions
+        /// for VPCs and subnets even when BPA is not enabled on the account to ensure that there
+        /// is no traffic disruption to the exclusions when VPC BPA is turned on. To learn more
+        /// about VPC BPA, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+        /// public access to VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcBlockPublicAccessExclusion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateVpcBlockPublicAccessExclusion service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcBlockPublicAccessExclusion">REST API Reference for CreateVpcBlockPublicAccessExclusion Operation</seealso>
+        Task<CreateVpcBlockPublicAccessExclusionResponse> CreateVpcBlockPublicAccessExclusionAsync(CreateVpcBlockPublicAccessExclusionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateVpcEndpoint
 
 
@@ -5721,6 +5745,30 @@ namespace Amazon.EC2
         /// <returns>The response from the DeleteVpc service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpc">REST API Reference for DeleteVpc Operation</seealso>
         Task<DeleteVpcResponse> DeleteVpcAsync(DeleteVpcRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteVpcBlockPublicAccessExclusion
+
+
+
+        /// <summary>
+        /// Delete a VPC Block Public Access (BPA) exclusion. A VPC BPA exclusion is a mode that
+        /// can be applied to a single VPC or subnet that exempts it from the account’s BPA mode
+        /// and will allow bidirectional or egress-only access. You can create BPA exclusions
+        /// for VPCs and subnets even when BPA is not enabled on the account to ensure that there
+        /// is no traffic disruption to the exclusions when VPC BPA is turned on. To learn more
+        /// about VPC BPA, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+        /// public access to VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcBlockPublicAccessExclusion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteVpcBlockPublicAccessExclusion service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcBlockPublicAccessExclusion">REST API Reference for DeleteVpcBlockPublicAccessExclusion Operation</seealso>
+        Task<DeleteVpcBlockPublicAccessExclusionResponse> DeleteVpcBlockPublicAccessExclusionAsync(DeleteVpcBlockPublicAccessExclusionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -10582,6 +10630,52 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  DescribeVpcBlockPublicAccessExclusions
+
+
+
+        /// <summary>
+        /// Describe VPC Block Public Access (BPA) exclusions. A VPC BPA exclusion is a mode that
+        /// can be applied to a single VPC or subnet that exempts it from the account’s BPA mode
+        /// and will allow bidirectional or egress-only access. You can create BPA exclusions
+        /// for VPCs and subnets even when BPA is not enabled on the account to ensure that there
+        /// is no traffic disruption to the exclusions when VPC BPA is turned on. To learn more
+        /// about VPC BPA, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+        /// public access to VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcBlockPublicAccessExclusions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeVpcBlockPublicAccessExclusions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcBlockPublicAccessExclusions">REST API Reference for DescribeVpcBlockPublicAccessExclusions Operation</seealso>
+        Task<DescribeVpcBlockPublicAccessExclusionsResponse> DescribeVpcBlockPublicAccessExclusionsAsync(DescribeVpcBlockPublicAccessExclusionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeVpcBlockPublicAccessOptions
+
+
+
+        /// <summary>
+        /// Describe VPC Block Public Access (BPA) options. VPC Block public Access (BPA) enables
+        /// you to block resources in VPCs and subnets that you own in a Region from reaching
+        /// or being reached from the internet through internet gateways and egress-only internet
+        /// gateways. To learn more about VPC BPA, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+        /// public access to VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcBlockPublicAccessOptions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeVpcBlockPublicAccessOptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcBlockPublicAccessOptions">REST API Reference for DescribeVpcBlockPublicAccessOptions Operation</seealso>
+        Task<DescribeVpcBlockPublicAccessOptionsResponse> DescribeVpcBlockPublicAccessOptionsAsync(DescribeVpcBlockPublicAccessOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeVpcClassicLink
 
 
@@ -15318,6 +15412,50 @@ namespace Amazon.EC2
         /// <returns>The response from the ModifyVpcAttribute service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcAttribute">REST API Reference for ModifyVpcAttribute Operation</seealso>
         Task<ModifyVpcAttributeResponse> ModifyVpcAttributeAsync(ModifyVpcAttributeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ModifyVpcBlockPublicAccessExclusion
+
+
+
+        /// <summary>
+        /// Modify VPC Block Public Access (BPA) exclusions. A VPC BPA exclusion is a mode that
+        /// can be applied to a single VPC or subnet that exempts it from the account’s BPA mode
+        /// and will allow bidirectional or egress-only access. You can create BPA exclusions
+        /// for VPCs and subnets even when BPA is not enabled on the account to ensure that there
+        /// is no traffic disruption to the exclusions when VPC BPA is turned on.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcBlockPublicAccessExclusion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyVpcBlockPublicAccessExclusion service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcBlockPublicAccessExclusion">REST API Reference for ModifyVpcBlockPublicAccessExclusion Operation</seealso>
+        Task<ModifyVpcBlockPublicAccessExclusionResponse> ModifyVpcBlockPublicAccessExclusionAsync(ModifyVpcBlockPublicAccessExclusionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ModifyVpcBlockPublicAccessOptions
+
+
+
+        /// <summary>
+        /// Modify VPC Block Public Access (BPA) options. VPC Block public Access (BPA) enables
+        /// you to block resources in VPCs and subnets that you own in a Region from reaching
+        /// or being reached from the internet through internet gateways and egress-only internet
+        /// gateways. To learn more about VPC BPA, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+        /// public access to VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcBlockPublicAccessOptions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyVpcBlockPublicAccessOptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcBlockPublicAccessOptions">REST API Reference for ModifyVpcBlockPublicAccessOptions Operation</seealso>
+        Task<ModifyVpcBlockPublicAccessOptionsResponse> ModifyVpcBlockPublicAccessOptionsAsync(ModifyVpcBlockPublicAccessOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

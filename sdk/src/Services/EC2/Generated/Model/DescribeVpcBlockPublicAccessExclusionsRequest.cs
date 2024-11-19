@@ -30,64 +30,59 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeVpcPeeringConnections operation.
-    /// Describes your VPC peering connections. The default is to describe all your VPC peering
-    /// connections. Alternatively, you can specify specific VPC peering connection IDs or
-    /// filter the results to include only the VPC peering connections that match specific
-    /// criteria.
+    /// Container for the parameters to the DescribeVpcBlockPublicAccessExclusions operation.
+    /// Describe VPC Block Public Access (BPA) exclusions. A VPC BPA exclusion is a mode that
+    /// can be applied to a single VPC or subnet that exempts it from the account’s BPA mode
+    /// and will allow bidirectional or egress-only access. You can create BPA exclusions
+    /// for VPCs and subnets even when BPA is not enabled on the account to ensure that there
+    /// is no traffic disruption to the exclusions when VPC BPA is turned on. To learn more
+    /// about VPC BPA, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+    /// public access to VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
     /// </summary>
-    public partial class DescribeVpcPeeringConnectionsRequest : AmazonEC2Request
+    public partial class DescribeVpcBlockPublicAccessExclusionsRequest : AmazonEC2Request
     {
+        private List<string> _exclusionIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _vpcPeeringConnectionIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property ExclusionIds. 
+        /// <para>
+        /// IDs of exclusions.
+        /// </para>
+        /// </summary>
+        public List<string> ExclusionIds
+        {
+            get { return this._exclusionIds; }
+            set { this._exclusionIds = value; }
+        }
+
+        // Check to see if ExclusionIds property is set
+        internal bool IsSetExclusionIds()
+        {
+            return this._exclusionIds != null && (this._exclusionIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// The filters.
+        /// Filters for the request:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>accepter-vpc-info.cidr-block</c> - The IPv4 CIDR block of the accepter VPC.
+        ///  <c>resource-arn</c> - The Amazon Resource Name (ARN) of a exclusion.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>accepter-vpc-info.owner-id</c> - The ID of the Amazon Web Services account that
-        /// owns the accepter VPC.
+        ///  <c>internet-gateway-exclusion-mode</c> - The mode of a VPC BPA exclusion. Possible
+        /// values: <c>bidirectional-access-allowed | egress-access-allowed</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>accepter-vpc-info.vpc-id</c> - The ID of the accepter VPC.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>expiration-time</c> - The expiration date and time for the VPC peering connection.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>requester-vpc-info.cidr-block</c> - The IPv4 CIDR block of the requester's VPC.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>requester-vpc-info.owner-id</c> - The ID of the Amazon Web Services account that
-        /// owns the requester VPC.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>requester-vpc-info.vpc-id</c> - The ID of the requester VPC.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>status-code</c> - The status of the VPC peering connection (<c>pending-acceptance</c>
-        /// | <c>failed</c> | <c>expired</c> | <c>provisioning</c> | <c>active</c> | <c>deleting</c>
-        /// | <c>deleted</c> | <c>rejected</c>).
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>status-message</c> - A message that provides more information about the status
-        /// of the VPC peering connection, if applicable.
+        ///  <c>state</c> - The state of VPC BPA. Possible values: <c>create-in-progress | create-complete
+        /// | update-in-progress | update-complete | delete-in-progress | deleted-complete | disable-in-progress
+        /// | disable-complete</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -103,7 +98,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>vpc-peering-connection-id</c> - The ID of the VPC peering connection.
+        ///  <c>tag-value</c>: The value of a tag assigned to the resource. Use this filter to
+        /// find all resources assigned a tag with a specific value, regardless of the tag key.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -157,28 +153,6 @@ namespace Amazon.EC2.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property VpcPeeringConnectionIds. 
-        /// <para>
-        /// The IDs of the VPC peering connections.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: Describes all your VPC peering connections.
-        /// </para>
-        /// </summary>
-        public List<string> VpcPeeringConnectionIds
-        {
-            get { return this._vpcPeeringConnectionIds; }
-            set { this._vpcPeeringConnectionIds = value; }
-        }
-
-        // Check to see if VpcPeeringConnectionIds property is set
-        internal bool IsSetVpcPeeringConnectionIds()
-        {
-            return this._vpcPeeringConnectionIds != null && (this._vpcPeeringConnectionIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

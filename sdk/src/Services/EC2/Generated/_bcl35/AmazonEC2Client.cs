@@ -9151,6 +9151,66 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateVpcBlockPublicAccessExclusion
+
+        /// <summary>
+        /// Create a VPC Block Public Access (BPA) exclusion. A VPC BPA exclusion is a mode that
+        /// can be applied to a single VPC or subnet that exempts it from the account’s BPA mode
+        /// and will allow bidirectional or egress-only access. You can create BPA exclusions
+        /// for VPCs and subnets even when BPA is not enabled on the account to ensure that there
+        /// is no traffic disruption to the exclusions when VPC BPA is turned on. To learn more
+        /// about VPC BPA, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+        /// public access to VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcBlockPublicAccessExclusion service method.</param>
+        /// 
+        /// <returns>The response from the CreateVpcBlockPublicAccessExclusion service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcBlockPublicAccessExclusion">REST API Reference for CreateVpcBlockPublicAccessExclusion Operation</seealso>
+        public virtual CreateVpcBlockPublicAccessExclusionResponse CreateVpcBlockPublicAccessExclusion(CreateVpcBlockPublicAccessExclusionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVpcBlockPublicAccessExclusionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVpcBlockPublicAccessExclusionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVpcBlockPublicAccessExclusionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateVpcBlockPublicAccessExclusion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcBlockPublicAccessExclusion operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVpcBlockPublicAccessExclusion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcBlockPublicAccessExclusion">REST API Reference for CreateVpcBlockPublicAccessExclusion Operation</seealso>
+        public virtual IAsyncResult BeginCreateVpcBlockPublicAccessExclusion(CreateVpcBlockPublicAccessExclusionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVpcBlockPublicAccessExclusionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVpcBlockPublicAccessExclusionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateVpcBlockPublicAccessExclusion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVpcBlockPublicAccessExclusion.</param>
+        /// 
+        /// <returns>Returns a  CreateVpcBlockPublicAccessExclusionResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcBlockPublicAccessExclusion">REST API Reference for CreateVpcBlockPublicAccessExclusion Operation</seealso>
+        public virtual CreateVpcBlockPublicAccessExclusionResponse EndCreateVpcBlockPublicAccessExclusion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateVpcBlockPublicAccessExclusionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateVpcEndpoint
 
         /// <summary>
@@ -13513,6 +13573,66 @@ namespace Amazon.EC2
         public virtual DeleteVpcResponse EndDeleteVpc(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteVpcResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteVpcBlockPublicAccessExclusion
+
+        /// <summary>
+        /// Delete a VPC Block Public Access (BPA) exclusion. A VPC BPA exclusion is a mode that
+        /// can be applied to a single VPC or subnet that exempts it from the account’s BPA mode
+        /// and will allow bidirectional or egress-only access. You can create BPA exclusions
+        /// for VPCs and subnets even when BPA is not enabled on the account to ensure that there
+        /// is no traffic disruption to the exclusions when VPC BPA is turned on. To learn more
+        /// about VPC BPA, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+        /// public access to VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcBlockPublicAccessExclusion service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVpcBlockPublicAccessExclusion service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcBlockPublicAccessExclusion">REST API Reference for DeleteVpcBlockPublicAccessExclusion Operation</seealso>
+        public virtual DeleteVpcBlockPublicAccessExclusionResponse DeleteVpcBlockPublicAccessExclusion(DeleteVpcBlockPublicAccessExclusionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVpcBlockPublicAccessExclusionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVpcBlockPublicAccessExclusionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVpcBlockPublicAccessExclusionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVpcBlockPublicAccessExclusion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcBlockPublicAccessExclusion operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVpcBlockPublicAccessExclusion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcBlockPublicAccessExclusion">REST API Reference for DeleteVpcBlockPublicAccessExclusion Operation</seealso>
+        public virtual IAsyncResult BeginDeleteVpcBlockPublicAccessExclusion(DeleteVpcBlockPublicAccessExclusionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVpcBlockPublicAccessExclusionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVpcBlockPublicAccessExclusionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteVpcBlockPublicAccessExclusion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVpcBlockPublicAccessExclusion.</param>
+        /// 
+        /// <returns>Returns a  DeleteVpcBlockPublicAccessExclusionResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcBlockPublicAccessExclusion">REST API Reference for DeleteVpcBlockPublicAccessExclusion Operation</seealso>
+        public virtual DeleteVpcBlockPublicAccessExclusionResponse EndDeleteVpcBlockPublicAccessExclusion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteVpcBlockPublicAccessExclusionResponse>(asyncResult);
         }
 
         #endregion
@@ -24028,6 +24148,124 @@ namespace Amazon.EC2
         public virtual DescribeVpcAttributeResponse EndDescribeVpcAttribute(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeVpcAttributeResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeVpcBlockPublicAccessExclusions
+
+        /// <summary>
+        /// Describe VPC Block Public Access (BPA) exclusions. A VPC BPA exclusion is a mode that
+        /// can be applied to a single VPC or subnet that exempts it from the account’s BPA mode
+        /// and will allow bidirectional or egress-only access. You can create BPA exclusions
+        /// for VPCs and subnets even when BPA is not enabled on the account to ensure that there
+        /// is no traffic disruption to the exclusions when VPC BPA is turned on. To learn more
+        /// about VPC BPA, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+        /// public access to VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcBlockPublicAccessExclusions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVpcBlockPublicAccessExclusions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcBlockPublicAccessExclusions">REST API Reference for DescribeVpcBlockPublicAccessExclusions Operation</seealso>
+        public virtual DescribeVpcBlockPublicAccessExclusionsResponse DescribeVpcBlockPublicAccessExclusions(DescribeVpcBlockPublicAccessExclusionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVpcBlockPublicAccessExclusionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVpcBlockPublicAccessExclusionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVpcBlockPublicAccessExclusionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVpcBlockPublicAccessExclusions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcBlockPublicAccessExclusions operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVpcBlockPublicAccessExclusions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcBlockPublicAccessExclusions">REST API Reference for DescribeVpcBlockPublicAccessExclusions Operation</seealso>
+        public virtual IAsyncResult BeginDescribeVpcBlockPublicAccessExclusions(DescribeVpcBlockPublicAccessExclusionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVpcBlockPublicAccessExclusionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVpcBlockPublicAccessExclusionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeVpcBlockPublicAccessExclusions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVpcBlockPublicAccessExclusions.</param>
+        /// 
+        /// <returns>Returns a  DescribeVpcBlockPublicAccessExclusionsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcBlockPublicAccessExclusions">REST API Reference for DescribeVpcBlockPublicAccessExclusions Operation</seealso>
+        public virtual DescribeVpcBlockPublicAccessExclusionsResponse EndDescribeVpcBlockPublicAccessExclusions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeVpcBlockPublicAccessExclusionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeVpcBlockPublicAccessOptions
+
+        /// <summary>
+        /// Describe VPC Block Public Access (BPA) options. VPC Block public Access (BPA) enables
+        /// you to block resources in VPCs and subnets that you own in a Region from reaching
+        /// or being reached from the internet through internet gateways and egress-only internet
+        /// gateways. To learn more about VPC BPA, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+        /// public access to VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcBlockPublicAccessOptions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVpcBlockPublicAccessOptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcBlockPublicAccessOptions">REST API Reference for DescribeVpcBlockPublicAccessOptions Operation</seealso>
+        public virtual DescribeVpcBlockPublicAccessOptionsResponse DescribeVpcBlockPublicAccessOptions(DescribeVpcBlockPublicAccessOptionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVpcBlockPublicAccessOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVpcBlockPublicAccessOptionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVpcBlockPublicAccessOptionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVpcBlockPublicAccessOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcBlockPublicAccessOptions operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVpcBlockPublicAccessOptions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcBlockPublicAccessOptions">REST API Reference for DescribeVpcBlockPublicAccessOptions Operation</seealso>
+        public virtual IAsyncResult BeginDescribeVpcBlockPublicAccessOptions(DescribeVpcBlockPublicAccessOptionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVpcBlockPublicAccessOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVpcBlockPublicAccessOptionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeVpcBlockPublicAccessOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVpcBlockPublicAccessOptions.</param>
+        /// 
+        /// <returns>Returns a  DescribeVpcBlockPublicAccessOptionsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcBlockPublicAccessOptions">REST API Reference for DescribeVpcBlockPublicAccessOptions Operation</seealso>
+        public virtual DescribeVpcBlockPublicAccessOptionsResponse EndDescribeVpcBlockPublicAccessOptions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeVpcBlockPublicAccessOptionsResponse>(asyncResult);
         }
 
         #endregion
@@ -35459,6 +35697,122 @@ namespace Amazon.EC2
         public virtual ModifyVpcAttributeResponse EndModifyVpcAttribute(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyVpcAttributeResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ModifyVpcBlockPublicAccessExclusion
+
+        /// <summary>
+        /// Modify VPC Block Public Access (BPA) exclusions. A VPC BPA exclusion is a mode that
+        /// can be applied to a single VPC or subnet that exempts it from the account’s BPA mode
+        /// and will allow bidirectional or egress-only access. You can create BPA exclusions
+        /// for VPCs and subnets even when BPA is not enabled on the account to ensure that there
+        /// is no traffic disruption to the exclusions when VPC BPA is turned on.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcBlockPublicAccessExclusion service method.</param>
+        /// 
+        /// <returns>The response from the ModifyVpcBlockPublicAccessExclusion service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcBlockPublicAccessExclusion">REST API Reference for ModifyVpcBlockPublicAccessExclusion Operation</seealso>
+        public virtual ModifyVpcBlockPublicAccessExclusionResponse ModifyVpcBlockPublicAccessExclusion(ModifyVpcBlockPublicAccessExclusionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVpcBlockPublicAccessExclusionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVpcBlockPublicAccessExclusionResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyVpcBlockPublicAccessExclusionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyVpcBlockPublicAccessExclusion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcBlockPublicAccessExclusion operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyVpcBlockPublicAccessExclusion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcBlockPublicAccessExclusion">REST API Reference for ModifyVpcBlockPublicAccessExclusion Operation</seealso>
+        public virtual IAsyncResult BeginModifyVpcBlockPublicAccessExclusion(ModifyVpcBlockPublicAccessExclusionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVpcBlockPublicAccessExclusionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVpcBlockPublicAccessExclusionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyVpcBlockPublicAccessExclusion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyVpcBlockPublicAccessExclusion.</param>
+        /// 
+        /// <returns>Returns a  ModifyVpcBlockPublicAccessExclusionResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcBlockPublicAccessExclusion">REST API Reference for ModifyVpcBlockPublicAccessExclusion Operation</seealso>
+        public virtual ModifyVpcBlockPublicAccessExclusionResponse EndModifyVpcBlockPublicAccessExclusion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyVpcBlockPublicAccessExclusionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ModifyVpcBlockPublicAccessOptions
+
+        /// <summary>
+        /// Modify VPC Block Public Access (BPA) options. VPC Block public Access (BPA) enables
+        /// you to block resources in VPCs and subnets that you own in a Region from reaching
+        /// or being reached from the internet through internet gateways and egress-only internet
+        /// gateways. To learn more about VPC BPA, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+        /// public access to VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcBlockPublicAccessOptions service method.</param>
+        /// 
+        /// <returns>The response from the ModifyVpcBlockPublicAccessOptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcBlockPublicAccessOptions">REST API Reference for ModifyVpcBlockPublicAccessOptions Operation</seealso>
+        public virtual ModifyVpcBlockPublicAccessOptionsResponse ModifyVpcBlockPublicAccessOptions(ModifyVpcBlockPublicAccessOptionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVpcBlockPublicAccessOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVpcBlockPublicAccessOptionsResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyVpcBlockPublicAccessOptionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyVpcBlockPublicAccessOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcBlockPublicAccessOptions operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyVpcBlockPublicAccessOptions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcBlockPublicAccessOptions">REST API Reference for ModifyVpcBlockPublicAccessOptions Operation</seealso>
+        public virtual IAsyncResult BeginModifyVpcBlockPublicAccessOptions(ModifyVpcBlockPublicAccessOptionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyVpcBlockPublicAccessOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyVpcBlockPublicAccessOptionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyVpcBlockPublicAccessOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyVpcBlockPublicAccessOptions.</param>
+        /// 
+        /// <returns>Returns a  ModifyVpcBlockPublicAccessOptionsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcBlockPublicAccessOptions">REST API Reference for ModifyVpcBlockPublicAccessOptions Operation</seealso>
+        public virtual ModifyVpcBlockPublicAccessOptionsResponse EndModifyVpcBlockPublicAccessOptions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyVpcBlockPublicAccessOptionsResponse>(asyncResult);
         }
 
         #endregion

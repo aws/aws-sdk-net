@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Vpc Object
+    /// Response Unmarshaller for VpcBlockPublicAccessExclusion Object
     /// </summary>  
-    public class VpcUnmarshaller : IUnmarshaller<Vpc, XmlUnmarshallerContext>, IUnmarshaller<Vpc, JsonUnmarshallerContext>
+    public class VpcBlockPublicAccessExclusionUnmarshaller : IUnmarshaller<VpcBlockPublicAccessExclusion, XmlUnmarshallerContext>, IUnmarshaller<VpcBlockPublicAccessExclusion, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Vpc Unmarshall(XmlUnmarshallerContext context)
+        public VpcBlockPublicAccessExclusion Unmarshall(XmlUnmarshallerContext context)
         {
-            Vpc unmarshalledObject = new Vpc();
+            VpcBlockPublicAccessExclusion unmarshalledObject = new VpcBlockPublicAccessExclusion();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -55,62 +55,46 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("blockPublicAccessStates", targetDepth))
+                    if (context.TestExpression("creationTimestamp", targetDepth))
                     {
-                        var unmarshaller = BlockPublicAccessStatesUnmarshaller.Instance;
-                        unmarshalledObject.BlockPublicAccessStates = unmarshaller.Unmarshall(context);
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.CreationTimestamp = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("cidrBlock", targetDepth))
+                    if (context.TestExpression("deletionTimestamp", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.DeletionTimestamp = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("exclusionId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.CidrBlock = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ExclusionId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("cidrBlockAssociationSet/item", targetDepth))
-                    {
-                        var unmarshaller = VpcCidrBlockAssociationUnmarshaller.Instance;
-                        if (unmarshalledObject.CidrBlockAssociationSet == null)
-                        {
-                            unmarshalledObject.CidrBlockAssociationSet = new List<VpcCidrBlockAssociation>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.CidrBlockAssociationSet.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("dhcpOptionsId", targetDepth))
+                    if (context.TestExpression("internetGatewayExclusionMode", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.DhcpOptionsId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.InternetGatewayExclusionMode = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("instanceTenancy", targetDepth))
+                    if (context.TestExpression("lastUpdateTimestamp", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.LastUpdateTimestamp = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("reason", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.InstanceTenancy = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Reason = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("ipv6CidrBlockAssociationSet/item", targetDepth))
-                    {
-                        var unmarshaller = VpcIpv6CidrBlockAssociationUnmarshaller.Instance;
-                        if (unmarshalledObject.Ipv6CidrBlockAssociationSet == null)
-                        {
-                            unmarshalledObject.Ipv6CidrBlockAssociationSet = new List<VpcIpv6CidrBlockAssociation>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.Ipv6CidrBlockAssociationSet.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("isDefault", targetDepth))
-                    {
-                        var unmarshaller = BoolUnmarshaller.Instance;
-                        unmarshalledObject.IsDefault = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ownerId", targetDepth))
+                    if (context.TestExpression("resourceArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("state", targetDepth))
@@ -130,12 +114,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Tags.Add(item);
                         continue;
                     }
-                    if (context.TestExpression("vpcId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.VpcId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
@@ -151,18 +129,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Vpc Unmarshall(JsonUnmarshallerContext context)
+        public VpcBlockPublicAccessExclusion Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static VpcUnmarshaller _instance = new VpcUnmarshaller();        
+        private static VpcBlockPublicAccessExclusionUnmarshaller _instance = new VpcBlockPublicAccessExclusionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VpcUnmarshaller Instance
+        public static VpcBlockPublicAccessExclusionUnmarshaller Instance
         {
             get
             {

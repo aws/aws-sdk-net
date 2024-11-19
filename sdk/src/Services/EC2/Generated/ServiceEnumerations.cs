@@ -1779,6 +1779,60 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type BlockPublicAccessMode.
+    /// </summary>
+    public class BlockPublicAccessMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BlockBidirectional for BlockPublicAccessMode
+        /// </summary>
+        public static readonly BlockPublicAccessMode BlockBidirectional = new BlockPublicAccessMode("block-bidirectional");
+        /// <summary>
+        /// Constant BlockIngress for BlockPublicAccessMode
+        /// </summary>
+        public static readonly BlockPublicAccessMode BlockIngress = new BlockPublicAccessMode("block-ingress");
+        /// <summary>
+        /// Constant Off for BlockPublicAccessMode
+        /// </summary>
+        public static readonly BlockPublicAccessMode Off = new BlockPublicAccessMode("off");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BlockPublicAccessMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BlockPublicAccessMode FindValue(string value)
+        {
+            return FindValue<BlockPublicAccessMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BlockPublicAccessMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BootModeType.
     /// </summary>
     public class BootModeType : ConstantClass
@@ -11712,6 +11766,110 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InterfaceProtocolType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InternetGatewayBlockMode.
+    /// </summary>
+    public class InternetGatewayBlockMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BlockBidirectional for InternetGatewayBlockMode
+        /// </summary>
+        public static readonly InternetGatewayBlockMode BlockBidirectional = new InternetGatewayBlockMode("block-bidirectional");
+        /// <summary>
+        /// Constant BlockIngress for InternetGatewayBlockMode
+        /// </summary>
+        public static readonly InternetGatewayBlockMode BlockIngress = new InternetGatewayBlockMode("block-ingress");
+        /// <summary>
+        /// Constant Off for InternetGatewayBlockMode
+        /// </summary>
+        public static readonly InternetGatewayBlockMode Off = new InternetGatewayBlockMode("off");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InternetGatewayBlockMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InternetGatewayBlockMode FindValue(string value)
+        {
+            return FindValue<InternetGatewayBlockMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InternetGatewayBlockMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InternetGatewayExclusionMode.
+    /// </summary>
+    public class InternetGatewayExclusionMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AllowBidirectional for InternetGatewayExclusionMode
+        /// </summary>
+        public static readonly InternetGatewayExclusionMode AllowBidirectional = new InternetGatewayExclusionMode("allow-bidirectional");
+        /// <summary>
+        /// Constant AllowEgress for InternetGatewayExclusionMode
+        /// </summary>
+        public static readonly InternetGatewayExclusionMode AllowEgress = new InternetGatewayExclusionMode("allow-egress");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InternetGatewayExclusionMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InternetGatewayExclusionMode FindValue(string value)
+        {
+            return FindValue<InternetGatewayExclusionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InternetGatewayExclusionMode(string value)
         {
             return FindValue(value);
         }
@@ -22332,6 +22490,142 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator VpcAttributeName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VpcBlockPublicAccessExclusionState.
+    /// </summary>
+    public class VpcBlockPublicAccessExclusionState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CreateComplete for VpcBlockPublicAccessExclusionState
+        /// </summary>
+        public static readonly VpcBlockPublicAccessExclusionState CreateComplete = new VpcBlockPublicAccessExclusionState("create-complete");
+        /// <summary>
+        /// Constant CreateFailed for VpcBlockPublicAccessExclusionState
+        /// </summary>
+        public static readonly VpcBlockPublicAccessExclusionState CreateFailed = new VpcBlockPublicAccessExclusionState("create-failed");
+        /// <summary>
+        /// Constant CreateInProgress for VpcBlockPublicAccessExclusionState
+        /// </summary>
+        public static readonly VpcBlockPublicAccessExclusionState CreateInProgress = new VpcBlockPublicAccessExclusionState("create-in-progress");
+        /// <summary>
+        /// Constant DeleteComplete for VpcBlockPublicAccessExclusionState
+        /// </summary>
+        public static readonly VpcBlockPublicAccessExclusionState DeleteComplete = new VpcBlockPublicAccessExclusionState("delete-complete");
+        /// <summary>
+        /// Constant DeleteInProgress for VpcBlockPublicAccessExclusionState
+        /// </summary>
+        public static readonly VpcBlockPublicAccessExclusionState DeleteInProgress = new VpcBlockPublicAccessExclusionState("delete-in-progress");
+        /// <summary>
+        /// Constant DisableComplete for VpcBlockPublicAccessExclusionState
+        /// </summary>
+        public static readonly VpcBlockPublicAccessExclusionState DisableComplete = new VpcBlockPublicAccessExclusionState("disable-complete");
+        /// <summary>
+        /// Constant DisableInProgress for VpcBlockPublicAccessExclusionState
+        /// </summary>
+        public static readonly VpcBlockPublicAccessExclusionState DisableInProgress = new VpcBlockPublicAccessExclusionState("disable-in-progress");
+        /// <summary>
+        /// Constant UpdateComplete for VpcBlockPublicAccessExclusionState
+        /// </summary>
+        public static readonly VpcBlockPublicAccessExclusionState UpdateComplete = new VpcBlockPublicAccessExclusionState("update-complete");
+        /// <summary>
+        /// Constant UpdateFailed for VpcBlockPublicAccessExclusionState
+        /// </summary>
+        public static readonly VpcBlockPublicAccessExclusionState UpdateFailed = new VpcBlockPublicAccessExclusionState("update-failed");
+        /// <summary>
+        /// Constant UpdateInProgress for VpcBlockPublicAccessExclusionState
+        /// </summary>
+        public static readonly VpcBlockPublicAccessExclusionState UpdateInProgress = new VpcBlockPublicAccessExclusionState("update-in-progress");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VpcBlockPublicAccessExclusionState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VpcBlockPublicAccessExclusionState FindValue(string value)
+        {
+            return FindValue<VpcBlockPublicAccessExclusionState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VpcBlockPublicAccessExclusionState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VpcBlockPublicAccessState.
+    /// </summary>
+    public class VpcBlockPublicAccessState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DefaultState for VpcBlockPublicAccessState
+        /// </summary>
+        public static readonly VpcBlockPublicAccessState DefaultState = new VpcBlockPublicAccessState("default-state");
+        /// <summary>
+        /// Constant UpdateComplete for VpcBlockPublicAccessState
+        /// </summary>
+        public static readonly VpcBlockPublicAccessState UpdateComplete = new VpcBlockPublicAccessState("update-complete");
+        /// <summary>
+        /// Constant UpdateInProgress for VpcBlockPublicAccessState
+        /// </summary>
+        public static readonly VpcBlockPublicAccessState UpdateInProgress = new VpcBlockPublicAccessState("update-in-progress");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VpcBlockPublicAccessState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VpcBlockPublicAccessState FindValue(string value)
+        {
+            return FindValue<VpcBlockPublicAccessState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VpcBlockPublicAccessState(string value)
         {
             return FindValue(value);
         }

@@ -567,6 +567,11 @@
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeVpcBlockPublicAccessExclusionsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeVpcClassicLinkDnsSupportRequest.MaxResults</property>
     <min>5</min>
     <max>255</max>
@@ -1178,5 +1183,10 @@
     <property>Amazon.EC2.Model.VerifiedAccessEndpointLoadBalancerOptions.Port</property>
     <min>1</min>
     <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.VpcBlockPublicAccessExclusion.ResourceArn</property>
+    <min>1</min>
+    <max>1283</max>
   </property-value-rule>
 </property-value-rules>
