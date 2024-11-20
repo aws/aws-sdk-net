@@ -33,9 +33,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SetSubnets operation
+    /// Response Unmarshaller for DescribeCapacityReservation operation
     /// </summary>  
-    public class SetSubnetsResponseUnmarshaller : XmlResponseUnmarshaller
+    public class DescribeCapacityReservationResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,7 +44,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            SetSubnetsResponse response = new SetSubnetsResponse();
+            DescribeCapacityReservationResponse response = new DescribeCapacityReservationResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -52,7 +52,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement)
                 {                    
-                    if(context.TestExpression("SetSubnetsResult", 2))
+                    if(context.TestExpression("DescribeCapacityReservationResult", 2))
                     {
                         UnmarshallResult(context, response);                        
                         continue;
@@ -68,7 +68,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, SetSubnetsResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, DescribeCapacityReservationResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -82,27 +82,33 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("AvailabilityZones/member", targetDepth))
+                    if (context.TestExpression("CapacityReservationState/member", targetDepth))
                     {
-                        var unmarshaller = AvailabilityZoneUnmarshaller.Instance;
-                        if (response.AvailabilityZones == null)
+                        var unmarshaller = ZonalCapacityReservationStateUnmarshaller.Instance;
+                        if (response.CapacityReservationState == null)
                         {
-                            response.AvailabilityZones = new List<AvailabilityZone>();
+                            response.CapacityReservationState = new List<ZonalCapacityReservationState>();
                         }
                         var item = unmarshaller.Unmarshall(context);
-                        response.AvailabilityZones.Add(item);
+                        response.CapacityReservationState.Add(item);
                         continue;
                     }
-                    if (context.TestExpression("EnablePrefixForIpv6SourceNat", targetDepth))
+                    if (context.TestExpression("DecreaseRequestsRemaining", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.EnablePrefixForIpv6SourceNat = unmarshaller.Unmarshall(context);
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        response.DecreaseRequestsRemaining = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("IpAddressType", targetDepth))
+                    if (context.TestExpression("LastModifiedTime", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.IpAddressType = unmarshaller.Unmarshall(context);
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        response.LastModifiedTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("MinimumLoadBalancerCapacity", targetDepth))
+                    {
+                        var unmarshaller = MinimumLoadBalancerCapacityUnmarshaller.Instance;
+                        response.MinimumLoadBalancerCapacity = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 
@@ -130,40 +136,16 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("AllocationIdNotFound"))
-                {
-                    return AllocationIdNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("AvailabilityZoneNotSupported"))
-                {
-                    return AvailabilityZoneNotSupportedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("CapacityReservationPending"))
-                {
-                    return CapacityReservationPendingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidConfigurationRequest"))
-                {
-                    return InvalidConfigurationRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidSubnet"))
-                {
-                    return InvalidSubnetExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("LoadBalancerNotFound"))
                 {
                     return LoadBalancerNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("SubnetNotFound"))
-                {
-                    return SubnetNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
             }
             return new AmazonElasticLoadBalancingV2Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static SetSubnetsResponseUnmarshaller _instance = new SetSubnetsResponseUnmarshaller();        
+        private static DescribeCapacityReservationResponseUnmarshaller _instance = new DescribeCapacityReservationResponseUnmarshaller();        
 
-        internal static SetSubnetsResponseUnmarshaller GetInstance()
+        internal static DescribeCapacityReservationResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -171,7 +153,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SetSubnetsResponseUnmarshaller Instance
+        public static DescribeCapacityReservationResponseUnmarshaller Instance
         {
             get
             {

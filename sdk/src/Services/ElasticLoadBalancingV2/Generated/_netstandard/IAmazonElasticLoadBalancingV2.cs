@@ -837,6 +837,27 @@ namespace Amazon.ElasticLoadBalancingV2
 
         #endregion
                 
+        #region  DescribeCapacityReservation
+
+
+
+        /// <summary>
+        /// Describes the capacity reservation status for the specified load balancer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityReservation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCapacityReservation service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.LoadBalancerNotFoundException">
+        /// The specified load balancer does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeCapacityReservation">REST API Reference for DescribeCapacityReservation Operation</seealso>
+        Task<DescribeCapacityReservationResponse> DescribeCapacityReservationAsync(DescribeCapacityReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeListenerAttributes
 
 
@@ -1313,6 +1334,54 @@ namespace Amazon.ElasticLoadBalancingV2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/GetTrustStoreRevocationContent">REST API Reference for GetTrustStoreRevocationContent Operation</seealso>
         Task<GetTrustStoreRevocationContentResponse> GetTrustStoreRevocationContentAsync(GetTrustStoreRevocationContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ModifyCapacityReservation
+
+
+
+        /// <summary>
+        /// Modifies the capacity reservation of the specified load balancer.
+        /// 
+        ///  
+        /// <para>
+        /// When modifying capacity reservation, you must include at least one <c>MinimumLoadBalancerCapacity</c>
+        /// or <c>ResetCapacityReservation</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyCapacityReservation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyCapacityReservation service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.CapacityDecreaseRequestsLimitExceededException">
+        /// You've exceeded the daily capacity decrease limit for this reservation.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.CapacityReservationPendingException">
+        /// There is a pending capacity reservation.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.CapacityUnitsLimitExceededException">
+        /// You've exceeded the capacity units limit.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.InsufficientCapacityException">
+        /// There is insufficient capacity to reserve.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.InvalidConfigurationRequestException">
+        /// The requested configuration is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.LoadBalancerNotFoundException">
+        /// The specified load balancer does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.OperationNotPermittedException">
+        /// This operation is not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.PriorRequestNotCompleteException">
+        /// This operation is not allowed while a prior request has not been completed.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyCapacityReservation">REST API Reference for ModifyCapacityReservation Operation</seealso>
+        Task<ModifyCapacityReservationResponse> ModifyCapacityReservationAsync(ModifyCapacityReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1866,6 +1935,9 @@ namespace Amazon.ElasticLoadBalancingV2
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.AvailabilityZoneNotSupportedException">
         /// The specified Availability Zone is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.CapacityReservationPendingException">
+        /// There is a pending capacity reservation.
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.InvalidConfigurationRequestException">
         /// The requested configuration is not valid.
