@@ -38,6 +38,7 @@ namespace Amazon.ControlTower.Model
         private string _baselineIdentifier;
         private string _baselineVersion;
         private List<EnabledBaselineParameterSummary> _parameters = AWSConfigs.InitializeCollections ? new List<EnabledBaselineParameterSummary>() : null;
+        private string _parentIdentifier;
         private EnablementStatusSummary _statusSummary;
         private string _targetIdentifier;
 
@@ -113,6 +114,27 @@ namespace Amazon.ControlTower.Model
         internal bool IsSetParameters()
         {
             return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParentIdentifier. 
+        /// <para>
+        /// An ARN that represents the parent <c>EnabledBaseline</c> at the Organizational Unit
+        /// (OU) level, from which the child <c>EnabledBaseline</c> inherits its configuration.
+        /// The value is returned by <c>GetEnabledBaseline</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ParentIdentifier
+        {
+            get { return this._parentIdentifier; }
+            set { this._parentIdentifier = value; }
+        }
+
+        // Check to see if ParentIdentifier property is set
+        internal bool IsSetParentIdentifier()
+        {
+            return this._parentIdentifier != null;
         }
 
         /// <summary>
