@@ -96,6 +96,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         unmarshalledObject.CapacityRebalance = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("CapacityReservationSpecification", targetDepth))
+                    {
+                        var unmarshaller = CapacityReservationSpecificationUnmarshaller.Instance;
+                        unmarshalledObject.CapacityReservationSpecification = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Context", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
