@@ -34,7 +34,8 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// Invokes an alias of a flow to run the inputs that you specify and return the output
     /// of each node as a stream. If there's an error, the error is returned. For more information,
     /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/flows-test.html">Test
-    /// a flow in Amazon Bedrock</a> in the Amazon Bedrock User Guide.
+    /// a flow in Amazon Bedrock</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
+    /// Bedrock User Guide</a>.
     /// 
     ///  <note> 
     /// <para>
