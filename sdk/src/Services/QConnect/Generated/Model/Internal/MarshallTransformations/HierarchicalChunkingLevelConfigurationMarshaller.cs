@@ -51,7 +51,7 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxTokens())
             {
                 context.Writer.WritePropertyName("maxTokens");
-                context.Writer.Write(requestObject.MaxTokens);
+                context.Writer.Write(requestObject.MaxTokens.Value);
             }
 
         }

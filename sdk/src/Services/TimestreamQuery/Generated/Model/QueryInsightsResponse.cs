@@ -50,9 +50,9 @@ namespace Amazon.TimestreamQuery.Model
         /// if the result set has changed as part of the query tuning exercise.
         /// </para>
         /// </summary>
-        public long OutputBytes
+        public long? OutputBytes
         {
-            get { return this._outputBytes.GetValueOrDefault(); }
+            get { return this._outputBytes; }
             set { this._outputBytes = value; }
         }
 
@@ -70,9 +70,9 @@ namespace Amazon.TimestreamQuery.Model
         /// part of the query tuning exercise.
         /// </para>
         /// </summary>
-        public long OutputRows
+        public long? OutputRows
         {
-            get { return this._outputRows.GetValueOrDefault(); }
+            get { return this._outputRows; }
             set { this._outputRows = value; }
         }
 
@@ -108,9 +108,9 @@ namespace Amazon.TimestreamQuery.Model
         /// Indicates the number of tables in the query.
         /// </para>
         /// </summary>
-        public long QueryTableCount
+        public long? QueryTableCount
         {
-            get { return this._queryTableCount.GetValueOrDefault(); }
+            get { return this._queryTableCount; }
             set { this._queryTableCount = value; }
         }
 
@@ -159,9 +159,9 @@ namespace Amazon.TimestreamQuery.Model
         /// Indicates the partitions created by the <c>Unload</c> operation.
         /// </para>
         /// </summary>
-        public long UnloadPartitionCount
+        public long? UnloadPartitionCount
         {
-            get { return this._unloadPartitionCount.GetValueOrDefault(); }
+            get { return this._unloadPartitionCount; }
             set { this._unloadPartitionCount = value; }
         }
 
@@ -177,9 +177,9 @@ namespace Amazon.TimestreamQuery.Model
         /// Indicates the size, in bytes, written by the <c>Unload</c> operation.
         /// </para>
         /// </summary>
-        public long UnloadWrittenBytes
+        public long? UnloadWrittenBytes
         {
-            get { return this._unloadWrittenBytes.GetValueOrDefault(); }
+            get { return this._unloadWrittenBytes; }
             set { this._unloadWrittenBytes = value; }
         }
 
@@ -195,9 +195,9 @@ namespace Amazon.TimestreamQuery.Model
         /// Indicates the rows written by the <c>Unload</c> query.
         /// </para>
         /// </summary>
-        public long UnloadWrittenRows
+        public long? UnloadWrittenRows
         {
-            get { return this._unloadWrittenRows.GetValueOrDefault(); }
+            get { return this._unloadWrittenRows; }
             set { this._unloadWrittenRows = value; }
         }
 

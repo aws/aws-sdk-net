@@ -61,102 +61,105 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/v2/campaigns";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetChannelSubtypeConfig())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("channelSubtypeConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ChannelSubtypeConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ChannelSubtypeConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetCommunicationLimitsOverride())
-                {
-                    context.Writer.WritePropertyName("communicationLimitsOverride");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CommunicationLimitsConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CommunicationLimitsOverride, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetCommunicationTimeConfig())
-                {
-                    context.Writer.WritePropertyName("communicationTimeConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CommunicationTimeConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CommunicationTimeConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetConnectCampaignFlowArn())
-                {
-                    context.Writer.WritePropertyName("connectCampaignFlowArn");
-                    context.Writer.Write(publicRequest.ConnectCampaignFlowArn);
-                }
-
-                if(publicRequest.IsSetConnectInstanceId())
-                {
-                    context.Writer.WritePropertyName("connectInstanceId");
-                    context.Writer.Write(publicRequest.ConnectInstanceId);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetSchedule())
-                {
-                    context.Writer.WritePropertyName("schedule");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ScheduleMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Schedule, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSource())
-                {
-                    context.Writer.WritePropertyName("source");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SourceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Source, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetChannelSubtypeConfig())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
+                        context.Writer.WritePropertyName("channelSubtypeConfig");
+                        context.Writer.WriteObjectStart();
 
-                            context.Writer.Write(publicRequestTagsValue);
+                        var marshaller = ChannelSubtypeConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ChannelSubtypeConfig, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetCommunicationLimitsOverride())
+                    {
+                        context.Writer.WritePropertyName("communicationLimitsOverride");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CommunicationLimitsConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CommunicationLimitsOverride, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetCommunicationTimeConfig())
+                    {
+                        context.Writer.WritePropertyName("communicationTimeConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CommunicationTimeConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CommunicationTimeConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetConnectCampaignFlowArn())
+                    {
+                        context.Writer.WritePropertyName("connectCampaignFlowArn");
+                        context.Writer.Write(publicRequest.ConnectCampaignFlowArn);
+                    }
+
+                    if(publicRequest.IsSetConnectInstanceId())
+                    {
+                        context.Writer.WritePropertyName("connectInstanceId");
+                        context.Writer.Write(publicRequest.ConnectInstanceId);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetSchedule())
+                    {
+                        context.Writer.WritePropertyName("schedule");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ScheduleMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Schedule, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSource())
+                    {
+                        context.Writer.WritePropertyName("source");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SourceMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Source, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

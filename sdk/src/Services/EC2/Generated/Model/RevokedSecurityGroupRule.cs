@@ -107,9 +107,9 @@ namespace Amazon.EC2.Model
         /// The 'from' port number of the security group rule.
         /// </para>
         /// </summary>
-        public int FromPort
+        public int? FromPort
         {
-            get { return this._fromPort.GetValueOrDefault(); }
+            get { return this._fromPort; }
             set { this._fromPort = value; }
         }
 
@@ -161,9 +161,9 @@ namespace Amazon.EC2.Model
         /// Defines if a security group rule is an outbound rule.
         /// </para>
         /// </summary>
-        public bool IsEgress
+        public bool? IsEgress
         {
-            get { return this._isEgress.GetValueOrDefault(); }
+            get { return this._isEgress; }
             set { this._isEgress = value; }
         }
 
@@ -233,9 +233,9 @@ namespace Amazon.EC2.Model
         /// The 'to' port number of the security group rule.
         /// </para>
         /// </summary>
-        public int ToPort
+        public int? ToPort
         {
-            get { return this._toPort.GetValueOrDefault(); }
+            get { return this._toPort; }
             set { this._toPort = value; }
         }
 

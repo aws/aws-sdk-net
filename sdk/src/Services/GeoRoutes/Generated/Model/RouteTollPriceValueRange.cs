@@ -44,9 +44,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public double Max
+        public double? Max
         {
-            get { return this._max.GetValueOrDefault(); }
+            get { return this._max; }
             set { this._max = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public double Min
+        public double? Min
         {
-            get { return this._min.GetValueOrDefault(); }
+            get { return this._min; }
             set { this._min = value; }
         }
 

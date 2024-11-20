@@ -51,7 +51,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEncryptionEnabled())
             {
                 context.Writer.WritePropertyName("EncryptionEnabled");
-                context.Writer.Write(requestObject.EncryptionEnabled);
+                context.Writer.Write(requestObject.EncryptionEnabled.Value);
             }
 
             if(requestObject.IsSetKmsKeyIdentifier())

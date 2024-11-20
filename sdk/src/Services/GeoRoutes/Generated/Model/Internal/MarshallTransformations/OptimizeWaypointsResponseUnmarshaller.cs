@@ -60,13 +60,13 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Distance", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.Distance = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Duration", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.Duration = unmarshaller.Unmarshall(context);
                     continue;
                 }

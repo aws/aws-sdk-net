@@ -63,9 +63,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The change data capture (CDC) start time for the source data provider.
         /// </para>
         /// </summary>
-        public DateTime CDCStartTime
+        public DateTime? CDCStartTime
         {
-            get { return this._cdcStartTime.GetValueOrDefault(); }
+            get { return this._cdcStartTime; }
             set { this._cdcStartTime = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The change data capture (CDC) stop time for the source data provider.
         /// </para>
         /// </summary>
-        public DateTime CDCStopTime
+        public DateTime? CDCStopTime
         {
-            get { return this._cdcStopTime.GetValueOrDefault(); }
+            get { return this._cdcStopTime; }
             set { this._cdcStopTime = value; }
         }
 

@@ -68,7 +68,7 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Time", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Time = unmarshaller.Unmarshall(context);
                     continue;
                 }

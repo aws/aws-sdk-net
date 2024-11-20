@@ -69,7 +69,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRequiresRestartForConfigurationUpdate())
             {
                 context.Writer.WritePropertyName("RequiresRestartForConfigurationUpdate");
-                context.Writer.Write(requestObject.RequiresRestartForConfigurationUpdate);
+                context.Writer.Write(requestObject.RequiresRestartForConfigurationUpdate.Value);
             }
 
         }

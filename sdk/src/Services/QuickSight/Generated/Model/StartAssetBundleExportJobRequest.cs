@@ -192,9 +192,9 @@ namespace Amazon.QuickSight.Model
         /// folders that the asset is a member of. 
         /// </para>
         /// </summary>
-        public bool IncludeFolderMemberships
+        public bool? IncludeFolderMemberships
         {
-            get { return this._includeFolderMemberships.GetValueOrDefault(); }
+            get { return this._includeFolderMemberships; }
             set { this._includeFolderMemberships = value; }
         }
 

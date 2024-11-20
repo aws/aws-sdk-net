@@ -51,7 +51,7 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNumber())
             {
                 context.Writer.WritePropertyName("number");
-                context.Writer.Write(requestObject.Number);
+                context.Writer.Write(requestObject.Number.Value);
             }
 
             if(requestObject.IsSetType())

@@ -74,7 +74,7 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Restricted", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Restricted = unmarshaller.Unmarshall(context);
                     continue;
                 }

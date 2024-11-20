@@ -45,9 +45,9 @@ namespace Amazon.ConnectCampaignsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=30)]
-        public int Frequency
+        public int? Frequency
         {
-            get { return this._frequency.GetValueOrDefault(); }
+            get { return this._frequency; }
             set { this._frequency = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.ConnectCampaignsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int MaxCountPerRecipient
+        public int? MaxCountPerRecipient
         {
-            get { return this._maxCountPerRecipient.GetValueOrDefault(); }
+            get { return this._maxCountPerRecipient; }
             set { this._maxCountPerRecipient = value; }
         }
 

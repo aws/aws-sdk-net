@@ -426,12 +426,11 @@ namespace Amazon.ECS
         /// 
         ///  <note> 
         /// <para>
-        /// When you call the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCluster.html">CreateCluster</a>
-        /// API operation, Amazon ECS attempts to create the Amazon ECS service-linked role for
-        /// your account. This is so that it can manage required resources in other Amazon Web
-        /// Services services on your behalf. However, if the user that makes the call doesn't
-        /// have permissions to create the service-linked role, it isn't created. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+        /// When you call the <a>CreateCluster</a> API operation, Amazon ECS attempts to create
+        /// the Amazon ECS service-linked role for your account. This is so that it can manage
+        /// required resources in other Amazon Web Services services on your behalf. However,
+        /// if the user that makes the call doesn't have permissions to create the service-linked
+        /// role, it isn't created. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
         /// service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service
         /// Developer Guide</i>.
         /// </para>
@@ -485,12 +484,11 @@ namespace Amazon.ECS
         /// 
         ///  <note> 
         /// <para>
-        /// When you call the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCluster.html">CreateCluster</a>
-        /// API operation, Amazon ECS attempts to create the Amazon ECS service-linked role for
-        /// your account. This is so that it can manage required resources in other Amazon Web
-        /// Services services on your behalf. However, if the user that makes the call doesn't
-        /// have permissions to create the service-linked role, it isn't created. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+        /// When you call the <a>CreateCluster</a> API operation, Amazon ECS attempts to create
+        /// the Amazon ECS service-linked role for your account. This is so that it can manage
+        /// required resources in other Amazon Web Services services on your behalf. However,
+        /// if the user that makes the call doesn't have permissions to create the service-linked
+        /// role, it isn't created. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
         /// service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service
         /// Developer Guide</i>.
         /// </para>
@@ -548,13 +546,17 @@ namespace Amazon.ECS
         /// Runs and maintains your desired number of tasks from a specified task definition.
         /// If the number of tasks running in a service drops below the <c>desiredCount</c>, Amazon
         /// ECS runs another copy of the task in the specified cluster. To update an existing
-        /// service, use <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html">UpdateService</a>.
+        /// service, see the <a>UpdateService</a> action.
         /// 
         ///  <note> 
         /// <para>
         /// On March 21, 2024, a change was made to resolve the task definition revision before
         /// authorization. When a task definition revision is not specified, authorization will
         /// occur using the latest revision of a task definition.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// Amazon Elastic Inference (EI) is no longer available to customers.
         /// </para>
         ///  </note> 
         /// <para>
@@ -663,16 +665,6 @@ namespace Amazon.ECS
         /// about task placement and task placement strategies, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement.html">Amazon
         /// ECS task placement</a> in the <i>Amazon Elastic Container Service Developer Guide</i>
         /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon
-        /// Elastic Inference (EI), and will help current customers migrate their workloads to
-        /// options that offer better price and performance. After April 15, 2023, new customers
-        /// will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker,
-        /// Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once
-        /// during the past 30-day period are considered current customers and will be able to
-        /// continue using the service. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateService service method.</param>
@@ -737,13 +729,17 @@ namespace Amazon.ECS
         /// Runs and maintains your desired number of tasks from a specified task definition.
         /// If the number of tasks running in a service drops below the <c>desiredCount</c>, Amazon
         /// ECS runs another copy of the task in the specified cluster. To update an existing
-        /// service, use <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html">UpdateService</a>.
+        /// service, see the <a>UpdateService</a> action.
         /// 
         ///  <note> 
         /// <para>
         /// On March 21, 2024, a change was made to resolve the task definition revision before
         /// authorization. When a task definition revision is not specified, authorization will
         /// occur using the latest revision of a task definition.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// Amazon Elastic Inference (EI) is no longer available to customers.
         /// </para>
         ///  </note> 
         /// <para>
@@ -852,16 +848,6 @@ namespace Amazon.ECS
         /// about task placement and task placement strategies, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement.html">Amazon
         /// ECS task placement</a> in the <i>Amazon Elastic Container Service Developer Guide</i>
         /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon
-        /// Elastic Inference (EI), and will help current customers migrate their workloads to
-        /// options that offer better price and performance. After April 15, 2023, new customers
-        /// will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker,
-        /// Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once
-        /// during the past 30-day period are considered current customers and will be able to
-        /// continue using the service. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateService service method.</param>
@@ -2547,6 +2533,278 @@ namespace Amazon.ECS
 
         #endregion
         
+        #region  DescribeServiceDeployments
+
+
+        /// <summary>
+        /// Describes one or more of your service deployments.
+        /// 
+        ///  
+        /// <para>
+        /// A service deployment happens when you release a software update for the service. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-deployments.html">Amazon
+        /// ECS service deployments</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServiceDeployments service method.</param>
+        /// 
+        /// <returns>The response from the DescribeServiceDeployments service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceNotFoundException">
+        /// The specified service wasn't found. You can view your available services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">ListServices</a>.
+        /// Amazon ECS services are cluster specific and Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServiceDeployments">REST API Reference for DescribeServiceDeployments Operation</seealso>
+        public virtual DescribeServiceDeploymentsResponse DescribeServiceDeployments(DescribeServiceDeploymentsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeServiceDeploymentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeServiceDeploymentsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeServiceDeploymentsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes one or more of your service deployments.
+        /// 
+        ///  
+        /// <para>
+        /// A service deployment happens when you release a software update for the service. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-deployments.html">Amazon
+        /// ECS service deployments</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServiceDeployments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeServiceDeployments service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceNotFoundException">
+        /// The specified service wasn't found. You can view your available services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">ListServices</a>.
+        /// Amazon ECS services are cluster specific and Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServiceDeployments">REST API Reference for DescribeServiceDeployments Operation</seealso>
+        public virtual Task<DescribeServiceDeploymentsResponse> DescribeServiceDeploymentsAsync(DescribeServiceDeploymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeServiceDeploymentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeServiceDeploymentsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeServiceDeploymentsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeServiceRevisions
+
+
+        /// <summary>
+        /// Describes one or more service revisions.
+        /// 
+        ///  
+        /// <para>
+        /// A service revision is a version of the service that includes the values for the Amazon
+        /// ECS resources (for example, task definition) and the environment resources (for example,
+        /// load balancers, subnets, and security groups). For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-revision.html">Amazon
+        /// ECS service revisions</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't describe a service revision that was created before October 25, 2024.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServiceRevisions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeServiceRevisions service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceNotFoundException">
+        /// The specified service wasn't found. You can view your available services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">ListServices</a>.
+        /// Amazon ECS services are cluster specific and Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServiceRevisions">REST API Reference for DescribeServiceRevisions Operation</seealso>
+        public virtual DescribeServiceRevisionsResponse DescribeServiceRevisions(DescribeServiceRevisionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeServiceRevisionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeServiceRevisionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeServiceRevisionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes one or more service revisions.
+        /// 
+        ///  
+        /// <para>
+        /// A service revision is a version of the service that includes the values for the Amazon
+        /// ECS resources (for example, task definition) and the environment resources (for example,
+        /// load balancers, subnets, and security groups). For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-revision.html">Amazon
+        /// ECS service revisions</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't describe a service revision that was created before October 25, 2024.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeServiceRevisions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeServiceRevisions service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClusterNotFoundException">
+        /// The specified cluster wasn't found. You can view your available clusters with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html">ListClusters</a>.
+        /// Amazon ECS clusters are Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceNotFoundException">
+        /// The specified service wasn't found. You can view your available services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">ListServices</a>.
+        /// Amazon ECS services are cluster specific and Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServiceRevisions">REST API Reference for DescribeServiceRevisions Operation</seealso>
+        public virtual Task<DescribeServiceRevisionsResponse> DescribeServiceRevisionsAsync(DescribeServiceRevisionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeServiceRevisionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeServiceRevisionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeServiceRevisionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeServices
 
 
@@ -3633,6 +3891,137 @@ namespace Amazon.ECS
             options.ResponseUnmarshaller = ListContainerInstancesResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListContainerInstancesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListServiceDeployments
+
+
+        /// <summary>
+        /// This operation lists all the service deployments that meet the specified filter criteria.
+        /// 
+        ///  
+        /// <para>
+        /// A service deployment happens when you release a softwre update for the service. You
+        /// route traffic from the running service revisions to the new service revison and control
+        /// the number of running tasks. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This API returns the values that you use for the request parameters in <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeServiceRevisions.html">DescribeServiceRevisions</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceDeployments service method.</param>
+        /// 
+        /// <returns>The response from the ListServiceDeployments service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceNotFoundException">
+        /// The specified service wasn't found. You can view your available services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">ListServices</a>.
+        /// Amazon ECS services are cluster specific and Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServiceDeployments">REST API Reference for ListServiceDeployments Operation</seealso>
+        public virtual ListServiceDeploymentsResponse ListServiceDeployments(ListServiceDeploymentsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListServiceDeploymentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListServiceDeploymentsResponseUnmarshaller.Instance;
+
+            return Invoke<ListServiceDeploymentsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This operation lists all the service deployments that meet the specified filter criteria.
+        /// 
+        ///  
+        /// <para>
+        /// A service deployment happens when you release a softwre update for the service. You
+        /// route traffic from the running service revisions to the new service revison and control
+        /// the number of running tasks. 
+        /// </para>
+        ///  
+        /// <para>
+        /// This API returns the values that you use for the request parameters in <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeServiceRevisions.html">DescribeServiceRevisions</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceDeployments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListServiceDeployments service method, as returned by ECS.</returns>
+        /// <exception cref="Amazon.ECS.Model.AccessDeniedException">
+        /// You don't have authorization to perform the requested action.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ClientException">
+        /// These errors are usually caused by a client action. This client action might be using
+        /// an action or resource on behalf of a user that doesn't have permissions to use the
+        /// action or resource. Or, it might be specifying an identifier that isn't valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following list includes additional causes for the error:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>RunTask</c> could not be processed because you use managed scaling and there
+        /// is a capacity error because the quota of tasks in the <c>PROVISIONING</c> per cluster
+        /// has been reached. For information about the service quotas, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+        /// ECS service quotas</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
+        /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.ServiceNotFoundException">
+        /// The specified service wasn't found. You can view your available services with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">ListServices</a>.
+        /// Amazon ECS services are cluster specific and Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
+        /// The specified task isn't supported in this Region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServiceDeployments">REST API Reference for ListServiceDeployments Operation</seealso>
+        public virtual Task<ListServiceDeploymentsResponse> ListServiceDeploymentsAsync(ListServiceDeploymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListServiceDeploymentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListServiceDeploymentsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListServiceDeploymentsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4836,6 +5225,10 @@ namespace Amazon.ECS
         /// authorization. When a task definition revision is not specified, authorization will
         /// occur using the latest revision of a task definition.
         /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// Amazon Elastic Inference (EI) is no longer available to customers.
+        /// </para>
         ///  </note> 
         /// <para>
         /// You can allow Amazon ECS to place tasks for you, or you can customize how Amazon ECS
@@ -4847,16 +5240,6 @@ namespace Amazon.ECS
         /// <para>
         /// Alternatively, you can use <c>StartTask</c> to use your own scheduler or place tasks
         /// manually on specific container instances.
-        /// </para>
-        ///  
-        /// <para>
-        /// Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon
-        /// Elastic Inference (EI), and will help current customers migrate their workloads to
-        /// options that offer better price and performance. After April 15, 2023, new customers
-        /// will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker,
-        /// Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once
-        /// during the past 30-day period are considered current customers and will be able to
-        /// continue using the service. 
         /// </para>
         ///  
         /// <para>
@@ -4980,6 +5363,10 @@ namespace Amazon.ECS
         /// authorization. When a task definition revision is not specified, authorization will
         /// occur using the latest revision of a task definition.
         /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// Amazon Elastic Inference (EI) is no longer available to customers.
+        /// </para>
         ///  </note> 
         /// <para>
         /// You can allow Amazon ECS to place tasks for you, or you can customize how Amazon ECS
@@ -4991,16 +5378,6 @@ namespace Amazon.ECS
         /// <para>
         /// Alternatively, you can use <c>StartTask</c> to use your own scheduler or place tasks
         /// manually on specific container instances.
-        /// </para>
-        ///  
-        /// <para>
-        /// Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon
-        /// Elastic Inference (EI), and will help current customers migrate their workloads to
-        /// options that offer better price and performance. After April 15, 2023, new customers
-        /// will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker,
-        /// Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once
-        /// during the past 30-day period are considered current customers and will be able to
-        /// continue using the service. 
         /// </para>
         ///  
         /// <para>
@@ -5132,17 +5509,11 @@ namespace Amazon.ECS
         /// authorization. When a task definition revision is not specified, authorization will
         /// occur using the latest revision of a task definition.
         /// </para>
-        ///  </note> 
+        ///  </note> <note> 
         /// <para>
-        /// Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon
-        /// Elastic Inference (EI), and will help current customers migrate their workloads to
-        /// options that offer better price and performance. After April 15, 2023, new customers
-        /// will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker,
-        /// Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once
-        /// during the past 30-day period are considered current customers and will be able to
-        /// continue using the service. 
+        /// Amazon Elastic Inference (EI) is no longer available to customers.
         /// </para>
-        ///  
+        ///  </note> 
         /// <para>
         /// Alternatively, you can use<c>RunTask</c> to place tasks for you. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
@@ -5210,17 +5581,11 @@ namespace Amazon.ECS
         /// authorization. When a task definition revision is not specified, authorization will
         /// occur using the latest revision of a task definition.
         /// </para>
-        ///  </note> 
+        ///  </note> <note> 
         /// <para>
-        /// Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon
-        /// Elastic Inference (EI), and will help current customers migrate their workloads to
-        /// options that offer better price and performance. After April 15, 2023, new customers
-        /// will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker,
-        /// Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once
-        /// during the past 30-day period are considered current customers and will be able to
-        /// continue using the service. 
+        /// Amazon Elastic Inference (EI) is no longer available to customers.
         /// </para>
-        ///  
+        ///  </note> 
         /// <para>
         /// Alternatively, you can use<c>RunTask</c> to place tasks for you. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling

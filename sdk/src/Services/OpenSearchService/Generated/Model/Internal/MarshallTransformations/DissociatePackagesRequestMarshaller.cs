@@ -61,32 +61,35 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/2021-01-01/packages/dissociateMultiple";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDomainName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DomainName");
-                    context.Writer.Write(publicRequest.DomainName);
-                }
-
-                if(publicRequest.IsSetPackageList())
-                {
-                    context.Writer.WritePropertyName("PackageList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPackageListListValue in publicRequest.PackageList)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDomainName())
                     {
-                            context.Writer.Write(publicRequestPackageListListValue);
+                        context.Writer.WritePropertyName("DomainName");
+                        context.Writer.Write(publicRequest.DomainName);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetPackageList())
+                    {
+                        context.Writer.WritePropertyName("PackageList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPackageListListValue in publicRequest.PackageList)
+                        {
+                                context.Writer.Write(publicRequestPackageListListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

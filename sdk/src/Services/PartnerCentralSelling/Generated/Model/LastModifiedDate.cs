@@ -45,9 +45,9 @@ namespace Amazon.PartnerCentralSelling.Model
         /// retrieve only those opportunities that were modified after a given timestamp.
         /// </para>
         /// </summary>
-        public DateTime AfterLastModifiedDate
+        public DateTime? AfterLastModifiedDate
         {
-            get { return this._afterLastModifiedDate.GetValueOrDefault(); }
+            get { return this._afterLastModifiedDate; }
             set { this._afterLastModifiedDate = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.PartnerCentralSelling.Model
         /// retrieve only those opportunities that were modified before a given timestamp.
         /// </para>
         /// </summary>
-        public DateTime BeforeLastModifiedDate
+        public DateTime? BeforeLastModifiedDate
         {
-            get { return this._beforeLastModifiedDate.GetValueOrDefault(); }
+            get { return this._beforeLastModifiedDate; }
             set { this._beforeLastModifiedDate = value; }
         }
 

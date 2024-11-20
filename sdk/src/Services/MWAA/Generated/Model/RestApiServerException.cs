@@ -102,7 +102,7 @@ namespace Amazon.MWAA.Model
             : base(info, context)
         {
             this.RestApiResponse = (Amazon.Runtime.Documents.Document)info.GetValue("RestApiResponse", typeof(Amazon.Runtime.Documents.Document));
-            this.RestApiStatusCode = (int)info.GetValue("RestApiStatusCode", typeof(int));
+            this.RestApiStatusCode = (int?)info.GetValue("RestApiStatusCode", typeof(int?));
         }
 
         /// <summary>
@@ -111,11 +111,6 @@ namespace Amazon.MWAA.Model
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
-#if BCL35
-        [System.Security.Permissions.SecurityPermission(
-            System.Security.Permissions.SecurityAction.LinkDemand,
-            Flags = System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter)]
-#endif
         [System.Security.SecurityCritical]
         // These FxCop rules are giving false-positives for this method
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
@@ -154,9 +149,9 @@ namespace Amazon.MWAA.Model
         /// The HTTP status code returned by the Apache Airflow REST API call.
         /// </para>
         /// </summary>
-        public int RestApiStatusCode
+        public int? RestApiStatusCode
         {
-            get { return this._restApiStatusCode.GetValueOrDefault(); }
+            get { return this._restApiStatusCode; }
             set { this._restApiStatusCode = value; }
         }
 

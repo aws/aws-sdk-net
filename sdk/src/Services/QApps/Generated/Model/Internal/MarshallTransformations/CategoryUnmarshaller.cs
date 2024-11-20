@@ -68,7 +68,7 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("appCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AppCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

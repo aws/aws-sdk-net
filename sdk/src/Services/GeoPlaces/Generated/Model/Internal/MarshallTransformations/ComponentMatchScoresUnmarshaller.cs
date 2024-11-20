@@ -74,7 +74,7 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Title", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Title = unmarshaller.Unmarshall(context);
                     continue;
                 }

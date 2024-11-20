@@ -195,9 +195,9 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000000000000)]
-        public long InfluxqlMaxSelectBuckets
+        public long? InfluxqlMaxSelectBuckets
         {
-            get { return this._influxqlMaxSelectBuckets.GetValueOrDefault(); }
+            get { return this._influxqlMaxSelectBuckets; }
             set { this._influxqlMaxSelectBuckets = value; }
         }
 
@@ -220,9 +220,9 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000000000000)]
-        public long InfluxqlMaxSelectPoint
+        public long? InfluxqlMaxSelectPoint
         {
-            get { return this._influxqlMaxSelectPoint.GetValueOrDefault(); }
+            get { return this._influxqlMaxSelectPoint; }
             set { this._influxqlMaxSelectPoint = value; }
         }
 
@@ -244,9 +244,9 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000000000000)]
-        public long InfluxqlMaxSelectSeries
+        public long? InfluxqlMaxSelectSeries
         {
-            get { return this._influxqlMaxSelectSeries.GetValueOrDefault(); }
+            get { return this._influxqlMaxSelectSeries; }
             set { this._influxqlMaxSelectSeries = value; }
         }
 
@@ -336,9 +336,9 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// Default: false
         /// </para>
         /// </summary>
-        public bool PprofDisabled
+        public bool? PprofDisabled
         {
-            get { return this._pprofDisabled.GetValueOrDefault(); }
+            get { return this._pprofDisabled; }
             set { this._pprofDisabled = value; }
         }
 
@@ -383,9 +383,9 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000000000000)]
-        public long QueryInitialMemoryBytes
+        public long? QueryInitialMemoryBytes
         {
-            get { return this._queryInitialMemoryBytes.GetValueOrDefault(); }
+            get { return this._queryInitialMemoryBytes; }
             set { this._queryInitialMemoryBytes = value; }
         }
 
@@ -408,9 +408,9 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000000000000)]
-        public long QueryMaxMemoryBytes
+        public long? QueryMaxMemoryBytes
         {
-            get { return this._queryMaxMemoryBytes.GetValueOrDefault(); }
+            get { return this._queryMaxMemoryBytes; }
             set { this._queryMaxMemoryBytes = value; }
         }
 
@@ -431,9 +431,9 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000000000000)]
-        public long QueryMemoryBytes
+        public long? QueryMemoryBytes
         {
-            get { return this._queryMemoryBytes.GetValueOrDefault(); }
+            get { return this._queryMemoryBytes; }
             set { this._queryMemoryBytes = value; }
         }
 
@@ -479,9 +479,9 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2880)]
-        public int SessionLength
+        public int? SessionLength
         {
-            get { return this._sessionLength.GetValueOrDefault(); }
+            get { return this._sessionLength; }
             set { this._sessionLength = value; }
         }
 
@@ -504,9 +504,9 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// Default: false
         /// </para>
         /// </summary>
-        public bool SessionRenewDisabled
+        public bool? SessionRenewDisabled
         {
-            get { return this._sessionRenewDisabled.GetValueOrDefault(); }
+            get { return this._sessionRenewDisabled; }
             set { this._sessionRenewDisabled = value; }
         }
 
@@ -529,9 +529,9 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000000000000)]
-        public long StorageCacheMaxMemorySize
+        public long? StorageCacheMaxMemorySize
         {
-            get { return this._storageCacheMaxMemorySize.GetValueOrDefault(); }
+            get { return this._storageCacheMaxMemorySize; }
             set { this._storageCacheMaxMemorySize = value; }
         }
 
@@ -553,9 +553,9 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000000000000)]
-        public long StorageCacheSnapshotMemorySize
+        public long? StorageCacheSnapshotMemorySize
         {
-            get { return this._storageCacheSnapshotMemorySize.GetValueOrDefault(); }
+            get { return this._storageCacheSnapshotMemorySize; }
             set { this._storageCacheSnapshotMemorySize = value; }
         }
 
@@ -622,9 +622,9 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000000000000)]
-        public long StorageCompactThroughputBurst
+        public long? StorageCompactThroughputBurst
         {
-            get { return this._storageCompactThroughputBurst.GetValueOrDefault(); }
+            get { return this._storageCompactThroughputBurst; }
             set { this._storageCompactThroughputBurst = value; }
         }
 
@@ -647,9 +647,9 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=64)]
-        public int StorageMaxConcurrentCompactions
+        public int? StorageMaxConcurrentCompactions
         {
-            get { return this._storageMaxConcurrentCompactions.GetValueOrDefault(); }
+            get { return this._storageMaxConcurrentCompactions; }
             set { this._storageMaxConcurrentCompactions = value; }
         }
 
@@ -672,9 +672,9 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000000000000)]
-        public long StorageMaxIndexLogFileSize
+        public long? StorageMaxIndexLogFileSize
         {
-            get { return this._storageMaxIndexLogFileSize.GetValueOrDefault(); }
+            get { return this._storageMaxIndexLogFileSize; }
             set { this._storageMaxIndexLogFileSize = value; }
         }
 
@@ -694,9 +694,9 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// Default: false
         /// </para>
         /// </summary>
-        public bool StorageNoValidateFieldSize
+        public bool? StorageNoValidateFieldSize
         {
-            get { return this._storageNoValidateFieldSize.GetValueOrDefault(); }
+            get { return this._storageNoValidateFieldSize; }
             set { this._storageNoValidateFieldSize = value; }
         }
 
@@ -740,9 +740,9 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=64)]
-        public int StorageSeriesFileMaxConcurrentSnapshotCompactions
+        public int? StorageSeriesFileMaxConcurrentSnapshotCompactions
         {
-            get { return this._storageSeriesFileMaxConcurrentSnapshotCompactions.GetValueOrDefault(); }
+            get { return this._storageSeriesFileMaxConcurrentSnapshotCompactions; }
             set { this._storageSeriesFileMaxConcurrentSnapshotCompactions = value; }
         }
 
@@ -766,9 +766,9 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000000000000)]
-        public long StorageSeriesIdSetCacheSize
+        public long? StorageSeriesIdSetCacheSize
         {
-            get { return this._storageSeriesIdSetCacheSize.GetValueOrDefault(); }
+            get { return this._storageSeriesIdSetCacheSize; }
             set { this._storageSeriesIdSetCacheSize = value; }
         }
 
@@ -790,9 +790,9 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
-        public int StorageWalMaxConcurrentWrites
+        public int? StorageWalMaxConcurrentWrites
         {
-            get { return this._storageWalMaxConcurrentWrites.GetValueOrDefault(); }
+            get { return this._storageWalMaxConcurrentWrites; }
             set { this._storageWalMaxConcurrentWrites = value; }
         }
 
@@ -856,9 +856,9 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// Default: false
         /// </para>
         /// </summary>
-        public bool UiDisabled
+        public bool? UiDisabled
         {
-            get { return this._uiDisabled.GetValueOrDefault(); }
+            get { return this._uiDisabled; }
             set { this._uiDisabled = value; }
         }
 

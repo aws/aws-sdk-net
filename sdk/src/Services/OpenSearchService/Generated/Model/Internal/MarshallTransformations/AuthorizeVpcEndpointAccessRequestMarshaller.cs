@@ -78,26 +78,16 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Account);
                     }
 
+                    if(publicRequest.IsSetService())
+                    {
+                        context.Writer.WritePropertyName("Service");
+                        context.Writer.Write(publicRequest.Service);
+                    }
+
                     writer.WriteObjectEnd();
                 }
 
-<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
-||||||| Commit version number update changes
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-=======
-                if(publicRequest.IsSetService())
-                {
-                    context.Writer.WritePropertyName("Service");
-                    context.Writer.Write(publicRequest.Service);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
             }
 
 

@@ -94,6 +94,17 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Description);
                     }
 
+                    if(publicRequest.IsSetIamIdentityCenterOptionsUpdates())
+                    {
+                        context.Writer.WritePropertyName("iamIdentityCenterOptionsUpdates");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = UpdateIamIdentityCenterConfigOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.IamIdentityCenterOptionsUpdates, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetId())
                     {
                         context.Writer.WritePropertyName("id");
@@ -114,96 +125,7 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
                     writer.WriteObjectEnd();
                 }
 
-<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
-||||||| Commit version number update changes
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetConfigVersion())
-                {
-                    context.Writer.WritePropertyName("configVersion");
-                    context.Writer.Write(publicRequest.ConfigVersion);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetId())
-                {
-                    context.Writer.WritePropertyName("id");
-                    context.Writer.Write(publicRequest.Id);
-                }
-
-                if(publicRequest.IsSetSamlOptions())
-                {
-                    context.Writer.WritePropertyName("samlOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SamlConfigOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SamlOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-=======
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetConfigVersion())
-                {
-                    context.Writer.WritePropertyName("configVersion");
-                    context.Writer.Write(publicRequest.ConfigVersion);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetIamIdentityCenterOptionsUpdates())
-                {
-                    context.Writer.WritePropertyName("iamIdentityCenterOptionsUpdates");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = UpdateIamIdentityCenterConfigOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.IamIdentityCenterOptionsUpdates, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetId())
-                {
-                    context.Writer.WritePropertyName("id");
-                    context.Writer.Write(publicRequest.Id);
-                }
-
-                if(publicRequest.IsSetSamlOptions())
-                {
-                    context.Writer.WritePropertyName("samlOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SamlConfigOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SamlOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
             }
 
 

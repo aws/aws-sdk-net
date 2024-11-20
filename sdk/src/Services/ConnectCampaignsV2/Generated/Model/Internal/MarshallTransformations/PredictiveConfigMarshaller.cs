@@ -51,13 +51,13 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBandwidthAllocation())
             {
                 context.Writer.WritePropertyName("bandwidthAllocation");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.BandwidthAllocation))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.BandwidthAllocation.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.BandwidthAllocation));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.BandwidthAllocation.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.BandwidthAllocation);
+                    context.Writer.Write(requestObject.BandwidthAllocation.Value);
                 }
             }
 

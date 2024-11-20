@@ -68,7 +68,7 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("GeometryOffset", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.GeometryOffset = unmarshaller.Unmarshall(context);
                     continue;
                 }

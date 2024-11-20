@@ -51,7 +51,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetVendingEnabled())
             {
                 context.Writer.WritePropertyName("VendingEnabled");
-                context.Writer.Write(requestObject.VendingEnabled);
+                context.Writer.Write(requestObject.VendingEnabled.Value);
             }
 
         }

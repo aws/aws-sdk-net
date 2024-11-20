@@ -51,13 +51,13 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllTransponders())
             {
                 context.Writer.WritePropertyName("AllTransponders");
-                context.Writer.Write(requestObject.AllTransponders);
+                context.Writer.Write(requestObject.AllTransponders.Value);
             }
 
             if(requestObject.IsSetAllVignettes())
             {
                 context.Writer.WritePropertyName("AllVignettes");
-                context.Writer.Write(requestObject.AllVignettes);
+                context.Writer.Write(requestObject.AllVignettes.Value);
             }
 
             if(requestObject.IsSetCurrency())

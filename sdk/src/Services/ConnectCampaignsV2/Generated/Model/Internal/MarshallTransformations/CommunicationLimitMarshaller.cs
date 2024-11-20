@@ -51,13 +51,13 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFrequency())
             {
                 context.Writer.WritePropertyName("frequency");
-                context.Writer.Write(requestObject.Frequency);
+                context.Writer.Write(requestObject.Frequency.Value);
             }
 
             if(requestObject.IsSetMaxCountPerRecipient())
             {
                 context.Writer.WritePropertyName("maxCountPerRecipient");
-                context.Writer.Write(requestObject.MaxCountPerRecipient);
+                context.Writer.Write(requestObject.MaxCountPerRecipient.Value);
             }
 
             if(requestObject.IsSetUnit())

@@ -51,7 +51,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnabledAPIAccess())
             {
                 context.Writer.WritePropertyName("EnabledAPIAccess");
-                context.Writer.Write(requestObject.EnabledAPIAccess);
+                context.Writer.Write(requestObject.EnabledAPIAccess.Value);
             }
 
             if(requestObject.IsSetIdentityCenterInstanceARN())

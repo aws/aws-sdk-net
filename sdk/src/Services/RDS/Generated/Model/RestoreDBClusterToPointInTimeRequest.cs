@@ -475,9 +475,9 @@ namespace Amazon.RDS.Model
         /// Specifies whether to turn on Performance Insights for the DB cluster.
         /// </para>
         /// </summary>
-        public bool EnablePerformanceInsights
+        public bool? EnablePerformanceInsights
         {
-            get { return this._enablePerformanceInsights.GetValueOrDefault(); }
+            get { return this._enablePerformanceInsights; }
             set { this._enablePerformanceInsights = value; }
         }
 
@@ -676,9 +676,9 @@ namespace Amazon.RDS.Model
         /// Default: <c>0</c> 
         /// </para>
         /// </summary>
-        public int MonitoringInterval
+        public int? MonitoringInterval
         {
-            get { return this._monitoringInterval.GetValueOrDefault(); }
+            get { return this._monitoringInterval; }
             set { this._monitoringInterval = value; }
         }
 
@@ -842,9 +842,9 @@ namespace Amazon.RDS.Model
         /// issues an error.
         /// </para>
         /// </summary>
-        public int PerformanceInsightsRetentionPeriod
+        public int? PerformanceInsightsRetentionPeriod
         {
-            get { return this._performanceInsightsRetentionPeriod.GetValueOrDefault(); }
+            get { return this._performanceInsightsRetentionPeriod; }
             set { this._performanceInsightsRetentionPeriod = value; }
         }
 

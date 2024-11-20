@@ -68,7 +68,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("units", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Units = unmarshaller.Unmarshall(context);
                     continue;
                 }

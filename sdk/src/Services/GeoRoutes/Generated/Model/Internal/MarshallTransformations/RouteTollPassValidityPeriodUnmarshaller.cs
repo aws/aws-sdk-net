@@ -74,7 +74,7 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("PeriodCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.PeriodCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -69,7 +69,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSingleFileOutput())
             {
                 context.Writer.WritePropertyName("singleFileOutput");
-                context.Writer.Write(requestObject.SingleFileOutput);
+                context.Writer.Write(requestObject.SingleFileOutput.Value);
             }
 
         }

@@ -94,55 +94,33 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
                         context.Writer.WriteArrayEnd();
                     }
 
-<<<<<<< HEAD
+                    if(publicRequest.IsSetInstancesToExclude())
+                    {
+                        context.Writer.WritePropertyName("InstancesToExclude");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = InstancesToExcludeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.InstancesToExclude, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetOrderId())
                     {
                         context.Writer.WritePropertyName("OrderId");
                         context.Writer.Write(publicRequest.OrderId);
                     }
 
+                    if(publicRequest.IsSetTaskActionOnBlockingInstances())
+                    {
+                        context.Writer.WritePropertyName("TaskActionOnBlockingInstances");
+                        context.Writer.Write(publicRequest.TaskActionOnBlockingInstances);
+                    }
+
                     writer.WriteObjectEnd();
-||||||| Commit version number update changes
-                if(publicRequest.IsSetOrderId())
-                {
-                    context.Writer.WritePropertyName("OrderId");
-                    context.Writer.Write(publicRequest.OrderId);
-=======
-                if(publicRequest.IsSetInstancesToExclude())
-                {
-                    context.Writer.WritePropertyName("InstancesToExclude");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = InstancesToExcludeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.InstancesToExclude, context);
-
-                    context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetOrderId())
-                {
-                    context.Writer.WritePropertyName("OrderId");
-                    context.Writer.Write(publicRequest.OrderId);
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
-                }
-
-<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
-||||||| Commit version number update changes
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-=======
-                if(publicRequest.IsSetTaskActionOnBlockingInstances())
-                {
-                    context.Writer.WritePropertyName("TaskActionOnBlockingInstances");
-                    context.Writer.Write(publicRequest.TaskActionOnBlockingInstances);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
             }
 
 

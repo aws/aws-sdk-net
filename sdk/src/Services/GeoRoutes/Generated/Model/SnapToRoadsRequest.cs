@@ -99,9 +99,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10000)]
-        public long SnapRadius
+        public long? SnapRadius
         {
-            get { return this._snapRadius.GetValueOrDefault(); }
+            get { return this._snapRadius; }
             set { this._snapRadius = value; }
         }
 

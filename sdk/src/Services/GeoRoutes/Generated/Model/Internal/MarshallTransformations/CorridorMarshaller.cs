@@ -67,7 +67,7 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRadius())
             {
                 context.Writer.WritePropertyName("Radius");
-                context.Writer.Write(requestObject.Radius);
+                context.Writer.Write(requestObject.Radius.Value);
             }
 
         }

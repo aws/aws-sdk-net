@@ -34,16 +34,10 @@ namespace Amazon.NetworkFirewall
     public partial class AmazonNetworkFirewallConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Network Firewall", "4.0.0.0");
 
         private static readonly AmazonNetworkFirewallEndpointResolver EndpointResolver =
             new AmazonNetworkFirewallEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("Network Firewall", "3.7.401.26");
-=======
-            InternalSDKUtils.BuildUserAgentString("Network Firewall", "3.7.402.10");
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
         private string _userAgent = UserAgentString;
         ///<summary>

@@ -250,9 +250,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// you need to update the message status using <a>PutMessageFeedback</a>.
         /// </para>
         /// </summary>
-        public bool MessageFeedbackEnabled
+        public bool? MessageFeedbackEnabled
         {
-            get { return this._messageFeedbackEnabled.GetValueOrDefault(); }
+            get { return this._messageFeedbackEnabled; }
             set { this._messageFeedbackEnabled = value; }
         }
 

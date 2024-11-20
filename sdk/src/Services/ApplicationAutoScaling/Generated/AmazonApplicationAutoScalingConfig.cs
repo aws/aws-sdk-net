@@ -34,16 +34,10 @@ namespace Amazon.ApplicationAutoScaling
     public partial class AmazonApplicationAutoScalingConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Application Auto Scaling", "4.0.0.0");
 
         private static readonly AmazonApplicationAutoScalingEndpointResolver EndpointResolver =
             new AmazonApplicationAutoScalingEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("Application Auto Scaling", "3.7.401.26");
-=======
-            InternalSDKUtils.BuildUserAgentString("Application Auto Scaling", "3.7.401.53");
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
         private string _userAgent = UserAgentString;
         ///<summary>

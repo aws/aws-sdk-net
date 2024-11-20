@@ -51,7 +51,7 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetClipStartTime())
             {
                 context.Writer.WritePropertyName("ClipStartTime");
-                context.Writer.Write(requestObject.ClipStartTime);
+                context.Writer.Write(requestObject.ClipStartTime.Value);
             }
 
             if(requestObject.IsSetEnd())

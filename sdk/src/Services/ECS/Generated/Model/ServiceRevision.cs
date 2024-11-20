@@ -122,9 +122,9 @@ namespace Amazon.ECS.Model
         /// The time that the service revision was created. The format is yyyy-mm-dd HH:mm:ss.SSSSS.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -155,9 +155,9 @@ namespace Amazon.ECS.Model
         /// Indicates whether Runtime Monitoring is turned on.
         /// </para>
         /// </summary>
-        public bool GuardDutyEnabled
+        public bool? GuardDutyEnabled
         {
-            get { return this._guardDutyEnabled.GetValueOrDefault(); }
+            get { return this._guardDutyEnabled; }
             set { this._guardDutyEnabled = value; }
         }
 

@@ -51,25 +51,25 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAvoidActionsForDistance())
             {
                 context.Writer.WritePropertyName("AvoidActionsForDistance");
-                context.Writer.Write(requestObject.AvoidActionsForDistance);
+                context.Writer.Write(requestObject.AvoidActionsForDistance.Value);
             }
 
             if(requestObject.IsSetAvoidUTurns())
             {
                 context.Writer.WritePropertyName("AvoidUTurns");
-                context.Writer.Write(requestObject.AvoidUTurns);
+                context.Writer.Write(requestObject.AvoidUTurns.Value);
             }
 
             if(requestObject.IsSetHeading())
             {
                 context.Writer.WritePropertyName("Heading");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Heading))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Heading.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Heading));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Heading.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Heading);
+                    context.Writer.Write(requestObject.Heading.Value);
                 }
             }
 
@@ -87,7 +87,7 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPassThrough())
             {
                 context.Writer.WritePropertyName("PassThrough");
-                context.Writer.Write(requestObject.PassThrough);
+                context.Writer.Write(requestObject.PassThrough.Value);
             }
 
             if(requestObject.IsSetPosition())
@@ -115,7 +115,7 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStopDuration())
             {
                 context.Writer.WritePropertyName("StopDuration");
-                context.Writer.Write(requestObject.StopDuration);
+                context.Writer.Write(requestObject.StopDuration.Value);
             }
 
         }

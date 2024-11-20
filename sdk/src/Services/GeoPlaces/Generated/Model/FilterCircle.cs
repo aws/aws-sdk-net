@@ -63,9 +63,9 @@ namespace Amazon.GeoPlaces.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=21000000)]
-        public long Radius
+        public long? Radius
         {
-            get { return this._radius.GetValueOrDefault(); }
+            get { return this._radius; }
             set { this._radius = value; }
         }
 

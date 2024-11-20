@@ -68,7 +68,7 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Distance", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Distance = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -80,7 +80,7 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RestDuration", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.RestDuration = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -92,13 +92,13 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TravelDuration", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TravelDuration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("WaitDuration", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.WaitDuration = unmarshaller.Unmarshall(context);
                     continue;
                 }

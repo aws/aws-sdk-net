@@ -92,6 +92,12 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
                         context.Writer.Write(publicRequest.Product);
                     }
 
+                    if(publicRequest.IsSetProductUserArn())
+                    {
+                        context.Writer.WritePropertyName("ProductUserArn");
+                        context.Writer.Write(publicRequest.ProductUserArn);
+                    }
+
                     if(publicRequest.IsSetUsername())
                     {
                         context.Writer.WritePropertyName("Username");
@@ -101,69 +107,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
                     writer.WriteObjectEnd();
                 }
 
-<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
-||||||| Commit version number update changes
-                if(publicRequest.IsSetIdentityProvider())
-                {
-                    context.Writer.WritePropertyName("IdentityProvider");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = IdentityProviderMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.IdentityProvider, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetProduct())
-                {
-                    context.Writer.WritePropertyName("Product");
-                    context.Writer.Write(publicRequest.Product);
-                }
-
-                if(publicRequest.IsSetUsername())
-                {
-                    context.Writer.WritePropertyName("Username");
-                    context.Writer.Write(publicRequest.Username);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-=======
-                if(publicRequest.IsSetIdentityProvider())
-                {
-                    context.Writer.WritePropertyName("IdentityProvider");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = IdentityProviderMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.IdentityProvider, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetProduct())
-                {
-                    context.Writer.WritePropertyName("Product");
-                    context.Writer.Write(publicRequest.Product);
-                }
-
-                if(publicRequest.IsSetProductUserArn())
-                {
-                    context.Writer.WritePropertyName("ProductUserArn");
-                    context.Writer.Write(publicRequest.ProductUserArn);
-                }
-
-                if(publicRequest.IsSetUsername())
-                {
-                    context.Writer.WritePropertyName("Username");
-                    context.Writer.Write(publicRequest.Username);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
             }
 
 

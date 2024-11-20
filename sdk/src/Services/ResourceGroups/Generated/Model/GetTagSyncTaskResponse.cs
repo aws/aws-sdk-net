@@ -50,9 +50,9 @@ namespace Amazon.ResourceGroups.Model
         /// The timestamp of when the tag-sync task was created. 
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 

@@ -47,9 +47,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=300, Max=50400)]
-        public long MaxDeliverySeconds
+        public long? MaxDeliverySeconds
         {
-            get { return this._maxDeliverySeconds.GetValueOrDefault(); }
+            get { return this._maxDeliverySeconds; }
             set { this._maxDeliverySeconds = value; }
         }
 

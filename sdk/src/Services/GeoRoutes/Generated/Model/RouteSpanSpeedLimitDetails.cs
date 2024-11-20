@@ -53,9 +53,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double MaxSpeed
+        public double? MaxSpeed
         {
-            get { return this._maxSpeed.GetValueOrDefault(); }
+            get { return this._maxSpeed; }
             set { this._maxSpeed = value; }
         }
 
@@ -71,9 +71,9 @@ namespace Amazon.GeoRoutes.Model
         /// If the span doesn't have a speed limit like the Autobahn.
         /// </para>
         /// </summary>
-        public bool Unlimited
+        public bool? Unlimited
         {
-            get { return this._unlimited.GetValueOrDefault(); }
+            get { return this._unlimited; }
             set { this._unlimited = value; }
         }
 

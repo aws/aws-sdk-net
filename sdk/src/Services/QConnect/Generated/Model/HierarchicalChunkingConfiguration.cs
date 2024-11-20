@@ -65,9 +65,9 @@ namespace Amazon.QConnect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
-        public int OverlapTokens
+        public int? OverlapTokens
         {
-            get { return this._overlapTokens.GetValueOrDefault(); }
+            get { return this._overlapTokens; }
             set { this._overlapTokens = value; }
         }
 

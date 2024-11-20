@@ -47,9 +47,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=255)]
-        public int TrailerCount
+        public int? TrailerCount
         {
-            get { return this._trailerCount.GetValueOrDefault(); }
+            get { return this._trailerCount; }
             set { this._trailerCount = value; }
         }
 

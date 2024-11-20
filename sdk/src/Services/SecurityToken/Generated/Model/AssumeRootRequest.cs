@@ -71,9 +71,9 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=900)]
-        public int DurationSeconds
+        public int? DurationSeconds
         {
-            get { return this._durationSeconds.GetValueOrDefault(); }
+            get { return this._durationSeconds; }
             set { this._durationSeconds = value; }
         }
 

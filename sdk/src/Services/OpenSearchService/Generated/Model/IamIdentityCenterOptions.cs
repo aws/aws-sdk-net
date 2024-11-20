@@ -45,9 +45,9 @@ namespace Amazon.OpenSearchService.Model
         /// IAM Identity Center is enabled for the OpenSearch Application.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

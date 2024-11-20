@@ -87,9 +87,9 @@ namespace Amazon.QuickSight.Model
         /// analysis requires this parameter to be set to <c>True</c>.
         /// </para>
         /// </summary>
-        public bool RestoreToFolders
+        public bool? RestoreToFolders
         {
-            get { return this._restoreToFolders.GetValueOrDefault(); }
+            get { return this._restoreToFolders; }
             set { this._restoreToFolders = value; }
         }
 

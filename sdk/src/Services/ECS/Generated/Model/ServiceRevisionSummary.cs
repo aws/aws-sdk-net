@@ -64,9 +64,9 @@ namespace Amazon.ECS.Model
         /// The number of pending tasks for the service revision.
         /// </para>
         /// </summary>
-        public int PendingTaskCount
+        public int? PendingTaskCount
         {
-            get { return this._pendingTaskCount.GetValueOrDefault(); }
+            get { return this._pendingTaskCount; }
             set { this._pendingTaskCount = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.ECS.Model
         /// The number of requested tasks for the service revision.
         /// </para>
         /// </summary>
-        public int RequestedTaskCount
+        public int? RequestedTaskCount
         {
-            get { return this._requestedTaskCount.GetValueOrDefault(); }
+            get { return this._requestedTaskCount; }
             set { this._requestedTaskCount = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.ECS.Model
         /// The number of running tasks for the service revision.
         /// </para>
         /// </summary>
-        public int RunningTaskCount
+        public int? RunningTaskCount
         {
-            get { return this._runningTaskCount.GetValueOrDefault(); }
+            get { return this._runningTaskCount; }
             set { this._runningTaskCount = value; }
         }
 

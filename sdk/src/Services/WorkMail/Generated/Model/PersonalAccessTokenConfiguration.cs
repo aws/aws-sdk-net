@@ -44,9 +44,9 @@ namespace Amazon.WorkMail.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=3653)]
-        public int LifetimeInDays
+        public int? LifetimeInDays
         {
-            get { return this._lifetimeInDays.GetValueOrDefault(); }
+            get { return this._lifetimeInDays; }
             set { this._lifetimeInDays = value; }
         }
 

@@ -80,7 +80,12 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
                         context.Writer.WriteObjectEnd();
                     }
 
-<<<<<<< HEAD
+                    if(publicRequest.IsSetIdentityProviderArn())
+                    {
+                        context.Writer.WritePropertyName("IdentityProviderArn");
+                        context.Writer.Write(publicRequest.IdentityProviderArn);
+                    }
+
                     if(publicRequest.IsSetProduct())
                     {
                         context.Writer.WritePropertyName("Product");
@@ -88,23 +93,6 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
                     }
 
                     writer.WriteObjectEnd();
-||||||| Commit version number update changes
-                if(publicRequest.IsSetProduct())
-                {
-                    context.Writer.WritePropertyName("Product");
-                    context.Writer.Write(publicRequest.Product);
-=======
-                if(publicRequest.IsSetIdentityProviderArn())
-                {
-                    context.Writer.WritePropertyName("IdentityProviderArn");
-                    context.Writer.Write(publicRequest.IdentityProviderArn);
-                }
-
-                if(publicRequest.IsSetProduct())
-                {
-                    context.Writer.WritePropertyName("Product");
-                    context.Writer.Write(publicRequest.Product);
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
                 }
 
                 request.Content = memoryStream.ToArray();

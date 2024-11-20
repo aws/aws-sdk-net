@@ -66,7 +66,7 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("createTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -102,13 +102,13 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("numberOfRecords", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.NumberOfRecords = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("retentionInDays", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.RetentionInDays = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -126,7 +126,7 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("updateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.UpdateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

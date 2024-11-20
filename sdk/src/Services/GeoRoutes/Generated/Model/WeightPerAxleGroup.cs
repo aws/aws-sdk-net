@@ -57,9 +57,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967295)]
-        public long Quad
+        public long? Quad
         {
-            get { return this._quad.GetValueOrDefault(); }
+            get { return this._quad; }
             set { this._quad = value; }
         }
 
@@ -80,9 +80,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967295)]
-        public long Quint
+        public long? Quint
         {
-            get { return this._quint.GetValueOrDefault(); }
+            get { return this._quint; }
             set { this._quint = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967295)]
-        public long Single
+        public long? Single
         {
-            get { return this._single.GetValueOrDefault(); }
+            get { return this._single; }
             set { this._single = value; }
         }
 
@@ -126,9 +126,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967295)]
-        public long Tandem
+        public long? Tandem
         {
-            get { return this._tandem.GetValueOrDefault(); }
+            get { return this._tandem; }
             set { this._tandem = value; }
         }
 
@@ -149,9 +149,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967295)]
-        public long Triple
+        public long? Triple
         {
-            get { return this._triple.GetValueOrDefault(); }
+            get { return this._triple; }
             set { this._triple = value; }
         }
 

@@ -107,9 +107,9 @@ namespace Amazon.AppSync.Model
         /// The date and time that the <c>ChannelNamespace</c> was created.
         /// </para>
         /// </summary>
-        public DateTime Created
+        public DateTime? Created
         {
-            get { return this._created.GetValueOrDefault(); }
+            get { return this._created; }
             set { this._created = value; }
         }
 
@@ -125,9 +125,9 @@ namespace Amazon.AppSync.Model
         /// The date and time that the <c>ChannelNamespace</c> was last changed.
         /// </para>
         /// </summary>
-        public DateTime LastModified
+        public DateTime? LastModified
         {
-            get { return this._lastModified.GetValueOrDefault(); }
+            get { return this._lastModified; }
             set { this._lastModified = value; }
         }
 

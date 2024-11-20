@@ -48,9 +48,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967295)]
-        public long FlowEventThresholdOverride
+        public long? FlowEventThresholdOverride
         {
-            get { return this._flowEventThresholdOverride.GetValueOrDefault(); }
+            get { return this._flowEventThresholdOverride; }
             set { this._flowEventThresholdOverride = value; }
         }
 

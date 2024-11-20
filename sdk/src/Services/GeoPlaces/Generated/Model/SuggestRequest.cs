@@ -180,9 +180,9 @@ namespace Amazon.GeoPlaces.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
-        public int MaxQueryRefinements
+        public int? MaxQueryRefinements
         {
-            get { return this._maxQueryRefinements.GetValueOrDefault(); }
+            get { return this._maxQueryRefinements; }
             set { this._maxQueryRefinements = value; }
         }
 
@@ -199,9 +199,9 @@ namespace Amazon.GeoPlaces.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
+        public int? MaxResults
         {
-            get { return this._maxResults.GetValueOrDefault(); }
+            get { return this._maxResults; }
             set { this._maxResults = value; }
         }
 

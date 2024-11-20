@@ -92,9 +92,9 @@ namespace Amazon.GeoPlaces.Model
         /// Boolean indicating if the address provided has been corrected.
         /// </para>
         /// </summary>
-        public bool AddressNumberCorrected
+        public bool? AddressNumberCorrected
         {
-            get { return this._addressNumberCorrected.GetValueOrDefault(); }
+            get { return this._addressNumberCorrected; }
             set { this._addressNumberCorrected = value; }
         }
 
@@ -130,9 +130,9 @@ namespace Amazon.GeoPlaces.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967295)]
-        public long Distance
+        public long? Distance
         {
-            get { return this._distance.GetValueOrDefault(); }
+            get { return this._distance; }
             set { this._distance = value; }
         }
 

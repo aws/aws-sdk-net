@@ -68,7 +68,7 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("capacity", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Capacity = unmarshaller.Unmarshall(context);
                     continue;
                 }

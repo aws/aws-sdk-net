@@ -121,9 +121,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int WaypointIndex
+        public int? WaypointIndex
         {
-            get { return this._waypointIndex.GetValueOrDefault(); }
+            get { return this._waypointIndex; }
             set { this._waypointIndex = value; }
         }
 

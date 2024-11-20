@@ -51,7 +51,7 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAxleCount())
             {
                 context.Writer.WritePropertyName("AxleCount");
-                context.Writer.Write(requestObject.AxleCount);
+                context.Writer.Write(requestObject.AxleCount.Value);
             }
 
             if(requestObject.IsSetEngineType())
@@ -63,7 +63,7 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGrossWeight())
             {
                 context.Writer.WritePropertyName("GrossWeight");
-                context.Writer.Write(requestObject.GrossWeight);
+                context.Writer.Write(requestObject.GrossWeight.Value);
             }
 
             if(requestObject.IsSetHazardousCargos())
@@ -80,25 +80,25 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHeight())
             {
                 context.Writer.WritePropertyName("Height");
-                context.Writer.Write(requestObject.Height);
+                context.Writer.Write(requestObject.Height.Value);
             }
 
             if(requestObject.IsSetHeightAboveFirstAxle())
             {
                 context.Writer.WritePropertyName("HeightAboveFirstAxle");
-                context.Writer.Write(requestObject.HeightAboveFirstAxle);
+                context.Writer.Write(requestObject.HeightAboveFirstAxle.Value);
             }
 
             if(requestObject.IsSetKpraLength())
             {
                 context.Writer.WritePropertyName("KpraLength");
-                context.Writer.Write(requestObject.KpraLength);
+                context.Writer.Write(requestObject.KpraLength.Value);
             }
 
             if(requestObject.IsSetLength())
             {
                 context.Writer.WritePropertyName("Length");
-                context.Writer.Write(requestObject.Length);
+                context.Writer.Write(requestObject.Length.Value);
             }
 
             if(requestObject.IsSetLicensePlate())
@@ -115,32 +115,32 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxSpeed())
             {
                 context.Writer.WritePropertyName("MaxSpeed");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.MaxSpeed))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MaxSpeed.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MaxSpeed));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MaxSpeed.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MaxSpeed);
+                    context.Writer.Write(requestObject.MaxSpeed.Value);
                 }
             }
 
             if(requestObject.IsSetOccupancy())
             {
                 context.Writer.WritePropertyName("Occupancy");
-                context.Writer.Write(requestObject.Occupancy);
+                context.Writer.Write(requestObject.Occupancy.Value);
             }
 
             if(requestObject.IsSetPayloadCapacity())
             {
                 context.Writer.WritePropertyName("PayloadCapacity");
-                context.Writer.Write(requestObject.PayloadCapacity);
+                context.Writer.Write(requestObject.PayloadCapacity.Value);
             }
 
             if(requestObject.IsSetTireCount())
             {
                 context.Writer.WritePropertyName("TireCount");
-                context.Writer.Write(requestObject.TireCount);
+                context.Writer.Write(requestObject.TireCount.Value);
             }
 
             if(requestObject.IsSetTrailer())
@@ -169,7 +169,7 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetWeightPerAxle())
             {
                 context.Writer.WritePropertyName("WeightPerAxle");
-                context.Writer.Write(requestObject.WeightPerAxle);
+                context.Writer.Write(requestObject.WeightPerAxle.Value);
             }
 
             if(requestObject.IsSetWeightPerAxleGroup())
@@ -186,7 +186,7 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetWidth())
             {
                 context.Writer.WritePropertyName("Width");
-                context.Writer.Write(requestObject.Width);
+                context.Writer.Write(requestObject.Width.Value);
             }
 
         }

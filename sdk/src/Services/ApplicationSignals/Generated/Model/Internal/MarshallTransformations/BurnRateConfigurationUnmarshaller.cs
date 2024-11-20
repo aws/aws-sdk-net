@@ -68,7 +68,7 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("LookBackWindowMinutes", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.LookBackWindowMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }

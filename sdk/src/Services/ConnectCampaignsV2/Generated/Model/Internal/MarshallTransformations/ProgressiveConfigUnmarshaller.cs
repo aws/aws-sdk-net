@@ -68,7 +68,7 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("bandwidthAllocation", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.BandwidthAllocation = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -221,9 +221,9 @@ namespace Amazon.GeoMaps.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=64, Max=1400)]
-        public int Height
+        public int? Height
         {
-            get { return this._height.GetValueOrDefault(); }
+            get { return this._height; }
             set { this._height = value; }
         }
 
@@ -276,9 +276,9 @@ namespace Amazon.GeoMaps.Model
         /// Example: <c>100</c> 
         /// </para>
         /// </summary>
-        public int Padding
+        public int? Padding
         {
-            get { return this._padding.GetValueOrDefault(); }
+            get { return this._padding; }
             set { this._padding = value; }
         }
 
@@ -308,9 +308,9 @@ namespace Amazon.GeoMaps.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967295)]
-        public long Radius
+        public long? Radius
         {
-            get { return this._radius.GetValueOrDefault(); }
+            get { return this._radius; }
             set { this._radius = value; }
         }
 
@@ -368,9 +368,9 @@ namespace Amazon.GeoMaps.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=64, Max=1400)]
-        public int Width
+        public int? Width
         {
-            get { return this._width.GetValueOrDefault(); }
+            get { return this._width; }
             set { this._width = value; }
         }
 
@@ -392,9 +392,9 @@ namespace Amazon.GeoMaps.Model
         ///  </note>
         /// </summary>
         [AWSProperty(Min=0, Max=20)]
-        public float Zoom
+        public float? Zoom
         {
-            get { return this._zoom.GetValueOrDefault(); }
+            get { return this._zoom; }
             set { this._zoom = value; }
         }
 

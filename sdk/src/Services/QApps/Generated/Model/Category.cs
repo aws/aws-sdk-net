@@ -45,9 +45,9 @@ namespace Amazon.QApps.Model
         /// The number of published Amazon Q Apps associated with a category
         /// </para>
         /// </summary>
-        public int AppCount
+        public int? AppCount
         {
-            get { return this._appCount.GetValueOrDefault(); }
+            get { return this._appCount; }
             set { this._appCount = value; }
         }
 

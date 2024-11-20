@@ -34,16 +34,10 @@ namespace Amazon.AppSync
     public partial class AmazonAppSyncConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("AppSync", "4.0.0.0");
 
         private static readonly AmazonAppSyncEndpointResolver EndpointResolver =
             new AmazonAppSyncEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("AppSync", "3.7.401.12");
-=======
-            InternalSDKUtils.BuildUserAgentString("AppSync", "3.7.402.10");
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
         private string _userAgent = UserAgentString;
         ///<summary>

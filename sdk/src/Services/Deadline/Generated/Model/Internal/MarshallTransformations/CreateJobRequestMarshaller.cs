@@ -123,31 +123,17 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Priority.Value);
                     }
 
-<<<<<<< HEAD
+                    if(publicRequest.IsSetSourceJobId())
+                    {
+                        context.Writer.WritePropertyName("sourceJobId");
+                        context.Writer.Write(publicRequest.SourceJobId);
+                    }
+
                     if(publicRequest.IsSetStorageProfileId())
                     {
                         context.Writer.WritePropertyName("storageProfileId");
                         context.Writer.Write(publicRequest.StorageProfileId);
                     }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetStorageProfileId())
-                {
-                    context.Writer.WritePropertyName("storageProfileId");
-                    context.Writer.Write(publicRequest.StorageProfileId);
-                }
-=======
-                if(publicRequest.IsSetSourceJobId())
-                {
-                    context.Writer.WritePropertyName("sourceJobId");
-                    context.Writer.Write(publicRequest.SourceJobId);
-                }
-
-                if(publicRequest.IsSetStorageProfileId())
-                {
-                    context.Writer.WritePropertyName("storageProfileId");
-                    context.Writer.Write(publicRequest.StorageProfileId);
-                }
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
                     if(publicRequest.IsSetTargetTaskRunStatus())
                     {

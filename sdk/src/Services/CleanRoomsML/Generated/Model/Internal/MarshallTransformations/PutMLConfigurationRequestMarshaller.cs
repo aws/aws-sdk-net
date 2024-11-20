@@ -64,26 +64,29 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                 throw new AmazonCleanRoomsMLException("Request object does not have required field MembershipIdentifier set");
             request.AddPathResource("{membershipIdentifier}", StringUtils.FromString(publicRequest.MembershipIdentifier));
             request.ResourcePath = "/memberships/{membershipIdentifier}/ml-configurations";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDefaultOutputLocation())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("defaultOutputLocation");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDefaultOutputLocation())
+                    {
+                        context.Writer.WritePropertyName("defaultOutputLocation");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = MLOutputConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DefaultOutputLocation, context);
+                        var marshaller = MLOutputConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DefaultOutputLocation, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

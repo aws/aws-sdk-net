@@ -49,9 +49,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=4294967295)]
-        public long DriveDuration
+        public long? DriveDuration
         {
-            get { return this._driveDuration.GetValueOrDefault(); }
+            get { return this._driveDuration; }
             set { this._driveDuration = value; }
         }
 
@@ -72,9 +72,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=4294967295)]
-        public long RestDuration
+        public long? RestDuration
         {
-            get { return this._restDuration.GetValueOrDefault(); }
+            get { return this._restDuration; }
             set { this._restDuration = value; }
         }
 

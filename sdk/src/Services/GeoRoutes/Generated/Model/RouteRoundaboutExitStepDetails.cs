@@ -65,9 +65,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=12)]
-        public int RelativeExit
+        public int? RelativeExit
         {
-            get { return this._relativeExit.GetValueOrDefault(); }
+            get { return this._relativeExit; }
             set { this._relativeExit = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=-360, Max=360)]
-        public double RoundaboutAngle
+        public double? RoundaboutAngle
         {
-            get { return this._roundaboutAngle.GetValueOrDefault(); }
+            get { return this._roundaboutAngle; }
             set { this._roundaboutAngle = value; }
         }
 

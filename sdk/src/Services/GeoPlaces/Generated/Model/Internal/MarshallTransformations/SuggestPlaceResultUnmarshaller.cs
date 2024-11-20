@@ -98,7 +98,7 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Distance", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Distance = unmarshaller.Unmarshall(context);
                     continue;
                 }

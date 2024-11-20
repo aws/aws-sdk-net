@@ -51,7 +51,7 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInstanceCount())
             {
                 context.Writer.WritePropertyName("instanceCount");
-                context.Writer.Write(requestObject.InstanceCount);
+                context.Writer.Write(requestObject.InstanceCount.Value);
             }
 
             if(requestObject.IsSetInstanceType())
@@ -63,7 +63,7 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             if(requestObject.IsSetVolumeSizeInGB())
             {
                 context.Writer.WritePropertyName("volumeSizeInGB");
-                context.Writer.Write(requestObject.VolumeSizeInGB);
+                context.Writer.Write(requestObject.VolumeSizeInGB.Value);
             }
 
         }

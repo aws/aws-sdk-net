@@ -57,9 +57,9 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// each step in your prompt flow by viewing its trace in Amazon Bedrock</a>.
         /// </para>
         /// </summary>
-        public bool EnableTrace
+        public bool? EnableTrace
         {
-            get { return this._enableTrace.GetValueOrDefault(); }
+            get { return this._enableTrace; }
             set { this._enableTrace = value; }
         }
 

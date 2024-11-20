@@ -54,9 +54,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double BestCaseSpeed
+        public double? BestCaseSpeed
         {
-            get { return this._bestCaseSpeed.GetValueOrDefault(); }
+            get { return this._bestCaseSpeed; }
             set { this._bestCaseSpeed = value; }
         }
 
@@ -77,9 +77,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967295)]
-        public long TurnDuration
+        public long? TurnDuration
         {
-            get { return this._turnDuration.GetValueOrDefault(); }
+            get { return this._turnDuration; }
             set { this._turnDuration = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double TypicalSpeed
+        public double? TypicalSpeed
         {
-            get { return this._typicalSpeed.GetValueOrDefault(); }
+            get { return this._typicalSpeed; }
             set { this._typicalSpeed = value; }
         }
 

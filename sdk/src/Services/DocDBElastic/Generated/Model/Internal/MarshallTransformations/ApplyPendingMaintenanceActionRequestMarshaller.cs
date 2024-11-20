@@ -61,39 +61,42 @@ namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/pending-action";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetApplyAction())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("applyAction");
-                    context.Writer.Write(publicRequest.ApplyAction);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetApplyAction())
+                    {
+                        context.Writer.WritePropertyName("applyAction");
+                        context.Writer.Write(publicRequest.ApplyAction);
+                    }
+
+                    if(publicRequest.IsSetApplyOn())
+                    {
+                        context.Writer.WritePropertyName("applyOn");
+                        context.Writer.Write(publicRequest.ApplyOn);
+                    }
+
+                    if(publicRequest.IsSetOptInType())
+                    {
+                        context.Writer.WritePropertyName("optInType");
+                        context.Writer.Write(publicRequest.OptInType);
+                    }
+
+                    if(publicRequest.IsSetResourceArn())
+                    {
+                        context.Writer.WritePropertyName("resourceArn");
+                        context.Writer.Write(publicRequest.ResourceArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetApplyOn())
-                {
-                    context.Writer.WritePropertyName("applyOn");
-                    context.Writer.Write(publicRequest.ApplyOn);
-                }
-
-                if(publicRequest.IsSetOptInType())
-                {
-                    context.Writer.WritePropertyName("optInType");
-                    context.Writer.Write(publicRequest.OptInType);
-                }
-
-                if(publicRequest.IsSetResourceArn())
-                {
-                    context.Writer.WritePropertyName("resourceArn");
-                    context.Writer.Write(publicRequest.ResourceArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

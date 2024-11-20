@@ -71,9 +71,9 @@ namespace Amazon.SupplyChain.Model
         /// The instance creation timestamp.
         /// </para>
         /// </summary>
-        public DateTime CreatedTime
+        public DateTime? CreatedTime
         {
-            get { return this._createdTime.GetValueOrDefault(); }
+            get { return this._createdTime; }
             set { this._createdTime = value; }
         }
 
@@ -187,9 +187,9 @@ namespace Amazon.SupplyChain.Model
         /// The instance last modified timestamp.
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTime
+        public DateTime? LastModifiedTime
         {
-            get { return this._lastModifiedTime.GetValueOrDefault(); }
+            get { return this._lastModifiedTime; }
             set { this._lastModifiedTime = value; }
         }
 
@@ -224,9 +224,9 @@ namespace Amazon.SupplyChain.Model
         /// The version number of the instance.
         /// </para>
         /// </summary>
-        public double VersionNumber
+        public double? VersionNumber
         {
-            get { return this._versionNumber.GetValueOrDefault(); }
+            get { return this._versionNumber; }
             set { this._versionNumber = value; }
         }
 

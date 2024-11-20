@@ -68,7 +68,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ReadUnitsPerSecond", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ReadUnitsPerSecond = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -80,7 +80,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("WriteUnitsPerSecond", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.WriteUnitsPerSecond = unmarshaller.Unmarshall(context);
                     continue;
                 }

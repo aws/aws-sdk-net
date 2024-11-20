@@ -54,7 +54,7 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ErrorCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.ErrorCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -47,9 +47,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// 
         /// </para>
         /// </summary>
-        public int Cancelled
+        public int? Cancelled
         {
-            get { return this._cancelled.GetValueOrDefault(); }
+            get { return this._cancelled; }
             set { this._cancelled = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// complete properly.
         /// </para>
         /// </summary>
-        public int Error
+        public int? Error
         {
-            get { return this._error.GetValueOrDefault(); }
+            get { return this._error; }
             set { this._error = value; }
         }
 
@@ -85,9 +85,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// assessment run.
         /// </para>
         /// </summary>
-        public int Failed
+        public int? Failed
         {
-            get { return this._failed.GetValueOrDefault(); }
+            get { return this._failed; }
             set { this._failed = value; }
         }
 
@@ -104,9 +104,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// run.
         /// </para>
         /// </summary>
-        public int Passed
+        public int? Passed
         {
-            get { return this._passed.GetValueOrDefault(); }
+            get { return this._passed; }
             set { this._passed = value; }
         }
 
@@ -122,9 +122,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Indicates that the recent completed AssessmentRun triggered a warning.
         /// </para>
         /// </summary>
-        public int Warning
+        public int? Warning
         {
-            get { return this._warning.GetValueOrDefault(); }
+            get { return this._warning; }
             set { this._warning = value; }
         }
 

@@ -67,38 +67,41 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                 throw new AmazonCleanRoomsMLException("Request object does not have required field TrainedModelArn set");
             request.AddPathResource("{trainedModelArn}", StringUtils.FromString(publicRequest.TrainedModelArn));
             request.ResourcePath = "/memberships/{membershipIdentifier}/trained-models/{trainedModelArn}/export-jobs";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetOutputConfiguration())
+                    {
+                        context.Writer.WritePropertyName("outputConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TrainedModelExportOutputConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OutputConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetOutputConfiguration())
-                {
-                    context.Writer.WritePropertyName("outputConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TrainedModelExportOutputConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OutputConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

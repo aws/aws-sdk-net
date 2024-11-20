@@ -51,31 +51,31 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetQuad())
             {
                 context.Writer.WritePropertyName("Quad");
-                context.Writer.Write(requestObject.Quad);
+                context.Writer.Write(requestObject.Quad.Value);
             }
 
             if(requestObject.IsSetQuint())
             {
                 context.Writer.WritePropertyName("Quint");
-                context.Writer.Write(requestObject.Quint);
+                context.Writer.Write(requestObject.Quint.Value);
             }
 
             if(requestObject.IsSetSingle())
             {
                 context.Writer.WritePropertyName("Single");
-                context.Writer.Write(requestObject.Single);
+                context.Writer.Write(requestObject.Single.Value);
             }
 
             if(requestObject.IsSetTandem())
             {
                 context.Writer.WritePropertyName("Tandem");
-                context.Writer.Write(requestObject.Tandem);
+                context.Writer.Write(requestObject.Tandem.Value);
             }
 
             if(requestObject.IsSetTriple())
             {
                 context.Writer.WritePropertyName("Triple");
-                context.Writer.Write(requestObject.Triple);
+                context.Writer.Write(requestObject.Triple.Value);
             }
 
         }

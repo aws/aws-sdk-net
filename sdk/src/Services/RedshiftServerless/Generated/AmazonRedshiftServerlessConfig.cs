@@ -34,16 +34,10 @@ namespace Amazon.RedshiftServerless
     public partial class AmazonRedshiftServerlessConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Redshift Serverless", "4.0.0.0");
 
         private static readonly AmazonRedshiftServerlessEndpointResolver EndpointResolver =
             new AmazonRedshiftServerlessEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("Redshift Serverless", "3.7.400.26");
-=======
-            InternalSDKUtils.BuildUserAgentString("Redshift Serverless", "3.7.401.10");
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
         private string _userAgent = UserAgentString;
         ///<summary>

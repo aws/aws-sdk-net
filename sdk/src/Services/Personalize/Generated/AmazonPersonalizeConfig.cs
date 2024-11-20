@@ -34,16 +34,10 @@ namespace Amazon.Personalize
     public partial class AmazonPersonalizeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Personalize", "4.0.0.0");
 
         private static readonly AmazonPersonalizeEndpointResolver EndpointResolver =
             new AmazonPersonalizeEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("Personalize", "3.7.401.14");
-=======
-            InternalSDKUtils.BuildUserAgentString("Personalize", "3.7.401.41");
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
         private string _userAgent = UserAgentString;
         ///<summary>

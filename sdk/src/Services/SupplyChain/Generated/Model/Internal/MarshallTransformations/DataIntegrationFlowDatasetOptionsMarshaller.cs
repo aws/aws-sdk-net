@@ -51,7 +51,7 @@ namespace Amazon.SupplyChain.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDedupeRecords())
             {
                 context.Writer.WritePropertyName("dedupeRecords");
-                context.Writer.Write(requestObject.DedupeRecords);
+                context.Writer.Write(requestObject.DedupeRecords.Value);
             }
 
             if(requestObject.IsSetLoadType())

@@ -107,9 +107,9 @@ namespace Amazon.SocialMessaging.Model
         /// Set to <c>True</c> to get only the metadata for the file.
         /// </para>
         /// </summary>
-        public bool MetadataOnly
+        public bool? MetadataOnly
         {
-            get { return this._metadataOnly.GetValueOrDefault(); }
+            get { return this._metadataOnly; }
             set { this._metadataOnly = value; }
         }
 

@@ -68,13 +68,13 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHeading())
             {
                 context.Writer.WritePropertyName("Heading");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Heading))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Heading.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Heading));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Heading.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Heading);
+                    context.Writer.Write(requestObject.Heading.Value);
                 }
             }
 
@@ -87,7 +87,7 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetServiceDuration())
             {
                 context.Writer.WritePropertyName("ServiceDuration");
-                context.Writer.Write(requestObject.ServiceDuration);
+                context.Writer.Write(requestObject.ServiceDuration.Value);
             }
 
             if(requestObject.IsSetSideOfStreet())

@@ -64,84 +64,87 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetKey())
                 request.Parameters.Add("key", StringUtils.FromString(publicRequest.Key));
             request.ResourcePath = "/suggest";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAdditionalFeatures())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AdditionalFeatures");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAdditionalFeaturesListValue in publicRequest.AdditionalFeatures)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAdditionalFeatures())
                     {
-                            context.Writer.Write(publicRequestAdditionalFeaturesListValue);
+                        context.Writer.WritePropertyName("AdditionalFeatures");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAdditionalFeaturesListValue in publicRequest.AdditionalFeatures)
+                        {
+                                context.Writer.Write(publicRequestAdditionalFeaturesListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetBiasPosition())
-                {
-                    context.Writer.WritePropertyName("BiasPosition");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestBiasPositionListValue in publicRequest.BiasPosition)
+                    if(publicRequest.IsSetBiasPosition())
                     {
-                            context.Writer.Write(publicRequestBiasPositionListValue);
+                        context.Writer.WritePropertyName("BiasPosition");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestBiasPositionListValue in publicRequest.BiasPosition)
+                        {
+                                context.Writer.Write(publicRequestBiasPositionListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetFilter())
+                    {
+                        context.Writer.WritePropertyName("Filter");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SuggestFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Filter, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetIntendedUse())
+                    {
+                        context.Writer.WritePropertyName("IntendedUse");
+                        context.Writer.Write(publicRequest.IntendedUse);
+                    }
+
+                    if(publicRequest.IsSetLanguage())
+                    {
+                        context.Writer.WritePropertyName("Language");
+                        context.Writer.Write(publicRequest.Language);
+                    }
+
+                    if(publicRequest.IsSetMaxQueryRefinements())
+                    {
+                        context.Writer.WritePropertyName("MaxQueryRefinements");
+                        context.Writer.Write(publicRequest.MaxQueryRefinements.Value);
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetPoliticalView())
+                    {
+                        context.Writer.WritePropertyName("PoliticalView");
+                        context.Writer.Write(publicRequest.PoliticalView);
+                    }
+
+                    if(publicRequest.IsSetQueryText())
+                    {
+                        context.Writer.WritePropertyName("QueryText");
+                        context.Writer.Write(publicRequest.QueryText);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetFilter())
-                {
-                    context.Writer.WritePropertyName("Filter");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SuggestFilterMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Filter, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetIntendedUse())
-                {
-                    context.Writer.WritePropertyName("IntendedUse");
-                    context.Writer.Write(publicRequest.IntendedUse);
-                }
-
-                if(publicRequest.IsSetLanguage())
-                {
-                    context.Writer.WritePropertyName("Language");
-                    context.Writer.Write(publicRequest.Language);
-                }
-
-                if(publicRequest.IsSetMaxQueryRefinements())
-                {
-                    context.Writer.WritePropertyName("MaxQueryRefinements");
-                    context.Writer.Write(publicRequest.MaxQueryRefinements);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
-                }
-
-                if(publicRequest.IsSetPoliticalView())
-                {
-                    context.Writer.WritePropertyName("PoliticalView");
-                    context.Writer.Write(publicRequest.PoliticalView);
-                }
-
-                if(publicRequest.IsSetQueryText())
-                {
-                    context.Writer.WritePropertyName("QueryText");
-                    context.Writer.Write(publicRequest.QueryText);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             request.UseQueryString = true;

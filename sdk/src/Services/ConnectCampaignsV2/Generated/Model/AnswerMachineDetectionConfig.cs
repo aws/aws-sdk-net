@@ -43,9 +43,9 @@ namespace Amazon.ConnectCampaignsV2.Model
         /// Enable or disable await answer machine prompt
         /// </para>
         /// </summary>
-        public bool AwaitAnswerMachinePrompt
+        public bool? AwaitAnswerMachinePrompt
         {
-            get { return this._awaitAnswerMachinePrompt.GetValueOrDefault(); }
+            get { return this._awaitAnswerMachinePrompt; }
             set { this._awaitAnswerMachinePrompt = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.ConnectCampaignsV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool EnableAnswerMachineDetection
+        public bool? EnableAnswerMachineDetection
         {
-            get { return this._enableAnswerMachineDetection.GetValueOrDefault(); }
+            get { return this._enableAnswerMachineDetection; }
             set { this._enableAnswerMachineDetection = value; }
         }
 

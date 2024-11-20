@@ -68,25 +68,25 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("IncludesReturnTrip", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IncludesReturnTrip = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SeniorPass", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.SeniorPass = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TransferCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TransferCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TripCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TripCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

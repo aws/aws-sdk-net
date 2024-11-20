@@ -133,9 +133,9 @@ namespace Amazon.GameLift.Model
         /// fails, the entire container group restarts.
         /// </para>
         /// </summary>
-        public bool Essential
+        public bool? Essential
         {
-            get { return this._essential.GetValueOrDefault(); }
+            get { return this._essential; }
             set { this._essential = value; }
         }
 
@@ -198,9 +198,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=4, Max=1024000)]
-        public int MemoryHardLimitMebibytes
+        public int? MemoryHardLimitMebibytes
         {
-            get { return this._memoryHardLimitMebibytes.GetValueOrDefault(); }
+            get { return this._memoryHardLimitMebibytes; }
             set { this._memoryHardLimitMebibytes = value; }
         }
 
@@ -283,9 +283,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Max=10)]
-        public double Vcpu
+        public double? Vcpu
         {
-            get { return this._vcpu.GetValueOrDefault(); }
+            get { return this._vcpu; }
             set { this._vcpu = value; }
         }
 

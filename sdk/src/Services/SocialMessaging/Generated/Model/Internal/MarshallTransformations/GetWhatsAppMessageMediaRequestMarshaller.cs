@@ -61,55 +61,58 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v1/whatsapp/media/get";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDestinationS3File())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("destinationS3File");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDestinationS3File())
+                    {
+                        context.Writer.WritePropertyName("destinationS3File");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = S3FileMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DestinationS3File, context);
+                        var marshaller = S3FileMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DestinationS3File, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDestinationS3PresignedUrl())
+                    {
+                        context.Writer.WritePropertyName("destinationS3PresignedUrl");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = S3PresignedUrlMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DestinationS3PresignedUrl, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetMediaId())
+                    {
+                        context.Writer.WritePropertyName("mediaId");
+                        context.Writer.Write(publicRequest.MediaId);
+                    }
+
+                    if(publicRequest.IsSetMetadataOnly())
+                    {
+                        context.Writer.WritePropertyName("metadataOnly");
+                        context.Writer.Write(publicRequest.MetadataOnly.Value);
+                    }
+
+                    if(publicRequest.IsSetOriginationPhoneNumberId())
+                    {
+                        context.Writer.WritePropertyName("originationPhoneNumberId");
+                        context.Writer.Write(publicRequest.OriginationPhoneNumberId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDestinationS3PresignedUrl())
-                {
-                    context.Writer.WritePropertyName("destinationS3PresignedUrl");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = S3PresignedUrlMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DestinationS3PresignedUrl, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetMediaId())
-                {
-                    context.Writer.WritePropertyName("mediaId");
-                    context.Writer.Write(publicRequest.MediaId);
-                }
-
-                if(publicRequest.IsSetMetadataOnly())
-                {
-                    context.Writer.WritePropertyName("metadataOnly");
-                    context.Writer.Write(publicRequest.MetadataOnly);
-                }
-
-                if(publicRequest.IsSetOriginationPhoneNumberId())
-                {
-                    context.Writer.WritePropertyName("originationPhoneNumberId");
-                    context.Writer.Write(publicRequest.OriginationPhoneNumberId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

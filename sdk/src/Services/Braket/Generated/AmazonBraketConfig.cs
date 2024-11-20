@@ -34,16 +34,10 @@ namespace Amazon.Braket
     public partial class AmazonBraketConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Braket", "4.0.0.0");
 
         private static readonly AmazonBraketEndpointResolver EndpointResolver =
             new AmazonBraketEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("Braket", "3.7.400.26");
-=======
-            InternalSDKUtils.BuildUserAgentString("Braket", "3.7.400.53");
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
         private string _userAgent = UserAgentString;
         ///<summary>

@@ -74,13 +74,13 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RelativeExit", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RelativeExit = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RoundaboutAngle", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.RoundaboutAngle = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -44,9 +44,9 @@ namespace Amazon.EC2.Model
         /// The number of CPU cores that are running for the specified instance after the update.
         /// </para>
         /// </summary>
-        public int CoreCount
+        public int? CoreCount
         {
-            get { return this._coreCount.GetValueOrDefault(); }
+            get { return this._coreCount; }
             set { this._coreCount = value; }
         }
 
@@ -81,9 +81,9 @@ namespace Amazon.EC2.Model
         /// the update.
         /// </para>
         /// </summary>
-        public int ThreadsPerCore
+        public int? ThreadsPerCore
         {
-            get { return this._threadsPerCore.GetValueOrDefault(); }
+            get { return this._threadsPerCore; }
             set { this._threadsPerCore = value; }
         }
 

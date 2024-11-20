@@ -107,9 +107,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// True if message feedback is enabled.
         /// </para>
         /// </summary>
-        public bool DefaultMessageFeedbackEnabled
+        public bool? DefaultMessageFeedbackEnabled
         {
-            get { return this._defaultMessageFeedbackEnabled.GetValueOrDefault(); }
+            get { return this._defaultMessageFeedbackEnabled; }
             set { this._defaultMessageFeedbackEnabled = value; }
         }
 

@@ -62,20 +62,20 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxSpeed())
             {
                 context.Writer.WritePropertyName("MaxSpeed");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.MaxSpeed))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.MaxSpeed.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MaxSpeed));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MaxSpeed.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MaxSpeed);
+                    context.Writer.Write(requestObject.MaxSpeed.Value);
                 }
             }
 
             if(requestObject.IsSetOccupancy())
             {
                 context.Writer.WritePropertyName("Occupancy");
-                context.Writer.Write(requestObject.Occupancy);
+                context.Writer.Write(requestObject.Occupancy.Value);
             }
 
         }

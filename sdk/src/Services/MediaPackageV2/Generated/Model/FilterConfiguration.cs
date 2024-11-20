@@ -49,9 +49,9 @@ namespace Amazon.MediaPackageV2.Model
         /// for this manifest's endpoint URL.
         /// </para>
         /// </summary>
-        public DateTime ClipStartTime
+        public DateTime? ClipStartTime
         {
-            get { return this._clipStartTime.GetValueOrDefault(); }
+            get { return this._clipStartTime; }
             set { this._clipStartTime = value; }
         }
 

@@ -67,9 +67,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=30, Max=75)]
-        public int MinimumHealthyPercentage
+        public int? MinimumHealthyPercentage
         {
-            get { return this._minimumHealthyPercentage.GetValueOrDefault(); }
+            get { return this._minimumHealthyPercentage; }
             set { this._minimumHealthyPercentage = value; }
         }
 

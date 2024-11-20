@@ -113,98 +113,16 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.ResourceGroupName);
                     }
 
+                    if(publicRequest.IsSetSNSNotificationArn())
+                    {
+                        context.Writer.WritePropertyName("SNSNotificationArn");
+                        context.Writer.Write(publicRequest.SNSNotificationArn);
+                    }
+
                     writer.WriteObjectEnd();
                 }
 
-<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
-||||||| Commit version number update changes
-                if(publicRequest.IsSetAutoConfigEnabled())
-                {
-                    context.Writer.WritePropertyName("AutoConfigEnabled");
-                    context.Writer.Write(publicRequest.AutoConfigEnabled);
-                }
-
-                if(publicRequest.IsSetCWEMonitorEnabled())
-                {
-                    context.Writer.WritePropertyName("CWEMonitorEnabled");
-                    context.Writer.Write(publicRequest.CWEMonitorEnabled);
-                }
-
-                if(publicRequest.IsSetOpsCenterEnabled())
-                {
-                    context.Writer.WritePropertyName("OpsCenterEnabled");
-                    context.Writer.Write(publicRequest.OpsCenterEnabled);
-                }
-
-                if(publicRequest.IsSetOpsItemSNSTopicArn())
-                {
-                    context.Writer.WritePropertyName("OpsItemSNSTopicArn");
-                    context.Writer.Write(publicRequest.OpsItemSNSTopicArn);
-                }
-
-                if(publicRequest.IsSetRemoveSNSTopic())
-                {
-                    context.Writer.WritePropertyName("RemoveSNSTopic");
-                    context.Writer.Write(publicRequest.RemoveSNSTopic);
-                }
-
-                if(publicRequest.IsSetResourceGroupName())
-                {
-                    context.Writer.WritePropertyName("ResourceGroupName");
-                    context.Writer.Write(publicRequest.ResourceGroupName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-=======
-                if(publicRequest.IsSetAutoConfigEnabled())
-                {
-                    context.Writer.WritePropertyName("AutoConfigEnabled");
-                    context.Writer.Write(publicRequest.AutoConfigEnabled);
-                }
-
-                if(publicRequest.IsSetCWEMonitorEnabled())
-                {
-                    context.Writer.WritePropertyName("CWEMonitorEnabled");
-                    context.Writer.Write(publicRequest.CWEMonitorEnabled);
-                }
-
-                if(publicRequest.IsSetOpsCenterEnabled())
-                {
-                    context.Writer.WritePropertyName("OpsCenterEnabled");
-                    context.Writer.Write(publicRequest.OpsCenterEnabled);
-                }
-
-                if(publicRequest.IsSetOpsItemSNSTopicArn())
-                {
-                    context.Writer.WritePropertyName("OpsItemSNSTopicArn");
-                    context.Writer.Write(publicRequest.OpsItemSNSTopicArn);
-                }
-
-                if(publicRequest.IsSetRemoveSNSTopic())
-                {
-                    context.Writer.WritePropertyName("RemoveSNSTopic");
-                    context.Writer.Write(publicRequest.RemoveSNSTopic);
-                }
-
-                if(publicRequest.IsSetResourceGroupName())
-                {
-                    context.Writer.WritePropertyName("ResourceGroupName");
-                    context.Writer.Write(publicRequest.ResourceGroupName);
-                }
-
-                if(publicRequest.IsSetSNSNotificationArn())
-                {
-                    context.Writer.WritePropertyName("SNSNotificationArn");
-                    context.Writer.Write(publicRequest.SNSNotificationArn);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
             }
 
 

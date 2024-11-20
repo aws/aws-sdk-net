@@ -44,9 +44,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=31)]
-        public int MaxPoints
+        public int? MaxPoints
         {
-            get { return this._maxPoints.GetValueOrDefault(); }
+            get { return this._maxPoints; }
             set { this._maxPoints = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967295)]
-        public long MaxResolution
+        public long? MaxResolution
         {
-            get { return this._maxResolution.GetValueOrDefault(); }
+            get { return this._maxResolution; }
             set { this._maxResolution = value; }
         }
 

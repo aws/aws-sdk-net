@@ -74,7 +74,7 @@ namespace Amazon.CloudControlApi.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("HookEventTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.HookEventTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -74,7 +74,7 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Value", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                     continue;
                 }

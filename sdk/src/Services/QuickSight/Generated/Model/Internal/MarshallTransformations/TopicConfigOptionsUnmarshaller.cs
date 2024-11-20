@@ -68,7 +68,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("QBusinessInsightsEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.QBusinessInsightsEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

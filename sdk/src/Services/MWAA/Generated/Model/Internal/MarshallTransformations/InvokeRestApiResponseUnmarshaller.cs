@@ -60,7 +60,7 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RestApiStatusCode", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.RestApiStatusCode = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -51,7 +51,7 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTrailerCount())
             {
                 context.Writer.WritePropertyName("TrailerCount");
-                context.Writer.Write(requestObject.TrailerCount);
+                context.Writer.Write(requestObject.TrailerCount.Value);
             }
 
         }

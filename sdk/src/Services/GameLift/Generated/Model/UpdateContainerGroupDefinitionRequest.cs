@@ -176,9 +176,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int SourceVersionNumber
+        public int? SourceVersionNumber
         {
-            get { return this._sourceVersionNumber.GetValueOrDefault(); }
+            get { return this._sourceVersionNumber; }
             set { this._sourceVersionNumber = value; }
         }
 
@@ -218,9 +218,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=4, Max=1024000)]
-        public int TotalMemoryLimitMebibytes
+        public int? TotalMemoryLimitMebibytes
         {
-            get { return this._totalMemoryLimitMebibytes.GetValueOrDefault(); }
+            get { return this._totalMemoryLimitMebibytes; }
             set { this._totalMemoryLimitMebibytes = value; }
         }
 
@@ -240,9 +240,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Max=10)]
-        public double TotalVcpuLimit
+        public double? TotalVcpuLimit
         {
-            get { return this._totalVcpuLimit.GetValueOrDefault(); }
+            get { return this._totalVcpuLimit; }
             set { this._totalVcpuLimit = value; }
         }
 

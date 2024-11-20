@@ -200,31 +200,21 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Version);
                     }
 
+                    if(publicRequest.IsSetZonalShiftConfig())
+                    {
+                        context.Writer.WritePropertyName("zonalShiftConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ZonalShiftConfigRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ZonalShiftConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     writer.WriteObjectEnd();
                 }
 
-<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
-||||||| Commit version number update changes
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-=======
-                if(publicRequest.IsSetZonalShiftConfig())
-                {
-                    context.Writer.WritePropertyName("zonalShiftConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ZonalShiftConfigRequestMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ZonalShiftConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
             }
 
 

@@ -45,16 +45,8 @@ namespace Amazon.IoTFleetWise.Model
         /// minute.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Required=true, Min=10000, Max=60000)]
-        public long? PeriodMs
-||||||| Commit version number update changes
-        [AWSProperty(Required=true, Min=10000, Max=60000)]
-        public long PeriodMs
-=======
         [AWSProperty(Required=true, Min=10000, Max=86400000)]
-        public long PeriodMs
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
+        public long? PeriodMs
         {
             get { return this._periodMs; }
             set { this._periodMs = value; }

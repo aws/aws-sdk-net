@@ -34,16 +34,10 @@ namespace Amazon.CustomerProfiles
     public partial class AmazonCustomerProfilesConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Customer Profiles", "4.0.0.0");
 
         private static readonly AmazonCustomerProfilesEndpointResolver EndpointResolver =
             new AmazonCustomerProfilesEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("Customer Profiles", "3.7.401.0");
-=======
-            InternalSDKUtils.BuildUserAgentString("Customer Profiles", "3.7.401.27");
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
         private string _userAgent = UserAgentString;
         ///<summary>

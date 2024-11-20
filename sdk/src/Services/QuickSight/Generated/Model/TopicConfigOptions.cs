@@ -42,9 +42,9 @@ namespace Amazon.QuickSight.Model
         /// Enables Amazon Q Business Insights for a <c>Topic</c>.
         /// </para>
         /// </summary>
-        public bool QBusinessInsightsEnabled
+        public bool? QBusinessInsightsEnabled
         {
-            get { return this._qBusinessInsightsEnabled.GetValueOrDefault(); }
+            get { return this._qBusinessInsightsEnabled; }
             set { this._qBusinessInsightsEnabled = value; }
         }
 

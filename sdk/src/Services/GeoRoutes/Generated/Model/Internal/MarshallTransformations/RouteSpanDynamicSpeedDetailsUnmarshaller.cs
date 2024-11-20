@@ -68,19 +68,19 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("BestCaseSpeed", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.BestCaseSpeed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TurnDuration", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TurnDuration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TypicalSpeed", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.TypicalSpeed = unmarshaller.Unmarshall(context);
                     continue;
                 }

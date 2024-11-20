@@ -124,9 +124,9 @@ namespace Amazon.MailManager.Model
         /// The timestamp of when the email was received.
         /// </para>
         /// </summary>
-        public DateTime Timestamp
+        public DateTime? Timestamp
         {
-            get { return this._timestamp.GetValueOrDefault(); }
+            get { return this._timestamp; }
             set { this._timestamp = value; }
         }
 

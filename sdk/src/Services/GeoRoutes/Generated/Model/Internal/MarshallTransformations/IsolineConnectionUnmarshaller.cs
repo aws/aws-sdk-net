@@ -68,7 +68,7 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("FromPolygonIndex", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FromPolygonIndex = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -80,7 +80,7 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ToPolygonIndex", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ToPolygonIndex = unmarshaller.Unmarshall(context);
                     continue;
                 }

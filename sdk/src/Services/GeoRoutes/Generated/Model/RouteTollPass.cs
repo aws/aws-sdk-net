@@ -46,9 +46,9 @@ namespace Amazon.GeoRoutes.Model
         /// If the pass includes the rate for the return leg of the trip.
         /// </para>
         /// </summary>
-        public bool IncludesReturnTrip
+        public bool? IncludesReturnTrip
         {
-            get { return this._includesReturnTrip.GetValueOrDefault(); }
+            get { return this._includesReturnTrip; }
             set { this._includesReturnTrip = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.GeoRoutes.Model
         /// If the pass is only valid for senior persons.
         /// </para>
         /// </summary>
-        public bool SeniorPass
+        public bool? SeniorPass
         {
-            get { return this._seniorPass.GetValueOrDefault(); }
+            get { return this._seniorPass; }
             set { this._seniorPass = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int TransferCount
+        public int? TransferCount
         {
-            get { return this._transferCount.GetValueOrDefault(); }
+            get { return this._transferCount; }
             set { this._transferCount = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int TripCount
+        public int? TripCount
         {
-            get { return this._tripCount.GetValueOrDefault(); }
+            get { return this._tripCount; }
             set { this._tripCount = value; }
         }
 

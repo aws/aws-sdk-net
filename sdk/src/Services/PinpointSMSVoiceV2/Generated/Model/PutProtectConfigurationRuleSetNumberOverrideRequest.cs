@@ -108,9 +108,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// rule does not expire.
         /// </para>
         /// </summary>
-        public DateTime ExpirationTimestamp
+        public DateTime? ExpirationTimestamp
         {
-            get { return this._expirationTimestamp.GetValueOrDefault(); }
+            get { return this._expirationTimestamp; }
             set { this._expirationTimestamp = value; }
         }
 

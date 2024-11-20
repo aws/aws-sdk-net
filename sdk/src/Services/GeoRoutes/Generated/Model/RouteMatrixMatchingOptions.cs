@@ -70,9 +70,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long OnRoadThreshold
+        public long? OnRoadThreshold
         {
-            get { return this._onRoadThreshold.GetValueOrDefault(); }
+            get { return this._onRoadThreshold; }
             set { this._onRoadThreshold = value; }
         }
 
@@ -94,9 +94,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967295)]
-        public long Radius
+        public long? Radius
         {
-            get { return this._radius.GetValueOrDefault(); }
+            get { return this._radius; }
             set { this._radius = value; }
         }
 

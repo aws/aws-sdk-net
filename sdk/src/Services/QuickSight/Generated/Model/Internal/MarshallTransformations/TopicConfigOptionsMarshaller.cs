@@ -51,7 +51,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetQBusinessInsightsEnabled())
             {
                 context.Writer.WritePropertyName("QBusinessInsightsEnabled");
-                context.Writer.Write(requestObject.QBusinessInsightsEnabled);
+                context.Writer.Write(requestObject.QBusinessInsightsEnabled.Value);
             }
 
         }

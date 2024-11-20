@@ -85,9 +85,9 @@ namespace Amazon.EC2.Model
         /// The date and time, in UTC time format, at which the request was initiated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdateTime
+        public DateTime? LastUpdateTime
         {
-            get { return this._lastUpdateTime.GetValueOrDefault(); }
+            get { return this._lastUpdateTime; }
             set { this._lastUpdateTime = value; }
         }
 

@@ -68,31 +68,31 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Quad", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Quad = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Quint", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Quint = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Single", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Single = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Tandem", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Tandem = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Triple", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Triple = unmarshaller.Unmarshall(context);
                     continue;
                 }

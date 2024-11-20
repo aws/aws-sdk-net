@@ -43,9 +43,9 @@ namespace Amazon.SocialMessaging.Model
         /// The file size of the media, in KB.
         /// </para>
         /// </summary>
-        public long FileSize
+        public long? FileSize
         {
-            get { return this._fileSize.GetValueOrDefault(); }
+            get { return this._fileSize; }
             set { this._fileSize = value; }
         }
 

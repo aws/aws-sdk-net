@@ -68,13 +68,13 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("MaxSpeed", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.MaxSpeed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Unlimited", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Unlimited = unmarshaller.Unmarshall(context);
                     continue;
                 }

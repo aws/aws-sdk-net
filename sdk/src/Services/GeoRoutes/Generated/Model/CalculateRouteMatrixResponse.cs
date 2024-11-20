@@ -47,9 +47,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int ErrorCount
+        public int? ErrorCount
         {
-            get { return this._errorCount.GetValueOrDefault(); }
+            get { return this._errorCount; }
             set { this._errorCount = value; }
         }
 

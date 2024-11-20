@@ -68,7 +68,7 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("maxRuntimeInSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxRuntimeInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

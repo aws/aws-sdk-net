@@ -84,9 +84,9 @@ namespace Amazon.CodeBuild.Model
         /// to automatically retry your build for up to 2 additional times.
         /// </para>
         /// </summary>
-        public int AutoRetryLimit
+        public int? AutoRetryLimit
         {
-            get { return this._autoRetryLimit.GetValueOrDefault(); }
+            get { return this._autoRetryLimit; }
             set { this._autoRetryLimit = value; }
         }
 

@@ -68,7 +68,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("autoStageRetryAttempt", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AutoStageRetryAttempt = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -80,7 +80,7 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("manualStageRetryAttempt", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.ManualStageRetryAttempt = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -51,13 +51,13 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHeading())
             {
                 context.Writer.WritePropertyName("Heading");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Heading))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Heading.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Heading));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Heading.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Heading);
+                    context.Writer.Write(requestObject.Heading.Value);
                 }
             }
 
@@ -75,13 +75,13 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSpeed())
             {
                 context.Writer.WritePropertyName("Speed");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Speed))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Speed.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Speed));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Speed.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Speed);
+                    context.Writer.Write(requestObject.Speed.Value);
                 }
             }
 

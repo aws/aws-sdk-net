@@ -74,7 +74,7 @@ namespace Amazon.Repostspace.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("error", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Error = unmarshaller.Unmarshall(context);
                     continue;
                 }

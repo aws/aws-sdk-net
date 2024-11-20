@@ -68,7 +68,7 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("instanceCount", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.InstanceCount = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -80,7 +80,7 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("volumeSizeInGB", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.VolumeSizeInGB = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -124,9 +124,9 @@ namespace Amazon.MailManager.Model
         /// Whether to include message metadata as JSON files in the export.
         /// </para>
         /// </summary>
-        public bool IncludeMetadata
+        public bool? IncludeMetadata
         {
-            get { return this._includeMetadata.GetValueOrDefault(); }
+            get { return this._includeMetadata; }
             set { this._includeMetadata = value; }
         }
 

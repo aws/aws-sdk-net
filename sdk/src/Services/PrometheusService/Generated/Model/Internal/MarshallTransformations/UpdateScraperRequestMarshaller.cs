@@ -64,54 +64,57 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
                 throw new AmazonPrometheusServiceException("Request object does not have required field ScraperId set");
             request.AddPathResource("{scraperId}", StringUtils.FromString(publicRequest.ScraperId));
             request.ResourcePath = "/scrapers/{scraperId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAlias())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("alias");
-                    context.Writer.Write(publicRequest.Alias);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAlias())
+                    {
+                        context.Writer.WritePropertyName("alias");
+                        context.Writer.Write(publicRequest.Alias);
+                    }
+
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetDestination())
+                    {
+                        context.Writer.WritePropertyName("destination");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DestinationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Destination, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetScrapeConfiguration())
+                    {
+                        context.Writer.WritePropertyName("scrapeConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ScrapeConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ScrapeConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDestination())
-                {
-                    context.Writer.WritePropertyName("destination");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DestinationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Destination, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetScrapeConfiguration())
-                {
-                    context.Writer.WritePropertyName("scrapeConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ScrapeConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ScrapeConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

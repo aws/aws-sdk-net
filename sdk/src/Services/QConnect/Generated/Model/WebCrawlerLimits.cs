@@ -43,9 +43,9 @@ namespace Amazon.QConnect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=300)]
-        public int RateLimit
+        public int? RateLimit
         {
-            get { return this._rateLimit.GetValueOrDefault(); }
+            get { return this._rateLimit; }
             set { this._rateLimit = value; }
         }
 

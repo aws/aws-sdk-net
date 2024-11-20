@@ -45,9 +45,9 @@ namespace Amazon.OpenSearchService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool VendingEnabled
+        public bool? VendingEnabled
         {
-            get { return this._vendingEnabled.GetValueOrDefault(); }
+            get { return this._vendingEnabled; }
             set { this._vendingEnabled = value; }
         }
 

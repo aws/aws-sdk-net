@@ -63,72 +63,23 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             request.ResourcePath = "/collaborations";
             using (MemoryStream memoryStream = new MemoryStream())
             {
-<<<<<<< HEAD
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-||||||| Commit version number update changes
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCreatorDisplayName())
-=======
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAnalyticsEngine())
-                {
-                    context.Writer.WritePropertyName("analyticsEngine");
-                    context.Writer.Write(publicRequest.AnalyticsEngine);
-                }
-
-                if(publicRequest.IsSetCreatorDisplayName())
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
                 {
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;
                     writer.WriteObjectStart();
                     var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAnalyticsEngine())
+                    {
+                        context.Writer.WritePropertyName("analyticsEngine");
+                        context.Writer.Write(publicRequest.AnalyticsEngine);
+                    }
+
                     if(publicRequest.IsSetCreatorDisplayName())
                     {
                         context.Writer.WritePropertyName("creatorDisplayName");
                         context.Writer.Write(publicRequest.CreatorDisplayName);
                     }
-<<<<<<< HEAD
-||||||| Commit version number update changes
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetCreatorPaymentConfiguration())
-                {
-                    context.Writer.WritePropertyName("creatorPaymentConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PaymentConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CreatorPaymentConfiguration, context);
-=======
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetCreatorMLMemberAbilities())
-                {
-                    context.Writer.WritePropertyName("creatorMLMemberAbilities");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MLMemberAbilitiesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CreatorMLMemberAbilities, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetCreatorPaymentConfiguration())
-                {
-                    context.Writer.WritePropertyName("creatorPaymentConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PaymentConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CreatorPaymentConfiguration, context);
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
                     if(publicRequest.IsSetCreatorMemberAbilities())
                     {
@@ -139,6 +90,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                                 context.Writer.Write(publicRequestCreatorMemberAbilitiesListValue);
                         }
                         context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetCreatorMLMemberAbilities())
+                    {
+                        context.Writer.WritePropertyName("creatorMLMemberAbilities");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MLMemberAbilitiesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CreatorMLMemberAbilities, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
 
                     if(publicRequest.IsSetCreatorPaymentConfiguration())

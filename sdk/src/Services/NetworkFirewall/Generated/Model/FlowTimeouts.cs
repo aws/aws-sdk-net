@@ -54,9 +54,9 @@ namespace Amazon.NetworkFirewall.Model
         /// If no value is provided, it defaults to 350 seconds. 
         /// </para>
         /// </summary>
-        public int TcpIdleTimeoutSeconds
+        public int? TcpIdleTimeoutSeconds
         {
-            get { return this._tcpIdleTimeoutSeconds.GetValueOrDefault(); }
+            get { return this._tcpIdleTimeoutSeconds; }
             set { this._tcpIdleTimeoutSeconds = value; }
         }
 

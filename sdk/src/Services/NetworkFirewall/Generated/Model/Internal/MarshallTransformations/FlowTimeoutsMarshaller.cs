@@ -51,7 +51,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTcpIdleTimeoutSeconds())
             {
                 context.Writer.WritePropertyName("TcpIdleTimeoutSeconds");
-                context.Writer.Write(requestObject.TcpIdleTimeoutSeconds);
+                context.Writer.Write(requestObject.TcpIdleTimeoutSeconds.Value);
             }
 
         }

@@ -51,9 +51,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The current latency of the change data capture (CDC) operation.
         /// </para>
         /// </summary>
-        public int CDCLatency
+        public int? CDCLatency
         {
-            get { return this._cdcLatency.GetValueOrDefault(); }
+            get { return this._cdcLatency; }
             set { this._cdcLatency = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The elapsed duration of the data migration run.
         /// </para>
         /// </summary>
-        public long ElapsedTimeMillis
+        public long? ElapsedTimeMillis
         {
-            get { return this._elapsedTimeMillis.GetValueOrDefault(); }
+            get { return this._elapsedTimeMillis; }
             set { this._elapsedTimeMillis = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The data migration's progress in the full-load migration phase.
         /// </para>
         /// </summary>
-        public int FullLoadPercentage
+        public int? FullLoadPercentage
         {
-            get { return this._fullLoadPercentage.GetValueOrDefault(); }
+            get { return this._fullLoadPercentage; }
             set { this._fullLoadPercentage = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The time when the migration started.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 
@@ -123,9 +123,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The time when the migration stopped or failed.
         /// </para>
         /// </summary>
-        public DateTime StopTime
+        public DateTime? StopTime
         {
-            get { return this._stopTime.GetValueOrDefault(); }
+            get { return this._stopTime; }
             set { this._stopTime = value; }
         }
 
@@ -141,9 +141,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The number of tables that DMS failed to process.
         /// </para>
         /// </summary>
-        public int TablesErrored
+        public int? TablesErrored
         {
-            get { return this._tablesErrored.GetValueOrDefault(); }
+            get { return this._tablesErrored; }
             set { this._tablesErrored = value; }
         }
 
@@ -159,9 +159,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The number of tables loaded in the current data migration run.
         /// </para>
         /// </summary>
-        public int TablesLoaded
+        public int? TablesLoaded
         {
-            get { return this._tablesLoaded.GetValueOrDefault(); }
+            get { return this._tablesLoaded; }
             set { this._tablesLoaded = value; }
         }
 
@@ -177,9 +177,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The data migration's table loading progress.
         /// </para>
         /// </summary>
-        public int TablesLoading
+        public int? TablesLoading
         {
-            get { return this._tablesLoading.GetValueOrDefault(); }
+            get { return this._tablesLoading; }
             set { this._tablesLoading = value; }
         }
 
@@ -195,9 +195,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The number of tables that are waiting for processing.
         /// </para>
         /// </summary>
-        public int TablesQueued
+        public int? TablesQueued
         {
-            get { return this._tablesQueued.GetValueOrDefault(); }
+            get { return this._tablesQueued; }
             set { this._tablesQueued = value; }
         }
 

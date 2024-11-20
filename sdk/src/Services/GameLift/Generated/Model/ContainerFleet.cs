@@ -88,9 +88,9 @@ namespace Amazon.GameLift.Model
         /// in Unix time as milliseconds (for example <c>"1469498468.057"</c>).
         /// </para>
         /// </summary>
-        public DateTime CreationTime
+        public DateTime? CreationTime
         {
-            get { return this._creationTime.GetValueOrDefault(); }
+            get { return this._creationTime; }
             set { this._creationTime = value; }
         }
 
@@ -249,9 +249,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5000)]
-        public int GameServerContainerGroupsPerInstance
+        public int? GameServerContainerGroupsPerInstance
         {
-            get { return this._gameServerContainerGroupsPerInstance.GetValueOrDefault(); }
+            get { return this._gameServerContainerGroupsPerInstance; }
             set { this._gameServerContainerGroupsPerInstance = value; }
         }
 
@@ -398,9 +398,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5000)]
-        public int MaximumGameServerContainerGroupsPerInstance
+        public int? MaximumGameServerContainerGroupsPerInstance
         {
-            get { return this._maximumGameServerContainerGroupsPerInstance.GetValueOrDefault(); }
+            get { return this._maximumGameServerContainerGroupsPerInstance; }
             set { this._maximumGameServerContainerGroupsPerInstance = value; }
         }
 

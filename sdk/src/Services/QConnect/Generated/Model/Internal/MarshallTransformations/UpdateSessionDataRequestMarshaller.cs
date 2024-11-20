@@ -67,37 +67,40 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 throw new AmazonQConnectException("Request object does not have required field SessionId set");
             request.AddPathResource("{sessionId}", StringUtils.FromString(publicRequest.SessionId));
             request.ResourcePath = "/assistants/{assistantId}/sessions/{sessionId}/data";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetData())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("data");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDataListValue in publicRequest.Data)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetData())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("data");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDataListValue in publicRequest.Data)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = RuntimeSessionDataMarshaller.Instance;
-                        marshaller.Marshall(publicRequestDataListValue, context);
+                            var marshaller = RuntimeSessionDataMarshaller.Instance;
+                            marshaller.Marshall(publicRequestDataListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetNamespace())
+                    {
+                        context.Writer.WritePropertyName("namespace");
+                        context.Writer.Write(publicRequest.Namespace);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetNamespace())
-                {
-                    context.Writer.WritePropertyName("namespace");
-                    context.Writer.Write(publicRequest.Namespace);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

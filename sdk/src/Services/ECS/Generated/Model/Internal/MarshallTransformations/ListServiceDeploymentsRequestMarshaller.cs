@@ -63,61 +63,64 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCluster())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("cluster");
-                    context.Writer.Write(publicRequest.Cluster);
-                }
-
-                if(publicRequest.IsSetCreatedAt())
-                {
-                    context.Writer.WritePropertyName("createdAt");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CreatedAtMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CreatedAt, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("maxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("nextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetService())
-                {
-                    context.Writer.WritePropertyName("service");
-                    context.Writer.Write(publicRequest.Service);
-                }
-
-                if(publicRequest.IsSetStatus())
-                {
-                    context.Writer.WritePropertyName("status");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestStatusListValue in publicRequest.Status)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCluster())
                     {
-                            context.Writer.Write(publicRequestStatusListValue);
+                        context.Writer.WritePropertyName("cluster");
+                        context.Writer.Write(publicRequest.Cluster);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetCreatedAt())
+                    {
+                        context.Writer.WritePropertyName("createdAt");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CreatedAtMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CreatedAt, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("maxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("nextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetService())
+                    {
+                        context.Writer.WritePropertyName("service");
+                        context.Writer.Write(publicRequest.Service);
+                    }
+
+                    if(publicRequest.IsSetStatus())
+                    {
+                        context.Writer.WritePropertyName("status");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestStatusListValue in publicRequest.Status)
+                        {
+                                context.Writer.Write(publicRequestStatusListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

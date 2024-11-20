@@ -68,7 +68,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("number", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Number = unmarshaller.Unmarshall(context);
                     continue;
                 }

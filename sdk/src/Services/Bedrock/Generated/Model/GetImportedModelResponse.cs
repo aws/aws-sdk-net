@@ -68,9 +68,9 @@ namespace Amazon.Bedrock.Model
         /// Specifies if the imported model supports converse.
         /// </para>
         /// </summary>
-        public bool InstructSupported
+        public bool? InstructSupported
         {
-            get { return this._instructSupported.GetValueOrDefault(); }
+            get { return this._instructSupported; }
             set { this._instructSupported = value; }
         }
 

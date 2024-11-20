@@ -43,9 +43,9 @@ namespace Amazon.GeoRoutes.Model
         /// Allow Hot (High Occupancy Toll) lanes while calculating the route.
         /// </para>
         /// </summary>
-        public bool Hot
+        public bool? Hot
         {
-            get { return this._hot.GetValueOrDefault(); }
+            get { return this._hot; }
             set { this._hot = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.GeoRoutes.Model
         /// Allow Hov (High Occupancy vehicle) lanes while calculating the route.
         /// </para>
         /// </summary>
-        public bool Hov
+        public bool? Hov
         {
-            get { return this._hov.GetValueOrDefault(); }
+            get { return this._hov; }
             set { this._hov = value; }
         }
 

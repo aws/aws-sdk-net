@@ -101,9 +101,9 @@ namespace Amazon.B2bi.Model
         /// Specifies whether or not to validate the EDI for this X12 object: <c>TRUE</c> or <c>FALSE</c>.
         /// </para>
         /// </summary>
-        public bool ValidateEdi
+        public bool? ValidateEdi
         {
-            get { return this._validateEdi.GetValueOrDefault(); }
+            get { return this._validateEdi; }
             set { this._validateEdi = value; }
         }
 

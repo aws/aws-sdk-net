@@ -51,13 +51,13 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCapacity())
             {
                 context.Writer.WritePropertyName("capacity");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Capacity))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Capacity.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Capacity));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Capacity.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Capacity);
+                    context.Writer.Write(requestObject.Capacity.Value);
                 }
             }
 

@@ -88,7 +88,17 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.InvocationTime.Value);
                     }
 
-<<<<<<< HEAD
+                    if(publicRequest.IsSetQueryInsights())
+                    {
+                        context.Writer.WritePropertyName("QueryInsights");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ScheduledQueryInsightsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.QueryInsights, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetScheduledQueryArn())
                     {
                         context.Writer.WritePropertyName("ScheduledQueryArn");
@@ -96,28 +106,6 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
                     }
 
                     writer.WriteObjectEnd();
-||||||| Commit version number update changes
-                if(publicRequest.IsSetScheduledQueryArn())
-                {
-                    context.Writer.WritePropertyName("ScheduledQueryArn");
-                    context.Writer.Write(publicRequest.ScheduledQueryArn);
-=======
-                if(publicRequest.IsSetQueryInsights())
-                {
-                    context.Writer.WritePropertyName("QueryInsights");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ScheduledQueryInsightsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.QueryInsights, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetScheduledQueryArn())
-                {
-                    context.Writer.WritePropertyName("ScheduledQueryArn");
-                    context.Writer.Write(publicRequest.ScheduledQueryArn);
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
                 }
 
                 request.Content = memoryStream.ToArray();

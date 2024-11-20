@@ -69,9 +69,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedTimestamp
+        public DateTime? CreatedTimestamp
         {
-            get { return this._createdTimestamp.GetValueOrDefault(); }
+            get { return this._createdTimestamp; }
             set { this._createdTimestamp = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// The time the rule will expire at.
         /// </para>
         /// </summary>
-        public DateTime ExpirationTimestamp
+        public DateTime? ExpirationTimestamp
         {
-            get { return this._expirationTimestamp.GetValueOrDefault(); }
+            get { return this._expirationTimestamp; }
             set { this._expirationTimestamp = value; }
         }
 

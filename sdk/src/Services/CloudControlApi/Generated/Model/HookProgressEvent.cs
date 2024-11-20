@@ -82,9 +82,9 @@ namespace Amazon.CloudControlApi.Model
         /// The time that the Hook invocation request initiated.
         /// </para>
         /// </summary>
-        public DateTime HookEventTime
+        public DateTime? HookEventTime
         {
-            get { return this._hookEventTime.GetValueOrDefault(); }
+            get { return this._hookEventTime; }
             set { this._hookEventTime = value; }
         }
 

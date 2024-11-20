@@ -61,91 +61,94 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/2021-01-01/opensearch/application";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAppConfigs())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("appConfigs");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAppConfigsListValue in publicRequest.AppConfigs)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAppConfigs())
                     {
+                        context.Writer.WritePropertyName("appConfigs");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAppConfigsListValue in publicRequest.AppConfigs)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = AppConfigMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAppConfigsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("clientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetDataSources())
+                    {
+                        context.Writer.WritePropertyName("dataSources");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDataSourcesListValue in publicRequest.DataSources)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = DataSourceMarshaller.Instance;
+                            marshaller.Marshall(publicRequestDataSourcesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetIamIdentityCenterOptions())
+                    {
+                        context.Writer.WritePropertyName("iamIdentityCenterOptions");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = AppConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAppConfigsListValue, context);
+                        var marshaller = IamIdentityCenterOptionsInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.IamIdentityCenterOptions, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("clientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDataSources())
-                {
-                    context.Writer.WritePropertyName("dataSources");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDataSourcesListValue in publicRequest.DataSources)
+                    if(publicRequest.IsSetName())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DataSourceMarshaller.Instance;
-                        marshaller.Marshall(publicRequestDataSourcesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetIamIdentityCenterOptions())
-                {
-                    context.Writer.WritePropertyName("iamIdentityCenterOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = IamIdentityCenterOptionsInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.IamIdentityCenterOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetTagList())
-                {
-                    context.Writer.WritePropertyName("tagList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagListListValue in publicRequest.TagList)
+                    if(publicRequest.IsSetTagList())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("tagList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagListListValue in publicRequest.TagList)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagListListValue, context);
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagListListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

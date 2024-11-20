@@ -62,7 +62,7 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUnbounded())
             {
                 context.Writer.WritePropertyName("Unbounded");
-                context.Writer.Write(requestObject.Unbounded);
+                context.Writer.Write(requestObject.Unbounded.Value);
             }
 
         }

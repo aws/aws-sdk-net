@@ -51,9 +51,9 @@ namespace Amazon.AppConfig.Model
         /// previous configuration version. This action moves the deployment to a status of <c>REVERTED</c>.
         /// </para>
         /// </summary>
-        public bool AllowRevert
+        public bool? AllowRevert
         {
-            get { return this._allowRevert.GetValueOrDefault(); }
+            get { return this._allowRevert; }
             set { this._allowRevert = value; }
         }
 

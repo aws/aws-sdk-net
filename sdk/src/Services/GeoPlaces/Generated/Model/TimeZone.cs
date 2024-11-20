@@ -83,9 +83,9 @@ namespace Amazon.GeoPlaces.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long OffsetSeconds
+        public long? OffsetSeconds
         {
-            get { return this._offsetSeconds.GetValueOrDefault(); }
+            get { return this._offsetSeconds; }
             set { this._offsetSeconds = value; }
         }
 

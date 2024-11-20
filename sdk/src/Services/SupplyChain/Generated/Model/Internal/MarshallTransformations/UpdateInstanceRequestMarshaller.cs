@@ -64,27 +64,30 @@ namespace Amazon.SupplyChain.Model.Internal.MarshallTransformations
                 throw new AmazonSupplyChainException("Request object does not have required field InstanceId set");
             request.AddPathResource("{instanceId}", StringUtils.FromString(publicRequest.InstanceId));
             request.ResourcePath = "/api/instance/{instanceId}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetInstanceDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("instanceDescription");
-                    context.Writer.Write(publicRequest.InstanceDescription);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetInstanceDescription())
+                    {
+                        context.Writer.WritePropertyName("instanceDescription");
+                        context.Writer.Write(publicRequest.InstanceDescription);
+                    }
+
+                    if(publicRequest.IsSetInstanceName())
+                    {
+                        context.Writer.WritePropertyName("instanceName");
+                        context.Writer.Write(publicRequest.InstanceName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetInstanceName())
-                {
-                    context.Writer.WritePropertyName("instanceName");
-                    context.Writer.Write(publicRequest.InstanceName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

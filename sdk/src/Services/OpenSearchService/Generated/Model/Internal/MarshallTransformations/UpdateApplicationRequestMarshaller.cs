@@ -64,47 +64,50 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 throw new AmazonOpenSearchServiceException("Request object does not have required field Id set");
             request.AddPathResource("{id}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = "/2021-01-01/opensearch/application/{id}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAppConfigs())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("appConfigs");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAppConfigsListValue in publicRequest.AppConfigs)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAppConfigs())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("appConfigs");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestAppConfigsListValue in publicRequest.AppConfigs)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = AppConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAppConfigsListValue, context);
+                            var marshaller = AppConfigMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAppConfigsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDataSources())
+                    {
+                        context.Writer.WritePropertyName("dataSources");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDataSourcesListValue in publicRequest.DataSources)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = DataSourceMarshaller.Instance;
+                            marshaller.Marshall(publicRequestDataSourcesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetDataSources())
-                {
-                    context.Writer.WritePropertyName("dataSources");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDataSourcesListValue in publicRequest.DataSources)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DataSourceMarshaller.Instance;
-                        marshaller.Marshall(publicRequestDataSourcesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -100,9 +100,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The status is either true or false.
         /// </para>
         /// </summary>
-        public bool IsLatestTaskAssessmentRun
+        public bool? IsLatestTaskAssessmentRun
         {
-            get { return this._isLatestTaskAssessmentRun.GetValueOrDefault(); }
+            get { return this._isLatestTaskAssessmentRun; }
             set { this._isLatestTaskAssessmentRun = value; }
         }
 

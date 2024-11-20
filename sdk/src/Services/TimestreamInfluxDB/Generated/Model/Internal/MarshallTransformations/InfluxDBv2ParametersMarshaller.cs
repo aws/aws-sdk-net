@@ -101,19 +101,19 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInfluxqlMaxSelectBuckets())
             {
                 context.Writer.WritePropertyName("influxqlMaxSelectBuckets");
-                context.Writer.Write(requestObject.InfluxqlMaxSelectBuckets);
+                context.Writer.Write(requestObject.InfluxqlMaxSelectBuckets.Value);
             }
 
             if(requestObject.IsSetInfluxqlMaxSelectPoint())
             {
                 context.Writer.WritePropertyName("influxqlMaxSelectPoint");
-                context.Writer.Write(requestObject.InfluxqlMaxSelectPoint);
+                context.Writer.Write(requestObject.InfluxqlMaxSelectPoint.Value);
             }
 
             if(requestObject.IsSetInfluxqlMaxSelectSeries())
             {
                 context.Writer.WritePropertyName("influxqlMaxSelectSeries");
-                context.Writer.Write(requestObject.InfluxqlMaxSelectSeries);
+                context.Writer.Write(requestObject.InfluxqlMaxSelectSeries.Value);
             }
 
             if(requestObject.IsSetLogLevel())
@@ -137,7 +137,7 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPprofDisabled())
             {
                 context.Writer.WritePropertyName("pprofDisabled");
-                context.Writer.Write(requestObject.PprofDisabled);
+                context.Writer.Write(requestObject.PprofDisabled.Value);
             }
 
             if(requestObject.IsSetQueryConcurrency())
@@ -149,19 +149,19 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
             if(requestObject.IsSetQueryInitialMemoryBytes())
             {
                 context.Writer.WritePropertyName("queryInitialMemoryBytes");
-                context.Writer.Write(requestObject.QueryInitialMemoryBytes);
+                context.Writer.Write(requestObject.QueryInitialMemoryBytes.Value);
             }
 
             if(requestObject.IsSetQueryMaxMemoryBytes())
             {
                 context.Writer.WritePropertyName("queryMaxMemoryBytes");
-                context.Writer.Write(requestObject.QueryMaxMemoryBytes);
+                context.Writer.Write(requestObject.QueryMaxMemoryBytes.Value);
             }
 
             if(requestObject.IsSetQueryMemoryBytes())
             {
                 context.Writer.WritePropertyName("queryMemoryBytes");
-                context.Writer.Write(requestObject.QueryMemoryBytes);
+                context.Writer.Write(requestObject.QueryMemoryBytes.Value);
             }
 
             if(requestObject.IsSetQueryQueueSize())
@@ -173,25 +173,25 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSessionLength())
             {
                 context.Writer.WritePropertyName("sessionLength");
-                context.Writer.Write(requestObject.SessionLength);
+                context.Writer.Write(requestObject.SessionLength.Value);
             }
 
             if(requestObject.IsSetSessionRenewDisabled())
             {
                 context.Writer.WritePropertyName("sessionRenewDisabled");
-                context.Writer.Write(requestObject.SessionRenewDisabled);
+                context.Writer.Write(requestObject.SessionRenewDisabled.Value);
             }
 
             if(requestObject.IsSetStorageCacheMaxMemorySize())
             {
                 context.Writer.WritePropertyName("storageCacheMaxMemorySize");
-                context.Writer.Write(requestObject.StorageCacheMaxMemorySize);
+                context.Writer.Write(requestObject.StorageCacheMaxMemorySize.Value);
             }
 
             if(requestObject.IsSetStorageCacheSnapshotMemorySize())
             {
                 context.Writer.WritePropertyName("storageCacheSnapshotMemorySize");
-                context.Writer.Write(requestObject.StorageCacheSnapshotMemorySize);
+                context.Writer.Write(requestObject.StorageCacheSnapshotMemorySize.Value);
             }
 
             if(requestObject.IsSetStorageCacheSnapshotWriteColdDuration())
@@ -219,25 +219,25 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStorageCompactThroughputBurst())
             {
                 context.Writer.WritePropertyName("storageCompactThroughputBurst");
-                context.Writer.Write(requestObject.StorageCompactThroughputBurst);
+                context.Writer.Write(requestObject.StorageCompactThroughputBurst.Value);
             }
 
             if(requestObject.IsSetStorageMaxConcurrentCompactions())
             {
                 context.Writer.WritePropertyName("storageMaxConcurrentCompactions");
-                context.Writer.Write(requestObject.StorageMaxConcurrentCompactions);
+                context.Writer.Write(requestObject.StorageMaxConcurrentCompactions.Value);
             }
 
             if(requestObject.IsSetStorageMaxIndexLogFileSize())
             {
                 context.Writer.WritePropertyName("storageMaxIndexLogFileSize");
-                context.Writer.Write(requestObject.StorageMaxIndexLogFileSize);
+                context.Writer.Write(requestObject.StorageMaxIndexLogFileSize.Value);
             }
 
             if(requestObject.IsSetStorageNoValidateFieldSize())
             {
                 context.Writer.WritePropertyName("storageNoValidateFieldSize");
-                context.Writer.Write(requestObject.StorageNoValidateFieldSize);
+                context.Writer.Write(requestObject.StorageNoValidateFieldSize.Value);
             }
 
             if(requestObject.IsSetStorageRetentionCheckInterval())
@@ -254,19 +254,19 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStorageSeriesFileMaxConcurrentSnapshotCompactions())
             {
                 context.Writer.WritePropertyName("storageSeriesFileMaxConcurrentSnapshotCompactions");
-                context.Writer.Write(requestObject.StorageSeriesFileMaxConcurrentSnapshotCompactions);
+                context.Writer.Write(requestObject.StorageSeriesFileMaxConcurrentSnapshotCompactions.Value);
             }
 
             if(requestObject.IsSetStorageSeriesIdSetCacheSize())
             {
                 context.Writer.WritePropertyName("storageSeriesIdSetCacheSize");
-                context.Writer.Write(requestObject.StorageSeriesIdSetCacheSize);
+                context.Writer.Write(requestObject.StorageSeriesIdSetCacheSize.Value);
             }
 
             if(requestObject.IsSetStorageWalMaxConcurrentWrites())
             {
                 context.Writer.WritePropertyName("storageWalMaxConcurrentWrites");
-                context.Writer.Write(requestObject.StorageWalMaxConcurrentWrites);
+                context.Writer.Write(requestObject.StorageWalMaxConcurrentWrites.Value);
             }
 
             if(requestObject.IsSetStorageWalMaxWriteDelay())
@@ -289,7 +289,7 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUiDisabled())
             {
                 context.Writer.WritePropertyName("uiDisabled");
-                context.Writer.Write(requestObject.UiDisabled);
+                context.Writer.Write(requestObject.UiDisabled.Value);
             }
 
         }

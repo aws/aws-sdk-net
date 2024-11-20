@@ -109,30 +109,16 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.FailureRetentionPeriodInDays.Value);
                     }
 
-<<<<<<< HEAD
                     if(publicRequest.IsSetName())
-||||||| Commit version number update changes
-                if(publicRequest.IsSetResourcesToReplicateTags())
-                {
-                    context.Writer.WritePropertyName("ResourcesToReplicateTags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestResourcesToReplicateTagsListValue in publicRequest.ResourcesToReplicateTags)
-=======
-                if(publicRequest.IsSetProvisionedResourceCleanup())
-                {
-                    context.Writer.WritePropertyName("ProvisionedResourceCleanup");
-                    context.Writer.Write(publicRequest.ProvisionedResourceCleanup);
-                }
-
-                if(publicRequest.IsSetResourcesToReplicateTags())
-                {
-                    context.Writer.WritePropertyName("ResourcesToReplicateTags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestResourcesToReplicateTagsListValue in publicRequest.ResourcesToReplicateTags)
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
                     {
                         context.Writer.WritePropertyName("Name");
                         context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetProvisionedResourceCleanup())
+                    {
+                        context.Writer.WritePropertyName("ProvisionedResourceCleanup");
+                        context.Writer.Write(publicRequest.ProvisionedResourceCleanup);
                     }
 
                     if(publicRequest.IsSetResourcesToReplicateTags())

@@ -34,16 +34,10 @@ namespace Amazon.BedrockAgent
     public partial class AmazonBedrockAgentConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Bedrock Agent", "4.0.0.0");
 
         private static readonly AmazonBedrockAgentEndpointResolver EndpointResolver =
             new AmazonBedrockAgentEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("Bedrock Agent", "3.7.404.4");
-=======
-            InternalSDKUtils.BuildUserAgentString("Bedrock Agent", "3.7.409.7");
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
         private string _userAgent = UserAgentString;
         ///<summary>

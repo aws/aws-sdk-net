@@ -63,49 +63,52 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAuthenticationMode())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AuthenticationMode");
-                    context.Writer.Write(publicRequest.AuthenticationMode);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAuthenticationMode())
+                    {
+                        context.Writer.WritePropertyName("AuthenticationMode");
+                        context.Writer.Write(publicRequest.AuthenticationMode);
+                    }
+
+                    if(publicRequest.IsSetIdentityCenterConfiguration())
+                    {
+                        context.Writer.WritePropertyName("IdentityCenterConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = IdentityCenterConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.IdentityCenterConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetOrganizationId())
+                    {
+                        context.Writer.WritePropertyName("OrganizationId");
+                        context.Writer.Write(publicRequest.OrganizationId);
+                    }
+
+                    if(publicRequest.IsSetPersonalAccessTokenConfiguration())
+                    {
+                        context.Writer.WritePropertyName("PersonalAccessTokenConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PersonalAccessTokenConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.PersonalAccessTokenConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetIdentityCenterConfiguration())
-                {
-                    context.Writer.WritePropertyName("IdentityCenterConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = IdentityCenterConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.IdentityCenterConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOrganizationId())
-                {
-                    context.Writer.WritePropertyName("OrganizationId");
-                    context.Writer.Write(publicRequest.OrganizationId);
-                }
-
-                if(publicRequest.IsSetPersonalAccessTokenConfiguration())
-                {
-                    context.Writer.WritePropertyName("PersonalAccessTokenConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PersonalAccessTokenConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PersonalAccessTokenConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

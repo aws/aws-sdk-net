@@ -64,9 +64,9 @@ namespace Amazon.GeoPlaces.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public double Title
+        public double? Title
         {
-            get { return this._title.GetValueOrDefault(); }
+            get { return this._title; }
             set { this._title = value; }
         }
 

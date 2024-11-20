@@ -62,9 +62,9 @@ namespace Amazon.GeoRoutes.Model
         /// No restrictions in terms of a routing boundary, and is typically used for longer routes.
         /// </para>
         /// </summary>
-        public bool Unbounded
+        public bool? Unbounded
         {
-            get { return this._unbounded.GetValueOrDefault(); }
+            get { return this._unbounded; }
             set { this._unbounded = value; }
         }
 

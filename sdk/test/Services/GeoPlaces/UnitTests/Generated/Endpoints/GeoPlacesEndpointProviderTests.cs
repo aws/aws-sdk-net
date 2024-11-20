@@ -23,7 +23,7 @@ using Amazon.Runtime;
 using Amazon.GeoPlaces.Endpoints;
 using Amazon.GeoPlaces.Internal;
 
-namespace AWSSDK_DotNet35.UnitTests.Endpoints
+namespace AWSSDK_DotNet.UnitTests.Endpoints
 {
     [TestClass]
     public partial class GeoPlacesEndpointsTests

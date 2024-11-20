@@ -80,13 +80,13 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DataMigrationCreateTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DataMigrationCreateTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DataMigrationEndTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DataMigrationEndTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -104,7 +104,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("DataMigrationStartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.DataMigrationStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -84,22 +84,6 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.Temperature = unmarshaller.Unmarshall(context);
                     continue;
                 }
-<<<<<<< HEAD
-                if (context.TestExpression("topK", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TopK = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-||||||| Commit version number update changes
-                if (context.TestExpression("topK", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.TopK = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-=======
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
                 if (context.TestExpression("topP", targetDepth))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;

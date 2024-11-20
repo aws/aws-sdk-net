@@ -51,13 +51,13 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDriveDuration())
             {
                 context.Writer.WritePropertyName("DriveDuration");
-                context.Writer.Write(requestObject.DriveDuration);
+                context.Writer.Write(requestObject.DriveDuration.Value);
             }
 
             if(requestObject.IsSetRestDuration())
             {
                 context.Writer.WritePropertyName("RestDuration");
-                context.Writer.Write(requestObject.RestDuration);
+                context.Writer.Write(requestObject.RestDuration.Value);
             }
 
         }

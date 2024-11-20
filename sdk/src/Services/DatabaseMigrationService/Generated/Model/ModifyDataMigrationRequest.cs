@@ -105,9 +105,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Whether to enable Cloudwatch logs for the data migration.
         /// </para>
         /// </summary>
-        public bool EnableCloudwatchLogs
+        public bool? EnableCloudwatchLogs
         {
-            get { return this._enableCloudwatchLogs.GetValueOrDefault(); }
+            get { return this._enableCloudwatchLogs; }
             set { this._enableCloudwatchLogs = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// the source, and then load them to the target.
         /// </para>
         /// </summary>
-        public int NumberOfJobs
+        public int? NumberOfJobs
         {
-            get { return this._numberOfJobs.GetValueOrDefault(); }
+            get { return this._numberOfJobs; }
             set { this._numberOfJobs = value; }
         }
 

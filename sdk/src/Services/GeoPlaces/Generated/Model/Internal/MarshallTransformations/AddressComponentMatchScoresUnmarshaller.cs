@@ -68,31 +68,31 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AddressNumber", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.AddressNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Block", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Block = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Building", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Building = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Country", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Country = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("District", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.District = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -104,37 +104,37 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Locality", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Locality = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PostalCode", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.PostalCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Region", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.Region = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SubBlock", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.SubBlock = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SubDistrict", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.SubDistrict = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SubRegion", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.SubRegion = unmarshaller.Unmarshall(context);
                     continue;
                 }

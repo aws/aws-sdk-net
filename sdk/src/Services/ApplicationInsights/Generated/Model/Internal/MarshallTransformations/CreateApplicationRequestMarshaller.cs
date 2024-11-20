@@ -107,27 +107,7 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.OpsCenterEnabled.Value);
                     }
 
-<<<<<<< HEAD
                     if(publicRequest.IsSetOpsItemSNSTopicArn())
-||||||| Commit version number update changes
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
-=======
-                if(publicRequest.IsSetSNSNotificationArn())
-                {
-                    context.Writer.WritePropertyName("SNSNotificationArn");
-                    context.Writer.Write(publicRequest.SNSNotificationArn);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
                     {
                         context.Writer.WritePropertyName("OpsItemSNSTopicArn");
                         context.Writer.Write(publicRequest.OpsItemSNSTopicArn);
@@ -137,6 +117,12 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
                     {
                         context.Writer.WritePropertyName("ResourceGroupName");
                         context.Writer.Write(publicRequest.ResourceGroupName);
+                    }
+
+                    if(publicRequest.IsSetSNSNotificationArn())
+                    {
+                        context.Writer.WritePropertyName("SNSNotificationArn");
+                        context.Writer.Write(publicRequest.SNSNotificationArn);
                     }
 
                     if(publicRequest.IsSetTags())

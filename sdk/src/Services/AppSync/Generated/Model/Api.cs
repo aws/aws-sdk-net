@@ -89,9 +89,9 @@ namespace Amazon.AppSync.Model
         /// The date and time that the <c>Api</c> was created.
         /// </para>
         /// </summary>
-        public DateTime Created
+        public DateTime? Created
         {
-            get { return this._created.GetValueOrDefault(); }
+            get { return this._created; }
             set { this._created = value; }
         }
 
@@ -217,9 +217,9 @@ namespace Amazon.AppSync.Model
         /// A flag indicating whether to use X-Ray tracing for this <c>Api</c>.
         /// </para>
         /// </summary>
-        public bool XrayEnabled
+        public bool? XrayEnabled
         {
-            get { return this._xrayEnabled.GetValueOrDefault(); }
+            get { return this._xrayEnabled; }
             set { this._xrayEnabled = value; }
         }
 

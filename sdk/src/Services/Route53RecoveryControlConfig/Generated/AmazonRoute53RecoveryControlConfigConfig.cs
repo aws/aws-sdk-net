@@ -34,16 +34,10 @@ namespace Amazon.Route53RecoveryControlConfig
     public partial class AmazonRoute53RecoveryControlConfigConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Route53 Recovery Control Config", "4.0.0.0");
 
         private static readonly AmazonRoute53RecoveryControlConfigEndpointResolver EndpointResolver =
             new AmazonRoute53RecoveryControlConfigEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("Route53 Recovery Control Config", "3.7.400.26");
-=======
-            InternalSDKUtils.BuildUserAgentString("Route53 Recovery Control Config", "3.7.400.53");
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
         private string _userAgent = UserAgentString;
         ///<summary>

@@ -44,9 +44,9 @@ namespace Amazon.CleanRoomsML.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=400)]
-        public int Number
+        public int? Number
         {
-            get { return this._number.GetValueOrDefault(); }
+            get { return this._number; }
             set { this._number = value; }
         }
 

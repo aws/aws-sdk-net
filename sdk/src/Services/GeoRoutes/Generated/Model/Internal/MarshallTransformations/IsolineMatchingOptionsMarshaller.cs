@@ -57,13 +57,13 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOnRoadThreshold())
             {
                 context.Writer.WritePropertyName("OnRoadThreshold");
-                context.Writer.Write(requestObject.OnRoadThreshold);
+                context.Writer.Write(requestObject.OnRoadThreshold.Value);
             }
 
             if(requestObject.IsSetRadius())
             {
                 context.Writer.WritePropertyName("Radius");
-                context.Writer.Write(requestObject.Radius);
+                context.Writer.Write(requestObject.Radius.Value);
             }
 
             if(requestObject.IsSetStrategy())

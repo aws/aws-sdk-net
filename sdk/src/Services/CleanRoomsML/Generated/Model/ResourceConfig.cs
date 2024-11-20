@@ -45,9 +45,9 @@ namespace Amazon.CleanRoomsML.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
-        public int InstanceCount
+        public int? InstanceCount
         {
-            get { return this._instanceCount.GetValueOrDefault(); }
+            get { return this._instanceCount; }
             set { this._instanceCount = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.CleanRoomsML.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=8192)]
-        public int VolumeSizeInGB
+        public int? VolumeSizeInGB
         {
-            get { return this._volumeSizeInGB.GetValueOrDefault(); }
+            get { return this._volumeSizeInGB; }
             set { this._volumeSizeInGB = value; }
         }
 

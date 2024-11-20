@@ -86,7 +86,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RequiresRestartForConfigurationUpdate", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RequiresRestartForConfigurationUpdate = unmarshaller.Unmarshall(context);
                     continue;
                 }

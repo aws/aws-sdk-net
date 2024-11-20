@@ -269,9 +269,9 @@ namespace Amazon.QuickSight.Model
         /// The include folder memberships flag.
         /// </para>
         /// </summary>
-        public bool IncludeFolderMemberships
+        public bool? IncludeFolderMemberships
         {
-            get { return this._includeFolderMemberships.GetValueOrDefault(); }
+            get { return this._includeFolderMemberships; }
             set { this._includeFolderMemberships = value; }
         }
 

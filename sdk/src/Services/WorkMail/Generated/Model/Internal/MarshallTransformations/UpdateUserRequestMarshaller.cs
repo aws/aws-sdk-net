@@ -65,7 +65,6 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
             request.ResourcePath = "/";
             using (MemoryStream memoryStream = new MemoryStream())
             {
-<<<<<<< HEAD
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
                     JsonWriter writer = new JsonWriter(streamWriter);
@@ -112,6 +111,12 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
                     {
                         context.Writer.WritePropertyName("HiddenFromGlobalAddressList");
                         context.Writer.Write(publicRequest.HiddenFromGlobalAddressList.Value);
+                    }
+
+                    if(publicRequest.IsSetIdentityProviderUserId())
+                    {
+                        context.Writer.WritePropertyName("IdentityProviderUserId");
+                        context.Writer.Write(publicRequest.IdentityProviderUserId);
                     }
 
                     if(publicRequest.IsSetInitials())
@@ -178,233 +183,6 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
                 }
 
                 request.Content = memoryStream.ToArray();
-||||||| Commit version number update changes
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCity())
-                {
-                    context.Writer.WritePropertyName("City");
-                    context.Writer.Write(publicRequest.City);
-                }
-
-                if(publicRequest.IsSetCompany())
-                {
-                    context.Writer.WritePropertyName("Company");
-                    context.Writer.Write(publicRequest.Company);
-                }
-
-                if(publicRequest.IsSetCountry())
-                {
-                    context.Writer.WritePropertyName("Country");
-                    context.Writer.Write(publicRequest.Country);
-                }
-
-                if(publicRequest.IsSetDepartment())
-                {
-                    context.Writer.WritePropertyName("Department");
-                    context.Writer.Write(publicRequest.Department);
-                }
-
-                if(publicRequest.IsSetDisplayName())
-                {
-                    context.Writer.WritePropertyName("DisplayName");
-                    context.Writer.Write(publicRequest.DisplayName);
-                }
-
-                if(publicRequest.IsSetFirstName())
-                {
-                    context.Writer.WritePropertyName("FirstName");
-                    context.Writer.Write(publicRequest.FirstName);
-                }
-
-                if(publicRequest.IsSetHiddenFromGlobalAddressList())
-                {
-                    context.Writer.WritePropertyName("HiddenFromGlobalAddressList");
-                    context.Writer.Write(publicRequest.HiddenFromGlobalAddressList);
-                }
-
-                if(publicRequest.IsSetInitials())
-                {
-                    context.Writer.WritePropertyName("Initials");
-                    context.Writer.Write(publicRequest.Initials);
-                }
-
-                if(publicRequest.IsSetJobTitle())
-                {
-                    context.Writer.WritePropertyName("JobTitle");
-                    context.Writer.Write(publicRequest.JobTitle);
-                }
-
-                if(publicRequest.IsSetLastName())
-                {
-                    context.Writer.WritePropertyName("LastName");
-                    context.Writer.Write(publicRequest.LastName);
-                }
-
-                if(publicRequest.IsSetOffice())
-                {
-                    context.Writer.WritePropertyName("Office");
-                    context.Writer.Write(publicRequest.Office);
-                }
-
-                if(publicRequest.IsSetOrganizationId())
-                {
-                    context.Writer.WritePropertyName("OrganizationId");
-                    context.Writer.Write(publicRequest.OrganizationId);
-                }
-
-                if(publicRequest.IsSetRole())
-                {
-                    context.Writer.WritePropertyName("Role");
-                    context.Writer.Write(publicRequest.Role);
-                }
-
-                if(publicRequest.IsSetStreet())
-                {
-                    context.Writer.WritePropertyName("Street");
-                    context.Writer.Write(publicRequest.Street);
-                }
-
-                if(publicRequest.IsSetTelephone())
-                {
-                    context.Writer.WritePropertyName("Telephone");
-                    context.Writer.Write(publicRequest.Telephone);
-                }
-
-                if(publicRequest.IsSetUserId())
-                {
-                    context.Writer.WritePropertyName("UserId");
-                    context.Writer.Write(publicRequest.UserId);
-                }
-
-                if(publicRequest.IsSetZipCode())
-                {
-                    context.Writer.WritePropertyName("ZipCode");
-                    context.Writer.Write(publicRequest.ZipCode);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-=======
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCity())
-                {
-                    context.Writer.WritePropertyName("City");
-                    context.Writer.Write(publicRequest.City);
-                }
-
-                if(publicRequest.IsSetCompany())
-                {
-                    context.Writer.WritePropertyName("Company");
-                    context.Writer.Write(publicRequest.Company);
-                }
-
-                if(publicRequest.IsSetCountry())
-                {
-                    context.Writer.WritePropertyName("Country");
-                    context.Writer.Write(publicRequest.Country);
-                }
-
-                if(publicRequest.IsSetDepartment())
-                {
-                    context.Writer.WritePropertyName("Department");
-                    context.Writer.Write(publicRequest.Department);
-                }
-
-                if(publicRequest.IsSetDisplayName())
-                {
-                    context.Writer.WritePropertyName("DisplayName");
-                    context.Writer.Write(publicRequest.DisplayName);
-                }
-
-                if(publicRequest.IsSetFirstName())
-                {
-                    context.Writer.WritePropertyName("FirstName");
-                    context.Writer.Write(publicRequest.FirstName);
-                }
-
-                if(publicRequest.IsSetHiddenFromGlobalAddressList())
-                {
-                    context.Writer.WritePropertyName("HiddenFromGlobalAddressList");
-                    context.Writer.Write(publicRequest.HiddenFromGlobalAddressList);
-                }
-
-                if(publicRequest.IsSetIdentityProviderUserId())
-                {
-                    context.Writer.WritePropertyName("IdentityProviderUserId");
-                    context.Writer.Write(publicRequest.IdentityProviderUserId);
-                }
-
-                if(publicRequest.IsSetInitials())
-                {
-                    context.Writer.WritePropertyName("Initials");
-                    context.Writer.Write(publicRequest.Initials);
-                }
-
-                if(publicRequest.IsSetJobTitle())
-                {
-                    context.Writer.WritePropertyName("JobTitle");
-                    context.Writer.Write(publicRequest.JobTitle);
-                }
-
-                if(publicRequest.IsSetLastName())
-                {
-                    context.Writer.WritePropertyName("LastName");
-                    context.Writer.Write(publicRequest.LastName);
-                }
-
-                if(publicRequest.IsSetOffice())
-                {
-                    context.Writer.WritePropertyName("Office");
-                    context.Writer.Write(publicRequest.Office);
-                }
-
-                if(publicRequest.IsSetOrganizationId())
-                {
-                    context.Writer.WritePropertyName("OrganizationId");
-                    context.Writer.Write(publicRequest.OrganizationId);
-                }
-
-                if(publicRequest.IsSetRole())
-                {
-                    context.Writer.WritePropertyName("Role");
-                    context.Writer.Write(publicRequest.Role);
-                }
-
-                if(publicRequest.IsSetStreet())
-                {
-                    context.Writer.WritePropertyName("Street");
-                    context.Writer.Write(publicRequest.Street);
-                }
-
-                if(publicRequest.IsSetTelephone())
-                {
-                    context.Writer.WritePropertyName("Telephone");
-                    context.Writer.Write(publicRequest.Telephone);
-                }
-
-                if(publicRequest.IsSetUserId())
-                {
-                    context.Writer.WritePropertyName("UserId");
-                    context.Writer.Write(publicRequest.UserId);
-                }
-
-                if(publicRequest.IsSetZipCode())
-                {
-                    context.Writer.WritePropertyName("ZipCode");
-                    context.Writer.Write(publicRequest.ZipCode);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
             }
 
 

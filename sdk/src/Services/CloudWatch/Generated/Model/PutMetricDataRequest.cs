@@ -248,9 +248,9 @@ namespace Amazon.CloudWatch.Model
         /// This parameter is <i>required</i> when <c>EntityMetricData</c> is included.
         /// </para>
         /// </summary>
-        public bool StrictEntityValidation
+        public bool? StrictEntityValidation
         {
-            get { return this._strictEntityValidation.GetValueOrDefault(); }
+            get { return this._strictEntityValidation; }
             set { this._strictEntityValidation = value; }
         }
 

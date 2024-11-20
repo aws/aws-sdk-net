@@ -63,43 +63,46 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFieldDefinitions())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("fieldDefinitions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestFieldDefinitionsListValue in publicRequest.FieldDefinitions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetFieldDefinitions())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("fieldDefinitions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFieldDefinitionsListValue in publicRequest.FieldDefinitions)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = FieldDefinitionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestFieldDefinitionsListValue, context);
+                            var marshaller = FieldDefinitionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFieldDefinitionsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetKeyspaceName())
+                    {
+                        context.Writer.WritePropertyName("keyspaceName");
+                        context.Writer.Write(publicRequest.KeyspaceName);
+                    }
+
+                    if(publicRequest.IsSetTypeName())
+                    {
+                        context.Writer.WritePropertyName("typeName");
+                        context.Writer.Write(publicRequest.TypeName);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetKeyspaceName())
-                {
-                    context.Writer.WritePropertyName("keyspaceName");
-                    context.Writer.Write(publicRequest.KeyspaceName);
-                }
-
-                if(publicRequest.IsSetTypeName())
-                {
-                    context.Writer.WritePropertyName("typeName");
-                    context.Writer.Write(publicRequest.TypeName);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

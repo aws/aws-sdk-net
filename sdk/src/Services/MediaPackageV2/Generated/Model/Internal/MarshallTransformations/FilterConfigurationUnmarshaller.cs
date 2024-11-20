@@ -68,7 +68,7 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("ClipStartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ClipStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

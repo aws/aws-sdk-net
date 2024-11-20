@@ -84,13 +84,13 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastModifiedTimestamp", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastModifiedTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("maxNestingDepth", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.MaxNestingDepth = unmarshaller.Unmarshall(context);
                     continue;
                 }

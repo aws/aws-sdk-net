@@ -80,31 +80,11 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
-<<<<<<< HEAD
                     if(publicRequest.IsSetClientRequestToken())
                     {
                         context.Writer.WritePropertyName("ClientRequestToken");
                         context.Writer.Write(publicRequest.ClientRequestToken);
                     }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetSinkType())
-                {
-                    context.Writer.WritePropertyName("SinkType");
-                    context.Writer.Write(publicRequest.SinkType);
-                }
-=======
-                if(publicRequest.IsSetSinkIamRoleArn())
-                {
-                    context.Writer.WritePropertyName("SinkIamRoleArn");
-                    context.Writer.Write(publicRequest.SinkIamRoleArn);
-                }
-
-                if(publicRequest.IsSetSinkType())
-                {
-                    context.Writer.WritePropertyName("SinkType");
-                    context.Writer.Write(publicRequest.SinkType);
-                }
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
                     else if(!(publicRequest.IsSetClientRequestToken()))
                     {
@@ -117,38 +97,19 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.SinkArn);
                     }
 
+                    if(publicRequest.IsSetSinkIamRoleArn())
+                    {
+                        context.Writer.WritePropertyName("SinkIamRoleArn");
+                        context.Writer.Write(publicRequest.SinkIamRoleArn);
+                    }
+
                     if(publicRequest.IsSetSinkType())
                     {
                         context.Writer.WritePropertyName("SinkType");
                         context.Writer.Write(publicRequest.SinkType);
                     }
 
-<<<<<<< HEAD
                     if(publicRequest.IsSetSourceArn())
-||||||| Commit version number update changes
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
-=======
-                if(publicRequest.IsSetSseAwsKeyManagementParams())
-                {
-                    context.Writer.WritePropertyName("SseAwsKeyManagementParams");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SseAwsKeyManagementParamsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SseAwsKeyManagementParams, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
                     {
                         context.Writer.WritePropertyName("SourceArn");
                         context.Writer.Write(publicRequest.SourceArn);
@@ -158,6 +119,17 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
                     {
                         context.Writer.WritePropertyName("SourceType");
                         context.Writer.Write(publicRequest.SourceType);
+                    }
+
+                    if(publicRequest.IsSetSseAwsKeyManagementParams())
+                    {
+                        context.Writer.WritePropertyName("SseAwsKeyManagementParams");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SseAwsKeyManagementParamsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SseAwsKeyManagementParams, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
 
                     if(publicRequest.IsSetTags())

@@ -151,9 +151,9 @@ namespace Amazon.GeoPlaces.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967295)]
-        public long Distance
+        public long? Distance
         {
-            get { return this._distance.GetValueOrDefault(); }
+            get { return this._distance; }
             set { this._distance = value; }
         }
 

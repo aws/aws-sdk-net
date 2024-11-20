@@ -74,7 +74,7 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("guardrailProcessingLatency", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.GuardrailProcessingLatency = unmarshaller.Unmarshall(context);
                     continue;
                 }

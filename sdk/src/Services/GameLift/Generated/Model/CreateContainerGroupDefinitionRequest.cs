@@ -358,27 +358,11 @@ namespace Amazon.GameLift.Model
         /// Default value: 1024
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Required=true, Min=128, Max=10240)]
-        public int? TotalCpuLimit
-||||||| Commit version number update changes
-        [AWSProperty(Required=true, Min=128, Max=10240)]
-        public int TotalCpuLimit
-=======
         [AWSProperty(Required=true, Min=4, Max=1024000)]
-        public int TotalMemoryLimitMebibytes
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
+        public int? TotalMemoryLimitMebibytes
         {
-<<<<<<< HEAD
-            get { return this._totalCpuLimit; }
-            set { this._totalCpuLimit = value; }
-||||||| Commit version number update changes
-            get { return this._totalCpuLimit.GetValueOrDefault(); }
-            set { this._totalCpuLimit = value; }
-=======
-            get { return this._totalMemoryLimitMebibytes.GetValueOrDefault(); }
+            get { return this._totalMemoryLimitMebibytes; }
             set { this._totalMemoryLimitMebibytes = value; }
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
         }
 
         // Check to see if TotalMemoryLimitMebibytes property is set
@@ -400,17 +384,10 @@ namespace Amazon.GameLift.Model
         /// Default value: 1
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Required=true, Min=4, Max=1024000)]
-        public int? TotalMemoryLimit
-||||||| Commit version number update changes
-        [AWSProperty(Required=true, Min=4, Max=1024000)]
-        public int TotalMemoryLimit
-=======
         [AWSProperty(Required=true, Max=10)]
-        public double TotalVcpuLimit
+        public double? TotalVcpuLimit
         {
-            get { return this._totalVcpuLimit.GetValueOrDefault(); }
+            get { return this._totalVcpuLimit; }
             set { this._totalVcpuLimit = value; }
         }
 
@@ -428,18 +405,9 @@ namespace Amazon.GameLift.Model
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
         public string VersionDescription
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
         {
-<<<<<<< HEAD
-            get { return this._totalMemoryLimit; }
-            set { this._totalMemoryLimit = value; }
-||||||| Commit version number update changes
-            get { return this._totalMemoryLimit.GetValueOrDefault(); }
-            set { this._totalMemoryLimit = value; }
-=======
             get { return this._versionDescription; }
             set { this._versionDescription = value; }
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
         }
 
         // Check to see if VersionDescription property is set

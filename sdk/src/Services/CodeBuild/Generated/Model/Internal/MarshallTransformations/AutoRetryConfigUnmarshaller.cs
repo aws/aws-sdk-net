@@ -68,13 +68,13 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("autoRetryLimit", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AutoRetryLimit = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("autoRetryNumber", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.AutoRetryNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }

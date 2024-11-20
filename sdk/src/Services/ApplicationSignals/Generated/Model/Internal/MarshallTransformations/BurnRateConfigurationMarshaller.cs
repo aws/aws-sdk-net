@@ -51,7 +51,7 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLookBackWindowMinutes())
             {
                 context.Writer.WritePropertyName("LookBackWindowMinutes");
-                context.Writer.Write(requestObject.LookBackWindowMinutes);
+                context.Writer.Write(requestObject.LookBackWindowMinutes.Value);
             }
 
         }

@@ -117,9 +117,9 @@ namespace Amazon.GeoPlaces.Model
         /// Boolean indicating if the address provided has been corrected.
         /// </para>
         /// </summary>
-        public bool AddressNumberCorrected
+        public bool? AddressNumberCorrected
         {
-            get { return this._addressNumberCorrected.GetValueOrDefault(); }
+            get { return this._addressNumberCorrected; }
             set { this._addressNumberCorrected = value; }
         }
 

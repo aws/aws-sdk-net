@@ -92,18 +92,23 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetTagList())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.TagList)
+                    if (publicRequest.TagList.Count == 0)
+                        request.Parameters.Add("TagList", "");
+                    else
                     {
-                        if(publicRequestlistValue.IsSetKey())
-                        {
-                            request.Parameters.Add("TagList" + "." + "Tag" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
-                        }
-                        if(publicRequestlistValue.IsSetValue())
-                        {
-                            request.Parameters.Add("TagList" + "." + "Tag" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
-                        }
-                        publicRequestlistValueIndex++;
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.TagList)
+                         {
+                            if(publicRequestlistValue.IsSetKey())
+                            {
+                                request.Parameters.Add("TagList" + "." + "Tag" + "." + publicRequestlistValueIndex + "." + "Key", StringUtils.FromString(publicRequestlistValue.Key));
+                            }
+                            if(publicRequestlistValue.IsSetValue())
+                            {
+                                request.Parameters.Add("TagList" + "." + "Tag" + "." + publicRequestlistValueIndex + "." + "Value", StringUtils.FromString(publicRequestlistValue.Value));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
                     }
                 }
                 if(publicRequest.IsSetTargetArn())

@@ -51,7 +51,7 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFlowEventThresholdOverride())
             {
                 context.Writer.WritePropertyName("FlowEventThresholdOverride");
-                context.Writer.Write(requestObject.FlowEventThresholdOverride);
+                context.Writer.Write(requestObject.FlowEventThresholdOverride.Value);
             }
 
             if(requestObject.IsSetUsage())

@@ -115,9 +115,9 @@ namespace Amazon.KinesisFirehose.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime RequestTimestamp
+        public DateTime? RequestTimestamp
         {
-            get { return this._requestTimestamp.GetValueOrDefault(); }
+            get { return this._requestTimestamp; }
             set { this._requestTimestamp = value; }
         }
 

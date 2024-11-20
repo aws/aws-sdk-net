@@ -69,9 +69,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967295)]
-        public long BestCaseDuration
+        public long? BestCaseDuration
         {
-            get { return this._bestCaseDuration.GetValueOrDefault(); }
+            get { return this._bestCaseDuration; }
             set { this._bestCaseDuration = value; }
         }
 
@@ -127,9 +127,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967295)]
-        public long Distance
+        public long? Distance
         {
-            get { return this._distance.GetValueOrDefault(); }
+            get { return this._distance; }
             set { this._distance = value; }
         }
 
@@ -151,9 +151,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967295)]
-        public long Duration
+        public long? Duration
         {
-            get { return this._duration.GetValueOrDefault(); }
+            get { return this._duration; }
             set { this._duration = value; }
         }
 
@@ -192,9 +192,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
-        public int FunctionalClassification
+        public int? FunctionalClassification
         {
-            get { return this._functionalClassification.GetValueOrDefault(); }
+            get { return this._functionalClassification; }
             set { this._functionalClassification = value; }
         }
 
@@ -230,9 +230,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int GeometryOffset
+        public int? GeometryOffset
         {
-            get { return this._geometryOffset.GetValueOrDefault(); }
+            get { return this._geometryOffset; }
             set { this._geometryOffset = value; }
         }
 
@@ -486,9 +486,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967295)]
-        public long TypicalDuration
+        public long? TypicalDuration
         {
-            get { return this._typicalDuration.GetValueOrDefault(); }
+            get { return this._typicalDuration; }
             set { this._typicalDuration = value; }
         }
 

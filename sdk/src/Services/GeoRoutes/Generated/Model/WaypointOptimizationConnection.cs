@@ -49,9 +49,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=4294967295)]
-        public long Distance
+        public long? Distance
         {
-            get { return this._distance.GetValueOrDefault(); }
+            get { return this._distance; }
             set { this._distance = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=4294967295)]
-        public long RestDuration
+        public long? RestDuration
         {
-            get { return this._restDuration.GetValueOrDefault(); }
+            get { return this._restDuration; }
             set { this._restDuration = value; }
         }
 
@@ -129,9 +129,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=4294967295)]
-        public long TravelDuration
+        public long? TravelDuration
         {
-            get { return this._travelDuration.GetValueOrDefault(); }
+            get { return this._travelDuration; }
             set { this._travelDuration = value; }
         }
 
@@ -152,9 +152,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=4294967295)]
-        public long WaitDuration
+        public long? WaitDuration
         {
-            get { return this._waitDuration.GetValueOrDefault(); }
+            get { return this._waitDuration; }
             set { this._waitDuration = value; }
         }
 

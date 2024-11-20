@@ -126,9 +126,9 @@ namespace Amazon.Glue.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
-        public double SampleSize
+        public double? SampleSize
         {
-            get { return this._sampleSize.GetValueOrDefault(); }
+            get { return this._sampleSize; }
             set { this._sampleSize = value; }
         }
 

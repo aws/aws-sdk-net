@@ -34,16 +34,10 @@ namespace Amazon.DataExchange
     public partial class AmazonDataExchangeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("DataExchange", "4.0.0.0");
 
         private static readonly AmazonDataExchangeEndpointResolver EndpointResolver =
             new AmazonDataExchangeEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("DataExchange", "3.7.400.26");
-=======
-            InternalSDKUtils.BuildUserAgentString("DataExchange", "3.7.401.17");
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
         private string _userAgent = UserAgentString;
         ///<summary>

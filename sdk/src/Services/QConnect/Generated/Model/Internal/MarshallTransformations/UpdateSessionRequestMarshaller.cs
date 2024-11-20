@@ -69,45 +69,31 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             request.ResourcePath = "/assistants/{assistantId}/sessions/{sessionId}";
             using (MemoryStream memoryStream = new MemoryStream())
             {
-<<<<<<< HEAD
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-||||||| Commit version number update changes
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
-=======
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAiAgentConfiguration())
-                {
-                    context.Writer.WritePropertyName("aiAgentConfiguration");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestAiAgentConfigurationKvp in publicRequest.AiAgentConfiguration)
-                    {
-                        context.Writer.WritePropertyName(publicRequestAiAgentConfigurationKvp.Key);
-                        var publicRequestAiAgentConfigurationValue = publicRequestAiAgentConfigurationKvp.Value;
-
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AIAgentConfigurationDataMarshaller.Instance;
-                        marshaller.Marshall(publicRequestAiAgentConfigurationValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDescription())
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
                 {
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;
                     writer.WriteObjectStart();
                     var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAiAgentConfiguration())
+                    {
+                        context.Writer.WritePropertyName("aiAgentConfiguration");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestAiAgentConfigurationKvp in publicRequest.AiAgentConfiguration)
+                        {
+                            context.Writer.WritePropertyName(publicRequestAiAgentConfigurationKvp.Key);
+                            var publicRequestAiAgentConfigurationValue = publicRequestAiAgentConfigurationKvp.Value;
+
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = AIAgentConfigurationDataMarshaller.Instance;
+                            marshaller.Marshall(publicRequestAiAgentConfigurationValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetDescription())
                     {
                         context.Writer.WritePropertyName("description");

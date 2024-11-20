@@ -93,9 +93,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The UTC time when DMS created the data migration.
         /// </para>
         /// </summary>
-        public DateTime DataMigrationCreateTime
+        public DateTime? DataMigrationCreateTime
         {
-            get { return this._dataMigrationCreateTime.GetValueOrDefault(); }
+            get { return this._dataMigrationCreateTime; }
             set { this._dataMigrationCreateTime = value; }
         }
 
@@ -111,9 +111,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The UTC time when data migration ended.
         /// </para>
         /// </summary>
-        public DateTime DataMigrationEndTime
+        public DateTime? DataMigrationEndTime
         {
-            get { return this._dataMigrationEndTime.GetValueOrDefault(); }
+            get { return this._dataMigrationEndTime; }
             set { this._dataMigrationEndTime = value; }
         }
 
@@ -165,9 +165,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// The UTC time when DMS started the data migration.
         /// </para>
         /// </summary>
-        public DateTime DataMigrationStartTime
+        public DateTime? DataMigrationStartTime
         {
-            get { return this._dataMigrationStartTime.GetValueOrDefault(); }
+            get { return this._dataMigrationStartTime; }
             set { this._dataMigrationStartTime = value; }
         }
 

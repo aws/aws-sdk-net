@@ -64,26 +64,29 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
                 throw new AmazonConnectCampaignsV2Exception("Request object does not have required field Id set");
             request.AddPathResource("{id}", StringUtils.FromString(publicRequest.Id));
             request.ResourcePath = "/v2/campaigns/{id}/channel-subtype-config";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetChannelSubtypeConfig())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("channelSubtypeConfig");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetChannelSubtypeConfig())
+                    {
+                        context.Writer.WritePropertyName("channelSubtypeConfig");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = ChannelSubtypeConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ChannelSubtypeConfig, context);
+                        var marshaller = ChannelSubtypeConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ChannelSubtypeConfig, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

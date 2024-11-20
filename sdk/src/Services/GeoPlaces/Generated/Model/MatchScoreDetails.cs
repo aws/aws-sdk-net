@@ -64,9 +64,9 @@ namespace Amazon.GeoPlaces.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public double Overall
+        public double? Overall
         {
-            get { return this._overall.GetValueOrDefault(); }
+            get { return this._overall; }
             set { this._overall = value; }
         }
 

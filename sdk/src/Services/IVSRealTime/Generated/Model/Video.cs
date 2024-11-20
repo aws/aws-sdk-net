@@ -85,16 +85,8 @@ namespace Amazon.IVSRealTime.Model
         /// is 2073600 (1920x1080 or 1080x1920). Default: 720.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Min=1, Max=1920)]
-        public int? Height
-||||||| Commit version number update changes
-        [AWSProperty(Min=1, Max=1920)]
-        public int Height
-=======
         [AWSProperty(Min=2, Max=1920)]
-        public int Height
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
+        public int? Height
         {
             get { return this._height; }
             set { this._height = value; }
@@ -114,16 +106,8 @@ namespace Amazon.IVSRealTime.Model
         /// is 2073600 (1920x1080 or 1080x1920). Default: 1280.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Min=1, Max=1920)]
-        public int? Width
-||||||| Commit version number update changes
-        [AWSProperty(Min=1, Max=1920)]
-        public int Width
-=======
         [AWSProperty(Min=2, Max=1920)]
-        public int Width
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
+        public int? Width
         {
             get { return this._width; }
             set { this._width = value; }

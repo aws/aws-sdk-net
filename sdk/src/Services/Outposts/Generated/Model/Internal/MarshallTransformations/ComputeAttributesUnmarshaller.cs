@@ -86,7 +86,7 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MaxVcpus", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxVcpus = unmarshaller.Unmarshall(context);
                     continue;
                 }

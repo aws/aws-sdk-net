@@ -64,148 +64,151 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetKey())
                 request.Parameters.Add("key", StringUtils.FromString(publicRequest.Key));
             request.ResourcePath = "/optimize-waypoints";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAvoid())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Avoid");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = WaypointOptimizationAvoidanceOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Avoid, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDepartureTime())
-                {
-                    context.Writer.WritePropertyName("DepartureTime");
-                    context.Writer.Write(publicRequest.DepartureTime);
-                }
-
-                if(publicRequest.IsSetDestination())
-                {
-                    context.Writer.WritePropertyName("Destination");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDestinationListValue in publicRequest.Destination)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAvoid())
                     {
-                            context.Writer.Write(publicRequestDestinationListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetDestinationOptions())
-                {
-                    context.Writer.WritePropertyName("DestinationOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = WaypointOptimizationDestinationOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DestinationOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDriver())
-                {
-                    context.Writer.WritePropertyName("Driver");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = WaypointOptimizationDriverOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Driver, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetExclude())
-                {
-                    context.Writer.WritePropertyName("Exclude");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = WaypointOptimizationExclusionOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Exclude, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetOptimizeSequencingFor())
-                {
-                    context.Writer.WritePropertyName("OptimizeSequencingFor");
-                    context.Writer.Write(publicRequest.OptimizeSequencingFor);
-                }
-
-                if(publicRequest.IsSetOrigin())
-                {
-                    context.Writer.WritePropertyName("Origin");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestOriginListValue in publicRequest.Origin)
-                    {
-                            context.Writer.Write(publicRequestOriginListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetOriginOptions())
-                {
-                    context.Writer.WritePropertyName("OriginOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = WaypointOptimizationOriginOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OriginOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTraffic())
-                {
-                    context.Writer.WritePropertyName("Traffic");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = WaypointOptimizationTrafficOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Traffic, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTravelMode())
-                {
-                    context.Writer.WritePropertyName("TravelMode");
-                    context.Writer.Write(publicRequest.TravelMode);
-                }
-
-                if(publicRequest.IsSetTravelModeOptions())
-                {
-                    context.Writer.WritePropertyName("TravelModeOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = WaypointOptimizationTravelModeOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TravelModeOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetWaypoints())
-                {
-                    context.Writer.WritePropertyName("Waypoints");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestWaypointsListValue in publicRequest.Waypoints)
-                    {
+                        context.Writer.WritePropertyName("Avoid");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = WaypointOptimizationWaypointMarshaller.Instance;
-                        marshaller.Marshall(publicRequestWaypointsListValue, context);
+                        var marshaller = WaypointOptimizationAvoidanceOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Avoid, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetDepartureTime())
+                    {
+                        context.Writer.WritePropertyName("DepartureTime");
+                        context.Writer.Write(publicRequest.DepartureTime);
+                    }
+
+                    if(publicRequest.IsSetDestination())
+                    {
+                        context.Writer.WritePropertyName("Destination");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDestinationListValue in publicRequest.Destination)
+                        {
+                                context.Writer.Write(publicRequestDestinationListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetDestinationOptions())
+                    {
+                        context.Writer.WritePropertyName("DestinationOptions");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = WaypointOptimizationDestinationOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.DestinationOptions, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetDriver())
+                    {
+                        context.Writer.WritePropertyName("Driver");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = WaypointOptimizationDriverOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Driver, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetExclude())
+                    {
+                        context.Writer.WritePropertyName("Exclude");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = WaypointOptimizationExclusionOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Exclude, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetOptimizeSequencingFor())
+                    {
+                        context.Writer.WritePropertyName("OptimizeSequencingFor");
+                        context.Writer.Write(publicRequest.OptimizeSequencingFor);
+                    }
+
+                    if(publicRequest.IsSetOrigin())
+                    {
+                        context.Writer.WritePropertyName("Origin");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestOriginListValue in publicRequest.Origin)
+                        {
+                                context.Writer.Write(publicRequestOriginListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetOriginOptions())
+                    {
+                        context.Writer.WritePropertyName("OriginOptions");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = WaypointOptimizationOriginOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OriginOptions, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTraffic())
+                    {
+                        context.Writer.WritePropertyName("Traffic");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = WaypointOptimizationTrafficOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Traffic, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTravelMode())
+                    {
+                        context.Writer.WritePropertyName("TravelMode");
+                        context.Writer.Write(publicRequest.TravelMode);
+                    }
+
+                    if(publicRequest.IsSetTravelModeOptions())
+                    {
+                        context.Writer.WritePropertyName("TravelModeOptions");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = WaypointOptimizationTravelModeOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TravelModeOptions, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetWaypoints())
+                    {
+                        context.Writer.WritePropertyName("Waypoints");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestWaypointsListValue in publicRequest.Waypoints)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = WaypointOptimizationWaypointMarshaller.Instance;
+                            marshaller.Marshall(publicRequestWaypointsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             request.UseQueryString = true;

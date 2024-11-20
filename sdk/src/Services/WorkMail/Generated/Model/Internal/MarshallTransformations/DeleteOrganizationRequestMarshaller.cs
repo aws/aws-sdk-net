@@ -88,31 +88,17 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.DeleteDirectory.Value);
                     }
 
-<<<<<<< HEAD
+                    if(publicRequest.IsSetDeleteIdentityCenterApplication())
+                    {
+                        context.Writer.WritePropertyName("DeleteIdentityCenterApplication");
+                        context.Writer.Write(publicRequest.DeleteIdentityCenterApplication.Value);
+                    }
+
                     if(publicRequest.IsSetForceDelete())
                     {
                         context.Writer.WritePropertyName("ForceDelete");
                         context.Writer.Write(publicRequest.ForceDelete.Value);
                     }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetForceDelete())
-                {
-                    context.Writer.WritePropertyName("ForceDelete");
-                    context.Writer.Write(publicRequest.ForceDelete);
-                }
-=======
-                if(publicRequest.IsSetDeleteIdentityCenterApplication())
-                {
-                    context.Writer.WritePropertyName("DeleteIdentityCenterApplication");
-                    context.Writer.Write(publicRequest.DeleteIdentityCenterApplication);
-                }
-
-                if(publicRequest.IsSetForceDelete())
-                {
-                    context.Writer.WritePropertyName("ForceDelete");
-                    context.Writer.Write(publicRequest.ForceDelete);
-                }
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
                     if(publicRequest.IsSetOrganizationId())
                     {

@@ -84,9 +84,9 @@ namespace Amazon.OpenSearchService.Model
         /// Timestamp at which the OpenSearch Application was created.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -156,9 +156,9 @@ namespace Amazon.OpenSearchService.Model
         /// Timestamp at which the OpenSearch Application was last updated.
         /// </para>
         /// </summary>
-        public DateTime LastUpdatedAt
+        public DateTime? LastUpdatedAt
         {
-            get { return this._lastUpdatedAt.GetValueOrDefault(); }
+            get { return this._lastUpdatedAt; }
             set { this._lastUpdatedAt = value; }
         }
 

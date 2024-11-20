@@ -63,9 +63,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int PeriodCount
+        public int? PeriodCount
         {
-            get { return this._periodCount.GetValueOrDefault(); }
+            get { return this._periodCount; }
             set { this._periodCount = value; }
         }
 

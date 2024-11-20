@@ -74,7 +74,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("KeyStoreAccessEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.KeyStoreAccessEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

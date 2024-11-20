@@ -51,7 +51,7 @@ namespace Amazon.SupplyChain.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsRequired())
             {
                 context.Writer.WritePropertyName("isRequired");
-                context.Writer.Write(requestObject.IsRequired);
+                context.Writer.Write(requestObject.IsRequired.Value);
             }
 
             if(requestObject.IsSetName())

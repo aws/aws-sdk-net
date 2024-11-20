@@ -167,9 +167,9 @@ namespace Amazon.CleanRoomsML.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=30)]
-        public int RetentionInDays
+        public int? RetentionInDays
         {
-            get { return this._retentionInDays.GetValueOrDefault(); }
+            get { return this._retentionInDays; }
             set { this._retentionInDays = value; }
         }
 

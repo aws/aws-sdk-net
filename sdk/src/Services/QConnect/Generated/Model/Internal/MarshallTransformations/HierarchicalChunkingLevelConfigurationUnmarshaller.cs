@@ -68,7 +68,7 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("maxTokens", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxTokens = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -76,30 +76,16 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                         context.Writer.WritePropertyName("artifacts");
                         context.Writer.WriteObjectStart();
 
-<<<<<<< HEAD
                         var marshaller = ProjectArtifactsMarshaller.Instance;
                         marshaller.Marshall(publicRequest.Artifacts, context);
-||||||| Commit version number update changes
-                if(publicRequest.IsSetBadgeEnabled())
-                {
-                    context.Writer.WritePropertyName("badgeEnabled");
-                    context.Writer.Write(publicRequest.BadgeEnabled);
-                }
-=======
-                if(publicRequest.IsSetAutoRetryLimit())
-                {
-                    context.Writer.WritePropertyName("autoRetryLimit");
-                    context.Writer.Write(publicRequest.AutoRetryLimit);
-                }
-
-                if(publicRequest.IsSetBadgeEnabled())
-                {
-                    context.Writer.WritePropertyName("badgeEnabled");
-                    context.Writer.Write(publicRequest.BadgeEnabled);
-                }
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
                         context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetAutoRetryLimit())
+                    {
+                        context.Writer.WritePropertyName("autoRetryLimit");
+                        context.Writer.Write(publicRequest.AutoRetryLimit.Value);
                     }
 
                     if(publicRequest.IsSetBadgeEnabled())

@@ -80,7 +80,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IsLatestTaskAssessmentRun", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.IsLatestTaskAssessmentRun = unmarshaller.Unmarshall(context);
                     continue;
                 }

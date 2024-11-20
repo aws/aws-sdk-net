@@ -48,9 +48,9 @@ namespace Amazon.TimestreamQuery.Model
         /// if the result set has changed as part of the query tuning exercise.
         /// </para>
         /// </summary>
-        public long OutputBytes
+        public long? OutputBytes
         {
-            get { return this._outputBytes.GetValueOrDefault(); }
+            get { return this._outputBytes; }
             set { this._outputBytes = value; }
         }
 
@@ -68,9 +68,9 @@ namespace Amazon.TimestreamQuery.Model
         /// part of the query tuning exercise.
         /// </para>
         /// </summary>
-        public long OutputRows
+        public long? OutputRows
         {
-            get { return this._outputRows.GetValueOrDefault(); }
+            get { return this._outputRows; }
             set { this._outputRows = value; }
         }
 
@@ -106,9 +106,9 @@ namespace Amazon.TimestreamQuery.Model
         /// Indicates the number of tables in the query.
         /// </para>
         /// </summary>
-        public long QueryTableCount
+        public long? QueryTableCount
         {
-            get { return this._queryTableCount.GetValueOrDefault(); }
+            get { return this._queryTableCount; }
             set { this._queryTableCount = value; }
         }
 

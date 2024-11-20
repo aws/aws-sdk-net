@@ -46,9 +46,9 @@ namespace Amazon.MediaPackageV2.Model
         /// false, to use the default value NO. Choose yes to use the value YES.
         /// </para>
         /// </summary>
-        public bool Precise
+        public bool? Precise
         {
-            get { return this._precise.GetValueOrDefault(); }
+            get { return this._precise; }
             set { this._precise = value; }
         }
 
@@ -69,9 +69,9 @@ namespace Amazon.MediaPackageV2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public float TimeOffset
+        public float? TimeOffset
         {
-            get { return this._timeOffset.GetValueOrDefault(); }
+            get { return this._timeOffset; }
             set { this._timeOffset = value; }
         }
 

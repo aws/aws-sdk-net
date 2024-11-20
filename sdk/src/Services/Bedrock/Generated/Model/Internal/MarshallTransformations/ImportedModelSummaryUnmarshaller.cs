@@ -74,7 +74,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("instructSupported", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.InstructSupported = unmarshaller.Unmarshall(context);
                     continue;
                 }

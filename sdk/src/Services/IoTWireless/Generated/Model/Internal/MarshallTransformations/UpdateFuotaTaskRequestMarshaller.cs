@@ -78,6 +78,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Description);
                     }
 
+                    if(publicRequest.IsSetDescriptor())
+                    {
+                        context.Writer.WritePropertyName("Descriptor");
+                        context.Writer.Write(publicRequest.Descriptor);
+                    }
+
                     if(publicRequest.IsSetFirmwareUpdateImage())
                     {
                         context.Writer.WritePropertyName("FirmwareUpdateImage");
@@ -128,117 +134,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     writer.WriteObjectEnd();
                 }
 
-<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
-||||||| Commit version number update changes
-                if(publicRequest.IsSetFirmwareUpdateImage())
-                {
-                    context.Writer.WritePropertyName("FirmwareUpdateImage");
-                    context.Writer.Write(publicRequest.FirmwareUpdateImage);
-                }
-
-                if(publicRequest.IsSetFirmwareUpdateRole())
-                {
-                    context.Writer.WritePropertyName("FirmwareUpdateRole");
-                    context.Writer.Write(publicRequest.FirmwareUpdateRole);
-                }
-
-                if(publicRequest.IsSetFragmentIntervalMS())
-                {
-                    context.Writer.WritePropertyName("FragmentIntervalMS");
-                    context.Writer.Write(publicRequest.FragmentIntervalMS);
-                }
-
-                if(publicRequest.IsSetFragmentSizeBytes())
-                {
-                    context.Writer.WritePropertyName("FragmentSizeBytes");
-                    context.Writer.Write(publicRequest.FragmentSizeBytes);
-                }
-
-                if(publicRequest.IsSetLoRaWAN())
-                {
-                    context.Writer.WritePropertyName("LoRaWAN");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LoRaWANFuotaTaskMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LoRaWAN, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetRedundancyPercent())
-                {
-                    context.Writer.WritePropertyName("RedundancyPercent");
-                    context.Writer.Write(publicRequest.RedundancyPercent);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-=======
-                if(publicRequest.IsSetDescriptor())
-                {
-                    context.Writer.WritePropertyName("Descriptor");
-                    context.Writer.Write(publicRequest.Descriptor);
-                }
-
-                if(publicRequest.IsSetFirmwareUpdateImage())
-                {
-                    context.Writer.WritePropertyName("FirmwareUpdateImage");
-                    context.Writer.Write(publicRequest.FirmwareUpdateImage);
-                }
-
-                if(publicRequest.IsSetFirmwareUpdateRole())
-                {
-                    context.Writer.WritePropertyName("FirmwareUpdateRole");
-                    context.Writer.Write(publicRequest.FirmwareUpdateRole);
-                }
-
-                if(publicRequest.IsSetFragmentIntervalMS())
-                {
-                    context.Writer.WritePropertyName("FragmentIntervalMS");
-                    context.Writer.Write(publicRequest.FragmentIntervalMS);
-                }
-
-                if(publicRequest.IsSetFragmentSizeBytes())
-                {
-                    context.Writer.WritePropertyName("FragmentSizeBytes");
-                    context.Writer.Write(publicRequest.FragmentSizeBytes);
-                }
-
-                if(publicRequest.IsSetLoRaWAN())
-                {
-                    context.Writer.WritePropertyName("LoRaWAN");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LoRaWANFuotaTaskMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LoRaWAN, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetRedundancyPercent())
-                {
-                    context.Writer.WritePropertyName("RedundancyPercent");
-                    context.Writer.Write(publicRequest.RedundancyPercent);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
             }
 
 

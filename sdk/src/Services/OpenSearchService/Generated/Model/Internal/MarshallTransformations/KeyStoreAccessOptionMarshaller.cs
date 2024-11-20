@@ -57,7 +57,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKeyStoreAccessEnabled())
             {
                 context.Writer.WritePropertyName("KeyStoreAccessEnabled");
-                context.Writer.Write(requestObject.KeyStoreAccessEnabled);
+                context.Writer.Write(requestObject.KeyStoreAccessEnabled.Value);
             }
 
         }

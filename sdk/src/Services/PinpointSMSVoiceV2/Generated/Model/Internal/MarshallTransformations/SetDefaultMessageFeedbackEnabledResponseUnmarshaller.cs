@@ -66,7 +66,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("MessageFeedbackEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.MessageFeedbackEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

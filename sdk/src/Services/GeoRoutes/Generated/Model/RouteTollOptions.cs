@@ -47,9 +47,9 @@ namespace Amazon.GeoRoutes.Model
         /// impacts toll calculation, and if true the price with transponders is used.
         /// </para>
         /// </summary>
-        public bool AllTransponders
+        public bool? AllTransponders
         {
-            get { return this._allTransponders.GetValueOrDefault(); }
+            get { return this._allTransponders; }
             set { this._allTransponders = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.GeoRoutes.Model
         /// payment is necessary.
         /// </para>
         /// </summary>
-        public bool AllVignettes
+        public bool? AllVignettes
         {
-            get { return this._allVignettes.GetValueOrDefault(); }
+            get { return this._allVignettes; }
             set { this._allVignettes = value; }
         }
 

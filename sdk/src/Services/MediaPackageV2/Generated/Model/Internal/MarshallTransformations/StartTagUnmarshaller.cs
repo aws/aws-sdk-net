@@ -68,13 +68,13 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Precise", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.Precise = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TimeOffset", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     unmarshalledObject.TimeOffset = unmarshaller.Unmarshall(context);
                     continue;
                 }

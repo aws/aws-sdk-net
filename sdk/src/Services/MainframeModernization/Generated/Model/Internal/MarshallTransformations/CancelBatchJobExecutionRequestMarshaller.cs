@@ -67,21 +67,24 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
                 throw new AmazonMainframeModernizationException("Request object does not have required field ExecutionId set");
             request.AddPathResource("{executionId}", StringUtils.FromString(publicRequest.ExecutionId));
             request.ResourcePath = "/applications/{applicationId}/batch-job-executions/{executionId}/cancel";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAuthSecretsManagerArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("authSecretsManagerArn");
-                    context.Writer.Write(publicRequest.AuthSecretsManagerArn);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAuthSecretsManagerArn())
+                    {
+                        context.Writer.WritePropertyName("authSecretsManagerArn");
+                        context.Writer.Write(publicRequest.AuthSecretsManagerArn);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

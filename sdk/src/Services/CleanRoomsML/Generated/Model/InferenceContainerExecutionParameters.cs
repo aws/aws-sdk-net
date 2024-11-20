@@ -43,9 +43,9 @@ namespace Amazon.CleanRoomsML.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int MaxPayloadInMB
+        public int? MaxPayloadInMB
         {
-            get { return this._maxPayloadInMB.GetValueOrDefault(); }
+            get { return this._maxPayloadInMB; }
             set { this._maxPayloadInMB = value; }
         }
 

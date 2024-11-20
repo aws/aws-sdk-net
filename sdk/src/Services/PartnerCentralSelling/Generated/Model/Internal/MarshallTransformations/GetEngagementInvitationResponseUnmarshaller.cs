@@ -72,7 +72,7 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ExpirationDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ExpirationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -84,7 +84,7 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("InvitationDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.InvitationDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

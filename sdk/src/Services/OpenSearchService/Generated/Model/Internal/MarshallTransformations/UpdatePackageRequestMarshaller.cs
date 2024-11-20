@@ -75,10 +75,32 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.CommitMessage);
                     }
 
+                    if(publicRequest.IsSetPackageConfiguration())
+                    {
+                        context.Writer.WritePropertyName("PackageConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PackageConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.PackageConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetPackageDescription())
                     {
                         context.Writer.WritePropertyName("PackageDescription");
                         context.Writer.Write(publicRequest.PackageDescription);
+                    }
+
+                    if(publicRequest.IsSetPackageEncryptionOptions())
+                    {
+                        context.Writer.WritePropertyName("PackageEncryptionOptions");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PackageEncryptionOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.PackageEncryptionOptions, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
 
                     if(publicRequest.IsSetPackageID())
@@ -101,85 +123,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     writer.WriteObjectEnd();
                 }
 
-<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
-||||||| Commit version number update changes
-                if(publicRequest.IsSetPackageDescription())
-                {
-                    context.Writer.WritePropertyName("PackageDescription");
-                    context.Writer.Write(publicRequest.PackageDescription);
-                }
-
-                if(publicRequest.IsSetPackageID())
-                {
-                    context.Writer.WritePropertyName("PackageID");
-                    context.Writer.Write(publicRequest.PackageID);
-                }
-
-                if(publicRequest.IsSetPackageSource())
-                {
-                    context.Writer.WritePropertyName("PackageSource");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PackageSourceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PackageSource, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-=======
-                if(publicRequest.IsSetPackageConfiguration())
-                {
-                    context.Writer.WritePropertyName("PackageConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PackageConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PackageConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPackageDescription())
-                {
-                    context.Writer.WritePropertyName("PackageDescription");
-                    context.Writer.Write(publicRequest.PackageDescription);
-                }
-
-                if(publicRequest.IsSetPackageEncryptionOptions())
-                {
-                    context.Writer.WritePropertyName("PackageEncryptionOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PackageEncryptionOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PackageEncryptionOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPackageID())
-                {
-                    context.Writer.WritePropertyName("PackageID");
-                    context.Writer.Write(publicRequest.PackageID);
-                }
-
-                if(publicRequest.IsSetPackageSource())
-                {
-                    context.Writer.WritePropertyName("PackageSource");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PackageSourceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PackageSource, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
             }
 
 

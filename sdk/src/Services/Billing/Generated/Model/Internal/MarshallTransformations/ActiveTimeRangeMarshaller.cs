@@ -51,13 +51,13 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActiveAfterInclusive())
             {
                 context.Writer.WritePropertyName("activeAfterInclusive");
-                context.Writer.Write(requestObject.ActiveAfterInclusive);
+                context.Writer.Write(requestObject.ActiveAfterInclusive.Value);
             }
 
             if(requestObject.IsSetActiveBeforeInclusive())
             {
                 context.Writer.WritePropertyName("activeBeforeInclusive");
-                context.Writer.Write(requestObject.ActiveBeforeInclusive);
+                context.Writer.Write(requestObject.ActiveBeforeInclusive.Value);
             }
 
         }

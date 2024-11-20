@@ -34,16 +34,10 @@ namespace Amazon.SimpleSystemsManagement
     public partial class AmazonSimpleSystemsManagementConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("SSM", "4.0.0.0");
 
         private static readonly AmazonSimpleSystemsManagementEndpointResolver EndpointResolver =
             new AmazonSimpleSystemsManagementEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("SSM", "3.7.402.5");
-=======
-            InternalSDKUtils.BuildUserAgentString("SSM", "3.7.402.32");
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
         private string _userAgent = UserAgentString;
         ///<summary>

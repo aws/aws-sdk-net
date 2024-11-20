@@ -44,9 +44,9 @@ namespace Amazon.QConnect.Model
         /// Where the text with a citation starts in the generated output.
         /// </para>
         /// </summary>
-        public int BeginOffsetInclusive
+        public int? BeginOffsetInclusive
         {
-            get { return this._beginOffsetInclusive.GetValueOrDefault(); }
+            get { return this._beginOffsetInclusive; }
             set { this._beginOffsetInclusive = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.QConnect.Model
         /// Where the text with a citation ends in the generated output.
         /// </para>
         /// </summary>
-        public int EndOffsetExclusive
+        public int? EndOffsetExclusive
         {
-            get { return this._endOffsetExclusive.GetValueOrDefault(); }
+            get { return this._endOffsetExclusive; }
             set { this._endOffsetExclusive = value; }
         }
 

@@ -64,73 +64,76 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 throw new AmazonAppSyncException("Request object does not have required field ApiId set");
             request.AddPathResource("{apiId}", StringUtils.FromString(publicRequest.ApiId));
             request.ResourcePath = "/v2/apis/{apiId}/channelNamespaces";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCodeHandlers())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("codeHandlers");
-                    context.Writer.Write(publicRequest.CodeHandlers);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetPublishAuthModes())
-                {
-                    context.Writer.WritePropertyName("publishAuthModes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPublishAuthModesListValue in publicRequest.PublishAuthModes)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCodeHandlers())
                     {
+                        context.Writer.WritePropertyName("codeHandlers");
+                        context.Writer.Write(publicRequest.CodeHandlers);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetPublishAuthModes())
+                    {
+                        context.Writer.WritePropertyName("publishAuthModes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPublishAuthModesListValue in publicRequest.PublishAuthModes)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = AuthModeMarshaller.Instance;
+                            marshaller.Marshall(publicRequestPublishAuthModesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSubscribeAuthModes())
+                    {
+                        context.Writer.WritePropertyName("subscribeAuthModes");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSubscribeAuthModesListValue in publicRequest.SubscribeAuthModes)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = AuthModeMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSubscribeAuthModesListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("tags");
                         context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
 
-                        var marshaller = AuthModeMarshaller.Instance;
-                        marshaller.Marshall(publicRequestPublishAuthModesListValue, context);
-
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSubscribeAuthModes())
-                {
-                    context.Writer.WritePropertyName("subscribeAuthModes");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSubscribeAuthModesListValue in publicRequest.SubscribeAuthModes)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AuthModeMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSubscribeAuthModesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

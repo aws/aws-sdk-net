@@ -141,9 +141,9 @@ namespace Amazon.ResourceGroups.Model
         /// A timestamp of when the status was last updated. 
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

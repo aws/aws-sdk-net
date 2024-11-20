@@ -110,16 +110,8 @@ namespace Amazon.GameLift.Model
         /// to get results as a set of sequential pages.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        [AWSProperty(Min=1, Max=10)]
-        public int? Limit
-||||||| Commit version number update changes
-        [AWSProperty(Min=1, Max=10)]
-        public int Limit
-=======
         [AWSProperty(Min=1, Max=100)]
-        public int Limit
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
+        public int? Limit
         {
             get { return this._limit; }
             set { this._limit = value; }

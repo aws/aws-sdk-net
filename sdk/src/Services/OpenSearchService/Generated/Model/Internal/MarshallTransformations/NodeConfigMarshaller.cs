@@ -51,13 +51,13 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCount())
             {
                 context.Writer.WritePropertyName("Count");
-                context.Writer.Write(requestObject.Count);
+                context.Writer.Write(requestObject.Count.Value);
             }
 
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("Enabled");
-                context.Writer.Write(requestObject.Enabled);
+                context.Writer.Write(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetType())

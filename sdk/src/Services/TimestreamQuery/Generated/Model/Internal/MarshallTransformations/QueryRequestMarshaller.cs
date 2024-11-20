@@ -94,7 +94,17 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.NextToken);
                     }
 
-<<<<<<< HEAD
+                    if(publicRequest.IsSetQueryInsights())
+                    {
+                        context.Writer.WritePropertyName("QueryInsights");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = QueryInsightsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.QueryInsights, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetQueryString())
                     {
                         context.Writer.WritePropertyName("QueryString");
@@ -102,28 +112,6 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
                     }
 
                     writer.WriteObjectEnd();
-||||||| Commit version number update changes
-                if(publicRequest.IsSetQueryString())
-                {
-                    context.Writer.WritePropertyName("QueryString");
-                    context.Writer.Write(publicRequest.QueryString);
-=======
-                if(publicRequest.IsSetQueryInsights())
-                {
-                    context.Writer.WritePropertyName("QueryInsights");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = QueryInsightsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.QueryInsights, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetQueryString())
-                {
-                    context.Writer.WritePropertyName("QueryString");
-                    context.Writer.Write(publicRequest.QueryString);
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
                 }
 
                 request.Content = memoryStream.ToArray();

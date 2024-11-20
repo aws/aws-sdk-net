@@ -144,9 +144,9 @@ namespace Amazon.Keyspaces.Model
         ///  The timestamp that shows when this type was last modified. 
         /// </para>
         /// </summary>
-        public DateTime LastModifiedTimestamp
+        public DateTime? LastModifiedTimestamp
         {
-            get { return this._lastModifiedTimestamp.GetValueOrDefault(); }
+            get { return this._lastModifiedTimestamp; }
             set { this._lastModifiedTimestamp = value; }
         }
 
@@ -162,9 +162,9 @@ namespace Amazon.Keyspaces.Model
         ///  The level of nesting implemented for this type. 
         /// </para>
         /// </summary>
-        public int MaxNestingDepth
+        public int? MaxNestingDepth
         {
-            get { return this._maxNestingDepth.GetValueOrDefault(); }
+            get { return this._maxNestingDepth; }
             set { this._maxNestingDepth = value; }
         }
 

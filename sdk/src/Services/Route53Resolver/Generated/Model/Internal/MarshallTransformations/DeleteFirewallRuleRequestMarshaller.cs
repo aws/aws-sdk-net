@@ -83,7 +83,12 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.FirewallRuleGroupId);
                     }
 
-<<<<<<< HEAD
+                    if(publicRequest.IsSetFirewallThreatProtectionId())
+                    {
+                        context.Writer.WritePropertyName("FirewallThreatProtectionId");
+                        context.Writer.Write(publicRequest.FirewallThreatProtectionId);
+                    }
+
                     if(publicRequest.IsSetQtype())
                     {
                         context.Writer.WritePropertyName("Qtype");
@@ -91,23 +96,6 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                     }
 
                     writer.WriteObjectEnd();
-||||||| Commit version number update changes
-                if(publicRequest.IsSetQtype())
-                {
-                    context.Writer.WritePropertyName("Qtype");
-                    context.Writer.Write(publicRequest.Qtype);
-=======
-                if(publicRequest.IsSetFirewallThreatProtectionId())
-                {
-                    context.Writer.WritePropertyName("FirewallThreatProtectionId");
-                    context.Writer.Write(publicRequest.FirewallThreatProtectionId);
-                }
-
-                if(publicRequest.IsSetQtype())
-                {
-                    context.Writer.WritePropertyName("Qtype");
-                    context.Writer.Write(publicRequest.Qtype);
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
                 }
 
                 request.Content = memoryStream.ToArray();

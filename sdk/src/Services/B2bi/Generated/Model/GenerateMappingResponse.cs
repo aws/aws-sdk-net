@@ -44,9 +44,9 @@ namespace Amazon.B2bi.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public float MappingAccuracy
+        public float? MappingAccuracy
         {
-            get { return this._mappingAccuracy.GetValueOrDefault(); }
+            get { return this._mappingAccuracy; }
             set { this._mappingAccuracy = value; }
         }
 

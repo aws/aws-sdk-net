@@ -44,9 +44,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200000)]
-        public long Margin
+        public long? Margin
         {
-            get { return this._margin.GetValueOrDefault(); }
+            get { return this._margin; }
             set { this._margin = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200000)]
-        public long MaxRadius
+        public long? MaxRadius
         {
-            get { return this._maxRadius.GetValueOrDefault(); }
+            get { return this._maxRadius; }
             set { this._maxRadius = value; }
         }
 

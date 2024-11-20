@@ -63,61 +63,64 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCatalog())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Catalog");
-                    context.Writer.Write(publicRequest.Catalog);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
-                }
-
-                if(publicRequest.IsSetNextToken())
-                {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetParticipantType())
-                {
-                    context.Writer.WritePropertyName("ParticipantType");
-                    context.Writer.Write(publicRequest.ParticipantType);
-                }
-
-                if(publicRequest.IsSetPayloadType())
-                {
-                    context.Writer.WritePropertyName("PayloadType");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPayloadTypeListValue in publicRequest.PayloadType)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCatalog())
                     {
-                            context.Writer.Write(publicRequestPayloadTypeListValue);
+                        context.Writer.WritePropertyName("Catalog");
+                        context.Writer.Write(publicRequest.Catalog);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetMaxResults())
+                    {
+                        context.Writer.WritePropertyName("MaxResults");
+                        context.Writer.Write(publicRequest.MaxResults.Value);
+                    }
+
+                    if(publicRequest.IsSetNextToken())
+                    {
+                        context.Writer.WritePropertyName("NextToken");
+                        context.Writer.Write(publicRequest.NextToken);
+                    }
+
+                    if(publicRequest.IsSetParticipantType())
+                    {
+                        context.Writer.WritePropertyName("ParticipantType");
+                        context.Writer.Write(publicRequest.ParticipantType);
+                    }
+
+                    if(publicRequest.IsSetPayloadType())
+                    {
+                        context.Writer.WritePropertyName("PayloadType");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPayloadTypeListValue in publicRequest.PayloadType)
+                        {
+                                context.Writer.Write(publicRequestPayloadTypeListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetSort())
+                    {
+                        context.Writer.WritePropertyName("Sort");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = OpportunityEngagementInvitationSortMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Sort, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSort())
-                {
-                    context.Writer.WritePropertyName("Sort");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OpportunityEngagementInvitationSortMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Sort, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

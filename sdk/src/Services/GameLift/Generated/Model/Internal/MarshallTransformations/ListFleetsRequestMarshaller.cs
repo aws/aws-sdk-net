@@ -77,37 +77,11 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.BuildId);
                     }
 
-<<<<<<< HEAD
-                    if(publicRequest.IsSetContainerGroupDefinitionName())
-                    {
-                        context.Writer.WritePropertyName("ContainerGroupDefinitionName");
-                        context.Writer.Write(publicRequest.ContainerGroupDefinitionName);
-                    }
-
                     if(publicRequest.IsSetLimit())
                     {
                         context.Writer.WritePropertyName("Limit");
                         context.Writer.Write(publicRequest.Limit.Value);
                     }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetContainerGroupDefinitionName())
-                {
-                    context.Writer.WritePropertyName("ContainerGroupDefinitionName");
-                    context.Writer.Write(publicRequest.ContainerGroupDefinitionName);
-                }
-
-                if(publicRequest.IsSetLimit())
-                {
-                    context.Writer.WritePropertyName("Limit");
-                    context.Writer.Write(publicRequest.Limit);
-                }
-=======
-                if(publicRequest.IsSetLimit())
-                {
-                    context.Writer.WritePropertyName("Limit");
-                    context.Writer.Write(publicRequest.Limit);
-                }
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
                     if(publicRequest.IsSetNextToken())
                     {

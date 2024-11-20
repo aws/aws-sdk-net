@@ -67,9 +67,9 @@ namespace Amazon.DataExchange.Model
         /// The timestamp of when access to the associated data set ends.
         /// </para>
         /// </summary>
-        public DateTime EndsAt
+        public DateTime? EndsAt
         {
-            get { return this._endsAt.GetValueOrDefault(); }
+            get { return this._endsAt; }
             set { this._endsAt = value; }
         }
 

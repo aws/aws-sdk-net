@@ -71,9 +71,9 @@ namespace Amazon.Redshift.Model
         /// The time (UTC) when the integration was created.
         /// </para>
         /// </summary>
-        public DateTime CreateTime
+        public DateTime? CreateTime
         {
-            get { return this._createTime.GetValueOrDefault(); }
+            get { return this._createTime; }
             set { this._createTime = value; }
         }
 

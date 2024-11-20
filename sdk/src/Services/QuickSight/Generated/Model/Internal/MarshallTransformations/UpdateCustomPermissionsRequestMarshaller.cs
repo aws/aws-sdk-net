@@ -67,26 +67,29 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field CustomPermissionsName set");
             request.AddPathResource("{CustomPermissionsName}", StringUtils.FromString(publicRequest.CustomPermissionsName));
             request.ResourcePath = "/accounts/{AwsAccountId}/custom-permissions/{CustomPermissionsName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCapabilities())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Capabilities");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCapabilities())
+                    {
+                        context.Writer.WritePropertyName("Capabilities");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = CapabilitiesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Capabilities, context);
+                        var marshaller = CapabilitiesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Capabilities, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

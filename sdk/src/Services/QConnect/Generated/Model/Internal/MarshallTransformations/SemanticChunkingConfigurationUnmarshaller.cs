@@ -68,19 +68,19 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("breakpointPercentileThreshold", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BreakpointPercentileThreshold = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("bufferSize", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.BufferSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("maxTokens", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxTokens = unmarshaller.Unmarshall(context);
                     continue;
                 }

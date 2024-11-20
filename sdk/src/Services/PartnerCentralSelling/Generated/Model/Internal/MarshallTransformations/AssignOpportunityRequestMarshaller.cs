@@ -63,38 +63,41 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAssignee())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Assignee");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAssignee())
+                    {
+                        context.Writer.WritePropertyName("Assignee");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = AssigneeContactMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Assignee, context);
+                        var marshaller = AssigneeContactMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Assignee, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetCatalog())
+                    {
+                        context.Writer.WritePropertyName("Catalog");
+                        context.Writer.Write(publicRequest.Catalog);
+                    }
+
+                    if(publicRequest.IsSetIdentifier())
+                    {
+                        context.Writer.WritePropertyName("Identifier");
+                        context.Writer.Write(publicRequest.Identifier);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetCatalog())
-                {
-                    context.Writer.WritePropertyName("Catalog");
-                    context.Writer.Write(publicRequest.Catalog);
-                }
-
-                if(publicRequest.IsSetIdentifier())
-                {
-                    context.Writer.WritePropertyName("Identifier");
-                    context.Writer.Write(publicRequest.Identifier);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

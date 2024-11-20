@@ -61,37 +61,40 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v1/whatsapp/signup";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetSetupFinalization())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("setupFinalization");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetSetupFinalization())
+                    {
+                        context.Writer.WritePropertyName("setupFinalization");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = WhatsAppSetupFinalizationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SetupFinalization, context);
+                        var marshaller = WhatsAppSetupFinalizationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SetupFinalization, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSignupCallback())
+                    {
+                        context.Writer.WritePropertyName("signupCallback");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = WhatsAppSignupCallbackMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SignupCallback, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSignupCallback())
-                {
-                    context.Writer.WritePropertyName("signupCallback");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = WhatsAppSignupCallbackMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SignupCallback, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,155 +63,158 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBillingType())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("BillingType");
-                    context.Writer.Write(publicRequest.BillingType);
-                }
-
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetFleetRoleArn())
-                {
-                    context.Writer.WritePropertyName("FleetRoleArn");
-                    context.Writer.Write(publicRequest.FleetRoleArn);
-                }
-
-                if(publicRequest.IsSetGameServerContainerGroupDefinitionName())
-                {
-                    context.Writer.WritePropertyName("GameServerContainerGroupDefinitionName");
-                    context.Writer.Write(publicRequest.GameServerContainerGroupDefinitionName);
-                }
-
-                if(publicRequest.IsSetGameServerContainerGroupsPerInstance())
-                {
-                    context.Writer.WritePropertyName("GameServerContainerGroupsPerInstance");
-                    context.Writer.Write(publicRequest.GameServerContainerGroupsPerInstance);
-                }
-
-                if(publicRequest.IsSetGameSessionCreationLimitPolicy())
-                {
-                    context.Writer.WritePropertyName("GameSessionCreationLimitPolicy");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = GameSessionCreationLimitPolicyMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.GameSessionCreationLimitPolicy, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetInstanceConnectionPortRange())
-                {
-                    context.Writer.WritePropertyName("InstanceConnectionPortRange");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ConnectionPortRangeMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.InstanceConnectionPortRange, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetInstanceInboundPermissions())
-                {
-                    context.Writer.WritePropertyName("InstanceInboundPermissions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestInstanceInboundPermissionsListValue in publicRequest.InstanceInboundPermissions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBillingType())
                     {
+                        context.Writer.WritePropertyName("BillingType");
+                        context.Writer.Write(publicRequest.BillingType);
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetFleetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("FleetRoleArn");
+                        context.Writer.Write(publicRequest.FleetRoleArn);
+                    }
+
+                    if(publicRequest.IsSetGameServerContainerGroupDefinitionName())
+                    {
+                        context.Writer.WritePropertyName("GameServerContainerGroupDefinitionName");
+                        context.Writer.Write(publicRequest.GameServerContainerGroupDefinitionName);
+                    }
+
+                    if(publicRequest.IsSetGameServerContainerGroupsPerInstance())
+                    {
+                        context.Writer.WritePropertyName("GameServerContainerGroupsPerInstance");
+                        context.Writer.Write(publicRequest.GameServerContainerGroupsPerInstance.Value);
+                    }
+
+                    if(publicRequest.IsSetGameSessionCreationLimitPolicy())
+                    {
+                        context.Writer.WritePropertyName("GameSessionCreationLimitPolicy");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = IpPermissionMarshaller.Instance;
-                        marshaller.Marshall(publicRequestInstanceInboundPermissionsListValue, context);
+                        var marshaller = GameSessionCreationLimitPolicyMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.GameSessionCreationLimitPolicy, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetInstanceType())
-                {
-                    context.Writer.WritePropertyName("InstanceType");
-                    context.Writer.Write(publicRequest.InstanceType);
-                }
-
-                if(publicRequest.IsSetLocations())
-                {
-                    context.Writer.WritePropertyName("Locations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestLocationsListValue in publicRequest.Locations)
+                    if(publicRequest.IsSetInstanceConnectionPortRange())
                     {
+                        context.Writer.WritePropertyName("InstanceConnectionPortRange");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = LocationConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestLocationsListValue, context);
+                        var marshaller = ConnectionPortRangeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.InstanceConnectionPortRange, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetLogConfiguration())
-                {
-                    context.Writer.WritePropertyName("LogConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LogConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LogConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetMetricGroups())
-                {
-                    context.Writer.WritePropertyName("MetricGroups");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestMetricGroupsListValue in publicRequest.MetricGroups)
+                    if(publicRequest.IsSetInstanceInboundPermissions())
                     {
-                            context.Writer.Write(publicRequestMetricGroupsListValue);
+                        context.Writer.WritePropertyName("InstanceInboundPermissions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestInstanceInboundPermissionsListValue in publicRequest.InstanceInboundPermissions)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = IpPermissionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestInstanceInboundPermissionsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetNewGameSessionProtectionPolicy())
-                {
-                    context.Writer.WritePropertyName("NewGameSessionProtectionPolicy");
-                    context.Writer.Write(publicRequest.NewGameSessionProtectionPolicy);
-                }
-
-                if(publicRequest.IsSetPerInstanceContainerGroupDefinitionName())
-                {
-                    context.Writer.WritePropertyName("PerInstanceContainerGroupDefinitionName");
-                    context.Writer.Write(publicRequest.PerInstanceContainerGroupDefinitionName);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetInstanceType())
                     {
+                        context.Writer.WritePropertyName("InstanceType");
+                        context.Writer.Write(publicRequest.InstanceType);
+                    }
+
+                    if(publicRequest.IsSetLocations())
+                    {
+                        context.Writer.WritePropertyName("Locations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestLocationsListValue in publicRequest.Locations)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = LocationConfigurationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestLocationsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetLogConfiguration())
+                    {
+                        context.Writer.WritePropertyName("LogConfiguration");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
+                        var marshaller = LogConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.LogConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetMetricGroups())
+                    {
+                        context.Writer.WritePropertyName("MetricGroups");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestMetricGroupsListValue in publicRequest.MetricGroups)
+                        {
+                                context.Writer.Write(publicRequestMetricGroupsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetNewGameSessionProtectionPolicy())
+                    {
+                        context.Writer.WritePropertyName("NewGameSessionProtectionPolicy");
+                        context.Writer.Write(publicRequest.NewGameSessionProtectionPolicy);
+                    }
+
+                    if(publicRequest.IsSetPerInstanceContainerGroupDefinitionName())
+                    {
+                        context.Writer.WritePropertyName("PerInstanceContainerGroupDefinitionName");
+                        context.Writer.Write(publicRequest.PerInstanceContainerGroupDefinitionName);
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

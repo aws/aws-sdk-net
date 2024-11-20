@@ -61,9 +61,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=255)]
-        public int AxleCount
+        public int? AxleCount
         {
-            get { return this._axleCount.GetValueOrDefault(); }
+            get { return this._axleCount; }
             set { this._axleCount = value; }
         }
 
@@ -102,9 +102,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967295)]
-        public long GrossWeight
+        public long? GrossWeight
         {
-            get { return this._grossWeight.GetValueOrDefault(); }
+            get { return this._grossWeight; }
             set { this._grossWeight = value; }
         }
 
@@ -144,9 +144,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5000)]
-        public long Height
+        public long? Height
         {
-            get { return this._height.GetValueOrDefault(); }
+            get { return this._height; }
             set { this._height = value; }
         }
 
@@ -167,9 +167,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5000)]
-        public long HeightAboveFirstAxle
+        public long? HeightAboveFirstAxle
         {
-            get { return this._heightAboveFirstAxle.GetValueOrDefault(); }
+            get { return this._heightAboveFirstAxle; }
             set { this._heightAboveFirstAxle = value; }
         }
 
@@ -190,9 +190,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967295)]
-        public long KpraLength
+        public long? KpraLength
         {
-            get { return this._kpraLength.GetValueOrDefault(); }
+            get { return this._kpraLength; }
             set { this._kpraLength = value; }
         }
 
@@ -213,9 +213,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=30000)]
-        public long Length
+        public long? Length
         {
-            get { return this._length.GetValueOrDefault(); }
+            get { return this._length; }
             set { this._length = value; }
         }
 
@@ -254,9 +254,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Max=252)]
-        public double MaxSpeed
+        public double? MaxSpeed
         {
-            get { return this._maxSpeed.GetValueOrDefault(); }
+            get { return this._maxSpeed; }
             set { this._maxSpeed = value; }
         }
 
@@ -277,9 +277,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int Occupancy
+        public int? Occupancy
         {
-            get { return this._occupancy.GetValueOrDefault(); }
+            get { return this._occupancy; }
             set { this._occupancy = value; }
         }
 
@@ -300,9 +300,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967295)]
-        public long PayloadCapacity
+        public long? PayloadCapacity
         {
-            get { return this._payloadCapacity.GetValueOrDefault(); }
+            get { return this._payloadCapacity; }
             set { this._payloadCapacity = value; }
         }
 
@@ -319,9 +319,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
-        public int TireCount
+        public int? TireCount
         {
-            get { return this._tireCount.GetValueOrDefault(); }
+            get { return this._tireCount; }
             set { this._tireCount = value; }
         }
 
@@ -453,9 +453,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967295)]
-        public long WeightPerAxle
+        public long? WeightPerAxle
         {
-            get { return this._weightPerAxle.GetValueOrDefault(); }
+            get { return this._weightPerAxle; }
             set { this._weightPerAxle = value; }
         }
 
@@ -499,9 +499,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5000)]
-        public long Width
+        public long? Width
         {
-            get { return this._width.GetValueOrDefault(); }
+            get { return this._width; }
             set { this._width = value; }
         }
 

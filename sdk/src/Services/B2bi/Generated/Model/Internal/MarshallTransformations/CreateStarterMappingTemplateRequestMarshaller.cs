@@ -63,43 +63,46 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMappingType())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("mappingType");
-                    context.Writer.Write(publicRequest.MappingType);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMappingType())
+                    {
+                        context.Writer.WritePropertyName("mappingType");
+                        context.Writer.Write(publicRequest.MappingType);
+                    }
+
+                    if(publicRequest.IsSetOutputSampleLocation())
+                    {
+                        context.Writer.WritePropertyName("outputSampleLocation");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = S3LocationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.OutputSampleLocation, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTemplateDetails())
+                    {
+                        context.Writer.WritePropertyName("templateDetails");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TemplateDetailsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.TemplateDetails, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetOutputSampleLocation())
-                {
-                    context.Writer.WritePropertyName("outputSampleLocation");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = S3LocationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OutputSampleLocation, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTemplateDetails())
-                {
-                    context.Writer.WritePropertyName("templateDetails");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TemplateDetailsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TemplateDetails, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

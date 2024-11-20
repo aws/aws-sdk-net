@@ -126,37 +126,23 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.MessageBody);
                     }
 
+                    if(publicRequest.IsSetMessageFeedbackEnabled())
+                    {
+                        context.Writer.WritePropertyName("MessageFeedbackEnabled");
+                        context.Writer.Write(publicRequest.MessageFeedbackEnabled.Value);
+                    }
+
                     if(publicRequest.IsSetOriginationIdentity())
                     {
                         context.Writer.WritePropertyName("OriginationIdentity");
                         context.Writer.Write(publicRequest.OriginationIdentity);
                     }
 
-<<<<<<< HEAD
                     if(publicRequest.IsSetProtectConfigurationId())
                     {
                         context.Writer.WritePropertyName("ProtectConfigurationId");
                         context.Writer.Write(publicRequest.ProtectConfigurationId);
                     }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetOriginationIdentity())
-                {
-                    context.Writer.WritePropertyName("OriginationIdentity");
-                    context.Writer.Write(publicRequest.OriginationIdentity);
-                }
-=======
-                if(publicRequest.IsSetMessageFeedbackEnabled())
-                {
-                    context.Writer.WritePropertyName("MessageFeedbackEnabled");
-                    context.Writer.Write(publicRequest.MessageFeedbackEnabled);
-                }
-
-                if(publicRequest.IsSetOriginationIdentity())
-                {
-                    context.Writer.WritePropertyName("OriginationIdentity");
-                    context.Writer.Write(publicRequest.OriginationIdentity);
-                }
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
                     if(publicRequest.IsSetTimeToLive())
                     {

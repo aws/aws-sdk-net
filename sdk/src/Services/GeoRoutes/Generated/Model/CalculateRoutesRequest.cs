@@ -139,9 +139,9 @@ namespace Amazon.GeoRoutes.Model
         /// Uses the current time as the time of departure.
         /// </para>
         /// </summary>
-        public bool DepartNow
+        public bool? DepartNow
         {
-            get { return this._departNow.GetValueOrDefault(); }
+            get { return this._departNow; }
             set { this._departNow = value; }
         }
 
@@ -417,9 +417,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
-        public int MaxAlternatives
+        public int? MaxAlternatives
         {
-            get { return this._maxAlternatives.GetValueOrDefault(); }
+            get { return this._maxAlternatives; }
             set { this._maxAlternatives = value; }
         }
 

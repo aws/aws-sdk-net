@@ -116,9 +116,9 @@ namespace Amazon.PartnerCentralSelling.Model
         /// to the partner.
         /// </para>
         /// </summary>
-        public DateTime ExpirationDate
+        public DateTime? ExpirationDate
         {
-            get { return this._expirationDate.GetValueOrDefault(); }
+            get { return this._expirationDate; }
             set { this._expirationDate = value; }
         }
 
@@ -156,9 +156,9 @@ namespace Amazon.PartnerCentralSelling.Model
         /// engagement.
         /// </para>
         /// </summary>
-        public DateTime InvitationDate
+        public DateTime? InvitationDate
         {
-            get { return this._invitationDate.GetValueOrDefault(); }
+            get { return this._invitationDate; }
             set { this._invitationDate = value; }
         }
 

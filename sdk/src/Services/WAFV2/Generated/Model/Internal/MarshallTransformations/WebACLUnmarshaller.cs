@@ -152,7 +152,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("RetrofittedByFirewallManager", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.RetrofittedByFirewallManager = unmarshaller.Unmarshall(context);
                     continue;
                 }

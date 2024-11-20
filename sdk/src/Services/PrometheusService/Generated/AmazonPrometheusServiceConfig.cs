@@ -34,16 +34,10 @@ namespace Amazon.PrometheusService
     public partial class AmazonPrometheusServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("amp", "4.0.0.0");
 
         private static readonly AmazonPrometheusServiceEndpointResolver EndpointResolver =
             new AmazonPrometheusServiceEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("amp", "3.7.400.26");
-=======
-            InternalSDKUtils.BuildUserAgentString("amp", "3.7.401.9");
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
         private string _userAgent = UserAgentString;
         ///<summary>

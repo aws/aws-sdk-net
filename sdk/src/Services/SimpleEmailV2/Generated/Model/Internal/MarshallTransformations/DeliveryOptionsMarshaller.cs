@@ -51,7 +51,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxDeliverySeconds())
             {
                 context.Writer.WritePropertyName("MaxDeliverySeconds");
-                context.Writer.Write(requestObject.MaxDeliverySeconds);
+                context.Writer.Write(requestObject.MaxDeliverySeconds.Value);
             }
 
             if(requestObject.IsSetSendingPoolName())

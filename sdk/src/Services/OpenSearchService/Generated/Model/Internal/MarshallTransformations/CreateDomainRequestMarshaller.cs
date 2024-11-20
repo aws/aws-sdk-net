@@ -183,36 +183,22 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
-<<<<<<< HEAD
                     if(publicRequest.IsSetEngineVersion())
                     {
                         context.Writer.WritePropertyName("EngineVersion");
                         context.Writer.Write(publicRequest.EngineVersion);
                     }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetIPAddressType())
-                {
-                    context.Writer.WritePropertyName("IPAddressType");
-                    context.Writer.Write(publicRequest.IPAddressType);
-                }
-=======
-                if(publicRequest.IsSetIdentityCenterOptions())
-                {
-                    context.Writer.WritePropertyName("IdentityCenterOptions");
-                    context.Writer.WriteObjectStart();
 
-                    var marshaller = IdentityCenterOptionsInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.IdentityCenterOptions, context);
+                    if(publicRequest.IsSetIdentityCenterOptions())
+                    {
+                        context.Writer.WritePropertyName("IdentityCenterOptions");
+                        context.Writer.WriteObjectStart();
 
-                    context.Writer.WriteObjectEnd();
-                }
+                        var marshaller = IdentityCenterOptionsInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.IdentityCenterOptions, context);
 
-                if(publicRequest.IsSetIPAddressType())
-                {
-                    context.Writer.WritePropertyName("IPAddressType");
-                    context.Writer.Write(publicRequest.IPAddressType);
-                }
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
+                        context.Writer.WriteObjectEnd();
+                    }
 
                     if(publicRequest.IsSetIPAddressType())
                     {

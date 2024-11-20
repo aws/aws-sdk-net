@@ -45,9 +45,9 @@ namespace Amazon.GeoPlaces.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int EndIndex
+        public int? EndIndex
         {
-            get { return this._endIndex.GetValueOrDefault(); }
+            get { return this._endIndex; }
             set { this._endIndex = value; }
         }
 
@@ -64,9 +64,9 @@ namespace Amazon.GeoPlaces.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int StartIndex
+        public int? StartIndex
         {
-            get { return this._startIndex.GetValueOrDefault(); }
+            get { return this._startIndex; }
             set { this._startIndex = value; }
         }
 

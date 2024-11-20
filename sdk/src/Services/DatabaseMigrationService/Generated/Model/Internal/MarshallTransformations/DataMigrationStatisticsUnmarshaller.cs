@@ -68,55 +68,55 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("CDCLatency", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.CDCLatency = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ElapsedTimeMillis", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.ElapsedTimeMillis = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FullLoadPercentage", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.FullLoadPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StopTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.StopTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TablesErrored", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TablesErrored = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TablesLoaded", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TablesLoaded = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TablesLoading", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TablesLoading = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TablesQueued", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TablesQueued = unmarshaller.Unmarshall(context);
                     continue;
                 }

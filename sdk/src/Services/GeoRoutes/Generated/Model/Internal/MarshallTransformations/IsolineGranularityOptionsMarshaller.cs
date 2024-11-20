@@ -51,13 +51,13 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxPoints())
             {
                 context.Writer.WritePropertyName("MaxPoints");
-                context.Writer.Write(requestObject.MaxPoints);
+                context.Writer.Write(requestObject.MaxPoints.Value);
             }
 
             if(requestObject.IsSetMaxResolution())
             {
                 context.Writer.WritePropertyName("MaxResolution");
-                context.Writer.Write(requestObject.MaxResolution);
+                context.Writer.Write(requestObject.MaxResolution.Value);
             }
 
         }

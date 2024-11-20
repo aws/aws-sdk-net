@@ -80,7 +80,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("created", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.Created = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -122,7 +122,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("xrayEnabled", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.XrayEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }

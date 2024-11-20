@@ -103,9 +103,9 @@ namespace Amazon.OpenSearchService.Model
         /// that the plugin is prerequisite for.
         /// </para>
         /// </summary>
-        public bool RequiresRestartForConfigurationUpdate
+        public bool? RequiresRestartForConfigurationUpdate
         {
-            get { return this._requiresRestartForConfigurationUpdate.GetValueOrDefault(); }
+            get { return this._requiresRestartForConfigurationUpdate; }
             set { this._requiresRestartForConfigurationUpdate = value; }
         }
 

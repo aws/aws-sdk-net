@@ -69,32 +69,18 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             request.ResourcePath = "/flows/{flowIdentifier}/aliases/{flowAliasIdentifier}";
             using (MemoryStream memoryStream = new MemoryStream())
             {
-<<<<<<< HEAD
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-||||||| Commit version number update changes
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetInputs())
-=======
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEnableTrace())
-                {
-                    context.Writer.WritePropertyName("enableTrace");
-                    context.Writer.Write(publicRequest.EnableTrace);
-                }
-
-                if(publicRequest.IsSetInputs())
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
                 {
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;
                     writer.WriteObjectStart();
                     var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEnableTrace())
+                    {
+                        context.Writer.WritePropertyName("enableTrace");
+                        context.Writer.Write(publicRequest.EnableTrace.Value);
+                    }
+
                     if(publicRequest.IsSetInputs())
                     {
                         context.Writer.WritePropertyName("inputs");

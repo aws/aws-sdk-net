@@ -44,9 +44,9 @@ namespace Amazon.Billing.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime ActiveAfterInclusive
+        public DateTime? ActiveAfterInclusive
         {
-            get { return this._activeAfterInclusive.GetValueOrDefault(); }
+            get { return this._activeAfterInclusive; }
             set { this._activeAfterInclusive = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.Billing.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime ActiveBeforeInclusive
+        public DateTime? ActiveBeforeInclusive
         {
-            get { return this._activeBeforeInclusive.GetValueOrDefault(); }
+            get { return this._activeBeforeInclusive; }
             set { this._activeBeforeInclusive = value; }
         }
 

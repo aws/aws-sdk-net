@@ -48,9 +48,9 @@ namespace Amazon.WorkMail.Model
         ///  The date when the Personal Access Token ID was created. 
         /// </para>
         /// </summary>
-        public DateTime DateCreated
+        public DateTime? DateCreated
         {
-            get { return this._dateCreated.GetValueOrDefault(); }
+            get { return this._dateCreated; }
             set { this._dateCreated = value; }
         }
 
@@ -66,9 +66,9 @@ namespace Amazon.WorkMail.Model
         ///  The date when the Personal Access Token ID was last used. 
         /// </para>
         /// </summary>
-        public DateTime DateLastUsed
+        public DateTime? DateLastUsed
         {
-            get { return this._dateLastUsed.GetValueOrDefault(); }
+            get { return this._dateLastUsed; }
             set { this._dateLastUsed = value; }
         }
 
@@ -84,9 +84,9 @@ namespace Amazon.WorkMail.Model
         ///  The time when the Personal Access Token ID will expire. 
         /// </para>
         /// </summary>
-        public DateTime ExpiresTime
+        public DateTime? ExpiresTime
         {
-            get { return this._expiresTime.GetValueOrDefault(); }
+            get { return this._expiresTime; }
             set { this._expiresTime = value; }
         }
 

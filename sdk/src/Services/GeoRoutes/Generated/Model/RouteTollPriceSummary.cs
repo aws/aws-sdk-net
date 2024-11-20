@@ -67,9 +67,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Estimate
+        public bool? Estimate
         {
-            get { return this._estimate.GetValueOrDefault(); }
+            get { return this._estimate; }
             set { this._estimate = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool Range
+        public bool? Range
         {
-            get { return this._range.GetValueOrDefault(); }
+            get { return this._range; }
             set { this._range = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public double Value
+        public double? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

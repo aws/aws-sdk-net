@@ -114,7 +114,7 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("FilesPrepared", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     response.FilesPrepared = unmarshaller.Unmarshall(context);
                     continue;
                 }

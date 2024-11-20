@@ -75,31 +75,17 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Authorized.Value);
                     }
 
-<<<<<<< HEAD
+                    if(publicRequest.IsSetContainerFormat())
+                    {
+                        context.Writer.WritePropertyName("containerFormat");
+                        context.Writer.Write(publicRequest.ContainerFormat);
+                    }
+
                     if(publicRequest.IsSetInsecureIngest())
                     {
                         context.Writer.WritePropertyName("insecureIngest");
                         context.Writer.Write(publicRequest.InsecureIngest.Value);
                     }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetInsecureIngest())
-                {
-                    context.Writer.WritePropertyName("insecureIngest");
-                    context.Writer.Write(publicRequest.InsecureIngest);
-                }
-=======
-                if(publicRequest.IsSetContainerFormat())
-                {
-                    context.Writer.WritePropertyName("containerFormat");
-                    context.Writer.Write(publicRequest.ContainerFormat);
-                }
-
-                if(publicRequest.IsSetInsecureIngest())
-                {
-                    context.Writer.WritePropertyName("insecureIngest");
-                    context.Writer.Write(publicRequest.InsecureIngest);
-                }
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
                     if(publicRequest.IsSetLatencyMode())
                     {
@@ -107,36 +93,22 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.LatencyMode);
                     }
 
-<<<<<<< HEAD
+                    if(publicRequest.IsSetMultitrackInputConfiguration())
+                    {
+                        context.Writer.WritePropertyName("multitrackInputConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MultitrackInputConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.MultitrackInputConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetName())
                     {
                         context.Writer.WritePropertyName("name");
                         context.Writer.Write(publicRequest.Name);
                     }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-=======
-                if(publicRequest.IsSetMultitrackInputConfiguration())
-                {
-                    context.Writer.WritePropertyName("multitrackInputConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MultitrackInputConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.MultitrackInputConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
                     if(publicRequest.IsSetPlaybackRestrictionPolicyArn())
                     {

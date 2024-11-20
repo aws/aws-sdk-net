@@ -51,19 +51,19 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBreakpointPercentileThreshold())
             {
                 context.Writer.WritePropertyName("breakpointPercentileThreshold");
-                context.Writer.Write(requestObject.BreakpointPercentileThreshold);
+                context.Writer.Write(requestObject.BreakpointPercentileThreshold.Value);
             }
 
             if(requestObject.IsSetBufferSize())
             {
                 context.Writer.WritePropertyName("bufferSize");
-                context.Writer.Write(requestObject.BufferSize);
+                context.Writer.Write(requestObject.BufferSize.Value);
             }
 
             if(requestObject.IsSetMaxTokens())
             {
                 context.Writer.WritePropertyName("maxTokens");
-                context.Writer.Write(requestObject.MaxTokens);
+                context.Writer.Write(requestObject.MaxTokens.Value);
             }
 
         }

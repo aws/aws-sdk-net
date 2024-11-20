@@ -67,9 +67,9 @@ namespace Amazon.ApplicationInsights.Model
         /// were provided.
         /// </para>
         /// </summary>
-        public bool MissingWorkloadConfig
+        public bool? MissingWorkloadConfig
         {
-            get { return this._missingWorkloadConfig.GetValueOrDefault(); }
+            get { return this._missingWorkloadConfig; }
             set { this._missingWorkloadConfig = value; }
         }
 

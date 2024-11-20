@@ -60,7 +60,7 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("statusCode", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.StatusCode = unmarshaller.Unmarshall(context);
                     continue;
                 }

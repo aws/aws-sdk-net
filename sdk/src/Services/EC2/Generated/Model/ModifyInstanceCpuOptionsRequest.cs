@@ -63,9 +63,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int CoreCount
+        public int? CoreCount
         {
-            get { return this._coreCount.GetValueOrDefault(); }
+            get { return this._coreCount; }
             set { this._coreCount = value; }
         }
 
@@ -101,9 +101,9 @@ namespace Amazon.EC2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int ThreadsPerCore
+        public int? ThreadsPerCore
         {
-            get { return this._threadsPerCore.GetValueOrDefault(); }
+            get { return this._threadsPerCore; }
             set { this._threadsPerCore = value; }
         }
 

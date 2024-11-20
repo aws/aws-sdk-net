@@ -51,7 +51,7 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDisk())
             {
                 context.Writer.WritePropertyName("disk");
-                context.Writer.Write(requestObject.Disk);
+                context.Writer.Write(requestObject.Disk.Value);
             }
 
             if(requestObject.IsSetMachineType())
@@ -63,13 +63,13 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMemory())
             {
                 context.Writer.WritePropertyName("memory");
-                context.Writer.Write(requestObject.Memory);
+                context.Writer.Write(requestObject.Memory.Value);
             }
 
             if(requestObject.IsSetVCpu())
             {
                 context.Writer.WritePropertyName("vCpu");
-                context.Writer.Write(requestObject.VCpu);
+                context.Writer.Write(requestObject.VCpu.Value);
             }
 
         }

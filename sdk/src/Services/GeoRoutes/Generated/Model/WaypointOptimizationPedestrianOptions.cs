@@ -46,9 +46,9 @@ namespace Amazon.GeoRoutes.Model
         ///  <b>Unit</b>: <c>KilometersPerHour</c> 
         /// </para>
         /// </summary>
-        public double Speed
+        public double? Speed
         {
-            get { return this._speed.GetValueOrDefault(); }
+            get { return this._speed; }
             set { this._speed = value; }
         }
 

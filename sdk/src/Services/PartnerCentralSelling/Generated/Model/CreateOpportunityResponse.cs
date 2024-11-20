@@ -67,9 +67,9 @@ namespace Amazon.PartnerCentralSelling.Model
         /// is created, its value is <c>CreatedDate</c>. 
         /// </para>
         /// </summary>
-        public DateTime LastModifiedDate
+        public DateTime? LastModifiedDate
         {
-            get { return this._lastModifiedDate.GetValueOrDefault(); }
+            get { return this._lastModifiedDate; }
             set { this._lastModifiedDate = value; }
         }
 

@@ -98,9 +98,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int VersionCountToRetain
+        public int? VersionCountToRetain
         {
-            get { return this._versionCountToRetain.GetValueOrDefault(); }
+            get { return this._versionCountToRetain; }
             set { this._versionCountToRetain = value; }
         }
 
@@ -117,9 +117,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int VersionNumber
+        public int? VersionNumber
         {
-            get { return this._versionNumber.GetValueOrDefault(); }
+            get { return this._versionNumber; }
             set { this._versionNumber = value; }
         }
 

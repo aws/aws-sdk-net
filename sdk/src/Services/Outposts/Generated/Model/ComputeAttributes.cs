@@ -103,9 +103,9 @@ namespace Amazon.Outposts.Model
         /// The maximum number of vCPUs possible for the specified asset.
         /// </para>
         /// </summary>
-        public int MaxVcpus
+        public int? MaxVcpus
         {
-            get { return this._maxVcpus.GetValueOrDefault(); }
+            get { return this._maxVcpus; }
             set { this._maxVcpus = value; }
         }
 

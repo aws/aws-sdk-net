@@ -104,7 +104,7 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("modifiedTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.ModifiedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

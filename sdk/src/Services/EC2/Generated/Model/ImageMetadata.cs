@@ -127,9 +127,9 @@ namespace Amazon.EC2.Model
         /// (AMI owner) or explicit (shared with your account) launch permissions.
         /// </para>
         /// </summary>
-        public bool IsPublic
+        public bool? IsPublic
         {
-            get { return this._isPublic.GetValueOrDefault(); }
+            get { return this._isPublic; }
             set { this._isPublic = value; }
         }
 

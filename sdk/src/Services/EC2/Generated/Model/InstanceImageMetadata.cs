@@ -122,9 +122,9 @@ namespace Amazon.EC2.Model
         /// The time the instance was launched.
         /// </para>
         /// </summary>
-        public DateTime LaunchTime
+        public DateTime? LaunchTime
         {
-            get { return this._launchTime.GetValueOrDefault(); }
+            get { return this._launchTime; }
             set { this._launchTime = value; }
         }
 

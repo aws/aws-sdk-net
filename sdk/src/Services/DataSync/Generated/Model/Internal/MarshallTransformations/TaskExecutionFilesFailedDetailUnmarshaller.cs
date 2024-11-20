@@ -68,25 +68,25 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Delete", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Delete = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Prepare", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Prepare = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Transfer", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Transfer = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Verify", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Verify = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -65,7 +65,6 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             {
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-<<<<<<< HEAD
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;
                     writer.WriteObjectStart();
@@ -75,55 +74,6 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                         context.Writer.WritePropertyName("ClientRequestToken");
                         context.Writer.Write(publicRequest.ClientRequestToken);
                     }
-||||||| Commit version number update changes
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetFirmwareUpdateImage())
-                {
-                    context.Writer.WritePropertyName("FirmwareUpdateImage");
-                    context.Writer.Write(publicRequest.FirmwareUpdateImage);
-                }
-=======
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetDescriptor())
-                {
-                    context.Writer.WritePropertyName("Descriptor");
-                    context.Writer.Write(publicRequest.Descriptor);
-                }
-
-                if(publicRequest.IsSetFirmwareUpdateImage())
-                {
-                    context.Writer.WritePropertyName("FirmwareUpdateImage");
-                    context.Writer.Write(publicRequest.FirmwareUpdateImage);
-                }
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
                     else if(!(publicRequest.IsSetClientRequestToken()))
                     {
@@ -134,6 +84,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     {
                         context.Writer.WritePropertyName("Description");
                         context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetDescriptor())
+                    {
+                        context.Writer.WritePropertyName("Descriptor");
+                        context.Writer.Write(publicRequest.Descriptor);
                     }
 
                     if(publicRequest.IsSetFirmwareUpdateImage())

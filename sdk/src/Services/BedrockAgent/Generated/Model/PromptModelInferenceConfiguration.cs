@@ -100,50 +100,6 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-<<<<<<< HEAD
-        /// Gets and sets the property TopK. 
-        /// <para>
-        /// The number of most-likely candidates that the model considers for the next token during
-        /// generation.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0, Max=500)]
-        public int? TopK
-        {
-            get { return this._topk; }
-            set { this._topk = value; }
-        }
-
-        // Check to see if TopK property is set
-        internal bool IsSetTopK()
-        {
-            return this._topk.HasValue; 
-        }
-
-        /// <summary>
-||||||| Commit version number update changes
-        /// Gets and sets the property TopK. 
-        /// <para>
-        /// The number of most-likely candidates that the model considers for the next token during
-        /// generation.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0, Max=500)]
-        public int TopK
-        {
-            get { return this._topk.GetValueOrDefault(); }
-            set { this._topk = value; }
-        }
-
-        // Check to see if TopK property is set
-        internal bool IsSetTopK()
-        {
-            return this._topk.HasValue; 
-        }
-
-        /// <summary>
-=======
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
         /// Gets and sets the property TopP. 
         /// <para>
         /// The percentage of most-likely candidates that the model considers for the next token.

@@ -70,9 +70,9 @@ namespace Amazon.PartnerCentralSelling.Model
         ///  <c>DateTime</c> when the <c>Opportunity</c> was last created. 
         /// </para>
         /// </summary>
-        public DateTime CreatedDate
+        public DateTime? CreatedDate
         {
-            get { return this._createdDate.GetValueOrDefault(); }
+            get { return this._createdDate; }
             set { this._createdDate = value; }
         }
 
@@ -124,9 +124,9 @@ namespace Amazon.PartnerCentralSelling.Model
         ///  <c>DateTime</c> when the <c>Opportunity</c> was last modified. 
         /// </para>
         /// </summary>
-        public DateTime LastModifiedDate
+        public DateTime? LastModifiedDate
         {
-            get { return this._lastModifiedDate.GetValueOrDefault(); }
+            get { return this._lastModifiedDate; }
             set { this._lastModifiedDate = value; }
         }
 

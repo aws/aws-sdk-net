@@ -63,89 +63,92 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDataMigrationName())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("DataMigrationName");
-                    context.Writer.Write(publicRequest.DataMigrationName);
-                }
-
-                if(publicRequest.IsSetDataMigrationType())
-                {
-                    context.Writer.WritePropertyName("DataMigrationType");
-                    context.Writer.Write(publicRequest.DataMigrationType);
-                }
-
-                if(publicRequest.IsSetEnableCloudwatchLogs())
-                {
-                    context.Writer.WritePropertyName("EnableCloudwatchLogs");
-                    context.Writer.Write(publicRequest.EnableCloudwatchLogs);
-                }
-
-                if(publicRequest.IsSetMigrationProjectIdentifier())
-                {
-                    context.Writer.WritePropertyName("MigrationProjectIdentifier");
-                    context.Writer.Write(publicRequest.MigrationProjectIdentifier);
-                }
-
-                if(publicRequest.IsSetNumberOfJobs())
-                {
-                    context.Writer.WritePropertyName("NumberOfJobs");
-                    context.Writer.Write(publicRequest.NumberOfJobs);
-                }
-
-                if(publicRequest.IsSetSelectionRules())
-                {
-                    context.Writer.WritePropertyName("SelectionRules");
-                    context.Writer.Write(publicRequest.SelectionRules);
-                }
-
-                if(publicRequest.IsSetServiceAccessRoleArn())
-                {
-                    context.Writer.WritePropertyName("ServiceAccessRoleArn");
-                    context.Writer.Write(publicRequest.ServiceAccessRoleArn);
-                }
-
-                if(publicRequest.IsSetSourceDataSettings())
-                {
-                    context.Writer.WritePropertyName("SourceDataSettings");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSourceDataSettingsListValue in publicRequest.SourceDataSettings)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDataMigrationName())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SourceDataSettingMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSourceDataSettingsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("DataMigrationName");
+                        context.Writer.Write(publicRequest.DataMigrationName);
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    if(publicRequest.IsSetDataMigrationType())
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WritePropertyName("DataMigrationType");
+                        context.Writer.Write(publicRequest.DataMigrationType);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetEnableCloudwatchLogs())
+                    {
+                        context.Writer.WritePropertyName("EnableCloudwatchLogs");
+                        context.Writer.Write(publicRequest.EnableCloudwatchLogs.Value);
+                    }
+
+                    if(publicRequest.IsSetMigrationProjectIdentifier())
+                    {
+                        context.Writer.WritePropertyName("MigrationProjectIdentifier");
+                        context.Writer.Write(publicRequest.MigrationProjectIdentifier);
+                    }
+
+                    if(publicRequest.IsSetNumberOfJobs())
+                    {
+                        context.Writer.WritePropertyName("NumberOfJobs");
+                        context.Writer.Write(publicRequest.NumberOfJobs.Value);
+                    }
+
+                    if(publicRequest.IsSetSelectionRules())
+                    {
+                        context.Writer.WritePropertyName("SelectionRules");
+                        context.Writer.Write(publicRequest.SelectionRules);
+                    }
+
+                    if(publicRequest.IsSetServiceAccessRoleArn())
+                    {
+                        context.Writer.WritePropertyName("ServiceAccessRoleArn");
+                        context.Writer.Write(publicRequest.ServiceAccessRoleArn);
+                    }
+
+                    if(publicRequest.IsSetSourceDataSettings())
+                    {
+                        context.Writer.WritePropertyName("SourceDataSettings");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSourceDataSettingsListValue in publicRequest.SourceDataSettings)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = SourceDataSettingMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSourceDataSettingsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = TagMarshaller.Instance;
+                            marshaller.Marshall(publicRequestTagsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

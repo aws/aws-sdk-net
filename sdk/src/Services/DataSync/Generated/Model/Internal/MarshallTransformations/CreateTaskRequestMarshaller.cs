@@ -176,6 +176,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                         context.Writer.WriteArrayEnd();
                     }
 
+                    if(publicRequest.IsSetTaskMode())
+                    {
+                        context.Writer.WritePropertyName("TaskMode");
+                        context.Writer.Write(publicRequest.TaskMode);
+                    }
+
                     if(publicRequest.IsSetTaskReportConfig())
                     {
                         context.Writer.WritePropertyName("TaskReportConfig");
@@ -186,36 +192,6 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
 
                         context.Writer.WriteObjectEnd();
                     }
-<<<<<<< HEAD
-||||||| Commit version number update changes
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetTaskReportConfig())
-                {
-                    context.Writer.WritePropertyName("TaskReportConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TaskReportConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TaskReportConfig, context);
-=======
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetTaskMode())
-                {
-                    context.Writer.WritePropertyName("TaskMode");
-                    context.Writer.Write(publicRequest.TaskMode);
-                }
-
-                if(publicRequest.IsSetTaskReportConfig())
-                {
-                    context.Writer.WritePropertyName("TaskReportConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TaskReportConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TaskReportConfig, context);
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
                     writer.WriteObjectEnd();
                 }

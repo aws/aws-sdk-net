@@ -51,19 +51,19 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPrecise())
             {
                 context.Writer.WritePropertyName("Precise");
-                context.Writer.Write(requestObject.Precise);
+                context.Writer.Write(requestObject.Precise.Value);
             }
 
             if(requestObject.IsSetTimeOffset())
             {
                 context.Writer.WritePropertyName("TimeOffset");
-                if(StringUtils.IsSpecialFloatValue(requestObject.TimeOffset))
+                if(StringUtils.IsSpecialFloatValue(requestObject.TimeOffset.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.TimeOffset));
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.TimeOffset.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.TimeOffset);
+                    context.Writer.Write(requestObject.TimeOffset.Value);
                 }
             }
 

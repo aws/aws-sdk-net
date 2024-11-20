@@ -45,9 +45,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public int GeometryOffset
+        public int? GeometryOffset
         {
-            get { return this._geometryOffset.GetValueOrDefault(); }
+            get { return this._geometryOffset; }
             set { this._geometryOffset = value; }
         }
 

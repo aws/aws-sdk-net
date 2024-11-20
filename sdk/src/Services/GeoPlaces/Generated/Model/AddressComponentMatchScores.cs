@@ -55,9 +55,9 @@ namespace Amazon.GeoPlaces.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public double AddressNumber
+        public double? AddressNumber
         {
-            get { return this._addressNumber.GetValueOrDefault(); }
+            get { return this._addressNumber; }
             set { this._addressNumber = value; }
         }
 
@@ -78,9 +78,9 @@ namespace Amazon.GeoPlaces.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public double Block
+        public double? Block
         {
-            get { return this._block.GetValueOrDefault(); }
+            get { return this._block; }
             set { this._block = value; }
         }
 
@@ -97,9 +97,9 @@ namespace Amazon.GeoPlaces.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public double Building
+        public double? Building
         {
-            get { return this._building.GetValueOrDefault(); }
+            get { return this._building; }
             set { this._building = value; }
         }
 
@@ -117,9 +117,9 @@ namespace Amazon.GeoPlaces.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public double Country
+        public double? Country
         {
-            get { return this._country.GetValueOrDefault(); }
+            get { return this._country; }
             set { this._country = value; }
         }
 
@@ -136,9 +136,9 @@ namespace Amazon.GeoPlaces.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public double District
+        public double? District
         {
-            get { return this._district.GetValueOrDefault(); }
+            get { return this._district; }
             set { this._district = value; }
         }
 
@@ -182,9 +182,9 @@ namespace Amazon.GeoPlaces.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public double Locality
+        public double? Locality
         {
-            get { return this._locality.GetValueOrDefault(); }
+            get { return this._locality; }
             set { this._locality = value; }
         }
 
@@ -202,9 +202,9 @@ namespace Amazon.GeoPlaces.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public double PostalCode
+        public double? PostalCode
         {
-            get { return this._postalCode.GetValueOrDefault(); }
+            get { return this._postalCode; }
             set { this._postalCode = value; }
         }
 
@@ -225,9 +225,9 @@ namespace Amazon.GeoPlaces.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public double Region
+        public double? Region
         {
-            get { return this._region.GetValueOrDefault(); }
+            get { return this._region; }
             set { this._region = value; }
         }
 
@@ -248,9 +248,9 @@ namespace Amazon.GeoPlaces.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public double SubBlock
+        public double? SubBlock
         {
-            get { return this._subBlock.GetValueOrDefault(); }
+            get { return this._subBlock; }
             set { this._subBlock = value; }
         }
 
@@ -271,9 +271,9 @@ namespace Amazon.GeoPlaces.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public double SubDistrict
+        public double? SubDistrict
         {
-            get { return this._subDistrict.GetValueOrDefault(); }
+            get { return this._subDistrict; }
             set { this._subDistrict = value; }
         }
 
@@ -290,9 +290,9 @@ namespace Amazon.GeoPlaces.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
-        public double SubRegion
+        public double? SubRegion
         {
-            get { return this._subRegion.GetValueOrDefault(); }
+            get { return this._subRegion; }
             set { this._subRegion = value; }
         }
 

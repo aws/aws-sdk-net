@@ -84,7 +84,7 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
             if(requestObject.IsSetValidateEdi())
             {
                 context.Writer.WritePropertyName("validateEdi");
-                context.Writer.Write(requestObject.ValidateEdi);
+                context.Writer.Write(requestObject.ValidateEdi.Value);
             }
 
         }

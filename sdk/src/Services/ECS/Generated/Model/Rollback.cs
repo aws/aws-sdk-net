@@ -94,9 +94,9 @@ namespace Amazon.ECS.Model
         /// Time time that the rollback started. The format is yyyy-MM-dd HH:mm:ss.SSSSSS.
         /// </para>
         /// </summary>
-        public DateTime StartedAt
+        public DateTime? StartedAt
         {
-            get { return this._startedAt.GetValueOrDefault(); }
+            get { return this._startedAt; }
             set { this._startedAt = value; }
         }
 

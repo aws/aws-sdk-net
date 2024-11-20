@@ -104,9 +104,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=360)]
-        public double Heading
+        public double? Heading
         {
-            get { return this._heading.GetValueOrDefault(); }
+            get { return this._heading; }
             set { this._heading = value; }
         }
 
@@ -166,9 +166,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967295)]
-        public long ServiceDuration
+        public long? ServiceDuration
         {
-            get { return this._serviceDuration.GetValueOrDefault(); }
+            get { return this._serviceDuration; }
             set { this._serviceDuration = value; }
         }
 

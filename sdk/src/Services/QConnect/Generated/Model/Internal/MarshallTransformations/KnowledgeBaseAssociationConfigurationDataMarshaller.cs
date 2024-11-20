@@ -62,7 +62,7 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxResults())
             {
                 context.Writer.WritePropertyName("maxResults");
-                context.Writer.Write(requestObject.MaxResults);
+                context.Writer.Write(requestObject.MaxResults.Value);
             }
 
             if(requestObject.IsSetOverrideKnowledgeBaseSearchType())

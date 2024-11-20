@@ -51,19 +51,19 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAvoidActionsForDistance())
             {
                 context.Writer.WritePropertyName("AvoidActionsForDistance");
-                context.Writer.Write(requestObject.AvoidActionsForDistance);
+                context.Writer.Write(requestObject.AvoidActionsForDistance.Value);
             }
 
             if(requestObject.IsSetHeading())
             {
                 context.Writer.WritePropertyName("Heading");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Heading))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Heading.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Heading));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Heading.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Heading);
+                    context.Writer.Write(requestObject.Heading.Value);
                 }
             }
 

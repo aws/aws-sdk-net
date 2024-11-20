@@ -65,38 +65,24 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             request.ResourcePath = "/";
             using (MemoryStream memoryStream = new MemoryStream())
             {
-<<<<<<< HEAD
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-||||||| Commit version number update changes
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetFleetId())
-=======
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetComputeStatus())
-                {
-                    context.Writer.WritePropertyName("ComputeStatus");
-                    context.Writer.Write(publicRequest.ComputeStatus);
-                }
-
-                if(publicRequest.IsSetContainerGroupDefinitionName())
-                {
-                    context.Writer.WritePropertyName("ContainerGroupDefinitionName");
-                    context.Writer.Write(publicRequest.ContainerGroupDefinitionName);
-                }
-
-                if(publicRequest.IsSetFleetId())
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
                 {
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;
                     writer.WriteObjectStart();
                     var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetComputeStatus())
+                    {
+                        context.Writer.WritePropertyName("ComputeStatus");
+                        context.Writer.Write(publicRequest.ComputeStatus);
+                    }
+
+                    if(publicRequest.IsSetContainerGroupDefinitionName())
+                    {
+                        context.Writer.WritePropertyName("ContainerGroupDefinitionName");
+                        context.Writer.Write(publicRequest.ContainerGroupDefinitionName);
+                    }
+
                     if(publicRequest.IsSetFleetId())
                     {
                         context.Writer.WritePropertyName("FleetId");

@@ -189,33 +189,19 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                         var marshaller = EncryptionAtRestOptionsMarshaller.Instance;
                         marshaller.Marshall(publicRequest.EncryptionAtRestOptions, context);
 
-<<<<<<< HEAD
                         context.Writer.WriteObjectEnd();
                     }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetIPAddressType())
-                {
-                    context.Writer.WritePropertyName("IPAddressType");
-                    context.Writer.Write(publicRequest.IPAddressType);
-                }
-=======
-                if(publicRequest.IsSetIdentityCenterOptions())
-                {
-                    context.Writer.WritePropertyName("IdentityCenterOptions");
-                    context.Writer.WriteObjectStart();
 
-                    var marshaller = IdentityCenterOptionsInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.IdentityCenterOptions, context);
+                    if(publicRequest.IsSetIdentityCenterOptions())
+                    {
+                        context.Writer.WritePropertyName("IdentityCenterOptions");
+                        context.Writer.WriteObjectStart();
 
-                    context.Writer.WriteObjectEnd();
-                }
+                        var marshaller = IdentityCenterOptionsInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.IdentityCenterOptions, context);
 
-                if(publicRequest.IsSetIPAddressType())
-                {
-                    context.Writer.WritePropertyName("IPAddressType");
-                    context.Writer.Write(publicRequest.IPAddressType);
-                }
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
+                        context.Writer.WriteObjectEnd();
+                    }
 
                     if(publicRequest.IsSetIPAddressType())
                     {

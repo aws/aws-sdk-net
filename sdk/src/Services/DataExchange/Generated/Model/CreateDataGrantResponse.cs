@@ -75,9 +75,9 @@ namespace Amazon.DataExchange.Model
         /// The timestamp of when the data grant was accepted.
         /// </para>
         /// </summary>
-        public DateTime AcceptedAt
+        public DateTime? AcceptedAt
         {
-            get { return this._acceptedAt.GetValueOrDefault(); }
+            get { return this._acceptedAt; }
             set { this._acceptedAt = value; }
         }
 
@@ -113,9 +113,9 @@ namespace Amazon.DataExchange.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -169,9 +169,9 @@ namespace Amazon.DataExchange.Model
         /// The timestamp of when access to the associated data set ends.
         /// </para>
         /// </summary>
-        public DateTime EndsAt
+        public DateTime? EndsAt
         {
-            get { return this._endsAt.GetValueOrDefault(); }
+            get { return this._endsAt; }
             set { this._endsAt = value; }
         }
 
@@ -320,9 +320,9 @@ namespace Amazon.DataExchange.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

@@ -68,7 +68,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("level", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Level = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -51,13 +51,13 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetReadUnitsPerSecond())
             {
                 context.Writer.WritePropertyName("ReadUnitsPerSecond");
-                context.Writer.Write(requestObject.ReadUnitsPerSecond);
+                context.Writer.Write(requestObject.ReadUnitsPerSecond.Value);
             }
 
             if(requestObject.IsSetWriteUnitsPerSecond())
             {
                 context.Writer.WritePropertyName("WriteUnitsPerSecond");
-                context.Writer.Write(requestObject.WriteUnitsPerSecond);
+                context.Writer.Write(requestObject.WriteUnitsPerSecond.Value);
             }
 
         }

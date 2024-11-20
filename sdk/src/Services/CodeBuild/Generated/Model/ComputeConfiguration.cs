@@ -46,9 +46,9 @@ namespace Amazon.CodeBuild.Model
         /// The amount of disk space of the instance type included in your fleet.
         /// </para>
         /// </summary>
-        public long Disk
+        public long? Disk
         {
-            get { return this._disk.GetValueOrDefault(); }
+            get { return this._disk; }
             set { this._disk = value; }
         }
 
@@ -82,9 +82,9 @@ namespace Amazon.CodeBuild.Model
         /// The amount of memory of the instance type included in your fleet.
         /// </para>
         /// </summary>
-        public long Memory
+        public long? Memory
         {
-            get { return this._memory.GetValueOrDefault(); }
+            get { return this._memory; }
             set { this._memory = value; }
         }
 
@@ -100,9 +100,9 @@ namespace Amazon.CodeBuild.Model
         /// The number of vCPUs of the instance type included in your fleet.
         /// </para>
         /// </summary>
-        public long VCpu
+        public long? VCpu
         {
-            get { return this._vCpu.GetValueOrDefault(); }
+            get { return this._vCpu; }
             set { this._vCpu = value; }
         }
 

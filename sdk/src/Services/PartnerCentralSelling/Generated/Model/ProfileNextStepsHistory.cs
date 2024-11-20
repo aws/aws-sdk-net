@@ -46,9 +46,9 @@ namespace Amazon.PartnerCentralSelling.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime Time
+        public DateTime? Time
         {
-            get { return this._time.GetValueOrDefault(); }
+            get { return this._time; }
             set { this._time = value; }
         }
 

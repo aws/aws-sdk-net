@@ -148,9 +148,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// epoch time</a> format.
         /// </para>
         /// </summary>
-        public DateTime RequiresAuthenticationTimestamp
+        public DateTime? RequiresAuthenticationTimestamp
         {
-            get { return this._requiresAuthenticationTimestamp.GetValueOrDefault(); }
+            get { return this._requiresAuthenticationTimestamp; }
             set { this._requiresAuthenticationTimestamp = value; }
         }
 

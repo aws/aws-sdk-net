@@ -67,9 +67,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Max=252)]
-        public double MaxSpeed
+        public double? MaxSpeed
         {
-            get { return this._maxSpeed.GetValueOrDefault(); }
+            get { return this._maxSpeed; }
             set { this._maxSpeed = value; }
         }
 
@@ -90,9 +90,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int Occupancy
+        public int? Occupancy
         {
-            get { return this._occupancy.GetValueOrDefault(); }
+            get { return this._occupancy; }
             set { this._occupancy = value; }
         }
 

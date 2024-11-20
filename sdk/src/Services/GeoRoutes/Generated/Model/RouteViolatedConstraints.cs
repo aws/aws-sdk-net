@@ -61,9 +61,9 @@ namespace Amazon.GeoRoutes.Model
         /// on which hazardous materials are prohibited from being transported.
         /// </para>
         /// </summary>
-        public bool AllHazardsRestricted
+        public bool? AllHazardsRestricted
         {
-            get { return this._allHazardsRestricted.GetValueOrDefault(); }
+            get { return this._allHazardsRestricted; }
             set { this._allHazardsRestricted = value; }
         }
 
@@ -117,9 +117,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967295)]
-        public long MaxHeight
+        public long? MaxHeight
         {
-            get { return this._maxHeight.GetValueOrDefault(); }
+            get { return this._maxHeight; }
             set { this._maxHeight = value; }
         }
 
@@ -140,9 +140,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967295)]
-        public long MaxKpraLength
+        public long? MaxKpraLength
         {
-            get { return this._maxKpraLength.GetValueOrDefault(); }
+            get { return this._maxKpraLength; }
             set { this._maxKpraLength = value; }
         }
 
@@ -159,9 +159,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967295)]
-        public long MaxLength
+        public long? MaxLength
         {
-            get { return this._maxLength.GetValueOrDefault(); }
+            get { return this._maxLength; }
             set { this._maxLength = value; }
         }
 
@@ -182,9 +182,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967295)]
-        public long MaxPayloadCapacity
+        public long? MaxPayloadCapacity
         {
-            get { return this._maxPayloadCapacity.GetValueOrDefault(); }
+            get { return this._maxPayloadCapacity; }
             set { this._maxPayloadCapacity = value; }
         }
 
@@ -227,9 +227,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967295)]
-        public long MaxWeightPerAxle
+        public long? MaxWeightPerAxle
         {
-            get { return this._maxWeightPerAxle.GetValueOrDefault(); }
+            get { return this._maxWeightPerAxle; }
             set { this._maxWeightPerAxle = value; }
         }
 
@@ -268,9 +268,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967295)]
-        public long MaxWidth
+        public long? MaxWidth
         {
-            get { return this._maxWidth.GetValueOrDefault(); }
+            get { return this._maxWidth; }
             set { this._maxWidth = value; }
         }
 
@@ -326,9 +326,9 @@ namespace Amazon.GeoRoutes.Model
         /// The time dependent constraint.
         /// </para>
         /// </summary>
-        public bool TimeDependent
+        public bool? TimeDependent
         {
-            get { return this._timeDependent.GetValueOrDefault(); }
+            get { return this._timeDependent; }
             set { this._timeDependent = value; }
         }
 
@@ -366,9 +366,9 @@ namespace Amazon.GeoRoutes.Model
         /// Travel mode corresponding to the leg.
         /// </para>
         /// </summary>
-        public bool TravelMode
+        public bool? TravelMode
         {
-            get { return this._travelMode.GetValueOrDefault(); }
+            get { return this._travelMode; }
             set { this._travelMode = value; }
         }
 

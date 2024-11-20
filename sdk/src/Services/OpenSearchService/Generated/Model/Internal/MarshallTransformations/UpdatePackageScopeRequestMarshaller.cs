@@ -61,38 +61,41 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/2021-01-01/packages/updateScope";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetOperation())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Operation");
-                    context.Writer.Write(publicRequest.Operation);
-                }
-
-                if(publicRequest.IsSetPackageID())
-                {
-                    context.Writer.WritePropertyName("PackageID");
-                    context.Writer.Write(publicRequest.PackageID);
-                }
-
-                if(publicRequest.IsSetPackageUserList())
-                {
-                    context.Writer.WritePropertyName("PackageUserList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPackageUserListListValue in publicRequest.PackageUserList)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetOperation())
                     {
-                            context.Writer.Write(publicRequestPackageUserListListValue);
+                        context.Writer.WritePropertyName("Operation");
+                        context.Writer.Write(publicRequest.Operation);
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetPackageID())
+                    {
+                        context.Writer.WritePropertyName("PackageID");
+                        context.Writer.Write(publicRequest.PackageID);
+                    }
+
+                    if(publicRequest.IsSetPackageUserList())
+                    {
+                        context.Writer.WritePropertyName("PackageUserList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPackageUserListListValue in publicRequest.PackageUserList)
+                        {
+                                context.Writer.Write(publicRequestPackageUserListListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -34,16 +34,10 @@ namespace Amazon.IoTFleetHub
     public partial class AmazonIoTFleetHubConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("IoTFleetHub", "4.0.0.0");
 
         private static readonly AmazonIoTFleetHubEndpointResolver EndpointResolver =
             new AmazonIoTFleetHubEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("IoTFleetHub", "3.7.400.26");
-=======
-            InternalSDKUtils.BuildUserAgentString("IoTFleetHub", "3.7.400.53");
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
         private string _userAgent = UserAgentString;
         ///<summary>

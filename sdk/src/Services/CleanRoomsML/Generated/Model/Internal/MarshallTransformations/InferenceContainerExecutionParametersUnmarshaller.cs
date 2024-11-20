@@ -68,7 +68,7 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("maxPayloadInMB", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxPayloadInMB = unmarshaller.Unmarshall(context);
                     continue;
                 }

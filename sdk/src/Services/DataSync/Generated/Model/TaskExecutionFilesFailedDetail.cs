@@ -53,9 +53,9 @@ namespace Amazon.DataSync.Model
         /// The number of objects that DataSync fails to delete during your task execution.
         /// </para>
         /// </summary>
-        public long Delete
+        public long? Delete
         {
-            get { return this._delete.GetValueOrDefault(); }
+            get { return this._delete; }
             set { this._delete = value; }
         }
 
@@ -71,9 +71,9 @@ namespace Amazon.DataSync.Model
         /// The number of objects that DataSync fails to prepare during your task execution.
         /// </para>
         /// </summary>
-        public long Prepare
+        public long? Prepare
         {
-            get { return this._prepare.GetValueOrDefault(); }
+            get { return this._prepare; }
             set { this._prepare = value; }
         }
 
@@ -89,9 +89,9 @@ namespace Amazon.DataSync.Model
         /// The number of objects that DataSync fails to transfer during your task execution.
         /// </para>
         /// </summary>
-        public long Transfer
+        public long? Transfer
         {
-            get { return this._transfer.GetValueOrDefault(); }
+            get { return this._transfer; }
             set { this._transfer = value; }
         }
 
@@ -107,9 +107,9 @@ namespace Amazon.DataSync.Model
         /// The number of objects that DataSync fails to verify during your task execution.
         /// </para>
         /// </summary>
-        public long Verify
+        public long? Verify
         {
-            get { return this._verify.GetValueOrDefault(); }
+            get { return this._verify; }
             set { this._verify = value; }
         }
 

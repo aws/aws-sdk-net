@@ -65,9 +65,9 @@ namespace Amazon.GeoPlaces.Model
         /// Boolean which indicates if it the preferred pronunciation.
         /// </para>
         /// </summary>
-        public bool Preferred
+        public bool? Preferred
         {
-            get { return this._preferred.GetValueOrDefault(); }
+            get { return this._preferred; }
             set { this._preferred = value; }
         }
 

@@ -23,7 +23,7 @@ using Amazon.Runtime;
 using Amazon.ConnectCampaignsV2.Endpoints;
 using Amazon.ConnectCampaignsV2.Internal;
 
-namespace AWSSDK_DotNet35.UnitTests.Endpoints
+namespace AWSSDK_DotNet.UnitTests.Endpoints
 {
     [TestClass]
     public partial class ConnectCampaignsV2EndpointsTests

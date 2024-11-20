@@ -34,16 +34,10 @@ namespace Amazon.ResourceGroupsTaggingAPI
     public partial class AmazonResourceGroupsTaggingAPIConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Resource Groups Tagging API", "4.0.0.0");
 
         private static readonly AmazonResourceGroupsTaggingAPIEndpointResolver EndpointResolver =
             new AmazonResourceGroupsTaggingAPIEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("Resource Groups Tagging API", "3.7.400.26");
-=======
-            InternalSDKUtils.BuildUserAgentString("Resource Groups Tagging API", "3.7.400.53");
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
         private string _userAgent = UserAgentString;
         ///<summary>

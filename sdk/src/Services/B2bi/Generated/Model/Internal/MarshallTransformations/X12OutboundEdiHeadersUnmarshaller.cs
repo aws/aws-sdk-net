@@ -86,7 +86,7 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("validateEdi", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.ValidateEdi = unmarshaller.Unmarshall(context);
                     continue;
                 }

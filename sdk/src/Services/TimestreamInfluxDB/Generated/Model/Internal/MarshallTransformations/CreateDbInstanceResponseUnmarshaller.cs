@@ -126,7 +126,7 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("port", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     response.Port = unmarshaller.Unmarshall(context);
                     continue;
                 }

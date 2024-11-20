@@ -54,7 +54,7 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("mappingAccuracy", targetDepth))
                 {
-                    var unmarshaller = FloatUnmarshaller.Instance;
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
                     response.MappingAccuracy = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -122,20 +122,13 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("TotalMemoryLimitMebibytes", targetDepth))
                 {
-<<<<<<< HEAD
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TotalCpuLimit = unmarshaller.Unmarshall(context);
-||||||| Commit version number update changes
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.TotalCpuLimit = unmarshaller.Unmarshall(context);
-=======
-                    var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.TotalMemoryLimitMebibytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TotalVcpuLimit", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.TotalVcpuLimit = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -143,21 +136,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.VersionDescription = unmarshaller.Unmarshall(context);
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
                     continue;
                 }
                 if (context.TestExpression("VersionNumber", targetDepth))
                 {
-<<<<<<< HEAD
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TotalMemoryLimit = unmarshaller.Unmarshall(context);
-||||||| Commit version number update changes
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.TotalMemoryLimit = unmarshaller.Unmarshall(context);
-=======
-                    var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.VersionNumber = unmarshaller.Unmarshall(context);
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
                     continue;
                 }
             }

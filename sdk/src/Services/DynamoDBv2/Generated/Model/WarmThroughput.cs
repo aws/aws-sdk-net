@@ -45,9 +45,9 @@ namespace Amazon.DynamoDBv2.Model
         /// Represents the number of read operations your base table can instantaneously support.
         /// </para>
         /// </summary>
-        public long ReadUnitsPerSecond
+        public long? ReadUnitsPerSecond
         {
-            get { return this._readUnitsPerSecond.GetValueOrDefault(); }
+            get { return this._readUnitsPerSecond; }
             set { this._readUnitsPerSecond = value; }
         }
 
@@ -63,9 +63,9 @@ namespace Amazon.DynamoDBv2.Model
         /// Represents the number of write operations your base table can instantaneously support.
         /// </para>
         /// </summary>
-        public long WriteUnitsPerSecond
+        public long? WriteUnitsPerSecond
         {
-            get { return this._writeUnitsPerSecond.GetValueOrDefault(); }
+            get { return this._writeUnitsPerSecond; }
             set { this._writeUnitsPerSecond = value; }
         }
 

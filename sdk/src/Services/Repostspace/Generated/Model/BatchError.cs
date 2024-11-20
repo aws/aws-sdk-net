@@ -64,9 +64,9 @@ namespace Amazon.Repostspace.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Error
+        public int? Error
         {
-            get { return this._error.GetValueOrDefault(); }
+            get { return this._error; }
             set { this._error = value; }
         }
 

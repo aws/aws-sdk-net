@@ -51,13 +51,13 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHot())
             {
                 context.Writer.WritePropertyName("Hot");
-                context.Writer.Write(requestObject.Hot);
+                context.Writer.Write(requestObject.Hot.Value);
             }
 
             if(requestObject.IsSetHov())
             {
                 context.Writer.WritePropertyName("Hov");
-                context.Writer.Write(requestObject.Hov);
+                context.Writer.Write(requestObject.Hov.Value);
             }
 
         }

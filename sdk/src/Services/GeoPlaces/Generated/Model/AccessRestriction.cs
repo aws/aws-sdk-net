@@ -63,9 +63,9 @@ namespace Amazon.GeoPlaces.Model
         /// The restriction.
         /// </para>
         /// </summary>
-        public bool Restricted
+        public bool? Restricted
         {
-            get { return this._restricted.GetValueOrDefault(); }
+            get { return this._restricted; }
             set { this._restricted = value; }
         }
 

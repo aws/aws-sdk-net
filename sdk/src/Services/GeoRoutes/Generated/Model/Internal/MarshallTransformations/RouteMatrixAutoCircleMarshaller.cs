@@ -51,13 +51,13 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMargin())
             {
                 context.Writer.WritePropertyName("Margin");
-                context.Writer.Write(requestObject.Margin);
+                context.Writer.Write(requestObject.Margin.Value);
             }
 
             if(requestObject.IsSetMaxRadius())
             {
                 context.Writer.WritePropertyName("MaxRadius");
-                context.Writer.Write(requestObject.MaxRadius);
+                context.Writer.Write(requestObject.MaxRadius.Value);
             }
 
         }

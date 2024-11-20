@@ -51,7 +51,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLevel())
             {
                 context.Writer.WritePropertyName("level");
-                context.Writer.Write(requestObject.Level);
+                context.Writer.Write(requestObject.Level.Value);
             }
 
             if(requestObject.IsSetStatus())

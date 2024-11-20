@@ -68,7 +68,7 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("EndIndex", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.EndIndex = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -86,7 +86,7 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("StartIndex", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.StartIndex = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -67,37 +67,40 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 throw new AmazonOpenSearchServiceException("Request object does not have required field PackageID set");
             request.AddPathResource("{PackageID}", StringUtils.FromString(publicRequest.PackageID));
             request.ResourcePath = "/2021-01-01/packages/associate/{PackageID}/{DomainName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAssociationConfiguration())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("AssociationConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PackageAssociationConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.AssociationConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetPrerequisitePackageIDList())
-                {
-                    context.Writer.WritePropertyName("PrerequisitePackageIDList");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPrerequisitePackageIDListListValue in publicRequest.PrerequisitePackageIDList)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAssociationConfiguration())
                     {
-                            context.Writer.Write(publicRequestPrerequisitePackageIDListListValue);
+                        context.Writer.WritePropertyName("AssociationConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PackageAssociationConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AssociationConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetPrerequisitePackageIDList())
+                    {
+                        context.Writer.WritePropertyName("PrerequisitePackageIDList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPrerequisitePackageIDListListValue in publicRequest.PrerequisitePackageIDList)
+                        {
+                                context.Writer.Write(publicRequestPrerequisitePackageIDListListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

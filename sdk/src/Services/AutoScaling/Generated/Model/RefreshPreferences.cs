@@ -116,9 +116,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=172800)]
-        public int BakeTime
+        public int? BakeTime
         {
-            get { return this._bakeTime.GetValueOrDefault(); }
+            get { return this._bakeTime; }
             set { this._bakeTime = value; }
         }
 

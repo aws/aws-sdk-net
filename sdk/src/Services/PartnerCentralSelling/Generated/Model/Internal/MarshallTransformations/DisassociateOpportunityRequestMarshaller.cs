@@ -63,39 +63,42 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCatalog())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Catalog");
-                    context.Writer.Write(publicRequest.Catalog);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCatalog())
+                    {
+                        context.Writer.WritePropertyName("Catalog");
+                        context.Writer.Write(publicRequest.Catalog);
+                    }
+
+                    if(publicRequest.IsSetOpportunityIdentifier())
+                    {
+                        context.Writer.WritePropertyName("OpportunityIdentifier");
+                        context.Writer.Write(publicRequest.OpportunityIdentifier);
+                    }
+
+                    if(publicRequest.IsSetRelatedEntityIdentifier())
+                    {
+                        context.Writer.WritePropertyName("RelatedEntityIdentifier");
+                        context.Writer.Write(publicRequest.RelatedEntityIdentifier);
+                    }
+
+                    if(publicRequest.IsSetRelatedEntityType())
+                    {
+                        context.Writer.WritePropertyName("RelatedEntityType");
+                        context.Writer.Write(publicRequest.RelatedEntityType);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetOpportunityIdentifier())
-                {
-                    context.Writer.WritePropertyName("OpportunityIdentifier");
-                    context.Writer.Write(publicRequest.OpportunityIdentifier);
-                }
-
-                if(publicRequest.IsSetRelatedEntityIdentifier())
-                {
-                    context.Writer.WritePropertyName("RelatedEntityIdentifier");
-                    context.Writer.Write(publicRequest.RelatedEntityIdentifier);
-                }
-
-                if(publicRequest.IsSetRelatedEntityType())
-                {
-                    context.Writer.WritePropertyName("RelatedEntityType");
-                    context.Writer.Write(publicRequest.RelatedEntityType);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

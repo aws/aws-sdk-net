@@ -43,9 +43,9 @@ namespace Amazon.SupplyChain.Model
         /// The dataset load option to remove duplicates.
         /// </para>
         /// </summary>
-        public bool DedupeRecords
+        public bool? DedupeRecords
         {
-            get { return this._dedupeRecords.GetValueOrDefault(); }
+            get { return this._dedupeRecords; }
             set { this._dedupeRecords = value; }
         }
 

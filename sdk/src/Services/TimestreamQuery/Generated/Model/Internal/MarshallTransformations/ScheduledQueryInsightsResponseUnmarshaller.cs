@@ -68,13 +68,13 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("OutputBytes", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.OutputBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("OutputRows", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.OutputRows = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -86,7 +86,7 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("QueryTableCount", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.QueryTableCount = unmarshaller.Unmarshall(context);
                     continue;
                 }

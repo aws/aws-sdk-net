@@ -125,9 +125,9 @@ namespace Amazon.PartnerCentralSelling.Model
         /// section 5.6.
         /// </para>
         /// </summary>
-        public DateTime StartTime
+        public DateTime? StartTime
         {
-            get { return this._startTime.GetValueOrDefault(); }
+            get { return this._startTime; }
             set { this._startTime = value; }
         }
 

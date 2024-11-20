@@ -74,13 +74,13 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("CDCStartTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CDCStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CDCStopTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CDCStopTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

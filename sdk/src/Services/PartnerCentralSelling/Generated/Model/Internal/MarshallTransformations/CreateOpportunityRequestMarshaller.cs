@@ -63,138 +63,141 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCatalog())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Catalog");
-                    context.Writer.Write(publicRequest.Catalog);
-                }
-
-                if(publicRequest.IsSetClientToken())
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(publicRequest.ClientToken);
-                }
-
-                else if(!(publicRequest.IsSetClientToken()))
-                {
-                    context.Writer.WritePropertyName("ClientToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());
-                }
-                if(publicRequest.IsSetCustomer())
-                {
-                    context.Writer.WritePropertyName("Customer");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CustomerMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Customer, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetLifeCycle())
-                {
-                    context.Writer.WritePropertyName("LifeCycle");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = LifeCycleMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.LifeCycle, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetMarketing())
-                {
-                    context.Writer.WritePropertyName("Marketing");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = MarketingMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Marketing, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetNationalSecurity())
-                {
-                    context.Writer.WritePropertyName("NationalSecurity");
-                    context.Writer.Write(publicRequest.NationalSecurity);
-                }
-
-                if(publicRequest.IsSetOpportunityTeam())
-                {
-                    context.Writer.WritePropertyName("OpportunityTeam");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestOpportunityTeamListValue in publicRequest.OpportunityTeam)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCatalog())
                     {
+                        context.Writer.WritePropertyName("Catalog");
+                        context.Writer.Write(publicRequest.Catalog);
+                    }
+
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
+                    else if(!(publicRequest.IsSetClientToken()))
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(Guid.NewGuid().ToString());
+                    }
+                    if(publicRequest.IsSetCustomer())
+                    {
+                        context.Writer.WritePropertyName("Customer");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = ContactMarshaller.Instance;
-                        marshaller.Marshall(publicRequestOpportunityTeamListValue, context);
+                        var marshaller = CustomerMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Customer, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetOpportunityType())
-                {
-                    context.Writer.WritePropertyName("OpportunityType");
-                    context.Writer.Write(publicRequest.OpportunityType);
-                }
-
-                if(publicRequest.IsSetOrigin())
-                {
-                    context.Writer.WritePropertyName("Origin");
-                    context.Writer.Write(publicRequest.Origin);
-                }
-
-                if(publicRequest.IsSetPartnerOpportunityIdentifier())
-                {
-                    context.Writer.WritePropertyName("PartnerOpportunityIdentifier");
-                    context.Writer.Write(publicRequest.PartnerOpportunityIdentifier);
-                }
-
-                if(publicRequest.IsSetPrimaryNeedsFromAws())
-                {
-                    context.Writer.WritePropertyName("PrimaryNeedsFromAws");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestPrimaryNeedsFromAwsListValue in publicRequest.PrimaryNeedsFromAws)
+                    if(publicRequest.IsSetLifeCycle())
                     {
-                            context.Writer.Write(publicRequestPrimaryNeedsFromAwsListValue);
+                        context.Writer.WritePropertyName("LifeCycle");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LifeCycleMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.LifeCycle, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetMarketing())
+                    {
+                        context.Writer.WritePropertyName("Marketing");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MarketingMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Marketing, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetNationalSecurity())
+                    {
+                        context.Writer.WritePropertyName("NationalSecurity");
+                        context.Writer.Write(publicRequest.NationalSecurity);
+                    }
+
+                    if(publicRequest.IsSetOpportunityTeam())
+                    {
+                        context.Writer.WritePropertyName("OpportunityTeam");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestOpportunityTeamListValue in publicRequest.OpportunityTeam)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ContactMarshaller.Instance;
+                            marshaller.Marshall(publicRequestOpportunityTeamListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetOpportunityType())
+                    {
+                        context.Writer.WritePropertyName("OpportunityType");
+                        context.Writer.Write(publicRequest.OpportunityType);
+                    }
+
+                    if(publicRequest.IsSetOrigin())
+                    {
+                        context.Writer.WritePropertyName("Origin");
+                        context.Writer.Write(publicRequest.Origin);
+                    }
+
+                    if(publicRequest.IsSetPartnerOpportunityIdentifier())
+                    {
+                        context.Writer.WritePropertyName("PartnerOpportunityIdentifier");
+                        context.Writer.Write(publicRequest.PartnerOpportunityIdentifier);
+                    }
+
+                    if(publicRequest.IsSetPrimaryNeedsFromAws())
+                    {
+                        context.Writer.WritePropertyName("PrimaryNeedsFromAws");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPrimaryNeedsFromAwsListValue in publicRequest.PrimaryNeedsFromAws)
+                        {
+                                context.Writer.Write(publicRequestPrimaryNeedsFromAwsListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetProject())
+                    {
+                        context.Writer.WritePropertyName("Project");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ProjectMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Project, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSoftwareRevenue())
+                    {
+                        context.Writer.WritePropertyName("SoftwareRevenue");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SoftwareRevenueMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SoftwareRevenue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetProject())
-                {
-                    context.Writer.WritePropertyName("Project");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ProjectMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Project, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSoftwareRevenue())
-                {
-                    context.Writer.WritePropertyName("SoftwareRevenue");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SoftwareRevenueMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SoftwareRevenue, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -63,27 +63,30 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMessageFeedbackStatus())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("MessageFeedbackStatus");
-                    context.Writer.Write(publicRequest.MessageFeedbackStatus);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMessageFeedbackStatus())
+                    {
+                        context.Writer.WritePropertyName("MessageFeedbackStatus");
+                        context.Writer.Write(publicRequest.MessageFeedbackStatus);
+                    }
+
+                    if(publicRequest.IsSetMessageId())
+                    {
+                        context.Writer.WritePropertyName("MessageId");
+                        context.Writer.Write(publicRequest.MessageId);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMessageId())
-                {
-                    context.Writer.WritePropertyName("MessageId");
-                    context.Writer.Write(publicRequest.MessageId);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

@@ -46,9 +46,9 @@ namespace Amazon.RedshiftServerless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
-        public int Level
+        public int? Level
         {
-            get { return this._level.GetValueOrDefault(); }
+            get { return this._level; }
             set { this._level = value; }
         }
 

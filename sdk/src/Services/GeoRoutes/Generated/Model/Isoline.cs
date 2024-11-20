@@ -67,9 +67,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967295)]
-        public long DistanceThreshold
+        public long? DistanceThreshold
         {
-            get { return this._distanceThreshold.GetValueOrDefault(); }
+            get { return this._distanceThreshold; }
             set { this._distanceThreshold = value; }
         }
 
@@ -105,9 +105,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967295)]
-        public long TimeThreshold
+        public long? TimeThreshold
         {
-            get { return this._timeThreshold.GetValueOrDefault(); }
+            get { return this._timeThreshold; }
             set { this._timeThreshold = value; }
         }
 

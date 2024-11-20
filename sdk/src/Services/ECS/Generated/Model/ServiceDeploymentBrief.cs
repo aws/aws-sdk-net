@@ -73,9 +73,9 @@ namespace Amazon.ECS.Model
         /// The time that the service deployment was created. The format is yyyy-MM-dd HH:mm:ss.SSSSSS.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -91,9 +91,9 @@ namespace Amazon.ECS.Model
         /// The time that the service deployment completed. The format is yyyy-MM-dd HH:mm:ss.SSSSSS.
         /// </para>
         /// </summary>
-        public DateTime FinishedAt
+        public DateTime? FinishedAt
         {
-            get { return this._finishedAt.GetValueOrDefault(); }
+            get { return this._finishedAt; }
             set { this._finishedAt = value; }
         }
 
@@ -145,9 +145,9 @@ namespace Amazon.ECS.Model
         /// The time that the service deployment statred. The format is yyyy-MM-dd HH:mm:ss.SSSSSS.
         /// </para>
         /// </summary>
-        public DateTime StartedAt
+        public DateTime? StartedAt
         {
-            get { return this._startedAt.GetValueOrDefault(); }
+            get { return this._startedAt; }
             set { this._startedAt = value; }
         }
 

@@ -89,7 +89,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEssential())
             {
                 context.Writer.WritePropertyName("Essential");
-                context.Writer.Write(requestObject.Essential);
+                context.Writer.Write(requestObject.Essential.Value);
             }
 
             if(requestObject.IsSetHealthCheck())
@@ -112,7 +112,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMemoryHardLimitMebibytes())
             {
                 context.Writer.WritePropertyName("MemoryHardLimitMebibytes");
-                context.Writer.Write(requestObject.MemoryHardLimitMebibytes);
+                context.Writer.Write(requestObject.MemoryHardLimitMebibytes.Value);
             }
 
             if(requestObject.IsSetMountPoints())
@@ -145,13 +145,13 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             if(requestObject.IsSetVcpu())
             {
                 context.Writer.WritePropertyName("Vcpu");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Vcpu))
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Vcpu.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Vcpu));
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Vcpu.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Vcpu);
+                    context.Writer.Write(requestObject.Vcpu.Value);
                 }
             }
 

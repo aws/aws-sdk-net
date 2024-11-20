@@ -69,9 +69,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public int Radius
+        public int? Radius
         {
-            get { return this._radius.GetValueOrDefault(); }
+            get { return this._radius; }
             set { this._radius = value; }
         }
 

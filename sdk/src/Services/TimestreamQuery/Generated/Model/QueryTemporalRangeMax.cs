@@ -64,9 +64,9 @@ namespace Amazon.TimestreamQuery.Model
         /// The maximum duration in nanoseconds between the start and end of the query.
         /// </para>
         /// </summary>
-        public long Value
+        public long? Value
         {
-            get { return this._value.GetValueOrDefault(); }
+            get { return this._value; }
             set { this._value = value; }
         }
 

@@ -43,9 +43,9 @@ namespace Amazon.BedrockRuntime.Model
         /// The text characters that were guarded by the guardrail coverage.
         /// </para>
         /// </summary>
-        public int Guarded
+        public int? Guarded
         {
-            get { return this._guarded.GetValueOrDefault(); }
+            get { return this._guarded; }
             set { this._guarded = value; }
         }
 
@@ -61,9 +61,9 @@ namespace Amazon.BedrockRuntime.Model
         /// The total text characters by the guardrail coverage.
         /// </para>
         /// </summary>
-        public int Total
+        public int? Total
         {
-            get { return this._total.GetValueOrDefault(); }
+            get { return this._total; }
             set { this._total = value; }
         }
 

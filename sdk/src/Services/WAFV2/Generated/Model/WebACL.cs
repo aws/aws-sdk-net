@@ -428,9 +428,9 @@ namespace Amazon.WAFV2.Model
         /// and <c>PostProcessFirewallManagerRuleGroups</c>. 
         /// </para>
         /// </summary>
-        public bool RetrofittedByFirewallManager
+        public bool? RetrofittedByFirewallManager
         {
-            get { return this._retrofittedByFirewallManager.GetValueOrDefault(); }
+            get { return this._retrofittedByFirewallManager; }
             set { this._retrofittedByFirewallManager = value; }
         }
 

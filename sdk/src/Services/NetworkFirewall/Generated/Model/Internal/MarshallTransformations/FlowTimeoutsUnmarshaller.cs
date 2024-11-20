@@ -68,7 +68,7 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("TcpIdleTimeoutSeconds", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TcpIdleTimeoutSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }

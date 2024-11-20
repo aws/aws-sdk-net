@@ -64,26 +64,29 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 throw new AmazonIoTException("Request object does not have required field ThingTypeName set");
             request.AddPathResource("{thingTypeName}", StringUtils.FromString(publicRequest.ThingTypeName));
             request.ResourcePath = "/thing-types/{thingTypeName}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetThingTypeProperties())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("thingTypeProperties");
-                    context.Writer.WriteObjectStart();
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetThingTypeProperties())
+                    {
+                        context.Writer.WritePropertyName("thingTypeProperties");
+                        context.Writer.WriteObjectStart();
 
-                    var marshaller = ThingTypePropertiesMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ThingTypeProperties, context);
+                        var marshaller = ThingTypePropertiesMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ThingTypeProperties, context);
 
-                    context.Writer.WriteObjectEnd();
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

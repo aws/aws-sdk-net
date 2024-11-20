@@ -68,7 +68,7 @@ namespace Amazon.SupplyChain.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("dedupeRecords", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     unmarshalledObject.DedupeRecords = unmarshaller.Unmarshall(context);
                     continue;
                 }

@@ -44,9 +44,9 @@ namespace Amazon.OpenSearchService.Model
         /// The number of nodes of a particular node type in the cluster.
         /// </para>
         /// </summary>
-        public int Count
+        public int? Count
         {
-            get { return this._count.GetValueOrDefault(); }
+            get { return this._count; }
             set { this._count = value; }
         }
 
@@ -62,9 +62,9 @@ namespace Amazon.OpenSearchService.Model
         /// A boolean that indicates whether a particular node type is enabled or not.
         /// </para>
         /// </summary>
-        public bool Enabled
+        public bool? Enabled
         {
-            get { return this._enabled.GetValueOrDefault(); }
+            get { return this._enabled; }
             set { this._enabled = value; }
         }
 

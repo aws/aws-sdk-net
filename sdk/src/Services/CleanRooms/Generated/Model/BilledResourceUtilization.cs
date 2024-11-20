@@ -44,9 +44,9 @@ namespace Amazon.CleanRooms.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public double Units
+        public double? Units
         {
-            get { return this._units.GetValueOrDefault(); }
+            get { return this._units; }
             set { this._units = value; }
         }
 

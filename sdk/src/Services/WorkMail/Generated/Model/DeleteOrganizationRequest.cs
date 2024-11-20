@@ -89,9 +89,9 @@ namespace Amazon.WorkMail.Model
         /// authentication settings for any organization.
         /// </para>
         /// </summary>
-        public bool DeleteIdentityCenterApplication
+        public bool? DeleteIdentityCenterApplication
         {
-            get { return this._deleteIdentityCenterApplication.GetValueOrDefault(); }
+            get { return this._deleteIdentityCenterApplication; }
             set { this._deleteIdentityCenterApplication = value; }
         }
 

@@ -48,9 +48,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int FromPolygonIndex
+        public int? FromPolygonIndex
         {
-            get { return this._fromPolygonIndex.GetValueOrDefault(); }
+            get { return this._fromPolygonIndex; }
             set { this._fromPolygonIndex = value; }
         }
 
@@ -87,9 +87,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
-        public int ToPolygonIndex
+        public int? ToPolygonIndex
         {
-            get { return this._toPolygonIndex.GetValueOrDefault(); }
+            get { return this._toPolygonIndex; }
             set { this._toPolygonIndex = value; }
         }
 

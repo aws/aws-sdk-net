@@ -104,9 +104,9 @@ namespace Amazon.CleanRooms.Model
         /// the Spark analytics engine.
         /// </para>
         /// </summary>
-        public bool SingleFileOutput
+        public bool? SingleFileOutput
         {
-            get { return this._singleFileOutput.GetValueOrDefault(); }
+            get { return this._singleFileOutput; }
             set { this._singleFileOutput = value; }
         }
 

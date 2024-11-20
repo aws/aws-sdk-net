@@ -48,9 +48,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public long AvoidActionsForDistance
+        public long? AvoidActionsForDistance
         {
-            get { return this._avoidActionsForDistance.GetValueOrDefault(); }
+            get { return this._avoidActionsForDistance; }
             set { this._avoidActionsForDistance = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=360)]
-        public double Heading
+        public double? Heading
         {
-            get { return this._heading.GetValueOrDefault(); }
+            get { return this._heading; }
             set { this._heading = value; }
         }
 

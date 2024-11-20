@@ -62,9 +62,9 @@ namespace Amazon.ApplicationSignals.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10080)]
-        public int LookBackWindowMinutes
+        public int? LookBackWindowMinutes
         {
-            get { return this._lookBackWindowMinutes.GetValueOrDefault(); }
+            get { return this._lookBackWindowMinutes; }
             set { this._lookBackWindowMinutes = value; }
         }
 

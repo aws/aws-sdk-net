@@ -63,9 +63,9 @@ namespace Amazon.OpenSearchService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool KeyStoreAccessEnabled
+        public bool? KeyStoreAccessEnabled
         {
-            get { return this._keyStoreAccessEnabled.GetValueOrDefault(); }
+            get { return this._keyStoreAccessEnabled; }
             set { this._keyStoreAccessEnabled = value; }
         }
 

@@ -44,9 +44,9 @@ namespace Amazon.OpenSearchService.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool EncryptionEnabled
+        public bool? EncryptionEnabled
         {
-            get { return this._encryptionEnabled.GetValueOrDefault(); }
+            get { return this._encryptionEnabled; }
             set { this._encryptionEnabled = value; }
         }
 

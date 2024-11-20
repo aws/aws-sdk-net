@@ -72,7 +72,7 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("AddressNumberCorrected", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.AddressNumberCorrected = unmarshaller.Unmarshall(context);
                     continue;
                 }

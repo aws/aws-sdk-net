@@ -316,9 +316,9 @@ namespace Amazon.DataSync.Model
         /// destination without comparing differences between the locations.
         /// </para>
         /// </summary>
-        public long FilesPrepared
+        public long? FilesPrepared
         {
-            get { return this._filesPrepared.GetValueOrDefault(); }
+            get { return this._filesPrepared; }
             set { this._filesPrepared = value; }
         }
 

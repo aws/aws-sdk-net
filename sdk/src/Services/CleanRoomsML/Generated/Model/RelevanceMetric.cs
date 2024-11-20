@@ -59,14 +59,8 @@ namespace Amazon.CleanRoomsML.Model
         /// The relevance score of the generated audience.
         /// </para>
         /// </summary>
-<<<<<<< HEAD
-        public double? Score
-||||||| Commit version number update changes
-        public double Score
-=======
         [AWSProperty(Min=0, Max=10)]
-        public double Score
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
+        public double? Score
         {
             get { return this._score; }
             set { this._score = value; }

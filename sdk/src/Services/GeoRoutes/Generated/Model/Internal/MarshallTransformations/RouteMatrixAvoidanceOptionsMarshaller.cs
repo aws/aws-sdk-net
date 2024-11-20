@@ -67,37 +67,37 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCarShuttleTrains())
             {
                 context.Writer.WritePropertyName("CarShuttleTrains");
-                context.Writer.Write(requestObject.CarShuttleTrains);
+                context.Writer.Write(requestObject.CarShuttleTrains.Value);
             }
 
             if(requestObject.IsSetControlledAccessHighways())
             {
                 context.Writer.WritePropertyName("ControlledAccessHighways");
-                context.Writer.Write(requestObject.ControlledAccessHighways);
+                context.Writer.Write(requestObject.ControlledAccessHighways.Value);
             }
 
             if(requestObject.IsSetDirtRoads())
             {
                 context.Writer.WritePropertyName("DirtRoads");
-                context.Writer.Write(requestObject.DirtRoads);
+                context.Writer.Write(requestObject.DirtRoads.Value);
             }
 
             if(requestObject.IsSetFerries())
             {
                 context.Writer.WritePropertyName("Ferries");
-                context.Writer.Write(requestObject.Ferries);
+                context.Writer.Write(requestObject.Ferries.Value);
             }
 
             if(requestObject.IsSetTollRoads())
             {
                 context.Writer.WritePropertyName("TollRoads");
-                context.Writer.Write(requestObject.TollRoads);
+                context.Writer.Write(requestObject.TollRoads.Value);
             }
 
             if(requestObject.IsSetTollTransponders())
             {
                 context.Writer.WritePropertyName("TollTransponders");
-                context.Writer.Write(requestObject.TollTransponders);
+                context.Writer.Write(requestObject.TollTransponders.Value);
             }
 
             if(requestObject.IsSetTruckRoadTypes())
@@ -114,13 +114,13 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTunnels())
             {
                 context.Writer.WritePropertyName("Tunnels");
-                context.Writer.Write(requestObject.Tunnels);
+                context.Writer.Write(requestObject.Tunnels.Value);
             }
 
             if(requestObject.IsSetUTurns())
             {
                 context.Writer.WritePropertyName("UTurns");
-                context.Writer.Write(requestObject.UTurns);
+                context.Writer.Write(requestObject.UTurns.Value);
             }
 
             if(requestObject.IsSetZoneCategories())

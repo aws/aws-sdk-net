@@ -86,7 +86,7 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("linkDate", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LinkDate = unmarshaller.Unmarshall(context);
                     continue;
                 }

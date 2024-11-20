@@ -64,39 +64,42 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
                 throw new AmazonMWAAException("Request object does not have required field Name set");
             request.AddPathResource("{Name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/restapi/{Name}";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBody())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Body");
-                    Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, publicRequest.Body);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBody())
+                    {
+                        context.Writer.WritePropertyName("Body");
+                        Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, publicRequest.Body);
+                    }
+
+                    if(publicRequest.IsSetMethod())
+                    {
+                        context.Writer.WritePropertyName("Method");
+                        context.Writer.Write(publicRequest.Method);
+                    }
+
+                    if(publicRequest.IsSetPath())
+                    {
+                        context.Writer.WritePropertyName("Path");
+                        context.Writer.Write(publicRequest.Path);
+                    }
+
+                    if(publicRequest.IsSetQueryParameters())
+                    {
+                        context.Writer.WritePropertyName("QueryParameters");
+                        Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, publicRequest.QueryParameters);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetMethod())
-                {
-                    context.Writer.WritePropertyName("Method");
-                    context.Writer.Write(publicRequest.Method);
-                }
-
-                if(publicRequest.IsSetPath())
-                {
-                    context.Writer.WritePropertyName("Path");
-                    context.Writer.Write(publicRequest.Path);
-                }
-
-                if(publicRequest.IsSetQueryParameters())
-                {
-                    context.Writer.WritePropertyName("QueryParameters");
-                    Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, publicRequest.QueryParameters);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
             

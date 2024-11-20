@@ -114,7 +114,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("IncludeFolderMemberships", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.IncludeFolderMemberships = unmarshaller.Unmarshall(context);
                     continue;
                 }

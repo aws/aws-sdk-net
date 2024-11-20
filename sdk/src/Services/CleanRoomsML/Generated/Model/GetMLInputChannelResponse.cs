@@ -99,9 +99,9 @@ namespace Amazon.CleanRoomsML.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime CreateTime
+        public DateTime? CreateTime
         {
-            get { return this._createTime.GetValueOrDefault(); }
+            get { return this._createTime; }
             set { this._createTime = value; }
         }
 
@@ -233,9 +233,9 @@ namespace Amazon.CleanRoomsML.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000000)]
-        public double NumberOfFiles
+        public double? NumberOfFiles
         {
-            get { return this._numberOfFiles.GetValueOrDefault(); }
+            get { return this._numberOfFiles; }
             set { this._numberOfFiles = value; }
         }
 
@@ -252,9 +252,9 @@ namespace Amazon.CleanRoomsML.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100000000000)]
-        public long NumberOfRecords
+        public long? NumberOfRecords
         {
-            get { return this._numberOfRecords.GetValueOrDefault(); }
+            get { return this._numberOfRecords; }
             set { this._numberOfRecords = value; }
         }
 
@@ -290,9 +290,9 @@ namespace Amazon.CleanRoomsML.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=30)]
-        public int RetentionInDays
+        public int? RetentionInDays
         {
-            get { return this._retentionInDays.GetValueOrDefault(); }
+            get { return this._retentionInDays; }
             set { this._retentionInDays = value; }
         }
 
@@ -309,9 +309,9 @@ namespace Amazon.CleanRoomsML.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000000)]
-        public double SizeInGb
+        public double? SizeInGb
         {
-            get { return this._sizeInGb.GetValueOrDefault(); }
+            get { return this._sizeInGb; }
             set { this._sizeInGb = value; }
         }
 
@@ -425,9 +425,9 @@ namespace Amazon.CleanRoomsML.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime UpdateTime
+        public DateTime? UpdateTime
         {
-            get { return this._updateTime.GetValueOrDefault(); }
+            get { return this._updateTime; }
             set { this._updateTime = value; }
         }
 

@@ -69,9 +69,9 @@ namespace Amazon.IoTWireless.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=60000)]
-        public int TransmissionInterval
+        public int? TransmissionInterval
         {
-            get { return this._transmissionInterval.GetValueOrDefault(); }
+            get { return this._transmissionInterval; }
             set { this._transmissionInterval = value; }
         }
 

@@ -54,19 +54,19 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("DateCreated", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.DateCreated = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DateLastUsed", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.DateLastUsed = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ExpiresTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ExpiresTime = unmarshaller.Unmarshall(context);
                     continue;
                 }

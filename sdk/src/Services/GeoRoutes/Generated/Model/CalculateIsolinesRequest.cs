@@ -133,9 +133,9 @@ namespace Amazon.GeoRoutes.Model
         /// Uses the current time as the time of departure.
         /// </para>
         /// </summary>
-        public bool DepartNow
+        public bool? DepartNow
         {
-            get { return this._departNow.GetValueOrDefault(); }
+            get { return this._departNow; }
             set { this._departNow = value; }
         }
 

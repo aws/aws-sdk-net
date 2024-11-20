@@ -101,9 +101,9 @@ namespace Amazon.ECS.Model
         /// The time the service deployment was created. The format is yyyy-MM-dd HH:mm:ss.SSSSSS.
         /// </para>
         /// </summary>
-        public DateTime CreatedAt
+        public DateTime? CreatedAt
         {
-            get { return this._createdAt.GetValueOrDefault(); }
+            get { return this._createdAt; }
             set { this._createdAt = value; }
         }
 
@@ -152,9 +152,9 @@ namespace Amazon.ECS.Model
         /// The time the service deployment finished. The format is yyyy-MM-dd HH:mm:ss.SSSSSS.
         /// </para>
         /// </summary>
-        public DateTime FinishedAt
+        public DateTime? FinishedAt
         {
-            get { return this._finishedAt.GetValueOrDefault(); }
+            get { return this._finishedAt; }
             set { this._finishedAt = value; }
         }
 
@@ -242,9 +242,9 @@ namespace Amazon.ECS.Model
         /// The time the service deployment statred. The format is yyyy-MM-dd HH:mm:ss.SSSSSS.
         /// </para>
         /// </summary>
-        public DateTime StartedAt
+        public DateTime? StartedAt
         {
-            get { return this._startedAt.GetValueOrDefault(); }
+            get { return this._startedAt; }
             set { this._startedAt = value; }
         }
 
@@ -311,9 +311,9 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public DateTime StoppedAt
+        public DateTime? StoppedAt
         {
-            get { return this._stoppedAt.GetValueOrDefault(); }
+            get { return this._stoppedAt; }
             set { this._stoppedAt = value; }
         }
 
@@ -347,9 +347,9 @@ namespace Amazon.ECS.Model
         /// The time that the service deployment was last updated. The format is yyyy-MM-dd HH:mm:ss.SSSSSS.
         /// </para>
         /// </summary>
-        public DateTime UpdatedAt
+        public DateTime? UpdatedAt
         {
-            get { return this._updatedAt.GetValueOrDefault(); }
+            get { return this._updatedAt; }
             set { this._updatedAt = value; }
         }
 

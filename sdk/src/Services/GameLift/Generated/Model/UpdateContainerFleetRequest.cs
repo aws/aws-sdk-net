@@ -218,9 +218,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5000)]
-        public int GameServerContainerGroupsPerInstance
+        public int? GameServerContainerGroupsPerInstance
         {
-            get { return this._gameServerContainerGroupsPerInstance.GetValueOrDefault(); }
+            get { return this._gameServerContainerGroupsPerInstance; }
             set { this._gameServerContainerGroupsPerInstance = value; }
         }
 

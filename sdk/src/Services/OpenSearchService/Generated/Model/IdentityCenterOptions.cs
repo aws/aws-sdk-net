@@ -47,9 +47,9 @@ namespace Amazon.OpenSearchService.Model
         /// True to enable IAM Identity Center for API access in Amazon OpenSearch Service.
         /// </para>
         /// </summary>
-        public bool EnabledAPIAccess
+        public bool? EnabledAPIAccess
         {
-            get { return this._enabledAPIAccess.GetValueOrDefault(); }
+            get { return this._enabledAPIAccess; }
             set { this._enabledAPIAccess = value; }
         }
 

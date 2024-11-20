@@ -52,9 +52,9 @@ namespace Amazon.DataSync.Model
         /// your task</a> to delete data in the destination that isn't in the source.
         /// </para>
         /// </summary>
-        public long AtDestinationForDelete
+        public long? AtDestinationForDelete
         {
-            get { return this._atDestinationForDelete.GetValueOrDefault(); }
+            get { return this._atDestinationForDelete; }
             set { this._atDestinationForDelete = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public long AtSource
+        public long? AtSource
         {
-            get { return this._atSource.GetValueOrDefault(); }
+            get { return this._atSource; }
             set { this._atSource = value; }
         }
 

@@ -43,9 +43,9 @@ namespace Amazon.QConnect.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=8192)]
-        public int MaxTokens
+        public int? MaxTokens
         {
-            get { return this._maxTokens.GetValueOrDefault(); }
+            get { return this._maxTokens; }
             set { this._maxTokens = value; }
         }
 

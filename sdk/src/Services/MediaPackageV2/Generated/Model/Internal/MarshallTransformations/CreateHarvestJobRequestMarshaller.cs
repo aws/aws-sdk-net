@@ -70,74 +70,77 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                 throw new AmazonMediaPackageV2Exception("Request object does not have required field OriginEndpointName set");
             request.AddPathResource("{OriginEndpointName}", StringUtils.FromString(publicRequest.OriginEndpointName));
             request.ResourcePath = "/channelGroup/{ChannelGroupName}/channel/{ChannelName}/originEndpoint/{OriginEndpointName}/harvestJob";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDescription())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetDestination())
-                {
-                    context.Writer.WritePropertyName("Destination");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = DestinationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Destination, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetHarvestedManifests())
-                {
-                    context.Writer.WritePropertyName("HarvestedManifests");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = HarvestedManifestsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.HarvestedManifests, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetHarvestJobName())
-                {
-                    context.Writer.WritePropertyName("HarvestJobName");
-                    context.Writer.Write(publicRequest.HarvestJobName);
-                }
-
-                if(publicRequest.IsSetScheduleConfiguration())
-                {
-                    context.Writer.WritePropertyName("ScheduleConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = HarvesterScheduleConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ScheduleConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetDescription())
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        context.Writer.WritePropertyName("Description");
+                        context.Writer.Write(publicRequest.Description);
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    if(publicRequest.IsSetDestination())
+                    {
+                        context.Writer.WritePropertyName("Destination");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DestinationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Destination, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetHarvestedManifests())
+                    {
+                        context.Writer.WritePropertyName("HarvestedManifests");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = HarvestedManifestsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.HarvestedManifests, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetHarvestJobName())
+                    {
+                        context.Writer.WritePropertyName("HarvestJobName");
+                        context.Writer.Write(publicRequest.HarvestJobName);
+                    }
+
+                    if(publicRequest.IsSetScheduleConfiguration())
+                    {
+                        context.Writer.WritePropertyName("ScheduleConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = HarvesterScheduleConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ScheduleConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetTags())
+                    {
+                        context.Writer.WritePropertyName("Tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
         

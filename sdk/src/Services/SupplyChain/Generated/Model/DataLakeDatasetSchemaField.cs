@@ -45,9 +45,9 @@ namespace Amazon.SupplyChain.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public bool IsRequired
+        public bool? IsRequired
         {
-            get { return this._isRequired.GetValueOrDefault(); }
+            get { return this._isRequired; }
             set { this._isRequired = value; }
         }
 

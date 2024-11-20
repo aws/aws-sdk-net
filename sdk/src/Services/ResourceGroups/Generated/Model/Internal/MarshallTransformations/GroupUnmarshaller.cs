@@ -74,7 +74,7 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("Criticality", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Criticality = unmarshaller.Unmarshall(context);
                     continue;
                 }

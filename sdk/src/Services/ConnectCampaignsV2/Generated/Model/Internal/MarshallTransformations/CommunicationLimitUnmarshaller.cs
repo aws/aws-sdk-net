@@ -68,13 +68,13 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("frequency", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Frequency = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("maxCountPerRecipient", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MaxCountPerRecipient = unmarshaller.Unmarshall(context);
                     continue;
                 }

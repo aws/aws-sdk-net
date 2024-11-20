@@ -68,13 +68,13 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("AtDestinationForDelete", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.AtDestinationForDelete = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AtSource", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.AtSource = unmarshaller.Unmarshall(context);
                     continue;
                 }

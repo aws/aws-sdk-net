@@ -104,9 +104,9 @@ namespace Amazon.GeoPlaces.Model
         /// Boolean which indicates if the result/place is currently open. 
         /// </para>
         /// </summary>
-        public bool OpenNow
+        public bool? OpenNow
         {
-            get { return this._openNow.GetValueOrDefault(); }
+            get { return this._openNow; }
             set { this._openNow = value; }
         }
 

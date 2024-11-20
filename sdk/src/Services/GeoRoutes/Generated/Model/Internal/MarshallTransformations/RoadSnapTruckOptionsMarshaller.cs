@@ -51,7 +51,7 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGrossWeight())
             {
                 context.Writer.WritePropertyName("GrossWeight");
-                context.Writer.Write(requestObject.GrossWeight);
+                context.Writer.Write(requestObject.GrossWeight.Value);
             }
 
             if(requestObject.IsSetHazardousCargos())
@@ -68,13 +68,13 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHeight())
             {
                 context.Writer.WritePropertyName("Height");
-                context.Writer.Write(requestObject.Height);
+                context.Writer.Write(requestObject.Height.Value);
             }
 
             if(requestObject.IsSetLength())
             {
                 context.Writer.WritePropertyName("Length");
-                context.Writer.Write(requestObject.Length);
+                context.Writer.Write(requestObject.Length.Value);
             }
 
             if(requestObject.IsSetTrailer())
@@ -97,7 +97,7 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetWidth())
             {
                 context.Writer.WritePropertyName("Width");
-                context.Writer.Write(requestObject.Width);
+                context.Writer.Write(requestObject.Width.Value);
             }
 
         }

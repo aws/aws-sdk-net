@@ -61,37 +61,40 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/v1/whatsapp/waba/eventdestinations";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEventDestinations())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("eventDestinations");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEventDestinationsListValue in publicRequest.EventDestinations)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEventDestinations())
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("eventDestinations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestEventDestinationsListValue in publicRequest.EventDestinations)
+                        {
+                            context.Writer.WriteObjectStart();
 
-                        var marshaller = WhatsAppBusinessAccountEventDestinationMarshaller.Instance;
-                        marshaller.Marshall(publicRequestEventDestinationsListValue, context);
+                            var marshaller = WhatsAppBusinessAccountEventDestinationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestEventDestinationsListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
-                    context.Writer.WriteArrayEnd();
+
+                    if(publicRequest.IsSetId())
+                    {
+                        context.Writer.WritePropertyName("id");
+                        context.Writer.Write(publicRequest.Id);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetId())
-                {
-                    context.Writer.WritePropertyName("id");
-                    context.Writer.Write(publicRequest.Id);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

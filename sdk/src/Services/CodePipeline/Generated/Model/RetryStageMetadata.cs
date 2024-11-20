@@ -47,9 +47,9 @@ namespace Amazon.CodePipeline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int AutoStageRetryAttempt
+        public int? AutoStageRetryAttempt
         {
-            get { return this._autoStageRetryAttempt.GetValueOrDefault(); }
+            get { return this._autoStageRetryAttempt; }
             set { this._autoStageRetryAttempt = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.CodePipeline.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public int ManualStageRetryAttempt
+        public int? ManualStageRetryAttempt
         {
-            get { return this._manualStageRetryAttempt.GetValueOrDefault(); }
+            get { return this._manualStageRetryAttempt; }
             set { this._manualStageRetryAttempt = value; }
         }
 

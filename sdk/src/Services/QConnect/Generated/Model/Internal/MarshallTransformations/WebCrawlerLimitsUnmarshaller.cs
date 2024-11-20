@@ -68,7 +68,7 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("rateLimit", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RateLimit = unmarshaller.Unmarshall(context);
                     continue;
                 }

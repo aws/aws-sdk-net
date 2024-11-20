@@ -82,36 +82,22 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
                         context.Writer.WriteArrayEnd();
                     }
 
-<<<<<<< HEAD
+                    if(publicRequest.IsSetCapabilityOptions())
+                    {
+                        context.Writer.WritePropertyName("capabilityOptions");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CapabilityOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CapabilityOptions, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetName())
                     {
                         context.Writer.WritePropertyName("name");
                         context.Writer.Write(publicRequest.Name);
                     }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-=======
-                if(publicRequest.IsSetCapabilityOptions())
-                {
-                    context.Writer.WritePropertyName("capabilityOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CapabilityOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.CapabilityOptions, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
                     if(publicRequest.IsSetPartnershipId())
                     {

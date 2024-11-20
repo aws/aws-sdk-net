@@ -94,7 +94,6 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.ClientToken);
                     }
 
-<<<<<<< HEAD
                     else if(!(publicRequest.IsSetClientToken()))
                     {
                         context.Writer.WritePropertyName("clientToken");
@@ -105,28 +104,6 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
                         context.Writer.WritePropertyName("description");
                         context.Writer.Write(publicRequest.Description);
                     }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetLogConfiguration())
-                {
-                    context.Writer.WritePropertyName("logConfiguration");
-                    context.Writer.WriteObjectStart();
-=======
-                if(publicRequest.IsSetExperimentReportConfiguration())
-                {
-                    context.Writer.WritePropertyName("experimentReportConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = CreateExperimentTemplateReportConfigurationInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ExperimentReportConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetLogConfiguration())
-                {
-                    context.Writer.WritePropertyName("logConfiguration");
-                    context.Writer.WriteObjectStart();
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
                     if(publicRequest.IsSetExperimentOptions())
                     {
@@ -135,6 +112,17 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
 
                         var marshaller = CreateExperimentTemplateExperimentOptionsInputMarshaller.Instance;
                         marshaller.Marshall(publicRequest.ExperimentOptions, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetExperimentReportConfiguration())
+                    {
+                        context.Writer.WritePropertyName("experimentReportConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CreateExperimentTemplateReportConfigurationInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ExperimentReportConfiguration, context);
 
                         context.Writer.WriteObjectEnd();
                     }

@@ -42,9 +42,9 @@ namespace Amazon.GeoRoutes.Model
         /// Walking speed in Kilometers per hour.
         /// </para>
         /// </summary>
-        public double Speed
+        public double? Speed
         {
-            get { return this._speed.GetValueOrDefault(); }
+            get { return this._speed; }
             set { this._speed = value; }
         }
 

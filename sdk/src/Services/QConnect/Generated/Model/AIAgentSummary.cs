@@ -168,9 +168,9 @@ namespace Amazon.QConnect.Model
         /// The time the AI Agent was last modified.
         /// </para>
         /// </summary>
-        public DateTime ModifiedTime
+        public DateTime? ModifiedTime
         {
-            get { return this._modifiedTime.GetValueOrDefault(); }
+            get { return this._modifiedTime; }
             set { this._modifiedTime = value; }
         }
 

@@ -55,9 +55,9 @@ namespace Amazon.ECS.Model
         /// The number of times the circuit breaker detected a service deploymeny failure.
         /// </para>
         /// </summary>
-        public int FailureCount
+        public int? FailureCount
         {
-            get { return this._failureCount.GetValueOrDefault(); }
+            get { return this._failureCount; }
             set { this._failureCount = value; }
         }
 
@@ -103,9 +103,9 @@ namespace Amazon.ECS.Model
         ///  <c>0.5 * desired task count</c> 
         /// </para>
         /// </summary>
-        public int Threshold
+        public int? Threshold
         {
-            get { return this._threshold.GetValueOrDefault(); }
+            get { return this._threshold; }
             set { this._threshold = value; }
         }
 

@@ -62,9 +62,9 @@ namespace Amazon.BedrockRuntime.Model
         /// The processing latency details for the guardrail invocation metrics.
         /// </para>
         /// </summary>
-        public long GuardrailProcessingLatency
+        public long? GuardrailProcessingLatency
         {
-            get { return this._guardrailProcessingLatency.GetValueOrDefault(); }
+            get { return this._guardrailProcessingLatency; }
             set { this._guardrailProcessingLatency = value; }
         }
 

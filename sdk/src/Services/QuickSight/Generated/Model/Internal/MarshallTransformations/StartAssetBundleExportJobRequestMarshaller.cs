@@ -101,37 +101,23 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.IncludeAllDependencies.Value);
                     }
 
-<<<<<<< HEAD
+                    if(publicRequest.IsSetIncludeFolderMembers())
+                    {
+                        context.Writer.WritePropertyName("IncludeFolderMembers");
+                        context.Writer.Write(publicRequest.IncludeFolderMembers);
+                    }
+
+                    if(publicRequest.IsSetIncludeFolderMemberships())
+                    {
+                        context.Writer.WritePropertyName("IncludeFolderMemberships");
+                        context.Writer.Write(publicRequest.IncludeFolderMemberships.Value);
+                    }
+
                     if(publicRequest.IsSetIncludePermissions())
                     {
                         context.Writer.WritePropertyName("IncludePermissions");
                         context.Writer.Write(publicRequest.IncludePermissions.Value);
                     }
-||||||| Commit version number update changes
-                if(publicRequest.IsSetIncludePermissions())
-                {
-                    context.Writer.WritePropertyName("IncludePermissions");
-                    context.Writer.Write(publicRequest.IncludePermissions);
-                }
-=======
-                if(publicRequest.IsSetIncludeFolderMembers())
-                {
-                    context.Writer.WritePropertyName("IncludeFolderMembers");
-                    context.Writer.Write(publicRequest.IncludeFolderMembers);
-                }
-
-                if(publicRequest.IsSetIncludeFolderMemberships())
-                {
-                    context.Writer.WritePropertyName("IncludeFolderMemberships");
-                    context.Writer.Write(publicRequest.IncludeFolderMemberships);
-                }
-
-                if(publicRequest.IsSetIncludePermissions())
-                {
-                    context.Writer.WritePropertyName("IncludePermissions");
-                    context.Writer.Write(publicRequest.IncludePermissions);
-                }
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
                     if(publicRequest.IsSetIncludeTags())
                     {

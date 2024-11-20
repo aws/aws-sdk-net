@@ -111,9 +111,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// The default is <c>false</c> 
         /// </para>
         /// </summary>
-        public bool Baseline
+        public bool? Baseline
         {
-            get { return this._baseline.GetValueOrDefault(); }
+            get { return this._baseline; }
             set { this._baseline = value; }
         }
 

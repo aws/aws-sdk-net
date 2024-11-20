@@ -105,6 +105,12 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.FromTimestamp.Value);
                     }
 
+                    if(publicRequest.IsSetIncludeMetadata())
+                    {
+                        context.Writer.WritePropertyName("IncludeMetadata");
+                        context.Writer.Write(publicRequest.IncludeMetadata.Value);
+                    }
+
                     if(publicRequest.IsSetMaxResults())
                     {
                         context.Writer.WritePropertyName("MaxResults");
@@ -120,103 +126,7 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                     writer.WriteObjectEnd();
                 }
 
-<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
-||||||| Commit version number update changes
-                if(publicRequest.IsSetExportDestinationConfiguration())
-                {
-                    context.Writer.WritePropertyName("ExportDestinationConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ExportDestinationConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ExportDestinationConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetFilters())
-                {
-                    context.Writer.WritePropertyName("Filters");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ArchiveFiltersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Filters, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetFromTimestamp())
-                {
-                    context.Writer.WritePropertyName("FromTimestamp");
-                    context.Writer.Write(publicRequest.FromTimestamp);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
-                }
-
-                if(publicRequest.IsSetToTimestamp())
-                {
-                    context.Writer.WritePropertyName("ToTimestamp");
-                    context.Writer.Write(publicRequest.ToTimestamp);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-=======
-                if(publicRequest.IsSetExportDestinationConfiguration())
-                {
-                    context.Writer.WritePropertyName("ExportDestinationConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ExportDestinationConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ExportDestinationConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetFilters())
-                {
-                    context.Writer.WritePropertyName("Filters");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ArchiveFiltersMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Filters, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetFromTimestamp())
-                {
-                    context.Writer.WritePropertyName("FromTimestamp");
-                    context.Writer.Write(publicRequest.FromTimestamp);
-                }
-
-                if(publicRequest.IsSetIncludeMetadata())
-                {
-                    context.Writer.WritePropertyName("IncludeMetadata");
-                    context.Writer.Write(publicRequest.IncludeMetadata);
-                }
-
-                if(publicRequest.IsSetMaxResults())
-                {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
-                }
-
-                if(publicRequest.IsSetToTimestamp())
-                {
-                    context.Writer.WritePropertyName("ToTimestamp");
-                    context.Writer.Write(publicRequest.ToTimestamp);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
             }
 
 

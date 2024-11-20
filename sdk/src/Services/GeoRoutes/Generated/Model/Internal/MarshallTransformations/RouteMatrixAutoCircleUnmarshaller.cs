@@ -68,13 +68,13 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Margin", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.Margin = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaxRadius", targetDepth))
                 {
-                    var unmarshaller = LongUnmarshaller.Instance;
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.MaxRadius = unmarshaller.Unmarshall(context);
                     continue;
                 }

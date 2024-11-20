@@ -62,9 +62,9 @@ namespace Amazon.MWAA.Model
         /// The HTTP status code returned by the Apache Airflow REST API call.
         /// </para>
         /// </summary>
-        public int RestApiStatusCode
+        public int? RestApiStatusCode
         {
-            get { return this._restApiStatusCode.GetValueOrDefault(); }
+            get { return this._restApiStatusCode; }
             set { this._restApiStatusCode = value; }
         }
 

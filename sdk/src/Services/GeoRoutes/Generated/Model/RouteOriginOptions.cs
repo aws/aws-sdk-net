@@ -49,9 +49,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Max=2000)]
-        public long AvoidActionsForDistance
+        public long? AvoidActionsForDistance
         {
-            get { return this._avoidActionsForDistance.GetValueOrDefault(); }
+            get { return this._avoidActionsForDistance; }
             set { this._avoidActionsForDistance = value; }
         }
 
@@ -67,9 +67,9 @@ namespace Amazon.GeoRoutes.Model
         /// Avoid U-turns for calculation on highways and motorways.
         /// </para>
         /// </summary>
-        public bool AvoidUTurns
+        public bool? AvoidUTurns
         {
-            get { return this._avoidUTurns.GetValueOrDefault(); }
+            get { return this._avoidUTurns; }
             set { this._avoidUTurns = value; }
         }
 
@@ -86,9 +86,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=360)]
-        public double Heading
+        public double? Heading
         {
-            get { return this._heading.GetValueOrDefault(); }
+            get { return this._heading; }
             set { this._heading = value; }
         }
 

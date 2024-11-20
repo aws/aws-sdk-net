@@ -63,85 +63,88 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetGameServerContainerDefinition())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("GameServerContainerDefinition");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = GameServerContainerDefinitionInputMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.GameServerContainerDefinition, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetOperatingSystem())
-                {
-                    context.Writer.WritePropertyName("OperatingSystem");
-                    context.Writer.Write(publicRequest.OperatingSystem);
-                }
-
-                if(publicRequest.IsSetSourceVersionNumber())
-                {
-                    context.Writer.WritePropertyName("SourceVersionNumber");
-                    context.Writer.Write(publicRequest.SourceVersionNumber);
-                }
-
-                if(publicRequest.IsSetSupportContainerDefinitions())
-                {
-                    context.Writer.WritePropertyName("SupportContainerDefinitions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestSupportContainerDefinitionsListValue in publicRequest.SupportContainerDefinitions)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetGameServerContainerDefinition())
                     {
+                        context.Writer.WritePropertyName("GameServerContainerDefinition");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = SupportContainerDefinitionInputMarshaller.Instance;
-                        marshaller.Marshall(publicRequestSupportContainerDefinitionsListValue, context);
+                        var marshaller = GameServerContainerDefinitionInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.GameServerContainerDefinition, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetTotalMemoryLimitMebibytes())
-                {
-                    context.Writer.WritePropertyName("TotalMemoryLimitMebibytes");
-                    context.Writer.Write(publicRequest.TotalMemoryLimitMebibytes);
-                }
-
-                if(publicRequest.IsSetTotalVcpuLimit())
-                {
-                    context.Writer.WritePropertyName("TotalVcpuLimit");
-                    if(StringUtils.IsSpecialDoubleValue(publicRequest.TotalVcpuLimit))
+                    if(publicRequest.IsSetName())
                     {
-                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.TotalVcpuLimit));
+                        context.Writer.WritePropertyName("Name");
+                        context.Writer.Write(publicRequest.Name);
                     }
-                    else
+
+                    if(publicRequest.IsSetOperatingSystem())
                     {
-                        context.Writer.Write(publicRequest.TotalVcpuLimit);
+                        context.Writer.WritePropertyName("OperatingSystem");
+                        context.Writer.Write(publicRequest.OperatingSystem);
                     }
+
+                    if(publicRequest.IsSetSourceVersionNumber())
+                    {
+                        context.Writer.WritePropertyName("SourceVersionNumber");
+                        context.Writer.Write(publicRequest.SourceVersionNumber.Value);
+                    }
+
+                    if(publicRequest.IsSetSupportContainerDefinitions())
+                    {
+                        context.Writer.WritePropertyName("SupportContainerDefinitions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSupportContainerDefinitionsListValue in publicRequest.SupportContainerDefinitions)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = SupportContainerDefinitionInputMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSupportContainerDefinitionsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetTotalMemoryLimitMebibytes())
+                    {
+                        context.Writer.WritePropertyName("TotalMemoryLimitMebibytes");
+                        context.Writer.Write(publicRequest.TotalMemoryLimitMebibytes.Value);
+                    }
+
+                    if(publicRequest.IsSetTotalVcpuLimit())
+                    {
+                        context.Writer.WritePropertyName("TotalVcpuLimit");
+                        if(StringUtils.IsSpecialDoubleValue(publicRequest.TotalVcpuLimit.Value))
+                        {
+                            context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.TotalVcpuLimit.Value));
+                        }
+                        else
+                        {
+                            context.Writer.Write(publicRequest.TotalVcpuLimit.Value);
+                        }
+                    }
+
+                    if(publicRequest.IsSetVersionDescription())
+                    {
+                        context.Writer.WritePropertyName("VersionDescription");
+                        context.Writer.Write(publicRequest.VersionDescription);
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetVersionDescription())
-                {
-                    context.Writer.WritePropertyName("VersionDescription");
-                    context.Writer.Write(publicRequest.VersionDescription);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

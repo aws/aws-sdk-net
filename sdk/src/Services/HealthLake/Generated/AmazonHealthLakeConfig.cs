@@ -34,16 +34,10 @@ namespace Amazon.HealthLake
     public partial class AmazonHealthLakeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("HealthLake", "4.0.0.0");
 
         private static readonly AmazonHealthLakeEndpointResolver EndpointResolver =
             new AmazonHealthLakeEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("HealthLake", "3.7.400.26");
-=======
-            InternalSDKUtils.BuildUserAgentString("HealthLake", "3.7.400.53");
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
         private string _userAgent = UserAgentString;
         ///<summary>

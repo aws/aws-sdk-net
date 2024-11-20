@@ -65,32 +65,18 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             request.ResourcePath = "/";
             using (MemoryStream memoryStream = new MemoryStream())
             {
-<<<<<<< HEAD
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-||||||| Commit version number update changes
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetLimit())
-=======
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetContainerGroupType())
-                {
-                    context.Writer.WritePropertyName("ContainerGroupType");
-                    context.Writer.Write(publicRequest.ContainerGroupType);
-                }
-
-                if(publicRequest.IsSetLimit())
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
                 {
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;
                     writer.WriteObjectStart();
                     var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetContainerGroupType())
+                    {
+                        context.Writer.WritePropertyName("ContainerGroupType");
+                        context.Writer.Write(publicRequest.ContainerGroupType);
+                    }
+
                     if(publicRequest.IsSetLimit())
                     {
                         context.Writer.WritePropertyName("Limit");
@@ -103,32 +89,10 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.NextToken);
                     }
 
-<<<<<<< HEAD
-                    if(publicRequest.IsSetSchedulingStrategy())
-                    {
-                        context.Writer.WritePropertyName("SchedulingStrategy");
-                        context.Writer.Write(publicRequest.SchedulingStrategy);
-                    }
-
                     writer.WriteObjectEnd();
                 }
 
                 request.Content = memoryStream.ToArray();
-||||||| Commit version number update changes
-                if(publicRequest.IsSetSchedulingStrategy())
-                {
-                    context.Writer.WritePropertyName("SchedulingStrategy");
-                    context.Writer.Write(publicRequest.SchedulingStrategy);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-=======
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
             }
 
 

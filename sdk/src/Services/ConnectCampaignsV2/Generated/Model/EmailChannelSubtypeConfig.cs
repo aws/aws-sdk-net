@@ -42,9 +42,9 @@ namespace Amazon.ConnectCampaignsV2.Model
         /// Gets and sets the property Capacity.
         /// </summary>
         [AWSProperty(Max=1)]
-        public double Capacity
+        public double? Capacity
         {
-            get { return this._capacity.GetValueOrDefault(); }
+            get { return this._capacity; }
             set { this._capacity = value; }
         }
 

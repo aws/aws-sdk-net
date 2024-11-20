@@ -61,43 +61,46 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v1/whatsapp/media";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetOriginationPhoneNumberId())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("originationPhoneNumberId");
-                    context.Writer.Write(publicRequest.OriginationPhoneNumberId);
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetOriginationPhoneNumberId())
+                    {
+                        context.Writer.WritePropertyName("originationPhoneNumberId");
+                        context.Writer.Write(publicRequest.OriginationPhoneNumberId);
+                    }
+
+                    if(publicRequest.IsSetSourceS3File())
+                    {
+                        context.Writer.WritePropertyName("sourceS3File");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = S3FileMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SourceS3File, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetSourceS3PresignedUrl())
+                    {
+                        context.Writer.WritePropertyName("sourceS3PresignedUrl");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = S3PresignedUrlMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SourceS3PresignedUrl, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSourceS3File())
-                {
-                    context.Writer.WritePropertyName("sourceS3File");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = S3FileMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SourceS3File, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetSourceS3PresignedUrl())
-                {
-                    context.Writer.WritePropertyName("sourceS3PresignedUrl");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = S3PresignedUrlMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SourceS3PresignedUrl, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 

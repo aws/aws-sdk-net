@@ -57,7 +57,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMinimumHealthyPercentage())
             {
                 context.Writer.WritePropertyName("MinimumHealthyPercentage");
-                context.Writer.Write(requestObject.MinimumHealthyPercentage);
+                context.Writer.Write(requestObject.MinimumHealthyPercentage.Value);
             }
 
             if(requestObject.IsSetProtectionStrategy())

@@ -74,7 +74,7 @@ namespace Amazon.SupplyChain.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("createdTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -110,7 +110,7 @@ namespace Amazon.SupplyChain.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("lastModifiedTime", targetDepth))
                 {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -122,7 +122,7 @@ namespace Amazon.SupplyChain.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("versionNumber", targetDepth))
                 {
-                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.VersionNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }

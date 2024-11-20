@@ -51,7 +51,7 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLifetimeInDays())
             {
                 context.Writer.WritePropertyName("LifetimeInDays");
-                context.Writer.Write(requestObject.LifetimeInDays);
+                context.Writer.Write(requestObject.LifetimeInDays.Value);
             }
 
             if(requestObject.IsSetStatus())

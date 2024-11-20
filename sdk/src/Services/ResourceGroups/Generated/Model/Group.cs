@@ -86,9 +86,9 @@ namespace Amazon.ResourceGroups.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
-        public int Criticality
+        public int? Criticality
         {
-            get { return this._criticality.GetValueOrDefault(); }
+            get { return this._criticality; }
             set { this._criticality = value; }
         }
 

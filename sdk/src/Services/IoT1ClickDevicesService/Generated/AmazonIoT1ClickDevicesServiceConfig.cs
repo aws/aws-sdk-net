@@ -34,16 +34,10 @@ namespace Amazon.IoT1ClickDevicesService
     public partial class AmazonIoT1ClickDevicesServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("IoT 1Click Devices Service", "4.0.0.0");
 
         private static readonly AmazonIoT1ClickDevicesServiceEndpointResolver EndpointResolver =
             new AmazonIoT1ClickDevicesServiceEndpointResolver();
-||||||| Commit version number update changes
-            InternalSDKUtils.BuildUserAgentString("IoT 1Click Devices Service", "3.7.400.26");
-=======
-            InternalSDKUtils.BuildUserAgentString("IoT 1Click Devices Service", "3.7.400.53");
->>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
         private string _userAgent = UserAgentString;
         ///<summary>

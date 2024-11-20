@@ -46,9 +46,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=360)]
-        public double Heading
+        public double? Heading
         {
-            get { return this._heading.GetValueOrDefault(); }
+            get { return this._heading; }
             set { this._heading = value; }
         }
 
@@ -88,9 +88,9 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
-        public double Speed
+        public double? Speed
         {
-            get { return this._speed.GetValueOrDefault(); }
+            get { return this._speed; }
             set { this._speed = value; }
         }
 

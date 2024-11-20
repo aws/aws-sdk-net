@@ -107,9 +107,9 @@ namespace Amazon.SocialMessaging.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime LinkDate
+        public DateTime? LinkDate
         {
-            get { return this._linkDate.GetValueOrDefault(); }
+            get { return this._linkDate; }
             set { this._linkDate = value; }
         }
 

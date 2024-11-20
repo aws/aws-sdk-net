@@ -46,9 +46,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long ReadUnitsPerSecond
+        public long? ReadUnitsPerSecond
         {
-            get { return this._readUnitsPerSecond.GetValueOrDefault(); }
+            get { return this._readUnitsPerSecond; }
             set { this._readUnitsPerSecond = value; }
         }
 
@@ -83,9 +83,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public long WriteUnitsPerSecond
+        public long? WriteUnitsPerSecond
         {
-            get { return this._writeUnitsPerSecond.GetValueOrDefault(); }
+            get { return this._writeUnitsPerSecond; }
             set { this._writeUnitsPerSecond = value; }
         }
 

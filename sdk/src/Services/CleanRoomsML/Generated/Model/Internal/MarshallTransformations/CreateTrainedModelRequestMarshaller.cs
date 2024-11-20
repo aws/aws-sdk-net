@@ -64,119 +64,122 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
                 throw new AmazonCleanRoomsMLException("Request object does not have required field MembershipIdentifier set");
             request.AddPathResource("{membershipIdentifier}", StringUtils.FromString(publicRequest.MembershipIdentifier));
             request.ResourcePath = "/memberships/{membershipIdentifier}/trained-models";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            using (MemoryStream memoryStream = new MemoryStream())
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.Validate = false;
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetConfiguredModelAlgorithmAssociationArn())
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
-                    context.Writer.WritePropertyName("configuredModelAlgorithmAssociationArn");
-                    context.Writer.Write(publicRequest.ConfiguredModelAlgorithmAssociationArn);
-                }
-
-                if(publicRequest.IsSetDataChannels())
-                {
-                    context.Writer.WritePropertyName("dataChannels");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDataChannelsListValue in publicRequest.DataChannels)
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetConfiguredModelAlgorithmAssociationArn())
                     {
+                        context.Writer.WritePropertyName("configuredModelAlgorithmAssociationArn");
+                        context.Writer.Write(publicRequest.ConfiguredModelAlgorithmAssociationArn);
+                    }
+
+                    if(publicRequest.IsSetDataChannels())
+                    {
+                        context.Writer.WritePropertyName("dataChannels");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestDataChannelsListValue in publicRequest.DataChannels)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = ModelTrainingDataChannelMarshaller.Instance;
+                            marshaller.Marshall(publicRequestDataChannelsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetDescription())
+                    {
+                        context.Writer.WritePropertyName("description");
+                        context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetEnvironment())
+                    {
+                        context.Writer.WritePropertyName("environment");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestEnvironmentKvp in publicRequest.Environment)
+                        {
+                            context.Writer.WritePropertyName(publicRequestEnvironmentKvp.Key);
+                            var publicRequestEnvironmentValue = publicRequestEnvironmentKvp.Value;
+
+                                context.Writer.Write(publicRequestEnvironmentValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetHyperparameters())
+                    {
+                        context.Writer.WritePropertyName("hyperparameters");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestHyperparametersKvp in publicRequest.Hyperparameters)
+                        {
+                            context.Writer.WritePropertyName(publicRequestHyperparametersKvp.Key);
+                            var publicRequestHyperparametersValue = publicRequestHyperparametersKvp.Value;
+
+                                context.Writer.Write(publicRequestHyperparametersValue);
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetKmsKeyArn())
+                    {
+                        context.Writer.WritePropertyName("kmsKeyArn");
+                        context.Writer.Write(publicRequest.KmsKeyArn);
+                    }
+
+                    if(publicRequest.IsSetName())
+                    {
+                        context.Writer.WritePropertyName("name");
+                        context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetResourceConfig())
+                    {
+                        context.Writer.WritePropertyName("resourceConfig");
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = ModelTrainingDataChannelMarshaller.Instance;
-                        marshaller.Marshall(publicRequestDataChannelsListValue, context);
+                        var marshaller = ResourceConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ResourceConfig, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteArrayEnd();
-                }
 
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("description");
-                    context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetEnvironment())
-                {
-                    context.Writer.WritePropertyName("environment");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestEnvironmentKvp in publicRequest.Environment)
+                    if(publicRequest.IsSetStoppingCondition())
                     {
-                        context.Writer.WritePropertyName(publicRequestEnvironmentKvp.Key);
-                        var publicRequestEnvironmentValue = publicRequestEnvironmentKvp.Value;
+                        context.Writer.WritePropertyName("stoppingCondition");
+                        context.Writer.WriteObjectStart();
 
-                            context.Writer.Write(publicRequestEnvironmentValue);
+                        var marshaller = StoppingConditionMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.StoppingCondition, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
 
-                if(publicRequest.IsSetHyperparameters())
-                {
-                    context.Writer.WritePropertyName("hyperparameters");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestHyperparametersKvp in publicRequest.Hyperparameters)
+                    if(publicRequest.IsSetTags())
                     {
-                        context.Writer.WritePropertyName(publicRequestHyperparametersKvp.Key);
-                        var publicRequestHyperparametersValue = publicRequestHyperparametersKvp.Value;
+                        context.Writer.WritePropertyName("tags");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                        {
+                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
 
-                            context.Writer.Write(publicRequestHyperparametersValue);
+                                context.Writer.Write(publicRequestTagsValue);
+                        }
+                        context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+
+                    writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetKmsKeyArn())
-                {
-                    context.Writer.WritePropertyName("kmsKeyArn");
-                    context.Writer.Write(publicRequest.KmsKeyArn);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetResourceConfig())
-                {
-                    context.Writer.WritePropertyName("resourceConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ResourceConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ResourceConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetStoppingCondition())
-                {
-                    context.Writer.WritePropertyName("stoppingCondition");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = StoppingConditionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.StoppingCondition, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+                request.Content = memoryStream.ToArray();
             }
 
 
