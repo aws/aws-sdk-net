@@ -36,6 +36,7 @@ namespace Amazon.CloudFront.Model
     {
         private Aliases _aliases;
         private List<AliasICPRecordal> _aliasICPRecordals = AWSConfigs.InitializeCollections ? new List<AliasICPRecordal>() : null;
+        private string _anycastIpListId;
         private string _arn;
         private CacheBehaviors _cacheBehaviors;
         private string _comment;
@@ -106,6 +107,24 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetAliasICPRecordals()
         {
             return this._aliasICPRecordals != null && (this._aliasICPRecordals.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AnycastIpListId. 
+        /// <para>
+        /// ID of the Anycast static IP list that is associated with the distribution.
+        /// </para>
+        /// </summary>
+        public string AnycastIpListId
+        {
+            get { return this._anycastIpListId; }
+            set { this._anycastIpListId = value; }
+        }
+
+        // Check to see if AnycastIpListId property is set
+        internal bool IsSetAnycastIpListId()
+        {
+            return this._anycastIpListId != null;
         }
 
         /// <summary>

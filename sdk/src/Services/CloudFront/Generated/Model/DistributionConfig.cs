@@ -35,6 +35,7 @@ namespace Amazon.CloudFront.Model
     public partial class DistributionConfig
     {
         private Aliases _aliases;
+        private string _anycastIpListId;
         private CacheBehaviors _cacheBehaviors;
         private string _callerReference;
         private string _comment;
@@ -87,6 +88,24 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetAliases()
         {
             return this._aliases != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AnycastIpListId. 
+        /// <para>
+        /// ID of the Anycast static IP list that is associated with the distribution.
+        /// </para>
+        /// </summary>
+        public string AnycastIpListId
+        {
+            get { return this._anycastIpListId; }
+            set { this._anycastIpListId = value; }
+        }
+
+        // Check to see if AnycastIpListId property is set
+        internal bool IsSetAnycastIpListId()
+        {
+            return this._anycastIpListId != null;
         }
 
         /// <summary>

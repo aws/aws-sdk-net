@@ -86,6 +86,7 @@ namespace Amazon.CloudFront.Model
         private string _originPath;
         private OriginShield _originShield;
         private S3OriginConfig _s3OriginConfig;
+        private VpcOriginConfig _vpcOriginConfig;
 
         /// <summary>
         /// Gets and sets the property ConnectionAttempts. 
@@ -325,6 +326,24 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetS3OriginConfig()
         {
             return this._s3OriginConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcOriginConfig. 
+        /// <para>
+        /// The VPC origin configuration.
+        /// </para>
+        /// </summary>
+        public VpcOriginConfig VpcOriginConfig
+        {
+            get { return this._vpcOriginConfig; }
+            set { this._vpcOriginConfig = value; }
+        }
+
+        // Check to see if VpcOriginConfig property is set
+        internal bool IsSetVpcOriginConfig()
+        {
+            return this._vpcOriginConfig != null;
         }
 
     }

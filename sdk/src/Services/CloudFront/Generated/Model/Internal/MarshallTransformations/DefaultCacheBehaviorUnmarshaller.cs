@@ -98,6 +98,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.FunctionAssociations = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("GrpcConfig", targetDepth))
+                    {
+                        var unmarshaller = GrpcConfigUnmarshaller.Instance;
+                        unmarshalledObject.GrpcConfig = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("LambdaFunctionAssociations", targetDepth))
                     {
                         var unmarshaller = LambdaFunctionAssociationsUnmarshaller.Instance;

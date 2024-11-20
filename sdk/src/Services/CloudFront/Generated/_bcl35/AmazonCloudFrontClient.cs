@@ -678,6 +678,78 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  CreateAnycastIpList
+
+        /// <summary>
+        /// Creates an Anycast static IP list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAnycastIpList service method.</param>
+        /// 
+        /// <returns>The response from the CreateAnycastIpList service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityAlreadyExistsException">
+        /// The entity already exists. You must provide a unique entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
+        /// The tagging specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateAnycastIpList">REST API Reference for CreateAnycastIpList Operation</seealso>
+        public virtual CreateAnycastIpListResponse CreateAnycastIpList(CreateAnycastIpListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAnycastIpListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAnycastIpListResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAnycastIpListResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAnycastIpList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAnycastIpList operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAnycastIpList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateAnycastIpList">REST API Reference for CreateAnycastIpList Operation</seealso>
+        public virtual IAsyncResult BeginCreateAnycastIpList(CreateAnycastIpListRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAnycastIpListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAnycastIpListResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAnycastIpList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAnycastIpList.</param>
+        /// 
+        /// <returns>Returns a  CreateAnycastIpListResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateAnycastIpList">REST API Reference for CreateAnycastIpList Operation</seealso>
+        public virtual CreateAnycastIpListResponse EndCreateAnycastIpList(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateAnycastIpListResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateCachePolicy
 
         /// <summary>
@@ -982,6 +1054,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.DistributionAlreadyExistsException">
         /// The caller reference you attempted to create the distribution with is associated with
         /// another distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException">
         /// The specified configuration for field-level encryption can't be associated with the
@@ -1290,6 +1365,9 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.DistributionAlreadyExistsException">
         /// The caller reference you attempted to create the distribution with is associated with
         /// another distribution.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException">
         /// The specified configuration for field-level encryption can't be associated with the
@@ -1992,14 +2070,13 @@ namespace Amazon.CloudFront
         /// Access denied.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.EntityAlreadyExistsException">
-        /// The key value store entity already exists. You must provide a unique key value store
-        /// entity.
+        /// The entity already exists. You must provide a unique entity.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
-        /// The key value store entity limit has been exceeded.
+        /// The entity limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.EntitySizeLimitExceededException">
-        /// The key value store entity size limit was exceeded.
+        /// The entity size limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
@@ -2804,6 +2881,159 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  CreateVpcOrigin
+
+        /// <summary>
+        /// Create an Amazon CloudFront VPC origin.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcOrigin service method.</param>
+        /// 
+        /// <returns>The response from the CreateVpcOrigin service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityAlreadyExistsException">
+        /// The entity already exists. You must provide a unique entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidTaggingException">
+        /// The tagging specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateVpcOrigin">REST API Reference for CreateVpcOrigin Operation</seealso>
+        public virtual CreateVpcOriginResponse CreateVpcOrigin(CreateVpcOriginRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVpcOriginRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVpcOriginResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVpcOriginResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateVpcOrigin operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcOrigin operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVpcOrigin
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateVpcOrigin">REST API Reference for CreateVpcOrigin Operation</seealso>
+        public virtual IAsyncResult BeginCreateVpcOrigin(CreateVpcOriginRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVpcOriginRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVpcOriginResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateVpcOrigin operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVpcOrigin.</param>
+        /// 
+        /// <returns>Returns a  CreateVpcOriginResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateVpcOrigin">REST API Reference for CreateVpcOrigin Operation</seealso>
+        public virtual CreateVpcOriginResponse EndCreateVpcOrigin(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateVpcOriginResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteAnycastIpList
+
+        /// <summary>
+        /// Deletes an Anycast static IP list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAnycastIpList service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAnycastIpList service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CannotDeleteEntityWhileInUseException">
+        /// The entity cannot be deleted while it is in use.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalDeleteException">
+        /// Deletion is not allowed for this entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteAnycastIpList">REST API Reference for DeleteAnycastIpList Operation</seealso>
+        public virtual DeleteAnycastIpListResponse DeleteAnycastIpList(DeleteAnycastIpListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAnycastIpListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAnycastIpListResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAnycastIpListResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAnycastIpList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAnycastIpList operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAnycastIpList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteAnycastIpList">REST API Reference for DeleteAnycastIpList Operation</seealso>
+        public virtual IAsyncResult BeginDeleteAnycastIpList(DeleteAnycastIpListRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAnycastIpListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAnycastIpListResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteAnycastIpList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteAnycastIpList.</param>
+        /// 
+        /// <returns>Returns a  DeleteAnycastIpListResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteAnycastIpList">REST API Reference for DeleteAnycastIpList Operation</seealso>
+        public virtual DeleteAnycastIpListResponse EndDeleteAnycastIpList(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteAnycastIpListResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteCachePolicy
 
         /// <summary>
@@ -2831,7 +3061,7 @@ namespace Amazon.CloudFront
         /// Cannot delete the cache policy because it is attached to one or more cache behaviors.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.IllegalDeleteException">
-        /// You cannot delete a managed policy.
+        /// Deletion is not allowed for this entity.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
         /// The <c>If-Match</c> version is missing or not valid.
@@ -3469,10 +3699,10 @@ namespace Amazon.CloudFront
         /// Access denied.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.CannotDeleteEntityWhileInUseException">
-        /// The key value store entity cannot be deleted while it is in use.
+        /// The entity cannot be deleted while it is in use.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
-        /// The key value store entity was not found.
+        /// The entity was not found.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
         /// The <c>If-Match</c> version is missing or not valid.
@@ -3695,7 +3925,7 @@ namespace Amazon.CloudFront
         /// Access denied.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.IllegalDeleteException">
-        /// You cannot delete a managed policy.
+        /// Deletion is not allowed for this entity.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
         /// The <c>If-Match</c> version is missing or not valid.
@@ -3929,7 +4159,7 @@ namespace Amazon.CloudFront
         /// Access denied.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.IllegalDeleteException">
-        /// You cannot delete a managed policy.
+        /// Deletion is not allowed for this entity.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
         /// The <c>If-Match</c> version is missing or not valid.
@@ -4197,6 +4427,84 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  DeleteVpcOrigin
+
+        /// <summary>
+        /// Delete an Amazon CloudFront VPC origin.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcOrigin service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVpcOrigin service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CannotDeleteEntityWhileInUseException">
+        /// The entity cannot be deleted while it is in use.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalDeleteException">
+        /// Deletion is not allowed for this entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteVpcOrigin">REST API Reference for DeleteVpcOrigin Operation</seealso>
+        public virtual DeleteVpcOriginResponse DeleteVpcOrigin(DeleteVpcOriginRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVpcOriginRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVpcOriginResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVpcOriginResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVpcOrigin operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcOrigin operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVpcOrigin
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteVpcOrigin">REST API Reference for DeleteVpcOrigin Operation</seealso>
+        public virtual IAsyncResult BeginDeleteVpcOrigin(DeleteVpcOriginRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVpcOriginRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVpcOriginResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteVpcOrigin operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVpcOrigin.</param>
+        /// 
+        /// <returns>Returns a  DeleteVpcOriginResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteVpcOrigin">REST API Reference for DeleteVpcOrigin Operation</seealso>
+        public virtual DeleteVpcOriginResponse EndDeleteVpcOrigin(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteVpcOriginResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeFunction
 
         /// <summary>
@@ -4276,7 +4584,7 @@ namespace Amazon.CloudFront
         /// Access denied.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
-        /// The key value store entity was not found.
+        /// The entity was not found.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
@@ -4326,6 +4634,72 @@ namespace Amazon.CloudFront
         public virtual DescribeKeyValueStoreResponse EndDescribeKeyValueStore(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeKeyValueStoreResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetAnycastIpList
+
+        /// <summary>
+        /// Gets an Anycast static IP list.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAnycastIpList service method.</param>
+        /// 
+        /// <returns>The response from the GetAnycastIpList service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetAnycastIpList">REST API Reference for GetAnycastIpList Operation</seealso>
+        public virtual GetAnycastIpListResponse GetAnycastIpList(GetAnycastIpListRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAnycastIpListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAnycastIpListResponseUnmarshaller.Instance;
+
+            return Invoke<GetAnycastIpListResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAnycastIpList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAnycastIpList operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAnycastIpList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetAnycastIpList">REST API Reference for GetAnycastIpList Operation</seealso>
+        public virtual IAsyncResult BeginGetAnycastIpList(GetAnycastIpListRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAnycastIpListRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAnycastIpListResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAnycastIpList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAnycastIpList.</param>
+        /// 
+        /// <returns>Returns a  GetAnycastIpListResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetAnycastIpList">REST API Reference for GetAnycastIpList Operation</seealso>
+        public virtual GetAnycastIpListResponse EndGetAnycastIpList(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetAnycastIpListResponse>(asyncResult);
         }
 
         #endregion
@@ -6220,6 +6594,138 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  GetVpcOrigin
+
+        /// <summary>
+        /// Get the details of an Amazon CloudFront VPC origin.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVpcOrigin service method.</param>
+        /// 
+        /// <returns>The response from the GetVpcOrigin service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetVpcOrigin">REST API Reference for GetVpcOrigin Operation</seealso>
+        public virtual GetVpcOriginResponse GetVpcOrigin(GetVpcOriginRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVpcOriginRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVpcOriginResponseUnmarshaller.Instance;
+
+            return Invoke<GetVpcOriginResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetVpcOrigin operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetVpcOrigin operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetVpcOrigin
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetVpcOrigin">REST API Reference for GetVpcOrigin Operation</seealso>
+        public virtual IAsyncResult BeginGetVpcOrigin(GetVpcOriginRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetVpcOriginRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetVpcOriginResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetVpcOrigin operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetVpcOrigin.</param>
+        /// 
+        /// <returns>Returns a  GetVpcOriginResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetVpcOrigin">REST API Reference for GetVpcOrigin Operation</seealso>
+        public virtual GetVpcOriginResponse EndGetVpcOrigin(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetVpcOriginResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListAnycastIpLists
+
+        /// <summary>
+        /// Lists your Anycast static IP lists.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAnycastIpLists service method.</param>
+        /// 
+        /// <returns>The response from the ListAnycastIpLists service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListAnycastIpLists">REST API Reference for ListAnycastIpLists Operation</seealso>
+        public virtual ListAnycastIpListsResponse ListAnycastIpLists(ListAnycastIpListsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAnycastIpListsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAnycastIpListsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAnycastIpListsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAnycastIpLists operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAnycastIpLists operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAnycastIpLists
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListAnycastIpLists">REST API Reference for ListAnycastIpLists Operation</seealso>
+        public virtual IAsyncResult BeginListAnycastIpLists(ListAnycastIpListsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAnycastIpListsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAnycastIpListsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAnycastIpLists operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAnycastIpLists.</param>
+        /// 
+        /// <returns>Returns a  ListAnycastIpListsResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListAnycastIpLists">REST API Reference for ListAnycastIpLists Operation</seealso>
+        public virtual ListAnycastIpListsResponse EndListAnycastIpLists(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAnycastIpListsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListCachePolicies
 
         /// <summary>
@@ -6604,6 +7110,72 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  ListDistributionsByAnycastIpListId
+
+        /// <summary>
+        /// Lists the distributions in your account that are associated with the specified <c>AnycastIpListId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByAnycastIpListId service method.</param>
+        /// 
+        /// <returns>The response from the ListDistributionsByAnycastIpListId service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByAnycastIpListId">REST API Reference for ListDistributionsByAnycastIpListId Operation</seealso>
+        public virtual ListDistributionsByAnycastIpListIdResponse ListDistributionsByAnycastIpListId(ListDistributionsByAnycastIpListIdRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDistributionsByAnycastIpListIdRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDistributionsByAnycastIpListIdResponseUnmarshaller.Instance;
+
+            return Invoke<ListDistributionsByAnycastIpListIdResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDistributionsByAnycastIpListId operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByAnycastIpListId operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDistributionsByAnycastIpListId
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByAnycastIpListId">REST API Reference for ListDistributionsByAnycastIpListId Operation</seealso>
+        public virtual IAsyncResult BeginListDistributionsByAnycastIpListId(ListDistributionsByAnycastIpListIdRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDistributionsByAnycastIpListIdRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDistributionsByAnycastIpListIdResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDistributionsByAnycastIpListId operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDistributionsByAnycastIpListId.</param>
+        /// 
+        /// <returns>Returns a  ListDistributionsByAnycastIpListIdResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByAnycastIpListId">REST API Reference for ListDistributionsByAnycastIpListId Operation</seealso>
+        public virtual ListDistributionsByAnycastIpListIdResponse EndListDistributionsByAnycastIpListId(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDistributionsByAnycastIpListIdResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListDistributionsByCachePolicyId
 
         /// <summary>
@@ -6962,6 +7534,72 @@ namespace Amazon.CloudFront
         public virtual ListDistributionsByResponseHeadersPolicyIdResponse EndListDistributionsByResponseHeadersPolicyId(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDistributionsByResponseHeadersPolicyIdResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListDistributionsByVpcOriginId
+
+        /// <summary>
+        /// List CloudFront distributions by their VPC origin ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByVpcOriginId service method.</param>
+        /// 
+        /// <returns>The response from the ListDistributionsByVpcOriginId service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByVpcOriginId">REST API Reference for ListDistributionsByVpcOriginId Operation</seealso>
+        public virtual ListDistributionsByVpcOriginIdResponse ListDistributionsByVpcOriginId(ListDistributionsByVpcOriginIdRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDistributionsByVpcOriginIdRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDistributionsByVpcOriginIdResponseUnmarshaller.Instance;
+
+            return Invoke<ListDistributionsByVpcOriginIdResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDistributionsByVpcOriginId operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByVpcOriginId operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDistributionsByVpcOriginId
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByVpcOriginId">REST API Reference for ListDistributionsByVpcOriginId Operation</seealso>
+        public virtual IAsyncResult BeginListDistributionsByVpcOriginId(ListDistributionsByVpcOriginIdRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDistributionsByVpcOriginIdRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDistributionsByVpcOriginIdResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDistributionsByVpcOriginId operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDistributionsByVpcOriginId.</param>
+        /// 
+        /// <returns>Returns a  ListDistributionsByVpcOriginIdResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByVpcOriginId">REST API Reference for ListDistributionsByVpcOriginId Operation</seealso>
+        public virtual ListDistributionsByVpcOriginIdResponse EndListDistributionsByVpcOriginId(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDistributionsByVpcOriginIdResponse>(asyncResult);
         }
 
         #endregion
@@ -7905,6 +8543,72 @@ namespace Amazon.CloudFront
 
         #endregion
         
+        #region  ListVpcOrigins
+
+        /// <summary>
+        /// List the CloudFront VPC origins in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVpcOrigins service method.</param>
+        /// 
+        /// <returns>The response from the ListVpcOrigins service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListVpcOrigins">REST API Reference for ListVpcOrigins Operation</seealso>
+        public virtual ListVpcOriginsResponse ListVpcOrigins(ListVpcOriginsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVpcOriginsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVpcOriginsResponseUnmarshaller.Instance;
+
+            return Invoke<ListVpcOriginsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListVpcOrigins operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListVpcOrigins operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListVpcOrigins
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListVpcOrigins">REST API Reference for ListVpcOrigins Operation</seealso>
+        public virtual IAsyncResult BeginListVpcOrigins(ListVpcOriginsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVpcOriginsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVpcOriginsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListVpcOrigins operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListVpcOrigins.</param>
+        /// 
+        /// <returns>Returns a  ListVpcOriginsResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListVpcOrigins">REST API Reference for ListVpcOrigins Operation</seealso>
+        public virtual ListVpcOriginsResponse EndListVpcOrigins(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListVpcOriginsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  PublishFunction
 
         /// <summary>
@@ -8559,6 +9263,9 @@ namespace Amazon.CloudFront
         /// You cannot delete a continuous deployment policy that is associated with a primary
         /// distribution.
         /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException">
         /// The specified configuration for field-level encryption can't be associated with the
         /// specified cache behavior.
@@ -8878,6 +9585,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.CNAMEAlreadyExistsException">
         /// The CNAME specified is already defined for CloudFront.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException">
         /// The specified configuration for field-level encryption can't be associated with the
@@ -9514,7 +10224,7 @@ namespace Amazon.CloudFront
         /// Access denied.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
-        /// The key value store entity was not found.
+        /// The entity was not found.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
@@ -10150,6 +10860,93 @@ namespace Amazon.CloudFront
         public virtual UpdateStreamingDistributionResponse EndUpdateStreamingDistribution(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateStreamingDistributionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateVpcOrigin
+
+        /// <summary>
+        /// Update an Amazon CloudFront VPC origin in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVpcOrigin service method.</param>
+        /// 
+        /// <returns>The response from the UpdateVpcOrigin service method, as returned by CloudFront.</returns>
+        /// <exception cref="Amazon.CloudFront.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.CannotUpdateEntityWhileInUseException">
+        /// The entity cannot be updated while it is in use.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityAlreadyExistsException">
+        /// The entity already exists. You must provide a unique entity.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
+        /// The entity limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
+        /// The entity was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
+        /// The update contains modifications that are not allowed.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
+        /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
+        /// The <c>If-Match</c> version is missing or not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this region.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateVpcOrigin">REST API Reference for UpdateVpcOrigin Operation</seealso>
+        public virtual UpdateVpcOriginResponse UpdateVpcOrigin(UpdateVpcOriginRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVpcOriginRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVpcOriginResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateVpcOriginResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateVpcOrigin operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVpcOrigin operation on AmazonCloudFrontClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateVpcOrigin
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateVpcOrigin">REST API Reference for UpdateVpcOrigin Operation</seealso>
+        public virtual IAsyncResult BeginUpdateVpcOrigin(UpdateVpcOriginRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateVpcOriginRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVpcOriginResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateVpcOrigin operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateVpcOrigin.</param>
+        /// 
+        /// <returns>Returns a  UpdateVpcOriginResult from CloudFront.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateVpcOrigin">REST API Reference for UpdateVpcOrigin Operation</seealso>
+        public virtual UpdateVpcOriginResponse EndUpdateVpcOrigin(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateVpcOriginResponse>(asyncResult);
         }
 
         #endregion

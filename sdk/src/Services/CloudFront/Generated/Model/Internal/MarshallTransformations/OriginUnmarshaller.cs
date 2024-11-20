@@ -116,6 +116,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                         unmarshalledObject.S3OriginConfig = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("VpcOriginConfig", targetDepth))
+                    {
+                        var unmarshaller = VpcOriginConfigUnmarshaller.Instance;
+                        unmarshalledObject.VpcOriginConfig = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {
