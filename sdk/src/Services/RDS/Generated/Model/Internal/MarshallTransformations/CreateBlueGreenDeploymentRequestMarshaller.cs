@@ -83,6 +83,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetTargetAllocatedStorage())
+                {
+                    request.Parameters.Add("TargetAllocatedStorage", StringUtils.FromInt(publicRequest.TargetAllocatedStorage));
+                }
                 if(publicRequest.IsSetTargetDBClusterParameterGroupName())
                 {
                     request.Parameters.Add("TargetDBClusterParameterGroupName", StringUtils.FromString(publicRequest.TargetDBClusterParameterGroupName));
@@ -98,6 +102,18 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetTargetEngineVersion())
                 {
                     request.Parameters.Add("TargetEngineVersion", StringUtils.FromString(publicRequest.TargetEngineVersion));
+                }
+                if(publicRequest.IsSetTargetIops())
+                {
+                    request.Parameters.Add("TargetIops", StringUtils.FromInt(publicRequest.TargetIops));
+                }
+                if(publicRequest.IsSetTargetStorageThroughput())
+                {
+                    request.Parameters.Add("TargetStorageThroughput", StringUtils.FromInt(publicRequest.TargetStorageThroughput));
+                }
+                if(publicRequest.IsSetTargetStorageType())
+                {
+                    request.Parameters.Add("TargetStorageType", StringUtils.FromString(publicRequest.TargetStorageType));
                 }
                 if(publicRequest.IsSetUpgradeTargetStorageConfig())
                 {

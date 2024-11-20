@@ -3486,7 +3486,11 @@
         "TargetDBClusterParameterGroupName":{"shape":"TargetDBClusterParameterGroupName"},
         "Tags":{"shape":"TagList"},
         "TargetDBInstanceClass":{"shape":"TargetDBInstanceClass"},
-        "UpgradeTargetStorageConfig":{"shape":"BooleanOptional"}
+        "UpgradeTargetStorageConfig":{"shape":"BooleanOptional"},
+        "TargetIops":{"shape":"IntegerOptional"},
+        "TargetStorageType":{"shape":"TargetStorageType"},
+        "TargetAllocatedStorage":{"shape":"IntegerOptional"},
+        "TargetStorageThroughput":{"shape":"IntegerOptional"}
       }
     },
     "CreateBlueGreenDeploymentResponse":{
@@ -10069,6 +10073,7 @@
         "UNAVAILABLE"
       ]
     },
+    "TargetStorageType":{"type":"string"},
     "TargetType":{
       "type":"string",
       "enum":[

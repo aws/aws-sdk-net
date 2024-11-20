@@ -1351,8 +1351,8 @@ namespace Amazon.RDS
         /// <para>
         /// A blue/green deployment creates a staging environment that copies the production environment.
         /// In a blue/green deployment, the blue environment is the current production environment.
-        /// The green environment is the staging environment. The staging environment stays in
-        /// sync with the current production environment using logical replication.
+        /// The green environment is the staging environment, and it stays in sync with the current
+        /// production environment.
         /// </para>
         ///  
         /// <para>
