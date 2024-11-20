@@ -90,6 +90,7 @@ namespace Amazon.EC2.Model
         private List<string> _allowedInstanceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private BareMetal _bareMetal;
         private BaselineEbsBandwidthMbps _baselineEbsBandwidthMbps;
+        private BaselinePerformanceFactors _baselinePerformanceFactors;
         private BurstablePerformance _burstablePerformance;
         private List<string> _cpuManufacturers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _excludedInstanceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -394,6 +395,30 @@ namespace Amazon.EC2.Model
         internal bool IsSetBaselineEbsBandwidthMbps()
         {
             return this._baselineEbsBandwidthMbps != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BaselinePerformanceFactors. 
+        /// <para>
+        /// The baseline performance to consider, using an instance family as a baseline reference.
+        /// The instance family establishes the lowest acceptable level of performance. Amazon
+        /// EC2 uses this baseline to guide instance type selection, but there is no guarantee
+        /// that the selected instance types will always exceed the baseline for every application.
+        /// Currently, this parameter only supports CPU performance as a baseline performance
+        /// factor. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html#ec2fleet-abis-performance-protection">Performance
+        /// protection</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public BaselinePerformanceFactors BaselinePerformanceFactors
+        {
+            get { return this._baselinePerformanceFactors; }
+            set { this._baselinePerformanceFactors = value; }
+        }
+
+        // Check to see if BaselinePerformanceFactors property is set
+        internal bool IsSetBaselinePerformanceFactors()
+        {
+            return this._baselinePerformanceFactors != null;
         }
 
         /// <summary>

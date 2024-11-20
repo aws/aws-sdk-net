@@ -123,6 +123,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.BaselineEbsBandwidthMbps = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("baselinePerformanceFactors", targetDepth))
+                    {
+                        var unmarshaller = BaselinePerformanceFactorsUnmarshaller.Instance;
+                        unmarshalledObject.BaselinePerformanceFactors = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("burstablePerformance", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

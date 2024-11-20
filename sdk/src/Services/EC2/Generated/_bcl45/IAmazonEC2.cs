@@ -24478,7 +24478,8 @@ namespace Amazon.EC2
         /// <summary>
         /// Modifies the Capacity Reservation settings for a stopped instance. Use this action
         /// to configure an instance to target a specific Capacity Reservation, run in any <c>open</c>
-        /// Capacity Reservation with matching attributes, or run On-Demand Instance capacity.
+        /// Capacity Reservation with matching attributes, run in On-Demand Instance capacity,
+        /// or only run in a Capacity Reservation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceCapacityReservationAttributes service method.</param>
         /// 
@@ -24491,7 +24492,8 @@ namespace Amazon.EC2
         /// <summary>
         /// Modifies the Capacity Reservation settings for a stopped instance. Use this action
         /// to configure an instance to target a specific Capacity Reservation, run in any <c>open</c>
-        /// Capacity Reservation with matching attributes, or run On-Demand Instance capacity.
+        /// Capacity Reservation with matching attributes, run in On-Demand Instance capacity,
+        /// or only run in a Capacity Reservation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceCapacityReservationAttributes service method.</param>
         /// <param name="cancellationToken">

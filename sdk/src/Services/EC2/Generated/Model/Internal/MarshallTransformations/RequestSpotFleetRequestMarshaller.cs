@@ -255,6 +255,24 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                         request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "InstanceRequirements" + "." + "BaselineEbsBandwidthMbps" + "." + "Min", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.BaselineEbsBandwidthMbps.Min));
                                     }
                                 }
+                                if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.IsSetBaselinePerformanceFactors())
+                                {
+                                    if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.BaselinePerformanceFactors.IsSetCpu())
+                                    {
+                                        if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.BaselinePerformanceFactors.Cpu.IsSetReferences())
+                                        {
+                                            int publicRequestSpotFleetRequestConfiglistValueInstanceRequirementsBaselinePerformanceFactorsCpulistValueIndex = 1;
+                                            foreach(var publicRequestSpotFleetRequestConfiglistValueInstanceRequirementsBaselinePerformanceFactorsCpulistValue in publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.BaselinePerformanceFactors.Cpu.References)
+                                            {
+                                                if(publicRequestSpotFleetRequestConfiglistValueInstanceRequirementsBaselinePerformanceFactorsCpulistValue.IsSetInstanceFamily())
+                                                {
+                                                    request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "InstanceRequirements" + "." + "BaselinePerformanceFactors" + "." + "Cpu" + "." + "ReferenceSet" + "." + publicRequestSpotFleetRequestConfiglistValueInstanceRequirementsBaselinePerformanceFactorsCpulistValueIndex + "." + "InstanceFamily", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValueInstanceRequirementsBaselinePerformanceFactorsCpulistValue.InstanceFamily));
+                                                }
+                                                publicRequestSpotFleetRequestConfiglistValueInstanceRequirementsBaselinePerformanceFactorsCpulistValueIndex++;
+                                            }
+                                        }
+                                    }
+                                }
                                 if(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.IsSetBurstablePerformance())
                                 {
                                     request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchSpecifications" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "InstanceRequirements" + "." + "BurstablePerformance", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValue.InstanceRequirements.BurstablePerformance));
@@ -747,6 +765,24 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                             if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.BaselineEbsBandwidthMbps.IsSetMin())
                                             {
                                                 request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "InstanceRequirements" + "." + "BaselineEbsBandwidthMbps" + "." + "Min", StringUtils.FromInt(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.BaselineEbsBandwidthMbps.Min));
+                                            }
+                                        }
+                                        if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.IsSetBaselinePerformanceFactors())
+                                        {
+                                            if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.BaselinePerformanceFactors.IsSetCpu())
+                                            {
+                                                if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.BaselinePerformanceFactors.Cpu.IsSetReferences())
+                                                {
+                                                    int publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementsBaselinePerformanceFactorsCpulistValueIndex = 1;
+                                                    foreach(var publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementsBaselinePerformanceFactorsCpulistValue in publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.BaselinePerformanceFactors.Cpu.References)
+                                                    {
+                                                        if(publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementsBaselinePerformanceFactorsCpulistValue.IsSetInstanceFamily())
+                                                        {
+                                                            request.Parameters.Add("SpotFleetRequestConfig" + "." + "LaunchTemplateConfigs" + "." + publicRequestSpotFleetRequestConfiglistValueIndex + "." + "Overrides" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueIndex + "." + "InstanceRequirements" + "." + "BaselinePerformanceFactors" + "." + "Cpu" + "." + "ReferenceSet" + "." + publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementsBaselinePerformanceFactorsCpulistValueIndex + "." + "InstanceFamily", StringUtils.FromString(publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementsBaselinePerformanceFactorsCpulistValue.InstanceFamily));
+                                                        }
+                                                        publicRequestSpotFleetRequestConfiglistValuelistValueInstanceRequirementsBaselinePerformanceFactorsCpulistValueIndex++;
+                                                    }
+                                                }
                                             }
                                         }
                                         if(publicRequestSpotFleetRequestConfiglistValuelistValue.InstanceRequirements.IsSetBurstablePerformance())

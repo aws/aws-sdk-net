@@ -211,7 +211,7 @@ namespace Amazon.EC2.Model
         /// Information about the Capacity Reservation targeting option. If you do not specify
         /// this parameter, the instance's Capacity Reservation preference defaults to <c>open</c>,
         /// which enables it to run in any open Capacity Reservation that has matching attributes
-        /// (instance type, platform, Availability Zone).
+        /// (instance type, platform, Availability Zone, and tenancy).
         /// </para>
         /// </summary>
         public CapacityReservationSpecification CapacityReservationSpecification

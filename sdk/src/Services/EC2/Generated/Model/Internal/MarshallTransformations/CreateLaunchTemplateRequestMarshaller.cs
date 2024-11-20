@@ -338,6 +338,24 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                 request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "BaselineEbsBandwidthMbps" + "." + "Min", StringUtils.FromInt(publicRequest.LaunchTemplateData.InstanceRequirements.BaselineEbsBandwidthMbps.Min));
                             }
                         }
+                        if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetBaselinePerformanceFactors())
+                        {
+                            if(publicRequest.LaunchTemplateData.InstanceRequirements.BaselinePerformanceFactors.IsSetCpu())
+                            {
+                                if(publicRequest.LaunchTemplateData.InstanceRequirements.BaselinePerformanceFactors.Cpu.IsSetReferences())
+                                {
+                                    int publicRequestLaunchTemplateDataInstanceRequirementsBaselinePerformanceFactorsCpulistValueIndex = 1;
+                                    foreach(var publicRequestLaunchTemplateDataInstanceRequirementsBaselinePerformanceFactorsCpulistValue in publicRequest.LaunchTemplateData.InstanceRequirements.BaselinePerformanceFactors.Cpu.References)
+                                    {
+                                        if(publicRequestLaunchTemplateDataInstanceRequirementsBaselinePerformanceFactorsCpulistValue.IsSetInstanceFamily())
+                                        {
+                                            request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "BaselinePerformanceFactors" + "." + "Cpu" + "." + "Reference" + "." + publicRequestLaunchTemplateDataInstanceRequirementsBaselinePerformanceFactorsCpulistValueIndex + "." + "InstanceFamily", StringUtils.FromString(publicRequestLaunchTemplateDataInstanceRequirementsBaselinePerformanceFactorsCpulistValue.InstanceFamily));
+                                        }
+                                        publicRequestLaunchTemplateDataInstanceRequirementsBaselinePerformanceFactorsCpulistValueIndex++;
+                                    }
+                                }
+                            }
+                        }
                         if(publicRequest.LaunchTemplateData.InstanceRequirements.IsSetBurstablePerformance())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "InstanceRequirements" + "." + "BurstablePerformance", StringUtils.FromString(publicRequest.LaunchTemplateData.InstanceRequirements.BurstablePerformance));

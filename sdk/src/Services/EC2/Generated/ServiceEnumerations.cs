@@ -2569,6 +2569,10 @@ namespace Amazon.EC2
     {
 
         /// <summary>
+        /// Constant CapacityReservationsOnly for CapacityReservationPreference
+        /// </summary>
+        public static readonly CapacityReservationPreference CapacityReservationsOnly = new CapacityReservationPreference("capacity-reservations-only");
+        /// <summary>
         /// Constant None for CapacityReservationPreference
         /// </summary>
         public static readonly CapacityReservationPreference None = new CapacityReservationPreference("none");
@@ -3540,6 +3544,10 @@ namespace Amazon.EC2
         /// Constant Amd for CpuManufacturer
         /// </summary>
         public static readonly CpuManufacturer Amd = new CpuManufacturer("amd");
+        /// <summary>
+        /// Constant Apple for CpuManufacturer
+        /// </summary>
+        public static readonly CpuManufacturer Apple = new CpuManufacturer("apple");
         /// <summary>
         /// Constant Intel for CpuManufacturer
         /// </summary>
