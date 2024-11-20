@@ -34,6 +34,7 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class Service
     {
+        private AvailabilityZoneRebalancing _availabilityZoneRebalancing;
         private List<CapacityProviderStrategyItem> _capacityProviderStrategy = AWSConfigs.InitializeCollections ? new List<CapacityProviderStrategyItem>() : null;
         private string _clusterArn;
         private DateTime? _createdAt;
@@ -65,6 +66,30 @@ namespace Amazon.ECS.Model
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _taskDefinition;
         private List<TaskSet> _taskSets = AWSConfigs.InitializeCollections ? new List<TaskSet>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneRebalancing. 
+        /// <para>
+        /// Indicates whether to use Availability Zone rebalancing for the service.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html">Balancing
+        /// an Amazon ECS service across Availability Zones</a> in the <i>Amazon Elastic Container
+        /// Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public AvailabilityZoneRebalancing AvailabilityZoneRebalancing
+        {
+            get { return this._availabilityZoneRebalancing; }
+            set { this._availabilityZoneRebalancing = value; }
+        }
+
+        // Check to see if AvailabilityZoneRebalancing property is set
+        internal bool IsSetAvailabilityZoneRebalancing()
+        {
+            return this._availabilityZoneRebalancing != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CapacityProviderStrategy. 

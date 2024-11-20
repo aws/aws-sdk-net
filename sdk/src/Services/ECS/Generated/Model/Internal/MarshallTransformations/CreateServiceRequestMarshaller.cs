@@ -69,6 +69,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAvailabilityZoneRebalancing())
+                {
+                    context.Writer.WritePropertyName("availabilityZoneRebalancing");
+                    context.Writer.Write(publicRequest.AvailabilityZoneRebalancing);
+                }
+
                 if(publicRequest.IsSetCapacityProviderStrategy())
                 {
                     context.Writer.WritePropertyName("capacityProviderStrategy");
