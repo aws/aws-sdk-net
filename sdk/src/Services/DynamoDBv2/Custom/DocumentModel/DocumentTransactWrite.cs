@@ -22,6 +22,7 @@ using System.Threading.Tasks;
 #endif
 using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime.Telemetry.Tracing;
+using Amazon.Runtime.Telemetry.Tracing;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
@@ -215,6 +216,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         internal Table TargetTable { get; private set; }
         internal List<ITransactWriteRequestItem> Items { get; private set; }
         internal TracerProvider TracerProvider { get; private set; }
+        internal TracerProvider TracerProvider { get; private set; }
 
         #endregion
 
@@ -234,6 +236,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             TargetTable = targetTable;
             Items = new List<ITransactWriteRequestItem>();
+            TracerProvider = targetTable?.DDBClient?.Config?.TelemetryProvider?.TracerProvider
+                ?? AWSConfigs.TelemetryProvider.TracerProvider;
             TracerProvider = targetTable?.DDBClient?.Config?.TelemetryProvider?.TracerProvider
                 ?? AWSConfigs.TelemetryProvider.TracerProvider;
         }

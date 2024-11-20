@@ -89,11 +89,31 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Description);
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetEngineVersion())
                     {
                         context.Writer.WritePropertyName("EngineVersion");
                         context.Writer.Write(publicRequest.EngineVersion);
                     }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetEngineVersion())
+                {
+                    context.Writer.WritePropertyName("EngineVersion");
+                    context.Writer.Write(publicRequest.EngineVersion);
+                }
+=======
+                if(publicRequest.IsSetEngine())
+                {
+                    context.Writer.WritePropertyName("Engine");
+                    context.Writer.Write(publicRequest.Engine);
+                }
+
+                if(publicRequest.IsSetEngineVersion())
+                {
+                    context.Writer.WritePropertyName("EngineVersion");
+                    context.Writer.Write(publicRequest.EngineVersion);
+                }
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
                     if(publicRequest.IsSetMaintenanceWindow())
                     {

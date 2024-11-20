@@ -72,8 +72,8 @@ namespace Amazon.CloudFormation.Model
         /// that has been checked for drift. Resources that haven't yet been checked for drift
         /// aren't included. Resources that do not currently support drift detection aren't checked,
         /// and so not included. For a list of resources that support drift detection, see <a
-        /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
-        /// that Support Drift Detection</a>.
+        /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resource
+        /// type support for imports and drift detection</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceReporting.IAmazonMarketplaceReporting.GetBuyerDashboard(Amazon.MarketplaceReporting.Model.GetBuyerDashboardRequest)" />
+            <member name="M:Amazon.MarketplaceReporting.AmazonMarketplaceReportingClient.GetBuyerDashboard(Amazon.MarketplaceReporting.Model.GetBuyerDashboardRequest)" />
+            <member name="T:Amazon.MarketplaceReporting.Model.GetBuyerDashboardRequest" />
+            <member name="T:Amazon.MarketplaceReporting.Model.GetBuyerDashboardResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows how to obtain a dashboard for active agreements
+                </para>
+                <code
+                    title="Getting an agreements dashboard"
+                    source=".\AWSSDKDocSamples\MarketplaceReporting\MarketplaceReporting.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceReporting.IAmazonMarketplaceReporting.GetBuyerDashboard(Amazon.MarketplaceReporting.Model.GetBuyerDashboardRequest)" />
+            <member name="M:Amazon.MarketplaceReporting.AmazonMarketplaceReportingClient.GetBuyerDashboard(Amazon.MarketplaceReporting.Model.GetBuyerDashboardRequest)" />
+            <member name="T:Amazon.MarketplaceReporting.Model.GetBuyerDashboardRequest" />
+            <member name="T:Amazon.MarketplaceReporting.Model.GetBuyerDashboardResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows how to obtain a dashboard for cost analysis
+                </para>
+                <code
+                    title="Getting a cost-analysis dashboard"
+                    source=".\AWSSDKDocSamples\MarketplaceReporting\MarketplaceReporting.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+</docs>

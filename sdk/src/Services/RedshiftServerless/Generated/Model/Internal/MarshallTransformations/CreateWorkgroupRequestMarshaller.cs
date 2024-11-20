@@ -117,11 +117,36 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.NamespaceName);
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetPort())
                     {
                         context.Writer.WritePropertyName("port");
                         context.Writer.Write(publicRequest.Port.Value);
                     }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetPubliclyAccessible())
+                {
+                    context.Writer.WritePropertyName("publiclyAccessible");
+                    context.Writer.Write(publicRequest.PubliclyAccessible);
+                }
+=======
+                if(publicRequest.IsSetPricePerformanceTarget())
+                {
+                    context.Writer.WritePropertyName("pricePerformanceTarget");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PerformanceTargetMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PricePerformanceTarget, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetPubliclyAccessible())
+                {
+                    context.Writer.WritePropertyName("publiclyAccessible");
+                    context.Writer.Write(publicRequest.PubliclyAccessible);
+                }
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
                     if(publicRequest.IsSetPubliclyAccessible())
                     {

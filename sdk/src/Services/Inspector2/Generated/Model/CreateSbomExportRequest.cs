@@ -77,7 +77,10 @@ namespace Amazon.Inspector2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property S3Destination.
+        /// Gets and sets the property S3Destination. 
+        /// <para>
+        /// Contains details of the Amazon S3 bucket and KMS key used to export findings.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public Destination S3Destination

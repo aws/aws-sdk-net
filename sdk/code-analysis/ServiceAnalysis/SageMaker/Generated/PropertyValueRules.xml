@@ -48,6 +48,11 @@
     <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:experiment-trial-component/.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.BatchDeleteClusterNodesRequest.ClusterName</property>
+    <max>256</max>
+    <pattern>^(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:cluster/[a-z0-9]{12})|([a-zA-Z0-9](-*[a-zA-Z0-9]){0,62})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateActionRequest.ActionName</property>
     <min>1</min>
     <max>120</max>
@@ -937,7 +942,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateNotebookInstanceRequest.PlatformIdentifier</property>
     <max>15</max>
-    <pattern>^(notebook-al1-v1|notebook-al2-v1|notebook-al2-v2)$</pattern>
+    <pattern>^(notebook-al1-v1|notebook-al2-v1|notebook-al2-v2|notebook-al2-v3)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateNotebookInstanceRequest.RoleArn</property>
@@ -1587,7 +1592,7 @@
     <property>Amazon.SageMaker.Model.DeleteModelPackageRequest.ModelPackageName</property>
     <min>1</min>
     <max>176</max>
-    <pattern>(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:[a-z\-]*\/)?([a-zA-Z0-9]([a-zA-Z0-9-]){0,62})(?&lt;!-)(\/[0-9]{1,5})?$</pattern>
+    <pattern>(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:[a-z\-]*\/)?([a-zA-Z0-9]([a-zA-Z0-9-]){0,62})(?&lt;!-)(\/[0-9]{1,9})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DeleteModelPackageGroupRequest.ModelPackageGroupName</property>
@@ -1809,6 +1814,11 @@
     <property>Amazon.SageMaker.Model.DescribeAppResponse.AppName</property>
     <max>63</max>
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeAppResponse.BuiltInLifecycleConfigArn</property>
+    <max>256</max>
+    <pattern>^(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:studio-lifecycle-config/.*|None)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeAppResponse.DomainId</property>
@@ -3080,7 +3090,7 @@
     <property>Amazon.SageMaker.Model.DescribeModelPackageRequest.ModelPackageName</property>
     <min>1</min>
     <max>176</max>
-    <pattern>(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:[a-z\-]*\/)?([a-zA-Z0-9]([a-zA-Z0-9-]){0,62})(?&lt;!-)(\/[0-9]{1,5})?$</pattern>
+    <pattern>(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:[a-z\-]*\/)?([a-zA-Z0-9]([a-zA-Z0-9-]){0,62})(?&lt;!-)(\/[0-9]{1,9})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeModelPackageResponse.ApprovalDescription</property>
@@ -3229,7 +3239,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeNotebookInstanceResponse.PlatformIdentifier</property>
     <max>15</max>
-    <pattern>^(notebook-al1-v1|notebook-al2-v1|notebook-al2-v2)$</pattern>
+    <pattern>^(notebook-al1-v1|notebook-al2-v1|notebook-al2-v2|notebook-al2-v3)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeNotebookInstanceResponse.RoleArn</property>
@@ -6330,6 +6340,12 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateModelPackageRequest.ClientToken</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateModelPackageRequest.ModelPackageArn</property>
     <min>1</min>
     <max>2048</max>
@@ -7013,6 +7029,12 @@
     <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.BatchDeleteClusterNodesError.NodeId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^i-[a-f0-9]{8}(?:[a-f0-9]{9})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.BatchDescribeModelPackageSummary.ModelPackageArn</property>
     <min>1</min>
     <max>2048</max>
@@ -7349,6 +7371,11 @@
     <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.CodeEditorAppSettings.BuiltInLifecycleConfigArn</property>
+    <max>256</max>
+    <pattern>^(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:studio-lifecycle-config/.*|None)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.CodeRepository.RepositoryUrl</property>
     <max>1024</max>
     <pattern>^https://([.\-_a-zA-Z0-9]+/?){3,1016}$</pattern>
@@ -7437,7 +7464,7 @@
     <property>Amazon.SageMaker.Model.ContainerDefinition.ModelPackageName</property>
     <min>1</min>
     <max>176</max>
-    <pattern>(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:[a-z\-]*\/)?([a-zA-Z0-9]([a-zA-Z0-9-]){0,62})(?&lt;!-)(\/[0-9]{1,5})?$</pattern>
+    <pattern>(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:[a-z\-]*\/)?([a-zA-Z0-9]([a-zA-Z0-9-]){0,62})(?&lt;!-)(\/[0-9]{1,9})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ContextSource.SourceId</property>
@@ -8992,6 +9019,11 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.JupyterLabAppSettings.BuiltInLifecycleConfigArn</property>
+    <max>256</max>
+    <pattern>^(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:studio-lifecycle-config/.*|None)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.KernelSpec.DisplayName</property>
     <max>1024</max>
   </property-value-rule>
@@ -9439,6 +9471,24 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ModelLatencyThreshold.Percentile</property>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ModelLifeCycle.Stage</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ModelLifeCycle.StageDescription</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>^.{0,1024}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ModelLifeCycle.StageStatus</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ModelMetadataFilter.Value</property>

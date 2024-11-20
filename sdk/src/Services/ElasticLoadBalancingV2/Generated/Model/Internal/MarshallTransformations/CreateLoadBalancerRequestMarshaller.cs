@@ -63,6 +63,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CustomerOwnedIpv4Pool", StringUtils.FromString(publicRequest.CustomerOwnedIpv4Pool));
                 }
+                if(publicRequest.IsSetEnablePrefixForIpv6SourceNat())
+                {
+                    request.Parameters.Add("EnablePrefixForIpv6SourceNat", StringUtils.FromString(publicRequest.EnablePrefixForIpv6SourceNat));
+                }
                 if(publicRequest.IsSetIpAddressType())
                 {
                     request.Parameters.Add("IpAddressType", StringUtils.FromString(publicRequest.IpAddressType));
@@ -95,6 +99,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                         request.Parameters.Add("SubnetMappings", "");
                     else
                     {
+<<<<<<< HEAD
                          int publicRequestlistValueIndex = 1;
                          foreach(var publicRequestlistValue in publicRequest.SubnetMappings)
                          {
@@ -116,6 +121,47 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                             }
                              publicRequestlistValueIndex++;
                          }
+||||||| Commit version number update changes
+                        if(publicRequestlistValue.IsSetAllocationId())
+                        {
+                            request.Parameters.Add("SubnetMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AllocationId", StringUtils.FromString(publicRequestlistValue.AllocationId));
+                        }
+                        if(publicRequestlistValue.IsSetIPv6Address())
+                        {
+                            request.Parameters.Add("SubnetMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "IPv6Address", StringUtils.FromString(publicRequestlistValue.IPv6Address));
+                        }
+                        if(publicRequestlistValue.IsSetPrivateIPv4Address())
+                        {
+                            request.Parameters.Add("SubnetMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "PrivateIPv4Address", StringUtils.FromString(publicRequestlistValue.PrivateIPv4Address));
+                        }
+                        if(publicRequestlistValue.IsSetSubnetId())
+                        {
+                            request.Parameters.Add("SubnetMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "SubnetId", StringUtils.FromString(publicRequestlistValue.SubnetId));
+                        }
+                        publicRequestlistValueIndex++;
+=======
+                        if(publicRequestlistValue.IsSetAllocationId())
+                        {
+                            request.Parameters.Add("SubnetMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AllocationId", StringUtils.FromString(publicRequestlistValue.AllocationId));
+                        }
+                        if(publicRequestlistValue.IsSetIPv6Address())
+                        {
+                            request.Parameters.Add("SubnetMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "IPv6Address", StringUtils.FromString(publicRequestlistValue.IPv6Address));
+                        }
+                        if(publicRequestlistValue.IsSetPrivateIPv4Address())
+                        {
+                            request.Parameters.Add("SubnetMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "PrivateIPv4Address", StringUtils.FromString(publicRequestlistValue.PrivateIPv4Address));
+                        }
+                        if(publicRequestlistValue.IsSetSourceNatIpv6Prefix())
+                        {
+                            request.Parameters.Add("SubnetMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "SourceNatIpv6Prefix", StringUtils.FromString(publicRequestlistValue.SourceNatIpv6Prefix));
+                        }
+                        if(publicRequestlistValue.IsSetSubnetId())
+                        {
+                            request.Parameters.Add("SubnetMappings" + "." + "member" + "." + publicRequestlistValueIndex + "." + "SubnetId", StringUtils.FromString(publicRequestlistValue.SubnetId));
+                        }
+                        publicRequestlistValueIndex++;
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
                     }
                 }
                 if(publicRequest.IsSetSubnets())

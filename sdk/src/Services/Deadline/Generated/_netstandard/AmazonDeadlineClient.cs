@@ -3429,6 +3429,56 @@ namespace Amazon.Deadline
 
         #endregion
         
+        #region  ListJobParameterDefinitions
+
+        internal virtual ListJobParameterDefinitionsResponse ListJobParameterDefinitions(ListJobParameterDefinitionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobParameterDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobParameterDefinitionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListJobParameterDefinitionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists parameter definitions of a job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListJobParameterDefinitions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListJobParameterDefinitions service method, as returned by Deadline.</returns>
+        /// <exception cref="Amazon.Deadline.Model.AccessDeniedException">
+        /// You don't have permission to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.InternalServerErrorException">
+        /// Deadline Cloud can't process your request right now. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ThrottlingException">
+        /// Your request exceeded a request rate quota.
+        /// </exception>
+        /// <exception cref="Amazon.Deadline.Model.ValidationException">
+        /// The request isn't valid. This can occur if your request contains malformed JSON or
+        /// unsupported characters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListJobParameterDefinitions">REST API Reference for ListJobParameterDefinitions Operation</seealso>
+        public virtual Task<ListJobParameterDefinitionsResponse> ListJobParameterDefinitionsAsync(ListJobParameterDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListJobParameterDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListJobParameterDefinitionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListJobParameterDefinitionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListJobs
 
         internal virtual ListJobsResponse ListJobs(ListJobsRequest request)

@@ -63,7 +63,37 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
             request.ResourcePath = "/identity-provider/ListIdentityProviders";
             using (MemoryStream memoryStream = new MemoryStream())
             {
+<<<<<<< HEAD
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+||||||| Commit version number update changes
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetMaxResults())
+=======
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetFilters())
+                {
+                    context.Writer.WritePropertyName("Filters");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestFiltersListValue in publicRequest.Filters)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = FilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequestFiltersListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetMaxResults())
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
                 {
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;

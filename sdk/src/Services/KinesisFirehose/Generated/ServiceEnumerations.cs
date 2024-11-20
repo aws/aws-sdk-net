@@ -349,6 +349,56 @@ namespace Amazon.KinesisFirehose
 
 
     /// <summary>
+    /// Constants used for properties of type DatabaseType.
+    /// </summary>
+    public class DatabaseType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MySQL for DatabaseType
+        /// </summary>
+        public static readonly DatabaseType MySQL = new DatabaseType("MySQL");
+        /// <summary>
+        /// Constant PostgreSQL for DatabaseType
+        /// </summary>
+        public static readonly DatabaseType PostgreSQL = new DatabaseType("PostgreSQL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DatabaseType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DatabaseType FindValue(string value)
+        {
+            return FindValue<DatabaseType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DatabaseType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DefaultDocumentIdFormat.
     /// </summary>
     public class DefaultDocumentIdFormat : ConstantClass
@@ -530,6 +580,14 @@ namespace Amazon.KinesisFirehose
         /// Constant UNKNOWN_ERROR for DeliveryStreamFailureType
         /// </summary>
         public static readonly DeliveryStreamFailureType UNKNOWN_ERROR = new DeliveryStreamFailureType("UNKNOWN_ERROR");
+        /// <summary>
+        /// Constant VPC_ENDPOINT_SERVICE_NAME_NOT_FOUND for DeliveryStreamFailureType
+        /// </summary>
+        public static readonly DeliveryStreamFailureType VPC_ENDPOINT_SERVICE_NAME_NOT_FOUND = new DeliveryStreamFailureType("VPC_ENDPOINT_SERVICE_NAME_NOT_FOUND");
+        /// <summary>
+        /// Constant VPC_INTERFACE_ENDPOINT_SERVICE_ACCESS_DENIED for DeliveryStreamFailureType
+        /// </summary>
+        public static readonly DeliveryStreamFailureType VPC_INTERFACE_ENDPOINT_SERVICE_ACCESS_DENIED = new DeliveryStreamFailureType("VPC_INTERFACE_ENDPOINT_SERVICE_ACCESS_DENIED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -634,6 +692,10 @@ namespace Amazon.KinesisFirehose
     public class DeliveryStreamType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant DatabaseAsSource for DeliveryStreamType
+        /// </summary>
+        public static readonly DeliveryStreamType DatabaseAsSource = new DeliveryStreamType("DatabaseAsSource");
         /// <summary>
         /// Constant DirectPut for DeliveryStreamType
         /// </summary>
@@ -1501,6 +1563,110 @@ namespace Amazon.KinesisFirehose
 
 
     /// <summary>
+    /// Constants used for properties of type SnapshotRequestedBy.
+    /// </summary>
+    public class SnapshotRequestedBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FIREHOSE for SnapshotRequestedBy
+        /// </summary>
+        public static readonly SnapshotRequestedBy FIREHOSE = new SnapshotRequestedBy("FIREHOSE");
+        /// <summary>
+        /// Constant USER for SnapshotRequestedBy
+        /// </summary>
+        public static readonly SnapshotRequestedBy USER = new SnapshotRequestedBy("USER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SnapshotRequestedBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SnapshotRequestedBy FindValue(string value)
+        {
+            return FindValue<SnapshotRequestedBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SnapshotRequestedBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SnapshotStatus.
+    /// </summary>
+    public class SnapshotStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETE for SnapshotStatus
+        /// </summary>
+        public static readonly SnapshotStatus COMPLETE = new SnapshotStatus("COMPLETE");
+        /// <summary>
+        /// Constant IN_PROGRESS for SnapshotStatus
+        /// </summary>
+        public static readonly SnapshotStatus IN_PROGRESS = new SnapshotStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant SUSPENDED for SnapshotStatus
+        /// </summary>
+        public static readonly SnapshotStatus SUSPENDED = new SnapshotStatus("SUSPENDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SnapshotStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SnapshotStatus FindValue(string value)
+        {
+            return FindValue<SnapshotStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SnapshotStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SnowflakeDataLoadingOption.
     /// </summary>
     public class SnowflakeDataLoadingOption : ConstantClass
@@ -1648,6 +1814,56 @@ namespace Amazon.KinesisFirehose
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SplunkS3BackupMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SSLMode.
+    /// </summary>
+    public class SSLMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for SSLMode
+        /// </summary>
+        public static readonly SSLMode Disabled = new SSLMode("Disabled");
+        /// <summary>
+        /// Constant Enabled for SSLMode
+        /// </summary>
+        public static readonly SSLMode Enabled = new SSLMode("Enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SSLMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SSLMode FindValue(string value)
+        {
+            return FindValue<SSLMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SSLMode(string value)
         {
             return FindValue(value);
         }

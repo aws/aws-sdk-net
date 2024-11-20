@@ -34,10 +34,16 @@ namespace Amazon.MediaConnect
     public partial class AmazonMediaConnectConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("MediaConnect", "4.0.0.0");
 
         private static readonly AmazonMediaConnectEndpointResolver EndpointResolver =
             new AmazonMediaConnectEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("MediaConnect", "3.7.401.13");
+=======
+            InternalSDKUtils.BuildUserAgentString("MediaConnect", "3.7.401.40");
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
         private string _userAgent = UserAgentString;
         ///<summary>

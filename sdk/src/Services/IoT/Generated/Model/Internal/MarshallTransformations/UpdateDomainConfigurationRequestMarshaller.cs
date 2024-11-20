@@ -66,8 +66,35 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.ResourcePath = "/domainConfigurations/{domainConfigurationName}";
             using (MemoryStream memoryStream = new MemoryStream())
             {
+<<<<<<< HEAD
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+||||||| Commit version number update changes
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAuthorizerConfig())
+=======
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetApplicationProtocol())
                 {
+                    context.Writer.WritePropertyName("applicationProtocol");
+                    context.Writer.Write(publicRequest.ApplicationProtocol);
+                }
+
+                if(publicRequest.IsSetAuthenticationType())
+                {
+                    context.Writer.WritePropertyName("authenticationType");
+                    context.Writer.Write(publicRequest.AuthenticationType);
+                }
+
+                if(publicRequest.IsSetAuthorizerConfig())
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
+                {
+<<<<<<< HEAD
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;
                     writer.WriteObjectStart();
@@ -118,6 +145,102 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     }
 
                     writer.WriteObjectEnd();
+||||||| Commit version number update changes
+                    context.Writer.WritePropertyName("authorizerConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AuthorizerConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AuthorizerConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetDomainConfigurationStatus())
+                {
+                    context.Writer.WritePropertyName("domainConfigurationStatus");
+                    context.Writer.Write(publicRequest.DomainConfigurationStatus);
+                }
+
+                if(publicRequest.IsSetRemoveAuthorizerConfig())
+                {
+                    context.Writer.WritePropertyName("removeAuthorizerConfig");
+                    context.Writer.Write(publicRequest.RemoveAuthorizerConfig);
+                }
+
+                if(publicRequest.IsSetServerCertificateConfig())
+                {
+                    context.Writer.WritePropertyName("serverCertificateConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ServerCertificateConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ServerCertificateConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetTlsConfig())
+                {
+                    context.Writer.WritePropertyName("tlsConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TlsConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TlsConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+=======
+                    context.Writer.WritePropertyName("authorizerConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AuthorizerConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AuthorizerConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetClientCertificateConfig())
+                {
+                    context.Writer.WritePropertyName("clientCertificateConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ClientCertificateConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ClientCertificateConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetDomainConfigurationStatus())
+                {
+                    context.Writer.WritePropertyName("domainConfigurationStatus");
+                    context.Writer.Write(publicRequest.DomainConfigurationStatus);
+                }
+
+                if(publicRequest.IsSetRemoveAuthorizerConfig())
+                {
+                    context.Writer.WritePropertyName("removeAuthorizerConfig");
+                    context.Writer.Write(publicRequest.RemoveAuthorizerConfig);
+                }
+
+                if(publicRequest.IsSetServerCertificateConfig())
+                {
+                    context.Writer.WritePropertyName("serverCertificateConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ServerCertificateConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ServerCertificateConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetTlsConfig())
+                {
+                    context.Writer.WritePropertyName("tlsConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TlsConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TlsConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
                 }
 
                 request.Content = memoryStream.ToArray();

@@ -72,6 +72,18 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.EnableOCSPCheck = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ocspAuthorizedResponderArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OcspAuthorizedResponderArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ocspLambdaArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OcspLambdaArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

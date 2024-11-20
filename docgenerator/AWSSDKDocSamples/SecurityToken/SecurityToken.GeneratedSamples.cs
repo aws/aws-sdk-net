@@ -99,6 +99,24 @@ namespace AWSSDKDocSamples.Amazon.SecurityToken.Generated
             #endregion
         }
 
+        public void SecurityTokenServiceAssumeRoot()
+        {
+            #region to-launch-a-privileged-session-1731335424565
+
+            var client = new AmazonSecurityTokenServiceClient();
+            var response = client.AssumeRoot(new AssumeRootRequest 
+            {
+                DurationSeconds = 900,
+                TargetPrincipal = "111122223333",
+                TaskPolicyArn = new PolicyDescriptorType { Arn = "arn:aws:iam::aws:policy/root-task/S3UnlockBucketPolicy" }
+            });
+
+            Credentials credentials = response.Credentials;
+            string sourceIdentity = response.SourceIdentity;
+
+            #endregion
+        }
+
         public void SecurityTokenServiceDecodeAuthorizationMessage()
         {
             #region to-decode-information-about-an-authorization-status-of-a-request-1480533854499

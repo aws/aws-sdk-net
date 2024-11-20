@@ -62,7 +62,7 @@ namespace Amazon.GameLift.Model
         /// operation. If no token is returned, these results represent the end of the list.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }

@@ -34,10 +34,16 @@ namespace Amazon.EC2
     public partial class AmazonEC2Config : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("EC2", "4.0.0.0");
 
         private static readonly AmazonEC2EndpointResolver EndpointResolver =
             new AmazonEC2EndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("EC2", "3.7.406.4");
+=======
+            InternalSDKUtils.BuildUserAgentString("EC2", "3.7.416.0");
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
         private string _userAgent = UserAgentString;
         ///<summary>

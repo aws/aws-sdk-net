@@ -533,6 +533,56 @@ namespace Amazon.CleanRooms
 
 
     /// <summary>
+    /// Constants used for properties of type AnalyticsEngine.
+    /// </summary>
+    public class AnalyticsEngine : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLEAN_ROOMS_SQL for AnalyticsEngine
+        /// </summary>
+        public static readonly AnalyticsEngine CLEAN_ROOMS_SQL = new AnalyticsEngine("CLEAN_ROOMS_SQL");
+        /// <summary>
+        /// Constant SPARK for AnalyticsEngine
+        /// </summary>
+        public static readonly AnalyticsEngine SPARK = new AnalyticsEngine("SPARK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalyticsEngine(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalyticsEngine FindValue(string value)
+        {
+            return FindValue<AnalyticsEngine>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalyticsEngine(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CollaborationQueryLogStatus.
     /// </summary>
     public class CollaborationQueryLogStatus : ConstantClass
@@ -738,6 +788,56 @@ namespace Amazon.CleanRooms
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ConflictExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CustomMLMemberAbility.
+    /// </summary>
+    public class CustomMLMemberAbility : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CAN_RECEIVE_INFERENCE_OUTPUT for CustomMLMemberAbility
+        /// </summary>
+        public static readonly CustomMLMemberAbility CAN_RECEIVE_INFERENCE_OUTPUT = new CustomMLMemberAbility("CAN_RECEIVE_INFERENCE_OUTPUT");
+        /// <summary>
+        /// Constant CAN_RECEIVE_MODEL_OUTPUT for CustomMLMemberAbility
+        /// </summary>
+        public static readonly CustomMLMemberAbility CAN_RECEIVE_MODEL_OUTPUT = new CustomMLMemberAbility("CAN_RECEIVE_MODEL_OUTPUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CustomMLMemberAbility(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CustomMLMemberAbility FindValue(string value)
+        {
+            return FindValue<CustomMLMemberAbility>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CustomMLMemberAbility(string value)
         {
             return FindValue(value);
         }
@@ -1225,13 +1325,25 @@ namespace Amazon.CleanRooms
         /// </summary>
         public static readonly ParameterType BIGINT = new ParameterType("BIGINT");
         /// <summary>
+        /// Constant BINARY for ParameterType
+        /// </summary>
+        public static readonly ParameterType BINARY = new ParameterType("BINARY");
+        /// <summary>
         /// Constant BOOLEAN for ParameterType
         /// </summary>
         public static readonly ParameterType BOOLEAN = new ParameterType("BOOLEAN");
         /// <summary>
+        /// Constant BYTE for ParameterType
+        /// </summary>
+        public static readonly ParameterType BYTE = new ParameterType("BYTE");
+        /// <summary>
         /// Constant CHAR for ParameterType
         /// </summary>
         public static readonly ParameterType CHAR = new ParameterType("CHAR");
+        /// <summary>
+        /// Constant CHARACTER for ParameterType
+        /// </summary>
+        public static readonly ParameterType CHARACTER = new ParameterType("CHARACTER");
         /// <summary>
         /// Constant DATE for ParameterType
         /// </summary>
@@ -1241,21 +1353,49 @@ namespace Amazon.CleanRooms
         /// </summary>
         public static readonly ParameterType DECIMAL = new ParameterType("DECIMAL");
         /// <summary>
+        /// Constant DOUBLE for ParameterType
+        /// </summary>
+        public static readonly ParameterType DOUBLE = new ParameterType("DOUBLE");
+        /// <summary>
         /// Constant DOUBLE_PRECISION for ParameterType
         /// </summary>
         public static readonly ParameterType DOUBLE_PRECISION = new ParameterType("DOUBLE_PRECISION");
+        /// <summary>
+        /// Constant FLOAT for ParameterType
+        /// </summary>
+        public static readonly ParameterType FLOAT = new ParameterType("FLOAT");
+        /// <summary>
+        /// Constant INT for ParameterType
+        /// </summary>
+        public static readonly ParameterType INT = new ParameterType("INT");
         /// <summary>
         /// Constant INTEGER for ParameterType
         /// </summary>
         public static readonly ParameterType INTEGER = new ParameterType("INTEGER");
         /// <summary>
+        /// Constant LONG for ParameterType
+        /// </summary>
+        public static readonly ParameterType LONG = new ParameterType("LONG");
+        /// <summary>
+        /// Constant NUMERIC for ParameterType
+        /// </summary>
+        public static readonly ParameterType NUMERIC = new ParameterType("NUMERIC");
+        /// <summary>
         /// Constant REAL for ParameterType
         /// </summary>
         public static readonly ParameterType REAL = new ParameterType("REAL");
         /// <summary>
+        /// Constant SHORT for ParameterType
+        /// </summary>
+        public static readonly ParameterType SHORT = new ParameterType("SHORT");
+        /// <summary>
         /// Constant SMALLINT for ParameterType
         /// </summary>
         public static readonly ParameterType SMALLINT = new ParameterType("SMALLINT");
+        /// <summary>
+        /// Constant STRING for ParameterType
+        /// </summary>
+        public static readonly ParameterType STRING = new ParameterType("STRING");
         /// <summary>
         /// Constant TIME for ParameterType
         /// </summary>
@@ -1265,6 +1405,14 @@ namespace Amazon.CleanRooms
         /// </summary>
         public static readonly ParameterType TIMESTAMP = new ParameterType("TIMESTAMP");
         /// <summary>
+        /// Constant TIMESTAMP_LTZ for ParameterType
+        /// </summary>
+        public static readonly ParameterType TIMESTAMP_LTZ = new ParameterType("TIMESTAMP_LTZ");
+        /// <summary>
+        /// Constant TIMESTAMP_NTZ for ParameterType
+        /// </summary>
+        public static readonly ParameterType TIMESTAMP_NTZ = new ParameterType("TIMESTAMP_NTZ");
+        /// <summary>
         /// Constant TIMESTAMPTZ for ParameterType
         /// </summary>
         public static readonly ParameterType TIMESTAMPTZ = new ParameterType("TIMESTAMPTZ");
@@ -1272,6 +1420,10 @@ namespace Amazon.CleanRooms
         /// Constant TIMETZ for ParameterType
         /// </summary>
         public static readonly ParameterType TIMETZ = new ParameterType("TIMETZ");
+        /// <summary>
+        /// Constant TINYINT for ParameterType
+        /// </summary>
+        public static readonly ParameterType TINYINT = new ParameterType("TINYINT");
         /// <summary>
         /// Constant VARBYTE for ParameterType
         /// </summary>
@@ -2104,6 +2256,56 @@ namespace Amazon.CleanRooms
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ValidationExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WorkerComputeType.
+    /// </summary>
+    public class WorkerComputeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CR1X for WorkerComputeType
+        /// </summary>
+        public static readonly WorkerComputeType CR1X = new WorkerComputeType("CR.1X");
+        /// <summary>
+        /// Constant CR4X for WorkerComputeType
+        /// </summary>
+        public static readonly WorkerComputeType CR4X = new WorkerComputeType("CR.4X");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WorkerComputeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WorkerComputeType FindValue(string value)
+        {
+            return FindValue<WorkerComputeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WorkerComputeType(string value)
         {
             return FindValue(value);
         }

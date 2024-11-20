@@ -65,7 +65,27 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
             request.ResourcePath = "/";
             using (MemoryStream memoryStream = new MemoryStream())
             {
+<<<<<<< HEAD
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+||||||| Commit version number update changes
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetMaxResults())
+=======
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetKeyArn())
+                {
+                    context.Writer.WritePropertyName("KeyArn");
+                    context.Writer.Write(publicRequest.KeyArn);
+                }
+
+                if(publicRequest.IsSetMaxResults())
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
                 {
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;

@@ -210,6 +210,18 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                     unmarshalledObject.ThirdPartyFirewallMissingSubnetViolation = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("WebACLHasIncompatibleConfigurationViolation", targetDepth))
+                {
+                    var unmarshaller = WebACLHasIncompatibleConfigurationViolationUnmarshaller.Instance;
+                    unmarshalledObject.WebACLHasIncompatibleConfigurationViolation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("WebACLHasOutOfScopeResourcesViolation", targetDepth))
+                {
+                    var unmarshaller = WebACLHasOutOfScopeResourcesViolationUnmarshaller.Instance;
+                    unmarshalledObject.WebACLHasOutOfScopeResourcesViolation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

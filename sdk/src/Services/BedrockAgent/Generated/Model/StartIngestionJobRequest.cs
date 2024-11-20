@@ -31,7 +31,8 @@ namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the StartIngestionJob operation.
-    /// Begins an ingestion job, in which a data source is added to a knowledge base.
+    /// Begins a data ingestion job. Data sources are ingested into your knowledge base so
+    /// that Large Language Models (LLMs) can use your data.
     /// </summary>
     public partial class StartIngestionJobRequest : AmazonBedrockAgentRequest
     {
@@ -65,7 +66,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property DataSourceId. 
         /// <para>
-        /// The unique identifier of the data source to ingest.
+        /// The unique identifier of the data source you want to ingest into your knowledge base.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -84,7 +85,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description of the ingestion job.
+        /// A description of the data ingestion job.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -103,7 +104,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property KnowledgeBaseId. 
         /// <para>
-        /// The unique identifier of the knowledge base to which to add the data source.
+        /// The unique identifier of the knowledge base for the data ingestion job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

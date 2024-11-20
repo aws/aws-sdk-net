@@ -190,6 +190,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* This release introduces Agents for Amazon Bedrock Runtime
 * [AWSSDK.BedrockRuntime](https://www.nuget.org/packages/AWSSDK.BedrockRuntime/)
 	* Run Inference: Added support to run the inference on models.  Includes set of APIs for running inference in streaming and non-streaming mode.
+* [AWSSDK.Billing](https://www.nuget.org/packages/AWSSDK.Billing/)
+	* Today, AWS announces the general availability of ListBillingViews API in the AWS SDKs, to enable AWS Billing Conductor (ABC) users to create proforma Cost and Usage Reports (CUR) programmatically.
 * [AWSSDK.BillingConductor](https://www.nuget.org/packages/AWSSDK.BillingConductor/)
 	* This is the initial SDK release for AWS Billing Conductor. The AWS Billing Conductor is a customizable billing service, allowing you to customize your billing data to match your desired business structure.
 * [AWSSDK.Braket](https://www.nuget.org/packages/AWSSDK.Braket/)
@@ -292,6 +294,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* Amazon Connect is a self-service, cloud-based contact center service that makes it easy for any business to deliver better customer service at lower cost.
 * [AWSSDK.ConnectCampaignService](https://www.nuget.org/packages/AWSSDK.ConnectCampaignService/)
 	* Added Amazon Connect high volume outbound communications SDK.
+* [AWSSDK.ConnectCampaignsV2](https://www.nuget.org/packages/AWSSDK.ConnectCampaignsV2/)
+	* Added Amazon Connect Outbound Campaigns V2 SDK.
 * [AWSSDK.ConnectCases](https://www.nuget.org/packages/AWSSDK.ConnectCases/)
 	* This release adds APIs for Amazon Connect Cases. Cases allows your agents to quickly track and manage customer issues that require multiple interactions, follow-up tasks, and teams in your contact center.  For more information, see https://docs.aws.amazon.com/cases/latest/APIReference/Welcome.html
 * [AWSSDK.ConnectContactLens](https://www.nuget.org/packages/AWSSDK.ConnectContactLens/)
@@ -412,6 +416,12 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* Amazon FSx provides fully-managed third-party file systems optimized for a variety of enterprise and compute-intensive workloads.
 * [AWSSDK.GameLift](https://www.nuget.org/packages/AWSSDK.GameLift/)
 	* Amazon GameLift Service is a managed AWS service for developers who need a scalable, server-based solution for multiplayer games.
+* [AWSSDK.GeoMaps](https://www.nuget.org/packages/AWSSDK.GeoMaps/)
+	* Release of Amazon Location Maps API. Maps enables you to build digital maps that showcase your locations, visualize your data, and unlock insights to drive your business
+* [AWSSDK.GeoPlaces](https://www.nuget.org/packages/AWSSDK.GeoPlaces/)
+	* Release of Amazon Location Places API. Places enables you to quickly search, display, and filter places, businesses, and locations based on proximity, category, and name
+* [AWSSDK.GeoRoutes](https://www.nuget.org/packages/AWSSDK.GeoRoutes/)
+	* Release of Amazon Location Routes API. Routes enables you to plan efficient routes and streamline deliveries by leveraging real-time traffic, vehicle restrictions, and turn-by-turn directions.
 * [AWSSDK.Glacier](https://www.nuget.org/packages/AWSSDK.Glacier/)
 	* Amazon Glacier is a secure, durable, and extremely low-cost storage service for data archiving and online backup.
 * [AWSSDK.GlobalAccelerator](https://www.nuget.org/packages/AWSSDK.GlobalAccelerator/)
@@ -568,6 +578,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* AWS Marketplace Deployment is a new service that provides essential features that facilitate the deployment of software, data, and services procured through AWS Marketplace.
 * [AWSSDK.MarketplaceEntitlementService](https://www.nuget.org/packages/AWSSDK.MarketplaceEntitlementService/)
 	* AWS Marketplace Entitlement Service enables AWS Marketplace sellers to determine the capacity purchased by their customers.
+* [AWSSDK.MarketplaceReporting](https://www.nuget.org/packages/AWSSDK.MarketplaceReporting/)
+	* The AWS Marketplace Reporting service introduces the GetBuyerDashboard API. This API returns a dashboard that provides visibility into your organization's AWS Marketplace agreements and associated spend across the AWS accounts in your organization.
 * [AWSSDK.MediaConnect](https://www.nuget.org/packages/AWSSDK.MediaConnect/)
 	* This is the initial release for AWS Elemental MediaConnect, an ingest and transport service for live video. This new AWS service allows broadcasters and content owners to send high-value live content into the cloud, securely transmit it to partners for distribution, and replicate it to multiple destinations around the globe.
 * [AWSSDK.MediaConvert](https://www.nuget.org/packages/AWSSDK.MediaConvert/)
@@ -622,8 +634,6 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* This is the initial SDK release for AWS Network Manager.
 * [AWSSDK.NetworkMonitor](https://www.nuget.org/packages/AWSSDK.NetworkMonitor/)
 	* CloudWatch Network Monitor is a new service within CloudWatch that will help network administrators and operators continuously monitor network performance metrics such as round-trip-time and packet loss between their AWS-hosted applications and their on-premises locations.
-* [AWSSDK.NimbleStudio](https://www.nuget.org/packages/AWSSDK.NimbleStudio/)
-	* Amazon Nimble Studio is a virtual studio service that empowers visual effects, animation, and interactive content teams to create content securely within a scalable, private cloud service.
 * [AWSSDK.OAM](https://www.nuget.org/packages/AWSSDK.OAM/)
 	* Amazon CloudWatch Observability Access Manager is a new service that allows configuration of the CloudWatch cross-account observability feature.
 * [AWSSDK.Omics](https://www.nuget.org/packages/AWSSDK.Omics/)
@@ -644,6 +654,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* This is the initial release for AWS Outposts, a fully managed service that extends AWS infrastructure, services, APIs, and tools to customer sites. AWS Outposts enables you to launch and run EC2 instances and EBS volumes locally at your on-premises location. This release introduces new APIs for creating and viewing Outposts. 
 * [AWSSDK.Panorama](https://www.nuget.org/packages/AWSSDK.Panorama/)
 	* General availability for AWS Panorama. AWS SDK for Panorama includes APIs to manage your devices and nodes, and deploy computer vision applications to the edge. For more information, see the AWS Panorama documentation at http://docs.aws.amazon.com/panorama
+* [AWSSDK.PartnerCentralSelling](https://www.nuget.org/packages/AWSSDK.PartnerCentralSelling/)
+	* Announcing AWS Partner Central API for Selling: This service launch Introduces new APIs for co-selling opportunity management and related functions. Key features include notifications, a dynamic sandbox for testing, and streamlined validations.
 * [AWSSDK.PaymentCryptography](https://www.nuget.org/packages/AWSSDK.PaymentCryptography/)
 	* Initial release of AWS Payment Cryptography Control Plane service for creating and managing cryptographic keys used during card payment processing.
 * [AWSSDK.PaymentCryptographyData](https://www.nuget.org/packages/AWSSDK.PaymentCryptographyData/)
@@ -800,6 +812,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* Amazon Snowball is a petabyte-scale data transport solution that uses secure appliances to transfer large amounts of data into and out of the AWS cloud
 * [AWSSDK.SnowDeviceManagement](https://www.nuget.org/packages/AWSSDK.SnowDeviceManagement/)
 	* AWS Snow Family customers can remotely monitor and operate their connected AWS Snowcone devices.
+* [AWSSDK.SocialMessaging](https://www.nuget.org/packages/AWSSDK.SocialMessaging/)
+	* This release for AWS End User Messaging includes a public SDK, providing a suite of APIs that enable sending WhatsApp messages to end users.
 * [AWSSDK.SQS](https://www.nuget.org/packages/AWSSDK.SQS/)
 	* Amazon Simple Queue Service (SQS) is a fast, reliable, scalable, fully managed message queuing service. SQS makes it simple and cost-effective to decouple the components of a cloud application.
 * [AWSSDK.SSMContacts](https://www.nuget.org/packages/AWSSDK.SSMContacts/)

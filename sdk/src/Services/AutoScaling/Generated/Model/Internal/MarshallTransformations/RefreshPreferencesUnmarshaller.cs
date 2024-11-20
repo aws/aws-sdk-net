@@ -67,6 +67,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         unmarshalledObject.AutoRollback = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("BakeTime", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.BakeTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("CheckpointDelay", targetDepth))
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;

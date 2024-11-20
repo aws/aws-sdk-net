@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// The DataSync agents that are connecting to a Network File System (NFS) location.
+    /// The DataSync agents that can connect to your Network File System (NFS) file server.
     /// </summary>
     public partial class OnPremConfig
     {
@@ -39,7 +39,13 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property AgentArns. 
         /// <para>
-        /// The Amazon Resource Names (ARNs) of the agents connecting to a transfer location.
+        /// The Amazon Resource Names (ARNs) of the DataSync agents that can connect to your NFS
+        /// file server.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/do-i-need-datasync-agent.html#multiple-agents">Using
+        /// multiple DataSync agents</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=4)]

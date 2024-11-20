@@ -48,6 +48,17 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetFlowTimeouts())
+            {
+                context.Writer.WritePropertyName("FlowTimeouts");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FlowTimeoutsMarshaller.Instance;
+                marshaller.Marshall(requestObject.FlowTimeouts, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetRuleOrder())
             {
                 context.Writer.WritePropertyName("RuleOrder");

@@ -53,6 +53,23 @@ namespace Amazon.BedrockRuntime.Model
     /// </para>
     ///  
     /// <para>
+    /// You can submit a prompt by including it in the <c>messages</c> field, specifying the
+    /// <c>modelId</c> of a foundation model or inference profile to run inference on it,
+    /// and including any other fields that are relevant to your use case.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can also submit a prompt from Prompt management by specifying the ARN of the prompt
+    /// version and including a map of variables to values in the <c>promptVariables</c> field.
+    /// You can append more messages to the prompt by using the <c>messages</c> field. If
+    /// you use a prompt from Prompt management, you can't include the following fields in
+    /// the request: <c>additionalModelRequestFields</c>, <c>inferenceConfig</c>, <c>system</c>,
+    /// or <c>toolConfig</c>. Instead, these fields must be defined through Prompt management.
+    /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-use.html">Use
+    /// a prompt from Prompt management</a>.
+    /// </para>
+    ///  
+    /// <para>
     /// For information about the Converse API, see <i>Use the Converse API</i> in the <i>Amazon
     /// Bedrock User Guide</i>. To use a guardrail, see <i>Use a guardrail with the Converse
     /// API</i> in the <i>Amazon Bedrock User Guide</i>. To use a tool with a model, see <i>Tool
@@ -77,6 +94,7 @@ namespace Amazon.BedrockRuntime.Model
         private InferenceConfiguration _inferenceConfig;
         private List<Message> _messages = AWSConfigs.InitializeCollections ? new List<Message>() : null;
         private string _modelId;
+        private Dictionary<string, PromptVariableValues> _promptVariables = AWSConfigs.InitializeCollections ? new Dictionary<string, PromptVariableValues>() : null;
         private List<SystemContentBlock> _system = AWSConfigs.InitializeCollections ? new List<SystemContentBlock>() : null;
         private ToolConfiguration _toolConfig;
 
@@ -84,7 +102,9 @@ namespace Amazon.BedrockRuntime.Model
         /// Gets and sets the property AdditionalModelRequestFields. 
         /// <para>
         /// Additional inference parameters that the model supports, beyond the base set of inference
-        /// parameters that <c>ConverseStream</c> supports in the <c>inferenceConfig</c> field.
+        /// parameters that <c>Converse</c> and <c>ConverseStream</c> support in the <c>inferenceConfig</c>
+        /// field. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Model
+        /// parameters</a>.
         /// </para>
         /// </summary>
         public Amazon.Runtime.Documents.Document AdditionalModelRequestFields
@@ -102,9 +122,10 @@ namespace Amazon.BedrockRuntime.Model
         /// <summary>
         /// Gets and sets the property AdditionalModelResponseFieldPaths. 
         /// <para>
-        /// Additional model parameters field paths to return in the response. <c>ConverseStream</c>
-        /// returns the requested fields as a JSON Pointer object in the <c>additionalModelResponseFields</c>
-        /// field. The following is example JSON for <c>additionalModelResponseFieldPaths</c>.
+        /// Additional model parameters field paths to return in the response. <c>Converse</c>
+        /// and <c>ConverseStream</c> return the requested fields as a JSON Pointer object in
+        /// the <c>additionalModelResponseFields</c> field. The following is example JSON for
+        /// <c>additionalModelResponseFieldPaths</c>.
         /// </para>
         ///  
         /// <para>
@@ -117,9 +138,9 @@ namespace Amazon.BedrockRuntime.Model
         /// </para>
         ///  
         /// <para>
-        ///  <c>ConverseStream</c> rejects an empty JSON Pointer or incorrectly structured JSON
-        /// Pointer with a <c>400</c> error code. if the JSON Pointer is valid, but the requested
-        /// field is not in the model response, it is ignored by <c>ConverseStream</c>.
+        ///  <c>Converse</c> and <c>ConverseStream</c> reject an empty JSON Pointer or incorrectly
+        /// structured JSON Pointer with a <c>400</c> error code. if the JSON Pointer is valid,
+        /// but the requested field is not in the model response, it is ignored by <c>Converse</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
@@ -138,7 +159,11 @@ namespace Amazon.BedrockRuntime.Model
         /// <summary>
         /// Gets and sets the property GuardrailConfig. 
         /// <para>
-        /// Configuration information for a guardrail that you want to use in the request. 
+        /// Configuration information for a guardrail that you want to use in the request. If
+        /// you include <c>guardContent</c> blocks in the <c>content</c> field in the <c>messages</c>
+        /// field, the guardrail operates only on those messages. If you include no <c>guardContent</c>
+        /// blocks, the guardrail operates on all messages in the request body and in any included
+        /// prompt resource.
         /// </para>
         /// </summary>
         public GuardrailStreamConfiguration GuardrailConfig
@@ -156,9 +181,9 @@ namespace Amazon.BedrockRuntime.Model
         /// <summary>
         /// Gets and sets the property InferenceConfig. 
         /// <para>
-        /// Inference parameters to pass to the model. <c>ConverseStream</c> supports a base set
-        /// of inference parameters. If you need to pass additional parameters that the model
-        /// supports, use the <c>additionalModelRequestFields</c> request field.
+        /// Inference parameters to pass to the model. <c>Converse</c> and <c>ConverseStream</c>
+        /// support a base set of inference parameters. If you need to pass additional parameters
+        /// that the model supports, use the <c>additionalModelRequestFields</c> request field.
         /// </para>
         /// </summary>
         public InferenceConfiguration InferenceConfig
@@ -179,7 +204,6 @@ namespace Amazon.BedrockRuntime.Model
         /// The messages that you want to send to the model.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<Message> Messages
         {
             get { return this._messages; }
@@ -195,12 +219,8 @@ namespace Amazon.BedrockRuntime.Model
         /// <summary>
         /// Gets and sets the property ModelId. 
         /// <para>
-        /// The ID for the model.
-        /// </para>
-        ///  
-        /// <para>
-        /// The <c>modelId</c> to provide depends on the type of model or throughput that you
-        /// use:
+        /// Specifies the model or throughput with which to run inference, or the prompt resource
+        /// to use in inference. The value depends on the resource that you use:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -226,6 +246,11 @@ namespace Amazon.BedrockRuntime.Model
         /// the ARN of the resulting provisioned model. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html">Use
         /// a custom model in Amazon Bedrock</a> in the Amazon Bedrock User Guide.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To include a prompt that was defined in Prompt management, specify the ARN of the
+        /// prompt version to use.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// The Converse API doesn't support <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html">imported
@@ -246,9 +271,31 @@ namespace Amazon.BedrockRuntime.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PromptVariables. 
+        /// <para>
+        /// Contains a map of variables in a prompt from Prompt management to objects containing
+        /// the values to fill in for them when running model invocation. This field is ignored
+        /// if you don't specify a prompt resource in the <c>modelId</c> field.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public Dictionary<string, PromptVariableValues> PromptVariables
+        {
+            get { return this._promptVariables; }
+            set { this._promptVariables = value; }
+        }
+
+        // Check to see if PromptVariables property is set
+        internal bool IsSetPromptVariables()
+        {
+            return this._promptVariables != null && (this._promptVariables.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property System. 
         /// <para>
-        /// A system prompt to send to the model.
+        /// A prompt that provides instructions or context to the model about the task it should
+        /// perform, or the persona it should adopt during the conversation.
         /// </para>
         /// </summary>
         public List<SystemContentBlock> System

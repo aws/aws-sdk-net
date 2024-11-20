@@ -45,7 +45,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the rule groups namespace.
+        /// The ARN of the rule groups namespace. For example, <c>arn:aws:aps:&lt;region&gt;:123456789012:rulegroupsnamespace/ws-example1-1234-abcd-5678-ef90abcd1234/rulesfile1</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

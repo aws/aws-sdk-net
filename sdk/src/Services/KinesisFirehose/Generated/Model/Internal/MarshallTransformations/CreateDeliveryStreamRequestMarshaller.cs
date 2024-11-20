@@ -82,10 +82,33 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetAmazonopensearchserviceDestinationConfiguration())
                     {
                         context.Writer.WritePropertyName("AmazonopensearchserviceDestinationConfiguration");
                         context.Writer.WriteObjectStart();
+||||||| Commit version number update changes
+                if(publicRequest.IsSetDeliveryStreamEncryptionConfigurationInput())
+                {
+                    context.Writer.WritePropertyName("DeliveryStreamEncryptionConfigurationInput");
+                    context.Writer.WriteObjectStart();
+=======
+                if(publicRequest.IsSetDatabaseSourceConfiguration())
+                {
+                    context.Writer.WritePropertyName("DatabaseSourceConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DatabaseSourceConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DatabaseSourceConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetDeliveryStreamEncryptionConfigurationInput())
+                {
+                    context.Writer.WritePropertyName("DeliveryStreamEncryptionConfigurationInput");
+                    context.Writer.WriteObjectStart();
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
                         var marshaller = AmazonopensearchserviceDestinationConfigurationMarshaller.Instance;
                         marshaller.Marshall(publicRequest.AmazonopensearchserviceDestinationConfiguration, context);

@@ -108,7 +108,6 @@ namespace Amazon.ResilienceHub.Model
         /// The operational recommendation item.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public UpdateRecommendationStatusItem Item
         {
             get { return this._item; }

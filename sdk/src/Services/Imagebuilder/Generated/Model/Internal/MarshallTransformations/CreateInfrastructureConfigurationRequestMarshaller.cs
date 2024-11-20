@@ -131,7 +131,32 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetName())
+||||||| Commit version number update changes
+                if(publicRequest.IsSetResourceTags())
+                {
+                    context.Writer.WritePropertyName("resourceTags");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestResourceTagsKvp in publicRequest.ResourceTags)
+=======
+                if(publicRequest.IsSetPlacement())
+                {
+                    context.Writer.WritePropertyName("placement");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PlacementMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Placement, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetResourceTags())
+                {
+                    context.Writer.WritePropertyName("resourceTags");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestResourceTagsKvp in publicRequest.ResourceTags)
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
                     {
                         context.Writer.WritePropertyName("name");
                         context.Writer.Write(publicRequest.Name);

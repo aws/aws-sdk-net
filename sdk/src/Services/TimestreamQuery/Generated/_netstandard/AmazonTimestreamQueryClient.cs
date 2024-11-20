@@ -680,7 +680,14 @@ namespace Amazon.TimestreamQuery
 
 
         /// <summary>
-        /// You can use this API to run a scheduled query manually.
+        /// You can use this API to run a scheduled query manually. 
+        /// 
+        ///  
+        /// <para>
+        /// If you enabled <c>QueryInsights</c>, this API also returns insights and metrics related
+        /// to the query that you executed as part of an Amazon SNS notification. <c>QueryInsights</c>
+        /// helps with performance tuning of your query.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExecuteScheduledQuery service method.</param>
         /// <param name="cancellationToken">
@@ -899,10 +906,26 @@ namespace Amazon.TimestreamQuery
 
         /// <summary>
         /// <c>Query</c> is a synchronous operation that enables you to run a query against your
-        /// Amazon Timestream data. <c>Query</c> will time out after 60 seconds. You must update
-        /// the default timeout in the SDK to support a timeout of 60 seconds. See the <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.run-query.html">code
-        /// sample</a> for details. 
+        /// Amazon Timestream data.
         /// 
+        ///  
+        /// <para>
+        /// If you enabled <c>QueryInsights</c>, this API also returns insights and metrics related
+        /// to the query that you executed. <c>QueryInsights</c> helps with performance tuning
+        /// of your query.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The maximum number of <c>Query</c> API requests you're allowed to make with <c>QueryInsights</c>
+        /// enabled is 1 query per second (QPS). If you exceed this query rate, it might result
+        /// in throttling.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  <c>Query</c> will time out after 60 seconds. You must update the default timeout
+        /// in the SDK to support a timeout of 60 seconds. See the <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.run-query.html">code
+        /// sample</a> for details. 
+        /// </para>
         ///  
         /// <para>
         /// Your query request will fail in the following cases:

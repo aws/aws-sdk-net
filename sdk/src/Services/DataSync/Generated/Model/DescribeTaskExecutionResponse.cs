@@ -42,6 +42,9 @@ namespace Amazon.DataSync.Model
         private long? _estimatedFilesToTransfer;
         private List<FilterRule> _excludes = AWSConfigs.InitializeCollections ? new List<FilterRule>() : null;
         private long? _filesDeleted;
+        private TaskExecutionFilesFailedDetail _filesFailed;
+        private TaskExecutionFilesListedDetail _filesListed;
+        private long? _filesPrepared;
         private long? _filesSkipped;
         private long? _filesTransferred;
         private long? _filesVerified;
@@ -53,14 +56,15 @@ namespace Amazon.DataSync.Model
         private DateTime? _startTime;
         private TaskExecutionStatus _status;
         private string _taskExecutionArn;
+        private TaskMode _taskMode;
         private TaskReportConfig _taskReportConfig;
 
         /// <summary>
         /// Gets and sets the property BytesCompressed. 
         /// <para>
-        /// The physical number of bytes transferred over the network after compression was applied.
-        /// In most cases, this number is less than <c>BytesTransferred</c> unless the data isn't
-        /// compressible.
+        /// The number of physical bytes that DataSync transfers over the network after compression
+        /// (if compression is possible). This number is typically less than <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeTaskExecution.html#DataSync-DescribeTaskExecution-response-BytesTransferred">BytesTransferred</a>
+        /// unless the data isn't compressible.
         /// </para>
         /// </summary>
         public long? BytesCompressed
@@ -78,8 +82,9 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property BytesTransferred. 
         /// <para>
-        /// The total number of bytes that are involved in the transfer. For the number of bytes
-        /// sent over the network, see <c>BytesCompressed</c>. 
+        /// The number of bytes that DataSync sends to the network before compression (if compression
+        /// is possible). For the number of bytes transferred over the network, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeTaskExecution.html#DataSync-DescribeTaskExecution-response-BytesCompressed">BytesCompressed</a>.
+        /// 
         /// </para>
         /// </summary>
         public long? BytesTransferred
@@ -97,7 +102,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property BytesWritten. 
         /// <para>
-        /// The number of logical bytes written to the destination location.
+        /// The number of logical bytes that DataSync actually writes to the destination location.
         /// </para>
         /// </summary>
         public long? BytesWritten
@@ -115,7 +120,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property EstimatedBytesToTransfer. 
         /// <para>
-        /// The estimated physical number of bytes that will transfer over the network.
+        /// The number of logical bytes that DataSync expects to write to the destination location.
         /// </para>
         /// </summary>
         public long? EstimatedBytesToTransfer
@@ -133,10 +138,9 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property EstimatedFilesToDelete. 
         /// <para>
-        /// The expected number of files, objects, and directories that DataSync will delete in
-        /// your destination location. If you don't <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html">configure
-        /// your task</a> to delete data in the destination that isn't in the source, the value
-        /// is always <c>0</c>.
+        /// The number of files, objects, and directories that DataSync expects to delete in your
+        /// destination location. If you don't configure your task to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html">delete
+        /// data in the destination that isn't in the source</a>, the value is always <c>0</c>.
         /// </para>
         /// </summary>
         public long? EstimatedFilesToDelete
@@ -154,12 +158,43 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property EstimatedFilesToTransfer. 
         /// <para>
-        /// The expected number of files, objects, and directories that DataSync will transfer
-        /// over the network. This value is calculated during the task execution's <c>PREPARING</c>
-        /// phase before the <c>TRANSFERRING</c> phase. The calculation is based on comparing
-        /// the content of the source and destination locations and finding the difference that
-        /// needs to be transferred. 
+        /// The number of files, objects, and directories that DataSync expects to transfer over
+        /// the network. This value is calculated while DataSync <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#understand-task-execution-statuses">prepares</a>
+        /// the transfer.
         /// </para>
+        ///  
+        /// <para>
+        /// How this gets calculated depends primarily on your task’s <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-TransferMode">transfer
+        /// mode</a> configuration:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If <c>TranserMode</c> is set to <c>CHANGED</c> - The calculation is based on comparing
+        /// the content of the source and destination locations and determining the difference
+        /// that needs to be transferred. The difference can include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Anything that's added or modified at the source location.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Anything that's in both locations and modified at the destination after an initial
+        /// transfer (unless <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-OverwriteMode">OverwriteMode</a>
+        /// is set to <c>NEVER</c>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>(Basic task mode only)</b> The number of items that DataSync expects to delete
+        /// (if <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-PreserveDeletedFiles">PreserveDeletedFiles</a>
+        /// is set to <c>REMOVE</c>).
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// If <c>TranserMode</c> is set to <c>ALL</c> - The calculation is based only on the
+        /// items that DataSync finds at the source location.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public long? EstimatedFilesToTransfer
         {
@@ -197,10 +232,9 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property FilesDeleted. 
         /// <para>
-        /// The number of files, objects, and directories that DataSync deleted in your destination
-        /// location. If you don't <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html">configure
-        /// your task</a> to delete data in the destination that isn't in the source, the value
-        /// is always <c>0</c>.
+        /// The number of files, objects, and directories that DataSync actually deletes in your
+        /// destination location. If you don't configure your task to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html">delete
+        /// data in the destination that isn't in the source</a>, the value is always <c>0</c>.
         /// </para>
         /// </summary>
         public long? FilesDeleted
@@ -216,9 +250,88 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FilesFailed. 
+        /// <para>
+        /// The number of objects that DataSync fails to prepare, transfer, verify, and delete
+        /// during your task execution.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Applies only to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
+        /// mode tasks</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public TaskExecutionFilesFailedDetail FilesFailed
+        {
+            get { return this._filesFailed; }
+            set { this._filesFailed = value; }
+        }
+
+        // Check to see if FilesFailed property is set
+        internal bool IsSetFilesFailed()
+        {
+            return this._filesFailed != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FilesListed. 
+        /// <para>
+        /// The number of objects that DataSync finds at your locations.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Applies only to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
+        /// mode tasks</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public TaskExecutionFilesListedDetail FilesListed
+        {
+            get { return this._filesListed; }
+            set { this._filesListed = value; }
+        }
+
+        // Check to see if FilesListed property is set
+        internal bool IsSetFilesListed()
+        {
+            return this._filesListed != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FilesPrepared. 
+        /// <para>
+        /// The number of objects that DataSync will attempt to transfer after comparing your
+        /// source and destination locations.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Applies only to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Enhanced
+        /// mode tasks</a>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// This counter isn't applicable if you configure your task to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html#task-option-transfer-mode">transfer
+        /// all data</a>. In that scenario, DataSync copies everything from the source to the
+        /// destination without comparing differences between the locations.
+        /// </para>
+        /// </summary>
+        public long FilesPrepared
+        {
+            get { return this._filesPrepared.GetValueOrDefault(); }
+            set { this._filesPrepared = value; }
+        }
+
+        // Check to see if FilesPrepared property is set
+        internal bool IsSetFilesPrepared()
+        {
+            return this._filesPrepared.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property FilesSkipped. 
         /// <para>
-        /// The number of files, objects, and directories that DataSync skipped during your transfer.
+        /// The number of files, objects, and directories that DataSync skips during your transfer.
         /// </para>
         /// </summary>
         public long? FilesSkipped
@@ -236,16 +349,16 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property FilesTransferred. 
         /// <para>
-        /// The actual number of files, objects, and directories that DataSync transferred over
-        /// the network. This value is updated periodically during the task execution's <c>TRANSFERRING</c>
-        /// phase when something is read from the source and sent over the network.
+        /// The number of files, objects, and directories that DataSync actually transfers over
+        /// the network. This value is updated periodically during your task execution when something
+        /// is read from the source and sent over the network.
         /// </para>
         ///  
         /// <para>
         /// If DataSync fails to transfer something, this value can be less than <c>EstimatedFilesToTransfer</c>.
         /// In some cases, this value can also be greater than <c>EstimatedFilesToTransfer</c>.
         /// This element is implementation-specific for some location types, so don't use it as
-        /// an exact indication of what transferred or to monitor your task execution.
+        /// an exact indication of what's transferring or to monitor your task execution.
         /// </para>
         /// </summary>
         public long? FilesTransferred
@@ -263,7 +376,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property FilesVerified. 
         /// <para>
-        /// The number of files, objects, and directories that DataSync verified during your transfer.
+        /// The number of files, objects, and directories that DataSync verifies during your transfer.
         /// </para>
         ///  <note> 
         /// <para>
@@ -438,6 +551,25 @@ namespace Amazon.DataSync.Model
         internal bool IsSetTaskExecutionArn()
         {
             return this._taskExecutionArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskMode. 
+        /// <para>
+        /// The task mode that you're using. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Choosing
+        /// a task mode for your data transfer</a>.
+        /// </para>
+        /// </summary>
+        public TaskMode TaskMode
+        {
+            get { return this._taskMode; }
+            set { this._taskMode = value; }
+        }
+
+        // Check to see if TaskMode property is set
+        internal bool IsSetTaskMode()
+        {
+            return this._taskMode != null;
         }
 
         /// <summary>

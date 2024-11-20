@@ -72,6 +72,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.AppIntegrations = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("managedSourceConfiguration", targetDepth))
+                {
+                    var unmarshaller = ManagedSourceConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ManagedSourceConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

@@ -65,7 +65,7 @@ namespace Amazon.S3
         ///  <b>Directory buckets</b> - If multipart uploads in a directory bucket are in progress,
         /// you can't delete the bucket until all the in-progress multipart uploads are aborted
         /// or completed. To delete these in-progress multipart uploads, use the <c>ListMultipartUploads</c>
-        /// operation to list the in-progress multipart uploads in the bucket and use the <c>AbortMultupartUpload</c>
+        /// operation to list the in-progress multipart uploads in the bucket and use the <c>AbortMultipartUpload</c>
         /// operation to abort all the in-progress multipart uploads. 
         /// </para>
         ///  </li> <li> 
@@ -163,7 +163,7 @@ namespace Amazon.S3
         ///  <b>Directory buckets</b> - If multipart uploads in a directory bucket are in progress,
         /// you can't delete the bucket until all the in-progress multipart uploads are aborted
         /// or completed. To delete these in-progress multipart uploads, use the <c>ListMultipartUploads</c>
-        /// operation to list the in-progress multipart uploads in the bucket and use the <c>AbortMultupartUpload</c>
+        /// operation to list the in-progress multipart uploads in the bucket and use the <c>AbortMultipartUpload</c>
         /// operation to abort all the in-progress multipart uploads. 
         /// </para>
         ///  </li> <li> 
@@ -1889,7 +1889,7 @@ namespace Amazon.S3
         /// <para>
         ///  Only 1 <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
         /// managed key</a> is supported per directory bucket for the lifetime of the bucket.
-        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// The <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
         /// Web Services managed key</a> (<c>aws/s3</c>) isn't supported. After you specify SSE-KMS
         /// as your bucket's default encryption configuration with a customer managed key, you
         /// can't change the customer managed key for the bucket's SSE-KMS configuration. 
@@ -3067,79 +3067,40 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Removes an object from a bucket. The behavior depends on the bucket's versioning state:
+        /// Removes an object from a bucket. The behavior depends on the bucket's versioning state.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjects.html#DeletingObjects-best-practices">Best
+        /// practices to consider before deleting an object</a>.
         /// 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// If bucket versioning is not enabled, the operation permanently deletes the object.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If bucket versioning is enabled, the operation inserts a delete marker, which becomes
-        /// the current version of the object. To permanently delete an object in a versioned
-        /// bucket, you must include the object’s <c>versionId</c> in the request. For more information
-        /// about versioning-enabled buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjectVersions.html">Deleting
-        /// object versions from a versioning-enabled bucket</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If bucket versioning is suspended, the operation removes the object that has a null
-        /// <c>versionId</c>, if there is one, and inserts a delete marker that becomes the current
-        /// version of the object. If there isn't an object with a null <c>versionId</c>, and
-        /// all versions of the object have a <c>versionId</c>, Amazon S3 does not remove the
-        /// object and only inserts a delete marker. To permanently delete an object that has
-        /// a <c>versionId</c>, you must include the object’s <c>versionId</c> in the request.
-        /// For more information about versioning-suspended buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjectsfromVersioningSuspendedBuckets.html">Deleting
-        /// objects from versioning-suspended buckets</a>.
-        /// </para>
-        ///  </li> </ul> <note> <ul> <li> 
-        /// <para>
-        ///  <b>Directory buckets</b> - S3 Versioning isn't enabled and supported for directory
-        /// buckets. For this API operation, only the <c>null</c> value of the version ID is supported
-        /// by directory buckets. You can only specify <c>null</c> to the <c>versionId</c> query
-        /// parameter in the request.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
-        /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
-        /// </para>
-        ///  </li> </ul> </note> 
+        ///  
         /// <para>
         /// To remove a specific version, you must use the <c>versionId</c> query parameter. Using
         /// this query parameter permanently deletes the version. If the object deleted is a delete
-        /// marker, Amazon S3 sets the response header <c>x-amz-delete-marker</c> to true. 
-        /// </para>
-        ///  
-        /// <para>
-        /// If the object you want to delete is in a bucket where the bucket versioning configuration
-        /// is MFA Delete enabled, you must include the <c>x-amz-mfa</c> request header in the
+        /// marker, Amazon S3 sets the response header <c>x-amz-delete-marker</c> to true. If
+        /// the object you want to delete is in a bucket where the bucket versioning configuration
+        /// is MFA delete enabled, you must include the <c>x-amz-mfa</c> request header in the
         /// DELETE <c>versionId</c> request. Requests that include <c>x-amz-mfa</c> must use HTTPS.
-        /// For more information about MFA Delete, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMFADelete.html">Using
-        /// MFA Delete</a> in the <i>Amazon S3 User Guide</i>. To see sample requests that use
-        /// versioning, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectDELETE.html#ExampleVersionObjectDelete">Sample
-        /// Request</a>. 
+        /// For more information about MFA delete and to see example requests, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMFADelete.html">Using
+        /// MFA delete</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectDELETE.html#ExampleVersionObjectDelete">Sample
+        /// request</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
         /// <para>
-        ///  <b>Directory buckets</b> - MFA delete is not supported by directory buckets.
+        /// S3 Versioning isn't enabled and supported for directory buckets. For this API operation,
+        /// only the <c>null</c> value of the version ID is supported by directory buckets. You
+        /// can only specify <c>null</c> to the <c>versionId</c> query parameter in the request.
         /// </para>
-        ///  </note> 
+        ///  </li> <li> 
         /// <para>
-        /// You can delete objects by explicitly calling DELETE Object or calling (<a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>)
-        /// to enable Amazon S3 to remove them for you. If you want to block users or accounts
-        /// from removing or deleting objects from your bucket, you must deny them the <c>s3:DeleteObject</c>,
-        /// <c>s3:DeleteObjectVersion</c>, and <c>s3:PutLifeCycleConfiguration</c> actions. 
+        /// For directory buckets, you must make requests for this API operation to the Zonal
+        /// endpoint. These endpoints support virtual-hosted-style requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  <note> 
+        ///  </li> <li> 
         /// <para>
-        ///  <b>Directory buckets</b> - S3 Lifecycle is not supported by directory buckets.
+        /// MFA delete is not supported by directory buckets.
         /// </para>
-        ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
         ///  <b>General purpose bucket permissions</b> - The following permissions are required
         /// in your policies when your <c>DeleteObjects</c> request includes specific headers.
@@ -3149,26 +3110,27 @@ namespace Amazon.S3
         ///  <b> <c>s3:DeleteObject</c> </b> - To delete an object from a bucket, you must always
         /// have the <c>s3:DeleteObject</c> permission.
         /// </para>
-        ///  </li> <li> 
+        ///  <note> 
+        /// <para>
+        /// You can also use <a>PutBucketLifecycle</a> to delete objects in Amazon S3.
+        /// </para>
+        ///  </note> </li> <li> 
         /// <para>
         ///  <b> <c>s3:DeleteObjectVersion</c> </b> - To delete a specific version of an object
         /// from a versioning-enabled bucket, you must have the <c>s3:DeleteObjectVersion</c>
         /// permission.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you want to block users or accounts from removing or deleting objects from your
+        /// bucket, you must deny them the <c>s3:DeleteObject</c>, <c>s3:DeleteObjectVersion</c>,
+        /// and <c>s3:PutLifeCycleConfiguration</c> permissions.
+        /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <b>Directory bucket permissions</b> - To grant access to this API operation on a
-        /// directory bucket, we recommend that you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
-        /// <c>CreateSession</c> </a> API operation for session-based authorization. Specifically,
-        /// you grant the <c>s3express:CreateSession</c> permission to the directory bucket in
-        /// a bucket policy or an IAM identity-based policy. Then, you make the <c>CreateSession</c>
-        /// API call on the bucket to obtain a session token. With the session token in your request
-        /// header, you can make API requests to this operation. After the session token expires,
-        /// you make another <c>CreateSession</c> API call to generate a new session token for
-        /// use. Amazon Web Services CLI or SDKs create session and refresh the session token
-        /// automatically to avoid service interruptions when a session expires. For more information
-        /// about authorization, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
-        /// <c>CreateSession</c> </a>.
+        ///  <b>Directory buckets permissions</b> - To grant access to this API operation on a
+        /// directory bucket, we recommend that you use the <a>CreateSession</a> API operation
+        /// for session-based authorization.
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
@@ -3196,79 +3158,40 @@ namespace Amazon.S3
         Task<DeleteObjectResponse> DeleteObjectAsync(string bucketName, string key, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Removes an object from a bucket. The behavior depends on the bucket's versioning state:
+        /// Removes an object from a bucket. The behavior depends on the bucket's versioning state.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjects.html#DeletingObjects-best-practices">Best
+        /// practices to consider before deleting an object</a>.
         /// 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// If bucket versioning is not enabled, the operation permanently deletes the object.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If bucket versioning is enabled, the operation inserts a delete marker, which becomes
-        /// the current version of the object. To permanently delete an object in a versioned
-        /// bucket, you must include the object’s <c>versionId</c> in the request. For more information
-        /// about versioning-enabled buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjectVersions.html">Deleting
-        /// object versions from a versioning-enabled bucket</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If bucket versioning is suspended, the operation removes the object that has a null
-        /// <c>versionId</c>, if there is one, and inserts a delete marker that becomes the current
-        /// version of the object. If there isn't an object with a null <c>versionId</c>, and
-        /// all versions of the object have a <c>versionId</c>, Amazon S3 does not remove the
-        /// object and only inserts a delete marker. To permanently delete an object that has
-        /// a <c>versionId</c>, you must include the object’s <c>versionId</c> in the request.
-        /// For more information about versioning-suspended buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjectsfromVersioningSuspendedBuckets.html">Deleting
-        /// objects from versioning-suspended buckets</a>.
-        /// </para>
-        ///  </li> </ul> <note> <ul> <li> 
-        /// <para>
-        ///  <b>Directory buckets</b> - S3 Versioning isn't enabled and supported for directory
-        /// buckets. For this API operation, only the <c>null</c> value of the version ID is supported
-        /// by directory buckets. You can only specify <c>null</c> to the <c>versionId</c> query
-        /// parameter in the request.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
-        /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
-        /// </para>
-        ///  </li> </ul> </note> 
+        ///  
         /// <para>
         /// To remove a specific version, you must use the <c>versionId</c> query parameter. Using
         /// this query parameter permanently deletes the version. If the object deleted is a delete
-        /// marker, Amazon S3 sets the response header <c>x-amz-delete-marker</c> to true. 
-        /// </para>
-        ///  
-        /// <para>
-        /// If the object you want to delete is in a bucket where the bucket versioning configuration
-        /// is MFA Delete enabled, you must include the <c>x-amz-mfa</c> request header in the
+        /// marker, Amazon S3 sets the response header <c>x-amz-delete-marker</c> to true. If
+        /// the object you want to delete is in a bucket where the bucket versioning configuration
+        /// is MFA delete enabled, you must include the <c>x-amz-mfa</c> request header in the
         /// DELETE <c>versionId</c> request. Requests that include <c>x-amz-mfa</c> must use HTTPS.
-        /// For more information about MFA Delete, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMFADelete.html">Using
-        /// MFA Delete</a> in the <i>Amazon S3 User Guide</i>. To see sample requests that use
-        /// versioning, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectDELETE.html#ExampleVersionObjectDelete">Sample
-        /// Request</a>. 
+        /// For more information about MFA delete and to see example requests, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMFADelete.html">Using
+        /// MFA delete</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectDELETE.html#ExampleVersionObjectDelete">Sample
+        /// request</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
         /// <para>
-        ///  <b>Directory buckets</b> - MFA delete is not supported by directory buckets.
+        /// S3 Versioning isn't enabled and supported for directory buckets. For this API operation,
+        /// only the <c>null</c> value of the version ID is supported by directory buckets. You
+        /// can only specify <c>null</c> to the <c>versionId</c> query parameter in the request.
         /// </para>
-        ///  </note> 
+        ///  </li> <li> 
         /// <para>
-        /// You can delete objects by explicitly calling DELETE Object or calling (<a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>)
-        /// to enable Amazon S3 to remove them for you. If you want to block users or accounts
-        /// from removing or deleting objects from your bucket, you must deny them the <c>s3:DeleteObject</c>,
-        /// <c>s3:DeleteObjectVersion</c>, and <c>s3:PutLifeCycleConfiguration</c> actions. 
+        /// For directory buckets, you must make requests for this API operation to the Zonal
+        /// endpoint. These endpoints support virtual-hosted-style requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  <note> 
+        ///  </li> <li> 
         /// <para>
-        ///  <b>Directory buckets</b> - S3 Lifecycle is not supported by directory buckets.
+        /// MFA delete is not supported by directory buckets.
         /// </para>
-        ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
         ///  <b>General purpose bucket permissions</b> - The following permissions are required
         /// in your policies when your <c>DeleteObjects</c> request includes specific headers.
@@ -3278,26 +3201,27 @@ namespace Amazon.S3
         ///  <b> <c>s3:DeleteObject</c> </b> - To delete an object from a bucket, you must always
         /// have the <c>s3:DeleteObject</c> permission.
         /// </para>
-        ///  </li> <li> 
+        ///  <note> 
+        /// <para>
+        /// You can also use <a>PutBucketLifecycle</a> to delete objects in Amazon S3.
+        /// </para>
+        ///  </note> </li> <li> 
         /// <para>
         ///  <b> <c>s3:DeleteObjectVersion</c> </b> - To delete a specific version of an object
         /// from a versioning-enabled bucket, you must have the <c>s3:DeleteObjectVersion</c>
         /// permission.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you want to block users or accounts from removing or deleting objects from your
+        /// bucket, you must deny them the <c>s3:DeleteObject</c>, <c>s3:DeleteObjectVersion</c>,
+        /// and <c>s3:PutLifeCycleConfiguration</c> permissions.
+        /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <b>Directory bucket permissions</b> - To grant access to this API operation on a
-        /// directory bucket, we recommend that you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
-        /// <c>CreateSession</c> </a> API operation for session-based authorization. Specifically,
-        /// you grant the <c>s3express:CreateSession</c> permission to the directory bucket in
-        /// a bucket policy or an IAM identity-based policy. Then, you make the <c>CreateSession</c>
-        /// API call on the bucket to obtain a session token. With the session token in your request
-        /// header, you can make API requests to this operation. After the session token expires,
-        /// you make another <c>CreateSession</c> API call to generate a new session token for
-        /// use. Amazon Web Services CLI or SDKs create session and refresh the session token
-        /// automatically to avoid service interruptions when a session expires. For more information
-        /// about authorization, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
-        /// <c>CreateSession</c> </a>.
+        ///  <b>Directory buckets permissions</b> - To grant access to this API operation on a
+        /// directory bucket, we recommend that you use the <a>CreateSession</a> API operation
+        /// for session-based authorization.
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
@@ -3327,79 +3251,40 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// Removes an object from a bucket. The behavior depends on the bucket's versioning state:
+        /// Removes an object from a bucket. The behavior depends on the bucket's versioning state.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjects.html#DeletingObjects-best-practices">Best
+        /// practices to consider before deleting an object</a>.
         /// 
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// If bucket versioning is not enabled, the operation permanently deletes the object.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If bucket versioning is enabled, the operation inserts a delete marker, which becomes
-        /// the current version of the object. To permanently delete an object in a versioned
-        /// bucket, you must include the object’s <c>versionId</c> in the request. For more information
-        /// about versioning-enabled buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjectVersions.html">Deleting
-        /// object versions from a versioning-enabled bucket</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If bucket versioning is suspended, the operation removes the object that has a null
-        /// <c>versionId</c>, if there is one, and inserts a delete marker that becomes the current
-        /// version of the object. If there isn't an object with a null <c>versionId</c>, and
-        /// all versions of the object have a <c>versionId</c>, Amazon S3 does not remove the
-        /// object and only inserts a delete marker. To permanently delete an object that has
-        /// a <c>versionId</c>, you must include the object’s <c>versionId</c> in the request.
-        /// For more information about versioning-suspended buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjectsfromVersioningSuspendedBuckets.html">Deleting
-        /// objects from versioning-suspended buckets</a>.
-        /// </para>
-        ///  </li> </ul> <note> <ul> <li> 
-        /// <para>
-        ///  <b>Directory buckets</b> - S3 Versioning isn't enabled and supported for directory
-        /// buckets. For this API operation, only the <c>null</c> value of the version ID is supported
-        /// by directory buckets. You can only specify <c>null</c> to the <c>versionId</c> query
-        /// parameter in the request.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
-        /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-        /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
-        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
-        /// </para>
-        ///  </li> </ul> </note> 
+        ///  
         /// <para>
         /// To remove a specific version, you must use the <c>versionId</c> query parameter. Using
         /// this query parameter permanently deletes the version. If the object deleted is a delete
-        /// marker, Amazon S3 sets the response header <c>x-amz-delete-marker</c> to true. 
-        /// </para>
-        ///  
-        /// <para>
-        /// If the object you want to delete is in a bucket where the bucket versioning configuration
-        /// is MFA Delete enabled, you must include the <c>x-amz-mfa</c> request header in the
+        /// marker, Amazon S3 sets the response header <c>x-amz-delete-marker</c> to true. If
+        /// the object you want to delete is in a bucket where the bucket versioning configuration
+        /// is MFA delete enabled, you must include the <c>x-amz-mfa</c> request header in the
         /// DELETE <c>versionId</c> request. Requests that include <c>x-amz-mfa</c> must use HTTPS.
-        /// For more information about MFA Delete, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMFADelete.html">Using
-        /// MFA Delete</a> in the <i>Amazon S3 User Guide</i>. To see sample requests that use
-        /// versioning, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectDELETE.html#ExampleVersionObjectDelete">Sample
-        /// Request</a>. 
+        /// For more information about MFA delete and to see example requests, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMFADelete.html">Using
+        /// MFA delete</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectDELETE.html#ExampleVersionObjectDelete">Sample
+        /// request</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
         /// <para>
-        ///  <b>Directory buckets</b> - MFA delete is not supported by directory buckets.
+        /// S3 Versioning isn't enabled and supported for directory buckets. For this API operation,
+        /// only the <c>null</c> value of the version ID is supported by directory buckets. You
+        /// can only specify <c>null</c> to the <c>versionId</c> query parameter in the request.
         /// </para>
-        ///  </note> 
+        ///  </li> <li> 
         /// <para>
-        /// You can delete objects by explicitly calling DELETE Object or calling (<a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>)
-        /// to enable Amazon S3 to remove them for you. If you want to block users or accounts
-        /// from removing or deleting objects from your bucket, you must deny them the <c>s3:DeleteObject</c>,
-        /// <c>s3:DeleteObjectVersion</c>, and <c>s3:PutLifeCycleConfiguration</c> actions. 
+        /// For directory buckets, you must make requests for this API operation to the Zonal
+        /// endpoint. These endpoints support virtual-hosted-style requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
+        /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  <note> 
+        ///  </li> <li> 
         /// <para>
-        ///  <b>Directory buckets</b> - S3 Lifecycle is not supported by directory buckets.
+        /// MFA delete is not supported by directory buckets.
         /// </para>
-        ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        ///  </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
         /// <para>
         ///  <b>General purpose bucket permissions</b> - The following permissions are required
         /// in your policies when your <c>DeleteObjects</c> request includes specific headers.
@@ -3409,26 +3294,27 @@ namespace Amazon.S3
         ///  <b> <c>s3:DeleteObject</c> </b> - To delete an object from a bucket, you must always
         /// have the <c>s3:DeleteObject</c> permission.
         /// </para>
-        ///  </li> <li> 
+        ///  <note> 
+        /// <para>
+        /// You can also use <a>PutBucketLifecycle</a> to delete objects in Amazon S3.
+        /// </para>
+        ///  </note> </li> <li> 
         /// <para>
         ///  <b> <c>s3:DeleteObjectVersion</c> </b> - To delete a specific version of an object
         /// from a versioning-enabled bucket, you must have the <c>s3:DeleteObjectVersion</c>
         /// permission.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you want to block users or accounts from removing or deleting objects from your
+        /// bucket, you must deny them the <c>s3:DeleteObject</c>, <c>s3:DeleteObjectVersion</c>,
+        /// and <c>s3:PutLifeCycleConfiguration</c> permissions.
+        /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <b>Directory bucket permissions</b> - To grant access to this API operation on a
-        /// directory bucket, we recommend that you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
-        /// <c>CreateSession</c> </a> API operation for session-based authorization. Specifically,
-        /// you grant the <c>s3express:CreateSession</c> permission to the directory bucket in
-        /// a bucket policy or an IAM identity-based policy. Then, you make the <c>CreateSession</c>
-        /// API call on the bucket to obtain a session token. With the session token in your request
-        /// header, you can make API requests to this operation. After the session token expires,
-        /// you make another <c>CreateSession</c> API call to generate a new session token for
-        /// use. Amazon Web Services CLI or SDKs create session and refresh the session token
-        /// automatically to avoid service interruptions when a session expires. For more information
-        /// about authorization, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
-        /// <c>CreateSession</c> </a>.
+        ///  <b>Directory buckets permissions</b> - To grant access to this API operation on a
+        /// directory bucket, we recommend that you use the <a>CreateSession</a> API operation
+        /// for session-based authorization.
         /// </para>
         ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
@@ -6471,6 +6357,9 @@ namespace Amazon.S3
         /// <c>s3:GetObject</c> permission. You need the relevant read object (or version) permission
         /// for this operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions,
         /// resources, and condition keys for Amazon S3</a> in the <i>Amazon S3 User Guide</i>.
+        /// For more information about the permissions to S3 API operations by S3 resource types,
+        /// see <a href="/AmazonS3/latest/userguide/using-with-s3-policy-actions.html">Required
+        /// permissions for Amazon S3 API operations</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -6636,6 +6525,9 @@ namespace Amazon.S3
         /// <c>s3:GetObject</c> permission. You need the relevant read object (or version) permission
         /// for this operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions,
         /// resources, and condition keys for Amazon S3</a> in the <i>Amazon S3 User Guide</i>.
+        /// For more information about the permissions to S3 API operations by S3 resource types,
+        /// see <a href="/AmazonS3/latest/userguide/using-with-s3-policy-actions.html">Required
+        /// permissions for Amazon S3 API operations</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -6803,6 +6695,9 @@ namespace Amazon.S3
         /// <c>s3:GetObject</c> permission. You need the relevant read object (or version) permission
         /// for this operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions,
         /// resources, and condition keys for Amazon S3</a> in the <i>Amazon S3 User Guide</i>.
+        /// For more information about the permissions to S3 API operations by S3 resource types,
+        /// see <a href="/AmazonS3/latest/userguide/using-with-s3-policy-actions.html">Required
+        /// permissions for Amazon S3 API operations</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -8046,6 +7941,16 @@ namespace Amazon.S3
         /// For information about Amazon S3 buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-buckets-s3.html">Creating,
         /// configuring, and working with Amazon S3 buckets</a>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// We strongly recommend using only paginated requests. Unpaginated requests are only
+        /// supported for Amazon Web Services accounts set to the default general purpose bucket
+        /// quota of 10,000. If you have an approved general purpose bucket quota above 10,000,
+        /// you must send paginated requests to list your account’s buckets. All unpaginated ListBuckets
+        /// requests will be rejected for Amazon Web Services accounts with a general purpose
+        /// bucket quota greater than 10,000. 
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -8072,6 +7977,16 @@ namespace Amazon.S3
         /// For information about Amazon S3 buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-buckets-s3.html">Creating,
         /// configuring, and working with Amazon S3 buckets</a>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// We strongly recommend using only paginated requests. Unpaginated requests are only
+        /// supported for Amazon Web Services accounts set to the default general purpose bucket
+        /// quota of 10,000. If you have an approved general purpose bucket quota above 10,000,
+        /// you must send paginated requests to list your account’s buckets. All unpaginated ListBuckets
+        /// requests will be rejected for Amazon Web Services accounts with a general purpose
+        /// bucket quota greater than 10,000. 
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBuckets service method.</param>
         /// <param name="cancellationToken">
@@ -8116,7 +8031,12 @@ namespace Amazon.S3
         /// <para>
         ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <note> 
+        /// <para>
+        ///  The <c>BucketRegion</c> response element is not part of the <c>ListDirectoryBuckets</c>
+        /// Response Syntax.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDirectoryBuckets service method.</param>
         /// <param name="cancellationToken">
@@ -8142,7 +8062,7 @@ namespace Amazon.S3
         ///  <b>Directory buckets</b> - If multipart uploads in a directory bucket are in progress,
         /// you can't delete the bucket until all the in-progress multipart uploads are aborted
         /// or completed. To delete these in-progress multipart uploads, use the <c>ListMultipartUploads</c>
-        /// operation to list the in-progress multipart uploads in the bucket and use the <c>AbortMultupartUpload</c>
+        /// operation to list the in-progress multipart uploads in the bucket and use the <c>AbortMultipartUpload</c>
         /// operation to abort all the in-progress multipart uploads. 
         /// </para>
         ///  </note> 
@@ -8277,7 +8197,7 @@ namespace Amazon.S3
         ///  <b>Directory buckets</b> - If multipart uploads in a directory bucket are in progress,
         /// you can't delete the bucket until all the in-progress multipart uploads are aborted
         /// or completed. To delete these in-progress multipart uploads, use the <c>ListMultipartUploads</c>
-        /// operation to list the in-progress multipart uploads in the bucket and use the <c>AbortMultupartUpload</c>
+        /// operation to list the in-progress multipart uploads in the bucket and use the <c>AbortMultipartUpload</c>
         /// operation to abort all the in-progress multipart uploads. 
         /// </para>
         ///  </note> 
@@ -8414,7 +8334,7 @@ namespace Amazon.S3
         ///  <b>Directory buckets</b> - If multipart uploads in a directory bucket are in progress,
         /// you can't delete the bucket until all the in-progress multipart uploads are aborted
         /// or completed. To delete these in-progress multipart uploads, use the <c>ListMultipartUploads</c>
-        /// operation to list the in-progress multipart uploads in the bucket and use the <c>AbortMultupartUpload</c>
+        /// operation to list the in-progress multipart uploads in the bucket and use the <c>AbortMultipartUpload</c>
         /// operation to abort all the in-progress multipart uploads. 
         /// </para>
         ///  </note> 
@@ -10065,7 +9985,7 @@ namespace Amazon.S3
         ///  </li> <li> 
         /// <para>
         /// Your SSE-KMS configuration can only support 1 <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer
-        /// managed key</a> per directory bucket for the lifetime of the bucket. <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// managed key</a> per directory bucket for the lifetime of the bucket. The <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
         /// Web Services managed key</a> (<c>aws/s3</c>) isn't supported. 
         /// </para>
         ///  </li> <li> 
@@ -11956,20 +11876,23 @@ namespace Amazon.S3
         /// lifecycle configuration. For information about lifecycle configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html">Managing
         /// your storage lifecycle</a>.
         /// </para>
-        ///  <note> 
+        ///  <dl> <dt>Rules</dt> <dd> 
         /// <para>
-        /// Bucket lifecycle configuration now supports specifying a lifecycle rule using an object
+        /// You specify the lifecycle configuration in your request body. The lifecycle configuration
+        /// is specified as XML consisting of one or more rules. An Amazon S3 Lifecycle configuration
+        /// can have up to 1,000 rules. This limit is not adjustable.
+        /// </para>
+        ///  
+        /// <para>
+        /// Bucket lifecycle configuration supports specifying a lifecycle rule using an object
         /// key name prefix, one or more object tags, object size, or any combination of these.
         /// Accordingly, this section describes the latest API. The previous version of the API
         /// supported filtering based only on an object key name prefix, which is supported for
         /// backward compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
         /// </para>
-        ///  </note> <dl> <dt>Rules</dt> <dd> 
+        ///  
         /// <para>
-        /// You specify the lifecycle configuration in your request body. The lifecycle configuration
-        /// is specified as XML consisting of one or more rules. An Amazon S3 Lifecycle configuration
-        /// can have up to 1,000 rules. This limit is not adjustable. Each rule consists of the
-        /// following:
+        /// A lifecycle rule consists of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -12071,20 +11994,23 @@ namespace Amazon.S3
         /// lifecycle configuration. For information about lifecycle configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html">Managing
         /// your storage lifecycle</a>.
         /// </para>
-        ///  <note> 
+        ///  <dl> <dt>Rules</dt> <dd> 
         /// <para>
-        /// Bucket lifecycle configuration now supports specifying a lifecycle rule using an object
+        /// You specify the lifecycle configuration in your request body. The lifecycle configuration
+        /// is specified as XML consisting of one or more rules. An Amazon S3 Lifecycle configuration
+        /// can have up to 1,000 rules. This limit is not adjustable.
+        /// </para>
+        ///  
+        /// <para>
+        /// Bucket lifecycle configuration supports specifying a lifecycle rule using an object
         /// key name prefix, one or more object tags, object size, or any combination of these.
         /// Accordingly, this section describes the latest API. The previous version of the API
         /// supported filtering based only on an object key name prefix, which is supported for
         /// backward compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
         /// </para>
-        ///  </note> <dl> <dt>Rules</dt> <dd> 
+        ///  
         /// <para>
-        /// You specify the lifecycle configuration in your request body. The lifecycle configuration
-        /// is specified as XML consisting of one or more rules. An Amazon S3 Lifecycle configuration
-        /// can have up to 1,000 rules. This limit is not adjustable. Each rule consists of the
-        /// following:
+        /// A lifecycle rule consists of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -12844,14 +12770,7 @@ namespace Amazon.S3
         /// <para>
         /// This operation is not supported by directory buckets.
         /// </para>
-        ///  </note> <important> 
-        /// <para>
-        /// The <c>SELECT</c> job type for the RestoreObject operation is no longer available
-        /// to new customers. Existing customers of Amazon S3 Select can continue to use the feature
-        /// as usual. <a href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn
-        /// more</a> 
-        /// </para>
-        ///  </important> 
+        ///  </note> 
         /// <para>
         /// Restores an archived copy of an object back into Amazon S3
         /// </para>
@@ -13073,14 +12992,7 @@ namespace Amazon.S3
         /// <para>
         /// This operation is not supported by directory buckets.
         /// </para>
-        ///  </note> <important> 
-        /// <para>
-        /// The <c>SELECT</c> job type for the RestoreObject operation is no longer available
-        /// to new customers. Existing customers of Amazon S3 Select can continue to use the feature
-        /// as usual. <a href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn
-        /// more</a> 
-        /// </para>
-        ///  </important> 
+        ///  </note> 
         /// <para>
         /// Restores an archived copy of an object back into Amazon S3
         /// </para>
@@ -13303,14 +13215,7 @@ namespace Amazon.S3
         /// <para>
         /// This operation is not supported by directory buckets.
         /// </para>
-        ///  </note> <important> 
-        /// <para>
-        /// The <c>SELECT</c> job type for the RestoreObject operation is no longer available
-        /// to new customers. Existing customers of Amazon S3 Select can continue to use the feature
-        /// as usual. <a href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn
-        /// more</a> 
-        /// </para>
-        ///  </important> 
+        ///  </note> 
         /// <para>
         /// Restores an archived copy of an object back into Amazon S3
         /// </para>
@@ -13533,14 +13438,7 @@ namespace Amazon.S3
         /// <para>
         /// This operation is not supported by directory buckets.
         /// </para>
-        ///  </note> <important> 
-        /// <para>
-        /// The <c>SELECT</c> job type for the RestoreObject operation is no longer available
-        /// to new customers. Existing customers of Amazon S3 Select can continue to use the feature
-        /// as usual. <a href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn
-        /// more</a> 
-        /// </para>
-        ///  </important> 
+        ///  </note> 
         /// <para>
         /// Restores an archived copy of an object back into Amazon S3
         /// </para>
@@ -13765,14 +13663,7 @@ namespace Amazon.S3
         /// <para>
         /// This operation is not supported by directory buckets.
         /// </para>
-        ///  </note> <important> 
-        /// <para>
-        /// The <c>SELECT</c> job type for the RestoreObject operation is no longer available
-        /// to new customers. Existing customers of Amazon S3 Select can continue to use the feature
-        /// as usual. <a href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn
-        /// more</a> 
-        /// </para>
-        ///  </important> 
+        ///  </note> 
         /// <para>
         /// Restores an archived copy of an object back into Amazon S3
         /// </para>
@@ -13999,13 +13890,7 @@ namespace Amazon.S3
         /// <para>
         /// This operation is not supported by directory buckets.
         /// </para>
-        ///  </note> <important> 
-        /// <para>
-        /// The SelectObjectContent operation is no longer available to new customers. Existing
-        /// customers of Amazon S3 Select can continue to use the operation as usual. <a href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn
-        /// more</a> 
-        /// </para>
-        ///  </important> 
+        ///  </note> 
         /// <para>
         /// This action filters the contents of an Amazon S3 object based on a simple structured
         /// query language (SQL) statement. In the request, along with the SQL expression, you

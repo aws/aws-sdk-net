@@ -103,7 +103,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// Gets and sets the property PanSequenceNumber. 
         /// <para>
         /// A number that identifies and differentiates payment cards with the same Primary Account
-        /// Number (PAN).
+        /// Number (PAN). Typically 00 is used, if no value is provided by the terminal.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=2)]

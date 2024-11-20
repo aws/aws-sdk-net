@@ -34,10 +34,16 @@ namespace Amazon.Lambda
     public partial class AmazonLambdaConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Lambda", "4.0.0.0");
 
         private static readonly AmazonLambdaEndpointResolver EndpointResolver =
             new AmazonLambdaEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("Lambda", "3.7.405.1");
+=======
+            InternalSDKUtils.BuildUserAgentString("Lambda", "3.7.408.5");
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
         private string _userAgent = UserAgentString;
         ///<summary>

@@ -78,6 +78,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.GenerativeData = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("intentDetectedData", targetDepth))
+                {
+                    var unmarshaller = IntentDetectedDataDetailsUnmarshaller.Instance;
+                    unmarshalledObject.IntentDetectedData = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sourceContentData", targetDepth))
                 {
                     var unmarshaller = SourceContentDataDetailsUnmarshaller.Instance;

@@ -34,10 +34,16 @@ namespace Amazon.APIGateway
     public partial class AmazonAPIGatewayConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("API Gateway", "4.0.0.0");
 
         private static readonly AmazonAPIGatewayEndpointResolver EndpointResolver =
             new AmazonAPIGatewayEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("API Gateway", "3.7.400.27");
+=======
+            InternalSDKUtils.BuildUserAgentString("API Gateway", "3.7.400.54");
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
         private string _userAgent = UserAgentString;
         ///<summary>

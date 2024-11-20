@@ -40,9 +40,11 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         private string _mediaPipelineArn;
         private string _mediaPipelineId;
         private string _sinkArn;
+        private string _sinkIamRoleArn;
         private MediaPipelineSinkType _sinkType;
         private string _sourceArn;
         private MediaPipelineSourceType _sourceType;
+        private SseAwsKeyManagementParams _sseAwsKeyManagementParams;
         private MediaPipelineStatus _status;
         private DateTime? _updatedTimestamp;
 
@@ -140,6 +142,26 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SinkIamRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the sink role to be used with <c>AwsKmsKeyId</c>
+        /// in <c>SseAwsKeyManagementParams</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
+        public string SinkIamRoleArn
+        {
+            get { return this._sinkIamRoleArn; }
+            set { this._sinkIamRoleArn = value; }
+        }
+
+        // Check to see if SinkIamRoleArn property is set
+        internal bool IsSetSinkIamRoleArn()
+        {
+            return this._sinkIamRoleArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SinkType. 
         /// <para>
         /// Destination type to which the media artifacts are saved. You must use an S3 Bucket.
@@ -192,6 +214,26 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         internal bool IsSetSourceType()
         {
             return this._sourceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SseAwsKeyManagementParams. 
+        /// <para>
+        /// An object that contains server side encryption parameters to be used by media capture
+        /// pipeline. The parameters can also be used by media concatenation pipeline taking media
+        /// capture pipeline as a media source.
+        /// </para>
+        /// </summary>
+        public SseAwsKeyManagementParams SseAwsKeyManagementParams
+        {
+            get { return this._sseAwsKeyManagementParams; }
+            set { this._sseAwsKeyManagementParams = value; }
+        }
+
+        // Check to see if SseAwsKeyManagementParams property is set
+        internal bool IsSetSseAwsKeyManagementParams()
+        {
+            return this._sseAwsKeyManagementParams != null;
         }
 
         /// <summary>

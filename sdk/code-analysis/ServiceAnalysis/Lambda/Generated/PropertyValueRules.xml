@@ -1429,6 +1429,10 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lambda.Model.UpdateFunctionCodeRequest.SourceKMSKeyArn</property>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|()</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lambda.Model.UpdateFunctionCodeResponse.Description</property>
     <min>0</min>
     <max>256</max>
@@ -1723,6 +1727,10 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lambda.Model.FunctionCode.SourceKMSKeyArn</property>
+    <pattern>(arn:(aws[a-zA-Z-]*)?:[a-z0-9-.]+:.*)|()</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lambda.Model.FunctionUrlConfig.FunctionArn</property>
     <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
@@ -1848,5 +1856,17 @@
     <min>1</min>
     <max>200</max>
     <pattern>[a-zA-Z0-9-\/*:_+=.@-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.TagsError.ErrorCode</property>
+    <min>10</min>
+    <max>21</max>
+    <pattern>[A-Za-z]+Exception</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.TagsError.Message</property>
+    <min>84</min>
+    <max>1000</max>
+    <pattern>^.*$</pattern>
   </property-value-rule>
 </property-value-rules>

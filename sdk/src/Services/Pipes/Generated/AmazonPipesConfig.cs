@@ -34,10 +34,16 @@ namespace Amazon.Pipes
     public partial class AmazonPipesConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Pipes", "4.0.0.0");
 
         private static readonly AmazonPipesEndpointResolver EndpointResolver =
             new AmazonPipesEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("Pipes", "3.7.401.8");
+=======
+            InternalSDKUtils.BuildUserAgentString("Pipes", "3.7.402.17");
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
         private string _userAgent = UserAgentString;
         ///<summary>

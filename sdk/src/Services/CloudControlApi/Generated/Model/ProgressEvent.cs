@@ -39,6 +39,7 @@ namespace Amazon.CloudControlApi.Model
     {
         private HandlerErrorCode _errorCode;
         private DateTime? _eventTime;
+        private string _hooksRequestToken;
         private string _identifier;
         private Operation _operation;
         private OperationStatus _operationStatus;
@@ -88,6 +89,25 @@ namespace Amazon.CloudControlApi.Model
         internal bool IsSetEventTime()
         {
             return this._eventTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HooksRequestToken. 
+        /// <para>
+        /// The unique token representing the Hooks operation for the request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string HooksRequestToken
+        {
+            get { return this._hooksRequestToken; }
+            set { this._hooksRequestToken = value; }
+        }
+
+        // Check to see if HooksRequestToken property is set
+        internal bool IsSetHooksRequestToken()
+        {
+            return this._hooksRequestToken != null;
         }
 
         /// <summary>
@@ -208,7 +228,7 @@ namespace Amazon.CloudControlApi.Model
         /// and its current value.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=65536)]
+        [AWSProperty(Sensitive=true, Min=1, Max=262144)]
         public string ResourceModel
         {
             get { return this._resourceModel; }
@@ -245,7 +265,7 @@ namespace Amazon.CloudControlApi.Model
         /// Any message explaining the current status.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
+        [AWSProperty(Min=0, Max=2048)]
         public string StatusMessage
         {
             get { return this._statusMessage; }

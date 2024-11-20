@@ -90,6 +90,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     unmarshalledObject.ResolvedImageUri = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SourceKMSKeyArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceKMSKeyArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

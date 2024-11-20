@@ -34,10 +34,16 @@ namespace Amazon.DeviceFarm
     public partial class AmazonDeviceFarmConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Device Farm", "4.0.0.0");
 
         private static readonly AmazonDeviceFarmEndpointResolver EndpointResolver =
             new AmazonDeviceFarmEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("Device Farm", "3.7.401.14");
+=======
+            InternalSDKUtils.BuildUserAgentString("Device Farm", "3.7.401.41");
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
         private string _userAgent = UserAgentString;
         ///<summary>

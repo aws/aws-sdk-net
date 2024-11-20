@@ -2042,6 +2042,10 @@ namespace Amazon.DataZone
         /// Constant OWNER for ProjectDesignation
         /// </summary>
         public static readonly ProjectDesignation OWNER = new ProjectDesignation("OWNER");
+        /// <summary>
+        /// Constant PROJECT_CATALOG_STEWARD for ProjectDesignation
+        /// </summary>
+        public static readonly ProjectDesignation PROJECT_CATALOG_STEWARD = new ProjectDesignation("PROJECT_CATALOG_STEWARD");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -3262,6 +3266,18 @@ namespace Amazon.DataZone
     public class UserDesignation : ConstantClass
     {
 
+        /// <summary>
+        /// Constant PROJECT_CATALOG_CONSUMER for UserDesignation
+        /// </summary>
+        public static readonly UserDesignation PROJECT_CATALOG_CONSUMER = new UserDesignation("PROJECT_CATALOG_CONSUMER");
+        /// <summary>
+        /// Constant PROJECT_CATALOG_STEWARD for UserDesignation
+        /// </summary>
+        public static readonly UserDesignation PROJECT_CATALOG_STEWARD = new UserDesignation("PROJECT_CATALOG_STEWARD");
+        /// <summary>
+        /// Constant PROJECT_CATALOG_VIEWER for UserDesignation
+        /// </summary>
+        public static readonly UserDesignation PROJECT_CATALOG_VIEWER = new UserDesignation("PROJECT_CATALOG_VIEWER");
         /// <summary>
         /// Constant PROJECT_CONTRIBUTOR for UserDesignation
         /// </summary>

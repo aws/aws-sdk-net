@@ -49,7 +49,7 @@ namespace Amazon.LakeFormation.Model
     /// </para>
     ///  
     /// <para>
-    ///  <c>ResourceArn = arn:aws:s3:::my-bucket UseServiceLinkedRole = true</c> 
+    ///  <c>ResourceArn = arn:aws:s3:::my-bucket/ UseServiceLinkedRole = true</c> 
     /// </para>
     ///  
     /// <para>

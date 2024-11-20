@@ -109,7 +109,81 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     writer.WriteObjectEnd();
                 }
 
+<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
+||||||| Commit version number update changes
+                if(publicRequest.IsSetAnomalyId())
+                {
+                    context.Writer.WritePropertyName("anomalyId");
+                    context.Writer.Write(publicRequest.AnomalyId);
+                }
+
+                if(publicRequest.IsSetPatternId())
+                {
+                    context.Writer.WritePropertyName("patternId");
+                    context.Writer.Write(publicRequest.PatternId);
+                }
+
+                if(publicRequest.IsSetSuppressionPeriod())
+                {
+                    context.Writer.WritePropertyName("suppressionPeriod");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SuppressionPeriodMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SuppressionPeriod, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetSuppressionType())
+                {
+                    context.Writer.WritePropertyName("suppressionType");
+                    context.Writer.Write(publicRequest.SuppressionType);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+=======
+                if(publicRequest.IsSetAnomalyId())
+                {
+                    context.Writer.WritePropertyName("anomalyId");
+                    context.Writer.Write(publicRequest.AnomalyId);
+                }
+
+                if(publicRequest.IsSetBaseline())
+                {
+                    context.Writer.WritePropertyName("baseline");
+                    context.Writer.Write(publicRequest.Baseline);
+                }
+
+                if(publicRequest.IsSetPatternId())
+                {
+                    context.Writer.WritePropertyName("patternId");
+                    context.Writer.Write(publicRequest.PatternId);
+                }
+
+                if(publicRequest.IsSetSuppressionPeriod())
+                {
+                    context.Writer.WritePropertyName("suppressionPeriod");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SuppressionPeriodMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SuppressionPeriod, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetSuppressionType())
+                {
+                    context.Writer.WritePropertyName("suppressionType");
+                    context.Writer.Write(publicRequest.SuppressionType);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
             }
 
 

@@ -54,6 +54,12 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Boolean.Value);
             }
 
+            if(requestObject.IsSetDecimal())
+            {
+                context.Writer.WritePropertyName("decimal");
+                context.Writer.Write(requestObject.Decimal);
+            }
+
             if(requestObject.IsSetEntityIdentifier())
             {
                 context.Writer.WritePropertyName("entityIdentifier");
@@ -63,6 +69,12 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.EntityIdentifier, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetIpaddr())
+            {
+                context.Writer.WritePropertyName("ipaddr");
+                context.Writer.Write(requestObject.Ipaddr);
             }
 
             if(requestObject.IsSetLong())

@@ -56,7 +56,7 @@ namespace Amazon.IoTFleetWise.Model
         /// API data type.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=1, Max=10)]
         public List<CreateVehicleRequestItem> Vehicles
         {
             get { return this._vehicles; }

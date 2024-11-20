@@ -201,11 +201,6 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>iam-instance-profile.name</c> - The instance profile associated with the instance.
-        /// Specified as an name.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <c>image-id</c> - The ID of the image used to launch the instance.
         /// </para>
         ///  </li> <li> 

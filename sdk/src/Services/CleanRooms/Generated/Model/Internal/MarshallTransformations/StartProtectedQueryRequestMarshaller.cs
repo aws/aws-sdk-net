@@ -66,7 +66,32 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             request.ResourcePath = "/memberships/{membershipIdentifier}/protectedQueries";
             using (MemoryStream memoryStream = new MemoryStream())
             {
+<<<<<<< HEAD
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+||||||| Commit version number update changes
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetResultConfiguration())
+=======
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetComputeConfiguration())
+                {
+                    context.Writer.WritePropertyName("computeConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ComputeConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ComputeConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetResultConfiguration())
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
                 {
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;

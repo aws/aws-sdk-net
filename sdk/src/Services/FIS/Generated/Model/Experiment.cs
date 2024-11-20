@@ -39,6 +39,8 @@ namespace Amazon.FIS.Model
         private DateTime? _creationTime;
         private DateTime? _endTime;
         private ExperimentOptions _experimentOptions;
+        private ExperimentReport _experimentReport;
+        private ExperimentReportConfiguration _experimentReportConfiguration;
         private string _experimentTemplateId;
         private string _id;
         private ExperimentLogConfiguration _logConfiguration;
@@ -139,6 +141,42 @@ namespace Amazon.FIS.Model
         internal bool IsSetExperimentOptions()
         {
             return this._experimentOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExperimentReport. 
+        /// <para>
+        /// The experiment report for the experiment.
+        /// </para>
+        /// </summary>
+        public ExperimentReport ExperimentReport
+        {
+            get { return this._experimentReport; }
+            set { this._experimentReport = value; }
+        }
+
+        // Check to see if ExperimentReport property is set
+        internal bool IsSetExperimentReport()
+        {
+            return this._experimentReport != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExperimentReportConfiguration. 
+        /// <para>
+        /// The experiment report configuration for the experiment.
+        /// </para>
+        /// </summary>
+        public ExperimentReportConfiguration ExperimentReportConfiguration
+        {
+            get { return this._experimentReportConfiguration; }
+            set { this._experimentReportConfiguration = value; }
+        }
+
+        // Check to see if ExperimentReportConfiguration property is set
+        internal bool IsSetExperimentReportConfiguration()
+        {
+            return this._experimentReportConfiguration != null;
         }
 
         /// <summary>

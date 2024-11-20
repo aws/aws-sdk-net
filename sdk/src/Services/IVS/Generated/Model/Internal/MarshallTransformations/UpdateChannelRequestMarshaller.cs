@@ -126,7 +126,130 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                     writer.WriteObjectEnd();
                 }
 
+<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
+||||||| Commit version number update changes
+                if(publicRequest.IsSetAuthorized())
+                {
+                    context.Writer.WritePropertyName("authorized");
+                    context.Writer.Write(publicRequest.Authorized);
+                }
+
+                if(publicRequest.IsSetInsecureIngest())
+                {
+                    context.Writer.WritePropertyName("insecureIngest");
+                    context.Writer.Write(publicRequest.InsecureIngest);
+                }
+
+                if(publicRequest.IsSetLatencyMode())
+                {
+                    context.Writer.WritePropertyName("latencyMode");
+                    context.Writer.Write(publicRequest.LatencyMode);
+                }
+
+                if(publicRequest.IsSetName())
+                {
+                    context.Writer.WritePropertyName("name");
+                    context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetPlaybackRestrictionPolicyArn())
+                {
+                    context.Writer.WritePropertyName("playbackRestrictionPolicyArn");
+                    context.Writer.Write(publicRequest.PlaybackRestrictionPolicyArn);
+                }
+
+                if(publicRequest.IsSetPreset())
+                {
+                    context.Writer.WritePropertyName("preset");
+                    context.Writer.Write(publicRequest.Preset);
+                }
+
+                if(publicRequest.IsSetRecordingConfigurationArn())
+                {
+                    context.Writer.WritePropertyName("recordingConfigurationArn");
+                    context.Writer.Write(publicRequest.RecordingConfigurationArn);
+                }
+
+                if(publicRequest.IsSetType())
+                {
+                    context.Writer.WritePropertyName("type");
+                    context.Writer.Write(publicRequest.Type);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+=======
+                if(publicRequest.IsSetAuthorized())
+                {
+                    context.Writer.WritePropertyName("authorized");
+                    context.Writer.Write(publicRequest.Authorized);
+                }
+
+                if(publicRequest.IsSetContainerFormat())
+                {
+                    context.Writer.WritePropertyName("containerFormat");
+                    context.Writer.Write(publicRequest.ContainerFormat);
+                }
+
+                if(publicRequest.IsSetInsecureIngest())
+                {
+                    context.Writer.WritePropertyName("insecureIngest");
+                    context.Writer.Write(publicRequest.InsecureIngest);
+                }
+
+                if(publicRequest.IsSetLatencyMode())
+                {
+                    context.Writer.WritePropertyName("latencyMode");
+                    context.Writer.Write(publicRequest.LatencyMode);
+                }
+
+                if(publicRequest.IsSetMultitrackInputConfiguration())
+                {
+                    context.Writer.WritePropertyName("multitrackInputConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MultitrackInputConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.MultitrackInputConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetName())
+                {
+                    context.Writer.WritePropertyName("name");
+                    context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetPlaybackRestrictionPolicyArn())
+                {
+                    context.Writer.WritePropertyName("playbackRestrictionPolicyArn");
+                    context.Writer.Write(publicRequest.PlaybackRestrictionPolicyArn);
+                }
+
+                if(publicRequest.IsSetPreset())
+                {
+                    context.Writer.WritePropertyName("preset");
+                    context.Writer.Write(publicRequest.Preset);
+                }
+
+                if(publicRequest.IsSetRecordingConfigurationArn())
+                {
+                    context.Writer.WritePropertyName("recordingConfigurationArn");
+                    context.Writer.Write(publicRequest.RecordingConfigurationArn);
+                }
+
+                if(publicRequest.IsSetType())
+                {
+                    context.Writer.WritePropertyName("type");
+                    context.Writer.Write(publicRequest.Type);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
             }
 
 

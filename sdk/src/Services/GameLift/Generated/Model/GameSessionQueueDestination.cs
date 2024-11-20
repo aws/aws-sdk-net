@@ -45,7 +45,7 @@ namespace Amazon.GameLift.Model
         /// all Regions.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Min=1, Max=512)]
         public string DestinationArn
         {
             get { return this._destinationArn; }

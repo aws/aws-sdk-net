@@ -31,7 +31,8 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the ListOriginAccessControls operation.
-    /// Gets the list of CloudFront origin access controls in this Amazon Web Services account.
+    /// Gets the list of CloudFront origin access controls (OACs) in this Amazon Web Services
+    /// account.
     /// 
     ///  
     /// <para>
@@ -41,6 +42,13 @@ namespace Amazon.CloudFront.Model
     /// another request that specifies the <c>NextMarker</c> value from the current response
     /// as the <c>Marker</c> value in the next request.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// If you're not using origin access controls for your Amazon Web Services account, the
+    /// <c>ListOriginAccessControls</c> operation doesn't return the <c>Items</c> element
+    /// in the response.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListOriginAccessControlsRequest : AmazonCloudFrontRequest
     {

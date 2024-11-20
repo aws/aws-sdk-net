@@ -809,10 +809,11 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Creates a knowledge base that contains data sources from which information can be
-        /// queried and used by LLMs. To create a knowledge base, you must first set up your data
-        /// sources and configure a supported vector store. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup.html">Set
-        /// up your data for ingestion</a>.
+        /// Creates a knowledge base. A knowledge base contains your data sources so that Large
+        /// Language Models (LLMs) can use your data. To create a knowledge base, you must first
+        /// set up your data sources and configure a supported vector store. For more information,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowlege-base-prereq.html">Set
+        /// up a knowledge base</a>.
         /// 
         ///  <note> 
         /// <para>
@@ -2069,8 +2070,8 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Gets information about a ingestion job, in which a data source is added to a knowledge
-        /// base.
+        /// Gets information about a data ingestion job. Data sources are ingested into your knowledge
+        /// base so that Large Language Models (LLMs) can use your data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIngestionJob service method.</param>
         /// <param name="cancellationToken">
@@ -2669,7 +2670,8 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Lists the ingestion jobs for a data source and information about each of them.
+        /// Lists the data ingestion jobs for a data source. The list also includes information
+        /// about each job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIngestionJobs service method.</param>
         /// <param name="cancellationToken">
@@ -2719,7 +2721,8 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Lists the knowledge bases in an account and information about each of them.
+        /// Lists the knowledge bases in an account. The list also includesinformation about each
+        /// knowledge base.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListKnowledgeBases service method.</param>
         /// <param name="cancellationToken">
@@ -2983,7 +2986,8 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
-        /// Begins an ingestion job, in which a data source is added to a knowledge base.
+        /// Begins a data ingestion job. Data sources are ingested into your knowledge base so
+        /// that Large Language Models (LLMs) can use your data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartIngestionJob service method.</param>
         /// <param name="cancellationToken">
@@ -3021,6 +3025,60 @@ namespace Amazon.BedrockAgent
             options.ResponseUnmarshaller = StartIngestionJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartIngestionJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopIngestionJob
+
+        internal virtual StopIngestionJobResponse StopIngestionJob(StopIngestionJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopIngestionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopIngestionJobResponseUnmarshaller.Instance;
+
+            return Invoke<StopIngestionJobResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Stops a currently running data ingestion job. You can send a <c>StartIngestionJob</c>
+        /// request again to ingest the rest of your data when you are ready.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopIngestionJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopIngestionJob service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
+        /// There was a conflict performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/StopIngestionJob">REST API Reference for StopIngestionJob Operation</seealso>
+        public virtual Task<StopIngestionJobResponse> StopIngestionJobAsync(StopIngestionJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopIngestionJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopIngestionJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopIngestionJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3661,6 +3719,52 @@ namespace Amazon.BedrockAgent
             options.ResponseUnmarshaller = UpdatePromptResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdatePromptResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ValidateFlowDefinition
+
+        internal virtual ValidateFlowDefinitionResponse ValidateFlowDefinition(ValidateFlowDefinitionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ValidateFlowDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ValidateFlowDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<ValidateFlowDefinitionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Validates the definition of a flow.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ValidateFlowDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ValidateFlowDefinition service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ValidateFlowDefinition">REST API Reference for ValidateFlowDefinition Operation</seealso>
+        public virtual Task<ValidateFlowDefinitionResponse> ValidateFlowDefinitionAsync(ValidateFlowDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ValidateFlowDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ValidateFlowDefinitionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ValidateFlowDefinitionResponse>(request, options, cancellationToken);
         }
 
         #endregion

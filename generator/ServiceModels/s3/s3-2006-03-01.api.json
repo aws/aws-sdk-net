@@ -964,6 +964,7 @@
         "requestUri":"/{Bucket}?lifecycle"
       },
       "input":{"shape":"PutBucketLifecycleConfigurationRequest"},
+      "output":{"shape":"PutBucketLifecycleConfigurationOutput"},
       "httpChecksum":{
         "requestAlgorithmMember":"ChecksumAlgorithm",
         "requestChecksumRequired":true
@@ -1489,7 +1490,8 @@
       "type":"structure",
       "members":{
         "Name":{"shape":"BucketName"},
-        "CreationDate":{"shape":"CreationDate"}
+        "CreationDate":{"shape":"CreationDate"},
+        "BucketRegion":{"shape":"BucketRegion"}
       }
     },
     "BucketAccelerateStatus":{
@@ -1592,6 +1594,7 @@
       ]
     },
     "BucketName":{"type":"string"},
+    "BucketRegion":{"type":"string"},
     "BucketType":{
       "type":"string",
       "enum":["Directory"]
@@ -3525,6 +3528,11 @@
         "Rules":{
           "shape":"LifecycleRules",
           "locationName":"Rule"
+        },
+        "TransitionDefaultMinimumObjectSize":{
+          "shape":"TransitionDefaultMinimumObjectSize",
+          "location":"header",
+          "locationName":"x-amz-transition-default-minimum-object-size"
         }
       }
     },
@@ -5437,7 +5445,8 @@
       "members":{
         "Buckets":{"shape":"Buckets"},
         "Owner":{"shape":"Owner"},
-        "ContinuationToken":{"shape":"NextToken"}
+        "ContinuationToken":{"shape":"NextToken"},
+        "Prefix":{"shape":"Prefix"}
       }
     },
     "ListBucketsRequest":{
@@ -5452,6 +5461,16 @@
           "shape":"Token",
           "location":"querystring",
           "locationName":"continuation-token"
+        },
+        "Prefix":{
+          "shape":"Prefix",
+          "location":"querystring",
+          "locationName":"prefix"
+        },
+        "BucketRegion":{
+          "shape":"BucketRegion",
+          "location":"querystring",
+          "locationName":"bucket-region"
         }
       }
     },
@@ -5947,7 +5966,7 @@
     "MaxBuckets":{
       "type":"integer",
       "box":true,
-      "max":1000,
+      "max":10000,
       "min":1
     },
     "MaxDirectoryBuckets":{
@@ -6784,6 +6803,16 @@
       },
       "payload":"InventoryConfiguration"
     },
+    "PutBucketLifecycleConfigurationOutput":{
+      "type":"structure",
+      "members":{
+        "TransitionDefaultMinimumObjectSize":{
+          "shape":"TransitionDefaultMinimumObjectSize",
+          "location":"header",
+          "locationName":"x-amz-transition-default-minimum-object-size"
+        }
+      }
+    },
     "PutBucketLifecycleConfigurationRequest":{
       "type":"structure",
       "required":["Bucket"],
@@ -6808,6 +6837,11 @@
           "shape":"AccountId",
           "location":"header",
           "locationName":"x-amz-expected-bucket-owner"
+        },
+        "TransitionDefaultMinimumObjectSize":{
+          "shape":"TransitionDefaultMinimumObjectSize",
+          "location":"header",
+          "locationName":"x-amz-transition-default-minimum-object-size"
         }
       },
       "payload":"LifecycleConfiguration"
@@ -8705,6 +8739,13 @@
         "Days":{"shape":"Days"},
         "StorageClass":{"shape":"TransitionStorageClass"}
       }
+    },
+    "TransitionDefaultMinimumObjectSize":{
+      "type":"string",
+      "enum":[
+        "varies_by_storage_class",
+        "all_storage_classes_128K"
+      ]
     },
     "TransitionList":{
       "type":"list",

@@ -85,22 +85,80 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
                         context.Writer.WriteArrayEnd();
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetDescription())
                     {
                         context.Writer.WritePropertyName("Description");
                         context.Writer.Write(publicRequest.Description);
                     }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetDescription())
+                {
+                    context.Writer.WritePropertyName("Description");
+                    context.Writer.Write(publicRequest.Description);
+                }
+=======
+                if(publicRequest.IsSetCriticality())
+                {
+                    context.Writer.WritePropertyName("Criticality");
+                    context.Writer.Write(publicRequest.Criticality);
+                }
 
+                if(publicRequest.IsSetDescription())
+                {
+                    context.Writer.WritePropertyName("Description");
+                    context.Writer.Write(publicRequest.Description);
+                }
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
+
+<<<<<<< HEAD
                     if(publicRequest.IsSetName())
                     {
                         context.Writer.WritePropertyName("Name");
                         context.Writer.Write(publicRequest.Name);
                     }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetName())
+                {
+                    context.Writer.WritePropertyName("Name");
+                    context.Writer.Write(publicRequest.Name);
+                }
+=======
+                if(publicRequest.IsSetDisplayName())
+                {
+                    context.Writer.WritePropertyName("DisplayName");
+                    context.Writer.Write(publicRequest.DisplayName);
+                }
 
+                if(publicRequest.IsSetName())
+                {
+                    context.Writer.WritePropertyName("Name");
+                    context.Writer.Write(publicRequest.Name);
+                }
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
+
+<<<<<<< HEAD
                     if(publicRequest.IsSetResourceQuery())
                     {
                         context.Writer.WritePropertyName("ResourceQuery");
                         context.Writer.WriteObjectStart();
+||||||| Commit version number update changes
+                if(publicRequest.IsSetResourceQuery())
+                {
+                    context.Writer.WritePropertyName("ResourceQuery");
+                    context.Writer.WriteObjectStart();
+=======
+                if(publicRequest.IsSetOwner())
+                {
+                    context.Writer.WritePropertyName("Owner");
+                    context.Writer.Write(publicRequest.Owner);
+                }
+
+                if(publicRequest.IsSetResourceQuery())
+                {
+                    context.Writer.WritePropertyName("ResourceQuery");
+                    context.Writer.WriteObjectStart();
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
                         var marshaller = ResourceQueryMarshaller.Instance;
                         marshaller.Marshall(publicRequest.ResourceQuery, context);

@@ -55,9 +55,9 @@ namespace Amazon.CloudFront.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// You must rename the <c>ETag</c> field to <c>IfMatch</c>, leaving the value unchanged.
-    /// (Set the value of <c>IfMatch</c> to the value of <c>ETag</c>, then remove the <c>ETag</c>
-    /// field.)
+    /// You must copy the <c>ETag</c> field value from the response. (You'll use it for the
+    /// <c>IfMatch</c> parameter in your request.) Then, remove the <c>ETag</c> field from
+    /// the distribution configuration.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -65,7 +65,7 @@ namespace Amazon.CloudFront.Model
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    /// Submit an <c>UpdateDistribution</c> request, providing the distribution configuration.
+    /// Submit an <c>UpdateDistribution</c> request, providing the updated distribution configuration.
     /// The new configuration replaces the existing configuration. The values that you specify
     /// in an <c>UpdateDistribution</c> request are not merged into your existing configuration.
     /// Make sure to include all fields: the ones that you modified and also the ones that

@@ -65,7 +65,11 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetExecutionId())
                 throw new AmazonMainframeModernizationException("Request object does not have required field ExecutionId set");
             request.AddPathResource("{executionId}", StringUtils.FromString(publicRequest.ExecutionId));
+            
+            if (publicRequest.IsSetAuthSecretsManagerArn())
+                request.Parameters.Add("authSecretsManagerArn", StringUtils.FromString(publicRequest.AuthSecretsManagerArn));
             request.ResourcePath = "/applications/{applicationId}/batch-job-executions/{executionId}/steps";
+            request.UseQueryString = true;
 
             return request;
         }

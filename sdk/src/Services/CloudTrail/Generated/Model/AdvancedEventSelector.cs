@@ -60,6 +60,26 @@ namespace Amazon.CloudTrail.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
+    /// The following additional fields are available for event data stores:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>eventName</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>eventType</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>sessionCredentialFromConsole</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>userIdentity.arn</c> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
     ///  <b>Supported CloudTrail event record fields for data events</b> 
     /// </para>
     ///  <ul> <li> 
@@ -81,6 +101,26 @@ namespace Amazon.CloudTrail.Model
     ///  </li> <li> 
     /// <para>
     ///  <c>resources.ARN</c> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// The following additional fields are available for event data stores:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>eventSource</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>eventType</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>sessionCredentialFromConsole</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>userIdentity.arn</c> 
     /// </para>
     ///  </li> </ul> 
     /// <para>

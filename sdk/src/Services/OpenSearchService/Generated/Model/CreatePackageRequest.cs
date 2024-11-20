@@ -37,10 +37,51 @@ namespace Amazon.OpenSearchService.Model
     /// </summary>
     public partial class CreatePackageRequest : AmazonOpenSearchServiceRequest
     {
+        private string _engineVersion;
+        private PackageConfiguration _packageConfiguration;
         private string _packageDescription;
+        private PackageEncryptionOptions _packageEncryptionOptions;
         private string _packageName;
         private PackageSource _packageSource;
         private PackageType _packageType;
+        private PackageVendingOptions _packageVendingOptions;
+
+        /// <summary>
+        /// Gets and sets the property EngineVersion. 
+        /// <para>
+        /// The version of the Amazon OpenSearch Service engine for which is compatible with the
+        /// package. This can only be specified for package type <c>ZIP-PLUGIN</c> 
+        /// </para>
+        /// </summary>
+        public string EngineVersion
+        {
+            get { return this._engineVersion; }
+            set { this._engineVersion = value; }
+        }
+
+        // Check to see if EngineVersion property is set
+        internal bool IsSetEngineVersion()
+        {
+            return this._engineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PackageConfiguration. 
+        /// <para>
+        ///  The configuration parameters for the package being created.
+        /// </para>
+        /// </summary>
+        public PackageConfiguration PackageConfiguration
+        {
+            get { return this._packageConfiguration; }
+            set { this._packageConfiguration = value; }
+        }
+
+        // Check to see if PackageConfiguration property is set
+        internal bool IsSetPackageConfiguration()
+        {
+            return this._packageConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property PackageDescription. 
@@ -59,6 +100,24 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetPackageDescription()
         {
             return this._packageDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PackageEncryptionOptions. 
+        /// <para>
+        /// The encryption parameters for the package being created.
+        /// </para>
+        /// </summary>
+        public PackageEncryptionOptions PackageEncryptionOptions
+        {
+            get { return this._packageEncryptionOptions; }
+            set { this._packageEncryptionOptions = value; }
+        }
+
+        // Check to see if PackageEncryptionOptions property is set
+        internal bool IsSetPackageEncryptionOptions()
+        {
+            return this._packageEncryptionOptions != null;
         }
 
         /// <summary>
@@ -116,6 +175,25 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetPackageType()
         {
             return this._packageType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PackageVendingOptions. 
+        /// <para>
+        ///  The vending options for the package being created. They determine if the package
+        /// can be vended to other users.
+        /// </para>
+        /// </summary>
+        public PackageVendingOptions PackageVendingOptions
+        {
+            get { return this._packageVendingOptions; }
+            set { this._packageVendingOptions = value; }
+        }
+
+        // Check to see if PackageVendingOptions property is set
+        internal bool IsSetPackageVendingOptions()
+        {
+            return this._packageVendingOptions != null;
         }
 
     }

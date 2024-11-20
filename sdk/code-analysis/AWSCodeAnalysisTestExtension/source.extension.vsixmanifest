@@ -473,8 +473,6 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.NetworkFirewall.CodeAnalysis" Path="|AWSSDK.NetworkFirewall.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.NetworkManager.CodeAnalysis" Path="|AWSSDK.NetworkManager.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.NetworkManager.CodeAnalysis" Path="|AWSSDK.NetworkManager.CodeAnalysis|"/>
-    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.NimbleStudio.CodeAnalysis" Path="|AWSSDK.NimbleStudio.CodeAnalysis|"/>
-    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.NimbleStudio.CodeAnalysis" Path="|AWSSDK.NimbleStudio.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.OAM.CodeAnalysis" Path="|AWSSDK.OAM.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.OAM.CodeAnalysis" Path="|AWSSDK.OAM.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Omics.CodeAnalysis" Path="|AWSSDK.Omics.CodeAnalysis|"/>

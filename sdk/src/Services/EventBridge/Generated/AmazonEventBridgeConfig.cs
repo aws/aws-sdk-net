@@ -34,10 +34,16 @@ namespace Amazon.EventBridge
     public partial class AmazonEventBridgeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("EventBridge", "4.0.0.0");
 
         private static readonly AmazonEventBridgeEndpointResolver EndpointResolver =
             new AmazonEventBridgeEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("EventBridge", "3.7.401.24");
+=======
+            InternalSDKUtils.BuildUserAgentString("EventBridge", "3.7.401.51");
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
         private string _userAgent = UserAgentString;
         ///<summary>

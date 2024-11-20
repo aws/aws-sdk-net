@@ -141,40 +141,13 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints:
+        /// Valid characters are any letter from any language, any whitespace character, any numeric
+        /// character, and the following characters: underscore (<c>_</c>), period (<c>.</c>),
+        /// colon (<c>:</c>), slash (<c>/</c>), equal (<c>=</c>), plus (<c>+</c>), backslash (<c>\</c>),
+        /// hyphen (<c>-</c>), at symbol (<c>@</c>).
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Cannot exceed 512 characters
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Cannot contain spaces( ), double quotes ("), single quotes ('), a backslash (\), or
-        /// control characters. The hexadecimal codes for invalid characters are: 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// x00 to x20
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// x22
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// x27
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// x5c
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// x7f or larger
-        /// </para>
-        ///  </li> </ul> </li> </ul>
         /// </summary>
-        [AWSProperty(Max=2147483647)]
+        [AWSProperty(Max=256)]
         public string S3KeyPrefix
         {
             get { return this._s3KeyPrefix; }

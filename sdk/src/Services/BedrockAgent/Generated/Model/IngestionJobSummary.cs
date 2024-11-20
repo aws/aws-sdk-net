@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Contains details about an ingestion job.
+    /// Contains details about a data ingestion job.
     /// </summary>
     public partial class IngestionJobSummary
     {
@@ -46,7 +46,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property DataSourceId. 
         /// <para>
-        /// The unique identifier of the data source in the ingestion job.
+        /// The unique identifier of the data source for the data ingestion job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -65,7 +65,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the ingestion job.
+        /// The description of the data ingestion job.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -84,7 +84,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property IngestionJobId. 
         /// <para>
-        /// The unique identifier of the ingestion job.
+        /// The unique identifier of the data ingestion job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -103,7 +103,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property KnowledgeBaseId. 
         /// <para>
-        /// The unique identifier of the knowledge base to which the data source is added.
+        /// The unique identifier of the knowledge base for the data ingestion job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -122,7 +122,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property StartedAt. 
         /// <para>
-        /// The time at which the ingestion job was started.
+        /// The time the data ingestion job started.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -141,7 +141,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property Statistics. 
         /// <para>
-        /// Contains statistics for the ingestion job.
+        /// Contains statistics for the data ingestion job.
         /// </para>
         /// </summary>
         public IngestionJobStatistics Statistics
@@ -159,7 +159,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the ingestion job.
+        /// The status of the data ingestion job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -178,7 +178,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The time at which the ingestion job was last updated.
+        /// The time the data ingestion job was last updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

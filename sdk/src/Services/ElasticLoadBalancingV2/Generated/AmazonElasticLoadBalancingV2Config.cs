@@ -34,10 +34,16 @@ namespace Amazon.ElasticLoadBalancingV2
     public partial class AmazonElasticLoadBalancingV2Config : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Elastic Load Balancing v2", "4.0.0.0");
 
         private static readonly AmazonElasticLoadBalancingV2EndpointResolver EndpointResolver =
             new AmazonElasticLoadBalancingV2EndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("Elastic Load Balancing v2", "3.7.404.7");
+=======
+            InternalSDKUtils.BuildUserAgentString("Elastic Load Balancing v2", "3.7.406.9");
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
         private string _userAgent = UserAgentString;
         ///<summary>

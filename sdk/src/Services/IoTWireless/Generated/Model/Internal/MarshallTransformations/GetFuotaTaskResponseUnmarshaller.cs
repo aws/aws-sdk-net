@@ -70,6 +70,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     response.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Descriptor", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Descriptor = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FirmwareUpdateImage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

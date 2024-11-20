@@ -66,7 +66,33 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             request.ResourcePath = "/domainConfigurations/{domainConfigurationName}";
             using (MemoryStream memoryStream = new MemoryStream())
             {
+<<<<<<< HEAD
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+||||||| Commit version number update changes
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAuthorizerConfig())
+=======
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetApplicationProtocol())
+                {
+                    context.Writer.WritePropertyName("applicationProtocol");
+                    context.Writer.Write(publicRequest.ApplicationProtocol);
+                }
+
+                if(publicRequest.IsSetAuthenticationType())
+                {
+                    context.Writer.WritePropertyName("authenticationType");
+                    context.Writer.Write(publicRequest.AuthenticationType);
+                }
+
+                if(publicRequest.IsSetAuthorizerConfig())
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
                 {
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;
@@ -83,11 +109,36 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetDomainName())
                     {
                         context.Writer.WritePropertyName("domainName");
                         context.Writer.Write(publicRequest.DomainName);
                     }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetDomainName())
+                {
+                    context.Writer.WritePropertyName("domainName");
+                    context.Writer.Write(publicRequest.DomainName);
+                }
+=======
+                if(publicRequest.IsSetClientCertificateConfig())
+                {
+                    context.Writer.WritePropertyName("clientCertificateConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ClientCertificateConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ClientCertificateConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetDomainName())
+                {
+                    context.Writer.WritePropertyName("domainName");
+                    context.Writer.Write(publicRequest.DomainName);
+                }
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
                     if(publicRequest.IsSetServerCertificateArns())
                     {

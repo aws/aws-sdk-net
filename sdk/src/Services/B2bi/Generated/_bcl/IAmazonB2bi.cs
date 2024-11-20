@@ -320,12 +320,146 @@ namespace Amazon.B2bi
 
         #endregion
         
+        #region  CreateStarterMappingTemplate
+
+
+        /// <summary>
+        /// Amazon Web Services B2B Data Interchange uses a mapping template in JSONata or XSLT
+        /// format to transform a customer input file into a JSON or XML file that can be converted
+        /// to EDI.
+        /// 
+        ///  
+        /// <para>
+        /// If you provide a sample EDI file with the same structure as the EDI files that you
+        /// wish to generate, then the service can generate a mapping template. The starter template
+        /// contains placeholder values which you can replace with JSONata or XSLT expressions
+        /// to take data from your input file and insert it into the JSON or XML file that is
+        /// used to generate the EDI.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not provide a sample EDI file, then the service can generate a mapping template
+        /// based on the EDI settings in the <c>templateDetails</c> parameter. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Currently, we only support generating a template that can generate the input to produce
+        /// an Outbound X12 EDI file.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStarterMappingTemplate service method.</param>
+        /// 
+        /// <returns>The response from the CreateStarterMappingTemplate service method, as returned by B2bi.</returns>
+        /// <exception cref="Amazon.B2bi.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.InternalServerException">
+        /// This exception is thrown when an error occurs in the Amazon Web Services B2B Data
+        /// Interchange service.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.ResourceNotFoundException">
+        /// Occurs when the requested resource does not exist, or cannot be found. In some cases,
+        /// the resource exists in a region other than the region specified in the API call.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.ValidationException">
+        /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/CreateStarterMappingTemplate">REST API Reference for CreateStarterMappingTemplate Operation</seealso>
+        CreateStarterMappingTemplateResponse CreateStarterMappingTemplate(CreateStarterMappingTemplateRequest request);
+
+
+
+        /// <summary>
+        /// Amazon Web Services B2B Data Interchange uses a mapping template in JSONata or XSLT
+        /// format to transform a customer input file into a JSON or XML file that can be converted
+        /// to EDI.
+        /// 
+        ///  
+        /// <para>
+        /// If you provide a sample EDI file with the same structure as the EDI files that you
+        /// wish to generate, then the service can generate a mapping template. The starter template
+        /// contains placeholder values which you can replace with JSONata or XSLT expressions
+        /// to take data from your input file and insert it into the JSON or XML file that is
+        /// used to generate the EDI.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you do not provide a sample EDI file, then the service can generate a mapping template
+        /// based on the EDI settings in the <c>templateDetails</c> parameter. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Currently, we only support generating a template that can generate the input to produce
+        /// an Outbound X12 EDI file.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStarterMappingTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateStarterMappingTemplate service method, as returned by B2bi.</returns>
+        /// <exception cref="Amazon.B2bi.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.InternalServerException">
+        /// This exception is thrown when an error occurs in the Amazon Web Services B2B Data
+        /// Interchange service.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.ResourceNotFoundException">
+        /// Occurs when the requested resource does not exist, or cannot be found. In some cases,
+        /// the resource exists in a region other than the region specified in the API call.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.ValidationException">
+        /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/CreateStarterMappingTemplate">REST API Reference for CreateStarterMappingTemplate Operation</seealso>
+        Task<CreateStarterMappingTemplateResponse> CreateStarterMappingTemplateAsync(CreateStarterMappingTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateTransformer
 
 
         /// <summary>
-        /// Creates a transformer. A transformer describes how to process the incoming EDI documents
-        /// and extract the necessary information to the output file.
+        /// Creates a transformer. Amazon Web Services B2B Data Interchange currently supports
+        /// two scenarios:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <i>Inbound EDI</i>: the Amazon Web Services customer receives an EDI file from their
+        /// trading partner. Amazon Web Services B2B Data Interchange converts this EDI file into
+        /// a JSON or XML file with a service-defined structure. A mapping template provided by
+        /// the customer, in JSONata or XSLT format, is optionally applied to this file to produce
+        /// a JSON or XML file with the structure the customer requires.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>Outbound EDI</i>: the Amazon Web Services customer has a JSON or XML file containing
+        /// data that they wish to use in an EDI file. A mapping template, provided by the customer
+        /// (in either JSONata or XSLT format) is applied to this file to generate a JSON or XML
+        /// file in the service-defined structure. This file is then converted to an EDI file.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// The following fields are provided for backwards compatibility only: <c>fileFormat</c>,
+        /// <c>mappingTemplate</c>, <c>ediType</c>, and <c>sampleDocument</c>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Use the <c>mapping</c> data type in place of <c>mappingTemplate</c> and <c>fileFormat</c>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use the <c>sampleDocuments</c> data type in place of <c>sampleDocument</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use either the <c>inputConversion</c> or <c>outputConversion</c> in place of <c>ediType</c>
+        /// 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTransformer service method.</param>
         /// 
@@ -363,8 +497,44 @@ namespace Amazon.B2bi
 
 
         /// <summary>
-        /// Creates a transformer. A transformer describes how to process the incoming EDI documents
-        /// and extract the necessary information to the output file.
+        /// Creates a transformer. Amazon Web Services B2B Data Interchange currently supports
+        /// two scenarios:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <i>Inbound EDI</i>: the Amazon Web Services customer receives an EDI file from their
+        /// trading partner. Amazon Web Services B2B Data Interchange converts this EDI file into
+        /// a JSON or XML file with a service-defined structure. A mapping template provided by
+        /// the customer, in JSONata or XSLT format, is optionally applied to this file to produce
+        /// a JSON or XML file with the structure the customer requires.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>Outbound EDI</i>: the Amazon Web Services customer has a JSON or XML file containing
+        /// data that they wish to use in an EDI file. A mapping template, provided by the customer
+        /// (in either JSONata or XSLT format) is applied to this file to generate a JSON or XML
+        /// file in the service-defined structure. This file is then converted to an EDI file.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// The following fields are provided for backwards compatibility only: <c>fileFormat</c>,
+        /// <c>mappingTemplate</c>, <c>ediType</c>, and <c>sampleDocument</c>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Use the <c>mapping</c> data type in place of <c>mappingTemplate</c> and <c>fileFormat</c>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use the <c>sampleDocuments</c> data type in place of <c>sampleDocument</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use either the <c>inputConversion</c> or <c>outputConversion</c> in place of <c>ediType</c>
+        /// 
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTransformer service method.</param>
         /// <param name="cancellationToken">
@@ -630,8 +800,9 @@ namespace Amazon.B2bi
 
 
         /// <summary>
-        /// Deletes the specified transformer. A transformer describes how to process the incoming
-        /// EDI documents and extract the necessary information to the output file.
+        /// Deletes the specified transformer. A transformer can take an EDI file as input and
+        /// transform it into a JSON-or XML-formatted document. Alternatively, a transformer can
+        /// take a JSON-or XML-formatted document as input and transform it into an EDI file.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTransformer service method.</param>
         /// 
@@ -664,8 +835,9 @@ namespace Amazon.B2bi
 
 
         /// <summary>
-        /// Deletes the specified transformer. A transformer describes how to process the incoming
-        /// EDI documents and extract the necessary information to the output file.
+        /// Deletes the specified transformer. A transformer can take an EDI file as input and
+        /// transform it into a JSON-or XML-formatted document. Alternatively, a transformer can
+        /// take a JSON-or XML-formatted document as input and transform it into an EDI file.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTransformer service method.</param>
         /// <param name="cancellationToken">
@@ -697,6 +869,84 @@ namespace Amazon.B2bi
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/DeleteTransformer">REST API Reference for DeleteTransformer Operation</seealso>
         Task<DeleteTransformerResponse> DeleteTransformerAsync(DeleteTransformerRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GenerateMapping
+
+
+        /// <summary>
+        /// Takes sample input and output documents and uses Amazon Bedrock to generate a mapping
+        /// automatically. Depending on the accuracy and other factors, you can then edit the
+        /// mapping for your needs.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Before you can use the AI-assisted feature for Amazon Web Services B2B Data Interchange
+        /// you must enable models in Amazon Bedrock. For details, see <a href="https://docs.aws.amazon.com/b2bi/latest/userguide/ai-assisted-mapping.html#ai-assist-prereq">AI-assisted
+        /// template mapping prerequisites</a> in the <i>Amazon Web Services B2B Data Interchange
+        /// User guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GenerateMapping service method.</param>
+        /// 
+        /// <returns>The response from the GenerateMapping service method, as returned by B2bi.</returns>
+        /// <exception cref="Amazon.B2bi.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.InternalServerException">
+        /// This exception is thrown when an error occurs in the Amazon Web Services B2B Data
+        /// Interchange service.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.ThrottlingException">
+        /// The request was denied due to throttling: the data speed and rendering may be limited
+        /// depending on various parameters and conditions.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.ValidationException">
+        /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/GenerateMapping">REST API Reference for GenerateMapping Operation</seealso>
+        GenerateMappingResponse GenerateMapping(GenerateMappingRequest request);
+
+
+
+        /// <summary>
+        /// Takes sample input and output documents and uses Amazon Bedrock to generate a mapping
+        /// automatically. Depending on the accuracy and other factors, you can then edit the
+        /// mapping for your needs.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Before you can use the AI-assisted feature for Amazon Web Services B2B Data Interchange
+        /// you must enable models in Amazon Bedrock. For details, see <a href="https://docs.aws.amazon.com/b2bi/latest/userguide/ai-assisted-mapping.html#ai-assist-prereq">AI-assisted
+        /// template mapping prerequisites</a> in the <i>Amazon Web Services B2B Data Interchange
+        /// User guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GenerateMapping service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GenerateMapping service method, as returned by B2bi.</returns>
+        /// <exception cref="Amazon.B2bi.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.InternalServerException">
+        /// This exception is thrown when an error occurs in the Amazon Web Services B2B Data
+        /// Interchange service.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.ThrottlingException">
+        /// The request was denied due to throttling: the data speed and rendering may be limited
+        /// depending on various parameters and conditions.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.ValidationException">
+        /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/GenerateMapping">REST API Reference for GenerateMapping Operation</seealso>
+        Task<GenerateMappingResponse> GenerateMappingAsync(GenerateMappingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -905,8 +1155,9 @@ namespace Amazon.B2bi
 
         /// <summary>
         /// Retrieves the details for the transformer specified by the transformer ID. A transformer
-        /// describes how to process the incoming EDI documents and extract the necessary information
-        /// to the output file.
+        /// can take an EDI file as input and transform it into a JSON-or XML-formatted document.
+        /// Alternatively, a transformer can take a JSON-or XML-formatted document as input and
+        /// transform it into an EDI file.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTransformer service method.</param>
         /// 
@@ -936,8 +1187,9 @@ namespace Amazon.B2bi
 
         /// <summary>
         /// Retrieves the details for the transformer specified by the transformer ID. A transformer
-        /// describes how to process the incoming EDI documents and extract the necessary information
-        /// to the output file.
+        /// can take an EDI file as input and transform it into a JSON-or XML-formatted document.
+        /// Alternatively, a transformer can take a JSON-or XML-formatted document as input and
+        /// transform it into an EDI file.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTransformer service method.</param>
         /// <param name="cancellationToken">
@@ -1276,8 +1528,9 @@ namespace Amazon.B2bi
 
 
         /// <summary>
-        /// Lists the available transformers. A transformer describes how to process the incoming
-        /// EDI documents and extract the necessary information to the output file.
+        /// Lists the available transformers. A transformer can take an EDI file as input and
+        /// transform it into a JSON-or XML-formatted document. Alternatively, a transformer can
+        /// take a JSON-or XML-formatted document as input and transform it into an EDI file.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTransformers service method.</param>
         /// 
@@ -1302,8 +1555,9 @@ namespace Amazon.B2bi
 
 
         /// <summary>
-        /// Lists the available transformers. A transformer describes how to process the incoming
-        /// EDI documents and extract the necessary information to the output file.
+        /// Lists the available transformers. A transformer can take an EDI file as input and
+        /// transform it into a JSON-or XML-formatted document. Alternatively, a transformer can
+        /// take a JSON-or XML-formatted document as input and transform it into an EDI file.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTransformers service method.</param>
         /// <param name="cancellationToken">
@@ -1335,7 +1589,7 @@ namespace Amazon.B2bi
 
         /// <summary>
         /// Runs a job, using a transformer, to parse input EDI (electronic data interchange)
-        /// file into the output structures used by Amazon Web Services B2BI Data Interchange.
+        /// file into the output structures used by Amazon Web Services B2B Data Interchange.
         /// 
         ///  
         /// <para>
@@ -1376,7 +1630,7 @@ namespace Amazon.B2bi
 
         /// <summary>
         /// Runs a job, using a transformer, to parse input EDI (electronic data interchange)
-        /// file into the output structures used by Amazon Web Services B2BI Data Interchange.
+        /// file into the output structures used by Amazon Web Services B2B Data Interchange.
         /// 
         ///  
         /// <para>
@@ -1485,6 +1739,74 @@ namespace Amazon.B2bi
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/TagResource">REST API Reference for TagResource Operation</seealso>
         Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  TestConversion
+
+
+        /// <summary>
+        /// This operation mimics the latter half of a typical Outbound EDI request. It takes
+        /// an input JSON/XML in the B2Bi shape as input, converts it to an X12 EDI string, and
+        /// return that string.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestConversion service method.</param>
+        /// 
+        /// <returns>The response from the TestConversion service method, as returned by B2bi.</returns>
+        /// <exception cref="Amazon.B2bi.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.InternalServerException">
+        /// This exception is thrown when an error occurs in the Amazon Web Services B2B Data
+        /// Interchange service.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.ResourceNotFoundException">
+        /// Occurs when the requested resource does not exist, or cannot be found. In some cases,
+        /// the resource exists in a region other than the region specified in the API call.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.ThrottlingException">
+        /// The request was denied due to throttling: the data speed and rendering may be limited
+        /// depending on various parameters and conditions.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.ValidationException">
+        /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/TestConversion">REST API Reference for TestConversion Operation</seealso>
+        TestConversionResponse TestConversion(TestConversionRequest request);
+
+
+
+        /// <summary>
+        /// This operation mimics the latter half of a typical Outbound EDI request. It takes
+        /// an input JSON/XML in the B2Bi shape as input, converts it to an X12 EDI string, and
+        /// return that string.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TestConversion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TestConversion service method, as returned by B2bi.</returns>
+        /// <exception cref="Amazon.B2bi.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.InternalServerException">
+        /// This exception is thrown when an error occurs in the Amazon Web Services B2B Data
+        /// Interchange service.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.ResourceNotFoundException">
+        /// Occurs when the requested resource does not exist, or cannot be found. In some cases,
+        /// the resource exists in a region other than the region specified in the API call.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.ThrottlingException">
+        /// The request was denied due to throttling: the data speed and rendering may be limited
+        /// depending on various parameters and conditions.
+        /// </exception>
+        /// <exception cref="Amazon.B2bi.Model.ValidationException">
+        /// Occurs when a B2BI object cannot be validated against a request from another object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/b2bi-2022-06-23/TestConversion">REST API Reference for TestConversion Operation</seealso>
+        Task<TestConversionResponse> TestConversionAsync(TestConversionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1936,9 +2258,10 @@ namespace Amazon.B2bi
 
 
         /// <summary>
-        /// Updates the specified parameters for a transformer. A transformer describes how to
-        /// process the incoming EDI documents and extract the necessary information to the output
-        /// file.
+        /// Updates the specified parameters for a transformer. A transformer can take an EDI
+        /// file as input and transform it into a JSON-or XML-formatted document. Alternatively,
+        /// a transformer can take a JSON-or XML-formatted document as input and transform it
+        /// into an EDI file.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTransformer service method.</param>
         /// 
@@ -1976,9 +2299,10 @@ namespace Amazon.B2bi
 
 
         /// <summary>
-        /// Updates the specified parameters for a transformer. A transformer describes how to
-        /// process the incoming EDI documents and extract the necessary information to the output
-        /// file.
+        /// Updates the specified parameters for a transformer. A transformer can take an EDI
+        /// file as input and transform it into a JSON-or XML-formatted document. Alternatively,
+        /// a transformer can take a JSON-or XML-formatted document as input and transform it
+        /// into an EDI file.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTransformer service method.</param>
         /// <param name="cancellationToken">

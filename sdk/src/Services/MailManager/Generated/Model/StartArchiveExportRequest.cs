@@ -39,6 +39,7 @@ namespace Amazon.MailManager.Model
         private ExportDestinationConfiguration _exportDestinationConfiguration;
         private ArchiveFilters _filters;
         private DateTime? _fromTimestamp;
+        private bool? _includeMetadata;
         private int? _maxResults;
         private DateTime? _toTimestamp;
 
@@ -115,6 +116,24 @@ namespace Amazon.MailManager.Model
         internal bool IsSetFromTimestamp()
         {
             return this._fromTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeMetadata. 
+        /// <para>
+        /// Whether to include message metadata as JSON files in the export.
+        /// </para>
+        /// </summary>
+        public bool IncludeMetadata
+        {
+            get { return this._includeMetadata.GetValueOrDefault(); }
+            set { this._includeMetadata = value; }
+        }
+
+        // Check to see if IncludeMetadata property is set
+        internal bool IsSetIncludeMetadata()
+        {
+            return this._includeMetadata.HasValue; 
         }
 
         /// <summary>

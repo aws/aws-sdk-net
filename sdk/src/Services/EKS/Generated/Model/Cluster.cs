@@ -56,6 +56,7 @@ namespace Amazon.EKS.Model
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private UpgradePolicyResponse _upgradePolicy;
         private string _version;
+        private ZonalShiftConfigResponse _zonalShiftConfig;
 
         /// <summary>
         /// Gets and sets the property AccessConfig. 
@@ -473,6 +474,24 @@ namespace Amazon.EKS.Model
         internal bool IsSetVersion()
         {
             return this._version != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ZonalShiftConfig. 
+        /// <para>
+        /// The configuration for zonal shift for the cluster.
+        /// </para>
+        /// </summary>
+        public ZonalShiftConfigResponse ZonalShiftConfig
+        {
+            get { return this._zonalShiftConfig; }
+            set { this._zonalShiftConfig = value; }
+        }
+
+        // Check to see if ZonalShiftConfig property is set
+        internal bool IsSetZonalShiftConfig()
+        {
+            return this._zonalShiftConfig != null;
         }
 
     }

@@ -1,7 +1,7 @@
 {
     "runtimePipelineOverride": {
         "overrides": [
-            { "operation": "addAfter", "newType": "Amazon.APIGateway.Internal.AmazonAPIGatewayPostMarshallHandler", "targetType": "Amazon.Runtime.Internal.Marshaller" },
+            { "operation": "addAfter", "newType": "Amazon.APIGateway.Internal.AmazonAPIGatewayPostMarshallHandler", "targetType": "Amazon.Runtime.Internal.Marshaller" }
         ]
     },
     "shapeModifiers": {
@@ -39,6 +39,6 @@
                     "237": { "emitPropertyName": "GB_237" }
                 }
             ]
-        },
+        }
     }
 }

@@ -90,6 +90,18 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Encoder = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("level", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Level = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("profile", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Profile = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("targetBitrate", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
@@ -100,6 +112,12 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TargetFramerate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("track", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Track = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("videoHeight", targetDepth))

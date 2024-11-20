@@ -48,6 +48,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetMqtt5Configuration())
+            {
+                context.Writer.WritePropertyName("mqtt5Configuration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = Mqtt5ConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Mqtt5Configuration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSearchableAttributes())
             {
                 context.Writer.WritePropertyName("searchableAttributes");

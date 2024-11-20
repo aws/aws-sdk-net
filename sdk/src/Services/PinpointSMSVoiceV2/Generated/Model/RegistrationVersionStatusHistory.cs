@@ -40,6 +40,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         private DateTime? _deniedTimestamp;
         private DateTime? _discardedTimestamp;
         private DateTime? _draftTimestamp;
+        private DateTime? _requiresAuthenticationTimestamp;
         private DateTime? _reviewingTimestamp;
         private DateTime? _revokedTimestamp;
         private DateTime? _submittedTimestamp;
@@ -138,6 +139,25 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         internal bool IsSetDraftTimestamp()
         {
             return this._draftTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequiresAuthenticationTimestamp. 
+        /// <para>
+        /// The time when the registration was in the requires authentication state, in <a href="https://www.epochconverter.com/">UNIX
+        /// epoch time</a> format.
+        /// </para>
+        /// </summary>
+        public DateTime RequiresAuthenticationTimestamp
+        {
+            get { return this._requiresAuthenticationTimestamp.GetValueOrDefault(); }
+            set { this._requiresAuthenticationTimestamp = value; }
+        }
+
+        // Check to see if RequiresAuthenticationTimestamp property is set
+        internal bool IsSetRequiresAuthenticationTimestamp()
+        {
+            return this._requiresAuthenticationTimestamp.HasValue; 
         }
 
         /// <summary>

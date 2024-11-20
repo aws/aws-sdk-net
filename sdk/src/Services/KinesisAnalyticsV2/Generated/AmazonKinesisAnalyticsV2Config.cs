@@ -34,10 +34,16 @@ namespace Amazon.KinesisAnalyticsV2
     public partial class AmazonKinesisAnalyticsV2Config : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Kinesis Analytics V2", "4.0.0.0");
 
         private static readonly AmazonKinesisAnalyticsV2EndpointResolver EndpointResolver =
             new AmazonKinesisAnalyticsV2EndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("Kinesis Analytics V2", "3.7.401.11");
+=======
+            InternalSDKUtils.BuildUserAgentString("Kinesis Analytics V2", "3.7.401.38");
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
         private string _userAgent = UserAgentString;
         ///<summary>

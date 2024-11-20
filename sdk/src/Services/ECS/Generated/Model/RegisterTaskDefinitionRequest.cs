@@ -284,12 +284,14 @@ namespace Amazon.ECS.Model
         /// If <c>none</c> is specified, then IPC resources within the containers of a task are
         /// private and not shared with other containers in a task or on the container instance.
         /// If no value is specified, then the IPC resource namespace sharing depends on the Docker
-        /// daemon setting on the container instance.
+        /// daemon setting on the container instance. For more information, see <a href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC
+        /// settings</a> in the <i>Docker run reference</i>.
         /// </para>
         ///  
         /// <para>
         /// If the <c>host</c> IPC mode is used, be aware that there is a heightened risk of undesired
-        /// IPC namespace expose.
+        /// IPC namespace expose. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker
+        /// security</a>.
         /// </para>
         ///  
         /// <para>
@@ -442,15 +444,19 @@ namespace Amazon.ECS.Model
         ///  </important> 
         /// <para>
         /// If the network mode is <c>awsvpc</c>, the task is allocated an elastic network interface,
-        /// and you must specify a <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_NetworkConfiguration.html">NetworkConfiguration</a>
-        /// value when you create a service or run a task with the task definition. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+        /// and you must specify a <a>NetworkConfiguration</a> value when you create a service
+        /// or run a task with the task definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
         /// Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// If the network mode is <c>host</c>, you cannot run multiple instantiations of the
         /// same task on a single container instance when port mappings are used.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.docker.com/engine/reference/run/#network-settings">Network
+        /// settings</a> in the <i>Docker run reference</i>.
         /// </para>
         /// </summary>
         public NetworkMode NetworkMode
@@ -486,12 +492,15 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// If no value is specified, the default is a private namespace for each container.
+        /// If no value is specified, the default is a private namespace for each container. For
+        /// more information, see <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID
+        /// settings</a> in the <i>Docker run reference</i>.
         /// </para>
         ///  
         /// <para>
         /// If the <c>host</c> PID mode is used, there's a heightened risk of undesired process
-        /// namespace exposure.
+        /// namespace exposure. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker
+        /// security</a>.
         /// </para>
         ///  <note> 
         /// <para>

@@ -65,6 +65,7 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
             {
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
+<<<<<<< HEAD
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;
                     writer.WriteObjectStart();
@@ -128,6 +129,128 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
                     }
 
                     writer.WriteObjectEnd();
+||||||| Commit version number update changes
+                    context.Writer.WritePropertyName("DukptAttributes");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DukptAttributesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DukptAttributes, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetEncryptedPinBlock())
+                {
+                    context.Writer.WritePropertyName("EncryptedPinBlock");
+                    context.Writer.Write(publicRequest.EncryptedPinBlock);
+                }
+
+                if(publicRequest.IsSetEncryptionKeyIdentifier())
+                {
+                    context.Writer.WritePropertyName("EncryptionKeyIdentifier");
+                    context.Writer.Write(publicRequest.EncryptionKeyIdentifier);
+                }
+
+                if(publicRequest.IsSetPinBlockFormat())
+                {
+                    context.Writer.WritePropertyName("PinBlockFormat");
+                    context.Writer.Write(publicRequest.PinBlockFormat);
+                }
+
+                if(publicRequest.IsSetPinDataLength())
+                {
+                    context.Writer.WritePropertyName("PinDataLength");
+                    context.Writer.Write(publicRequest.PinDataLength);
+                }
+
+                if(publicRequest.IsSetPrimaryAccountNumber())
+                {
+                    context.Writer.WritePropertyName("PrimaryAccountNumber");
+                    context.Writer.Write(publicRequest.PrimaryAccountNumber);
+                }
+
+                if(publicRequest.IsSetVerificationAttributes())
+                {
+                    context.Writer.WritePropertyName("VerificationAttributes");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PinVerificationAttributesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.VerificationAttributes, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetVerificationKeyIdentifier())
+                {
+                    context.Writer.WritePropertyName("VerificationKeyIdentifier");
+                    context.Writer.Write(publicRequest.VerificationKeyIdentifier);
+=======
+                    context.Writer.WritePropertyName("DukptAttributes");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DukptAttributesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DukptAttributes, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetEncryptedPinBlock())
+                {
+                    context.Writer.WritePropertyName("EncryptedPinBlock");
+                    context.Writer.Write(publicRequest.EncryptedPinBlock);
+                }
+
+                if(publicRequest.IsSetEncryptionKeyIdentifier())
+                {
+                    context.Writer.WritePropertyName("EncryptionKeyIdentifier");
+                    context.Writer.Write(publicRequest.EncryptionKeyIdentifier);
+                }
+
+                if(publicRequest.IsSetEncryptionWrappedKey())
+                {
+                    context.Writer.WritePropertyName("EncryptionWrappedKey");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = WrappedKeyMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EncryptionWrappedKey, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetPinBlockFormat())
+                {
+                    context.Writer.WritePropertyName("PinBlockFormat");
+                    context.Writer.Write(publicRequest.PinBlockFormat);
+                }
+
+                if(publicRequest.IsSetPinDataLength())
+                {
+                    context.Writer.WritePropertyName("PinDataLength");
+                    context.Writer.Write(publicRequest.PinDataLength);
+                }
+
+                if(publicRequest.IsSetPrimaryAccountNumber())
+                {
+                    context.Writer.WritePropertyName("PrimaryAccountNumber");
+                    context.Writer.Write(publicRequest.PrimaryAccountNumber);
+                }
+
+                if(publicRequest.IsSetVerificationAttributes())
+                {
+                    context.Writer.WritePropertyName("VerificationAttributes");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PinVerificationAttributesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.VerificationAttributes, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetVerificationKeyIdentifier())
+                {
+                    context.Writer.WritePropertyName("VerificationKeyIdentifier");
+                    context.Writer.Write(publicRequest.VerificationKeyIdentifier);
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
                 }
 
                 request.Content = memoryStream.ToArray();

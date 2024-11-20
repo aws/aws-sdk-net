@@ -50,6 +50,11 @@ namespace Amazon.ResourceGroups.Model
         /// Specifies whether you want to turn <a href="https://docs.aws.amazon.com/ARG/latest/userguide/monitor-groups.html">group
         /// lifecycle events</a> on or off.
         /// </para>
+        ///  
+        /// <para>
+        /// You can't turn on group lifecycle events if your resource groups quota is greater
+        /// than 2,000. 
+        /// </para>
         /// </summary>
         public GroupLifecycleEventsDesiredStatus GroupLifecycleEventsDesiredStatus
         {

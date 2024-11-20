@@ -82,11 +82,31 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetBuildspecOverride())
                     {
                         context.Writer.WritePropertyName("buildspecOverride");
                         context.Writer.Write(publicRequest.BuildspecOverride);
                     }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetBuildspecOverride())
+                {
+                    context.Writer.WritePropertyName("buildspecOverride");
+                    context.Writer.Write(publicRequest.BuildspecOverride);
+                }
+=======
+                if(publicRequest.IsSetAutoRetryLimitOverride())
+                {
+                    context.Writer.WritePropertyName("autoRetryLimitOverride");
+                    context.Writer.Write(publicRequest.AutoRetryLimitOverride);
+                }
+
+                if(publicRequest.IsSetBuildspecOverride())
+                {
+                    context.Writer.WritePropertyName("buildspecOverride");
+                    context.Writer.Write(publicRequest.BuildspecOverride);
+                }
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
                     if(publicRequest.IsSetBuildStatusConfigOverride())
                     {

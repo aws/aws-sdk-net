@@ -49,6 +49,7 @@ namespace Amazon.QBusiness.Model
         private GroupMembers _groupMembers;
         private string _groupName;
         private string _indexId;
+        private string _roleArn;
         private MembershipType _type;
 
         /// <summary>
@@ -148,6 +149,28 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetIndexId()
         {
             return this._indexId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of an IAM role that has access to the S3 file that
+        /// contains your list of users that belong to a group.The Amazon Resource Name (ARN)
+        /// of an IAM role that has access to the S3 file that contains your list of users that
+        /// belong to a group.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1284)]
+        public string RoleArn
+        {
+            get { return this._roleArn; }
+            set { this._roleArn = value; }
+        }
+
+        // Check to see if RoleArn property is set
+        internal bool IsSetRoleArn()
+        {
+            return this._roleArn != null;
         }
 
         /// <summary>

@@ -63,7 +63,27 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
             request.ResourcePath = "/update-group";
             using (MemoryStream memoryStream = new MemoryStream())
             {
+<<<<<<< HEAD
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+||||||| Commit version number update changes
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDescription())
+=======
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCriticality())
+                {
+                    context.Writer.WritePropertyName("Criticality");
+                    context.Writer.Write(publicRequest.Criticality);
+                }
+
+                if(publicRequest.IsSetDescription())
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
                 {
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;
@@ -75,11 +95,31 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Description);
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetGroup())
                     {
                         context.Writer.WritePropertyName("Group");
                         context.Writer.Write(publicRequest.Group);
                     }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetGroup())
+                {
+                    context.Writer.WritePropertyName("Group");
+                    context.Writer.Write(publicRequest.Group);
+                }
+=======
+                if(publicRequest.IsSetDisplayName())
+                {
+                    context.Writer.WritePropertyName("DisplayName");
+                    context.Writer.Write(publicRequest.DisplayName);
+                }
+
+                if(publicRequest.IsSetGroup())
+                {
+                    context.Writer.WritePropertyName("Group");
+                    context.Writer.Write(publicRequest.Group);
+                }
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
                     if(publicRequest.IsSetGroupName())
                     {
@@ -90,7 +130,23 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
                     writer.WriteObjectEnd();
                 }
 
+<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
+||||||| Commit version number update changes
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+=======
+                if(publicRequest.IsSetOwner())
+                {
+                    context.Writer.WritePropertyName("Owner");
+                    context.Writer.Write(publicRequest.Owner);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
             }
 
 

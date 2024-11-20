@@ -78,6 +78,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.Artifacts = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("autoRetryLimit", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.AutoRetryLimit = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("badge", targetDepth))
                 {
                     var unmarshaller = ProjectBadgeUnmarshaller.Instance;

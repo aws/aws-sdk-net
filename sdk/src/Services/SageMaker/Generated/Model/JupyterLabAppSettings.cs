@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class JupyterLabAppSettings
     {
         private AppLifecycleManagement _appLifecycleManagement;
+        private string _builtInLifecycleConfigArn;
         private List<CodeRepository> _codeRepositories = AWSConfigs.InitializeCollections ? new List<CodeRepository>() : null;
         private List<CustomImage> _customImages = AWSConfigs.InitializeCollections ? new List<CustomImage>() : null;
         private ResourceSpec _defaultResourceSpec;
@@ -57,6 +58,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetAppLifecycleManagement()
         {
             return this._appLifecycleManagement != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BuiltInLifecycleConfigArn. 
+        /// <para>
+        /// The lifecycle configuration that runs before the default lifecycle configuration.
+        /// It can override changes made in the default lifecycle configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string BuiltInLifecycleConfigArn
+        {
+            get { return this._builtInLifecycleConfigArn; }
+            set { this._builtInLifecycleConfigArn = value; }
+        }
+
+        // Check to see if BuiltInLifecycleConfigArn property is set
+        internal bool IsSetBuiltInLifecycleConfigArn()
+        {
+            return this._builtInLifecycleConfigArn != null;
         }
 
         /// <summary>

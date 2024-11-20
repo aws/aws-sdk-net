@@ -73,6 +73,10 @@ namespace Amazon.ResourceGroups.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <c>AWS::ResourceGroups::ApplicationGroup</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>AWS::AppRegistry::Application</c> 
         /// </para>
         ///  </li> <li> 

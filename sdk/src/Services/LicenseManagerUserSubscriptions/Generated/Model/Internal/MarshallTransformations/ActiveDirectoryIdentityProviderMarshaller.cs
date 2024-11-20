@@ -48,6 +48,23 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetActiveDirectorySettings())
+            {
+                context.Writer.WritePropertyName("ActiveDirectorySettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ActiveDirectorySettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ActiveDirectorySettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetActiveDirectoryType())
+            {
+                context.Writer.WritePropertyName("ActiveDirectoryType");
+                context.Writer.Write(requestObject.ActiveDirectoryType);
+            }
+
             if(requestObject.IsSetDirectoryId())
             {
                 context.Writer.WritePropertyName("DirectoryId");

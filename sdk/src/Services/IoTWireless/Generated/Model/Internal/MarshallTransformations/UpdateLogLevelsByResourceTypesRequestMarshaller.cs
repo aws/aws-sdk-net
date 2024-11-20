@@ -65,11 +65,49 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             {
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
+<<<<<<< HEAD
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;
                     writer.WriteObjectStart();
                     var context = new JsonMarshallerContext(request, writer);
                     if(publicRequest.IsSetDefaultLogLevel())
+||||||| Commit version number update changes
+                    context.Writer.WritePropertyName("DefaultLogLevel");
+                    context.Writer.Write(publicRequest.DefaultLogLevel);
+                }
+
+                if(publicRequest.IsSetWirelessDeviceLogOptions())
+                {
+                    context.Writer.WritePropertyName("WirelessDeviceLogOptions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestWirelessDeviceLogOptionsListValue in publicRequest.WirelessDeviceLogOptions)
+=======
+                    context.Writer.WritePropertyName("DefaultLogLevel");
+                    context.Writer.Write(publicRequest.DefaultLogLevel);
+                }
+
+                if(publicRequest.IsSetFuotaTaskLogOptions())
+                {
+                    context.Writer.WritePropertyName("FuotaTaskLogOptions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestFuotaTaskLogOptionsListValue in publicRequest.FuotaTaskLogOptions)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = FuotaTaskLogOptionMarshaller.Instance;
+                        marshaller.Marshall(publicRequestFuotaTaskLogOptionsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetWirelessDeviceLogOptions())
+                {
+                    context.Writer.WritePropertyName("WirelessDeviceLogOptions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestWirelessDeviceLogOptionsListValue in publicRequest.WirelessDeviceLogOptions)
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
                     {
                         context.Writer.WritePropertyName("DefaultLogLevel");
                         context.Writer.Write(publicRequest.DefaultLogLevel);

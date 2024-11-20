@@ -37,6 +37,7 @@ namespace Amazon.GuardDuty.Model
         private bool? _blocked;
         private string _connectionDirection;
         private LocalIpDetails _localIpDetails;
+        private string _localNetworkInterface;
         private LocalPortDetails _localPortDetails;
         private string _protocol;
         private RemoteIpDetails _remoteIpDetails;
@@ -94,6 +95,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetLocalIpDetails()
         {
             return this._localIpDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LocalNetworkInterface. 
+        /// <para>
+        /// The EC2 instance's local elastic network interface utilized for the connection.
+        /// </para>
+        /// </summary>
+        public string LocalNetworkInterface
+        {
+            get { return this._localNetworkInterface; }
+            set { this._localNetworkInterface = value; }
+        }
+
+        // Check to see if LocalNetworkInterface property is set
+        internal bool IsSetLocalNetworkInterface()
+        {
+            return this._localNetworkInterface != null;
         }
 
         /// <summary>

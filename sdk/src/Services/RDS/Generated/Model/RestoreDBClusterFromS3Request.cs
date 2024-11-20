@@ -499,7 +499,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Amazon Aurora (PostgreSQL only) - <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Using
+        /// Amazon Aurora - <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Using
         /// Amazon RDS Extended Support</a> in the <i>Amazon Aurora User Guide</i> 
         /// </para>
         ///  </li> <li> 

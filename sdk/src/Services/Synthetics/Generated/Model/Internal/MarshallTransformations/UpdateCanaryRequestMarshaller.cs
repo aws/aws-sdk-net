@@ -68,6 +68,7 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
             {
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
+<<<<<<< HEAD
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;
                     writer.WriteObjectStart();
@@ -169,6 +170,199 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
                     }
 
                     writer.WriteObjectEnd();
+||||||| Commit version number update changes
+                    context.Writer.WritePropertyName("ArtifactConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ArtifactConfigInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ArtifactConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetArtifactS3Location())
+                {
+                    context.Writer.WritePropertyName("ArtifactS3Location");
+                    context.Writer.Write(publicRequest.ArtifactS3Location);
+                }
+
+                if(publicRequest.IsSetCode())
+                {
+                    context.Writer.WritePropertyName("Code");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CanaryCodeInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Code, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetExecutionRoleArn())
+                {
+                    context.Writer.WritePropertyName("ExecutionRoleArn");
+                    context.Writer.Write(publicRequest.ExecutionRoleArn);
+                }
+
+                if(publicRequest.IsSetFailureRetentionPeriodInDays())
+                {
+                    context.Writer.WritePropertyName("FailureRetentionPeriodInDays");
+                    context.Writer.Write(publicRequest.FailureRetentionPeriodInDays);
+                }
+
+                if(publicRequest.IsSetRunConfig())
+                {
+                    context.Writer.WritePropertyName("RunConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CanaryRunConfigInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RunConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetRuntimeVersion())
+                {
+                    context.Writer.WritePropertyName("RuntimeVersion");
+                    context.Writer.Write(publicRequest.RuntimeVersion);
+                }
+
+                if(publicRequest.IsSetSchedule())
+                {
+                    context.Writer.WritePropertyName("Schedule");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CanaryScheduleInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Schedule, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetSuccessRetentionPeriodInDays())
+                {
+                    context.Writer.WritePropertyName("SuccessRetentionPeriodInDays");
+                    context.Writer.Write(publicRequest.SuccessRetentionPeriodInDays);
+                }
+
+                if(publicRequest.IsSetVisualReference())
+                {
+                    context.Writer.WritePropertyName("VisualReference");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = VisualReferenceInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.VisualReference, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetVpcConfig())
+                {
+                    context.Writer.WritePropertyName("VpcConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = VpcConfigInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.VpcConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+=======
+                    context.Writer.WritePropertyName("ArtifactConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ArtifactConfigInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ArtifactConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetArtifactS3Location())
+                {
+                    context.Writer.WritePropertyName("ArtifactS3Location");
+                    context.Writer.Write(publicRequest.ArtifactS3Location);
+                }
+
+                if(publicRequest.IsSetCode())
+                {
+                    context.Writer.WritePropertyName("Code");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CanaryCodeInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Code, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetExecutionRoleArn())
+                {
+                    context.Writer.WritePropertyName("ExecutionRoleArn");
+                    context.Writer.Write(publicRequest.ExecutionRoleArn);
+                }
+
+                if(publicRequest.IsSetFailureRetentionPeriodInDays())
+                {
+                    context.Writer.WritePropertyName("FailureRetentionPeriodInDays");
+                    context.Writer.Write(publicRequest.FailureRetentionPeriodInDays);
+                }
+
+                if(publicRequest.IsSetProvisionedResourceCleanup())
+                {
+                    context.Writer.WritePropertyName("ProvisionedResourceCleanup");
+                    context.Writer.Write(publicRequest.ProvisionedResourceCleanup);
+                }
+
+                if(publicRequest.IsSetRunConfig())
+                {
+                    context.Writer.WritePropertyName("RunConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CanaryRunConfigInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RunConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetRuntimeVersion())
+                {
+                    context.Writer.WritePropertyName("RuntimeVersion");
+                    context.Writer.Write(publicRequest.RuntimeVersion);
+                }
+
+                if(publicRequest.IsSetSchedule())
+                {
+                    context.Writer.WritePropertyName("Schedule");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CanaryScheduleInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Schedule, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetSuccessRetentionPeriodInDays())
+                {
+                    context.Writer.WritePropertyName("SuccessRetentionPeriodInDays");
+                    context.Writer.Write(publicRequest.SuccessRetentionPeriodInDays);
+                }
+
+                if(publicRequest.IsSetVisualReference())
+                {
+                    context.Writer.WritePropertyName("VisualReference");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = VisualReferenceInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.VisualReference, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetVpcConfig())
+                {
+                    context.Writer.WritePropertyName("VpcConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = VpcConfigInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.VpcConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
                 }
 
                 request.Content = memoryStream.ToArray();

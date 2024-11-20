@@ -57,7 +57,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             request.AddSubResource("lifecycle");
 
             var stringWriter = new XMLEncodedStringWriter(System.Globalization.CultureInfo.InvariantCulture);
-            using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings(){Encoding = Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
+            using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {
                 var lifecycleConfigurationLifecycleConfiguration = putLifecycleConfigurationRequest.Configuration;
                 if (lifecycleConfigurationLifecycleConfiguration != null)
@@ -137,6 +137,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                                             if (noncurrentVersionTransition != null)
                                             {
                                                 xmlWriter.WriteStartElement("NoncurrentVersionTransition");
+                                                if (noncurrentVersionTransition.IsSetNewerNoncurrentVersions())
+                                                {
+                                                    xmlWriter.WriteElementString("NewerNoncurrentVersions", S3Transforms.ToXmlStringValue(noncurrentVersionTransition.NewerNoncurrentVersions));
+                                                }
                                                 if (noncurrentVersionTransition.IsSetNoncurrentDays())
                                                 {
                                                     xmlWriter.WriteElementString("NoncurrentDays", S3Transforms.ToXmlStringValue(noncurrentVersionTransition.NoncurrentDays.Value));

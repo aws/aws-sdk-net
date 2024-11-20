@@ -66,6 +66,7 @@ namespace Amazon.FIS.Model
         private string _clientToken;
         private string _description;
         private CreateExperimentTemplateExperimentOptionsInput _experimentOptions;
+        private CreateExperimentTemplateReportConfigurationInput _experimentReportConfiguration;
         private CreateExperimentTemplateLogConfigurationInput _logConfiguration;
         private string _roleArn;
         private List<CreateExperimentTemplateStopConditionInput> _stopConditions = AWSConfigs.InitializeCollections ? new List<CreateExperimentTemplateStopConditionInput>() : null;
@@ -146,6 +147,24 @@ namespace Amazon.FIS.Model
         internal bool IsSetExperimentOptions()
         {
             return this._experimentOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExperimentReportConfiguration. 
+        /// <para>
+        /// The experiment report configuration for the experiment template.
+        /// </para>
+        /// </summary>
+        public CreateExperimentTemplateReportConfigurationInput ExperimentReportConfiguration
+        {
+            get { return this._experimentReportConfiguration; }
+            set { this._experimentReportConfiguration = value; }
+        }
+
+        // Check to see if ExperimentReportConfiguration property is set
+        internal bool IsSetExperimentReportConfiguration()
+        {
+            return this._experimentReportConfiguration != null;
         }
 
         /// <summary>

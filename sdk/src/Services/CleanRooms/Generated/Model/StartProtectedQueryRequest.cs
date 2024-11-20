@@ -35,10 +35,29 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class StartProtectedQueryRequest : AmazonCleanRoomsRequest
     {
+        private ComputeConfiguration _computeConfiguration;
         private string _membershipIdentifier;
         private ProtectedQueryResultConfiguration _resultConfiguration;
         private ProtectedQuerySQLParameters _sqlParameters;
         private ProtectedQueryType _type;
+
+        /// <summary>
+        /// Gets and sets the property ComputeConfiguration. 
+        /// <para>
+        ///  The compute configuration for the protected query.
+        /// </para>
+        /// </summary>
+        public ComputeConfiguration ComputeConfiguration
+        {
+            get { return this._computeConfiguration; }
+            set { this._computeConfiguration = value; }
+        }
+
+        // Check to see if ComputeConfiguration property is set
+        internal bool IsSetComputeConfiguration()
+        {
+            return this._computeConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MembershipIdentifier. 

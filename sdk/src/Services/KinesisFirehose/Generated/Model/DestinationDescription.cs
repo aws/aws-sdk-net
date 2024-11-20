@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// Describes the destination for a delivery stream.
+    /// Describes the destination for a Firehose stream.
     /// </summary>
     public partial class DestinationDescription
     {
@@ -159,10 +159,6 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property IcebergDestinationDescription. 
         /// <para>
         ///  Describes a destination in Apache Iceberg Tables. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Amazon Data Firehose is in preview release and is subject to change.
         /// </para>
         /// </summary>
         public IcebergDestinationDescription IcebergDestinationDescription

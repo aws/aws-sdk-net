@@ -335,6 +335,118 @@ namespace Amazon.LicenseManagerUserSubscriptions
 
         #endregion
         
+        #region  CreateLicenseServerEndpoint
+
+        internal virtual CreateLicenseServerEndpointResponse CreateLicenseServerEndpoint(CreateLicenseServerEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLicenseServerEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLicenseServerEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLicenseServerEndpointResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a network endpoint for the Remote Desktop Services (RDS) license server.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLicenseServerEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLicenseServerEndpoint service method, as returned by LicenseManagerUserSubscriptions.</returns>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.ConflictException">
+        /// The request couldn't be completed because it conflicted with the current state of
+        /// the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.ServiceQuotaExceededException">
+        /// The request failed because a service quota is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/CreateLicenseServerEndpoint">REST API Reference for CreateLicenseServerEndpoint Operation</seealso>
+        public virtual Task<CreateLicenseServerEndpointResponse> CreateLicenseServerEndpointAsync(CreateLicenseServerEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateLicenseServerEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLicenseServerEndpointResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateLicenseServerEndpointResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteLicenseServerEndpoint
+
+        internal virtual DeleteLicenseServerEndpointResponse DeleteLicenseServerEndpoint(DeleteLicenseServerEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLicenseServerEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLicenseServerEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLicenseServerEndpointResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a <c>LicenseServerEndpoint</c> resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLicenseServerEndpoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteLicenseServerEndpoint service method, as returned by LicenseManagerUserSubscriptions.</returns>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.ConflictException">
+        /// The request couldn't be completed because it conflicted with the current state of
+        /// the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.ServiceQuotaExceededException">
+        /// The request failed because a service quota is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/DeleteLicenseServerEndpoint">REST API Reference for DeleteLicenseServerEndpoint Operation</seealso>
+        public virtual Task<DeleteLicenseServerEndpointResponse> DeleteLicenseServerEndpointAsync(DeleteLicenseServerEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteLicenseServerEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLicenseServerEndpointResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteLicenseServerEndpointResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeregisterIdentityProvider
 
         internal virtual DeregisterIdentityProviderResponse DeregisterIdentityProvider(DeregisterIdentityProviderRequest request)
@@ -349,7 +461,8 @@ namespace Amazon.LicenseManagerUserSubscriptions
 
 
         /// <summary>
-        /// Deregisters the identity provider from providing user-based subscriptions.
+        /// Deregisters the Active Directory identity provider from License Manager user-based
+        /// subscriptions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeregisterIdentityProvider service method.</param>
         /// <param name="cancellationToken">
@@ -461,7 +574,7 @@ namespace Amazon.LicenseManagerUserSubscriptions
 
 
         /// <summary>
-        /// Lists the identity providers for user-based subscriptions.
+        /// Lists the Active Directory identity providers for user-based subscriptions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIdentityProviders service method.</param>
         /// <param name="cancellationToken">
@@ -559,6 +672,59 @@ namespace Amazon.LicenseManagerUserSubscriptions
 
         #endregion
         
+        #region  ListLicenseServerEndpoints
+
+        internal virtual ListLicenseServerEndpointsResponse ListLicenseServerEndpoints(ListLicenseServerEndpointsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLicenseServerEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLicenseServerEndpointsResponseUnmarshaller.Instance;
+
+            return Invoke<ListLicenseServerEndpointsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List the Remote Desktop Services (RDS) License Server endpoints
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLicenseServerEndpoints service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListLicenseServerEndpoints service method, as returned by LicenseManagerUserSubscriptions.</returns>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.ConflictException">
+        /// The request couldn't be completed because it conflicted with the current state of
+        /// the resource.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.ServiceQuotaExceededException">
+        /// The request failed because a service quota is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.ThrottlingException">
+        /// The request was denied because of request throttling. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/ListLicenseServerEndpoints">REST API Reference for ListLicenseServerEndpoints Operation</seealso>
+        public virtual Task<ListLicenseServerEndpointsResponse> ListLicenseServerEndpointsAsync(ListLicenseServerEndpointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListLicenseServerEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLicenseServerEndpointsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListLicenseServerEndpointsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListProductSubscriptions
 
         internal virtual ListProductSubscriptionsResponse ListProductSubscriptions(ListProductSubscriptionsRequest request)
@@ -611,6 +777,49 @@ namespace Amazon.LicenseManagerUserSubscriptions
             options.ResponseUnmarshaller = ListProductSubscriptionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListProductSubscriptionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTagsForResource
+
+        internal virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the list of tags for the specified resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by LicenseManagerUserSubscriptions.</returns>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTagsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -844,6 +1053,89 @@ namespace Amazon.LicenseManagerUserSubscriptions
             options.ResponseUnmarshaller = StopProductSubscriptionResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopProductSubscriptionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TagResource
+
+        internal virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Adds tags to a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by LicenseManagerUserSubscriptions.</returns>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = TagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UntagResource
+
+        internal virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes tags from a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by LicenseManagerUserSubscriptions.</returns>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.LicenseManagerUserSubscriptions.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UntagResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion

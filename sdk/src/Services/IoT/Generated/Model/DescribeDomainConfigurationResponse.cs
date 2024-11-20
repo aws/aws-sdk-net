@@ -34,7 +34,10 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class DescribeDomainConfigurationResponse : AmazonWebServiceResponse
     {
+        private ApplicationProtocol _applicationProtocol;
+        private AuthenticationType _authenticationType;
         private AuthorizerConfig _authorizerConfig;
+        private ClientCertificateConfig _clientCertificateConfig;
         private string _domainConfigurationArn;
         private string _domainConfigurationName;
         private DomainConfigurationStatus _domainConfigurationStatus;
@@ -45,6 +48,91 @@ namespace Amazon.IoT.Model
         private List<ServerCertificateSummary> _serverCertificates = AWSConfigs.InitializeCollections ? new List<ServerCertificateSummary>() : null;
         private ServiceType _serviceType;
         private TlsConfig _tlsConfig;
+
+        /// <summary>
+        /// Gets and sets the property ApplicationProtocol. 
+        /// <para>
+        /// An enumerated string that speciﬁes the application-layer protocol.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>SECURE_MQTT</c> - MQTT over TLS.
+        /// </para>
+        ///  </li> </ul> <ul> <li> 
+        /// <para>
+        ///  <c>MQTT_WSS</c> - MQTT over WebSocket.
+        /// </para>
+        ///  </li> </ul> <ul> <li> 
+        /// <para>
+        ///  <c>HTTPS</c> - HTTP over TLS.
+        /// </para>
+        ///  </li> </ul> <ul> <li> 
+        /// <para>
+        ///  <c>DEFAULT</c> - Use a combination of port and Application Layer Protocol Negotiation
+        /// (ALPN) to specify application_layer protocol. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/protocols.html">Device
+        /// communication protocols</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ApplicationProtocol ApplicationProtocol
+        {
+            get { return this._applicationProtocol; }
+            set { this._applicationProtocol = value; }
+        }
+
+        // Check to see if ApplicationProtocol property is set
+        internal bool IsSetApplicationProtocol()
+        {
+            return this._applicationProtocol != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AuthenticationType. 
+        /// <para>
+        /// An enumerated string that speciﬁes the authentication type.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CUSTOM_AUTH_X509</c> - Use custom authentication and authorization with additional
+        /// details from the X.509 client certificate.
+        /// </para>
+        ///  </li> </ul> <ul> <li> 
+        /// <para>
+        ///  <c>CUSTOM_AUTH</c> - Use custom authentication and authorization. For more information,
+        /// see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/custom-authentication.html">Custom
+        /// authentication and authorization</a>.
+        /// </para>
+        ///  </li> </ul> <ul> <li> 
+        /// <para>
+        ///  <c>AWS_X509</c> - Use X.509 client certificates without custom authentication and
+        /// authorization. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html">X.509
+        /// client certificates</a>.
+        /// </para>
+        ///  </li> </ul> <ul> <li> 
+        /// <para>
+        ///  <c>AWS_SIGV4</c> - Use Amazon Web Services Signature Version 4. For more information,
+        /// see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/custom-authentication.html">IAM
+        /// users, groups, and roles</a>.
+        /// </para>
+        ///  </li> </ul> <ul> <li> 
+        /// <para>
+        ///  <c>DEFAULT</c> - Use a combination of port and Application Layer Protocol Negotiation
+        /// (ALPN) to specify authentication type. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/protocols.html">Device
+        /// communication protocols</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public AuthenticationType AuthenticationType
+        {
+            get { return this._authenticationType; }
+            set { this._authenticationType = value; }
+        }
+
+        // Check to see if AuthenticationType property is set
+        internal bool IsSetAuthenticationType()
+        {
+            return this._authenticationType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AuthorizerConfig. 
@@ -62,6 +150,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetAuthorizerConfig()
         {
             return this._authorizerConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientCertificateConfig. 
+        /// <para>
+        /// An object that speciﬁes the client certificate conﬁguration for a domain.
+        /// </para>
+        /// </summary>
+        public ClientCertificateConfig ClientCertificateConfig
+        {
+            get { return this._clientCertificateConfig; }
+            set { this._clientCertificateConfig = value; }
+        }
+
+        // Check to see if ClientCertificateConfig property is set
+        internal bool IsSetClientCertificateConfig()
+        {
+            return this._clientCertificateConfig != null;
         }
 
         /// <summary>

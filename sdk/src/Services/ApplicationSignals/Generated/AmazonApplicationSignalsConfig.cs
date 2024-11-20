@@ -34,10 +34,16 @@ namespace Amazon.ApplicationSignals
     public partial class AmazonApplicationSignalsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Application Signals", "4.0.0.0");
 
         private static readonly AmazonApplicationSignalsEndpointResolver EndpointResolver =
             new AmazonApplicationSignalsEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("Application Signals", "3.7.402.11");
+=======
+            InternalSDKUtils.BuildUserAgentString("Application Signals", "3.7.403.3");
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
         private string _userAgent = UserAgentString;
         ///<summary>

@@ -38,12 +38,14 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         private string _domain;
         private IdentityProvider _identityProvider;
         private string _instanceId;
+        private string _instanceUserArn;
         private string _username;
 
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// The domain name of the user.
+        /// The domain name of the Active Directory that contains information for the user to
+        /// disassociate.
         /// </para>
         /// </summary>
         public string Domain
@@ -61,10 +63,9 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         /// <summary>
         /// Gets and sets the property IdentityProvider. 
         /// <para>
-        /// An object that specifies details for the identity provider.
+        /// An object that specifies details for the Active Directory identity provider.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public IdentityProvider IdentityProvider
         {
             get { return this._identityProvider; }
@@ -80,10 +81,9 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The ID of the EC2 instance, which provides user-based subscriptions.
+        /// The ID of the EC2 instance which provides user-based subscriptions.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string InstanceId
         {
             get { return this._instanceId; }
@@ -97,12 +97,29 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Username. 
+        /// Gets and sets the property InstanceUserArn. 
         /// <para>
-        /// The user name from the identity provider for the user.
+        /// The Amazon Resource Name (ARN) of the user to disassociate from the EC2 instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        public string InstanceUserArn
+        {
+            get { return this._instanceUserArn; }
+            set { this._instanceUserArn = value; }
+        }
+
+        // Check to see if InstanceUserArn property is set
+        internal bool IsSetInstanceUserArn()
+        {
+            return this._instanceUserArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Username. 
+        /// <para>
+        /// The user name from the Active Directory identity provider for the user.
+        /// </para>
+        /// </summary>
         public string Username
         {
             get { return this._username; }

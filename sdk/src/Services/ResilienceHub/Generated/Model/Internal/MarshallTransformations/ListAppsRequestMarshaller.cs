@@ -63,6 +63,9 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetAppArn())
                 request.Parameters.Add("appArn", StringUtils.FromString(publicRequest.AppArn));
             
+            if (publicRequest.IsSetAwsApplicationArn())
+                request.Parameters.Add("awsApplicationArn", StringUtils.FromString(publicRequest.AwsApplicationArn));
+            
             if (publicRequest.IsSetFromLastAssessmentTime())
                 request.Parameters.Add("fromLastAssessmentTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.FromLastAssessmentTime));
             

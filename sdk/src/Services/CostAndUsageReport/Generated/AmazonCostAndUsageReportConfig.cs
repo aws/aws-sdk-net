@@ -34,10 +34,16 @@ namespace Amazon.CostAndUsageReport
     public partial class AmazonCostAndUsageReportConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Cost and Usage Report Service", "4.0.0.0");
 
         private static readonly AmazonCostAndUsageReportEndpointResolver EndpointResolver =
             new AmazonCostAndUsageReportEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("Cost and Usage Report Service", "3.7.400.26");
+=======
+            InternalSDKUtils.BuildUserAgentString("Cost and Usage Report Service", "3.7.400.53");
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
         private string _userAgent = UserAgentString;
         ///<summary>

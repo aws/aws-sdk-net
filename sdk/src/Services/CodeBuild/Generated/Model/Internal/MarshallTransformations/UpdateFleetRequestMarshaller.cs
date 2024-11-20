@@ -83,11 +83,36 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.BaseCapacity.Value);
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetComputeType())
                     {
                         context.Writer.WritePropertyName("computeType");
                         context.Writer.Write(publicRequest.ComputeType);
                     }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetComputeType())
+                {
+                    context.Writer.WritePropertyName("computeType");
+                    context.Writer.Write(publicRequest.ComputeType);
+                }
+=======
+                if(publicRequest.IsSetComputeConfiguration())
+                {
+                    context.Writer.WritePropertyName("computeConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ComputeConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ComputeConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetComputeType())
+                {
+                    context.Writer.WritePropertyName("computeType");
+                    context.Writer.Write(publicRequest.ComputeType);
+                }
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
                     if(publicRequest.IsSetEnvironmentType())
                     {
@@ -113,10 +138,33 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.OverflowBehavior);
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetScalingConfiguration())
                     {
                         context.Writer.WritePropertyName("scalingConfiguration");
                         context.Writer.WriteObjectStart();
+||||||| Commit version number update changes
+                if(publicRequest.IsSetScalingConfiguration())
+                {
+                    context.Writer.WritePropertyName("scalingConfiguration");
+                    context.Writer.WriteObjectStart();
+=======
+                if(publicRequest.IsSetProxyConfiguration())
+                {
+                    context.Writer.WritePropertyName("proxyConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ProxyConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ProxyConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetScalingConfiguration())
+                {
+                    context.Writer.WritePropertyName("scalingConfiguration");
+                    context.Writer.WriteObjectStart();
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
                         var marshaller = ScalingConfigurationInputMarshaller.Instance;
                         marshaller.Marshall(publicRequest.ScalingConfiguration, context);

@@ -58,7 +58,8 @@ namespace Amazon.AutoScaling.Model
         ///  
         /// <para>
         /// The valid values for <c>Name</c> depend on which API operation you're using with the
-        /// filter (<a>DescribeAutoScalingGroups</a> or <a>DescribeTags</a>).
+        /// filter (<a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAutoScalingGroups.html">DescribeAutoScalingGroups</a>
+        /// or <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeTags.html">DescribeTags</a>).
         /// </para>
         ///  
         /// <para>

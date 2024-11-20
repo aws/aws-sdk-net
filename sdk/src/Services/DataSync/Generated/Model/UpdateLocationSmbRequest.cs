@@ -47,8 +47,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property AgentArns. 
         /// <para>
-        /// Specifies the DataSync agent (or agents) which you want to connect to your SMB file
-        /// server. You specify an agent by using its Amazon Resource Name (ARN).
+        /// Specifies the DataSync agent (or agents) that can connect to your SMB file server.
+        /// You specify an agent by using its Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4)]

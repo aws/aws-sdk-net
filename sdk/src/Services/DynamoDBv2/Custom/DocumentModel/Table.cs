@@ -28,6 +28,7 @@ using System.Globalization;
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Telemetry.Tracing;
+using Amazon.Runtime.Telemetry.Tracing;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {
@@ -623,6 +624,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
             Config = config;
             TracerProvider = DDBClient?.Config?.TelemetryProvider?.TracerProvider
                 ?? AWSConfigs.TelemetryProvider.TracerProvider;
+            TracerProvider = DDBClient?.Config?.TelemetryProvider?.TracerProvider
+                ?? AWSConfigs.TelemetryProvider.TracerProvider;
         }
 
 
@@ -1094,6 +1097,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                                          isEmptyStringValueEnabled: isEmptyStringValueEnabled,
                                          metadataCachingMode: metadataCachingMode);
 
+                return TryLoadTable(ddbClient, config, out table);
+            }
                 return TryLoadTable(ddbClient, config, out table);
             }
         }

@@ -36,6 +36,7 @@ namespace Amazon.ResilienceHub.Model
     {
         private string _appArn;
         private string _appVersion;
+        private List<ErrorDetail> _errorDetails = AWSConfigs.InitializeCollections ? new List<ErrorDetail>() : null;
         private string _errorMessage;
         private ResourceImportStatusType _status;
         private DateTime? _statusChangeTime;
@@ -83,9 +84,27 @@ namespace Amazon.ResilienceHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ErrorDetails. 
+        /// <para>
+        /// List of errors that were encountered while importing resources.
+        /// </para>
+        /// </summary>
+        public List<ErrorDetail> ErrorDetails
+        {
+            get { return this._errorDetails; }
+            set { this._errorDetails = value; }
+        }
+
+        // Check to see if ErrorDetails property is set
+        internal bool IsSetErrorDetails()
+        {
+            return this._errorDetails != null && (this._errorDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// The returned error message for the request.
+        /// The error message returned for the resource request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]

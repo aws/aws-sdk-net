@@ -45,6 +45,7 @@ namespace Amazon.Repostspace.Model
         private List<string> _groupAdmins = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private string _randomDomain;
+        private Dictionary<string, List<string>> _roles = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private string _spaceId;
         private string _status;
         private long? _storageLimit;
@@ -212,6 +213,7 @@ namespace Amazon.Repostspace.Model
         /// The list of groups that are administrators of the private re:Post.
         /// </para>
         /// </summary>
+        [Obsolete("This property has been depracted and will be replaced by the roles property.")]
         public List<string> GroupAdmins
         {
             get { return this._groupAdmins; }
@@ -260,6 +262,24 @@ namespace Amazon.Repostspace.Model
         internal bool IsSetRandomDomain()
         {
             return this._randomDomain != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Roles. 
+        /// <para>
+        /// A map of accessor identifiers and their roles.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, List<string>> Roles
+        {
+            get { return this._roles; }
+            set { this._roles = value; }
+        }
+
+        // Check to see if Roles property is set
+        internal bool IsSetRoles()
+        {
+            return this._roles != null && (this._roles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -344,6 +364,7 @@ namespace Amazon.Repostspace.Model
         /// The list of users that are administrators of the private re:Post.
         /// </para>
         /// </summary>
+        [Obsolete("This property has been depracted and will be replaced by the roles property.")]
         public List<string> UserAdmins
         {
             get { return this._userAdmins; }

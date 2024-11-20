@@ -5,8 +5,19 @@
     <pattern>^\S{1,80}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MainframeModernization.Model.CancelBatchJobExecutionRequest.AuthSecretsManagerArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MainframeModernization.Model.CancelBatchJobExecutionRequest.ExecutionId</property>
     <pattern>^\S{1,80}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MainframeModernization.Model.CreateApplicationRequest.ClientToken</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^[!-~]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MainframeModernization.Model.CreateApplicationRequest.Description</property>
@@ -38,6 +49,12 @@
     <pattern>^\S{1,80}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MainframeModernization.Model.CreateDataSetImportTaskRequest.ClientToken</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^[!-~]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MainframeModernization.Model.CreateDataSetImportTaskResponse.TaskId</property>
     <pattern>^\S{1,80}$</pattern>
   </property-value-rule>
@@ -50,12 +67,24 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MainframeModernization.Model.CreateDeploymentRequest.ClientToken</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^[!-~]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MainframeModernization.Model.CreateDeploymentRequest.EnvironmentId</property>
     <pattern>^\S{1,80}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MainframeModernization.Model.CreateDeploymentResponse.DeploymentId</property>
     <pattern>^\S{1,80}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MainframeModernization.Model.CreateEnvironmentRequest.ClientToken</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^[!-~]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MainframeModernization.Model.CreateEnvironmentRequest.Description</property>
@@ -351,6 +380,11 @@
     <pattern>^\S{1,80}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MainframeModernization.Model.ListBatchJobRestartPointsRequest.AuthSecretsManagerArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MainframeModernization.Model.ListBatchJobRestartPointsRequest.ExecutionId</property>
     <pattern>^\S{1,80}$</pattern>
   </property-value-rule>
@@ -450,6 +484,11 @@
   <property-value-rule>
     <property>Amazon.MainframeModernization.Model.StartBatchJobRequest.ApplicationId</property>
     <pattern>^\S{1,80}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MainframeModernization.Model.StartBatchJobRequest.AuthSecretsManagerArn</property>
+    <min>20</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MainframeModernization.Model.StartBatchJobResponse.ExecutionId</property>

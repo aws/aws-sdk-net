@@ -141,11 +141,31 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.MessageType);
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetOriginationIdentity())
                     {
                         context.Writer.WritePropertyName("OriginationIdentity");
                         context.Writer.Write(publicRequest.OriginationIdentity);
                     }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetMessageType())
+                {
+                    context.Writer.WritePropertyName("MessageType");
+                    context.Writer.Write(publicRequest.MessageType);
+                }
+=======
+                if(publicRequest.IsSetMessageFeedbackEnabled())
+                {
+                    context.Writer.WritePropertyName("MessageFeedbackEnabled");
+                    context.Writer.Write(publicRequest.MessageFeedbackEnabled);
+                }
+
+                if(publicRequest.IsSetMessageType())
+                {
+                    context.Writer.WritePropertyName("MessageType");
+                    context.Writer.Write(publicRequest.MessageType);
+                }
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
                     if(publicRequest.IsSetProtectConfigurationId())
                     {

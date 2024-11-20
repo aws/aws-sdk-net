@@ -39,9 +39,9 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property Failed. 
         /// <para>
-        /// Lists all accounts in which enabling a natively supported Amazon Web Service as a
-        /// Security Lake source failed. The failure occurred as these accounts are not part of
-        /// an organization.
+        /// Lists all accounts in which enabling a natively supported Amazon Web Services service
+        /// as a Security Lake source failed. The failure occurred as these accounts are not part
+        /// of an organization.
         /// </para>
         /// </summary>
         public List<string> Failed

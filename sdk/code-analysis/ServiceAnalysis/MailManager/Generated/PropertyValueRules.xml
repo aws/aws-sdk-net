@@ -724,6 +724,21 @@
     <pattern>^[A-Za-z0-9!@#$%^&amp;*()_+\-=\[\]{}|.,?]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MailManager.Model.Metadata.IngressPointId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MailManager.Model.Metadata.RuleSetId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MailManager.Model.Metadata.TrafficPolicyId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MailManager.Model.Relay.RelayId</property>
     <min>1</min>
     <max>100</max>
@@ -744,6 +759,11 @@
   <property-value-rule>
     <property>Amazon.MailManager.Model.RelayAuthentication.SecretArn</property>
     <pattern>^arn:(aws|aws-cn|aws-us-gov):secretsmanager:[a-z0-9-]+:\d{12}:secret:[a-zA-Z0-9/_+=,.@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MailManager.Model.Row.IngressPointId</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MailManager.Model.Rule.Name</property>

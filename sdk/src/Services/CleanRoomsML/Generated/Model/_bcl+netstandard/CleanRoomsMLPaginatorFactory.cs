@@ -61,11 +61,91 @@ namespace Amazon.CleanRoomsML.Model
         }
 
         /// <summary>
+        /// Paginator for ListCollaborationConfiguredModelAlgorithmAssociations operation
+        ///</summary>
+        public IListCollaborationConfiguredModelAlgorithmAssociationsPaginator ListCollaborationConfiguredModelAlgorithmAssociations(ListCollaborationConfiguredModelAlgorithmAssociationsRequest request) 
+        {
+            return new ListCollaborationConfiguredModelAlgorithmAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCollaborationMLInputChannels operation
+        ///</summary>
+        public IListCollaborationMLInputChannelsPaginator ListCollaborationMLInputChannels(ListCollaborationMLInputChannelsRequest request) 
+        {
+            return new ListCollaborationMLInputChannelsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCollaborationTrainedModelExportJobs operation
+        ///</summary>
+        public IListCollaborationTrainedModelExportJobsPaginator ListCollaborationTrainedModelExportJobs(ListCollaborationTrainedModelExportJobsRequest request) 
+        {
+            return new ListCollaborationTrainedModelExportJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCollaborationTrainedModelInferenceJobs operation
+        ///</summary>
+        public IListCollaborationTrainedModelInferenceJobsPaginator ListCollaborationTrainedModelInferenceJobs(ListCollaborationTrainedModelInferenceJobsRequest request) 
+        {
+            return new ListCollaborationTrainedModelInferenceJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCollaborationTrainedModels operation
+        ///</summary>
+        public IListCollaborationTrainedModelsPaginator ListCollaborationTrainedModels(ListCollaborationTrainedModelsRequest request) 
+        {
+            return new ListCollaborationTrainedModelsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListConfiguredAudienceModels operation
         ///</summary>
         public IListConfiguredAudienceModelsPaginator ListConfiguredAudienceModels(ListConfiguredAudienceModelsRequest request) 
         {
             return new ListConfiguredAudienceModelsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListConfiguredModelAlgorithmAssociations operation
+        ///</summary>
+        public IListConfiguredModelAlgorithmAssociationsPaginator ListConfiguredModelAlgorithmAssociations(ListConfiguredModelAlgorithmAssociationsRequest request) 
+        {
+            return new ListConfiguredModelAlgorithmAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListConfiguredModelAlgorithms operation
+        ///</summary>
+        public IListConfiguredModelAlgorithmsPaginator ListConfiguredModelAlgorithms(ListConfiguredModelAlgorithmsRequest request) 
+        {
+            return new ListConfiguredModelAlgorithmsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListMLInputChannels operation
+        ///</summary>
+        public IListMLInputChannelsPaginator ListMLInputChannels(ListMLInputChannelsRequest request) 
+        {
+            return new ListMLInputChannelsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTrainedModelInferenceJobs operation
+        ///</summary>
+        public IListTrainedModelInferenceJobsPaginator ListTrainedModelInferenceJobs(ListTrainedModelInferenceJobsRequest request) 
+        {
+            return new ListTrainedModelInferenceJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTrainedModels operation
+        ///</summary>
+        public IListTrainedModelsPaginator ListTrainedModels(ListTrainedModelsRequest request) 
+        {
+            return new ListTrainedModelsPaginator(this.client, request);
         }
 
         /// <summary>

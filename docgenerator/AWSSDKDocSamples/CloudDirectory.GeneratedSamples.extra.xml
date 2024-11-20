@@ -1,0 +1,763 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudDirectory.IAmazonCloudDirectory.AddFacetToObject(Amazon.CloudDirectory.Model.AddFacetToObjectRequest)" />
+            <member name="M:Amazon.CloudDirectory.AmazonCloudDirectoryClient.AddFacetToObject(Amazon.CloudDirectory.Model.AddFacetToObjectRequest)" />
+            <member name="T:Amazon.CloudDirectory.Model.AddFacetToObjectRequest" />
+            <member name="T:Amazon.CloudDirectory.Model.AddFacetToObjectResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To add a facet to an object"
+                    source=".\AWSSDKDocSamples\CloudDirectory\CloudDirectory.GeneratedSamples.cs"
+                    region="to-add-a-facet-to-an-object-1507568792747" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudDirectory.IAmazonCloudDirectory.ApplySchema(Amazon.CloudDirectory.Model.ApplySchemaRequest)" />
+            <member name="M:Amazon.CloudDirectory.AmazonCloudDirectoryClient.ApplySchema(Amazon.CloudDirectory.Model.ApplySchemaRequest)" />
+            <member name="T:Amazon.CloudDirectory.Model.ApplySchemaRequest" />
+            <member name="T:Amazon.CloudDirectory.Model.ApplySchemaResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To apply a schema"
+                    source=".\AWSSDKDocSamples\CloudDirectory\CloudDirectory.GeneratedSamples.cs"
+                    region="to-apply-a-schema-1507061899015" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudDirectory.IAmazonCloudDirectory.AttachObject(Amazon.CloudDirectory.Model.AttachObjectRequest)" />
+            <member name="M:Amazon.CloudDirectory.AmazonCloudDirectoryClient.AttachObject(Amazon.CloudDirectory.Model.AttachObjectRequest)" />
+            <member name="T:Amazon.CloudDirectory.Model.AttachObjectRequest" />
+            <member name="T:Amazon.CloudDirectory.Model.AttachObjectResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To attach an object"
+                    source=".\AWSSDKDocSamples\CloudDirectory\CloudDirectory.GeneratedSamples.cs"
+                    region="to-attach-an-object-1507060976164" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudDirectory.IAmazonCloudDirectory.AttachPolicy(Amazon.CloudDirectory.Model.AttachPolicyRequest)" />
+            <member name="M:Amazon.CloudDirectory.AmazonCloudDirectoryClient.AttachPolicy(Amazon.CloudDirectory.Model.AttachPolicyRequest)" />
+            <member name="T:Amazon.CloudDirectory.Model.AttachPolicyRequest" />
+            <member name="T:Amazon.CloudDirectory.Model.AttachPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To attach a policy to an object"
+                    source=".\AWSSDKDocSamples\CloudDirectory\CloudDirectory.GeneratedSamples.cs"
+                    region="to-attach-a-policy-to-an-object-1508268194724" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudDirectory.IAmazonCloudDirectory.AttachToIndex(Amazon.CloudDirectory.Model.AttachToIndexRequest)" />
+            <member name="M:Amazon.CloudDirectory.AmazonCloudDirectoryClient.AttachToIndex(Amazon.CloudDirectory.Model.AttachToIndexRequest)" />
+            <member name="T:Amazon.CloudDirectory.Model.AttachToIndexRequest" />
+            <member name="T:Amazon.CloudDirectory.Model.AttachToIndexResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To attach a index to an object"
+                    source=".\AWSSDKDocSamples\CloudDirectory\CloudDirectory.GeneratedSamples.cs"
+                    region="to-attach-a-index-to-an-object-1506532855758" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudDirectory.IAmazonCloudDirectory.AttachTypedLink(Amazon.CloudDirectory.Model.AttachTypedLinkRequest)" />
+            <member name="M:Amazon.CloudDirectory.AmazonCloudDirectoryClient.AttachTypedLink(Amazon.CloudDirectory.Model.AttachTypedLinkRequest)" />
+            <member name="T:Amazon.CloudDirectory.Model.AttachTypedLinkRequest" />
+            <member name="T:Amazon.CloudDirectory.Model.AttachTypedLinkResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To attach a typed link to an object"
+                    source=".\AWSSDKDocSamples\CloudDirectory\CloudDirectory.GeneratedSamples.cs"
+                    region="to-attach-a-typed-link-to-an-object-1506559900588" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudDirectory.IAmazonCloudDirectory.BatchRead(Amazon.CloudDirectory.Model.BatchReadRequest)" />
+            <member name="M:Amazon.CloudDirectory.AmazonCloudDirectoryClient.BatchRead(Amazon.CloudDirectory.Model.BatchReadRequest)" />
+            <member name="T:Amazon.CloudDirectory.Model.BatchReadRequest" />
+            <member name="T:Amazon.CloudDirectory.Model.BatchReadResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To run a batch read command"
+                    source=".\AWSSDKDocSamples\CloudDirectory\CloudDirectory.GeneratedSamples.cs"
+                    region="to-run-a-batch-read-command-1506123433380" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudDirectory.IAmazonCloudDirectory.BatchWrite(Amazon.CloudDirectory.Model.BatchWriteRequest)" />
+            <member name="M:Amazon.CloudDirectory.AmazonCloudDirectoryClient.BatchWrite(Amazon.CloudDirectory.Model.BatchWriteRequest)" />
+            <member name="T:Amazon.CloudDirectory.Model.BatchWriteRequest" />
+            <member name="T:Amazon.CloudDirectory.Model.BatchWriteResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To run a batch write command"
+                    source=".\AWSSDKDocSamples\CloudDirectory\CloudDirectory.GeneratedSamples.cs"
+                    region="to-run-a-batch-write-command-1506122878964" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudDirectory.IAmazonCloudDirectory.CreateDirectory(Amazon.CloudDirectory.Model.CreateDirectoryRequest)" />
+            <member name="M:Amazon.CloudDirectory.AmazonCloudDirectoryClient.CreateDirectory(Amazon.CloudDirectory.Model.CreateDirectoryRequest)" />
+            <member name="T:Amazon.CloudDirectory.Model.CreateDirectoryRequest" />
+            <member name="T:Amazon.CloudDirectory.Model.CreateDirectoryResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To create a new Cloud Directory"
+                    source=".\AWSSDKDocSamples\CloudDirectory\CloudDirectory.GeneratedSamples.cs"
+                    region="to-create-a-new-cloud-directory-1506119878996" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudDirectory.IAmazonCloudDirectory.CreateFacet(Amazon.CloudDirectory.Model.CreateFacetRequest)" />
+            <member name="M:Amazon.CloudDirectory.AmazonCloudDirectoryClient.CreateFacet(Amazon.CloudDirectory.Model.CreateFacetRequest)" />
+            <member name="T:Amazon.CloudDirectory.Model.CreateFacetRequest" />
+            <member name="T:Amazon.CloudDirectory.Model.CreateFacetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To create a facet"
+                    source=".\AWSSDKDocSamples\CloudDirectory\CloudDirectory.GeneratedSamples.cs"
+                    region="to-create-a-facet-1506112442334" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudDirectory.IAmazonCloudDirectory.CreateIndex(Amazon.CloudDirectory.Model.CreateIndexRequest)" />
+            <member name="M:Amazon.CloudDirectory.AmazonCloudDirectoryClient.CreateIndex(Amazon.CloudDirectory.Model.CreateIndexRequest)" />
+            <member name="T:Amazon.CloudDirectory.Model.CreateIndexRequest" />
+            <member name="T:Amazon.CloudDirectory.Model.CreateIndexResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To create an index"
+                    source=".\AWSSDKDocSamples\CloudDirectory\CloudDirectory.GeneratedSamples.cs"
+                    region="to-create-an-index-1505339563796" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudDirectory.IAmazonCloudDirectory.CreateObject(Amazon.CloudDirectory.Model.CreateObjectRequest)" />
+            <member name="M:Amazon.CloudDirectory.AmazonCloudDirectoryClient.CreateObject(Amazon.CloudDirectory.Model.CreateObjectRequest)" />
+            <member name="T:Amazon.CloudDirectory.Model.CreateObjectRequest" />
+            <member name="T:Amazon.CloudDirectory.Model.CreateObjectResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To create an object"
+                    source=".\AWSSDKDocSamples\CloudDirectory\CloudDirectory.GeneratedSamples.cs"
+                    region="to-create-an-object-1494010287120" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudDirectory.IAmazonCloudDirectory.CreateSchema(Amazon.CloudDirectory.Model.CreateSchemaRequest)" />
+            <member name="M:Amazon.CloudDirectory.AmazonCloudDirectoryClient.CreateSchema(Amazon.CloudDirectory.Model.CreateSchemaRequest)" />
+            <member name="T:Amazon.CloudDirectory.Model.CreateSchemaRequest" />
+            <member name="T:Amazon.CloudDirectory.Model.CreateSchemaResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To create a schema"
+                    source=".\AWSSDKDocSamples\CloudDirectory\CloudDirectory.GeneratedSamples.cs"
+                    region="to-create-a-schema-1506530911949" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudDirectory.IAmazonCloudDirectory.CreateTypedLinkFacet(Amazon.CloudDirectory.Model.CreateTypedLinkFacetRequest)" />
+            <member name="M:Amazon.CloudDirectory.AmazonCloudDirectoryClient.CreateTypedLinkFacet(Amazon.CloudDirectory.Model.CreateTypedLinkFacetRequest)" />
+            <member name="T:Amazon.CloudDirectory.Model.CreateTypedLinkFacetRequest" />
+            <member name="T:Amazon.CloudDirectory.Model.CreateTypedLinkFacetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To create a typed link facet"
+                    source=".\AWSSDKDocSamples\CloudDirectory\CloudDirectory.GeneratedSamples.cs"
+                    region="to-create-a-typed-link-facet-1506127699199" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudDirectory.IAmazonCloudDirectory.DeleteDirectory(Amazon.CloudDirectory.Model.DeleteDirectoryRequest)" />
+            <member name="M:Amazon.CloudDirectory.AmazonCloudDirectoryClient.DeleteDirectory(Amazon.CloudDirectory.Model.DeleteDirectoryRequest)" />
+            <member name="T:Amazon.CloudDirectory.Model.DeleteDirectoryRequest" />
+            <member name="T:Amazon.CloudDirectory.Model.DeleteDirectoryResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To delete a directory"
+                    source=".\AWSSDKDocSamples\CloudDirectory\CloudDirectory.GeneratedSamples.cs"
+                    region="to-delete-a-directory-1507570867859" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudDirectory.IAmazonCloudDirectory.DeleteFacet(Amazon.CloudDirectory.Model.DeleteFacetRequest)" />
+            <member name="M:Amazon.CloudDirectory.AmazonCloudDirectoryClient.DeleteFacet(Amazon.CloudDirectory.Model.DeleteFacetRequest)" />
+            <member name="T:Amazon.CloudDirectory.Model.DeleteFacetRequest" />
+            <member name="T:Amazon.CloudDirectory.Model.DeleteFacetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To delete a facet"
+                    source=".\AWSSDKDocSamples\CloudDirectory\CloudDirectory.GeneratedSamples.cs"
+                    region="to-delete-a-facet-1507573383449" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudDirectory.IAmazonCloudDirectory.DeleteObject(Amazon.CloudDirectory.Model.DeleteObjectRequest)" />
+            <member name="M:Amazon.CloudDirectory.AmazonCloudDirectoryClient.DeleteObject(Amazon.CloudDirectory.Model.DeleteObjectRequest)" />
+            <member name="T:Amazon.CloudDirectory.Model.DeleteObjectRequest" />
+            <member name="T:Amazon.CloudDirectory.Model.DeleteObjectResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To delete an object"
+                    source=".\AWSSDKDocSamples\CloudDirectory\CloudDirectory.GeneratedSamples.cs"
+                    region="to-delete-an-object-1507574607158" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudDirectory.IAmazonCloudDirectory.DeleteSchema(Amazon.CloudDirectory.Model.DeleteSchemaRequest)" />
+            <member name="M:Amazon.CloudDirectory.AmazonCloudDirectoryClient.DeleteSchema(Amazon.CloudDirectory.Model.DeleteSchemaRequest)" />
+            <member name="T:Amazon.CloudDirectory.Model.DeleteSchemaRequest" />
+            <member name="T:Amazon.CloudDirectory.Model.DeleteSchemaResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To delete a schema"
+                    source=".\AWSSDKDocSamples\CloudDirectory\CloudDirectory.GeneratedSamples.cs"
+                    region="to-delete-a-schema-1507575230059" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudDirectory.IAmazonCloudDirectory.DeleteTypedLinkFacet(Amazon.CloudDirectory.Model.DeleteTypedLinkFacetRequest)" />
+            <member name="M:Amazon.CloudDirectory.AmazonCloudDirectoryClient.DeleteTypedLinkFacet(Amazon.CloudDirectory.Model.DeleteTypedLinkFacetRequest)" />
+            <member name="T:Amazon.CloudDirectory.Model.DeleteTypedLinkFacetRequest" />
+            <member name="T:Amazon.CloudDirectory.Model.DeleteTypedLinkFacetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To delete a typed link facet"
+                    source=".\AWSSDKDocSamples\CloudDirectory\CloudDirectory.GeneratedSamples.cs"
+                    region="to-delete-a-typed-link-facet-1507576290714" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudDirectory.IAmazonCloudDirectory.DetachFromIndex(Amazon.CloudDirectory.Model.DetachFromIndexRequest)" />
+            <member name="M:Amazon.CloudDirectory.AmazonCloudDirectoryClient.DetachFromIndex(Amazon.CloudDirectory.Model.DetachFromIndexRequest)" />
+            <member name="T:Amazon.CloudDirectory.Model.DetachFromIndexRequest" />
+            <member name="T:Amazon.CloudDirectory.Model.DetachFromIndexResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To detach an object from an index"
+                    source=".\AWSSDKDocSamples\CloudDirectory\CloudDirectory.GeneratedSamples.cs"
+                    region="to-detach-an-object-from-an-index-1507579662964" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudDirectory.IAmazonCloudDirectory.DetachObject(Amazon.CloudDirectory.Model.DetachObjectRequest)" />
+            <member name="M:Amazon.CloudDirectory.AmazonCloudDirectoryClient.DetachObject(Amazon.CloudDirectory.Model.DetachObjectRequest)" />
+            <member name="T:Amazon.CloudDirectory.Model.DetachObjectRequest" />
+            <member name="T:Amazon.CloudDirectory.Model.DetachObjectResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To detach an object from its parent object"
+                    source=".\AWSSDKDocSamples\CloudDirectory\CloudDirectory.GeneratedSamples.cs"
+                    region="to-detach-an-object-from-its-parent-object-1508196401149" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudDirectory.IAmazonCloudDirectory.DetachPolicy(Amazon.CloudDirectory.Model.DetachPolicyRequest)" />
+            <member name="M:Amazon.CloudDirectory.AmazonCloudDirectoryClient.DetachPolicy(Amazon.CloudDirectory.Model.DetachPolicyRequest)" />
+            <member name="T:Amazon.CloudDirectory.Model.DetachPolicyRequest" />
+            <member name="T:Amazon.CloudDirectory.Model.DetachPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To detach a policy from an object"
+                    source=".\AWSSDKDocSamples\CloudDirectory\CloudDirectory.GeneratedSamples.cs"
+                    region="to-detach-a-policy-from-an-object-1508268395318" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudDirectory.IAmazonCloudDirectory.DetachTypedLink(Amazon.CloudDirectory.Model.DetachTypedLinkRequest)" />
+            <member name="M:Amazon.CloudDirectory.AmazonCloudDirectoryClient.DetachTypedLink(Amazon.CloudDirectory.Model.DetachTypedLinkRequest)" />
+            <member name="T:Amazon.CloudDirectory.Model.DetachTypedLinkRequest" />
+            <member name="T:Amazon.CloudDirectory.Model.DetachTypedLinkResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To detach a typed link from an object"
+                    source=".\AWSSDKDocSamples\CloudDirectory\CloudDirectory.GeneratedSamples.cs"
+                    region="to-detach-a-typed-link-from-an-object-1506540145856" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudDirectory.IAmazonCloudDirectory.DisableDirectory(Amazon.CloudDirectory.Model.DisableDirectoryRequest)" />
+            <member name="M:Amazon.CloudDirectory.AmazonCloudDirectoryClient.DisableDirectory(Amazon.CloudDirectory.Model.DisableDirectoryRequest)" />
+            <member name="T:Amazon.CloudDirectory.Model.DisableDirectoryRequest" />
+            <member name="T:Amazon.CloudDirectory.Model.DisableDirectoryResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To disable a directory"
+                    source=".\AWSSDKDocSamples\CloudDirectory\CloudDirectory.GeneratedSamples.cs"
+                    region="to-disable-a-directory-1507253386265" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudDirectory.IAmazonCloudDirectory.EnableDirectory(Amazon.CloudDirectory.Model.EnableDirectoryRequest)" />
+            <member name="M:Amazon.CloudDirectory.AmazonCloudDirectoryClient.EnableDirectory(Amazon.CloudDirectory.Model.EnableDirectoryRequest)" />
+            <member name="T:Amazon.CloudDirectory.Model.EnableDirectoryRequest" />
+            <member name="T:Amazon.CloudDirectory.Model.EnableDirectoryResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To enable a disabled directory"
+                    source=".\AWSSDKDocSamples\CloudDirectory\CloudDirectory.GeneratedSamples.cs"
+                    region="to-enable-a-disabled-directory-1507253506378" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudDirectory.IAmazonCloudDirectory.GetDirectory(Amazon.CloudDirectory.Model.GetDirectoryRequest)" />
+            <member name="M:Amazon.CloudDirectory.AmazonCloudDirectoryClient.GetDirectory(Amazon.CloudDirectory.Model.GetDirectoryRequest)" />
+            <member name="T:Amazon.CloudDirectory.Model.GetDirectoryRequest" />
+            <member name="T:Amazon.CloudDirectory.Model.GetDirectoryResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To get information about a directory"
+                    source=".\AWSSDKDocSamples\CloudDirectory\CloudDirectory.GeneratedSamples.cs"
+                    region="to-get-information-about-a-directory-1507235667410" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudDirectory.IAmazonCloudDirectory.GetFacet(Amazon.CloudDirectory.Model.GetFacetRequest)" />
+            <member name="M:Amazon.CloudDirectory.AmazonCloudDirectoryClient.GetFacet(Amazon.CloudDirectory.Model.GetFacetRequest)" />
+            <member name="T:Amazon.CloudDirectory.Model.GetFacetRequest" />
+            <member name="T:Amazon.CloudDirectory.Model.GetFacetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To get information about a facet"
+                    source=".\AWSSDKDocSamples\CloudDirectory\CloudDirectory.GeneratedSamples.cs"
+                    region="to-get-information-about-a-facet-1507234748374" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudDirectory.IAmazonCloudDirectory.GetObjectInformation(Amazon.CloudDirectory.Model.GetObjectInformationRequest)" />
+            <member name="M:Amazon.CloudDirectory.AmazonCloudDirectoryClient.GetObjectInformation(Amazon.CloudDirectory.Model.GetObjectInformationRequest)" />
+            <member name="T:Amazon.CloudDirectory.Model.GetObjectInformationRequest" />
+            <member name="T:Amazon.CloudDirectory.Model.GetObjectInformationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To get information about an object"
+                    source=".\AWSSDKDocSamples\CloudDirectory\CloudDirectory.GeneratedSamples.cs"
+                    region="to-get-information-about-an-object-1507228370573" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudDirectory.IAmazonCloudDirectory.GetSchemaAsJson(Amazon.CloudDirectory.Model.GetSchemaAsJsonRequest)" />
+            <member name="M:Amazon.CloudDirectory.AmazonCloudDirectoryClient.GetSchemaAsJson(Amazon.CloudDirectory.Model.GetSchemaAsJsonRequest)" />
+            <member name="T:Amazon.CloudDirectory.Model.GetSchemaAsJsonRequest" />
+            <member name="T:Amazon.CloudDirectory.Model.GetSchemaAsJsonResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To get schema information and display it in JSON format"
+                    source=".\AWSSDKDocSamples\CloudDirectory\CloudDirectory.GeneratedSamples.cs"
+                    region="to-get-schema-information-and-display-it-in-json-format-1507249604181" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudDirectory.IAmazonCloudDirectory.GetTypedLinkFacetInformation(Amazon.CloudDirectory.Model.GetTypedLinkFacetInformationRequest)" />
+            <member name="M:Amazon.CloudDirectory.AmazonCloudDirectoryClient.GetTypedLinkFacetInformation(Amazon.CloudDirectory.Model.GetTypedLinkFacetInformationRequest)" />
+            <member name="T:Amazon.CloudDirectory.Model.GetTypedLinkFacetInformationRequest" />
+            <member name="T:Amazon.CloudDirectory.Model.GetTypedLinkFacetInformationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To get information about a typed link facet"
+                    source=".\AWSSDKDocSamples\CloudDirectory\CloudDirectory.GeneratedSamples.cs"
+                    region="to-get-information-about-a-typed-link-facet-1507251423121" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudDirectory.IAmazonCloudDirectory.ListAppliedSchemaArns(Amazon.CloudDirectory.Model.ListAppliedSchemaArnsRequest)" />
+            <member name="M:Amazon.CloudDirectory.AmazonCloudDirectoryClient.ListAppliedSchemaArns(Amazon.CloudDirectory.Model.ListAppliedSchemaArnsRequest)" />
+            <member name="T:Amazon.CloudDirectory.Model.ListAppliedSchemaArnsRequest" />
+            <member name="T:Amazon.CloudDirectory.Model.ListAppliedSchemaArnsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To list applied schema ARNs for a specified directory"
+                    source=".\AWSSDKDocSamples\CloudDirectory\CloudDirectory.GeneratedSamples.cs"
+                    region="to-list-applied-schema-arns-for-a-specified-directory-1508194900072" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudDirectory.IAmazonCloudDirectory.ListAttachedIndices(Amazon.CloudDirectory.Model.ListAttachedIndicesRequest)" />
+            <member name="M:Amazon.CloudDirectory.AmazonCloudDirectoryClient.ListAttachedIndices(Amazon.CloudDirectory.Model.ListAttachedIndicesRequest)" />
+            <member name="T:Amazon.CloudDirectory.Model.ListAttachedIndicesRequest" />
+            <member name="T:Amazon.CloudDirectory.Model.ListAttachedIndicesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To list the indices attached to an object"
+                    source=".\AWSSDKDocSamples\CloudDirectory\CloudDirectory.GeneratedSamples.cs"
+                    region="to-list-the-indices-attached-to-an-object-1507579868633" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudDirectory.IAmazonCloudDirectory.ListDevelopmentSchemaArns(Amazon.CloudDirectory.Model.ListDevelopmentSchemaArnsRequest)" />
+            <member name="M:Amazon.CloudDirectory.AmazonCloudDirectoryClient.ListDevelopmentSchemaArns(Amazon.CloudDirectory.Model.ListDevelopmentSchemaArnsRequest)" />
+            <member name="T:Amazon.CloudDirectory.Model.ListDevelopmentSchemaArnsRequest" />
+            <member name="T:Amazon.CloudDirectory.Model.ListDevelopmentSchemaArnsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To list all development schema arns in your AWS account"
+                    source=".\AWSSDKDocSamples\CloudDirectory\CloudDirectory.GeneratedSamples.cs"
+                    region="to-list-the-development-schema-arns-1508262502911" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudDirectory.IAmazonCloudDirectory.ListDirectories(Amazon.CloudDirectory.Model.ListDirectoriesRequest)" />
+            <member name="M:Amazon.CloudDirectory.AmazonCloudDirectoryClient.ListDirectories(Amazon.CloudDirectory.Model.ListDirectoriesRequest)" />
+            <member name="T:Amazon.CloudDirectory.Model.ListDirectoriesRequest" />
+            <member name="T:Amazon.CloudDirectory.Model.ListDirectoriesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To list all directories in your AWS account"
+                    source=".\AWSSDKDocSamples\CloudDirectory\CloudDirectory.GeneratedSamples.cs"
+                    region="to-list-all-directories-in-your-aws-account-1508262706411" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudDirectory.IAmazonCloudDirectory.ListFacetAttributes(Amazon.CloudDirectory.Model.ListFacetAttributesRequest)" />
+            <member name="M:Amazon.CloudDirectory.AmazonCloudDirectoryClient.ListFacetAttributes(Amazon.CloudDirectory.Model.ListFacetAttributesRequest)" />
+            <member name="T:Amazon.CloudDirectory.Model.ListFacetAttributesRequest" />
+            <member name="T:Amazon.CloudDirectory.Model.ListFacetAttributesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To list facet attributes"
+                    source=".\AWSSDKDocSamples\CloudDirectory\CloudDirectory.GeneratedSamples.cs"
+                    region="to-list-facet-attributes-1508275015421" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudDirectory.IAmazonCloudDirectory.ListFacetNames(Amazon.CloudDirectory.Model.ListFacetNamesRequest)" />
+            <member name="M:Amazon.CloudDirectory.AmazonCloudDirectoryClient.ListFacetNames(Amazon.CloudDirectory.Model.ListFacetNamesRequest)" />
+            <member name="T:Amazon.CloudDirectory.Model.ListFacetNamesRequest" />
+            <member name="T:Amazon.CloudDirectory.Model.ListFacetNamesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To list facet names"
+                    source=".\AWSSDKDocSamples\CloudDirectory\CloudDirectory.GeneratedSamples.cs"
+                    region="to-list-facet-names-1508275974689" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudDirectory.IAmazonCloudDirectory.ListIncomingTypedLinks(Amazon.CloudDirectory.Model.ListIncomingTypedLinksRequest)" />
+            <member name="M:Amazon.CloudDirectory.AmazonCloudDirectoryClient.ListIncomingTypedLinks(Amazon.CloudDirectory.Model.ListIncomingTypedLinksRequest)" />
+            <member name="T:Amazon.CloudDirectory.Model.ListIncomingTypedLinksRequest" />
+            <member name="T:Amazon.CloudDirectory.Model.ListIncomingTypedLinksResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To list incoming typed links"
+                    source=".\AWSSDKDocSamples\CloudDirectory\CloudDirectory.GeneratedSamples.cs"
+                    region="to-list-incoming-typed-links-1508276145750" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudDirectory.IAmazonCloudDirectory.ListIndex(Amazon.CloudDirectory.Model.ListIndexRequest)" />
+            <member name="M:Amazon.CloudDirectory.AmazonCloudDirectoryClient.ListIndex(Amazon.CloudDirectory.Model.ListIndexRequest)" />
+            <member name="T:Amazon.CloudDirectory.Model.ListIndexRequest" />
+            <member name="T:Amazon.CloudDirectory.Model.ListIndexResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To list an index"
+                    source=".\AWSSDKDocSamples\CloudDirectory\CloudDirectory.GeneratedSamples.cs"
+                    region="to-list-an-index-1508281185950" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudDirectory.IAmazonCloudDirectory.ListObjectAttributes(Amazon.CloudDirectory.Model.ListObjectAttributesRequest)" />
+            <member name="M:Amazon.CloudDirectory.AmazonCloudDirectoryClient.ListObjectAttributes(Amazon.CloudDirectory.Model.ListObjectAttributesRequest)" />
+            <member name="T:Amazon.CloudDirectory.Model.ListObjectAttributesRequest" />
+            <member name="T:Amazon.CloudDirectory.Model.ListObjectAttributesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To list object attributes"
+                    source=".\AWSSDKDocSamples\CloudDirectory\CloudDirectory.GeneratedSamples.cs"
+                    region="to-list-object-attributes-1508281422770" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudDirectory.IAmazonCloudDirectory.ListObjectChildren(Amazon.CloudDirectory.Model.ListObjectChildrenRequest)" />
+            <member name="M:Amazon.CloudDirectory.AmazonCloudDirectoryClient.ListObjectChildren(Amazon.CloudDirectory.Model.ListObjectChildrenRequest)" />
+            <member name="T:Amazon.CloudDirectory.Model.ListObjectChildrenRequest" />
+            <member name="T:Amazon.CloudDirectory.Model.ListObjectChildrenResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="To list an objects children"
+                    source=".\AWSSDKDocSamples\CloudDirectory\CloudDirectory.GeneratedSamples.cs"
+                    region="to-list-an-objects-children-1508281694794" />
+            </example>
+        </value>
+    </doc>
+</docs>

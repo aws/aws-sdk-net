@@ -115,6 +115,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.ReferencedGroupInfo = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("securityGroupRuleArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SecurityGroupRuleArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("securityGroupRuleId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

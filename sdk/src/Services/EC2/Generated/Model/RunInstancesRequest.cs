@@ -404,9 +404,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Amazon Elastic Inference (EI) is no longer available to new customers. For more information,
-        /// see <a href="http://aws.amazon.com/machine-learning/elastic-inference/faqs/">Amazon
-        /// Elastic Inference FAQs</a>.
+        /// Amazon Elastic Inference is no longer available.
         /// </para>
         ///  </note>
         /// </summary>

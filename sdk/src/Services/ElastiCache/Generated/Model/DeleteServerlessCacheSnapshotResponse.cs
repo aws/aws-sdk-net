@@ -39,7 +39,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property ServerlessCacheSnapshot. 
         /// <para>
-        /// The snapshot to be deleted. Available for Redis OSS and Serverless Memcached only.
+        /// The snapshot to be deleted. Available for Valkey, Redis OSS and Serverless Memcached
+        /// only.
         /// </para>
         /// </summary>
         public ServerlessCacheSnapshot ServerlessCacheSnapshot

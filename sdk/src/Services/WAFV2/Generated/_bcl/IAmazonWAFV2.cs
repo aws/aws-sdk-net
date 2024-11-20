@@ -43,14 +43,13 @@ namespace Amazon.WAFV2
     ///  
     /// <para>
     /// If you used WAF prior to this release, you can't use this WAFV2 API to access any
-    /// WAF resources that you created before. You can access your old rules, web ACLs, and
-    /// other WAF resources only through the WAF Classic APIs. The WAF Classic APIs have retained
-    /// the prior names, endpoints, and namespaces. 
+    /// WAF resources that you created before. WAF Classic support will end on September 30,
+    /// 2025. 
     /// </para>
     ///  
     /// <para>
-    /// For information, including how to migrate your WAF resources to this version, see
-    /// the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+    /// For information about WAF, including how to migrate your WAF Classic resources to
+    /// this version, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
     /// Developer Guide</a>. 
     /// </para>
     ///  </note> 
@@ -95,31 +94,6 @@ namespace Amazon.WAFV2
     /// tailored to the programming language or platform that you're using. For more information,
     /// see <a href="http://aws.amazon.com/tools/#SDKs">Amazon Web Services SDKs</a>.
     /// </para>
-    ///  
-    /// <para>
-    /// We currently provide two versions of the WAF API: this API and the prior versions,
-    /// the classic WAF APIs. This new API provides the same functionality as the older versions,
-    /// with the following major improvements:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// You use one API for both global and regional applications. Where you need to distinguish
-    /// the scope, you specify a <c>Scope</c> parameter and set it to <c>CLOUDFRONT</c> or
-    /// <c>REGIONAL</c>. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// You can define a web ACL or rule group with a single call, and update it with a single
-    /// call. You define all rule specifications in JSON format, and pass them to your rule
-    /// group or web ACL calls.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// The limits WAF places on the use of rules more closely reflects the cost of running
-    /// each type of rule. Rule groups include capacity settings, so you know the maximum
-    /// cost of a rule group when you use it.
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial interface IAmazonWAFV2 : IAmazonService, IDisposable
     {
@@ -1526,13 +1500,13 @@ namespace Amazon.WAFV2
 
 
         /// <summary>
-        /// Deletes all rule groups that are managed by Firewall Manager for the specified web
-        /// ACL. 
+        /// Deletes all rule groups that are managed by Firewall Manager from the specified <a>WebACL</a>.
+        /// 
         /// 
         ///  
         /// <para>
-        /// You can only use this if <c>ManagedByFirewallManager</c> is false in the specified
-        /// <a>WebACL</a>. 
+        /// You can only use this if <c>ManagedByFirewallManager</c> and <c>RetrofittedByFirewallManager</c>
+        /// are both false in the web ACL. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFirewallManagerRuleGroups service method.</param>
@@ -1587,13 +1561,13 @@ namespace Amazon.WAFV2
 
 
         /// <summary>
-        /// Deletes all rule groups that are managed by Firewall Manager for the specified web
-        /// ACL. 
+        /// Deletes all rule groups that are managed by Firewall Manager from the specified <a>WebACL</a>.
+        /// 
         /// 
         ///  
         /// <para>
-        /// You can only use this if <c>ManagedByFirewallManager</c> is false in the specified
-        /// <a>WebACL</a>. 
+        /// You can only use this if <c>ManagedByFirewallManager</c> and <c>RetrofittedByFirewallManager</c>
+        /// are both false in the web ACL. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFirewallManagerRuleGroups service method.</param>
@@ -2288,8 +2262,8 @@ namespace Amazon.WAFV2
         /// 
         ///  
         /// <para>
-        /// You can only use this if <c>ManagedByFirewallManager</c> is false in the specified
-        /// <a>WebACL</a>. 
+        /// You can only use this if <c>ManagedByFirewallManager</c> is false in the web ACL.
+        /// 
         /// </para>
         ///  <note> 
         /// <para>
@@ -2393,8 +2367,8 @@ namespace Amazon.WAFV2
         /// 
         ///  
         /// <para>
-        /// You can only use this if <c>ManagedByFirewallManager</c> is false in the specified
-        /// <a>WebACL</a>. 
+        /// You can only use this if <c>ManagedByFirewallManager</c> is false in the web ACL.
+        /// 
         /// </para>
         ///  <note> 
         /// <para>

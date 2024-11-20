@@ -389,6 +389,56 @@ namespace Amazon.IdentityManagement
 
 
     /// <summary>
+    /// Constants used for properties of type FeatureType.
+    /// </summary>
+    public class FeatureType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RootCredentialsManagement for FeatureType
+        /// </summary>
+        public static readonly FeatureType RootCredentialsManagement = new FeatureType("RootCredentialsManagement");
+        /// <summary>
+        /// Constant RootSessions for FeatureType
+        /// </summary>
+        public static readonly FeatureType RootSessions = new FeatureType("RootSessions");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FeatureType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FeatureType FindValue(string value)
+        {
+            return FindValue<FeatureType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FeatureType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GlobalEndpointTokenVersion.
     /// </summary>
     public class GlobalEndpointTokenVersion : ConstantClass
@@ -1096,6 +1146,10 @@ namespace Amazon.IdentityManagement
         /// Constant AccountMFAEnabled for SummaryKeyType
         /// </summary>
         public static readonly SummaryKeyType AccountMFAEnabled = new SummaryKeyType("AccountMFAEnabled");
+        /// <summary>
+        /// Constant AccountPasswordPresent for SummaryKeyType
+        /// </summary>
+        public static readonly SummaryKeyType AccountPasswordPresent = new SummaryKeyType("AccountPasswordPresent");
         /// <summary>
         /// Constant AccountSigningCertificatesPresent for SummaryKeyType
         /// </summary>

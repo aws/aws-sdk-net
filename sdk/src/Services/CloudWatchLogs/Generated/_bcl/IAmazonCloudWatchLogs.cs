@@ -383,7 +383,7 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// You can't update an existing delivery. You can only create and delete deliveries.
+        /// To update an existing delivery configuration, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UpdateDeliveryConfiguration.html">UpdateDeliveryConfiguration</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDelivery service method.</param>
@@ -465,7 +465,7 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// You can't update an existing delivery. You can only create and delete deliveries.
+        /// To update an existing delivery configuration, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UpdateDeliveryConfiguration.html">UpdateDeliveryConfiguration</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDelivery service method.</param>
@@ -2359,7 +2359,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// CloudWatch Logs doesn’t support IAM policies that control access to the <c>DescribeLogGroups</c>
+        /// CloudWatch Logs doesn't support IAM policies that control access to the <c>DescribeLogGroups</c>
         /// action by using the <c>aws:ResourceTag/<i>key-name</i> </c> condition key. Other CloudWatch
         /// Logs actions do support the use of the <c>aws:ResourceTag/<i>key-name</i> </c> condition
         /// key to control access. For more information about using tags to control access, see
@@ -2392,7 +2392,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// CloudWatch Logs doesn’t support IAM policies that control access to the <c>DescribeLogGroups</c>
+        /// CloudWatch Logs doesn't support IAM policies that control access to the <c>DescribeLogGroups</c>
         /// action by using the <c>aws:ResourceTag/<i>key-name</i> </c> condition key. Other CloudWatch
         /// Logs actions do support the use of the <c>aws:ResourceTag/<i>key-name</i> </c> condition
         /// key to control access. For more information about using tags to control access, see
@@ -2426,7 +2426,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// CloudWatch Logs doesn’t support IAM policies that control access to the <c>DescribeLogGroups</c>
+        /// CloudWatch Logs doesn't support IAM policies that control access to the <c>DescribeLogGroups</c>
         /// action by using the <c>aws:ResourceTag/<i>key-name</i> </c> condition key. Other CloudWatch
         /// Logs actions do support the use of the <c>aws:ResourceTag/<i>key-name</i> </c> condition
         /// key to control access. For more information about using tags to control access, see
@@ -2463,7 +2463,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// CloudWatch Logs doesn’t support IAM policies that control access to the <c>DescribeLogGroups</c>
+        /// CloudWatch Logs doesn't support IAM policies that control access to the <c>DescribeLogGroups</c>
         /// action by using the <c>aws:ResourceTag/<i>key-name</i> </c> condition key. Other CloudWatch
         /// Logs actions do support the use of the <c>aws:ResourceTag/<i>key-name</i> </c> condition
         /// key to control access. For more information about using tags to control access, see
@@ -5468,14 +5468,14 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  <note> 
         /// <para>
-        /// CloudWatch Logs doesn’t immediately delete log events when they reach their retention
+        /// CloudWatch Logs doesn't immediately delete log events when they reach their retention
         /// setting. It typically takes up to 72 hours after that before log events are deleted,
         /// but in rare situations might take longer.
         /// </para>
         ///  
         /// <para>
         /// To illustrate, imagine that you change a log group to have a longer retention setting
-        /// when it contains log events that are past the expiration date, but haven’t been deleted.
+        /// when it contains log events that are past the expiration date, but haven't been deleted.
         /// Those log events will take up to 72 hours to be deleted after the new retention date
         /// is reached. To make sure that log data is deleted permanently, keep a log group at
         /// its lower retention setting until 72 hours after the previous retention period ends.
@@ -5518,14 +5518,14 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  <note> 
         /// <para>
-        /// CloudWatch Logs doesn’t immediately delete log events when they reach their retention
+        /// CloudWatch Logs doesn't immediately delete log events when they reach their retention
         /// setting. It typically takes up to 72 hours after that before log events are deleted,
         /// but in rare situations might take longer.
         /// </para>
         ///  
         /// <para>
         /// To illustrate, imagine that you change a log group to have a longer retention setting
-        /// when it contains log events that are past the expiration date, but haven’t been deleted.
+        /// when it contains log events that are past the expiration date, but haven't been deleted.
         /// Those log events will take up to 72 hours to be deleted after the new retention date
         /// is reached. To make sure that log data is deleted permanently, keep a log group at
         /// its lower retention setting until 72 hours after the previous retention period ends.
@@ -6133,7 +6133,7 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified
+        /// CloudWatch Logs doesn't support IAM policies that prevent users from assigning specified
         /// tags to log groups using the <c>aws:Resource/<i>key-name</i> </c> or <c>aws:TagKeys</c>
         /// condition keys. For more information about using tags to control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
         /// access to Amazon Web Services resources using tags</a>.
@@ -6177,7 +6177,7 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified
+        /// CloudWatch Logs doesn't support IAM policies that prevent users from assigning specified
         /// tags to log groups using the <c>aws:Resource/<i>key-name</i> </c> or <c>aws:TagKeys</c>
         /// condition keys. For more information about using tags to control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
         /// access to Amazon Web Services resources using tags</a>.
@@ -6368,7 +6368,7 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified
+        /// CloudWatch Logs doesn't support IAM policies that prevent users from assigning specified
         /// tags to log groups using the <c>aws:Resource/<i>key-name</i> </c> or <c>aws:TagKeys</c>
         /// condition keys. 
         /// </para>
@@ -6403,7 +6403,7 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified
+        /// CloudWatch Logs doesn't support IAM policies that prevent users from assigning specified
         /// tags to log groups using the <c>aws:Resource/<i>key-name</i> </c> or <c>aws:TagKeys</c>
         /// condition keys. 
         /// </para>
@@ -6474,9 +6474,9 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Use this operation to <i>suppress</i> anomaly detection for a specified anomaly or
-        /// pattern. If you suppress an anomaly, CloudWatch Logs won’t report new occurrences
+        /// pattern. If you suppress an anomaly, CloudWatch Logs won't report new occurrences
         /// of that anomaly and won't update that anomaly with new data. If you suppress a pattern,
-        /// CloudWatch Logs won’t report any anomalies related to that pattern.
+        /// CloudWatch Logs won't report any anomalies related to that pattern.
         /// 
         ///  
         /// <para>
@@ -6513,9 +6513,9 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Use this operation to <i>suppress</i> anomaly detection for a specified anomaly or
-        /// pattern. If you suppress an anomaly, CloudWatch Logs won’t report new occurrences
+        /// pattern. If you suppress an anomaly, CloudWatch Logs won't report new occurrences
         /// of that anomaly and won't update that anomaly with new data. If you suppress a pattern,
-        /// CloudWatch Logs won’t report any anomalies related to that pattern.
+        /// CloudWatch Logs won't report any anomalies related to that pattern.
         /// 
         ///  
         /// <para>

@@ -88,6 +88,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.BuildId);
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetCertificateConfiguration())
                     {
                         context.Writer.WritePropertyName("CertificateConfiguration");
@@ -104,6 +105,30 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                         context.Writer.WritePropertyName("ComputeType");
                         context.Writer.Write(publicRequest.ComputeType);
                     }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetContainerGroupsConfiguration())
+                {
+                    context.Writer.WritePropertyName("ContainerGroupsConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ContainerGroupsConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ContainerGroupsConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetDescription())
+                {
+                    context.Writer.WritePropertyName("Description");
+                    context.Writer.Write(publicRequest.Description);
+                }
+=======
+                if(publicRequest.IsSetDescription())
+                {
+                    context.Writer.WritePropertyName("Description");
+                    context.Writer.Write(publicRequest.Description);
+                }
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
                     if(publicRequest.IsSetContainerGroupsConfiguration())
                     {

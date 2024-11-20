@@ -179,6 +179,10 @@ namespace Amazon.LakeFormation
         /// </summary>
         public static readonly DataLakeResourceType DATABASE = new DataLakeResourceType("DATABASE");
         /// <summary>
+        /// Constant LF_NAMED_TAG_EXPRESSION for DataLakeResourceType
+        /// </summary>
+        public static readonly DataLakeResourceType LF_NAMED_TAG_EXPRESSION = new DataLakeResourceType("LF_NAMED_TAG_EXPRESSION");
+        /// <summary>
         /// Constant LF_TAG for DataLakeResourceType
         /// </summary>
         public static readonly DataLakeResourceType LF_TAG = new DataLakeResourceType("LF_TAG");
@@ -418,6 +422,10 @@ namespace Amazon.LakeFormation
         /// Constant CREATE_LF_TAG for Permission
         /// </summary>
         public static readonly Permission CREATE_LF_TAG = new Permission("CREATE_LF_TAG");
+        /// <summary>
+        /// Constant CREATE_LF_TAG_EXPRESSION for Permission
+        /// </summary>
+        public static readonly Permission CREATE_LF_TAG_EXPRESSION = new Permission("CREATE_LF_TAG_EXPRESSION");
         /// <summary>
         /// Constant CREATE_TABLE for Permission
         /// </summary>

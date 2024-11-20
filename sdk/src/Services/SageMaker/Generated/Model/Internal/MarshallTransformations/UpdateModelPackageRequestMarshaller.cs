@@ -93,7 +93,27 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.ApprovalDescription);
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetCustomerMetadataProperties())
+||||||| Commit version number update changes
+                if(publicRequest.IsSetCustomerMetadataProperties())
+                {
+                    context.Writer.WritePropertyName("CustomerMetadataProperties");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestCustomerMetadataPropertiesKvp in publicRequest.CustomerMetadataProperties)
+=======
+                if(publicRequest.IsSetClientToken())
+                {
+                    context.Writer.WritePropertyName("ClientToken");
+                    context.Writer.Write(publicRequest.ClientToken);
+                }
+
+                if(publicRequest.IsSetCustomerMetadataProperties())
+                {
+                    context.Writer.WritePropertyName("CustomerMetadataProperties");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestCustomerMetadataPropertiesKvp in publicRequest.CustomerMetadataProperties)
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
                     {
                         context.Writer.WritePropertyName("CustomerMetadataProperties");
                         context.Writer.WriteObjectStart();
@@ -146,11 +166,36 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetModelPackageArn())
                     {
                         context.Writer.WritePropertyName("ModelPackageArn");
                         context.Writer.Write(publicRequest.ModelPackageArn);
                     }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetModelPackageArn())
+                {
+                    context.Writer.WritePropertyName("ModelPackageArn");
+                    context.Writer.Write(publicRequest.ModelPackageArn);
+                }
+=======
+                if(publicRequest.IsSetModelLifeCycle())
+                {
+                    context.Writer.WritePropertyName("ModelLifeCycle");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ModelLifeCycleMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ModelLifeCycle, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetModelPackageArn())
+                {
+                    context.Writer.WritePropertyName("ModelPackageArn");
+                    context.Writer.Write(publicRequest.ModelPackageArn);
+                }
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
                     if(publicRequest.IsSetSourceUri())
                     {

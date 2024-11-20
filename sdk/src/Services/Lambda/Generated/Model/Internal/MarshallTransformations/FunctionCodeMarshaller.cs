@@ -72,6 +72,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.S3ObjectVersion);
             }
 
+            if(requestObject.IsSetSourceKMSKeyArn())
+            {
+                context.Writer.WritePropertyName("SourceKMSKeyArn");
+                context.Writer.Write(requestObject.SourceKMSKeyArn);
+            }
+
             if(requestObject.IsSetZipFile())
             {
                 context.Writer.WritePropertyName("ZipFile");

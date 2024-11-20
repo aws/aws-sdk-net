@@ -34,10 +34,16 @@ namespace Amazon.Snowball
     public partial class AmazonSnowballConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Snowball", "4.0.0.0");
 
         private static readonly AmazonSnowballEndpointResolver EndpointResolver =
             new AmazonSnowballEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("Snowball", "3.7.400.26");
+=======
+            InternalSDKUtils.BuildUserAgentString("Snowball", "3.7.400.53");
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
         private string _userAgent = UserAgentString;
         ///<summary>

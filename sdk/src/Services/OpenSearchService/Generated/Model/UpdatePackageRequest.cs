@@ -38,7 +38,9 @@ namespace Amazon.OpenSearchService.Model
     public partial class UpdatePackageRequest : AmazonOpenSearchServiceRequest
     {
         private string _commitMessage;
+        private PackageConfiguration _packageConfiguration;
         private string _packageDescription;
+        private PackageEncryptionOptions _packageEncryptionOptions;
         private string _packageID;
         private PackageSource _packageSource;
 
@@ -62,6 +64,24 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PackageConfiguration. 
+        /// <para>
+        /// The updated configuration details for a package.
+        /// </para>
+        /// </summary>
+        public PackageConfiguration PackageConfiguration
+        {
+            get { return this._packageConfiguration; }
+            set { this._packageConfiguration = value; }
+        }
+
+        // Check to see if PackageConfiguration property is set
+        internal bool IsSetPackageConfiguration()
+        {
+            return this._packageConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PackageDescription. 
         /// <para>
         /// A new description of the package.
@@ -78,6 +98,24 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetPackageDescription()
         {
             return this._packageDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PackageEncryptionOptions. 
+        /// <para>
+        /// Encryption options for a package.
+        /// </para>
+        /// </summary>
+        public PackageEncryptionOptions PackageEncryptionOptions
+        {
+            get { return this._packageEncryptionOptions; }
+            set { this._packageEncryptionOptions = value; }
+        }
+
+        // Check to see if PackageEncryptionOptions property is set
+        internal bool IsSetPackageEncryptionOptions()
+        {
+            return this._packageEncryptionOptions != null;
         }
 
         /// <summary>

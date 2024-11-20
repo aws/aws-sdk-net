@@ -48,7 +48,14 @@ namespace Amazon.CleanRoomsML.Model
         /// 
         /// </para>
         /// </summary>
+<<<<<<< HEAD
         public double? RecallMetric
+||||||| Commit version number update changes
+        public double RecallMetric
+=======
+        [AWSProperty(Min=0, Max=1)]
+        public double RecallMetric
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
         {
             get { return this._recallMetric; }
             set { this._recallMetric = value; }

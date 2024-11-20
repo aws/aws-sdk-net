@@ -109,7 +109,81 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                     writer.WriteObjectEnd();
                 }
 
+<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
+||||||| Commit version number update changes
+                if(publicRequest.IsSetDbParameterGroupIdentifier())
+                {
+                    context.Writer.WritePropertyName("dbParameterGroupIdentifier");
+                    context.Writer.Write(publicRequest.DbParameterGroupIdentifier);
+                }
+
+                if(publicRequest.IsSetDeploymentType())
+                {
+                    context.Writer.WritePropertyName("deploymentType");
+                    context.Writer.Write(publicRequest.DeploymentType);
+                }
+
+                if(publicRequest.IsSetIdentifier())
+                {
+                    context.Writer.WritePropertyName("identifier");
+                    context.Writer.Write(publicRequest.Identifier);
+                }
+
+                if(publicRequest.IsSetLogDeliveryConfiguration())
+                {
+                    context.Writer.WritePropertyName("logDeliveryConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LogDeliveryConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.LogDeliveryConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+=======
+                if(publicRequest.IsSetDbParameterGroupIdentifier())
+                {
+                    context.Writer.WritePropertyName("dbParameterGroupIdentifier");
+                    context.Writer.Write(publicRequest.DbParameterGroupIdentifier);
+                }
+
+                if(publicRequest.IsSetDeploymentType())
+                {
+                    context.Writer.WritePropertyName("deploymentType");
+                    context.Writer.Write(publicRequest.DeploymentType);
+                }
+
+                if(publicRequest.IsSetIdentifier())
+                {
+                    context.Writer.WritePropertyName("identifier");
+                    context.Writer.Write(publicRequest.Identifier);
+                }
+
+                if(publicRequest.IsSetLogDeliveryConfiguration())
+                {
+                    context.Writer.WritePropertyName("logDeliveryConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LogDeliveryConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.LogDeliveryConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetPort())
+                {
+                    context.Writer.WritePropertyName("port");
+                    context.Writer.Write(publicRequest.Port);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
             }
 
 

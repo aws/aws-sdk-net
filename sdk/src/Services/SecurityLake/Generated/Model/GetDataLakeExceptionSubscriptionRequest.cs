@@ -31,8 +31,8 @@ namespace Amazon.SecurityLake.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDataLakeExceptionSubscription operation.
-    /// Retrieves the details of exception notifications for the account in Amazon Security
-    /// Lake.
+    /// Retrieves the protocol and endpoint that were provided when subscribing to Amazon
+    /// SNS topics for exception notifications.
     /// </summary>
     public partial class GetDataLakeExceptionSubscriptionRequest : AmazonSecurityLakeRequest
     {

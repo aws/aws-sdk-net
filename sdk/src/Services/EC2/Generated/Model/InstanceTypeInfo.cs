@@ -558,7 +558,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SupportedUsageClasses. 
         /// <para>
-        /// Indicates whether the instance type is offered for spot or On-Demand.
+        /// Indicates whether the instance type is offered for spot, On-Demand, or Capacity Blocks.
         /// </para>
         /// </summary>
         public List<string> SupportedUsageClasses

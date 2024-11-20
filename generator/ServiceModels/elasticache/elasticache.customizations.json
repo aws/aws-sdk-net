@@ -10,7 +10,7 @@
       "DescribeReservedCacheNodes",
       "DescribeReservedCacheNodesOfferings",
       "DescribeSnapshots"
-    ]
+    ],
     "shapeModifiers": {
         "DescribeEventsMessage": {
             "backwardsCompatibleDateTimeProperties": [

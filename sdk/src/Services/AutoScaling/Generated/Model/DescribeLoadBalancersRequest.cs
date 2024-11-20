@@ -33,9 +33,9 @@ namespace Amazon.AutoScaling.Model
     /// Container for the parameters to the DescribeLoadBalancers operation.
     /// <note> 
     /// <para>
-    /// This API operation is superseded by <a>DescribeTrafficSources</a>, which can describe
-    /// multiple traffic sources types. We recommend using <c>DescribeTrafficSources</c> to
-    /// simplify how you manage traffic sources. However, we continue to support <c>DescribeLoadBalancers</c>.
+    /// This API operation is superseded by <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeTrafficSources.html">DescribeTrafficSources</a>,
+    /// which can describe multiple traffic sources types. We recommend using <c>DescribeTrafficSources</c>
+    /// to simplify how you manage traffic sources. However, we continue to support <c>DescribeLoadBalancers</c>.
     /// You can use both the original <c>DescribeLoadBalancers</c> API operation and <c>DescribeTrafficSources</c>
     /// on the same Auto Scaling group.
     /// </para>
@@ -46,7 +46,7 @@ namespace Amazon.AutoScaling.Model
     ///  
     /// <para>
     /// This operation describes only Classic Load Balancers. If you have Application Load
-    /// Balancers, Network Load Balancers, or Gateway Load Balancers, use the <a>DescribeLoadBalancerTargetGroups</a>
+    /// Balancers, Network Load Balancers, or Gateway Load Balancers, use the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeLoadBalancerTargetGroups.html">DescribeLoadBalancerTargetGroups</a>
     /// API instead.
     /// </para>
     ///  
@@ -63,10 +63,10 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// Load balancers also have an <c>InService</c> state if you attach them in the <a>CreateAutoScalingGroup</a>
+    /// Load balancers also have an <c>InService</c> state if you attach them in the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CreateAutoScalingGroup.html">CreateAutoScalingGroup</a>
     /// API call. If your load balancer state is <c>InService</c>, but it is not working properly,
-    /// check the scaling activities by calling <a>DescribeScalingActivities</a> and take
-    /// any corrective actions necessary.
+    /// check the scaling activities by calling <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeScalingActivities.html">DescribeScalingActivities</a>
+    /// and take any corrective actions necessary.
     /// </para>
     ///  
     /// <para>

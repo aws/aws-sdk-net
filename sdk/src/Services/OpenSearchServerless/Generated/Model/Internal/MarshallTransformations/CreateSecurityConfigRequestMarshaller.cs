@@ -114,7 +114,96 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
                     writer.WriteObjectEnd();
                 }
 
+<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
+||||||| Commit version number update changes
+                else if(!(publicRequest.IsSetClientToken()))
+                {
+                    context.Writer.WritePropertyName("clientToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());
+                }
+                if(publicRequest.IsSetDescription())
+                {
+                    context.Writer.WritePropertyName("description");
+                    context.Writer.Write(publicRequest.Description);
+                }
+
+                if(publicRequest.IsSetName())
+                {
+                    context.Writer.WritePropertyName("name");
+                    context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetSamlOptions())
+                {
+                    context.Writer.WritePropertyName("samlOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SamlConfigOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SamlOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetType())
+                {
+                    context.Writer.WritePropertyName("type");
+                    context.Writer.Write(publicRequest.Type);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+=======
+                else if(!(publicRequest.IsSetClientToken()))
+                {
+                    context.Writer.WritePropertyName("clientToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());
+                }
+                if(publicRequest.IsSetDescription())
+                {
+                    context.Writer.WritePropertyName("description");
+                    context.Writer.Write(publicRequest.Description);
+                }
+
+                if(publicRequest.IsSetIamIdentityCenterOptions())
+                {
+                    context.Writer.WritePropertyName("iamIdentityCenterOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CreateIamIdentityCenterConfigOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.IamIdentityCenterOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetName())
+                {
+                    context.Writer.WritePropertyName("name");
+                    context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetSamlOptions())
+                {
+                    context.Writer.WritePropertyName("samlOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SamlConfigOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SamlOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetType())
+                {
+                    context.Writer.WritePropertyName("type");
+                    context.Writer.Write(publicRequest.Type);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
             }
 
 

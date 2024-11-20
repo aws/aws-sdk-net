@@ -53,6 +53,14 @@ namespace Amazon.RedshiftDataAPIService.Model
         }
 
         /// <summary>
+        /// Paginator for GetStatementResultV2 operation
+        ///</summary>
+        public IGetStatementResultV2Paginator GetStatementResultV2(GetStatementResultV2Request request) 
+        {
+            return new GetStatementResultV2Paginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDatabases operation
         ///</summary>
         public IListDatabasesPaginator ListDatabases(ListDatabasesRequest request) 

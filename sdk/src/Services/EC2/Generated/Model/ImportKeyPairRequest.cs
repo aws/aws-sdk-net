@@ -31,16 +31,14 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ImportKeyPair operation.
-    /// Imports the public key from an RSA or ED25519 key pair that you created with a third-party
-    /// tool. Compare this with <a>CreateKeyPair</a>, in which Amazon Web Services creates
-    /// the key pair and gives the keys to you (Amazon Web Services keeps a copy of the public
-    /// key). With ImportKeyPair, you create the key pair and give Amazon Web Services just
-    /// the public key. The private key is never transferred between you and Amazon Web Services.
+    /// Imports the public key from an RSA or ED25519 key pair that you created using a third-party
+    /// tool. You give Amazon Web Services only the public key. The private key is never transferred
+    /// between you and Amazon Web Services.
     /// 
     ///  
     /// <para>
-    /// For more information about key pairs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
-    /// EC2 key pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// For more information about the requirements for importing a key pair, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws">Create
+    /// a key pair and import the public key to Amazon EC2</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     /// </summary>
     public partial class ImportKeyPairRequest : AmazonEC2Request
@@ -58,7 +56,7 @@ namespace Amazon.EC2.Model
         /// Instantiates ImportKeyPairRequest with the parameterized properties
         /// </summary>
         /// <param name="keyName">A unique name for the key pair.</param>
-        /// <param name="publicKeyMaterial">The public key. For API calls, the text must be base64-encoded. For command line tools, base64 encoding is performed for you.</param>
+        /// <param name="publicKeyMaterial">The public key.</param>
         public ImportKeyPairRequest(string keyName, string publicKeyMaterial)
         {
             _keyName = keyName;
@@ -87,8 +85,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PublicKeyMaterial. 
         /// <para>
-        /// The public key. For API calls, the text must be base64-encoded. For command line tools,
-        /// base64 encoding is performed for you.
+        /// The public key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

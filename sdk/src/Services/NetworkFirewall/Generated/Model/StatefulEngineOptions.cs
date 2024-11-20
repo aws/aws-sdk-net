@@ -35,8 +35,28 @@ namespace Amazon.NetworkFirewall.Model
     /// </summary>
     public partial class StatefulEngineOptions
     {
+        private FlowTimeouts _flowTimeouts;
         private RuleOrder _ruleOrder;
         private StreamExceptionPolicy _streamExceptionPolicy;
+
+        /// <summary>
+        /// Gets and sets the property FlowTimeouts. 
+        /// <para>
+        /// Configures the amount of time that can pass without any traffic sent through the firewall
+        /// before the firewall determines that the connection is idle. 
+        /// </para>
+        /// </summary>
+        public FlowTimeouts FlowTimeouts
+        {
+            get { return this._flowTimeouts; }
+            set { this._flowTimeouts = value; }
+        }
+
+        // Check to see if FlowTimeouts property is set
+        internal bool IsSetFlowTimeouts()
+        {
+            return this._flowTimeouts != null;
+        }
 
         /// <summary>
         /// Gets and sets the property RuleOrder. 

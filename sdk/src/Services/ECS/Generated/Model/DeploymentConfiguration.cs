@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// Optional deployment parameters that control how many tasks run during a deployment
-    /// and the ordering of stopping and starting tasks.
+    /// Optional deployment parameters that control how many tasks run during the deployment
+    /// and the failure detection methods.
     /// </summary>
     public partial class DeploymentConfiguration
     {

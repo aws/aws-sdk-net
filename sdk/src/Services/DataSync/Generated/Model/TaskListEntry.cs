@@ -40,6 +40,7 @@ namespace Amazon.DataSync.Model
         private string _name;
         private TaskStatus _status;
         private string _taskArn;
+        private TaskMode _taskMode;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -95,6 +96,25 @@ namespace Amazon.DataSync.Model
         internal bool IsSetTaskArn()
         {
             return this._taskArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskMode. 
+        /// <para>
+        /// The task mode that you're using. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choosing-task-mode.html">Choosing
+        /// a task mode for your data transfer</a>.
+        /// </para>
+        /// </summary>
+        public TaskMode TaskMode
+        {
+            get { return this._taskMode; }
+            set { this._taskMode = value; }
+        }
+
+        // Check to see if TaskMode property is set
+        internal bool IsSetTaskMode()
+        {
+            return this._taskMode != null;
         }
 
     }

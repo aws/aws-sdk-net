@@ -123,6 +123,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.PubliclyAccessible.Value);
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetSecurityGroupIds())
                     {
                         context.Writer.WritePropertyName("securityGroupIds");
@@ -133,6 +134,30 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                         }
                         context.Writer.WriteArrayEnd();
                     }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetPubliclyAccessible())
+                {
+                    context.Writer.WritePropertyName("publiclyAccessible");
+                    context.Writer.Write(publicRequest.PubliclyAccessible);
+                }
+=======
+                if(publicRequest.IsSetPricePerformanceTarget())
+                {
+                    context.Writer.WritePropertyName("pricePerformanceTarget");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PerformanceTargetMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PricePerformanceTarget, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetPubliclyAccessible())
+                {
+                    context.Writer.WritePropertyName("publiclyAccessible");
+                    context.Writer.Write(publicRequest.PubliclyAccessible);
+                }
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
                     if(publicRequest.IsSetSubnetIds())
                     {

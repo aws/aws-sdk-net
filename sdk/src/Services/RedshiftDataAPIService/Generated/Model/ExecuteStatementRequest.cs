@@ -84,6 +84,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         private string _database;
         private string _dbUser;
         private List<SqlParameter> _parameters = AWSConfigs.InitializeCollections ? new List<SqlParameter>() : null;
+        private ResultFormatString _resultFormat;
         private string _secretArn;
         private string _sessionId;
         private int? _sessionKeepAliveSeconds;
@@ -187,6 +188,25 @@ namespace Amazon.RedshiftDataAPIService.Model
         internal bool IsSetParameters()
         {
             return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResultFormat. 
+        /// <para>
+        /// The data format of the result of the SQL statement. If no format is specified, the
+        /// default is JSON.
+        /// </para>
+        /// </summary>
+        public ResultFormatString ResultFormat
+        {
+            get { return this._resultFormat; }
+            set { this._resultFormat = value; }
+        }
+
+        // Check to see if ResultFormat property is set
+        internal bool IsSetResultFormat()
+        {
+            return this._resultFormat != null;
         }
 
         /// <summary>

@@ -66,7 +66,27 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             request.ResourcePath = "/v2/email/configuration-sets/{ConfigurationSetName}/delivery-options";
             using (MemoryStream memoryStream = new MemoryStream())
             {
+<<<<<<< HEAD
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+||||||| Commit version number update changes
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetSendingPoolName())
+=======
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetMaxDeliverySeconds())
+                {
+                    context.Writer.WritePropertyName("MaxDeliverySeconds");
+                    context.Writer.Write(publicRequest.MaxDeliverySeconds);
+                }
+
+                if(publicRequest.IsSetSendingPoolName())
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
                 {
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;

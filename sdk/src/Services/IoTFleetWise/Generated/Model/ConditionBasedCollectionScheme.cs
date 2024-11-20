@@ -46,8 +46,16 @@ namespace Amazon.IoTFleetWise.Model
         /// Specifies the version of the conditional expression language.
         /// </para>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Min=1)]
         public int? ConditionLanguageVersion
+||||||| Commit version number update changes
+        [AWSProperty(Min=1)]
+        public int ConditionLanguageVersion
+=======
+        [AWSProperty(Min=1, Max=1)]
+        public int ConditionLanguageVersion
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
         {
             get { return this._conditionLanguageVersion; }
             set { this._conditionLanguageVersion = value; }
@@ -66,7 +74,7 @@ namespace Amazon.IoTFleetWise.Model
         /// &gt;= 105.0</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=2048)]
         public string Expression
         {
             get { return this._expression; }

@@ -166,7 +166,7 @@ namespace Amazon.IoTFleetWise.Model
         ///  A list of vehicle attributes associated with the campaign. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=5)]
+        [AWSProperty(Sensitive=true, Min=0, Max=5)]
         public List<string> DataExtraDimensions
         {
             get { return this._dataExtraDimensions; }
@@ -338,7 +338,7 @@ namespace Amazon.IoTFleetWise.Model
         ///  Information about a list of signals to collect data on. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1000)]
+        [AWSProperty(Sensitive=true, Min=0, Max=1000)]
         public List<SignalInformation> SignalsToCollect
         {
             get { return this._signalsToCollect; }

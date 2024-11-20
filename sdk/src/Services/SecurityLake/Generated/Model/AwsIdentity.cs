@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
-    /// The AWS identity.
+    /// The Amazon Web Services identity.
     /// </summary>
     public partial class AwsIdentity
     {
@@ -40,7 +40,8 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property ExternalId. 
         /// <para>
-        /// The external ID used to estalish trust relationship with the AWS identity.
+        /// The external ID used to establish trust relationship with the Amazon Web Services
+        /// identity.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=1224)]
@@ -59,7 +60,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property Principal. 
         /// <para>
-        /// The AWS identity principal.
+        /// The Amazon Web Services identity principal.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

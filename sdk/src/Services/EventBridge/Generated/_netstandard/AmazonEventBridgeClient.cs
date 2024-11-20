@@ -237,7 +237,7 @@ namespace Amazon.EventBridge
         /// </summary>
         protected override AbstractAWSSigner CreateSigner()
         {
-            return new EventBridgeSigner();
+            return new AWSEndpointAuthSchemeSigner();
         } 
 
         /// <summary>

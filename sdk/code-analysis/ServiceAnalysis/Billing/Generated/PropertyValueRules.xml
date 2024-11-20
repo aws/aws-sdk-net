@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-16"?>
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.ListBillingViewsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.ListBillingViewsRequest.NextToken</property>
+    <min>1</min>
+    <max>2047</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.ListBillingViewsResponse.NextToken</property>
+    <min>1</min>
+    <max>2047</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.BillingViewListElement.Arn</property>
+    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9_\+=\.\-@]{1,43}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.BillingViewListElement.Name</property>
+    <pattern>[ a-zA-Z0-9_\+=\.\-@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.BillingViewListElement.OwnerAccountId</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.ValidationExceptionField.Message</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.ValidationExceptionField.Name</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+</property-value-rules>

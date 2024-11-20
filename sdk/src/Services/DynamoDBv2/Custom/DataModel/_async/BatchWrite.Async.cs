@@ -17,6 +17,7 @@
 using System.Threading.Tasks;
 using System.Threading;
 using Amazon.Runtime.Telemetry.Tracing;
+using Amazon.Runtime.Telemetry.Tracing;
 
 namespace Amazon.DynamoDBv2.DataModel
 {

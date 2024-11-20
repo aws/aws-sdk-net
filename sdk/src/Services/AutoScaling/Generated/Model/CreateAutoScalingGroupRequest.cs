@@ -41,8 +41,8 @@ namespace Amazon.AutoScaling.Model
     ///  
     /// <para>
     /// If you exceed your maximum limit of Auto Scaling groups, the call fails. To query
-    /// this limit, call the <a>DescribeAccountLimits</a> API. For information about updating
-    /// this limit, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-quotas.html">Quotas
+    /// this limit, call the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html">DescribeAccountLimits</a>
+    /// API. For information about updating this limit, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-quotas.html">Quotas
     /// for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     /// </para>
     ///  
@@ -62,6 +62,7 @@ namespace Amazon.AutoScaling.Model
     public partial class CreateAutoScalingGroupRequest : AmazonAutoScalingRequest
     {
         private string _autoScalingGroupName;
+        private AvailabilityZoneDistribution _availabilityZoneDistribution;
         private List<string> _availabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _capacityRebalance;
         private string _context;
@@ -117,6 +118,24 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetAutoScalingGroupName()
         {
             return this._autoScalingGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneDistribution. 
+        /// <para>
+        /// The instance capacity distribution across Availability Zones.
+        /// </para>
+        /// </summary>
+        public AvailabilityZoneDistribution AvailabilityZoneDistribution
+        {
+            get { return this._availabilityZoneDistribution; }
+            set { this._availabilityZoneDistribution = value; }
+        }
+
+        // Check to see if AvailabilityZoneDistribution property is set
+        internal bool IsSetAvailabilityZoneDistribution()
+        {
+            return this._availabilityZoneDistribution != null;
         }
 
         /// <summary>

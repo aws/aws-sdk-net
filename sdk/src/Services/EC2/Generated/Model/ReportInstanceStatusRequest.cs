@@ -57,6 +57,8 @@ namespace Amazon.EC2.Model
         /// Descriptive text about the health state of your instance.
         /// </para>
         /// </summary>
+        [Obsolete("This member has been deprecated")]
+        [AWSProperty(Sensitive=true)]
         public string Description
         {
             get { return this._description; }

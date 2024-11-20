@@ -34,10 +34,16 @@ namespace Amazon.AWSSupport
     public partial class AmazonAWSSupportConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Support", "4.0.0.0");
 
         private static readonly AmazonAWSSupportEndpointResolver EndpointResolver =
             new AmazonAWSSupportEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("Support", "3.7.400.27");
+=======
+            InternalSDKUtils.BuildUserAgentString("Support", "3.7.400.54");
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
         private string _userAgent = UserAgentString;
         ///<summary>

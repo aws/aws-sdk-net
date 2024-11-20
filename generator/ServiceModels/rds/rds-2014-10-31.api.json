@@ -529,7 +529,8 @@
         {"shape":"MaxDBShardGroupLimitReached"},
         {"shape":"InvalidDBClusterStateFault"},
         {"shape":"UnsupportedDBEngineVersionFault"},
-        {"shape":"InvalidVPCNetworkStateFault"}
+        {"shape":"InvalidVPCNetworkStateFault"},
+        {"shape":"NetworkTypeNotSupported"}
       ]
     },
     "CreateDBSnapshot":{
@@ -2132,6 +2133,7 @@
       },
       "errors":[
         {"shape":"GlobalClusterNotFoundFault"},
+        {"shape":"GlobalClusterAlreadyExistsFault"},
         {"shape":"InvalidGlobalClusterStateFault"},
         {"shape":"InvalidDBClusterStateFault"},
         {"shape":"InvalidDBInstanceStateFault"}
@@ -3325,6 +3327,13 @@
         "CertificateDetails":{"shape":"CertificateDetails"}
       }
     },
+    "ClusterScalabilityType":{
+      "type":"string",
+      "enum":[
+        "standard",
+        "limitless"
+      ]
+    },
     "ConnectionPoolConfiguration":{
       "type":"structure",
       "members":{
@@ -3586,6 +3595,7 @@
         "EnableLimitlessDatabase":{"shape":"BooleanOptional"},
         "ServerlessV2ScalingConfiguration":{"shape":"ServerlessV2ScalingConfiguration"},
         "NetworkType":{"shape":"String"},
+        "ClusterScalabilityType":{"shape":"ClusterScalabilityType"},
         "DBSystemId":{"shape":"String"},
         "ManageMasterUserPassword":{"shape":"BooleanOptional"},
         "MasterUserSecretKmsKeyId":{"shape":"String"},
@@ -3875,7 +3885,8 @@
         "ComputeRedundancy":{"shape":"IntegerOptional"},
         "MaxACU":{"shape":"DoubleOptional"},
         "MinACU":{"shape":"DoubleOptional"},
-        "PubliclyAccessible":{"shape":"BooleanOptional"}
+        "PubliclyAccessible":{"shape":"BooleanOptional"},
+        "Tags":{"shape":"TagList"}
       }
     },
     "CreateDBSnapshotMessage":{
@@ -4180,6 +4191,7 @@
         "AwsBackupRecoveryPointArn":{"shape":"String"},
         "LimitlessDatabase":{"shape":"LimitlessDatabase"},
         "StorageThroughput":{"shape":"IntegerOptional"},
+        "ClusterScalabilityType":{"shape":"ClusterScalabilityType"},
         "CertificateDetails":{"shape":"CertificateDetails"},
         "EngineLifecycleSupport":{"shape":"String"}
       },
@@ -5431,7 +5443,8 @@
         "Status":{"shape":"String"},
         "PubliclyAccessible":{"shape":"BooleanOptional"},
         "Endpoint":{"shape":"String"},
-        "DBShardGroupArn":{"shape":"String"}
+        "DBShardGroupArn":{"shape":"String"},
+        "TagList":{"shape":"TagList"}
       }
     },
     "DBShardGroupAlreadyExistsFault":{
@@ -6973,6 +6986,7 @@
         "StorageEncrypted":{"shape":"BooleanOptional"},
         "DeletionProtection":{"shape":"BooleanOptional"},
         "GlobalClusterMembers":{"shape":"GlobalClusterMemberList"},
+        "Endpoint":{"shape":"String"},
         "FailoverState":{"shape":"FailoverState"},
         "TagList":{"shape":"TagList"}
       },
@@ -9165,6 +9179,11 @@
         "ServerlessV2ScalingConfiguration":{"shape":"ServerlessV2ScalingConfiguration"},
         "NetworkType":{"shape":"String"},
         "RdsCustomClusterConfiguration":{"shape":"RdsCustomClusterConfiguration"},
+        "MonitoringInterval":{"shape":"IntegerOptional"},
+        "MonitoringRoleArn":{"shape":"String"},
+        "EnablePerformanceInsights":{"shape":"BooleanOptional"},
+        "PerformanceInsightsKMSKeyId":{"shape":"String"},
+        "PerformanceInsightsRetentionPeriod":{"shape":"IntegerOptional"},
         "EngineLifecycleSupport":{"shape":"String"}
       }
     },
@@ -9207,6 +9226,11 @@
         "NetworkType":{"shape":"String"},
         "SourceDbClusterResourceId":{"shape":"String"},
         "RdsCustomClusterConfiguration":{"shape":"RdsCustomClusterConfiguration"},
+        "MonitoringInterval":{"shape":"IntegerOptional"},
+        "MonitoringRoleArn":{"shape":"String"},
+        "EnablePerformanceInsights":{"shape":"BooleanOptional"},
+        "PerformanceInsightsKMSKeyId":{"shape":"String"},
+        "PerformanceInsightsRetentionPeriod":{"shape":"IntegerOptional"},
         "EngineLifecycleSupport":{"shape":"String"}
       }
     },

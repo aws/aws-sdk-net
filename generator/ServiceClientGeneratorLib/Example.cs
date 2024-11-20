@@ -42,7 +42,7 @@ namespace ServiceClientGenerator
         /// The example id taken from the model.
         /// </summary>
         /// <remarks>
-        /// This unique id is used for the region in the emitted code sample 
+        /// This unique id is used for the region in the emitted code sample
         /// that will be parsed to include the code in the documentation.
         /// </remarks>
         public string Id
@@ -201,7 +201,7 @@ namespace ServiceClientGenerator
 
             return result;
         }
-        
+
 
         /// <summary>
         /// Given a member and sample data, build a literal/instantation for the
@@ -227,9 +227,15 @@ namespace ServiceClientGenerator
             if (shape.IsString && data.IsString)
                 cb.AppendQuote(data.ToString());
             else if (shape.IsBoolean)
-                cb.Append(data.ToString().ToLower());
+                cb.Append(data.ToString().ToLowerInvariant());
+
             else if (shape.IsFloat || shape.IsInt || shape.IsDouble || shape.IsLong)
-                cb.Append(data.ToString());
+            {
+                if (data.IsDouble)
+                    cb.Append(((double)data).ToString(CultureInfo.InvariantCulture));
+                else
+                    cb.Append(data.ToString());
+            }
 
             else if (shape.IsList && data.IsArray)
             {
@@ -285,7 +291,7 @@ namespace ServiceClientGenerator
                 foreach (var field in data.PropertyNames)
                 {
                     var property = shape.Members.GetMemberByName(field);
- 
+
                     if (null == property)
                         continue;
 

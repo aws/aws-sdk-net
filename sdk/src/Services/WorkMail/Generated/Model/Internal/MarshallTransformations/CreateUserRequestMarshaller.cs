@@ -122,7 +122,107 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
                     writer.WriteObjectEnd();
                 }
 
+<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
+||||||| Commit version number update changes
+                if(publicRequest.IsSetFirstName())
+                {
+                    context.Writer.WritePropertyName("FirstName");
+                    context.Writer.Write(publicRequest.FirstName);
+                }
+
+                if(publicRequest.IsSetHiddenFromGlobalAddressList())
+                {
+                    context.Writer.WritePropertyName("HiddenFromGlobalAddressList");
+                    context.Writer.Write(publicRequest.HiddenFromGlobalAddressList);
+                }
+
+                if(publicRequest.IsSetLastName())
+                {
+                    context.Writer.WritePropertyName("LastName");
+                    context.Writer.Write(publicRequest.LastName);
+                }
+
+                if(publicRequest.IsSetName())
+                {
+                    context.Writer.WritePropertyName("Name");
+                    context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetOrganizationId())
+                {
+                    context.Writer.WritePropertyName("OrganizationId");
+                    context.Writer.Write(publicRequest.OrganizationId);
+                }
+
+                if(publicRequest.IsSetPassword())
+                {
+                    context.Writer.WritePropertyName("Password");
+                    context.Writer.Write(publicRequest.Password);
+                }
+
+                if(publicRequest.IsSetRole())
+                {
+                    context.Writer.WritePropertyName("Role");
+                    context.Writer.Write(publicRequest.Role);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+=======
+                if(publicRequest.IsSetFirstName())
+                {
+                    context.Writer.WritePropertyName("FirstName");
+                    context.Writer.Write(publicRequest.FirstName);
+                }
+
+                if(publicRequest.IsSetHiddenFromGlobalAddressList())
+                {
+                    context.Writer.WritePropertyName("HiddenFromGlobalAddressList");
+                    context.Writer.Write(publicRequest.HiddenFromGlobalAddressList);
+                }
+
+                if(publicRequest.IsSetIdentityProviderUserId())
+                {
+                    context.Writer.WritePropertyName("IdentityProviderUserId");
+                    context.Writer.Write(publicRequest.IdentityProviderUserId);
+                }
+
+                if(publicRequest.IsSetLastName())
+                {
+                    context.Writer.WritePropertyName("LastName");
+                    context.Writer.Write(publicRequest.LastName);
+                }
+
+                if(publicRequest.IsSetName())
+                {
+                    context.Writer.WritePropertyName("Name");
+                    context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetOrganizationId())
+                {
+                    context.Writer.WritePropertyName("OrganizationId");
+                    context.Writer.Write(publicRequest.OrganizationId);
+                }
+
+                if(publicRequest.IsSetPassword())
+                {
+                    context.Writer.WritePropertyName("Password");
+                    context.Writer.Write(publicRequest.Password);
+                }
+
+                if(publicRequest.IsSetRole())
+                {
+                    context.Writer.WritePropertyName("Role");
+                    context.Writer.Write(publicRequest.Role);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
             }
 
 

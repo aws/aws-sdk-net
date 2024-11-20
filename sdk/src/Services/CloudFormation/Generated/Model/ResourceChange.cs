@@ -254,14 +254,14 @@ namespace Amazon.CloudFormation.Model
         /// For example, if the <c>RequiresRecreation</c> field is <c>Always</c> and the <c>Evaluation</c>
         /// field is <c>Static</c>, <c>Replacement</c> is <c>True</c>. If the <c>RequiresRecreation</c>
         /// field is <c>Always</c> and the <c>Evaluation</c> field is <c>Dynamic</c>, <c>Replacement</c>
-        /// is <c>Conditionally</c>.
+        /// is <c>Conditional</c>.
         /// </para>
         ///  
         /// <para>
         /// If you have multiple changes with different <c>RequiresRecreation</c> values, the
         /// <c>Replacement</c> value depends on the change with the most impact. A <c>RequiresRecreation</c>
-        /// value of <c>Always</c> has the most impact, followed by <c>Conditionally</c>, and
-        /// then <c>Never</c>.
+        /// value of <c>Always</c> has the most impact, followed by <c>Conditional</c>, and then
+        /// <c>Never</c>.
         /// </para>
         /// </summary>
         public Replacement Replacement

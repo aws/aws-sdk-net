@@ -34,10 +34,16 @@ namespace Amazon.CodeDeploy
     public partial class AmazonCodeDeployConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("CodeDeploy", "4.0.0.0");
 
         private static readonly AmazonCodeDeployEndpointResolver EndpointResolver =
             new AmazonCodeDeployEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("CodeDeploy", "3.7.400.26");
+=======
+            InternalSDKUtils.BuildUserAgentString("CodeDeploy", "3.7.400.53");
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
         private string _userAgent = UserAgentString;
         ///<summary>

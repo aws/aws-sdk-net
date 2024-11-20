@@ -179,8 +179,31 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                         context.Writer.WritePropertyName("ModelMetrics");
                         context.Writer.WriteObjectStart();
 
+<<<<<<< HEAD
                         var marshaller = ModelMetricsMarshaller.Instance;
                         marshaller.Marshall(publicRequest.ModelMetrics, context);
+||||||| Commit version number update changes
+                if(publicRequest.IsSetModelMetrics())
+                {
+                    context.Writer.WritePropertyName("ModelMetrics");
+                    context.Writer.WriteObjectStart();
+=======
+                if(publicRequest.IsSetModelLifeCycle())
+                {
+                    context.Writer.WritePropertyName("ModelLifeCycle");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ModelLifeCycleMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ModelLifeCycle, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetModelMetrics())
+                {
+                    context.Writer.WritePropertyName("ModelMetrics");
+                    context.Writer.WriteObjectStart();
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
                         context.Writer.WriteObjectEnd();
                     }

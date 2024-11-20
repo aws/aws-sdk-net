@@ -34,10 +34,16 @@ namespace Amazon.IoTTwinMaker
     public partial class AmazonIoTTwinMakerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("IoTTwinMaker", "4.0.0.0");
 
         private static readonly AmazonIoTTwinMakerEndpointResolver EndpointResolver =
             new AmazonIoTTwinMakerEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("IoTTwinMaker", "3.7.400.26");
+=======
+            InternalSDKUtils.BuildUserAgentString("IoTTwinMaker", "3.7.400.53");
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
         private string _userAgent = UserAgentString;
         ///<summary>

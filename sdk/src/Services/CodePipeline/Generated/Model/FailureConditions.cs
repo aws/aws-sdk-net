@@ -37,6 +37,7 @@ namespace Amazon.CodePipeline.Model
     {
         private List<Condition> _conditions = AWSConfigs.InitializeCollections ? new List<Condition>() : null;
         private Result _result;
+        private RetryConfiguration _retryConfiguration;
 
         /// <summary>
         /// Gets and sets the property Conditions. 
@@ -74,6 +75,25 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetResult()
         {
             return this._result != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetryConfiguration. 
+        /// <para>
+        /// The retry configuration specifies automatic retry for a failed stage, along with the
+        /// configured retry mode.
+        /// </para>
+        /// </summary>
+        public RetryConfiguration RetryConfiguration
+        {
+            get { return this._retryConfiguration; }
+            set { this._retryConfiguration = value; }
+        }
+
+        // Check to see if RetryConfiguration property is set
+        internal bool IsSetRetryConfiguration()
+        {
+            return this._retryConfiguration != null;
         }
 
     }

@@ -67,6 +67,7 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
             {
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
+<<<<<<< HEAD
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;
                     writer.WriteObjectStart();
@@ -119,6 +120,139 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
                     }
 
                     writer.WriteObjectEnd();
+||||||| Commit version number update changes
+                    context.Writer.WritePropertyName("ediType");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EdiTypeMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EdiType, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetFileFormat())
+                {
+                    context.Writer.WritePropertyName("fileFormat");
+                    context.Writer.Write(publicRequest.FileFormat);
+                }
+
+                if(publicRequest.IsSetMappingTemplate())
+                {
+                    context.Writer.WritePropertyName("mappingTemplate");
+                    context.Writer.Write(publicRequest.MappingTemplate);
+                }
+
+                if(publicRequest.IsSetName())
+                {
+                    context.Writer.WritePropertyName("name");
+                    context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetSampleDocument())
+                {
+                    context.Writer.WritePropertyName("sampleDocument");
+                    context.Writer.Write(publicRequest.SampleDocument);
+                }
+
+                if(publicRequest.IsSetStatus())
+                {
+                    context.Writer.WritePropertyName("status");
+                    context.Writer.Write(publicRequest.Status);
+                }
+
+                if(publicRequest.IsSetTransformerId())
+                {
+                    context.Writer.WritePropertyName("transformerId");
+                    context.Writer.Write(publicRequest.TransformerId);
+=======
+                    context.Writer.WritePropertyName("ediType");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EdiTypeMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EdiType, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetFileFormat())
+                {
+                    context.Writer.WritePropertyName("fileFormat");
+                    context.Writer.Write(publicRequest.FileFormat);
+                }
+
+                if(publicRequest.IsSetInputConversion())
+                {
+                    context.Writer.WritePropertyName("inputConversion");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = InputConversionMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.InputConversion, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetMapping())
+                {
+                    context.Writer.WritePropertyName("mapping");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MappingMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Mapping, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetMappingTemplate())
+                {
+                    context.Writer.WritePropertyName("mappingTemplate");
+                    context.Writer.Write(publicRequest.MappingTemplate);
+                }
+
+                if(publicRequest.IsSetName())
+                {
+                    context.Writer.WritePropertyName("name");
+                    context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetOutputConversion())
+                {
+                    context.Writer.WritePropertyName("outputConversion");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = OutputConversionMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OutputConversion, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetSampleDocument())
+                {
+                    context.Writer.WritePropertyName("sampleDocument");
+                    context.Writer.Write(publicRequest.SampleDocument);
+                }
+
+                if(publicRequest.IsSetSampleDocuments())
+                {
+                    context.Writer.WritePropertyName("sampleDocuments");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SampleDocumentsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SampleDocuments, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetStatus())
+                {
+                    context.Writer.WritePropertyName("status");
+                    context.Writer.Write(publicRequest.Status);
+                }
+
+                if(publicRequest.IsSetTransformerId())
+                {
+                    context.Writer.WritePropertyName("transformerId");
+                    context.Writer.Write(publicRequest.TransformerId);
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
                 }
 
                 request.Content = memoryStream.ToArray();

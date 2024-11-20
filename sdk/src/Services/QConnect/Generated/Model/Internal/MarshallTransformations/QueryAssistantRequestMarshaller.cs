@@ -78,7 +78,27 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.MaxResults.Value);
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetNextToken())
+||||||| Commit version number update changes
+                if(publicRequest.IsSetQueryCondition())
+                {
+                    context.Writer.WritePropertyName("queryCondition");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestQueryConditionListValue in publicRequest.QueryCondition)
+=======
+                if(publicRequest.IsSetOverrideKnowledgeBaseSearchType())
+                {
+                    context.Writer.WritePropertyName("overrideKnowledgeBaseSearchType");
+                    context.Writer.Write(publicRequest.OverrideKnowledgeBaseSearchType);
+                }
+
+                if(publicRequest.IsSetQueryCondition())
+                {
+                    context.Writer.WritePropertyName("queryCondition");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestQueryConditionListValue in publicRequest.QueryCondition)
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
                     {
                         context.Writer.WritePropertyName("nextToken");
                         context.Writer.Write(publicRequest.NextToken);
@@ -106,11 +126,36 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.QueryText);
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetSessionId())
                     {
                         context.Writer.WritePropertyName("sessionId");
                         context.Writer.Write(publicRequest.SessionId);
                     }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetQueryText())
+                {
+                    context.Writer.WritePropertyName("queryText");
+                    context.Writer.Write(publicRequest.QueryText);
+                }
+=======
+                if(publicRequest.IsSetQueryInputData())
+                {
+                    context.Writer.WritePropertyName("queryInputData");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = QueryInputDataMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.QueryInputData, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetQueryText())
+                {
+                    context.Writer.WritePropertyName("queryText");
+                    context.Writer.Write(publicRequest.QueryText);
+                }
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
                     writer.WriteObjectEnd();
                 }

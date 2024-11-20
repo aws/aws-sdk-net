@@ -40,7 +40,7 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the tagged resource group.
+        /// TheAmazon resource name (ARN) of the tagged resource group.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=1600)]

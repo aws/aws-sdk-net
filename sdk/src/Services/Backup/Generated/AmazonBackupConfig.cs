@@ -34,10 +34,16 @@ namespace Amazon.Backup
     public partial class AmazonBackupConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("Backup", "4.0.0.0");
 
         private static readonly AmazonBackupEndpointResolver EndpointResolver =
             new AmazonBackupEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("Backup", "3.7.401.13");
+=======
+            InternalSDKUtils.BuildUserAgentString("Backup", "3.7.401.40");
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
         private string _userAgent = UserAgentString;
         ///<summary>

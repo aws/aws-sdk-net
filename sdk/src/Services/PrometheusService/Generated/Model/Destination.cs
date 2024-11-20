@@ -39,7 +39,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property AmpConfiguration. 
         /// <para>
-        /// The Amazon Managed Service for Prometheusworkspace to send metrics to.
+        /// The Amazon Managed Service for Prometheus workspace to send metrics to.
         /// </para>
         /// </summary>
         public AmpConfiguration AmpConfiguration

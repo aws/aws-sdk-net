@@ -65,6 +65,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
             {
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
+<<<<<<< HEAD
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;
                     writer.WriteObjectStart();
@@ -98,6 +99,63 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
                     }
 
                     writer.WriteObjectEnd();
+||||||| Commit version number update changes
+                    context.Writer.WritePropertyName("IdentityProvider");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = IdentityProviderMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.IdentityProvider, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetProduct())
+                {
+                    context.Writer.WritePropertyName("Product");
+                    context.Writer.Write(publicRequest.Product);
+                }
+
+                if(publicRequest.IsSetUpdateSettings())
+                {
+                    context.Writer.WritePropertyName("UpdateSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = UpdateSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.UpdateSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+=======
+                    context.Writer.WritePropertyName("IdentityProvider");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = IdentityProviderMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.IdentityProvider, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetIdentityProviderArn())
+                {
+                    context.Writer.WritePropertyName("IdentityProviderArn");
+                    context.Writer.Write(publicRequest.IdentityProviderArn);
+                }
+
+                if(publicRequest.IsSetProduct())
+                {
+                    context.Writer.WritePropertyName("Product");
+                    context.Writer.Write(publicRequest.Product);
+                }
+
+                if(publicRequest.IsSetUpdateSettings())
+                {
+                    context.Writer.WritePropertyName("UpdateSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = UpdateSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.UpdateSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
                 }
 
                 request.Content = memoryStream.ToArray();

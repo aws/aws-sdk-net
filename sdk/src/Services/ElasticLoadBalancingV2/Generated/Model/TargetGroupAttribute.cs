@@ -190,7 +190,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         ///  <c>preserve_client_ip.enabled</c> - Indicates whether client IP preservation is enabled.
         /// The value is <c>true</c> or <c>false</c>. The default is disabled if the target group
         /// type is IP address and the target group protocol is TCP or TLS. Otherwise, the default
-        /// is enabled. Client IP preservation cannot be disabled for UDP and TCP_UDP target groups.
+        /// is enabled. Client IP preservation can't be disabled for UDP and TCP_UDP target groups.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -232,7 +232,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         ///  <c>target_failover.on_unhealthy</c> - Indicates how the Gateway Load Balancer handles
         /// existing flows when a target is unhealthy. The possible values are <c>rebalance</c>
         /// and <c>no_rebalance</c>. The default is <c>no_rebalance</c>. The two attributes (<c>target_failover.on_deregistration</c>
-        /// and <c>target_failover.on_unhealthy</c>) cannot be set independently. The value you
+        /// and <c>target_failover.on_unhealthy</c>) can't be set independently. The value you
         /// set for both attributes must be the same. 
         /// </para>
         ///  </li> </ul>

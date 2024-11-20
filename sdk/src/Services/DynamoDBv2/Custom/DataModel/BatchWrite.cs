@@ -19,6 +19,8 @@ using Amazon.DynamoDBv2.DocumentModel;
 using System.Globalization;
 using Amazon.Runtime.Telemetry.Tracing;
 
+using Amazon.Runtime.Telemetry.Tracing;
+
 #if AWS_ASYNC_API
 using System.Threading.Tasks;
 #endif

@@ -133,6 +133,56 @@ namespace Amazon.TimestreamQuery
 
 
     /// <summary>
+    /// Constants used for properties of type QueryInsightsMode.
+    /// </summary>
+    public class QueryInsightsMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for QueryInsightsMode
+        /// </summary>
+        public static readonly QueryInsightsMode DISABLED = new QueryInsightsMode("DISABLED");
+        /// <summary>
+        /// Constant ENABLED_WITH_RATE_CONTROL for QueryInsightsMode
+        /// </summary>
+        public static readonly QueryInsightsMode ENABLED_WITH_RATE_CONTROL = new QueryInsightsMode("ENABLED_WITH_RATE_CONTROL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QueryInsightsMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QueryInsightsMode FindValue(string value)
+        {
+            return FindValue<QueryInsightsMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QueryInsightsMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type QueryPricingModel.
     /// </summary>
     public class QueryPricingModel : ConstantClass
@@ -374,6 +424,56 @@ namespace Amazon.TimestreamQuery
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ScalarType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ScheduledQueryInsightsMode.
+    /// </summary>
+    public class ScheduledQueryInsightsMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for ScheduledQueryInsightsMode
+        /// </summary>
+        public static readonly ScheduledQueryInsightsMode DISABLED = new ScheduledQueryInsightsMode("DISABLED");
+        /// <summary>
+        /// Constant ENABLED_WITH_RATE_CONTROL for ScheduledQueryInsightsMode
+        /// </summary>
+        public static readonly ScheduledQueryInsightsMode ENABLED_WITH_RATE_CONTROL = new ScheduledQueryInsightsMode("ENABLED_WITH_RATE_CONTROL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScheduledQueryInsightsMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScheduledQueryInsightsMode FindValue(string value)
+        {
+            return FindValue<ScheduledQueryInsightsMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScheduledQueryInsightsMode(string value)
         {
             return FindValue(value);
         }

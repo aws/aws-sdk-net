@@ -72,6 +72,12 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
                     unmarshalledObject.ComponentName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MissingWorkloadConfig", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.MissingWorkloadConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Tier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

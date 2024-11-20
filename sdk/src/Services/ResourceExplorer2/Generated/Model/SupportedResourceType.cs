@@ -59,7 +59,7 @@ namespace Amazon.ResourceExplorer2.Model
         /// <summary>
         /// Gets and sets the property Service. 
         /// <para>
-        /// The Amazon Web Servicesservice that is associated with the resource type. This is
+        /// The Amazon Web Services service that is associated with the resource type. This is
         /// the primary service that lets you create and interact with resources of this type.
         /// </para>
         /// </summary>

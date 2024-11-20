@@ -968,10 +968,6 @@
       <Project>{43F64B0B-FD8E-4C5B-B31C-9FDF68364301}</Project>
       <Name>AWSSDK.NetworkManager.CodeAnalysis</Name>
     </ProjectReference>
-    <ProjectReference Include="../ServiceAnalysis/NimbleStudio/AWSSDK.NimbleStudio.CodeAnalysis.csproj">
-      <Project>{D34DF54F-B993-4ADB-8FB0-BE4301ABB80A}</Project>
-      <Name>AWSSDK.NimbleStudio.CodeAnalysis</Name>
-    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/OAM/AWSSDK.OAM.CodeAnalysis.csproj">
       <Project>{CE46B838-797A-40BD-8460-0858007DE083}</Project>
       <Name>AWSSDK.OAM.CodeAnalysis</Name>

@@ -81,6 +81,37 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
                         }
                         context.Writer.WriteArrayEnd();
                     }
+<<<<<<< HEAD
+||||||| Commit version number update changes
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetClientToken())
+                {
+                    context.Writer.WritePropertyName("clientToken");
+                    context.Writer.Write(publicRequest.ClientToken);
+                }
+=======
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetCapabilityOptions())
+                {
+                    context.Writer.WritePropertyName("capabilityOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CapabilityOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CapabilityOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetClientToken())
+                {
+                    context.Writer.WritePropertyName("clientToken");
+                    context.Writer.Write(publicRequest.ClientToken);
+                }
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
                     if(publicRequest.IsSetClientToken())
                     {

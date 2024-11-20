@@ -48,6 +48,11 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// A <i>partial upload</i> occurs when a file is open when the session disconnects.
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <c>OnPartialUpload</c> can contain a maximum of one <c>WorkflowDetail</c> object.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
         public List<WorkflowDetail> OnPartialUpload
@@ -77,6 +82,11 @@ namespace Amazon.Transfer.Model
         ///  <c>aws transfer update-server --server-id s-01234567890abcdef --workflow-details
         /// '{"OnUpload":[]}'</c> 
         /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <c>OnUpload</c> can contain a maximum of one <c>WorkflowDetail</c> object.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
         public List<WorkflowDetail> OnUpload

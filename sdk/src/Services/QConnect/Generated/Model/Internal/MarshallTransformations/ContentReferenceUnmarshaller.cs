@@ -90,6 +90,18 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.KnowledgeBaseId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("referenceType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ReferenceType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sourceURL", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceURL = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

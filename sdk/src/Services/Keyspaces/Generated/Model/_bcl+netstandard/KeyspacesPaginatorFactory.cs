@@ -59,5 +59,13 @@ namespace Amazon.Keyspaces.Model
         {
             return new ListTagsForResourcePaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListTypes operation
+        ///</summary>
+        public IListTypesPaginator ListTypes(ListTypesRequest request) 
+        {
+            return new ListTypesPaginator(this.client, request);
+        }
     }
 }

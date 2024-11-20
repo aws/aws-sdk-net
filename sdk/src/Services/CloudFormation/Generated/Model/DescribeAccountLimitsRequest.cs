@@ -33,8 +33,8 @@ namespace Amazon.CloudFormation.Model
     /// Container for the parameters to the DescribeAccountLimits operation.
     /// Retrieves your account's CloudFormation limits, such as the maximum number of stacks
     /// that you can create in your account. For more information about account limits, see
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">CloudFormation
-    /// Quotas</a> in the <i>CloudFormation User Guide</i>.
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">Understand
+    /// CloudFormation quotas</a> in the <i>CloudFormation User Guide</i>.
     /// </summary>
     public partial class DescribeAccountLimitsRequest : AmazonCloudFormationRequest
     {

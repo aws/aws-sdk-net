@@ -126,6 +126,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.RdsDbUserDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("rdsLimitlessDbDetails", targetDepth))
+                {
+                    var unmarshaller = RdsLimitlessDbDetailsUnmarshaller.Instance;
+                    unmarshalledObject.RdsLimitlessDbDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("resourceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

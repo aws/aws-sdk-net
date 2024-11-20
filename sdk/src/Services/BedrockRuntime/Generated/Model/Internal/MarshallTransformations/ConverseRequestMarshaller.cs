@@ -111,6 +111,7 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetMessages())
                     {
                         context.Writer.WritePropertyName("messages");
@@ -128,6 +129,38 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                     }
 
                     if(publicRequest.IsSetSystem())
+||||||| Commit version number update changes
+                if(publicRequest.IsSetSystem())
+                {
+                    context.Writer.WritePropertyName("system");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSystemListValue in publicRequest.System)
+=======
+                if(publicRequest.IsSetPromptVariables())
+                {
+                    context.Writer.WritePropertyName("promptVariables");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestPromptVariablesKvp in publicRequest.PromptVariables)
+                    {
+                        context.Writer.WritePropertyName(publicRequestPromptVariablesKvp.Key);
+                        var publicRequestPromptVariablesValue = publicRequestPromptVariablesKvp.Value;
+
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PromptVariableValuesMarshaller.Instance;
+                        marshaller.Marshall(publicRequestPromptVariablesValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetSystem())
+                {
+                    context.Writer.WritePropertyName("system");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSystemListValue in publicRequest.System)
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
                     {
                         context.Writer.WritePropertyName("system");
                         context.Writer.WriteArrayStart();

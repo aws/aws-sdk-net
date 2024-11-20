@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AccessAnalyzer.Model
 {
     /// <summary>
-    /// Contains information about the configuration of an unused access analyzer for an Amazon
-    /// Web Services organization or account.
+    /// Contains information about the configuration of an analyzer for an Amazon Web Services
+    /// organization or account.
     /// </summary>
     public partial class AnalyzerConfiguration
     {
@@ -41,7 +41,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// Gets and sets the property UnusedAccess. 
         /// <para>
         /// Specifies the configuration of an unused access analyzer for an Amazon Web Services
-        /// organization or account. External access analyzers do not support any configuration.
+        /// organization or account.
         /// </para>
         /// </summary>
         public UnusedAccessConfiguration UnusedAccess

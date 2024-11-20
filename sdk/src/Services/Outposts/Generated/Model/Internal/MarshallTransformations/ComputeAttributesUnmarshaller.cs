@@ -78,6 +78,18 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
                     unmarshalledObject.InstanceFamilies = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InstanceTypeCapacities", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AssetInstanceTypeCapacity, AssetInstanceTypeCapacityUnmarshaller>(AssetInstanceTypeCapacityUnmarshaller.Instance);
+                    unmarshalledObject.InstanceTypeCapacities = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MaxVcpus", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxVcpus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("State", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

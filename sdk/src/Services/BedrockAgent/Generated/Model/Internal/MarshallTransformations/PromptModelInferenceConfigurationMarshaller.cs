@@ -78,12 +78,22 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 }
             }
 
+<<<<<<< HEAD
             if(requestObject.IsSetTopK())
             {
                 context.Writer.WritePropertyName("topK");
                 context.Writer.Write(requestObject.TopK.Value);
             }
 
+||||||| Commit version number update changes
+            if(requestObject.IsSetTopK())
+            {
+                context.Writer.WritePropertyName("topK");
+                context.Writer.Write(requestObject.TopK);
+            }
+
+=======
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
             if(requestObject.IsSetTopP())
             {
                 context.Writer.WritePropertyName("topP");

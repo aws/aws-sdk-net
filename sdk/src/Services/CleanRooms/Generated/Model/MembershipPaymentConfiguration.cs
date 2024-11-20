@@ -35,7 +35,27 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class MembershipPaymentConfiguration
     {
+        private MembershipMLPaymentConfig _machineLearning;
         private MembershipQueryComputePaymentConfig _queryCompute;
+
+        /// <summary>
+        /// Gets and sets the property MachineLearning. 
+        /// <para>
+        /// The payment responsibilities accepted by the collaboration member for machine learning
+        /// costs.
+        /// </para>
+        /// </summary>
+        public MembershipMLPaymentConfig MachineLearning
+        {
+            get { return this._machineLearning; }
+            set { this._machineLearning = value; }
+        }
+
+        // Check to see if MachineLearning property is set
+        internal bool IsSetMachineLearning()
+        {
+            return this._machineLearning != null;
+        }
 
         /// <summary>
         /// Gets and sets the property QueryCompute. 

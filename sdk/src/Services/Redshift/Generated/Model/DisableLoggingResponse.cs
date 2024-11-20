@@ -178,7 +178,7 @@ namespace Amazon.Redshift.Model
         /// The prefix applied to the log file names.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2147483647)]
+        [AWSProperty(Max=256)]
         public string S3KeyPrefix
         {
             get { return this._s3KeyPrefix; }

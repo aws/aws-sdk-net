@@ -82,8 +82,8 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property ResourceType. 
         /// <para>
         /// The type of resource to import into your stack, such as <c>AWS::S3::Bucket</c>. For
-        /// a list of supported resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resources
-        /// that support import operations</a> in the <i>CloudFormation User Guide</i>.
+        /// a list of supported resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resource
+        /// type support for imports and drift detection</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

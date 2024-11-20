@@ -55,6 +55,8 @@ namespace Amazon.QuickSight.Model
         private AssetBundleCloudFormationOverridePropertyConfiguration _cloudFormationOverridePropertyConfiguration;
         private AssetBundleExportFormat _exportFormat;
         private bool? _includeAllDependencies;
+        private IncludeFolderMembers _includeFolderMembers;
+        private bool? _includeFolderMemberships;
         private bool? _includePermissions;
         private bool? _includeTags;
         private List<string> _resourceArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -162,6 +164,44 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetIncludeAllDependencies()
         {
             return this._includeAllDependencies.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeFolderMembers. 
+        /// <para>
+        /// A setting that indicates whether you want to include folder assets. You can also use
+        /// this setting to recusrsively include all subfolders of an exported folder.
+        /// </para>
+        /// </summary>
+        public IncludeFolderMembers IncludeFolderMembers
+        {
+            get { return this._includeFolderMembers; }
+            set { this._includeFolderMembers = value; }
+        }
+
+        // Check to see if IncludeFolderMembers property is set
+        internal bool IsSetIncludeFolderMembers()
+        {
+            return this._includeFolderMembers != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeFolderMemberships. 
+        /// <para>
+        /// A Boolean that determines if the exported asset carries over information about the
+        /// folders that the asset is a member of. 
+        /// </para>
+        /// </summary>
+        public bool IncludeFolderMemberships
+        {
+            get { return this._includeFolderMemberships.GetValueOrDefault(); }
+            set { this._includeFolderMemberships = value; }
+        }
+
+        // Check to see if IncludeFolderMemberships property is set
+        internal bool IsSetIncludeFolderMemberships()
+        {
+            return this._includeFolderMemberships.HasValue; 
         }
 
         /// <summary>

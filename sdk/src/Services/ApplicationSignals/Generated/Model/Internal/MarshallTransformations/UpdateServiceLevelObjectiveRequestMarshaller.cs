@@ -66,7 +66,37 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             request.ResourcePath = "/slo/{Id}";
             using (MemoryStream memoryStream = new MemoryStream())
             {
+<<<<<<< HEAD
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+||||||| Commit version number update changes
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDescription())
+=======
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetBurnRateConfigurations())
+                {
+                    context.Writer.WritePropertyName("BurnRateConfigurations");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestBurnRateConfigurationsListValue in publicRequest.BurnRateConfigurations)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = BurnRateConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestBurnRateConfigurationsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetDescription())
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
                 {
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;

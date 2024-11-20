@@ -101,7 +101,69 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
                     writer.WriteObjectEnd();
                 }
 
+<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
+||||||| Commit version number update changes
+                if(publicRequest.IsSetIdentityProvider())
+                {
+                    context.Writer.WritePropertyName("IdentityProvider");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = IdentityProviderMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.IdentityProvider, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetInstanceId())
+                {
+                    context.Writer.WritePropertyName("InstanceId");
+                    context.Writer.Write(publicRequest.InstanceId);
+                }
+
+                if(publicRequest.IsSetUsername())
+                {
+                    context.Writer.WritePropertyName("Username");
+                    context.Writer.Write(publicRequest.Username);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+=======
+                if(publicRequest.IsSetIdentityProvider())
+                {
+                    context.Writer.WritePropertyName("IdentityProvider");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = IdentityProviderMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.IdentityProvider, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetInstanceId())
+                {
+                    context.Writer.WritePropertyName("InstanceId");
+                    context.Writer.Write(publicRequest.InstanceId);
+                }
+
+                if(publicRequest.IsSetInstanceUserArn())
+                {
+                    context.Writer.WritePropertyName("InstanceUserArn");
+                    context.Writer.Write(publicRequest.InstanceUserArn);
+                }
+
+                if(publicRequest.IsSetUsername())
+                {
+                    context.Writer.WritePropertyName("Username");
+                    context.Writer.Write(publicRequest.Username);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
             }
 
 

@@ -73,7 +73,7 @@ namespace Amazon.KinesisFirehose.Model
         ///  
         /// <para>
         /// We recommend setting this parameter to a value greater than the amount of data you
-        /// typically ingest into the delivery stream in 10 seconds. For example, if you typically
+        /// typically ingest into the Firehose stream in 10 seconds. For example, if you typically
         /// ingest data at 1 MiB/sec, the value should be 10 MiB or higher.
         /// </para>
         /// </summary>

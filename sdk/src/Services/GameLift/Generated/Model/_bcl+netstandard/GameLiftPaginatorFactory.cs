@@ -173,11 +173,35 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
+        /// Paginator for ListContainerFleets operation
+        ///</summary>
+        public IListContainerFleetsPaginator ListContainerFleets(ListContainerFleetsRequest request) 
+        {
+            return new ListContainerFleetsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListContainerGroupDefinitions operation
         ///</summary>
         public IListContainerGroupDefinitionsPaginator ListContainerGroupDefinitions(ListContainerGroupDefinitionsRequest request) 
         {
             return new ListContainerGroupDefinitionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListContainerGroupDefinitionVersions operation
+        ///</summary>
+        public IListContainerGroupDefinitionVersionsPaginator ListContainerGroupDefinitionVersions(ListContainerGroupDefinitionVersionsRequest request) 
+        {
+            return new ListContainerGroupDefinitionVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListFleetDeployments operation
+        ///</summary>
+        public IListFleetDeploymentsPaginator ListFleetDeployments(ListFleetDeploymentsRequest request) 
+        {
+            return new ListFleetDeploymentsPaginator(this.client, request);
         }
 
         /// <summary>

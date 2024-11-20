@@ -132,6 +132,12 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
                     unmarshalledObject.SeverityLevel = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ShortName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ShortName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("StartTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

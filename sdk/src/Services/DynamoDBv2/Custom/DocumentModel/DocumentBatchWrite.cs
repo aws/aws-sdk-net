@@ -102,6 +102,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
             ToPut = new List<Document>();
             TracerProvider = targetTable?.DDBClient?.Config?.TelemetryProvider?.TracerProvider
                 ?? AWSConfigs.TelemetryProvider.TracerProvider;
+            TracerProvider = targetTable?.DDBClient?.Config?.TelemetryProvider?.TracerProvider
+                ?? AWSConfigs.TelemetryProvider.TracerProvider;
         }
 
         #endregion

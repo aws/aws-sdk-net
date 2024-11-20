@@ -34,10 +34,16 @@ namespace Amazon.EKS
     public partial class AmazonEKSConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("EKS", "4.0.0.0");
 
         private static readonly AmazonEKSEndpointResolver EndpointResolver =
             new AmazonEKSEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("EKS", "3.7.402.22");
+=======
+            InternalSDKUtils.BuildUserAgentString("EKS", "3.7.404.6");
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
         private string _userAgent = UserAgentString;
         ///<summary>

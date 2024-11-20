@@ -3,6 +3,7 @@ $version: "2.0"
 
 namespace aws.protocoltests.restjson
 
+use aws.api#service
 use aws.protocols#restJson1
 use aws.protocoltests.shared#BooleanList
 use aws.protocoltests.shared#FooEnumList
@@ -23,7 +24,7 @@ use smithy.test#httpResponseTests
 /// 2. Normal JSON sets.
 /// 3. JSON lists of lists.
 /// 4. Lists of structures.
-///
+@service(sdkId: "Test")
 service JsonListsService {
     version: "2006-03-01"
     operations: [
@@ -40,7 +41,7 @@ operation JsonLists {
 
 apply JsonLists @httpRequestTests([
     {
-        id: "RestJsonLists"
+        id: "RestJsonListsTest"
         documentation: "Serializes JSON lists"
         protocol: restJson1
         method: "PUT"
@@ -123,7 +124,7 @@ apply JsonLists @httpRequestTests([
         }
     }
     {
-        id: "RestJsonListsEmpty"
+        id: "RestJsonListsEmptyTest2"
         documentation: "Serializes empty JSON lists"
         protocol: restJson1
         method: "PUT"
@@ -139,7 +140,7 @@ apply JsonLists @httpRequestTests([
         }
     }
     {
-        id: "RestJsonListsSerializeNull"
+        id: "RestJsonListsSerializeNullTest3"
         documentation: "Serializes null values in lists"
         protocol: restJson1
         method: "PUT"
@@ -161,7 +162,7 @@ apply JsonLists @httpRequestTests([
 
 apply JsonLists @httpResponseTests([
     {
-        id: "RestJsonLists"
+        id: "RestJsonListsTest"
         documentation: "Serializes JSON lists"
         protocol: restJson1
         code: 200
@@ -243,7 +244,7 @@ apply JsonLists @httpResponseTests([
         }
     }
     {
-        id: "RestJsonListsEmpty"
+        id: "RestJsonListsEmptyTest2"
         documentation: "Serializes empty JSON lists"
         protocol: restJson1
         code: 200
@@ -258,7 +259,7 @@ apply JsonLists @httpResponseTests([
         }
     }
     {
-        id: "RestJsonListsSerializeNull"
+        id: "RestJsonListsSerializeNullTest3"
         documentation: "Serializes null values in sparse lists"
         protocol: restJson1
         code: 200

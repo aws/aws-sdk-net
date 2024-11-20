@@ -183,6 +183,110 @@ namespace Amazon.OpenSearchServerless
 
 
     /// <summary>
+    /// Constants used for properties of type IamIdentityCenterGroupAttribute.
+    /// </summary>
+    public class IamIdentityCenterGroupAttribute : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GroupId for IamIdentityCenterGroupAttribute
+        /// </summary>
+        public static readonly IamIdentityCenterGroupAttribute GroupId = new IamIdentityCenterGroupAttribute("GroupId");
+        /// <summary>
+        /// Constant GroupName for IamIdentityCenterGroupAttribute
+        /// </summary>
+        public static readonly IamIdentityCenterGroupAttribute GroupName = new IamIdentityCenterGroupAttribute("GroupName");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IamIdentityCenterGroupAttribute(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IamIdentityCenterGroupAttribute FindValue(string value)
+        {
+            return FindValue<IamIdentityCenterGroupAttribute>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IamIdentityCenterGroupAttribute(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IamIdentityCenterUserAttribute.
+    /// </summary>
+    public class IamIdentityCenterUserAttribute : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Email for IamIdentityCenterUserAttribute
+        /// </summary>
+        public static readonly IamIdentityCenterUserAttribute Email = new IamIdentityCenterUserAttribute("Email");
+        /// <summary>
+        /// Constant UserId for IamIdentityCenterUserAttribute
+        /// </summary>
+        public static readonly IamIdentityCenterUserAttribute UserId = new IamIdentityCenterUserAttribute("UserId");
+        /// <summary>
+        /// Constant UserName for IamIdentityCenterUserAttribute
+        /// </summary>
+        public static readonly IamIdentityCenterUserAttribute UserName = new IamIdentityCenterUserAttribute("UserName");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IamIdentityCenterUserAttribute(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IamIdentityCenterUserAttribute FindValue(string value)
+        {
+            return FindValue<IamIdentityCenterUserAttribute>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IamIdentityCenterUserAttribute(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LifecyclePolicyType.
     /// </summary>
     public class LifecyclePolicyType : ConstantClass
@@ -280,6 +384,10 @@ namespace Amazon.OpenSearchServerless
     public class SecurityConfigType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant Iamidentitycenter for SecurityConfigType
+        /// </summary>
+        public static readonly SecurityConfigType Iamidentitycenter = new SecurityConfigType("iamidentitycenter");
         /// <summary>
         /// Constant Saml for SecurityConfigType
         /// </summary>

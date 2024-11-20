@@ -43,7 +43,8 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property ExceptionTimeToLive. 
         /// <para>
-        /// The time-to-live (TTL) for the exception message to remain.
+        /// The time-to-live (TTL) for the exception message to remain. It is the duration of
+        /// time until which the exception message remains. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

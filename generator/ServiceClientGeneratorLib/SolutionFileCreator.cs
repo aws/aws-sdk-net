@@ -38,6 +38,11 @@ namespace ServiceClientGenerator
         private const string CommonTestProjectGuid = "{66F78F86-68D7-4538-8EA5-A669A08E1C19}";
         private const string CommonTestProjectName = "AWSSDK.CommonTest";
 
+        private const string CommonNetStandardTestProjectGuid = "{87FCE8BC-9E24-4D84-B5CF-C1BA7A51423F}";
+        private const string CommonNetStandardTestProjectName = "AWSSDK.CommonTest.NetStandard";
+        private const string UnitTestsNetStandardCoreOnlyProjectGuid = "{B969DE99-0634-4989-A318-086AE1699974}";
+        private const string UnitTestsNetStandardCoreOnlyProjectName = "UnitTests.NetStandard.CoreOnly";
+
         private const string UnitTestUtilityProjectFileName = "AWSSDK.UnitTestUtilities.NetFramework";
         private const string UtilityProjectFileGuid = "{002B183F-E568-49CD-9D06-CBCFF2C2921F}";
 
@@ -74,12 +79,27 @@ namespace ServiceClientGenerator
             ProjectPath = Utils.PathCombineAlt("..", "sdk", "test", "Common", $"{CommonTestProjectName}.csproj")
         };
 
+        private static readonly Project CommonNetStandardTestProject = new Project
+        {
+            Name = CommonNetStandardTestProjectName,
+            ProjectGuid = CommonNetStandardTestProjectGuid,
+            ProjectPath = Utils.PathCombineAlt("..", "sdk", "test", "NetStandard", "Common", $"{CommonNetStandardTestProjectName}.csproj")
+        };
+
         private static readonly Project ServiceSlnCommonTestProject = new Project
         {
             Name = CommonTestProjectName,
             ProjectGuid = CommonTestProjectGuid,
             ProjectPath = Utils.PathCombineAlt("..", "..", "..", CommonTestProject.ProjectPath),
             RelativePath = Utils.PathCombineAlt("..", "..", "..", "test", "Common", $"{CommonTestProjectName}.csproj")
+        };
+
+        private static readonly Project ServiceSlnCommonNetStandardTestProject = new Project
+        {
+            Name = CommonNetStandardTestProjectName,
+            ProjectGuid = CommonNetStandardTestProjectGuid,
+            ProjectPath = Utils.PathCombineAlt("..", "..", "..", CommonNetStandardTestProject.ProjectPath),
+            RelativePath = Utils.PathCombineAlt("..", "..", "..", "test", "NetStandard", "Common", $"{CommonNetStandardTestProjectName}.csproj")
         };
 
         private static readonly Project UnitTestUtilityProject45 = new Project
@@ -96,6 +116,21 @@ namespace ServiceClientGenerator
             ProjectGuid = IntegrationTestUtilityGuid,
             ProjectPath = Utils.PathCombineAlt("..", "..", "..", "..", "sdk", "test", "IntegrationTests", $"{IntegrationTestUtilityName}.csproj"),
             RelativePath = Utils.PathCombineAlt("..", "..", "..", "test", "IntegrationTests", $"{IntegrationTestUtilityName}.csproj")
+        };
+
+        private static readonly Project UnitTestsNetStandardCoreOnlyProject = new Project
+        {
+            Name = UnitTestsNetStandardCoreOnlyProjectName,
+            ProjectGuid = UnitTestsNetStandardCoreOnlyProjectGuid,
+            ProjectPath = Utils.PathCombineAlt("..", "sdk", "test", "NetStandard", "UnitTests", $"{UnitTestsNetStandardCoreOnlyProjectName}.csproj")
+        };
+
+        private static readonly Project ServiceSlnUnitTestsNetStandardCoreOnlyProject = new Project
+        {
+            Name = UnitTestsNetStandardCoreOnlyProjectName,
+            ProjectGuid = UnitTestsNetStandardCoreOnlyProjectGuid,
+            ProjectPath = Utils.PathCombineAlt("..", "..", "..", UnitTestsNetStandardCoreOnlyProject.ProjectPath),
+            RelativePath = Utils.PathCombineAlt("..", "..", "..", "test", "NetStandard", "UnitTests", $"{UnitTestsNetStandardCoreOnlyProjectName}.csproj")
         };
 
         private static readonly List<Project> CoreProjects = new List<Project>
@@ -128,6 +163,7 @@ namespace ServiceClientGenerator
             }
 
             AddSupportProjects();
+            AddSpecificTestProjects();
             ScanForExistingProjects();
 
             // Build project configurations for each solution
@@ -146,6 +182,18 @@ namespace ServiceClientGenerator
         private void AddSupportProjects()
         {
             _allProjects.Add(GeneratorLibProjectName, GeneratorLibProjectConfig);
+        }
+
+        private void AddSpecificTestProjects()
+        {
+            // Add UnitTests.NetStandard.CoreOnly
+            var projectConfig = new ProjectFileCreator.ProjectConfigurationData
+            {
+                ProjectGuid = Utils.GetProjectGuid(UnitTestsNetStandardCoreOnlyProjectGuid),
+                ConfigurationPlatforms = StandardPlatformConfigurations
+            };
+
+            _allProjects.Add(UnitTestsNetStandardCoreOnlyProjectName, projectConfig);
         }
 
         /// <summary>
@@ -342,11 +390,11 @@ namespace ServiceClientGenerator
                         });
                     }
 
+                    testProjects.Add(GeneratorLibProject);
+                    SelectBuildConfigurationsForProject(GeneratorLibProjectName, buildConfigurations);
+
                     if (configuration.Name.Equals(ProjectTypes.NetFramework, StringComparison.Ordinal))
                     {
-                        testProjects.Add(GeneratorLibProject);
-                        SelectBuildConfigurationsForProject(GeneratorLibProjectName, buildConfigurations);
-
                         testProjects.Add(CommonTestProject);
                         SelectBuildConfigurationsForProject(CommonTestProjectName, buildConfigurations);
                     }
@@ -428,9 +476,13 @@ namespace ServiceClientGenerator
                 // Include service's Unit and Integ csproj files and its dependencies.
                 AddTestProjectsAndDependencies(projectFileConfigurations, buildConfigurations, serviceDirectory, projectGuidDictionary, testProjects, dependentProjects);
 
-                // Add AWSSDK.CommonTest.csproj 
+                // Add AWSSDK.CommonTest.csproj and AWSSDK.CommonTest.NetStandard.csproj
                 testProjects.Add(ServiceSlnCommonTestProject);
+                testProjects.Add(ServiceSlnCommonNetStandardTestProject);
+                testProjects.Add(ServiceSlnUnitTestsNetStandardCoreOnlyProject);
                 SelectBuildConfigurationsForProject(CommonTestProjectName, buildConfigurations);
+                SelectBuildConfigurationsForProject(CommonNetStandardTestProjectName, buildConfigurations);
+                SelectBuildConfigurationsForProject(UnitTestsNetStandardCoreOnlyProjectName, buildConfigurations);
 
                 foreach (var serviceProjectDependency in serviceProjectDependencies)
                 {

@@ -49,7 +49,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The time at which the knowledge base was created.
+        /// The time the knowledge base was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -261,7 +261,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The time at which the knowledge base was last updated.
+        /// The time the knowledge base was last updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

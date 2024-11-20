@@ -6,7 +6,7 @@
     "BatchPutDocument": "<p>Adds one or more documents to an Amazon Q Business index.</p> <p>You use this API to:</p> <ul> <li> <p>ingest your structured and unstructured documents and documents stored in an Amazon S3 bucket into an Amazon Q Business index.</p> </li> <li> <p>add custom attributes to documents in an Amazon Q Business index.</p> </li> <li> <p>attach an access control list to the documents added to an Amazon Q Business index.</p> </li> </ul> <p>You can see the progress of the deletion, and any error messages related to the process, by using CloudWatch.</p>",
     "Chat": "<p>Starts or continues a streaming Amazon Q Business conversation.</p>",
     "ChatSync": "<p>Starts or continues a non-streaming Amazon Q Business conversation.</p>",
-    "CreateApplication": "<p>Creates an Amazon Q Business application.</p> <note> <p>There are new tiers for Amazon Q Business. Not all features in Amazon Q Business Pro are also available in Amazon Q Business Lite. For information on what's included in Amazon Q Business Lite and what's included in Amazon Q Business Pro, see <a href=\"https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/tiers.html#user-sub-tiers\">Amazon Q Business tiers</a>. You must use the Amazon Q Business console to assign subscription tiers to users.</p> </note>",
+    "CreateApplication": "<p>Creates an Amazon Q Business application.</p> <note> <p>There are new tiers for Amazon Q Business. Not all features in Amazon Q Business Pro are also available in Amazon Q Business Lite. For information on what's included in Amazon Q Business Lite and what's included in Amazon Q Business Pro, see <a href=\"https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/tiers.html#user-sub-tiers\">Amazon Q Business tiers</a>. You must use the Amazon Q Business console to assign subscription tiers to users. </p> <p> A Amazon Q Apps service linked role will be created if it's absent in the Amazon Web Services account when the QAppsConfiguration is enabled in the request. For more information, see <a href=\"https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/using-service-linked-roles-qapps.html\"> Using service-linked roles for Q Apps </a> </p> </note>",
     "CreateDataSource": "<p>Creates a data source connector for an Amazon Q Business application.</p> <p> <code>CreateDataSource</code> is a synchronous operation. The operation returns 200 if the data source was successfully created. Otherwise, an exception is raised.</p>",
     "CreateIndex": "<p>Creates an Amazon Q Business index.</p> <p>To determine if index creation has completed, check the <code>Status</code> field returned from a call to <code>DescribeIndex</code>. The <code>Status</code> field is set to <code>ACTIVE</code> when the index is ready to use.</p> <p>Once the index is active, you can index your documents using the <a href=\"https://docs.aws.amazon.com/amazonq/latest/api-reference/API_BatchPutDocument.html\"> <code>BatchPutDocument</code> </a> API or the <a href=\"https://docs.aws.amazon.com/amazonq/latest/api-reference/API_CreateDataSource.html\"> <code>CreateDataSource</code> </a> API.</p>",
     "CreatePlugin": "<p>Creates an Amazon Q Business plugin.</p>",
@@ -50,7 +50,7 @@
     "StopDataSourceSyncJob": "<p>Stops an Amazon Q Business data source connector synchronization job already in progress.</p>",
     "TagResource": "<p>Adds the specified tag to the specified Amazon Q Business application or data source resource. If the tag already exists, the existing value is replaced with the new value.</p>",
     "UntagResource": "<p>Removes a tag from an Amazon Q Business application or a data source.</p>",
-    "UpdateApplication": "<p>Updates an existing Amazon Q Business application.</p>",
+    "UpdateApplication": "<p>Updates an existing Amazon Q Business application.</p> <note> <p> A Amazon Q Apps service-linked role will be created if it's absent in the Amazon Web Services account when the QAppsConfiguration is enabled in the request. For more information, see <a href=\"https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/using-service-linked-roles-qapps.html\"> Using service-linked roles for Q Apps </a> </p> </note>",
     "UpdateChatControlsConfiguration": "<p>Updates an set of chat controls configured for an existing Amazon Q Business application.</p>",
     "UpdateDataSource": "<p>Updates an existing Amazon Q Business data source connector.</p>",
     "UpdateIndex": "<p>Updates an Amazon Q Business index.</p>",
@@ -188,6 +188,12 @@
       "base": null,
       "refs": {
         "ActionReviewPayloadField$allowedValues": "<p>Information about the field values that an end user can use to provide to Amazon Q Business for Amazon Q Business to perform the requested plugin action.</p>"
+      }
+    },
+    "ActionReviewPayloadFieldArrayItemJsonSchema": {
+      "base": null,
+      "refs": {
+        "ActionReviewPayloadField$arrayItemJsonSchema": "<p>Use to create a custom form with array fields (fields with nested objects inside an array). </p>"
       }
     },
     "AmazonResourceName": {
@@ -1992,6 +1998,12 @@
         "IdentityProviderConfiguration$openIDConnectConfiguration": null
       }
     },
+    "Origin": {
+      "base": null,
+      "refs": {
+        "WebExperienceOrigins$member": null
+      }
+    },
     "Payload": {
       "base": null,
       "refs": {
@@ -2142,7 +2154,7 @@
       }
     },
     "QAppsConfiguration": {
-      "base": "<p>Configuration information about Amazon Q Apps. (preview feature)</p>",
+      "base": "<p>Configuration information about Amazon Q Apps.</p>",
       "refs": {
         "CreateApplicationRequest$qAppsConfiguration": "<p>An option to allow end users to create and use Amazon Q Apps in the web experience.</p>",
         "GetApplicationResponse$qAppsConfiguration": "<p>Settings for whether end users can create and use Amazon Q Apps in the web experience.</p>",
@@ -2241,7 +2253,7 @@
       "refs": {
         "BasicAuthConfiguration$roleArn": "<p>The ARN of an IAM role used by Amazon Q Business to access the basic authentication credentials stored in a Secrets Manager secret.</p>",
         "BatchPutDocumentRequest$roleArn": "<p>The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket.</p>",
-        "CreateApplicationRequest$roleArn": "<p> The Amazon Resource Name (ARN) of an IAM role with permissions to access your Amazon CloudWatch logs and metrics.</p>",
+        "CreateApplicationRequest$roleArn": "<p> The Amazon Resource Name (ARN) of an IAM role with permissions to access your Amazon CloudWatch logs and metrics. If this property is not specified, Amazon Q Business will create a <a href=\"https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/using-service-linked-roles.html#slr-permissions\">service linked role (SLR)</a> and use it as the application's role.</p>",
         "CreateDataSourceRequest$roleArn": "<p>The Amazon Resource Name (ARN) of an IAM role with permission to access the data source and required resources.</p>",
         "CreateRetrieverRequest$roleArn": "<p>The ARN of an IAM role used by Amazon Q Business to access the basic authentication credentials stored in a Secrets Manager secret.</p>",
         "CreateWebExperienceRequest$roleArn": "<p>The Amazon Resource Name (ARN) of the service role attached to your web experience.</p> <note> <p>You must provide this value if you're using IAM Identity Center to manage end user access to your application. If you're using legacy identity management to manage user access, you don't need to provide this value.</p> </note>",
@@ -2252,6 +2264,7 @@
         "HookConfiguration$roleArn": "<p>The Amazon Resource Name (ARN) of a role with permission to run <code>PreExtractionHookConfiguration</code> and <code>PostExtractionHookConfiguration</code> for altering document metadata and content during the document ingestion process.</p>",
         "OAuth2ClientCredentialConfiguration$roleArn": "<p>The ARN of an IAM role used by Amazon Q Business to access the OAuth 2.0 authentication credentials stored in a Secrets Manager secret.</p>",
         "OpenIDConnectProviderConfiguration$secretsRole": "<p>An IAM role with permissions to access KMS to decrypt the Secrets Manager secret containing your OIDC client secret.</p>",
+        "PutGroupRequest$roleArn": "<p>The Amazon Resource Name (ARN) of an IAM role that has access to the S3 file that contains your list of users that belong to a group.The Amazon Resource Name (ARN) of an IAM role that has access to the S3 file that contains your list of users that belong to a group.</p>",
         "SamlConfiguration$roleArn": "<p>The Amazon Resource Name (ARN) of an IAM role assumed by users when they authenticate into their Amazon Q Business web experience, containing the relevant Amazon Q Business permissions for conversing with Amazon Q Business.</p>",
         "UpdateApplicationRequest$roleArn": "<p>An Amazon Web Services Identity and Access Management (IAM) role that gives Amazon Q Business permission to access Amazon CloudWatch logs and metrics.</p>",
         "UpdateDataSourceRequest$roleArn": "<p>The Amazon Resource Name (ARN) of an IAM role with permission to access the data source and required resources.</p>",
@@ -2287,7 +2300,8 @@
       "base": "<p>Information required for Amazon Q Business to find a specific file in an Amazon S3 bucket.</p>",
       "refs": {
         "APISchema$s3": "<p>Contains details about the S3 object containing the OpenAPI schema for a custom plugin. The schema could be in either JSON or YAML format.</p>",
-        "DocumentContent$s3": "<p>The path to the document in an Amazon S3 bucket.</p>"
+        "DocumentContent$s3": "<p>The path to the document in an Amazon S3 bucket.</p>",
+        "GroupMembers$s3PathForGroupMembers": null
       }
     },
     "S3BucketName": {
@@ -2790,9 +2804,9 @@
     "UserGroups": {
       "base": null,
       "refs": {
-        "ChatInput$userGroups": "<p>The groups that a user associated with the chat input belongs to.</p>",
-        "ChatSyncInput$userGroups": "<p>The groups that a user associated with the chat input belongs to.</p>",
-        "UsersAndGroups$userGroups": "<p>The user groups associated with a topic control rule.</p>"
+        "ChatInput$userGroups": "<p>The group names that a user associated with the chat input belongs to.</p>",
+        "ChatSyncInput$userGroups": "<p>The group names that a user associated with the chat input belongs to.</p>",
+        "UsersAndGroups$userGroups": "<p>The user group names associated with a topic control rule.</p>"
       }
     },
     "UserId": {
@@ -2821,7 +2835,7 @@
       }
     },
     "UsersAndGroups": {
-      "base": "<p>Provides information about users and groups associated with a topic control rule.</p>",
+      "base": "<p>Provides information about users and group names associated with a topic control rule.</p>",
       "refs": {
         "Rule$includedUsersAndGroups": "<p>Users and groups to be included in a rule.</p>",
         "Rule$excludedUsersAndGroups": "<p>Users and groups to be excluded from a rule.</p>"
@@ -2879,6 +2893,14 @@
         "GetWebExperienceResponse$webExperienceId": "<p>The identifier of the Amazon Q Business web experience.</p>",
         "UpdateWebExperienceRequest$webExperienceId": "<p>The identifier of the Amazon Q Business web experience.</p>",
         "WebExperience$webExperienceId": "<p>The identifier of your Amazon Q Business web experience.</p>"
+      }
+    },
+    "WebExperienceOrigins": {
+      "base": null,
+      "refs": {
+        "CreateWebExperienceRequest$origins": "<p>Sets the website domain origins that are allowed to embed the Amazon Q Business web experience. <pre><code> The &lt;i&gt;domain origin&lt;/i&gt; refers to the base URL for accessing a website including the protocol (&lt;code&gt;http/https&lt;/code&gt;), the domain name, and the port number (if specified). &lt;/p&gt; &lt;note&gt; &lt;p&gt;You must only submit a &lt;i&gt;base URL&lt;/i&gt; and not a full path. For example, &lt;code&gt;https://docs.aws.amazon.com&lt;/code&gt;.&lt;/p&gt; &lt;/note&gt; </code></pre>",
+        "GetWebExperienceResponse$origins": "<p>Gets the website domain origins that are allowed to embed the Amazon Q Business web experience. <pre><code> The &lt;i&gt;domain origin&lt;/i&gt; refers to the base URL for accessing a website including the protocol (&lt;code&gt;http/https&lt;/code&gt;), the domain name, and the port number (if specified). &lt;/p&gt; </code></pre>",
+        "UpdateWebExperienceRequest$origins": "<p>Updates the website domain origins that are allowed to embed the Amazon Q Business web experience. <pre><code> The &lt;i&gt;domain origin&lt;/i&gt; refers to the &lt;i&gt;base URL&lt;/i&gt; for accessing a website including the protocol (&lt;code&gt;http/https&lt;/code&gt;), the domain name, and the port number (if specified).&lt;/p&gt; &lt;note&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;Any values except &lt;code&gt;null&lt;/code&gt; submitted as part of this update will replace all previous values.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You must only submit a &lt;i&gt;base URL&lt;/i&gt; and not a full path. For example, &lt;code&gt;https://docs.aws.amazon.com&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;/note&gt; </code></pre>"
       }
     },
     "WebExperienceSamplePromptsControlMode": {

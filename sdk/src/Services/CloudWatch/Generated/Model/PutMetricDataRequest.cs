@@ -31,25 +31,34 @@ namespace Amazon.CloudWatch.Model
 {
     /// <summary>
     /// Container for the parameters to the PutMetricData operation.
-    /// Publishes metric data points to Amazon CloudWatch. CloudWatch associates the data
-    /// points with the specified metric. If the specified metric does not exist, CloudWatch
-    /// creates the metric. When CloudWatch creates a metric, it can take up to fifteen minutes
-    /// for the metric to appear in calls to <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.
+    /// Publishes metric data to Amazon CloudWatch. CloudWatch associates the data with the
+    /// specified metric. If the specified metric does not exist, CloudWatch creates the metric.
+    /// When CloudWatch creates a metric, it can take up to fifteen minutes for the metric
+    /// to appear in calls to <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.
     /// 
     ///  
     /// <para>
-    /// You can publish either individual data points in the <c>Value</c> field, or arrays
-    /// of values and the number of times each value occurred during the period by using the
-    /// <c>Values</c> and <c>Counts</c> fields in the <c>MetricData</c> structure. Using the
-    /// <c>Values</c> and <c>Counts</c> method enables you to publish up to 150 values per
-    /// metric with one <c>PutMetricData</c> request, and supports retrieving percentile statistics
-    /// on this data.
+    /// You can publish metrics with associated entity data (so that related telemetry can
+    /// be found and viewed together), or publish metric data by itself. To send entity data
+    /// with your metrics, use the <c>EntityMetricData</c> parameter. To send metrics without
+    /// entity data, use the <c>MetricData</c> parameter. The <c>EntityMetricData</c> structure
+    /// includes <c>MetricData</c> structures for the metric data.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can publish either individual values in the <c>Value</c> field, or arrays of values
+    /// and the number of times each value occurred during the period by using the <c>Values</c>
+    /// and <c>Counts</c> fields in the <c>MetricData</c> structure. Using the <c>Values</c>
+    /// and <c>Counts</c> method enables you to publish up to 150 values per metric with one
+    /// <c>PutMetricData</c> request, and supports retrieving percentile statistics on this
+    /// data.
     /// </para>
     ///  
     /// <para>
     /// Each <c>PutMetricData</c> request is limited to 1 MB in size for HTTP POST requests.
     /// You can send a payload compressed by gzip. Each request is also limited to no more
-    /// than 1000 different metrics.
+    /// than 1000 different metrics (across both the <c>MetricData</c> and <c>EntityMetricData</c>
+    /// properties).
     /// </para>
     ///  
     /// <para>
@@ -77,7 +86,7 @@ namespace Amazon.CloudWatch.Model
     /// to become available for <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
     /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>
     /// from the time they are submitted. Data points with time stamps between 3 and 24 hours
-    /// ago can take as much as 2 hours to become available for for <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+    /// ago can take as much as 2 hours to become available for <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
     /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.
     /// </para>
     ///  
@@ -100,16 +109,48 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class PutMetricDataRequest : AmazonCloudWatchRequest
     {
+        private List<EntityMetricData> _entityMetricData = AWSConfigs.InitializeCollections ? new List<EntityMetricData>() : null;
         private List<MetricDatum> _metricData = AWSConfigs.InitializeCollections ? new List<MetricDatum>() : null;
         private string _awsNamespace;
+        private bool? _strictEntityValidation;
+
+        /// <summary>
+        /// Gets and sets the property EntityMetricData. 
+        /// <para>
+        /// Data for metrics that contain associated entity information. You can include up to
+        /// two <c>EntityMetricData</c> objects, each of which can contain a single <c>Entity</c>
+        /// and associated metrics.
+        /// </para>
+        ///  
+        /// <para>
+        /// The limit of metrics allowed, 1000, is the sum of both <c>EntityMetricData</c> and
+        /// <c>MetricData</c> metrics.
+        /// </para>
+        /// </summary>
+        public List<EntityMetricData> EntityMetricData
+        {
+            get { return this._entityMetricData; }
+            set { this._entityMetricData = value; }
+        }
+
+        // Check to see if EntityMetricData property is set
+        internal bool IsSetEntityMetricData()
+        {
+            return this._entityMetricData != null && (this._entityMetricData.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property MetricData. 
         /// <para>
-        /// The data for the metric. The array can include no more than 1000 metrics per call.
+        /// The data for the metrics. Use this parameter if your metrics do not contain associated
+        /// entities. The array can include no more than 1000 metrics per call.
+        /// </para>
+        ///  
+        /// <para>
+        /// The limit of metrics allowed, 1000, is the sum of both <c>EntityMetricData</c> and
+        /// <c>MetricData</c> metrics.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<MetricDatum> MetricData
         {
             get { return this._metricData; }
@@ -145,6 +186,78 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetNamespace()
         {
             return this._awsNamespace != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StrictEntityValidation. 
+        /// <para>
+        /// Whether to accept valid metric data when an invalid entity is sent.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// When set to <c>true</c>: Any validation error (for entity or metric data) will fail
+        /// the entire request, and no data will be ingested. The failed operation will return
+        /// a 400 result with the error.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When set to <c>false</c>: Validation errors in the entity will not associate the metric
+        /// with the entity, but the metric data will still be accepted and ingested. Validation
+        /// errors in the metric data will fail the entire request, and no data will be ingested.
+        /// </para>
+        ///  
+        /// <para>
+        /// In the case of an invalid entity, the operation will return a <c>200</c> status, but
+        /// an additional response header will contain information about the validation errors.
+        /// The new header, <c>X-Amzn-Failure-Message</c> is an enumeration of the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>InvalidEntity</c> - The provided entity is invalid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>InvalidKeyAttributes</c> - The provided <c>KeyAttributes</c> of an entity is invalid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>InvalidAttributes</c> - The provided <c>Attributes</c> of an entity is invalid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>InvalidTypeValue</c> - The provided <c>Type</c> in the <c>KeyAttributes</c> of
+        /// an entity is invalid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>EntitySizeTooLarge</c> - The number of <c>EntityMetricData</c> objects allowed
+        /// is 2.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>MissingRequiredFields</c> - There are missing required fields in the <c>KeyAttributes</c>
+        /// for the provided <c>Type</c>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For details of the requirements for specifying an entity, see <a href="https://docs.aws.amazon.com/adding-your-own-related-telemetry.html">How
+        /// to add related information to telemetry</a> in the <i>CloudWatch User Guide</i>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// This parameter is <i>required</i> when <c>EntityMetricData</c> is included.
+        /// </para>
+        /// </summary>
+        public bool StrictEntityValidation
+        {
+            get { return this._strictEntityValidation.GetValueOrDefault(); }
+            set { this._strictEntityValidation = value; }
+        }
+
+        // Check to see if StrictEntityValidation property is set
+        internal bool IsSetStrictEntityValidation()
+        {
+            return this._strictEntityValidation.HasValue; 
         }
 
     }

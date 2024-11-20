@@ -123,8 +123,9 @@ namespace Amazon.NeptuneGraph.Model
         /// <para>
         /// Specifies the format of S3 data to be imported. Valid values are <c>CSV</c>, which
         /// identifies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-gremlin.html">Gremlin
-        /// CSV format</a> or <c>OPENCYPHER</c>, which identies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-opencypher.html">openCypher
-        /// load format</a>.
+        /// CSV format</a>, <c>OPEN_CYPHER</c>, which identifies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-opencypher.html">openCypher
+        /// load format</a>, or <c>ntriples</c>, which identifies the <a href="https://docs.aws.amazon.com/neptune-analytics/latest/userguide/using-rdf-data.html">RDF
+        /// n-triples</a> format.
         /// </para>
         /// </summary>
         public Format Format
@@ -217,8 +218,16 @@ namespace Amazon.NeptuneGraph.Model
         /// specified 128 m-NCUs are used.
         /// </para>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Min=32, Max=24576)]
         public int? MaxProvisionedMemory
+||||||| Commit version number update changes
+        [AWSProperty(Min=32, Max=24576)]
+        public int MaxProvisionedMemory
+=======
+        [AWSProperty(Min=16, Max=24576)]
+        public int MaxProvisionedMemory
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
         {
             get { return this._maxProvisionedMemory; }
             set { this._maxProvisionedMemory = value; }
@@ -237,8 +246,16 @@ namespace Amazon.NeptuneGraph.Model
         /// the graph. Default: 128
         /// </para>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Min=32, Max=24576)]
         public int? MinProvisionedMemory
+||||||| Commit version number update changes
+        [AWSProperty(Min=32, Max=24576)]
+        public int MinProvisionedMemory
+=======
+        [AWSProperty(Min=16, Max=24576)]
+        public int MinProvisionedMemory
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
         {
             get { return this._minProvisionedMemory; }
             set { this._minProvisionedMemory = value; }

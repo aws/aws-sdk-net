@@ -39,7 +39,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property DeliveryStreamDescription. 
         /// <para>
-        /// Information about the delivery stream.
+        /// Information about the Firehose stream.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

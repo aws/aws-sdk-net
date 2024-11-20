@@ -31,19 +31,13 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterCompute operation.
-    /// <b>This operation has been expanded to use with the Amazon GameLift containers feature,
-    /// which is currently in public preview.</b> 
+    /// Registers a compute resource in an Amazon GameLift Anywhere fleet. 
     /// 
     ///  
     /// <para>
-    /// Registers a compute resource in an Amazon GameLift fleet. Register computes with an
-    /// Amazon GameLift Anywhere fleet or a container fleet. 
-    /// </para>
-    ///  
-    /// <para>
-    /// For an Anywhere fleet or a container fleet that's running the Amazon GameLift Agent,
-    /// the Agent handles all compute registry tasks for you. For an Anywhere fleet that doesn't
-    /// use the Agent, call this operation to register fleet computes.
+    /// For an Anywhere fleet that's running the Amazon GameLift Agent, the Agent handles
+    /// all compute registry tasks for you. For an Anywhere fleet that doesn't use the Agent,
+    /// call this operation to register fleet computes.
     /// </para>
     ///  
     /// <para>
@@ -161,7 +155,7 @@ namespace Amazon.GameLift.Model
         /// fleet ID or ARN value.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string FleetId
         {
             get { return this._fleetId; }

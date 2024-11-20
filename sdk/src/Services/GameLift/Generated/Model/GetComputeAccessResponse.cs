@@ -36,6 +36,7 @@ namespace Amazon.GameLift.Model
     {
         private string _computeArn;
         private string _computeName;
+        private List<ContainerIdentifier> _containerIdentifiers = AWSConfigs.InitializeCollections ? new List<ContainerIdentifier>() : null;
         private Credentials _credentials;
         private string _fleetArn;
         private string _fleetId;
@@ -83,6 +84,26 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ContainerIdentifiers. 
+        /// <para>
+        /// For a managed container fleet, a list of containers on the compute. Use the container
+        /// runtime ID with Docker commands to connect to a specific container. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<ContainerIdentifier> ContainerIdentifiers
+        {
+            get { return this._containerIdentifiers; }
+            set { this._containerIdentifiers = value; }
+        }
+
+        // Check to see if ContainerIdentifiers property is set
+        internal bool IsSetContainerIdentifiers()
+        {
+            return this._containerIdentifiers != null && (this._containerIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property Credentials. 
         /// <para>
         /// A set of temporary Amazon Web Services credentials for use when connecting to the
@@ -110,6 +131,7 @@ namespace Amazon.GameLift.Model
         /// are unique across all Regions. Format is <c>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</c>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string FleetArn
         {
             get { return this._fleetArn; }
@@ -128,6 +150,7 @@ namespace Amazon.GameLift.Model
         /// The ID of the fleet that holds the compute resource to be accessed.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string FleetId
         {
             get { return this._fleetId; }
@@ -143,7 +166,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Target. 
         /// <para>
-        /// (For container fleets only) The instance ID where the compute resource is running.
+        /// The instance ID where the compute resource is running.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=400)]

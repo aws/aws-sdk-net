@@ -13,7 +13,7 @@ namespace AWSSDKDocSamples.Amazon.CloudFront.Generated
     {
         public void CloudFrontCreateFunction()
         {
-            #region to-create-a-function-1699737558249
+            #region example-1
 
             var client = new AmazonCloudFrontClient();
             var response = client.CreateFunction(new CreateFunctionRequest 
@@ -41,7 +41,7 @@ namespace AWSSDKDocSamples.Amazon.CloudFront.Generated
 
         public void CloudFrontCreateKeyValueStore()
         {
-            #region to-create-a-key-value-store-1699751722467
+            #region example-1
 
             var client = new AmazonCloudFrontClient();
             var response = client.CreateKeyValueStore(new CreateKeyValueStoreRequest 
@@ -63,7 +63,7 @@ namespace AWSSDKDocSamples.Amazon.CloudFront.Generated
 
         public void CloudFrontDeleteKeyValueStore()
         {
-            #region to-delete-a-key-value-store-1699751759648
+            #region example-1
 
             var client = new AmazonCloudFrontClient();
             var response = client.DeleteKeyValueStore(new DeleteKeyValueStoreRequest 
@@ -78,7 +78,7 @@ namespace AWSSDKDocSamples.Amazon.CloudFront.Generated
 
         public void CloudFrontDescribeKeyValueStore()
         {
-            #region to-describe-a-key-value-store-1699751788152
+            #region example-1
 
             var client = new AmazonCloudFrontClient();
             var response = client.DescribeKeyValueStore(new DescribeKeyValueStoreRequest 
@@ -94,13 +94,11 @@ namespace AWSSDKDocSamples.Amazon.CloudFront.Generated
 
         public void CloudFrontListKeyValueStores()
         {
-            #region to-get-a-list-of-key-value-store-1699751799198
+            #region example-1
 
             var client = new AmazonCloudFrontClient();
             var response = client.ListKeyValueStores(new ListKeyValueStoresRequest 
             {
-                Marker = "",
-                MaxItems = "100",
                 Status = "READY"
             });
 
@@ -111,7 +109,7 @@ namespace AWSSDKDocSamples.Amazon.CloudFront.Generated
 
         public void CloudFrontUpdateFunction()
         {
-            #region to-update-a-function-1699751865053
+            #region example-1
 
             var client = new AmazonCloudFrontClient();
             var response = client.UpdateFunction(new UpdateFunctionRequest 
@@ -139,7 +137,7 @@ namespace AWSSDKDocSamples.Amazon.CloudFront.Generated
 
         public void CloudFrontUpdateKeyValueStore()
         {
-            #region to-update-a-key-value-store-1699751822090
+            #region example-1
 
             var client = new AmazonCloudFrontClient();
             var response = client.UpdateKeyValueStore(new UpdateKeyValueStoreRequest 

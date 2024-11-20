@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.MWAA.IAmazonMWAA.InvokeRestApi(Amazon.MWAA.Model.InvokeRestApiRequest)" />
+            <member name="M:Amazon.MWAA.AmazonMWAAClient.InvokeRestApi(Amazon.MWAA.Model.InvokeRestApiRequest)" />
+            <member name="T:Amazon.MWAA.Model.InvokeRestApiRequest" />
+            <member name="T:Amazon.MWAA.Model.InvokeRestApiResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Listing Airflow variables."
+                    source=".\AWSSDKDocSamples\MWAA\MWAA.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+</docs>

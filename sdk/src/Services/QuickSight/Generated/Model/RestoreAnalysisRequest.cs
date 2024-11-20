@@ -37,6 +37,7 @@ namespace Amazon.QuickSight.Model
     {
         private string _analysisId;
         private string _awsAccountId;
+        private bool? _restoreToFolders;
 
         /// <summary>
         /// Gets and sets the property AnalysisId. 
@@ -74,6 +75,28 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetAwsAccountId()
         {
             return this._awsAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RestoreToFolders. 
+        /// <para>
+        /// A boolean value that determines if the analysis will be restored to folders that it
+        /// previously resided in. A <c>True</c> value restores analysis back to all folders that
+        /// it previously resided in. A <c>False</c> value restores the analysis but does not
+        /// restore the analysis back to all previously resided folders. Restoring a restricted
+        /// analysis requires this parameter to be set to <c>True</c>.
+        /// </para>
+        /// </summary>
+        public bool RestoreToFolders
+        {
+            get { return this._restoreToFolders.GetValueOrDefault(); }
+            set { this._restoreToFolders = value; }
+        }
+
+        // Check to see if RestoreToFolders property is set
+        internal bool IsSetRestoreToFolders()
+        {
+            return this._restoreToFolders.HasValue; 
         }
 
     }

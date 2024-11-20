@@ -44,6 +44,7 @@ namespace Amazon.IoTFleetWise.Model
         /// The name of a campaign.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public string CampaignName
         {
             get { return this._campaignName; }

@@ -119,7 +119,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The time at which the knowledge base was last updated.
+        /// The time the knowledge base was last updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

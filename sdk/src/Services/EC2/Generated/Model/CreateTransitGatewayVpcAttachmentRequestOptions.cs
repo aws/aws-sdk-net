@@ -99,17 +99,12 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property SecurityGroupReferencingSupport. 
         /// <para>
         /// Enables you to reference a security group across VPCs attached to a transit gateway
-        /// to simplify security group management. 
+        /// to simplify security group management.
         /// </para>
         ///  
         /// <para>
-        /// This option is disabled by default.
-        /// </para>
-        ///  
-        /// <para>
-        /// If you don't enable or disable SecurityGroupReferencingSupport in the request, the
-        /// attachment will inherit the security group referencing support setting on the transit
-        /// gateway.
+        /// This option is set to <c>enable</c> by default. However, at the transit gateway level
+        /// the default is set to <c>disable</c>.
         /// </para>
         ///  
         /// <para>

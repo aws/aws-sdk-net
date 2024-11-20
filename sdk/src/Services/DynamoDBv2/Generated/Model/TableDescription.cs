@@ -58,6 +58,7 @@ namespace Amazon.DynamoDBv2.Model
         private string _tableName;
         private long? _tableSizeBytes;
         private TableStatus _tableStatus;
+        private TableWarmThroughputDescription _warmThroughput;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -771,6 +772,24 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetTableStatus()
         {
             return this._tableStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WarmThroughput. 
+        /// <para>
+        /// Describes the warm throughput value of the base table.
+        /// </para>
+        /// </summary>
+        public TableWarmThroughputDescription WarmThroughput
+        {
+            get { return this._warmThroughput; }
+            set { this._warmThroughput = value; }
+        }
+
+        // Check to see if WarmThroughput property is set
+        internal bool IsSetWarmThroughput()
+        {
+            return this._warmThroughput != null;
         }
 
     }

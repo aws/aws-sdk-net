@@ -21,6 +21,8 @@ using Amazon.DynamoDBv2.Model;
 using System.Globalization;
 using Amazon.Runtime.Telemetry.Tracing;
 
+using Amazon.Runtime.Telemetry.Tracing;
+
 #if AWS_ASYNC_API
 using System.Threading.Tasks;
 #endif
@@ -273,6 +275,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
 
         #region Private/internal members
+
+        internal TracerProvider TracerProvider { get; private set; }
 
         internal TracerProvider TracerProvider { get; private set; }
 

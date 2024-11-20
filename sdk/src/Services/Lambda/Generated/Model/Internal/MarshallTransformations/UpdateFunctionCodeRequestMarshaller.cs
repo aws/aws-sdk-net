@@ -125,6 +125,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.S3ObjectVersion);
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetZipFile())
                     {
                         context.Writer.WritePropertyName("ZipFile");
@@ -132,6 +133,23 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     }
 
                     writer.WriteObjectEnd();
+||||||| Commit version number update changes
+                if(publicRequest.IsSetZipFile())
+                {
+                    context.Writer.WritePropertyName("ZipFile");
+                    context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.ZipFile));
+=======
+                if(publicRequest.IsSetSourceKMSKeyArn())
+                {
+                    context.Writer.WritePropertyName("SourceKMSKeyArn");
+                    context.Writer.Write(publicRequest.SourceKMSKeyArn);
+                }
+
+                if(publicRequest.IsSetZipFile())
+                {
+                    context.Writer.WritePropertyName("ZipFile");
+                    context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.ZipFile));
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
                 }
 
                 request.Content = memoryStream.ToArray();

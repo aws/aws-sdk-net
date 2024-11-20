@@ -15,7 +15,7 @@
                 <code
                     title="To create a function"
                     source=".\AWSSDKDocSamples\CloudFront\CloudFront.GeneratedSamples.cs"
-                    region="to-create-a-function-1699737558249" />
+                    region="example-1" />
             </example>
         </value>
     </doc>
@@ -34,7 +34,7 @@
                 <code
                     title="To create a KeyValueStore"
                     source=".\AWSSDKDocSamples\CloudFront\CloudFront.GeneratedSamples.cs"
-                    region="to-create-a-key-value-store-1699751722467" />
+                    region="example-1" />
             </example>
         </value>
     </doc>
@@ -53,7 +53,7 @@
                 <code
                     title="To delete a KeyValueStore"
                     source=".\AWSSDKDocSamples\CloudFront\CloudFront.GeneratedSamples.cs"
-                    region="to-delete-a-key-value-store-1699751759648" />
+                    region="example-1" />
             </example>
         </value>
     </doc>
@@ -72,7 +72,7 @@
                 <code
                     title="To describe a KeyValueStore"
                     source=".\AWSSDKDocSamples\CloudFront\CloudFront.GeneratedSamples.cs"
-                    region="to-describe-a-key-value-store-1699751788152" />
+                    region="example-1" />
             </example>
         </value>
     </doc>
@@ -91,7 +91,7 @@
                 <code
                     title="To get a list of KeyValueStores"
                     source=".\AWSSDKDocSamples\CloudFront\CloudFront.GeneratedSamples.cs"
-                    region="to-get-a-list-of-key-value-store-1699751799198" />
+                    region="example-1" />
             </example>
         </value>
     </doc>
@@ -110,7 +110,7 @@
                 <code
                     title="To update a function"
                     source=".\AWSSDKDocSamples\CloudFront\CloudFront.GeneratedSamples.cs"
-                    region="to-update-a-function-1699751865053" />
+                    region="example-1" />
             </example>
         </value>
     </doc>
@@ -129,7 +129,7 @@
                 <code
                     title="To update a KeyValueStore"
                     source=".\AWSSDKDocSamples\CloudFront\CloudFront.GeneratedSamples.cs"
-                    region="to-update-a-key-value-store-1699751822090" />
+                    region="example-1" />
             </example>
         </value>
     </doc>

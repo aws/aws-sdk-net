@@ -91,8 +91,33 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                         var marshaller = IdentityProviderConfigurationMarshaller.Instance;
                         marshaller.Marshall(publicRequest.IdentityProviderConfiguration, context);
 
+<<<<<<< HEAD
                         context.Writer.WriteObjectEnd();
                     }
+||||||| Commit version number update changes
+                if(publicRequest.IsSetRoleArn())
+                {
+                    context.Writer.WritePropertyName("roleArn");
+                    context.Writer.Write(publicRequest.RoleArn);
+                }
+=======
+                if(publicRequest.IsSetOrigins())
+                {
+                    context.Writer.WritePropertyName("origins");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestOriginsListValue in publicRequest.Origins)
+                    {
+                            context.Writer.Write(publicRequestOriginsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetRoleArn())
+                {
+                    context.Writer.WritePropertyName("roleArn");
+                    context.Writer.Write(publicRequest.RoleArn);
+                }
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
                     if(publicRequest.IsSetRoleArn())
                     {

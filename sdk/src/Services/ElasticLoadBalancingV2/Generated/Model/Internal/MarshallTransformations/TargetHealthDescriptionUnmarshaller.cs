@@ -55,6 +55,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("AdministrativeOverride", targetDepth))
+                    {
+                        var unmarshaller = AdministrativeOverrideUnmarshaller.Instance;
+                        unmarshalledObject.AdministrativeOverride = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("AnomalyDetection", targetDepth))
                     {
                         var unmarshaller = AnomalyDetectionUnmarshaller.Instance;

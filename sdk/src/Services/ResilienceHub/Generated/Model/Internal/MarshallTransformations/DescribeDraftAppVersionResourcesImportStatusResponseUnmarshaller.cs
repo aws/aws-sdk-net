@@ -64,6 +64,12 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                     response.AppVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("errorDetails", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ErrorDetail, ErrorDetailUnmarshaller>(ErrorDetailUnmarshaller.Instance);
+                    response.ErrorDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("errorMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

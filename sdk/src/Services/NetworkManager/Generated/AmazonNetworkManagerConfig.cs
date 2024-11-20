@@ -34,10 +34,16 @@ namespace Amazon.NetworkManager
     public partial class AmazonNetworkManagerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("NetworkManager", "4.0.0.0");
 
         private static readonly AmazonNetworkManagerEndpointResolver EndpointResolver =
             new AmazonNetworkManagerEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("NetworkManager", "3.7.400.26");
+=======
+            InternalSDKUtils.BuildUserAgentString("NetworkManager", "3.7.400.53");
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
         private string _userAgent = UserAgentString;
         ///<summary>

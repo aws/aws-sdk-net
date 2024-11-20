@@ -48,6 +48,12 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetBusinessRegistrationNumber())
+            {
+                context.Writer.WritePropertyName("businessRegistrationNumber");
+                context.Writer.Write(requestObject.BusinessRegistrationNumber);
+            }
+
             if(requestObject.IsSetServiceTaxCodes())
             {
                 context.Writer.WritePropertyName("serviceTaxCodes");
@@ -57,6 +63,12 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
                         context.Writer.Write(requestObjectServiceTaxCodesListValue);
                 }
                 context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetTaxInformationNumber())
+            {
+                context.Writer.WritePropertyName("taxInformationNumber");
+                context.Writer.Write(requestObject.TaxInformationNumber);
             }
 
         }

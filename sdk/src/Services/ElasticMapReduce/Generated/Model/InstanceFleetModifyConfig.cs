@@ -41,11 +41,31 @@ namespace Amazon.ElasticMapReduce.Model
     /// </summary>
     public partial class InstanceFleetModifyConfig
     {
+        private string _context;
         private string _instanceFleetId;
         private List<InstanceTypeConfig> _instanceTypeConfigs = AWSConfigs.InitializeCollections ? new List<InstanceTypeConfig>() : null;
         private InstanceFleetResizingSpecifications _resizeSpecifications;
         private int? _targetOnDemandCapacity;
         private int? _targetSpotCapacity;
+
+        /// <summary>
+        /// Gets and sets the property Context. 
+        /// <para>
+        /// Reserved.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string Context
+        {
+            get { return this._context; }
+            set { this._context = value; }
+        }
+
+        // Check to see if Context property is set
+        internal bool IsSetContext()
+        {
+            return this._context != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InstanceFleetId. 

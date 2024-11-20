@@ -107,7 +107,69 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     writer.WriteObjectEnd();
                 }
 
+<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
+||||||| Commit version number update changes
+                if(publicRequest.IsSetGroupMembers())
+                {
+                    context.Writer.WritePropertyName("groupMembers");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = GroupMembersMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.GroupMembers, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetGroupName())
+                {
+                    context.Writer.WritePropertyName("groupName");
+                    context.Writer.Write(publicRequest.GroupName);
+                }
+
+                if(publicRequest.IsSetType())
+                {
+                    context.Writer.WritePropertyName("type");
+                    context.Writer.Write(publicRequest.Type);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+=======
+                if(publicRequest.IsSetGroupMembers())
+                {
+                    context.Writer.WritePropertyName("groupMembers");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = GroupMembersMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.GroupMembers, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetGroupName())
+                {
+                    context.Writer.WritePropertyName("groupName");
+                    context.Writer.Write(publicRequest.GroupName);
+                }
+
+                if(publicRequest.IsSetRoleArn())
+                {
+                    context.Writer.WritePropertyName("roleArn");
+                    context.Writer.Write(publicRequest.RoleArn);
+                }
+
+                if(publicRequest.IsSetType())
+                {
+                    context.Writer.WritePropertyName("type");
+                    context.Writer.Write(publicRequest.Type);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
             }
 
 

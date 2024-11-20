@@ -56,6 +56,7 @@ namespace Amazon.OpenSearchService.Model
         private Dictionary<string, string> _endpoints = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _endpointV2;
         private string _engineVersion;
+        private IdentityCenterOptions _identityCenterOptions;
         private IPAddressType _ipAddressType;
         private Dictionary<string, LogPublishingOption> _logPublishingOptions = AWSConfigs.InitializeCollections ? new Dictionary<string, LogPublishingOption>() : null;
         private List<ModifyingProperties> _modifyingProperties = AWSConfigs.InitializeCollections ? new List<ModifyingProperties>() : null;
@@ -492,6 +493,24 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetEngineVersion()
         {
             return this._engineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdentityCenterOptions. 
+        /// <para>
+        /// Container for IAM Identity Center Option control for the domain.
+        /// </para>
+        /// </summary>
+        public IdentityCenterOptions IdentityCenterOptions
+        {
+            get { return this._identityCenterOptions; }
+            set { this._identityCenterOptions = value; }
+        }
+
+        // Check to see if IdentityCenterOptions property is set
+        internal bool IsSetIdentityCenterOptions()
+        {
+            return this._identityCenterOptions != null;
         }
 
         /// <summary>

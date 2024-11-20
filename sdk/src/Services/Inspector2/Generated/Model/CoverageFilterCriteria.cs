@@ -267,7 +267,7 @@ namespace Amazon.Inspector2.Model
         /// Gets and sets the property ScanMode. 
         /// <para>
         /// The filter to search for Amazon EC2 instance coverage by scan mode. Valid values are
-        /// <c>EC2_SSM_AGENT_BASED</c> and <c>EC2_HYBRID</c>.
+        /// <c>EC2_SSM_AGENT_BASED</c> and <c>EC2_AGENTLESS</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

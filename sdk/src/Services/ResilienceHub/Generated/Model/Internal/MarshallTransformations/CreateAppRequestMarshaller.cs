@@ -65,6 +65,7 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             {
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
+<<<<<<< HEAD
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;
                     writer.WriteObjectStart();
@@ -74,6 +75,55 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                         context.Writer.WritePropertyName("assessmentSchedule");
                         context.Writer.Write(publicRequest.AssessmentSchedule);
                     }
+||||||| Commit version number update changes
+                    context.Writer.WritePropertyName("assessmentSchedule");
+                    context.Writer.Write(publicRequest.AssessmentSchedule);
+                }
+
+                if(publicRequest.IsSetClientToken())
+                {
+                    context.Writer.WritePropertyName("clientToken");
+                    context.Writer.Write(publicRequest.ClientToken);
+                }
+
+                else if(!(publicRequest.IsSetClientToken()))
+                {
+                    context.Writer.WritePropertyName("clientToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());
+                }
+                if(publicRequest.IsSetDescription())
+                {
+                    context.Writer.WritePropertyName("description");
+                    context.Writer.Write(publicRequest.Description);
+                }
+=======
+                    context.Writer.WritePropertyName("assessmentSchedule");
+                    context.Writer.Write(publicRequest.AssessmentSchedule);
+                }
+
+                if(publicRequest.IsSetAwsApplicationArn())
+                {
+                    context.Writer.WritePropertyName("awsApplicationArn");
+                    context.Writer.Write(publicRequest.AwsApplicationArn);
+                }
+
+                if(publicRequest.IsSetClientToken())
+                {
+                    context.Writer.WritePropertyName("clientToken");
+                    context.Writer.Write(publicRequest.ClientToken);
+                }
+
+                else if(!(publicRequest.IsSetClientToken()))
+                {
+                    context.Writer.WritePropertyName("clientToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());
+                }
+                if(publicRequest.IsSetDescription())
+                {
+                    context.Writer.WritePropertyName("description");
+                    context.Writer.Write(publicRequest.Description);
+                }
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
                     if(publicRequest.IsSetClientToken())
                     {

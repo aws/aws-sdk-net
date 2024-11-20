@@ -70,6 +70,12 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetExpressionName())
+            {
+                context.Writer.WritePropertyName("ExpressionName");
+                context.Writer.Write(requestObject.ExpressionName);
+            }
+
             if(requestObject.IsSetResourceType())
             {
                 context.Writer.WritePropertyName("ResourceType");

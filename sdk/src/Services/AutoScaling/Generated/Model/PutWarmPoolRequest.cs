@@ -43,8 +43,9 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// You can view the instances in the warm pool using the <a>DescribeWarmPool</a> API
-    /// call. If you are no longer using a warm pool, you can delete it by calling the <a>DeleteWarmPool</a>
+    /// You can view the instances in the warm pool using the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeWarmPool.html">DescribeWarmPool</a>
+    /// API call. If you are no longer using a warm pool, you can delete it by calling the
+    /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DeleteWarmPool.html">DeleteWarmPool</a>
     /// API.
     /// </para>
     ///  

@@ -34,10 +34,16 @@ namespace Amazon.MediaPackage
     public partial class AmazonMediaPackageConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("MediaPackage", "4.0.0.0");
 
         private static readonly AmazonMediaPackageEndpointResolver EndpointResolver =
             new AmazonMediaPackageEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("MediaPackage", "3.7.400.26");
+=======
+            InternalSDKUtils.BuildUserAgentString("MediaPackage", "3.7.400.53");
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
         private string _userAgent = UserAgentString;
         ///<summary>

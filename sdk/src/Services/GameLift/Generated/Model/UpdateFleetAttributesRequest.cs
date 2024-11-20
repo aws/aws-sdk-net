@@ -104,7 +104,7 @@ namespace Amazon.GameLift.Model
         /// the fleet ID or ARN value.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string FleetId
         {
             get { return this._fleetId; }
@@ -164,8 +164,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// The game session protection policy to apply to all new game sessions created in this
         /// fleet. Game sessions that already exist are not affected. You can set protection for
-        /// individual game sessions using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>
-        /// .
+        /// individual game sessions using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>.
         /// </para>
         ///  <ul> <li> 
         /// <para>

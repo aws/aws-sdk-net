@@ -79,7 +79,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property FieldLogLevel. 
         /// <para>
-        /// The field logging level. Values can be NONE, ERROR, INFO, DEBUG, or ALL.
+        /// The field logging level. Values can be NONE, ERROR, or ALL.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -87,8 +87,7 @@ namespace Amazon.AppSync.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>ERROR</b>: Logs the following information <b>only</b> for the fields that are
-        /// in the error category:
+        ///  <b>ERROR</b>: Logs the following information only for the fields that are in error:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -104,41 +103,6 @@ namespace Amazon.AppSync.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <b>INFO</b>: Logs the following information <b>only</b> for the fields that are in
-        /// the info and error categories:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Info-level messages.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The user messages sent through <c>$util.log.info</c> and <c>console.log</c>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Field-level tracing and mapping logs are not shown.
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <b>DEBUG</b>: Logs the following information <b>only</b> for the fields that are
-        /// in the debug, info, and error categories:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Debug-level messages.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The user messages sent through <c>$util.log.info</c>, <c>$util.log.debug</c>, <c>console.log</c>,
-        /// and <c>console.debug</c>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Field-level tracing and mapping logs are not shown.
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
         ///  <b>ALL</b>: The following information is logged for all fields in the query:
         /// </para>
         ///  <ul> <li> 
@@ -147,7 +111,7 @@ namespace Amazon.AppSync.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The generated request/response functions that were resolved for each field.
+        /// The generated request/response functions that got resolved for each field.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>

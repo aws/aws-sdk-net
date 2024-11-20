@@ -547,6 +547,8 @@ namespace AWSSDK_DotNet.UnitTests
 
             mock.Verify(x => x.Config, Times.AtLeastOnce());
 
+            mock.Verify(x => x.Config, Times.AtLeastOnce());
+
             mock.VerifyNoOtherCalls();
         }
 
@@ -563,6 +565,8 @@ namespace AWSSDK_DotNet.UnitTests
             // A boolean isn't valid as a primary key, so we expect an exception 
             Assert.ThrowsException<InvalidOperationException>(() => 
                 context.Load<HashKeyConverter_DateTimeToBool>(new DateTime(1024, DateTimeKind.Utc)));
+
+            mock.Verify(x => x.Config, Times.AtLeastOnce());
 
             mock.Verify(x => x.Config, Times.AtLeastOnce());
 

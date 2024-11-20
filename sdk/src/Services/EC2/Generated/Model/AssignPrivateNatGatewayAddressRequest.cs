@@ -32,7 +32,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the AssignPrivateNatGatewayAddress operation.
     /// Assigns private IPv4 addresses to a private NAT gateway. For more information, see
-    /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-working-with">Work
+    /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-working-with.html">Work
     /// with NAT gateways</a> in the <i>Amazon VPC User Guide</i>.
     /// </summary>
     public partial class AssignPrivateNatGatewayAddressRequest : AmazonEC2Request

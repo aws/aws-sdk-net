@@ -71,6 +71,7 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             {
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
                 {
+<<<<<<< HEAD
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;
                     writer.WriteObjectStart();
@@ -128,6 +129,116 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     }
 
                     writer.WriteObjectEnd();
+||||||| Commit version number update changes
+                    context.Writer.WritePropertyName("authenticationConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = WebExperienceAuthConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AuthenticationConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetIdentityProviderConfiguration())
+                {
+                    context.Writer.WritePropertyName("identityProviderConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = IdentityProviderConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.IdentityProviderConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetRoleArn())
+                {
+                    context.Writer.WritePropertyName("roleArn");
+                    context.Writer.Write(publicRequest.RoleArn);
+                }
+
+                if(publicRequest.IsSetSamplePromptsControlMode())
+                {
+                    context.Writer.WritePropertyName("samplePromptsControlMode");
+                    context.Writer.Write(publicRequest.SamplePromptsControlMode);
+                }
+
+                if(publicRequest.IsSetSubtitle())
+                {
+                    context.Writer.WritePropertyName("subtitle");
+                    context.Writer.Write(publicRequest.Subtitle);
+                }
+
+                if(publicRequest.IsSetTitle())
+                {
+                    context.Writer.WritePropertyName("title");
+                    context.Writer.Write(publicRequest.Title);
+                }
+
+                if(publicRequest.IsSetWelcomeMessage())
+                {
+                    context.Writer.WritePropertyName("welcomeMessage");
+                    context.Writer.Write(publicRequest.WelcomeMessage);
+=======
+                    context.Writer.WritePropertyName("authenticationConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = WebExperienceAuthConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AuthenticationConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetIdentityProviderConfiguration())
+                {
+                    context.Writer.WritePropertyName("identityProviderConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = IdentityProviderConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.IdentityProviderConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetOrigins())
+                {
+                    context.Writer.WritePropertyName("origins");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestOriginsListValue in publicRequest.Origins)
+                    {
+                            context.Writer.Write(publicRequestOriginsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetRoleArn())
+                {
+                    context.Writer.WritePropertyName("roleArn");
+                    context.Writer.Write(publicRequest.RoleArn);
+                }
+
+                if(publicRequest.IsSetSamplePromptsControlMode())
+                {
+                    context.Writer.WritePropertyName("samplePromptsControlMode");
+                    context.Writer.Write(publicRequest.SamplePromptsControlMode);
+                }
+
+                if(publicRequest.IsSetSubtitle())
+                {
+                    context.Writer.WritePropertyName("subtitle");
+                    context.Writer.Write(publicRequest.Subtitle);
+                }
+
+                if(publicRequest.IsSetTitle())
+                {
+                    context.Writer.WritePropertyName("title");
+                    context.Writer.Write(publicRequest.Title);
+                }
+
+                if(publicRequest.IsSetWelcomeMessage())
+                {
+                    context.Writer.WritePropertyName("welcomeMessage");
+                    context.Writer.Write(publicRequest.WelcomeMessage);
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
                 }
 
                 request.Content = memoryStream.ToArray();

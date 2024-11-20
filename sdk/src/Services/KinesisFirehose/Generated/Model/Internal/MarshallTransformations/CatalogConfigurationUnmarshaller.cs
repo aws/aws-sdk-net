@@ -72,6 +72,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                     unmarshalledObject.CatalogARN = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("WarehouseLocation", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.WarehouseLocation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

@@ -31,7 +31,7 @@ namespace Amazon.SecurityLake.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSubscribers operation.
-    /// List all subscribers for the specific Amazon Security Lake account ID. You can retrieve
+    /// Lists all subscribers for the specific Amazon Security Lake account ID. You can retrieve
     /// a list of subscriptions associated with a specific organization or Amazon Web Services
     /// account.
     /// </summary>

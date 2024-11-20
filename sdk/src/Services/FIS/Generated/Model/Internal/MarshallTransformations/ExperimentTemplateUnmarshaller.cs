@@ -96,6 +96,12 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExperimentOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("experimentReportConfiguration", targetDepth))
+                {
+                    var unmarshaller = ExperimentTemplateReportConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ExperimentReportConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

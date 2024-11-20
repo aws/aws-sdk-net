@@ -26,6 +26,7 @@ using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Telemetry.Tracing;
+using Amazon.Runtime.Telemetry.Tracing;
 
 namespace Amazon.DynamoDBv2.DocumentModel
 {

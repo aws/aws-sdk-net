@@ -40,6 +40,7 @@ namespace Amazon.WorkMail.Model
     {
         private string _clientToken;
         private bool? _deleteDirectory;
+        private bool? _deleteIdentityCenterApplication;
         private bool? _forceDelete;
         private string _organizationId;
 
@@ -79,6 +80,25 @@ namespace Amazon.WorkMail.Model
         internal bool IsSetDeleteDirectory()
         {
             return this._deleteDirectory.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeleteIdentityCenterApplication. 
+        /// <para>
+        /// Deletes IAM Identity Center application for WorkMail. This action does not affect
+        /// authentication settings for any organization.
+        /// </para>
+        /// </summary>
+        public bool DeleteIdentityCenterApplication
+        {
+            get { return this._deleteIdentityCenterApplication.GetValueOrDefault(); }
+            set { this._deleteIdentityCenterApplication = value; }
+        }
+
+        // Check to see if DeleteIdentityCenterApplication property is set
+        internal bool IsSetDeleteIdentityCenterApplication()
+        {
+            return this._deleteIdentityCenterApplication.HasValue; 
         }
 
         /// <summary>

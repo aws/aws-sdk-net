@@ -34,10 +34,16 @@ namespace Amazon.LakeFormation
     public partial class AmazonLakeFormationConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("LakeFormation", "4.0.0.0");
 
         private static readonly AmazonLakeFormationEndpointResolver EndpointResolver =
             new AmazonLakeFormationEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("LakeFormation", "3.7.400.26");
+=======
+            InternalSDKUtils.BuildUserAgentString("LakeFormation", "3.7.401.8");
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
         private string _userAgent = UserAgentString;
         ///<summary>

@@ -97,10 +97,33 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Description);
                     }
 
+<<<<<<< HEAD
                     if(publicRequest.IsSetExperimentOptions())
                     {
                         context.Writer.WritePropertyName("experimentOptions");
                         context.Writer.WriteObjectStart();
+||||||| Commit version number update changes
+                if(publicRequest.IsSetLogConfiguration())
+                {
+                    context.Writer.WritePropertyName("logConfiguration");
+                    context.Writer.WriteObjectStart();
+=======
+                if(publicRequest.IsSetExperimentReportConfiguration())
+                {
+                    context.Writer.WritePropertyName("experimentReportConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = UpdateExperimentTemplateReportConfigurationInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ExperimentReportConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetLogConfiguration())
+                {
+                    context.Writer.WritePropertyName("logConfiguration");
+                    context.Writer.WriteObjectStart();
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
                         var marshaller = UpdateExperimentTemplateExperimentOptionsInputMarshaller.Instance;
                         marshaller.Marshall(publicRequest.ExperimentOptions, context);

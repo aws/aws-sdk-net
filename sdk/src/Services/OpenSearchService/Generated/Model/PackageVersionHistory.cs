@@ -36,6 +36,7 @@ namespace Amazon.OpenSearchService.Model
     {
         private string _commitMessage;
         private DateTime? _createdAt;
+        private PackageConfiguration _packageConfiguration;
         private string _packageVersion;
         private PluginProperties _pluginProperties;
 
@@ -74,6 +75,24 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PackageConfiguration. 
+        /// <para>
+        /// The configuration details for a specific version of a package.
+        /// </para>
+        /// </summary>
+        public PackageConfiguration PackageConfiguration
+        {
+            get { return this._packageConfiguration; }
+            set { this._packageConfiguration = value; }
+        }
+
+        // Check to see if PackageConfiguration property is set
+        internal bool IsSetPackageConfiguration()
+        {
+            return this._packageConfiguration != null;
         }
 
         /// <summary>

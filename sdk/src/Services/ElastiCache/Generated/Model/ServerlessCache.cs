@@ -110,8 +110,8 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property DailySnapshotTime. 
         /// <para>
         /// The daily time that a cache snapshot will be created. Default is NULL, i.e. snapshots
-        /// will not be created at a specific time on a daily basis. Available for Redis OSS and
-        /// Serverless Memcached only.
+        /// will not be created at a specific time on a daily basis. Available for Valkey, Redis
+        /// OSS and Serverless Memcached only.
         /// </para>
         /// </summary>
         public string DailySnapshotTime
@@ -287,7 +287,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property SnapshotRetentionLimit. 
         /// <para>
         /// The current setting for the number of serverless cache snapshots the system will retain.
-        /// Available for Redis OSS and Serverless Memcached only.
+        /// Available for Valkey, Redis OSS and Serverless Memcached only.
         /// </para>
         /// </summary>
         public int? SnapshotRetentionLimit
@@ -346,7 +346,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property UserGroupId. 
         /// <para>
         /// The identifier of the user group associated with the serverless cache. Available for
-        /// Redis OSS only. Default is NULL.
+        /// Valkey and Redis OSS only. Default is NULL.
         /// </para>
         /// </summary>
         public string UserGroupId

@@ -202,7 +202,7 @@ namespace Amazon.CloudWatch.Model
         /// <para>
         /// The results that are returned are an approximation of the value you specify. There
         /// is a low probability that the returned results include metrics with last published
-        /// data as much as 40 minutes more than the specified time interval.
+        /// data as much as 50 minutes more than the specified time interval.
         /// </para>
         /// </summary>
         public RecentlyActive RecentlyActive

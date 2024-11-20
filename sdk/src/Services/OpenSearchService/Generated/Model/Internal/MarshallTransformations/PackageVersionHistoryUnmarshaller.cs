@@ -78,6 +78,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PackageConfiguration", targetDepth))
+                {
+                    var unmarshaller = PackageConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.PackageConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PackageVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

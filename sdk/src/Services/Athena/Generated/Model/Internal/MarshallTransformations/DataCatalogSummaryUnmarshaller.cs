@@ -72,24 +72,6 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                     unmarshalledObject.CatalogName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ConnectionType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Error", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Error = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("Type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

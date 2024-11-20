@@ -34,6 +34,10 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTFleetWise.Model.CreateCampaignResponse.Arn</property>
+    <pattern>arn:aws:iotfleetwise:[a-z0-9-]+:[0-9]{12}:campaign/[a-zA-Z\d\-_:]{1,100}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTFleetWise.Model.CreateCampaignResponse.Name</property>
     <min>1</min>
     <max>100</max>
@@ -130,6 +134,10 @@
     <pattern>[a-zA-Z\d\-_:]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTFleetWise.Model.DeleteCampaignResponse.Arn</property>
+    <pattern>arn:aws:iotfleetwise:[a-z0-9-]+:[0-9]{12}:campaign/[a-zA-Z\d\-_:]{1,100}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTFleetWise.Model.DeleteCampaignResponse.Name</property>
     <min>1</min>
     <max>100</max>
@@ -212,6 +220,10 @@
     <min>1</min>
     <max>100</max>
     <pattern>[a-zA-Z\d\-_:]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTFleetWise.Model.GetCampaignResponse.Arn</property>
+    <pattern>arn:aws:iotfleetwise:[a-z0-9-]+:[0-9]{12}:campaign/[a-zA-Z\d\-_:]{1,100}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTFleetWise.Model.GetCampaignResponse.Description</property>
@@ -378,6 +390,12 @@
     <property>Amazon.IoTFleetWise.Model.ListCampaignsRequest.NextToken</property>
     <min>1</min>
     <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTFleetWise.Model.ListCampaignsRequest.Status</property>
+    <min>7</min>
+    <max>20</max>
+    <pattern>[A-Z_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTFleetWise.Model.ListCampaignsResponse.NextToken</property>
@@ -553,6 +571,7 @@
     <property>Amazon.IoTFleetWise.Model.ListTagsForResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>1011</max>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTFleetWise.Model.ListVehiclesRequest.MaxResults</property>
@@ -599,11 +618,13 @@
     <property>Amazon.IoTFleetWise.Model.TagResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>1011</max>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTFleetWise.Model.UntagResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>1011</max>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTFleetWise.Model.UpdateCampaignRequest.Description</property>
@@ -616,6 +637,10 @@
     <min>1</min>
     <max>100</max>
     <pattern>[a-zA-Z\d\-_:]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTFleetWise.Model.UpdateCampaignResponse.Arn</property>
+    <pattern>arn:aws:iotfleetwise:[a-z0-9-]+:[0-9]{12}:campaign/[a-zA-Z\d\-_:]{1,100}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTFleetWise.Model.UpdateCampaignResponse.Name</property>
@@ -768,6 +793,10 @@
     <pattern>[^\u0000-\u001F\u007F]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTFleetWise.Model.CampaignSummary.Arn</property>
+    <pattern>arn:aws:iotfleetwise:[a-z0-9-]+:[0-9]{12}:campaign/[a-zA-Z\d\-_:]{1,100}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTFleetWise.Model.CampaignSummary.Description</property>
     <min>1</min>
     <max>2048</max>
@@ -825,6 +854,7 @@
   <property-value-rule>
     <property>Amazon.IoTFleetWise.Model.ConditionBasedCollectionScheme.ConditionLanguageVersion</property>
     <min>1</min>
+    <max>1</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTFleetWise.Model.ConditionBasedCollectionScheme.Expression</property>
@@ -1110,7 +1140,7 @@
   <property-value-rule>
     <property>Amazon.IoTFleetWise.Model.TimeBasedCollectionScheme.PeriodMs</property>
     <min>10000</min>
-    <max>60000</max>
+    <max>86400000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTFleetWise.Model.TimestreamConfig.ExecutionRoleArn</property>
@@ -1170,6 +1200,12 @@
     <property>Amazon.IoTFleetWise.Model.VehicleMiddleware.Name</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTFleetWise.Model.VehicleStatus.CampaignName</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-zA-Z\d\-_:]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTFleetWise.Model.VehicleStatus.VehicleName</property>

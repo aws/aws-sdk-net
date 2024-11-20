@@ -80,13 +80,21 @@ namespace Amazon.IVSRealTime.Model
         /// <summary>
         /// Gets and sets the property Height. 
         /// <para>
-        /// Video-resolution height. Note that the maximum value is determined by <c>width</c>
-        /// times <c>height</c>, such that the maximum total pixels is 2073600 (1920x1080 or 1080x1920).
-        /// Default: 720.
+        /// Video-resolution height. This must be an even number. Note that the maximum value
+        /// is determined by <c>width</c> times <c>height</c>, such that the maximum total pixels
+        /// is 2073600 (1920x1080 or 1080x1920). Default: 720.
         /// </para>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Min=1, Max=1920)]
         public int? Height
+||||||| Commit version number update changes
+        [AWSProperty(Min=1, Max=1920)]
+        public int Height
+=======
+        [AWSProperty(Min=2, Max=1920)]
+        public int Height
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
         {
             get { return this._height; }
             set { this._height = value; }
@@ -101,13 +109,21 @@ namespace Amazon.IVSRealTime.Model
         /// <summary>
         /// Gets and sets the property Width. 
         /// <para>
-        /// Video-resolution width. Note that the maximum value is determined by <c>width</c>
-        /// times <c>height</c>, such that the maximum total pixels is 2073600 (1920x1080 or 1080x1920).
-        /// Default: 1280.
+        /// Video-resolution width. This must be an even number. Note that the maximum value is
+        /// determined by <c>width</c> times <c>height</c>, such that the maximum total pixels
+        /// is 2073600 (1920x1080 or 1080x1920). Default: 1280.
         /// </para>
         /// </summary>
+<<<<<<< HEAD
         [AWSProperty(Min=1, Max=1920)]
         public int? Width
+||||||| Commit version number update changes
+        [AWSProperty(Min=1, Max=1920)]
+        public int Width
+=======
+        [AWSProperty(Min=2, Max=1920)]
+        public int Width
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
         {
             get { return this._width; }
             set { this._width = value; }

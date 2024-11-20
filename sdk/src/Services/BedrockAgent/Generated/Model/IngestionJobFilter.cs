@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Defines a filter by which to filter the results.
+    /// The definition of a filter to filter the data.
     /// </summary>
     public partial class IngestionJobFilter
     {
@@ -41,7 +41,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property Attribute. 
         /// <para>
-        /// The attribute by which to filter the results.
+        /// The name of field or attribute to apply the filter.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property Operator. 
         /// <para>
-        /// The operation to carry out between the attribute and the values.
+        /// The operation to apply to the field or attribute.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,7 +79,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// A list of values for the attribute.
+        /// A list of values that belong to the field or attribute.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10)]

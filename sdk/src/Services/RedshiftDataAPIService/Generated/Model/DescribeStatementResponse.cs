@@ -46,6 +46,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         private string _queryString;
         private long? _redshiftPid;
         private long? _redshiftQueryId;
+        private ResultFormatString _resultFormat;
         private long? _resultRows;
         private long? _resultSize;
         private string _secretArn;
@@ -276,6 +277,24 @@ namespace Amazon.RedshiftDataAPIService.Model
         internal bool IsSetRedshiftQueryId()
         {
             return this._redshiftQueryId.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResultFormat. 
+        /// <para>
+        /// The data format of the result of the SQL statement.
+        /// </para>
+        /// </summary>
+        public ResultFormatString ResultFormat
+        {
+            get { return this._resultFormat; }
+            set { this._resultFormat = value; }
+        }
+
+        // Check to see if ResultFormat property is set
+        internal bool IsSetResultFormat()
+        {
+            return this._resultFormat != null;
         }
 
         /// <summary>

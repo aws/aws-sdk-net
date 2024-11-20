@@ -40,7 +40,7 @@ namespace Amazon.Connect.Model
     ///  </li> <li> 
     /// <para>
     ///  Duration labels, such as <c>NON_TALK_TIME</c>, <c>CONTACT_DURATION</c>, <c>AGENT_INTERACTION_DURATION</c>,
-    /// <c>CUSTOMER_HOLD_TIME</c> have a minimum value of 0 and maximum value of 28800.
+    /// <c>CUSTOMER_HOLD_TIME</c> have a minimum value of 0 and maximum value of 63072000.
     /// </para>
     ///  </li> <li> 
     /// <para>

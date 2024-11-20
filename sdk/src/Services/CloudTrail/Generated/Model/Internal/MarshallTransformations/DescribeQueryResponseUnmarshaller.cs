@@ -70,6 +70,12 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                     response.ErrorMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Prompt", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Prompt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("QueryId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

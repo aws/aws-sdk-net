@@ -34,10 +34,16 @@ namespace Amazon.AuditManager
     public partial class AmazonAuditManagerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("AuditManager", "4.0.0.0");
 
         private static readonly AmazonAuditManagerEndpointResolver EndpointResolver =
             new AmazonAuditManagerEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("AuditManager", "3.7.400.26");
+=======
+            InternalSDKUtils.BuildUserAgentString("AuditManager", "3.7.400.53");
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
         private string _userAgent = UserAgentString;
         ///<summary>

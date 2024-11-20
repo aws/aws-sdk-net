@@ -114,16 +114,6 @@ namespace Amazon.VerifiedPermissions.Model
         /// Specifies the details required to communicate with the identity provider (IdP) associated
         /// with this identity source.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// At this time, the only valid member of this structure is a Amazon Cognito user pool
-        /// configuration.
-        /// </para>
-        ///  
-        /// <para>
-        /// You must specify a <c>userPoolArn</c>, and optionally, a <c>ClientId</c>.
-        /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public UpdateConfiguration UpdateConfiguration

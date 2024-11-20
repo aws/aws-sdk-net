@@ -14,6 +14,7 @@
  */
 
 using Amazon.Runtime.Telemetry.Tracing;
+using Amazon.Runtime.Telemetry.Tracing;
 using System.Threading;
 using System.Threading.Tasks;
 

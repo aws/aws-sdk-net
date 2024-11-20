@@ -38,7 +38,27 @@ namespace Amazon.BedrockAgent.Model
     /// </summary>
     public partial class PromptFlowNodeConfiguration
     {
+        private GuardrailConfiguration _guardrailConfiguration;
         private PromptFlowNodeSourceConfiguration _sourceConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property GuardrailConfiguration. 
+        /// <para>
+        /// Contains configurations for a guardrail to apply to the prompt in this node and the
+        /// response generated from it.
+        /// </para>
+        /// </summary>
+        public GuardrailConfiguration GuardrailConfiguration
+        {
+            get { return this._guardrailConfiguration; }
+            set { this._guardrailConfiguration = value; }
+        }
+
+        // Check to see if GuardrailConfiguration property is set
+        internal bool IsSetGuardrailConfiguration()
+        {
+            return this._guardrailConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SourceConfiguration. 

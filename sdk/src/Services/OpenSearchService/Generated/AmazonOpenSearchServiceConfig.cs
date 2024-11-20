@@ -34,10 +34,16 @@ namespace Amazon.OpenSearchService
     public partial class AmazonOpenSearchServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
+<<<<<<< HEAD
             InternalSDKUtils.BuildUserAgentString("OpenSearch", "4.0.0.0");
 
         private static readonly AmazonOpenSearchServiceEndpointResolver EndpointResolver =
             new AmazonOpenSearchServiceEndpointResolver();
+||||||| Commit version number update changes
+            InternalSDKUtils.BuildUserAgentString("OpenSearch", "3.7.400.26");
+=======
+            InternalSDKUtils.BuildUserAgentString("OpenSearch", "3.7.403.5");
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
 
         private string _userAgent = UserAgentString;
         ///<summary>

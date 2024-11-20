@@ -66,7 +66,27 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
             request.ResourcePath = "/applications/{applicationId}/batch-job";
             using (MemoryStream memoryStream = new MemoryStream())
             {
+<<<<<<< HEAD
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+||||||| Commit version number update changes
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetBatchJobIdentifier())
+=======
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAuthSecretsManagerArn())
+                {
+                    context.Writer.WritePropertyName("authSecretsManagerArn");
+                    context.Writer.Write(publicRequest.AuthSecretsManagerArn);
+                }
+
+                if(publicRequest.IsSetBatchJobIdentifier())
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
                 {
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;

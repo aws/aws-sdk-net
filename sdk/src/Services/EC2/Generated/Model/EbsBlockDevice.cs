@@ -185,8 +185,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// Identifier (key ID, key alias, ID ARN, or alias ARN) for a customer managed CMK under
-        /// which the EBS volume is encrypted.
+        /// Identifier (key ID, key alias, key ARN, or alias ARN) of the customer managed KMS
+        /// key to use for EBS encryption.
         /// </para>
         ///  
         /// <para>

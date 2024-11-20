@@ -63,7 +63,38 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             request.ResourcePath = "/2021-01-01/packages";
             using (MemoryStream memoryStream = new MemoryStream())
             {
+<<<<<<< HEAD
                 using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+||||||| Commit version number update changes
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetPackageDescription())
+=======
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetEngineVersion())
+                {
+                    context.Writer.WritePropertyName("EngineVersion");
+                    context.Writer.Write(publicRequest.EngineVersion);
+                }
+
+                if(publicRequest.IsSetPackageConfiguration())
+                {
+                    context.Writer.WritePropertyName("PackageConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PackageConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PackageConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetPackageDescription())
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
                 {
                     JsonWriter writer = new JsonWriter(streamWriter);
                     writer.Validate = false;
@@ -101,7 +132,85 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     writer.WriteObjectEnd();
                 }
 
+<<<<<<< HEAD
                 request.Content = memoryStream.ToArray();
+||||||| Commit version number update changes
+                if(publicRequest.IsSetPackageName())
+                {
+                    context.Writer.WritePropertyName("PackageName");
+                    context.Writer.Write(publicRequest.PackageName);
+                }
+
+                if(publicRequest.IsSetPackageSource())
+                {
+                    context.Writer.WritePropertyName("PackageSource");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PackageSourceMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PackageSource, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetPackageType())
+                {
+                    context.Writer.WritePropertyName("PackageType");
+                    context.Writer.Write(publicRequest.PackageType);
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+=======
+                if(publicRequest.IsSetPackageEncryptionOptions())
+                {
+                    context.Writer.WritePropertyName("PackageEncryptionOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PackageEncryptionOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PackageEncryptionOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetPackageName())
+                {
+                    context.Writer.WritePropertyName("PackageName");
+                    context.Writer.Write(publicRequest.PackageName);
+                }
+
+                if(publicRequest.IsSetPackageSource())
+                {
+                    context.Writer.WritePropertyName("PackageSource");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PackageSourceMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PackageSource, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetPackageType())
+                {
+                    context.Writer.WritePropertyName("PackageType");
+                    context.Writer.Write(publicRequest.PackageType);
+                }
+
+                if(publicRequest.IsSetPackageVendingOptions())
+                {
+                    context.Writer.WritePropertyName("PackageVendingOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PackageVendingOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PackageVendingOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+>>>>>>> acae479fe47dc2583f625fe9f3d68413573ee15b
             }
 
 

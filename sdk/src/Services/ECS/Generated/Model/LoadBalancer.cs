@@ -105,7 +105,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerName. 
         /// <para>
-        /// The name of the load balancer to associate with the Amazon ECS service or task set.
+        /// The name of the load balancer to associate with the service or task set.
         /// </para>
         ///  
         /// <para>
