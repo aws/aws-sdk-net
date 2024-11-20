@@ -37,7 +37,9 @@ namespace Amazon.TimestreamQuery.Model
     /// <para>
     /// If you enabled <c>QueryInsights</c>, this API also returns insights and metrics related
     /// to the query that you executed as part of an Amazon SNS notification. <c>QueryInsights</c>
-    /// helps with performance tuning of your query.
+    /// helps with performance tuning of your query. For more information about <c>QueryInsights</c>,
+    /// see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/using-query-insights.html">Using
+    /// query insights to optimize queries in Amazon Timestream</a>.
     /// </para>
     /// </summary>
     public partial class ExecuteScheduledQueryRequest : AmazonTimestreamQueryRequest

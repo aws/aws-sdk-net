@@ -30,21 +30,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TimestreamQuery.Model
 {
     /// <summary>
-    /// Notification configuration for a scheduled query. A notification is sent by Timestream
-    /// when a scheduled query is created, its state is updated or when it is deleted.
+    /// Configuration settings for notifications related to account settings.
     /// </summary>
-    public partial class NotificationConfiguration
+    public partial class AccountSettingsNotificationConfiguration
     {
+        private string _roleArn;
         private SnsConfiguration _snsConfiguration;
 
         /// <summary>
-        /// Gets and sets the property SnsConfiguration. 
+        /// Gets and sets the property RoleArn. 
         /// <para>
-        /// Details about the Amazon Simple Notification Service (SNS) configuration. This field
-        /// is visible only when SNS Topic is provided when updating the account settings. 
+        /// An Amazon Resource Name (ARN) that grants Timestream permission to publish notifications.
+        /// This field is only visible if SNS Topic is provided when updating the account settings.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=2048)]
+        public string RoleArn
+        {
+            get { return this._roleArn; }
+            set { this._roleArn = value; }
+        }
+
+        // Check to see if RoleArn property is set
+        internal bool IsSetRoleArn()
+        {
+            return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnsConfiguration.
+        /// </summary>
         public SnsConfiguration SnsConfiguration
         {
             get { return this._snsConfiguration; }

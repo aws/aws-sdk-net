@@ -25,6 +25,56 @@ namespace Amazon.TimestreamQuery
 {
 
     /// <summary>
+    /// Constants used for properties of type ComputeMode.
+    /// </summary>
+    public class ComputeMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ON_DEMAND for ComputeMode
+        /// </summary>
+        public static readonly ComputeMode ON_DEMAND = new ComputeMode("ON_DEMAND");
+        /// <summary>
+        /// Constant PROVISIONED for ComputeMode
+        /// </summary>
+        public static readonly ComputeMode PROVISIONED = new ComputeMode("PROVISIONED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ComputeMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ComputeMode FindValue(string value)
+        {
+            return FindValue<ComputeMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ComputeMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DimensionValueType.
     /// </summary>
     public class DimensionValueType : ConstantClass
@@ -64,6 +114,60 @@ namespace Amazon.TimestreamQuery
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DimensionValueType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LastUpdateStatus.
+    /// </summary>
+    public class LastUpdateStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for LastUpdateStatus
+        /// </summary>
+        public static readonly LastUpdateStatus FAILED = new LastUpdateStatus("FAILED");
+        /// <summary>
+        /// Constant PENDING for LastUpdateStatus
+        /// </summary>
+        public static readonly LastUpdateStatus PENDING = new LastUpdateStatus("PENDING");
+        /// <summary>
+        /// Constant SUCCEEDED for LastUpdateStatus
+        /// </summary>
+        public static readonly LastUpdateStatus SUCCEEDED = new LastUpdateStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LastUpdateStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LastUpdateStatus FindValue(string value)
+        {
+            return FindValue<LastUpdateStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LastUpdateStatus(string value)
         {
             return FindValue(value);
         }
