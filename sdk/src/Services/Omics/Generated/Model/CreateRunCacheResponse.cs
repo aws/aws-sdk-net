@@ -30,21 +30,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Omics.Model
 {
     /// <summary>
-    /// This is the response object from the StartRun operation.
+    /// This is the response object from the CreateRunCache operation.
     /// </summary>
-    public partial class StartRunResponse : AmazonWebServiceResponse
+    public partial class CreateRunCacheResponse : AmazonWebServiceResponse
     {
         private string _arn;
         private string _id;
-        private string _runOutputUri;
-        private RunStatus _status;
+        private RunCacheStatus _status;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
-        private string _uuid;
 
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// Unique resource identifier for the run.
+        /// Unique resource identifier for the run cache.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -63,7 +61,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The run's ID.
+        /// Identifier for the run cache.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=18)]
@@ -80,32 +78,13 @@ namespace Amazon.Omics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RunOutputUri. 
-        /// <para>
-        /// The destination for workflow outputs.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=750)]
-        public string RunOutputUri
-        {
-            get { return this._runOutputUri; }
-            set { this._runOutputUri = value; }
-        }
-
-        // Check to see if RunOutputUri property is set
-        internal bool IsSetRunOutputUri()
-        {
-            return this._runOutputUri != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The run's status.
+        /// Run cache status.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
-        public RunStatus Status
+        public RunCacheStatus Status
         {
             get { return this._status; }
             set { this._status = value; }
@@ -120,7 +99,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The run's tags.
+        /// The tags associated with this run cache.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
@@ -133,25 +112,6 @@ namespace Amazon.Omics.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
-
-        /// <summary>
-        /// Gets and sets the property Uuid. 
-        /// <para>
-        /// The universally unique identifier for a run.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=128)]
-        public string Uuid
-        {
-            get { return this._uuid; }
-            set { this._uuid = value; }
-        }
-
-        // Check to see if Uuid property is set
-        internal bool IsSetUuid()
-        {
-            return this._uuid != null;
         }
 
     }

@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Omics.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetRunTask operation
+    /// Response Unmarshaller for DeleteRunCache operation
     /// </summary>  
-    public class GetRunTaskResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeleteRunCacheResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,103 +46,8 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetRunTaskResponse response = new GetRunTaskResponse();
+            DeleteRunCacheResponse response = new DeleteRunCacheResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("cacheHit", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.CacheHit = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("cacheS3Uri", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.CacheS3Uri = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("cpus", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    response.Cpus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("creationTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreationTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("failureReason", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.FailureReason = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("gpus", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    response.Gpus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("instanceType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.InstanceType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("logStream", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.LogStream = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("memory", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    response.Memory = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("startTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.StartTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("statusMessage", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.StatusMessage = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("stopTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.StopTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("taskId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.TaskId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -201,9 +106,9 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             return new AmazonOmicsException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetRunTaskResponseUnmarshaller _instance = new GetRunTaskResponseUnmarshaller();        
+        private static DeleteRunCacheResponseUnmarshaller _instance = new DeleteRunCacheResponseUnmarshaller();        
 
-        internal static GetRunTaskResponseUnmarshaller GetInstance()
+        internal static DeleteRunCacheResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -211,7 +116,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetRunTaskResponseUnmarshaller Instance
+        public static DeleteRunCacheResponseUnmarshaller Instance
         {
             get
             {

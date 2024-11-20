@@ -40,9 +40,10 @@ namespace Amazon.Omics.Model
     /// </para>
     ///  
     /// <para>
-    /// The total number of runs in your account is subject to a quota per Region. To avoid
-    /// needing to delete runs manually, you can set the retention mode to <c>REMOVE</c>.
-    /// Runs with this setting are deleted automatically when the run quoata is exceeded.
+    /// HealthOmics stores a fixed number of runs that are available to the console and API.
+    /// By default, HealthOmics doesn't any remove any runs. If HealthOmics reaches the maximum
+    /// number of runs, you must manually remove runs. To have older runs removed automatically,
+    /// set the retention mode to <c>REMOVE</c>.
     /// </para>
     ///  
     /// <para>
@@ -55,6 +56,8 @@ namespace Amazon.Omics.Model
     /// </summary>
     public partial class StartRunRequest : AmazonOmicsRequest
     {
+        private CacheBehavior _cacheBehavior;
+        private string _cacheId;
         private RunLogLevel _logLevel;
         private string _name;
         private string _outputUri;
@@ -71,6 +74,48 @@ namespace Amazon.Omics.Model
         private string _workflowId;
         private string _workflowOwnerId;
         private WorkflowType _workflowType;
+
+        /// <summary>
+        /// Gets and sets the property CacheBehavior. 
+        /// <para>
+        /// The cache behavior for the run. You specify this value if you want to override the
+        /// default behavior for the cache. You had set the default value when you created the
+        /// cache. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/how-run-cache.html#run-cache-behavior">Run
+        /// cache behavior</a> in the AWS HealthOmics User Guide.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public CacheBehavior CacheBehavior
+        {
+            get { return this._cacheBehavior; }
+            set { this._cacheBehavior = value; }
+        }
+
+        // Check to see if CacheBehavior property is set
+        internal bool IsSetCacheBehavior()
+        {
+            return this._cacheBehavior != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CacheId. 
+        /// <para>
+        /// Identifier of the cache associated with this run. If you don't specify a cache ID,
+        /// no task outputs are cached for this run.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=18)]
+        public string CacheId
+        {
+            get { return this._cacheId; }
+            set { this._cacheId = value; }
+        }
+
+        // Check to see if CacheId property is set
+        internal bool IsSetCacheId()
+        {
+            return this._cacheId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LogLevel. 
@@ -188,7 +233,21 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property RetentionMode. 
         /// <para>
-        /// The retention mode for the run.
+        /// The retention mode for the run. The default value is RETAIN. 
+        /// </para>
+        ///  
+        /// <para>
+        /// HealthOmics stores a fixed number of runs that are available to the console and API.
+        /// In the default mode (RETAIN), you need to remove runs manually when the number of
+        /// run exceeds the maximum. If you set the retention mode to <c>REMOVE</c>, HealthOmics
+        /// automatically removes runs (that have mode set to REMOVE) when the number of run exceeds
+        /// the maximum. All run logs are available in CloudWatch logs, if you need information
+        /// about a run that is no longer available to the API.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about retention mode, see <a href="https://docs.aws.amazon.com/omics/latest/dev/starting-a-run.html">Specifying
+        /// run retention mode</a> in the <i>AWS HealthOmics User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

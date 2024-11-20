@@ -141,6 +141,56 @@ namespace Amazon.Omics
 
 
     /// <summary>
+    /// Constants used for properties of type CacheBehavior.
+    /// </summary>
+    public class CacheBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CACHE_ALWAYS for CacheBehavior
+        /// </summary>
+        public static readonly CacheBehavior CACHE_ALWAYS = new CacheBehavior("CACHE_ALWAYS");
+        /// <summary>
+        /// Constant CACHE_ON_FAILURE for CacheBehavior
+        /// </summary>
+        public static readonly CacheBehavior CACHE_ON_FAILURE = new CacheBehavior("CACHE_ON_FAILURE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CacheBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CacheBehavior FindValue(string value)
+        {
+            return FindValue<CacheBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CacheBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CreationType.
     /// </summary>
     public class CreationType : ConstantClass
@@ -1438,6 +1488,60 @@ namespace Amazon.Omics
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceOwner(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RunCacheStatus.
+    /// </summary>
+    public class RunCacheStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for RunCacheStatus
+        /// </summary>
+        public static readonly RunCacheStatus ACTIVE = new RunCacheStatus("ACTIVE");
+        /// <summary>
+        /// Constant DELETED for RunCacheStatus
+        /// </summary>
+        public static readonly RunCacheStatus DELETED = new RunCacheStatus("DELETED");
+        /// <summary>
+        /// Constant FAILED for RunCacheStatus
+        /// </summary>
+        public static readonly RunCacheStatus FAILED = new RunCacheStatus("FAILED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RunCacheStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RunCacheStatus FindValue(string value)
+        {
+            return FindValue<RunCacheStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RunCacheStatus(string value)
         {
             return FindValue(value);
         }

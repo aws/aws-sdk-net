@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Omics.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TaskListItem Object
+    /// Response Unmarshaller for RunCacheListItem Object
     /// </summary>  
-    public class TaskListItemUnmarshaller : IUnmarshaller<TaskListItem, XmlUnmarshallerContext>, IUnmarshaller<TaskListItem, JsonUnmarshallerContext>
+    public class RunCacheListItemUnmarshaller : IUnmarshaller<RunCacheListItem, XmlUnmarshallerContext>, IUnmarshaller<RunCacheListItem, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        TaskListItem IUnmarshaller<TaskListItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RunCacheListItem IUnmarshaller<RunCacheListItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public TaskListItem Unmarshall(JsonUnmarshallerContext context)
+        public RunCacheListItem Unmarshall(JsonUnmarshallerContext context)
         {
-            TaskListItem unmarshalledObject = new TaskListItem();
+            RunCacheListItem unmarshalledObject = new RunCacheListItem();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,10 +66,16 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("cacheHit", targetDepth))
+                if (context.TestExpression("arn", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.CacheHit = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("cacheBehavior", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CacheBehavior = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("cacheS3Uri", targetDepth))
@@ -78,34 +84,16 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     unmarshalledObject.CacheS3Uri = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("cpus", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Cpus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("creationTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("gpus", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Gpus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("instanceType", targetDepth))
+                if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("memory", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Memory = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth))
@@ -114,28 +102,10 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("startTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("stopTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StopTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("taskId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TaskId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -143,12 +113,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         }
 
 
-        private static TaskListItemUnmarshaller _instance = new TaskListItemUnmarshaller();        
+        private static RunCacheListItemUnmarshaller _instance = new RunCacheListItemUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TaskListItemUnmarshaller Instance
+        public static RunCacheListItemUnmarshaller Instance
         {
             get
             {

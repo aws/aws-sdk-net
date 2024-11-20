@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Omics.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// StartRun Request Marshaller
+    /// CreateRunCache Request Marshaller
     /// </summary>       
-    public class StartRunRequestMarshaller : IMarshaller<IRequest, StartRunRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class CreateRunCacheRequestMarshaller : IMarshaller<IRequest, CreateRunCacheRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((StartRunRequest)input);
+            return this.Marshall((CreateRunCacheRequest)input);
         }
 
         /// <summary>
@@ -53,14 +53,14 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(StartRunRequest publicRequest)
+        public IRequest Marshall(CreateRunCacheRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Omics");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2022-11-28";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/run";
+            request.ResourcePath = "/runCache";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -73,40 +73,28 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.CacheBehavior);
                 }
 
-                if(publicRequest.IsSetCacheId())
+                if(publicRequest.IsSetCacheBucketOwnerId())
                 {
-                    context.Writer.WritePropertyName("cacheId");
-                    context.Writer.Write(publicRequest.CacheId);
+                    context.Writer.WritePropertyName("cacheBucketOwnerId");
+                    context.Writer.Write(publicRequest.CacheBucketOwnerId);
                 }
 
-                if(publicRequest.IsSetLogLevel())
+                if(publicRequest.IsSetCacheS3Location())
                 {
-                    context.Writer.WritePropertyName("logLevel");
-                    context.Writer.Write(publicRequest.LogLevel);
+                    context.Writer.WritePropertyName("cacheS3Location");
+                    context.Writer.Write(publicRequest.CacheS3Location);
+                }
+
+                if(publicRequest.IsSetDescription())
+                {
+                    context.Writer.WritePropertyName("description");
+                    context.Writer.Write(publicRequest.Description);
                 }
 
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");
                     context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetOutputUri())
-                {
-                    context.Writer.WritePropertyName("outputUri");
-                    context.Writer.Write(publicRequest.OutputUri);
-                }
-
-                if(publicRequest.IsSetParameters())
-                {
-                    context.Writer.WritePropertyName("parameters");
-                    Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, publicRequest.Parameters);
-                }
-
-                if(publicRequest.IsSetPriority())
-                {
-                    context.Writer.WritePropertyName("priority");
-                    context.Writer.Write(publicRequest.Priority);
                 }
 
                 if(publicRequest.IsSetRequestId())
@@ -120,42 +108,6 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("requestId");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
-                if(publicRequest.IsSetRetentionMode())
-                {
-                    context.Writer.WritePropertyName("retentionMode");
-                    context.Writer.Write(publicRequest.RetentionMode);
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("roleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetRunGroupId())
-                {
-                    context.Writer.WritePropertyName("runGroupId");
-                    context.Writer.Write(publicRequest.RunGroupId);
-                }
-
-                if(publicRequest.IsSetRunId())
-                {
-                    context.Writer.WritePropertyName("runId");
-                    context.Writer.Write(publicRequest.RunId);
-                }
-
-                if(publicRequest.IsSetStorageCapacity())
-                {
-                    context.Writer.WritePropertyName("storageCapacity");
-                    context.Writer.Write(publicRequest.StorageCapacity);
-                }
-
-                if(publicRequest.IsSetStorageType())
-                {
-                    context.Writer.WritePropertyName("storageType");
-                    context.Writer.Write(publicRequest.StorageType);
-                }
-
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");
@@ -170,24 +122,6 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetWorkflowId())
-                {
-                    context.Writer.WritePropertyName("workflowId");
-                    context.Writer.Write(publicRequest.WorkflowId);
-                }
-
-                if(publicRequest.IsSetWorkflowOwnerId())
-                {
-                    context.Writer.WritePropertyName("workflowOwnerId");
-                    context.Writer.Write(publicRequest.WorkflowOwnerId);
-                }
-
-                if(publicRequest.IsSetWorkflowType())
-                {
-                    context.Writer.WritePropertyName("workflowType");
-                    context.Writer.Write(publicRequest.WorkflowType);
-                }
-
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
@@ -198,9 +132,9 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static StartRunRequestMarshaller _instance = new StartRunRequestMarshaller();        
+        private static CreateRunCacheRequestMarshaller _instance = new CreateRunCacheRequestMarshaller();        
 
-        internal static StartRunRequestMarshaller GetInstance()
+        internal static CreateRunCacheRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -208,7 +142,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StartRunRequestMarshaller Instance
+        public static CreateRunCacheRequestMarshaller Instance
         {
             get
             {

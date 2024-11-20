@@ -30,49 +30,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Omics.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetRun operation.
-    /// Gets information about a workflow run.
+    /// Container for the parameters to the GetRunCache operation.
+    /// Retrieve the details for the specified run cache.
     /// 
     ///  
     /// <para>
-    /// If a workflow is shared with you, you cannot export information about the run.
-    /// </para>
-    ///  
-    /// <para>
-    /// HealthOmics stores a fixed number of runs that are available to the console and API.
-    /// If GetRun doesn't return the requested run, you can find run logs for all runs in
-    /// the CloudWatch logs. For more information about viewing the run logs, see <a href="https://docs.aws.amazon.com/omics/latest/dev/cloudwatch-logs.html">CloudWatch
-    /// logs</a> in the <i>AWS HealthOmics User Guide</i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflow-call-caching.html">Call
+    /// caching for HealthOmics runs</a> in the AWS HealthOmics User Guide.
     /// </para>
     /// </summary>
-    public partial class GetRunRequest : AmazonOmicsRequest
+    public partial class GetRunCacheRequest : AmazonOmicsRequest
     {
-        private List<string> _export = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _id;
-
-        /// <summary>
-        /// Gets and sets the property Export. 
-        /// <para>
-        /// The run's export format.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0, Max=32)]
-        public List<string> Export
-        {
-            get { return this._export; }
-            set { this._export = value; }
-        }
-
-        // Check to see if Export property is set
-        internal bool IsSetExport()
-        {
-            return this._export != null && (this._export.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
 
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The run's ID.
+        /// The identifier of the run cache to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=18)]

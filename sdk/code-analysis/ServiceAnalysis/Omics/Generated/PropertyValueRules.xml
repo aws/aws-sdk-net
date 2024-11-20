@@ -253,6 +253,56 @@
     <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.CreateRunCacheRequest.CacheBehavior</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateRunCacheRequest.CacheBucketOwnerId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateRunCacheRequest.CacheS3Location</property>
+    <pattern>s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])(/(.{0,1024}))?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateRunCacheRequest.Description</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateRunCacheRequest.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateRunCacheRequest.RequestId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateRunCacheResponse.Arn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>arn:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateRunCacheResponse.Id</property>
+    <min>1</min>
+    <max>18</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateRunCacheResponse.Status</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.CreateRunGroupRequest.MaxCpus</property>
     <min>1</min>
     <max>100000</max>
@@ -455,6 +505,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.DeleteRunRequest.Id</property>
+    <min>1</min>
+    <max>18</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.DeleteRunCacheRequest.Id</property>
     <min>1</min>
     <max>18</max>
     <pattern>[0-9]+</pattern>
@@ -909,6 +965,17 @@
     <pattern>arn:.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.GetRunResponse.CacheBehavior</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetRunResponse.CacheId</property>
+    <min>1</min>
+    <max>18</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.GetRunResponse.Definition</property>
     <min>1</min>
     <max>256</max>
@@ -918,6 +985,10 @@
     <property>Amazon.Omics.Model.GetRunResponse.Digest</property>
     <min>1</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetRunResponse.EngineVersion</property>
+    <pattern>[0-9]{2}.[0-9]{2}.[0-9]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetRunResponse.FailureReason</property>
@@ -1028,6 +1099,56 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.GetRunCacheRequest.Id</property>
+    <min>1</min>
+    <max>18</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetRunCacheResponse.Arn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>arn:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetRunCacheResponse.CacheBehavior</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetRunCacheResponse.CacheBucketOwnerId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetRunCacheResponse.CacheS3Uri</property>
+    <pattern>s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])(/(.{0,1024}))?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetRunCacheResponse.Description</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetRunCacheResponse.Id</property>
+    <min>1</min>
+    <max>18</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetRunCacheResponse.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetRunCacheResponse.Status</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.GetRunGroupRequest.Id</property>
     <min>1</min>
     <max>18</max>
@@ -1082,6 +1203,10 @@
     <min>1</min>
     <max>18</max>
     <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetRunTaskResponse.CacheS3Uri</property>
+    <pattern>s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])(/(.{0,1024}))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetRunTaskResponse.Cpus</property>
@@ -1526,6 +1651,23 @@
     <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.ListRunCachesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ListRunCachesRequest.StartingToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ListRunCachesResponse.NextToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.ListRunGroupsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -1838,6 +1980,17 @@
     <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.StartRunRequest.CacheBehavior</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.StartRunRequest.CacheId</property>
+    <min>1</min>
+    <max>18</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.StartRunRequest.LogLevel</property>
     <min>1</min>
     <max>64</max>
@@ -2013,6 +2166,29 @@
     <min>3</min>
     <max>255</max>
     <pattern>([a-z]){1}([a-z0-9_]){2,254}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.UpdateRunCacheRequest.CacheBehavior</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.UpdateRunCacheRequest.Description</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.UpdateRunCacheRequest.Id</property>
+    <min>1</min>
+    <max>18</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.UpdateRunCacheRequest.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.UpdateRunGroupRequest.Id</property>
@@ -2634,6 +2810,38 @@
     <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.RunCacheListItem.Arn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>arn:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.RunCacheListItem.CacheBehavior</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.RunCacheListItem.CacheS3Uri</property>
+    <pattern>s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])(/(.{0,1024}))?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.RunCacheListItem.Id</property>
+    <min>1</min>
+    <max>18</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.RunCacheListItem.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.RunCacheListItem.Status</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.RunGroupListItem.Arn</property>
     <min>1</min>
     <max>128</max>
@@ -2855,6 +3063,10 @@
   <property-value-rule>
     <property>Amazon.Omics.Model.StartReferenceImportJobSourceItem.SourceFile</property>
     <pattern>s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])/(.{1,1024})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.TaskListItem.CacheS3Uri</property>
+    <pattern>s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])(/(.{0,1024}))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.TaskListItem.Cpus</property>
