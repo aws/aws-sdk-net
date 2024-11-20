@@ -2187,6 +2187,194 @@ namespace Amazon.DataZone
 
 
     /// <summary>
+    /// Constants used for properties of type RuleAction.
+    /// </summary>
+    public class RuleAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE_SUBSCRIPTION_REQUEST for RuleAction
+        /// </summary>
+        public static readonly RuleAction CREATE_SUBSCRIPTION_REQUEST = new RuleAction("CREATE_SUBSCRIPTION_REQUEST");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RuleAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuleAction FindValue(string value)
+        {
+            return FindValue<RuleAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuleAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RuleScopeSelectionMode.
+    /// </summary>
+    public class RuleScopeSelectionMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for RuleScopeSelectionMode
+        /// </summary>
+        public static readonly RuleScopeSelectionMode ALL = new RuleScopeSelectionMode("ALL");
+        /// <summary>
+        /// Constant SPECIFIC for RuleScopeSelectionMode
+        /// </summary>
+        public static readonly RuleScopeSelectionMode SPECIFIC = new RuleScopeSelectionMode("SPECIFIC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RuleScopeSelectionMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuleScopeSelectionMode FindValue(string value)
+        {
+            return FindValue<RuleScopeSelectionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuleScopeSelectionMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RuleTargetType.
+    /// </summary>
+    public class RuleTargetType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DOMAIN_UNIT for RuleTargetType
+        /// </summary>
+        public static readonly RuleTargetType DOMAIN_UNIT = new RuleTargetType("DOMAIN_UNIT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RuleTargetType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuleTargetType FindValue(string value)
+        {
+            return FindValue<RuleTargetType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuleTargetType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RuleType.
+    /// </summary>
+    public class RuleType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant METADATA_FORM_ENFORCEMENT for RuleType
+        /// </summary>
+        public static readonly RuleType METADATA_FORM_ENFORCEMENT = new RuleType("METADATA_FORM_ENFORCEMENT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RuleType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuleType FindValue(string value)
+        {
+            return FindValue<RuleType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuleType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SearchOutputAdditionalAttribute.
     /// </summary>
     public class SearchOutputAdditionalAttribute : ConstantClass

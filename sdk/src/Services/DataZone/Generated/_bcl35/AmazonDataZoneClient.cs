@@ -2246,6 +2246,90 @@ namespace Amazon.DataZone
 
         #endregion
         
+        #region  CreateRule
+
+        /// <summary>
+        /// Creates a rule in Amazon DataZone. A rule is a formal agreement that enforces specific
+        /// requirements across user workflows (e.g., publishing assets to the catalog, requesting
+        /// subscriptions, creating projects) within the Amazon DataZone data portal. These rules
+        /// help maintain consistency, ensure compliance, and uphold governance standards in data
+        /// management processes. For instance, a metadata enforcement rule can specify the required
+        /// information for creating a subscription request or publishing a data asset to the
+        /// catalog, ensuring alignment with organizational standards.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRule service method.</param>
+        /// 
+        /// <returns>The response from the CreateRule service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateRule">REST API Reference for CreateRule Operation</seealso>
+        public virtual CreateRuleResponse CreateRule(CreateRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRuleResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRuleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateRule operation on AmazonDataZoneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateRule">REST API Reference for CreateRule Operation</seealso>
+        public virtual IAsyncResult BeginCreateRule(CreateRuleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRuleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateRule.</param>
+        /// 
+        /// <returns>Returns a  CreateRuleResult from DataZone.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateRule">REST API Reference for CreateRule Operation</seealso>
+        public virtual CreateRuleResponse EndCreateRule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateRuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateSubscriptionGrant
 
         /// <summary>
@@ -3803,6 +3887,87 @@ namespace Amazon.DataZone
         public virtual DeleteProjectMembershipResponse EndDeleteProjectMembership(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteProjectMembershipResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteRule
+
+        /// <summary>
+        /// Deletes a rule in Amazon DataZone. A rule is a formal agreement that enforces specific
+        /// requirements across user workflows (e.g., publishing assets to the catalog, requesting
+        /// subscriptions, creating projects) within the Amazon DataZone data portal. These rules
+        /// help maintain consistency, ensure compliance, and uphold governance standards in data
+        /// management processes. For instance, a metadata enforcement rule can specify the required
+        /// information for creating a subscription request or publishing a data asset to the
+        /// catalog, ensuring alignment with organizational standards.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRule service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRule service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
+        public virtual DeleteRuleResponse DeleteRule(DeleteRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRuleResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRuleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRule operation on AmazonDataZoneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
+        public virtual IAsyncResult BeginDeleteRule(DeleteRuleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRuleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteRule.</param>
+        /// 
+        /// <returns>Returns a  DeleteRuleResult from DataZone.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
+        public virtual DeleteRuleResponse EndDeleteRule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteRuleResponse>(asyncResult);
         }
 
         #endregion
@@ -5854,6 +6019,84 @@ namespace Amazon.DataZone
 
         #endregion
         
+        #region  GetRule
+
+        /// <summary>
+        /// Gets the details of a rule in Amazon DataZone. A rule is a formal agreement that enforces
+        /// specific requirements across user workflows (e.g., publishing assets to the catalog,
+        /// requesting subscriptions, creating projects) within the Amazon DataZone data portal.
+        /// These rules help maintain consistency, ensure compliance, and uphold governance standards
+        /// in data management processes. For instance, a metadata enforcement rule can specify
+        /// the required information for creating a subscription request or publishing a data
+        /// asset to the catalog, ensuring alignment with organizational standards.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRule service method.</param>
+        /// 
+        /// <returns>The response from the GetRule service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetRule">REST API Reference for GetRule Operation</seealso>
+        public virtual GetRuleResponse GetRule(GetRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRuleResponseUnmarshaller.Instance;
+
+            return Invoke<GetRuleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetRule operation on AmazonDataZoneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetRule">REST API Reference for GetRule Operation</seealso>
+        public virtual IAsyncResult BeginGetRule(GetRuleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRuleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetRule.</param>
+        /// 
+        /// <returns>Returns a  GetRuleResult from DataZone.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetRule">REST API Reference for GetRule Operation</seealso>
+        public virtual GetRuleResponse EndGetRule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetRuleResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetSubscription
 
         /// <summary>
@@ -7725,6 +7968,84 @@ namespace Amazon.DataZone
         public virtual ListProjectsResponse EndListProjects(IAsyncResult asyncResult)
         {
             return EndInvoke<ListProjectsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListRules
+
+        /// <summary>
+        /// Lists existing rules. In Amazon DataZone, a rule is a formal agreement that enforces
+        /// specific requirements across user workflows (e.g., publishing assets to the catalog,
+        /// requesting subscriptions, creating projects) within the Amazon DataZone data portal.
+        /// These rules help maintain consistency, ensure compliance, and uphold governance standards
+        /// in data management processes. For instance, a metadata enforcement rule can specify
+        /// the required information for creating a subscription request or publishing a data
+        /// asset to the catalog, ensuring alignment with organizational standards.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRules service method.</param>
+        /// 
+        /// <returns>The response from the ListRules service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListRules">REST API Reference for ListRules Operation</seealso>
+        public virtual ListRulesResponse ListRules(ListRulesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRulesResponseUnmarshaller.Instance;
+
+            return Invoke<ListRulesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRules operation on AmazonDataZoneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListRules
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListRules">REST API Reference for ListRules Operation</seealso>
+        public virtual IAsyncResult BeginListRules(ListRulesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRulesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListRules operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListRules.</param>
+        /// 
+        /// <returns>Returns a  ListRulesResult from DataZone.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListRules">REST API Reference for ListRules Operation</seealso>
+        public virtual ListRulesResponse EndListRules(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListRulesResponse>(asyncResult);
         }
 
         #endregion
@@ -10237,6 +10558,90 @@ namespace Amazon.DataZone
         public virtual UpdateProjectResponse EndUpdateProject(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateProjectResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateRule
+
+        /// <summary>
+        /// Updates a rule. In Amazon DataZone, a rule is a formal agreement that enforces specific
+        /// requirements across user workflows (e.g., publishing assets to the catalog, requesting
+        /// subscriptions, creating projects) within the Amazon DataZone data portal. These rules
+        /// help maintain consistency, ensure compliance, and uphold governance standards in data
+        /// management processes. For instance, a metadata enforcement rule can specify the required
+        /// information for creating a subscription request or publishing a data asset to the
+        /// catalog, ensuring alignment with organizational standards.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRule service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRule service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateRule">REST API Reference for UpdateRule Operation</seealso>
+        public virtual UpdateRuleResponse UpdateRule(UpdateRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRuleResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRuleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRule operation on AmazonDataZoneClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateRule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateRule">REST API Reference for UpdateRule Operation</seealso>
+        public virtual IAsyncResult BeginUpdateRule(UpdateRuleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRuleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateRule.</param>
+        /// 
+        /// <returns>Returns a  UpdateRuleResult from DataZone.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateRule">REST API Reference for UpdateRule Operation</seealso>
+        public virtual UpdateRuleResponse EndUpdateRule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateRuleResponse>(asyncResult);
         }
 
         #endregion

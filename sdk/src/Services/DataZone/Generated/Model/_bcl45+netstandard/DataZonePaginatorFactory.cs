@@ -197,6 +197,14 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
+        /// Paginator for ListRules operation
+        ///</summary>
+        public IListRulesPaginator ListRules(ListRulesRequest request) 
+        {
+            return new ListRulesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListSubscriptionGrants operation
         ///</summary>
         public IListSubscriptionGrantsPaginator ListSubscriptionGrants(ListSubscriptionGrantsRequest request) 

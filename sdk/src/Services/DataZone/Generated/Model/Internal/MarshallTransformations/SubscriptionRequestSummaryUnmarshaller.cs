@@ -90,10 +90,22 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     unmarshalledObject.DomainId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("existingSubscriptionId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExistingSubscriptionId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("metadataFormsSummary", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<MetadataFormSummary, MetadataFormSummaryUnmarshaller>(MetadataFormSummaryUnmarshaller.Instance);
+                    unmarshalledObject.MetadataFormsSummary = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("requestReason", targetDepth))

@@ -1730,6 +1730,70 @@ namespace Amazon.DataZone
 
         #endregion
         
+        #region  CreateRule
+
+        internal virtual CreateRuleResponse CreateRule(CreateRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRuleResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRuleResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a rule in Amazon DataZone. A rule is a formal agreement that enforces specific
+        /// requirements across user workflows (e.g., publishing assets to the catalog, requesting
+        /// subscriptions, creating projects) within the Amazon DataZone data portal. These rules
+        /// help maintain consistency, ensure compliance, and uphold governance standards in data
+        /// management processes. For instance, a metadata enforcement rule can specify the required
+        /// information for creating a subscription request or publishing a data asset to the
+        /// catalog, ensuring alignment with organizational standards.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRule service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateRule">REST API Reference for CreateRule Operation</seealso>
+        public virtual Task<CreateRuleResponse> CreateRuleAsync(CreateRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRuleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateRuleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateSubscriptionGrant
 
         internal virtual CreateSubscriptionGrantResponse CreateSubscriptionGrant(CreateSubscriptionGrantRequest request)
@@ -2867,6 +2931,67 @@ namespace Amazon.DataZone
             options.ResponseUnmarshaller = DeleteProjectMembershipResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteProjectMembershipResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteRule
+
+        internal virtual DeleteRuleResponse DeleteRule(DeleteRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRuleResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRuleResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a rule in Amazon DataZone. A rule is a formal agreement that enforces specific
+        /// requirements across user workflows (e.g., publishing assets to the catalog, requesting
+        /// subscriptions, creating projects) within the Amazon DataZone data portal. These rules
+        /// help maintain consistency, ensure compliance, and uphold governance standards in data
+        /// management processes. For instance, a metadata enforcement rule can specify the required
+        /// information for creating a subscription request or publishing a data asset to the
+        /// catalog, ensuring alignment with organizational standards.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRule service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
+        public virtual Task<DeleteRuleResponse> DeleteRuleAsync(DeleteRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRuleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteRuleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4358,6 +4483,64 @@ namespace Amazon.DataZone
 
         #endregion
         
+        #region  GetRule
+
+        internal virtual GetRuleResponse GetRule(GetRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRuleResponseUnmarshaller.Instance;
+
+            return Invoke<GetRuleResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets the details of a rule in Amazon DataZone. A rule is a formal agreement that enforces
+        /// specific requirements across user workflows (e.g., publishing assets to the catalog,
+        /// requesting subscriptions, creating projects) within the Amazon DataZone data portal.
+        /// These rules help maintain consistency, ensure compliance, and uphold governance standards
+        /// in data management processes. For instance, a metadata enforcement rule can specify
+        /// the required information for creating a subscription request or publishing a data
+        /// asset to the catalog, ensuring alignment with organizational standards.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRule service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetRule">REST API Reference for GetRule Operation</seealso>
+        public virtual Task<GetRuleResponse> GetRuleAsync(GetRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRuleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRuleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetSubscription
 
         internal virtual GetSubscriptionResponse GetSubscription(GetSubscriptionRequest request)
@@ -5709,6 +5892,64 @@ namespace Amazon.DataZone
             options.ResponseUnmarshaller = ListProjectsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListProjectsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListRules
+
+        internal virtual ListRulesResponse ListRules(ListRulesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRulesResponseUnmarshaller.Instance;
+
+            return Invoke<ListRulesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists existing rules. In Amazon DataZone, a rule is a formal agreement that enforces
+        /// specific requirements across user workflows (e.g., publishing assets to the catalog,
+        /// requesting subscriptions, creating projects) within the Amazon DataZone data portal.
+        /// These rules help maintain consistency, ensure compliance, and uphold governance standards
+        /// in data management processes. For instance, a metadata enforcement rule can specify
+        /// the required information for creating a subscription request or publishing a data
+        /// asset to the catalog, ensuring alignment with organizational standards.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRules service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListRules">REST API Reference for ListRules Operation</seealso>
+        public virtual Task<ListRulesResponse> ListRulesAsync(ListRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRulesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRulesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7541,6 +7782,70 @@ namespace Amazon.DataZone
             options.ResponseUnmarshaller = UpdateProjectResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateProjectResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateRule
+
+        internal virtual UpdateRuleResponse UpdateRule(UpdateRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRuleResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRuleResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates a rule. In Amazon DataZone, a rule is a formal agreement that enforces specific
+        /// requirements across user workflows (e.g., publishing assets to the catalog, requesting
+        /// subscriptions, creating projects) within the Amazon DataZone data portal. These rules
+        /// help maintain consistency, ensure compliance, and uphold governance standards in data
+        /// management processes. For instance, a metadata enforcement rule can specify the required
+        /// information for creating a subscription request or publishing a data asset to the
+        /// catalog, ensuring alignment with organizational standards.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRule service method, as returned by DataZone.</returns>
+        /// <exception cref="Amazon.DataZone.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ConflictException">
+        /// There is a conflict while performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.InternalServerException">
+        /// The request has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ResourceNotFoundException">
+        /// The specified resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ServiceQuotaExceededException">
+        /// The request has exceeded the specified service quota.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.UnauthorizedException">
+        /// You do not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.DataZone.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateRule">REST API Reference for UpdateRule Operation</seealso>
+        public virtual Task<UpdateRuleResponse> UpdateRuleAsync(UpdateRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRuleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateRuleResponse>(request, options, cancellationToken);
         }
 
         #endregion

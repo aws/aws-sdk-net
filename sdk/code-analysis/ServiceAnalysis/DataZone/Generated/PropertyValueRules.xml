@@ -55,6 +55,10 @@
     <pattern>^dzd[-_][a-zA-Z0-9_-]{1,36}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.AcceptSubscriptionRequestResponse.ExistingSubscriptionId</property>
+    <pattern>^[a-zA-Z0-9_-]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.AcceptSubscriptionRequestResponse.Id</property>
     <pattern>^[a-zA-Z0-9_-]{1,36}$</pattern>
   </property-value-rule>
@@ -998,6 +1002,42 @@
     <pattern>^[a-zA-Z0-9_-]{1,36}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.CreateRuleRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\x21-\x7E]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.CreateRuleRequest.Description</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.CreateRuleRequest.DomainIdentifier</property>
+    <pattern>^dzd[-_][a-zA-Z0-9_-]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.CreateRuleRequest.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[\w -]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.CreateRuleResponse.Description</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.CreateRuleResponse.Identifier</property>
+    <pattern>^[a-zA-Z0-9_-]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.CreateRuleResponse.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[\w -]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.CreateSubscriptionGrantRequest.DomainIdentifier</property>
     <pattern>^dzd[-_][a-zA-Z0-9_-]{1,36}$</pattern>
   </property-value-rule>
@@ -1042,6 +1082,10 @@
   <property-value-rule>
     <property>Amazon.DataZone.Model.CreateSubscriptionRequestResponse.DomainId</property>
     <pattern>^dzd[-_][a-zA-Z0-9_-]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.CreateSubscriptionRequestResponse.ExistingSubscriptionId</property>
+    <pattern>^[a-zA-Z0-9_-]{1,36}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.CreateSubscriptionRequestResponse.Id</property>
@@ -1273,6 +1317,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.DeleteProjectMembershipRequest.ProjectIdentifier</property>
+    <pattern>^[a-zA-Z0-9_-]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.DeleteRuleRequest.DomainIdentifier</property>
+    <pattern>^dzd[-_][a-zA-Z0-9_-]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.DeleteRuleRequest.Identifier</property>
     <pattern>^[a-zA-Z0-9_-]{1,36}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -2063,6 +2115,39 @@
     <pattern>^[\w -]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.GetRuleRequest.DomainIdentifier</property>
+    <pattern>^dzd[-_][a-zA-Z0-9_-]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.GetRuleRequest.Identifier</property>
+    <pattern>^[a-zA-Z0-9_-]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.GetRuleRequest.Revision</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.GetRuleResponse.Description</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.GetRuleResponse.Identifier</property>
+    <pattern>^[a-zA-Z0-9_-]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.GetRuleResponse.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[\w -]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.GetRuleResponse.Revision</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.GetSubscriptionRequest.DomainIdentifier</property>
     <pattern>^dzd[-_][a-zA-Z0-9_-]{1,36}$</pattern>
   </property-value-rule>
@@ -2122,6 +2207,10 @@
   <property-value-rule>
     <property>Amazon.DataZone.Model.GetSubscriptionRequestDetailsResponse.DomainId</property>
     <pattern>^dzd[-_][a-zA-Z0-9_-]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.GetSubscriptionRequestDetailsResponse.ExistingSubscriptionId</property>
+    <pattern>^[a-zA-Z0-9_-]{1,36}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.GetSubscriptionRequestDetailsResponse.Id</property>
@@ -2691,6 +2780,25 @@
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.ListRulesRequest.DomainIdentifier</property>
+    <pattern>^dzd[-_][a-zA-Z0-9_-]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.ListRulesRequest.MaxResults</property>
+    <min>25</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.ListRulesRequest.NextToken</property>
+    <min>1</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.ListRulesResponse.NextToken</property>
+    <min>1</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.ListSubscriptionGrantsRequest.DomainIdentifier</property>
     <pattern>^dzd[-_][a-zA-Z0-9_-]{1,36}$</pattern>
   </property-value-rule>
@@ -2968,6 +3076,10 @@
   <property-value-rule>
     <property>Amazon.DataZone.Model.RejectSubscriptionRequestResponse.DomainId</property>
     <pattern>^dzd[-_][a-zA-Z0-9_-]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.RejectSubscriptionRequestResponse.ExistingSubscriptionId</property>
+    <pattern>^[a-zA-Z0-9_-]{1,36}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.RejectSubscriptionRequestResponse.Id</property>
@@ -3637,6 +3749,45 @@
     <pattern>^[\w -]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.UpdateRuleRequest.Description</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.UpdateRuleRequest.DomainIdentifier</property>
+    <pattern>^dzd[-_][a-zA-Z0-9_-]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.UpdateRuleRequest.Identifier</property>
+    <pattern>^[a-zA-Z0-9_-]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.UpdateRuleRequest.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[\w -]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.UpdateRuleResponse.Description</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.UpdateRuleResponse.Identifier</property>
+    <pattern>^[a-zA-Z0-9_-]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.UpdateRuleResponse.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[\w -]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.UpdateRuleResponse.Revision</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.UpdateSubscriptionGrantStatusRequest.AssetIdentifier</property>
     <pattern>^[a-zA-Z0-9_-]{1,36}$</pattern>
   </property-value-rule>
@@ -3685,6 +3836,10 @@
   <property-value-rule>
     <property>Amazon.DataZone.Model.UpdateSubscriptionRequestResponse.DomainId</property>
     <pattern>^dzd[-_][a-zA-Z0-9_-]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.UpdateSubscriptionRequestResponse.ExistingSubscriptionId</property>
+    <pattern>^[a-zA-Z0-9_-]{1,36}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.UpdateSubscriptionRequestResponse.Id</property>
@@ -4132,6 +4287,12 @@
     <pattern>^[a-z0-9_\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.DomainUnitTarget.DomainUnitId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-z0-9_\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.EnvironmentActionSummary.DomainId</property>
     <pattern>^dzd[-_][a-zA-Z0-9_-]{1,36}$</pattern>
   </property-value-rule>
@@ -4302,6 +4463,7 @@
     <property>Amazon.DataZone.Model.FormInput.TypeRevision</property>
     <min>1</min>
     <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.FormOutput.FormName</property>
@@ -4517,6 +4679,34 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.MetadataFormReference.TypeIdentifier</property>
+    <min>1</min>
+    <max>385</max>
+    <pattern>^(?!\.)[\w\.]*\w$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.MetadataFormReference.TypeRevision</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.MetadataFormSummary.FormName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^(?![0-9_])\w+$|^_\w*[a-zA-Z0-9]\w*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.MetadataFormSummary.TypeName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^(amazon.datazone.)?(?![0-9_])\w+$|^_\w*[a-zA-Z0-9]\w*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.MetadataFormSummary.TypeRevision</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.MetadataGenerationRunItem.DomainId</property>
     <pattern>^dzd[-_][a-zA-Z0-9_-]{1,36}$</pattern>
   </property-value-rule>
@@ -4640,6 +4830,21 @@
     <property>Amazon.DataZone.Model.RelationalFilterConfiguration.SchemaName</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.RuleSummary.Identifier</property>
+    <pattern>^[a-zA-Z0-9_-]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.RuleSummary.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[\w -]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.RuleSummary.Revision</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.ScheduleConfiguration.Schedule</property>
@@ -4771,6 +4976,10 @@
   <property-value-rule>
     <property>Amazon.DataZone.Model.SubscriptionRequestSummary.DomainId</property>
     <pattern>^dzd[-_][a-zA-Z0-9_-]{1,36}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.SubscriptionRequestSummary.ExistingSubscriptionId</property>
+    <pattern>^[a-zA-Z0-9_-]{1,36}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.SubscriptionRequestSummary.Id</property>

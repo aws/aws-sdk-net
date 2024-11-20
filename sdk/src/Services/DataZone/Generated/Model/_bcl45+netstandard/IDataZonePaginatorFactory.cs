@@ -127,6 +127,11 @@ namespace Amazon.DataZone.Model
         IListProjectsPaginator ListProjects(ListProjectsRequest request);
 
         /// <summary>
+        /// Paginator for ListRules operation
+        ///</summary>
+        IListRulesPaginator ListRules(ListRulesRequest request);
+
+        /// <summary>
         /// Paginator for ListSubscriptionGrants operation
         ///</summary>
         IListSubscriptionGrantsPaginator ListSubscriptionGrants(ListSubscriptionGrantsRequest request);
