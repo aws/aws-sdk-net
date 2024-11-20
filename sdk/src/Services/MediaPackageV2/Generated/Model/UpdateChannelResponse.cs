@@ -41,8 +41,10 @@ namespace Amazon.MediaPackageV2.Model
         private string _description;
         private string _eTag;
         private List<IngestEndpoint> _ingestEndpoints = AWSConfigs.InitializeCollections ? new List<IngestEndpoint>() : null;
+        private InputSwitchConfiguration _inputSwitchConfiguration;
         private InputType _inputType;
         private DateTime? _modifiedAt;
+        private OutputHeaderConfiguration _outputHeaderConfiguration;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -178,6 +180,26 @@ namespace Amazon.MediaPackageV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InputSwitchConfiguration. 
+        /// <para>
+        /// The configuration for input switching based on the media quality confidence score
+        /// (MQCS) as provided from AWS Elemental MediaLive. This setting is valid only when <c>InputType</c>
+        /// is <c>CMAF</c>.
+        /// </para>
+        /// </summary>
+        public InputSwitchConfiguration InputSwitchConfiguration
+        {
+            get { return this._inputSwitchConfiguration; }
+            set { this._inputSwitchConfiguration = value; }
+        }
+
+        // Check to see if InputSwitchConfiguration property is set
+        internal bool IsSetInputSwitchConfiguration()
+        {
+            return this._inputSwitchConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InputType. 
         /// <para>
         /// The input type will be an immutable field which will be used to define whether the
@@ -229,6 +251,26 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetModifiedAt()
         {
             return this._modifiedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputHeaderConfiguration. 
+        /// <para>
+        /// The settings for what common media server data (CMSD) headers AWS Elemental MediaPackage
+        /// includes in responses to the CDN. This setting is valid only when <c>InputType</c>
+        /// is <c>CMAF</c>.
+        /// </para>
+        /// </summary>
+        public OutputHeaderConfiguration OutputHeaderConfiguration
+        {
+            get { return this._outputHeaderConfiguration; }
+            set { this._outputHeaderConfiguration = value; }
+        }
+
+        // Check to see if OutputHeaderConfiguration property is set
+        internal bool IsSetOutputHeaderConfiguration()
+        {
+            return this._outputHeaderConfiguration != null;
         }
 
         /// <summary>
