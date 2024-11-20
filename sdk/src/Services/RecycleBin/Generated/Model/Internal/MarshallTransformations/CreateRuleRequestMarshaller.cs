@@ -73,6 +73,22 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetExcludeResourceTags())
+                {
+                    context.Writer.WritePropertyName("ExcludeResourceTags");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestExcludeResourceTagsListValue in publicRequest.ExcludeResourceTags)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ResourceTagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestExcludeResourceTagsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetLockConfiguration())
                 {
                     context.Writer.WritePropertyName("LockConfiguration");

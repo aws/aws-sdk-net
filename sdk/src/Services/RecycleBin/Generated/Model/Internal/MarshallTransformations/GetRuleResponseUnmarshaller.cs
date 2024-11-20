@@ -58,6 +58,12 @@ namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
                     response.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ExcludeResourceTags", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ResourceTag, ResourceTagUnmarshaller>(ResourceTagUnmarshaller.Instance);
+                    response.ExcludeResourceTags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Identifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
