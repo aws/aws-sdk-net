@@ -47,7 +47,8 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A string of up to 64 ASCII characters that Amazon EFS uses to ensure idempotent creation.
+        /// A string of up to 64 ASCII characters that Amazon WorkSpaces uses to ensure idempotent
+        /// creation.
         /// </para>
         /// </summary>
         public string ClientToken

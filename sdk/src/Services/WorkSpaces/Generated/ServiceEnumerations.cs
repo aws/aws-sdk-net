@@ -1701,6 +1701,10 @@ namespace Amazon.WorkSpaces
         /// </summary>
         public static readonly OperatingSystemName RHEL_8 = new OperatingSystemName("RHEL_8");
         /// <summary>
+        /// Constant ROCKY_8 for OperatingSystemName
+        /// </summary>
+        public static readonly OperatingSystemName ROCKY_8 = new OperatingSystemName("ROCKY_8");
+        /// <summary>
         /// Constant UBUNTU_18_04 for OperatingSystemName
         /// </summary>
         public static readonly OperatingSystemName UBUNTU_18_04 = new OperatingSystemName("UBUNTU_18_04");
