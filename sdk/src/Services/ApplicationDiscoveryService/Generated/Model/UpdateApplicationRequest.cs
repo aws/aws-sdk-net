@@ -38,6 +38,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         private string _configurationId;
         private string _description;
         private string _name;
+        private string _wave;
 
         /// <summary>
         /// Gets and sets the property ConfigurationId. 
@@ -94,6 +95,25 @@ namespace Amazon.ApplicationDiscoveryService.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Wave. 
+        /// <para>
+        /// The new migration wave of the application that you want to update.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string Wave
+        {
+            get { return this._wave; }
+            set { this._wave = value; }
+        }
+
+        // Check to see if Wave property is set
+        internal bool IsSetWave()
+        {
+            return this._wave != null;
         }
 
     }

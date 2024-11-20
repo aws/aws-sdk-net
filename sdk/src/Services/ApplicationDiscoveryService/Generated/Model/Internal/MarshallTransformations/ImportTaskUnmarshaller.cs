@@ -90,6 +90,12 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
                     unmarshalledObject.ErrorsAndFailedEntriesZip = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("fileClassification", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FileClassification = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("importCompletionTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
