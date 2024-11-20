@@ -31,6 +31,10 @@ namespace Amazon.CostOptimizationHub
     {
 
         /// <summary>
+        /// Constant Delete for ActionType
+        /// </summary>
+        public static readonly ActionType Delete = new ActionType("Delete");
+        /// <summary>
         /// Constant MigrateToGraviton for ActionType
         /// </summary>
         public static readonly ActionType MigrateToGraviton = new ActionType("MigrateToGraviton");
