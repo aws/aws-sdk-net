@@ -1,3 +1,48 @@
+### 3.7.931.0 (2024-11-20 23:26 UTC)
+* ApplicationDiscoveryService (3.7.401.0)
+	* Add support to import data from commercially available discovery tools without file manipulation.
+* AutoScaling (3.7.406.0)
+	* With this release, customers can prioritize launching instances into ODCRs using targets from ASGs or Launch Templates. Customers can express their baseline instances' CPU-performance in attribute-based Instance Requirements configuration by referencing an instance family that meets their needs.
+* BedrockAgentRuntime (3.7.408.0)
+	* Releasing new Prompt Optimization to enhance your prompts for improved performance
+* CloudFront (3.7.402.0)
+	* Add support for gRPC, VPC origins, and Anycast IP Lists. Allow LoggingConfig IncludeCookies to be set regardless of whether the LoggingConfig is enabled.
+* ComputeOptimizer (3.7.401.0)
+	* This release enables AWS Compute Optimizer to analyze and generate optimization recommendations for Amazon Aurora database instances. It also enables Compute Optimizer to identify idle Amazon EC2 instances, Amazon EBS volumes, Amazon ECS services running on Fargate, and Amazon RDS databases.
+* ControlTower (3.7.402.0)
+	* Adds support for child enabled baselines which allow you to see the enabled baseline status for individual accounts.
+* CostOptimizationHub (3.7.402.0)
+	* This release adds action type "Delete" to the GetRecommendation, ListRecommendations and ListRecommendationSummaries APIs to support new EBS and ECS recommendations with action type "Delete".
+* DataZone (3.7.407.0)
+	* This release supports Metadata Enforcement Rule feature for Create Subscription Request action.
+* EC2 (3.7.419.0)
+	* With this release, customers can express their desire to launch instances only in an ODCR or ODCR group rather than OnDemand capacity. Customers can express their baseline instances' CPU-performance in attribute-based Instance Requirements configuration by referencing an instance family.
+* ECS (3.7.407.0)
+	* This release adds support for the Availability Zone rebalancing feature on Amazon ECS.
+* ElasticLoadBalancingV2 (3.7.407.0)
+	* This release adds support for configuring Load balancer Capacity Unit reservations
+* Lambda (3.7.409.0)
+	* Add Node 22.x (node22.x) support to AWS Lambda
+* MediaConvert (3.7.404.0)
+	* This release adds the ability to reconfigure concurrent job settings for existing queues and create queues with custom concurrent job settings.
+* MediaPackageV2 (3.7.403.0)
+	* MediaPackage v2 now supports the Media Quality Confidence Score (MQCS) published from MediaLive. Customers can control input switching based on the MQCS and publishing HTTP Headers for the MQCS via the API.
+* Omics (3.7.402.0)
+	* Enabling call caching feature that allows customers to reuse previously computed results from a set of completed tasks in a new workflow run.
+* RDS (3.7.408.0)
+	* This release adds support for scale storage on the DB instance using a Blue/Green Deployment.
+* RecycleBin (3.7.401.0)
+	* This release adds support for exclusion tags for Recycle Bin, which allows you to identify resources that are to be excluded, or ignored, by a Region-level retention rule.
+* TimestreamQuery (3.7.402.0)
+	* This release adds support for Provisioning Timestream Compute Units (TCUs), a new feature that allows provisioning dedicated compute resources for your queries, providing predictable and cost-effective query performance.
+* WorkSpaces (3.7.406.0)
+	* Added support for Rocky Linux 8 on Amazon WorkSpaces Personal.
+* WorkSpacesWeb (3.7.402.0)
+	* Added data protection settings with support for inline data redaction.
+* Core 3.7.400.55
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.930.0 (2024-11-19 20:46 UTC)
 * B2bi (3.7.403.0)
 	* Add new X12 transactions sets and versions
