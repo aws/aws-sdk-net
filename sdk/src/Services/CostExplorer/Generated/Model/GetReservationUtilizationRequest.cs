@@ -87,7 +87,15 @@ namespace Amazon.CostExplorer.Model
         /// <para>
         /// SERVICE
         /// </para>
-        ///  </li> <li> 
+        ///  <note> 
+        /// <para>
+        /// If not specified, the <c>SERVICE</c> filter defaults to Amazon Elastic Compute Cloud
+        /// - Compute. Supported values for <c>SERVICE</c> are Amazon Elastic Compute Cloud -
+        /// Compute, Amazon Relational Database Service, Amazon ElastiCache, Amazon Redshift,
+        /// and Amazon Elasticsearch Service. The value for the <c>SERVICE</c> filter should not
+        /// exceed "1".
+        /// </para>
+        ///  </note> </li> <li> 
         /// <para>
         /// SCOPE
         /// </para>

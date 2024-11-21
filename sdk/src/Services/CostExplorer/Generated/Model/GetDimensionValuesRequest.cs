@@ -70,12 +70,13 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  
         /// <para>
-        /// - Amazon Web Services(Amazon Web Services): The entity that sells Amazon Web Servicesservices.
+        /// - Amazon Web Services(Amazon Web Services): The entity that sells Amazon Web Services
+        /// services.
         /// </para>
         ///  
         /// <para>
         /// - AISPL (Amazon Internet Services Pvt. Ltd.): The local Indian entity that's an acting
-        /// reseller for Amazon Web Servicesservices in India.
+        /// reseller for Amazon Web Services services in India.
         /// </para>
         ///  
         /// <para>

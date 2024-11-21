@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// The combination of Amazon Web Servicesservice, linked account, linked account name,
+    /// The combination of Amazon Web Services service, linked account, linked account name,
     /// Region, and usage type where a cost anomaly is observed. The linked account name will
     /// only be available when the account name can be identified.
     /// </summary>
@@ -102,7 +102,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Service. 
         /// <para>
-        /// The Amazon Web Servicesservice name that's associated with the cost anomaly. 
+        /// The Amazon Web Services service name that's associated with the cost anomaly. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

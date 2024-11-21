@@ -64,7 +64,8 @@ namespace Amazon.CostExplorer.Model
         /// An <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
         /// object used to categorize costs. This supports dimensions, tags, and nested expressions.
         /// Currently the only dimensions supported are <c>LINKED_ACCOUNT</c>, <c>SERVICE_CODE</c>,
-        /// <c>RECORD_TYPE</c>, <c>LINKED_ACCOUNT_NAME</c>, <c>REGION</c>, and <c>USAGE_TYPE</c>.
+        /// <c>RECORD_TYPE</c>, <c>LINKED_ACCOUNT_NAME</c>, <c>REGION</c>, <c>USAGE_TYPE</c>,
+        /// and <c>BILLING_ENTITY</c>.
         /// </para>
         ///  
         /// <para>

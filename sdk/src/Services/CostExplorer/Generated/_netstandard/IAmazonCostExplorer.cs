@@ -350,6 +350,33 @@ namespace Amazon.CostExplorer
 
         #endregion
                 
+        #region  GetCommitmentPurchaseAnalysis
+
+
+
+        /// <summary>
+        /// Retrieves a commitment purchase analysis result based on the <c>AnalysisId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCommitmentPurchaseAnalysis service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCommitmentPurchaseAnalysis service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.AnalysisNotFoundException">
+        /// The requested analysis can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCommitmentPurchaseAnalysis">REST API Reference for GetCommitmentPurchaseAnalysis Operation</seealso>
+        Task<GetCommitmentPurchaseAnalysisResponse> GetCommitmentPurchaseAnalysisAsync(GetCommitmentPurchaseAnalysisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetCostAndUsage
 
 
@@ -988,6 +1015,33 @@ namespace Amazon.CostExplorer
 
         #endregion
                 
+        #region  ListCommitmentPurchaseAnalyses
+
+
+
+        /// <summary>
+        /// Lists the commitment purchase analyses for your account based on the last 30 days.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCommitmentPurchaseAnalyses service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCommitmentPurchaseAnalyses service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListCommitmentPurchaseAnalyses">REST API Reference for ListCommitmentPurchaseAnalyses Operation</seealso>
+        Task<ListCommitmentPurchaseAnalysesResponse> ListCommitmentPurchaseAnalysesAsync(ListCommitmentPurchaseAnalysesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListCostAllocationTagBackfillHistory
 
 
@@ -1135,6 +1189,40 @@ namespace Amazon.CostExplorer
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ProvideAnomalyFeedback">REST API Reference for ProvideAnomalyFeedback Operation</seealso>
         Task<ProvideAnomalyFeedbackResponse> ProvideAnomalyFeedbackAsync(ProvideAnomalyFeedbackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StartCommitmentPurchaseAnalysis
+
+
+
+        /// <summary>
+        /// Specifies the parameters of a planned commitment purchase and starts the generation
+        /// of the analysis. This enables you to estimate the cost, coverage, and utilization
+        /// impact of your planned commitment purchases. You can request up to 20 analysis runs
+        /// per day.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartCommitmentPurchaseAnalysis service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartCommitmentPurchaseAnalysis service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.GenerationExistsException">
+        /// A request to generate a recommendation is already in progress.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.ServiceQuotaExceededException">
+        /// You've reached the limit on the number of resources you can create, or exceeded the
+        /// size of an individual resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/StartCommitmentPurchaseAnalysis">REST API Reference for StartCommitmentPurchaseAnalysis Operation</seealso>
+        Task<StartCommitmentPurchaseAnalysisResponse> StartCommitmentPurchaseAnalysisAsync(StartCommitmentPurchaseAnalysisRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
