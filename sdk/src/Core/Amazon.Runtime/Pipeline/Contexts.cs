@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+using Smithy.Identity.Abstractions;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
@@ -32,6 +33,7 @@ namespace Amazon.Runtime
         InvokeOptionsBase Options { get; }        
         RequestMetrics Metrics { get; }
         AbstractAWSSigner Signer { get; set; }
+        BaseIdentity Identity { get; set; }
         IClientConfig ClientConfig { get; }
         ImmutableCredentials ImmutableCredentials { get; set; }
 
@@ -122,6 +124,7 @@ namespace Amazon.Runtime.Internal
         public InvokeOptionsBase Options { get; set; }        
         public ImmutableCredentials ImmutableCredentials { get; set; }
         public AbstractAWSSigner Signer { get; set; }
+        public BaseIdentity Identity { get; set; }
 
 #if AWS_ASYNC_API
         public System.Threading.CancellationToken CancellationToken { get; set; }

@@ -9,37 +9,16 @@ namespace ServiceClientGenerator
 {
     public static class GeneratorHelpers
     {
-        public static string DetermineSigner(string signatureVersion, string serviceBasename)
+        public static string DetermineSignerOverride(string signatureVersion)
         {
-            switch (serviceBasename)
-            {
-                case "EventBridge":
-                case "SimpleEmailServiceV2":
-                    // we should not continue to add new hardcoded service specific signers
-                    // and instead implement a solution based on a signer selection specification
-                    return "AWSEndpointAuthSchemeSigner";
-                case "CloudFrontKeyValueStore":
-                    return "AWS4aSignerCRTWrapper";
-            }
-
             switch (signatureVersion)
             {
-                case "v2":
-                    return "QueryStringSigner";
-                case "v3https":
-                    return "AWS3Signer";
-                case "v4":
-                    return "AWS4Signer";
                 case "s3":
                     return "Amazon.S3.Internal.S3Signer";
                 case "s3v4":
                     return "S3Signer";
-                case "bearer":
-                    return "BearerTokenSigner";
-                case "":
-                    return "NullSigner";
                 default:
-                    throw new Exception("Unknown signer: " + signatureVersion);
+                    return null;
             }
         }
 
