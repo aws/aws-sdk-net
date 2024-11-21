@@ -30,36 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTJobsDataPlane.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetPendingJobExecutions operation.
-    /// Gets the list of all jobs for a thing that are not in a terminal status.
-    /// 
-    ///  
-    /// <para>
-    /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPendingJobExecutions</a>
-    /// action.
-    /// </para>
+    /// This is the response object from the StartCommandExecution operation.
     /// </summary>
-    public partial class GetPendingJobExecutionsRequest : AmazonIoTJobsDataPlaneRequest
+    public partial class StartCommandExecutionResponse : AmazonWebServiceResponse
     {
-        private string _thingName;
+        private string _executionId;
 
         /// <summary>
-        /// Gets and sets the property ThingName. 
+        /// Gets and sets the property ExecutionId. 
         /// <para>
-        /// The name of the thing that is executing the job.
+        /// A unique identifier for the command execution.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
-        public string ThingName
+        [AWSProperty(Min=1, Max=64)]
+        public string ExecutionId
         {
-            get { return this._thingName; }
-            set { this._thingName = value; }
+            get { return this._executionId; }
+            set { this._executionId = value; }
         }
 
-        // Check to see if ThingName property is set
-        internal bool IsSetThingName()
+        // Check to see if ExecutionId property is set
+        internal bool IsSetExecutionId()
         {
-            return this._thingName != null;
+            return this._executionId != null;
         }
 
     }

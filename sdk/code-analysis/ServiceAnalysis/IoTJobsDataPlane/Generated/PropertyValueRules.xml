@@ -17,6 +17,26 @@
     <pattern>[a-zA-Z0-9:_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTJobsDataPlane.Model.StartCommandExecutionRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[\x21-\x7E]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTJobsDataPlane.Model.StartCommandExecutionRequest.ExecutionTimeoutSeconds</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTJobsDataPlane.Model.StartCommandExecutionRequest.TargetArn</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTJobsDataPlane.Model.StartCommandExecutionResponse.ExecutionId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTJobsDataPlane.Model.StartNextPendingJobExecutionRequest.ThingName</property>
     <min>1</min>
     <max>128</max>
@@ -37,6 +57,20 @@
   <property-value-rule>
     <property>Amazon.IoTJobsDataPlane.Model.UpdateJobExecutionResponse.JobDocument</property>
     <max>32768</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTJobsDataPlane.Model.CommandParameterValue.BIN</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTJobsDataPlane.Model.CommandParameterValue.S</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTJobsDataPlane.Model.CommandParameterValue.UL</property>
+    <min>1</min>
+    <max>20</max>
+    <pattern>^[0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTJobsDataPlane.Model.JobExecution.JobDocument</property>
