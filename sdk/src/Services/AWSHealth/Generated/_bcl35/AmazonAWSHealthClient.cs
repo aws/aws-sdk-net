@@ -40,7 +40,7 @@ namespace Amazon.AWSHealth
     /// <para>
     /// The Health API provides access to the Health information that appears in the <a href="https://health.aws.amazon.com/health/home">Health
     /// Dashboard</a>. You can use the API operations to get information about events that
-    /// might affect your Amazon Web Services and resources.
+    /// might affect your Amazon Web Services services and resources.
     /// </para>
     ///  
     /// <para>
@@ -408,8 +408,8 @@ namespace Amazon.AWSHealth
         /// Returns a list of entities that have been affected by the specified events, based
         /// on the specified filter criteria. Entities can refer to individual customer resources,
         /// groups of customer resources, or any other construct, depending on the Amazon Web
-        /// Service. Events that have impact beyond that of the affected entities, or where the
-        /// extent of impact is unknown, include at least one entity indicating this.
+        /// Services service. Events that have impact beyond that of the affected entities, or
+        /// where the extent of impact is unknown, include at least one entity indicating this.
         /// 
         ///  
         /// <para>
@@ -489,7 +489,7 @@ namespace Amazon.AWSHealth
         /// Returns a list of entities that have been affected by one or more events for one or
         /// more accounts in your organization in Organizations, based on the filter criteria.
         /// Entities can refer to individual customer resources, groups of customer resources,
-        /// or any other construct, depending on the Amazon Web Service.
+        /// or any other construct, depending on the Amazon Web Services service.
         /// 
         ///  
         /// <para>
@@ -1113,7 +1113,8 @@ namespace Amazon.AWSHealth
         /// <summary>
         /// Returns the event types that meet the specified filter criteria. You can use this
         /// API operation to find information about the Health event, such as the category, Amazon
-        /// Web Service, and event code. The metadata for each event appears in the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventType.html">EventType</a>
+        /// Web Services service, and event code. The metadata for each event appears in the <a
+        /// href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventType.html">EventType</a>
         /// object. 
         /// 
         ///  

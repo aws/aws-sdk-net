@@ -139,8 +139,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EventScopeCode. 
         /// <para>
-        /// This parameter specifies if the Health event is a public Amazon Web Service event
-        /// or an account-specific event.
+        /// This parameter specifies if the Health event is a public Amazon Web Services service
+        /// event or an account-specific event.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -254,7 +254,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Service. 
         /// <para>
-        /// The Amazon Web Service that is affected by the event. For example, <c>EC2</c>, <c>RDS</c>.
+        /// The Amazon Web Services service that is affected by the event. For example, <c>EC2</c>,
+        /// <c>RDS</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=30)]
