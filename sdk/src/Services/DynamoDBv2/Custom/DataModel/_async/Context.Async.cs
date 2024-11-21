@@ -459,9 +459,6 @@ namespace Amazon.DynamoDBv2.DataModel
                 var query = ConvertQueryByValue<T>(hashKeyValue, op, values, operationConfig);
                 return FromSearchAsync<T>(query);
             }
-                var query = ConvertQueryByValue<T>(hashKeyValue, op, values, operationConfig);
-                return FromSearchAsync<T>(query);
-            }
         }
 
         /// <inheritdoc/>

@@ -34,7 +34,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
 
         public MetadataTests()
         {
-            filePath = Path.Combine(Path.GetTempPath(), "PutObjectFile.txt");
+            filePath = Path.Combine(Path.GetTempPath(), "PutObjectMetadataFile.txt");
             File.WriteAllText(filePath, "This is some sample text.!!");
             bucketName = UtilityMethods.CreateBucketAsync(Client, "PutObjectTest").Result;
         }

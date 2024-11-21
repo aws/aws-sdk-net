@@ -203,6 +203,7 @@ namespace AWSSDK_NetStandard.UnitTests
         public void TestMockingTableClient_LoadTable_Throws()
         {
             var mockClient = new Mock<IAmazonDynamoDB>();
+            mockClient.Setup(x => x.Config).Returns(new AmazonDynamoDBConfig());
 
             // Because we're in ASYNC_AWAIT, the mock client doesn't expose the internal sync LoadTable
             // that this still relies on, so we expect it to fail

@@ -15,7 +15,6 @@
 
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.Runtime.Telemetry.Tracing;
-using Amazon.Runtime.Telemetry.Tracing;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
