@@ -26,7 +26,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ListDirectoryBuckets operation
     /// </summary>  
-    public class ListDirectoryBucketsResponseUnmarshaller : XmlResponseUnmarshaller
+    public class ListDirectoryBucketsResponseUnmarshaller : S3ReponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,29 +76,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             }
 
             return;
-        }
-
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <param name="innerException"></param>
-        /// <param name="statusCode"></param>
-        /// <returns></returns>
-        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
-        {
-            ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            errorResponse.InnerException = innerException;
-            errorResponse.StatusCode = statusCode;
-
-            var responseBodyBytes = context.GetResponseBodyBytes();
-
-            using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, null))
-            {
-            }
-            return new AmazonS3Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
         private static ListDirectoryBucketsResponseUnmarshaller _instance = new ListDirectoryBucketsResponseUnmarshaller();

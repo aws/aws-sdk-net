@@ -157,6 +157,7 @@ namespace Amazon.S3.Model
         private string contentBody;
         private string expectedBucketOwner;
         private string key;
+        private long? _writeOffsetBytes; 
         private Stream inputStream;
         private string filePath;
         private bool autoCloseStream = true;
@@ -450,6 +451,29 @@ namespace Amazon.S3.Model
         internal bool IsSetKey()
         {
             return this.key != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WriteOffsetBytes. 
+        /// <p>
+        /// Specifies the offset for appending data to existing objects in bytes.
+        /// The offset must be equal to the size of the existing object being appended to.
+        /// If no object exists, setting this header to 0 will create a new object.
+        /// </p>
+        /// <note>
+        /// <p>This functionality is only supported for objects in the Amazon S3 Express One Zone storage class in directory buckets.</p>
+        /// </note>
+        /// </summary>
+        public long WriteOffsetBytes
+        {
+            get { return this._writeOffsetBytes.GetValueOrDefault(); }
+            set { this._writeOffsetBytes = value; }
+        }
+
+        // Check to see if WriteOffsetBytes property is set
+        internal bool IsSetWriteOffsetBytes()
+        {
+            return this._writeOffsetBytes.HasValue;
         }
 
         /// <summary>

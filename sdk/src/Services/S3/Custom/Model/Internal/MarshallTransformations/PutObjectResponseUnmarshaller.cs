@@ -21,6 +21,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Util;
+using System.IO;
 
 #pragma warning disable 1591
 
@@ -79,8 +80,49 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 response.ChecksumSHA1 = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-checksum-sha1"));
             if (responseData.IsHeaderPresent("x-amz-checksum-sha256"))
                 response.ChecksumSHA256 = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-checksum-sha256"));
+            if (responseData.IsHeaderPresent("x-amz-object-size"))
+                response.Size = S3Transforms.ToLong(responseData.GetHeaderValue("x-amz-object-size"));
 
             return;
+        }
+
+        /// <summary>
+        /// Unmarshaller error response to exception.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <param name="innerException"></param>
+        /// <param name="statusCode"></param>
+        /// <returns></returns>
+        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        {
+            var errorResponse = S3ErrorResponseUnmarshaller.Instance.Unmarshall(context);
+            errorResponse.InnerException = innerException;
+            errorResponse.StatusCode = statusCode;
+
+            var responseBodyBytes = context.GetResponseBodyBytes();
+
+            using (var streamCopy = new MemoryStream(responseBodyBytes))
+            using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, null))
+            {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequest"))
+                {
+                    return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                else if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidWriteOffset"))
+                {
+                    return InvalidWriteOffsetExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                else if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyParts"))
+                {
+                    return TooManyPartsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                else if (errorResponse.Code != null && errorResponse.Code.Equals("EncryptionTypeMismatch"))
+                {
+                    return EncryptionTypeMismatchExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+            }
+
+            return base.ConstructS3Exception(context, errorResponse, innerException, statusCode);
         }
 
         private static PutObjectResponseUnmarshaller _instance;

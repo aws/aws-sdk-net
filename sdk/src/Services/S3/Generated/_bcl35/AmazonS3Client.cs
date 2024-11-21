@@ -2566,7 +2566,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -2769,7 +2769,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -2873,7 +2873,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -2967,7 +2967,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3068,7 +3068,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3359,7 +3359,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3452,7 +3452,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3495,7 +3495,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3577,7 +3577,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3631,7 +3631,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3724,7 +3724,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3772,7 +3772,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3857,29 +3857,52 @@ namespace Amazon.S3
         #region  DeleteLifecycleConfiguration
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This operation is not supported by directory buckets.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Deletes the lifecycle configuration from the specified bucket. Amazon S3 removes all
         /// the lifecycle configuration rules in the lifecycle subresource associated with the
         /// bucket. Your objects never expire, and Amazon S3 no longer automatically deletes any
         /// objects on the basis of rules contained in the deleted lifecycle configuration.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        /// <para>
+        ///  <b>General purpose bucket permissions</b> - By default, all Amazon S3 resources are
+        /// private, including buckets, objects, and related subresources (for example, lifecycle
+        /// configuration and website configuration). Only the resource owner (that is, the Amazon
+        /// Web Services account that created it) can access the resource. The resource owner
+        /// can optionally grant access permissions to others by writing an access policy. For
+        /// this operation, a user must have the <c>s3:PutLifecycleConfiguration</c> permission.
         /// </para>
         ///  
         /// <para>
-        /// To use this operation, you must have permission to perform the <c>s3:PutLifecycleConfiguration</c>
-        /// action. By default, the bucket owner has this permission and the bucket owner can
-        /// grant this permission to others.
+        /// For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
+        /// Access Permissions to Your Amazon S3 Resources</a>.
+        /// </para>
+        ///  </li> </ul> <ul> <li> 
+        /// <para>
+        ///  <b>Directory bucket permissions</b> - You must have the <c>s3express:PutLifecycleConfiguration</c>
+        /// permission in an IAM identity-based policy to use this operation. Cross-account access
+        /// to this API operation isn't supported. The resource owner can optionally grant access
+        /// permissions to others by creating a role or user for them as long as they are within
+        /// the same account as the owner and resource.
         /// </para>
         ///  
         /// <para>
-        /// There is usually some time lag before lifecycle configuration deletion is fully propagated
-        /// to all the Amazon S3 systems.
+        /// For more information about directory bucket policies and permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam.html">Authorizing
+        /// Regional endpoint APIs with IAM</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
+        /// API operation to the Regional endpoint. These endpoints support path-style requests
+        /// in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </note> </li> </ul> </dd> </dl> <dl> <dt>HTTP Host header syntax</dt> <dd> 
+        /// <para>
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        /// </para>
+        ///  </dd> </dl> 
         /// <para>
         /// For more information about the object expiration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#intro-lifecycle-rules-actions">Elements
         /// to Describe Lifecycle Actions</a>.
@@ -3913,29 +3936,52 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This operation is not supported by directory buckets.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Deletes the lifecycle configuration from the specified bucket. Amazon S3 removes all
         /// the lifecycle configuration rules in the lifecycle subresource associated with the
         /// bucket. Your objects never expire, and Amazon S3 no longer automatically deletes any
         /// objects on the basis of rules contained in the deleted lifecycle configuration.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        /// <para>
+        ///  <b>General purpose bucket permissions</b> - By default, all Amazon S3 resources are
+        /// private, including buckets, objects, and related subresources (for example, lifecycle
+        /// configuration and website configuration). Only the resource owner (that is, the Amazon
+        /// Web Services account that created it) can access the resource. The resource owner
+        /// can optionally grant access permissions to others by writing an access policy. For
+        /// this operation, a user must have the <c>s3:PutLifecycleConfiguration</c> permission.
         /// </para>
         ///  
         /// <para>
-        /// To use this operation, you must have permission to perform the <c>s3:PutLifecycleConfiguration</c>
-        /// action. By default, the bucket owner has this permission and the bucket owner can
-        /// grant this permission to others.
+        /// For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
+        /// Access Permissions to Your Amazon S3 Resources</a>.
+        /// </para>
+        ///  </li> </ul> <ul> <li> 
+        /// <para>
+        ///  <b>Directory bucket permissions</b> - You must have the <c>s3express:PutLifecycleConfiguration</c>
+        /// permission in an IAM identity-based policy to use this operation. Cross-account access
+        /// to this API operation isn't supported. The resource owner can optionally grant access
+        /// permissions to others by creating a role or user for them as long as they are within
+        /// the same account as the owner and resource.
         /// </para>
         ///  
         /// <para>
-        /// There is usually some time lag before lifecycle configuration deletion is fully propagated
-        /// to all the Amazon S3 systems.
+        /// For more information about directory bucket policies and permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam.html">Authorizing
+        /// Regional endpoint APIs with IAM</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
+        /// API operation to the Regional endpoint. These endpoints support path-style requests
+        /// in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </note> </li> </ul> </dd> </dl> <dl> <dt>HTTP Host header syntax</dt> <dd> 
+        /// <para>
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        /// </para>
+        ///  </dd> </dl> 
         /// <para>
         /// For more information about the object expiration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#intro-lifecycle-rules-actions">Elements
         /// to Describe Lifecycle Actions</a>.
@@ -4514,7 +4560,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -4603,7 +4649,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -4693,7 +4739,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -4751,7 +4797,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -4848,7 +4894,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -4908,7 +4954,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -5007,7 +5053,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -5212,7 +5258,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -5315,7 +5361,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -5410,7 +5456,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -5468,7 +5514,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -5565,7 +5611,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -5603,7 +5649,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -5680,7 +5726,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -5780,7 +5826,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -5845,7 +5891,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -5949,7 +5995,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -6250,7 +6296,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -6398,7 +6444,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -6432,7 +6478,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -6505,7 +6551,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -6599,7 +6645,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -6651,7 +6697,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -6742,7 +6788,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -6789,7 +6835,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -6875,7 +6921,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -6937,7 +6983,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -7036,37 +7082,66 @@ namespace Amazon.S3
         #region  GetLifecycleConfiguration
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This operation is not supported by directory buckets.
-        /// </para>
-        ///  </note> <note> 
-        /// <para>
-        /// Bucket lifecycle configuration now supports specifying a lifecycle rule using an object
-        /// key name prefix, one or more object tags, object size, or any combination of these.
-        /// Accordingly, this section describes the latest API. The previous version of the API
-        /// supported filtering based only on an object key name prefix, which is supported for
-        /// backward compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycle.html">GetBucketLifecycle</a>.
-        /// Accordingly, this section describes the latest API. The response describes the new
-        /// filter element that you can use to specify a filter to select a subset of objects
-        /// to which the rule applies. If you are using a previous version of the lifecycle configuration,
-        /// it still works. For the earlier action, 
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Returns the lifecycle configuration information set on the bucket. For information
         /// about lifecycle configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object
         /// Lifecycle Management</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Bucket lifecycle configuration now supports specifying a lifecycle rule using an object
+        /// key name prefix, one or more object tags, object size, or any combination of these.
+        /// Accordingly, this section describes the latest API, which is compatible with the new
+        /// functionality. The previous version of the API supported filtering based only on an
+        /// object key name prefix, which is supported for general purpose buckets for backward
+        /// compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycle.html">GetBucketLifecycle</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Lifecyle configurations for directory buckets only support expiring objects and cancelling
+        /// multipart uploads. Expiring of versioned objects, transitions and tag filters are
+        /// not supported.
+        /// </para>
+        ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        /// <para>
+        ///  <b>General purpose bucket permissions</b> - By default, all Amazon S3 resources are
+        /// private, including buckets, objects, and related subresources (for example, lifecycle
+        /// configuration and website configuration). Only the resource owner (that is, the Amazon
+        /// Web Services account that created it) can access the resource. The resource owner
+        /// can optionally grant access permissions to others by writing an access policy. For
+        /// this operation, a user must have the <c>s3:GetLifecycleConfiguration</c> permission.
         /// </para>
         ///  
         /// <para>
-        /// To use this operation, you must have permission to perform the <c>s3:GetLifecycleConfiguration</c>
-        /// action. The bucket owner has this permission, by default. The bucket owner can grant
-        /// this permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
-        /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
+        /// For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
         /// Access Permissions to Your Amazon S3 Resources</a>.
         /// </para>
+        ///  </li> </ul> <ul> <li> 
+        /// <para>
+        ///  <b>Directory bucket permissions</b> - You must have the <c>s3express:GetLifecycleConfiguration</c>
+        /// permission in an IAM identity-based policy to use this operation. Cross-account access
+        /// to this API operation isn't supported. The resource owner can optionally grant access
+        /// permissions to others by creating a role or user for them as long as they are within
+        /// the same account as the owner and resource.
+        /// </para>
         ///  
+        /// <para>
+        /// For more information about directory bucket policies and permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam.html">Authorizing
+        /// Regional endpoint APIs with IAM</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
+        /// API operation to the Regional endpoint. These endpoints support path-style requests
+        /// in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </note> </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
+        /// <para>
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        /// </para>
+        ///  </dd> </dl> 
         /// <para>
         ///  <c>GetBucketLifecycleConfiguration</c> has the following special error:
         /// </para>
@@ -7120,37 +7195,66 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This operation is not supported by directory buckets.
-        /// </para>
-        ///  </note> <note> 
-        /// <para>
-        /// Bucket lifecycle configuration now supports specifying a lifecycle rule using an object
-        /// key name prefix, one or more object tags, object size, or any combination of these.
-        /// Accordingly, this section describes the latest API. The previous version of the API
-        /// supported filtering based only on an object key name prefix, which is supported for
-        /// backward compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycle.html">GetBucketLifecycle</a>.
-        /// Accordingly, this section describes the latest API. The response describes the new
-        /// filter element that you can use to specify a filter to select a subset of objects
-        /// to which the rule applies. If you are using a previous version of the lifecycle configuration,
-        /// it still works. For the earlier action, 
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Returns the lifecycle configuration information set on the bucket. For information
         /// about lifecycle configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object
         /// Lifecycle Management</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Bucket lifecycle configuration now supports specifying a lifecycle rule using an object
+        /// key name prefix, one or more object tags, object size, or any combination of these.
+        /// Accordingly, this section describes the latest API, which is compatible with the new
+        /// functionality. The previous version of the API supported filtering based only on an
+        /// object key name prefix, which is supported for general purpose buckets for backward
+        /// compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycle.html">GetBucketLifecycle</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Lifecyle configurations for directory buckets only support expiring objects and cancelling
+        /// multipart uploads. Expiring of versioned objects, transitions and tag filters are
+        /// not supported.
+        /// </para>
+        ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
+        /// <para>
+        ///  <b>General purpose bucket permissions</b> - By default, all Amazon S3 resources are
+        /// private, including buckets, objects, and related subresources (for example, lifecycle
+        /// configuration and website configuration). Only the resource owner (that is, the Amazon
+        /// Web Services account that created it) can access the resource. The resource owner
+        /// can optionally grant access permissions to others by writing an access policy. For
+        /// this operation, a user must have the <c>s3:GetLifecycleConfiguration</c> permission.
         /// </para>
         ///  
         /// <para>
-        /// To use this operation, you must have permission to perform the <c>s3:GetLifecycleConfiguration</c>
-        /// action. The bucket owner has this permission, by default. The bucket owner can grant
-        /// this permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
-        /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
+        /// For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
         /// Access Permissions to Your Amazon S3 Resources</a>.
         /// </para>
+        ///  </li> </ul> <ul> <li> 
+        /// <para>
+        ///  <b>Directory bucket permissions</b> - You must have the <c>s3express:GetLifecycleConfiguration</c>
+        /// permission in an IAM identity-based policy to use this operation. Cross-account access
+        /// to this API operation isn't supported. The resource owner can optionally grant access
+        /// permissions to others by creating a role or user for them as long as they are within
+        /// the same account as the owner and resource.
+        /// </para>
         ///  
+        /// <para>
+        /// For more information about directory bucket policies and permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam.html">Authorizing
+        /// Regional endpoint APIs with IAM</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
+        /// API operation to the Regional endpoint. These endpoints support path-style requests
+        /// in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </note> </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
+        /// <para>
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        /// </para>
+        ///  </dd> </dl> 
         /// <para>
         ///  <c>GetBucketLifecycleConfiguration</c> has the following special error:
         /// </para>
@@ -8170,7 +8274,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -8246,7 +8350,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -8439,7 +8543,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> <note> <ul> <li> 
         /// <para>
-        ///  <b>Directory buckets</b> - Delete marker is not supported by directory buckets.
+        ///  <b>Directory buckets</b> - Delete marker is not supported for directory buckets.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8611,7 +8715,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> <note> <ul> <li> 
         /// <para>
-        ///  <b>Directory buckets</b> - Delete marker is not supported by directory buckets.
+        ///  <b>Directory buckets</b> - Delete marker is not supported for directory buckets.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8785,7 +8889,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul> <note> <ul> <li> 
         /// <para>
-        ///  <b>Directory buckets</b> - Delete marker is not supported by directory buckets.
+        ///  <b>Directory buckets</b> - Delete marker is not supported for directory buckets.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8875,7 +8979,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -8951,7 +9055,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -9051,7 +9155,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -9099,7 +9203,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -9184,7 +9288,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -9987,7 +10091,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -10092,7 +10196,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -10195,7 +10299,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -10300,7 +10404,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -10407,12 +10511,13 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
         /// Returns a list of all buckets owned by the authenticated sender of the request. To
-        /// use this operation, you must have the <c>s3:ListAllMyBuckets</c> permission. 
+        /// grant IAM permission to use this operation, you must add the <c>s3:ListAllMyBuckets</c>
+        /// policy action. 
         /// </para>
         ///  
         /// <para>
@@ -10421,12 +10526,13 @@ namespace Amazon.S3
         /// </para>
         ///  <important> 
         /// <para>
-        /// We strongly recommend using only paginated requests. Unpaginated requests are only
-        /// supported for Amazon Web Services accounts set to the default general purpose bucket
-        /// quota of 10,000. If you have an approved general purpose bucket quota above 10,000,
-        /// you must send paginated requests to list your account’s buckets. All unpaginated ListBuckets
-        /// requests will be rejected for Amazon Web Services accounts with a general purpose
-        /// bucket quota greater than 10,000. 
+        /// We strongly recommend using only paginated <c>ListBuckets</c> requests. Unpaginated
+        /// <c>ListBuckets</c> requests are only supported for Amazon Web Services accounts set
+        /// to the default general purpose bucket quota of 10,000. If you have an approved general
+        /// purpose bucket quota above 10,000, you must send paginated <c>ListBuckets</c> requests
+        /// to list your account’s buckets. All unpaginated <c>ListBuckets</c> requests will be
+        /// rejected for Amazon Web Services accounts with a general purpose bucket quota greater
+        /// than 10,000. 
         /// </para>
         ///  </important>
         /// </summary>
@@ -10441,12 +10547,13 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
         /// Returns a list of all buckets owned by the authenticated sender of the request. To
-        /// use this operation, you must have the <c>s3:ListAllMyBuckets</c> permission. 
+        /// grant IAM permission to use this operation, you must add the <c>s3:ListAllMyBuckets</c>
+        /// policy action. 
         /// </para>
         ///  
         /// <para>
@@ -10455,12 +10562,13 @@ namespace Amazon.S3
         /// </para>
         ///  <important> 
         /// <para>
-        /// We strongly recommend using only paginated requests. Unpaginated requests are only
-        /// supported for Amazon Web Services accounts set to the default general purpose bucket
-        /// quota of 10,000. If you have an approved general purpose bucket quota above 10,000,
-        /// you must send paginated requests to list your account’s buckets. All unpaginated ListBuckets
-        /// requests will be rejected for Amazon Web Services accounts with a general purpose
-        /// bucket quota greater than 10,000. 
+        /// We strongly recommend using only paginated <c>ListBuckets</c> requests. Unpaginated
+        /// <c>ListBuckets</c> requests are only supported for Amazon Web Services accounts set
+        /// to the default general purpose bucket quota of 10,000. If you have an approved general
+        /// purpose bucket quota above 10,000, you must send paginated <c>ListBuckets</c> requests
+        /// to list your account’s buckets. All unpaginated <c>ListBuckets</c> requests will be
+        /// rejected for Amazon Web Services accounts with a general purpose bucket quota greater
+        /// than 10,000. 
         /// </para>
         ///  </important>
         /// </summary>
@@ -11059,7 +11167,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -11120,7 +11228,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -11183,7 +11291,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -11693,7 +11801,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -11756,7 +11864,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -11821,7 +11929,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -11923,7 +12031,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -12564,7 +12672,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -12683,7 +12791,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -13026,7 +13134,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -13163,7 +13271,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -13322,7 +13430,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -13486,7 +13594,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -13601,7 +13709,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -13740,7 +13848,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -14152,7 +14260,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -14298,7 +14406,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -14341,7 +14449,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -14421,7 +14529,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -14511,7 +14619,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -14638,7 +14746,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> <note> 
         /// <para>
@@ -14763,7 +14871,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -14902,7 +15010,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -15078,7 +15186,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -15169,7 +15277,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -15295,19 +15403,13 @@ namespace Amazon.S3
         #region  PutLifecycleConfiguration
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This operation is not supported by directory buckets.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Creates a new lifecycle configuration for the bucket or replaces an existing lifecycle
         /// configuration. Keep in mind that this will overwrite an existing lifecycle configuration,
         /// so if you want to retain any configuration details, they must be included in the new
         /// lifecycle configuration. For information about lifecycle configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html">Managing
         /// your storage lifecycle</a>.
-        /// </para>
-        ///  <dl> <dt>Rules</dt> <dd> 
+        /// 
+        ///  <dl> <dt>Rules</dt> <dt>Permissions</dt> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
         /// You specify the lifecycle configuration in your request body. The lifecycle configuration
         /// is specified as XML consisting of one or more rules. An Amazon S3 Lifecycle configuration
@@ -15319,9 +15421,17 @@ namespace Amazon.S3
         /// key name prefix, one or more object tags, object size, or any combination of these.
         /// Accordingly, this section describes the latest API. The previous version of the API
         /// supported filtering based only on an object key name prefix, which is supported for
-        /// backward compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
+        /// backward compatibility for general purpose buckets. For the related API description,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
+        /// 
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Lifecyle configurations for directory buckets only support expiring objects and cancelling
+        /// multipart uploads. Expiring of versioned objects,transitions and tag filters are not
+        /// supported.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// A lifecycle rule consists of the following:
         /// </para>
@@ -15348,14 +15458,14 @@ namespace Amazon.S3
         /// Lifecycle Management</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html">Lifecycle
         /// Configuration Elements</a>.
         /// </para>
-        ///  </dd> <dt>Permissions</dt> <dd> 
+        ///  </dd> <dd> <ul> <li> 
         /// <para>
-        /// By default, all Amazon S3 resources are private, including buckets, objects, and related
-        /// subresources (for example, lifecycle configuration and website configuration). Only
-        /// the resource owner (that is, the Amazon Web Services account that created it) can
-        /// access the resource. The resource owner can optionally grant access permissions to
-        /// others by writing an access policy. For this operation, a user must get the <c>s3:PutLifecycleConfiguration</c>
-        /// permission.
+        ///  <b>General purpose bucket permissions</b> - By default, all Amazon S3 resources are
+        /// private, including buckets, objects, and related subresources (for example, lifecycle
+        /// configuration and website configuration). Only the resource owner (that is, the Amazon
+        /// Web Services account that created it) can access the resource. The resource owner
+        /// can optionally grant access permissions to others by writing an access policy. For
+        /// this operation, a user must have the <c>s3:PutLifecycleConfiguration</c> permission.
         /// </para>
         ///  
         /// <para>
@@ -15375,21 +15485,42 @@ namespace Amazon.S3
         /// <para>
         ///  <c>s3:PutLifecycleConfiguration</c> 
         /// </para>
-        ///  </li> </ul> 
+        ///  
         /// <para>
         /// For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
         /// Access Permissions to Your Amazon S3 Resources</a>.
         /// </para>
-        ///  </dd> </dl> 
+        ///  </li> </ul> </li> </ul> <ul> <li> 
+        /// <para>
+        ///  <b>Directory bucket permissions</b> - You must have the <c>s3express:PutLifecycleConfiguration</c>
+        /// permission in an IAM identity-based policy to use this operation. Cross-account access
+        /// to this API operation isn't supported. The resource owner can optionally grant access
+        /// permissions to others by creating a role or user for them as long as they are within
+        /// the same account as the owner and resource.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about directory bucket policies and permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam.html">Authorizing
+        /// Regional endpoint APIs with IAM</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
+        /// API operation to the Regional endpoint. These endpoints support path-style requests
+        /// in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </note> </li> </ul> </dd> <dd> 
+        /// <para>
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        /// </para>
+        ///  
         /// <para>
         /// The following operations are related to <c>PutBucketLifecycleConfiguration</c>:
         /// </para>
         ///  <ul> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-configuration-examples.html">Examples
-        /// of Lifecycle Configuration</a> 
-        /// </para>
-        ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a>
         /// 
@@ -15399,7 +15530,7 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html">DeleteBucketLifecycle</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </dd> </dl>
         /// </summary>
         /// <param name="bucketName">The name of the bucket for which to set the configuration.</param>
         /// <param name="configuration">A property of PutLifecycleConfigurationRequest used to execute the PutLifecycleConfiguration service method.</param>
@@ -15416,19 +15547,13 @@ namespace Amazon.S3
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This operation is not supported by directory buckets.
-        /// </para>
-        ///  </note> 
-        /// <para>
         /// Creates a new lifecycle configuration for the bucket or replaces an existing lifecycle
         /// configuration. Keep in mind that this will overwrite an existing lifecycle configuration,
         /// so if you want to retain any configuration details, they must be included in the new
         /// lifecycle configuration. For information about lifecycle configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html">Managing
         /// your storage lifecycle</a>.
-        /// </para>
-        ///  <dl> <dt>Rules</dt> <dd> 
+        /// 
+        ///  <dl> <dt>Rules</dt> <dt>Permissions</dt> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
         /// You specify the lifecycle configuration in your request body. The lifecycle configuration
         /// is specified as XML consisting of one or more rules. An Amazon S3 Lifecycle configuration
@@ -15440,9 +15565,17 @@ namespace Amazon.S3
         /// key name prefix, one or more object tags, object size, or any combination of these.
         /// Accordingly, this section describes the latest API. The previous version of the API
         /// supported filtering based only on an object key name prefix, which is supported for
-        /// backward compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
+        /// backward compatibility for general purpose buckets. For the related API description,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
+        /// 
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Lifecyle configurations for directory buckets only support expiring objects and cancelling
+        /// multipart uploads. Expiring of versioned objects,transitions and tag filters are not
+        /// supported.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// A lifecycle rule consists of the following:
         /// </para>
@@ -15469,14 +15602,14 @@ namespace Amazon.S3
         /// Lifecycle Management</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html">Lifecycle
         /// Configuration Elements</a>.
         /// </para>
-        ///  </dd> <dt>Permissions</dt> <dd> 
+        ///  </dd> <dd> <ul> <li> 
         /// <para>
-        /// By default, all Amazon S3 resources are private, including buckets, objects, and related
-        /// subresources (for example, lifecycle configuration and website configuration). Only
-        /// the resource owner (that is, the Amazon Web Services account that created it) can
-        /// access the resource. The resource owner can optionally grant access permissions to
-        /// others by writing an access policy. For this operation, a user must get the <c>s3:PutLifecycleConfiguration</c>
-        /// permission.
+        ///  <b>General purpose bucket permissions</b> - By default, all Amazon S3 resources are
+        /// private, including buckets, objects, and related subresources (for example, lifecycle
+        /// configuration and website configuration). Only the resource owner (that is, the Amazon
+        /// Web Services account that created it) can access the resource. The resource owner
+        /// can optionally grant access permissions to others by writing an access policy. For
+        /// this operation, a user must have the <c>s3:PutLifecycleConfiguration</c> permission.
         /// </para>
         ///  
         /// <para>
@@ -15496,21 +15629,42 @@ namespace Amazon.S3
         /// <para>
         ///  <c>s3:PutLifecycleConfiguration</c> 
         /// </para>
-        ///  </li> </ul> 
+        ///  
         /// <para>
         /// For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
         /// Access Permissions to Your Amazon S3 Resources</a>.
         /// </para>
-        ///  </dd> </dl> 
+        ///  </li> </ul> </li> </ul> <ul> <li> 
+        /// <para>
+        ///  <b>Directory bucket permissions</b> - You must have the <c>s3express:PutLifecycleConfiguration</c>
+        /// permission in an IAM identity-based policy to use this operation. Cross-account access
+        /// to this API operation isn't supported. The resource owner can optionally grant access
+        /// permissions to others by creating a role or user for them as long as they are within
+        /// the same account as the owner and resource.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about directory bucket policies and permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam.html">Authorizing
+        /// Regional endpoint APIs with IAM</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
+        /// API operation to the Regional endpoint. These endpoints support path-style requests
+        /// in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i>
+        /// </c>. Virtual-hosted-style requests aren't supported. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+        /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  </note> </li> </ul> </dd> <dd> 
+        /// <para>
+        ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c>s3express-control.<i>region</i>.amazonaws.com</c>.
+        /// </para>
+        ///  
         /// <para>
         /// The following operations are related to <c>PutBucketLifecycleConfiguration</c>:
         /// </para>
         ///  <ul> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-configuration-examples.html">Examples
-        /// of Lifecycle Configuration</a> 
-        /// </para>
-        ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a>
         /// 
@@ -15520,7 +15674,7 @@ namespace Amazon.S3
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html">DeleteBucketLifecycle</a>
         /// 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> </dd> </dl>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutLifecycleConfiguration service method.</param>
         /// 
@@ -15758,7 +15912,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -15825,7 +15979,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -15905,7 +16059,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -15974,7 +16128,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -16100,7 +16254,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -16203,7 +16357,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -16429,7 +16583,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -16657,7 +16811,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -16885,7 +17039,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -17115,7 +17269,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -17378,7 +17532,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>
@@ -17816,7 +17970,7 @@ namespace Amazon.S3
         /// <summary>
         /// <note> 
         /// <para>
-        /// This operation is not supported by directory buckets.
+        /// This operation is not supported for directory buckets.
         /// </para>
         ///  </note> 
         /// <para>

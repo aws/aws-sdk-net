@@ -140,7 +140,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         [TestMethod]
         [TestCategory("S3")]
-        [ExpectedException(typeof(AmazonS3Exception), "Content-MD5 HTTP header is required for Put Part requests with Object Lock parameters")]
+        [ExpectedException(typeof(AmazonS3Exception), "Content-MD5 OR x-amz-checksum- HTTP header is required for Put Object requests with Object Lock parameters", AllowDerivedTypes = true)]
         public void TestSimpleUploadFileFailViaTransferUtility()
         {
             var transferConfig = new TransferUtilityConfig { MinSizeBeforePartUpload = 6000000 };
@@ -190,7 +190,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         [TestMethod]
         [TestCategory("S3")]
-        [ExpectedException(typeof(AmazonS3Exception), "Content-MD5 HTTP header is required for Put Part requests with Object Lock parameters")]
+        [ExpectedException(typeof(AmazonS3Exception), "Content-MD5 OR x-amz-checksum- HTTP header is required for Put Object requests with Object Lock parameters", AllowDerivedTypes = true)]
         public void TestSimpleUploadStreamFailViaTransferUtility()
         {
             var transferConfig = new TransferUtilityConfig { MinSizeBeforePartUpload = 6000000 };

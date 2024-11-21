@@ -13,37 +13,24 @@
  * permissions and limitations under the License.
  */
 
-/*
- * Do not modify this file. This file is generated from the s3-2006-03-01.normal.json service model.
- */
 using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.IO;
-using System.Net;
-using System.Text;
-using System.Xml.Serialization;
 
-using Amazon.S3.Model;
-using Amazon.Runtime;
-using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for BucketAlreadyExistsException operation
+    /// Response Unmarshaller for TooManyPartsException operation
     /// </summary>  
-    public class BucketAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<BucketAlreadyExistsException, XmlUnmarshallerContext>
+    public class TooManyPartsExceptionUnmarshaller : IErrorResponseUnmarshaller<TooManyPartsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public BucketAlreadyExistsException Unmarshall(XmlUnmarshallerContext context)
+        public TooManyPartsException Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,7 +41,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public BucketAlreadyExistsException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        public TooManyPartsException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
             string id2 = null, amzCfId = null;
             var s3ErrorResponse = errorResponse as S3ErrorResponse;
@@ -64,7 +51,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 amzCfId = s3ErrorResponse.AmzCfId;
             }
 
-            BucketAlreadyExistsException response = new BucketAlreadyExistsException(errorResponse.Message, errorResponse.InnerException,
+            TooManyPartsException response = new TooManyPartsException(errorResponse.Message, errorResponse.InnerException,
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode, id2, amzCfId);
 
             while (context.Read())
@@ -76,17 +63,18 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static BucketAlreadyExistsExceptionUnmarshaller _instance = new BucketAlreadyExistsExceptionUnmarshaller();
+        private static TooManyPartsExceptionUnmarshaller _instance = new TooManyPartsExceptionUnmarshaller();
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BucketAlreadyExistsExceptionUnmarshaller Instance
+        public static TooManyPartsExceptionUnmarshaller Instance
         {
             get
             {
                 return _instance;
             }
         }
+
     }
 }

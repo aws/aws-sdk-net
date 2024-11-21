@@ -119,6 +119,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if (putObjectRequest.IsSetIfNoneMatch())
                 request.Headers["If-None-Match"] = putObjectRequest.IfNoneMatch;
+                
+            if (putObjectRequest.IsSetWriteOffsetBytes())
+                request.Headers.Add("x-amz-write-offset-bytes", S3Transforms.ToStringValue(putObjectRequest.WriteOffsetBytes));
 
             AmazonS3Util.SetMetadataHeaders(request, putObjectRequest.Metadata);
 
