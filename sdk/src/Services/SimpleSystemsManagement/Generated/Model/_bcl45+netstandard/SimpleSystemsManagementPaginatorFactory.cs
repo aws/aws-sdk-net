@@ -381,6 +381,22 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Paginator for ListNodes operation
+        ///</summary>
+        public IListNodesPaginator ListNodes(ListNodesRequest request) 
+        {
+            return new ListNodesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListNodesSummary operation
+        ///</summary>
+        public IListNodesSummaryPaginator ListNodesSummary(ListNodesSummaryRequest request) 
+        {
+            return new ListNodesSummaryPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListOpsItemEvents operation
         ///</summary>
         public IListOpsItemEventsPaginator ListOpsItemEvents(ListOpsItemEventsRequest request) 

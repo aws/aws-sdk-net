@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The specified aggregator isn't valid for inventory groups. Verify that the aggregator
-    /// uses a valid inventory type such as <c>AWS:Application</c> or <c>AWS:InstanceInformation</c>.
+    /// The specified aggregator isn't valid for the group type. Verify that the aggregator
+    /// you provided is supported.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

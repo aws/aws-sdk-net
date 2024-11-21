@@ -181,6 +181,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// A set of global filters used to include patches in the baseline.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// The <c>GlobalFilters</c> parameter can be configured only by using the CLI or an Amazon
+        /// Web Services SDK. It can't be configured from the Patch Manager console, and its value
+        /// isn't displayed in the console.
+        /// </para>
+        ///  </important>
         /// </summary>
         public PatchFilterGroup GlobalFilters
         {

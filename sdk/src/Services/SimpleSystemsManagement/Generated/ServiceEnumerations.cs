@@ -2107,6 +2107,64 @@ namespace Amazon.SimpleSystemsManagement
 
 
     /// <summary>
+    /// Constants used for properties of type ExecutionPreviewStatus.
+    /// </summary>
+    public class ExecutionPreviewStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Failed for ExecutionPreviewStatus
+        /// </summary>
+        public static readonly ExecutionPreviewStatus Failed = new ExecutionPreviewStatus("Failed");
+        /// <summary>
+        /// Constant InProgress for ExecutionPreviewStatus
+        /// </summary>
+        public static readonly ExecutionPreviewStatus InProgress = new ExecutionPreviewStatus("InProgress");
+        /// <summary>
+        /// Constant Pending for ExecutionPreviewStatus
+        /// </summary>
+        public static readonly ExecutionPreviewStatus Pending = new ExecutionPreviewStatus("Pending");
+        /// <summary>
+        /// Constant Success for ExecutionPreviewStatus
+        /// </summary>
+        public static readonly ExecutionPreviewStatus Success = new ExecutionPreviewStatus("Success");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExecutionPreviewStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExecutionPreviewStatus FindValue(string value)
+        {
+            return FindValue<ExecutionPreviewStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExecutionPreviewStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ExternalAlarmState.
     /// </summary>
     public class ExternalAlarmState : ConstantClass
@@ -2204,6 +2262,60 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Fault(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImpactType.
+    /// </summary>
+    public class ImpactType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Mutating for ImpactType
+        /// </summary>
+        public static readonly ImpactType Mutating = new ImpactType("Mutating");
+        /// <summary>
+        /// Constant NonMutating for ImpactType
+        /// </summary>
+        public static readonly ImpactType NonMutating = new ImpactType("NonMutating");
+        /// <summary>
+        /// Constant Undetermined for ImpactType
+        /// </summary>
+        public static readonly ImpactType Undetermined = new ImpactType("Undetermined");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImpactType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImpactType FindValue(string value)
+        {
+            return FindValue<ImpactType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImpactType(string value)
         {
             return FindValue(value);
         }
@@ -2978,6 +3090,374 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MaintenanceWindowTaskType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ManagedStatus.
+    /// </summary>
+    public class ManagedStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant All for ManagedStatus
+        /// </summary>
+        public static readonly ManagedStatus All = new ManagedStatus("All");
+        /// <summary>
+        /// Constant Managed for ManagedStatus
+        /// </summary>
+        public static readonly ManagedStatus Managed = new ManagedStatus("Managed");
+        /// <summary>
+        /// Constant Unmanaged for ManagedStatus
+        /// </summary>
+        public static readonly ManagedStatus Unmanaged = new ManagedStatus("Unmanaged");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ManagedStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ManagedStatus FindValue(string value)
+        {
+            return FindValue<ManagedStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ManagedStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NodeAggregatorType.
+    /// </summary>
+    public class NodeAggregatorType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Count for NodeAggregatorType
+        /// </summary>
+        public static readonly NodeAggregatorType Count = new NodeAggregatorType("Count");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NodeAggregatorType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NodeAggregatorType FindValue(string value)
+        {
+            return FindValue<NodeAggregatorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NodeAggregatorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NodeAttributeName.
+    /// </summary>
+    public class NodeAttributeName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AgentVersion for NodeAttributeName
+        /// </summary>
+        public static readonly NodeAttributeName AgentVersion = new NodeAttributeName("AgentVersion");
+        /// <summary>
+        /// Constant PlatformName for NodeAttributeName
+        /// </summary>
+        public static readonly NodeAttributeName PlatformName = new NodeAttributeName("PlatformName");
+        /// <summary>
+        /// Constant PlatformType for NodeAttributeName
+        /// </summary>
+        public static readonly NodeAttributeName PlatformType = new NodeAttributeName("PlatformType");
+        /// <summary>
+        /// Constant PlatformVersion for NodeAttributeName
+        /// </summary>
+        public static readonly NodeAttributeName PlatformVersion = new NodeAttributeName("PlatformVersion");
+        /// <summary>
+        /// Constant Region for NodeAttributeName
+        /// </summary>
+        public static readonly NodeAttributeName Region = new NodeAttributeName("Region");
+        /// <summary>
+        /// Constant ResourceType for NodeAttributeName
+        /// </summary>
+        public static readonly NodeAttributeName ResourceType = new NodeAttributeName("ResourceType");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NodeAttributeName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NodeAttributeName FindValue(string value)
+        {
+            return FindValue<NodeAttributeName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NodeAttributeName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NodeFilterKey.
+    /// </summary>
+    public class NodeFilterKey : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AccountId for NodeFilterKey
+        /// </summary>
+        public static readonly NodeFilterKey AccountId = new NodeFilterKey("AccountId");
+        /// <summary>
+        /// Constant AgentType for NodeFilterKey
+        /// </summary>
+        public static readonly NodeFilterKey AgentType = new NodeFilterKey("AgentType");
+        /// <summary>
+        /// Constant AgentVersion for NodeFilterKey
+        /// </summary>
+        public static readonly NodeFilterKey AgentVersion = new NodeFilterKey("AgentVersion");
+        /// <summary>
+        /// Constant ComputerName for NodeFilterKey
+        /// </summary>
+        public static readonly NodeFilterKey ComputerName = new NodeFilterKey("ComputerName");
+        /// <summary>
+        /// Constant InstanceId for NodeFilterKey
+        /// </summary>
+        public static readonly NodeFilterKey InstanceId = new NodeFilterKey("InstanceId");
+        /// <summary>
+        /// Constant InstanceStatus for NodeFilterKey
+        /// </summary>
+        public static readonly NodeFilterKey InstanceStatus = new NodeFilterKey("InstanceStatus");
+        /// <summary>
+        /// Constant IpAddress for NodeFilterKey
+        /// </summary>
+        public static readonly NodeFilterKey IpAddress = new NodeFilterKey("IpAddress");
+        /// <summary>
+        /// Constant ManagedStatus for NodeFilterKey
+        /// </summary>
+        public static readonly NodeFilterKey ManagedStatus = new NodeFilterKey("ManagedStatus");
+        /// <summary>
+        /// Constant OrganizationalUnitId for NodeFilterKey
+        /// </summary>
+        public static readonly NodeFilterKey OrganizationalUnitId = new NodeFilterKey("OrganizationalUnitId");
+        /// <summary>
+        /// Constant OrganizationalUnitPath for NodeFilterKey
+        /// </summary>
+        public static readonly NodeFilterKey OrganizationalUnitPath = new NodeFilterKey("OrganizationalUnitPath");
+        /// <summary>
+        /// Constant PlatformName for NodeFilterKey
+        /// </summary>
+        public static readonly NodeFilterKey PlatformName = new NodeFilterKey("PlatformName");
+        /// <summary>
+        /// Constant PlatformType for NodeFilterKey
+        /// </summary>
+        public static readonly NodeFilterKey PlatformType = new NodeFilterKey("PlatformType");
+        /// <summary>
+        /// Constant PlatformVersion for NodeFilterKey
+        /// </summary>
+        public static readonly NodeFilterKey PlatformVersion = new NodeFilterKey("PlatformVersion");
+        /// <summary>
+        /// Constant Region for NodeFilterKey
+        /// </summary>
+        public static readonly NodeFilterKey Region = new NodeFilterKey("Region");
+        /// <summary>
+        /// Constant ResourceType for NodeFilterKey
+        /// </summary>
+        public static readonly NodeFilterKey ResourceType = new NodeFilterKey("ResourceType");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NodeFilterKey(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NodeFilterKey FindValue(string value)
+        {
+            return FindValue<NodeFilterKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NodeFilterKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NodeFilterOperatorType.
+    /// </summary>
+    public class NodeFilterOperatorType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BeginWith for NodeFilterOperatorType
+        /// </summary>
+        public static readonly NodeFilterOperatorType BeginWith = new NodeFilterOperatorType("BeginWith");
+        /// <summary>
+        /// Constant Equal for NodeFilterOperatorType
+        /// </summary>
+        public static readonly NodeFilterOperatorType Equal = new NodeFilterOperatorType("Equal");
+        /// <summary>
+        /// Constant NotEqual for NodeFilterOperatorType
+        /// </summary>
+        public static readonly NodeFilterOperatorType NotEqual = new NodeFilterOperatorType("NotEqual");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NodeFilterOperatorType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NodeFilterOperatorType FindValue(string value)
+        {
+            return FindValue<NodeFilterOperatorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NodeFilterOperatorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NodeTypeName.
+    /// </summary>
+    public class NodeTypeName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Instance for NodeTypeName
+        /// </summary>
+        public static readonly NodeTypeName Instance = new NodeTypeName("Instance");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NodeTypeName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NodeTypeName FindValue(string value)
+        {
+            return FindValue<NodeTypeName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NodeTypeName(string value)
         {
             return FindValue(value);
         }

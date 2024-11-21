@@ -436,7 +436,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property PlatformType. 
         /// <para>
-        /// The operating system platform type of the managed node. For example, Windows.
+        /// The operating system platform type of the managed node. For example, Windows Server
+        /// or Amazon Linux 2.
         /// </para>
         /// </summary>
         public PlatformType PlatformType
