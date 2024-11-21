@@ -52,6 +52,7 @@ namespace Amazon.Lambda.Model
         private int? _maximumBatchingWindowInSeconds;
         private int? _maximumRecordAgeInSeconds;
         private int? _maximumRetryAttempts;
+        private EventSourceMappingMetricsConfig _metricsConfig;
         private int? _parallelizationFactor;
         private List<string> _queues = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ScalingConfig _scalingConfig;
@@ -433,6 +434,25 @@ namespace Amazon.Lambda.Model
         internal bool IsSetMaximumRetryAttempts()
         {
             return this._maximumRetryAttempts.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetricsConfig. 
+        /// <para>
+        /// The metrics configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">Event
+        /// source mapping metrics</a>.
+        /// </para>
+        /// </summary>
+        public EventSourceMappingMetricsConfig MetricsConfig
+        {
+            get { return this._metricsConfig; }
+            set { this._metricsConfig = value; }
+        }
+
+        // Check to see if MetricsConfig property is set
+        internal bool IsSetMetricsConfig()
+        {
+            return this._metricsConfig != null;
         }
 
         /// <summary>

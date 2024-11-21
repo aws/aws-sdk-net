@@ -162,6 +162,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MaximumRetryAttempts);
                 }
 
+                if(publicRequest.IsSetMetricsConfig())
+                {
+                    context.Writer.WritePropertyName("MetricsConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EventSourceMappingMetricsConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.MetricsConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetParallelizationFactor())
                 {
                     context.Writer.WritePropertyName("ParallelizationFactor");

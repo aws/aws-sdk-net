@@ -76,18 +76,13 @@ namespace Amazon.Lambda.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// The following error handling options are available only for stream sources (DynamoDB
-    /// and Kinesis):
+    /// The following error handling options are available only for DynamoDB and Kinesis event
+    /// sources:
     /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <c>BisectBatchOnFunctionError</c> – If the function returns an error, split the batch
     /// in two and retry.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>DestinationConfig</c> – Send discarded records to an Amazon SQS queue or Amazon
-    /// SNS topic.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -104,6 +99,16 @@ namespace Amazon.Lambda.Model
     ///  </li> <li> 
     /// <para>
     ///  <c>ParallelizationFactor</c> – Process multiple batches from each shard concurrently.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For stream sources (DynamoDB, Kinesis, Amazon MSK, and self-managed Apache Kafka),
+    /// the following option is also available:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>DestinationConfig</c> – Send discarded records to an Amazon SQS queue, Amazon
+    /// SNS topic, or Amazon S3 bucket.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -161,6 +166,7 @@ namespace Amazon.Lambda.Model
         private int? _maximumBatchingWindowInSeconds;
         private int? _maximumRecordAgeInSeconds;
         private int? _maximumRetryAttempts;
+        private EventSourceMappingMetricsConfig _metricsConfig;
         private int? _parallelizationFactor;
         private ScalingConfig _scalingConfig;
         private List<SourceAccessConfiguration> _sourceAccessConfigurations = AWSConfigs.InitializeCollections ? new List<SourceAccessConfiguration>() : null;
@@ -478,6 +484,25 @@ namespace Amazon.Lambda.Model
         internal bool IsSetMaximumRetryAttempts()
         {
             return this._maximumRetryAttempts.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetricsConfig. 
+        /// <para>
+        /// The metrics configuration for your event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">Event
+        /// source mapping metrics</a>.
+        /// </para>
+        /// </summary>
+        public EventSourceMappingMetricsConfig MetricsConfig
+        {
+            get { return this._metricsConfig; }
+            set { this._metricsConfig = value; }
+        }
+
+        // Check to see if MetricsConfig property is set
+        internal bool IsSetMetricsConfig()
+        {
+            return this._metricsConfig != null;
         }
 
         /// <summary>

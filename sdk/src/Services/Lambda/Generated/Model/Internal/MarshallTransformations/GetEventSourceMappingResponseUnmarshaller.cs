@@ -154,6 +154,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     response.MaximumRetryAttempts = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MetricsConfig", targetDepth))
+                {
+                    var unmarshaller = EventSourceMappingMetricsConfigUnmarshaller.Instance;
+                    response.MetricsConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ParallelizationFactor", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

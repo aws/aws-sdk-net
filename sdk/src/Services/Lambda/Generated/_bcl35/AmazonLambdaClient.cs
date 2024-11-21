@@ -63,7 +63,7 @@ namespace Amazon.Lambda
     /// </para>
     ///  
     /// <para>
-    /// For a list of Region-specific endpoints that Lambda supports, see <a href="https://docs.aws.amazon.com/general/latest/gr/lambda-service.html/">Lambda
+    /// For a list of Region-specific endpoints that Lambda supports, see <a href="https://docs.aws.amazon.com/general/latest/gr/lambda-service.html">Lambda
     /// endpoints and quotas </a> in the <i>Amazon Web Services General Reference.</i>. 
     /// </para>
     ///  
@@ -764,18 +764,13 @@ namespace Amazon.Lambda
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The following error handling options are available only for stream sources (DynamoDB
-        /// and Kinesis):
+        /// The following error handling options are available only for DynamoDB and Kinesis event
+        /// sources:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <c>BisectBatchOnFunctionError</c> – If the function returns an error, split the batch
         /// in two and retry.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>DestinationConfig</c> – Send discarded records to an Amazon SQS queue or Amazon
-        /// SNS topic.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -792,6 +787,16 @@ namespace Amazon.Lambda
         ///  </li> <li> 
         /// <para>
         ///  <c>ParallelizationFactor</c> – Process multiple batches from each shard concurrently.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For stream sources (DynamoDB, Kinesis, Amazon MSK, and self-managed Apache Kafka),
+        /// the following option is also available:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>DestinationConfig</c> – Send discarded records to an Amazon SQS queue, Amazon
+        /// SNS topic, or Amazon S3 bucket.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -4814,12 +4819,18 @@ namespace Amazon.Lambda
         /// </para>
         ///  
         /// <para>
-        /// To send an invocation record to a queue, topic, function, or event bus, specify a
-        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-async-destinations">destination</a>.
+        /// To send an invocation record to a queue, topic, S3 bucket, function, or event bus,
+        /// specify a <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-async-destinations">destination</a>.
         /// You can configure separate destinations for successful invocations (on-success) and
         /// events that fail all processing attempts (on-failure). You can configure destinations
         /// in addition to or instead of a dead-letter queue.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// S3 buckets are supported only for on-failure destinations. To retain records of successful
+        /// invocations, use another destination type.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutFunctionEventInvokeConfig service method.</param>
         /// 
@@ -5622,18 +5633,13 @@ namespace Amazon.Lambda
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The following error handling options are available only for stream sources (DynamoDB
-        /// and Kinesis):
+        /// The following error handling options are available only for DynamoDB and Kinesis event
+        /// sources:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <c>BisectBatchOnFunctionError</c> – If the function returns an error, split the batch
         /// in two and retry.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>DestinationConfig</c> – Send discarded records to an Amazon SQS queue or Amazon
-        /// SNS topic.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5650,6 +5656,16 @@ namespace Amazon.Lambda
         ///  </li> <li> 
         /// <para>
         ///  <c>ParallelizationFactor</c> – Process multiple batches from each shard concurrently.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For stream sources (DynamoDB, Kinesis, Amazon MSK, and self-managed Apache Kafka),
+        /// the following option is also available:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>DestinationConfig</c> – Send discarded records to an Amazon SQS queue, Amazon
+        /// SNS topic, or Amazon S3 bucket.
         /// </para>
         ///  </li> </ul> 
         /// <para>
