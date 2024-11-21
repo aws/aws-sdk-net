@@ -30,7 +30,7 @@ namespace Amazon.Runtime
         /// <returns></returns>
         public override ImmutableCredentials GetCredentials()
         {
-            throw new NotSupportedException("AnonymousAWSCredentials do not support this operation");
+            return null;
         }
 
         #endregion

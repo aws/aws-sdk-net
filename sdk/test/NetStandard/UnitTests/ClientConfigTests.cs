@@ -67,7 +67,8 @@ namespace UnitTests
             "TelemetryProvider",
             "AccountIdEndpointMode",
             "RequestChecksumCalculation",
-            "ResponseChecksumValidation",
+            "ResponseChecksumValidation",,
+            "IdentityResolverConfiguration"
         };
 
         [Fact]

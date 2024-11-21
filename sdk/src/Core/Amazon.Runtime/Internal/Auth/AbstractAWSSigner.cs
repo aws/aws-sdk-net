@@ -20,6 +20,7 @@ using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 #endif
+using Smithy.Identity.Abstractions;
 using Amazon.Internal;
 using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
@@ -28,7 +29,7 @@ namespace Amazon.Runtime.Internal.Auth
 {
     public enum ClientProtocol { QueryStringProtocol, RestProtocol, Unknown }
 
-    public abstract class AbstractAWSSigner
+    public abstract class AbstractAWSSigner : ISigner
     {
         private readonly object _lock = new object();
         private AWS4Signer _aws4Signer;

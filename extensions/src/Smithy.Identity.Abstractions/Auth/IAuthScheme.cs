@@ -24,6 +24,9 @@
         /// </summary>
         IIdentityResolver GetIdentityResolver(IIdentityResolverConfiguration configuration);
 
-        // TODO: Include methods to retrieve signer for the current scheme.
+        /// <summary>
+        /// Retrieves the signer associated with this authentication scheme.
+        /// </summary>
+        ISigner Signer();
     }
 }
