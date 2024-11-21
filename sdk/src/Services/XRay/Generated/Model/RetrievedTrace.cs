@@ -30,48 +30,40 @@ using Amazon.Runtime.Internal;
 namespace Amazon.XRay.Model
 {
     /// <summary>
-    /// A segment from a trace that has been ingested by the X-Ray service. The segment can
-    /// be compiled from documents uploaded with <a href="https://docs.aws.amazon.com/xray/latest/api/API_PutTraceSegments.html">PutTraceSegments</a>,
-    /// or an <c>inferred</c> segment for a downstream service, generated from a subsegment
-    /// sent by the service that called it.
-    /// 
-    ///  
-    /// <para>
-    /// For the full segment document schema, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/aws-xray-interface-api.html#xray-api-segmentdocuments">Amazon
-    /// Web Services X-Ray segment documents</a> in the <i>Amazon Web Services X-Ray Developer
-    /// Guide</i>.
-    /// </para>
+    /// Retrieved collection of spans with matching trace IDs.
     /// </summary>
-    public partial class Segment
+    public partial class RetrievedTrace
     {
-        private string _document;
+        private double? _duration;
         private string _id;
+        private List<Span> _spans = AWSConfigs.InitializeCollections ? new List<Span>() : null;
 
         /// <summary>
-        /// Gets and sets the property Document. 
+        /// Gets and sets the property Duration. 
         /// <para>
-        /// The segment document.
+        ///  The length of time in seconds between the start time of the root span and the end
+        /// time of the last span that completed. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
-        public string Document
+        public double Duration
         {
-            get { return this._document; }
-            set { this._document = value; }
+            get { return this._duration.GetValueOrDefault(); }
+            set { this._duration = value; }
         }
 
-        // Check to see if Document property is set
-        internal bool IsSetDocument()
+        // Check to see if Duration property is set
+        internal bool IsSetDuration()
         {
-            return this._document != null;
+            return this._duration.HasValue; 
         }
 
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The segment's ID.
+        ///  The unique identifier for the span. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=35)]
         public string Id
         {
             get { return this._id; }
@@ -82,6 +74,25 @@ namespace Amazon.XRay.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Spans. 
+        /// <para>
+        ///  Spans that comprise the trace. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public List<Span> Spans
+        {
+            get { return this._spans; }
+            set { this._spans = value; }
+        }
+
+        // Check to see if Spans property is set
+        internal bool IsSetSpans()
+        {
+            return this._spans != null && (this._spans.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -30,19 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.XRay.Model
 {
     /// <summary>
-    /// A segment from a trace that has been ingested by the X-Ray service. The segment can
-    /// be compiled from documents uploaded with <a href="https://docs.aws.amazon.com/xray/latest/api/API_PutTraceSegments.html">PutTraceSegments</a>,
-    /// or an <c>inferred</c> segment for a downstream service, generated from a subsegment
-    /// sent by the service that called it.
-    /// 
-    ///  
-    /// <para>
-    /// For the full segment document schema, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/aws-xray-interface-api.html#xray-api-segmentdocuments">Amazon
-    /// Web Services X-Ray segment documents</a> in the <i>Amazon Web Services X-Ray Developer
-    /// Guide</i>.
-    /// </para>
+    /// A span from a trace that has been ingested by the X-Ray service. A span represents
+    /// a unit of work or an operation performed by a service.
     /// </summary>
-    public partial class Segment
+    public partial class Span
     {
         private string _document;
         private string _id;
@@ -50,10 +41,10 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property Document. 
         /// <para>
-        /// The segment document.
+        ///  The span document.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Max=204800)]
         public string Document
         {
             get { return this._document; }
@@ -69,9 +60,10 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The segment's ID.
+        /// The span ID.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=16)]
         public string Id
         {
             get { return this._id; }

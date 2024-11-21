@@ -30,28 +30,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.XRay.Model
 {
     /// <summary>
-    /// Container for the parameters to the BatchGetTraces operation.
-    /// <note> 
-    /// <para>
-    /// You cannot find traces through this API if Transaction Search is enabled since trace
-    /// is not indexed in X-Ray.
-    /// </para>
-    ///  </note> 
-    /// <para>
-    /// Retrieves a list of traces specified by ID. Each trace is a collection of segment
-    /// documents that originates from a single request. Use <c>GetTraceSummaries</c> to get
-    /// a list of trace IDs.
-    /// </para>
+    /// This is the response object from the GetRetrievedTracesGraph operation.
     /// </summary>
-    public partial class BatchGetTracesRequest : AmazonXRayRequest
+    public partial class GetRetrievedTracesGraphResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<string> _traceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private RetrievalStatus _retrievalStatus;
+        private List<RetrievedService> _services = AWSConfigs.InitializeCollections ? new List<RetrievedService>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Pagination token.
+        ///  Specify the pagination token returned by a previous request to retrieve the next
+        /// page of indexes. 
         /// </para>
         /// </summary>
         public string NextToken
@@ -67,22 +58,40 @@ namespace Amazon.XRay.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TraceIds. 
+        /// Gets and sets the property RetrievalStatus. 
         /// <para>
-        /// Specify the trace IDs of requests for which to retrieve segments.
+        ///  Status of the retrieval. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public List<string> TraceIds
+        public RetrievalStatus RetrievalStatus
         {
-            get { return this._traceIds; }
-            set { this._traceIds = value; }
+            get { return this._retrievalStatus; }
+            set { this._retrievalStatus = value; }
         }
 
-        // Check to see if TraceIds property is set
-        internal bool IsSetTraceIds()
+        // Check to see if RetrievalStatus property is set
+        internal bool IsSetRetrievalStatus()
         {
-            return this._traceIds != null && (this._traceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._retrievalStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Services. 
+        /// <para>
+        ///  Retrieved services. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1000)]
+        public List<RetrievedService> Services
+        {
+            get { return this._services; }
+            set { this._services = value; }
+        }
+
+        // Check to see if Services property is set
+        internal bool IsSetServices()
+        {
+            return this._services != null && (this._services.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

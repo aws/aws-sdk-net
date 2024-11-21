@@ -30,28 +30,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.XRay.Model
 {
     /// <summary>
-    /// Container for the parameters to the BatchGetTraces operation.
-    /// <note> 
+    /// Container for the parameters to the GetIndexingRules operation.
+    /// Retrieves all indexing rules.
+    /// 
+    ///  
     /// <para>
-    /// You cannot find traces through this API if Transaction Search is enabled since trace
-    /// is not indexed in X-Ray.
-    /// </para>
-    ///  </note> 
-    /// <para>
-    /// Retrieves a list of traces specified by ID. Each trace is a collection of segment
-    /// documents that originates from a single request. Use <c>GetTraceSummaries</c> to get
-    /// a list of trace IDs.
+    /// Indexing rules are used to determine the server-side sampling rate for spans ingested
+    /// through the CloudWatchLogs destination and indexed by X-Ray. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Transaction-Search.html">Transaction
+    /// Search</a>.
     /// </para>
     /// </summary>
-    public partial class BatchGetTracesRequest : AmazonXRayRequest
+    public partial class GetIndexingRulesRequest : AmazonXRayRequest
     {
         private string _nextToken;
-        private List<string> _traceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Pagination token.
+        ///  Specify the pagination token returned by a previous request to retrieve the next
+        /// page of indexes. 
         /// </para>
         /// </summary>
         public string NextToken
@@ -64,25 +62,6 @@ namespace Amazon.XRay.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property TraceIds. 
-        /// <para>
-        /// Specify the trace IDs of requests for which to retrieve segments.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public List<string> TraceIds
-        {
-            get { return this._traceIds; }
-            set { this._traceIds = value; }
-        }
-
-        // Check to see if TraceIds property is set
-        internal bool IsSetTraceIds()
-        {
-            return this._traceIds != null && (this._traceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

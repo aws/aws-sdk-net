@@ -59,7 +59,7 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property ThrottleCount. 
         /// <para>
-        /// The number of requests that failed with a 419 throttling status code.
+        /// The number of requests that failed with a 429 throttling status code.
         /// </para>
         /// </summary>
         public long ThrottleCount
