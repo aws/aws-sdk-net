@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetBasePathMapping Request Marshaller
+    /// GetDomainNameAccessAssociations Request Marshaller
     /// </summary>       
-    public class GetBasePathMappingRequestMarshaller : IMarshaller<IRequest, GetBasePathMappingRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetDomainNameAccessAssociationsRequestMarshaller : IMarshaller<IRequest, GetDomainNameAccessAssociationsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetBasePathMappingRequest)input);
+            return this.Marshall((GetDomainNameAccessAssociationsRequest)input);
         }
 
         /// <summary>
@@ -53,29 +53,29 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetBasePathMappingRequest publicRequest)
+        public IRequest Marshall(GetDomainNameAccessAssociationsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.APIGateway");
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-07-09";
             request.HttpMethod = "GET";
 
-            if (!publicRequest.IsSetBasePath())
-                throw new AmazonAPIGatewayException("Request object does not have required field BasePath set");
-            request.AddPathResource("{base_path}", StringUtils.FromString(publicRequest.BasePath));
-            if (!publicRequest.IsSetDomainName())
-                throw new AmazonAPIGatewayException("Request object does not have required field DomainName set");
-            request.AddPathResource("{domain_name}", StringUtils.FromString(publicRequest.DomainName));
             
-            if (publicRequest.IsSetDomainNameId())
-                request.Parameters.Add("domainNameId", StringUtils.FromString(publicRequest.DomainNameId));
-            request.ResourcePath = "/domainnames/{domain_name}/basepathmappings/{base_path}";
+            if (publicRequest.IsSetLimit())
+                request.Parameters.Add("limit", StringUtils.FromInt(publicRequest.Limit));
+            
+            if (publicRequest.IsSetPosition())
+                request.Parameters.Add("position", StringUtils.FromString(publicRequest.Position));
+            
+            if (publicRequest.IsSetResourceOwner())
+                request.Parameters.Add("resourceOwner", StringUtils.FromString(publicRequest.ResourceOwner));
+            request.ResourcePath = "/domainnameaccessassociations";
             request.UseQueryString = true;
 
             return request;
         }
-        private static GetBasePathMappingRequestMarshaller _instance = new GetBasePathMappingRequestMarshaller();        
+        private static GetDomainNameAccessAssociationsRequestMarshaller _instance = new GetDomainNameAccessAssociationsRequestMarshaller();        
 
-        internal static GetBasePathMappingRequestMarshaller GetInstance()
+        internal static GetDomainNameAccessAssociationsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -83,7 +83,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetBasePathMappingRequestMarshaller Instance
+        public static GetDomainNameAccessAssociationsRequestMarshaller Instance
         {
             get
             {

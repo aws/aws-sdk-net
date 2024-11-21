@@ -30,10 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetDomainNames operation.
-    /// Represents a collection of DomainName resources.
+    /// Container for the parameters to the GetDomainNameAccessAssociations operation.
+    /// Represents a collection on DomainNameAccessAssociations resources.
     /// </summary>
-    public partial class GetDomainNamesRequest : AmazonAPIGatewayRequest
+    public partial class GetDomainNameAccessAssociationsRequest : AmazonAPIGatewayRequest
     {
         private int? _limit;
         private string _position;
@@ -43,7 +43,7 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// The maximum number of returned results per page. The default value is 25 and the maximum
-        /// value is 500.
+        /// value is 500. 
         /// </para>
         /// </summary>
         public int Limit
@@ -61,7 +61,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Position. 
         /// <para>
-        /// The current pagination position in the paged result set.
+        /// The current pagination position in the paged result set. 
         /// </para>
         /// </summary>
         public string Position
@@ -79,7 +79,10 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ResourceOwner. 
         /// <para>
-        /// The owner of the domain name access association. 
+        ///  The owner of the domain name access association. Use <c>SELF</c> to only list the
+        /// domain name access associations owned by your own account. Use <c>OTHER_ACCOUNTS</c>
+        /// to list the domain name access associations with your private custom domain names
+        /// that are owned by other AWS accounts.
         /// </para>
         /// </summary>
         public ResourceOwner ResourceOwner

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateBasePathMapping Request Marshaller
+    /// CreateDomainNameAccessAssociation Request Marshaller
     /// </summary>       
-    public class CreateBasePathMappingRequestMarshaller : IMarshaller<IRequest, CreateBasePathMappingRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class CreateDomainNameAccessAssociationRequestMarshaller : IMarshaller<IRequest, CreateDomainNameAccessAssociationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateBasePathMappingRequest)input);
+            return this.Marshall((CreateDomainNameAccessAssociationRequest)input);
         }
 
         /// <summary>
@@ -53,42 +53,50 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateBasePathMappingRequest publicRequest)
+        public IRequest Marshall(CreateDomainNameAccessAssociationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.APIGateway");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-07-09";
             request.HttpMethod = "POST";
 
-            if (!publicRequest.IsSetDomainName())
-                throw new AmazonAPIGatewayException("Request object does not have required field DomainName set");
-            request.AddPathResource("{domain_name}", StringUtils.FromString(publicRequest.DomainName));
-            
-            if (publicRequest.IsSetDomainNameId())
-                request.Parameters.Add("domainNameId", StringUtils.FromString(publicRequest.DomainNameId));
-            request.ResourcePath = "/domainnames/{domain_name}/basepathmappings";
+            request.ResourcePath = "/domainnameaccessassociations";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBasePath())
+                if(publicRequest.IsSetAccessAssociationSource())
                 {
-                    context.Writer.WritePropertyName("basePath");
-                    context.Writer.Write(publicRequest.BasePath);
+                    context.Writer.WritePropertyName("accessAssociationSource");
+                    context.Writer.Write(publicRequest.AccessAssociationSource);
                 }
 
-                if(publicRequest.IsSetRestApiId())
+                if(publicRequest.IsSetAccessAssociationSourceType())
                 {
-                    context.Writer.WritePropertyName("restApiId");
-                    context.Writer.Write(publicRequest.RestApiId);
+                    context.Writer.WritePropertyName("accessAssociationSourceType");
+                    context.Writer.Write(publicRequest.AccessAssociationSourceType);
                 }
 
-                if(publicRequest.IsSetStage())
+                if(publicRequest.IsSetDomainNameArn())
                 {
-                    context.Writer.WritePropertyName("stage");
-                    context.Writer.Write(publicRequest.Stage);
+                    context.Writer.WritePropertyName("domainNameArn");
+                    context.Writer.Write(publicRequest.DomainNameArn);
+                }
+
+                if(publicRequest.IsSetTags())
+                {
+                    context.Writer.WritePropertyName("tags");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    {
+                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                            context.Writer.Write(publicRequestTagsValue);
+                    }
+                    context.Writer.WriteObjectEnd();
                 }
 
                 writer.WriteObjectEnd();
@@ -96,13 +104,12 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
-            request.UseQueryString = true;
 
             return request;
         }
-        private static CreateBasePathMappingRequestMarshaller _instance = new CreateBasePathMappingRequestMarshaller();        
+        private static CreateDomainNameAccessAssociationRequestMarshaller _instance = new CreateDomainNameAccessAssociationRequestMarshaller();        
 
-        internal static CreateBasePathMappingRequestMarshaller GetInstance()
+        internal static CreateDomainNameAccessAssociationRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -110,7 +117,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateBasePathMappingRequestMarshaller Instance
+        public static CreateDomainNameAccessAssociationRequestMarshaller Instance
         {
             get
             {

@@ -44,6 +44,7 @@ namespace Amazon.APIGateway.Model
         private EndpointConfiguration _endpointConfiguration;
         private MutualTlsAuthenticationInput _mutualTlsAuthentication;
         private string _ownershipVerificationCertificateArn;
+        private string _policy;
         private string _regionalCertificateArn;
         private string _regionalCertificateName;
         private SecurityPolicy _securityPolicy;
@@ -53,7 +54,8 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property CertificateArn. 
         /// <para>
         /// The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized
-        /// endpoint for this domain name. Certificate Manager is the only supported source.
+        /// endpoint or private endpoint for this domain name. Certificate Manager is the only
+        /// supported source.
         /// </para>
         /// </summary>
         public string CertificateArn
@@ -72,7 +74,7 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property CertificateBody. 
         /// <para>
         /// [Deprecated] The body of the server certificate that will be used by edge-optimized
-        /// endpoint for this domain name provided by your certificate authority.
+        /// endpoint or private endpoint for this domain name provided by your certificate authority.
         /// </para>
         /// </summary>
         public string CertificateBody
@@ -114,7 +116,7 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property CertificateName. 
         /// <para>
         /// The user-friendly name of the certificate that will be used by edge-optimized endpoint
-        /// for this domain name.
+        /// or private endpoint for this domain name.
         /// </para>
         /// </summary>
         public string CertificateName
@@ -218,6 +220,26 @@ namespace Amazon.APIGateway.Model
         internal bool IsSetOwnershipVerificationCertificateArn()
         {
             return this._ownershipVerificationCertificateArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Policy. 
+        /// <para>
+        /// A stringified JSON policy document that applies to the <c>execute-api</c> service
+        /// for this DomainName regardless of the caller and Method configuration. Supported only
+        /// for private custom domain names.
+        /// </para>
+        /// </summary>
+        public string Policy
+        {
+            get { return this._policy; }
+            set { this._policy = value; }
+        }
+
+        // Check to see if Policy property is set
+        internal bool IsSetPolicy()
+        {
+            return this._policy != null;
         }
 
         /// <summary>

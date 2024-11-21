@@ -30,51 +30,44 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetDomainName operation.
-    /// Represents a domain name that is contained in a simpler, more intuitive URL that can
-    /// be called.
+    /// This is the response object from the GetDomainNameAccessAssociations operation.
     /// </summary>
-    public partial class GetDomainNameRequest : AmazonAPIGatewayRequest
+    public partial class GetDomainNameAccessAssociationsResponse : AmazonWebServiceResponse
     {
-        private string _domainName;
-        private string _domainNameId;
+        private List<DomainNameAccessAssociation> _items = AWSConfigs.InitializeCollections ? new List<DomainNameAccessAssociation>() : null;
+        private string _position;
 
         /// <summary>
-        /// Gets and sets the property DomainName. 
+        /// Gets and sets the property Items. 
         /// <para>
-        /// The name of the DomainName resource.
+        ///  The current page of elements from this collection. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string DomainName
+        public List<DomainNameAccessAssociation> Items
         {
-            get { return this._domainName; }
-            set { this._domainName = value; }
+            get { return this._items; }
+            set { this._items = value; }
         }
 
-        // Check to see if DomainName property is set
-        internal bool IsSetDomainName()
+        // Check to see if Items property is set
+        internal bool IsSetItems()
         {
-            return this._domainName != null;
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
-        /// Gets and sets the property DomainNameId. 
-        /// <para>
-        ///  The identifier for the domain name resource. Supported only for private custom domain
-        /// names. 
-        /// </para>
+        /// Gets and sets the property Position.
         /// </summary>
-        public string DomainNameId
+        public string Position
         {
-            get { return this._domainNameId; }
-            set { this._domainNameId = value; }
+            get { return this._position; }
+            set { this._position = value; }
         }
 
-        // Check to see if DomainNameId property is set
-        internal bool IsSetDomainNameId()
+        // Check to see if Position property is set
+        internal bool IsSetPosition()
         {
-            return this._domainNameId != null;
+            return this._position != null;
         }
 
     }
