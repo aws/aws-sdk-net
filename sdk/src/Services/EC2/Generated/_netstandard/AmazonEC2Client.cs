@@ -2369,6 +2369,25 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
+        /// You can cancel a Capacity Reservation that is in the following states:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>assessing</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>active</c> and there is no commitment duration or the commitment duration has
+        /// elapsed. You can't cancel a future-dated Capacity Reservation during the commitment
+        /// duration.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If a future-dated Capacity Reservation enters the <c>delayed</c> state, the commitment
+        /// duration is waived, and you can cancel it as soon as it enters the <c>active</c> state.
+        /// </para>
+        ///  
+        /// <para>
         /// Instances running in the reserved capacity continue running until you stop them. Stopped
         /// instances that target the Capacity Reservation can no longer launch. Modify these
         /// instances to either target a different Capacity Reservation, launch On-Demand Instance
@@ -2934,35 +2953,41 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a new Capacity Reservation with the specified attributes.
+        /// Creates a new Capacity Reservation with the specified attributes. Capacity Reservations
+        /// enable you to reserve capacity for your Amazon EC2 instances in a specific Availability
+        /// Zone for any duration.
         /// 
         ///  
         /// <para>
-        /// Capacity Reservations enable you to reserve capacity for your Amazon EC2 instances
-        /// in a specific Availability Zone for any duration. This gives you the flexibility to
-        /// selectively add capacity reservations and still get the Regional RI discounts for
-        /// that usage. By creating Capacity Reservations, you ensure that you always have access
-        /// to Amazon EC2 capacity when you need it, for as long as you need it. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html">Capacity
-        /// Reservations</a> in the <i>Amazon EC2 User Guide</i>.
+        /// You can create a Capacity Reservation at any time, and you can choose when it starts.
+        /// You can create a Capacity Reservation for immediate use or you can request a Capacity
+        /// Reservation for a future date.
         /// </para>
         ///  
         /// <para>
-        /// Your request to create a Capacity Reservation could fail if Amazon EC2 does not have
-        /// sufficient capacity to fulfill the request. If your request fails due to Amazon EC2
-        /// capacity constraints, either try again at a later time, try in a different Availability
-        /// Zone, or request a smaller capacity reservation. If your application is flexible across
-        /// instance types and sizes, try to create a Capacity Reservation with different instance
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html">
+        /// Reserve compute capacity with On-Demand Capacity Reservations</a> in the <i>Amazon
+        /// EC2 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Your request to create a Capacity Reservation could fail if:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Amazon EC2 does not have sufficient capacity. In this case, try again at a later time,
+        /// try in a different Availability Zone, or request a smaller Capacity Reservation. If
+        /// your workload is flexible across instance types and sizes, try with different instance
         /// attributes.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// Your request could also fail if the requested quantity exceeds your On-Demand Instance
-        /// limit for the selected instance type. If your request fails due to limit constraints,
-        /// increase your On-Demand Instance limit for the required instance type and try again.
-        /// For more information about increasing your instance limits, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon
-        /// EC2 Service Quotas</a> in the <i>Amazon EC2 User Guide</i>.
+        /// The requested quantity exceeds your On-Demand Instance quota. In this case, increase
+        /// your On-Demand Instance quota for the requested instance type and try again. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">
+        /// Amazon EC2 Service Quotas</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCapacityReservation service method.</param>
         /// <param name="cancellationToken">
@@ -10571,6 +10596,76 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeCapacityBlockExtensionHistory
+
+        internal virtual DescribeCapacityBlockExtensionHistoryResponse DescribeCapacityBlockExtensionHistory(DescribeCapacityBlockExtensionHistoryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCapacityBlockExtensionHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCapacityBlockExtensionHistoryResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCapacityBlockExtensionHistoryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the events for the specified Capacity Block extension during the specified
+        /// time.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityBlockExtensionHistory service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCapacityBlockExtensionHistory service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityBlockExtensionHistory">REST API Reference for DescribeCapacityBlockExtensionHistory Operation</seealso>
+        public virtual Task<DescribeCapacityBlockExtensionHistoryResponse> DescribeCapacityBlockExtensionHistoryAsync(DescribeCapacityBlockExtensionHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCapacityBlockExtensionHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCapacityBlockExtensionHistoryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeCapacityBlockExtensionHistoryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeCapacityBlockExtensionOfferings
+
+        internal virtual DescribeCapacityBlockExtensionOfferingsResponse DescribeCapacityBlockExtensionOfferings(DescribeCapacityBlockExtensionOfferingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCapacityBlockExtensionOfferingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCapacityBlockExtensionOfferingsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCapacityBlockExtensionOfferingsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes Capacity Block extension offerings available for purchase in the Amazon
+        /// Web Services Region that you're currently using.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityBlockExtensionOfferings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCapacityBlockExtensionOfferings service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityBlockExtensionOfferings">REST API Reference for DescribeCapacityBlockExtensionOfferings Operation</seealso>
+        public virtual Task<DescribeCapacityBlockExtensionOfferingsResponse> DescribeCapacityBlockExtensionOfferingsAsync(DescribeCapacityBlockExtensionOfferingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCapacityBlockExtensionOfferingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCapacityBlockExtensionOfferingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeCapacityBlockExtensionOfferingsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeCapacityBlockOfferings
 
         internal virtual DescribeCapacityBlockOfferingsResponse DescribeCapacityBlockOfferings(DescribeCapacityBlockOfferingsRequest request)
@@ -17082,7 +17177,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describe VPC Block Public Access (BPA) options. VPC Block public Access (BPA) enables
+        /// Describe VPC Block Public Access (BPA) options. VPC Block Public Access (BPA) enables
         /// you to block resources in VPCs and subnets that you own in a Region from reaching
         /// or being reached from the internet through internet gateways and egress-only internet
         /// gateways. To learn more about VPC BPA, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
@@ -22576,8 +22671,38 @@ namespace Amazon.EC2
         /// type, EBS optimization, platform, instance store settings, Availability Zone, or tenancy.
         /// If you need to modify any of these attributes, we recommend that you cancel the Capacity
         /// Reservation, and then create a new one with the required attributes. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-modify.html">Modify
-        /// an active Capacity Reservation</a>.
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-modify.html">
+        /// Modify an active Capacity Reservation</a>.
+        /// 
+        ///  
+        /// <para>
+        /// The allowed modifications depend on the state of the Capacity Reservation:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>assessing</c> or <c>scheduled</c> state - You can modify the tags only.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>pending</c> state - You can't modify the Capacity Reservation in any way.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>active</c> state but still within the commitment duration - You can't decrease
+        /// the instance count or set an end date that is within the commitment duration. All
+        /// other modifications are allowed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>active</c> state with no commitment duration or elapsed commitment duration -
+        /// All modifications are allowed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>expired</c>, <c>cancelled</c>, <c>unsupported</c>, or <c>failed</c> state - You
+        /// can't modify the Capacity Reservation in any way.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyCapacityReservation service method.</param>
         /// <param name="cancellationToken">
@@ -24902,7 +25027,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modify VPC Block Public Access (BPA) options. VPC Block public Access (BPA) enables
+        /// Modify VPC Block Public Access (BPA) options. VPC Block Public Access (BPA) enables
         /// you to block resources in VPCs and subnets that you own in a Region from reaching
         /// or being reached from the internet through internet gateways and egress-only internet
         /// gateways. To learn more about VPC BPA, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
@@ -25823,6 +25948,41 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = PurchaseCapacityBlockResponseUnmarshaller.Instance;
 
             return InvokeAsync<PurchaseCapacityBlockResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PurchaseCapacityBlockExtension
+
+        internal virtual PurchaseCapacityBlockExtensionResponse PurchaseCapacityBlockExtension(PurchaseCapacityBlockExtensionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PurchaseCapacityBlockExtensionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PurchaseCapacityBlockExtensionResponseUnmarshaller.Instance;
+
+            return Invoke<PurchaseCapacityBlockExtensionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Purchase the Capacity Block extension for use with your account. You must specify
+        /// the ID of the Capacity Block extension offering you are purchasing.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PurchaseCapacityBlockExtension service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PurchaseCapacityBlockExtension service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseCapacityBlockExtension">REST API Reference for PurchaseCapacityBlockExtension Operation</seealso>
+        public virtual Task<PurchaseCapacityBlockExtensionResponse> PurchaseCapacityBlockExtensionAsync(PurchaseCapacityBlockExtensionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PurchaseCapacityBlockExtensionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PurchaseCapacityBlockExtensionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PurchaseCapacityBlockExtensionResponse>(request, options, cancellationToken);
         }
 
         #endregion

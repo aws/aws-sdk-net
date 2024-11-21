@@ -41,6 +41,7 @@ namespace Amazon.EC2.Model
         private IpamDiscoveryFailureReason _failureReason;
         private DateTime? _lastAttemptedDiscoveryTime;
         private DateTime? _lastSuccessfulDiscoveryTime;
+        private string _organizationalUnitId;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -132,6 +133,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetLastSuccessfulDiscoveryTime()
         {
             return this._lastSuccessfulDiscoveryTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrganizationalUnitId. 
+        /// <para>
+        /// The ID of an Organizational Unit in Amazon Web Services Organizations.
+        /// </para>
+        /// </summary>
+        public string OrganizationalUnitId
+        {
+            get { return this._organizationalUnitId; }
+            set { this._organizationalUnitId = value; }
+        }
+
+        // Check to see if OrganizationalUnitId property is set
+        internal bool IsSetOrganizationalUnitId()
+        {
+            return this._organizationalUnitId != null;
         }
 
     }

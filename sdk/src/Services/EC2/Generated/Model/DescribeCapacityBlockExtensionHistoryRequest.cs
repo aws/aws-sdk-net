@@ -30,76 +30,64 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeVpcBlockPublicAccessExclusions operation.
-    /// Describe VPC Block Public Access (BPA) exclusions. A VPC BPA exclusion is a mode that
-    /// can be applied to a single VPC or subnet that exempts it from the account’s BPA mode
-    /// and will allow bidirectional or egress-only access. You can create BPA exclusions
-    /// for VPCs and subnets even when BPA is not enabled on the account to ensure that there
-    /// is no traffic disruption to the exclusions when VPC BPA is turned on. To learn more
-    /// about VPC BPA, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
-    /// public access to VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
+    /// Container for the parameters to the DescribeCapacityBlockExtensionHistory operation.
+    /// Describes the events for the specified Capacity Block extension during the specified
+    /// time.
     /// </summary>
-    public partial class DescribeVpcBlockPublicAccessExclusionsRequest : AmazonEC2Request
+    public partial class DescribeCapacityBlockExtensionHistoryRequest : AmazonEC2Request
     {
-        private List<string> _exclusionIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _capacityReservationIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
         private int? _maxResults;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property ExclusionIds. 
+        /// Gets and sets the property CapacityReservationIds. 
         /// <para>
-        /// IDs of exclusions.
+        /// The IDs of Capacity Block reservations that you want to display the history for.
         /// </para>
         /// </summary>
-        public List<string> ExclusionIds
+        public List<string> CapacityReservationIds
         {
-            get { return this._exclusionIds; }
-            set { this._exclusionIds = value; }
+            get { return this._capacityReservationIds; }
+            set { this._capacityReservationIds = value; }
         }
 
-        // Check to see if ExclusionIds property is set
-        internal bool IsSetExclusionIds()
+        // Check to see if CapacityReservationIds property is set
+        internal bool IsSetCapacityReservationIds()
         {
-            return this._exclusionIds != null && (this._exclusionIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._capacityReservationIds != null && (this._capacityReservationIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Filters for the request:
+        /// One or more filters
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>resource-arn</c> - The Amazon Resource Name (ARN) of a exclusion.
+        ///  <c>availability-zone</c> - The Availability Zone of the extension.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>internet-gateway-exclusion-mode</c> - The mode of a VPC BPA exclusion. Possible
-        /// values: <c>allow-bidirectional | allow-egress</c>.
+        ///  <c>availability-zone-id</c> - The Availability Zone ID of the extension.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>state</c> - The state of VPC BPA. Possible values: <c>create-in-progress | create-complete
-        /// | update-in-progress | update-complete | delete-in-progress | deleted-complete | disable-in-progress
-        /// | disable-complete</c> 
+        ///  <c>capacity-block-extension-offering-id</c> - The ID of the extension offering.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>tag</c> - The key/value combination of a tag assigned to the resource. Use the
-        /// tag key in the filter name and the tag value as the filter value. For example, to
-        /// find all resources that have a tag with the key <c>Owner</c> and the value <c>TeamA</c>,
-        /// specify <c>tag:Owner</c> for the filter name and <c>TeamA</c> for the filter value.
+        ///  <c>capacity-block-extension-status</c> - The status of the extension (<c>payment-pending</c>
+        /// | <c>payment-failed</c> | <c>payment-succeeded</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>tag-key</c> - The key of a tag assigned to the resource. Use this filter to find
-        /// all resources assigned a tag with a specific key, regardless of the tag value.
+        ///  <c>capacity-reservation-id</c> - The reservation ID of the extension.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>tag-value</c>: The value of a tag assigned to the resource. Use this filter to
-        /// find all resources assigned a tag with a specific value, regardless of the tag key.
+        ///  <c>instance-type</c> - The instance type of the extension.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -123,7 +111,7 @@ namespace Amazon.EC2.Model
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=5, Max=1000)]
+        [AWSProperty(Min=1, Max=1000)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -139,8 +127,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token returned from a previous paginated request. Pagination continues from the
-        /// end of the items returned by the previous request.
+        /// The token to use to retrieve the next page of results.
         /// </para>
         /// </summary>
         public string NextToken

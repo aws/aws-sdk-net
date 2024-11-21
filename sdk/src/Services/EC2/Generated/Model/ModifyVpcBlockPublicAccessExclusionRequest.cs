@@ -68,14 +68,14 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>bidirectional-access-allowed</c>: Allow all internet traffic to and from the excluded
-        /// VPCs and subnets.
+        ///  <c>allow-bidirectional</c>: Allow all internet traffic to and from the excluded VPCs
+        /// and subnets.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>egress-access-allowed</c>: Allow outbound internet traffic from the excluded VPCs
-        /// and subnets. Block inbound internet traffic to the excluded VPCs and subnets. Only
-        /// applies when VPC Block Public Access is set to Bidirectional.
+        ///  <c>allow-egress</c>: Allow outbound internet traffic from the excluded VPCs and subnets.
+        /// Block inbound internet traffic to the excluded VPCs and subnets. Only applies when
+        /// VPC Block Public Access is set to Bidirectional.
         /// </para>
         ///  </li> </ul>
         /// </summary>

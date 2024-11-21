@@ -2305,6 +2305,60 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type CapacityBlockExtensionStatus.
+    /// </summary>
+    public class CapacityBlockExtensionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PaymentFailed for CapacityBlockExtensionStatus
+        /// </summary>
+        public static readonly CapacityBlockExtensionStatus PaymentFailed = new CapacityBlockExtensionStatus("payment-failed");
+        /// <summary>
+        /// Constant PaymentPending for CapacityBlockExtensionStatus
+        /// </summary>
+        public static readonly CapacityBlockExtensionStatus PaymentPending = new CapacityBlockExtensionStatus("payment-pending");
+        /// <summary>
+        /// Constant PaymentSucceeded for CapacityBlockExtensionStatus
+        /// </summary>
+        public static readonly CapacityBlockExtensionStatus PaymentSucceeded = new CapacityBlockExtensionStatus("payment-succeeded");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapacityBlockExtensionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityBlockExtensionStatus FindValue(string value)
+        {
+            return FindValue<CapacityBlockExtensionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityBlockExtensionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CapacityReservationBillingRequestStatus.
     /// </summary>
     public class CapacityReservationBillingRequestStatus : ConstantClass
@@ -2364,6 +2418,56 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CapacityReservationBillingRequestStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CapacityReservationDeliveryPreference.
+    /// </summary>
+    public class CapacityReservationDeliveryPreference : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Fixed for CapacityReservationDeliveryPreference
+        /// </summary>
+        public static readonly CapacityReservationDeliveryPreference Fixed = new CapacityReservationDeliveryPreference("fixed");
+        /// <summary>
+        /// Constant Incremental for CapacityReservationDeliveryPreference
+        /// </summary>
+        public static readonly CapacityReservationDeliveryPreference Incremental = new CapacityReservationDeliveryPreference("incremental");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapacityReservationDeliveryPreference(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityReservationDeliveryPreference FindValue(string value)
+        {
+            return FindValue<CapacityReservationDeliveryPreference>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityReservationDeliveryPreference(string value)
         {
             return FindValue(value);
         }
@@ -2627,9 +2731,17 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly CapacityReservationState Active = new CapacityReservationState("active");
         /// <summary>
+        /// Constant Assessing for CapacityReservationState
+        /// </summary>
+        public static readonly CapacityReservationState Assessing = new CapacityReservationState("assessing");
+        /// <summary>
         /// Constant Cancelled for CapacityReservationState
         /// </summary>
         public static readonly CapacityReservationState Cancelled = new CapacityReservationState("cancelled");
+        /// <summary>
+        /// Constant Delayed for CapacityReservationState
+        /// </summary>
+        public static readonly CapacityReservationState Delayed = new CapacityReservationState("delayed");
         /// <summary>
         /// Constant Expired for CapacityReservationState
         /// </summary>
@@ -2654,6 +2766,10 @@ namespace Amazon.EC2
         /// Constant Scheduled for CapacityReservationState
         /// </summary>
         public static readonly CapacityReservationState Scheduled = new CapacityReservationState("scheduled");
+        /// <summary>
+        /// Constant Unsupported for CapacityReservationState
+        /// </summary>
+        public static readonly CapacityReservationState Unsupported = new CapacityReservationState("unsupported");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyVpcBlockPublicAccessOptions operation.
-    /// Modify VPC Block Public Access (BPA) options. VPC Block public Access (BPA) enables
+    /// Modify VPC Block Public Access (BPA) options. VPC Block Public Access (BPA) enables
     /// you to block resources in VPCs and subnets that you own in a Region from reaching
     /// or being reached from the internet through internet gateways and egress-only internet
     /// gateways. To learn more about VPC BPA, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
@@ -48,19 +48,19 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>bidirectional-access-allowed</c>: VPC BPA is not enabled and traffic is allowed
-        /// to and from internet gateways and egress-only internet gateways in this Region.
+        ///  <c>off</c>: VPC BPA is not enabled and traffic is allowed to and from internet gateways
+        /// and egress-only internet gateways in this Region.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>bidirectional-access-blocked</c>: Block all traffic to and from internet gateways
-        /// and egress-only internet gateways in this Region (except for excluded VPCs and subnets).
+        ///  <c>block-bidirectional</c>: Block all traffic to and from internet gateways and egress-only
+        /// internet gateways in this Region (except for excluded VPCs and subnets).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ingress-access-blocked</c>: Block all internet traffic to the VPCs in this Region
-        /// (except for VPCs or subnets which are excluded). Only traffic to and from NAT gateways
-        /// and egress-only internet gateways is allowed because these gateways only allow outbound
+        ///  <c>block-ingress</c>: Block all internet traffic to the VPCs in this Region (except
+        /// for VPCs or subnets which are excluded). Only traffic to and from NAT gateways and
+        /// egress-only internet gateways is allowed because these gateways only allow outbound
         /// connections to be established.
         /// </para>
         ///  </li> </ul>

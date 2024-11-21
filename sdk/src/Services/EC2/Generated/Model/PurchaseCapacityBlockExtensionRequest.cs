@@ -30,46 +30,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Container for the parameters to the CancelCapacityReservation operation.
-    /// Cancels the specified Capacity Reservation, releases the reserved capacity, and changes
-    /// the Capacity Reservation's state to <c>cancelled</c>.
-    /// 
-    ///  
-    /// <para>
-    /// You can cancel a Capacity Reservation that is in the following states:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <c>assessing</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>active</c> and there is no commitment duration or the commitment duration has
-    /// elapsed. You can't cancel a future-dated Capacity Reservation during the commitment
-    /// duration.
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// If a future-dated Capacity Reservation enters the <c>delayed</c> state, the commitment
-    /// duration is waived, and you can cancel it as soon as it enters the <c>active</c> state.
-    /// </para>
-    ///  
-    /// <para>
-    /// Instances running in the reserved capacity continue running until you stop them. Stopped
-    /// instances that target the Capacity Reservation can no longer launch. Modify these
-    /// instances to either target a different Capacity Reservation, launch On-Demand Instance
-    /// capacity, or run in any open Capacity Reservation that has matching attributes and
-    /// sufficient capacity.
-    /// </para>
+    /// Container for the parameters to the PurchaseCapacityBlockExtension operation.
+    /// Purchase the Capacity Block extension for use with your account. You must specify
+    /// the ID of the Capacity Block extension offering you are purchasing.
     /// </summary>
-    public partial class CancelCapacityReservationRequest : AmazonEC2Request
+    public partial class PurchaseCapacityBlockExtensionRequest : AmazonEC2Request
     {
+        private string _capacityBlockExtensionOfferingId;
         private string _capacityReservationId;
+
+        /// <summary>
+        /// Gets and sets the property CapacityBlockExtensionOfferingId. 
+        /// <para>
+        /// The ID of the Capacity Block extension offering to purchase.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string CapacityBlockExtensionOfferingId
+        {
+            get { return this._capacityBlockExtensionOfferingId; }
+            set { this._capacityBlockExtensionOfferingId = value; }
+        }
+
+        // Check to see if CapacityBlockExtensionOfferingId property is set
+        internal bool IsSetCapacityBlockExtensionOfferingId()
+        {
+            return this._capacityBlockExtensionOfferingId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CapacityReservationId. 
         /// <para>
-        /// The ID of the Capacity Reservation to be cancelled.
+        /// The ID of the Capacity reservation to be extended.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

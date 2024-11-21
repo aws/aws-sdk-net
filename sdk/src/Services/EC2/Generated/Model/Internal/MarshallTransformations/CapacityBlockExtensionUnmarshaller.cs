@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CapacityBlockOffering Object
+    /// Response Unmarshaller for CapacityBlockExtension Object
     /// </summary>  
-    public class CapacityBlockOfferingUnmarshaller : IUnmarshaller<CapacityBlockOffering, XmlUnmarshallerContext>, IUnmarshaller<CapacityBlockOffering, JsonUnmarshallerContext>
+    public class CapacityBlockExtensionUnmarshaller : IUnmarshaller<CapacityBlockExtension, XmlUnmarshallerContext>, IUnmarshaller<CapacityBlockExtension, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CapacityBlockOffering Unmarshall(XmlUnmarshallerContext context)
+        public CapacityBlockExtension Unmarshall(XmlUnmarshallerContext context)
         {
-            CapacityBlockOffering unmarshalledObject = new CapacityBlockOffering();
+            CapacityBlockExtension unmarshalledObject = new CapacityBlockExtension();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -61,34 +61,58 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("capacityBlockDurationHours", targetDepth))
-                    {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.CapacityBlockDurationHours = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("capacityBlockDurationMinutes", targetDepth))
-                    {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.CapacityBlockDurationMinutes = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("capacityBlockOfferingId", targetDepth))
+                    if (context.TestExpression("availabilityZoneId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.CapacityBlockOfferingId = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.AvailabilityZoneId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("capacityBlockExtensionDurationHours", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.CapacityBlockExtensionDurationHours = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("capacityBlockExtensionEndDate", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.CapacityBlockExtensionEndDate = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("capacityBlockExtensionOfferingId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CapacityBlockExtensionOfferingId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("capacityBlockExtensionPurchaseDate", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.CapacityBlockExtensionPurchaseDate = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("capacityBlockExtensionStartDate", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.CapacityBlockExtensionStartDate = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("capacityBlockExtensionStatus", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CapacityBlockExtensionStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("capacityReservationId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CapacityReservationId = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("currencyCode", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.CurrencyCode = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("endDate", targetDepth))
-                    {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
-                        unmarshalledObject.EndDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("instanceCount", targetDepth))
@@ -101,18 +125,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("startDate", targetDepth))
-                    {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
-                        unmarshalledObject.StartDate = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("tenancy", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Tenancy = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("upfrontFee", targetDepth))
@@ -136,18 +148,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CapacityBlockOffering Unmarshall(JsonUnmarshallerContext context)
+        public CapacityBlockExtension Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static CapacityBlockOfferingUnmarshaller _instance = new CapacityBlockOfferingUnmarshaller();        
+        private static CapacityBlockExtensionUnmarshaller _instance = new CapacityBlockExtensionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CapacityBlockOfferingUnmarshaller Instance
+        public static CapacityBlockExtensionUnmarshaller Instance
         {
             get
             {

@@ -41,7 +41,9 @@ namespace Amazon.EC2.Model
         private string _capacityReservationArn;
         private string _capacityReservationFleetId;
         private string _capacityReservationId;
+        private CapacityReservationCommitmentInfo _commitmentInfo;
         private DateTime? _createDate;
+        private CapacityReservationDeliveryPreference _deliveryPreference;
         private bool? _ebsOptimized;
         private DateTime? _endDate;
         private EndDateType _endDateType;
@@ -189,6 +191,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CommitmentInfo. 
+        /// <para>
+        /// Information about your commitment for a future-dated Capacity Reservation.
+        /// </para>
+        /// </summary>
+        public CapacityReservationCommitmentInfo CommitmentInfo
+        {
+            get { return this._commitmentInfo; }
+            set { this._commitmentInfo = value; }
+        }
+
+        // Check to see if CommitmentInfo property is set
+        internal bool IsSetCommitmentInfo()
+        {
+            return this._commitmentInfo != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreateDate. 
         /// <para>
         /// The date and time at which the Capacity Reservation was created.
@@ -204,6 +224,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetCreateDate()
         {
             return this._createDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeliveryPreference. 
+        /// <para>
+        /// The delivery method for a future-dated Capacity Reservation. <c>incremental</c> indicates
+        /// that the requested capacity is delivered in addition to any running instances and
+        /// reserved capacity that you have in your account at the requested date and time.
+        /// </para>
+        /// </summary>
+        public CapacityReservationDeliveryPreference DeliveryPreference
+        {
+            get { return this._deliveryPreference; }
+            set { this._deliveryPreference = value; }
+        }
+
+        // Check to see if DeliveryPreference property is set
+        internal bool IsSetDeliveryPreference()
+        {
+            return this._deliveryPreference != null;
         }
 
         /// <summary>
@@ -467,18 +507,18 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>active</c> - The Capacity Reservation is active and the capacity is available
-        /// for your use.
+        ///  <c>active</c> - The capacity is available for use.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>expired</c> - The Capacity Reservation expired automatically at the date and time
-        /// specified in your request. The reserved capacity is no longer available for your use.
+        /// specified in your reservation request. The reserved capacity is no longer available
+        /// for your use.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>cancelled</c> - The Capacity Reservation was cancelled. The reserved capacity
-        /// is no longer available for your use.
+        ///  <c>cancelled</c> - The Capacity Reservation was canceled. The reserved capacity is
+        /// no longer available for your use.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -487,9 +527,33 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>failed</c> - The Capacity Reservation request has failed. A request might fail
-        /// due to invalid request parameters, capacity constraints, or instance limit constraints.
-        /// Failed requests are retained for 60 minutes.
+        ///  <c>failed</c> - The Capacity Reservation request has failed. A request can fail due
+        /// to request parameters that are not valid, capacity constraints, or instance limit
+        /// constraints. You can view a failed request for 60 minutes.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>scheduled</c> - (<i>Future-dated Capacity Reservations only</i>) The future-dated
+        /// Capacity Reservation request was approved and the Capacity Reservation is scheduled
+        /// for delivery on the requested start date.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>assessing</c> - (<i>Future-dated Capacity Reservations only</i>) Amazon EC2 is
+        /// assessing your request for a future-dated Capacity Reservation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>delayed</c> - (<i>Future-dated Capacity Reservations only</i>) Amazon EC2 encountered
+        /// a delay in provisioning the requested future-dated Capacity Reservation. Amazon EC2
+        /// is unable to deliver the requested capacity by the requested start date and time.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>unsupported</c> - (<i>Future-dated Capacity Reservations only</i>) Amazon EC2
+        /// can't support the future-dated Capacity Reservation request due to capacity constraints.
+        /// You can view unsupported requests for 30 days. The Capacity Reservation will not be
+        /// delivered.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -71,6 +71,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
                 }
+                if(publicRequest.IsSetCommitmentDuration())
+                {
+                    request.Parameters.Add("CommitmentDuration", StringUtils.FromLong(publicRequest.CommitmentDuration));
+                }
+                if(publicRequest.IsSetDeliveryPreference())
+                {
+                    request.Parameters.Add("DeliveryPreference", StringUtils.FromString(publicRequest.DeliveryPreference));
+                }
                 if(publicRequest.IsSetEbsOptimized())
                 {
                     request.Parameters.Add("EbsOptimized", StringUtils.FromBool(publicRequest.EbsOptimized));
@@ -110,6 +118,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetPlacementGroupArn())
                 {
                     request.Parameters.Add("PlacementGroupArn", StringUtils.FromString(publicRequest.PlacementGroupArn));
+                }
+                if(publicRequest.IsSetStartDate())
+                {
+                    request.Parameters.Add("StartDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartDate));
                 }
                 if(publicRequest.IsSetTagSpecifications())
                 {

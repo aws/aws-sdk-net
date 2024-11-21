@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for IpamDiscoveredAccount Object
+    /// Response Unmarshaller for CapacityReservationCommitmentInfo Object
     /// </summary>  
-    public class IpamDiscoveredAccountUnmarshaller : IUnmarshaller<IpamDiscoveredAccount, XmlUnmarshallerContext>, IUnmarshaller<IpamDiscoveredAccount, JsonUnmarshallerContext>
+    public class CapacityReservationCommitmentInfoUnmarshaller : IUnmarshaller<CapacityReservationCommitmentInfo, XmlUnmarshallerContext>, IUnmarshaller<CapacityReservationCommitmentInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public IpamDiscoveredAccount Unmarshall(XmlUnmarshallerContext context)
+        public CapacityReservationCommitmentInfo Unmarshall(XmlUnmarshallerContext context)
         {
-            IpamDiscoveredAccount unmarshalledObject = new IpamDiscoveredAccount();
+            CapacityReservationCommitmentInfo unmarshalledObject = new CapacityReservationCommitmentInfo();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -55,40 +55,16 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("accountId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("discoveryRegion", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.DiscoveryRegion = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("failureReason", targetDepth))
-                    {
-                        var unmarshaller = IpamDiscoveryFailureReasonUnmarshaller.Instance;
-                        unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("lastAttemptedDiscoveryTime", targetDepth))
+                    if (context.TestExpression("commitmentEndDate", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;
-                        unmarshalledObject.LastAttemptedDiscoveryTime = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.CommitmentEndDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("lastSuccessfulDiscoveryTime", targetDepth))
+                    if (context.TestExpression("committedInstanceCount", targetDepth))
                     {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
-                        unmarshalledObject.LastSuccessfulDiscoveryTime = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("organizationalUnitId", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.OrganizationalUnitId = unmarshaller.Unmarshall(context);
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.CommittedInstanceCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -106,18 +82,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public IpamDiscoveredAccount Unmarshall(JsonUnmarshallerContext context)
+        public CapacityReservationCommitmentInfo Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static IpamDiscoveredAccountUnmarshaller _instance = new IpamDiscoveredAccountUnmarshaller();        
+        private static CapacityReservationCommitmentInfoUnmarshaller _instance = new CapacityReservationCommitmentInfoUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static IpamDiscoveredAccountUnmarshaller Instance
+        public static CapacityReservationCommitmentInfoUnmarshaller Instance
         {
             get
             {
