@@ -40,6 +40,7 @@ namespace Amazon.CloudTrail.Model
     public partial class CancelQueryRequest : AmazonCloudTrailRequest
     {
         private string _eventDataStore;
+        private string _eventDataStoreOwnerAccountId;
         private string _queryId;
 
         /// <summary>
@@ -61,6 +62,25 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetEventDataStore()
         {
             return this._eventDataStore != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventDataStoreOwnerAccountId. 
+        /// <para>
+        ///  The account ID of the event data store owner. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=16)]
+        public string EventDataStoreOwnerAccountId
+        {
+            get { return this._eventDataStoreOwnerAccountId; }
+            set { this._eventDataStoreOwnerAccountId = value; }
+        }
+
+        // Check to see if EventDataStoreOwnerAccountId property is set
+        internal bool IsSetEventDataStoreOwnerAccountId()
+        {
+            return this._eventDataStoreOwnerAccountId != null;
         }
 
         /// <summary>
