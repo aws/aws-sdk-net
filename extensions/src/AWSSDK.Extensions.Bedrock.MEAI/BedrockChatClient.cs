@@ -66,6 +66,11 @@ internal sealed partial class BedrockChatClient : IChatClient
     public async Task<ChatCompletion> CompleteAsync(
         IList<ChatMessage> chatMessages, ChatOptions? options = null, CancellationToken cancellationToken = default)
     {
+        if (chatMessages is null)
+        {
+            throw new ArgumentNullException(nameof(chatMessages));
+        }
+
         ConverseRequest request = new()
         {
             ModelId = options?.ModelId ?? _modelId,
@@ -125,6 +130,11 @@ internal sealed partial class BedrockChatClient : IChatClient
     public async IAsyncEnumerable<StreamingChatCompletionUpdate> CompleteStreamingAsync(
         IList<ChatMessage> chatMessages, ChatOptions? options = null, [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
+        if (chatMessages is null)
+        {
+            throw new ArgumentNullException(nameof(chatMessages));
+        }
+
         ConverseStreamRequest request = new()
         {
             ModelId = options?.ModelId ?? _modelId,
@@ -233,10 +243,19 @@ internal sealed partial class BedrockChatClient : IChatClient
     }
 
     /// <inheritdoc />
-    public TService? GetService<TService>(object? key) where TService : class =>
-        key is not null ? null :
-        _runtime as TService ??
-        this as TService;
+    public object? GetService(Type serviceType, object? key)
+    {
+        if (serviceType is null)
+        {
+            throw new ArgumentNullException(nameof(serviceType));
+        }
+
+        return 
+            key is not null ? null :
+            serviceType.IsInstanceOfType(_runtime) ? _runtime :
+            serviceType.IsInstanceOfType(this) ? this :
+            null;
+    }
 
     /// <summary>Converts a <see cref="StopReason"/> into a <see cref="ChatFinishReason"/>.</summary>
     private static ChatFinishReason GetChatFinishReason(StopReason stopReason) =>

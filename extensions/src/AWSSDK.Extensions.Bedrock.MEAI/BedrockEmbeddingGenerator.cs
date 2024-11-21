@@ -62,10 +62,19 @@ internal sealed partial class BedrockEmbeddingGenerator : IEmbeddingGenerator<st
     public EmbeddingGeneratorMetadata Metadata { get; }
 
     /// <inheritdoc />
-    public TService? GetService<TService>(object? key) where TService : class =>
-        key is not null ? null :
-        _runtime as TService ??
-        this as TService;
+    public object? GetService(Type serviceType, object? key)
+    {
+        if (serviceType is null)
+        {
+            throw new ArgumentNullException(nameof(serviceType));
+        }
+
+        return
+            key is not null ? null :
+            serviceType.IsInstanceOfType(_runtime) ? _runtime :
+            serviceType.IsInstanceOfType(this) ? this :
+            null;
+    }
 
     /// <inheritdoc />
     public async Task<GeneratedEmbeddings<Embedding<float>>> GenerateAsync(
