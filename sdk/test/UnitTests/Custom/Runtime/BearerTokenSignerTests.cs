@@ -111,7 +111,7 @@ namespace AWSSDK.UnitTests.Runtime
 
             var pipeline = new RuntimePipeline(new MockHandler());
             pipeline.AddHandler(new Signer());
-            pipeline.AddHandler(new CredentialsRetriever(new AnonymousAWSCredentials()));
+            pipeline.AddHandler(new CredentialsRetriever());
 
             var context = CreateTestContext(new BearerTokenSigner(), null, mockConfig);
             pipeline.InvokeSync(context);
@@ -134,7 +134,7 @@ namespace AWSSDK.UnitTests.Runtime
 
             var pipeline = new RuntimePipeline(new MockHandler());
             pipeline.AddHandler(new Signer());
-            pipeline.AddHandler(new CredentialsRetriever(new AnonymousAWSCredentials()));
+            pipeline.AddHandler(new CredentialsRetriever());
 
             var context = CreateTestContext(new BearerTokenSigner(), null, mockConfig);
             await pipeline.InvokeAsync<AmazonWebServiceResponse>(context);
@@ -157,7 +157,7 @@ namespace AWSSDK.UnitTests.Runtime
 
             var pipeline = new RuntimePipeline(new MockHandler());
             pipeline.AddHandler(new Signer());
-            pipeline.AddHandler(new CredentialsRetriever(new AnonymousAWSCredentials()));
+            pipeline.AddHandler(new CredentialsRetriever());
 
             var context = CreateTestContext(new BearerTokenSigner(), null, mockConfig);
             pipeline.InvokeSync(context);
@@ -180,7 +180,7 @@ namespace AWSSDK.UnitTests.Runtime
 
             var pipeline = new RuntimePipeline(new MockHandler());
             pipeline.AddHandler(new Signer());
-            pipeline.AddHandler(new CredentialsRetriever(new AnonymousAWSCredentials()));
+            pipeline.AddHandler(new CredentialsRetriever());
 
             var context = CreateTestContext(new BearerTokenSigner(), null, mockConfig);
             await pipeline.InvokeAsync<AmazonWebServiceResponse>(context);
@@ -203,7 +203,7 @@ namespace AWSSDK.UnitTests.Runtime
 
             var pipeline = new RuntimePipeline(new MockHandler());
             pipeline.AddHandler(new Signer());
-            pipeline.AddHandler(new CredentialsRetriever(new AnonymousAWSCredentials()));
+            pipeline.AddHandler(new CredentialsRetriever());
 
             var context = CreateTestContext(new BearerTokenSigner(), null, mockConfig);
 
@@ -230,7 +230,7 @@ namespace AWSSDK.UnitTests.Runtime
 
             var pipeline = new RuntimePipeline(new MockHandler());
             pipeline.AddHandler(new Signer());
-            pipeline.AddHandler(new CredentialsRetriever(new AnonymousAWSCredentials()));
+            pipeline.AddHandler(new CredentialsRetriever());
 
             var context = CreateTestContext(new BearerTokenSigner(), null, mockConfig);
 
@@ -255,7 +255,7 @@ namespace AWSSDK.UnitTests.Runtime
 
             var pipeline = new RuntimePipeline(new MockHandler());
             pipeline.AddHandler(new Signer());
-            pipeline.AddHandler(new CredentialsRetriever(new AnonymousAWSCredentials()));
+            pipeline.AddHandler(new CredentialsRetriever());
 
             var context = CreateTestContext(new BearerTokenSigner(), null, mockConfig);
 
@@ -288,7 +288,7 @@ namespace AWSSDK.UnitTests.Runtime
 
             var pipeline = new RuntimePipeline(new MockHandler());
             pipeline.AddHandler(new Signer());
-            pipeline.AddHandler(new CredentialsRetriever(new AnonymousAWSCredentials()));
+            pipeline.AddHandler(new CredentialsRetriever());
 
             var context = CreateTestContext(new BearerTokenSigner(), null, mockConfig);
 
