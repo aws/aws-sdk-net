@@ -120,7 +120,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Entity. 
         /// <para>
-        /// Reserved for internal use.
+        /// The entity associated with the log events.
         /// </para>
         /// </summary>
         public Entity Entity

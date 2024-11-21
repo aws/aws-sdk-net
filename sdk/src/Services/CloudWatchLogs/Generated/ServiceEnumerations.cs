@@ -455,6 +455,106 @@ namespace Amazon.CloudWatchLogs
 
 
     /// <summary>
+    /// Constants used for properties of type FlattenedElement.
+    /// </summary>
+    public class FlattenedElement : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant First for FlattenedElement
+        /// </summary>
+        public static readonly FlattenedElement First = new FlattenedElement("first");
+        /// <summary>
+        /// Constant Last for FlattenedElement
+        /// </summary>
+        public static readonly FlattenedElement Last = new FlattenedElement("last");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FlattenedElement(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FlattenedElement FindValue(string value)
+        {
+            return FindValue<FlattenedElement>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FlattenedElement(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IndexSource.
+    /// </summary>
+    public class IndexSource : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCOUNT for IndexSource
+        /// </summary>
+        public static readonly IndexSource ACCOUNT = new IndexSource("ACCOUNT");
+        /// <summary>
+        /// Constant LOG_GROUP for IndexSource
+        /// </summary>
+        public static readonly IndexSource LOG_GROUP = new IndexSource("LOG_GROUP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IndexSource(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IndexSource FindValue(string value)
+        {
+            return FindValue<IndexSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IndexSource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InheritedProperty.
     /// </summary>
     public class InheritedProperty : ConstantClass
@@ -673,9 +773,17 @@ namespace Amazon.CloudWatchLogs
         /// </summary>
         public static readonly PolicyType DATA_PROTECTION_POLICY = new PolicyType("DATA_PROTECTION_POLICY");
         /// <summary>
+        /// Constant FIELD_INDEX_POLICY for PolicyType
+        /// </summary>
+        public static readonly PolicyType FIELD_INDEX_POLICY = new PolicyType("FIELD_INDEX_POLICY");
+        /// <summary>
         /// Constant SUBSCRIPTION_FILTER_POLICY for PolicyType
         /// </summary>
         public static readonly PolicyType SUBSCRIPTION_FILTER_POLICY = new PolicyType("SUBSCRIPTION_FILTER_POLICY");
+        /// <summary>
+        /// Constant TRANSFORMER_POLICY for PolicyType
+        /// </summary>
+        public static readonly PolicyType TRANSFORMER_POLICY = new PolicyType("TRANSFORMER_POLICY");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1180,6 +1288,64 @@ namespace Amazon.CloudWatchLogs
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SuppressionUnit(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Type.
+    /// </summary>
+    public class Type : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Boolean for Type
+        /// </summary>
+        public static readonly Type Boolean = new Type("boolean");
+        /// <summary>
+        /// Constant Double for Type
+        /// </summary>
+        public static readonly Type Double = new Type("double");
+        /// <summary>
+        /// Constant Integer for Type
+        /// </summary>
+        public static readonly Type Integer = new Type("integer");
+        /// <summary>
+        /// Constant String for Type
+        /// </summary>
+        public static readonly Type String = new Type("string");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Type(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Type FindValue(string value)
+        {
+            return FindValue<Type>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Type(string value)
         {
             return FindValue(value);
         }
