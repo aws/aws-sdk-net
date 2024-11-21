@@ -13,6 +13,8 @@
 * permissions and limitations under the License.
 */
 
+using System.Threading;
+using Amazon.Runtime.Internal.Auth;
 using Smithy.Identity.Abstractions;
 
 namespace Amazon.Runtime.Credentials.Internal
@@ -23,6 +25,7 @@ namespace Amazon.Runtime.Credentials.Internal
     /// </summary>
     public class AwsV4aAuthScheme : IAuthScheme<AWSCredentials>
     {
+        private static ISigner _signer;
         /// <inheritdoc/>
         public string SchemeId => AuthSchemeOption.SigV4A;
 
@@ -30,6 +33,14 @@ namespace Amazon.Runtime.Credentials.Internal
         public IIdentityResolver GetIdentityResolver(IIdentityResolverConfiguration configuration)
         {
             return configuration.GetIdentityResolver<AWSCredentials>();
+        }
+
+        /// <inheritdoc/>
+        public ISigner Signer()
+        {
+            if (_signer == null)
+                Interlocked.Exchange(ref _signer, new AWS4aSignerCRTWrapper());
+            return _signer;
         }
     }
 }

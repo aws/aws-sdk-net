@@ -65,7 +65,8 @@ namespace UnitTests
             "RequestMinCompressionSizeBytes",
             "ClientAppId",
             "TelemetryProvider",
-            "AccountIdEndpointMode"
+            "AccountIdEndpointMode",
+            "IdentityResolverConfiguration"
         };
 
         [Fact]

@@ -233,6 +233,12 @@ namespace <#=this.Config.Namespace#>
         /// <param name="pipeline"></param>
         protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
+<# 
+// TODO: Remove the if statement when we eventually generate auth resolvers for all services.
+if (this.Config.ClassName == "AutoScaling" || this.Config.ClassName == "S3") { 
+#>
+            pipeline.AddHandlerBefore<Amazon.Runtime.Internal.CredentialsRetriever>(new Amazon<#=this.Config.ClassName#>AuthSchemeHandler(this.DefaultAWSCredentials));
+<# } #>
 <#
     var pipelineOverrides = this.Config.ServiceModel.Customizations.PipelineOverride;
     if (pipelineOverrides != null)

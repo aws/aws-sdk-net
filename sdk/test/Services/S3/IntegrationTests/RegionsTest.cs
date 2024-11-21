@@ -14,6 +14,7 @@ using Amazon.Util;
 using System.Globalization;
 using System.Threading;
 using System.Collections.Generic;
+using Amazon.Runtime.Credentials.Internal.IdentityResolvers;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -77,7 +78,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     CannedACL = S3CannedACL.BucketOwnerFullControl
                 });
 
-                var credentials = GetCredentials(client);
+                var credentials = DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
                 try
                 {
                     var response = testPost("foo/bar/content.txt", bucketName, testContentStream("Line one\nLine two\nLine three\n"), "", credentials, region);
@@ -162,13 +163,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         }
 
-        private static AWSCredentials GetCredentials(AmazonServiceClient client)
-        {
-            var type = client.GetType();
-            var property = type.GetProperty("Credentials", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic);
-            var credentials = property.GetValue(client, null) as AWSCredentials;
-            return credentials;
-        }
         static string policy_tmpl = @"{ ""expiration"": ""EXPIRATIONDATE"",  ""conditions"": [{ ""bucket"": ""BUCKETNAME"" }, { ""acl"": ""public-read"" }, [""eq"", ""$Content-Type"", ""text/plain""], [""starts-with"", ""$key"", ""foo/bar/""]MOARCONDITIONS]}";
         private S3PostUploadResponse testPost(string key, string bucketName, Stream contentStream, string extraConditions, AWSCredentials credentials, RegionEndpoint region)
         {

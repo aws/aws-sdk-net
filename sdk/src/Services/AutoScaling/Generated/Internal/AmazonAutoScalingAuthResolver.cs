@@ -20,6 +20,7 @@
 using Amazon.Runtime;
 using Amazon.Runtime.Credentials.Internal;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Auth;
 using Smithy.Identity.Abstractions;
 using System.Collections.Generic;
 
@@ -42,6 +43,13 @@ namespace Amazon.AutoScaling.Internal
     /// </summary>
     public class AmazonAutoScalingAuthSchemeHandler : BaseAuthResolverHandler
     {
+        /// <summary>
+        /// Construct an instance of AmazonAutoScalingAuthSchemeHandler
+        /// </summary>
+        public AmazonAutoScalingAuthSchemeHandler(AWSCredentials credentials)
+            : base(credentials)
+        { }
+
         /// <summary>
         /// Modeled auth scheme resolver for AutoScaling.
         /// </summary>

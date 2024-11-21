@@ -387,7 +387,7 @@ namespace Amazon.Runtime
                     // ChecksumHandler must come after EndpointsResolver because of an upcoming project.
                     new ChecksumHandler(),
                     // CredentialsRetriever must come after RetryHandler because of any credential related changes.
-                    new CredentialsRetriever(this.DefaultAWSCredentials),
+                    new CredentialsRetriever(),
                     new RetryHandler(retryPolicy),
                     new CompressionHandler(),
                     postMarshallHandler,
