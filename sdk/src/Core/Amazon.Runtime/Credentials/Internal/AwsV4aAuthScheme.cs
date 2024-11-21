@@ -13,6 +13,7 @@
 * permissions and limitations under the License.
 */
 
+using System.Threading;
 using Amazon.Runtime.Internal.Auth;
 using Smithy.Identity.Abstractions;
 
@@ -38,7 +39,7 @@ namespace Amazon.Runtime.Credentials.Internal
         public ISigner Signer()
         {
             if (_signer == null)
-                _signer = new AWS4aSignerCRTWrapper();
+                Interlocked.Exchange(ref _signer, new AWS4aSignerCRTWrapper());
             return _signer;
         }
     }
