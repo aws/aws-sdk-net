@@ -377,6 +377,60 @@ namespace Amazon.SSMQuickSetup
 
         #endregion
         
+        #region  GetConfiguration
+
+        internal virtual GetConfigurationResponse GetConfiguration(GetConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns details about the specified configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetConfiguration service method, as returned by SSMQuickSetup.</returns>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.AccessDeniedException">
+        /// The requester has insufficient permissions to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.ConflictException">
+        /// Another request is being processed. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.InternalServerException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.ResourceNotFoundException">
+        /// The resource couldn't be found. Check the ID or name and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.ThrottlingException">
+        /// The request or operation exceeds the maximum allowed request rate per Amazon Web Services
+        /// account and Amazon Web Services Region.
+        /// </exception>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.ValidationException">
+        /// The request is invalid. Verify the values provided for the request parameters are
+        /// accurate.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/GetConfiguration">REST API Reference for GetConfiguration Operation</seealso>
+        public virtual Task<GetConfigurationResponse> GetConfigurationAsync(GetConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetConfigurationManager
 
         internal virtual GetConfigurationManagerResponse GetConfigurationManager(GetConfigurationManagerRequest request)
@@ -526,6 +580,58 @@ namespace Amazon.SSMQuickSetup
             options.ResponseUnmarshaller = ListConfigurationManagersResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListConfigurationManagersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListConfigurations
+
+        internal virtual ListConfigurationsResponse ListConfigurations(ListConfigurationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListConfigurationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns configurations deployed by Quick Setup in the requesting Amazon Web Services
+        /// account and Amazon Web Services Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListConfigurations service method, as returned by SSMQuickSetup.</returns>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.AccessDeniedException">
+        /// The requester has insufficient permissions to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.InternalServerException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.ResourceNotFoundException">
+        /// The resource couldn't be found. Check the ID or name and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.ThrottlingException">
+        /// The request or operation exceeds the maximum allowed request rate per Amazon Web Services
+        /// account and Amazon Web Services Region.
+        /// </exception>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.ValidationException">
+        /// The request is invalid. Verify the values provided for the request parameters are
+        /// accurate.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/ListConfigurations">REST API Reference for ListConfigurations Operation</seealso>
+        public virtual Task<ListConfigurationsResponse> ListConfigurationsAsync(ListConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConfigurationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListConfigurationsResponse>(request, options, cancellationToken);
         }
 
         #endregion

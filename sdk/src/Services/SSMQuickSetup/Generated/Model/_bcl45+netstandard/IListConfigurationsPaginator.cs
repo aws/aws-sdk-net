@@ -16,24 +16,24 @@
 /*
  * Do not modify this file. This file is generated from the ssm-quicksetup-2018-05-10.normal.json service model.
  */
+using Amazon.Runtime;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SSMQuickSetup.Model
 {
     /// <summary>
-    /// Paginators for the SSMQuickSetup service
+    /// Paginator for the ListConfigurations operation
     ///</summary>
-    public interface ISSMQuickSetupPaginatorFactory
+    public interface IListConfigurationsPaginator
     {
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<ListConfigurationsResponse> Responses { get; }
 
         /// <summary>
-        /// Paginator for ListConfigurationManagers operation
-        ///</summary>
-        IListConfigurationManagersPaginator ListConfigurationManagers(ListConfigurationManagersRequest request);
-
-        /// <summary>
-        /// Paginator for ListConfigurations operation
-        ///</summary>
-        IListConfigurationsPaginator ListConfigurations(ListConfigurationsRequest request);
+        /// Enumerable containing all of the ConfigurationsList
+        /// </summary>
+        IPaginatedEnumerable<ConfigurationSummary> ConfigurationsList { get; }
     }
 }

@@ -166,6 +166,66 @@ namespace Amazon.SSMQuickSetup
 
         #endregion
         
+        #region  GetConfiguration
+
+
+        /// <summary>
+        /// Returns details about the specified configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetConfiguration service method, as returned by SSMQuickSetup.</returns>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.AccessDeniedException">
+        /// The requester has insufficient permissions to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.ConflictException">
+        /// Another request is being processed. Wait a few minutes and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.InternalServerException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.ResourceNotFoundException">
+        /// The resource couldn't be found. Check the ID or name and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.ThrottlingException">
+        /// The request or operation exceeds the maximum allowed request rate per Amazon Web Services
+        /// account and Amazon Web Services Region.
+        /// </exception>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.ValidationException">
+        /// The request is invalid. Verify the values provided for the request parameters are
+        /// accurate.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/GetConfiguration">REST API Reference for GetConfiguration Operation</seealso>
+        GetConfigurationResponse GetConfiguration(GetConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetConfiguration operation on AmazonSSMQuickSetupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/GetConfiguration">REST API Reference for GetConfiguration Operation</seealso>
+        IAsyncResult BeginGetConfiguration(GetConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetConfigurationResult from SSMQuickSetup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/GetConfiguration">REST API Reference for GetConfiguration Operation</seealso>
+        GetConfigurationResponse EndGetConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetConfigurationManager
 
 
@@ -334,6 +394,64 @@ namespace Amazon.SSMQuickSetup
         /// <returns>Returns a  ListConfigurationManagersResult from SSMQuickSetup.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/ListConfigurationManagers">REST API Reference for ListConfigurationManagers Operation</seealso>
         ListConfigurationManagersResponse EndListConfigurationManagers(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListConfigurations
+
+
+        /// <summary>
+        /// Returns configurations deployed by Quick Setup in the requesting Amazon Web Services
+        /// account and Amazon Web Services Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConfigurations service method.</param>
+        /// 
+        /// <returns>The response from the ListConfigurations service method, as returned by SSMQuickSetup.</returns>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.AccessDeniedException">
+        /// The requester has insufficient permissions to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.InternalServerException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.ResourceNotFoundException">
+        /// The resource couldn't be found. Check the ID or name and try again.
+        /// </exception>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.ThrottlingException">
+        /// The request or operation exceeds the maximum allowed request rate per Amazon Web Services
+        /// account and Amazon Web Services Region.
+        /// </exception>
+        /// <exception cref="Amazon.SSMQuickSetup.Model.ValidationException">
+        /// The request is invalid. Verify the values provided for the request parameters are
+        /// accurate.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/ListConfigurations">REST API Reference for ListConfigurations Operation</seealso>
+        ListConfigurationsResponse ListConfigurations(ListConfigurationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListConfigurations operation on AmazonSSMQuickSetupClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListConfigurations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/ListConfigurations">REST API Reference for ListConfigurations Operation</seealso>
+        IAsyncResult BeginListConfigurations(ListConfigurationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListConfigurations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListConfigurations.</param>
+        /// 
+        /// <returns>Returns a  ListConfigurationsResult from SSMQuickSetup.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-quicksetup-2018-05-10/ListConfigurations">REST API Reference for ListConfigurations Operation</seealso>
+        ListConfigurationsResponse EndListConfigurations(IAsyncResult asyncResult);
 
         #endregion
         
