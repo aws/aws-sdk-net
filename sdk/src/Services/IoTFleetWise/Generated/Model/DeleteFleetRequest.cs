@@ -34,13 +34,6 @@ namespace Amazon.IoTFleetWise.Model
     /// Deletes a fleet. Before you delete a fleet, all vehicles must be dissociated from
     /// the fleet. For more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/delete-fleet-cli.html">Delete
     /// a fleet (AWS CLI)</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// If the fleet is successfully deleted, Amazon Web Services IoT FleetWise sends back
-    /// an HTTP 200 response with an empty body.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class DeleteFleetRequest : AmazonIoTFleetWiseRequest
     {

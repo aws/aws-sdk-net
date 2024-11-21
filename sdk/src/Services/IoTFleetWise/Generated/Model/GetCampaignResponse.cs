@@ -40,6 +40,7 @@ namespace Amazon.IoTFleetWise.Model
         private DateTime? _creationTime;
         private List<DataDestinationConfig> _dataDestinationConfigs = AWSConfigs.InitializeCollections ? new List<DataDestinationConfig>() : null;
         private List<string> _dataExtraDimensions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<DataPartition> _dataPartitions = AWSConfigs.InitializeCollections ? new List<DataPartition>() : null;
         private string _description;
         private DiagnosticsMode _diagnosticsMode;
         private DateTime? _expiryTime;
@@ -49,6 +50,7 @@ namespace Amazon.IoTFleetWise.Model
         private int? _priority;
         private string _signalCatalogArn;
         private List<SignalInformation> _signalsToCollect = AWSConfigs.InitializeCollections ? new List<SignalInformation>() : null;
+        private List<SignalFetchInformation> _signalsToFetch = AWSConfigs.InitializeCollections ? new List<SignalFetchInformation>() : null;
         private SpoolingMode _spoolingMode;
         private DateTime? _startTime;
         private CampaignStatus _status;
@@ -132,8 +134,13 @@ namespace Amazon.IoTFleetWise.Model
         /// <summary>
         /// Gets and sets the property DataDestinationConfigs. 
         /// <para>
-        /// The destination where the campaign sends data. You can choose to send data to be stored
-        /// in Amazon S3 or Amazon Timestream.
+        /// The destination where the campaign sends data. You can send data to an MQTT topic,
+        /// or store it in Amazon S3 or Amazon Timestream.
+        /// </para>
+        ///  
+        /// <para>
+        /// MQTT is the publish/subscribe messaging protocol used by Amazon Web Services IoT to
+        /// communicate with your devices.
         /// </para>
         ///  
         /// <para>
@@ -177,6 +184,25 @@ namespace Amazon.IoTFleetWise.Model
         internal bool IsSetDataExtraDimensions()
         {
             return this._dataExtraDimensions != null && (this._dataExtraDimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataPartitions. 
+        /// <para>
+        /// The data partitions associated with the signals collected from the vehicle.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=20)]
+        public List<DataPartition> DataPartitions
+        {
+            get { return this._dataPartitions; }
+            set { this._dataPartitions = value; }
+        }
+
+        // Check to see if DataPartitions property is set
+        internal bool IsSetDataPartitions()
+        {
+            return this._dataPartitions != null && (this._dataPartitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -349,6 +375,25 @@ namespace Amazon.IoTFleetWise.Model
         internal bool IsSetSignalsToCollect()
         {
             return this._signalsToCollect != null && (this._signalsToCollect.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SignalsToFetch. 
+        /// <para>
+        /// Information about a list of signals to fetch data from.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2)]
+        public List<SignalFetchInformation> SignalsToFetch
+        {
+            get { return this._signalsToFetch; }
+            set { this._signalsToFetch = value; }
+        }
+
+        // Check to see if SignalsToFetch property is set
+        internal bool IsSetSignalsToFetch()
+        {
+            return this._signalsToFetch != null && (this._signalsToFetch.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

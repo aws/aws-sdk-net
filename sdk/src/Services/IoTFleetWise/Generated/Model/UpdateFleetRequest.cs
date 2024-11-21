@@ -31,14 +31,7 @@ namespace Amazon.IoTFleetWise.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateFleet operation.
-    /// Updates the description of an existing fleet. 
-    /// 
-    ///  <note> 
-    /// <para>
-    /// If the fleet is successfully updated, Amazon Web Services IoT FleetWise sends back
-    /// an HTTP 200 response with an empty HTTP body.
-    /// </para>
-    ///  </note>
+    /// Updates the description of an existing fleet.
     /// </summary>
     public partial class UpdateFleetRequest : AmazonIoTFleetWiseRequest
     {

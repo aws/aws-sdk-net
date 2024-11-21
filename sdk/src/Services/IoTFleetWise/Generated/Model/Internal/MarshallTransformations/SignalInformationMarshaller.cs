@@ -48,6 +48,12 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetDataPartitionId())
+            {
+                context.Writer.WritePropertyName("dataPartitionId");
+                context.Writer.Write(requestObject.DataPartitionId);
+            }
+
             if(requestObject.IsSetMaxSampleCount())
             {
                 context.Writer.WritePropertyName("maxSampleCount");

@@ -34,9 +34,49 @@ namespace Amazon.IoTFleetWise.Model
     /// </summary>
     public partial class SignalInformation
     {
+        private string _dataPartitionId;
         private long? _maxSampleCount;
         private long? _minimumSamplingIntervalMs;
         private string _name;
+
+        /// <summary>
+        /// Gets and sets the property DataPartitionId. 
+        /// <para>
+        /// The ID of the data partition this signal is associated with.
+        /// </para>
+        ///  
+        /// <para>
+        /// The ID must match one of the IDs provided in <c>dataPartitions</c>. This is accomplished
+        /// either by specifying a particular data partition ID or by using <c>default</c> for
+        /// an established default partition. You can establish a default partition in the <c>DataPartition</c>
+        /// data type.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you upload a signal as a condition for a campaign's data partition, the same signal
+        /// must be included in <c>signalsToCollect</c>.
+        /// </para>
+        ///  </note> <important> 
+        /// <para>
+        /// Access to certain Amazon Web Services IoT FleetWise features is currently gated. For
+        /// more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleetwise-regions.html">Amazon
+        /// Web Services Region and feature availability</a> in the <i>Amazon Web Services IoT
+        /// FleetWise Developer Guide</i>.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string DataPartitionId
+        {
+            get { return this._dataPartitionId; }
+            set { this._dataPartitionId = value; }
+        }
+
+        // Check to see if DataPartitionId property is set
+        internal bool IsSetDataPartitionId()
+        {
+            return this._dataPartitionId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxSampleCount. 

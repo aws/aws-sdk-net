@@ -42,6 +42,7 @@ namespace Amazon.IoTFleetWise.Model
     public partial class NetworkInterface
     {
         private CanInterface _canInterface;
+        private CustomDecodingInterface _customDecodingInterface;
         private string _interfaceId;
         private ObdInterface _obdInterface;
         private NetworkInterfaceType _type;
@@ -67,6 +68,25 @@ namespace Amazon.IoTFleetWise.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CustomDecodingInterface. 
+        /// <para>
+        /// Information about a <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_CustomDecodingInterface.html">custom
+        /// network interface</a>.
+        /// </para>
+        /// </summary>
+        public CustomDecodingInterface CustomDecodingInterface
+        {
+            get { return this._customDecodingInterface; }
+            set { this._customDecodingInterface = value; }
+        }
+
+        // Check to see if CustomDecodingInterface property is set
+        internal bool IsSetCustomDecodingInterface()
+        {
+            return this._customDecodingInterface != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InterfaceId. 
         /// <para>
         /// The ID of the network interface.
@@ -88,7 +108,7 @@ namespace Amazon.IoTFleetWise.Model
         /// <summary>
         /// Gets and sets the property ObdInterface. 
         /// <para>
-        /// Information about a network interface specified by the On-board diagnostic (OBD) II
+        /// Information about a network interface specified by the on-board diagnostic (OBD) II
         /// protocol.
         /// </para>
         /// </summary>
