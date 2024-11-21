@@ -793,6 +793,9 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 
                                     xmlWriter.WriteEndElement();
                                 }
+                                if(publicRequestDistributionConfigOriginGroupsItemsValue.IsSetSelectionCriteria())
+                                    xmlWriter.WriteElementString("SelectionCriteria", StringUtils.FromString(publicRequestDistributionConfigOriginGroupsItemsValue.SelectionCriteria));                 
+
                                 xmlWriter.WriteEndElement();
                             }
                             }            
