@@ -32,7 +32,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// Container for the parameters to the PurchaseReservedCacheNodesOffering operation.
     /// Allows you to purchase a reserved cache node offering. Reserved nodes are not eligible
-    /// for cancellation and are non-refundable. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/reserved-nodes.html">Managing
+    /// for cancellation and are non-refundable. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/reserved-nodes.html">Managing
     /// Costs with Reserved Nodes</a>.
     /// </summary>
     public partial class PurchaseReservedCacheNodesOfferingRequest : AmazonElastiCacheRequest

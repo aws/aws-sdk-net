@@ -33,7 +33,7 @@ namespace Amazon.ElastiCache.Model
     /// Container for the parameters to the DeleteUserGroup operation.
     /// For Valkey engine version 7.2 onwards and Redis OSS 6.0 onwards: Deletes a user group.
     /// The user group must first be disassociated from the replication group before it can
-    /// be deleted. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using
+    /// be deleted. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Clusters.RBAC.html">Using
     /// Role Based Access Control (RBAC)</a>.
     /// </summary>
     public partial class DeleteUserGroupRequest : AmazonElastiCacheRequest

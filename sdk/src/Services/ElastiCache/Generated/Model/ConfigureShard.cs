@@ -89,7 +89,7 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// The 4-digit id for the node group you are configuring. For Valkey or Redis OSS (cluster
         /// mode disabled) replication groups, the node group id is always 0001. To find a Valkey
-        /// or Redis OSS (cluster mode enabled)'s node group's (shard's) id, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/shard-find-id.html">Finding
+        /// or Redis OSS (cluster mode enabled)'s node group's (shard's) id, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/shard-find-id.html">Finding
         /// a Shard's Id</a>.
         /// </para>
         /// </summary>

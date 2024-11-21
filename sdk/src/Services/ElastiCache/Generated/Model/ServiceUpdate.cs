@@ -179,7 +179,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property ServiceUpdateRecommendedApplyByDate. 
         /// <para>
         /// The recommendend date to apply the service update in order to ensure compliance. For
-        /// information on compliance, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/elasticache-compliance.html#elasticache-compliance-self-service">Self-Service
+        /// information on compliance, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/elasticache-compliance.html#elasticache-compliance-self-service">Self-Service
         /// Security Updates for Compliance</a>.
         /// </para>
         /// </summary>

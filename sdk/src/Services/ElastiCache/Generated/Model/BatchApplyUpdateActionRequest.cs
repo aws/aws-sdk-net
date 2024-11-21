@@ -32,7 +32,7 @@ namespace Amazon.ElastiCache.Model
     /// <summary>
     /// Container for the parameters to the BatchApplyUpdateAction operation.
     /// Apply the service update. For more information on service updates and applying them,
-    /// see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/applying-updates.html">Applying
+    /// see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/applying-updates.html">Applying
     /// Service Updates</a>.
     /// </summary>
     public partial class BatchApplyUpdateActionRequest : AmazonElastiCacheRequest

@@ -35,9 +35,28 @@ namespace Amazon.ElastiCache.Model
     /// </summary>
     public partial class ModifyUserGroupRequest : AmazonElastiCacheRequest
     {
+        private string _engine;
         private string _userGroupId;
         private List<string> _userIdsToAdd = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _userIdsToRemove = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property Engine. 
+        /// <para>
+        /// The engine for a user group. 
+        /// </para>
+        /// </summary>
+        public string Engine
+        {
+            get { return this._engine; }
+            set { this._engine = value; }
+        }
+
+        // Check to see if Engine property is set
+        internal bool IsSetEngine()
+        {
+            return this._engine != null;
+        }
 
         /// <summary>
         /// Gets and sets the property UserGroupId. 
