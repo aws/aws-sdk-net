@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// PutScalingPolicy Request Marshaller
+    /// GetPredictiveScalingForecast Request Marshaller
     /// </summary>       
-    public class PutScalingPolicyRequestMarshaller : IMarshaller<IRequest, PutScalingPolicyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetPredictiveScalingForecastRequestMarshaller : IMarshaller<IRequest, GetPredictiveScalingForecastRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((PutScalingPolicyRequest)input);
+            return this.Marshall((GetPredictiveScalingForecastRequest)input);
         }
 
         /// <summary>
@@ -53,10 +53,10 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(PutScalingPolicyRequest publicRequest)
+        public IRequest Marshall(GetPredictiveScalingForecastRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ApplicationAutoScaling");
-            string target = "AnyScaleFrontendService.PutScalingPolicy";
+            string target = "AnyScaleFrontendService.GetPredictiveScalingForecast";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-02-06";
@@ -69,27 +69,16 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetEndTime())
+                {
+                    context.Writer.WritePropertyName("EndTime");
+                    context.Writer.Write(publicRequest.EndTime);
+                }
+
                 if(publicRequest.IsSetPolicyName())
                 {
                     context.Writer.WritePropertyName("PolicyName");
                     context.Writer.Write(publicRequest.PolicyName);
-                }
-
-                if(publicRequest.IsSetPolicyType())
-                {
-                    context.Writer.WritePropertyName("PolicyType");
-                    context.Writer.Write(publicRequest.PolicyType);
-                }
-
-                if(publicRequest.IsSetPredictiveScalingPolicyConfiguration())
-                {
-                    context.Writer.WritePropertyName("PredictiveScalingPolicyConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = PredictiveScalingPolicyConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.PredictiveScalingPolicyConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetResourceId())
@@ -110,26 +99,10 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ServiceNamespace);
                 }
 
-                if(publicRequest.IsSetStepScalingPolicyConfiguration())
+                if(publicRequest.IsSetStartTime())
                 {
-                    context.Writer.WritePropertyName("StepScalingPolicyConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = StepScalingPolicyConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.StepScalingPolicyConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTargetTrackingScalingPolicyConfiguration())
-                {
-                    context.Writer.WritePropertyName("TargetTrackingScalingPolicyConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = TargetTrackingScalingPolicyConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.TargetTrackingScalingPolicyConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("StartTime");
+                    context.Writer.Write(publicRequest.StartTime);
                 }
 
                 writer.WriteObjectEnd();
@@ -140,9 +113,9 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static PutScalingPolicyRequestMarshaller _instance = new PutScalingPolicyRequestMarshaller();        
+        private static GetPredictiveScalingForecastRequestMarshaller _instance = new GetPredictiveScalingForecastRequestMarshaller();        
 
-        internal static PutScalingPolicyRequestMarshaller GetInstance()
+        internal static GetPredictiveScalingForecastRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -150,7 +123,7 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PutScalingPolicyRequestMarshaller Instance
+        public static GetPredictiveScalingForecastRequestMarshaller Instance
         {
             get
             {

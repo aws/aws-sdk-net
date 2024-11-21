@@ -47,6 +47,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         private string _policyARN;
         private string _policyName;
         private PolicyType _policyType;
+        private PredictiveScalingPolicyConfiguration _predictiveScalingPolicyConfiguration;
         private string _resourceId;
         private ScalableDimension _scalableDimension;
         private ServiceNamespace _serviceNamespace;
@@ -158,6 +159,24 @@ namespace Amazon.ApplicationAutoScaling.Model
         internal bool IsSetPolicyType()
         {
             return this._policyType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PredictiveScalingPolicyConfiguration. 
+        /// <para>
+        ///  The predictive scaling policy configuration. 
+        /// </para>
+        /// </summary>
+        public PredictiveScalingPolicyConfiguration PredictiveScalingPolicyConfiguration
+        {
+            get { return this._predictiveScalingPolicyConfiguration; }
+            set { this._predictiveScalingPolicyConfiguration = value; }
+        }
+
+        // Check to see if PredictiveScalingPolicyConfiguration property is set
+        internal bool IsSetPredictiveScalingPolicyConfiguration()
+        {
+            return this._predictiveScalingPolicyConfiguration != null;
         }
 
         /// <summary>

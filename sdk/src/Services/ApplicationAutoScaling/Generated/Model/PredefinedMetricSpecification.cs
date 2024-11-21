@@ -35,7 +35,7 @@ namespace Amazon.ApplicationAutoScaling.Model
     /// 
     ///  
     /// <para>
-    /// For more information, <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/monitor-cloudwatch-metrics.html#predefined-metrics">Predefined
+    /// For more information, <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/monitoring-cloudwatch.html#predefined-metrics">Predefined
     /// metrics for target tracking scaling policies</a> in the <i>Application Auto Scaling
     /// User Guide</i>.
     /// </para>
