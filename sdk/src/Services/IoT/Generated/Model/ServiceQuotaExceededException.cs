@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// A limit has been exceeded.
+    /// Service quota has been exceeded.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
