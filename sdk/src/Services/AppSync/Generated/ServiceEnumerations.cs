@@ -765,6 +765,10 @@ namespace Amazon.AppSync
     {
 
         /// <summary>
+        /// Constant AMAZON_BEDROCK_RUNTIME for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType AMAZON_BEDROCK_RUNTIME = new DataSourceType("AMAZON_BEDROCK_RUNTIME");
+        /// <summary>
         /// Constant AMAZON_DYNAMODB for DataSourceType
         /// </summary>
         public static readonly DataSourceType AMAZON_DYNAMODB = new DataSourceType("AMAZON_DYNAMODB");
