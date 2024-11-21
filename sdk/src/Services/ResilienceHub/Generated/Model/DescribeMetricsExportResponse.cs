@@ -30,18 +30,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeResourceGroupingRecommendationTask operation.
+    /// This is the response object from the DescribeMetricsExport operation.
     /// </summary>
-    public partial class DescribeResourceGroupingRecommendationTaskResponse : AmazonWebServiceResponse
+    public partial class DescribeMetricsExportResponse : AmazonWebServiceResponse
     {
         private string _errorMessage;
-        private string _groupingId;
-        private ResourcesGroupingRecGenStatusType _status;
+        private S3Location _exportLocation;
+        private string _metricsExportId;
+        private MetricsExportStatusType _status;
 
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// Error that occurred while generating a grouping recommendation.
+        /// Explains the error that occurred while exporting the metrics.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
@@ -58,32 +59,50 @@ namespace Amazon.ResilienceHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GroupingId. 
+        /// Gets and sets the property ExportLocation. 
         /// <para>
-        /// Identifier of the grouping recommendation task.
+        /// Specifies the name of the Amazon S3 bucket where the exported metrics is stored.
+        /// </para>
+        /// </summary>
+        public S3Location ExportLocation
+        {
+            get { return this._exportLocation; }
+            set { this._exportLocation = value; }
+        }
+
+        // Check to see if ExportLocation property is set
+        internal bool IsSetExportLocation()
+        {
+            return this._exportLocation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetricsExportId. 
+        /// <para>
+        /// Identifier for the metrics export task.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
-        public string GroupingId
+        public string MetricsExportId
         {
-            get { return this._groupingId; }
-            set { this._groupingId = value; }
+            get { return this._metricsExportId; }
+            set { this._metricsExportId = value; }
         }
 
-        // Check to see if GroupingId property is set
-        internal bool IsSetGroupingId()
+        // Check to see if MetricsExportId property is set
+        internal bool IsSetMetricsExportId()
         {
-            return this._groupingId != null;
+            return this._metricsExportId != null;
         }
 
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Status of the action.
+        /// Indicates the status of the metrics export task.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public ResourcesGroupingRecGenStatusType Status
+        public MetricsExportStatusType Status
         {
             get { return this._status; }
             set { this._status = value; }

@@ -30,40 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListResiliencyPolicies operation.
-    /// Lists the resiliency policies for the Resilience Hub applications.
+    /// This is the response object from the ListMetrics operation.
     /// </summary>
-    public partial class ListResiliencyPoliciesRequest : AmazonResilienceHubRequest
+    public partial class ListMetricsResponse : AmazonWebServiceResponse
     {
-        private int? _maxResults;
         private string _nextToken;
-        private string _policyName;
-
-        /// <summary>
-        /// Gets and sets the property MaxResults. 
-        /// <para>
-        /// Maximum number of results to include in the response. If more results exist than the
-        /// specified <c>MaxResults</c> value, a token is included in the response so that the
-        /// remaining results can be retrieved.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=100)]
-        public int MaxResults
-        {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
-        }
-
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
-        {
-            return this._maxResults.HasValue; 
-        }
+        private List<List<string>> _rows = AWSConfigs.InitializeCollections ? new List<List<string>>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Null, or the token from a previous call to get the next set of results.
+        /// Token for the next set of results, or null if there are no more results.
         /// </para>
         /// </summary>
         public string NextToken
@@ -79,21 +56,22 @@ namespace Amazon.ResilienceHub.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PolicyName. 
+        /// Gets and sets the property Rows. 
         /// <para>
-        /// Name of the resiliency policy.
+        /// Specifies all the list of metric values for each row of metrics.
         /// </para>
         /// </summary>
-        public string PolicyName
+        [AWSProperty(Required=true)]
+        public List<List<string>> Rows
         {
-            get { return this._policyName; }
-            set { this._policyName = value; }
+            get { return this._rows; }
+            set { this._rows = value; }
         }
 
-        // Check to see if PolicyName property is set
-        internal bool IsSetPolicyName()
+        // Check to see if Rows property is set
+        internal bool IsSetRows()
         {
-            return this._policyName != null;
+            return this._rows != null && (this._rows.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

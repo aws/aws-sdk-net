@@ -63,8 +63,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property FailedEntries. 
         /// <para>
-        /// Indicates the list of resource grouping recommendations that could not be included
-        /// in your application.
+        /// List of resource grouping recommendations that could not be included in your application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

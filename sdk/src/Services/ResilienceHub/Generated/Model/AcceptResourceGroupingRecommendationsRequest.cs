@@ -65,8 +65,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property Entries. 
         /// <para>
-        /// Indicates the list of resource grouping recommendations you want to include in your
-        /// application.
+        /// List of resource grouping recommendations you want to include in your application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=30)]

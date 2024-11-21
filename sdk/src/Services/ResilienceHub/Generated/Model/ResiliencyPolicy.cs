@@ -152,7 +152,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property PolicyDescription. 
         /// <para>
-        /// The description for the policy.
+        /// Description of the resiliency policy.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=500)]

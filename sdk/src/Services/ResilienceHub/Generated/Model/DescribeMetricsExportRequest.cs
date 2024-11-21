@@ -30,30 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
-    /// This is the response object from the UpdateResiliencyPolicy operation.
+    /// Container for the parameters to the DescribeMetricsExport operation.
+    /// Describes the metrics of the application configuration being exported.
     /// </summary>
-    public partial class UpdateResiliencyPolicyResponse : AmazonWebServiceResponse
+    public partial class DescribeMetricsExportRequest : AmazonResilienceHubRequest
     {
-        private ResiliencyPolicy _policy;
+        private string _metricsExportId;
 
         /// <summary>
-        /// Gets and sets the property Policy. 
+        /// Gets and sets the property MetricsExportId. 
         /// <para>
-        /// The resiliency policy that was updated, including the recovery time objective (RTO)
-        /// and recovery point objective (RPO) in seconds.
+        /// Identifier of the metrics export task.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public ResiliencyPolicy Policy
+        [AWSProperty(Required=true, Min=1, Max=255)]
+        public string MetricsExportId
         {
-            get { return this._policy; }
-            set { this._policy = value; }
+            get { return this._metricsExportId; }
+            set { this._metricsExportId = value; }
         }
 
-        // Check to see if Policy property is set
-        internal bool IsSetPolicy()
+        // Check to see if MetricsExportId property is set
+        internal bool IsSetMetricsExportId()
         {
-            return this._policy != null;
+            return this._metricsExportId != null;
         }
 
     }

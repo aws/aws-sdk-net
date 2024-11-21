@@ -2155,6 +2155,78 @@ namespace Amazon.ResilienceHub
 
         #endregion
         
+        #region  DescribeMetricsExport
+
+        /// <summary>
+        /// Describes the metrics of the application configuration being exported.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMetricsExport service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMetricsExport service method, as returned by ResilienceHub.</returns>
+        /// <exception cref="Amazon.ResilienceHub.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
+        /// This exception occurs when the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
+        /// This exception occurs when a request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeMetricsExport">REST API Reference for DescribeMetricsExport Operation</seealso>
+        public virtual DescribeMetricsExportResponse DescribeMetricsExport(DescribeMetricsExportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMetricsExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMetricsExportResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMetricsExportResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMetricsExport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMetricsExport operation on AmazonResilienceHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMetricsExport
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeMetricsExport">REST API Reference for DescribeMetricsExport Operation</seealso>
+        public virtual IAsyncResult BeginDescribeMetricsExport(DescribeMetricsExportRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeMetricsExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMetricsExportResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeMetricsExport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMetricsExport.</param>
+        /// 
+        /// <returns>Returns a  DescribeMetricsExportResult from ResilienceHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeMetricsExport">REST API Reference for DescribeMetricsExport Operation</seealso>
+        public virtual DescribeMetricsExportResponse EndDescribeMetricsExport(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeMetricsExportResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeResiliencyPolicy
 
         /// <summary>
@@ -2463,7 +2535,7 @@ namespace Amazon.ResilienceHub
         #region  ListAppAssessmentComplianceDrifts
 
         /// <summary>
-        /// Indicates the list of compliance drifts that were detected while running an assessment.
+        /// List of compliance drifts that were detected while running an assessment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAppAssessmentComplianceDrifts service method.</param>
         /// 
@@ -2532,7 +2604,7 @@ namespace Amazon.ResilienceHub
         #region  ListAppAssessmentResourceDrifts
 
         /// <summary>
-        /// Indicates the list of resource drifts that were detected while running an assessment.
+        /// List of resource drifts that were detected while running an assessment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAppAssessmentResourceDrifts service method.</param>
         /// 
@@ -3265,6 +3337,75 @@ namespace Amazon.ResilienceHub
         public virtual ListAppVersionsResponse EndListAppVersions(IAsyncResult asyncResult)
         {
             return EndInvoke<ListAppVersionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListMetrics
+
+        /// <summary>
+        /// Lists the metrics that can be exported.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMetrics service method.</param>
+        /// 
+        /// <returns>The response from the ListMetrics service method, as returned by ResilienceHub.</returns>
+        /// <exception cref="Amazon.ResilienceHub.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
+        /// This exception occurs when a request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListMetrics">REST API Reference for ListMetrics Operation</seealso>
+        public virtual ListMetricsResponse ListMetrics(ListMetricsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMetricsResponseUnmarshaller.Instance;
+
+            return Invoke<ListMetricsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMetrics operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMetrics operation on AmazonResilienceHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMetrics
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListMetrics">REST API Reference for ListMetrics Operation</seealso>
+        public virtual IAsyncResult BeginListMetrics(ListMetricsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMetricsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMetrics operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMetrics.</param>
+        /// 
+        /// <returns>Returns a  ListMetricsResult from ResilienceHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListMetrics">REST API Reference for ListMetrics Operation</seealso>
+        public virtual ListMetricsResponse EndListMetrics(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListMetricsResponse>(asyncResult);
         }
 
         #endregion
@@ -4326,6 +4467,86 @@ namespace Amazon.ResilienceHub
         public virtual StartAppAssessmentResponse EndStartAppAssessment(IAsyncResult asyncResult)
         {
             return EndInvoke<StartAppAssessmentResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartMetricsExport
+
+        /// <summary>
+        /// Initiates the export task of metrics.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMetricsExport service method.</param>
+        /// 
+        /// <returns>The response from the StartMetricsExport service method, as returned by ResilienceHub.</returns>
+        /// <exception cref="Amazon.ResilienceHub.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ConflictException">
+        /// This exception occurs when a conflict with a previous successful write is detected.
+        /// This generally occurs when the previous write did not have time to propagate to the
+        /// host serving the current request. A retry (with appropriate backoff logic) is the
+        /// recommended response to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ServiceQuotaExceededException">
+        /// This exception occurs when you have exceeded your service quota. To perform the requested
+        /// action, remove some of the relevant resources, or use Service Quotas to request a
+        /// service quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
+        /// This exception occurs when a request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/StartMetricsExport">REST API Reference for StartMetricsExport Operation</seealso>
+        public virtual StartMetricsExportResponse StartMetricsExport(StartMetricsExportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMetricsExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMetricsExportResponseUnmarshaller.Instance;
+
+            return Invoke<StartMetricsExportResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartMetricsExport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartMetricsExport operation on AmazonResilienceHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartMetricsExport
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/StartMetricsExport">REST API Reference for StartMetricsExport Operation</seealso>
+        public virtual IAsyncResult BeginStartMetricsExport(StartMetricsExportRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartMetricsExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMetricsExportResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartMetricsExport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartMetricsExport.</param>
+        /// 
+        /// <returns>Returns a  StartMetricsExportResult from ResilienceHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/StartMetricsExport">REST API Reference for StartMetricsExport Operation</seealso>
+        public virtual StartMetricsExportResponse EndStartMetricsExport(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartMetricsExportResponse>(asyncResult);
         }
 
         #endregion

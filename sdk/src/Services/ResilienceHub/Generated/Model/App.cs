@@ -137,7 +137,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// Date and time when the app was created.
+        /// Date and time when the application was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

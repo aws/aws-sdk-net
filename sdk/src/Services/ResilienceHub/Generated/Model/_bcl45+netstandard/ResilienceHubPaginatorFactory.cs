@@ -133,6 +133,14 @@ namespace Amazon.ResilienceHub.Model
         }
 
         /// <summary>
+        /// Paginator for ListMetrics operation
+        ///</summary>
+        public IListMetricsPaginator ListMetrics(ListMetricsRequest request) 
+        {
+            return new ListMetricsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListRecommendationTemplates operation
         ///</summary>
         public IListRecommendationTemplatesPaginator ListRecommendationTemplates(ListRecommendationTemplatesRequest request) 

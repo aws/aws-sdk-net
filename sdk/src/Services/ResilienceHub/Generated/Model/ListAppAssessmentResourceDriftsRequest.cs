@@ -31,7 +31,7 @@ namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAppAssessmentResourceDrifts operation.
-    /// Indicates the list of resource drifts that were detected while running an assessment.
+    /// List of resource drifts that were detected while running an assessment.
     /// </summary>
     public partial class ListAppAssessmentResourceDriftsRequest : AmazonResilienceHubRequest
     {
@@ -64,9 +64,9 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Indicates the maximum number of drift results to include in the response. If more
-        /// results exist than the specified <c>MaxResults</c> value, a token is included in the
-        /// response so that the remaining results can be retrieved.
+        /// Maximum number of drift results to include in the response. If more results exist
+        /// than the specified <c>MaxResults</c> value, a token is included in the response so
+        /// that the remaining results can be retrieved.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
