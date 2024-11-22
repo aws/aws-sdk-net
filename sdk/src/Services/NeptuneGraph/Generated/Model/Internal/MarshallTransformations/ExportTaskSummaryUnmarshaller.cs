@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ImportTaskSummary Object
+    /// Response Unmarshaller for ExportTaskSummary Object
     /// </summary>  
-    public class ImportTaskSummaryUnmarshaller : IUnmarshaller<ImportTaskSummary, XmlUnmarshallerContext>, IUnmarshaller<ImportTaskSummary, JsonUnmarshallerContext>
+    public class ExportTaskSummaryUnmarshaller : IUnmarshaller<ExportTaskSummary, XmlUnmarshallerContext>, IUnmarshaller<ExportTaskSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ImportTaskSummary IUnmarshaller<ImportTaskSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ExportTaskSummary IUnmarshaller<ExportTaskSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ImportTaskSummary Unmarshall(JsonUnmarshallerContext context)
+        public ExportTaskSummary Unmarshall(JsonUnmarshallerContext context)
         {
-            ImportTaskSummary unmarshalledObject = new ImportTaskSummary();
+            ExportTaskSummary unmarshalledObject = new ExportTaskSummary();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,6 +66,12 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("destination", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Destination = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("format", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -76,6 +82,12 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GraphId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("kmsKeyIdentifier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KmsKeyIdentifier = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("parquetType", targetDepth))
@@ -90,16 +102,16 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
                     unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("source", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Source = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("statusReason", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StatusReason = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("taskId", targetDepth))
@@ -113,12 +125,12 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
         }
 
 
-        private static ImportTaskSummaryUnmarshaller _instance = new ImportTaskSummaryUnmarshaller();        
+        private static ExportTaskSummaryUnmarshaller _instance = new ExportTaskSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ImportTaskSummaryUnmarshaller Instance
+        public static ExportTaskSummaryUnmarshaller Instance
         {
             get
             {

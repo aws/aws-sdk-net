@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ImportTaskSummary Object
+    /// Response Unmarshaller for ExportFilterPropertyAttributes Object
     /// </summary>  
-    public class ImportTaskSummaryUnmarshaller : IUnmarshaller<ImportTaskSummary, XmlUnmarshallerContext>, IUnmarshaller<ImportTaskSummary, JsonUnmarshallerContext>
+    public class ExportFilterPropertyAttributesUnmarshaller : IUnmarshaller<ExportFilterPropertyAttributes, XmlUnmarshallerContext>, IUnmarshaller<ExportFilterPropertyAttributes, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ImportTaskSummary IUnmarshaller<ImportTaskSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ExportFilterPropertyAttributes IUnmarshaller<ExportFilterPropertyAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ImportTaskSummary Unmarshall(JsonUnmarshallerContext context)
+        public ExportFilterPropertyAttributes Unmarshall(JsonUnmarshallerContext context)
         {
-            ImportTaskSummary unmarshalledObject = new ImportTaskSummary();
+            ExportFilterPropertyAttributes unmarshalledObject = new ExportFilterPropertyAttributes();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,46 +66,22 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("format", targetDepth))
+                if (context.TestExpression("multiValueHandling", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Format = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MultiValueHandling = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("graphId", targetDepth))
+                if (context.TestExpression("outputType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GraphId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OutputType = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("parquetType", targetDepth))
+                if (context.TestExpression("sourcePropertyName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ParquetType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("roleArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("source", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Source = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("taskId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TaskId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourcePropertyName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -113,12 +89,12 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
         }
 
 
-        private static ImportTaskSummaryUnmarshaller _instance = new ImportTaskSummaryUnmarshaller();        
+        private static ExportFilterPropertyAttributesUnmarshaller _instance = new ExportFilterPropertyAttributesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ImportTaskSummaryUnmarshaller Instance
+        public static ExportFilterPropertyAttributesUnmarshaller Instance
         {
             get
             {

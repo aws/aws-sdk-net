@@ -52,6 +52,7 @@ namespace Amazon.NeptuneGraph.Model
         private string _kmsKeyIdentifier;
         private int? _maxProvisionedMemory;
         private int? _minProvisionedMemory;
+        private ParquetType _parquetType;
         private bool? _publicConnectivity;
         private int? _replicaCount;
         private string _roleArn;
@@ -249,6 +250,24 @@ namespace Amazon.NeptuneGraph.Model
         internal bool IsSetMinProvisionedMemory()
         {
             return this._minProvisionedMemory.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParquetType. 
+        /// <para>
+        /// The parquet type of the import task.
+        /// </para>
+        /// </summary>
+        public ParquetType ParquetType
+        {
+            get { return this._parquetType; }
+            set { this._parquetType = value; }
+        }
+
+        // Check to see if ParquetType property is set
+        internal bool IsSetParquetType()
+        {
+            return this._parquetType != null;
         }
 
         /// <summary>

@@ -30,70 +30,66 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NeptuneGraph.Model
 {
     /// <summary>
-    /// Container for the parameters to the StartImportTask operation.
-    /// Import data into existing Neptune Analytics graph from Amazon Simple Storage Service
-    /// (S3). The graph needs to be empty and in the AVAILABLE state.
+    /// Container for the parameters to the StartExportTask operation.
+    /// Export data from an existing Neptune Analytics graph to Amazon S3. The graph state
+    /// should be <c>AVAILABLE</c>.
     /// </summary>
-    public partial class StartImportTaskRequest : AmazonNeptuneGraphRequest
+    public partial class StartExportTaskRequest : AmazonNeptuneGraphRequest
     {
-        private BlankNodeHandling _blankNodeHandling;
-        private bool? _failOnError;
-        private Format _format;
+        private string _destination;
+        private ExportFilter _exportFilter;
+        private ExportFormat _format;
         private string _graphIdentifier;
-        private ImportOptions _importOptions;
+        private string _kmsKeyIdentifier;
         private ParquetType _parquetType;
         private string _roleArn;
-        private string _source;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
-        /// Gets and sets the property BlankNodeHandling. 
+        /// Gets and sets the property Destination. 
         /// <para>
-        /// The method to handle blank nodes in the dataset. Currently, only <c>convertToIri</c>
-        /// is supported, meaning blank nodes are converted to unique IRIs at load time. Must
-        /// be provided when format is <c>ntriples</c>. For more information, see <a href="https://docs.aws.amazon.com/neptune-analytics/latest/userguide/using-rdf-data.html#rdf-handling">Handling
-        /// RDF values</a>.
+        /// The Amazon S3 URI where data will be exported to.
         /// </para>
         /// </summary>
-        public BlankNodeHandling BlankNodeHandling
+        [AWSProperty(Required=true, Min=1, Max=1024)]
+        public string Destination
         {
-            get { return this._blankNodeHandling; }
-            set { this._blankNodeHandling = value; }
+            get { return this._destination; }
+            set { this._destination = value; }
         }
 
-        // Check to see if BlankNodeHandling property is set
-        internal bool IsSetBlankNodeHandling()
+        // Check to see if Destination property is set
+        internal bool IsSetDestination()
         {
-            return this._blankNodeHandling != null;
+            return this._destination != null;
         }
 
         /// <summary>
-        /// Gets and sets the property FailOnError. 
+        /// Gets and sets the property ExportFilter. 
         /// <para>
-        /// If set to true, the task halts when an import error is encountered. If set to false,
-        /// the task skips the data that caused the error and continues if possible.
+        /// The export filter of the export task.
         /// </para>
         /// </summary>
-        public bool FailOnError
+        public ExportFilter ExportFilter
         {
-            get { return this._failOnError.GetValueOrDefault(); }
-            set { this._failOnError = value; }
+            get { return this._exportFilter; }
+            set { this._exportFilter = value; }
         }
 
-        // Check to see if FailOnError property is set
-        internal bool IsSetFailOnError()
+        // Check to see if ExportFilter property is set
+        internal bool IsSetExportFilter()
         {
-            return this._failOnError.HasValue; 
+            return this._exportFilter != null;
         }
 
         /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
-        /// Specifies the format of Amazon S3 data to be imported. Valid values are CSV, which
-        /// identifies the Gremlin CSV format or OPENCYPHER, which identies the openCypher load
-        /// format.
+        /// The format of the export task.
         /// </para>
         /// </summary>
-        public Format Format
+        [AWSProperty(Required=true)]
+        public ExportFormat Format
         {
             get { return this._format; }
             set { this._format = value; }
@@ -108,7 +104,7 @@ namespace Amazon.NeptuneGraph.Model
         /// <summary>
         /// Gets and sets the property GraphIdentifier. 
         /// <para>
-        /// The unique identifier of the Neptune Analytics graph.
+        /// The source graph identifier of the export task.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -125,24 +121,28 @@ namespace Amazon.NeptuneGraph.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ImportOptions.
+        /// Gets and sets the property KmsKeyIdentifier. 
+        /// <para>
+        /// The KMS key identifier of the export task.
+        /// </para>
         /// </summary>
-        public ImportOptions ImportOptions
+        [AWSProperty(Required=true, Min=1, Max=1024)]
+        public string KmsKeyIdentifier
         {
-            get { return this._importOptions; }
-            set { this._importOptions = value; }
+            get { return this._kmsKeyIdentifier; }
+            set { this._kmsKeyIdentifier = value; }
         }
 
-        // Check to see if ImportOptions property is set
-        internal bool IsSetImportOptions()
+        // Check to see if KmsKeyIdentifier property is set
+        internal bool IsSetKmsKeyIdentifier()
         {
-            return this._importOptions != null;
+            return this._kmsKeyIdentifier != null;
         }
 
         /// <summary>
         /// Gets and sets the property ParquetType. 
         /// <para>
-        /// The parquet type of the import task.
+        /// The parquet type of the export task.
         /// </para>
         /// </summary>
         public ParquetType ParquetType
@@ -160,7 +160,7 @@ namespace Amazon.NeptuneGraph.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of the IAM role that will allow access to the data that is to be imported.
+        /// The ARN of the IAM role that will allow data to be exported to the destination.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -177,23 +177,22 @@ namespace Amazon.NeptuneGraph.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Source. 
+        /// Gets and sets the property Tags. 
         /// <para>
-        /// A URL identifying the location of the data to be imported. This can be an Amazon S3
-        /// path, or can point to a Neptune database endpoint or snapshot.
+        /// Tags to be applied to the export task.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string Source
+        [AWSProperty(Min=0, Max=50)]
+        public Dictionary<string, string> Tags
         {
-            get { return this._source; }
-            set { this._source = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
-        // Check to see if Source property is set
-        internal bool IsSetSource()
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
         {
-            return this._source != null;
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

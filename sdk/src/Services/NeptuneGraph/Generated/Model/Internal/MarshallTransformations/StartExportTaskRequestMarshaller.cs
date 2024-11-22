@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateGraphUsingImportTask Request Marshaller
+    /// StartExportTask Request Marshaller
     /// </summary>       
-    public class CreateGraphUsingImportTaskRequestMarshaller : IMarshaller<IRequest, CreateGraphUsingImportTaskRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class StartExportTaskRequestMarshaller : IMarshaller<IRequest, StartExportTaskRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateGraphUsingImportTaskRequest)input);
+            return this.Marshall((StartExportTaskRequest)input);
         }
 
         /// <summary>
@@ -53,36 +53,35 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateGraphUsingImportTaskRequest publicRequest)
+        public IRequest Marshall(StartExportTaskRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.NeptuneGraph");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2023-11-29";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/importtasks";
+            request.ResourcePath = "/exporttasks";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetBlankNodeHandling())
+                if(publicRequest.IsSetDestination())
                 {
-                    context.Writer.WritePropertyName("blankNodeHandling");
-                    context.Writer.Write(publicRequest.BlankNodeHandling);
+                    context.Writer.WritePropertyName("destination");
+                    context.Writer.Write(publicRequest.Destination);
                 }
 
-                if(publicRequest.IsSetDeletionProtection())
+                if(publicRequest.IsSetExportFilter())
                 {
-                    context.Writer.WritePropertyName("deletionProtection");
-                    context.Writer.Write(publicRequest.DeletionProtection);
-                }
+                    context.Writer.WritePropertyName("exportFilter");
+                    context.Writer.WriteObjectStart();
 
-                if(publicRequest.IsSetFailOnError())
-                {
-                    context.Writer.WritePropertyName("failOnError");
-                    context.Writer.Write(publicRequest.FailOnError);
+                    var marshaller = ExportFilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ExportFilter, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetFormat())
@@ -91,21 +90,10 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Format);
                 }
 
-                if(publicRequest.IsSetGraphName())
+                if(publicRequest.IsSetGraphIdentifier())
                 {
-                    context.Writer.WritePropertyName("graphName");
-                    context.Writer.Write(publicRequest.GraphName);
-                }
-
-                if(publicRequest.IsSetImportOptions())
-                {
-                    context.Writer.WritePropertyName("importOptions");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = ImportOptionsMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.ImportOptions, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("graphIdentifier");
+                    context.Writer.Write(publicRequest.GraphIdentifier);
                 }
 
                 if(publicRequest.IsSetKmsKeyIdentifier())
@@ -114,46 +102,16 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.KmsKeyIdentifier);
                 }
 
-                if(publicRequest.IsSetMaxProvisionedMemory())
-                {
-                    context.Writer.WritePropertyName("maxProvisionedMemory");
-                    context.Writer.Write(publicRequest.MaxProvisionedMemory);
-                }
-
-                if(publicRequest.IsSetMinProvisionedMemory())
-                {
-                    context.Writer.WritePropertyName("minProvisionedMemory");
-                    context.Writer.Write(publicRequest.MinProvisionedMemory);
-                }
-
                 if(publicRequest.IsSetParquetType())
                 {
                     context.Writer.WritePropertyName("parquetType");
                     context.Writer.Write(publicRequest.ParquetType);
                 }
 
-                if(publicRequest.IsSetPublicConnectivity())
-                {
-                    context.Writer.WritePropertyName("publicConnectivity");
-                    context.Writer.Write(publicRequest.PublicConnectivity);
-                }
-
-                if(publicRequest.IsSetReplicaCount())
-                {
-                    context.Writer.WritePropertyName("replicaCount");
-                    context.Writer.Write(publicRequest.ReplicaCount);
-                }
-
                 if(publicRequest.IsSetRoleArn())
                 {
                     context.Writer.WritePropertyName("roleArn");
                     context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetSource())
-                {
-                    context.Writer.WritePropertyName("source");
-                    context.Writer.Write(publicRequest.Source);
                 }
 
                 if(publicRequest.IsSetTags())
@@ -170,17 +128,6 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetVectorSearchConfiguration())
-                {
-                    context.Writer.WritePropertyName("vectorSearchConfiguration");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = VectorSearchConfigurationMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.VectorSearchConfiguration, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
@@ -189,9 +136,9 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateGraphUsingImportTaskRequestMarshaller _instance = new CreateGraphUsingImportTaskRequestMarshaller();        
+        private static StartExportTaskRequestMarshaller _instance = new StartExportTaskRequestMarshaller();        
 
-        internal static CreateGraphUsingImportTaskRequestMarshaller GetInstance()
+        internal static StartExportTaskRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -199,7 +146,7 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateGraphUsingImportTaskRequestMarshaller Instance
+        public static StartExportTaskRequestMarshaller Instance
         {
             get
             {

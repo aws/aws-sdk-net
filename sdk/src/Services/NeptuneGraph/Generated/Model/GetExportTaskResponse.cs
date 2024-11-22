@@ -30,30 +30,85 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NeptuneGraph.Model
 {
     /// <summary>
-    /// This is the response object from the CreateGraphUsingImportTask operation.
+    /// This is the response object from the GetExportTask operation.
     /// </summary>
-    public partial class CreateGraphUsingImportTaskResponse : AmazonWebServiceResponse
+    public partial class GetExportTaskResponse : AmazonWebServiceResponse
     {
-        private Format _format;
+        private string _destination;
+        private ExportFilter _exportFilter;
+        private ExportTaskDetails _exportTaskDetails;
+        private ExportFormat _format;
         private string _graphId;
-        private ImportOptions _importOptions;
+        private string _kmsKeyIdentifier;
         private ParquetType _parquetType;
         private string _roleArn;
-        private string _source;
-        private ImportTaskStatus _status;
+        private ExportTaskStatus _status;
+        private string _statusReason;
         private string _taskId;
+
+        /// <summary>
+        /// Gets and sets the property Destination. 
+        /// <para>
+        /// The Amazon S3 URI of the export task where data will be exported.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1024)]
+        public string Destination
+        {
+            get { return this._destination; }
+            set { this._destination = value; }
+        }
+
+        // Check to see if Destination property is set
+        internal bool IsSetDestination()
+        {
+            return this._destination != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExportFilter. 
+        /// <para>
+        /// The export filter of the export task.
+        /// </para>
+        /// </summary>
+        public ExportFilter ExportFilter
+        {
+            get { return this._exportFilter; }
+            set { this._exportFilter = value; }
+        }
+
+        // Check to see if ExportFilter property is set
+        internal bool IsSetExportFilter()
+        {
+            return this._exportFilter != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExportTaskDetails. 
+        /// <para>
+        /// The details of the export task.
+        /// </para>
+        /// </summary>
+        public ExportTaskDetails ExportTaskDetails
+        {
+            get { return this._exportTaskDetails; }
+            set { this._exportTaskDetails = value; }
+        }
+
+        // Check to see if ExportTaskDetails property is set
+        internal bool IsSetExportTaskDetails()
+        {
+            return this._exportTaskDetails != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
-        /// Specifies the format of S3 data to be imported. Valid values are <c>CSV</c>, which
-        /// identifies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-gremlin.html">Gremlin
-        /// CSV format</a>, <c>OPENCYPHER</c>, which identifies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-opencypher.html">openCypher
-        /// load format</a>, or <c>ntriples</c>, which identifies the <a href="https://docs.aws.amazon.com/neptune-analytics/latest/userguide/using-rdf-data.html">RDF
-        /// n-triples</a> format.
+        /// The format of the export task.
         /// </para>
         /// </summary>
-        public Format Format
+        [AWSProperty(Required=true)]
+        public ExportFormat Format
         {
             get { return this._format; }
             set { this._format = value; }
@@ -68,9 +123,10 @@ namespace Amazon.NeptuneGraph.Model
         /// <summary>
         /// Gets and sets the property GraphId. 
         /// <para>
-        /// The unique identifier of the Neptune Analytics graph.
+        /// The source graph identifier of the export task.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string GraphId
         {
             get { return this._graphId; }
@@ -84,30 +140,28 @@ namespace Amazon.NeptuneGraph.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ImportOptions. 
+        /// Gets and sets the property KmsKeyIdentifier. 
         /// <para>
-        /// Contains options for controlling the import process. For example, if the <c>failOnError</c>
-        /// key is set to <c>false</c>, the import skips problem data and attempts to continue
-        /// (whereas if set to <c>true</c>, the default, or if omitted, the import operation halts
-        /// immediately when an error is encountered.
+        /// The KMS key identifier of the export task.
         /// </para>
         /// </summary>
-        public ImportOptions ImportOptions
+        [AWSProperty(Required=true, Min=1, Max=1024)]
+        public string KmsKeyIdentifier
         {
-            get { return this._importOptions; }
-            set { this._importOptions = value; }
+            get { return this._kmsKeyIdentifier; }
+            set { this._kmsKeyIdentifier = value; }
         }
 
-        // Check to see if ImportOptions property is set
-        internal bool IsSetImportOptions()
+        // Check to see if KmsKeyIdentifier property is set
+        internal bool IsSetKmsKeyIdentifier()
         {
-            return this._importOptions != null;
+            return this._kmsKeyIdentifier != null;
         }
 
         /// <summary>
         /// Gets and sets the property ParquetType. 
         /// <para>
-        /// The parquet type of the import task.
+        /// The parquet type of the export task.
         /// </para>
         /// </summary>
         public ParquetType ParquetType
@@ -125,7 +179,7 @@ namespace Amazon.NeptuneGraph.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of the IAM role that will allow access to the data that is to be imported.
+        /// The ARN of the IAM role that will allow data to be exported to the destination.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -142,33 +196,13 @@ namespace Amazon.NeptuneGraph.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Source. 
-        /// <para>
-        /// A URL identifying to the location of the data to be imported. This can be an Amazon
-        /// S3 path, or can point to a Neptune database endpoint or snapshot.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string Source
-        {
-            get { return this._source; }
-            set { this._source = value; }
-        }
-
-        // Check to see if Source property is set
-        internal bool IsSetSource()
-        {
-            return this._source != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the import task.
+        /// The current status of the export task.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public ImportTaskStatus Status
+        public ExportTaskStatus Status
         {
             get { return this._status; }
             set { this._status = value; }
@@ -181,9 +215,27 @@ namespace Amazon.NeptuneGraph.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StatusReason. 
+        /// <para>
+        /// The reason that the export task has this status value.
+        /// </para>
+        /// </summary>
+        public string StatusReason
+        {
+            get { return this._statusReason; }
+            set { this._statusReason = value; }
+        }
+
+        // Check to see if StatusReason property is set
+        internal bool IsSetStatusReason()
+        {
+            return this._statusReason != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property TaskId. 
         /// <para>
-        /// The unique identifier of the import task.
+        /// The unique identifier of the export task.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

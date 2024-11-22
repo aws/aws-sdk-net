@@ -64,6 +64,12 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
                     response.GraphId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("parquetType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ParquetType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("roleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

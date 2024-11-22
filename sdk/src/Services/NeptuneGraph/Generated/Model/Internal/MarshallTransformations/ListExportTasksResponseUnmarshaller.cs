@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateGraphUsingImportTask operation
+    /// Response Unmarshaller for ListExportTasks operation
     /// </summary>  
-    public class CreateGraphUsingImportTaskResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListExportTasksResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,58 +46,22 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateGraphUsingImportTaskResponse response = new CreateGraphUsingImportTaskResponse();
+            ListExportTasksResponse response = new ListExportTasksResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("format", targetDepth))
+                if (context.TestExpression("nextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Format = unmarshaller.Unmarshall(context);
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("graphId", targetDepth))
+                if (context.TestExpression("tasks", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.GraphId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("importOptions", targetDepth))
-                {
-                    var unmarshaller = ImportOptionsUnmarshaller.Instance;
-                    response.ImportOptions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("parquetType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ParquetType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("roleArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.RoleArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("source", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Source = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("taskId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.TaskId = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<ExportTaskSummary, ExportTaskSummaryUnmarshaller>(ExportTaskSummaryUnmarshaller.Instance);
+                    response.Tasks = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -123,17 +87,13 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
-                {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceQuotaExceededException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
-                    return ServiceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
@@ -147,9 +107,9 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
             return new AmazonNeptuneGraphException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateGraphUsingImportTaskResponseUnmarshaller _instance = new CreateGraphUsingImportTaskResponseUnmarshaller();        
+        private static ListExportTasksResponseUnmarshaller _instance = new ListExportTasksResponseUnmarshaller();        
 
-        internal static CreateGraphUsingImportTaskResponseUnmarshaller GetInstance()
+        internal static ListExportTasksResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -157,7 +117,7 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateGraphUsingImportTaskResponseUnmarshaller Instance
+        public static ListExportTasksResponseUnmarshaller Instance
         {
             get
             {
