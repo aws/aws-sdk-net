@@ -166,6 +166,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     response.ParallelizationFactor = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ProvisionedPollerConfig", targetDepth))
+                {
+                    var unmarshaller = ProvisionedPollerConfigUnmarshaller.Instance;
+                    response.ProvisionedPollerConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Queues", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

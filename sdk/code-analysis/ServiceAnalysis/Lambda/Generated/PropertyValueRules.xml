@@ -1835,6 +1835,16 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lambda.Model.ProvisionedPollerConfig.MaximumPollers</property>
+    <min>1</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.ProvisionedPollerConfig.MinimumPollers</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lambda.Model.RuntimeVersionConfig.RuntimeVersionArn</property>
     <min>26</min>
     <max>2048</max>

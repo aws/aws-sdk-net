@@ -168,6 +168,7 @@ namespace Amazon.Lambda.Model
         private int? _maximumRetryAttempts;
         private EventSourceMappingMetricsConfig _metricsConfig;
         private int? _parallelizationFactor;
+        private ProvisionedPollerConfig _provisionedPollerConfig;
         private ScalingConfig _scalingConfig;
         private List<SourceAccessConfiguration> _sourceAccessConfigurations = AWSConfigs.InitializeCollections ? new List<SourceAccessConfiguration>() : null;
         private int? _tumblingWindowInSeconds;
@@ -523,6 +524,26 @@ namespace Amazon.Lambda.Model
         internal bool IsSetParallelizationFactor()
         {
             return this._parallelizationFactor.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProvisionedPollerConfig. 
+        /// <para>
+        /// (Amazon MSK and self-managed Apache Kafka only) The Provisioned Mode configuration
+        /// for the event source. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#invocation-eventsourcemapping-provisioned-mode">Provisioned
+        /// Mode</a>.
+        /// </para>
+        /// </summary>
+        public ProvisionedPollerConfig ProvisionedPollerConfig
+        {
+            get { return this._provisionedPollerConfig; }
+            set { this._provisionedPollerConfig = value; }
+        }
+
+        // Check to see if ProvisionedPollerConfig property is set
+        internal bool IsSetProvisionedPollerConfig()
+        {
+            return this._provisionedPollerConfig != null;
         }
 
         /// <summary>
