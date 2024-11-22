@@ -41,6 +41,7 @@ namespace Amazon.Connect.Model
         private List<string> _initiationMethods = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _queueIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SearchableContactAttributes _searchableContactAttributes;
+        private SearchableSegmentAttributes _searchableSegmentAttributes;
 
         /// <summary>
         /// Gets and sets the property AgentHierarchyGroups. 
@@ -177,6 +178,21 @@ namespace Amazon.Connect.Model
         internal bool IsSetSearchableContactAttributes()
         {
             return this._searchableContactAttributes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SearchableSegmentAttributes.
+        /// </summary>
+        public SearchableSegmentAttributes SearchableSegmentAttributes
+        {
+            get { return this._searchableSegmentAttributes; }
+            set { this._searchableSegmentAttributes = value; }
+        }
+
+        // Check to see if SearchableSegmentAttributes property is set
+        internal bool IsSetSearchableSegmentAttributes()
+        {
+            return this._searchableSegmentAttributes != null;
         }
 
     }

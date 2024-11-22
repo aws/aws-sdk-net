@@ -41,6 +41,7 @@ namespace Amazon.Connect.Model
         private int? _maxContacts;
         private string _name;
         private OutboundCallerConfig _outboundCallerConfig;
+        private OutboundEmailConfig _outboundEmailConfig;
         private string _queueArn;
         private string _queueId;
         private QueueStatus _status;
@@ -173,6 +174,21 @@ namespace Amazon.Connect.Model
         internal bool IsSetOutboundCallerConfig()
         {
             return this._outboundCallerConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutboundEmailConfig.
+        /// </summary>
+        public OutboundEmailConfig OutboundEmailConfig
+        {
+            get { return this._outboundEmailConfig; }
+            set { this._outboundEmailConfig = value; }
+        }
+
+        // Check to see if OutboundEmailConfig property is set
+        internal bool IsSetOutboundEmailConfig()
+        {
+            return this._outboundEmailConfig != null;
         }
 
         /// <summary>

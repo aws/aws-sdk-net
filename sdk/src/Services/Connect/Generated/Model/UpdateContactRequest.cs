@@ -52,6 +52,7 @@ namespace Amazon.Connect.Model
         private string _instanceId;
         private string _name;
         private Dictionary<string, Reference> _references = AWSConfigs.InitializeCollections ? new Dictionary<string, Reference>() : null;
+        private Dictionary<string, SegmentAttributeValue> _segmentAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, SegmentAttributeValue>() : null;
 
         /// <summary>
         /// Gets and sets the property ContactId. 
@@ -118,7 +119,7 @@ namespace Amazon.Connect.Model
         /// The name of the contact.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=512)]
+        [AWSProperty(Sensitive=true, Min=0, Max=1024)]
         public string Name
         {
             get { return this._name; }
@@ -147,6 +148,21 @@ namespace Amazon.Connect.Model
         internal bool IsSetReferences()
         {
             return this._references != null && (this._references.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SegmentAttributes.
+        /// </summary>
+        public Dictionary<string, SegmentAttributeValue> SegmentAttributes
+        {
+            get { return this._segmentAttributes; }
+            set { this._segmentAttributes = value; }
+        }
+
+        // Check to see if SegmentAttributes property is set
+        internal bool IsSetSegmentAttributes()
+        {
+            return this._segmentAttributes != null && (this._segmentAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

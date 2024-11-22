@@ -104,6 +104,25 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetSegmentAttributes())
+                {
+                    context.Writer.WritePropertyName("SegmentAttributes");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestSegmentAttributesKvp in publicRequest.SegmentAttributes)
+                    {
+                        context.Writer.WritePropertyName(publicRequestSegmentAttributesKvp.Key);
+                        var publicRequestSegmentAttributesValue = publicRequestSegmentAttributesKvp.Value;
+
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SegmentAttributeValueMarshaller.Instance;
+                        marshaller.Marshall(publicRequestSegmentAttributesValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

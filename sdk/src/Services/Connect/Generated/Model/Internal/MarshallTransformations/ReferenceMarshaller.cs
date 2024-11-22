@@ -48,6 +48,24 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetArn())
+            {
+                context.Writer.WritePropertyName("Arn");
+                context.Writer.Write(requestObject.Arn);
+            }
+
+            if(requestObject.IsSetStatus())
+            {
+                context.Writer.WritePropertyName("Status");
+                context.Writer.Write(requestObject.Status);
+            }
+
+            if(requestObject.IsSetStatusReason())
+            {
+                context.Writer.WritePropertyName("StatusReason");
+                context.Writer.Write(requestObject.StatusReason);
+            }
+
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");

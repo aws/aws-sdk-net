@@ -43,6 +43,7 @@ namespace Amazon.Connect.Model
         private List<TaskTemplateField> _fields = AWSConfigs.InitializeCollections ? new List<TaskTemplateField>() : null;
         private string _instanceId;
         private string _name;
+        private string _selfAssignFlowId;
         private TaskTemplateStatus _status;
 
         /// <summary>
@@ -198,6 +199,22 @@ namespace Amazon.Connect.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SelfAssignFlowId.
+        /// </summary>
+        [AWSProperty(Max=500)]
+        public string SelfAssignFlowId
+        {
+            get { return this._selfAssignFlowId; }
+            set { this._selfAssignFlowId = value; }
+        }
+
+        // Check to see if SelfAssignFlowId property is set
+        internal bool IsSetSelfAssignFlowId()
+        {
+            return this._selfAssignFlowId != null;
         }
 
         /// <summary>

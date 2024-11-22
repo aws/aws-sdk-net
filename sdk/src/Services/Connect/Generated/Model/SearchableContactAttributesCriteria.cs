@@ -44,7 +44,7 @@ namespace Amazon.Connect.Model
         /// The key containing a searchable user-defined contact attribute.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=100)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=100)]
         public string Key
         {
             get { return this._key; }

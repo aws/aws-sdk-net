@@ -35,9 +35,26 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class AttachmentReference
     {
+        private string _arn;
         private string _name;
         private ReferenceStatus _status;
         private string _value;
+
+        /// <summary>
+        /// Gets and sets the property Arn.
+        /// </summary>
+        [AWSProperty(Min=20, Max=256)]
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 

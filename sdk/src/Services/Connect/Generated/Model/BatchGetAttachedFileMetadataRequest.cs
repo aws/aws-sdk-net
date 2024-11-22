@@ -71,7 +71,7 @@ namespace Amazon.Connect.Model
         /// The unique identifiers of the attached file resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public List<string> FileIds
         {
             get { return this._fileIds; }

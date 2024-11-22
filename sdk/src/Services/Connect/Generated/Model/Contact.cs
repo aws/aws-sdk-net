@@ -34,13 +34,16 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class Contact
     {
+        private AdditionalEmailRecipients _additionalEmailRecipients;
         private AgentInfo _agentInfo;
         private AnsweringMachineDetectionStatus _answeringMachineDetectionStatus;
         private string _arn;
         private Campaign _campaign;
         private Channel _channel;
         private DateTime? _connectedToSystemTimestamp;
+        private string _contactAssociationId;
         private Customer _customer;
+        private EndpointInfo _customerEndpoint;
         private CustomerVoiceActivity _customerVoiceActivity;
         private string _description;
         private DisconnectDetails _disconnectDetails;
@@ -62,10 +65,26 @@ namespace Amazon.Connect.Model
         private RoutingCriteria _routingCriteria;
         private DateTime? _scheduledTimestamp;
         private Dictionary<string, SegmentAttributeValue> _segmentAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, SegmentAttributeValue>() : null;
+        private EndpointInfo _systemEndpoint;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private int? _totalPauseCount;
         private int? _totalPauseDurationInSeconds;
         private WisdomInfo _wisdomInfo;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalEmailRecipients.
+        /// </summary>
+        public AdditionalEmailRecipients AdditionalEmailRecipients
+        {
+            get { return this._additionalEmailRecipients; }
+            set { this._additionalEmailRecipients = value; }
+        }
+
+        // Check to see if AdditionalEmailRecipients property is set
+        internal bool IsSetAdditionalEmailRecipients()
+        {
+            return this._additionalEmailRecipients != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AgentInfo. 
@@ -174,6 +193,22 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ContactAssociationId.
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string ContactAssociationId
+        {
+            get { return this._contactAssociationId; }
+            set { this._contactAssociationId = value; }
+        }
+
+        // Check to see if ContactAssociationId property is set
+        internal bool IsSetContactAssociationId()
+        {
+            return this._contactAssociationId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Customer. 
         /// <para>
         /// Information about the Customer on the contact.
@@ -189,6 +224,21 @@ namespace Amazon.Connect.Model
         internal bool IsSetCustomer()
         {
             return this._customer != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomerEndpoint.
+        /// </summary>
+        public EndpointInfo CustomerEndpoint
+        {
+            get { return this._customerEndpoint; }
+            set { this._customerEndpoint = value; }
+        }
+
+        // Check to see if CustomerEndpoint property is set
+        internal bool IsSetCustomerEndpoint()
+        {
+            return this._customerEndpoint != null;
         }
 
         /// <summary>
@@ -404,7 +454,7 @@ namespace Amazon.Connect.Model
         /// The name of the contact.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=512)]
+        [AWSProperty(Sensitive=true, Min=0, Max=1024)]
         public string Name
         {
             get { return this._name; }
@@ -592,6 +642,21 @@ namespace Amazon.Connect.Model
         internal bool IsSetSegmentAttributes()
         {
             return this._segmentAttributes != null && (this._segmentAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SystemEndpoint.
+        /// </summary>
+        public EndpointInfo SystemEndpoint
+        {
+            get { return this._systemEndpoint; }
+            set { this._systemEndpoint = value; }
+        }
+
+        // Check to see if SystemEndpoint property is set
+        internal bool IsSetSystemEndpoint()
+        {
+            return this._systemEndpoint != null;
         }
 
         /// <summary>

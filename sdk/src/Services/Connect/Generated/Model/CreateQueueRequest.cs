@@ -71,6 +71,7 @@ namespace Amazon.Connect.Model
         private int? _maxContacts;
         private string _name;
         private OutboundCallerConfig _outboundCallerConfig;
+        private OutboundEmailConfig _outboundEmailConfig;
         private List<string> _quickConnectIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
@@ -186,6 +187,21 @@ namespace Amazon.Connect.Model
         internal bool IsSetOutboundCallerConfig()
         {
             return this._outboundCallerConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutboundEmailConfig.
+        /// </summary>
+        public OutboundEmailConfig OutboundEmailConfig
+        {
+            get { return this._outboundEmailConfig; }
+            set { this._outboundEmailConfig = value; }
+        }
+
+        // Check to see if OutboundEmailConfig property is set
+        internal bool IsSetOutboundEmailConfig()
+        {
+            return this._outboundEmailConfig != null;
         }
 
         /// <summary>

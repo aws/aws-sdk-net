@@ -43,7 +43,7 @@ namespace Amazon.Connect.Model
         /// The value of a segment attribute.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string ValueString
         {
             get { return this._valueString; }

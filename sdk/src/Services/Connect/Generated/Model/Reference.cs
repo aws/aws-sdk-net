@@ -35,8 +35,58 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class Reference
     {
+        private string _arn;
+        private ReferenceStatus _status;
+        private string _statusReason;
         private ReferenceType _type;
         private string _value;
+
+        /// <summary>
+        /// Gets and sets the property Arn.
+        /// </summary>
+        [AWSProperty(Min=20, Max=256)]
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status.
+        /// </summary>
+        public ReferenceStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusReason.
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public string StatusReason
+        {
+            get { return this._statusReason; }
+            set { this._statusReason = value; }
+        }
+
+        // Check to see if StatusReason property is set
+        internal bool IsSetStatusReason()
+        {
+            return this._statusReason != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Type. 
@@ -64,7 +114,7 @@ namespace Amazon.Connect.Model
         /// that is displayed to an agent in the Contact Control Panel (CCP).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=4096)]
+        [AWSProperty(Min=0, Max=4096)]
         public string Value
         {
             get { return this._value; }

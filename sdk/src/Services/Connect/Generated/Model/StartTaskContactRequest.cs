@@ -102,6 +102,7 @@ namespace Amazon.Connect.Model
         private Dictionary<string, Reference> _references = AWSConfigs.InitializeCollections ? new Dictionary<string, Reference>() : null;
         private string _relatedContactId;
         private DateTime? _scheduledTime;
+        private Dictionary<string, SegmentAttributeValue> _segmentAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, SegmentAttributeValue>() : null;
         private string _taskTemplateId;
 
         /// <summary>
@@ -223,7 +224,7 @@ namespace Amazon.Connect.Model
         /// The name of a task that is shown to an agent in the Contact Control Panel (CCP).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=512)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=1024)]
         public string Name
         {
             get { return this._name; }
@@ -343,6 +344,21 @@ namespace Amazon.Connect.Model
         internal bool IsSetScheduledTime()
         {
             return this._scheduledTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SegmentAttributes.
+        /// </summary>
+        public Dictionary<string, SegmentAttributeValue> SegmentAttributes
+        {
+            get { return this._segmentAttributes; }
+            set { this._segmentAttributes = value; }
+        }
+
+        // Check to see if SegmentAttributes property is set
+        internal bool IsSetSegmentAttributes()
+        {
+            return this._segmentAttributes != null && (this._segmentAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
