@@ -84,6 +84,12 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.DeliverToMailbox = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DeliverToQBusiness", targetDepth))
+                {
+                    var unmarshaller = DeliverToQBusinessActionUnmarshaller.Instance;
+                    unmarshalledObject.DeliverToQBusiness = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Drop", targetDepth))
                 {
                     var unmarshaller = DropActionUnmarshaller.Instance;
