@@ -84,6 +84,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.FilterControls = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Images", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<SheetImage, SheetImageUnmarshaller>(SheetImageUnmarshaller.Instance);
+                    unmarshalledObject.Images = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Layouts", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Layout, LayoutUnmarshaller>(LayoutUnmarshaller.Instance);

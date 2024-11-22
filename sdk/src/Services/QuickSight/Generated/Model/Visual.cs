@@ -53,9 +53,11 @@ namespace Amazon.QuickSight.Model
         private HistogramVisual _histogramVisual;
         private InsightVisual _insightVisual;
         private KPIVisual _kpiVisual;
+        private LayerMapVisual _layerMapVisual;
         private LineChartVisual _lineChartVisual;
         private PieChartVisual _pieChartVisual;
         private PivotTableVisual _pivotTableVisual;
+        private PluginVisual _pluginVisual;
         private RadarChartVisual _radarChartVisual;
         private SankeyDiagramVisual _sankeyDiagramVisual;
         private ScatterPlotVisual _scatterPlotVisual;
@@ -359,6 +361,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LayerMapVisual. 
+        /// <para>
+        /// The properties for a layer map visual
+        /// </para>
+        /// </summary>
+        public LayerMapVisual LayerMapVisual
+        {
+            get { return this._layerMapVisual; }
+            set { this._layerMapVisual = value; }
+        }
+
+        // Check to see if LayerMapVisual property is set
+        internal bool IsSetLayerMapVisual()
+        {
+            return this._layerMapVisual != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LineChartVisual. 
         /// <para>
         /// A line chart.
@@ -425,6 +445,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetPivotTableVisual()
         {
             return this._pivotTableVisual != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PluginVisual. 
+        /// <para>
+        /// The custom plugin visual type.
+        /// </para>
+        /// </summary>
+        public PluginVisual PluginVisual
+        {
+            get { return this._pluginVisual; }
+            set { this._pluginVisual = value; }
+        }
+
+        // Check to see if PluginVisual property is set
+        internal bool IsSetPluginVisual()
+        {
+            return this._pluginVisual != null;
         }
 
         /// <summary>

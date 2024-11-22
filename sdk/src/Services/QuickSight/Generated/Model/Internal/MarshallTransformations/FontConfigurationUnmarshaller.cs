@@ -78,6 +78,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.FontDecoration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FontFamily", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FontFamily = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FontSize", targetDepth))
                 {
                     var unmarshaller = FontSizeUnmarshaller.Instance;

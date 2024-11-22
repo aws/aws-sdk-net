@@ -39,6 +39,7 @@ namespace Amazon.QuickSight.Model
         private SheetContentType _contentType;
         private string _description;
         private List<FilterControl> _filterControls = AWSConfigs.InitializeCollections ? new List<FilterControl>() : null;
+        private List<SheetImage> _images = AWSConfigs.InitializeCollections ? new List<SheetImage>() : null;
         private List<Layout> _layouts = AWSConfigs.InitializeCollections ? new List<Layout>() : null;
         private string _name;
         private List<ParameterControl> _parameterControls = AWSConfigs.InitializeCollections ? new List<ParameterControl>() : null;
@@ -116,6 +117,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetFilterControls()
         {
             return this._filterControls != null && (this._filterControls.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Images. 
+        /// <para>
+        /// A list of images on a sheet.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<SheetImage> Images
+        {
+            get { return this._images; }
+            set { this._images = value; }
+        }
+
+        // Check to see if Images property is set
+        internal bool IsSetImages()
+        {
+            return this._images != null && (this._images.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -205,5 +205,10 @@ namespace Amazon.QuickSight.Model
         /// Paginator for SearchGroups operation
         ///</summary>
         ISearchGroupsPaginator SearchGroups(SearchGroupsRequest request);
+
+        /// <summary>
+        /// Paginator for SearchTopics operation
+        ///</summary>
+        ISearchTopicsPaginator SearchTopics(SearchTopicsRequest request);
     }
 }

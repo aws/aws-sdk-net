@@ -84,6 +84,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.Title = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ValueFontConfiguration", targetDepth))
+                {
+                    var unmarshaller = FontConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ValueFontConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Visibility", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -60,6 +60,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.FontDecoration);
             }
 
+            if(requestObject.IsSetFontFamily())
+            {
+                context.Writer.WritePropertyName("FontFamily");
+                context.Writer.Write(requestObject.FontFamily);
+            }
+
             if(requestObject.IsSetFontSize())
             {
                 context.Writer.WritePropertyName("FontSize");
