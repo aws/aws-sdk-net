@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Omics.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetSequenceStore operation
+    /// Response Unmarshaller for UpdateSequenceStore operation
     /// </summary>  
-    public class GetSequenceStoreResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdateSequenceStoreResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,7 +46,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetSequenceStoreResponse response = new GetSequenceStoreResponse();
+            UpdateSequenceStoreResponse response = new UpdateSequenceStoreResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -157,6 +157,10 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                {
+                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -181,9 +185,9 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             return new AmazonOmicsException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetSequenceStoreResponseUnmarshaller _instance = new GetSequenceStoreResponseUnmarshaller();        
+        private static UpdateSequenceStoreResponseUnmarshaller _instance = new UpdateSequenceStoreResponseUnmarshaller();        
 
-        internal static GetSequenceStoreResponseUnmarshaller GetInstance()
+        internal static UpdateSequenceStoreResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -191,7 +195,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetSequenceStoreResponseUnmarshaller Instance
+        public static UpdateSequenceStoreResponseUnmarshaller Instance
         {
             get
             {

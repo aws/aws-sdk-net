@@ -30,39 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Omics.Model
 {
     /// <summary>
-    /// The S3 access metadata of the sequence store.
+    /// Container for the parameters to the DeleteS3AccessPolicy operation.
+    /// Deletes an access policy for the specified store.
     /// </summary>
-    public partial class SequenceStoreS3Access
+    public partial class DeleteS3AccessPolicyRequest : AmazonOmicsRequest
     {
-        private string _accessLogLocation;
         private string _s3AccessPointArn;
-        private string _s3Uri;
-
-        /// <summary>
-        /// Gets and sets the property AccessLogLocation. 
-        /// <para>
-        /// Location of the access logs.
-        /// </para>
-        /// </summary>
-        public string AccessLogLocation
-        {
-            get { return this._accessLogLocation; }
-            set { this._accessLogLocation = value; }
-        }
-
-        // Check to see if AccessLogLocation property is set
-        internal bool IsSetAccessLogLocation()
-        {
-            return this._accessLogLocation != null;
-        }
 
         /// <summary>
         /// Gets and sets the property S3AccessPointArn. 
         /// <para>
-        /// This is ARN of the access point associated with the S3 bucket storing read sets.
+        /// The S3 access point ARN that has the access policy.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string S3AccessPointArn
         {
             get { return this._s3AccessPointArn; }
@@ -73,24 +54,6 @@ namespace Amazon.Omics.Model
         internal bool IsSetS3AccessPointArn()
         {
             return this._s3AccessPointArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property S3Uri. 
-        /// <para>
-        /// The S3 URI of the sequence store.
-        /// </para>
-        /// </summary>
-        public string S3Uri
-        {
-            get { return this._s3Uri; }
-            set { this._s3Uri = value; }
-        }
-
-        // Check to see if S3Uri property is set
-        internal bool IsSetS3Uri()
-        {
-            return this._s3Uri != null;
         }
 
     }

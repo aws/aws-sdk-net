@@ -66,6 +66,24 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Name);
             }
 
+            if(requestObject.IsSetStatus())
+            {
+                context.Writer.WritePropertyName("status");
+                context.Writer.Write(requestObject.Status);
+            }
+
+            if(requestObject.IsSetUpdatedAfter())
+            {
+                context.Writer.WritePropertyName("updatedAfter");
+                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.UpdatedAfter));
+            }
+
+            if(requestObject.IsSetUpdatedBefore())
+            {
+                context.Writer.WritePropertyName("updatedBefore");
+                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.UpdatedBefore));
+            }
+
         }
 
         /// <summary>

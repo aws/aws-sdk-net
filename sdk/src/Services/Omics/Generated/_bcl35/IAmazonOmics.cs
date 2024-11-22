@@ -1554,6 +1554,67 @@ namespace Amazon.Omics
 
         #endregion
         
+        #region  DeleteS3AccessPolicy
+
+
+        /// <summary>
+        /// Deletes an access policy for the specified store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteS3AccessPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteS3AccessPolicy service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.NotSupportedOperationException">
+        /// The operation is not supported by Amazon Omics, or the API does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteS3AccessPolicy">REST API Reference for DeleteS3AccessPolicy Operation</seealso>
+        DeleteS3AccessPolicyResponse DeleteS3AccessPolicy(DeleteS3AccessPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteS3AccessPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteS3AccessPolicy operation on AmazonOmicsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteS3AccessPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteS3AccessPolicy">REST API Reference for DeleteS3AccessPolicy Operation</seealso>
+        IAsyncResult BeginDeleteS3AccessPolicy(DeleteS3AccessPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteS3AccessPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteS3AccessPolicy.</param>
+        /// 
+        /// <returns>Returns a  DeleteS3AccessPolicyResult from Omics.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteS3AccessPolicy">REST API Reference for DeleteS3AccessPolicy Operation</seealso>
+        DeleteS3AccessPolicyResponse EndDeleteS3AccessPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteSequenceStore
 
 
@@ -2767,6 +2828,70 @@ namespace Amazon.Omics
         /// <returns>Returns a  GetRunTaskResult from Omics.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetRunTask">REST API Reference for GetRunTask Operation</seealso>
         GetRunTaskResponse EndGetRunTask(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetS3AccessPolicy
+
+
+        /// <summary>
+        /// Retrieves details about an access policy on a given store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetS3AccessPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetS3AccessPolicy service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.NotSupportedOperationException">
+        /// The operation is not supported by Amazon Omics, or the API does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetS3AccessPolicy">REST API Reference for GetS3AccessPolicy Operation</seealso>
+        GetS3AccessPolicyResponse GetS3AccessPolicy(GetS3AccessPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetS3AccessPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetS3AccessPolicy operation on AmazonOmicsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetS3AccessPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetS3AccessPolicy">REST API Reference for GetS3AccessPolicy Operation</seealso>
+        IAsyncResult BeginGetS3AccessPolicy(GetS3AccessPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetS3AccessPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetS3AccessPolicy.</param>
+        /// 
+        /// <returns>Returns a  GetS3AccessPolicyResult from Omics.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetS3AccessPolicy">REST API Reference for GetS3AccessPolicy Operation</seealso>
+        GetS3AccessPolicyResponse EndGetS3AccessPolicy(IAsyncResult asyncResult);
 
         #endregion
         
@@ -4386,6 +4511,67 @@ namespace Amazon.Omics
 
         #endregion
         
+        #region  PutS3AccessPolicy
+
+
+        /// <summary>
+        /// Adds an access policy to the specified store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutS3AccessPolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutS3AccessPolicy service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.NotSupportedOperationException">
+        /// The operation is not supported by Amazon Omics, or the API does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/PutS3AccessPolicy">REST API Reference for PutS3AccessPolicy Operation</seealso>
+        PutS3AccessPolicyResponse PutS3AccessPolicy(PutS3AccessPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutS3AccessPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutS3AccessPolicy operation on AmazonOmicsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutS3AccessPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/PutS3AccessPolicy">REST API Reference for PutS3AccessPolicy Operation</seealso>
+        IAsyncResult BeginPutS3AccessPolicy(PutS3AccessPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutS3AccessPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutS3AccessPolicy.</param>
+        /// 
+        /// <returns>Returns a  PutS3AccessPolicyResult from Omics.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/PutS3AccessPolicy">REST API Reference for PutS3AccessPolicy Operation</seealso>
+        PutS3AccessPolicyResponse EndPutS3AccessPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  StartAnnotationImportJob
 
 
@@ -5195,6 +5381,67 @@ namespace Amazon.Omics
         /// <returns>Returns a  UpdateRunGroupResult from Omics.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateRunGroup">REST API Reference for UpdateRunGroup Operation</seealso>
         UpdateRunGroupResponse EndUpdateRunGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateSequenceStore
+
+
+        /// <summary>
+        /// Update one or more parameters for the sequence store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSequenceStore service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSequenceStore service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ConflictException">
+        /// The request cannot be applied to the target resource in its current state.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateSequenceStore">REST API Reference for UpdateSequenceStore Operation</seealso>
+        UpdateSequenceStoreResponse UpdateSequenceStore(UpdateSequenceStoreRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSequenceStore operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSequenceStore operation on AmazonOmicsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSequenceStore
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateSequenceStore">REST API Reference for UpdateSequenceStore Operation</seealso>
+        IAsyncResult BeginUpdateSequenceStore(UpdateSequenceStoreRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateSequenceStore operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSequenceStore.</param>
+        /// 
+        /// <returns>Returns a  UpdateSequenceStoreResult from Omics.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateSequenceStore">REST API Reference for UpdateSequenceStore Operation</seealso>
+        UpdateSequenceStoreResponse EndUpdateSequenceStore(IAsyncResult asyncResult);
 
         #endregion
         

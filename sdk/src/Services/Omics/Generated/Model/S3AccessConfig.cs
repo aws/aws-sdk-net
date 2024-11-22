@@ -30,13 +30,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Omics.Model
 {
     /// <summary>
-    /// The S3 access metadata of the sequence store.
+    /// S3 access configuration parameters.
     /// </summary>
-    public partial class SequenceStoreS3Access
+    public partial class S3AccessConfig
     {
         private string _accessLogLocation;
-        private string _s3AccessPointArn;
-        private string _s3Uri;
 
         /// <summary>
         /// Gets and sets the property AccessLogLocation. 
@@ -54,43 +52,6 @@ namespace Amazon.Omics.Model
         internal bool IsSetAccessLogLocation()
         {
             return this._accessLogLocation != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property S3AccessPointArn. 
-        /// <para>
-        /// This is ARN of the access point associated with the S3 bucket storing read sets.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
-        public string S3AccessPointArn
-        {
-            get { return this._s3AccessPointArn; }
-            set { this._s3AccessPointArn = value; }
-        }
-
-        // Check to see if S3AccessPointArn property is set
-        internal bool IsSetS3AccessPointArn()
-        {
-            return this._s3AccessPointArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property S3Uri. 
-        /// <para>
-        /// The S3 URI of the sequence store.
-        /// </para>
-        /// </summary>
-        public string S3Uri
-        {
-            get { return this._s3Uri; }
-            set { this._s3Uri = value; }
-        }
-
-        // Check to see if S3Uri property is set
-        internal bool IsSetS3Uri()
-        {
-            return this._s3Uri != null;
         }
 
     }

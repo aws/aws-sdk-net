@@ -1843,6 +1843,68 @@ namespace Amazon.Omics
 
 
     /// <summary>
+    /// Constants used for properties of type SequenceStoreStatus.
+    /// </summary>
+    public class SequenceStoreStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for SequenceStoreStatus
+        /// </summary>
+        public static readonly SequenceStoreStatus ACTIVE = new SequenceStoreStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for SequenceStoreStatus
+        /// </summary>
+        public static readonly SequenceStoreStatus CREATING = new SequenceStoreStatus("CREATING");
+        /// <summary>
+        /// Constant DELETING for SequenceStoreStatus
+        /// </summary>
+        public static readonly SequenceStoreStatus DELETING = new SequenceStoreStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for SequenceStoreStatus
+        /// </summary>
+        public static readonly SequenceStoreStatus FAILED = new SequenceStoreStatus("FAILED");
+        /// <summary>
+        /// Constant UPDATING for SequenceStoreStatus
+        /// </summary>
+        public static readonly SequenceStoreStatus UPDATING = new SequenceStoreStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SequenceStoreStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SequenceStoreStatus FindValue(string value)
+        {
+            return FindValue<SequenceStoreStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SequenceStoreStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ShareResourceType.
     /// </summary>
     public class ShareResourceType : ConstantClass
@@ -2122,6 +2184,56 @@ namespace Amazon.Omics
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StoreStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StoreType.
+    /// </summary>
+    public class StoreType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant REFERENCE_STORE for StoreType
+        /// </summary>
+        public static readonly StoreType REFERENCE_STORE = new StoreType("REFERENCE_STORE");
+        /// <summary>
+        /// Constant SEQUENCE_STORE for StoreType
+        /// </summary>
+        public static readonly StoreType SEQUENCE_STORE = new StoreType("SEQUENCE_STORE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StoreType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StoreType FindValue(string value)
+        {
+            return FindValue<StoreType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StoreType(string value)
         {
             return FindValue(value);
         }

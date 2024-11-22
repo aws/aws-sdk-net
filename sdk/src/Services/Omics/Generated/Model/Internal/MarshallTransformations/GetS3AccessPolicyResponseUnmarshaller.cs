@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Omics.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetSequenceStore operation
+    /// Response Unmarshaller for GetS3AccessPolicy operation
     /// </summary>  
-    public class GetSequenceStoreResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetS3AccessPolicyResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,82 +46,34 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetSequenceStoreResponse response = new GetSequenceStoreResponse();
+            GetS3AccessPolicyResponse response = new GetS3AccessPolicyResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("s3AccessPointArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Arn = unmarshaller.Unmarshall(context);
+                    response.S3AccessPointArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("creationTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.CreationTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("s3AccessPolicy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Description = unmarshaller.Unmarshall(context);
+                    response.S3AccessPolicy = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("eTagAlgorithmFamily", targetDepth))
+                if (context.TestExpression("storeId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ETagAlgorithmFamily = unmarshaller.Unmarshall(context);
+                    response.StoreId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("fallbackLocation", targetDepth))
+                if (context.TestExpression("storeType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.FallbackLocation = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("id", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Id = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("propagatedSetLevelTags", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.PropagatedSetLevelTags = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("s3Access", targetDepth))
-                {
-                    var unmarshaller = SequenceStoreS3AccessUnmarshaller.Instance;
-                    response.S3Access = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("sseConfig", targetDepth))
-                {
-                    var unmarshaller = SseConfigUnmarshaller.Instance;
-                    response.SseConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Status = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("statusMessage", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.StatusMessage = unmarshaller.Unmarshall(context);
+                    response.StoreType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("updateTime", targetDepth))
@@ -161,6 +113,10 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("NotSupportedOperationException"))
+                {
+                    return NotSupportedOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("RequestTimeoutException"))
                 {
                     return RequestTimeoutExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -168,6 +124,10 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceQuotaExceededException"))
+                {
+                    return ServiceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
@@ -181,9 +141,9 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             return new AmazonOmicsException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetSequenceStoreResponseUnmarshaller _instance = new GetSequenceStoreResponseUnmarshaller();        
+        private static GetS3AccessPolicyResponseUnmarshaller _instance = new GetS3AccessPolicyResponseUnmarshaller();        
 
-        internal static GetSequenceStoreResponseUnmarshaller GetInstance()
+        internal static GetS3AccessPolicyResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -191,7 +151,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetSequenceStoreResponseUnmarshaller Instance
+        public static GetS3AccessPolicyResponseUnmarshaller Instance
         {
             get
             {

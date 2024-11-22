@@ -30,20 +30,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Omics.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateSequenceStore operation.
-    /// Creates a sequence store.
+    /// Container for the parameters to the UpdateSequenceStore operation.
+    /// Update one or more parameters for the sequence store.
     /// </summary>
-    public partial class CreateSequenceStoreRequest : AmazonOmicsRequest
+    public partial class UpdateSequenceStoreRequest : AmazonOmicsRequest
     {
         private string _clientToken;
         private string _description;
-        private ETagAlgorithmFamily _eTagAlgorithmFamily;
         private string _fallbackLocation;
+        private string _id;
         private string _name;
         private List<string> _propagatedSetLevelTags = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private S3AccessConfig _s3AccessConfig;
-        private SseConfig _sseConfig;
-        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -68,7 +66,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description for the store.
+        /// A description for the sequence store.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -85,27 +83,9 @@ namespace Amazon.Omics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ETagAlgorithmFamily. 
-        /// <para>
-        /// The ETag algorithm family to use for ingested read sets.
-        /// </para>
-        /// </summary>
-        public ETagAlgorithmFamily ETagAlgorithmFamily
-        {
-            get { return this._eTagAlgorithmFamily; }
-            set { this._eTagAlgorithmFamily = value; }
-        }
-
-        // Check to see if ETagAlgorithmFamily property is set
-        internal bool IsSetETagAlgorithmFamily()
-        {
-            return this._eTagAlgorithmFamily != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property FallbackLocation. 
         /// <para>
-        /// An S3 location that is used to store files that have failed a direct upload.
+        /// The S3 URI of a bucket and folder to store Read Sets that fail to upload.
         /// </para>
         /// </summary>
         public string FallbackLocation
@@ -121,12 +101,31 @@ namespace Amazon.Omics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property Id. 
         /// <para>
-        /// A name for the store.
+        /// The ID of the sequence store.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=127)]
+        [AWSProperty(Required=true, Min=10, Max=36)]
+        public string Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
+
+        // Check to see if Id property is set
+        internal bool IsSetId()
+        {
+            return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// A name for the sequence store.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=127)]
         public string Name
         {
             get { return this._name; }
@@ -162,7 +161,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property S3AccessConfig. 
         /// <para>
-        /// S3 access configuration parameters
+        /// S3 access configuration parameters.
         /// </para>
         /// </summary>
         public S3AccessConfig S3AccessConfig
@@ -175,42 +174,6 @@ namespace Amazon.Omics.Model
         internal bool IsSetS3AccessConfig()
         {
             return this._s3AccessConfig != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SseConfig. 
-        /// <para>
-        /// Server-side encryption (SSE) settings for the store.
-        /// </para>
-        /// </summary>
-        public SseConfig SseConfig
-        {
-            get { return this._sseConfig; }
-            set { this._sseConfig = value; }
-        }
-
-        // Check to see if SseConfig property is set
-        internal bool IsSetSseConfig()
-        {
-            return this._sseConfig != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// Tags for the store.
-        /// </para>
-        /// </summary>
-        public Dictionary<string, string> Tags
-        {
-            get { return this._tags; }
-            set { this._tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

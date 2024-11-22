@@ -397,6 +397,12 @@
     <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.CreateSequenceStoreResponse.StatusMessage</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.CreateShareRequest.ShareName</property>
     <min>1</min>
     <max>256</max>
@@ -520,6 +526,12 @@
     <min>1</min>
     <max>18</max>
     <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.DeleteS3AccessPolicyRequest.S3AccessPointArn</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>arn:[^:]*:s3:[^:]*:[^:]*:accesspoint/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.DeleteSequenceStoreRequest.Id</property>
@@ -1255,6 +1267,29 @@
     <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.GetS3AccessPolicyRequest.S3AccessPointArn</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>arn:[^:]*:s3:[^:]*:[^:]*:accesspoint/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetS3AccessPolicyResponse.S3AccessPointArn</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>arn:[^:]*:s3:[^:]*:[^:]*:accesspoint/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetS3AccessPolicyResponse.S3AccessPolicy</property>
+    <min>1</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetS3AccessPolicyResponse.StoreId</property>
+    <min>10</min>
+    <max>36</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.GetSequenceStoreRequest.Id</property>
     <min>10</min>
     <max>36</max>
@@ -1284,6 +1319,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetSequenceStoreResponse.Name</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetSequenceStoreResponse.StatusMessage</property>
     <min>1</min>
     <max>127</max>
     <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
@@ -1824,6 +1865,29 @@
     <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.PutS3AccessPolicyRequest.S3AccessPointArn</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>arn:[^:]*:s3:[^:]*:[^:]*:accesspoint/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.PutS3AccessPolicyRequest.S3AccessPolicy</property>
+    <min>1</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.PutS3AccessPolicyResponse.S3AccessPointArn</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>arn:[^:]*:s3:[^:]*:[^:]*:accesspoint/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.PutS3AccessPolicyResponse.StoreId</property>
+    <min>10</min>
+    <max>36</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.StartAnnotationImportJobRequest.DestinationName</property>
     <min>3</min>
     <max>255</max>
@@ -2220,6 +2284,68 @@
     <property>Amazon.Omics.Model.UpdateRunGroupRequest.Name</property>
     <min>1</min>
     <max>128</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.UpdateSequenceStoreRequest.ClientToken</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.UpdateSequenceStoreRequest.Description</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.UpdateSequenceStoreRequest.FallbackLocation</property>
+    <pattern>s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])/?((.{1,1024})/)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.UpdateSequenceStoreRequest.Id</property>
+    <min>10</min>
+    <max>36</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.UpdateSequenceStoreRequest.Name</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.UpdateSequenceStoreResponse.Arn</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>arn:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.UpdateSequenceStoreResponse.Description</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.UpdateSequenceStoreResponse.FallbackLocation</property>
+    <pattern>s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])/?((.{1,1024})/)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.UpdateSequenceStoreResponse.Id</property>
+    <min>10</min>
+    <max>36</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.UpdateSequenceStoreResponse.Name</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.UpdateSequenceStoreResponse.StatusMessage</property>
+    <min>1</min>
+    <max>127</max>
     <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -2932,6 +3058,10 @@
     <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.S3AccessConfig.AccessLogLocation</property>
+    <pattern>$|^s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])/?((.{1,800})/)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.SequenceInformation.GeneratedFrom</property>
     <min>1</min>
     <max>127</max>
@@ -2966,10 +3096,20 @@
     <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.SequenceStoreDetail.StatusMessage</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.SequenceStoreFilter.Name</property>
     <min>1</min>
     <max>127</max>
     <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.SequenceStoreS3Access.AccessLogLocation</property>
+    <pattern>$|^s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])/?((.{1,800})/)?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.SequenceStoreS3Access.S3AccessPointArn</property>

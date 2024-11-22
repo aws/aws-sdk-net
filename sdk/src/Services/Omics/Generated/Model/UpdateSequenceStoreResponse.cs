@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Omics.Model
 {
     /// <summary>
-    /// This is the response object from the GetSequenceStore operation.
+    /// This is the response object from the UpdateSequenceStore operation.
     /// </summary>
-    public partial class GetSequenceStoreResponse : AmazonWebServiceResponse
+    public partial class UpdateSequenceStoreResponse : AmazonWebServiceResponse
     {
         private string _arn;
         private DateTime? _creationTime;
@@ -51,7 +51,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The store's ARN.
+        /// The ARN of the sequence store.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=127)]
@@ -70,7 +70,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// When the store was created.
+        /// The time when the store was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -89,7 +89,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The store's description.
+        /// Description of the sequence store.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -108,7 +108,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property ETagAlgorithmFamily. 
         /// <para>
-        /// The algorithm family of the ETag.
+        /// The ETag algorithm family to use on ingested read sets.
         /// </para>
         /// </summary>
         public ETagAlgorithmFamily ETagAlgorithmFamily
@@ -126,7 +126,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property FallbackLocation. 
         /// <para>
-        /// An S3 location that is used to store files that have failed a direct upload.
+        /// The S3 URI of a bucket and folder to store Read Sets that fail to upload.
         /// </para>
         /// </summary>
         public string FallbackLocation
@@ -144,7 +144,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The store's ID.
+        /// The ID of the sequence store.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=36)]
@@ -163,7 +163,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The store's name.
+        /// The name of the sequence store.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=127)]
@@ -200,10 +200,7 @@ namespace Amazon.Omics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property S3Access. 
-        /// <para>
-        /// The S3 metadata of a sequence store, including the ARN and S3 URI of the S3 bucket.
-        /// </para>
+        /// Gets and sets the property S3Access.
         /// </summary>
         public SequenceStoreS3Access S3Access
         {
@@ -218,10 +215,7 @@ namespace Amazon.Omics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SseConfig. 
-        /// <para>
-        /// The store's server-side encryption (SSE) settings.
-        /// </para>
+        /// Gets and sets the property SseConfig.
         /// </summary>
         public SseConfig SseConfig
         {
@@ -275,7 +269,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property UpdateTime. 
         /// <para>
-        /// The last-updated time of the sequence store.
+        /// The last-updated time of the Sequence Store.
         /// </para>
         /// </summary>
         public DateTime UpdateTime

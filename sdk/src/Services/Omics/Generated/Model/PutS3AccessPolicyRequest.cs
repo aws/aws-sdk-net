@@ -30,39 +30,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Omics.Model
 {
     /// <summary>
-    /// The S3 access metadata of the sequence store.
+    /// Container for the parameters to the PutS3AccessPolicy operation.
+    /// Adds an access policy to the specified store.
     /// </summary>
-    public partial class SequenceStoreS3Access
+    public partial class PutS3AccessPolicyRequest : AmazonOmicsRequest
     {
-        private string _accessLogLocation;
         private string _s3AccessPointArn;
-        private string _s3Uri;
-
-        /// <summary>
-        /// Gets and sets the property AccessLogLocation. 
-        /// <para>
-        /// Location of the access logs.
-        /// </para>
-        /// </summary>
-        public string AccessLogLocation
-        {
-            get { return this._accessLogLocation; }
-            set { this._accessLogLocation = value; }
-        }
-
-        // Check to see if AccessLogLocation property is set
-        internal bool IsSetAccessLogLocation()
-        {
-            return this._accessLogLocation != null;
-        }
+        private string _s3AccessPolicy;
 
         /// <summary>
         /// Gets and sets the property S3AccessPointArn. 
         /// <para>
-        /// This is ARN of the access point associated with the S3 bucket storing read sets.
+        /// The S3 access point ARN where you want to put the access policy.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string S3AccessPointArn
         {
             get { return this._s3AccessPointArn; }
@@ -76,21 +58,22 @@ namespace Amazon.Omics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property S3Uri. 
+        /// Gets and sets the property S3AccessPolicy. 
         /// <para>
-        /// The S3 URI of the sequence store.
+        /// The resource policy that controls S3 access to the store.
         /// </para>
         /// </summary>
-        public string S3Uri
+        [AWSProperty(Required=true, Min=1, Max=100000)]
+        public string S3AccessPolicy
         {
-            get { return this._s3Uri; }
-            set { this._s3Uri = value; }
+            get { return this._s3AccessPolicy; }
+            set { this._s3AccessPolicy = value; }
         }
 
-        // Check to see if S3Uri property is set
-        internal bool IsSetS3Uri()
+        // Check to see if S3AccessPolicy property is set
+        internal bool IsSetS3AccessPolicy()
         {
-            return this._s3Uri != null;
+            return this._s3AccessPolicy != null;
         }
 
     }

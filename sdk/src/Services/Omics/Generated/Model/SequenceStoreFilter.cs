@@ -37,6 +37,9 @@ namespace Amazon.Omics.Model
         private DateTime? _createdAfter;
         private DateTime? _createdBefore;
         private string _name;
+        private SequenceStoreStatus _status;
+        private DateTime? _updatedAfter;
+        private DateTime? _updatedBefore;
 
         /// <summary>
         /// Gets and sets the property CreatedAfter. 
@@ -91,6 +94,60 @@ namespace Amazon.Omics.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// Filter results based on status.
+        /// </para>
+        /// </summary>
+        public SequenceStoreStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdatedAfter. 
+        /// <para>
+        /// Filter results based on stores updated after the specified time.
+        /// </para>
+        /// </summary>
+        public DateTime UpdatedAfter
+        {
+            get { return this._updatedAfter.GetValueOrDefault(); }
+            set { this._updatedAfter = value; }
+        }
+
+        // Check to see if UpdatedAfter property is set
+        internal bool IsSetUpdatedAfter()
+        {
+            return this._updatedAfter.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdatedBefore. 
+        /// <para>
+        /// Filter results based on stores updated before the specified time.
+        /// </para>
+        /// </summary>
+        public DateTime UpdatedBefore
+        {
+            get { return this._updatedBefore.GetValueOrDefault(); }
+            set { this._updatedBefore = value; }
+        }
+
+        // Check to see if UpdatedBefore property is set
+        internal bool IsSetUpdatedBefore()
+        {
+            return this._updatedBefore.HasValue; 
         }
 
     }

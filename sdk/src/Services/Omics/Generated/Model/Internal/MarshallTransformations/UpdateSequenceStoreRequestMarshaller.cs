@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Omics.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateSequenceStore Request Marshaller
+    /// UpdateSequenceStore Request Marshaller
     /// </summary>       
-    public class CreateSequenceStoreRequestMarshaller : IMarshaller<IRequest, CreateSequenceStoreRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateSequenceStoreRequestMarshaller : IMarshaller<IRequest, UpdateSequenceStoreRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateSequenceStoreRequest)input);
+            return this.Marshall((UpdateSequenceStoreRequest)input);
         }
 
         /// <summary>
@@ -53,14 +53,17 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateSequenceStoreRequest publicRequest)
+        public IRequest Marshall(UpdateSequenceStoreRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Omics");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2022-11-28";
-            request.HttpMethod = "POST";
+            request.HttpMethod = "PATCH";
 
-            request.ResourcePath = "/sequencestore";
+            if (!publicRequest.IsSetId())
+                throw new AmazonOmicsException("Request object does not have required field Id set");
+            request.AddPathResource("{id}", StringUtils.FromString(publicRequest.Id));
+            request.ResourcePath = "/sequencestore/{id}";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
@@ -82,12 +85,6 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("description");
                     context.Writer.Write(publicRequest.Description);
-                }
-
-                if(publicRequest.IsSetETagAlgorithmFamily())
-                {
-                    context.Writer.WritePropertyName("eTagAlgorithmFamily");
-                    context.Writer.Write(publicRequest.ETagAlgorithmFamily);
                 }
 
                 if(publicRequest.IsSetFallbackLocation())
@@ -124,31 +121,6 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetSseConfig())
-                {
-                    context.Writer.WritePropertyName("sseConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SseConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.SseConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
@@ -159,9 +131,9 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateSequenceStoreRequestMarshaller _instance = new CreateSequenceStoreRequestMarshaller();        
+        private static UpdateSequenceStoreRequestMarshaller _instance = new UpdateSequenceStoreRequestMarshaller();        
 
-        internal static CreateSequenceStoreRequestMarshaller GetInstance()
+        internal static UpdateSequenceStoreRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -169,7 +141,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateSequenceStoreRequestMarshaller Instance
+        public static UpdateSequenceStoreRequestMarshaller Instance
         {
             get
             {

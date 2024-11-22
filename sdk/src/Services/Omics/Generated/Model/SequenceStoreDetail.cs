@@ -42,6 +42,9 @@ namespace Amazon.Omics.Model
         private string _id;
         private string _name;
         private SseConfig _sseConfig;
+        private SequenceStoreStatus _status;
+        private string _statusMessage;
+        private DateTime? _updateTime;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -190,6 +193,61 @@ namespace Amazon.Omics.Model
         internal bool IsSetSseConfig()
         {
             return this._sseConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// Status of the sequence store.
+        /// </para>
+        /// </summary>
+        public SequenceStoreStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusMessage. 
+        /// <para>
+        /// The status message of the sequence store.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=127)]
+        public string StatusMessage
+        {
+            get { return this._statusMessage; }
+            set { this._statusMessage = value; }
+        }
+
+        // Check to see if StatusMessage property is set
+        internal bool IsSetStatusMessage()
+        {
+            return this._statusMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdateTime. 
+        /// <para>
+        /// The last-updated time of the Sequence Store.
+        /// </para>
+        /// </summary>
+        public DateTime UpdateTime
+        {
+            get { return this._updateTime.GetValueOrDefault(); }
+            set { this._updateTime = value; }
+        }
+
+        // Check to see if UpdateTime property is set
+        internal bool IsSetUpdateTime()
+        {
+            return this._updateTime.HasValue; 
         }
 
     }
