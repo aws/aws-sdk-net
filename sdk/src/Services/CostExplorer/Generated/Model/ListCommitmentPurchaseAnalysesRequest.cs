@@ -31,7 +31,7 @@ namespace Amazon.CostExplorer.Model
 {
     /// <summary>
     /// Container for the parameters to the ListCommitmentPurchaseAnalyses operation.
-    /// Lists the commitment purchase analyses for your account based on the last 30 days.
+    /// Lists the commitment purchase analyses for your account.
     /// </summary>
     public partial class ListCommitmentPurchaseAnalysesRequest : AmazonCostExplorerRequest
     {

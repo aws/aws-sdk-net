@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RootCause Object
+    /// Response Unmarshaller for RootCauseImpact Object
     /// </summary>  
-    public class RootCauseUnmarshaller : IUnmarshaller<RootCause, XmlUnmarshallerContext>, IUnmarshaller<RootCause, JsonUnmarshallerContext>
+    public class RootCauseImpactUnmarshaller : IUnmarshaller<RootCauseImpact, XmlUnmarshallerContext>, IUnmarshaller<RootCauseImpact, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RootCause IUnmarshaller<RootCause, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RootCauseImpact IUnmarshaller<RootCauseImpact, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public RootCause Unmarshall(JsonUnmarshallerContext context)
+        public RootCauseImpact Unmarshall(JsonUnmarshallerContext context)
         {
-            RootCause unmarshalledObject = new RootCause();
+            RootCauseImpact unmarshalledObject = new RootCauseImpact();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,40 +66,10 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Impact", targetDepth))
+                if (context.TestExpression("Contribution", targetDepth))
                 {
-                    var unmarshaller = RootCauseImpactUnmarshaller.Instance;
-                    unmarshalledObject.Impact = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LinkedAccount", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LinkedAccount = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LinkedAccountName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LinkedAccountName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Region", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Region = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Service", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Service = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("UsageType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UsageType = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.Contribution = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -107,12 +77,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         }
 
 
-        private static RootCauseUnmarshaller _instance = new RootCauseUnmarshaller();        
+        private static RootCauseImpactUnmarshaller _instance = new RootCauseImpactUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RootCauseUnmarshaller Instance
+        public static RootCauseImpactUnmarshaller Instance
         {
             get
             {

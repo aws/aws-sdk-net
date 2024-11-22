@@ -1745,7 +1745,7 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// Lists the commitment purchase analyses for your account based on the last 30 days.
+        /// Lists the commitment purchase analyses for your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCommitmentPurchaseAnalyses service method.</param>
         /// 
@@ -1765,7 +1765,7 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// Lists the commitment purchase analyses for your account based on the last 30 days.
+        /// Lists the commitment purchase analyses for your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCommitmentPurchaseAnalyses service method.</param>
         /// <param name="cancellationToken">
@@ -2045,8 +2045,7 @@ namespace Amazon.CostExplorer
         /// <summary>
         /// Specifies the parameters of a planned commitment purchase and starts the generation
         /// of the analysis. This enables you to estimate the cost, coverage, and utilization
-        /// impact of your planned commitment purchases. You can request up to 20 analysis runs
-        /// per day.
+        /// impact of your planned commitment purchases.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartCommitmentPurchaseAnalysis service method.</param>
         /// 
@@ -2055,7 +2054,7 @@ namespace Amazon.CostExplorer
         /// The requested data is unavailable.
         /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.GenerationExistsException">
-        /// A request to generate a recommendation is already in progress.
+        /// A request to generate a recommendation or analysis is already in progress.
         /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
         /// You made too many calls in a short period of time. Try again later.
@@ -2072,8 +2071,7 @@ namespace Amazon.CostExplorer
         /// <summary>
         /// Specifies the parameters of a planned commitment purchase and starts the generation
         /// of the analysis. This enables you to estimate the cost, coverage, and utilization
-        /// impact of your planned commitment purchases. You can request up to 20 analysis runs
-        /// per day.
+        /// impact of your planned commitment purchases.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartCommitmentPurchaseAnalysis service method.</param>
         /// <param name="cancellationToken">
@@ -2085,7 +2083,7 @@ namespace Amazon.CostExplorer
         /// The requested data is unavailable.
         /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.GenerationExistsException">
-        /// A request to generate a recommendation is already in progress.
+        /// A request to generate a recommendation or analysis is already in progress.
         /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
         /// You made too many calls in a short period of time. Try again later.
@@ -2178,7 +2176,7 @@ namespace Amazon.CostExplorer
         /// The requested data is unavailable.
         /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.GenerationExistsException">
-        /// A request to generate a recommendation is already in progress.
+        /// A request to generate a recommendation or analysis is already in progress.
         /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
         /// You made too many calls in a short period of time. Try again later.
@@ -2215,7 +2213,7 @@ namespace Amazon.CostExplorer
         /// The requested data is unavailable.
         /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.GenerationExistsException">
-        /// A request to generate a recommendation is already in progress.
+        /// A request to generate a recommendation or analysis is already in progress.
         /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
         /// You made too many calls in a short period of time. Try again later.

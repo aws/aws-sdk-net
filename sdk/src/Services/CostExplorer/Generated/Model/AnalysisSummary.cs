@@ -64,7 +64,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property AnalysisId. 
         /// <para>
-        /// The analysis ID that's associated with the commitment purchase.
+        /// The analysis ID that's associated with the commitment purchase analysis.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -120,7 +120,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property CommitmentPurchaseAnalysisConfiguration. 
         /// <para>
-        /// The analysis configuration for the commitment purchase analysis.
+        /// The configuration for the commitment purchase analysis.
         /// </para>
         /// </summary>
         public CommitmentPurchaseAnalysisConfiguration CommitmentPurchaseAnalysisConfiguration

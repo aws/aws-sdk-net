@@ -231,7 +231,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EstimatedCommitmentCost. 
         /// <para>
-        /// The estimated cost of the purchase commitment over the length of the lookback period.
+        /// The estimated cost of the Savings Plan over the length of the lookback period.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -269,8 +269,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EstimatedOnDemandCost. 
         /// <para>
-        /// The remaining On-Demand cost estimated to not be covered by the commitment, over the
-        /// length of the lookback period.
+        /// The remaining On-Demand cost estimated to not be covered by the Savings Plan over
+        /// the length of the lookback period.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -289,7 +289,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EstimatedOnDemandCostWithCurrentCommitment. 
         /// <para>
-        /// The estimated On-Demand cost you expect with no additional commitment, based on your
+        /// The estimated On-Demand cost you expect with no additional commitment based on your
         /// usage of the selected time period and the Savings Plan you own.
         /// </para>
         /// </summary>
@@ -309,7 +309,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EstimatedROI. 
         /// <para>
-        /// The estimated return on investment that's based on the purchase commitment and estimated
+        /// The estimated return on investment that's based on the Savings Plan and estimated
         /// savings. This is calculated as estimatedSavingsAmount/estimatedSPCost*100.
         /// </para>
         /// </summary>
@@ -329,8 +329,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EstimatedSavingsAmount. 
         /// <para>
-        /// The estimated savings amount that's based on the purchase commitment over the length
-        /// of the lookback period.
+        /// The estimated savings amount that's based on the Savings Plan over the length of the
+        /// lookback period.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -463,7 +463,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property UpfrontCost. 
         /// <para>
-        /// The upfront cost of the Savings Plan, based on the selected payment option.
+        /// The upfront cost of the Savings Plan based on the selected payment option.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

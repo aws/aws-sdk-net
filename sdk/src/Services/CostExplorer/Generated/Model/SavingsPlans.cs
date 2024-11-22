@@ -64,7 +64,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property OfferingId. 
         /// <para>
-        /// The unique ID that's used to distinguish commitments from one another.
+        /// The unique ID that's used to distinguish Savings Plans commitments from one another.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

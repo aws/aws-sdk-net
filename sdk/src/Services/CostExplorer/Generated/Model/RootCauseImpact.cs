@@ -30,32 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// Container for the parameters to the StartCommitmentPurchaseAnalysis operation.
-    /// Specifies the parameters of a planned commitment purchase and starts the generation
-    /// of the analysis. This enables you to estimate the cost, coverage, and utilization
-    /// impact of your planned commitment purchases.
+    /// The dollar value of the root cause.
     /// </summary>
-    public partial class StartCommitmentPurchaseAnalysisRequest : AmazonCostExplorerRequest
+    public partial class RootCauseImpact
     {
-        private CommitmentPurchaseAnalysisConfiguration _commitmentPurchaseAnalysisConfiguration;
+        private double? _contribution;
 
         /// <summary>
-        /// Gets and sets the property CommitmentPurchaseAnalysisConfiguration. 
+        /// Gets and sets the property Contribution. 
         /// <para>
-        /// The configuration for the commitment purchase analysis.
+        /// The dollar amount that this root cause contributed to the anomaly's TotalImpact.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public CommitmentPurchaseAnalysisConfiguration CommitmentPurchaseAnalysisConfiguration
+        public double Contribution
         {
-            get { return this._commitmentPurchaseAnalysisConfiguration; }
-            set { this._commitmentPurchaseAnalysisConfiguration = value; }
+            get { return this._contribution.GetValueOrDefault(); }
+            set { this._contribution = value; }
         }
 
-        // Check to see if CommitmentPurchaseAnalysisConfiguration property is set
-        internal bool IsSetCommitmentPurchaseAnalysisConfiguration()
+        // Check to see if Contribution property is set
+        internal bool IsSetContribution()
         {
-            return this._commitmentPurchaseAnalysisConfiguration != null;
+            return this._contribution.HasValue; 
         }
 
     }
