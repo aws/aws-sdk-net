@@ -25,6 +25,56 @@ namespace Amazon.BedrockAgentRuntime
 {
 
     /// <summary>
+    /// Constants used for properties of type ActionGroupSignature.
+    /// </summary>
+    public class ActionGroupSignature : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AMAZONCodeInterpreter for ActionGroupSignature
+        /// </summary>
+        public static readonly ActionGroupSignature AMAZONCodeInterpreter = new ActionGroupSignature("AMAZON.CodeInterpreter");
+        /// <summary>
+        /// Constant AMAZONUserInput for ActionGroupSignature
+        /// </summary>
+        public static readonly ActionGroupSignature AMAZONUserInput = new ActionGroupSignature("AMAZON.UserInput");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ActionGroupSignature(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ActionGroupSignature FindValue(string value)
+        {
+            return FindValue<ActionGroupSignature>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ActionGroupSignature(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ActionInvocationType.
     /// </summary>
     public class ActionInvocationType : ConstantClass
@@ -172,6 +222,52 @@ namespace Amazon.BedrockAgentRuntime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CreationMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CustomControlMethod.
+    /// </summary>
+    public class CustomControlMethod : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RETURN_CONTROL for CustomControlMethod
+        /// </summary>
+        public static readonly CustomControlMethod RETURN_CONTROL = new CustomControlMethod("RETURN_CONTROL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CustomControlMethod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CustomControlMethod FindValue(string value)
+        {
+            return FindValue<CustomControlMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CustomControlMethod(string value)
         {
             return FindValue(value);
         }
@@ -1269,6 +1365,118 @@ namespace Amazon.BedrockAgentRuntime
 
 
     /// <summary>
+    /// Constants used for properties of type ParameterType.
+    /// </summary>
+    public class ParameterType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Array for ParameterType
+        /// </summary>
+        public static readonly ParameterType Array = new ParameterType("array");
+        /// <summary>
+        /// Constant Boolean for ParameterType
+        /// </summary>
+        public static readonly ParameterType Boolean = new ParameterType("boolean");
+        /// <summary>
+        /// Constant Integer for ParameterType
+        /// </summary>
+        public static readonly ParameterType Integer = new ParameterType("integer");
+        /// <summary>
+        /// Constant Number for ParameterType
+        /// </summary>
+        public static readonly ParameterType Number = new ParameterType("number");
+        /// <summary>
+        /// Constant String for ParameterType
+        /// </summary>
+        public static readonly ParameterType String = new ParameterType("string");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ParameterType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ParameterType FindValue(string value)
+        {
+            return FindValue<ParameterType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ParameterType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PromptState.
+    /// </summary>
+    public class PromptState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for PromptState
+        /// </summary>
+        public static readonly PromptState DISABLED = new PromptState("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for PromptState
+        /// </summary>
+        public static readonly PromptState ENABLED = new PromptState("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PromptState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PromptState FindValue(string value)
+        {
+            return FindValue<PromptState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PromptState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PromptType.
     /// </summary>
     public class PromptType : ConstantClass
@@ -1290,6 +1498,10 @@ namespace Amazon.BedrockAgentRuntime
         /// Constant PRE_PROCESSING for PromptType
         /// </summary>
         public static readonly PromptType PRE_PROCESSING = new PromptType("PRE_PROCESSING");
+        /// <summary>
+        /// Constant ROUTING_CLASSIFIER for PromptType
+        /// </summary>
+        public static readonly PromptType ROUTING_CLASSIFIER = new PromptType("ROUTING_CLASSIFIER");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1366,6 +1578,56 @@ namespace Amazon.BedrockAgentRuntime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator QueryTransformationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RequireConfirmation.
+    /// </summary>
+    public class RequireConfirmation : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for RequireConfirmation
+        /// </summary>
+        public static readonly RequireConfirmation DISABLED = new RequireConfirmation("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for RequireConfirmation
+        /// </summary>
+        public static readonly RequireConfirmation ENABLED = new RequireConfirmation("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RequireConfirmation(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RequireConfirmation FindValue(string value)
+        {
+            return FindValue<RequireConfirmation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RequireConfirmation(string value)
         {
             return FindValue(value);
         }

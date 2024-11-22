@@ -592,6 +592,105 @@ namespace Amazon.BedrockAgentRuntime
 
         #endregion
         
+        #region  InvokeInlineAgent
+
+        internal virtual InvokeInlineAgentResponse InvokeInlineAgent(InvokeInlineAgentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InvokeInlineAgentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InvokeInlineAgentResponseUnmarshaller.Instance;
+
+            return Invoke<InvokeInlineAgentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Invokes an inline Amazon Bedrock agent using the configurations you provide with
+        /// the request. 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Specify the following fields for security purposes.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// (Optional) <c>customerEncryptionKeyArn</c> – The Amazon Resource Name (ARN) of a KMS
+        /// key to encrypt the creation of the agent.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// (Optional) <c>idleSessionTTLinSeconds</c> – Specify the number of seconds for which
+        /// the agent should maintain session information. After this time expires, the subsequent
+        /// <c>InvokeInlineAgent</c> request begins a new session.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// To override the default prompt behavior for agent orchestration and to use advanced
+        /// prompts, include a <c>promptOverrideConfiguration</c> object. For more information,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html">Advanced
+        /// prompts</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The agent instructions will not be honored if your agent has only one knowledge base,
+        /// uses default prompts, has no action group, and user input is disabled.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// The CLI doesn't support streaming operations in Amazon Bedrock, including <c>InvokeInlineAgent</c>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InvokeInlineAgent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the InvokeInlineAgent service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.BadGatewayException">
+        /// There was an issue with a dependency due to a server issue. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ConflictException">
+        /// There was a conflict performing an operation. Resolve the conflict and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.DependencyFailedException">
+        /// There was an issue with a dependency. Check the resource configurations and retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/InvokeInlineAgent">REST API Reference for InvokeInlineAgent Operation</seealso>
+        public virtual Task<InvokeInlineAgentResponse> InvokeInlineAgentAsync(InvokeInlineAgentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = InvokeInlineAgentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InvokeInlineAgentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<InvokeInlineAgentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  OptimizePrompt
 
         internal virtual OptimizePromptResponse OptimizePrompt(OptimizePromptRequest request)
