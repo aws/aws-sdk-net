@@ -58,6 +58,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     response.CloudFrontDomain = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ManagedLoginVersion", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.ManagedLoginVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;
@@ -81,6 +87,10 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
             {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("FeatureUnavailableInTierException"))
+                {
+                    return FeatureUnavailableInTierExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalErrorException"))
                 {
                     return InternalErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

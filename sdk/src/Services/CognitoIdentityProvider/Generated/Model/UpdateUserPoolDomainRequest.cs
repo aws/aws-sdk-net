@@ -99,6 +99,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
         private CustomDomainConfigType _customDomainConfig;
         private string _domain;
+        private int? _managedLoginVersion;
         private string _userPoolId;
 
         /// <summary>
@@ -107,6 +108,15 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The configuration for a custom domain that hosts the sign-up and sign-in pages for
         /// your application. Use this object to specify an SSL certificate that is managed by
         /// ACM.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you create a custom domain, the passkey RP ID defaults to the custom domain.
+        /// If you had a prefix domain active, this will cause passkey integration for your prefix
+        /// domain to stop working due to a mismatch in RP ID. To keep the prefix domain passkey
+        /// integration working, you can explicitly set RP ID to the prefix domain. Update the
+        /// RP ID in a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a>
+        /// request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -145,6 +155,27 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetDomain()
         {
             return this._domain != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedLoginVersion. 
+        /// <para>
+        /// A version number that indicates the state of managed login for your domain. Version
+        /// <c>1</c> is hosted UI (classic). Version <c>2</c> is the newer managed login with
+        /// the branding designer. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html">Managed
+        /// login</a>.
+        /// </para>
+        /// </summary>
+        public int ManagedLoginVersion
+        {
+            get { return this._managedLoginVersion.GetValueOrDefault(); }
+            set { this._managedLoginVersion = value; }
+        }
+
+        // Check to see if ManagedLoginVersion property is set
+        internal bool IsSetManagedLoginVersion()
+        {
+            return this._managedLoginVersion.HasValue; 
         }
 
         /// <summary>

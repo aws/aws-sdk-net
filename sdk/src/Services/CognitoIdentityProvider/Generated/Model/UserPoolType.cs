@@ -30,7 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// A container for information about the user pool.
+    /// The configuration of a user pool.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>,
+    /// <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>,
+    /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.
+    /// </para>
     /// </summary>
     public partial class UserPoolType
     {
@@ -66,6 +73,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         private UsernameConfigurationType _usernameConfiguration;
         private UserPoolAddOnsType _userPoolAddOns;
         private Dictionary<string, string> _userPoolTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private UserPoolTierType _userPoolTier;
         private VerificationMessageTemplateType _verificationMessageTemplate;
 
         /// <summary>
@@ -112,7 +120,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AliasAttributes. 
         /// <para>
-        /// The attributes that are aliased in a user pool.
+        /// Attributes supported as an alias for this user pool. An alias is an attribute that
+        /// users can enter as an alternative username. Possible values: <b>phone_number</b>,
+        /// <b>email</b>, or <b>preferred_username</b>.
         /// </para>
         /// </summary>
         public List<string> AliasAttributes
@@ -130,7 +140,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the user pool.
+        /// The Amazon Resource Name (ARN) of the user pool.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -399,7 +409,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property LambdaConfig. 
         /// <para>
-        /// The Lambda triggers associated with the user pool.
+        /// A collection of user pool Lambda triggers. Amazon Cognito invokes triggers at several
+        /// possible stages of user pool operations. Triggers can modify the outcome of the operations
+        /// that invoked them.
         /// </para>
         /// </summary>
         public LambdaConfigType LambdaConfig
@@ -488,7 +500,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Policies. 
         /// <para>
-        /// The policies associated with the user pool.
+        /// A list of user pool policies. Contains the policy that sets password-complexity requirements.
         /// </para>
         /// </summary>
         public UserPoolPolicyType Policies
@@ -513,8 +525,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  
         /// <para>
-        /// Developer-only attributes are a legacy feature of user pools, are read-only to all
-        /// app clients. You can create and update developer-only attributes only with IAM-authenticated
+        /// Developer-only attributes are a legacy feature of user pools, and are read-only to
+        /// all app clients. You can create and update developer-only attributes only with IAM-authenticated
         /// API operations. Use app client read/write permissions instead.
         /// </para>
         /// </summary>
@@ -553,11 +565,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property SmsConfiguration. 
         /// <para>
-        /// The SMS configuration with the settings that your Amazon Cognito user pool must use
-        /// to send an SMS message from your Amazon Web Services account through Amazon Simple
-        /// Notification Service. To send SMS messages with Amazon SNS in the Amazon Web Services
-        /// Region that you want, the Amazon Cognito user pool uses an Identity and Access Management
-        /// (IAM) role in your Amazon Web Services account.
+        /// User pool configuration for delivery of SMS messages with Amazon Simple Notification
+        /// Service. To send SMS messages with Amazon SNS in the Amazon Web Services Region that
+        /// you want, the Amazon Cognito user pool uses an Identity and Access Management (IAM)
+        /// role in your Amazon Web Services account.
         /// </para>
         /// </summary>
         public SmsConfigurationType SmsConfiguration
@@ -692,10 +703,18 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UsernameConfiguration. 
         /// <para>
-        /// Case sensitivity of the username input for the selected sign-in option. For example,
-        /// when case sensitivity is set to <c>False</c>, users can sign in using either "username"
-        /// or "Username". This configuration is immutable once it has been set. For more information,
-        /// see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.
+        /// Case sensitivity of the username input for the selected sign-in option. When case
+        /// sensitivity is set to <c>False</c> (case insensitive), users can sign in with any
+        /// combination of capital and lowercase letters. For example, <c>username</c>, <c>USERNAME</c>,
+        /// or <c>UserName</c>, or for email, <c>email@example.com</c> or <c>EMaiL@eXamplE.Com</c>.
+        /// For most use cases, set case sensitivity to <c>False</c> (case insensitive) as a best
+        /// practice. When usernames and email addresses are case insensitive, Amazon Cognito
+        /// treats any variation in case as the same user, and prevents a case variation from
+        /// being assigned to the same attribute for a different user.
+        /// </para>
+        ///  
+        /// <para>
+        /// This configuration is immutable after you set it. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.
         /// </para>
         /// </summary>
         public UsernameConfigurationType UsernameConfiguration
@@ -756,9 +775,31 @@ namespace Amazon.CognitoIdentityProvider.Model
         }
 
         /// <summary>
+        /// Gets and sets the property UserPoolTier. 
+        /// <para>
+        /// The user pool <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sign-in-feature-plans.html">feature
+        /// plan</a>, or tier. This parameter determines the eligibility of the user pool for
+        /// features like managed login, access-token customization, and threat protection. Defaults
+        /// to <c>ESSENTIALS</c>.
+        /// </para>
+        /// </summary>
+        public UserPoolTierType UserPoolTier
+        {
+            get { return this._userPoolTier; }
+            set { this._userPoolTier = value; }
+        }
+
+        // Check to see if UserPoolTier property is set
+        internal bool IsSetUserPoolTier()
+        {
+            return this._userPoolTier != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property VerificationMessageTemplate. 
         /// <para>
-        /// The template for verification messages.
+        /// The template for the verification message that your user pool delivers to users who
+        /// set an email address or phone number attribute.
         /// </para>
         /// </summary>
         public VerificationMessageTemplateType VerificationMessageTemplate

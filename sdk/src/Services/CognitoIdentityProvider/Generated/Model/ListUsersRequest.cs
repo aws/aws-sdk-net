@@ -94,9 +94,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Filter. 
         /// <para>
-        /// A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i> "<i>AttributeValue</i>"".
-        /// Quotation marks within the filter string must be escaped using the backslash (<c>\</c>)
-        /// character. For example, <c>"family_name = \"Reddy\""</c>.
+        /// A filter string of the form <c>"AttributeName Filter-Type "AttributeValue"</c>. Quotation
+        /// marks within the filter string must be escaped using the backslash (<c>\</c>) character.
+        /// For example, <c>"family_name = \"Reddy\""</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>

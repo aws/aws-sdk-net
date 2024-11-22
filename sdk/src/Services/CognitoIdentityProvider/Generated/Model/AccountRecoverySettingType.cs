@@ -30,7 +30,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The data type for <c>AccountRecoverySetting</c>.
+    /// The settings for user message delivery in forgot-password operations. Contains preference
+    /// for email or SMS message delivery of password reset codes, or for admin-only password
+    /// reset.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is a request and response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>
+    /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>,
+    /// and a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.
+    /// </para>
     /// </summary>
     public partial class AccountRecoverySettingType
     {
@@ -39,7 +48,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property RecoveryMechanisms. 
         /// <para>
-        /// The list of <c>RecoveryOptionTypes</c>.
+        /// The list of options and priorities for user message delivery in forgot-password operations.
+        /// Sets or displays user pool preferences for email or SMS message priority, whether
+        /// users should fall back to a second delivery method, and whether passwords should only
+        /// be reset by administrators.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2)]

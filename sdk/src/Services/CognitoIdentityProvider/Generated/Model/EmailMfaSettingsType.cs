@@ -34,6 +34,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// deactivates email MFA and sets it as the preferred MFA method when multiple methods
     /// are available. To activate this setting, <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">
     /// advanced security features</a> must be active in your user pool.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is a request parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserMFAPreference.html">SetUserMFAPreference</a>
+    /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserMFAPreference.html">AdminSetUserMFAPreference</a>.
+    /// 
+    /// </para>
     /// </summary>
     public partial class EmailMfaSettingsType
     {

@@ -44,7 +44,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     ///  
     /// <para>
     /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
-    /// Servicesservice, Amazon Simple Notification Service might place your account in the
+    /// Services service, Amazon Simple Notification Service might place your account in the
     /// SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
     /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
     /// your app while in the sandbox environment, you can move out of the sandbox and into
@@ -107,6 +107,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         private UsernameConfigurationType _usernameConfiguration;
         private UserPoolAddOnsType _userPoolAddOns;
         private Dictionary<string, string> _userPoolTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private UserPoolTierType _userPoolTier;
         private VerificationMessageTemplateType _verificationMessageTemplate;
 
         /// <summary>
@@ -300,25 +301,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property LambdaConfig. 
         /// <para>
-        /// The Lambda trigger configuration information for the new user pool.
+        /// A collection of user pool Lambda triggers. Amazon Cognito invokes triggers at several
+        /// possible stages of authentication operations. Triggers can modify the outcome of the
+        /// operations that invoked them.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// In a push model, event sources (such as Amazon S3 and custom applications) need permission
-        /// to invoke a function. So you must make an extra call to add permission for these event
-        /// sources to invoke your Lambda function.
-        /// </para>
-        ///   
-        /// <para>
-        /// For more information on using the Lambda API to add permission, see<a href="https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html">
-        /// AddPermission </a>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For adding permission using the CLI, see<a href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html">
-        /// add-permission </a>.
-        /// </para>
-        ///  </note>
         /// </summary>
         public LambdaConfigType LambdaConfig
         {
@@ -583,10 +569,39 @@ namespace Amazon.CognitoIdentityProvider.Model
         }
 
         /// <summary>
+        /// Gets and sets the property UserPoolTier. 
+        /// <para>
+        /// The user pool <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sign-in-feature-plans.html">feature
+        /// plan</a>, or tier. This parameter determines the eligibility of the user pool for
+        /// features like managed login, access-token customization, and threat protection. Defaults
+        /// to <c>ESSENTIALS</c>.
+        /// </para>
+        /// </summary>
+        public UserPoolTierType UserPoolTier
+        {
+            get { return this._userPoolTier; }
+            set { this._userPoolTier = value; }
+        }
+
+        // Check to see if UserPoolTier property is set
+        internal bool IsSetUserPoolTier()
+        {
+            return this._userPoolTier != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property VerificationMessageTemplate. 
         /// <para>
-        /// The template for the verification message that the user sees when the app requests
-        /// permission to access the user's information.
+        /// The template for the verification message that your user pool delivers to users who
+        /// set an email address or phone number attribute.
+        /// </para>
+        ///  
+        /// <para>
+        /// Set the email message type that corresponds to your <c>DefaultEmailOption</c> selection.
+        /// For <c>CONFIRM_WITH_LINK</c>, specify an <c>EmailMessageByLink</c> and leave <c>EmailMessage</c>
+        /// blank. For <c>CONFIRM_WITH_CODE</c>, specify an <c>EmailMessage</c> and leave <c>EmailMessageByLink</c>
+        /// blank. When you supply both parameters with either choice, Amazon Cognito returns
+        /// an error.
         /// </para>
         /// </summary>
         public VerificationMessageTemplateType VerificationMessageTemplate

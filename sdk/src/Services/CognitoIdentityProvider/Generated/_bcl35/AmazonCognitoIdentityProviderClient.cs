@@ -704,7 +704,7 @@ namespace Amazon.CognitoIdentityProvider
         ///  
         /// <para>
         /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
-        /// Servicesservice, Amazon Simple Notification Service might place your account in the
+        /// Services service, Amazon Simple Notification Service might place your account in the
         /// SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
         /// your app while in the sandbox environment, you can move out of the sandbox and into
@@ -725,8 +725,12 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  
         /// <para>
-        /// In either case, the user will be in the <c>FORCE_CHANGE_PASSWORD</c> state until they
-        /// sign in and change their password.
+        /// In either case, if the user has a password, they will be in the <c>FORCE_CHANGE_PASSWORD</c>
+        /// state until they sign in and set their password. Your invitation message template
+        /// must have the <c>{####}</c> password placeholder if your users have passwords. If
+        /// your template doesn't have this placeholder, Amazon Cognito doesn't deliver the invitation
+        /// message. In this case, you must update your message template and resend the password
+        /// with a new <c>AdminCreateUser</c> request with a <c>MessageAction</c> value of <c>RESEND</c>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -1571,7 +1575,8 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Gets the specified user by user name in a user pool as an administrator. Works on
-        /// any user.
+        /// any user. This operation contributes to your monthly active user (MAU) count for the
+        /// purpose of billing.
         /// 
         ///  <note> 
         /// <para>
@@ -1681,7 +1686,7 @@ namespace Amazon.CognitoIdentityProvider
         ///  
         /// <para>
         /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
-        /// Servicesservice, Amazon Simple Notification Service might place your account in the
+        /// Services service, Amazon Simple Notification Service might place your account in the
         /// SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
         /// your app while in the sandbox environment, you can move out of the sandbox and into
@@ -1947,7 +1952,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  AdminListDevices
 
         /// <summary>
-        /// Lists devices, as an administrator.
+        /// Lists a user's registered devices.
         /// 
         ///  <note> 
         /// <para>
@@ -2353,7 +2358,7 @@ namespace Amazon.CognitoIdentityProvider
         ///  
         /// <para>
         /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
-        /// Servicesservice, Amazon Simple Notification Service might place your account in the
+        /// Services service, Amazon Simple Notification Service might place your account in the
         /// SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
         /// your app while in the sandbox environment, you can move out of the sandbox and into
@@ -2517,7 +2522,7 @@ namespace Amazon.CognitoIdentityProvider
         ///  
         /// <para>
         /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
-        /// Servicesservice, Amazon Simple Notification Service might place your account in the
+        /// Services service, Amazon Simple Notification Service might place your account in the
         /// SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
         /// your app while in the sandbox environment, you can move out of the sandbox and into
@@ -3217,7 +3222,7 @@ namespace Amazon.CognitoIdentityProvider
         ///  
         /// <para>
         /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
-        /// Servicesservice, Amazon Simple Notification Service might place your account in the
+        /// Services service, Amazon Simple Notification Service might place your account in the
         /// SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
         /// your app while in the sandbox environment, you can move out of the sandbox and into
@@ -3698,6 +3703,112 @@ namespace Amazon.CognitoIdentityProvider
         public virtual ChangePasswordResponse EndChangePassword(IAsyncResult asyncResult)
         {
             return EndInvoke<ChangePasswordResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CompleteWebAuthnRegistration
+
+        /// <summary>
+        /// Completes registration of a passkey authenticator for the current user. Your application
+        /// provides data from a successful registration request with the data from the output
+        /// of a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_StartWebAuthnRegistration.html">
+        /// StartWebAuthnRegistration</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Authorize this action with a signed-in user's access token. It must include the scope
+        /// <c>aws.cognito.signin.user.admin</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CompleteWebAuthnRegistration service method.</param>
+        /// 
+        /// <returns>The response from the CompleteWebAuthnRegistration service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.WebAuthnChallengeNotFoundException">
+        /// This exception is thrown when the challenge from <c>StartWebAuthn</c> registration
+        /// has expired.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.WebAuthnClientMismatchException">
+        /// This exception is thrown when the access token is for a different client than the
+        /// one in the original <c>StartWebAuthnRegistration</c> request.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.WebAuthnCredentialNotSupportedException">
+        /// This exception is thrown when a user presents passkey credentials from an unsupported
+        /// device or provider.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.WebAuthnNotEnabledException">
+        /// This exception is thrown when the passkey feature isn't enabled for the user pool.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.WebAuthnOriginNotAllowedException">
+        /// This exception is thrown when the passkey credential's registration origin does not
+        /// align with the user pool relying party id.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.WebAuthnRelyingPartyMismatchException">
+        /// This exception is thrown when the given passkey credential is associated with a different
+        /// relying party ID than the user pool relying party ID.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CompleteWebAuthnRegistration">REST API Reference for CompleteWebAuthnRegistration Operation</seealso>
+        public virtual CompleteWebAuthnRegistrationResponse CompleteWebAuthnRegistration(CompleteWebAuthnRegistrationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CompleteWebAuthnRegistrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CompleteWebAuthnRegistrationResponseUnmarshaller.Instance;
+
+            return Invoke<CompleteWebAuthnRegistrationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CompleteWebAuthnRegistration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CompleteWebAuthnRegistration operation on AmazonCognitoIdentityProviderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCompleteWebAuthnRegistration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CompleteWebAuthnRegistration">REST API Reference for CompleteWebAuthnRegistration Operation</seealso>
+        public virtual IAsyncResult BeginCompleteWebAuthnRegistration(CompleteWebAuthnRegistrationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CompleteWebAuthnRegistrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CompleteWebAuthnRegistrationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CompleteWebAuthnRegistration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCompleteWebAuthnRegistration.</param>
+        /// 
+        /// <returns>Returns a  CompleteWebAuthnRegistrationResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CompleteWebAuthnRegistration">REST API Reference for CompleteWebAuthnRegistration Operation</seealso>
+        public virtual CompleteWebAuthnRegistrationResponse EndCompleteWebAuthnRegistration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CompleteWebAuthnRegistrationResponse>(asyncResult);
         }
 
         #endregion
@@ -4271,6 +4382,131 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  CreateManagedLoginBranding
+
+        /// <summary>
+        /// Creates a new set of branding settings for a user pool style and associates it with
+        /// an app client. This operation is the programmatic option for the creation of a new
+        /// style in the branding designer.
+        /// 
+        ///  
+        /// <para>
+        /// Provides values for UI customization in a <c>Settings</c> JSON object and image files
+        /// in an <c>Assets</c> array. To send the JSON object <c>Document</c> type parameter
+        /// in <c>Settings</c>, you might need to update to the most recent version of your Amazon
+        /// Web Services SDK. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  This operation has a 2-megabyte request-size limit and include the CSS settings and
+        /// image assets for your app client. Your branding settings might exceed 2MB in size.
+        /// Amazon Cognito doesn't require that you pass all parameters in one request and preserves
+        /// existing style settings that you don't specify. If your request is larger than 2MB,
+        /// separate it into multiple requests, each with a size smaller than the limit. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/managed-login-brandingdesigner.html#branding-designer-api">API
+        /// and SDK operations for managed login branding</a> 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateManagedLoginBranding service method.</param>
+        /// 
+        /// <returns>The response from the CreateManagedLoginBranding service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ConcurrentModificationException">
+        /// This exception is thrown if two or more modifications are happening concurrently.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ManagedLoginBrandingExistsException">
+        /// This exception is thrown when you attempt to apply a managed login branding style
+        /// to an app client that already has an assigned style.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateManagedLoginBranding">REST API Reference for CreateManagedLoginBranding Operation</seealso>
+        public virtual CreateManagedLoginBrandingResponse CreateManagedLoginBranding(CreateManagedLoginBrandingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateManagedLoginBrandingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateManagedLoginBrandingResponseUnmarshaller.Instance;
+
+            return Invoke<CreateManagedLoginBrandingResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateManagedLoginBranding operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateManagedLoginBranding operation on AmazonCognitoIdentityProviderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateManagedLoginBranding
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateManagedLoginBranding">REST API Reference for CreateManagedLoginBranding Operation</seealso>
+        public virtual IAsyncResult BeginCreateManagedLoginBranding(CreateManagedLoginBrandingRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateManagedLoginBrandingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateManagedLoginBrandingResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateManagedLoginBranding operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateManagedLoginBranding.</param>
+        /// 
+        /// <returns>Returns a  CreateManagedLoginBrandingResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateManagedLoginBranding">REST API Reference for CreateManagedLoginBranding Operation</seealso>
+        public virtual CreateManagedLoginBrandingResponse EndCreateManagedLoginBranding(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateManagedLoginBrandingResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateResourceServer
 
         /// <summary>
@@ -4482,7 +4718,7 @@ namespace Amazon.CognitoIdentityProvider
         ///  
         /// <para>
         /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
-        /// Servicesservice, Amazon Simple Notification Service might place your account in the
+        /// Services service, Amazon Simple Notification Service might place your account in the
         /// SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
         /// your app while in the sandbox environment, you can move out of the sandbox and into
@@ -4524,6 +4760,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="request">Container for the necessary parameters to execute the CreateUserPool service method.</param>
         /// 
         /// <returns>The response from the CreateUserPool service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.FeatureUnavailableInTierException">
+        /// This exception is thrown when a feature you attempted to configure isn't available
+        /// in your current feature plan.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -4550,6 +4790,10 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TierChangeNotAllowedException">
+        /// This exception is thrown when you've attempted to change your feature plan but the
+        /// operation isn't permitted.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception is thrown when the user has made too many requests for a given operation.
@@ -4718,7 +4962,8 @@ namespace Amazon.CognitoIdentityProvider
         #region  CreateUserPoolDomain
 
         /// <summary>
-        /// Creates a new domain for a user pool.
+        /// Creates a new domain for a user pool. The domain hosts user pool domain services like
+        /// managed login, the hosted UI (classic), and the user pool authorization server.
         /// 
         ///  <note> 
         /// <para>
@@ -4745,6 +4990,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="request">Container for the necessary parameters to execute the CreateUserPoolDomain service method.</param>
         /// 
         /// <returns>The response from the CreateUserPoolDomain service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.FeatureUnavailableInTierException">
+        /// This exception is thrown when a feature you attempted to configure isn't available
+        /// in your current feature plan.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -4955,6 +5204,102 @@ namespace Amazon.CognitoIdentityProvider
         public virtual DeleteIdentityProviderResponse EndDeleteIdentityProvider(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteIdentityProviderResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteManagedLoginBranding
+
+        /// <summary>
+        /// Deletes a managed login branding style. When you delete a style, you delete the branding
+        /// association for an app client and restore it to default settings.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteManagedLoginBranding service method.</param>
+        /// 
+        /// <returns>The response from the DeleteManagedLoginBranding service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ConcurrentModificationException">
+        /// This exception is thrown if two or more modifications are happening concurrently.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteManagedLoginBranding">REST API Reference for DeleteManagedLoginBranding Operation</seealso>
+        public virtual DeleteManagedLoginBrandingResponse DeleteManagedLoginBranding(DeleteManagedLoginBrandingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteManagedLoginBrandingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteManagedLoginBrandingResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteManagedLoginBrandingResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteManagedLoginBranding operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteManagedLoginBranding operation on AmazonCognitoIdentityProviderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteManagedLoginBranding
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteManagedLoginBranding">REST API Reference for DeleteManagedLoginBranding Operation</seealso>
+        public virtual IAsyncResult BeginDeleteManagedLoginBranding(DeleteManagedLoginBrandingRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteManagedLoginBrandingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteManagedLoginBrandingResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteManagedLoginBranding operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteManagedLoginBranding.</param>
+        /// 
+        /// <returns>Returns a  DeleteManagedLoginBrandingResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteManagedLoginBranding">REST API Reference for DeleteManagedLoginBranding Operation</seealso>
+        public virtual DeleteManagedLoginBrandingResponse EndDeleteManagedLoginBranding(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteManagedLoginBrandingResponse>(asyncResult);
         }
 
         #endregion
@@ -5439,6 +5784,83 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  DeleteWebAuthnCredential
+
+        /// <summary>
+        /// Deletes a registered passkey, or webauthN, device for the currently signed-in user.
+        /// 
+        ///  
+        /// <para>
+        /// Authorize this action with a signed-in user's access token. It must include the scope
+        /// <c>aws.cognito.signin.user.admin</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWebAuthnCredential service method.</param>
+        /// 
+        /// <returns>The response from the DeleteWebAuthnCredential service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteWebAuthnCredential">REST API Reference for DeleteWebAuthnCredential Operation</seealso>
+        public virtual DeleteWebAuthnCredentialResponse DeleteWebAuthnCredential(DeleteWebAuthnCredentialRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWebAuthnCredentialRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWebAuthnCredentialResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteWebAuthnCredentialResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteWebAuthnCredential operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWebAuthnCredential operation on AmazonCognitoIdentityProviderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteWebAuthnCredential
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteWebAuthnCredential">REST API Reference for DeleteWebAuthnCredential Operation</seealso>
+        public virtual IAsyncResult BeginDeleteWebAuthnCredential(DeleteWebAuthnCredentialRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWebAuthnCredentialRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWebAuthnCredentialResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteWebAuthnCredential operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteWebAuthnCredential.</param>
+        /// 
+        /// <returns>Returns a  DeleteWebAuthnCredentialResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteWebAuthnCredential">REST API Reference for DeleteWebAuthnCredential Operation</seealso>
+        public virtual DeleteWebAuthnCredentialResponse EndDeleteWebAuthnCredential(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteWebAuthnCredentialResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeIdentityProvider
 
         /// <summary>
@@ -5505,6 +5927,148 @@ namespace Amazon.CognitoIdentityProvider
         public virtual DescribeIdentityProviderResponse EndDescribeIdentityProvider(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeIdentityProviderResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeManagedLoginBranding
+
+        /// <summary>
+        /// When given the ID of a managed login branding style, returns detailed information
+        /// about the style.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeManagedLoginBranding service method.</param>
+        /// 
+        /// <returns>The response from the DescribeManagedLoginBranding service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeManagedLoginBranding">REST API Reference for DescribeManagedLoginBranding Operation</seealso>
+        public virtual DescribeManagedLoginBrandingResponse DescribeManagedLoginBranding(DescribeManagedLoginBrandingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeManagedLoginBrandingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeManagedLoginBrandingResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeManagedLoginBrandingResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeManagedLoginBranding operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeManagedLoginBranding operation on AmazonCognitoIdentityProviderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeManagedLoginBranding
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeManagedLoginBranding">REST API Reference for DescribeManagedLoginBranding Operation</seealso>
+        public virtual IAsyncResult BeginDescribeManagedLoginBranding(DescribeManagedLoginBrandingRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeManagedLoginBrandingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeManagedLoginBrandingResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeManagedLoginBranding operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeManagedLoginBranding.</param>
+        /// 
+        /// <returns>Returns a  DescribeManagedLoginBrandingResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeManagedLoginBranding">REST API Reference for DescribeManagedLoginBranding Operation</seealso>
+        public virtual DescribeManagedLoginBrandingResponse EndDescribeManagedLoginBranding(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeManagedLoginBrandingResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeManagedLoginBrandingByClient
+
+        /// <summary>
+        /// When given the ID of a user pool app client, returns detailed information about the
+        /// style assigned to the app client.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeManagedLoginBrandingByClient service method.</param>
+        /// 
+        /// <returns>The response from the DescribeManagedLoginBrandingByClient service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeManagedLoginBrandingByClient">REST API Reference for DescribeManagedLoginBrandingByClient Operation</seealso>
+        public virtual DescribeManagedLoginBrandingByClientResponse DescribeManagedLoginBrandingByClient(DescribeManagedLoginBrandingByClientRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeManagedLoginBrandingByClientRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeManagedLoginBrandingByClientResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeManagedLoginBrandingByClientResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeManagedLoginBrandingByClient operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeManagedLoginBrandingByClient operation on AmazonCognitoIdentityProviderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeManagedLoginBrandingByClient
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeManagedLoginBrandingByClient">REST API Reference for DescribeManagedLoginBrandingByClient Operation</seealso>
+        public virtual IAsyncResult BeginDescribeManagedLoginBrandingByClient(DescribeManagedLoginBrandingByClientRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeManagedLoginBrandingByClientRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeManagedLoginBrandingByClientResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeManagedLoginBrandingByClient operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeManagedLoginBrandingByClient.</param>
+        /// 
+        /// <returns>Returns a  DescribeManagedLoginBrandingByClientResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeManagedLoginBrandingByClient">REST API Reference for DescribeManagedLoginBrandingByClient Operation</seealso>
+        public virtual DescribeManagedLoginBrandingByClientResponse EndDescribeManagedLoginBrandingByClient(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeManagedLoginBrandingByClientResponse>(asyncResult);
         }
 
         #endregion
@@ -6125,7 +6689,7 @@ namespace Amazon.CognitoIdentityProvider
         ///  
         /// <para>
         /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
-        /// Servicesservice, Amazon Simple Notification Service might place your account in the
+        /// Services service, Amazon Simple Notification Service might place your account in the
         /// SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
         /// your app while in the sandbox environment, you can move out of the sandbox and into
@@ -6903,7 +7467,7 @@ namespace Amazon.CognitoIdentityProvider
         ///  
         /// <para>
         /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
-        /// Servicesservice, Amazon Simple Notification Service might place your account in the
+        /// Services service, Amazon Simple Notification Service might place your account in the
         /// SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
         /// your app while in the sandbox environment, you can move out of the sandbox and into
@@ -7019,6 +7583,100 @@ namespace Amazon.CognitoIdentityProvider
         public virtual GetUserAttributeVerificationCodeResponse EndGetUserAttributeVerificationCode(IAsyncResult asyncResult)
         {
             return EndInvoke<GetUserAttributeVerificationCodeResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetUserAuthFactors
+
+        /// <summary>
+        /// Lists the authentication options for the currently signed-in user. Returns the following:
+        /// 
+        ///  <ol> <li> 
+        /// <para>
+        /// The user's multi-factor authentication (MFA) preferences.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The user's options in the <c>USER_AUTH</c> flow that they can select in a <c>SELECT_CHALLENGE</c>
+        /// response or request in a <c>PREFERRED_CHALLENGE</c>request.
+        /// </para>
+        ///  </li> </ol>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetUserAuthFactors service method.</param>
+        /// 
+        /// <returns>The response from the GetUserAuthFactors service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.PasswordResetRequiredException">
+        /// This exception is thrown when a password reset is required.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
+        /// This exception is thrown when a user isn't confirmed successfully.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user isn't found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUserAuthFactors">REST API Reference for GetUserAuthFactors Operation</seealso>
+        public virtual GetUserAuthFactorsResponse GetUserAuthFactors(GetUserAuthFactorsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetUserAuthFactorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetUserAuthFactorsResponseUnmarshaller.Instance;
+
+            return Invoke<GetUserAuthFactorsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetUserAuthFactors operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetUserAuthFactors operation on AmazonCognitoIdentityProviderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetUserAuthFactors
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUserAuthFactors">REST API Reference for GetUserAuthFactors Operation</seealso>
+        public virtual IAsyncResult BeginGetUserAuthFactors(GetUserAuthFactorsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetUserAuthFactorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetUserAuthFactorsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetUserAuthFactors operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetUserAuthFactors.</param>
+        /// 
+        /// <returns>Returns a  GetUserAuthFactorsResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUserAuthFactors">REST API Reference for GetUserAuthFactors Operation</seealso>
+        public virtual GetUserAuthFactorsResponse EndGetUserAuthFactors(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetUserAuthFactorsResponse>(asyncResult);
         }
 
         #endregion
@@ -7245,7 +7903,7 @@ namespace Amazon.CognitoIdentityProvider
         ///  
         /// <para>
         /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
-        /// Servicesservice, Amazon Simple Notification Service might place your account in the
+        /// Services service, Amazon Simple Notification Service might place your account in the
         /// SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
         /// your app while in the sandbox environment, you can move out of the sandbox and into
@@ -8276,6 +8934,73 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  ListWebAuthnCredentials
+
+        /// <summary>
+        /// Generates a list of the current user's registered passkey, or webauthN, credentials.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWebAuthnCredentials service method.</param>
+        /// 
+        /// <returns>The response from the ListWebAuthnCredentials service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListWebAuthnCredentials">REST API Reference for ListWebAuthnCredentials Operation</seealso>
+        public virtual ListWebAuthnCredentialsResponse ListWebAuthnCredentials(ListWebAuthnCredentialsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWebAuthnCredentialsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWebAuthnCredentialsResponseUnmarshaller.Instance;
+
+            return Invoke<ListWebAuthnCredentialsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListWebAuthnCredentials operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListWebAuthnCredentials operation on AmazonCognitoIdentityProviderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListWebAuthnCredentials
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListWebAuthnCredentials">REST API Reference for ListWebAuthnCredentials Operation</seealso>
+        public virtual IAsyncResult BeginListWebAuthnCredentials(ListWebAuthnCredentialsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWebAuthnCredentialsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWebAuthnCredentialsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListWebAuthnCredentials operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListWebAuthnCredentials.</param>
+        /// 
+        /// <returns>Returns a  ListWebAuthnCredentialsResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListWebAuthnCredentials">REST API Reference for ListWebAuthnCredentials Operation</seealso>
+        public virtual ListWebAuthnCredentialsResponse EndListWebAuthnCredentials(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListWebAuthnCredentialsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ResendConfirmationCode
 
         /// <summary>
@@ -8303,7 +9028,7 @@ namespace Amazon.CognitoIdentityProvider
         ///  
         /// <para>
         /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
-        /// Servicesservice, Amazon Simple Notification Service might place your account in the
+        /// Services service, Amazon Simple Notification Service might place your account in the
         /// SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
         /// your app while in the sandbox environment, you can move out of the sandbox and into
@@ -8452,7 +9177,7 @@ namespace Amazon.CognitoIdentityProvider
         ///  
         /// <para>
         /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
-        /// Servicesservice, Amazon Simple Notification Service might place your account in the
+        /// Services service, Amazon Simple Notification Service might place your account in the
         /// SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
         /// your app while in the sandbox environment, you can move out of the sandbox and into
@@ -8695,6 +9420,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="request">Container for the necessary parameters to execute the SetLogDeliveryConfiguration service method.</param>
         /// 
         /// <returns>The response from the SetLogDeliveryConfiguration service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.FeatureUnavailableInTierException">
+        /// This exception is thrown when a feature you attempted to configure isn't available
+        /// in your current feature plan.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -9036,7 +9765,7 @@ namespace Amazon.CognitoIdentityProvider
         #region  SetUserPoolMfaConfig
 
         /// <summary>
-        /// Sets the user pool multi-factor authentication (MFA) configuration.
+        /// Sets the user pool multi-factor authentication (MFA) and passkey configuration.
         /// 
         ///  <note> 
         /// <para>
@@ -9051,7 +9780,7 @@ namespace Amazon.CognitoIdentityProvider
         ///  
         /// <para>
         /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
-        /// Servicesservice, Amazon Simple Notification Service might place your account in the
+        /// Services service, Amazon Simple Notification Service might place your account in the
         /// SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
         /// your app while in the sandbox environment, you can move out of the sandbox and into
@@ -9066,6 +9795,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <returns>The response from the SetUserPoolMfaConfig service method, as returned by CognitoIdentityProvider.</returns>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ConcurrentModificationException">
         /// This exception is thrown if two or more modifications are happening concurrently.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.FeatureUnavailableInTierException">
+        /// This exception is thrown when a feature you attempted to configure isn't available
+        /// in your current feature plan.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
@@ -9264,7 +9997,7 @@ namespace Amazon.CognitoIdentityProvider
         ///  
         /// <para>
         /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
-        /// Servicesservice, Amazon Simple Notification Service might place your account in the
+        /// Services service, Amazon Simple Notification Service might place your account in the
         /// SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
         /// your app while in the sandbox environment, you can move out of the sandbox and into
@@ -9272,7 +10005,17 @@ namespace Amazon.CognitoIdentityProvider
         /// SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer
         /// Guide</i>.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// You might receive a <c>LimitExceeded</c> exception in response to this request if
+        /// you have exceeded a rate quota for email or SMS messages, and if your user pool automatically
+        /// verifies email addresses or phone numbers. When you get this exception in the response,
+        /// the user is successfully created and is in an <c>UNCONFIRMED</c> state. You can send
+        /// a new code with the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ResendConfirmationCode.html">
+        /// ResendConfirmationCode</a> request, or confirm the user as an administrator with an
+        /// <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminConfirmSignUp.html">
+        /// AdminConfirmSignUp</a> request.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SignUp service method.</param>
         /// 
@@ -9451,6 +10194,102 @@ namespace Amazon.CognitoIdentityProvider
         public virtual StartUserImportJobResponse EndStartUserImportJob(IAsyncResult asyncResult)
         {
             return EndInvoke<StartUserImportJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartWebAuthnRegistration
+
+        /// <summary>
+        /// Requests credential creation options from your user pool for registration of a passkey
+        /// authenticator. Returns information about the user pool, the user profile, and authentication
+        /// requirements. Users must provide this information in their request to enroll your
+        /// application with their passkey provider.
+        /// 
+        ///  
+        /// <para>
+        /// After users present this data and register with their passkey provider, return the
+        /// response to your user pool in a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CompleteWebAuthnRegistration.html">
+        /// CompleteWebAuthnRegistration</a> API request.
+        /// </para>
+        ///  
+        /// <para>
+        /// Authorize this action with a signed-in user's access token. It must include the scope
+        /// <c>aws.cognito.signin.user.admin</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartWebAuthnRegistration service method.</param>
+        /// 
+        /// <returns>The response from the StartWebAuthnRegistration service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.WebAuthnConfigurationMissingException">
+        /// This exception is thrown when a user pool doesn't have a configured relying party
+        /// id or a user pool domain.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.WebAuthnNotEnabledException">
+        /// This exception is thrown when the passkey feature isn't enabled for the user pool.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/StartWebAuthnRegistration">REST API Reference for StartWebAuthnRegistration Operation</seealso>
+        public virtual StartWebAuthnRegistrationResponse StartWebAuthnRegistration(StartWebAuthnRegistrationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartWebAuthnRegistrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartWebAuthnRegistrationResponseUnmarshaller.Instance;
+
+            return Invoke<StartWebAuthnRegistrationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartWebAuthnRegistration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartWebAuthnRegistration operation on AmazonCognitoIdentityProviderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartWebAuthnRegistration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/StartWebAuthnRegistration">REST API Reference for StartWebAuthnRegistration Operation</seealso>
+        public virtual IAsyncResult BeginStartWebAuthnRegistration(StartWebAuthnRegistrationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartWebAuthnRegistrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartWebAuthnRegistrationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartWebAuthnRegistration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartWebAuthnRegistration.</param>
+        /// 
+        /// <returns>Returns a  StartWebAuthnRegistrationResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/StartWebAuthnRegistration">REST API Reference for StartWebAuthnRegistration Operation</seealso>
+        public virtual StartWebAuthnRegistrationResponse EndStartWebAuthnRegistration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartWebAuthnRegistrationResponse>(asyncResult);
         }
 
         #endregion
@@ -10073,6 +10912,120 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  UpdateManagedLoginBranding
+
+        /// <summary>
+        /// Configures the branding settings for a user pool style. This operation is the programmatic
+        /// option for the configuration of a style in the branding designer.
+        /// 
+        ///  
+        /// <para>
+        /// Provides values for UI customization in a <c>Settings</c> JSON object and image files
+        /// in an <c>Assets</c> array.
+        /// </para>
+        ///  
+        /// <para>
+        ///  This operation has a 2-megabyte request-size limit and include the CSS settings and
+        /// image assets for your app client. Your branding settings might exceed 2MB in size.
+        /// Amazon Cognito doesn't require that you pass all parameters in one request and preserves
+        /// existing style settings that you don't specify. If your request is larger than 2MB,
+        /// separate it into multiple requests, each with a size smaller than the limit. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/managed-login-brandingdesigner.html#branding-designer-api">API
+        /// and SDK operations for managed login branding</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateManagedLoginBranding service method.</param>
+        /// 
+        /// <returns>The response from the UpdateManagedLoginBranding service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ConcurrentModificationException">
+        /// This exception is thrown if two or more modifications are happening concurrently.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateManagedLoginBranding">REST API Reference for UpdateManagedLoginBranding Operation</seealso>
+        public virtual UpdateManagedLoginBrandingResponse UpdateManagedLoginBranding(UpdateManagedLoginBrandingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateManagedLoginBrandingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateManagedLoginBrandingResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateManagedLoginBrandingResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateManagedLoginBranding operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateManagedLoginBranding operation on AmazonCognitoIdentityProviderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateManagedLoginBranding
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateManagedLoginBranding">REST API Reference for UpdateManagedLoginBranding Operation</seealso>
+        public virtual IAsyncResult BeginUpdateManagedLoginBranding(UpdateManagedLoginBrandingRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateManagedLoginBrandingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateManagedLoginBrandingResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateManagedLoginBranding operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateManagedLoginBranding.</param>
+        /// 
+        /// <returns>Returns a  UpdateManagedLoginBrandingResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateManagedLoginBranding">REST API Reference for UpdateManagedLoginBranding Operation</seealso>
+        public virtual UpdateManagedLoginBrandingResponse EndUpdateManagedLoginBranding(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateManagedLoginBrandingResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateResourceServer
 
         /// <summary>
@@ -10203,7 +11156,7 @@ namespace Amazon.CognitoIdentityProvider
         ///  
         /// <para>
         /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
-        /// Servicesservice, Amazon Simple Notification Service might place your account in the
+        /// Services service, Amazon Simple Notification Service might place your account in the
         /// SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
         /// your app while in the sandbox environment, you can move out of the sandbox and into
@@ -10348,7 +11301,7 @@ namespace Amazon.CognitoIdentityProvider
         ///  
         /// <para>
         /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
-        /// Servicesservice, Amazon Simple Notification Service might place your account in the
+        /// Services service, Amazon Simple Notification Service might place your account in the
         /// SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
         /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
         /// your app while in the sandbox environment, you can move out of the sandbox and into
@@ -10394,6 +11347,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ConcurrentModificationException">
         /// This exception is thrown if two or more modifications are happening concurrently.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.FeatureUnavailableInTierException">
+        /// This exception is thrown when a feature you attempted to configure isn't available
+        /// in your current feature plan.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -10420,6 +11377,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
         /// This exception is thrown when the Amazon Cognito service can't find the requested
         /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TierChangeNotAllowedException">
+        /// This exception is thrown when you've attempted to change your feature plan but the
+        /// operation isn't permitted.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
         /// This exception is thrown when the user has made too many requests for a given operation.
@@ -10659,6 +11620,10 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="request">Container for the necessary parameters to execute the UpdateUserPoolDomain service method.</param>
         /// 
         /// <returns>The response from the UpdateUserPoolDomain service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.FeatureUnavailableInTierException">
+        /// This exception is thrown when a feature you attempted to configure isn't available
+        /// in your current feature plan.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>

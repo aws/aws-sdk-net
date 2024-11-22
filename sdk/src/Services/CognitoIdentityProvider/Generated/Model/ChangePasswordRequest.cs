@@ -78,10 +78,12 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property PreviousPassword. 
         /// <para>
-        /// The old password.
+        /// The user's previous password. Required if the user has a password. If the user has
+        /// no password and only signs in with passwordless authentication options, you can omit
+        /// this parameter.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Max=256)]
+        [AWSProperty(Sensitive=true, Max=256)]
         public string PreviousPassword
         {
             get { return this._previousPassword; }

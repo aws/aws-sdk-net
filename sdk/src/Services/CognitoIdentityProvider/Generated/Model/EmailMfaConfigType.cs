@@ -34,6 +34,12 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// and body of the email message template for MFA messages. To activate this setting,
     /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">
     /// advanced security features</a> must be active in your user pool.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is a request parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a>
+    /// and a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUserPoolMfaConfig.html">GetUserPoolMfaConfig</a>.
+    /// </para>
     /// </summary>
     public partial class EmailMfaConfigType
     {

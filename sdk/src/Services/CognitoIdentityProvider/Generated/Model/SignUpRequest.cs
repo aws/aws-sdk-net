@@ -56,7 +56,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     ///  
     /// <para>
     /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
-    /// Servicesservice, Amazon Simple Notification Service might place your account in the
+    /// Services service, Amazon Simple Notification Service might place your account in the
     /// SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
     /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
     /// your app while in the sandbox environment, you can move out of the sandbox and into
@@ -64,7 +64,17 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// SMS message settings for Amazon Cognito user pools</a> in the <i>Amazon Cognito Developer
     /// Guide</i>.
     /// </para>
-    ///  </note>
+    ///  </note> 
+    /// <para>
+    /// You might receive a <c>LimitExceeded</c> exception in response to this request if
+    /// you have exceeded a rate quota for email or SMS messages, and if your user pool automatically
+    /// verifies email addresses or phone numbers. When you get this exception in the response,
+    /// the user is successfully created and is in an <c>UNCONFIRMED</c> state. You can send
+    /// a new code with the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ResendConfirmationCode.html">
+    /// ResendConfirmationCode</a> request, or confirm the user as an administrator with an
+    /// <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminConfirmSignUp.html">
+    /// AdminConfirmSignUp</a> request.
+    /// </para>
     /// </summary>
     public partial class SignUpRequest : AmazonCognitoIdentityProviderRequest
     {
@@ -177,8 +187,17 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// The password of the user you want to register.
         /// </para>
+        ///  
+        /// <para>
+        /// Users can sign up without a password when your user pool supports passwordless sign-in
+        /// with email or SMS OTPs. To create a user with no password, omit this parameter or
+        /// submit a blank value. You can only create a passwordless user when passwordless sign-in
+        /// is available. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SignInPolicyType.html">the
+        /// SignInPolicyType</a> property of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>
+        /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Max=256)]
+        [AWSProperty(Sensitive=true, Max=256)]
         public string Password
         {
             get { return this._password; }

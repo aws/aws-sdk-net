@@ -404,7 +404,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property EnablePropagateAdditionalUserContextData. 
         /// <para>
         /// Activates the propagation of additional user context data. For more information about
-        /// propagation of user context data, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">
+        /// propagation of user context data, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-threat-protection.html">
         /// Adding advanced security to a user pool</a>. If you don’t include this parameter,
         /// you can't send device fingerprint information, including source IP address, to Amazon
         /// Cognito advanced security. You can only activate <c>EnablePropagateAdditionalUserContextData</c>
@@ -466,6 +466,15 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Valid values include:
         /// </para>
         ///  <ul> <li> 
+        /// <para>
+        ///  <c>ALLOW_USER_AUTH</c>: Enable selection-based sign-in with <c>USER_AUTH</c>. This
+        /// setting covers username-password, secure remote password (SRP), passwordless, and
+        /// passkey authentication. This authentiation flow can do username-password and SRP authentication
+        /// without other <c>ExplicitAuthFlows</c> permitting them. For example users can complete
+        /// an SRP challenge through <c>USER_AUTH</c> without the flow <c>USER_SRP_AUTH</c> being
+        /// active for the app client. This flow doesn't include <c>CUSTOM_AUTH</c>. 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  <c>ALLOW_ADMIN_USER_PASSWORD_AUTH</c>: Enable admin based user password authentication
         /// flow <c>ADMIN_USER_PASSWORD_AUTH</c>. This setting replaces the <c>ADMIN_NO_SRP_AUTH</c>
@@ -707,6 +716,15 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <c>SignInWithApple</c>, and <c>LoginWithAmazon</c>. You can also specify the names
         /// that you configured for the SAML and OIDC IdPs in your user pool, for example <c>MySAMLIdP</c>
         /// or <c>MyOIDCIdP</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting applies to providers that you can access with the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-app-integration.html">hosted
+        /// UI and OAuth 2.0 authorization server</a>. The removal of <c>COGNITO</c> from this
+        /// list doesn't prevent authentication operations for local users with the user pools
+        /// API in an Amazon Web Services SDK. The only way to prevent API-based authentication
+        /// is to block access with a <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-waf.html">WAF
+        /// rule</a>.
         /// </para>
         /// </summary>
         public List<string> SupportedIdentityProviders

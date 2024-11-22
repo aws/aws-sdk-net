@@ -55,7 +55,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     ///  
     /// <para>
     /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
-    /// Servicesservice, Amazon Simple Notification Service might place your account in the
+    /// Services service, Amazon Simple Notification Service might place your account in the
     /// SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
     /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
     /// your app while in the sandbox environment, you can move out of the sandbox and into
@@ -144,17 +144,72 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  <important> 
         /// <para>
         /// You must provide a SECRET_HASH parameter in all challenge responses to an app client
-        /// that has a client secret.
+        /// that has a client secret. Include a <c>DEVICE_KEY</c> for device authentication.
         /// </para>
-        ///  </important> <dl> <dt>SMS_MFA</dt> <dd> 
+        ///  </important> <dl> <dt>SELECT_CHALLENGE</dt> <dd> 
         /// <para>
-        ///  <c>"ChallengeName": "SMS_MFA", "ChallengeResponses": {"SMS_MFA_CODE": "[code]", "USERNAME":
+        ///  <c>"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "USERNAME": "[username]",
+        /// "ANSWER": "[Challenge name]"}</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Available challenges are <c>PASSWORD</c>, <c>PASSWORD_SRP</c>, <c>EMAIL_OTP</c>, <c>SMS_OTP</c>,
+        /// and <c>WEB_AUTHN</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Complete authentication in the <c>SELECT_CHALLENGE</c> response for <c>PASSWORD</c>,
+        /// <c>PASSWORD_SRP</c>, and <c>WEB_AUTHN</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "WEB_AUTHN",
+        /// "USERNAME": "[username]", "CREDENTIAL": "[AuthenticationResponseJSON]"}</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// See <a href="https://www.w3.org/TR/webauthn-3/#dictdef-authenticationresponsejson">
+        /// AuthenticationResponseJSON</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "PASSWORD",
+        /// "USERNAME": "[username]", "PASSWORD": "[password]"}</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "PASSWORD_SRP",
+        /// "USERNAME": "[username]", "SRP_A": "[SRP_A]"}</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <c>SMS_OTP</c> and <c>EMAIL_OTP</c>, respond with the username and answer. Your
+        /// user pool will send a code for the user to submit in the next challenge response.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "SMS_OTP",
+        /// "USERNAME": "[username]"}</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "EMAIL_OTP",
+        /// "USERNAME": "[username]"}</c> 
+        /// </para>
+        ///  </li> </ul> </dd> <dt>SMS_OTP</dt> <dd> 
+        /// <para>
+        ///  <c>"ChallengeName": "SMS_OTP", "ChallengeResponses": {"SMS_OTP_CODE": "[code]", "USERNAME":
         /// "[username]"}</c> 
         /// </para>
         ///  </dd> <dt>EMAIL_OTP</dt> <dd> 
         /// <para>
         ///  <c>"ChallengeName": "EMAIL_OTP", "ChallengeResponses": {"EMAIL_OTP_CODE": "[code]",
         /// "USERNAME": "[username]"}</c> 
+        /// </para>
+        ///  </dd> <dt>SMS_MFA</dt> <dd> 
+        /// <para>
+        ///  <c>"ChallengeName": "SMS_MFA", "ChallengeResponses": {"SMS_MFA_CODE": "[code]", "USERNAME":
+        /// "[username]"}</c> 
         /// </para>
         ///  </dd> <dt>PASSWORD_VERIFIER</dt> <dd> 
         /// <para>

@@ -30,7 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The risk configuration type.
+    /// The settings of risk configuration for threat protection with advanced security features
+    /// in a user pool.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeRiskConfiguration.html">DescribeRiskConfiguration</a>
+    /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetRiskConfiguration.html">SetRiskConfiguration</a>.
+    /// </para>
     /// </summary>
     public partial class RiskConfigurationType
     {
@@ -44,8 +51,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AccountTakeoverRiskConfiguration. 
         /// <para>
-        /// The account takeover risk configuration object, including the <c>NotifyConfiguration</c>
-        /// object and <c>Actions</c> to take if there is an account takeover.
+        /// The settings for automated responses and notification templates for adaptive authentication
+        /// with advanced security features.
         /// </para>
         /// </summary>
         public AccountTakeoverRiskConfigurationType AccountTakeoverRiskConfiguration
@@ -63,7 +70,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ClientId. 
         /// <para>
-        /// The app client ID.
+        /// The app client where this configuration is applied. When this parameter isn't present,
+        /// the risk configuration applies to all user pool app clients that don't have client-level
+        /// settings.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=128)]
@@ -82,8 +91,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property CompromisedCredentialsRiskConfiguration. 
         /// <para>
-        /// The compromised credentials risk configuration object, including the <c>EventFilter</c>
-        /// and the <c>EventAction</c>.
+        /// Settings for compromised-credentials actions and authentication types with advanced
+        /// security features in full-function <c>ENFORCED</c> mode.
         /// </para>
         /// </summary>
         public CompromisedCredentialsRiskConfigurationType CompromisedCredentialsRiskConfiguration
@@ -121,7 +130,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property RiskExceptionConfiguration. 
         /// <para>
-        /// The configuration to override the risk decision.
+        /// Exceptions to the risk evaluation configuration, including always-allow and always-block
+        /// IP address ranges. 
         /// </para>
         /// </summary>
         public RiskExceptionConfigurationType RiskExceptionConfiguration
@@ -139,7 +149,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID.
+        /// The ID of the user pool that has the risk configuration applied.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=55)]

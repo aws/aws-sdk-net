@@ -30,7 +30,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The group type.
+    /// A user pool group. Contains details about the group and the way that it contributes
+    /// to IAM role decisions with identity pools. Identity pools can make decisions about
+    /// the IAM role to assign based on groups: users get credentials for the role associated
+    /// with their highest-priority group.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListGroupsForUser.html">AdminListGroupsForUser</a>,
+    /// <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html">CreateGroup</a>,
+    /// <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetGroup.html">GetGroup</a>,
+    /// <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListGroups.html">ListGroups</a>,
+    /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateGroup.html">UpdateGroup</a>.
+    /// </para>
     /// </summary>
     public partial class GroupType
     {
@@ -65,7 +77,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A string containing the description of the group.
+        /// A friendly description of the group.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]
@@ -140,7 +152,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  
         /// <para>
-        /// The default <c>Precedence</c> value is null.
+        /// The default <c>Precedence</c> value is <c>null</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -159,7 +171,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The role Amazon Resource Name (ARN) for the group.
+        /// The ARN of the IAM role associated with the group. If a group has the highest priority
+        /// of a user's groups, users who authenticate with an identity pool get credentials for
+        /// the <c>RoleArn</c> that's associated with the group.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -178,7 +192,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID for the user pool.
+        /// The ID of the user pool that contains the group.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=55)]

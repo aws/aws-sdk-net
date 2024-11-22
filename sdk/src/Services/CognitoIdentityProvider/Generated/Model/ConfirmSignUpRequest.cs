@@ -67,6 +67,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         private string _confirmationCode;
         private bool? _forceAliasCreation;
         private string _secretHash;
+        private string _session;
         private UserContextDataType _userContextData;
         private string _username;
 
@@ -224,6 +225,26 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetSecretHash()
         {
             return this._secretHash != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Session. 
+        /// <para>
+        /// The optional session ID from a <c>SignUp</c> API request. You can sign in a user directly
+        /// from the sign-up process with the <c>USER_AUTH</c> authentication flow.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=20, Max=2048)]
+        public string Session
+        {
+            get { return this._session; }
+            set { this._session = value; }
+        }
+
+        // Check to see if Session property is set
+        internal bool IsSetSession()
+        {
+            return this._session != null;
         }
 
         /// <summary>

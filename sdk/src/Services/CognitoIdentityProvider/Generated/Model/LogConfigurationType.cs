@@ -30,7 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The logging parameters of a user pool.
+    /// The configuration of user event logs to an external Amazon Web Services service like
+    /// Amazon Data Firehose, Amazon S3, or Amazon CloudWatch Logs.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is a request parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetLogDeliveryConfiguration.html">SetLogDeliveryConfiguration</a>
+    /// and a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetLogDeliveryConfiguration.html">GetLogDeliveryConfiguration</a>.
+    /// </para>
     /// </summary>
     public partial class LogConfigurationType
     {

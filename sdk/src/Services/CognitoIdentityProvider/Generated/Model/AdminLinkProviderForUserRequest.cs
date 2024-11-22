@@ -143,27 +143,31 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// respectively. The <c>ProviderAttributeValue</c> for the user must be the same value
         /// as the <c>id</c>, <c>sub</c>, or <c>user_id</c> value found in the social IdP token.
         /// </para>
-        ///   
+        ///  
         /// <para>
-        /// For OIDC, the <c>ProviderAttributeName</c> can be any value that matches a claim in
-        /// the ID token, or that your app retrieves from the <c>userInfo</c> endpoint. You must
-        /// map the claim to a user pool attribute in your IdP configuration, and set the user
-        /// pool attribute name as the value of <c>ProviderAttributeName</c> in your <c>AdminLinkProviderForUser</c>
-        /// request.
+        /// For OIDC, the <c>ProviderAttributeName</c> can be any mapped value from a claim in
+        /// the ID token, or that your app retrieves from the <c>userInfo</c> endpoint. For SAML,
+        /// the <c>ProviderAttributeName</c> can be any mapped value from a claim in the SAML
+        /// assertion.
         /// </para>
         ///  
         /// <para>
-        /// For SAML, the <c>ProviderAttributeName</c> can be any value that matches a claim in
-        /// the SAML assertion. To link SAML users based on the subject of the SAML assertion,
-        /// map the subject to a claim through the SAML IdP and set that claim name as the value
-        /// of <c>ProviderAttributeName</c> in your <c>AdminLinkProviderForUser</c> request.
+        /// The following additional considerations apply to <c>SourceUser</c> for OIDC and SAML
+        /// providers.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// For both OIDC and SAML users, when you set <c>ProviderAttributeName</c> to <c>Cognito_Subject</c>,
-        /// Amazon Cognito will automatically parse the default unique identifier found in the
-        /// subject from the IdP token.
+        /// You must map the claim to a user pool attribute in your IdP configuration, and set
+        /// the user pool attribute name as the value of <c>ProviderAttributeName</c> in your
+        /// <c>AdminLinkProviderForUser</c> request. For example, <c>email</c>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When you set <c>ProviderAttributeName</c> to <c>Cognito_Subject</c>, Amazon Cognito
+        /// will automatically parse the default unique identifier found in the subject from the
+        /// IdP token.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public ProviderUserIdentifierType SourceUser

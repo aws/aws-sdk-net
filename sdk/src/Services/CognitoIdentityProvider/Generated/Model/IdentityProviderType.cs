@@ -30,7 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// A container for information about an IdP.
+    /// A user pool identity provider (IdP). Contains information about a third-party IdP
+    /// to a user pool, the attributes that it populates to user profiles, and the trust relationship
+    /// between the IdP and your user pool.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateIdentityProvider.html">CreateIdentityProvider</a>,
+    /// <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeIdentityProvider.html">DescribeIdentityProvider</a>,
+    /// <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetIdentityProviderByIdentifier.html">GetIdentityProviderByIdentifier</a>,
+    /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateIdentityProvider.html">UpdateIdentityProvider</a>.
+    /// </para>
     /// </summary>
     public partial class IdentityProviderType
     {
@@ -84,7 +94,12 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property IdpIdentifiers. 
         /// <para>
-        /// A list of IdP identifiers.
+        /// A list of IdP identifiers. IdP identifiers are strings that represent friendly names
+        /// or domain names of IdPs, for example <c>MyIdP</c> or <c>auth.example.com</c>. You
+        /// can choose to route user authorization requests to the right IdP with either IdP identifiers
+        /// or IdP names. For more information, see <c>identity_provider</c> and <c>idp_identifier</c>
+        /// at <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authorization-endpoint.html#get-authorize-request-parameters">Authorize
+        /// endpoint</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
@@ -251,7 +266,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ProviderName. 
         /// <para>
-        /// The IdP name.
+        /// A friendly name for the IdP.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
@@ -270,7 +285,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ProviderType. 
         /// <para>
-        /// The IdP type.
+        /// The type of IdP. Either SAML, OIDC, or a named social identity provider.
         /// </para>
         /// </summary>
         public IdentityProviderTypeType ProviderType
@@ -288,7 +303,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID.
+        /// The ID of the user pool associated with the IdP.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=55)]

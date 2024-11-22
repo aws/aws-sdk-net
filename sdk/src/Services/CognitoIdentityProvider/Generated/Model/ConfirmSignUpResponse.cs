@@ -34,6 +34,31 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class ConfirmSignUpResponse : AmazonWebServiceResponse
     {
+        private string _session;
+
+        /// <summary>
+        /// Gets and sets the property Session. 
+        /// <para>
+        /// You can automatically sign users in with the one-time password that they provided
+        /// in a successful <c>ConfirmSignUp</c> request. To do this, pass the <c>Session</c>
+        /// parameter from the <c>ConfirmSignUp</c> response in the <c>Session</c> parameter of
+        /// an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>
+        /// or <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>
+        /// request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=20, Max=2048)]
+        public string Session
+        {
+            get { return this._session; }
+            set { this._session = value; }
+        }
+
+        // Check to see if Session property is set
+        internal bool IsSetSession()
+        {
+            return this._session != null;
+        }
 
     }
 }

@@ -30,16 +30,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The policy associated with a user pool.
+    /// A list of user pool policies. Contains the policy that sets password-complexity requirements.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is a request and response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>
+    /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>,
+    /// and a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.
+    /// </para>
     /// </summary>
     public partial class UserPoolPolicyType
     {
         private PasswordPolicyType _passwordPolicy;
+        private SignInPolicyType _signInPolicy;
 
         /// <summary>
         /// Gets and sets the property PasswordPolicy. 
         /// <para>
-        /// The password policy.
+        /// The password policy settings for a user pool, including complexity, history, and length
+        /// requirements.
         /// </para>
         /// </summary>
         public PasswordPolicyType PasswordPolicy
@@ -52,6 +61,24 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetPasswordPolicy()
         {
             return this._passwordPolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SignInPolicy. 
+        /// <para>
+        /// The policy for allowed types of authentication in a user pool.
+        /// </para>
+        /// </summary>
+        public SignInPolicyType SignInPolicy
+        {
+            get { return this._signInPolicy; }
+            set { this._signInPolicy = value; }
+        }
+
+        // Check to see if SignInPolicy property is set
+        internal bool IsSetSignInPolicy()
+        {
+            return this._signInPolicy != null;
         }
 
     }

@@ -30,7 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The authentication event type.
+    /// One authentication event that Amazon Cognito logged in a user pool with advanced security
+    /// features active. Contains user and device metadata and a risk assessment from your
+    /// user pool.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is a request parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListUserAuthEvents.html">AdminListUserAuthEvents</a>.
+    /// </para>
     /// </summary>
     public partial class AuthEventType
     {
@@ -46,7 +53,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ChallengeResponses. 
         /// <para>
-        /// The challenge responses.
+        /// A list of the challenges that the user was requested to answer, for example <c>Password</c>,
+        /// and the result, for example <c>Success</c>.
         /// </para>
         /// </summary>
         public List<ChallengeResponseType> ChallengeResponses
@@ -103,8 +111,13 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property EventFeedback. 
         /// <para>
-        /// A flag specifying the user feedback captured at the time of an event request is good
-        /// or bad. 
+        /// The <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateAuthEventFeedback.html">UpdateAuthEventFeedback</a>
+        /// or <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateAuthEventFeedback.html">AdminUpdateAuthEventFeedback</a>
+        /// feedback that you or your user provided in response to the event. A value of <c>Valid</c>
+        /// indicates that you disagreed with the level of risk that your user pool assigned,
+        /// and evaluated a session to be valid, or likely safe. A value of <c>Invalid</c> indicates
+        /// that you agreed with the user pool risk level and evaluated a session to be invalid,
+        /// or likely malicious.
         /// </para>
         /// </summary>
         public EventFeedbackType EventFeedback
@@ -159,7 +172,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property EventRisk. 
         /// <para>
-        /// The event risk.
+        /// The threat evaluation from your user pool about an event. Contains information about
+        /// whether your user pool detected compromised credentials, whether the event triggered
+        /// an automated response, and the level of risk.
         /// </para>
         /// </summary>
         public EventRiskType EventRisk
@@ -177,7 +192,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property EventType. 
         /// <para>
-        /// The event type.
+        /// The type of authentication event.
         /// </para>
         /// </summary>
         public EventType EventType

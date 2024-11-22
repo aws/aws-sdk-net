@@ -46,7 +46,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     ///  
     /// <para>
     /// If you have never used SMS text messages with Amazon Cognito or any other Amazon Web
-    /// Servicesservice, Amazon Simple Notification Service might place your account in the
+    /// Services service, Amazon Simple Notification Service might place your account in the
     /// SMS sandbox. In <i> <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
     /// mode</a> </i>, you can send messages only to verified phone numbers. After you test
     /// your app while in the sandbox environment, you can move out of the sandbox and into
@@ -84,6 +84,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         private string _clientId;
         private Dictionary<string, string> _clientMetadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ContextDataType _contextData;
+        private string _session;
         private string _userPoolId;
 
         /// <summary>
@@ -108,52 +109,68 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AuthFlow. 
         /// <para>
-        /// The authentication flow for this call to run. The API action will depend on this value.
-        /// For example:
+        /// The authentication flow that you want to initiate. The <c>AuthParameters</c> that
+        /// you must submit are linked to the flow that you submit. For example:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>REFRESH_TOKEN_AUTH</c> will take in a valid refresh token and return new tokens.
+        ///  <c>USER_AUTH</c>: Request a preferred authentication type or review available authentication
+        /// types. From the offered authentication types, select one in a challenge response and
+        /// then authenticate with that method in an additional challenge response.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>USER_SRP_AUTH</c> will take in <c>USERNAME</c> and <c>SRP_A</c> and return the
-        /// Secure Remote Password (SRP) protocol variables to be used for next challenge execution.
+        ///  <c>REFRESH_TOKEN_AUTH</c>: Receive new ID and access tokens when you pass a <c>REFRESH_TOKEN</c>
+        /// parameter with a valid refresh token as the value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ADMIN_USER_PASSWORD_AUTH</c> will take in <c>USERNAME</c> and <c>PASSWORD</c>
-        /// and return the next challenge or tokens.
+        ///  <c>USER_SRP_AUTH</c>: Receive secure remote password (SRP) variables for the next
+        /// challenge, <c>PASSWORD_VERIFIER</c>, when you pass <c>USERNAME</c> and <c>SRP_A</c>
+        /// parameters..
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ADMIN_USER_PASSWORD_AUTH</c>: Receive new tokens or the next challenge, for example
+        /// <c>SOFTWARE_TOKEN_MFA</c>, when you pass <c>USERNAME</c> and <c>PASSWORD</c> parameters.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Valid values include:
+        /// Valid values include the following:
         /// </para>
-        ///  <ul> <li> 
+        ///  <dl> <dt>USER_AUTH</dt> <dd> 
         /// <para>
-        ///  <c>USER_SRP_AUTH</c>: Authentication flow for the Secure Remote Password (SRP) protocol.
+        /// The entry point for sign-in with passwords, one-time passwords, biometric devices,
+        /// and security keys.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>USER_SRP_AUTH</dt> <dd> 
         /// <para>
-        ///  <c>REFRESH_TOKEN_AUTH</c>/<c>REFRESH_TOKEN</c>: Authentication flow for refreshing
-        /// the access token and ID token by supplying a valid refresh token.
+        /// Username-password authentication with the Secure Remote Password (SRP) protocol. For
+        /// more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-authentication-flow.html#Using-SRP-password-verification-in-custom-authentication-flow">Use
+        /// SRP password verification in custom authentication flow</a>.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>REFRESH_TOKEN_AUTH and REFRESH_TOKEN</dt> <dd> 
         /// <para>
-        ///  <c>CUSTOM_AUTH</c>: Custom authentication flow.
+        /// Provide a valid refresh token and receive new ID and access tokens. For more information,
+        /// see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-using-the-refresh-token.html">Using
+        /// the refresh token</a>.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>CUSTOM_AUTH</dt> <dd> 
         /// <para>
-        ///  <c>ADMIN_NO_SRP_AUTH</c>: Non-SRP authentication flow; you can pass in the USERNAME
-        /// and PASSWORD directly if the flow is enabled for calling the app client.
+        /// Custom authentication with Lambda triggers. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-challenge.html">Custom
+        /// authentication challenge Lambda triggers</a>.
         /// </para>
-        ///  </li> <li> 
+        ///  </dd> <dt>ADMIN_USER_PASSWORD_AUTH</dt> <dd> 
         /// <para>
-        ///  <c>ADMIN_USER_PASSWORD_AUTH</c>: Admin-based user password authentication. This replaces
-        /// the <c>ADMIN_NO_SRP_AUTH</c> authentication flow. In this flow, Amazon Cognito receives
-        /// the password in the request instead of using the SRP process to verify passwords.
+        /// Username-password authentication with the password sent directly in the request. For
+        /// more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-authentication-flow.html#Built-in-authentication-flow-and-challenges">Admin
+        /// authentication flow</a>.
         /// </para>
-        ///  </li> </ul>
+        ///  </dd> </dl> 
+        /// <para>
+        ///  <c>USER_PASSWORD_AUTH</c> is a flow type of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>
+        /// and isn't valid for AdminInitiateAuth.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public AuthFlowType AuthFlow
@@ -175,6 +192,12 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// that you're invoking. The required values depend on the value of <c>AuthFlow</c>:
         /// </para>
         ///  <ul> <li> 
+        /// <para>
+        /// For <c>USER_AUTH</c>: <c>USERNAME</c> (required), <c>PREFERRED_CHALLENGE</c>. If you
+        /// don't provide a value for <c>PREFERRED_CHALLENGE</c>, Amazon Cognito responds with
+        /// the <c>AvailableChallenges</c> parameter that specifies the available sign-in methods.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// For <c>USER_SRP_AUTH</c>: <c>USERNAME</c> (required), <c>SRP_A</c> (required), <c>SECRET_HASH</c>
         /// (required if the app client is configured with a client secret), <c>DEVICE_KEY</c>.
@@ -294,6 +317,14 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// Define auth challenge
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Custom email sender
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Custom SMS sender
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
@@ -352,6 +383,26 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetContextData()
         {
             return this._contextData != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Session. 
+        /// <para>
+        /// The optional session ID from a <c>ConfirmSignUp</c> API request. You can sign in a
+        /// user directly from the sign-up process with the <c>USER_AUTH</c> authentication flow.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=20, Max=2048)]
+        public string Session
+        {
+            get { return this._session; }
+            set { this._session = value; }
+        }
+
+        // Check to see if Session property is set
+        internal bool IsSetSession()
+        {
+            return this._session != null;
         }
 
         /// <summary>

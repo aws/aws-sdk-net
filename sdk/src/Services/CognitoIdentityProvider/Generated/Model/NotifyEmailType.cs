@@ -30,7 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The notify email type.
+    /// The template for email messages that advanced security features sends to a user when
+    /// your threat protection automated response has a <i>Notify</i> action.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is a request parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetRiskConfiguration.html">SetRiskConfiguration</a>
+    /// and a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeRiskConfiguration.html">DescribeRiskConfiguration</a>.
+    /// </para>
     /// </summary>
     public partial class NotifyEmailType
     {
@@ -41,7 +48,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property HtmlBody. 
         /// <para>
-        /// The email HTML body.
+        /// The body of an email notification formatted in HTML. Choose an <c>HtmlBody</c> or
+        /// a <c>TextBody</c> to send an HTML-formatted or plaintext message, respectively.
         /// </para>
         /// </summary>
         [AWSProperty(Min=6, Max=20000)]
@@ -60,7 +68,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Subject. 
         /// <para>
-        /// The email subject.
+        /// The subject of the threat protection email notification.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=140)]
@@ -79,7 +87,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property TextBody. 
         /// <para>
-        /// The email text body.
+        /// The body of an email notification formatted in plaintext. Choose an <c>HtmlBody</c>
+        /// or a <c>TextBody</c> to send an HTML-formatted or plaintext message, respectively.
         /// </para>
         /// </summary>
         [AWSProperty(Min=6, Max=20000)]

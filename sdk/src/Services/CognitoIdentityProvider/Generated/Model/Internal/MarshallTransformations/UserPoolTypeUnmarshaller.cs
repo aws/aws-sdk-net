@@ -258,6 +258,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     unmarshalledObject.UserPoolTags = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("UserPoolTier", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UserPoolTier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("VerificationMessageTemplate", targetDepth))
                 {
                     var unmarshaller = VerificationMessageTemplateTypeUnmarshaller.Instance;

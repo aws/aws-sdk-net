@@ -120,6 +120,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetSession())
+                {
+                    context.Writer.WritePropertyName("Session");
+                    context.Writer.Write(publicRequest.Session);
+                }
+
                 if(publicRequest.IsSetUserContextData())
                 {
                     context.Writer.WritePropertyName("UserContextData");

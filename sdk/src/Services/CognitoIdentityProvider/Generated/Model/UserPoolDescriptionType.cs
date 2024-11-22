@@ -30,7 +30,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// A user pool description.
+    /// A short description of a user pool.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUserPools.html">ListUserPools</a>.
+    /// 
+    /// </para>
     /// </summary>
     public partial class UserPoolDescriptionType
     {
@@ -64,7 +70,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID in a user pool description.
+        /// The user pool ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=55)]
@@ -83,7 +89,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property LambdaConfig. 
         /// <para>
-        /// The Lambda configuration information in a user pool description.
+        /// A collection of user pool Lambda triggers. Amazon Cognito invokes triggers at several
+        /// possible stages of user pool operations. Triggers can modify the outcome of the operations
+        /// that invoked them.
         /// </para>
         /// </summary>
         public LambdaConfigType LambdaConfig
@@ -121,7 +129,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name in a user pool description.
+        /// The user pool name.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -140,7 +148,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The user pool status in a user pool description.
+        /// The user pool status.
         /// </para>
         /// </summary>
         [Obsolete("This property is no longer available.")]

@@ -58,6 +58,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     response.CodeDeliveryDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Session", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Session = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("UserConfirmed", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

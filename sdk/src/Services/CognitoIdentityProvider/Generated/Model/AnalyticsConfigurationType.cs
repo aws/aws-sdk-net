@@ -30,17 +30,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The Amazon Pinpoint analytics configuration necessary to collect metrics for a user
-    /// pool.
+    /// The settings for Amazon Pinpoint analytics configuration. With an analytics configuration,
+    /// your application can collect user-activity metrics for user notifications with a Amazon
+    /// Pinpoint campaign.
     /// 
-    ///  <note> 
+    ///  
     /// <para>
-    /// In Regions where Amazon Pinpoint isn't available, user pools only support sending
-    /// events to Amazon Pinpoint projects in us-east-1. In Regions where Amazon Pinpoint
-    /// is available, user pools support sending events to Amazon Pinpoint projects within
-    /// that same Region.
+    /// Amazon Pinpoint isn't available in all Amazon Web Services Regions. For a list of
+    /// available Regions, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-pinpoint-integration.html#cognito-user-pools-find-region-mappings">Amazon
+    /// Cognito and Amazon Pinpoint Region availability</a>.
     /// </para>
-    ///  </note>
+    ///  
+    /// <para>
+    /// This data type is a request parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPoolClient.html">CreateUserPoolClient</a>
+    /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPoolClient.html">UpdateUserPoolClient</a>,
+    /// and a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPoolClient.html">DescribeUserPoolClient</a>.
+    /// </para>
     /// </summary>
     public partial class AnalyticsConfigurationType
     {
@@ -53,9 +58,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ApplicationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the Amazon
-        /// Pinpoint project to integrate with the chosen user pool Client. Amazon Cognito publishes
-        /// events to the Amazon Pinpoint project that the app ARN declares.
+        /// The Amazon Resource Name (ARN) of an Amazon Pinpoint project that you want to connect
+        /// to your user pool app client. Amazon Cognito publishes events to the Amazon Pinpoint
+        /// project that <c>ApplicationArn</c> declares. You can also configure your application
+        /// to pass an endpoint ID in the <c>AnalyticsMetadata</c> parameter of sign-in operations.
+        /// The endpoint ID is information about the destination for push notifications
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -74,7 +81,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The application ID for an Amazon Pinpoint application.
+        /// Your Amazon Pinpoint project ID.
         /// </para>
         /// </summary>
         public string ApplicationId
@@ -92,7 +99,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ExternalId. 
         /// <para>
-        /// The external ID.
+        /// The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">external
+        /// ID</a> of the role that Amazon Cognito assumes to send analytics data to Amazon Pinpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=131072)]
@@ -111,8 +119,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of an Identity and Access Management role that authorizes Amazon Cognito to
-        /// publish events to Amazon Pinpoint analytics.
+        /// The ARN of an Identity and Access Management role that has the permissions required
+        /// for Amazon Cognito to publish events to Amazon Pinpoint analytics.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

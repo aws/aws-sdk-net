@@ -35,6 +35,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     public partial class CreateUserPoolDomainResponse : AmazonWebServiceResponse
     {
         private string _cloudFrontDomain;
+        private int? _managedLoginVersion;
 
         /// <summary>
         /// Gets and sets the property CloudFrontDomain. 
@@ -56,6 +57,25 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetCloudFrontDomain()
         {
             return this._cloudFrontDomain != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedLoginVersion. 
+        /// <para>
+        /// The version of managed login branding applied your domain. A value of <c>1</c> indicates
+        /// hosted UI (classic) branding and a version of <c>2</c> indicates managed login branding.
+        /// </para>
+        /// </summary>
+        public int ManagedLoginVersion
+        {
+            get { return this._managedLoginVersion.GetValueOrDefault(); }
+            set { this._managedLoginVersion = value; }
+        }
+
+        // Check to see if ManagedLoginVersion property is set
+        internal bool IsSetManagedLoginVersion()
+        {
+            return this._managedLoginVersion.HasValue; 
         }
 
     }

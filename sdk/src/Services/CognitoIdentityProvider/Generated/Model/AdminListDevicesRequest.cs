@@ -31,7 +31,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the AdminListDevices operation.
-    /// Lists devices, as an administrator.
+    /// Lists a user's registered devices.
     /// 
     ///  <note> 
     /// <para>

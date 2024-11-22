@@ -30,7 +30,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The configuration for creating a new user profile.
+    /// The settings for administrator creation of users in a user pool. Contains settings
+    /// for allowing user sign-up, customizing invitation messages to new users, and the amount
+    /// of time before temporary passwords expire.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is a request and response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>
+    /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>,
+    /// and a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.
+    /// </para>
     /// </summary>
     public partial class AdminCreateUserConfigType
     {
@@ -41,8 +50,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AllowAdminCreateUserOnly. 
         /// <para>
-        /// Set to <c>True</c> if only the administrator is allowed to create user profiles. Set
-        /// to <c>False</c> if users can sign themselves up via an app.
+        /// The setting for allowing self-service sign-up. When <c>true</c>, only administrators
+        /// can create new user profiles. When <c>false</c>, users can register themselves and
+        /// create a new user profile with the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SignUp.html">SignUp</a>
+        /// operation.
         /// </para>
         /// </summary>
         public bool AllowAdminCreateUserOnly
@@ -60,7 +71,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property InviteMessageTemplate. 
         /// <para>
-        /// The message template to be used for the welcome message to new users.
+        /// The template for the welcome message to new users. This template must include the
+        /// <c>{####}</c> temporary password placeholder if you are creating users with passwords.
+        /// If your users don't have passwords, you can omit the placeholder.
         /// </para>
         ///  
         /// <para>
@@ -83,18 +96,22 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UnusedAccountValidityDays. 
         /// <para>
-        /// The user account expiration limit, in days, after which a new account that hasn't
-        /// signed in is no longer usable. To reset the account after that time limit, you must
-        /// call <c>AdminCreateUser</c> again, specifying <c>"RESEND"</c> for the <c>MessageAction</c>
-        /// parameter. The default value for this parameter is 7.
+        /// This parameter is no longer in use. Configure the duration of temporary passwords
+        /// with the <c>TemporaryPasswordValidityDays</c> parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_PasswordPolicyType.html">PasswordPolicyType</a>.
+        /// For older user pools that have a <c>UnusedAccountValidityDays</c> configuration, that
+        /// value is effective until you set a value for <c>TemporaryPasswordValidityDays</c>.
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
-        /// If you set a value for <c>TemporaryPasswordValidityDays</c> in <c>PasswordPolicy</c>,
-        /// that value will be used, and <c>UnusedAccountValidityDays</c> will be no longer be
-        /// an available parameter for that user pool.
+        /// The password expiration limit in days for administrator-created users. When this time
+        /// expires, the user can't sign in with their temporary password. To reset the account
+        /// after that time limit, you must call <c>AdminCreateUser</c> again, specifying <c>RESEND</c>
+        /// for the <c>MessageAction</c> parameter. 
         /// </para>
-        ///  </note>
+        ///  
+        /// <para>
+        /// The default value for this parameter is 7.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=365)]
         public int UnusedAccountValidityDays

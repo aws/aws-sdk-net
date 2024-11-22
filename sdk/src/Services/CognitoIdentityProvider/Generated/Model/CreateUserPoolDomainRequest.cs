@@ -31,7 +31,8 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateUserPoolDomain operation.
-    /// Creates a new domain for a user pool.
+    /// Creates a new domain for a user pool. The domain hosts user pool domain services like
+    /// managed login, the hosted UI (classic), and the user pool authorization server.
     /// 
     ///  <note> 
     /// <para>
@@ -59,6 +60,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
         private CustomDomainConfigType _customDomainConfig;
         private string _domain;
+        private int? _managedLoginVersion;
         private string _userPoolId;
 
         /// <summary>
@@ -113,9 +115,34 @@ namespace Amazon.CognitoIdentityProvider.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ManagedLoginVersion. 
+        /// <para>
+        /// The version of managed login branding that you want to apply to your domain. A value
+        /// of <c>1</c> indicates hosted UI (classic) branding and a version of <c>2</c> indicates
+        /// managed login branding.
+        /// </para>
+        ///  
+        /// <para>
+        /// Managed login requires that your user pool be configured for any <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sign-in-feature-plans.html">feature
+        /// plan</a> other than <c>Lite</c>.
+        /// </para>
+        /// </summary>
+        public int ManagedLoginVersion
+        {
+            get { return this._managedLoginVersion.GetValueOrDefault(); }
+            set { this._managedLoginVersion = value; }
+        }
+
+        // Check to see if ManagedLoginVersion property is set
+        internal bool IsSetManagedLoginVersion()
+        {
+            return this._managedLoginVersion.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID.
+        /// The ID of the user pool where you want to add a domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

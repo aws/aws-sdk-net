@@ -32,7 +32,8 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// <summary>
     /// Container for the parameters to the AdminGetUser operation.
     /// Gets the specified user by user name in a user pool as an administrator. Works on
-    /// any user.
+    /// any user. This operation contributes to your monthly active user (MAU) count for the
+    /// purpose of billing.
     /// 
     ///  <note> 
     /// <para>

@@ -30,7 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The device verifier against which it is authenticated.
+    /// A Secure Remote Password (SRP) value that your application generates when you register
+    /// a user's device. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html#user-pools-remembered-devices-getting-a-device-key">Getting
+    /// a device key</a>.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is a request parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmDevice.html">ConfirmDevice</a>.
+    /// </para>
     /// </summary>
     public partial class DeviceSecretVerifierConfigType
     {
@@ -40,7 +47,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property PasswordVerifier. 
         /// <para>
-        /// The password verifier.
+        /// A password verifier for a user's device. Used in SRP authentication.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=131072)]
@@ -59,7 +66,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Salt. 
         /// <para>
-        /// The <a href="https://en.wikipedia.org/wiki/Salt_(cryptography)">salt</a> 
+        /// The salt that you want to use in SRP authentication with the user's device.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=131072)]

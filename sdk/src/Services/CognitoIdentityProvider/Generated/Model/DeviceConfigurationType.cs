@@ -53,6 +53,12 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// When you provide a value for any property of <c>DeviceConfiguration</c>, you activate
     /// the device remembering for the user pool.
     /// </para>
+    ///  
+    /// <para>
+    /// This data type is a request and response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html">CreateUserPool</a>
+    /// and <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html">UpdateUserPool</a>,
+    /// and a response parameter of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.
+    /// </para>
     ///  </note>
     /// </summary>
     public partial class DeviceConfigurationType
