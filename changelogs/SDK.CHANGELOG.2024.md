@@ -1,3 +1,50 @@
+### 3.7.933.0 (2024-11-22 19:40 UTC)
+* AutoScaling (3.7.407.0)
+	* Now, Amazon EC2 Auto Scaling customers can enable target tracking policies to take quicker scaling decisions, enhancing their application performance and EC2 utilization. To get started, specify target tracking to monitor a metric that is available on Amazon CloudWatch at seconds-level interval.
+* BCMPricingCalculator (3.7.400.0)
+	* Initial release of the AWS Billing and Cost Management Pricing Calculator API.
+* BedrockAgentRuntime (3.7.409.0)
+	* InvokeInlineAgent API release to help invoke runtime agents without any dependency on preconfigured agents.
+* Chatbot (3.7.403.0)
+	* Adds support for programmatic management of custom actions and aliases which can be associated with channel configurations.
+* CodePipeline (3.7.405.0)
+	* AWS CodePipeline V2 type pipelines now support ECRBuildAndPublish and InspectorScan actions.
+* CognitoIdentityProvider (3.7.404.0)
+	* Add support for users to sign up and sign in without passwords, using email and SMS OTPs and Passkeys. Add support for Passkeys based on WebAuthn. Add support for enhanced branding customization for hosted authentication pages with Amazon Cognito Managed Login. Add feature tiers with new pricing.
+* Connect (3.7.410.0)
+	* Amazon Connect Service Feature: Add APIs for Amazon Connect Email Channel
+* CostExplorer (3.7.403.0)
+	* This release adds the Impact field(contains Contribution field) to the GetAnomalies API response under RootCause
+* ElasticLoadBalancingV2 (3.7.408.0)
+	* This release adds support for advertising trusted CA certificate names in associated trust stores.
+* ElasticMapReduce (3.7.403.0)
+	* Advanced Scaling in Amazon EMR Managed Scaling
+* Inspector2 (3.7.404.0)
+	* Extend inspector2 service model to include ServiceQuotaExceededException.
+* Lambda (3.7.411.0)
+	* Add ProvisionedPollerConfig to Lambda event-source-mapping API.
+* MailManager (3.7.403.0)
+	* Added new "DeliverToQBusiness" rule action to MailManager RulesSet for ingesting email data into Amazon Q Business customer applications
+* NeptuneGraph (3.7.403.0)
+	* Add 4 new APIs to support new Export features, allowing Parquet and CSV formats. Add new arguments in Import APIs to support Parquet import. Add a new query "neptune.read" to run algorithms without loading data into database
+* Omics (3.7.403.0)
+	* This release adds support for resource policy based cross account S3 access to sequence store read sets.
+* QuickSight (3.7.410.0)
+	* This release includes: Update APIs to support Image, Layer Map, font customization, and Plugin Visual. Add Identity center related information in ListNamsespace API. Update API for restrictedFolder support in topics and add API for SearchTopics, Describe/Update DashboardsQA Configration.
+* SageMaker (3.7.416.0)
+	* This release adds APIs for new features for SageMaker endpoint to scale down to zero instances, native support for multi-adapter inference, and endpoint scaling improvements.
+* SimpleEmail (3.7.402.0)
+	* This release adds support for starting email contacts in your Amazon Connect instance as an email receiving action.
+* SimpleNotificationService (3.7.400.57)
+	* ArchivePolicy attribute added to Archive and Replay feature
+* StepFunctions (3.7.403.0)
+	* Add support for variables and JSONata in TestState, GetExecutionHistory, DescribeStateMachine, and DescribeStateMachineForExecution
+* WorkSpaces (3.7.406.2)
+	* While integrating WSP-DCV rebrand, a few mentions were erroneously renamed from WSP to DCV. This release reverts those mentions back to WSP.
+* Core 3.7.400.57
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.932.0 (2024-11-21 19:48 UTC)
 * APIGateway (3.7.401.0)
 	* Added support for custom domain names for private APIs.
