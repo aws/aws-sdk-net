@@ -79,6 +79,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         unmarshalledObject.MetricStat = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("Period", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.Period = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ReturnData", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

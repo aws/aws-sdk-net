@@ -452,6 +452,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                                             request.Parameters.Add("TargetTrackingConfiguration" + "." + "CustomizedMetricSpecification" + "." + "Metrics" + "." + "member" + "." + publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValueIndex + "." + "MetricStat" + "." + "Metric" + "." + "Namespace", StringUtils.FromString(publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValue.MetricStat.Metric.Namespace));
                                         }
                                     }
+                                    if(publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValue.MetricStat.IsSetPeriod())
+                                    {
+                                        request.Parameters.Add("TargetTrackingConfiguration" + "." + "CustomizedMetricSpecification" + "." + "Metrics" + "." + "member" + "." + publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValueIndex + "." + "MetricStat" + "." + "Period", StringUtils.FromInt(publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValue.MetricStat.Period));
+                                    }
                                     if(publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValue.MetricStat.IsSetStat())
                                     {
                                         request.Parameters.Add("TargetTrackingConfiguration" + "." + "CustomizedMetricSpecification" + "." + "Metrics" + "." + "member" + "." + publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValueIndex + "." + "MetricStat" + "." + "Stat", StringUtils.FromString(publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValue.MetricStat.Stat));
@@ -460,6 +464,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                                     {
                                         request.Parameters.Add("TargetTrackingConfiguration" + "." + "CustomizedMetricSpecification" + "." + "Metrics" + "." + "member" + "." + publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValueIndex + "." + "MetricStat" + "." + "Unit", StringUtils.FromString(publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValue.MetricStat.Unit));
                                     }
+                                }
+                                if(publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValue.IsSetPeriod())
+                                {
+                                    request.Parameters.Add("TargetTrackingConfiguration" + "." + "CustomizedMetricSpecification" + "." + "Metrics" + "." + "member" + "." + publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValueIndex + "." + "Period", StringUtils.FromInt(publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValue.Period));
                                 }
                                 if(publicRequestTargetTrackingConfigurationCustomizedMetricSpecificationlistValue.IsSetReturnData())
                                 {
@@ -471,6 +479,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         if(publicRequest.TargetTrackingConfiguration.CustomizedMetricSpecification.IsSetNamespace())
                         {
                             request.Parameters.Add("TargetTrackingConfiguration" + "." + "CustomizedMetricSpecification" + "." + "Namespace", StringUtils.FromString(publicRequest.TargetTrackingConfiguration.CustomizedMetricSpecification.Namespace));
+                        }
+                        if(publicRequest.TargetTrackingConfiguration.CustomizedMetricSpecification.IsSetPeriod())
+                        {
+                            request.Parameters.Add("TargetTrackingConfiguration" + "." + "CustomizedMetricSpecification" + "." + "Period", StringUtils.FromInt(publicRequest.TargetTrackingConfiguration.CustomizedMetricSpecification.Period));
                         }
                         if(publicRequest.TargetTrackingConfiguration.CustomizedMetricSpecification.IsSetStatistic())
                         {
