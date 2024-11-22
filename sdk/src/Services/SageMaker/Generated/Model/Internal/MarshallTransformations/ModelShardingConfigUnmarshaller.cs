@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for InferenceComponentSpecificationSummary Object
+    /// Response Unmarshaller for ModelShardingConfig Object
     /// </summary>  
-    public class InferenceComponentSpecificationSummaryUnmarshaller : IUnmarshaller<InferenceComponentSpecificationSummary, XmlUnmarshallerContext>, IUnmarshaller<InferenceComponentSpecificationSummary, JsonUnmarshallerContext>
+    public class ModelShardingConfigUnmarshaller : IUnmarshaller<ModelShardingConfig, XmlUnmarshallerContext>, IUnmarshaller<ModelShardingConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        InferenceComponentSpecificationSummary IUnmarshaller<InferenceComponentSpecificationSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ModelShardingConfig IUnmarshaller<ModelShardingConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public InferenceComponentSpecificationSummary Unmarshall(JsonUnmarshallerContext context)
+        public ModelShardingConfig Unmarshall(JsonUnmarshallerContext context)
         {
-            InferenceComponentSpecificationSummary unmarshalledObject = new InferenceComponentSpecificationSummary();
+            ModelShardingConfig unmarshalledObject = new ModelShardingConfig();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,16 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("BaseInferenceComponentName", targetDepth))
+                if (context.TestExpression("Image", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BaseInferenceComponentName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Image = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ComputeResourceRequirements", targetDepth))
+                if (context.TestExpression("OverrideEnvironment", targetDepth))
                 {
-                    var unmarshaller = InferenceComponentComputeResourceRequirementsUnmarshaller.Instance;
-                    unmarshalledObject.ComputeResourceRequirements = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Container", targetDepth))
-                {
-                    var unmarshaller = InferenceComponentContainerSpecificationSummaryUnmarshaller.Instance;
-                    unmarshalledObject.Container = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ModelName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ModelName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("StartupParameters", targetDepth))
-                {
-                    var unmarshaller = InferenceComponentStartupParametersUnmarshaller.Instance;
-                    unmarshalledObject.StartupParameters = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.OverrideEnvironment = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +83,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static InferenceComponentSpecificationSummaryUnmarshaller _instance = new InferenceComponentSpecificationSummaryUnmarshaller();        
+        private static ModelShardingConfigUnmarshaller _instance = new ModelShardingConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InferenceComponentSpecificationSummaryUnmarshaller Instance
+        public static ModelShardingConfigUnmarshaller Instance
         {
             get
             {

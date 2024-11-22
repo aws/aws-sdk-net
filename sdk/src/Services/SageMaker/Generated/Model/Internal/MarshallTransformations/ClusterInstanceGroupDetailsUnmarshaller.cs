@@ -108,6 +108,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.OnStartDeepHealthChecks = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OverrideVpcConfig", targetDepth))
+                {
+                    var unmarshaller = VpcConfigUnmarshaller.Instance;
+                    unmarshalledObject.OverrideVpcConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TargetCount", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

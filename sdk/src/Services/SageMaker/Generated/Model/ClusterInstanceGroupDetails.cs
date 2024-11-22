@@ -41,6 +41,7 @@ namespace Amazon.SageMaker.Model
         private ClusterInstanceType _instanceType;
         private ClusterLifeCycleConfig _lifeCycleConfig;
         private List<string> _onStartDeepHealthChecks = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private VpcConfig _overrideVpcConfig;
         private int? _targetCount;
         private int? _threadsPerCore;
 
@@ -176,6 +177,21 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetOnStartDeepHealthChecks()
         {
             return this._onStartDeepHealthChecks != null && (this._onStartDeepHealthChecks.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OverrideVpcConfig.
+        /// </summary>
+        public VpcConfig OverrideVpcConfig
+        {
+            get { return this._overrideVpcConfig; }
+            set { this._overrideVpcConfig = value; }
+        }
+
+        // Check to see if OverrideVpcConfig property is set
+        internal bool IsSetOverrideVpcConfig()
+        {
+            return this._overrideVpcConfig != null;
         }
 
         /// <summary>

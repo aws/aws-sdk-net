@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// OptimizationConfig Marshaller
+    /// ModelShardingConfig Marshaller
     /// </summary>
-    public class OptimizationConfigMarshaller : IRequestMarshaller<OptimizationConfig, JsonMarshallerContext> 
+    public class ModelShardingConfigMarshaller : IRequestMarshaller<ModelShardingConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,40 +44,27 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(OptimizationConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(ModelShardingConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetModelCompilationConfig())
+            if(requestObject.IsSetImage())
             {
-                context.Writer.WritePropertyName("ModelCompilationConfig");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ModelCompilationConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.ModelCompilationConfig, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("Image");
+                context.Writer.Write(requestObject.Image);
             }
 
-            if(requestObject.IsSetModelQuantizationConfig())
+            if(requestObject.IsSetOverrideEnvironment())
             {
-                context.Writer.WritePropertyName("ModelQuantizationConfig");
+                context.Writer.WritePropertyName("OverrideEnvironment");
                 context.Writer.WriteObjectStart();
+                foreach (var requestObjectOverrideEnvironmentKvp in requestObject.OverrideEnvironment)
+                {
+                    context.Writer.WritePropertyName(requestObjectOverrideEnvironmentKvp.Key);
+                    var requestObjectOverrideEnvironmentValue = requestObjectOverrideEnvironmentKvp.Value;
 
-                var marshaller = ModelQuantizationConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.ModelQuantizationConfig, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetModelShardingConfig())
-            {
-                context.Writer.WritePropertyName("ModelShardingConfig");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ModelShardingConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.ModelShardingConfig, context);
-
+                        context.Writer.Write(requestObjectOverrideEnvironmentValue);
+                }
                 context.Writer.WriteObjectEnd();
             }
 
@@ -86,7 +73,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static OptimizationConfigMarshaller Instance = new OptimizationConfigMarshaller();
+        public readonly static ModelShardingConfigMarshaller Instance = new ModelShardingConfigMarshaller();
 
     }
 }

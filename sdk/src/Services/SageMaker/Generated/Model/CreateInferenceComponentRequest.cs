@@ -93,7 +93,6 @@ namespace Amazon.SageMaker.Model
         /// Runtime settings for a model that is deployed with an inference component.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public InferenceComponentRuntimeConfig RuntimeConfig
         {
             get { return this._runtimeConfig; }
@@ -153,7 +152,7 @@ namespace Amazon.SageMaker.Model
         /// The name of an existing production variant where you host the inference component.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=63)]
+        [AWSProperty(Max=63)]
         public string VariantName
         {
             get { return this._variantName; }

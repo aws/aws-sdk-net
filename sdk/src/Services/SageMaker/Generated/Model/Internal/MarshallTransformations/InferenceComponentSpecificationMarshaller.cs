@@ -48,6 +48,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetBaseInferenceComponentName())
+            {
+                context.Writer.WritePropertyName("BaseInferenceComponentName");
+                context.Writer.Write(requestObject.BaseInferenceComponentName);
+            }
+
             if(requestObject.IsSetComputeResourceRequirements())
             {
                 context.Writer.WritePropertyName("ComputeResourceRequirements");
