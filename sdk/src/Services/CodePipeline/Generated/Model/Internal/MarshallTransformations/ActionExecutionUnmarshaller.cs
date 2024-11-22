@@ -102,6 +102,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastUpdatedBy = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("logStreamARN", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LogStreamARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("percentComplete", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
