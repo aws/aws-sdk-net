@@ -55,6 +55,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("AdvertiseTrustStoreCaNames", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AdvertiseTrustStoreCaNames = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("IgnoreClientCertificateExpiry", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
