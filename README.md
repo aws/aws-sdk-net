@@ -182,6 +182,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* AWS Batch enables developers, scientists, and engineers to easily and efficiently run hundreds of thousands of batch computing jobs on AWS. 
 * [AWSSDK.BCMDataExports](https://www.nuget.org/packages/AWSSDK.BCMDataExports/)
 	* Users can create, read, update, delete Exports of billing and cost management data.  Users can get details of Export Executions and details of Tables for exporting.  Tagging support is provided for Exports
+* [AWSSDK.BCMPricingCalculator](https://www.nuget.org/packages/AWSSDK.BCMPricingCalculator/)
+	* Initial release of the AWS Billing and Cost Management Pricing Calculator API.
 * [AWSSDK.Bedrock](https://www.nuget.org/packages/AWSSDK.Bedrock/)
 	* Model Invocation logging added to enable or disable logs in customer account. Model listing and description support added. Provisioned Throughput feature added. Custom model support added for creating custom models. Also includes list, and delete functions for custom model.
 * [AWSSDK.BedrockAgent](https://www.nuget.org/packages/AWSSDK.BedrockAgent/)
