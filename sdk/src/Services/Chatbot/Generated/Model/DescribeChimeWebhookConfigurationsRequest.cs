@@ -42,7 +42,7 @@ namespace Amazon.Chatbot.Model
         /// <summary>
         /// Gets and sets the property ChatConfigurationArn. 
         /// <para>
-        /// An optional Amazon Resource Number (ARN) of a ChimeWebhookConfiguration to describe.
+        /// An optional Amazon Resource Name (ARN) of a ChimeWebhookConfiguration to describe.
         /// </para>
         /// </summary>
         [AWSProperty(Min=19, Max=1169)]

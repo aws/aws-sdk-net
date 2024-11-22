@@ -297,6 +297,70 @@ namespace Amazon.Chatbot
         #endregion
 
 
+        #region  AssociateToConfiguration
+
+        /// <summary>
+        /// Links a resource (for example, a custom action) to a channel configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateToConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the AssociateToConfiguration service method, as returned by Chatbot.</returns>
+        /// <exception cref="Amazon.Chatbot.Model.InternalServiceErrorException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.UnauthorizedException">
+        /// The request was rejected because it doesn't have valid credentials for the target
+        /// resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/AssociateToConfiguration">REST API Reference for AssociateToConfiguration Operation</seealso>
+        public virtual AssociateToConfigurationResponse AssociateToConfiguration(AssociateToConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateToConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateToConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateToConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateToConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateToConfiguration operation on AmazonChatbotClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateToConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/AssociateToConfiguration">REST API Reference for AssociateToConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginAssociateToConfiguration(AssociateToConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateToConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateToConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateToConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateToConfiguration.</param>
+        /// 
+        /// <returns>Returns a  AssociateToConfigurationResult from Chatbot.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/AssociateToConfiguration">REST API Reference for AssociateToConfiguration Operation</seealso>
+        public virtual AssociateToConfigurationResponse EndAssociateToConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateToConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateChimeWebhookConfiguration
 
         /// <summary>
@@ -362,6 +426,76 @@ namespace Amazon.Chatbot
         public virtual CreateChimeWebhookConfigurationResponse EndCreateChimeWebhookConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateChimeWebhookConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateCustomAction
+
+        /// <summary>
+        /// Creates a custom action that can be invoked as an alias or as a button on a notification.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCustomAction service method.</param>
+        /// 
+        /// <returns>The response from the CreateCustomAction service method, as returned by Chatbot.</returns>
+        /// <exception cref="Amazon.Chatbot.Model.ConflictException">
+        /// There was an issue processing your request.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.InternalServiceErrorException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.LimitExceededException">
+        /// You have exceeded a service limit for AWS Chatbot.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.UnauthorizedException">
+        /// The request was rejected because it doesn't have valid credentials for the target
+        /// resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/CreateCustomAction">REST API Reference for CreateCustomAction Operation</seealso>
+        public virtual CreateCustomActionResponse CreateCustomAction(CreateCustomActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCustomActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCustomActionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCustomActionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateCustomAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateCustomAction operation on AmazonChatbotClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCustomAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/CreateCustomAction">REST API Reference for CreateCustomAction Operation</seealso>
+        public virtual IAsyncResult BeginCreateCustomAction(CreateCustomActionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCustomActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCustomActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateCustomAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCustomAction.</param>
+        /// 
+        /// <returns>Returns a  CreateCustomActionResult from Chatbot.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/CreateCustomAction">REST API Reference for CreateCustomAction Operation</seealso>
+        public virtual CreateCustomActionResponse EndCreateCustomAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateCustomActionResponse>(asyncResult);
         }
 
         #endregion
@@ -566,6 +700,73 @@ namespace Amazon.Chatbot
         public virtual DeleteChimeWebhookConfigurationResponse EndDeleteChimeWebhookConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteChimeWebhookConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteCustomAction
+
+        /// <summary>
+        /// Deletes a custom action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomAction service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCustomAction service method, as returned by Chatbot.</returns>
+        /// <exception cref="Amazon.Chatbot.Model.InternalServiceErrorException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.ResourceNotFoundException">
+        /// We were unable to find the resource for your request
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.UnauthorizedException">
+        /// The request was rejected because it doesn't have valid credentials for the target
+        /// resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DeleteCustomAction">REST API Reference for DeleteCustomAction Operation</seealso>
+        public virtual DeleteCustomActionResponse DeleteCustomAction(DeleteCustomActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCustomActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCustomActionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCustomActionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCustomAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomAction operation on AmazonChatbotClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCustomAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DeleteCustomAction">REST API Reference for DeleteCustomAction Operation</seealso>
+        public virtual IAsyncResult BeginDeleteCustomAction(DeleteCustomActionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCustomActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCustomActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteCustomAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCustomAction.</param>
+        /// 
+        /// <returns>Returns a  DeleteCustomActionResult from Chatbot.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DeleteCustomAction">REST API Reference for DeleteCustomAction Operation</seealso>
+        public virtual DeleteCustomActionResponse EndDeleteCustomAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteCustomActionResponse>(asyncResult);
         }
 
         #endregion
@@ -1204,6 +1405,70 @@ namespace Amazon.Chatbot
 
         #endregion
         
+        #region  DisassociateFromConfiguration
+
+        /// <summary>
+        /// Unlink a resource, for example a custom action, from a channel configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateFromConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateFromConfiguration service method, as returned by Chatbot.</returns>
+        /// <exception cref="Amazon.Chatbot.Model.InternalServiceErrorException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.UnauthorizedException">
+        /// The request was rejected because it doesn't have valid credentials for the target
+        /// resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DisassociateFromConfiguration">REST API Reference for DisassociateFromConfiguration Operation</seealso>
+        public virtual DisassociateFromConfigurationResponse DisassociateFromConfiguration(DisassociateFromConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateFromConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateFromConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateFromConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateFromConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateFromConfiguration operation on AmazonChatbotClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateFromConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DisassociateFromConfiguration">REST API Reference for DisassociateFromConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateFromConfiguration(DisassociateFromConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateFromConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateFromConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateFromConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateFromConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DisassociateFromConfigurationResult from Chatbot.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DisassociateFromConfiguration">REST API Reference for DisassociateFromConfiguration Operation</seealso>
+        public virtual DisassociateFromConfigurationResponse EndDisassociateFromConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateFromConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetAccountPreferences
 
         /// <summary>
@@ -1260,6 +1525,73 @@ namespace Amazon.Chatbot
         public virtual GetAccountPreferencesResponse EndGetAccountPreferences(IAsyncResult asyncResult)
         {
             return EndInvoke<GetAccountPreferencesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetCustomAction
+
+        /// <summary>
+        /// Returns a custom action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCustomAction service method.</param>
+        /// 
+        /// <returns>The response from the GetCustomAction service method, as returned by Chatbot.</returns>
+        /// <exception cref="Amazon.Chatbot.Model.InternalServiceErrorException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.ResourceNotFoundException">
+        /// We were unable to find the resource for your request
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.UnauthorizedException">
+        /// The request was rejected because it doesn't have valid credentials for the target
+        /// resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/GetCustomAction">REST API Reference for GetCustomAction Operation</seealso>
+        public virtual GetCustomActionResponse GetCustomAction(GetCustomActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCustomActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCustomActionResponseUnmarshaller.Instance;
+
+            return Invoke<GetCustomActionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCustomAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCustomAction operation on AmazonChatbotClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCustomAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/GetCustomAction">REST API Reference for GetCustomAction Operation</seealso>
+        public virtual IAsyncResult BeginGetCustomAction(GetCustomActionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCustomActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCustomActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCustomAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCustomAction.</param>
+        /// 
+        /// <returns>Returns a  GetCustomActionResult from Chatbot.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/GetCustomAction">REST API Reference for GetCustomAction Operation</seealso>
+        public virtual GetCustomActionResponse EndGetCustomAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetCustomActionResponse>(asyncResult);
         }
 
         #endregion
@@ -1323,6 +1655,124 @@ namespace Amazon.Chatbot
         public virtual GetMicrosoftTeamsChannelConfigurationResponse EndGetMicrosoftTeamsChannelConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<GetMicrosoftTeamsChannelConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListAssociations
+
+        /// <summary>
+        /// Lists resources associated with a channel configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListAssociations service method, as returned by Chatbot.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/ListAssociations">REST API Reference for ListAssociations Operation</seealso>
+        public virtual ListAssociationsResponse ListAssociations(ListAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAssociationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAssociations operation on AmazonChatbotClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/ListAssociations">REST API Reference for ListAssociations Operation</seealso>
+        public virtual IAsyncResult BeginListAssociations(ListAssociationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssociationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAssociations.</param>
+        /// 
+        /// <returns>Returns a  ListAssociationsResult from Chatbot.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/ListAssociations">REST API Reference for ListAssociations Operation</seealso>
+        public virtual ListAssociationsResponse EndListAssociations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAssociationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListCustomActions
+
+        /// <summary>
+        /// Lists custom actions defined in this account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCustomActions service method.</param>
+        /// 
+        /// <returns>The response from the ListCustomActions service method, as returned by Chatbot.</returns>
+        /// <exception cref="Amazon.Chatbot.Model.InternalServiceErrorException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.UnauthorizedException">
+        /// The request was rejected because it doesn't have valid credentials for the target
+        /// resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/ListCustomActions">REST API Reference for ListCustomActions Operation</seealso>
+        public virtual ListCustomActionsResponse ListCustomActions(ListCustomActionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCustomActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCustomActionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCustomActionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCustomActions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCustomActions operation on AmazonChatbotClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCustomActions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/ListCustomActions">REST API Reference for ListCustomActions Operation</seealso>
+        public virtual IAsyncResult BeginListCustomActions(ListCustomActionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCustomActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCustomActionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCustomActions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCustomActions.</param>
+        /// 
+        /// <returns>Returns a  ListCustomActionsResult from Chatbot.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/ListCustomActions">REST API Reference for ListCustomActions Operation</seealso>
+        public virtual ListCustomActionsResponse EndListCustomActions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListCustomActionsResponse>(asyncResult);
         }
 
         #endregion
@@ -1836,6 +2286,73 @@ namespace Amazon.Chatbot
         public virtual UpdateChimeWebhookConfigurationResponse EndUpdateChimeWebhookConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateChimeWebhookConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateCustomAction
+
+        /// <summary>
+        /// Updates a custom action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCustomAction service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCustomAction service method, as returned by Chatbot.</returns>
+        /// <exception cref="Amazon.Chatbot.Model.InternalServiceErrorException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.ResourceNotFoundException">
+        /// We were unable to find the resource for your request
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.UnauthorizedException">
+        /// The request was rejected because it doesn't have valid credentials for the target
+        /// resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/UpdateCustomAction">REST API Reference for UpdateCustomAction Operation</seealso>
+        public virtual UpdateCustomActionResponse UpdateCustomAction(UpdateCustomActionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCustomActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCustomActionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCustomActionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateCustomAction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCustomAction operation on AmazonChatbotClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateCustomAction
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/UpdateCustomAction">REST API Reference for UpdateCustomAction Operation</seealso>
+        public virtual IAsyncResult BeginUpdateCustomAction(UpdateCustomActionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCustomActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCustomActionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateCustomAction operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateCustomAction.</param>
+        /// 
+        /// <returns>Returns a  UpdateCustomActionResult from Chatbot.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/UpdateCustomAction">REST API Reference for UpdateCustomAction Operation</seealso>
+        public virtual UpdateCustomActionResponse EndUpdateCustomAction(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateCustomActionResponse>(asyncResult);
         }
 
         #endregion

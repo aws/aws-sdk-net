@@ -52,7 +52,7 @@ namespace Amazon.Chatbot.Model
         /// <summary>
         /// Gets and sets the property ChatConfigurationArn. 
         /// <para>
-        /// The Amazon Resource Number (ARN) of the SlackChannelConfiguration.
+        /// The Amazon Resource Name (ARN) of the SlackChannelConfiguration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=1169)]

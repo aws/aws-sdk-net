@@ -76,6 +76,34 @@ namespace Amazon.Chatbot
         IChatbotPaginatorFactory Paginators { get; }
 #endif
                 
+        #region  AssociateToConfiguration
+
+
+
+        /// <summary>
+        /// Links a resource (for example, a custom action) to a channel configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateToConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateToConfiguration service method, as returned by Chatbot.</returns>
+        /// <exception cref="Amazon.Chatbot.Model.InternalServiceErrorException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.UnauthorizedException">
+        /// The request was rejected because it doesn't have valid credentials for the target
+        /// resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/AssociateToConfiguration">REST API Reference for AssociateToConfiguration Operation</seealso>
+        Task<AssociateToConfigurationResponse> AssociateToConfigurationAsync(AssociateToConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateChimeWebhookConfiguration
 
 
@@ -106,6 +134,40 @@ namespace Amazon.Chatbot
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/CreateChimeWebhookConfiguration">REST API Reference for CreateChimeWebhookConfiguration Operation</seealso>
         Task<CreateChimeWebhookConfigurationResponse> CreateChimeWebhookConfigurationAsync(CreateChimeWebhookConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateCustomAction
+
+
+
+        /// <summary>
+        /// Creates a custom action that can be invoked as an alias or as a button on a notification.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCustomAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCustomAction service method, as returned by Chatbot.</returns>
+        /// <exception cref="Amazon.Chatbot.Model.ConflictException">
+        /// There was an issue processing your request.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.InternalServiceErrorException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.LimitExceededException">
+        /// You have exceeded a service limit for AWS Chatbot.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.UnauthorizedException">
+        /// The request was rejected because it doesn't have valid credentials for the target
+        /// resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/CreateCustomAction">REST API Reference for CreateCustomAction Operation</seealso>
+        Task<CreateCustomActionResponse> CreateCustomActionAsync(CreateCustomActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -202,6 +264,37 @@ namespace Amazon.Chatbot
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DeleteChimeWebhookConfiguration">REST API Reference for DeleteChimeWebhookConfiguration Operation</seealso>
         Task<DeleteChimeWebhookConfigurationResponse> DeleteChimeWebhookConfigurationAsync(DeleteChimeWebhookConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteCustomAction
+
+
+
+        /// <summary>
+        /// Deletes a custom action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCustomAction service method, as returned by Chatbot.</returns>
+        /// <exception cref="Amazon.Chatbot.Model.InternalServiceErrorException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.ResourceNotFoundException">
+        /// We were unable to find the resource for your request
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.UnauthorizedException">
+        /// The request was rejected because it doesn't have valid credentials for the target
+        /// resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DeleteCustomAction">REST API Reference for DeleteCustomAction Operation</seealso>
+        Task<DeleteCustomActionResponse> DeleteCustomActionAsync(DeleteCustomActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -479,6 +572,34 @@ namespace Amazon.Chatbot
 
         #endregion
                 
+        #region  DisassociateFromConfiguration
+
+
+
+        /// <summary>
+        /// Unlink a resource, for example a custom action, from a channel configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateFromConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateFromConfiguration service method, as returned by Chatbot.</returns>
+        /// <exception cref="Amazon.Chatbot.Model.InternalServiceErrorException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.UnauthorizedException">
+        /// The request was rejected because it doesn't have valid credentials for the target
+        /// resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/DisassociateFromConfiguration">REST API Reference for DisassociateFromConfiguration Operation</seealso>
+        Task<DisassociateFromConfigurationResponse> DisassociateFromConfigurationAsync(DisassociateFromConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetAccountPreferences
 
 
@@ -500,6 +621,37 @@ namespace Amazon.Chatbot
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/GetAccountPreferences">REST API Reference for GetAccountPreferences Operation</seealso>
         Task<GetAccountPreferencesResponse> GetAccountPreferencesAsync(GetAccountPreferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetCustomAction
+
+
+
+        /// <summary>
+        /// Returns a custom action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCustomAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCustomAction service method, as returned by Chatbot.</returns>
+        /// <exception cref="Amazon.Chatbot.Model.InternalServiceErrorException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.ResourceNotFoundException">
+        /// We were unable to find the resource for your request
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.UnauthorizedException">
+        /// The request was rejected because it doesn't have valid credentials for the target
+        /// resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/GetCustomAction">REST API Reference for GetCustomAction Operation</seealso>
+        Task<GetCustomActionResponse> GetCustomActionAsync(GetCustomActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -527,6 +679,52 @@ namespace Amazon.Chatbot
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/GetMicrosoftTeamsChannelConfiguration">REST API Reference for GetMicrosoftTeamsChannelConfiguration Operation</seealso>
         Task<GetMicrosoftTeamsChannelConfigurationResponse> GetMicrosoftTeamsChannelConfigurationAsync(GetMicrosoftTeamsChannelConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListAssociations
+
+
+
+        /// <summary>
+        /// Lists resources associated with a channel configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAssociations service method, as returned by Chatbot.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/ListAssociations">REST API Reference for ListAssociations Operation</seealso>
+        Task<ListAssociationsResponse> ListAssociationsAsync(ListAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListCustomActions
+
+
+
+        /// <summary>
+        /// Lists custom actions defined in this account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCustomActions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCustomActions service method, as returned by Chatbot.</returns>
+        /// <exception cref="Amazon.Chatbot.Model.InternalServiceErrorException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.UnauthorizedException">
+        /// The request was rejected because it doesn't have valid credentials for the target
+        /// resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/ListCustomActions">REST API Reference for ListCustomActions Operation</seealso>
+        Task<ListCustomActionsResponse> ListCustomActionsAsync(ListCustomActionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -752,6 +950,37 @@ namespace Amazon.Chatbot
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/UpdateChimeWebhookConfiguration">REST API Reference for UpdateChimeWebhookConfiguration Operation</seealso>
         Task<UpdateChimeWebhookConfigurationResponse> UpdateChimeWebhookConfigurationAsync(UpdateChimeWebhookConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateCustomAction
+
+
+
+        /// <summary>
+        /// Updates a custom action.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCustomAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCustomAction service method, as returned by Chatbot.</returns>
+        /// <exception cref="Amazon.Chatbot.Model.InternalServiceErrorException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.InvalidRequestException">
+        /// Your request input doesn't meet the constraints required by AWS Chatbot.
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.ResourceNotFoundException">
+        /// We were unable to find the resource for your request
+        /// </exception>
+        /// <exception cref="Amazon.Chatbot.Model.UnauthorizedException">
+        /// The request was rejected because it doesn't have valid credentials for the target
+        /// resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chatbot-2017-10-11/UpdateCustomAction">REST API Reference for UpdateCustomAction Operation</seealso>
+        Task<UpdateCustomActionResponse> UpdateCustomActionAsync(UpdateCustomActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
