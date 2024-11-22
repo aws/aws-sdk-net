@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StateExitedEventDetails Object
+    /// Response Unmarshaller for EvaluationFailedEventDetails Object
     /// </summary>  
-    public class StateExitedEventDetailsUnmarshaller : IUnmarshaller<StateExitedEventDetails, XmlUnmarshallerContext>, IUnmarshaller<StateExitedEventDetails, JsonUnmarshallerContext>
+    public class EvaluationFailedEventDetailsUnmarshaller : IUnmarshaller<EvaluationFailedEventDetails, XmlUnmarshallerContext>, IUnmarshaller<EvaluationFailedEventDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        StateExitedEventDetails IUnmarshaller<StateExitedEventDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EvaluationFailedEventDetails IUnmarshaller<EvaluationFailedEventDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public StateExitedEventDetails Unmarshall(JsonUnmarshallerContext context)
+        public EvaluationFailedEventDetails Unmarshall(JsonUnmarshallerContext context)
         {
-            StateExitedEventDetails unmarshalledObject = new StateExitedEventDetails();
+            EvaluationFailedEventDetails unmarshalledObject = new EvaluationFailedEventDetails();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,28 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("assignedVariables", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.AssignedVariables = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("assignedVariablesDetails", targetDepth))
-                {
-                    var unmarshaller = AssignedVariablesDetailsUnmarshaller.Instance;
-                    unmarshalledObject.AssignedVariablesDetails = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
+                if (context.TestExpression("cause", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Cause = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("output", targetDepth))
+                if (context.TestExpression("error", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Output = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Error = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("outputDetails", targetDepth))
+                if (context.TestExpression("location", targetDepth))
                 {
-                    var unmarshaller = HistoryEventExecutionDataDetailsUnmarshaller.Instance;
-                    unmarshalledObject.OutputDetails = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Location = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("state", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +95,12 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
         }
 
 
-        private static StateExitedEventDetailsUnmarshaller _instance = new StateExitedEventDetailsUnmarshaller();        
+        private static EvaluationFailedEventDetailsUnmarshaller _instance = new EvaluationFailedEventDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StateExitedEventDetailsUnmarshaller Instance
+        public static EvaluationFailedEventDetailsUnmarshaller Instance
         {
             get
             {

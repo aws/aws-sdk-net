@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StateExitedEventDetails Object
+    /// Response Unmarshaller for AssignedVariablesDetails Object
     /// </summary>  
-    public class StateExitedEventDetailsUnmarshaller : IUnmarshaller<StateExitedEventDetails, XmlUnmarshallerContext>, IUnmarshaller<StateExitedEventDetails, JsonUnmarshallerContext>
+    public class AssignedVariablesDetailsUnmarshaller : IUnmarshaller<AssignedVariablesDetails, XmlUnmarshallerContext>, IUnmarshaller<AssignedVariablesDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        StateExitedEventDetails IUnmarshaller<StateExitedEventDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AssignedVariablesDetails IUnmarshaller<AssignedVariablesDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public StateExitedEventDetails Unmarshall(JsonUnmarshallerContext context)
+        public AssignedVariablesDetails Unmarshall(JsonUnmarshallerContext context)
         {
-            StateExitedEventDetails unmarshalledObject = new StateExitedEventDetails();
+            AssignedVariablesDetails unmarshalledObject = new AssignedVariablesDetails();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,10 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("assignedVariables", targetDepth))
+                if (context.TestExpression("truncated", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.AssignedVariables = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("assignedVariablesDetails", targetDepth))
-                {
-                    var unmarshaller = AssignedVariablesDetailsUnmarshaller.Instance;
-                    unmarshalledObject.AssignedVariablesDetails = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("output", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Output = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("outputDetails", targetDepth))
-                {
-                    var unmarshaller = HistoryEventExecutionDataDetailsUnmarshaller.Instance;
-                    unmarshalledObject.OutputDetails = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Truncated = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +77,12 @@ namespace Amazon.StepFunctions.Model.Internal.MarshallTransformations
         }
 
 
-        private static StateExitedEventDetailsUnmarshaller _instance = new StateExitedEventDetailsUnmarshaller();        
+        private static AssignedVariablesDetailsUnmarshaller _instance = new AssignedVariablesDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StateExitedEventDetailsUnmarshaller Instance
+        public static AssignedVariablesDetailsUnmarshaller Instance
         {
             get
             {

@@ -30,16 +30,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// Provides details about input or output in an execution history event.
+    /// Provides details about assigned variables in an execution history event.
     /// </summary>
-    public partial class HistoryEventExecutionDataDetails
+    public partial class AssignedVariablesDetails
     {
         private bool? _truncated;
 
         /// <summary>
         /// Gets and sets the property Truncated. 
         /// <para>
-        /// Indicates whether input or output was truncated in the response. Always <c>false</c>
+        /// Indicates whether assigned variables were truncated in the response. Always <c>false</c>
         /// for API calls. In CloudWatch logs, the value will be true if the data is truncated
         /// due to size limits.
         /// </para>

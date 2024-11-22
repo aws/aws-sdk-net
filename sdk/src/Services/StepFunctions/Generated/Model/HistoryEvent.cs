@@ -40,6 +40,7 @@ namespace Amazon.StepFunctions.Model
         private ActivityStartedEventDetails _activityStartedEventDetails;
         private ActivitySucceededEventDetails _activitySucceededEventDetails;
         private ActivityTimedOutEventDetails _activityTimedOutEventDetails;
+        private EvaluationFailedEventDetails _evaluationFailedEventDetails;
         private ExecutionAbortedEventDetails _executionAbortedEventDetails;
         private ExecutionFailedEventDetails _executionFailedEventDetails;
         private ExecutionRedrivenEventDetails _executionRedrivenEventDetails;
@@ -166,6 +167,24 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetActivityTimedOutEventDetails()
         {
             return this._activityTimedOutEventDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EvaluationFailedEventDetails. 
+        /// <para>
+        /// Contains details about an evaluation failure that occurred while processing a state.
+        /// </para>
+        /// </summary>
+        public EvaluationFailedEventDetails EvaluationFailedEventDetails
+        {
+            get { return this._evaluationFailedEventDetails; }
+            set { this._evaluationFailedEventDetails = value; }
+        }
+
+        // Check to see if EvaluationFailedEventDetails property is set
+        internal bool IsSetEvaluationFailedEventDetails()
+        {
+            return this._evaluationFailedEventDetails != null;
         }
 
         /// <summary>

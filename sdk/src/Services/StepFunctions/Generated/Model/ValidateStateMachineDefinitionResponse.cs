@@ -41,8 +41,10 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property Diagnostics. 
         /// <para>
-        /// If the result is <c>OK</c>, this field will be empty. When there are errors, this
-        /// field will contain an array of <b>Diagnostic</b> objects to help you troubleshoot.
+        /// An array of diagnostic errors and warnings found during validation of the state machine
+        /// definition. Since <b>warnings</b> do not prevent deploying your workflow definition,
+        /// the <b>result</b> value could be <c>OK</c> even when warning diagnostics are present
+        /// in the response.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -47,6 +47,7 @@ namespace Amazon.StepFunctions.Model
         private StateMachineStatus _status;
         private TracingConfiguration _tracingConfiguration;
         private StateMachineType _type;
+        private Dictionary<string, List<string>> _variableReferences = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
 
         /// <summary>
         /// Gets and sets the property CreationDate. 
@@ -339,6 +340,26 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetType()
         {
             return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VariableReferences. 
+        /// <para>
+        /// A map of <b>state name</b> to a list of variables referenced by that state. States
+        /// that do not use variable references will not be shown in the response.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public Dictionary<string, List<string>> VariableReferences
+        {
+            get { return this._variableReferences; }
+            set { this._variableReferences = value; }
+        }
+
+        // Check to see if VariableReferences property is set
+        internal bool IsSetVariableReferences()
+        {
+            return this._variableReferences != null && (this._variableReferences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
