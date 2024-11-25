@@ -72,6 +72,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.AllowedPrefixesToDirectConnectGateway = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("associatedCoreNetwork", targetDepth))
+                {
+                    var unmarshaller = AssociatedCoreNetworkUnmarshaller.Instance;
+                    unmarshalledObject.AssociatedCoreNetwork = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("associatedGateway", targetDepth))
                 {
                     var unmarshaller = AssociatedGatewayUnmarshaller.Instance;
