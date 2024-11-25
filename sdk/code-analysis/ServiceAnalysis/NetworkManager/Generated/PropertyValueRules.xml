@@ -253,6 +253,24 @@
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CreateDirectConnectGatewayAttachmentRequest.ClientToken</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CreateDirectConnectGatewayAttachmentRequest.CoreNetworkId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^core-network-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.CreateDirectConnectGatewayAttachmentRequest.DirectConnectGatewayArn</property>
+    <min>0</min>
+    <max>500</max>
+    <pattern>^arn:[^:]{1,63}:directconnect::[^:]{0,63}:dx-gateway\/[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkManager.Model.CreateGlobalNetworkRequest.Description</property>
     <min>0</min>
     <max>256</max>
@@ -724,6 +742,12 @@
     <min>0</min>
     <max>2048</max>
     <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.GetDirectConnectGatewayAttachmentRequest.AttachmentId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^attachment-([0-9a-f]{8,17})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkManager.Model.GetLinkAssociationsRequest.DeviceId</property>
@@ -1460,6 +1484,12 @@
     <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkManager.Model.UpdateDirectConnectGatewayAttachmentRequest.AttachmentId</property>
+    <min>0</min>
+    <max>50</max>
+    <pattern>^attachment-([0-9a-f]{8,17})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkManager.Model.UpdateGlobalNetworkRequest.Description</property>
     <min>0</min>
     <max>256</max>
@@ -2126,6 +2156,12 @@
     <min>0</min>
     <max>256</max>
     <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkManager.Model.DirectConnectGatewayAttachment.DirectConnectGatewayArn</property>
+    <min>0</min>
+    <max>500</max>
+    <pattern>^arn:[^:]{1,63}:directconnect::[^:]{0,63}:dx-gateway\/[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkManager.Model.EdgeOverride.UseEdge</property>

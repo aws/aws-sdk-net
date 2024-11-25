@@ -1071,6 +1071,79 @@ namespace Amazon.NetworkManager
 
         #endregion
         
+        #region  CreateDirectConnectGatewayAttachment
+
+        /// <summary>
+        /// Creates an Amazon Web Services Direct Connect gateway attachment
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDirectConnectGatewayAttachment service method.</param>
+        /// 
+        /// <returns>The response from the CreateDirectConnectGatewayAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateDirectConnectGatewayAttachment">REST API Reference for CreateDirectConnectGatewayAttachment Operation</seealso>
+        public virtual CreateDirectConnectGatewayAttachmentResponse CreateDirectConnectGatewayAttachment(CreateDirectConnectGatewayAttachmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDirectConnectGatewayAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDirectConnectGatewayAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDirectConnectGatewayAttachmentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDirectConnectGatewayAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDirectConnectGatewayAttachment operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDirectConnectGatewayAttachment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateDirectConnectGatewayAttachment">REST API Reference for CreateDirectConnectGatewayAttachment Operation</seealso>
+        public virtual IAsyncResult BeginCreateDirectConnectGatewayAttachment(CreateDirectConnectGatewayAttachmentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDirectConnectGatewayAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDirectConnectGatewayAttachmentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateDirectConnectGatewayAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDirectConnectGatewayAttachment.</param>
+        /// 
+        /// <returns>Returns a  CreateDirectConnectGatewayAttachmentResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/CreateDirectConnectGatewayAttachment">REST API Reference for CreateDirectConnectGatewayAttachment Operation</seealso>
+        public virtual CreateDirectConnectGatewayAttachmentResponse EndCreateDirectConnectGatewayAttachment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateDirectConnectGatewayAttachmentResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateGlobalNetwork
 
         /// <summary>
@@ -3608,6 +3681,75 @@ namespace Amazon.NetworkManager
 
         #endregion
         
+        #region  GetDirectConnectGatewayAttachment
+
+        /// <summary>
+        /// Returns information about a specific Amazon Web Services Direct Connect gateway attachment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDirectConnectGatewayAttachment service method.</param>
+        /// 
+        /// <returns>The response from the GetDirectConnectGatewayAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetDirectConnectGatewayAttachment">REST API Reference for GetDirectConnectGatewayAttachment Operation</seealso>
+        public virtual GetDirectConnectGatewayAttachmentResponse GetDirectConnectGatewayAttachment(GetDirectConnectGatewayAttachmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDirectConnectGatewayAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDirectConnectGatewayAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<GetDirectConnectGatewayAttachmentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDirectConnectGatewayAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDirectConnectGatewayAttachment operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDirectConnectGatewayAttachment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetDirectConnectGatewayAttachment">REST API Reference for GetDirectConnectGatewayAttachment Operation</seealso>
+        public virtual IAsyncResult BeginGetDirectConnectGatewayAttachment(GetDirectConnectGatewayAttachmentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDirectConnectGatewayAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDirectConnectGatewayAttachmentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDirectConnectGatewayAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDirectConnectGatewayAttachment.</param>
+        /// 
+        /// <returns>Returns a  GetDirectConnectGatewayAttachmentResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/GetDirectConnectGatewayAttachment">REST API Reference for GetDirectConnectGatewayAttachment Operation</seealso>
+        public virtual GetDirectConnectGatewayAttachmentResponse EndGetDirectConnectGatewayAttachment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDirectConnectGatewayAttachmentResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetLinkAssociations
 
         /// <summary>
@@ -6072,6 +6214,80 @@ namespace Amazon.NetworkManager
         public virtual UpdateDeviceResponse EndUpdateDevice(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateDeviceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateDirectConnectGatewayAttachment
+
+        /// <summary>
+        /// Updates the edge locations associated with an Amazon Web Services Direct Connect gateway
+        /// attachment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDirectConnectGatewayAttachment service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDirectConnectGatewayAttachment service method, as returned by NetworkManager.</returns>
+        /// <exception cref="Amazon.NetworkManager.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ConflictException">
+        /// There was a conflict processing the request. Updating or deleting the resource can
+        /// cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.InternalServerException">
+        /// The request has failed due to an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ResourceNotFoundException">
+        /// The specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkManager.Model.ValidationException">
+        /// The input fails to satisfy the constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateDirectConnectGatewayAttachment">REST API Reference for UpdateDirectConnectGatewayAttachment Operation</seealso>
+        public virtual UpdateDirectConnectGatewayAttachmentResponse UpdateDirectConnectGatewayAttachment(UpdateDirectConnectGatewayAttachmentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDirectConnectGatewayAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDirectConnectGatewayAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDirectConnectGatewayAttachmentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDirectConnectGatewayAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDirectConnectGatewayAttachment operation on AmazonNetworkManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDirectConnectGatewayAttachment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateDirectConnectGatewayAttachment">REST API Reference for UpdateDirectConnectGatewayAttachment Operation</seealso>
+        public virtual IAsyncResult BeginUpdateDirectConnectGatewayAttachment(UpdateDirectConnectGatewayAttachmentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDirectConnectGatewayAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDirectConnectGatewayAttachmentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateDirectConnectGatewayAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDirectConnectGatewayAttachment.</param>
+        /// 
+        /// <returns>Returns a  UpdateDirectConnectGatewayAttachmentResult from NetworkManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateDirectConnectGatewayAttachment">REST API Reference for UpdateDirectConnectGatewayAttachment Operation</seealso>
+        public virtual UpdateDirectConnectGatewayAttachmentResponse EndUpdateDirectConnectGatewayAttachment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateDirectConnectGatewayAttachmentResponse>(asyncResult);
         }
 
         #endregion
