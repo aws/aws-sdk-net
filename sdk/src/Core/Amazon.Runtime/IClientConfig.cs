@@ -58,6 +58,17 @@ namespace Amazon.Runtime
         Profile Profile { get; }
 
         /// <summary>
+        /// Gets the default <see cref="AWSCredentials"/> by the service client.
+        /// <remarks>
+        /// <para>
+        /// Credentials provided directly to <see cref="AmazonServiceClient"/> constructor 
+        /// will take precedence over these default credentials.
+        /// </para>
+        /// </remarks>
+        /// </summary>
+        AWSCredentials DefaultAWSCredentials { get; }
+
+        /// <summary>
         /// Gets the configuration for identity resolvers used by the service client, which manages
         /// the resolvers used to obtain various types of identities.
         /// Use this to retrieve and manage specific identity resolvers based on the required identity type.

@@ -40,7 +40,7 @@
                 "operation": "addBefore",
                 "newType": "Amazon.Neptune.Internal.PreSignedUrlRequestHandler",
                 "targetType": "Amazon.Runtime.Internal.Marshaller",
-                "constructorInput": "this.DefaultAWSCredentials"
+                "constructorInput": "this.Config.DefaultAWSCredentials"
             }
         ]
     }  

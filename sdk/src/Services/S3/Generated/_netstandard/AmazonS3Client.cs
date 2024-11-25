@@ -232,7 +232,7 @@ namespace Amazon.S3
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
         protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
-            pipeline.AddHandlerBefore<Amazon.Runtime.Internal.CredentialsRetriever>(new AmazonS3AuthSchemeHandler(this.DefaultAWSCredentials));
+            pipeline.AddHandlerBefore<Amazon.Runtime.Internal.CredentialsRetriever>(new AmazonS3AuthSchemeHandler(this.Config.DefaultAWSCredentials));
             pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Marshaller>(new Amazon.S3.Internal.AmazonS3PreMarshallHandler());
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.EndpointResolver>(new Amazon.S3.Internal.AmazonS3KmsHandler());
             pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Unmarshaller>(new Amazon.S3.Internal.AmazonS3ResponseHandler());
@@ -251,6 +251,7 @@ namespace Amazon.S3
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonS3EndpointResolver());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>
