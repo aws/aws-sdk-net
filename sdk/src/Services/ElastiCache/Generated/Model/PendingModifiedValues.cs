@@ -147,8 +147,8 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// For clusters running Redis OSS, this value must be 1. For clusters running Memcached,
-        /// this value must be between 1 and 40.
+        /// For clusters running Valkey or Redis OSS, this value must be 1. For clusters running
+        /// Memcached, this value must be between 1 and 40.
         /// </para>
         /// </summary>
         public int? NumCacheNodes

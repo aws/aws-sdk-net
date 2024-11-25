@@ -45,7 +45,7 @@ namespace Amazon.CloudFront.Model
         /// The comment of the key value store to update.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=128)]
+        [AWSProperty(Required=true, Min=0, Max=128)]
         public string Comment
         {
             get { return this._comment; }

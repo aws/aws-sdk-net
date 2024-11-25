@@ -48,6 +48,7 @@ namespace Amazon.CleanRoomsML.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=1)]
         public double? RecallMetric
         {
             get { return this._recallMetric; }

@@ -132,10 +132,10 @@ namespace Amazon.DNXCore.IntegrationTests
             }
         }
 
-        // [Fact]
-        // This is commented out because netstandard uses xunit which runs tests in parallel.
+        // This is ignored because netstandard uses xunit which runs tests in parallel.
         // When this test is run in parallel with other tests it causes them to fail b/c it changes
         // the clockskew while those are running.
+        [Fact(Skip = "Skipping flaky test while design for clock skew behavior is defined")]
         public void TestManualClockCorrection()
         {
             TestClients(TestServiceCallForManualClockCorrection);
@@ -144,10 +144,10 @@ namespace Amazon.DNXCore.IntegrationTests
         // This test verifies that all service clients are able to
         // correctly handle clock skew errors.
         // By default it only tests a small subset of services.
-        // This is commented out because netstandard uses xunit which runs tests in parallel.
+        // This is ignored because netstandard uses xunit which runs tests in parallel.
         // When this test is run in parallel with other tests it causes them to fail b/c it changes
         // the clockskew while those are running.
-        // [Fact]
+        [Fact(Skip = "Skipping flaky test while design for clock skew behavior is defined")]
         public void TestClockSkewCorrection()
         {
             TestClients(TestServiceCallForClockSkew);

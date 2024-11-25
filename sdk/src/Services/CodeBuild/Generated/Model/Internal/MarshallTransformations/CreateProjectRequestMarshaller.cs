@@ -82,6 +82,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
+                    if(publicRequest.IsSetAutoRetryLimit())
+                    {
+                        context.Writer.WritePropertyName("autoRetryLimit");
+                        context.Writer.Write(publicRequest.AutoRetryLimit.Value);
+                    }
+
                     if(publicRequest.IsSetBadgeEnabled())
                     {
                         context.Writer.WritePropertyName("badgeEnabled");

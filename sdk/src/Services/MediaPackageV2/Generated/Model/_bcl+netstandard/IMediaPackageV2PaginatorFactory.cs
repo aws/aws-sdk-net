@@ -37,6 +37,11 @@ namespace Amazon.MediaPackageV2.Model
         IListChannelsPaginator ListChannels(ListChannelsRequest request);
 
         /// <summary>
+        /// Paginator for ListHarvestJobs operation
+        ///</summary>
+        IListHarvestJobsPaginator ListHarvestJobs(ListHarvestJobsRequest request);
+
+        /// <summary>
         /// Paginator for ListOriginEndpoints operation
         ///</summary>
         IListOriginEndpointsPaginator ListOriginEndpoints(ListOriginEndpointsRequest request);

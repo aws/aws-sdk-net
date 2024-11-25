@@ -32,13 +32,16 @@ namespace Amazon.SimpleEmailV2.Model
     /// <summary>
     /// An object that defines the email template to use for an email message, and the values
     /// to use for any message variables in that template. An <i>email template</i> is a type
-    /// of message template that contains content that you want to define, save, and reuse
-    /// in email messages that you send.
+    /// of message template that contains content that you want to reuse in email messages
+    /// that you send. You can specifiy the email template by providing the name or ARN of
+    /// an <i>email template</i> previously saved in your Amazon SES account or by providing
+    /// the full template content.
     /// </summary>
     public partial class Template
     {
         private List<MessageHeader> _headers = AWSConfigs.InitializeCollections ? new List<MessageHeader>() : null;
         private string _templateArn;
+        private EmailTemplateContent _templateContent;
         private string _templateData;
         private string _templateName;
 
@@ -77,6 +80,31 @@ namespace Amazon.SimpleEmailV2.Model
         internal bool IsSetTemplateArn()
         {
             return this._templateArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TemplateContent. 
+        /// <para>
+        /// The content of the template.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon SES supports only simple substitions when you send email using the <c>SendEmail</c>
+        /// or <c>SendBulkEmail</c> operations and you provide the full template content in the
+        /// request.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public EmailTemplateContent TemplateContent
+        {
+            get { return this._templateContent; }
+            set { this._templateContent = value; }
+        }
+
+        // Check to see if TemplateContent property is set
+        internal bool IsSetTemplateContent()
+        {
+            return this._templateContent != null;
         }
 
         /// <summary>

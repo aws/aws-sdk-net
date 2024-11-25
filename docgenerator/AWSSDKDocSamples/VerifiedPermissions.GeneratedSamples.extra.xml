@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.BatchGetPolicy(Amazon.VerifiedPermissions.Model.BatchGetPolicyRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.BatchGetPolicy(Amazon.VerifiedPermissions.Model.BatchGetPolicyRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.BatchGetPolicyRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.BatchGetPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves information about the specified policy contained in the specified policy store. In this example, the requested policy is a template-linked policy, so it returns the ID of the policy template, and the specific principal and resource used by this policy.
+                </para>
+                <code
+                    title="To retrieve details about a policy"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.BatchIsAuthorized(Amazon.VerifiedPermissions.Model.BatchIsAuthorizedRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.BatchIsAuthorized(Amazon.VerifiedPermissions.Model.BatchIsAuthorizedRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.BatchIsAuthorizedRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.BatchIsAuthorizedResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example requests two authorization decisions for two principals                     of type Usernamed Alice and Annalisa.
+                </para>
+                <code
+                    title="Batch - Example 1"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.BatchIsAuthorizedWithToken(Amazon.VerifiedPermissions.Model.BatchIsAuthorizedWithTokenRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.BatchIsAuthorizedWithToken(Amazon.VerifiedPermissions.Model.BatchIsAuthorizedWithTokenRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.BatchIsAuthorizedWithTokenRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.BatchIsAuthorizedWithTokenResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example requests three authorization decisions for two resources                     and two actions in different photo albums.
+                </para>
+                <code
+                    title="Batch - Example 1"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.CreateIdentitySource(Amazon.VerifiedPermissions.Model.CreateIdentitySourceRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.CreateIdentitySource(Amazon.VerifiedPermissions.Model.CreateIdentitySourceRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.CreateIdentitySourceRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.CreateIdentitySourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following ``create-identity-source`` example creates an identity source that lets you reference identities stored in the specified Amazon Cognito user pool. Those identities are available in Verified Permissions as entities of type ``User``. 
+                </para>
+                <code
+                    title="To create an identity source"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.CreatePolicy(Amazon.VerifiedPermissions.Model.CreatePolicyRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.CreatePolicy(Amazon.VerifiedPermissions.Model.CreatePolicyRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.CreatePolicyRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.CreatePolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example request creates a static policy with a policy scope that specifies both a principal and a resource. The response includes both the Principal and Resource elements because both were specified in the request policy scope.
+                </para>
+                <code
+                    title="To create a static policy"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.CreatePolicy(Amazon.VerifiedPermissions.Model.CreatePolicyRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.CreatePolicy(Amazon.VerifiedPermissions.Model.CreatePolicyRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.CreatePolicyRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.CreatePolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example request creates a static policy with a policy scope that specifies both a principal and a resource. The response includes both the Principal and Resource elements because both were specified in the request policy scope.
+                </para>
+                <code
+                    title="To create a static policy"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.CreatePolicy(Amazon.VerifiedPermissions.Model.CreatePolicyRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.CreatePolicy(Amazon.VerifiedPermissions.Model.CreatePolicyRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.CreatePolicyRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.CreatePolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a template-linked policy using the specified policy template and associates the specified principal to use with the new template-linked policy.
+                </para>
+                <code
+                    title="To create a template-linked policy"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.CreatePolicyStore(Amazon.VerifiedPermissions.Model.CreatePolicyStoreRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.CreatePolicyStore(Amazon.VerifiedPermissions.Model.CreatePolicyStoreRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.CreatePolicyStoreRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.CreatePolicyStoreResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a new policy store with strict validation turned on.
+                </para>
+                <code
+                    title="To create policy store"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.CreatePolicyTemplate(Amazon.VerifiedPermissions.Model.CreatePolicyTemplateRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.CreatePolicyTemplate(Amazon.VerifiedPermissions.Model.CreatePolicyTemplateRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.CreatePolicyTemplateRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.CreatePolicyTemplateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a policy template that has a placeholder for the principal.
+                </para>
+                <code
+                    title="To create a policy template"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.DeleteIdentitySource(Amazon.VerifiedPermissions.Model.DeleteIdentitySourceRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.DeleteIdentitySource(Amazon.VerifiedPermissions.Model.DeleteIdentitySourceRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.DeleteIdentitySourceRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.DeleteIdentitySourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example request deletes the specified identity source.
+                </para>
+                <code
+                    title="To delete an identity source"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.DeletePolicy(Amazon.VerifiedPermissions.Model.DeletePolicyRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.DeletePolicy(Amazon.VerifiedPermissions.Model.DeletePolicyRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.DeletePolicyRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.DeletePolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes the specified policy from its policy store.
+                </para>
+                <code
+                    title="To delete a policy"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.DeletePolicyStore(Amazon.VerifiedPermissions.Model.DeletePolicyStoreRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.DeletePolicyStore(Amazon.VerifiedPermissions.Model.DeletePolicyStoreRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.DeletePolicyStoreRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.DeletePolicyStoreResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes the specified policy store.
+                </para>
+                <code
+                    title="To delete a policy store"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.DeletePolicyTemplate(Amazon.VerifiedPermissions.Model.DeletePolicyTemplateRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.DeletePolicyTemplate(Amazon.VerifiedPermissions.Model.DeletePolicyTemplateRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.DeletePolicyTemplateRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.DeletePolicyTemplateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes a policy template. Before you can perform this operation, you must first delete any template-linked policies that were instantiated from this policy template. To delete them, use DeletePolicy.
+                </para>
+                <code
+                    title="To delete a policy template"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.GetIdentitySource(Amazon.VerifiedPermissions.Model.GetIdentitySourceRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.GetIdentitySource(Amazon.VerifiedPermissions.Model.GetIdentitySourceRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.GetIdentitySourceRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.GetIdentitySourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves the details for the specified identity source.
+                </para>
+                <code
+                    title="To retrieve details about an identity source"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.GetPolicy(Amazon.VerifiedPermissions.Model.GetPolicyRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.GetPolicy(Amazon.VerifiedPermissions.Model.GetPolicyRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.GetPolicyRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.GetPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves information about the specified policy contained in the specified policy store. In this example, the requested policy is a template-linked policy, so it returns the ID of the policy template, and the specific principal and resource used by this policy.
+                </para>
+                <code
+                    title="To retrieve details about a policy"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.GetPolicyStore(Amazon.VerifiedPermissions.Model.GetPolicyStoreRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.GetPolicyStore(Amazon.VerifiedPermissions.Model.GetPolicyStoreRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.GetPolicyStoreRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.GetPolicyStoreResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves details about the specified policy store.
+                </para>
+                <code
+                    title="GetPolicyStore"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.GetPolicyTemplate(Amazon.VerifiedPermissions.Model.GetPolicyTemplateRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.GetPolicyTemplate(Amazon.VerifiedPermissions.Model.GetPolicyTemplateRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.GetPolicyTemplateRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.GetPolicyTemplateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example displays the details of the specified policy template.
+                </para>
+                <code
+                    title="GetPolicyTemplate"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.GetSchema(Amazon.VerifiedPermissions.Model.GetSchemaRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.GetSchema(Amazon.VerifiedPermissions.Model.GetSchemaRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.GetSchemaRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.GetSchemaResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves the current schema stored in the specified policy store.
+
+Note
+The JSON in the parameters of this operation are strings that can contain embedded quotation marks (") within the outermost quotation mark pair. This requires that you stringify the JSON object by preceding all embedded quotation marks with a backslash character ( \" ) and combining all lines into a single text line with no line breaks.
+
+Example strings might be displayed wrapped across multiple lines here for readability, but the operation requires the parameters be submitted as single line strings.
+                </para>
+                <code
+                    title="GetSchema"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.IsAuthorized(Amazon.VerifiedPermissions.Model.IsAuthorizedRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.IsAuthorized(Amazon.VerifiedPermissions.Model.IsAuthorizedRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.IsAuthorizedRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.IsAuthorizedResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example requests an authorization decision for a principal of type User named Alice, who wants to perform the updatePhoto operation, on a resource of type Photo named VacationPhoto94.jpg.
+
+The response shows that the request was allowed by one policy.
+                </para>
+                <code
+                    title="IsAuthorized - Example 1"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.IsAuthorized(Amazon.VerifiedPermissions.Model.IsAuthorizedRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.IsAuthorized(Amazon.VerifiedPermissions.Model.IsAuthorizedRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.IsAuthorizedRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.IsAuthorizedResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example is the same as the previous example, except that the principal is User::"bob", and the policy store doesn't contain any policy that allows that user access to Album::"alice_folder". The output infers that the Deny was implicit because the list of DeterminingPolicies is empty.
+                </para>
+                <code
+                    title="IsAuthorized - Example 2"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.IsAuthorizedWithToken(Amazon.VerifiedPermissions.Model.IsAuthorizedWithTokenRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.IsAuthorizedWithToken(Amazon.VerifiedPermissions.Model.IsAuthorizedWithTokenRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.IsAuthorizedWithTokenRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.IsAuthorizedWithTokenResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example requests an authorization decision for a user who was authenticated by Amazon Cognito. The request uses the identity token provided by Amazon Cognito instead of the access token. In this example, the specified information store is configured to return principals as entities of type CognitoUser. The policy store contains a policy with the following statement.
+
+permit(
+    principal == CognitoUser::"us-east-1_1a2b3c4d5|a1b2c3d4e5f6g7h8i9j0kalbmc",
+    action,
+    resource == Photo::"VacationPhoto94.jpg"
+);
+                </para>
+                <code
+                    title="IsAuthorizedWithToken - Example 1"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.ListIdentitySources(Amazon.VerifiedPermissions.Model.ListIdentitySourcesRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.ListIdentitySources(Amazon.VerifiedPermissions.Model.ListIdentitySourcesRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.ListIdentitySourcesRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.ListIdentitySourcesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example request creates lists the identity sources currently defined in the specified policy store.
+                </para>
+                <code
+                    title="ListIdentitySources"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.ListPolicies(Amazon.VerifiedPermissions.Model.ListPoliciesRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.ListPolicies(Amazon.VerifiedPermissions.Model.ListPoliciesRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.ListPoliciesRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.ListPoliciesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists all policies in the policy store.
+                </para>
+                <code
+                    title="ListPolicies - Example 1"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.ListPolicies(Amazon.VerifiedPermissions.Model.ListPoliciesRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.ListPolicies(Amazon.VerifiedPermissions.Model.ListPoliciesRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.ListPoliciesRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.ListPoliciesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists all policies for a specified principal.
+                </para>
+                <code
+                    title="ListPolicies - Example 2"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.ListPolicies(Amazon.VerifiedPermissions.Model.ListPoliciesRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.ListPolicies(Amazon.VerifiedPermissions.Model.ListPoliciesRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.ListPoliciesRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.ListPoliciesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example uses the Filter parameter to list only the template-linked policies in the specified policy store.
+                </para>
+                <code
+                    title="ListPolicies - Example 3"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.ListPolicyStores(Amazon.VerifiedPermissions.Model.ListPolicyStoresRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.ListPolicyStores(Amazon.VerifiedPermissions.Model.ListPolicyStoresRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.ListPolicyStoresRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.ListPolicyStoresResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists all policy stores in the AWS account in the AWS Region in which you call the operation.
+                </para>
+                <code
+                    title="ListPolicyStores"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.ListPolicyTemplates(Amazon.VerifiedPermissions.Model.ListPolicyTemplatesRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.ListPolicyTemplates(Amazon.VerifiedPermissions.Model.ListPolicyTemplatesRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.ListPolicyTemplatesRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.ListPolicyTemplatesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves a list of all of the policy templates in the specified policy store.
+                </para>
+                <code
+                    title="ListPolicyTemplates"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.PutSchema(Amazon.VerifiedPermissions.Model.PutSchemaRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.PutSchema(Amazon.VerifiedPermissions.Model.PutSchemaRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.PutSchemaRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.PutSchemaResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a new schema, or updates an existing schema, in the specified policy store. Note that the schema text is shown line wrapped for readability. You should submit the entire schema text as a single line of text.
+
+Note
+The JSON in the parameters of this operation are strings that can contain embedded quotation marks (") within the outermost quotation mark pair. This requires that you stringify the JSON object by preceding all embedded quotation marks with a backslash character ( \" ) and combining all lines into a single text line with no line breaks.
+
+Example strings might be displayed wrapped across multiple lines here for readability, but the operation requires the parameters be submitted as single line strings.
+                </para>
+                <code
+                    title="PutSchema"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.UpdateIdentitySource(Amazon.VerifiedPermissions.Model.UpdateIdentitySourceRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.UpdateIdentitySource(Amazon.VerifiedPermissions.Model.UpdateIdentitySourceRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.UpdateIdentitySourceRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.UpdateIdentitySourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example updates the configuration of the specified identity source with a new configuration.
+                </para>
+                <code
+                    title="UpdateIdentitySource"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.UpdatePolicy(Amazon.VerifiedPermissions.Model.UpdatePolicyRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.UpdatePolicy(Amazon.VerifiedPermissions.Model.UpdatePolicyRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.UpdatePolicyRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.UpdatePolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example replaces the definition of the specified static policy with a new one.
+                </para>
+                <code
+                    title="UpdatePolicy"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.UpdatePolicyStore(Amazon.VerifiedPermissions.Model.UpdatePolicyStoreRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.UpdatePolicyStore(Amazon.VerifiedPermissions.Model.UpdatePolicyStoreRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.UpdatePolicyStoreRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.UpdatePolicyStoreResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example turns off the validation settings for a policy store.
+                </para>
+                <code
+                    title="UpdatePolicyStore"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.VerifiedPermissions.IAmazonVerifiedPermissions.UpdatePolicyTemplate(Amazon.VerifiedPermissions.Model.UpdatePolicyTemplateRequest)" />
+            <member name="M:Amazon.VerifiedPermissions.AmazonVerifiedPermissionsClient.UpdatePolicyTemplate(Amazon.VerifiedPermissions.Model.UpdatePolicyTemplateRequest)" />
+            <member name="T:Amazon.VerifiedPermissions.Model.UpdatePolicyTemplateRequest" />
+            <member name="T:Amazon.VerifiedPermissions.Model.UpdatePolicyTemplateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example updates a policy template with both a new description and a new policy body. The effect, principal, and resource are the same as the original policy template. Only the action in the head, and the when and unless clauses can be different.
+
+Note
+The JSON in the parameters of this operation are strings that can contain embedded quotation marks (") within the outermost quotation mark pair. This requires that you stringify the JSON object by preceding all embedded quotation marks with a backslash character ( \" ) and combining all lines into a single text line with no line breaks.
+
+Example strings might be displayed wrapped across multiple lines here for readability, but the operation requires the parameters be submitted as single line strings.
+                </para>
+                <code
+                    title="UpdatePolicyTemplate"
+                    source=".\AWSSDKDocSamples\VerifiedPermissions\VerifiedPermissions.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+</docs>

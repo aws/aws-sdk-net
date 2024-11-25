@@ -31,7 +31,7 @@ namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForDeliveryStream operation.
-    /// Lists the tags for the specified delivery stream. This operation has a limit of five
+    /// Lists the tags for the specified Firehose stream. This operation has a limit of five
     /// transactions per second per account.
     /// </summary>
     public partial class ListTagsForDeliveryStreamRequest : AmazonKinesisFirehoseRequest
@@ -43,7 +43,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property DeliveryStreamName. 
         /// <para>
-        /// The name of the delivery stream whose tags you want to list.
+        /// The name of the Firehose stream whose tags you want to list.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -83,7 +83,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// The number of tags to return. If this number is less than the total number of tags
-        /// associated with the delivery stream, <c>HasMoreTags</c> is set to <c>true</c> in the
+        /// associated with the Firehose stream, <c>HasMoreTags</c> is set to <c>true</c> in the
         /// response. To list additional tags, set <c>ExclusiveStartTagKey</c> to the last key
         /// in the response. 
         /// </para>

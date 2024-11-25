@@ -34,10 +34,29 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class TargetHealthDescription
     {
+        private AdministrativeOverride _administrativeOverride;
         private AnomalyDetection _anomalyDetection;
         private string _healthCheckPort;
         private TargetDescription _target;
         private TargetHealth _targetHealth;
+
+        /// <summary>
+        /// Gets and sets the property AdministrativeOverride. 
+        /// <para>
+        /// The administrative override information for the target.
+        /// </para>
+        /// </summary>
+        public AdministrativeOverride AdministrativeOverride
+        {
+            get { return this._administrativeOverride; }
+            set { this._administrativeOverride = value; }
+        }
+
+        // Check to see if AdministrativeOverride property is set
+        internal bool IsSetAdministrativeOverride()
+        {
+            return this._administrativeOverride != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AnomalyDetection. 

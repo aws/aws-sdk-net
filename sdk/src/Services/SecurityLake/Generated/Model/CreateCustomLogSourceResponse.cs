@@ -39,7 +39,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// The created third-party custom source.
+        /// The third-party custom source that was created.
         /// </para>
         /// </summary>
         public CustomLogSourceResource Source

@@ -27,6 +27,43 @@ namespace Amazon.S3.Model
     /// </summary>
     public partial class PutLifecycleConfigurationResponse : AmazonWebServiceResponse
     {
+        private TransitionDefaultMinimumObjectSize _transitionDefaultMinimumObjectSize;
+
+        /// <summary>
+        /// Gets and sets the property TransitionDefaultMinimumObjectSize. 
+        /// <para>
+        /// Indicates which default minimum object size behavior is applied to the lifecycle configuration.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>all_storage_classes_128K</c> - Objects smaller than 128 KB will not transition
+        /// to any storage class by default. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>varies_by_storage_class</c> - Objects smaller than 128 KB will transition to Glacier
+        /// Flexible Retrieval or Glacier Deep Archive storage classes. By default, all other
+        /// storage classes will prevent transitions smaller than 128 KB. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To customize the minimum object size for any transition you can add a filter that
+        /// specifies a custom <c>ObjectSizeGreaterThan</c> or <c>ObjectSizeLessThan</c> in the
+        /// body of your transition rule. Custom filters always take precedence over the default
+        /// transition behavior.
+        /// </para>
+        /// </summary>
+        public TransitionDefaultMinimumObjectSize TransitionDefaultMinimumObjectSize
+        {
+            get { return this._transitionDefaultMinimumObjectSize; }
+            set { this._transitionDefaultMinimumObjectSize = value; }
+        }
+
+        // Check to see if TransitionDefaultMinimumObjectSize property is set
+        internal bool IsSetTransitionDefaultMinimumObjectSize()
+        {
+            return !string.IsNullOrEmpty(this._transitionDefaultMinimumObjectSize);
+        }
     }
 }
     

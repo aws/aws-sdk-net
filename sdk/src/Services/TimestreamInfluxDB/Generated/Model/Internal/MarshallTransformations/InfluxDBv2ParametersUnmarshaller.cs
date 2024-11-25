@@ -72,6 +72,48 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                     unmarshalledObject.FluxLogEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("httpIdleTimeout", targetDepth))
+                {
+                    var unmarshaller = DurationUnmarshaller.Instance;
+                    unmarshalledObject.HttpIdleTimeout = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("httpReadHeaderTimeout", targetDepth))
+                {
+                    var unmarshaller = DurationUnmarshaller.Instance;
+                    unmarshalledObject.HttpReadHeaderTimeout = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("httpReadTimeout", targetDepth))
+                {
+                    var unmarshaller = DurationUnmarshaller.Instance;
+                    unmarshalledObject.HttpReadTimeout = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("httpWriteTimeout", targetDepth))
+                {
+                    var unmarshaller = DurationUnmarshaller.Instance;
+                    unmarshalledObject.HttpWriteTimeout = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("influxqlMaxSelectBuckets", targetDepth))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.InfluxqlMaxSelectBuckets = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("influxqlMaxSelectPoint", targetDepth))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.InfluxqlMaxSelectPoint = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("influxqlMaxSelectSeries", targetDepth))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.InfluxqlMaxSelectSeries = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("logLevel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -90,10 +132,34 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                     unmarshalledObject.NoTasks = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("pprofDisabled", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.PprofDisabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("queryConcurrency", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.QueryConcurrency = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("queryInitialMemoryBytes", targetDepth))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.QueryInitialMemoryBytes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("queryMaxMemoryBytes", targetDepth))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.QueryMaxMemoryBytes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("queryMemoryBytes", targetDepth))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.QueryMemoryBytes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("queryQueueSize", targetDepth))
@@ -102,10 +168,106 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                     unmarshalledObject.QueryQueueSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("sessionLength", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.SessionLength = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sessionRenewDisabled", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.SessionRenewDisabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("storageCacheMaxMemorySize", targetDepth))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.StorageCacheMaxMemorySize = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("storageCacheSnapshotMemorySize", targetDepth))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.StorageCacheSnapshotMemorySize = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("storageCacheSnapshotWriteColdDuration", targetDepth))
+                {
+                    var unmarshaller = DurationUnmarshaller.Instance;
+                    unmarshalledObject.StorageCacheSnapshotWriteColdDuration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("storageCompactFullWriteColdDuration", targetDepth))
+                {
+                    var unmarshaller = DurationUnmarshaller.Instance;
+                    unmarshalledObject.StorageCompactFullWriteColdDuration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("storageCompactThroughputBurst", targetDepth))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.StorageCompactThroughputBurst = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("storageMaxConcurrentCompactions", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.StorageMaxConcurrentCompactions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("storageMaxIndexLogFileSize", targetDepth))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.StorageMaxIndexLogFileSize = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("storageNoValidateFieldSize", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.StorageNoValidateFieldSize = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("storageRetentionCheckInterval", targetDepth))
+                {
+                    var unmarshaller = DurationUnmarshaller.Instance;
+                    unmarshalledObject.StorageRetentionCheckInterval = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("storageSeriesFileMaxConcurrentSnapshotCompactions", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.StorageSeriesFileMaxConcurrentSnapshotCompactions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("storageSeriesIdSetCacheSize", targetDepth))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.StorageSeriesIdSetCacheSize = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("storageWalMaxConcurrentWrites", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.StorageWalMaxConcurrentWrites = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("storageWalMaxWriteDelay", targetDepth))
+                {
+                    var unmarshaller = DurationUnmarshaller.Instance;
+                    unmarshalledObject.StorageWalMaxWriteDelay = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("tracingType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TracingType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("uiDisabled", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.UiDisabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

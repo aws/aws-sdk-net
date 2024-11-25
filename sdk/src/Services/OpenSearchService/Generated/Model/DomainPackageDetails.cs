@@ -36,6 +36,7 @@ namespace Amazon.OpenSearchService.Model
     /// </summary>
     public partial class DomainPackageDetails
     {
+        private PackageAssociationConfiguration _associationConfiguration;
         private string _domainName;
         private DomainPackageStatus _domainPackageStatus;
         private ErrorDetails _errorDetails;
@@ -44,7 +45,26 @@ namespace Amazon.OpenSearchService.Model
         private string _packageName;
         private PackageType _packageType;
         private string _packageVersion;
+        private List<string> _prerequisitePackageIDList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _referencePath;
+
+        /// <summary>
+        /// Gets and sets the property AssociationConfiguration. 
+        /// <para>
+        /// The configuration for associating a package with an Amazon OpenSearch Service domain.
+        /// </para>
+        /// </summary>
+        public PackageAssociationConfiguration AssociationConfiguration
+        {
+            get { return this._associationConfiguration; }
+            set { this._associationConfiguration = value; }
+        }
+
+        // Check to see if AssociationConfiguration property is set
+        internal bool IsSetAssociationConfiguration()
+        {
+            return this._associationConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DomainName. 
@@ -190,6 +210,25 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetPackageVersion()
         {
             return this._packageVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrerequisitePackageIDList. 
+        /// <para>
+        /// A list of package IDs that must be associated with the domain before or with the package
+        /// can be associated.
+        /// </para>
+        /// </summary>
+        public List<string> PrerequisitePackageIDList
+        {
+            get { return this._prerequisitePackageIDList; }
+            set { this._prerequisitePackageIDList = value; }
+        }
+
+        // Check to see if PrerequisitePackageIDList property is set
+        internal bool IsSetPrerequisitePackageIDList()
+        {
+            return this._prerequisitePackageIDList != null && (this._prerequisitePackageIDList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

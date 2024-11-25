@@ -51,6 +51,18 @@
         {"shape":"ResourceLimitExceeded"}
       ]
     },
+    "BatchDeleteClusterNodes":{
+      "name":"BatchDeleteClusterNodes",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"BatchDeleteClusterNodesRequest"},
+      "output":{"shape":"BatchDeleteClusterNodesResponse"},
+      "errors":[
+        {"shape":"ResourceNotFound"}
+      ]
+    },
     "BatchDescribeModelPackage":{
       "name":"BatchDescribeModelPackage",
       "http":{
@@ -5227,6 +5239,51 @@
         "GenerateInferenceId":{"shape":"Boolean"}
       }
     },
+    "BatchDeleteClusterNodesError":{
+      "type":"structure",
+      "required":[
+        "Code",
+        "Message",
+        "NodeId"
+      ],
+      "members":{
+        "Code":{"shape":"BatchDeleteClusterNodesErrorCode"},
+        "Message":{"shape":"String"},
+        "NodeId":{"shape":"ClusterNodeId"}
+      }
+    },
+    "BatchDeleteClusterNodesErrorCode":{
+      "type":"string",
+      "enum":[
+        "NodeIdNotFound",
+        "InvalidNodeStatus",
+        "NodeIdInUse"
+      ]
+    },
+    "BatchDeleteClusterNodesErrorList":{
+      "type":"list",
+      "member":{"shape":"BatchDeleteClusterNodesError"},
+      "max":99,
+      "min":1
+    },
+    "BatchDeleteClusterNodesRequest":{
+      "type":"structure",
+      "required":[
+        "ClusterName",
+        "NodeIds"
+      ],
+      "members":{
+        "ClusterName":{"shape":"ClusterNameOrArn"},
+        "NodeIds":{"shape":"ClusterNodeIds"}
+      }
+    },
+    "BatchDeleteClusterNodesResponse":{
+      "type":"structure",
+      "members":{
+        "Failed":{"shape":"BatchDeleteClusterNodesErrorList"},
+        "Successful":{"shape":"ClusterNodeIds"}
+      }
+    },
     "BatchDescribeModelPackageError":{
       "type":"structure",
       "required":[
@@ -6058,7 +6115,26 @@
         "ml.t3.medium",
         "ml.t3.large",
         "ml.t3.xlarge",
-        "ml.t3.2xlarge"
+        "ml.t3.2xlarge",
+        "ml.g6.xlarge",
+        "ml.g6.2xlarge",
+        "ml.g6.4xlarge",
+        "ml.g6.8xlarge",
+        "ml.g6.16xlarge",
+        "ml.g6.12xlarge",
+        "ml.g6.24xlarge",
+        "ml.g6.48xlarge",
+        "ml.gr6.4xlarge",
+        "ml.gr6.8xlarge",
+        "ml.g6e.xlarge",
+        "ml.g6e.2xlarge",
+        "ml.g6e.4xlarge",
+        "ml.g6e.8xlarge",
+        "ml.g6e.16xlarge",
+        "ml.g6e.12xlarge",
+        "ml.g6e.24xlarge",
+        "ml.g6e.48xlarge",
+        "ml.p5e.48xlarge"
       ]
     },
     "ClusterLifeCycleConfig":{
@@ -6110,6 +6186,12 @@
       "max":256,
       "min":1,
       "pattern":"^i-[a-f0-9]{8}(?:[a-f0-9]{9})?$"
+    },
+    "ClusterNodeIds":{
+      "type":"list",
+      "member":{"shape":"ClusterNodeId"},
+      "max":99,
+      "min":1
     },
     "ClusterNodeRecovery":{
       "type":"string",
@@ -6221,7 +6303,8 @@
         "DefaultResourceSpec":{"shape":"ResourceSpec"},
         "CustomImages":{"shape":"CustomImages"},
         "LifecycleConfigArns":{"shape":"LifecycleConfigArns"},
-        "AppLifecycleManagement":{"shape":"AppLifecycleManagement"}
+        "AppLifecycleManagement":{"shape":"AppLifecycleManagement"},
+        "BuiltInLifecycleConfigArn":{"shape":"StudioLifecycleConfigArn"}
       }
     },
     "CodeRepositories":{
@@ -7597,7 +7680,8 @@
         "SkipModelValidation":{"shape":"SkipModelValidation"},
         "SourceUri":{"shape":"ModelPackageSourceUri"},
         "SecurityConfig":{"shape":"ModelPackageSecurityConfig"},
-        "ModelCard":{"shape":"ModelPackageModelCard"}
+        "ModelCard":{"shape":"ModelPackageModelCard"},
+        "ModelLifeCycle":{"shape":"ModelLifeCycle"}
       }
     },
     "CreateModelPackageOutput":{
@@ -9155,7 +9239,8 @@
         "LastUserActivityTimestamp":{"shape":"Timestamp"},
         "CreationTime":{"shape":"Timestamp"},
         "FailureReason":{"shape":"FailureReason"},
-        "ResourceSpec":{"shape":"ResourceSpec"}
+        "ResourceSpec":{"shape":"ResourceSpec"},
+        "BuiltInLifecycleConfigArn":{"shape":"StudioLifecycleConfigArn"}
       }
     },
     "DescribeArtifactRequest":{
@@ -10399,7 +10484,8 @@
         "SkipModelValidation":{"shape":"SkipModelValidation"},
         "SourceUri":{"shape":"ModelPackageSourceUri"},
         "SecurityConfig":{"shape":"ModelPackageSecurityConfig"},
-        "ModelCard":{"shape":"ModelPackageModelCard"}
+        "ModelCard":{"shape":"ModelPackageModelCard"},
+        "ModelLifeCycle":{"shape":"ModelLifeCycle"}
       }
     },
     "DescribeModelQualityJobDefinitionRequest":{
@@ -14214,6 +14300,13 @@
         "ml.inf1.2xlarge",
         "ml.inf1.6xlarge",
         "ml.inf1.24xlarge",
+        "ml.trn1.2xlarge",
+        "ml.trn1.32xlarge",
+        "ml.trn1n.32xlarge",
+        "ml.inf2.xlarge",
+        "ml.inf2.8xlarge",
+        "ml.inf2.24xlarge",
+        "ml.inf2.48xlarge",
         "ml.p4d.24xlarge",
         "ml.p4de.24xlarge",
         "ml.p5.48xlarge",
@@ -14430,7 +14523,8 @@
         "LifecycleConfigArns":{"shape":"LifecycleConfigArns"},
         "CodeRepositories":{"shape":"CodeRepositories"},
         "AppLifecycleManagement":{"shape":"AppLifecycleManagement"},
-        "EmrSettings":{"shape":"EmrSettings"}
+        "EmrSettings":{"shape":"EmrSettings"},
+        "BuiltInLifecycleConfigArn":{"shape":"StudioLifecycleConfigArn"}
       }
     },
     "JupyterServerAppSettings":{
@@ -17251,6 +17345,18 @@
       "max":1,
       "min":1
     },
+    "ModelLifeCycle":{
+      "type":"structure",
+      "required":[
+        "Stage",
+        "StageStatus"
+      ],
+      "members":{
+        "Stage":{"shape":"EntityName"},
+        "StageStatus":{"shape":"EntityName"},
+        "StageDescription":{"shape":"StageDescription"}
+      }
+    },
     "ModelMetadataFilter":{
       "type":"structure",
       "required":[
@@ -17352,6 +17458,7 @@
         "SourceUri":{"shape":"ModelPackageSourceUri"},
         "SecurityConfig":{"shape":"ModelPackageSecurityConfig"},
         "ModelCard":{"shape":"ModelPackageModelCard"},
+        "ModelLifeCycle":{"shape":"ModelLifeCycle"},
         "Tags":{"shape":"TagList"},
         "CustomerMetadataProperties":{"shape":"CustomerMetadataMap"},
         "DriftCheckBaselines":{"shape":"DriftCheckBaselines"},
@@ -19184,7 +19291,7 @@
     "PlatformIdentifier":{
       "type":"string",
       "max":15,
-      "pattern":"^(notebook-al1-v1|notebook-al2-v1|notebook-al2-v2)$"
+      "pattern":"^(notebook-al1-v1|notebook-al2-v1|notebook-al2-v2|notebook-al2-v3)$"
     },
     "PolicyString":{
       "type":"string",
@@ -21692,6 +21799,12 @@
         "TFRecord"
       ]
     },
+    "StageDescription":{
+      "type":"string",
+      "max":1024,
+      "min":0,
+      "pattern":"^.{0,1024}$"
+    },
     "StageStatus":{
       "type":"string",
       "enum":[
@@ -22719,6 +22832,7 @@
         "ml.p4d.24xlarge",
         "ml.p4de.24xlarge",
         "ml.p5.48xlarge",
+        "ml.p5e.48xlarge",
         "ml.c5.xlarge",
         "ml.c5.2xlarge",
         "ml.c5.4xlarge",
@@ -22737,6 +22851,22 @@
         "ml.g5.12xlarge",
         "ml.g5.24xlarge",
         "ml.g5.48xlarge",
+        "ml.g6.xlarge",
+        "ml.g6.2xlarge",
+        "ml.g6.4xlarge",
+        "ml.g6.8xlarge",
+        "ml.g6.16xlarge",
+        "ml.g6.12xlarge",
+        "ml.g6.24xlarge",
+        "ml.g6.48xlarge",
+        "ml.g6e.xlarge",
+        "ml.g6e.2xlarge",
+        "ml.g6e.4xlarge",
+        "ml.g6e.8xlarge",
+        "ml.g6e.16xlarge",
+        "ml.g6e.12xlarge",
+        "ml.g6e.24xlarge",
+        "ml.g6e.48xlarge",
         "ml.trn1.2xlarge",
         "ml.trn1.32xlarge",
         "ml.trn1n.32xlarge",
@@ -22920,6 +23050,7 @@
         "TrainingEndTime":{"shape":"Timestamp"},
         "LastModifiedTime":{"shape":"Timestamp"},
         "TrainingJobStatus":{"shape":"TrainingJobStatus"},
+        "SecondaryStatus":{"shape":"SecondaryStatus"},
         "WarmPoolStatus":{"shape":"WarmPoolStatus"}
       }
     },
@@ -23099,7 +23230,11 @@
         "ml.g5.12xlarge",
         "ml.g5.16xlarge",
         "ml.g5.24xlarge",
-        "ml.g5.48xlarge"
+        "ml.g5.48xlarge",
+        "ml.inf2.xlarge",
+        "ml.inf2.8xlarge",
+        "ml.inf2.24xlarge",
+        "ml.inf2.48xlarge"
       ]
     },
     "TransformInstanceTypes":{
@@ -23935,7 +24070,9 @@
         "AdditionalInferenceSpecificationsToAdd":{"shape":"AdditionalInferenceSpecifications"},
         "InferenceSpecification":{"shape":"InferenceSpecification"},
         "SourceUri":{"shape":"ModelPackageSourceUri"},
-        "ModelCard":{"shape":"ModelPackageModelCard"}
+        "ModelCard":{"shape":"ModelPackageModelCard"},
+        "ModelLifeCycle":{"shape":"ModelLifeCycle"},
+        "ClientToken":{"shape":"ClientToken"}
       }
     },
     "UpdateModelPackageOutput":{
@@ -24378,7 +24515,7 @@
       "type":"string",
       "max":176,
       "min":1,
-      "pattern":"(arn:aws[a-z\\-]*:sagemaker:[a-z0-9\\-]*:[0-9]{12}:[a-z\\-]*\\/)?([a-zA-Z0-9]([a-zA-Z0-9-]){0,62})(?<!-)(\\/[0-9]{1,5})?$"
+      "pattern":"(arn:aws[a-z\\-]*:sagemaker:[a-z0-9\\-]*:[0-9]{12}:[a-z\\-]*\\/)?([a-zA-Z0-9]([a-zA-Z0-9-]){0,62})(?<!-)(\\/[0-9]{1,9})?$"
     },
     "Vertex":{
       "type":"structure",

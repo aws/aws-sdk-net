@@ -77,6 +77,17 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.BaseCapacity.Value);
                     }
 
+                    if(publicRequest.IsSetComputeConfiguration())
+                    {
+                        context.Writer.WritePropertyName("computeConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ComputeConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ComputeConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetComputeType())
                     {
                         context.Writer.WritePropertyName("computeType");
@@ -111,6 +122,17 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     {
                         context.Writer.WritePropertyName("overflowBehavior");
                         context.Writer.Write(publicRequest.OverflowBehavior);
+                    }
+
+                    if(publicRequest.IsSetProxyConfiguration())
+                    {
+                        context.Writer.WritePropertyName("proxyConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ProxyConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ProxyConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
 
                     if(publicRequest.IsSetScalingConfiguration())

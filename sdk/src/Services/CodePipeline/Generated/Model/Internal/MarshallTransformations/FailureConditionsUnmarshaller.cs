@@ -78,6 +78,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                     unmarshalledObject.Result = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("retryConfiguration", targetDepth))
+                {
+                    var unmarshaller = RetryConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.RetryConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

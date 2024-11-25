@@ -78,6 +78,12 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                     unmarshalledObject.Epoch = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("filePath", targetDepth))
+                {
+                    var unmarshaller = StringFilterUnmarshaller.Instance;
+                    unmarshalledObject.FilePath = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringFilterUnmarshaller.Instance;

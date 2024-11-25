@@ -139,8 +139,7 @@ namespace Amazon.CleanRooms.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the protected query. Value values are `SUBMITTED`, `STARTED`, `CANCELLED`,
-        /// `CANCELLING`, `FAILED`, `SUCCESS`, `TIMED_OUT`.
+        /// The status of the protected query.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

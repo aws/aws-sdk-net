@@ -108,6 +108,18 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                     unmarshalledObject.JobType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("sourceUrl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceUrl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sourceUrlType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceUrlType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("startTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

@@ -35,6 +35,7 @@ namespace Amazon.Bedrock.Model
     public partial class GetImportedModelResponse : AmazonWebServiceResponse
     {
         private DateTime? _creationTime;
+        private bool? _instructSupported;
         private string _jobArn;
         private string _jobName;
         private string _modelArchitecture;
@@ -59,6 +60,24 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstructSupported. 
+        /// <para>
+        /// Specifies if the imported model supports converse.
+        /// </para>
+        /// </summary>
+        public bool? InstructSupported
+        {
+            get { return this._instructSupported; }
+            set { this._instructSupported = value; }
+        }
+
+        // Check to see if InstructSupported property is set
+        internal bool IsSetInstructSupported()
+        {
+            return this._instructSupported.HasValue; 
         }
 
         /// <summary>

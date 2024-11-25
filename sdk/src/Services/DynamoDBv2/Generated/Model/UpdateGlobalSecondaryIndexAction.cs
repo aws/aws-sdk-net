@@ -38,6 +38,7 @@ namespace Amazon.DynamoDBv2.Model
         private string _indexName;
         private OnDemandThroughput _onDemandThroughput;
         private ProvisionedThroughput _provisionedThroughput;
+        private WarmThroughput _warmThroughput;
 
         /// <summary>
         /// Gets and sets the property IndexName. 
@@ -100,6 +101,25 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetProvisionedThroughput()
         {
             return this._provisionedThroughput != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WarmThroughput. 
+        /// <para>
+        /// Represents the warm throughput value of the new provisioned throughput settings to
+        /// be applied to a global secondary index.
+        /// </para>
+        /// </summary>
+        public WarmThroughput WarmThroughput
+        {
+            get { return this._warmThroughput; }
+            set { this._warmThroughput = value; }
+        }
+
+        // Check to see if WarmThroughput property is set
+        internal bool IsSetWarmThroughput()
+        {
+            return this._warmThroughput != null;
         }
 
     }

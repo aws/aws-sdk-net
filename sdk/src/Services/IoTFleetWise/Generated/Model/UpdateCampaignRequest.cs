@@ -88,7 +88,7 @@ namespace Amazon.IoTFleetWise.Model
         /// Default: An empty array
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=5)]
+        [AWSProperty(Sensitive=true, Min=0, Max=5)]
         public List<string> DataExtraDimensions
         {
             get { return this._dataExtraDimensions; }

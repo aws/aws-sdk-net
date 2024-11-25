@@ -80,6 +80,17 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetS3PathForGroupMembers())
+            {
+                context.Writer.WritePropertyName("s3PathForGroupMembers");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = S3Marshaller.Instance;
+                marshaller.Marshall(requestObject.S3PathForGroupMembers, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

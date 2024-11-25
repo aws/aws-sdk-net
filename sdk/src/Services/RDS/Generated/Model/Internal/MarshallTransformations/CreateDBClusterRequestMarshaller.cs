@@ -97,6 +97,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CharacterSetName", StringUtils.FromString(publicRequest.CharacterSetName));
                 }
+                if(publicRequest.IsSetClusterScalabilityType())
+                {
+                    request.Parameters.Add("ClusterScalabilityType", StringUtils.FromString(publicRequest.ClusterScalabilityType));
+                }
                 if(publicRequest.IsSetCopyTagsToSnapshot())
                 {
                     request.Parameters.Add("CopyTagsToSnapshot", StringUtils.FromBool(publicRequest.CopyTagsToSnapshot));

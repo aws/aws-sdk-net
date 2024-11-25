@@ -36,6 +36,7 @@ namespace Amazon.SageMaker.Model
     {
         private DateTime? _creationTime;
         private DateTime? _lastModifiedTime;
+        private SecondaryStatus _secondaryStatus;
         private DateTime? _trainingEndTime;
         private string _trainingJobArn;
         private string _trainingJobName;
@@ -77,6 +78,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetLastModifiedTime()
         {
             return this._lastModifiedTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecondaryStatus. 
+        /// <para>
+        /// The secondary status of the training job.
+        /// </para>
+        /// </summary>
+        public SecondaryStatus SecondaryStatus
+        {
+            get { return this._secondaryStatus; }
+            set { this._secondaryStatus = value; }
+        }
+
+        // Check to see if SecondaryStatus property is set
+        internal bool IsSetSecondaryStatus()
+        {
+            return this._secondaryStatus != null;
         }
 
         /// <summary>

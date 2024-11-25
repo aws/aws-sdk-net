@@ -31,10 +31,10 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the IncreaseReplicaCount operation.
-    /// Dynamically increases the number of replicas in a Redis OSS (cluster mode disabled)
-    /// replication group or the number of replica nodes in one or more node groups (shards)
-    /// of a Redis OSS (cluster mode enabled) replication group. This operation is performed
-    /// with no cluster down time.
+    /// Dynamically increases the number of replicas in a Valkey or Redis OSS (cluster mode
+    /// disabled) replication group or the number of replica nodes in one or more node groups
+    /// (shards) of a Valkey or Redis OSS (cluster mode enabled) replication group. This operation
+    /// is performed with no cluster down time.
     /// </summary>
     public partial class IncreaseReplicaCountRequest : AmazonElastiCacheRequest
     {
@@ -67,9 +67,10 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property NewReplicaCount. 
         /// <para>
         /// The number of read replica nodes you want at the completion of this operation. For
-        /// Redis OSS (cluster mode disabled) replication groups, this is the number of replica
-        /// nodes in the replication group. For Redis OSS (cluster mode enabled) replication groups,
-        /// this is the number of replica nodes in each of the replication group's node groups.
+        /// Valkey or Redis OSS (cluster mode disabled) replication groups, this is the number
+        /// of replica nodes in the replication group. For Valkey or Redis OSS (cluster mode enabled)
+        /// replication groups, this is the number of replica nodes in each of the replication
+        /// group's node groups.
         /// </para>
         /// </summary>
         public int? NewReplicaCount
@@ -88,8 +89,8 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property ReplicaConfiguration. 
         /// <para>
         /// A list of <c>ConfigureShard</c> objects that can be used to configure each shard in
-        /// a Redis OSS (cluster mode enabled) replication group. The <c>ConfigureShard</c> has
-        /// three members: <c>NewReplicaCount</c>, <c>NodeGroupId</c>, and <c>PreferredAvailabilityZones</c>.
+        /// a Valkey or Redis OSS (cluster mode enabled) replication group. The <c>ConfigureShard</c>
+        /// has three members: <c>NewReplicaCount</c>, <c>NodeGroupId</c>, and <c>PreferredAvailabilityZones</c>.
         /// </para>
         /// </summary>
         public List<ConfigureShard> ReplicaConfiguration

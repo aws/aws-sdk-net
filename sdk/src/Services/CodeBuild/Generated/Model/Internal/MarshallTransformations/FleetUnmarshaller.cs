@@ -78,6 +78,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                     unmarshalledObject.BaseCapacity = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("computeConfiguration", targetDepth))
+                {
+                    var unmarshaller = ComputeConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ComputeConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("computeType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -130,6 +136,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.OverflowBehavior = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("proxyConfiguration", targetDepth))
+                {
+                    var unmarshaller = ProxyConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ProxyConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("scalingConfiguration", targetDepth))

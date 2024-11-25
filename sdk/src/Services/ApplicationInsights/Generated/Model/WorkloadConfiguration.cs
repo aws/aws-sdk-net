@@ -82,7 +82,7 @@ namespace Amazon.ApplicationInsights.Model
         /// The name of the workload.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=8)]
+        [AWSProperty(Min=1, Max=12)]
         public string WorkloadName
         {
             get { return this._workloadName; }

@@ -31,10 +31,10 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCapacityReservationBySplitting operation.
-    /// Create a new Capacity Reservation by splitting the available capacity of the source
-    /// Capacity Reservation. The new Capacity Reservation will have the same attributes as
-    /// the source Capacity Reservation except for tags. The source Capacity Reservation must
-    /// be <c>active</c> and owned by your Amazon Web Services account.
+    /// Create a new Capacity Reservation by splitting the capacity of the source Capacity
+    /// Reservation. The new Capacity Reservation will have the same attributes as the source
+    /// Capacity Reservation except for tags. The source Capacity Reservation must be <c>active</c>
+    /// and owned by your Amazon Web Services account.
     /// </summary>
     public partial class CreateCapacityReservationBySplittingRequest : AmazonEC2Request
     {
@@ -85,8 +85,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SourceCapacityReservationId. 
         /// <para>
-        ///  The ID of the Capacity Reservation from which you want to split the available capacity.
-        /// 
+        ///  The ID of the Capacity Reservation from which you want to split the capacity. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

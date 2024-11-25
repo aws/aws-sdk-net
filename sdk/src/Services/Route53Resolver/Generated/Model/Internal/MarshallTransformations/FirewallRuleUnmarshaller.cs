@@ -96,6 +96,12 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                     unmarshalledObject.BlockResponse = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ConfidenceThreshold", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConfidenceThreshold = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -106,6 +112,12 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.CreatorRequestId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DnsThreatProtection", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DnsThreatProtection = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FirewallDomainListId", targetDepth))
@@ -124,6 +136,12 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FirewallRuleGroupId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FirewallThreatProtectionId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FirewallThreatProtectionId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ModificationTime", targetDepth))

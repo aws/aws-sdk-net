@@ -90,7 +90,8 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property Group. 
         /// <para>
-        /// The name or ARN of the resource group with the configuration that you want to update.
+        /// The name or Amazon resource name (ARN) of the resource group with the configuration
+        /// that you want to update.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]

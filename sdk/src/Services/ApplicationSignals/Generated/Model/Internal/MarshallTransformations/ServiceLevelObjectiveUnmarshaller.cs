@@ -72,6 +72,12 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("BurnRateConfigurations", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<BurnRateConfiguration, BurnRateConfigurationUnmarshaller>(BurnRateConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.BurnRateConfigurations = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreatedTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

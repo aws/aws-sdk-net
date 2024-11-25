@@ -103,6 +103,17 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetWarmThroughput())
+            {
+                context.Writer.WritePropertyName("WarmThroughput");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = WarmThroughputMarshaller.Instance;
+                marshaller.Marshall(requestObject.WarmThroughput, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

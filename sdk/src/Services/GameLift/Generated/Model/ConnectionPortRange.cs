@@ -30,20 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// <b>This operation has been expanded to use with the Amazon GameLift containers feature,
-    /// which is currently in public preview.</b> 
-    /// 
-    ///  
-    /// <para>
     /// The set of port numbers to open on each instance in a container fleet. Connection
     /// ports are used by inbound traffic to connect with processes that are running in containers
     /// on the fleet.
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>Part of:</b> <a>ContainerGroupsConfiguration</a>, <a>ContainerGroupsAttributes</a>
-    /// 
-    /// </para>
     /// </summary>
     public partial class ConnectionPortRange
     {

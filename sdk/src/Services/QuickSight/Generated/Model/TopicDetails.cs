@@ -35,10 +35,29 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class TopicDetails
     {
+        private TopicConfigOptions _configOptions;
         private List<DatasetMetadata> _dataSets = AWSConfigs.InitializeCollections ? new List<DatasetMetadata>() : null;
         private string _description;
         private string _name;
         private TopicUserExperienceVersion _userExperienceVersion;
+
+        /// <summary>
+        /// Gets and sets the property ConfigOptions. 
+        /// <para>
+        /// Configuration options for a <c>Topic</c>.
+        /// </para>
+        /// </summary>
+        public TopicConfigOptions ConfigOptions
+        {
+            get { return this._configOptions; }
+            set { this._configOptions = value; }
+        }
+
+        // Check to see if ConfigOptions property is set
+        internal bool IsSetConfigOptions()
+        {
+            return this._configOptions != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DataSets. 

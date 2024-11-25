@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.Billing.IAmazonBilling.ListBillingViews(Amazon.Billing.Model.ListBillingViewsRequest)" />
+            <member name="M:Amazon.Billing.AmazonBillingClient.ListBillingViews(Amazon.Billing.Model.ListBillingViewsRequest)" />
+            <member name="T:Amazon.Billing.Model.ListBillingViewsRequest" />
+            <member name="T:Amazon.Billing.Model.ListBillingViewsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke ListBillingViews"
+                    source=".\AWSSDKDocSamples\Billing\Billing.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Billing.IAmazonBilling.ListBillingViews(Amazon.Billing.Model.ListBillingViewsRequest)" />
+            <member name="M:Amazon.Billing.AmazonBillingClient.ListBillingViews(Amazon.Billing.Model.ListBillingViewsRequest)" />
+            <member name="T:Amazon.Billing.Model.ListBillingViewsRequest" />
+            <member name="T:Amazon.Billing.Model.ListBillingViewsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Error example for ListBillingViews"
+                    source=".\AWSSDKDocSamples\Billing\Billing.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+</docs>

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// Contains information about a delivery stream.
+    /// Contains information about a Firehose stream.
     /// </summary>
     public partial class DeliveryStreamDescription
     {
@@ -50,7 +50,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property CreateTimestamp. 
         /// <para>
-        /// The date and time that the delivery stream was created.
+        /// The date and time that the Firehose stream was created.
         /// </para>
         /// </summary>
         public DateTime? CreateTimestamp
@@ -68,7 +68,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property DeliveryStreamARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the delivery stream. For more information, see <a
+        /// The Amazon Resource Name (ARN) of the Firehose stream. For more information, see <a
         /// href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
         /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.
         /// </para>
@@ -89,7 +89,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property DeliveryStreamEncryptionConfiguration. 
         /// <para>
-        /// Indicates the server-side encryption (SSE) status for the delivery stream.
+        /// Indicates the server-side encryption (SSE) status for the Firehose stream.
         /// </para>
         /// </summary>
         public DeliveryStreamEncryptionConfiguration DeliveryStreamEncryptionConfiguration
@@ -107,7 +107,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property DeliveryStreamName. 
         /// <para>
-        /// The name of the delivery stream.
+        /// The name of the Firehose stream.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -126,7 +126,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property DeliveryStreamStatus. 
         /// <para>
-        /// The status of the delivery stream. If the status of a delivery stream is <c>CREATING_FAILED</c>,
+        /// The status of the Firehose stream. If the status of a Firehose stream is <c>CREATING_FAILED</c>,
         /// this status doesn't change, and you can't invoke <c>CreateDeliveryStream</c> again
         /// on it. However, you can invoke the <a>DeleteDeliveryStream</a> operation to delete
         /// it.
@@ -148,15 +148,15 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property DeliveryStreamType. 
         /// <para>
-        /// The delivery stream type. This can be one of the following values:
+        /// The Firehose stream type. This can be one of the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>DirectPut</c>: Provider applications access the delivery stream directly.
+        ///  <c>DirectPut</c>: Provider applications access the Firehose stream directly.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>KinesisStreamAsSource</c>: The delivery stream uses a Kinesis data stream as a
+        ///  <c>KinesisStreamAsSource</c>: The Firehose stream uses a Kinesis data stream as a
         /// source.
         /// </para>
         ///  </li> </ul>
@@ -235,7 +235,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property LastUpdateTimestamp. 
         /// <para>
-        /// The date and time that the delivery stream was last updated.
+        /// The date and time that the Firehose stream was last updated.
         /// </para>
         /// </summary>
         public DateTime? LastUpdateTimestamp
@@ -272,7 +272,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property VersionId. 
         /// <para>
-        /// Each time the destination is updated for a delivery stream, the version ID is changed,
+        /// Each time the destination is updated for a Firehose stream, the version ID is changed,
         /// and the current version ID is required when updating the destination. This is so that
         /// the service knows it is applying the changes to the correct version of the delivery
         /// stream.

@@ -78,6 +78,12 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Authorized = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("containerFormat", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ContainerFormat = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ingestEndpoint", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -94,6 +100,12 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.LatencyMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("multitrackInputConfiguration", targetDepth))
+                {
+                    var unmarshaller = MultitrackInputConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.MultitrackInputConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth))

@@ -84,6 +84,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.ColumnStatisticsTaskRunId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ComputationType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ComputationType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

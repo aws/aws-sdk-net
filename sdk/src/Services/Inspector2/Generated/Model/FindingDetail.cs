@@ -46,7 +46,11 @@ namespace Amazon.Inspector2.Model
         private List<string> _ttps = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
-        /// Gets and sets the property CisaData.
+        /// Gets and sets the property CisaData. 
+        /// <para>
+        /// The Cybersecurity and Infrastructure Security Agency (CISA) details for a specific
+        /// vulnerability.
+        /// </para>
         /// </summary>
         public CisaData CisaData
         {
@@ -116,7 +120,10 @@ namespace Amazon.Inspector2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExploitObserved.
+        /// Gets and sets the property ExploitObserved. 
+        /// <para>
+        /// Contains information on when this exploit was observed.
+        /// </para>
         /// </summary>
         public ExploitObserved ExploitObserved
         {

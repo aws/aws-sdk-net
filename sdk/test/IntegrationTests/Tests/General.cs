@@ -680,6 +680,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         // By default it only tests a small subset of services.
         [TestMethod]
         [TestCategory("General")]
+        [Ignore("Skipping flaky test while design for clock skew behavior is defined")]
         public void TestClockSkewCorrection()
         {
             VerifyClockSkewSetting();

@@ -1059,6 +1059,10 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly InvalidInputExceptionReason INVALID_PATTERN_TARGET_ID = new InvalidInputExceptionReason("INVALID_PATTERN_TARGET_ID");
         /// <summary>
+        /// Constant INVALID_PRINCIPAL for InvalidInputExceptionReason
+        /// </summary>
+        public static readonly InvalidInputExceptionReason INVALID_PRINCIPAL = new InvalidInputExceptionReason("INVALID_PRINCIPAL");
+        /// <summary>
         /// Constant INVALID_RESOURCE_POLICY_JSON for InvalidInputExceptionReason
         /// </summary>
         public static readonly InvalidInputExceptionReason INVALID_RESOURCE_POLICY_JSON = new InvalidInputExceptionReason("INVALID_RESOURCE_POLICY_JSON");
@@ -1102,6 +1106,10 @@ namespace Amazon.Organizations
         /// Constant MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS for InvalidInputExceptionReason
         /// </summary>
         public static readonly InvalidInputExceptionReason MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS = new InvalidInputExceptionReason("MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS");
+        /// <summary>
+        /// Constant NON_DETACHABLE_POLICY for InvalidInputExceptionReason
+        /// </summary>
+        public static readonly InvalidInputExceptionReason NON_DETACHABLE_POLICY = new InvalidInputExceptionReason("NON_DETACHABLE_POLICY");
         /// <summary>
         /// Constant TARGET_NOT_SUPPORTED for InvalidInputExceptionReason
         /// </summary>
@@ -1276,6 +1284,10 @@ namespace Amazon.Organizations
         /// Constant CHATBOT_POLICY for PolicyType
         /// </summary>
         public static readonly PolicyType CHATBOT_POLICY = new PolicyType("CHATBOT_POLICY");
+        /// <summary>
+        /// Constant RESOURCE_CONTROL_POLICY for PolicyType
+        /// </summary>
+        public static readonly PolicyType RESOURCE_CONTROL_POLICY = new PolicyType("RESOURCE_CONTROL_POLICY");
         /// <summary>
         /// Constant SERVICE_CONTROL_POLICY for PolicyType
         /// </summary>

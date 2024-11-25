@@ -39,7 +39,14 @@ namespace Amazon.QBusiness.Model
     /// are also available in Amazon Q Business Lite. For information on what's included in
     /// Amazon Q Business Lite and what's included in Amazon Q Business Pro, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/tiers.html#user-sub-tiers">Amazon
     /// Q Business tiers</a>. You must use the Amazon Q Business console to assign subscription
-    /// tiers to users.
+    /// tiers to users. 
+    /// </para>
+    ///  
+    /// <para>
+    ///  A Amazon Q Apps service linked role will be created if it's absent in the Amazon
+    /// Web Services account when the QAppsConfiguration is enabled in the request. For more
+    /// information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/using-service-linked-roles-qapps.html">
+    /// Using service-linked roles for Q Apps </a> 
     /// </para>
     ///  </note>
     /// </summary>
@@ -272,7 +279,9 @@ namespace Amazon.QBusiness.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         ///  The Amazon Resource Name (ARN) of an IAM role with permissions to access your Amazon
-        /// CloudWatch logs and metrics.
+        /// CloudWatch logs and metrics. If this property is not specified, Amazon Q Business
+        /// will create a <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/using-service-linked-roles.html#slr-permissions">service
+        /// linked role (SLR)</a> and use it as the application's role.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1284)]

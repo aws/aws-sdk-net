@@ -38,6 +38,8 @@ namespace Amazon.ElastiCache.Model
         private CacheUsageLimits _cacheUsageLimits;
         private string _dailySnapshotTime;
         private string _description;
+        private string _engine;
+        private string _majorEngineVersion;
         private bool? _removeUserGroup;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _serverlessCacheName;
@@ -66,8 +68,8 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property DailySnapshotTime. 
         /// <para>
         /// The daily time during which Elasticache begins taking a daily snapshot of the serverless
-        /// cache. Available for Redis OSS and Serverless Memcached only. The default is NULL,
-        /// i.e. the existing snapshot time configured for the cluster is not removed.
+        /// cache. Available for Valkey, Redis OSS and Serverless Memcached only. The default
+        /// is NULL, i.e. the existing snapshot time configured for the cluster is not removed.
         /// </para>
         /// </summary>
         public string DailySnapshotTime
@@ -102,10 +104,47 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Engine. 
+        /// <para>
+        /// Modifies the engine listed in a serverless cache request. The options are redis, memcached
+        /// or valkey.
+        /// </para>
+        /// </summary>
+        public string Engine
+        {
+            get { return this._engine; }
+            set { this._engine = value; }
+        }
+
+        // Check to see if Engine property is set
+        internal bool IsSetEngine()
+        {
+            return this._engine != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MajorEngineVersion. 
+        /// <para>
+        /// Modifies the engine vesion listed in a serverless cache request. 
+        /// </para>
+        /// </summary>
+        public string MajorEngineVersion
+        {
+            get { return this._majorEngineVersion; }
+            set { this._majorEngineVersion = value; }
+        }
+
+        // Check to see if MajorEngineVersion property is set
+        internal bool IsSetMajorEngineVersion()
+        {
+            return this._majorEngineVersion != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RemoveUserGroup. 
         /// <para>
-        /// The identifier of the UserGroup to be removed from association with the Redis OSS
-        /// serverless cache. Available for Redis OSS only. Default is NULL.
+        /// The identifier of the UserGroup to be removed from association with the Valkey and
+        /// Redis OSS serverless cache. Available for Valkey and Redis OSS only. Default is NULL.
         /// </para>
         /// </summary>
         public bool? RemoveUserGroup
@@ -164,8 +203,8 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property SnapshotRetentionLimit. 
         /// <para>
         /// The number of days for which Elasticache retains automatic snapshots before deleting
-        /// them. Available for Redis OSS and Serverless Memcached only. Default = NULL, i.e.
-        /// the existing snapshot-retention-limit will not be removed or modified. The maximum
+        /// them. Available for Valkey, Redis OSS and Serverless Memcached only. Default = NULL,
+        /// i.e. the existing snapshot-retention-limit will not be removed or modified. The maximum
         /// value allowed is 35 days.
         /// </para>
         /// </summary>
@@ -185,7 +224,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property UserGroupId. 
         /// <para>
         /// The identifier of the UserGroup to be associated with the serverless cache. Available
-        /// for Redis OSS only. Default is NULL - the existing UserGroup is not removed.
+        /// for Valkey and Redis OSS only. Default is NULL - the existing UserGroup is not removed.
         /// </para>
         /// </summary>
         public string UserGroupId

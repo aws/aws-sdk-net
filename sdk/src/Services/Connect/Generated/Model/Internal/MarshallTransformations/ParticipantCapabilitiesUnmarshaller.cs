@@ -66,6 +66,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ScreenShare", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ScreenShare = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Video", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -69,10 +69,38 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     writer.Validate = false;
                     writer.WriteObjectStart();
                     var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetEngineVersion())
+                    {
+                        context.Writer.WritePropertyName("EngineVersion");
+                        context.Writer.Write(publicRequest.EngineVersion);
+                    }
+
+                    if(publicRequest.IsSetPackageConfiguration())
+                    {
+                        context.Writer.WritePropertyName("PackageConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PackageConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.PackageConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetPackageDescription())
                     {
                         context.Writer.WritePropertyName("PackageDescription");
                         context.Writer.Write(publicRequest.PackageDescription);
+                    }
+
+                    if(publicRequest.IsSetPackageEncryptionOptions())
+                    {
+                        context.Writer.WritePropertyName("PackageEncryptionOptions");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PackageEncryptionOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.PackageEncryptionOptions, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
 
                     if(publicRequest.IsSetPackageName())
@@ -96,6 +124,17 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     {
                         context.Writer.WritePropertyName("PackageType");
                         context.Writer.Write(publicRequest.PackageType);
+                    }
+
+                    if(publicRequest.IsSetPackageVendingOptions())
+                    {
+                        context.Writer.WritePropertyName("PackageVendingOptions");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PackageVendingOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.PackageVendingOptions, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
 
                     writer.WriteObjectEnd();

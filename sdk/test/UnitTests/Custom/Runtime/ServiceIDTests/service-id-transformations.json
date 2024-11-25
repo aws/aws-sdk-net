@@ -1050,11 +1050,6 @@
     "service_envvar_name": "AWS_ENDPOINT_URL_NETWORKMANAGER"
   },
   {
-    "service_id": "nimble",
-    "services_section_name": "nimble",
-    "service_envvar_name": "AWS_ENDPOINT_URL_NIMBLE"
-  },
-  {
     "service_id": "OpenSearch",
     "services_section_name": "opensearch",
     "service_envvar_name": "AWS_ENDPOINT_URL_OPENSEARCH"

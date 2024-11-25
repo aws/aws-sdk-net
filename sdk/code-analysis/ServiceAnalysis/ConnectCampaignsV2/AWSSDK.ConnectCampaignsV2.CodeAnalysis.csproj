@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <ProjectGuid>{8082E10C-7CBC-40C7-86FA-6C70FD611804}</ProjectGuid>
+    <RootNamespace>Amazon.ConnectCampaignsV2.CodeAnalysis</RootNamespace>
+    <AssemblyName>AWSSDK.ConnectCampaignsV2.CodeAnalysis</AssemblyName>
+
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="2.9.8" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Generated/PropertyValueRules.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../SharedAnalysisCode/SharedAnalysisCode.csproj" />
+  </ItemGroup>
+</Project>

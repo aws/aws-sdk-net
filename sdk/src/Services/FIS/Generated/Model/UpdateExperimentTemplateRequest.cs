@@ -38,6 +38,7 @@ namespace Amazon.FIS.Model
         private Dictionary<string, UpdateExperimentTemplateActionInputItem> _actions = AWSConfigs.InitializeCollections ? new Dictionary<string, UpdateExperimentTemplateActionInputItem>() : null;
         private string _description;
         private UpdateExperimentTemplateExperimentOptionsInput _experimentOptions;
+        private UpdateExperimentTemplateReportConfigurationInput _experimentReportConfiguration;
         private string _id;
         private UpdateExperimentTemplateLogConfigurationInput _logConfiguration;
         private string _roleArn;
@@ -97,6 +98,24 @@ namespace Amazon.FIS.Model
         internal bool IsSetExperimentOptions()
         {
             return this._experimentOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExperimentReportConfiguration. 
+        /// <para>
+        /// The experiment report configuration for the experiment template.
+        /// </para>
+        /// </summary>
+        public UpdateExperimentTemplateReportConfigurationInput ExperimentReportConfiguration
+        {
+            get { return this._experimentReportConfiguration; }
+            set { this._experimentReportConfiguration = value; }
+        }
+
+        // Check to see if ExperimentReportConfiguration property is set
+        internal bool IsSetExperimentReportConfiguration()
+        {
+            return this._experimentReportConfiguration != null;
         }
 
         /// <summary>

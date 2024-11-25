@@ -119,8 +119,15 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupArns. 
         /// <para>
-        /// Specifies the ARNs of the security groups that provide access to your file system's
-        /// preferred subnet.
+        /// Specifies the ARNs of the Amazon EC2 security groups that provide access to your file
+        /// system's preferred subnet.
+        /// </para>
+        ///  
+        /// <para>
+        /// The security groups that you specify must be able to communicate with your file system's
+        /// security groups. For information about configuring security groups for file system
+        /// access, see the <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/limit-access-security-groups.html">
+        /// <i>Amazon FSx for Windows File Server User Guide</i> </a>.
         /// </para>
         ///  <note> 
         /// <para>

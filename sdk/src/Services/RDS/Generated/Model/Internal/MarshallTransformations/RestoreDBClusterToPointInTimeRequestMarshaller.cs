@@ -113,6 +113,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("EnableIAMDatabaseAuthentication", StringUtils.FromBool(publicRequest.EnableIAMDatabaseAuthentication));
                 }
+                if(publicRequest.IsSetEnablePerformanceInsights())
+                {
+                    request.Parameters.Add("EnablePerformanceInsights", StringUtils.FromBool(publicRequest.EnablePerformanceInsights));
+                }
                 if(publicRequest.IsSetEngineLifecycleSupport())
                 {
                     request.Parameters.Add("EngineLifecycleSupport", StringUtils.FromString(publicRequest.EngineLifecycleSupport));
@@ -129,6 +133,14 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("KmsKeyId", StringUtils.FromString(publicRequest.KmsKeyId));
                 }
+                if(publicRequest.IsSetMonitoringInterval())
+                {
+                    request.Parameters.Add("MonitoringInterval", StringUtils.FromInt(publicRequest.MonitoringInterval));
+                }
+                if(publicRequest.IsSetMonitoringRoleArn())
+                {
+                    request.Parameters.Add("MonitoringRoleArn", StringUtils.FromString(publicRequest.MonitoringRoleArn));
+                }
                 if(publicRequest.IsSetNetworkType())
                 {
                     request.Parameters.Add("NetworkType", StringUtils.FromString(publicRequest.NetworkType));
@@ -136,6 +148,14 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetOptionGroupName())
                 {
                     request.Parameters.Add("OptionGroupName", StringUtils.FromString(publicRequest.OptionGroupName));
+                }
+                if(publicRequest.IsSetPerformanceInsightsKMSKeyId())
+                {
+                    request.Parameters.Add("PerformanceInsightsKMSKeyId", StringUtils.FromString(publicRequest.PerformanceInsightsKMSKeyId));
+                }
+                if(publicRequest.IsSetPerformanceInsightsRetentionPeriod())
+                {
+                    request.Parameters.Add("PerformanceInsightsRetentionPeriod", StringUtils.FromInt(publicRequest.PerformanceInsightsRetentionPeriod));
                 }
                 if(publicRequest.IsSetPort())
                 {

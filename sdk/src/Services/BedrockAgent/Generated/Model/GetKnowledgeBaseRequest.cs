@@ -40,7 +40,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property KnowledgeBaseId. 
         /// <para>
-        /// The unique identifier of the knowledge base for which to get information.
+        /// The unique identifier of the knowledge base you want to get information on.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -38,7 +38,14 @@ namespace Amazon.Connect.Model
     /// management type, <c>FirstName</c>, <c>LastName</c>, and <c>Email</c> cannot be updated
     /// from within Amazon Connect because they are managed by the directory.
     /// </para>
-    ///  </note>
+    ///  </note> <important> 
+    /// <para>
+    /// The <c>FirstName</c> and <c>LastName</c> length constraints below apply only to instances
+    /// using SAML for identity management. If you are using Amazon Connect for identity management,
+    /// the length constraints are 1-255 for <c>FirstName</c>, and 1-256 for <c>LastName</c>.
+    /// 
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class UserIdentityInfo
     {
@@ -75,7 +82,7 @@ namespace Amazon.Connect.Model
         /// management.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=100)]
+        [AWSProperty(Sensitive=true, Min=0, Max=255)]
         public string FirstName
         {
             get { return this._firstName; }
@@ -95,7 +102,7 @@ namespace Amazon.Connect.Model
         /// management.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=100)]
+        [AWSProperty(Sensitive=true, Min=0, Max=300)]
         public string LastName
         {
             get { return this._lastName; }

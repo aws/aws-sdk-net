@@ -96,6 +96,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.PodName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("podNamespace", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PodNamespace = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("startedAt", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;

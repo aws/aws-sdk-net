@@ -31,7 +31,7 @@ namespace Amazon.MWAA.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteEnvironment operation.
-    /// Deletes an Amazon Managed Workflows for Apache Airflow (MWAA) environment.
+    /// Deletes an Amazon Managed Workflows for Apache Airflow (Amazon MWAA) environment.
     /// </summary>
     public partial class DeleteEnvironmentRequest : AmazonMWAARequest
     {

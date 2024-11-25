@@ -46,6 +46,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         private string _influxAuthParametersSecretArn;
         private LogDeliveryConfiguration _logDeliveryConfiguration;
         private string _name;
+        private int? _port;
         private bool? _publiclyAccessible;
         private string _secondaryAvailabilityZone;
         private Status _status;
@@ -275,6 +276,25 @@ namespace Amazon.TimestreamInfluxDB.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Port. 
+        /// <para>
+        /// The port number on which InfluxDB accepts connections.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1024, Max=65535)]
+        public int? Port
+        {
+            get { return this._port; }
+            set { this._port = value; }
+        }
+
+        // Check to see if Port property is set
+        internal bool IsSetPort()
+        {
+            return this._port.HasValue; 
         }
 
         /// <summary>

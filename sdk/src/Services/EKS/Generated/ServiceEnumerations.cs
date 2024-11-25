@@ -1407,6 +1407,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly NodegroupIssueCode ClusterUnreachable = new NodegroupIssueCode("ClusterUnreachable");
         /// <summary>
+        /// Constant Ec2InstanceTypeDoesNotExist for NodegroupIssueCode
+        /// </summary>
+        public static readonly NodegroupIssueCode Ec2InstanceTypeDoesNotExist = new NodegroupIssueCode("Ec2InstanceTypeDoesNotExist");
+        /// <summary>
         /// Constant Ec2LaunchTemplateDeletionFailure for NodegroupIssueCode
         /// </summary>
         public static readonly NodegroupIssueCode Ec2LaunchTemplateDeletionFailure = new NodegroupIssueCode("Ec2LaunchTemplateDeletionFailure");
@@ -1896,6 +1900,10 @@ namespace Amazon.EKS
         /// Constant Version for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType Version = new UpdateParamType("Version");
+        /// <summary>
+        /// Constant ZonalShiftConfig for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType ZonalShiftConfig = new UpdateParamType("ZonalShiftConfig");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2040,6 +2048,10 @@ namespace Amazon.EKS
         /// Constant VpcConfigUpdate for UpdateType
         /// </summary>
         public static readonly UpdateType VpcConfigUpdate = new UpdateType("VpcConfigUpdate");
+        /// <summary>
+        /// Constant ZonalShiftConfigUpdate for UpdateType
+        /// </summary>
+        public static readonly UpdateType ZonalShiftConfigUpdate = new UpdateType("ZonalShiftConfigUpdate");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

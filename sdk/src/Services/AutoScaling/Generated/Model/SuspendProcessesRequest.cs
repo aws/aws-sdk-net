@@ -44,7 +44,8 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// To resume processes that have been suspended, call the <a>ResumeProcesses</a> API.
+    /// To resume processes that have been suspended, call the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_ResumeProcesses.html">ResumeProcesses</a>
+    /// API.
     /// </para>
     /// </summary>
     public partial class SuspendProcessesRequest : AmazonAutoScalingRequest

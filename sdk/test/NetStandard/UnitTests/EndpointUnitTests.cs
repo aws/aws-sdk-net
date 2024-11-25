@@ -1,13 +1,5 @@
 ﻿using Amazon;
-
 using Xunit;
-using Amazon.S3;
-using System;
-using System.IO;
-using System.Diagnostics;
-using System.Reflection;
-using System.Collections.Generic;
-using Amazon.Internal;
 
 namespace AWSSDK_NetStandard.UnitTests
 {

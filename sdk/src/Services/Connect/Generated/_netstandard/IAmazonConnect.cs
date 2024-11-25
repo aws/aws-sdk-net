@@ -115,13 +115,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Associates the specified dataset for a Amazon Connect instance with the target account.
         /// You can associate only one dataset in a single call.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateAnalyticsDataSet service method.</param>
         /// <param name="cancellationToken">
@@ -615,7 +610,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Associates an agent with a traffic distribution group.
+        /// Associates an agent with a traffic distribution group. This API can be called only
+        /// in the Region where the traffic distribution group is created.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateTrafficDistributionGroupUser service method.</param>
         /// <param name="cancellationToken">
@@ -684,13 +680,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Associates a list of analytics datasets for a given Amazon Connect instance to a target
         /// account. You can associate multiple datasets in a single call.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchAssociateAnalyticsDataSet service method.</param>
         /// <param name="cancellationToken">
@@ -723,13 +714,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Removes a list of analytics datasets associated with a given Amazon Connect instance.
         /// You can disassociate multiple datasets in a single call.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDisassociateAnalyticsDataSet service method.</param>
         /// <param name="cancellationToken">
@@ -1729,7 +1715,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Creates a traffic distribution group given an Amazon Connect instance that has been
-        /// replicated. 
+        /// replicated.
         /// 
         ///  <note> 
         /// <para>
@@ -3067,12 +3053,9 @@ namespace Amazon.Connect
         /// </para>
         ///  <important> 
         /// <para>
-        /// Contact information remains available in Amazon Connect for 24 months, and then it
-        /// is deleted.
-        /// </para>
-        ///  
-        /// <para>
-        /// Only data from November 12, 2021, and later is returned by this API.
+        /// Contact information remains available in Amazon Connect for 24 months from the InitiationTimestamp,
+        /// and then it is deleted. Only contact information that is available in Amazon Connect
+        /// is returned by this API
         /// </para>
         ///  </important>
         /// </summary>
@@ -3937,12 +3920,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Removes the dataset ID associated with a given Amazon Connect instance.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateAnalyticsDataSet service method.</param>
         /// <param name="cancellationToken">
@@ -4357,7 +4335,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Disassociates an agent from a traffic distribution group.
+        /// Disassociates an agent from a traffic distribution group. This API can be called only
+        /// in the Region where the traffic distribution group is created.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateTrafficDistributionGroupUser service method.</param>
         /// <param name="cancellationToken">
@@ -4750,7 +4729,7 @@ namespace Amazon.Connect
         /// the previous version of this API. It has new metrics, offers filtering at a metric
         /// level, and offers the ability to filter and group data by channels, queues, routing
         /// profiles, agents, and agent hierarchy levels. It can retrieve historical data for
-        /// the last 3 months, at varying intervals. 
+        /// the last 3 months, at varying intervals. It does not support agent queues.
         /// </para>
         ///  
         /// <para>
@@ -4994,12 +4973,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Lists the association status of requested dataset ID for a given Amazon Connect instance.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAnalyticsDataAssociations service method.</param>
         /// <param name="cancellationToken">
@@ -7845,6 +7819,76 @@ namespace Amazon.Connect
 
         #endregion
                 
+        #region  StartOutboundChatContact
+
+
+
+        /// <summary>
+        /// Initiates a new outbound SMS contact to a customer. Response of this API provides
+        /// the ContactId of the outbound SMS contact created.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>SourceEndpoint</b> only supports Endpoints with <c>CONNECT_PHONENUMBER_ARN</c>
+        /// as Type and <b>DestinationEndpoint</b> only supports Endpoints with <c>TELEPHONE_NUMBER</c>
+        /// as Type. <b>ContactFlowId</b> initiates the flow to manage the new SMS contact created.
+        /// </para>
+        ///  
+        /// <para>
+        /// This API can be used to initiate outbound SMS contacts for an agent or it can also
+        /// deflect an ongoing contact to an outbound SMS contact by using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartOutboundChatContact.html">StartOutboundChatContact</a>
+        /// Flow Action.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about using SMS in Amazon Connect, see the following topics in
+        /// the <i>Amazon Connect Administrator Guide</i>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-sms-messaging.html">Set
+        /// up SMS messaging</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/sms-number.html">Request
+        /// an SMS-enabled phone number through AWS End User Messaging SMS</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartOutboundChatContact service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartOutboundChatContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartOutboundChatContact">REST API Reference for StartOutboundChatContact Operation</seealso>
+        Task<StartOutboundChatContactResponse> StartOutboundChatContactAsync(StartOutboundChatContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  StartOutboundVoiceContact
 
 
@@ -7909,6 +7953,45 @@ namespace Amazon.Connect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartOutboundVoiceContact">REST API Reference for StartOutboundVoiceContact Operation</seealso>
         Task<StartOutboundVoiceContactResponse> StartOutboundVoiceContactAsync(StartOutboundVoiceContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StartScreenSharing
+
+
+
+        /// <summary>
+        /// Starts screen sharing for a contact. For more information about screen sharing, see
+        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/inapp-calling.html">Set
+        /// up in-app, web, video calling, and screen sharing capabilities</a> in the <i>Amazon
+        /// Connect Administrator Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartScreenSharing service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartScreenSharing service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartScreenSharing">REST API Reference for StartScreenSharing Operation</seealso>
+        Task<StartScreenSharingResponse> StartScreenSharingAsync(StartScreenSharingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

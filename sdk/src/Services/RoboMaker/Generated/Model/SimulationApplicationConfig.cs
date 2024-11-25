@@ -198,6 +198,11 @@ namespace Amazon.RoboMaker.Model
         /// <para>
         /// A list of world configurations.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// This API is no longer supported and will throw an error if used.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
         public List<WorldConfig> WorldConfigs

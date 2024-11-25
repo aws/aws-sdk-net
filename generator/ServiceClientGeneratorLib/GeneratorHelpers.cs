@@ -14,9 +14,10 @@ namespace ServiceClientGenerator
             switch (serviceBasename)
             {
                 case "EventBridge":
+                case "SimpleEmailServiceV2":
                     // we should not continue to add new hardcoded service specific signers
                     // and instead implement a solution based on a signer selection specification
-                    return "EventBridgeSigner";
+                    return "AWSEndpointAuthSchemeSigner";
                 case "CloudFrontKeyValueStore":
                     return "AWS4aSignerCRTWrapper";
             }

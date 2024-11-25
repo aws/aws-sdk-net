@@ -35,6 +35,7 @@ namespace Amazon.CodeBuild.Model
     public partial class ProjectEnvironment
     {
         private string _certificate;
+        private ComputeConfiguration _computeConfiguration;
         private ComputeType _computeType;
         private List<EnvironmentVariable> _environmentVariables = AWSConfigs.InitializeCollections ? new List<EnvironmentVariable>() : null;
         private ProjectFleet _fleet;
@@ -65,57 +66,88 @@ namespace Amazon.CodeBuild.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ComputeConfiguration. 
+        /// <para>
+        /// The compute configuration of the build project. This is only required if <c>computeType</c>
+        /// is set to <c>ATTRIBUTE_BASED_COMPUTE</c>.
+        /// </para>
+        /// </summary>
+        public ComputeConfiguration ComputeConfiguration
+        {
+            get { return this._computeConfiguration; }
+            set { this._computeConfiguration = value; }
+        }
+
+        // Check to see if ComputeConfiguration property is set
+        internal bool IsSetComputeConfiguration()
+        {
+            return this._computeConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ComputeType. 
         /// <para>
         /// Information about the compute resources the build project uses. Available values include:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>BUILD_GENERAL1_SMALL</c>: Use up to 3 GB memory and 2 vCPUs for builds.
+        ///  <c>ATTRIBUTE_BASED_COMPUTE</c>: Specify the amount of vCPUs, memory, disk space,
+        /// and the type of machine.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  If you use <c>ATTRIBUTE_BASED_COMPUTE</c>, you must define your attributes by using
+        /// <c>computeConfiguration</c>. CodeBuild will select the cheapest instance that satisfies
+        /// your specified attributes. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html#environment-reserved-capacity.types">Reserved
+        /// capacity environment types</a> in the <i>CodeBuild User Guide</i>.
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
+        ///  <c>BUILD_GENERAL1_SMALL</c>: Use up to 4 GiB memory and 2 vCPUs for builds.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>BUILD_GENERAL1_MEDIUM</c>: Use up to 7 GB memory and 4 vCPUs for builds.
+        ///  <c>BUILD_GENERAL1_MEDIUM</c>: Use up to 8 GiB memory and 4 vCPUs for builds.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>BUILD_GENERAL1_LARGE</c>: Use up to 16 GB memory and 8 vCPUs for builds, depending
+        ///  <c>BUILD_GENERAL1_LARGE</c>: Use up to 16 GiB memory and 8 vCPUs for builds, depending
         /// on your environment type.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>BUILD_GENERAL1_XLARGE</c>: Use up to 70 GB memory and 36 vCPUs for builds, depending
+        ///  <c>BUILD_GENERAL1_XLARGE</c>: Use up to 72 GiB memory and 36 vCPUs for builds, depending
         /// on your environment type.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>BUILD_GENERAL1_2XLARGE</c>: Use up to 145 GB memory, 72 vCPUs, and 824 GB of SSD
-        /// storage for builds. This compute type supports Docker images up to 100 GB uncompressed.
+        ///  <c>BUILD_GENERAL1_2XLARGE</c>: Use up to 144 GiB memory, 72 vCPUs, and 824 GB of
+        /// SSD storage for builds. This compute type supports Docker images up to 100 GB uncompressed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>BUILD_LAMBDA_1GB</c>: Use up to 1 GB memory for builds. Only available for environment
+        ///  <c>BUILD_LAMBDA_1GB</c>: Use up to 1 GiB memory for builds. Only available for environment
         /// type <c>LINUX_LAMBDA_CONTAINER</c> and <c>ARM_LAMBDA_CONTAINER</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>BUILD_LAMBDA_2GB</c>: Use up to 2 GB memory for builds. Only available for environment
+        ///  <c>BUILD_LAMBDA_2GB</c>: Use up to 2 GiB memory for builds. Only available for environment
         /// type <c>LINUX_LAMBDA_CONTAINER</c> and <c>ARM_LAMBDA_CONTAINER</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>BUILD_LAMBDA_4GB</c>: Use up to 4 GB memory for builds. Only available for environment
+        ///  <c>BUILD_LAMBDA_4GB</c>: Use up to 4 GiB memory for builds. Only available for environment
         /// type <c>LINUX_LAMBDA_CONTAINER</c> and <c>ARM_LAMBDA_CONTAINER</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>BUILD_LAMBDA_8GB</c>: Use up to 8 GB memory for builds. Only available for environment
+        ///  <c>BUILD_LAMBDA_8GB</c>: Use up to 8 GiB memory for builds. Only available for environment
         /// type <c>LINUX_LAMBDA_CONTAINER</c> and <c>ARM_LAMBDA_CONTAINER</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>BUILD_LAMBDA_10GB</c>: Use up to 10 GB memory for builds. Only available for environment
-        /// type <c>LINUX_LAMBDA_CONTAINER</c> and <c>ARM_LAMBDA_CONTAINER</c>.
+        ///  <c>BUILD_LAMBDA_10GB</c>: Use up to 10 GiB memory for builds. Only available for
+        /// environment type <c>LINUX_LAMBDA_CONTAINER</c> and <c>ARM_LAMBDA_CONTAINER</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -123,17 +155,17 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  For environment type <c>LINUX_CONTAINER</c>, you can use up to 3 GB memory and 2
+        ///  For environment type <c>LINUX_CONTAINER</c>, you can use up to 4 GiB memory and 2
         /// vCPUs for builds. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  For environment type <c>LINUX_GPU_CONTAINER</c>, you can use up to 16 GB memory,
+        ///  For environment type <c>LINUX_GPU_CONTAINER</c>, you can use up to 16 GiB memory,
         /// 4 vCPUs, and 1 NVIDIA A10G Tensor Core GPU for builds.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  For environment type <c>ARM_CONTAINER</c>, you can use up to 4 GB memory and 2 vCPUs
+        ///  For environment type <c>ARM_CONTAINER</c>, you can use up to 4 GiB memory and 2 vCPUs
         /// on ARM-based processors for builds.
         /// </para>
         ///  </li> </ul> 
@@ -142,28 +174,23 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  For environment type <c>LINUX_CONTAINER</c>, you can use up to 15 GB memory and 8
-        /// vCPUs for builds. 
+        ///  For environment type <c>LINUX_CONTAINER</c>, you can use up to 16 GiB memory and
+        /// 8 vCPUs for builds. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  For environment type <c>LINUX_GPU_CONTAINER</c>, you can use up to 255 GB memory,
+        ///  For environment type <c>LINUX_GPU_CONTAINER</c>, you can use up to 255 GiB memory,
         /// 32 vCPUs, and 4 NVIDIA Tesla V100 GPUs for builds.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  For environment type <c>ARM_CONTAINER</c>, you can use up to 16 GB memory and 8 vCPUs
-        /// on ARM-based processors for builds.
+        ///  For environment type <c>ARM_CONTAINER</c>, you can use up to 16 GiB memory and 8
+        /// vCPUs on ARM-based processors for builds.
         /// </para>
-        ///  </li> </ul> <note> 
+        ///  </li> </ul> 
         /// <para>
-        /// If you're using compute fleets during project creation, <c>computeType</c> will be
-        /// ignored.
-        /// </para>
-        ///  </note> 
-        /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
-        /// Environment Compute Types</a> in the <i>CodeBuild User Guide.</i> 
+        /// For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html#environment.types">On-demand
+        /// environment types</a> in the <i>CodeBuild User Guide.</i> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

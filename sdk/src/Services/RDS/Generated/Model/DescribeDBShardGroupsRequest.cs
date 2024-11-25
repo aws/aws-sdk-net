@@ -43,9 +43,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBShardGroupIdentifier. 
         /// <para>
-        /// The user-supplied DB shard group identifier or the Amazon Resource Name (ARN) of the
-        /// DB shard group. If this parameter is specified, information for only the specific
-        /// DB shard group is returned. This parameter isn't case-sensitive.
+        /// The user-supplied DB shard group identifier. If this parameter is specified, information
+        /// for only the specific DB shard group is returned. This parameter isn't case-sensitive.
         /// </para>
         ///  
         /// <para>

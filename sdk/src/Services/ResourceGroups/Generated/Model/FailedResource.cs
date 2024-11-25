@@ -79,7 +79,7 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN of the resource that failed to be added or removed.
+        /// The Amazon resource name (ARN) of the resource that failed to be added or removed.
         /// </para>
         /// </summary>
         public string ResourceArn

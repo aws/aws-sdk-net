@@ -54,6 +54,10 @@ namespace Amazon.Redshift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// ra3.large
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// ra3.xlplus
     /// </para>
     ///  </li> <li> 

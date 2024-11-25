@@ -154,7 +154,7 @@ namespace Amazon.Pipes.Model
         /// <summary>
         /// Gets and sets the property TimestampFormat. 
         /// <para>
-        /// How to format the timestamps. For example, <c>YYYY-MM-DDThh:mm:ss.sssTZD</c>.
+        /// How to format the timestamps. For example, <c>yyyy-MM-dd'T'HH:mm:ss'Z'</c>.
         /// </para>
         ///  
         /// <para>

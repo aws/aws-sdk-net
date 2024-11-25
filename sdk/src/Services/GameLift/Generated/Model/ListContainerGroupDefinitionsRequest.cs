@@ -31,15 +31,36 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the ListContainerGroupDefinitions operation.
-    /// <b>This operation is used with the Amazon GameLift containers feature, which is currently
-    /// in public preview. </b> 
+    /// Retrieves container group definitions for the Amazon Web Services account and Amazon
+    /// Web Services Region. Use the pagination parameters to retrieve results in a set of
+    /// sequential pages.
     /// 
     ///  
     /// <para>
-    /// Retrieves all container group definitions for the Amazon Web Services account and
-    /// Amazon Web Services Region that are currently in use. You can filter the result set
-    /// by the container groups' scheduling strategy. Use the pagination parameters to retrieve
-    /// results in a set of sequential pages.
+    /// This operation returns only the latest version of each definition. To retrieve all
+    /// versions of a container group definition, use <a>ListContainerGroupDefinitionVersions</a>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Request options:</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Retrieve the most recent versions of all container group definitions. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Retrieve the most recent versions of all container group definitions, filtered by
+    /// type. Specify the container group type to filter on. 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Results:</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// If successful, this operation returns the complete properties of a set of container
+    /// group definition versions that match the request.
     /// </para>
     ///  <note> 
     /// <para>
@@ -59,9 +80,28 @@ namespace Amazon.GameLift.Model
     /// </summary>
     public partial class ListContainerGroupDefinitionsRequest : AmazonGameLiftRequest
     {
+        private ContainerGroupType _containerGroupType;
         private int? _limit;
         private string _nextToken;
-        private ContainerSchedulingStrategy _schedulingStrategy;
+
+        /// <summary>
+        /// Gets and sets the property ContainerGroupType. 
+        /// <para>
+        /// The type of container group to retrieve. Container group type determines how Amazon
+        /// GameLift deploys the container group on each fleet instance.
+        /// </para>
+        /// </summary>
+        public ContainerGroupType ContainerGroupType
+        {
+            get { return this._containerGroupType; }
+            set { this._containerGroupType = value; }
+        }
+
+        // Check to see if ContainerGroupType property is set
+        internal bool IsSetContainerGroupType()
+        {
+            return this._containerGroupType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Limit. 
@@ -70,7 +110,7 @@ namespace Amazon.GameLift.Model
         /// to get results as a set of sequential pages.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=10)]
+        [AWSProperty(Min=1, Max=100)]
         public int? Limit
         {
             get { return this._limit; }
@@ -91,7 +131,7 @@ namespace Amazon.GameLift.Model
         /// of the result set, do not specify a value.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -102,35 +142,6 @@ namespace Amazon.GameLift.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SchedulingStrategy. 
-        /// <para>
-        /// The type of container group definitions to retrieve.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>DAEMON</c> -- Daemon container groups run background processes and are deployed
-        /// once per fleet instance.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>REPLICA</c> -- Replica container groups run your game server application and supporting
-        /// software. Replica groups might be deployed multiple times per fleet instance.
-        /// </para>
-        ///  </li> </ul>
-        /// </summary>
-        public ContainerSchedulingStrategy SchedulingStrategy
-        {
-            get { return this._schedulingStrategy; }
-            set { this._schedulingStrategy = value; }
-        }
-
-        // Check to see if SchedulingStrategy property is set
-        internal bool IsSetSchedulingStrategy()
-        {
-            return this._schedulingStrategy != null;
         }
 
     }

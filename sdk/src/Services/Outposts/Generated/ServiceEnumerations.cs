@@ -175,11 +175,93 @@ namespace Amazon.Outposts
 
 
     /// <summary>
+    /// Constants used for properties of type AWSServiceName.
+    /// </summary>
+    public class AWSServiceName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS for AWSServiceName
+        /// </summary>
+        public static readonly AWSServiceName AWS = new AWSServiceName("AWS");
+        /// <summary>
+        /// Constant EC2 for AWSServiceName
+        /// </summary>
+        public static readonly AWSServiceName EC2 = new AWSServiceName("EC2");
+        /// <summary>
+        /// Constant ELASTICACHE for AWSServiceName
+        /// </summary>
+        public static readonly AWSServiceName ELASTICACHE = new AWSServiceName("ELASTICACHE");
+        /// <summary>
+        /// Constant ELB for AWSServiceName
+        /// </summary>
+        public static readonly AWSServiceName ELB = new AWSServiceName("ELB");
+        /// <summary>
+        /// Constant RDS for AWSServiceName
+        /// </summary>
+        public static readonly AWSServiceName RDS = new AWSServiceName("RDS");
+        /// <summary>
+        /// Constant ROUTE53 for AWSServiceName
+        /// </summary>
+        public static readonly AWSServiceName ROUTE53 = new AWSServiceName("ROUTE53");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AWSServiceName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AWSServiceName FindValue(string value)
+        {
+            return FindValue<AWSServiceName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AWSServiceName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CapacityTaskFailureType.
     /// </summary>
     public class CapacityTaskFailureType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant BLOCKING_INSTANCES_NOT_EVACUATED for CapacityTaskFailureType
+        /// </summary>
+        public static readonly CapacityTaskFailureType BLOCKING_INSTANCES_NOT_EVACUATED = new CapacityTaskFailureType("BLOCKING_INSTANCES_NOT_EVACUATED");
+        /// <summary>
+        /// Constant INTERNAL_SERVER_ERROR for CapacityTaskFailureType
+        /// </summary>
+        public static readonly CapacityTaskFailureType INTERNAL_SERVER_ERROR = new CapacityTaskFailureType("INTERNAL_SERVER_ERROR");
+        /// <summary>
+        /// Constant RESOURCE_NOT_FOUND for CapacityTaskFailureType
+        /// </summary>
+        public static readonly CapacityTaskFailureType RESOURCE_NOT_FOUND = new CapacityTaskFailureType("RESOURCE_NOT_FOUND");
+        /// <summary>
+        /// Constant UNEXPECTED_ASSET_STATE for CapacityTaskFailureType
+        /// </summary>
+        public static readonly CapacityTaskFailureType UNEXPECTED_ASSET_STATE = new CapacityTaskFailureType("UNEXPECTED_ASSET_STATE");
         /// <summary>
         /// Constant UNSUPPORTED_CAPACITY_CONFIGURATION for CapacityTaskFailureType
         /// </summary>
@@ -227,6 +309,10 @@ namespace Amazon.Outposts
     {
 
         /// <summary>
+        /// Constant CANCELLATION_IN_PROGRESS for CapacityTaskStatus
+        /// </summary>
+        public static readonly CapacityTaskStatus CANCELLATION_IN_PROGRESS = new CapacityTaskStatus("CANCELLATION_IN_PROGRESS");
+        /// <summary>
         /// Constant CANCELLED for CapacityTaskStatus
         /// </summary>
         public static readonly CapacityTaskStatus CANCELLED = new CapacityTaskStatus("CANCELLED");
@@ -246,6 +332,10 @@ namespace Amazon.Outposts
         /// Constant REQUESTED for CapacityTaskStatus
         /// </summary>
         public static readonly CapacityTaskStatus REQUESTED = new CapacityTaskStatus("REQUESTED");
+        /// <summary>
+        /// Constant WAITING_FOR_EVACUATION for CapacityTaskStatus
+        /// </summary>
+        public static readonly CapacityTaskStatus WAITING_FOR_EVACUATION = new CapacityTaskStatus("WAITING_FOR_EVACUATION");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -735,6 +825,10 @@ namespace Amazon.Outposts
         /// </summary>
         public static readonly OrderStatus COMPLETED = new OrderStatus("COMPLETED");
         /// <summary>
+        /// Constant DELIVERED for OrderStatus
+        /// </summary>
+        public static readonly OrderStatus DELIVERED = new OrderStatus("DELIVERED");
+        /// <summary>
         /// Constant ERROR for OrderStatus
         /// </summary>
         public static readonly OrderStatus ERROR = new OrderStatus("ERROR");
@@ -912,6 +1006,10 @@ namespace Amazon.Outposts
     public class PaymentTerm : ConstantClass
     {
 
+        /// <summary>
+        /// Constant FIVE_YEARS for PaymentTerm
+        /// </summary>
+        public static readonly PaymentTerm FIVE_YEARS = new PaymentTerm("FIVE_YEARS");
         /// <summary>
         /// Constant ONE_YEAR for PaymentTerm
         /// </summary>
@@ -1378,6 +1476,56 @@ namespace Amazon.Outposts
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SupportedStorageEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TaskActionOnBlockingInstances.
+    /// </summary>
+    public class TaskActionOnBlockingInstances : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAIL_TASK for TaskActionOnBlockingInstances
+        /// </summary>
+        public static readonly TaskActionOnBlockingInstances FAIL_TASK = new TaskActionOnBlockingInstances("FAIL_TASK");
+        /// <summary>
+        /// Constant WAIT_FOR_EVACUATION for TaskActionOnBlockingInstances
+        /// </summary>
+        public static readonly TaskActionOnBlockingInstances WAIT_FOR_EVACUATION = new TaskActionOnBlockingInstances("WAIT_FOR_EVACUATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TaskActionOnBlockingInstances(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TaskActionOnBlockingInstances FindValue(string value)
+        {
+            return FindValue<TaskActionOnBlockingInstances>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TaskActionOnBlockingInstances(string value)
         {
             return FindValue(value);
         }

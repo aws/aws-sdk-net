@@ -88,6 +88,17 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.InvocationTime.Value);
                     }
 
+                    if(publicRequest.IsSetQueryInsights())
+                    {
+                        context.Writer.WritePropertyName("QueryInsights");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ScheduledQueryInsightsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.QueryInsights, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetScheduledQueryArn())
                     {
                         context.Writer.WritePropertyName("ScheduledQueryArn");

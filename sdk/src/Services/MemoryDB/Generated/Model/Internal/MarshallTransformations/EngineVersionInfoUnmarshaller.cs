@@ -66,6 +66,12 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Engine", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Engine = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EnginePatchVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -27,6 +27,11 @@ namespace Amazon.ResourceGroups.Model
     {
 
         /// <summary>
+        /// Paginator for ListGroupingStatuses operation
+        ///</summary>
+        IListGroupingStatusesPaginator ListGroupingStatuses(ListGroupingStatusesRequest request);
+
+        /// <summary>
         /// Paginator for ListGroupResources operation
         ///</summary>
         IListGroupResourcesPaginator ListGroupResources(ListGroupResourcesRequest request);
@@ -35,6 +40,11 @@ namespace Amazon.ResourceGroups.Model
         /// Paginator for ListGroups operation
         ///</summary>
         IListGroupsPaginator ListGroups(ListGroupsRequest request);
+
+        /// <summary>
+        /// Paginator for ListTagSyncTasks operation
+        ///</summary>
+        IListTagSyncTasksPaginator ListTagSyncTasks(ListTagSyncTasksRequest request);
 
         /// <summary>
         /// Paginator for SearchResources operation

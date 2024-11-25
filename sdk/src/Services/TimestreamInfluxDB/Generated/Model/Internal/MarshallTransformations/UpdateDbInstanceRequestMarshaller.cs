@@ -106,6 +106,12 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
 
+                    if(publicRequest.IsSetPort())
+                    {
+                        context.Writer.WritePropertyName("port");
+                        context.Writer.Write(publicRequest.Port.Value);
+                    }
+
                     writer.WriteObjectEnd();
                 }
 

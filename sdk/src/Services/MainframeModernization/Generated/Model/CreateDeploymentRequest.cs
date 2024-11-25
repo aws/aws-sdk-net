@@ -88,6 +88,7 @@ namespace Amazon.MainframeModernization.Model
         /// deleting the clientToken after it expires. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=128)]
         public string ClientToken
         {
             get { return this._clientToken; }

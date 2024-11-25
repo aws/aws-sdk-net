@@ -76,8 +76,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property AgentArns. 
         /// <para>
-        /// Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely
-        /// connect with your location.
+        /// Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can connect
+        /// with your object storage system.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=4)]

@@ -82,7 +82,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// <summary>
         /// Gets and sets the property Records. 
         /// <para>
-        /// The results of the SQL statement.
+        /// The results of the SQL statement in JSON format.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

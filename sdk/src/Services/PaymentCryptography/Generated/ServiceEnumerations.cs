@@ -43,6 +43,14 @@ namespace Amazon.PaymentCryptography
         /// </summary>
         public static readonly KeyAlgorithm AES_256 = new KeyAlgorithm("AES_256");
         /// <summary>
+        /// Constant ECC_NIST_P256 for KeyAlgorithm
+        /// </summary>
+        public static readonly KeyAlgorithm ECC_NIST_P256 = new KeyAlgorithm("ECC_NIST_P256");
+        /// <summary>
+        /// Constant ECC_NIST_P384 for KeyAlgorithm
+        /// </summary>
+        public static readonly KeyAlgorithm ECC_NIST_P384 = new KeyAlgorithm("ECC_NIST_P384");
+        /// <summary>
         /// Constant RSA_2048 for KeyAlgorithm
         /// </summary>
         public static readonly KeyAlgorithm RSA_2048 = new KeyAlgorithm("RSA_2048");

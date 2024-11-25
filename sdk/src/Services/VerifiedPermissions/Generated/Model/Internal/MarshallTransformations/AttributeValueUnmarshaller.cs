@@ -72,10 +72,22 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
                     unmarshalledObject.Boolean = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("decimal", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Decimal = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("entityIdentifier", targetDepth))
                 {
                     var unmarshaller = EntityIdentifierUnmarshaller.Instance;
                     unmarshalledObject.EntityIdentifier = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ipaddr", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Ipaddr = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("long", targetDepth))

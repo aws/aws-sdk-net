@@ -152,12 +152,12 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property SendFilePaths. 
         /// <para>
         /// One or more source paths for the Amazon S3 storage. Each string represents a source
-        /// file path for one outbound file transfer. For example, <c> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i>
+        /// file path for one outbound file transfer. For example, <c> <i>amzn-s3-demo-bucket</i>/<i>myfile.txt</i>
         /// </c>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Replace <c> <i>DOC-EXAMPLE-BUCKET</i> </c> with one of your actual buckets.
+        /// Replace <c> <i>amzn-s3-demo-bucket</i> </c> with one of your actual buckets.
         /// </para>
         ///  </note>
         /// </summary>

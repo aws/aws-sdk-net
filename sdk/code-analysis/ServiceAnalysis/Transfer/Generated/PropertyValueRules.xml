@@ -630,6 +630,33 @@
     <pattern>w-([a-z0-9]{17})</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Transfer.Model.ListFileTransferResultsRequest.ConnectorId</property>
+    <min>19</min>
+    <max>19</max>
+    <pattern>c-([0-9a-f]{17})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.ListFileTransferResultsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.ListFileTransferResultsRequest.NextToken</property>
+    <min>1</min>
+    <max>6144</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.ListFileTransferResultsRequest.TransferId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[0-9a-zA-Z./-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.ListFileTransferResultsResponse.NextToken</property>
+    <min>1</min>
+    <max>6144</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Transfer.Model.ListHostKeysRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -1200,6 +1227,12 @@
     <min>19</min>
     <max>19</max>
     <pattern>p-([0-9a-f]{17})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Transfer.Model.ConnectorFileTransferResult.FilePath</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>(.)+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Transfer.Model.CopyStepDetails.Name</property>

@@ -75,6 +75,12 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Authorized.Value);
                     }
 
+                    if(publicRequest.IsSetContainerFormat())
+                    {
+                        context.Writer.WritePropertyName("containerFormat");
+                        context.Writer.Write(publicRequest.ContainerFormat);
+                    }
+
                     if(publicRequest.IsSetInsecureIngest())
                     {
                         context.Writer.WritePropertyName("insecureIngest");
@@ -85,6 +91,17 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                     {
                         context.Writer.WritePropertyName("latencyMode");
                         context.Writer.Write(publicRequest.LatencyMode);
+                    }
+
+                    if(publicRequest.IsSetMultitrackInputConfiguration())
+                    {
+                        context.Writer.WritePropertyName("multitrackInputConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MultitrackInputConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.MultitrackInputConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
 
                     if(publicRequest.IsSetName())

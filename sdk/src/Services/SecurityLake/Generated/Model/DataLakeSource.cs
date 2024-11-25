@@ -30,8 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
-    /// Amazon Security Lake collects logs and events from supported Amazon Web Services and
-    /// custom sources. For the list of supported Amazon Web Services, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon
+    /// Amazon Security Lake collects logs and events from supported Amazon Web Services services
+    /// and custom sources. For the list of supported Amazon Web Services services, see the
+    /// <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon
     /// Security Lake User Guide</a>.
     /// </summary>
     public partial class DataLakeSource
@@ -199,9 +200,9 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property SourceName. 
         /// <para>
-        /// The supported Amazon Web Services from which logs and events are collected. Amazon
-        /// Security Lake supports log and event collection for natively supported Amazon Web
-        /// Services.
+        /// The supported Amazon Web Services services from which logs and events are collected.
+        /// Amazon Security Lake supports log and event collection for natively supported Amazon
+        /// Web Services services.
         /// </para>
         /// </summary>
         public string SourceName

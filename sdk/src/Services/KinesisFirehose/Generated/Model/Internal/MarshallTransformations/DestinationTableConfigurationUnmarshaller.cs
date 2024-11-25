@@ -78,6 +78,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                     unmarshalledObject.DestinationTableName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PartitionSpec", targetDepth))
+                {
+                    var unmarshaller = PartitionSpecUnmarshaller.Instance;
+                    unmarshalledObject.PartitionSpec = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("S3ErrorOutputPrefix", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

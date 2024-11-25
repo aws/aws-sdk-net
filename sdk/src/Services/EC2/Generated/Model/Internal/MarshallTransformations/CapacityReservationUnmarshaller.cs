@@ -209,6 +209,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.TotalInstanceCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("unusedReservationBillingOwnerId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.UnusedReservationBillingOwnerId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

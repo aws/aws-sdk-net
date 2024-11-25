@@ -33,8 +33,8 @@ namespace Amazon.CloudFormation.Model
     /// Container for the parameters to the ContinueUpdateRollback operation.
     /// For a specified stack that's in the <c>UPDATE_ROLLBACK_FAILED</c> state, continues
     /// rolling it back to the <c>UPDATE_ROLLBACK_COMPLETE</c> state. Depending on the cause
-    /// of the failure, you can manually <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">
-    /// fix the error</a> and continue the rollback. By continuing the rollback, you can return
+    /// of the failure, you can manually <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">fix
+    /// the error</a> and continue the rollback. By continuing the rollback, you can return
     /// your stack to a working state (the <c>UPDATE_ROLLBACK_COMPLETE</c> state), and then
     /// try to update the stack again.
     /// 
@@ -116,8 +116,8 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Don't confuse a child stack's name with its corresponding logical ID defined in the
         /// parent stack. For an example of a continue update rollback operation with nested stacks,
-        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks">Using
-        /// ResourcesToSkip to recover a nested stacks hierarchy</a>.
+        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks">Continue
+        /// rolling back from failed nested stack updates</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -136,12 +136,12 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that
-        /// CloudFormation assumes to roll back the stack. CloudFormation uses the role's credentials
-        /// to make calls on your behalf. CloudFormation always uses this role for all future
-        /// operations on the stack. Provided that users have permission to operate on the stack,
-        /// CloudFormation uses this role even if the users don't have permission to pass it.
-        /// Ensure that the role grants least permission.
+        /// The Amazon Resource Name (ARN) of an IAM role that CloudFormation assumes to roll
+        /// back the stack. CloudFormation uses the role's credentials to make calls on your behalf.
+        /// CloudFormation always uses this role for all future operations on the stack. Provided
+        /// that users have permission to operate on the stack, CloudFormation uses this role
+        /// even if the users don't have permission to pass it. Ensure that the role grants least
+        /// permission.
         /// </para>
         ///  
         /// <para>

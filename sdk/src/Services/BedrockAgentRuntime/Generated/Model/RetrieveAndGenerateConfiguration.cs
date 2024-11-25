@@ -52,7 +52,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property ExternalSourcesConfiguration. 
         /// <para>
-        /// The configuration used with the external source wrapper object in the retrieveAndGenerate
+        /// The configuration for the external source wrapper object in the <c>retrieveAndGenerate</c>
         /// function.
         /// </para>
         /// </summary>
@@ -71,7 +71,8 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property KnowledgeBaseConfiguration. 
         /// <para>
-        /// Contains details about the resource being queried.
+        /// Contains details about the knowledge base for retrieving information and generating
+        /// responses.
         /// </para>
         /// </summary>
         public KnowledgeBaseRetrieveAndGenerateConfiguration KnowledgeBaseConfiguration
@@ -89,7 +90,13 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of resource that is queried by the request.
+        /// The type of resource that contains your data for retrieving information and generating
+        /// responses.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you choose ot use <c>EXTERNAL_SOURCES</c>, then currently only Claude 3 Sonnet
+        /// models for knowledge bases are supported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

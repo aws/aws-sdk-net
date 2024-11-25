@@ -34,6 +34,7 @@ namespace Amazon.QConnect.Model
     /// </summary>
     public partial class SessionData
     {
+        private Dictionary<string, AIAgentConfigurationData> _aiAgentConfiguration = AWSConfigs.InitializeCollections ? new Dictionary<string, AIAgentConfigurationData>() : null;
         private string _description;
         private SessionIntegrationConfiguration _integrationConfiguration;
         private string _name;
@@ -41,6 +42,25 @@ namespace Amazon.QConnect.Model
         private string _sessionId;
         private TagFilter _tagFilter;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AiAgentConfiguration. 
+        /// <para>
+        /// The configuration of the AI Agents (mapped by AI Agent Type to AI Agent version) that
+        /// should be used by Amazon Q in Connect for this Session.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, AIAgentConfigurationData> AiAgentConfiguration
+        {
+            get { return this._aiAgentConfiguration; }
+            set { this._aiAgentConfiguration = value; }
+        }
+
+        // Check to see if AiAgentConfiguration property is set
+        internal bool IsSetAiAgentConfiguration()
+        {
+            return this._aiAgentConfiguration != null && (this._aiAgentConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 

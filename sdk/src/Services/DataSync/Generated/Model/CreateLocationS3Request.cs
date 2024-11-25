@@ -102,7 +102,7 @@ namespace Amazon.DataSync.Model
         /// data access with Amazon S3 access points</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=156)]
+        [AWSProperty(Required=true, Max=268)]
         public string S3BucketArn
         {
             get { return this._s3BucketArn; }

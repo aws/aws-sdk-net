@@ -883,6 +883,68 @@ namespace Amazon.AppSync
 
 
     /// <summary>
+    /// Constants used for properties of type EventLogLevel.
+    /// </summary>
+    public class EventLogLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for EventLogLevel
+        /// </summary>
+        public static readonly EventLogLevel ALL = new EventLogLevel("ALL");
+        /// <summary>
+        /// Constant DEBUG for EventLogLevel
+        /// </summary>
+        public static readonly EventLogLevel DEBUG = new EventLogLevel("DEBUG");
+        /// <summary>
+        /// Constant ERROR for EventLogLevel
+        /// </summary>
+        public static readonly EventLogLevel ERROR = new EventLogLevel("ERROR");
+        /// <summary>
+        /// Constant INFO for EventLogLevel
+        /// </summary>
+        public static readonly EventLogLevel INFO = new EventLogLevel("INFO");
+        /// <summary>
+        /// Constant NONE for EventLogLevel
+        /// </summary>
+        public static readonly EventLogLevel NONE = new EventLogLevel("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EventLogLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventLogLevel FindValue(string value)
+        {
+            return FindValue<EventLogLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventLogLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FieldLogLevel.
     /// </summary>
     public class FieldLogLevel : ConstantClass

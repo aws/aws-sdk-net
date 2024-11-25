@@ -169,7 +169,8 @@ namespace Amazon.VerifiedPermissions.Model
         /// <summary>
         /// Gets and sets the property PolicyStoreId. 
         /// <para>
-        /// The identifier of the PolicyStore where the policy you want information about is stored.
+        /// The identifier of the policy store where the policy you want information about is
+        /// stored.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]
@@ -192,11 +193,11 @@ namespace Amazon.VerifiedPermissions.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>static</c> 
+        ///  <c>STATIC</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>templateLinked</c> 
+        ///  <c>TEMPLATE_LINKED</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

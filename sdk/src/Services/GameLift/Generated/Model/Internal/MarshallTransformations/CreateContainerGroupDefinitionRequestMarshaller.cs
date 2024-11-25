@@ -71,20 +71,21 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     writer.Validate = false;
                     writer.WriteObjectStart();
                     var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetContainerDefinitions())
+                    if(publicRequest.IsSetContainerGroupType())
                     {
-                        context.Writer.WritePropertyName("ContainerDefinitions");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestContainerDefinitionsListValue in publicRequest.ContainerDefinitions)
-                        {
-                            context.Writer.WriteObjectStart();
+                        context.Writer.WritePropertyName("ContainerGroupType");
+                        context.Writer.Write(publicRequest.ContainerGroupType);
+                    }
 
-                            var marshaller = ContainerDefinitionInputMarshaller.Instance;
-                            marshaller.Marshall(publicRequestContainerDefinitionsListValue, context);
+                    if(publicRequest.IsSetGameServerContainerDefinition())
+                    {
+                        context.Writer.WritePropertyName("GameServerContainerDefinition");
+                        context.Writer.WriteObjectStart();
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
+                        var marshaller = GameServerContainerDefinitionInputMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.GameServerContainerDefinition, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
 
                     if(publicRequest.IsSetName())
@@ -99,10 +100,20 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.OperatingSystem);
                     }
 
-                    if(publicRequest.IsSetSchedulingStrategy())
+                    if(publicRequest.IsSetSupportContainerDefinitions())
                     {
-                        context.Writer.WritePropertyName("SchedulingStrategy");
-                        context.Writer.Write(publicRequest.SchedulingStrategy);
+                        context.Writer.WritePropertyName("SupportContainerDefinitions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestSupportContainerDefinitionsListValue in publicRequest.SupportContainerDefinitions)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = SupportContainerDefinitionInputMarshaller.Instance;
+                            marshaller.Marshall(publicRequestSupportContainerDefinitionsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
                     }
 
                     if(publicRequest.IsSetTags())
@@ -121,16 +132,29 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                         context.Writer.WriteArrayEnd();
                     }
 
-                    if(publicRequest.IsSetTotalCpuLimit())
+                    if(publicRequest.IsSetTotalMemoryLimitMebibytes())
                     {
-                        context.Writer.WritePropertyName("TotalCpuLimit");
-                        context.Writer.Write(publicRequest.TotalCpuLimit.Value);
+                        context.Writer.WritePropertyName("TotalMemoryLimitMebibytes");
+                        context.Writer.Write(publicRequest.TotalMemoryLimitMebibytes.Value);
                     }
 
-                    if(publicRequest.IsSetTotalMemoryLimit())
+                    if(publicRequest.IsSetTotalVcpuLimit())
                     {
-                        context.Writer.WritePropertyName("TotalMemoryLimit");
-                        context.Writer.Write(publicRequest.TotalMemoryLimit.Value);
+                        context.Writer.WritePropertyName("TotalVcpuLimit");
+                        if(StringUtils.IsSpecialDoubleValue(publicRequest.TotalVcpuLimit.Value))
+                        {
+                            context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.TotalVcpuLimit.Value));
+                        }
+                        else
+                        {
+                            context.Writer.Write(publicRequest.TotalVcpuLimit.Value);
+                        }
+                    }
+
+                    if(publicRequest.IsSetVersionDescription())
+                    {
+                        context.Writer.WritePropertyName("VersionDescription");
+                        context.Writer.Write(publicRequest.VersionDescription);
                     }
 
                     writer.WriteObjectEnd();

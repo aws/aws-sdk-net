@@ -37,7 +37,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.AssociatePackageRequest.PackageID</property>
-    <pattern>^([FG][0-9]+)$</pattern>
+    <pattern>^([FG][0-9]+)$|^(pkg-[a-f0-9]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.AssociatePackagesRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.AuthorizeVpcEndpointAccessRequest.Account</property>
@@ -59,6 +65,33 @@
     <property>Amazon.OpenSearchService.Model.CancelServiceSoftwareUpdateRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.CreateApplicationRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.CreateApplicationRequest.Name</property>
+    <min>3</min>
+    <max>30</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.CreateApplicationResponse.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.CreateApplicationResponse.Id</property>
+    <pattern>[a-z0-9]{3,30}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.CreateApplicationResponse.Name</property>
+    <min>3</min>
+    <max>30</max>
     <pattern>[a-z][a-z0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -96,6 +129,10 @@
     <pattern>[a-z][a-z0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.CreatePackageRequest.EngineVersion</property>
+    <pattern>^Elasticsearch_[0-9]{1}\.[0-9]{1,2}$|^OpenSearch_[0-9]{1,2}\.[0-9]{1,2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.CreatePackageRequest.PackageDescription</property>
     <max>1024</max>
   </property-value-rule>
@@ -115,6 +152,10 @@
     <min>1</min>
     <max>512</max>
     <pattern>arn:aws[a-z\-]*:[a-z]+:[a-z0-9\-]+:[0-9]+:domain\/[a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DeleteApplicationRequest.Id</property>
+    <pattern>[a-z0-9]{3,30}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.DeleteDataSourceRequest.DomainName</property>
@@ -148,7 +189,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.DeletePackageRequest.PackageID</property>
-    <pattern>^([FG][0-9]+)$</pattern>
+    <pattern>^([FG][0-9]+)$|^(pkg-[a-f0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.DeleteVpcEndpointRequest.VpcEndpointId</property>
@@ -294,7 +335,33 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.DissociatePackageRequest.PackageID</property>
-    <pattern>^([FG][0-9]+)$</pattern>
+    <pattern>^([FG][0-9]+)$|^(pkg-[a-f0-9]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DissociatePackagesRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.GetApplicationRequest.Id</property>
+    <pattern>[a-z0-9]{3,30}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.GetApplicationResponse.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.GetApplicationResponse.Id</property>
+    <pattern>[a-z0-9]{3,30}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.GetApplicationResponse.Name</property>
+    <min>3</min>
+    <max>30</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.GetCompatibleVersionsRequest.DomainName</property>
@@ -354,11 +421,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.GetPackageVersionHistoryRequest.PackageID</property>
-    <pattern>^([FG][0-9]+)$</pattern>
+    <pattern>^([FG][0-9]+)$|^(pkg-[a-f0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.GetPackageVersionHistoryResponse.PackageID</property>
-    <pattern>^([FG][0-9]+)$</pattern>
+    <pattern>^([FG][0-9]+)$|^(pkg-[a-f0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.GetUpgradeHistoryRequest.DomainName</property>
@@ -375,6 +442,10 @@
     <min>3</min>
     <max>28</max>
     <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.ListApplicationsRequest.MaxResults</property>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.ListDataSourcesRequest.DomainName</property>
@@ -398,7 +469,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.ListDomainsForPackageRequest.PackageID</property>
-    <pattern>^([FG][0-9]+)$</pattern>
+    <pattern>^([FG][0-9]+)$|^(pkg-[a-f0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.ListInstanceTypeDetailsRequest.DomainName</property>
@@ -536,6 +607,26 @@
     <pattern>[a-z][a-z0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.UpdateApplicationRequest.Id</property>
+    <pattern>[a-z0-9]{3,30}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.UpdateApplicationResponse.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.UpdateApplicationResponse.Id</property>
+    <pattern>[a-z0-9]{3,30}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.UpdateApplicationResponse.Name</property>
+    <min>3</min>
+    <max>30</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.UpdateDataSourceRequest.Description</property>
     <max>1000</max>
     <pattern>^([a-zA-Z0-9_])*[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$</pattern>
@@ -574,7 +665,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.UpdatePackageRequest.PackageID</property>
-    <pattern>^([FG][0-9]+)$</pattern>
+    <pattern>^([FG][0-9]+)$|^(pkg-[a-f0-9]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.UpdatePackageScopeRequest.PackageID</property>
+    <pattern>^([FG][0-9]+)$|^(pkg-[a-f0-9]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.UpdatePackageScopeResponse.PackageID</property>
+    <pattern>^([FG][0-9]+)$|^(pkg-[a-f0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.UpdateScheduledActionRequest.DomainName</property>
@@ -617,6 +716,27 @@
     <min>0</min>
     <max>102400</max>
     <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.AppConfig.Value</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.ApplicationSummary.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.ApplicationSummary.Id</property>
+    <pattern>[a-z0-9]{3,30}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.ApplicationSummary.Name</property>
+    <min>3</min>
+    <max>30</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.AutoTuneStatus.UpdateVersion</property>
@@ -715,6 +835,17 @@
     <pattern>^[A-Za-z0-9\-\.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DataSource.DataSourceArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DataSource.DataSourceDescription</property>
+    <max>1000</max>
+    <pattern>^([a-zA-Z0-9_])*[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.DataSourceDetails.Description</property>
     <max>1000</max>
     <pattern>^([a-zA-Z0-9_])*[\\a-zA-Z0-9_@#%*+=:?./!\s-]*$</pattern>
@@ -784,7 +915,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.DomainPackageDetails.PackageID</property>
-    <pattern>^([FG][0-9]+)$</pattern>
+    <pattern>^([FG][0-9]+)$|^(pkg-[a-f0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.DomainPackageDetails.PackageName</property>
@@ -853,6 +984,60 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.IamIdentityCenterOptions.IamIdentityCenterApplicationArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.IamIdentityCenterOptions.IamIdentityCenterInstanceArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.IamIdentityCenterOptions.IamRoleForIdentityCenterApplicationArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(aws|aws\-cn|aws\-us\-gov|aws\-iso|aws\-iso\-b):iam::[0-9]+:role\/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.IamIdentityCenterOptionsInput.IamIdentityCenterInstanceArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.IamIdentityCenterOptionsInput.IamRoleForIdentityCenterApplicationArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(aws|aws\-cn|aws\-us\-gov|aws\-iso|aws\-iso\-b):iam::[0-9]+:role\/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.IdentityCenterOptions.IdentityCenterApplicationARN</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\\-]*:[a-z]+:[a-z0-9\\-]*:[0-9]*:[a-z0-9\\-]+\/[a-z0-9\\-]+\/[a-z0-9\\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.IdentityCenterOptions.IdentityCenterInstanceARN</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\\-]*:[a-z]+:[a-z0-9\\-]*:[0-9]*:[a-z0-9\\-]+\/[a-z0-9\\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.IdentityCenterOptions.IdentityStoreId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^d-[0-9a-f]{10}$|^[0-9a-f]{8}\\b-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-\\b[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.IdentityCenterOptionsInput.IdentityCenterInstanceARN</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z\\-]*:[a-z]+:[a-z0-9\\-]*:[0-9]*:[a-z0-9\\-]+\/[a-z0-9\\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.InboundConnection.ConnectionId</property>
     <min>10</min>
     <max>256</max>
@@ -867,6 +1052,12 @@
     <property>Amazon.OpenSearchService.Model.JWTOptionsInput.SubjectKey</property>
     <min>1</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.KeyStoreAccessOption.KeyAccessRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(aws|aws\-cn|aws\-us\-gov|aws\-iso|aws\-iso\-b):iam::[0-9]+:role\/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.LogPublishingOption.CloudWatchLogsLogGroupArn</property>
@@ -908,6 +1099,11 @@
     <pattern>[a-z][a-z0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.PackageConfiguration.LicenseFilepath</property>
+    <max>256</max>
+    <pattern>^(?!.*\/\.{2,})(?!.*\.\.)[a-zA-Z0-9_.-]+(?:\/[a-zA-Z0-9_.-]+)*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.PackageDetails.EngineVersion</property>
     <pattern>^Elasticsearch_[0-9]{1}\.[0-9]{1,2}$|^OpenSearch_[0-9]{1,2}\.[0-9]{1,2}$</pattern>
   </property-value-rule>
@@ -917,13 +1113,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.PackageDetails.PackageID</property>
-    <pattern>^([FG][0-9]+)$</pattern>
+    <pattern>^([FG][0-9]+)$|^(pkg-[a-f0-9]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.PackageDetails.PackageName</property>
     <min>3</min>
     <max>256</max>
     <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.PackageDetails.PackageOwner</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.PackageDetailsForAssociation.PackageID</property>
+    <pattern>^([FG][0-9]+)$|^(pkg-[a-f0-9]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.PackageEncryptionOptions.KmsKeyIdentifier</property>
+    <min>1</min>
+    <max>500</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.PackageSource.S3BucketName</property>

@@ -66,10 +66,22 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("businessRegistrationNumber", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BusinessRegistrationNumber = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("serviceTaxCodes", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.ServiceTaxCodes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("taxInformationNumber", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TaxInformationNumber = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

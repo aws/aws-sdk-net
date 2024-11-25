@@ -255,7 +255,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>supported-usage-class</c> - The usage class (<c>on-demand</c> | <c>spot</c>).
+        ///  <c>supported-usage-class</c> - The usage class (<c>on-demand</c> | <c>spot</c> |
+        /// <c>capacity-block</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>

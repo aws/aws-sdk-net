@@ -495,6 +495,16 @@
     <pattern>[\w+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.DisableOrganizationsRootCredentialsManagementResponse.OrganizationId</property>
+    <max>34</max>
+    <pattern>^o-[a-z0-9]{10,32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.DisableOrganizationsRootSessionsResponse.OrganizationId</property>
+    <max>34</max>
+    <pattern>^o-[a-z0-9]{10,32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityManagement.Model.EnableMFADeviceRequest.AuthenticationCode1</property>
     <min>6</min>
     <max>6</max>
@@ -517,6 +527,16 @@
     <min>1</min>
     <max>128</max>
     <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.EnableOrganizationsRootCredentialsManagementResponse.OrganizationId</property>
+    <max>34</max>
+    <pattern>^o-[a-z0-9]{10,32}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.EnableOrganizationsRootSessionsResponse.OrganizationId</property>
+    <max>34</max>
+    <pattern>^o-[a-z0-9]{10,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GenerateOrganizationsAccessReportRequest.EntityPath</property>
@@ -1113,6 +1133,11 @@
     <property>Amazon.IdentityManagement.Model.ListOpenIDConnectProviderTagsRequest.OpenIDConnectProviderArn</property>
     <min>20</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListOrganizationsFeaturesResponse.OrganizationId</property>
+    <max>34</max>
+    <pattern>^o-[a-z0-9]{10,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListPoliciesRequest.Marker</property>

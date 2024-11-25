@@ -197,6 +197,11 @@ namespace Amazon.IoT.Model
         IListPrincipalPoliciesPaginator ListPrincipalPolicies(ListPrincipalPoliciesRequest request);
 
         /// <summary>
+        /// Paginator for ListPrincipalThingsV2 operation
+        ///</summary>
+        IListPrincipalThingsV2Paginator ListPrincipalThingsV2(ListPrincipalThingsV2Request request);
+
+        /// <summary>
         /// Paginator for ListProvisioningTemplates operation
         ///</summary>
         IListProvisioningTemplatesPaginator ListProvisioningTemplates(ListProvisioningTemplatesRequest request);
@@ -270,6 +275,11 @@ namespace Amazon.IoT.Model
         /// Paginator for ListThingPrincipals operation
         ///</summary>
         IListThingPrincipalsPaginator ListThingPrincipals(ListThingPrincipalsRequest request);
+
+        /// <summary>
+        /// Paginator for ListThingPrincipalsV2 operation
+        ///</summary>
+        IListThingPrincipalsV2Paginator ListThingPrincipalsV2(ListThingPrincipalsV2Request request);
 
         /// <summary>
         /// Paginator for ListThingRegistrationTaskReports operation

@@ -63,7 +63,7 @@ namespace Amazon.VerifiedPermissions.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// OpenID Connect (OIDC) provider: <c>Namespace::[Entity type]::[principalIdClaim]|[user
+    /// OpenID Connect (OIDC) provider: <c>Namespace::[Entity type]::[entityIdPrefix]|[user
     /// principal attribute]</c>, for example <c>MyCorp::User::MyOIDCProvider|a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</c>.
     /// </para>
     ///  </li> </ul> </note> <note> 

@@ -35,8 +35,8 @@ namespace Amazon.CloudFormation.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/modules.html#module-enabling">Activating
-    /// public modules for use in your account</a> in the <i>CloudFormation User Guide</i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/module-versioning.html#requirements-for-modules">Requirements
+    /// for activating third-party public modules</a> in the <i>CloudFormation User Guide</i>.
     /// </para>
     /// </summary>
     public partial class RequiredActivatedType
@@ -56,7 +56,7 @@ namespace Amazon.CloudFormation.Model
         /// If you specified a <c>TypeNameAlias</c> when enabling the extension in this account
         /// and Region, CloudFormation treats that alias as the extension's type name within the
         /// account and Region, not the type name of the public extension. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying
+        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Use
         /// aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>

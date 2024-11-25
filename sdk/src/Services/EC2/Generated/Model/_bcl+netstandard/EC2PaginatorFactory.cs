@@ -77,6 +77,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeCapacityReservationBillingRequests operation
+        ///</summary>
+        public IDescribeCapacityReservationBillingRequestsPaginator DescribeCapacityReservationBillingRequests(DescribeCapacityReservationBillingRequestsRequest request) 
+        {
+            return new DescribeCapacityReservationBillingRequestsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeCapacityReservationFleets operation
         ///</summary>
         public IDescribeCapacityReservationFleetsPaginator DescribeCapacityReservationFleets(DescribeCapacityReservationFleetsRequest request) 
@@ -298,6 +306,14 @@ namespace Amazon.EC2.Model
         public IDescribeInstanceEventWindowsPaginator DescribeInstanceEventWindows(DescribeInstanceEventWindowsRequest request) 
         {
             return new DescribeInstanceEventWindowsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeInstanceImageMetadata operation
+        ///</summary>
+        public IDescribeInstanceImageMetadataPaginator DescribeInstanceImageMetadata(DescribeInstanceImageMetadataRequest request) 
+        {
+            return new DescribeInstanceImageMetadataPaginator(this.client, request);
         }
 
         /// <summary>
@@ -634,6 +650,14 @@ namespace Amazon.EC2.Model
         public IDescribeSecurityGroupsPaginator DescribeSecurityGroups(DescribeSecurityGroupsRequest request) 
         {
             return new DescribeSecurityGroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeSecurityGroupVpcAssociations operation
+        ///</summary>
+        public IDescribeSecurityGroupVpcAssociationsPaginator DescribeSecurityGroupVpcAssociations(DescribeSecurityGroupVpcAssociationsRequest request) 
+        {
+            return new DescribeSecurityGroupVpcAssociationsPaginator(this.client, request);
         }
 
         /// <summary>

@@ -42,6 +42,7 @@ namespace Amazon.CodePipeline.Model
         private StageExecution _latestExecution;
         private StageConditionState _onFailureConditionState;
         private StageConditionState _onSuccessConditionState;
+        private RetryStageMetadata _retryStageMetadata;
         private string _stageName;
 
         /// <summary>
@@ -183,6 +184,25 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetOnSuccessConditionState()
         {
             return this._onSuccessConditionState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetryStageMetadata. 
+        /// <para>
+        /// he details of a specific automatic retry on stage failure, including the attempt number
+        /// and trigger.
+        /// </para>
+        /// </summary>
+        public RetryStageMetadata RetryStageMetadata
+        {
+            get { return this._retryStageMetadata; }
+            set { this._retryStageMetadata = value; }
+        }
+
+        // Check to see if RetryStageMetadata property is set
+        internal bool IsSetRetryStageMetadata()
+        {
+            return this._retryStageMetadata != null;
         }
 
         /// <summary>

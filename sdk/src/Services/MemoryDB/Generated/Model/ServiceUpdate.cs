@@ -37,6 +37,7 @@ namespace Amazon.MemoryDB.Model
         private DateTime? _autoUpdateStartDate;
         private string _clusterName;
         private string _description;
+        private string _engine;
         private string _nodesUpdated;
         private DateTime? _releaseDate;
         private string _serviceUpdateName;
@@ -95,6 +96,24 @@ namespace Amazon.MemoryDB.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Engine. 
+        /// <para>
+        /// The MemoryDB engine to which the update applies. The values are either Redis or Valkey.
+        /// </para>
+        /// </summary>
+        public string Engine
+        {
+            get { return this._engine; }
+            set { this._engine = value; }
+        }
+
+        // Check to see if Engine property is set
+        internal bool IsSetEngine()
+        {
+            return this._engine != null;
         }
 
         /// <summary>

@@ -43,6 +43,7 @@ namespace Amazon.DatabaseMigrationService.Model
     {
         private ReplicationTaskAssessmentRunProgress _assessmentProgress;
         private string _assessmentRunName;
+        private bool? _isLatestTaskAssessmentRun;
         private string _lastFailureMessage;
         private string _replicationTaskArn;
         private string _replicationTaskAssessmentRunArn;
@@ -51,6 +52,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _resultKmsKeyArn;
         private string _resultLocationBucket;
         private string _resultLocationFolder;
+        private ReplicationTaskAssessmentRunResultStatistic _resultStatistic;
         private string _serviceAccessRoleArn;
         private string _status;
 
@@ -89,6 +91,25 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetAssessmentRunName()
         {
             return this._assessmentRunName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsLatestTaskAssessmentRun. 
+        /// <para>
+        /// Indicates that the following PreflightAssessmentRun is the latest for the ReplicationTask.
+        /// The status is either true or false.
+        /// </para>
+        /// </summary>
+        public bool? IsLatestTaskAssessmentRun
+        {
+            get { return this._isLatestTaskAssessmentRun; }
+            set { this._isLatestTaskAssessmentRun = value; }
+        }
+
+        // Check to see if IsLatestTaskAssessmentRun property is set
+        internal bool IsSetIsLatestTaskAssessmentRun()
+        {
+            return this._isLatestTaskAssessmentRun.HasValue; 
         }
 
         /// <summary>
@@ -234,6 +255,26 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetResultLocationFolder()
         {
             return this._resultLocationFolder != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResultStatistic. 
+        /// <para>
+        ///  Result statistics for a completed assessment run, showing aggregated statistics of
+        /// IndividualAssessments for how many assessments were passed, failed, or encountered
+        /// issues such as errors or warnings. 
+        /// </para>
+        /// </summary>
+        public ReplicationTaskAssessmentRunResultStatistic ResultStatistic
+        {
+            get { return this._resultStatistic; }
+            set { this._resultStatistic = value; }
+        }
+
+        // Check to see if ResultStatistic property is set
+        internal bool IsSetResultStatistic()
+        {
+            return this._resultStatistic != null;
         }
 
         /// <summary>

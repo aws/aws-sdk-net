@@ -66,6 +66,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("FlowTimeouts", targetDepth))
+                {
+                    var unmarshaller = FlowTimeoutsUnmarshaller.Instance;
+                    unmarshalledObject.FlowTimeouts = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RuleOrder", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

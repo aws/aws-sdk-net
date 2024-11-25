@@ -200,6 +200,17 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Version);
                     }
 
+                    if(publicRequest.IsSetZonalShiftConfig())
+                    {
+                        context.Writer.WritePropertyName("zonalShiftConfig");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ZonalShiftConfigRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ZonalShiftConfig, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     writer.WriteObjectEnd();
                 }
 

@@ -66,6 +66,9 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetDomainOwner())
                 request.Parameters.Add("domain-owner", StringUtils.FromString(publicRequest.DomainOwner));
             
+            if (publicRequest.IsSetEndpointType())
+                request.Parameters.Add("endpointType", StringUtils.FromString(publicRequest.EndpointType));
+            
             if (publicRequest.IsSetFormat())
                 request.Parameters.Add("format", StringUtils.FromString(publicRequest.Format));
             

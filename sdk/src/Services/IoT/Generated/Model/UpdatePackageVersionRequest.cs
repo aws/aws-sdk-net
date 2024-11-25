@@ -181,7 +181,7 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property Recipe. 
         /// <para>
         /// The inline job document associated with a software package version used for a quick
-        /// job deployment via IoT Jobs.
+        /// job deployment.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Max=3072)]

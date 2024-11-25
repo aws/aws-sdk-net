@@ -37,6 +37,11 @@ namespace Amazon.RedshiftDataAPIService.Model
         IGetStatementResultPaginator GetStatementResult(GetStatementResultRequest request);
 
         /// <summary>
+        /// Paginator for GetStatementResultV2 operation
+        ///</summary>
+        IGetStatementResultV2Paginator GetStatementResultV2(GetStatementResultV2Request request);
+
+        /// <summary>
         /// Paginator for ListDatabases operation
         ///</summary>
         IListDatabasesPaginator ListDatabases(ListDatabasesRequest request);

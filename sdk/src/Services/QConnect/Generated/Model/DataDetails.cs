@@ -36,6 +36,7 @@ namespace Amazon.QConnect.Model
     {
         private ContentDataDetails _contentData;
         private GenerativeDataDetails _generativeData;
+        private IntentDetectedDataDetails _intentDetectedData;
         private SourceContentDataDetails _sourceContentData;
 
         /// <summary>
@@ -72,6 +73,24 @@ namespace Amazon.QConnect.Model
         internal bool IsSetGenerativeData()
         {
             return this._generativeData != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IntentDetectedData. 
+        /// <para>
+        /// Details about the intent data.
+        /// </para>
+        /// </summary>
+        public IntentDetectedDataDetails IntentDetectedData
+        {
+            get { return this._intentDetectedData; }
+            set { this._intentDetectedData = value; }
+        }
+
+        // Check to see if IntentDetectedData property is set
+        internal bool IsSetIntentDetectedData()
+        {
+            return this._intentDetectedData != null;
         }
 
         /// <summary>

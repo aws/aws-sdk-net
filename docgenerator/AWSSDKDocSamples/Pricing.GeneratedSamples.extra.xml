@@ -15,7 +15,7 @@
                 <code
                     title="To retrieve a list of services and service codes"
                     source=".\AWSSDKDocSamples\Pricing\Pricing.GeneratedSamples.cs"
-                    region="to-retrieve-service-metadata" />
+                    region="example-1" />
             </example>
         </value>
     </doc>
@@ -34,7 +34,7 @@
                 <code
                     title="To retrieve a list of attribute values"
                     source=".\AWSSDKDocSamples\Pricing\Pricing.GeneratedSamples.cs"
-                    region="to-retreive-attribute-values" />
+                    region="example-1" />
             </example>
         </value>
     </doc>

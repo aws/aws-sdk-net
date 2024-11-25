@@ -113,6 +113,12 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.HiddenFromGlobalAddressList.Value);
                     }
 
+                    if(publicRequest.IsSetIdentityProviderUserId())
+                    {
+                        context.Writer.WritePropertyName("IdentityProviderUserId");
+                        context.Writer.Write(publicRequest.IdentityProviderUserId);
+                    }
+
                     if(publicRequest.IsSetInitials())
                     {
                         context.Writer.WritePropertyName("Initials");

@@ -76,8 +76,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property SbomValidationStatus. 
         /// <para>
-        /// The status of the initial validation for the SBOM against the Software Package Data
-        /// Exchange (SPDX) and CycloneDX industry standard format.
+        /// The status of the initial validation for the software bill of materials against the
+        /// Software Package Data Exchange (SPDX) and CycloneDX industry standard formats.
         /// </para>
         /// </summary>
         public SbomValidationStatus SbomValidationStatus

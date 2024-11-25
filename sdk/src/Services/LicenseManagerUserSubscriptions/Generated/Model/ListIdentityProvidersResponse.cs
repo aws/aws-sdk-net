@@ -40,7 +40,8 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         /// <summary>
         /// Gets and sets the property IdentityProviderSummaries. 
         /// <para>
-        /// Metadata that describes the list identity providers operation.
+        /// An array of <c>IdentityProviderSummary</c> resources that contain details about the
+        /// Active Directory identity providers that meet the request criteria.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +60,9 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Token for the next set of results.
+        /// The next token used for paginated responses. When this field isn't empty, there are
+        /// additional elements that the service hasn't included in this request. Use this token
+        /// with the next request to retrieve additional objects.
         /// </para>
         /// </summary>
         public string NextToken

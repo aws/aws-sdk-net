@@ -70,12 +70,17 @@ namespace Amazon.RDS.Model
         private string _domainIAMRoleName;
         private List<string> _enableCloudwatchLogsExports = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _enableIAMDatabaseAuthentication;
+        private bool? _enablePerformanceInsights;
         private string _engineLifecycleSupport;
         private string _engineMode;
         private int? _iops;
         private string _kmsKeyId;
+        private int? _monitoringInterval;
+        private string _monitoringRoleArn;
         private string _networkType;
         private string _optionGroupName;
+        private string _performanceInsightsKMSKeyId;
+        private int? _performanceInsightsRetentionPeriod;
         private int? _port;
         private bool? _publiclyAccessible;
         private RdsCustomClusterConfiguration _rdsCustomClusterConfiguration;
@@ -443,11 +448,13 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
-        /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.
+        /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
+        /// IAM database authentication for MariaDB, MySQL, and PostgreSQL</a> in the <i>Amazon
+        /// RDS User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// Valid for: Aurora DB clusters only
+        /// Valid for: Aurora DB clusters and Multi-AZ DB clusters
         /// </para>
         /// </summary>
         public bool? EnableIAMDatabaseAuthentication
@@ -460,6 +467,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetEnableIAMDatabaseAuthentication()
         {
             return this._enableIAMDatabaseAuthentication.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnablePerformanceInsights. 
+        /// <para>
+        /// Specifies whether to turn on Performance Insights for the DB cluster.
+        /// </para>
+        /// </summary>
+        public bool? EnablePerformanceInsights
+        {
+            get { return this._enablePerformanceInsights; }
+            set { this._enablePerformanceInsights = value; }
+        }
+
+        // Check to see if EnablePerformanceInsights property is set
+        internal bool IsSetEnablePerformanceInsights()
+        {
+            return this._enablePerformanceInsights.HasValue; 
         }
 
         /// <summary>
@@ -484,7 +509,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Amazon Aurora (PostgreSQL only) - <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Using
+        /// Amazon Aurora - <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Using
         /// Amazon RDS Extended Support</a> in the <i>Amazon Aurora User Guide</i> 
         /// </para>
         ///  </li> <li> 
@@ -632,6 +657,62 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MonitoringInterval. 
+        /// <para>
+        /// The interval, in seconds, between points when Enhanced Monitoring metrics are collected
+        /// for the DB cluster. To turn off collecting Enhanced Monitoring metrics, specify <c>0</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <c>MonitoringRoleArn</c> is specified, also set <c>MonitoringInterval</c> to a
+        /// value other than <c>0</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <c>0 | 1 | 5 | 10 | 15 | 30 | 60</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <c>0</c> 
+        /// </para>
+        /// </summary>
+        public int? MonitoringInterval
+        {
+            get { return this._monitoringInterval; }
+            set { this._monitoringInterval = value; }
+        }
+
+        // Check to see if MonitoringInterval property is set
+        internal bool IsSetMonitoringInterval()
+        {
+            return this._monitoringInterval.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MonitoringRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the IAM role that permits RDS to send Enhanced
+        /// Monitoring metrics to Amazon CloudWatch Logs. An example is <c>arn:aws:iam:123456789012:role/emaccess</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <c>MonitoringInterval</c> is set to a value other than <c>0</c>, supply a <c>MonitoringRoleArn</c>
+        /// value.
+        /// </para>
+        /// </summary>
+        public string MonitoringRoleArn
+        {
+            get { return this._monitoringRoleArn; }
+            set { this._monitoringRoleArn = value; }
+        }
+
+        // Check to see if MonitoringRoleArn property is set
+        internal bool IsSetMonitoringRoleArn()
+        {
+            return this._monitoringRoleArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NetworkType. 
         /// <para>
         /// The network type of the DB cluster.
@@ -696,6 +777,81 @@ namespace Amazon.RDS.Model
         internal bool IsSetOptionGroupName()
         {
             return this._optionGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerformanceInsightsKMSKeyId. 
+        /// <para>
+        /// The Amazon Web Services KMS key identifier for encryption of Performance Insights
+        /// data.
+        /// </para>
+        ///  
+        /// <para>
+        /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias
+        /// name for the KMS key.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify a value for <c>PerformanceInsightsKMSKeyId</c>, then Amazon RDS
+        /// uses your default KMS key. There is a default KMS key for your Amazon Web Services
+        /// account. Your Amazon Web Services account has a different default KMS key for each
+        /// Amazon Web Services Region.
+        /// </para>
+        /// </summary>
+        public string PerformanceInsightsKMSKeyId
+        {
+            get { return this._performanceInsightsKMSKeyId; }
+            set { this._performanceInsightsKMSKeyId = value; }
+        }
+
+        // Check to see if PerformanceInsightsKMSKeyId property is set
+        internal bool IsSetPerformanceInsightsKMSKeyId()
+        {
+            return this._performanceInsightsKMSKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerformanceInsightsRetentionPeriod. 
+        /// <para>
+        /// The number of days to retain Performance Insights data.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>7</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples:
+        /// <c>93</c> (3 months * 31), <c>341</c> (11 months * 31), <c>589</c> (19 months * 31)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>731</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Default: <c>7</c> days
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify a retention period that isn't valid, such as <c>94</c>, Amazon RDS
+        /// issues an error.
+        /// </para>
+        /// </summary>
+        public int? PerformanceInsightsRetentionPeriod
+        {
+            get { return this._performanceInsightsRetentionPeriod; }
+            set { this._performanceInsightsRetentionPeriod = value; }
+        }
+
+        // Check to see if PerformanceInsightsRetentionPeriod property is set
+        internal bool IsSetPerformanceInsightsRetentionPeriod()
+        {
+            return this._performanceInsightsRetentionPeriod.HasValue; 
         }
 
         /// <summary>

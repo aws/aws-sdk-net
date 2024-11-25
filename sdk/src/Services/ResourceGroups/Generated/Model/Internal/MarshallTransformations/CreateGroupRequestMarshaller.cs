@@ -85,16 +85,34 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
                         context.Writer.WriteArrayEnd();
                     }
 
+                    if(publicRequest.IsSetCriticality())
+                    {
+                        context.Writer.WritePropertyName("Criticality");
+                        context.Writer.Write(publicRequest.Criticality.Value);
+                    }
+
                     if(publicRequest.IsSetDescription())
                     {
                         context.Writer.WritePropertyName("Description");
                         context.Writer.Write(publicRequest.Description);
                     }
 
+                    if(publicRequest.IsSetDisplayName())
+                    {
+                        context.Writer.WritePropertyName("DisplayName");
+                        context.Writer.Write(publicRequest.DisplayName);
+                    }
+
                     if(publicRequest.IsSetName())
                     {
                         context.Writer.WritePropertyName("Name");
                         context.Writer.Write(publicRequest.Name);
+                    }
+
+                    if(publicRequest.IsSetOwner())
+                    {
+                        context.Writer.WritePropertyName("Owner");
+                        context.Writer.Write(publicRequest.Owner);
                     }
 
                     if(publicRequest.IsSetResourceQuery())

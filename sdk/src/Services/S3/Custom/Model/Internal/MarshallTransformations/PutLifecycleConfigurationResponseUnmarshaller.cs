@@ -36,7 +36,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         {
             PutLifecycleConfigurationResponse response = new PutLifecycleConfigurationResponse();
             
-
+            if (context.ResponseData.IsHeaderPresent("x-amz-transition-default-minimum-object-size"))
+                response.TransitionDefaultMinimumObjectSize = context.ResponseData.GetHeaderValue("x-amz-transition-default-minimum-object-size");
             return response;
         }
 

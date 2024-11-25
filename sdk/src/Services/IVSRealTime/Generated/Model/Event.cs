@@ -45,14 +45,87 @@ namespace Amazon.IVSRealTime.Model
         /// <para>
         /// If the event is an error event, the error code is provided to give insight into the
         /// specific error that occurred. If the event is not an error event, this field is null.
-        /// <c>INSUFFICIENT_CAPABILITIES</c> indicates that the participant tried to take an action
-        /// that the participant’s token is not allowed to do. For more information about participant
-        /// capabilities, see the <c>capabilities</c> field in <a>CreateParticipantToken</a>.
-        /// <c>QUOTA_EXCEEDED</c> indicates that the number of participants who want to publish/subscribe
-        /// to a stage exceeds the quota; for more information, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html">Service
-        /// Quotas</a>. <c>PUBLISHER_NOT_FOUND</c> indicates that the participant tried to subscribe
-        /// to a publisher that doesn’t exist. 
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>B_FRAME_PRESENT</c> — The participant's stream includes B-frames. For details,
+        /// see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/rt-rtmp-publishing.html">
+        /// IVS RTMP Publishing</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>BITRATE_EXCEEDED</c> — The participant exceeded the maximum supported bitrate.
+        /// For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html">
+        /// Service Quotas</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>INSUFFICIENT_CAPABILITIES</c> — The participant tried to take an action that the
+        /// participant’s token is not allowed to do. For details on participant capabilities,
+        /// see the <c>capabilities</c> field in <a>CreateParticipantToken</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>INTERNAL_SERVER_EXCEPTION</c> — The participant failed to publish to the stage
+        /// due to an internal server error.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>INVALID_AUDIO_CODEC</c> — The participant is using an invalid audio codec. For
+        /// details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/rt-stream-ingest.html">
+        /// Stream Ingest</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>INVALID_INPUT</c> — The participant is using an invalid input stream.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>INVALID_PROTOCOL</c> — The participant's IngestConfiguration resource is configured
+        /// for RTMPS but they tried streaming with RTMP. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/rt-rtmp-publishing.html">
+        /// IVS RTMP Publishing</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>INVALID_STREAM_KEY</c> — The participant is using an invalid stream key. For details,
+        /// see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/rt-rtmp-publishing.html">
+        /// IVS RTMP Publishing</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>INVALID_VIDEO_CODEC</c> — The participant is using an invalid video codec. For
+        /// details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/rt-stream-ingest.html">
+        /// Stream Ingest</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PUBLISHER_NOT_FOUND</c> — The participant tried to subscribe to a publisher that
+        /// doesn’t exist.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>QUOTA_EXCEEDED</c> — The number of participants who want to publish/subscribe
+        /// to a stage exceeds the quota. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html">
+        /// Service Quotas</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>RESOLUTION_EXCEEDED</c> — The participant exceeded the maximum supported resolution.
+        /// For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html">
+        /// Service Quotas</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>REUSE_OF_STREAM_KEY</c> — The participant tried to use a stream key that is associated
+        /// with another active stage session.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>STREAM_DURATION_EXCEEDED</c> — The participant exceeded the maximum allowed stream
+        /// duration. For details, see <a href="https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/service-quotas.html">
+        /// Service Quotas</a>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public EventErrorCode ErrorCode
         {

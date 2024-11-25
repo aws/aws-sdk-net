@@ -93,6 +93,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                         response.AvailabilityZones.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("EnablePrefixForIpv6SourceNat", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.EnablePrefixForIpv6SourceNat = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("IpAddressType", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

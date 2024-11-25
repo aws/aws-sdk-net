@@ -69,6 +69,22 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
                     writer.Validate = false;
                     writer.WriteObjectStart();
                     var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetBurnRateConfigurations())
+                    {
+                        context.Writer.WritePropertyName("BurnRateConfigurations");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestBurnRateConfigurationsListValue in publicRequest.BurnRateConfigurations)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = BurnRateConfigurationMarshaller.Instance;
+                            marshaller.Marshall(publicRequestBurnRateConfigurationsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
                     if(publicRequest.IsSetDescription())
                     {
                         context.Writer.WritePropertyName("Description");

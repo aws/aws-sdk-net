@@ -101,8 +101,8 @@ namespace Amazon.AppConfig.Model
         /// </para>
         ///  </important> 
         /// <para>
-        /// For more information about working with configurations, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving
-        /// the Configuration</a> in the <i>AppConfig User Guide</i>.
+        /// For more information about working with configurations, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/retrieving-feature-flags.html">Retrieving
+        /// feature flags and configuration data in AppConfig</a> in the <i>AppConfig User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

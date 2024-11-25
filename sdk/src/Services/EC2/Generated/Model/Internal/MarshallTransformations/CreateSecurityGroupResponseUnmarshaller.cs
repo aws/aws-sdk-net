@@ -62,6 +62,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         response.GroupId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("securityGroupArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.SecurityGroupArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;

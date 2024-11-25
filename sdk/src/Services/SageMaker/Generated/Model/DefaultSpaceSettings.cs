@@ -30,7 +30,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// A collection of settings that apply to spaces created in the domain.
+    /// The default settings for shared spaces that users create in the domain.
+    /// 
+    ///  
+    /// <para>
+    /// SageMaker applies these settings only to shared spaces. It doesn't apply them to private
+    /// spaces.
+    /// </para>
     /// </summary>
     public partial class DefaultSpaceSettings
     {

@@ -30,8 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// The Amazon S3 location for the software bill of materials associated with a software
-    /// package version.
+    /// A specific software bill of matrerials associated with a software package version.
     /// </summary>
     public partial class Sbom
     {

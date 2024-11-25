@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// The settings to be applied to the Redis OSS replication group, either immediately
+    /// The settings to be applied to the Valkey or Redis OSS replication group, either immediately
     /// or during the next maintenance window.
     /// </summary>
     public partial class ReplicationGroupPendingModifiedValues
@@ -66,7 +66,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AutomaticFailoverStatus. 
         /// <para>
-        /// Indicates the status of automatic failover for this Redis OSS replication group.
+        /// Indicates the status of automatic failover for this Valkey or Redis OSS replication
+        /// group.
         /// </para>
         /// </summary>
         public PendingAutomaticFailoverStatus AutomaticFailoverStatus
@@ -85,10 +86,10 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property ClusterMode. 
         /// <para>
         /// Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first
-        /// set the cluster mode to Compatible. Compatible mode allows your Redis OSS clients
-        /// to connect using both cluster mode enabled and cluster mode disabled. After you migrate
-        /// all Redis OSS clients to use cluster mode enabled, you can then complete cluster mode
-        /// configuration and set the cluster mode to Enabled.
+        /// set the cluster mode to Compatible. Compatible mode allows your Valkey or Redis OSS
+        /// clients to connect using both cluster mode enabled and cluster mode disabled. After
+        /// you migrate all Valkey or Redis OSS clients to use cluster mode enabled, you can then
+        /// complete cluster mode configuration and set the cluster mode to Enabled.
         /// </para>
         /// </summary>
         public ClusterMode ClusterMode

@@ -94,6 +94,17 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetStartTag())
+            {
+                context.Writer.WritePropertyName("StartTag");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = StartTagMarshaller.Instance;
+                marshaller.Marshall(requestObject.StartTag, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

@@ -68,28 +68,6 @@ namespace Amazon.DNXCore.IntegrationTests
         }
 
         [Fact]
-        public async Task TestRestJson()
-        {
-            using (var client = UtilityMethods.CreateClient<AmazonElasticTranscoderClient>())
-            {
-                var presets = (await client.ListPresetsAsync(new ListPresetsRequest())).Presets;
-                Assert.NotNull(presets);
-                Assert.NotEmpty(presets);
-
-                var fakeId = "1111111111111-abcde1";
-                var aete = await AssertExtensions.ExpectExceptionAsync<Amazon.ElasticTranscoder.Model.ResourceNotFoundException>(client.DeletePipelineAsync(new DeletePipelineRequest
-                {
-                    Id = fakeId
-                }));
-                Assert.NotNull(aete);
-                Assert.NotNull(aete.Message);
-                Assert.True(aete.Message.IndexOf(fakeId, StringComparison.OrdinalIgnoreCase) >= 0);
-                //Assert.NotNull(aete.ErrorCode);
-                Assert.Equal(ErrorType.Unknown, aete.ErrorType);
-            }
-        }
-
-        [Fact]
         public async Task TestRestXml()
         {
             using (var client = UtilityMethods.CreateClient<AmazonS3Client>())

@@ -84,6 +84,12 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("iamIdentityCenterOptions", targetDepth))
+                {
+                    var unmarshaller = IamIdentityCenterConfigOptionsUnmarshaller.Instance;
+                    unmarshalledObject.IamIdentityCenterOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

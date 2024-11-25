@@ -45,6 +45,7 @@ namespace Amazon.GuardDuty.Model
         private LambdaDetails _lambdaDetails;
         private RdsDbInstanceDetails _rdsDbInstanceDetails;
         private RdsDbUserDetails _rdsDbUserDetails;
+        private RdsLimitlessDbDetails _rdsLimitlessDbDetails;
         private string _resourceType;
         private List<S3BucketDetail> _s3BucketDetails = AWSConfigs.InitializeCollections ? new List<S3BucketDetail>() : null;
 
@@ -227,6 +228,25 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetRdsDbUserDetails()
         {
             return this._rdsDbUserDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RdsLimitlessDbDetails. 
+        /// <para>
+        /// Contains information about the RDS Limitless database that was involved in a GuardDuty
+        /// finding.
+        /// </para>
+        /// </summary>
+        public RdsLimitlessDbDetails RdsLimitlessDbDetails
+        {
+            get { return this._rdsLimitlessDbDetails; }
+            set { this._rdsLimitlessDbDetails = value; }
+        }
+
+        // Check to see if RdsLimitlessDbDetails property is set
+        internal bool IsSetRdsLimitlessDbDetails()
+        {
+            return this._rdsLimitlessDbDetails != null;
         }
 
         /// <summary>

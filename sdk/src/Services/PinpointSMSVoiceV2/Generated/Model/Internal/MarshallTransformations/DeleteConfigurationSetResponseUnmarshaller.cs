@@ -70,6 +70,12 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                     response.CreatedTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DefaultMessageFeedbackEnabled", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    response.DefaultMessageFeedbackEnabled = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DefaultMessageType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

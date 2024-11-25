@@ -36,13 +36,13 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
     public partial class UpdateIdentityProviderSettingsRequest : AmazonLicenseManagerUserSubscriptionsRequest
     {
         private IdentityProvider _identityProvider;
+        private string _identityProviderArn;
         private string _product;
         private UpdateSettings _updateSettings;
 
         /// <summary>
         /// Gets and sets the property IdentityProvider.
         /// </summary>
-        [AWSProperty(Required=true)]
         public IdentityProvider IdentityProvider
         {
             get { return this._identityProvider; }
@@ -56,12 +56,34 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IdentityProviderArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the identity provider to update.
+        /// </para>
+        /// </summary>
+        public string IdentityProviderArn
+        {
+            get { return this._identityProviderArn; }
+            set { this._identityProviderArn = value; }
+        }
+
+        // Check to see if IdentityProviderArn property is set
+        internal bool IsSetIdentityProviderArn()
+        {
+            return this._identityProviderArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Product. 
         /// <para>
         /// The name of the user-based subscription product.
         /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <c>VISUAL_STUDIO_ENTERPRISE</c> | <c>VISUAL_STUDIO_PROFESSIONAL</c>
+        /// | <c>OFFICE_PROFESSIONAL_PLUS</c> 
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string Product
         {
             get { return this._product; }

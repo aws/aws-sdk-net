@@ -45,6 +45,7 @@ namespace Amazon.CodeBuild.Model
     public partial class StartBuildRequest : AmazonCodeBuildRequest
     {
         private ProjectArtifacts _artifactsOverride;
+        private int? _autoRetryLimitOverride;
         private string _buildspecOverride;
         private BuildStatusConfig _buildStatusConfigOverride;
         private ProjectCache _cacheOverride;
@@ -94,6 +95,26 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetArtifactsOverride()
         {
             return this._artifactsOverride != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoRetryLimitOverride. 
+        /// <para>
+        /// The maximum number of additional automatic retries after a failed build. For example,
+        /// if the auto-retry limit is set to 2, CodeBuild will call the <c>RetryBuild</c> API
+        /// to automatically retry your build for up to 2 additional times.
+        /// </para>
+        /// </summary>
+        public int? AutoRetryLimitOverride
+        {
+            get { return this._autoRetryLimitOverride; }
+            set { this._autoRetryLimitOverride = value; }
+        }
+
+        // Check to see if AutoRetryLimitOverride property is set
+        internal bool IsSetAutoRetryLimitOverride()
+        {
+            return this._autoRetryLimitOverride.HasValue; 
         }
 
         /// <summary>

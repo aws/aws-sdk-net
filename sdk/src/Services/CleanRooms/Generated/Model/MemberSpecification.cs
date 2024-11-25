@@ -37,6 +37,7 @@ namespace Amazon.CleanRooms.Model
         private string _accountId;
         private string _displayName;
         private List<string> _memberAbilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private MLMemberAbilities _mlMemberAbilities;
         private PaymentConfiguration _paymentConfiguration;
 
         /// <summary>
@@ -95,6 +96,30 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetMemberAbilities()
         {
             return this._memberAbilities != null && (this._memberAbilities.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MlMemberAbilities. 
+        /// <para>
+        /// The ML abilities granted to the collaboration member.
+        /// </para>
+        ///  
+        /// <para>
+        /// Custom ML modeling is in beta release and is subject to change. For beta terms and
+        /// conditions, see <i>Betas and Previews</i> in the <a href="https://aws.amazon.com/service-terms/">Amazon
+        /// Web Services Service Terms</a>.
+        /// </para>
+        /// </summary>
+        public MLMemberAbilities MlMemberAbilities
+        {
+            get { return this._mlMemberAbilities; }
+            set { this._mlMemberAbilities = value; }
+        }
+
+        // Check to see if MlMemberAbilities property is set
+        internal bool IsSetMlMemberAbilities()
+        {
+            return this._mlMemberAbilities != null;
         }
 
         /// <summary>

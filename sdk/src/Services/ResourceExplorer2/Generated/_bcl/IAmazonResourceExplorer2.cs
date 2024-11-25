@@ -1069,6 +1069,82 @@ namespace Amazon.ResourceExplorer2
 
         #endregion
         
+        #region  GetManagedView
+
+
+        /// <summary>
+        /// Retrieves details of the specified <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/aws-managed-views.html">Amazon
+        /// Web Services-managed view</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedView service method.</param>
+        /// 
+        /// <returns>The response from the GetManagedView service method, as returned by ResourceExplorer2.</returns>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.AccessDeniedException">
+        /// The credentials that you used to call this operation don't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.InternalServerException">
+        /// The request failed because of internal service error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ResourceNotFoundException">
+        /// You specified a resource that doesn't exist. Check the ID or ARN that you used to
+        /// identity the resource, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ThrottlingException">
+        /// The request failed because you exceeded a rate limit for this operation. For more
+        /// information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas
+        /// for Resource Explorer</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.UnauthorizedException">
+        /// The principal making the request isn't permitted to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ValidationException">
+        /// You provided an invalid value for one of the operation's parameters. Check the syntax
+        /// for the operation, and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/GetManagedView">REST API Reference for GetManagedView Operation</seealso>
+        GetManagedViewResponse GetManagedView(GetManagedViewRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves details of the specified <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/aws-managed-views.html">Amazon
+        /// Web Services-managed view</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedView service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetManagedView service method, as returned by ResourceExplorer2.</returns>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.AccessDeniedException">
+        /// The credentials that you used to call this operation don't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.InternalServerException">
+        /// The request failed because of internal service error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ResourceNotFoundException">
+        /// You specified a resource that doesn't exist. Check the ID or ARN that you used to
+        /// identity the resource, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ThrottlingException">
+        /// The request failed because you exceeded a rate limit for this operation. For more
+        /// information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas
+        /// for Resource Explorer</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.UnauthorizedException">
+        /// The principal making the request isn't permitted to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ValidationException">
+        /// You provided an invalid value for one of the operation's parameters. Check the syntax
+        /// for the operation, and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/GetManagedView">REST API Reference for GetManagedView Operation</seealso>
+        Task<GetManagedViewResponse> GetManagedViewAsync(GetManagedViewRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetView
 
 
@@ -1268,6 +1344,76 @@ namespace Amazon.ResourceExplorer2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/ListIndexesForMembers">REST API Reference for ListIndexesForMembers Operation</seealso>
         Task<ListIndexesForMembersResponse> ListIndexesForMembersAsync(ListIndexesForMembersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListManagedViews
+
+
+        /// <summary>
+        /// Lists the Amazon resource names (ARNs) of the <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/aws-managed-views.html">Amazon
+        /// Web Services-managed views</a> available in the Amazon Web Services Region in which
+        /// you call this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListManagedViews service method.</param>
+        /// 
+        /// <returns>The response from the ListManagedViews service method, as returned by ResourceExplorer2.</returns>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.AccessDeniedException">
+        /// The credentials that you used to call this operation don't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.InternalServerException">
+        /// The request failed because of internal service error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ThrottlingException">
+        /// The request failed because you exceeded a rate limit for this operation. For more
+        /// information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas
+        /// for Resource Explorer</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.UnauthorizedException">
+        /// The principal making the request isn't permitted to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ValidationException">
+        /// You provided an invalid value for one of the operation's parameters. Check the syntax
+        /// for the operation, and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/ListManagedViews">REST API Reference for ListManagedViews Operation</seealso>
+        ListManagedViewsResponse ListManagedViews(ListManagedViewsRequest request);
+
+
+
+        /// <summary>
+        /// Lists the Amazon resource names (ARNs) of the <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/aws-managed-views.html">Amazon
+        /// Web Services-managed views</a> available in the Amazon Web Services Region in which
+        /// you call this operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListManagedViews service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListManagedViews service method, as returned by ResourceExplorer2.</returns>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.AccessDeniedException">
+        /// The credentials that you used to call this operation don't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.InternalServerException">
+        /// The request failed because of internal service error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ThrottlingException">
+        /// The request failed because you exceeded a rate limit for this operation. For more
+        /// information, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/quotas.html">Quotas
+        /// for Resource Explorer</a>.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.UnauthorizedException">
+        /// The principal making the request isn't permitted to perform the operation.
+        /// </exception>
+        /// <exception cref="Amazon.ResourceExplorer2.Model.ValidationException">
+        /// You provided an invalid value for one of the operation's parameters. Check the syntax
+        /// for the operation, and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resource-explorer-2-2022-07-28/ListManagedViews">REST API Reference for ListManagedViews Operation</seealso>
+        Task<ListManagedViewsResponse> ListManagedViewsAsync(ListManagedViewsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

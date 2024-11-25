@@ -98,6 +98,12 @@
     <pattern>[^\[;\]&lt;&gt;]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PaymentCryptography.Model.ListAliasesRequest.KeyArn</property>
+    <min>70</min>
+    <max>150</max>
+    <pattern>arn:aws:payment-cryptography:[a-z]{2}-[a-z]{1,16}-[0-9]+:[0-9]{12}:key/[0-9a-zA-Z]{16,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PaymentCryptography.Model.ListAliasesRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -340,7 +346,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PaymentCryptography.Model.Tag.Value</property>
-    <min>0</min>
+    <min>1</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>

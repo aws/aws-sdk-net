@@ -7,6 +7,23 @@
     <pattern>^(\*[\w\d-]*\.)?([\w\d-]+\.)+[\w\d-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppSync.Model.CreateApiRequest.Name</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>[A-Za-z0-9_\-\ ]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.CreateChannelNamespaceRequest.CodeHandlers</property>
+    <min>1</min>
+    <max>32768</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.CreateChannelNamespaceRequest.Name</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>([A-Za-z0-9](?:[A-Za-z0-9\-]{0,48}[A-Za-z0-9])?)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppSync.Model.CreateDataSourceRequest.Name</property>
     <min>1</min>
     <max>65536</max>
@@ -115,6 +132,12 @@
     <pattern>[_A-Za-z][_0-9A-Za-z]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppSync.Model.DeleteChannelNamespaceRequest.Name</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>([A-Za-z0-9](?:[A-Za-z0-9\-]{0,48}[A-Za-z0-9])?)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppSync.Model.DeleteDataSourceRequest.Name</property>
     <min>1</min>
     <max>65536</max>
@@ -198,6 +221,12 @@
     <pattern>^(\*[\w\d-]*\.)?([\w\d-]+\.)+[\w\d-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppSync.Model.GetChannelNamespaceRequest.Name</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>([A-Za-z0-9](?:[A-Za-z0-9\-]{0,48}[A-Za-z0-9])?)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppSync.Model.GetDataSourceRequest.Name</property>
     <min>1</min>
     <max>65536</max>
@@ -212,7 +241,7 @@
     <property>Amazon.AppSync.Model.GetDataSourceIntrospectionRequest.NextToken</property>
     <min>1</min>
     <max>65536</max>
-    <pattern>[\\S]+</pattern>
+    <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.GetDomainNameRequest.DomainName</property>
@@ -253,13 +282,47 @@
     <property>Amazon.AppSync.Model.ListApiKeysRequest.NextToken</property>
     <min>1</min>
     <max>65536</max>
-    <pattern>[\\S]+</pattern>
+    <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.ListApiKeysResponse.NextToken</property>
     <min>1</min>
     <max>65536</max>
-    <pattern>[\\S]+</pattern>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.ListApisRequest.MaxResults</property>
+    <min>0</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.ListApisRequest.NextToken</property>
+    <min>1</min>
+    <max>65536</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.ListApisResponse.NextToken</property>
+    <min>1</min>
+    <max>65536</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.ListChannelNamespacesRequest.MaxResults</property>
+    <min>0</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.ListChannelNamespacesRequest.NextToken</property>
+    <min>1</min>
+    <max>65536</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.ListChannelNamespacesResponse.NextToken</property>
+    <min>1</min>
+    <max>65536</max>
+    <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.ListDataSourcesRequest.MaxResults</property>
@@ -270,13 +333,13 @@
     <property>Amazon.AppSync.Model.ListDataSourcesRequest.NextToken</property>
     <min>1</min>
     <max>65536</max>
-    <pattern>[\\S]+</pattern>
+    <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.ListDataSourcesResponse.NextToken</property>
     <min>1</min>
     <max>65536</max>
-    <pattern>[\\S]+</pattern>
+    <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.ListDomainNamesRequest.MaxResults</property>
@@ -287,13 +350,13 @@
     <property>Amazon.AppSync.Model.ListDomainNamesRequest.NextToken</property>
     <min>1</min>
     <max>65536</max>
-    <pattern>[\\S]+</pattern>
+    <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.ListDomainNamesResponse.NextToken</property>
     <min>1</min>
     <max>65536</max>
-    <pattern>[\\S]+</pattern>
+    <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.ListFunctionsRequest.MaxResults</property>
@@ -304,13 +367,13 @@
     <property>Amazon.AppSync.Model.ListFunctionsRequest.NextToken</property>
     <min>1</min>
     <max>65536</max>
-    <pattern>[\\S]+</pattern>
+    <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.ListFunctionsResponse.NextToken</property>
     <min>1</min>
     <max>65536</max>
-    <pattern>[\\S]+</pattern>
+    <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.ListGraphqlApisRequest.MaxResults</property>
@@ -321,13 +384,13 @@
     <property>Amazon.AppSync.Model.ListGraphqlApisRequest.NextToken</property>
     <min>1</min>
     <max>65536</max>
-    <pattern>[\\S]+</pattern>
+    <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.ListGraphqlApisResponse.NextToken</property>
     <min>1</min>
     <max>65536</max>
-    <pattern>[\\S]+</pattern>
+    <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.ListResolversRequest.MaxResults</property>
@@ -338,13 +401,13 @@
     <property>Amazon.AppSync.Model.ListResolversRequest.NextToken</property>
     <min>1</min>
     <max>65536</max>
-    <pattern>[\\S]+</pattern>
+    <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.ListResolversResponse.NextToken</property>
     <min>1</min>
     <max>65536</max>
-    <pattern>[\\S]+</pattern>
+    <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.ListResolversByFunctionRequest.MaxResults</property>
@@ -355,13 +418,13 @@
     <property>Amazon.AppSync.Model.ListResolversByFunctionRequest.NextToken</property>
     <min>1</min>
     <max>65536</max>
-    <pattern>[\\S]+</pattern>
+    <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.ListResolversByFunctionResponse.NextToken</property>
     <min>1</min>
     <max>65536</max>
-    <pattern>[\\S]+</pattern>
+    <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.ListSourceApiAssociationsRequest.MaxResults</property>
@@ -372,13 +435,13 @@
     <property>Amazon.AppSync.Model.ListSourceApiAssociationsRequest.NextToken</property>
     <min>1</min>
     <max>65536</max>
-    <pattern>[\\S]+</pattern>
+    <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.ListSourceApiAssociationsResponse.NextToken</property>
     <min>1</min>
     <max>65536</max>
-    <pattern>[\\S]+</pattern>
+    <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.ListTagsForResourceRequest.ResourceArn</property>
@@ -395,13 +458,13 @@
     <property>Amazon.AppSync.Model.ListTypesRequest.NextToken</property>
     <min>1</min>
     <max>65536</max>
-    <pattern>[\\S]+</pattern>
+    <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.ListTypesResponse.NextToken</property>
     <min>1</min>
     <max>65536</max>
-    <pattern>[\\S]+</pattern>
+    <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.ListTypesByAssociationRequest.MaxResults</property>
@@ -412,13 +475,13 @@
     <property>Amazon.AppSync.Model.ListTypesByAssociationRequest.NextToken</property>
     <min>1</min>
     <max>65536</max>
-    <pattern>[\\S]+</pattern>
+    <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.ListTypesByAssociationResponse.NextToken</property>
     <min>1</min>
     <max>65536</max>
-    <pattern>[\\S]+</pattern>
+    <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.TagResourceRequest.ResourceArn</property>
@@ -431,6 +494,23 @@
     <min>70</min>
     <max>75</max>
     <pattern>^arn:aws:appsync:[A-Za-z0-9_/.-]{0,63}:\d{12}:apis/[0-9A-Za-z_-]{26}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.UpdateApiRequest.Name</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>[A-Za-z0-9_\-\ ]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.UpdateChannelNamespaceRequest.CodeHandlers</property>
+    <min>1</min>
+    <max>32768</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.UpdateChannelNamespaceRequest.Name</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>([A-Za-z0-9](?:[A-Za-z0-9\-]{0,48}[A-Za-z0-9])?)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.UpdateDataSourceRequest.Name</property>
@@ -547,10 +627,33 @@
     <pattern>[_A-Za-z][_0-9A-Za-z]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppSync.Model.Api.Name</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>[A-Za-z0-9_\-\ ]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.Api.OwnerContact</property>
+    <min>0</min>
+    <max>250</max>
+    <pattern>[A-Za-z0-9_\-\ \.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppSync.Model.ApiAssociation.DomainName</property>
     <min>1</min>
     <max>253</max>
     <pattern>^(\*[\w\d-]*\.)?([\w\d-]+\.)+[\w\d-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.ChannelNamespace.CodeHandlers</property>
+    <min>1</min>
+    <max>32768</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.ChannelNamespace.Name</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>([A-Za-z0-9](?:[A-Za-z0-9\-]{0,48}[A-Za-z0-9])?)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.DataSource.Name</property>
@@ -562,7 +665,7 @@
     <property>Amazon.AppSync.Model.DataSourceIntrospectionResult.NextToken</property>
     <min>1</min>
     <max>65536</max>
-    <pattern>[\\S]+</pattern>
+    <pattern>[\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.DomainNameConfig.CertificateArn</property>

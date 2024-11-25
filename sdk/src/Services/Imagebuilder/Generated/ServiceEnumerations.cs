@@ -1367,6 +1367,10 @@ namespace Amazon.Imagebuilder
         /// </summary>
         public static readonly Platform Linux = new Platform("Linux");
         /// <summary>
+        /// Constant MacOS for Platform
+        /// </summary>
+        public static readonly Platform MacOS = new Platform("macOS");
+        /// <summary>
         /// Constant Windows for Platform
         /// </summary>
         public static readonly Platform Windows = new Platform("Windows");
@@ -1458,6 +1462,60 @@ namespace Amazon.Imagebuilder
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TenancyType.
+    /// </summary>
+    public class TenancyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Dedicated for TenancyType
+        /// </summary>
+        public static readonly TenancyType Dedicated = new TenancyType("dedicated");
+        /// <summary>
+        /// Constant Default for TenancyType
+        /// </summary>
+        public static readonly TenancyType Default = new TenancyType("default");
+        /// <summary>
+        /// Constant Host for TenancyType
+        /// </summary>
+        public static readonly TenancyType Host = new TenancyType("host");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TenancyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TenancyType FindValue(string value)
+        {
+            return FindValue<TenancyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TenancyType(string value)
         {
             return FindValue(value);
         }

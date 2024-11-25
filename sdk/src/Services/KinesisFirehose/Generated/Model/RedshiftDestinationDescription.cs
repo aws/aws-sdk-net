@@ -49,7 +49,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property CloudWatchLoggingOptions. 
         /// <para>
-        /// The Amazon CloudWatch logging options for your delivery stream.
+        /// The Amazon CloudWatch logging options for your Firehose stream.
         /// </para>
         /// </summary>
         public CloudWatchLoggingOptions CloudWatchLoggingOptions

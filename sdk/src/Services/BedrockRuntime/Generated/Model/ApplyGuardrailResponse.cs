@@ -36,6 +36,7 @@ namespace Amazon.BedrockRuntime.Model
     {
         private GuardrailAction _action;
         private List<GuardrailAssessment> _assessments = AWSConfigs.InitializeCollections ? new List<GuardrailAssessment>() : null;
+        private GuardrailCoverage _guardrailCoverage;
         private List<GuardrailOutputContent> _outputs = AWSConfigs.InitializeCollections ? new List<GuardrailOutputContent>() : null;
         private GuardrailUsage _usage;
 
@@ -75,6 +76,24 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetAssessments()
         {
             return this._assessments != null && (this._assessments.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GuardrailCoverage. 
+        /// <para>
+        /// The guardrail coverage details in the apply guardrail response.
+        /// </para>
+        /// </summary>
+        public GuardrailCoverage GuardrailCoverage
+        {
+            get { return this._guardrailCoverage; }
+            set { this._guardrailCoverage = value; }
+        }
+
+        // Check to see if GuardrailCoverage property is set
+        internal bool IsSetGuardrailCoverage()
+        {
+            return this._guardrailCoverage != null;
         }
 
         /// <summary>

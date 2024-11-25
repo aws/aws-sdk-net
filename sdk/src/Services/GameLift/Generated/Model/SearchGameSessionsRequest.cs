@@ -263,6 +263,7 @@ namespace Amazon.GameLift.Model
         /// alias ID, but not both.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string FleetId
         {
             get { return this._fleetId; }

@@ -72,6 +72,18 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ingestionFailureReasons", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.IngestionFailureReasons = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ingestionStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IngestionStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("knowledgeBaseArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -130,6 +142,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("vectorIngestionConfiguration", targetDepth))
+                {
+                    var unmarshaller = VectorIngestionConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.VectorIngestionConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

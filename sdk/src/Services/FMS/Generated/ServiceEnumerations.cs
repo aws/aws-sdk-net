@@ -1387,6 +1387,10 @@ namespace Amazon.FMS
         /// </summary>
         public static readonly ViolationReason UNEXPECTED_TARGET_GATEWAY_ROUTES = new ViolationReason("UNEXPECTED_TARGET_GATEWAY_ROUTES");
         /// <summary>
+        /// Constant WEB_ACL_CONFIGURATION_OR_SCOPE_OF_USE for ViolationReason
+        /// </summary>
+        public static readonly ViolationReason WEB_ACL_CONFIGURATION_OR_SCOPE_OF_USE = new ViolationReason("WEB_ACL_CONFIGURATION_OR_SCOPE_OF_USE");
+        /// <summary>
         /// Constant WEB_ACL_MISSING_RULE_GROUP for ViolationReason
         /// </summary>
         public static readonly ViolationReason WEB_ACL_MISSING_RULE_GROUP = new ViolationReason("WEB_ACL_MISSING_RULE_GROUP");

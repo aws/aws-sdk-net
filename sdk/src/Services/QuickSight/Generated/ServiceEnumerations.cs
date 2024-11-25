@@ -897,6 +897,56 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type AssetBundleExportJobFolderPropertyToOverride.
+    /// </summary>
+    public class AssetBundleExportJobFolderPropertyToOverride : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Name for AssetBundleExportJobFolderPropertyToOverride
+        /// </summary>
+        public static readonly AssetBundleExportJobFolderPropertyToOverride Name = new AssetBundleExportJobFolderPropertyToOverride("Name");
+        /// <summary>
+        /// Constant ParentFolderArn for AssetBundleExportJobFolderPropertyToOverride
+        /// </summary>
+        public static readonly AssetBundleExportJobFolderPropertyToOverride ParentFolderArn = new AssetBundleExportJobFolderPropertyToOverride("ParentFolderArn");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssetBundleExportJobFolderPropertyToOverride(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssetBundleExportJobFolderPropertyToOverride FindValue(string value)
+        {
+            return FindValue<AssetBundleExportJobFolderPropertyToOverride>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssetBundleExportJobFolderPropertyToOverride(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AssetBundleExportJobRefreshSchedulePropertyToOverride.
     /// </summary>
     public class AssetBundleExportJobRefreshSchedulePropertyToOverride : ConstantClass
@@ -1333,6 +1383,60 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type AuthenticationType.
+    /// </summary>
+    public class AuthenticationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PASSWORD for AuthenticationType
+        /// </summary>
+        public static readonly AuthenticationType PASSWORD = new AuthenticationType("PASSWORD");
+        /// <summary>
+        /// Constant TOKEN for AuthenticationType
+        /// </summary>
+        public static readonly AuthenticationType TOKEN = new AuthenticationType("TOKEN");
+        /// <summary>
+        /// Constant X509 for AuthenticationType
+        /// </summary>
+        public static readonly AuthenticationType X509 = new AuthenticationType("X509");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AuthenticationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AuthenticationType FindValue(string value)
+        {
+            return FindValue<AuthenticationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AuthenticationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AuthorSpecifiedAggregation.
     /// </summary>
     public class AuthorSpecifiedAggregation : ConstantClass
@@ -1678,6 +1782,168 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator BoxPlotFillStyle(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BrandStatus.
+    /// </summary>
+    public class BrandStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE_FAILED for BrandStatus
+        /// </summary>
+        public static readonly BrandStatus CREATE_FAILED = new BrandStatus("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATE_IN_PROGRESS for BrandStatus
+        /// </summary>
+        public static readonly BrandStatus CREATE_IN_PROGRESS = new BrandStatus("CREATE_IN_PROGRESS");
+        /// <summary>
+        /// Constant CREATE_SUCCEEDED for BrandStatus
+        /// </summary>
+        public static readonly BrandStatus CREATE_SUCCEEDED = new BrandStatus("CREATE_SUCCEEDED");
+        /// <summary>
+        /// Constant DELETE_FAILED for BrandStatus
+        /// </summary>
+        public static readonly BrandStatus DELETE_FAILED = new BrandStatus("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETE_IN_PROGRESS for BrandStatus
+        /// </summary>
+        public static readonly BrandStatus DELETE_IN_PROGRESS = new BrandStatus("DELETE_IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BrandStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BrandStatus FindValue(string value)
+        {
+            return FindValue<BrandStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BrandStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BrandVersionStatus.
+    /// </summary>
+    public class BrandVersionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE_FAILED for BrandVersionStatus
+        /// </summary>
+        public static readonly BrandVersionStatus CREATE_FAILED = new BrandVersionStatus("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATE_IN_PROGRESS for BrandVersionStatus
+        /// </summary>
+        public static readonly BrandVersionStatus CREATE_IN_PROGRESS = new BrandVersionStatus("CREATE_IN_PROGRESS");
+        /// <summary>
+        /// Constant CREATE_SUCCEEDED for BrandVersionStatus
+        /// </summary>
+        public static readonly BrandVersionStatus CREATE_SUCCEEDED = new BrandVersionStatus("CREATE_SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BrandVersionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BrandVersionStatus FindValue(string value)
+        {
+            return FindValue<BrandVersionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BrandVersionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CapabilityState.
+    /// </summary>
+    public class CapabilityState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DENY for CapabilityState
+        /// </summary>
+        public static readonly CapabilityState DENY = new CapabilityState("DENY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapabilityState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapabilityState FindValue(string value)
+        {
+            return FindValue<CapabilityState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapabilityState(string value)
         {
             return FindValue(value);
         }
@@ -5634,6 +5900,60 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator IdentityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IncludeFolderMembers.
+    /// </summary>
+    public class IncludeFolderMembers : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for IncludeFolderMembers
+        /// </summary>
+        public static readonly IncludeFolderMembers NONE = new IncludeFolderMembers("NONE");
+        /// <summary>
+        /// Constant ONE_LEVEL for IncludeFolderMembers
+        /// </summary>
+        public static readonly IncludeFolderMembers ONE_LEVEL = new IncludeFolderMembers("ONE_LEVEL");
+        /// <summary>
+        /// Constant RECURSE for IncludeFolderMembers
+        /// </summary>
+        public static readonly IncludeFolderMembers RECURSE = new IncludeFolderMembers("RECURSE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IncludeFolderMembers(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IncludeFolderMembers FindValue(string value)
+        {
+            return FindValue<IncludeFolderMembers>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IncludeFolderMembers(string value)
         {
             return FindValue(value);
         }

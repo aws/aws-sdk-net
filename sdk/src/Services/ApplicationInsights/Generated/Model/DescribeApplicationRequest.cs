@@ -41,7 +41,7 @@ namespace Amazon.ApplicationInsights.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The AWS account ID for the resource group owner.
+        /// The Amazon Web Services account ID for the resource group owner.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]

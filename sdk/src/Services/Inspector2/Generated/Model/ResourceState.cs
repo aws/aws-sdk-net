@@ -78,7 +78,10 @@ namespace Amazon.Inspector2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Lambda.
+        /// Gets and sets the property Lambda. 
+        /// <para>
+        /// An object that described the state of Amazon Inspector scans for an account.
+        /// </para>
         /// </summary>
         public State Lambda
         {
@@ -93,7 +96,10 @@ namespace Amazon.Inspector2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LambdaCode.
+        /// Gets and sets the property LambdaCode. 
+        /// <para>
+        /// An object that described the state of Amazon Inspector scans for an account.
+        /// </para>
         /// </summary>
         public State LambdaCode
         {

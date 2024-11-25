@@ -42,9 +42,59 @@ namespace Amazon.CleanRoomsML.Model
         IListAudienceModelsPaginator ListAudienceModels(ListAudienceModelsRequest request);
 
         /// <summary>
+        /// Paginator for ListCollaborationConfiguredModelAlgorithmAssociations operation
+        ///</summary>
+        IListCollaborationConfiguredModelAlgorithmAssociationsPaginator ListCollaborationConfiguredModelAlgorithmAssociations(ListCollaborationConfiguredModelAlgorithmAssociationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListCollaborationMLInputChannels operation
+        ///</summary>
+        IListCollaborationMLInputChannelsPaginator ListCollaborationMLInputChannels(ListCollaborationMLInputChannelsRequest request);
+
+        /// <summary>
+        /// Paginator for ListCollaborationTrainedModelExportJobs operation
+        ///</summary>
+        IListCollaborationTrainedModelExportJobsPaginator ListCollaborationTrainedModelExportJobs(ListCollaborationTrainedModelExportJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListCollaborationTrainedModelInferenceJobs operation
+        ///</summary>
+        IListCollaborationTrainedModelInferenceJobsPaginator ListCollaborationTrainedModelInferenceJobs(ListCollaborationTrainedModelInferenceJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListCollaborationTrainedModels operation
+        ///</summary>
+        IListCollaborationTrainedModelsPaginator ListCollaborationTrainedModels(ListCollaborationTrainedModelsRequest request);
+
+        /// <summary>
         /// Paginator for ListConfiguredAudienceModels operation
         ///</summary>
         IListConfiguredAudienceModelsPaginator ListConfiguredAudienceModels(ListConfiguredAudienceModelsRequest request);
+
+        /// <summary>
+        /// Paginator for ListConfiguredModelAlgorithmAssociations operation
+        ///</summary>
+        IListConfiguredModelAlgorithmAssociationsPaginator ListConfiguredModelAlgorithmAssociations(ListConfiguredModelAlgorithmAssociationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListConfiguredModelAlgorithms operation
+        ///</summary>
+        IListConfiguredModelAlgorithmsPaginator ListConfiguredModelAlgorithms(ListConfiguredModelAlgorithmsRequest request);
+
+        /// <summary>
+        /// Paginator for ListMLInputChannels operation
+        ///</summary>
+        IListMLInputChannelsPaginator ListMLInputChannels(ListMLInputChannelsRequest request);
+
+        /// <summary>
+        /// Paginator for ListTrainedModelInferenceJobs operation
+        ///</summary>
+        IListTrainedModelInferenceJobsPaginator ListTrainedModelInferenceJobs(ListTrainedModelInferenceJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListTrainedModels operation
+        ///</summary>
+        IListTrainedModelsPaginator ListTrainedModels(ListTrainedModelsRequest request);
 
         /// <summary>
         /// Paginator for ListTrainingDatasets operation

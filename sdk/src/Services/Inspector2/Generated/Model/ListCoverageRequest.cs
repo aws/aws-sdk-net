@@ -31,7 +31,7 @@ namespace Amazon.Inspector2.Model
 {
     /// <summary>
     /// Container for the parameters to the ListCoverage operation.
-    /// Lists coverage details for you environment.
+    /// Lists coverage details for your environment.
     /// </summary>
     public partial class ListCoverageRequest : AmazonInspector2Request
     {

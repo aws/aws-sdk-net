@@ -64,6 +64,7 @@ namespace Amazon.RDS.Model
         private int? _backupRetentionPeriod;
         private string _caCertificateIdentifier;
         private string _characterSetName;
+        private ClusterScalabilityType _clusterScalabilityType;
         private bool? _copyTagsToSnapshot;
         private string _databaseName;
         private string _dbClusterIdentifier;
@@ -317,6 +318,35 @@ namespace Amazon.RDS.Model
         internal bool IsSetCharacterSetName()
         {
             return this._characterSetName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClusterScalabilityType. 
+        /// <para>
+        /// Specifies the scalability mode of the Aurora DB cluster. When set to <c>limitless</c>,
+        /// the cluster operates as an Aurora Limitless Database. When set to <c>standard</c>
+        /// (the default), the cluster uses normal DB instance creation.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid for: Aurora DB clusters only
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can't modify this setting after you create the DB cluster.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public ClusterScalabilityType ClusterScalabilityType
+        {
+            get { return this._clusterScalabilityType; }
+            set { this._clusterScalabilityType = value; }
+        }
+
+        // Check to see if ClusterScalabilityType property is set
+        internal bool IsSetClusterScalabilityType()
+        {
+            return this._clusterScalabilityType != null;
         }
 
         /// <summary>
@@ -752,11 +782,13 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
-        /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.
+        /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">IAM
+        /// database authentication for MariaDB, MySQL, and PostgreSQL</a> in the <i>Amazon RDS
+        /// User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// Valid for Cluster Type: Aurora DB clusters only
+        /// Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
         /// </para>
         /// </summary>
         public bool? EnableIAMDatabaseAuthentication
@@ -781,6 +813,11 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Valid for: Aurora DB clusters only
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This setting is no longer used. Instead use the <c>ClusterScalabilityType</c> setting.
+        /// </para>
+        ///  </note>
         /// </summary>
         public bool? EnableLimitlessDatabase
         {
@@ -915,7 +952,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Amazon Aurora (PostgreSQL only) - <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Using
+        /// Amazon Aurora - <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Using
         /// Amazon RDS Extended Support</a> in the <i>Amazon Aurora User Guide</i> 
         /// </para>
         ///  </li> <li> 

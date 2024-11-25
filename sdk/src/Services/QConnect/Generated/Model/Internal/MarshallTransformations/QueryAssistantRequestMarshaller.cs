@@ -84,6 +84,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.NextToken);
                     }
 
+                    if(publicRequest.IsSetOverrideKnowledgeBaseSearchType())
+                    {
+                        context.Writer.WritePropertyName("overrideKnowledgeBaseSearchType");
+                        context.Writer.Write(publicRequest.OverrideKnowledgeBaseSearchType);
+                    }
+
                     if(publicRequest.IsSetQueryCondition())
                     {
                         context.Writer.WritePropertyName("queryCondition");
@@ -98,6 +104,17 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                             context.Writer.WriteObjectEnd();
                         }
                         context.Writer.WriteArrayEnd();
+                    }
+
+                    if(publicRequest.IsSetQueryInputData())
+                    {
+                        context.Writer.WritePropertyName("queryInputData");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = QueryInputDataMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.QueryInputData, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
 
                     if(publicRequest.IsSetQueryText())

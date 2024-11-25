@@ -78,6 +78,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Description);
                     }
 
+                    if(publicRequest.IsSetDescriptor())
+                    {
+                        context.Writer.WritePropertyName("Descriptor");
+                        context.Writer.Write(publicRequest.Descriptor);
+                    }
+
                     if(publicRequest.IsSetFirmwareUpdateImage())
                     {
                         context.Writer.WritePropertyName("FirmwareUpdateImage");

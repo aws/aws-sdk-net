@@ -35,11 +35,13 @@ namespace Amazon.CodePipeline.Model
     public partial class ActionDeclaration
     {
         private ActionTypeId _actionTypeId;
+        private List<string> _commands = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Dictionary<string, string> _configuration = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private List<InputArtifact> _inputArtifacts = AWSConfigs.InitializeCollections ? new List<InputArtifact>() : null;
         private string _name;
         private string _awsNamespace;
         private List<OutputArtifact> _outputArtifacts = AWSConfigs.InitializeCollections ? new List<OutputArtifact>() : null;
+        private List<string> _outputVariables = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _region;
         private string _roleArn;
         private int? _runOrder;
@@ -62,6 +64,32 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetActionTypeId()
         {
             return this._actionTypeId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Commands. 
+        /// <para>
+        /// The shell commands to run with your compute action in CodePipeline. All commands are
+        /// supported except multi-line formats. While CodeBuild logs and permissions are used,
+        /// you do not need to create any resources in CodeBuild.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Using compute time for this action will incur separate charges in CodeBuild.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public List<string> Commands
+        {
+            get { return this._commands; }
+            set { this._commands = value; }
+        }
+
+        // Check to see if Commands property is set
+        internal bool IsSetCommands()
+        {
+            return this._commands != null && (this._commands.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -175,6 +203,26 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetOutputArtifacts()
         {
             return this._outputArtifacts != null && (this._outputArtifacts.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputVariables. 
+        /// <para>
+        /// The list of variables that are to be exported from the compute action. This is specifically
+        /// CodeBuild environment variables as used for that action.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=15)]
+        public List<string> OutputVariables
+        {
+            get { return this._outputVariables; }
+            set { this._outputVariables = value; }
+        }
+
+        // Check to see if OutputVariables property is set
+        internal bool IsSetOutputVariables()
+        {
+            return this._outputVariables != null && (this._outputVariables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -67,6 +67,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                         unmarshalledObject.AutoScalingGroupName = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("AvailabilityZoneDistribution", targetDepth))
+                    {
+                        var unmarshaller = AvailabilityZoneDistributionUnmarshaller.Instance;
+                        unmarshalledObject.AvailabilityZoneDistribution = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("AvailabilityZones/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

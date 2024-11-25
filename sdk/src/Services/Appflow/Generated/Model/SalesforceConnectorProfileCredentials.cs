@@ -116,12 +116,6 @@ namespace Amazon.Appflow.Model
         /// Salesforce. Amazon AppFlow receives the authorization code from Salesforce after you
         /// log in to your Salesforce account and authorize Amazon AppFlow to access your records.
         /// </para>
-        ///  </dd> <dt>CLIENT_CREDENTIALS</dt> <dd> 
-        /// <para>
-        /// Amazon AppFlow passes client credentials (a client ID and client secret) when it requests
-        /// the access token from Salesforce. You provide these credentials to Amazon AppFlow
-        /// when you define the connection to your Salesforce account.
-        /// </para>
         ///  </dd> <dt>JWT_BEARER</dt> <dd> 
         /// <para>
         /// Amazon AppFlow passes a JSON web token (JWT) when it requests the access token from
@@ -129,7 +123,11 @@ namespace Amazon.Appflow.Model
         /// your Salesforce account. When you use this grant type, you don't need to log in to
         /// your Salesforce account to authorize Amazon AppFlow to access your records.
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> <note> 
+        /// <para>
+        /// The CLIENT_CREDENTIALS value is not supported for Salesforce.
+        /// </para>
+        ///  </note>
         /// </summary>
         public OAuth2GrantType OAuth2GrantType
         {

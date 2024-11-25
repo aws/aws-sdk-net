@@ -36,6 +36,7 @@ namespace Amazon.AutoScaling.Model
     {
         private string _autoScalingGroupARN;
         private string _autoScalingGroupName;
+        private AvailabilityZoneDistribution _availabilityZoneDistribution;
         private List<string> _availabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _capacityRebalance;
         private string _context;
@@ -106,6 +107,24 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetAutoScalingGroupName()
         {
             return this._autoScalingGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneDistribution. 
+        /// <para>
+        ///  The instance capacity distribution across Availability Zones. 
+        /// </para>
+        /// </summary>
+        public AvailabilityZoneDistribution AvailabilityZoneDistribution
+        {
+            get { return this._availabilityZoneDistribution; }
+            set { this._availabilityZoneDistribution = value; }
+        }
+
+        // Check to see if AvailabilityZoneDistribution property is set
+        internal bool IsSetAvailabilityZoneDistribution()
+        {
+            return this._availabilityZoneDistribution != null;
         }
 
         /// <summary>
@@ -562,8 +581,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current state of the group when the <a>DeleteAutoScalingGroup</a> operation is
-        /// in progress.
+        /// The current state of the group when the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DeleteAutoScalingGroup.html">DeleteAutoScalingGroup</a>
+        /// operation is in progress.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

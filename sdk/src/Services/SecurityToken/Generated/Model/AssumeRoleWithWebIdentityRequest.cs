@@ -61,8 +61,8 @@ namespace Amazon.SecurityToken.Model
     /// the identity of the caller is validated by using a token from the web identity provider.
     /// For a comparison of <c>AssumeRoleWithWebIdentity</c> with the other API operations
     /// that produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
-    /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
-    /// the Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.
+    /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_sts-comparison.html">Compare
+    /// STS credentials</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -81,13 +81,12 @@ namespace Amazon.SecurityToken.Model
     /// to specify the duration of your session. You can provide a value from 900 seconds
     /// (15 minutes) up to the maximum session duration setting for the role. This setting
     /// can have a value from 1 hour to 12 hours. To learn how to view the maximum value for
-    /// your role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
-    /// the Maximum Session Duration Setting for a Role</a> in the <i>IAM User Guide</i>.
-    /// The maximum session duration limit applies when you use the <c>AssumeRole*</c> API
-    /// operations or the <c>assume-role*</c> CLI commands. However the limit does not apply
-    /// when you use those operations to create a console URL. For more information, see <a
-    /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM
-    /// Roles</a> in the <i>IAM User Guide</i>. 
+    /// your role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_update-role-settings.html#id_roles_update-session-duration">Update
+    /// the maximum session duration for a role </a> in the <i>IAM User Guide</i>. The maximum
+    /// session duration limit applies when you use the <c>AssumeRole*</c> API operations
+    /// or the <c>assume-role*</c> CLI commands. However the limit does not apply when you
+    /// use those operations to create a console URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
+    /// IAM Roles</a> in the <i>IAM User Guide</i>. 
     /// </para>
     ///  
     /// <para>
@@ -181,7 +180,7 @@ namespace Amazon.SecurityToken.Model
     /// </para>
     ///  </important> 
     /// <para>
-    /// For more information about how to use web identity federation and the <c>AssumeRoleWithWebIdentity</c>
+    /// For more information about how to use OIDC federation and the <c>AssumeRoleWithWebIdentity</c>
     /// API, see the following resources: 
     /// </para>
     ///  <ul> <li> 
@@ -192,25 +191,11 @@ namespace Amazon.SecurityToken.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://aws.amazon.com/blogs/aws/the-aws-web-identity-federation-playground/">
-    /// Web Identity Federation Playground</a>. Walk through the process of authenticating
-    /// through Login with Amazon, Facebook, or Google, getting temporary security credentials,
-    /// and then using those credentials to make a request to Amazon Web Services. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
     ///  <a href="http://aws.amazon.com/sdkforios/">Amazon Web Services SDK for iOS Developer
     /// Guide</a> and <a href="http://aws.amazon.com/sdkforandroid/">Amazon Web Services SDK
     /// for Android Developer Guide</a>. These toolkits contain sample apps that show how
     /// to invoke the identity providers. The toolkits then show how to use the information
     /// from these providers to get and use temporary security credentials. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="http://aws.amazon.com/articles/web-identity-federation-with-mobile-applications">Web
-    /// Identity Federation with Mobile Applications</a>. This article discusses web identity
-    /// federation and shows an example of how to use web identity federation to get access
-    /// to content in Amazon S3. 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -286,6 +271,11 @@ namespace Amazon.SecurityToken.Model
         /// 2,048 characters. The JSON policy characters can be any ASCII character from the space
         /// character to the end of the valid character list (\u0020 through \u00FF). It can also
         /// include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about role session permissions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+        /// policies</a>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -390,6 +380,19 @@ namespace Amazon.SecurityToken.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the role that the caller is assuming.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Additional considerations apply to Amazon Cognito identity pools that assume <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies-cross-account-resource-access.html">cross-account
+        /// IAM roles</a>. The trust policies of these roles must accept the <c>cognito-identity.amazonaws.com</c>
+        /// service principal and must contain the <c>cognito-identity.amazonaws.com:aud</c> condition
+        /// key to restrict role assumption to users from your intended identity pools. A policy
+        /// that trusts Amazon Cognito identity pools without this condition creates a risk that
+        /// a user from an unintended identity pool can assume the role. For more information,
+        /// see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/iam-roles.html#trust-policies">
+        /// Trust policies for IAM roles in Basic (Classic) authentication </a> in the <i>Amazon
+        /// Cognito Developer Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
         public string RoleArn
@@ -412,6 +415,14 @@ namespace Amazon.SecurityToken.Model
         /// security credentials that your application will use are associated with that user.
         /// This session name is included as part of the ARN and assumed role ID in the <c>AssumedRoleUser</c>
         /// response element.
+        /// </para>
+        ///  
+        /// <para>
+        /// For security purposes, administrators can view this field in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html#cloudtrail-integration_signin-tempcreds">CloudTrail
+        /// logs</a> to help identify who performed an action in Amazon Web Services. Your administrator
+        /// might require that you specify your user name as the session name when you assume
+        /// the role. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_rolesessionname">
+        /// <c>sts:RoleSessionName</c> </a>.
         /// </para>
         ///  
         /// <para>
@@ -439,7 +450,8 @@ namespace Amazon.SecurityToken.Model
         /// The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity
         /// provider. Your application must get this token by authenticating the user who is using
         /// your application with a web identity provider before the application makes an <c>AssumeRoleWithWebIdentity</c>
-        /// call. Only tokens with RSA algorithms (RS256) are supported.
+        /// call. Timestamps in the token must be formatted as either an integer or a long integer.
+        /// Only tokens with RSA algorithms (RS256) are supported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=4, Max=20000)]

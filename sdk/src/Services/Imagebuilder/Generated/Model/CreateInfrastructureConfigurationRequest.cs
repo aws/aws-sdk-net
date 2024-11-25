@@ -44,6 +44,7 @@ namespace Amazon.Imagebuilder.Model
         private string _keyPair;
         private Logging _logging;
         private string _name;
+        private Placement _placement;
         private Dictionary<string, string> _resourceTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _snsTopicArn;
@@ -208,9 +209,29 @@ namespace Amazon.Imagebuilder.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Placement. 
+        /// <para>
+        /// The instance placement settings that define where the instances that are launched
+        /// from your image will run.
+        /// </para>
+        /// </summary>
+        public Placement Placement
+        {
+            get { return this._placement; }
+            set { this._placement = value; }
+        }
+
+        // Check to see if Placement property is set
+        internal bool IsSetPlacement()
+        {
+            return this._placement != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ResourceTags. 
         /// <para>
-        /// The tags attached to the resource created by Image Builder.
+        /// The metadata tags to assign to the Amazon EC2 instance that Image Builder launches
+        /// during the build process. Tags are formatted as key value pairs.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=30)]
@@ -293,7 +314,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags of the infrastructure configuration.
+        /// The metadata tags to assign to the infrastructure configuration resource that Image
+        /// Builder creates as output. Tags are formatted as key value pairs.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

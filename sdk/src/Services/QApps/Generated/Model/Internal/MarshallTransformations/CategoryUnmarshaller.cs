@@ -66,6 +66,18 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("appCount", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.AppCount = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("color", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Color = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

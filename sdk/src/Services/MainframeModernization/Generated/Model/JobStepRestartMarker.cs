@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MainframeModernization.Model
 {
     /// <summary>
-    /// Provides restart step information for the most recent restart operation.
+    /// Provides step/procedure step information for a restart batch job operation.
     /// </summary>
     public partial class JobStepRestartMarker
     {
@@ -42,7 +42,7 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property FromProcStep. 
         /// <para>
-        /// The procedure step name that a job was restarted from.
+        /// The procedure step name that a batch job was restarted from.
         /// </para>
         /// </summary>
         public string FromProcStep
@@ -60,7 +60,7 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property FromStep. 
         /// <para>
-        /// The step name that a batch job restart was from.
+        /// The step name that a batch job was restarted from.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -97,7 +97,7 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property ToStep. 
         /// <para>
-        /// The step name that a job was restarted to.
+        /// The step name that a batch job was restarted to.
         /// </para>
         /// </summary>
         public string ToStep

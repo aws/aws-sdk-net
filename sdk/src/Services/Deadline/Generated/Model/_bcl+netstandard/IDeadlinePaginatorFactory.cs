@@ -67,6 +67,11 @@ namespace Amazon.Deadline.Model
         IListJobMembersPaginator ListJobMembers(ListJobMembersRequest request);
 
         /// <summary>
+        /// Paginator for ListJobParameterDefinitions operation
+        ///</summary>
+        IListJobParameterDefinitionsPaginator ListJobParameterDefinitions(ListJobParameterDefinitionsRequest request);
+
+        /// <summary>
         /// Paginator for ListJobs operation
         ///</summary>
         IListJobsPaginator ListJobs(ListJobsRequest request);

@@ -51,6 +51,12 @@ namespace Amazon.SupplyChain
     /// </summary>
     public partial interface IAmazonSupplyChain : IAmazonService, IDisposable
     {
+#if AWS_ASYNC_ENUMERABLES_API
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ISupplyChainPaginatorFactory Paginators { get; }
+#endif
                 
         #region  CreateBillOfMaterialsImportJob
 
@@ -100,6 +106,272 @@ namespace Amazon.SupplyChain
 
         #endregion
                 
+        #region  CreateDataIntegrationFlow
+
+
+
+        /// <summary>
+        /// Enables you to programmatically create a data pipeline to ingest data from source
+        /// systems such as Amazon S3 buckets, to a predefined Amazon Web Services Supply Chain
+        /// dataset (product, inbound_order) or a temporary dataset along with the data transformation
+        /// query provided with the API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataIntegrationFlow service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDataIntegrationFlow service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/CreateDataIntegrationFlow">REST API Reference for CreateDataIntegrationFlow Operation</seealso>
+        Task<CreateDataIntegrationFlowResponse> CreateDataIntegrationFlowAsync(CreateDataIntegrationFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateDataLakeDataset
+
+
+
+        /// <summary>
+        /// Enables you to programmatically create an Amazon Web Services Supply Chain data lake
+        /// dataset. Developers can create the datasets using their pre-defined or custom schema
+        /// for a given instance ID, namespace, and dataset name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataLakeDataset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDataLakeDataset service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/CreateDataLakeDataset">REST API Reference for CreateDataLakeDataset Operation</seealso>
+        Task<CreateDataLakeDatasetResponse> CreateDataLakeDatasetAsync(CreateDataLakeDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateInstance
+
+
+
+        /// <summary>
+        /// Enables you to programmatically create an Amazon Web Services Supply Chain instance
+        /// by applying KMS keys and relevant information associated with the API without using
+        /// the Amazon Web Services console.
+        /// 
+        ///  
+        /// <para>
+        /// This is an asynchronous operation. Upon receiving a CreateInstance request, Amazon
+        /// Web Services Supply Chain immediately returns the instance resource, instance ID,
+        /// and the initializing state while simultaneously creating all required Amazon Web Services
+        /// resources for an instance creation. You can use GetInstance to check the status of
+        /// the instance. If the instance results in an unhealthy state, you need to check the
+        /// error message, delete the current instance, and recreate a new one based on the mitigation
+        /// from the error message.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInstance service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateInstance service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/CreateInstance">REST API Reference for CreateInstance Operation</seealso>
+        Task<CreateInstanceResponse> CreateInstanceAsync(CreateInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteDataIntegrationFlow
+
+
+
+        /// <summary>
+        /// Enable you to programmatically delete an existing data pipeline for the provided Amazon
+        /// Web Services Supply Chain instance and DataIntegrationFlow name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataIntegrationFlow service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDataIntegrationFlow service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/DeleteDataIntegrationFlow">REST API Reference for DeleteDataIntegrationFlow Operation</seealso>
+        Task<DeleteDataIntegrationFlowResponse> DeleteDataIntegrationFlowAsync(DeleteDataIntegrationFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteDataLakeDataset
+
+
+
+        /// <summary>
+        /// Enables you to programmatically delete an Amazon Web Services Supply Chain data lake
+        /// dataset. Developers can delete the existing datasets for a given instance ID, namespace,
+        /// and instance name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataLakeDataset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDataLakeDataset service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/DeleteDataLakeDataset">REST API Reference for DeleteDataLakeDataset Operation</seealso>
+        Task<DeleteDataLakeDatasetResponse> DeleteDataLakeDatasetAsync(DeleteDataLakeDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteInstance
+
+
+
+        /// <summary>
+        /// Enables you to programmatically delete an Amazon Web Services Supply Chain instance
+        /// by deleting the KMS keys and relevant information associated with the API without
+        /// using the Amazon Web Services console.
+        /// 
+        ///  
+        /// <para>
+        /// This is an asynchronous operation. Upon receiving a DeleteInstance request, Amazon
+        /// Web Services Supply Chain immediately returns a response with the instance resource,
+        /// delete state while cleaning up all Amazon Web Services resources created during the
+        /// instance creation process. You can use the GetInstance action to check the instance
+        /// status.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInstance service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteInstance service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/DeleteInstance">REST API Reference for DeleteInstance Operation</seealso>
+        Task<DeleteInstanceResponse> DeleteInstanceAsync(DeleteInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetBillOfMaterialsImportJob
 
 
@@ -136,6 +408,291 @@ namespace Amazon.SupplyChain
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetBillOfMaterialsImportJob">REST API Reference for GetBillOfMaterialsImportJob Operation</seealso>
         Task<GetBillOfMaterialsImportJobResponse> GetBillOfMaterialsImportJobAsync(GetBillOfMaterialsImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetDataIntegrationFlow
+
+
+
+        /// <summary>
+        /// Enables you to programmatically view a specific data pipeline for the provided Amazon
+        /// Web Services Supply Chain instance and DataIntegrationFlow name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataIntegrationFlow service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDataIntegrationFlow service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetDataIntegrationFlow">REST API Reference for GetDataIntegrationFlow Operation</seealso>
+        Task<GetDataIntegrationFlowResponse> GetDataIntegrationFlowAsync(GetDataIntegrationFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetDataLakeDataset
+
+
+
+        /// <summary>
+        /// Enables you to programmatically view an Amazon Web Services Supply Chain data lake
+        /// dataset. Developers can view the data lake dataset information such as namespace,
+        /// schema, and so on for a given instance ID, namespace, and dataset name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataLakeDataset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDataLakeDataset service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetDataLakeDataset">REST API Reference for GetDataLakeDataset Operation</seealso>
+        Task<GetDataLakeDatasetResponse> GetDataLakeDatasetAsync(GetDataLakeDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetInstance
+
+
+
+        /// <summary>
+        /// Enables you to programmatically retrieve the information related to an Amazon Web
+        /// Services Supply Chain instance ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInstance service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetInstance service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/GetInstance">REST API Reference for GetInstance Operation</seealso>
+        Task<GetInstanceResponse> GetInstanceAsync(GetInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListDataIntegrationFlows
+
+
+
+        /// <summary>
+        /// Enables you to programmatically list all data pipelines for the provided Amazon Web
+        /// Services Supply Chain instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataIntegrationFlows service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDataIntegrationFlows service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListDataIntegrationFlows">REST API Reference for ListDataIntegrationFlows Operation</seealso>
+        Task<ListDataIntegrationFlowsResponse> ListDataIntegrationFlowsAsync(ListDataIntegrationFlowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListDataLakeDatasets
+
+
+
+        /// <summary>
+        /// Enables you to programmatically view the list of Amazon Web Services Supply Chain
+        /// data lake datasets. Developers can view the datasets and the corresponding information
+        /// such as namespace, schema, and so on for a given instance ID and namespace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataLakeDatasets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDataLakeDatasets service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListDataLakeDatasets">REST API Reference for ListDataLakeDatasets Operation</seealso>
+        Task<ListDataLakeDatasetsResponse> ListDataLakeDatasetsAsync(ListDataLakeDatasetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListInstances
+
+
+
+        /// <summary>
+        /// List all Amazon Web Services Supply Chain instances for a specific account. Enables
+        /// you to programmatically list all Amazon Web Services Supply Chain instances based
+        /// on their account ID, instance name, and state of the instance (active or delete).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInstances service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListInstances service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListInstances">REST API Reference for ListInstances Operation</seealso>
+        Task<ListInstancesResponse> ListInstancesAsync(ListInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListTagsForResource
+
+
+
+        /// <summary>
+        /// List all the tags for an Amazon Web ServicesSupply Chain resource. You can list all
+        /// the tags added to a resource. By listing the tags, developers can view the tag level
+        /// information on a resource and perform actions such as, deleting a resource associated
+        /// with a particular tag.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -179,6 +736,215 @@ namespace Amazon.SupplyChain
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/SendDataIntegrationEvent">REST API Reference for SendDataIntegrationEvent Operation</seealso>
         Task<SendDataIntegrationEventResponse> SendDataIntegrationEventAsync(SendDataIntegrationEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  TagResource
+
+
+
+        /// <summary>
+        /// You can create tags during or after creating a resource such as instance, data flow,
+        /// or dataset in AWS Supply chain. During the data ingestion process, you can add tags
+        /// such as dev, test, or prod to data flows created during the data ingestion process
+        /// in the AWS Supply Chain datasets. You can use these tags to identify a group of resources
+        /// or a single resource used by the developer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UntagResource
+
+
+
+        /// <summary>
+        /// You can delete tags for an Amazon Web Services Supply chain resource such as instance,
+        /// data flow, or dataset in AWS Supply Chain. During the data ingestion process, you
+        /// can delete tags such as dev, test, or prod to data flows created during the data ingestion
+        /// process in the AWS Supply Chain datasets.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateDataIntegrationFlow
+
+
+
+        /// <summary>
+        /// Enables you to programmatically update an existing data pipeline to ingest data from
+        /// the source systems such as, Amazon S3 buckets, to a predefined Amazon Web Services
+        /// Supply Chain dataset (product, inbound_order) or a temporary dataset along with the
+        /// data transformation query provided with the API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataIntegrationFlow service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDataIntegrationFlow service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/UpdateDataIntegrationFlow">REST API Reference for UpdateDataIntegrationFlow Operation</seealso>
+        Task<UpdateDataIntegrationFlowResponse> UpdateDataIntegrationFlowAsync(UpdateDataIntegrationFlowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateDataLakeDataset
+
+
+
+        /// <summary>
+        /// Enables you to programmatically update an Amazon Web Services Supply Chain data lake
+        /// dataset. Developers can update the description of a data lake dataset for a given
+        /// instance ID, namespace, and dataset name.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataLakeDataset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDataLakeDataset service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/UpdateDataLakeDataset">REST API Reference for UpdateDataLakeDataset Operation</seealso>
+        Task<UpdateDataLakeDatasetResponse> UpdateDataLakeDatasetAsync(UpdateDataLakeDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateInstance
+
+
+
+        /// <summary>
+        /// Enables you to programmatically update an Amazon Web Services Supply Chain instance
+        /// description by providing all the relevant information such as account ID, instance
+        /// ID and so on without using the AWS console.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateInstance service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateInstance service method, as returned by SupplyChain.</returns>
+        /// <exception cref="Amazon.SupplyChain.Model.AccessDeniedException">
+        /// You do not have the required privileges to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SupplyChain.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/UpdateInstance">REST API Reference for UpdateInstance Operation</seealso>
+        Task<UpdateInstanceResponse> UpdateInstanceAsync(UpdateInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

@@ -90,6 +90,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.DataSources = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Folders", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AssetBundleImportJobFolderOverrideParameters, AssetBundleImportJobFolderOverrideParametersUnmarshaller>(AssetBundleImportJobFolderOverrideParametersUnmarshaller.Instance);
+                    unmarshalledObject.Folders = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RefreshSchedules", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<AssetBundleImportJobRefreshScheduleOverrideParameters, AssetBundleImportJobRefreshScheduleOverrideParametersUnmarshaller>(AssetBundleImportJobRefreshScheduleOverrideParametersUnmarshaller.Instance);

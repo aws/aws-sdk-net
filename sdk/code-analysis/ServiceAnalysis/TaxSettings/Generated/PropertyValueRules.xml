@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.TaxSettings.Model.DeleteSupplementalTaxRegistrationRequest.AuthorityId</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.TaxSettings.Model.DeleteTaxRegistrationRequest.AccountId</property>
     <min>12</min>
     <max>12</max>
@@ -15,6 +21,23 @@
   <property-value-rule>
     <property>Amazon.TaxSettings.Model.GetTaxRegistrationDocumentResponse.DestinationFilePath</property>
     <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TaxSettings.Model.ListSupplementalTaxRegistrationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TaxSettings.Model.ListSupplementalTaxRegistrationsRequest.NextToken</property>
+    <min>1</min>
+    <max>2000</max>
+    <pattern>^[-A-Za-z0-9_+\=\/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TaxSettings.Model.ListSupplementalTaxRegistrationsResponse.NextToken</property>
+    <min>1</min>
+    <max>2000</max>
+    <pattern>^[-A-Za-z0-9_+\=\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TaxSettings.Model.ListTaxRegistrationsRequest.MaxResults</property>
@@ -32,6 +55,12 @@
     <min>1</min>
     <max>2000</max>
     <pattern>^[-A-Za-z0-9_+\=\/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TaxSettings.Model.PutSupplementalTaxRegistrationResponse.AuthorityId</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TaxSettings.Model.PutTaxRegistrationRequest.AccountId</property>
@@ -226,6 +255,14 @@
     <pattern>^(?!\s*$)[\s\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.TaxSettings.Model.MalaysiaAdditionalInfo.BusinessRegistrationNumber</property>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TaxSettings.Model.MalaysiaAdditionalInfo.TaxInformationNumber</property>
+    <pattern>^[A-Z]{1,2}[0-9]{1,11}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.TaxSettings.Model.PolandAdditionalInfo.IndividualRegistrationNumber</property>
     <pattern>^([0-9]{10})$</pattern>
   </property-value-rule>
@@ -264,6 +301,36 @@
     <min>1</min>
     <max>100</max>
     <pattern>^[0-9\u3130-\u318F\uAC00-\uD7AF,.( )-\\s]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TaxSettings.Model.SupplementalTaxRegistration.AuthorityId</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[\s\S]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TaxSettings.Model.SupplementalTaxRegistration.LegalName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^(?!\s*$)[\s\S]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TaxSettings.Model.SupplementalTaxRegistration.RegistrationId</property>
+    <min>1</min>
+    <max>20</max>
+    <pattern>^(?!\s*$)[\s\S]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TaxSettings.Model.SupplementalTaxRegistrationEntry.LegalName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^(?!\s*$)[\s\S]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TaxSettings.Model.SupplementalTaxRegistrationEntry.RegistrationId</property>
+    <min>1</min>
+    <max>20</max>
+    <pattern>^(?!\s*$)[\s\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TaxSettings.Model.TaxDocumentMetadata.TaxDocumentAccessToken</property>

@@ -31,16 +31,11 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the ListFleets operation.
-    /// <b>This operation has been expanded to use with the Amazon GameLift containers feature,
-    /// which is currently in public preview.</b> 
-    /// 
-    ///  
-    /// <para>
     /// Retrieves a collection of fleet resources in an Amazon Web Services Region. You can
     /// filter the result set to find only those fleets that are deployed with a specific
     /// build or script. For fleets that have multiple locations, this operation retrieves
     /// fleets based on their home Region only.
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// You can use operation in the following ways: 
@@ -58,11 +53,6 @@ namespace Amazon.GameLift.Model
     /// <para>
     /// To get a list of all Realtime Servers fleets with a specific configuration script,
     /// provide the script ID. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  To get a list of all fleets with a specific container group definition, provide the
-    /// <c>ContainerGroupDefinition</c> ID. 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -82,7 +72,6 @@ namespace Amazon.GameLift.Model
     public partial class ListFleetsRequest : AmazonGameLiftRequest
     {
         private string _buildId;
-        private string _containerGroupDefinitionName;
         private int? _limit;
         private string _nextToken;
         private string _scriptId;
@@ -104,26 +93,6 @@ namespace Amazon.GameLift.Model
         internal bool IsSetBuildId()
         {
             return this._buildId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ContainerGroupDefinitionName. 
-        /// <para>
-        /// The container group definition name to request fleets for. Use this parameter to return
-        /// only fleets that are deployed with the specified container group definition.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=512)]
-        public string ContainerGroupDefinitionName
-        {
-            get { return this._containerGroupDefinitionName; }
-            set { this._containerGroupDefinitionName = value; }
-        }
-
-        // Check to see if ContainerGroupDefinitionName property is set
-        internal bool IsSetContainerGroupDefinitionName()
-        {
-            return this._containerGroupDefinitionName != null;
         }
 
         /// <summary>

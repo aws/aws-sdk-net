@@ -72,6 +72,7 @@ namespace Amazon.CodeArtifact.Model
     {
         private string _domain;
         private string _domainOwner;
+        private EndpointType _endpointType;
         private PackageFormat _format;
         private string _repository;
 
@@ -112,6 +113,24 @@ namespace Amazon.CodeArtifact.Model
         internal bool IsSetDomainOwner()
         {
             return this._domainOwner != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndpointType. 
+        /// <para>
+        /// A string that specifies the type of endpoint.
+        /// </para>
+        /// </summary>
+        public EndpointType EndpointType
+        {
+            get { return this._endpointType; }
+            set { this._endpointType = value; }
+        }
+
+        // Check to see if EndpointType property is set
+        internal bool IsSetEndpointType()
+        {
+            return this._endpointType != null;
         }
 
         /// <summary>

@@ -83,6 +83,12 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.FirewallRuleGroupId);
                     }
 
+                    if(publicRequest.IsSetFirewallThreatProtectionId())
+                    {
+                        context.Writer.WritePropertyName("FirewallThreatProtectionId");
+                        context.Writer.Write(publicRequest.FirewallThreatProtectionId);
+                    }
+
                     if(publicRequest.IsSetQtype())
                     {
                         context.Writer.WritePropertyName("Qtype");

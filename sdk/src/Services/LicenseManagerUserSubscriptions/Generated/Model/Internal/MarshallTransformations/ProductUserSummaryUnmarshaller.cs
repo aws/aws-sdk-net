@@ -84,6 +84,12 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
                     unmarshalledObject.Product = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ProductUserArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ProductUserArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

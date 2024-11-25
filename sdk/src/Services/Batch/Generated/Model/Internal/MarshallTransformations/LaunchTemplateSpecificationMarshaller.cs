@@ -60,6 +60,22 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.LaunchTemplateName);
             }
 
+            if(requestObject.IsSetOverrides())
+            {
+                context.Writer.WritePropertyName("overrides");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectOverridesListValue in requestObject.Overrides)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = LaunchTemplateSpecificationOverrideMarshaller.Instance;
+                    marshaller.Marshall(requestObjectOverridesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetVersion())
             {
                 context.Writer.WritePropertyName("version");

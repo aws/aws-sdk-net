@@ -59,6 +59,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.B2bi.IAmazonB2bi.CreateStarterMappingTemplate(Amazon.B2bi.Model.CreateStarterMappingTemplateRequest)" />
+            <member name="M:Amazon.B2bi.AmazonB2biClient.CreateStarterMappingTemplate(Amazon.B2bi.Model.CreateStarterMappingTemplateRequest)" />
+            <member name="T:Amazon.B2bi.Model.CreateStarterMappingTemplateRequest" />
+            <member name="T:Amazon.B2bi.Model.CreateStarterMappingTemplateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample CreateStarterMappingTemplate call"
+                    source=".\AWSSDKDocSamples\B2bi\B2bi.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.B2bi.IAmazonB2bi.CreateTransformer(Amazon.B2bi.Model.CreateTransformerRequest)" />
             <member name="M:Amazon.B2bi.AmazonB2biClient.CreateTransformer(Amazon.B2bi.Model.CreateTransformerRequest)" />
             <member name="T:Amazon.B2bi.Model.CreateTransformerRequest" />
@@ -147,6 +166,25 @@
                 </para>
                 <code
                     title="Sample DeleteTransformer call"
+                    source=".\AWSSDKDocSamples\B2bi\B2bi.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.B2bi.IAmazonB2bi.GenerateMapping(Amazon.B2bi.Model.GenerateMappingRequest)" />
+            <member name="M:Amazon.B2bi.AmazonB2biClient.GenerateMapping(Amazon.B2bi.Model.GenerateMappingRequest)" />
+            <member name="T:Amazon.B2bi.Model.GenerateMappingRequest" />
+            <member name="T:Amazon.B2bi.Model.GenerateMappingResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample GenerateMapping call"
                     source=".\AWSSDKDocSamples\B2bi\B2bi.GeneratedSamples.cs"
                     region="example-1" />
             </example>
@@ -375,6 +413,25 @@
                 </para>
                 <code
                     title="Sample TagResource call"
+                    source=".\AWSSDKDocSamples\B2bi\B2bi.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.B2bi.IAmazonB2bi.TestConversion(Amazon.B2bi.Model.TestConversionRequest)" />
+            <member name="M:Amazon.B2bi.AmazonB2biClient.TestConversion(Amazon.B2bi.Model.TestConversionRequest)" />
+            <member name="T:Amazon.B2bi.Model.TestConversionRequest" />
+            <member name="T:Amazon.B2bi.Model.TestConversionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Sample TestConversion call"
                     source=".\AWSSDKDocSamples\B2bi\B2bi.GeneratedSamples.cs"
                     region="example-1" />
             </example>

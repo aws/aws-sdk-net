@@ -2468,6 +2468,142 @@ namespace Amazon.CloudTrail
 
         #endregion
         
+        #region  GenerateQuery
+
+
+        /// <summary>
+        /// Generates a query from a natural language prompt. This operation uses generative
+        /// artificial intelligence (generative AI) to produce a ready-to-use SQL query from the
+        /// prompt. 
+        /// 
+        ///  
+        /// <para>
+        /// The prompt can be a question or a statement about the event data in your event data
+        /// store. For example, you can enter prompts like "What are my top errors in the past
+        /// month?" and “Give me a list of users that used SNS.”
+        /// </para>
+        ///  
+        /// <para>
+        /// The prompt must be in English. For information about limitations, permissions, and
+        /// supported Regions, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/lake-query-generator.html">Create
+        /// CloudTrail Lake queries from natural language prompts</a> in the <i>CloudTrail </i>
+        /// user guide.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Do not include any personally identifying, confidential, or sensitive information
+        /// in your prompts.
+        /// </para>
+        ///  
+        /// <para>
+        /// This feature uses generative AI large language models (LLMs); we recommend double-checking
+        /// the LLM response.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GenerateQuery service method.</param>
+        /// 
+        /// <returns>The response from the GenerateQuery service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreARNInvalidException">
+        /// The specified event data store ARN is not valid or does not map to an event data store
+        /// in your account.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreNotFoundException">
+        /// The specified event data store was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.GenerateResponseException">
+        /// This exception is thrown when a valid query could not be generated for the provided
+        /// prompt.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InactiveEventDataStoreException">
+        /// The event data store is inactive.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
+        /// The request includes a parameter that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
+        /// This exception is thrown when the management account does not have a service-linked
+        /// role.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GenerateQuery">REST API Reference for GenerateQuery Operation</seealso>
+        GenerateQueryResponse GenerateQuery(GenerateQueryRequest request);
+
+
+
+        /// <summary>
+        /// Generates a query from a natural language prompt. This operation uses generative
+        /// artificial intelligence (generative AI) to produce a ready-to-use SQL query from the
+        /// prompt. 
+        /// 
+        ///  
+        /// <para>
+        /// The prompt can be a question or a statement about the event data in your event data
+        /// store. For example, you can enter prompts like "What are my top errors in the past
+        /// month?" and “Give me a list of users that used SNS.”
+        /// </para>
+        ///  
+        /// <para>
+        /// The prompt must be in English. For information about limitations, permissions, and
+        /// supported Regions, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/lake-query-generator.html">Create
+        /// CloudTrail Lake queries from natural language prompts</a> in the <i>CloudTrail </i>
+        /// user guide.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Do not include any personally identifying, confidential, or sensitive information
+        /// in your prompts.
+        /// </para>
+        ///  
+        /// <para>
+        /// This feature uses generative AI large language models (LLMs); we recommend double-checking
+        /// the LLM response.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GenerateQuery service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GenerateQuery service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreARNInvalidException">
+        /// The specified event data store ARN is not valid or does not map to an event data store
+        /// in your account.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreNotFoundException">
+        /// The specified event data store was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.GenerateResponseException">
+        /// This exception is thrown when a valid query could not be generated for the provided
+        /// prompt.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InactiveEventDataStoreException">
+        /// The event data store is inactive.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
+        /// The request includes a parameter that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
+        /// This exception is thrown when the management account does not have a service-linked
+        /// role.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GenerateQuery">REST API Reference for GenerateQuery Operation</seealso>
+        Task<GenerateQueryResponse> GenerateQueryAsync(GenerateQueryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetChannel
 
 
@@ -5586,6 +5722,12 @@ namespace Amazon.CloudTrail
         /// 
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.ConflictException">
+        /// This exception is thrown when the specified resource is not ready for an operation.
+        /// This can occur when you try to run an operation on a resource before CloudTrail has
+        /// time to fully load the resource, or because another operation is modifying the resource.
+        /// If this exception occurs, wait a few minutes, and then try the operation again.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreARNInvalidException">
         /// The specified event data store ARN is not valid or does not map to an event data store
         /// in your account.
@@ -5689,6 +5831,12 @@ namespace Amazon.CloudTrail
         /// The following is the format of a channel ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</c>
         /// 
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.ConflictException">
+        /// This exception is thrown when the specified resource is not ready for an operation.
+        /// This can occur when you try to run an operation on a resource before CloudTrail has
+        /// time to fully load the resource, or because another operation is modifying the resource.
+        /// If this exception occurs, wait a few minutes, and then try the operation again.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreARNInvalidException">
         /// The specified event data store ARN is not valid or does not map to an event data store

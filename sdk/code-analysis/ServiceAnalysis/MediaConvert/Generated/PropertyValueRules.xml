@@ -1256,8 +1256,8 @@
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.KantarWatermarkSettings.CredentialsSecretName</property>
     <min>1</min>
-    <max>512</max>
-    <pattern>^[a-zA-Z0-9_\/_+=.@-]*$</pattern>
+    <max>2048</max>
+    <pattern>^(arn:(aws|aws-us-gov|aws-cn):secretsmanager:(us(-gov)?|ap|ca|cn|eu|sa)-(central|(north|south)?(east|west)?)-\d:\d{12}:secret:)?[a-zA-Z0-9_\/_+=.@-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.KantarWatermarkSettings.KantarLicenseId</property>

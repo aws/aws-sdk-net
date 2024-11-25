@@ -48,17 +48,6 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
         {
             CreateDataCatalogResponse response = new CreateDataCatalogResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("DataCatalog", targetDepth))
-                {
-                    var unmarshaller = DataCatalogUnmarshaller.Instance;
-                    response.DataCatalog = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }

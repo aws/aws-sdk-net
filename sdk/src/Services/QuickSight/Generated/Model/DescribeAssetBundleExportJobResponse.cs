@@ -43,6 +43,8 @@ namespace Amazon.QuickSight.Model
         private List<AssetBundleExportJobError> _errors = AWSConfigs.InitializeCollections ? new List<AssetBundleExportJobError>() : null;
         private AssetBundleExportFormat _exportFormat;
         private bool? _includeAllDependencies;
+        private IncludeFolderMembers _includeFolderMembers;
+        private bool? _includeFolderMemberships;
         private bool? _includePermissions;
         private bool? _includeTags;
         private AssetBundleExportJobStatus _jobStatus;
@@ -241,6 +243,42 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetIncludeAllDependencies()
         {
             return this._includeAllDependencies.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeFolderMembers. 
+        /// <para>
+        /// A setting that determines whether folder members are included.
+        /// </para>
+        /// </summary>
+        public IncludeFolderMembers IncludeFolderMembers
+        {
+            get { return this._includeFolderMembers; }
+            set { this._includeFolderMembers = value; }
+        }
+
+        // Check to see if IncludeFolderMembers property is set
+        internal bool IsSetIncludeFolderMembers()
+        {
+            return this._includeFolderMembers != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeFolderMemberships. 
+        /// <para>
+        /// The include folder memberships flag.
+        /// </para>
+        /// </summary>
+        public bool? IncludeFolderMemberships
+        {
+            get { return this._includeFolderMemberships; }
+            set { this._includeFolderMemberships = value; }
+        }
+
+        // Check to see if IncludeFolderMemberships property is set
+        internal bool IsSetIncludeFolderMemberships()
+        {
+            return this._includeFolderMemberships.HasValue; 
         }
 
         /// <summary>

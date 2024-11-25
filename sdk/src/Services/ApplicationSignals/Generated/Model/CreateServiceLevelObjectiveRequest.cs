@@ -147,12 +147,34 @@ namespace Amazon.ApplicationSignals.Model
     /// </summary>
     public partial class CreateServiceLevelObjectiveRequest : AmazonApplicationSignalsRequest
     {
+        private List<BurnRateConfiguration> _burnRateConfigurations = AWSConfigs.InitializeCollections ? new List<BurnRateConfiguration>() : null;
         private string _description;
         private Goal _goal;
         private string _name;
         private RequestBasedServiceLevelIndicatorConfig _requestBasedSliConfig;
         private ServiceLevelIndicatorConfig _sliConfig;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+
+        /// <summary>
+        /// Gets and sets the property BurnRateConfigurations. 
+        /// <para>
+        /// Use this array to create <i>burn rates</i> for this SLO. Each burn rate is a metric
+        /// that indicates how fast the service is consuming the error budget, relative to the
+        /// attainment goal of the SLO.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<BurnRateConfiguration> BurnRateConfigurations
+        {
+            get { return this._burnRateConfigurations; }
+            set { this._burnRateConfigurations = value; }
+        }
+
+        // Check to see if BurnRateConfigurations property is set
+        internal bool IsSetBurnRateConfigurations()
+        {
+            return this._burnRateConfigurations != null && (this._burnRateConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 

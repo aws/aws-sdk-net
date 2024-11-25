@@ -189,8 +189,8 @@ namespace Amazon.CloudFormation.Model
         /// present, the resource or resource configuration phase has completed and the stabilization
         /// of the resources is in progress. The stack sets <c>CONFIGURATION_COMPLETE</c> when
         /// all of the resources in the stack have reached that event. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation
-        /// stack deployment</a> in the <i>CloudFormation User Guide</i>.
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">Understand
+        /// CloudFormation stack creation events</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
         public DetailedStatus DetailedStatus
@@ -237,8 +237,8 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Information about whether a stack's actual configuration differs, or has <i>drifted</i>,
         /// from its expected configuration, as defined in the stack template and any values specified
-        /// as template parameters. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
-        /// Unregulated Configuration Changes to Stacks and Resources</a>.
+        /// as template parameters. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detect
+        /// unmanaged configuration changes to stacks and resources with drift detection</a>.
         /// </para>
         /// </summary>
         public StackDriftInformation DriftInformation
@@ -262,8 +262,8 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// For <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
         /// stacks</a>, termination protection is set on the root stack and can't be changed directly
-        /// on the nested stack. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
-        /// a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.
+        /// on the nested stack. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protect
+        /// a CloudFormation stack from being deleted</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
         public bool? EnableTerminationProtection
@@ -361,8 +361,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
-        /// with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Embed
+        /// stacks within other stacks using nested stacks</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
         public string ParentId
@@ -403,9 +403,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that's
-        /// associated with the stack. During a stack operation, CloudFormation uses this role's
-        /// credentials to make calls on your behalf.
+        /// The Amazon Resource Name (ARN) of an IAM role that's associated with the stack. During
+        /// a stack operation, CloudFormation uses this role's credentials to make calls on your
+        /// behalf.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -448,8 +448,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Working
-        /// with Nested Stacks</a> in the <i>CloudFormation User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">Embed
+        /// stacks within other stacks using nested stacks</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
         public string RootId

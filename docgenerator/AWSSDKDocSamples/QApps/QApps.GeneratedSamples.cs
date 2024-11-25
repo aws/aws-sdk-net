@@ -41,6 +41,71 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
             #endregion
         }
 
+        public void QAppsBatchCreateCategory()
+        {
+            #region example-1
+
+            var client = new AmazonQAppsClient();
+            var response = client.BatchCreateCategory(new BatchCreateCategoryRequest 
+            {
+                Categories = new List<BatchCreateCategoryInputCategory> {
+                    new BatchCreateCategoryInputCategory {
+                        Id = "549abfe0-f5c4-45a2-bb9b-c05987a49c6d",
+                        Title = "HR"
+                    },
+                    new BatchCreateCategoryInputCategory {
+                        Id = "18cbebaa-196a-4aa5-a840-88d548e07f8f",
+                        Title = "Marketing"
+                    }
+                },
+                InstanceId = "0b95c9c4-89cc-4aa8-9aae-aa91cbec699f"
+            });
+
+
+            #endregion
+        }
+
+        public void QAppsBatchDeleteCategory()
+        {
+            #region example-1
+
+            var client = new AmazonQAppsClient();
+            var response = client.BatchDeleteCategory(new BatchDeleteCategoryRequest 
+            {
+                Categories = new List<string> {
+                    "9c871ed4-1c41-4065-aefe-321cd4b61cf8"
+                },
+                InstanceId = "0b95c9c4-89cc-4aa8-9aae-aa91cbec699f"
+            });
+
+
+            #endregion
+        }
+
+        public void QAppsBatchUpdateCategory()
+        {
+            #region example-1
+
+            var client = new AmazonQAppsClient();
+            var response = client.BatchUpdateCategory(new BatchUpdateCategoryRequest 
+            {
+                Categories = new List<CategoryInput> {
+                    new CategoryInput {
+                        Id = "549abfe0-f5c4-45a2-bb9b-c05987a49c6d",
+                        Title = "HR Management"
+                    },
+                    new CategoryInput {
+                        Id = "18cbebaa-196a-4aa5-a840-88d548e07f8f",
+                        Title = "Sales"
+                    }
+                },
+                InstanceId = "0b95c9c4-89cc-4aa8-9aae-aa91cbec699f"
+            });
+
+
+            #endregion
+        }
+
         public void QAppsCreateLibraryItem()
         {
             #region example-1
@@ -279,6 +344,21 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
             });
 
             string fileId = response.FileId;
+
+            #endregion
+        }
+
+        public void QAppsListCategories()
+        {
+            #region example-1
+
+            var client = new AmazonQAppsClient();
+            var response = client.ListCategories(new ListCategoriesRequest 
+            {
+                InstanceId = "0b95c9c4-89cc-4aa8-9aae-aa91cbec699f"
+            });
+
+            List<Category> categories = response.Categories;
 
             #endregion
         }

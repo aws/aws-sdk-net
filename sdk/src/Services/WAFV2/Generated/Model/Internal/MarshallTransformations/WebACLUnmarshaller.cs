@@ -150,6 +150,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.PreProcessFirewallManagerRuleGroups = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RetrofittedByFirewallManager", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.RetrofittedByFirewallManager = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Rules", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Rule, RuleUnmarshaller>(RuleUnmarshaller.Instance);

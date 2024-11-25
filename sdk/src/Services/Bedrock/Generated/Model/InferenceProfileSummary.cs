@@ -68,7 +68,7 @@ namespace Amazon.Bedrock.Model
         /// The description of the inference profile.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=500)]
+        [AWSProperty(Sensitive=true, Min=1, Max=200)]
         public string Description
         {
             get { return this._description; }
@@ -161,7 +161,7 @@ namespace Amazon.Bedrock.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The status of the inference profile. <c>ACTIVE</c> means that the inference profile
-        /// is available to use.
+        /// is ready to be used.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -180,9 +180,20 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the inference profile. <c>SYSTEM_DEFINED</c> means that the inference
-        /// profile is defined by Amazon Bedrock.
+        /// The type of the inference profile. The following types are possible:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>SYSTEM_DEFINED</c> – The inference profile is defined by Amazon Bedrock. You can
+        /// route inference requests across regions with these inference profiles.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>APPLICATION</c> – The inference profile was created by a user. This type of inference
+        /// profile can track metrics and costs when invoking the model in it. The inference profile
+        /// may route requests to one or multiple regions.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public InferenceProfileType Type

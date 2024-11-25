@@ -31,8 +31,9 @@ namespace Amazon.ResourceGroups.Model
 {
     /// <summary>
     /// Container for the parameters to the Tag operation.
-    /// Adds tags to a resource group with the specified ARN. Existing tags on a resource
-    /// group are not changed if they are not specified in the request parameters.
+    /// Adds tags to a resource group with the specified Amazon resource name (ARN). Existing
+    /// tags on a resource group are not changed if they are not specified in the request
+    /// parameters.
     /// 
     ///  <important> 
     /// <para>
@@ -62,7 +63,7 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the resource group to which to add tags.
+        /// The Amazon resource name (ARN) of the resource group to which to add tags.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=1600)]

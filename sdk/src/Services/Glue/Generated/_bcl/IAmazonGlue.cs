@@ -1424,6 +1424,78 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  CreateColumnStatisticsTaskSettings
+
+
+        /// <summary>
+        /// Creates settings for a column statistics task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateColumnStatisticsTaskSettings service method.</param>
+        /// 
+        /// <returns>The response from the CreateColumnStatisticsTaskSettings service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ColumnStatisticsTaskRunningException">
+        /// An exception thrown when you try to start another job while running a column stats
+        /// generation job.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateColumnStatisticsTaskSettings">REST API Reference for CreateColumnStatisticsTaskSettings Operation</seealso>
+        CreateColumnStatisticsTaskSettingsResponse CreateColumnStatisticsTaskSettings(CreateColumnStatisticsTaskSettingsRequest request);
+
+
+
+        /// <summary>
+        /// Creates settings for a column statistics task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateColumnStatisticsTaskSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateColumnStatisticsTaskSettings service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
+        /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ColumnStatisticsTaskRunningException">
+        /// An exception thrown when you try to start another job while running a column stats
+        /// generation job.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNumberLimitExceededException">
+        /// A resource numerical limit was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateColumnStatisticsTaskSettings">REST API Reference for CreateColumnStatisticsTaskSettings Operation</seealso>
+        Task<CreateColumnStatisticsTaskSettingsResponse> CreateColumnStatisticsTaskSettingsAsync(CreateColumnStatisticsTaskSettingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateConnection
 
 
@@ -3171,6 +3243,52 @@ namespace Amazon.Glue
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteColumnStatisticsForTable">REST API Reference for DeleteColumnStatisticsForTable Operation</seealso>
         Task<DeleteColumnStatisticsForTableResponse> DeleteColumnStatisticsForTableAsync(DeleteColumnStatisticsForTableRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteColumnStatisticsTaskSettings
+
+
+        /// <summary>
+        /// Deletes settings for a column statistics task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteColumnStatisticsTaskSettings service method.</param>
+        /// 
+        /// <returns>The response from the DeleteColumnStatisticsTaskSettings service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteColumnStatisticsTaskSettings">REST API Reference for DeleteColumnStatisticsTaskSettings Operation</seealso>
+        DeleteColumnStatisticsTaskSettingsResponse DeleteColumnStatisticsTaskSettings(DeleteColumnStatisticsTaskSettingsRequest request);
+
+
+
+        /// <summary>
+        /// Deletes settings for a column statistics task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteColumnStatisticsTaskSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteColumnStatisticsTaskSettings service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteColumnStatisticsTaskSettings">REST API Reference for DeleteColumnStatisticsTaskSettings Operation</seealso>
+        Task<DeleteColumnStatisticsTaskSettingsResponse> DeleteColumnStatisticsTaskSettingsAsync(DeleteColumnStatisticsTaskSettingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -5029,6 +5147,52 @@ namespace Amazon.Glue
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsTaskRuns">REST API Reference for GetColumnStatisticsTaskRuns Operation</seealso>
         Task<GetColumnStatisticsTaskRunsResponse> GetColumnStatisticsTaskRunsAsync(GetColumnStatisticsTaskRunsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetColumnStatisticsTaskSettings
+
+
+        /// <summary>
+        /// Gets settings for a column statistics task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetColumnStatisticsTaskSettings service method.</param>
+        /// 
+        /// <returns>The response from the GetColumnStatisticsTaskSettings service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsTaskSettings">REST API Reference for GetColumnStatisticsTaskSettings Operation</seealso>
+        GetColumnStatisticsTaskSettingsResponse GetColumnStatisticsTaskSettings(GetColumnStatisticsTaskSettingsRequest request);
+
+
+
+        /// <summary>
+        /// Gets settings for a column statistics task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetColumnStatisticsTaskSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetColumnStatisticsTaskSettings service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetColumnStatisticsTaskSettings">REST API Reference for GetColumnStatisticsTaskSettings Operation</seealso>
+        Task<GetColumnStatisticsTaskSettingsResponse> GetColumnStatisticsTaskSettingsAsync(GetColumnStatisticsTaskSettingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -10806,6 +10970,58 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  StartColumnStatisticsTaskRunSchedule
+
+
+        /// <summary>
+        /// Starts a column statistics task run schedule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartColumnStatisticsTaskRunSchedule service method.</param>
+        /// 
+        /// <returns>The response from the StartColumnStatisticsTaskRunSchedule service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartColumnStatisticsTaskRunSchedule">REST API Reference for StartColumnStatisticsTaskRunSchedule Operation</seealso>
+        StartColumnStatisticsTaskRunScheduleResponse StartColumnStatisticsTaskRunSchedule(StartColumnStatisticsTaskRunScheduleRequest request);
+
+
+
+        /// <summary>
+        /// Starts a column statistics task run schedule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartColumnStatisticsTaskRunSchedule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartColumnStatisticsTaskRunSchedule service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartColumnStatisticsTaskRunSchedule">REST API Reference for StartColumnStatisticsTaskRunSchedule Operation</seealso>
+        Task<StartColumnStatisticsTaskRunScheduleResponse> StartColumnStatisticsTaskRunScheduleAsync(StartColumnStatisticsTaskRunScheduleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  StartCrawler
 
 
@@ -11664,6 +11880,52 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  StopColumnStatisticsTaskRunSchedule
+
+
+        /// <summary>
+        /// Stops a column statistics task run schedule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopColumnStatisticsTaskRunSchedule service method.</param>
+        /// 
+        /// <returns>The response from the StopColumnStatisticsTaskRunSchedule service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopColumnStatisticsTaskRunSchedule">REST API Reference for StopColumnStatisticsTaskRunSchedule Operation</seealso>
+        StopColumnStatisticsTaskRunScheduleResponse StopColumnStatisticsTaskRunSchedule(StopColumnStatisticsTaskRunScheduleRequest request);
+
+
+
+        /// <summary>
+        /// Stops a column statistics task run schedule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopColumnStatisticsTaskRunSchedule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopColumnStatisticsTaskRunSchedule service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopColumnStatisticsTaskRunSchedule">REST API Reference for StopColumnStatisticsTaskRunSchedule Operation</seealso>
+        Task<StopColumnStatisticsTaskRunScheduleResponse> StopColumnStatisticsTaskRunScheduleAsync(StopColumnStatisticsTaskRunScheduleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  StopCrawler
 
 
@@ -12419,6 +12681,64 @@ namespace Amazon.Glue
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateColumnStatisticsForTable">REST API Reference for UpdateColumnStatisticsForTable Operation</seealso>
         Task<UpdateColumnStatisticsForTableResponse> UpdateColumnStatisticsForTableAsync(UpdateColumnStatisticsForTableRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateColumnStatisticsTaskSettings
+
+
+        /// <summary>
+        /// Updates settings for a column statistics task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateColumnStatisticsTaskSettings service method.</param>
+        /// 
+        /// <returns>The response from the UpdateColumnStatisticsTaskSettings service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.VersionMismatchException">
+        /// There was a version conflict.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateColumnStatisticsTaskSettings">REST API Reference for UpdateColumnStatisticsTaskSettings Operation</seealso>
+        UpdateColumnStatisticsTaskSettingsResponse UpdateColumnStatisticsTaskSettings(UpdateColumnStatisticsTaskSettingsRequest request);
+
+
+
+        /// <summary>
+        /// Updates settings for a column statistics task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateColumnStatisticsTaskSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateColumnStatisticsTaskSettings service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.VersionMismatchException">
+        /// There was a version conflict.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateColumnStatisticsTaskSettings">REST API Reference for UpdateColumnStatisticsTaskSettings Operation</seealso>
+        Task<UpdateColumnStatisticsTaskSettingsResponse> UpdateColumnStatisticsTaskSettingsAsync(UpdateColumnStatisticsTaskSettingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

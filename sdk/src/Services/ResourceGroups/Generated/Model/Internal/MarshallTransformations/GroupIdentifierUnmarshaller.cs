@@ -66,6 +66,24 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Criticality", targetDepth))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.Criticality = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Description", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DisplayName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DisplayName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("GroupArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -76,6 +94,12 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GroupName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Owner", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Owner = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

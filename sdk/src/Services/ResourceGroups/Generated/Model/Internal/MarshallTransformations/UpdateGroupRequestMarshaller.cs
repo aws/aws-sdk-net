@@ -69,10 +69,22 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
                     writer.Validate = false;
                     writer.WriteObjectStart();
                     var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetCriticality())
+                    {
+                        context.Writer.WritePropertyName("Criticality");
+                        context.Writer.Write(publicRequest.Criticality.Value);
+                    }
+
                     if(publicRequest.IsSetDescription())
                     {
                         context.Writer.WritePropertyName("Description");
                         context.Writer.Write(publicRequest.Description);
+                    }
+
+                    if(publicRequest.IsSetDisplayName())
+                    {
+                        context.Writer.WritePropertyName("DisplayName");
+                        context.Writer.Write(publicRequest.DisplayName);
                     }
 
                     if(publicRequest.IsSetGroup())
@@ -85,6 +97,12 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
                     {
                         context.Writer.WritePropertyName("GroupName");
                         context.Writer.Write(publicRequest.GroupName);
+                    }
+
+                    if(publicRequest.IsSetOwner())
+                    {
+                        context.Writer.WritePropertyName("Owner");
+                        context.Writer.Write(publicRequest.Owner);
                     }
 
                     writer.WriteObjectEnd();

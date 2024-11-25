@@ -52,10 +52,28 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("applicationProtocol", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ApplicationProtocol = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("authenticationType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AuthenticationType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("authorizerConfig", targetDepth))
                 {
                     var unmarshaller = AuthorizerConfigUnmarshaller.Instance;
                     response.AuthorizerConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("clientCertificateConfig", targetDepth))
+                {
+                    var unmarshaller = ClientCertificateConfigUnmarshaller.Instance;
+                    response.ClientCertificateConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("domainConfigurationArn", targetDepth))

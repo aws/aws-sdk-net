@@ -102,7 +102,7 @@ namespace Amazon.QuickSight.Model
         /// Information about the permissions on the dashboard.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Max=100)]
         public List<ResourcePermission> Permissions
         {
             get { return this._permissions; }

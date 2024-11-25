@@ -31,7 +31,7 @@ namespace Amazon.PrometheusService.Model
 {
     /// <summary>
     /// A scrape configuration for a scraper, base 64 encoded. For more information, see <a
-    /// href="prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper
+    /// href="https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration">Scraper
     /// configuration</a> in the <i>Amazon Managed Service for Prometheus User Guide</i>.
     /// </summary>
     public partial class ScrapeConfiguration

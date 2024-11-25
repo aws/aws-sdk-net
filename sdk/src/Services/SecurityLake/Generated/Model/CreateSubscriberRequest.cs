@@ -31,9 +31,9 @@ namespace Amazon.SecurityLake.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSubscriber operation.
-    /// Creates a subscription permission for accounts that are already enabled in Amazon
-    /// Security Lake. You can create a subscriber with access to data in the current Amazon
-    /// Web Services Region.
+    /// Creates a subscriber for accounts that are already enabled in Amazon Security Lake.
+    /// You can create a subscriber with access to data in the current Amazon Web Services
+    /// Region.
     /// </summary>
     public partial class CreateSubscriberRequest : AmazonSecurityLakeRequest
     {
@@ -65,8 +65,9 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property Sources. 
         /// <para>
-        /// The supported Amazon Web Services from which logs and events are collected. Security
-        /// Lake supports log and event collection for natively supported Amazon Web Services.
+        /// The supported Amazon Web Services services from which logs and events are collected.
+        /// Security Lake supports log and event collection for natively supported Amazon Web
+        /// Services services.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -32,13 +32,6 @@ namespace Amazon.MemoryDB.Model
     /// <summary>
     /// Container for the parameters to the DeleteCluster operation.
     /// Deletes a cluster. It also deletes all associated nodes and node endpoints
-    /// 
-    ///  <note> 
-    /// <para>
-    ///  <c>CreateSnapshot</c> permission is required to create a final snapshot. Without
-    /// this permission, the API call will fail with an <c>Access Denied</c> exception.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class DeleteClusterRequest : AmazonMemoryDBRequest
     {

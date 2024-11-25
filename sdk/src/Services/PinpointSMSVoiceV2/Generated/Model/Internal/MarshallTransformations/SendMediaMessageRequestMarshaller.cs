@@ -126,6 +126,12 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.MessageBody);
                     }
 
+                    if(publicRequest.IsSetMessageFeedbackEnabled())
+                    {
+                        context.Writer.WritePropertyName("MessageFeedbackEnabled");
+                        context.Writer.Write(publicRequest.MessageFeedbackEnabled.Value);
+                    }
+
                     if(publicRequest.IsSetOriginationIdentity())
                     {
                         context.Writer.WritePropertyName("OriginationIdentity");

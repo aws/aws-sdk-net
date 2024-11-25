@@ -47,7 +47,7 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// By default, no traffic is mirrored. Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorFilter.htm">CreateTrafficMirrorFilter</a>
+    /// By default, no traffic is mirrored. Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTrafficMirrorFilter.html">CreateTrafficMirrorFilter</a>
     /// to create filter rules that specify the traffic to mirror.
     /// </para>
     /// </summary>

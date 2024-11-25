@@ -324,6 +324,30 @@
     <pattern>[0-9A-Za-z][-.0-9A-Z_a-z]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PrometheusService.Model.UpdateScraperRequest.Alias</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>^[0-9A-Za-z][-.0-9A-Z_a-z]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.UpdateScraperRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[!-~]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.UpdateScraperRequest.ScraperId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9A-Za-z][-.0-9A-Z_a-z]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PrometheusService.Model.UpdateScraperResponse.ScraperId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[0-9A-Za-z][-.0-9A-Z_a-z]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PrometheusService.Model.UpdateWorkspaceAliasRequest.Alias</property>
     <min>1</min>
     <max>100</max>

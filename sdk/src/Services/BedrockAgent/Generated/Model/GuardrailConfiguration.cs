@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Details about the guardrail associated with an agent.
+    /// Details about a guardrail associated with a resource.
     /// </summary>
     public partial class GuardrailConfiguration
     {

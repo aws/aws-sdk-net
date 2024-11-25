@@ -75,6 +75,22 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.DefaultLogLevel);
                     }
 
+                    if(publicRequest.IsSetFuotaTaskLogOptions())
+                    {
+                        context.Writer.WritePropertyName("FuotaTaskLogOptions");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestFuotaTaskLogOptionsListValue in publicRequest.FuotaTaskLogOptions)
+                        {
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = FuotaTaskLogOptionMarshaller.Instance;
+                            marshaller.Marshall(publicRequestFuotaTaskLogOptionsListValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
                     if(publicRequest.IsSetWirelessDeviceLogOptions())
                     {
                         context.Writer.WritePropertyName("WirelessDeviceLogOptions");

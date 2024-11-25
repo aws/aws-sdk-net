@@ -117,7 +117,7 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  
         /// <para>
-        /// A <c>BaseDirectory</c> example is <c>/DOC-EXAMPLE-BUCKET/home/mydirectory</c>.
+        /// A <c>BaseDirectory</c> example is <c>/<i>amzn-s3-demo-bucket</i>/home/mydirectory</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1024)]

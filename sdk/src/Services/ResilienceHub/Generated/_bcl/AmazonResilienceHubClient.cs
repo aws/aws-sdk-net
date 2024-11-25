@@ -2847,7 +2847,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// List of compliance drifts that were detected while running an assessment.
+        /// Indicates the list of compliance drifts that were detected while running an assessment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAppAssessmentComplianceDrifts service method.</param>
         /// 
@@ -2879,7 +2879,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// List of compliance drifts that were detected while running an assessment.
+        /// Indicates the list of compliance drifts that were detected while running an assessment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAppAssessmentComplianceDrifts service method.</param>
         /// <param name="cancellationToken">

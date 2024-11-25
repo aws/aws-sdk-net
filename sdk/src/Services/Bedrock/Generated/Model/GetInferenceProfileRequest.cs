@@ -31,8 +31,9 @@ namespace Amazon.Bedrock.Model
 {
     /// <summary>
     /// Container for the parameters to the GetInferenceProfile operation.
-    /// Gets information about an inference profile. For more information, see the Amazon
-    /// Bedrock User Guide.
+    /// Gets information about an inference profile. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">Increase
+    /// throughput and resilience with cross-region inference in Amazon Bedrock</a>. in the
+    /// Amazon Bedrock User Guide.
     /// </summary>
     public partial class GetInferenceProfileRequest : AmazonBedrockRequest
     {
@@ -41,7 +42,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property InferenceProfileIdentifier. 
         /// <para>
-        /// The unique identifier of the inference profile.
+        /// The ID or Amazon Resource Name (ARN) of the inference profile.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

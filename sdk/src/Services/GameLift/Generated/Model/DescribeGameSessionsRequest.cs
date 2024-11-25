@@ -128,6 +128,7 @@ namespace Amazon.GameLift.Model
         /// the fleet ID or ARN value. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string FleetId
         {
             get { return this._fleetId; }
@@ -146,7 +147,7 @@ namespace Amazon.GameLift.Model
         /// A unique identifier for the game session to retrieve. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Min=1, Max=512)]
         public string GameSessionId
         {
             get { return this._gameSessionId; }

@@ -515,6 +515,82 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.DisableOrganizationsRootCredentialsManagement(Amazon.IdentityManagement.Model.DisableOrganizationsRootCredentialsManagementRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.DisableOrganizationsRootCredentialsManagement(Amazon.IdentityManagement.Model.DisableOrganizationsRootCredentialsManagementRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.DisableOrganizationsRootCredentialsManagementRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.DisableOrganizationsRootCredentialsManagementResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command disables the management of privileged root user credentials across member accounts in your organization.
+                </para>
+                <code
+                    title="To disable the RootCredentialsManagement feature in your organization"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="to-disable-the-rootcredentialsmanagement-feature-in-your-organization-1730908292211" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.DisableOrganizationsRootSessions(Amazon.IdentityManagement.Model.DisableOrganizationsRootSessionsRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.DisableOrganizationsRootSessions(Amazon.IdentityManagement.Model.DisableOrganizationsRootSessionsRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.DisableOrganizationsRootSessionsRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.DisableOrganizationsRootSessionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command disables root user sessions for privileged tasks across member accounts in your organization.
+                </para>
+                <code
+                    title="To disable the RootSessions feature in your organization"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="to-disable-the-rootsessions-feature-in-your-organization-1730908495962" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.EnableOrganizationsRootCredentialsManagement(Amazon.IdentityManagement.Model.EnableOrganizationsRootCredentialsManagementRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.EnableOrganizationsRootCredentialsManagement(Amazon.IdentityManagement.Model.EnableOrganizationsRootCredentialsManagementRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.EnableOrganizationsRootCredentialsManagementRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.EnableOrganizationsRootCredentialsManagementResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command enables the management of privileged root user credentials across member accounts in your organization.
+                </para>
+                <code
+                    title="To enable the RootCredentialsManagement feature in your organization"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="to-enable-the-rootcredentialsmanagement-feature-in-your-organization-1730908602395" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.EnableOrganizationsRootSessions(Amazon.IdentityManagement.Model.EnableOrganizationsRootSessionsRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.EnableOrganizationsRootSessions(Amazon.IdentityManagement.Model.EnableOrganizationsRootSessionsRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.EnableOrganizationsRootSessionsRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.EnableOrganizationsRootSessionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following command allows the management account or delegated administrator to perform privileged tasks on member accounts in your organization.
+                </para>
+                <code
+                    title="To enable the RootSessions feature in your organization"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="to-enable-the-rootsessions-feature-in-your-organization-1730908736611" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.GenerateOrganizationsAccessReport(Amazon.IdentityManagement.Model.GenerateOrganizationsAccessReportRequest)" />
             <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.GenerateOrganizationsAccessReport(Amazon.IdentityManagement.Model.GenerateOrganizationsAccessReportRequest)" />
             <member name="T:Amazon.IdentityManagement.Model.GenerateOrganizationsAccessReportRequest" />
@@ -814,6 +890,25 @@
                     title="To list the groups that an IAM user belongs to"
                     source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
                     region="278ec2ee-fc28-4136-83fb-433af0ae46a2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.ListOrganizationsFeatures(Amazon.IdentityManagement.Model.ListOrganizationsFeaturesRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.ListOrganizationsFeatures(Amazon.IdentityManagement.Model.ListOrganizationsFeaturesRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.ListOrganizationsFeaturesRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.ListOrganizationsFeaturesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    he following command lists the centralized root access features enabled for your organization.
+                </para>
+                <code
+                    title="To list the centralized root access features enabled for your organization"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="to-list-the-centralized-root-access-features-enabled-for-your-organization-1730908832557" />
             </example>
         </value>
     </doc>

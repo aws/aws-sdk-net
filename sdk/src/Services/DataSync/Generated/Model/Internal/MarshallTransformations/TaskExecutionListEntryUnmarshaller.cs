@@ -78,6 +78,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                     unmarshalledObject.TaskExecutionArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TaskMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TaskMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

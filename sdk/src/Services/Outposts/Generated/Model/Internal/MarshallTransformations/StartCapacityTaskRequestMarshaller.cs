@@ -94,10 +94,27 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
                         context.Writer.WriteArrayEnd();
                     }
 
+                    if(publicRequest.IsSetInstancesToExclude())
+                    {
+                        context.Writer.WritePropertyName("InstancesToExclude");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = InstancesToExcludeMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.InstancesToExclude, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetOrderId())
                     {
                         context.Writer.WritePropertyName("OrderId");
                         context.Writer.Write(publicRequest.OrderId);
+                    }
+
+                    if(publicRequest.IsSetTaskActionOnBlockingInstances())
+                    {
+                        context.Writer.WritePropertyName("TaskActionOnBlockingInstances");
+                        context.Writer.Write(publicRequest.TaskActionOnBlockingInstances);
                     }
 
                     writer.WriteObjectEnd();

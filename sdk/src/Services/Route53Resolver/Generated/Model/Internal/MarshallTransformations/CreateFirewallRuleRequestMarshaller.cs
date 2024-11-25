@@ -101,6 +101,12 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.BlockResponse);
                     }
 
+                    if(publicRequest.IsSetConfidenceThreshold())
+                    {
+                        context.Writer.WritePropertyName("ConfidenceThreshold");
+                        context.Writer.Write(publicRequest.ConfidenceThreshold);
+                    }
+
                     if(publicRequest.IsSetCreatorRequestId())
                     {
                         context.Writer.WritePropertyName("CreatorRequestId");
@@ -112,6 +118,12 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                         context.Writer.WritePropertyName("CreatorRequestId");
                         context.Writer.Write(Guid.NewGuid().ToString());
                     }
+                    if(publicRequest.IsSetDnsThreatProtection())
+                    {
+                        context.Writer.WritePropertyName("DnsThreatProtection");
+                        context.Writer.Write(publicRequest.DnsThreatProtection);
+                    }
+
                     if(publicRequest.IsSetFirewallDomainListId())
                     {
                         context.Writer.WritePropertyName("FirewallDomainListId");
