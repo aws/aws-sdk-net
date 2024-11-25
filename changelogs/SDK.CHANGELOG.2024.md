@@ -1,3 +1,11 @@
+### 3.7.934.0 (2024-11-25 19:30 UTC)
+* DirectConnect (3.7.401.0)
+	* Update DescribeDirectConnectGatewayAssociations API to return associated core network information if a Direct Connect gateway is attached to a Cloud WAN core network.
+* NetworkManager (3.7.401.0)
+	* This release adds native Direct Connect integration on Cloud WAN enabling customers to directly attach their Direct Connect gateways to Cloud WAN without the need for an intermediate Transit Gateway.
+* S3 (3.7.408.0)
+	* Amazon Simple Storage Service / Features: Add support for ETag based conditional writes in PutObject and CompleteMultiPartUpload APIs to prevent unintended object modifications.
+
 ### 3.7.933.0 (2024-11-22 19:40 UTC)
 * AutoScaling (3.7.407.0)
 	* Now, Amazon EC2 Auto Scaling customers can enable target tracking policies to take quicker scaling decisions, enhancing their application performance and EC2 utilization. To get started, specify target tracking to monitor a metric that is available on Amazon CloudWatch at seconds-level interval.
