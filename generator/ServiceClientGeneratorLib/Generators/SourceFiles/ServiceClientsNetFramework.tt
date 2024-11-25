@@ -226,19 +226,13 @@ namespace <#=this.Config.Namespace#>
 
         #region Overrides  
 
-<# if(this.Config.ServiceModel.Customizations.PipelineOverride != null || this.Config.EndpointsRuleSet != null) { #>
         /// <summary>
         /// Customize the pipeline
         /// </summary>
         /// <param name="pipeline"></param>
         protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
-<# 
-// TODO: Remove the if statement when we eventually generate auth resolvers for all services.
-if (this.Config.ClassName == "AutoScaling" || this.Config.ClassName == "S3") { 
-#>
-            pipeline.AddHandlerBefore<Amazon.Runtime.Internal.CredentialsRetriever>(new Amazon<#=this.Config.ClassName#>AuthSchemeHandler(this.DefaultAWSCredentials));
-<# } #>
+            pipeline.AddHandlerBefore<Amazon.Runtime.Internal.CredentialsRetriever>(new Amazon<#=this.Config.ClassName#>AuthSchemeHandler(this.Config.DefaultAWSCredentials));
 <#
     var pipelineOverrides = this.Config.ServiceModel.Customizations.PipelineOverride;
     if (pipelineOverrides != null)
@@ -286,10 +280,8 @@ if (this.Config.ClassName == "AutoScaling" || this.Config.ClassName == "S3") {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new Amazon<#=this.Config.ClassName#>EndpointResolver());
 <# } #>
-        }	
-<#
         }
-#>
+
 		/// <summary>
         /// Capture metadata for the service.
         /// </summary>
