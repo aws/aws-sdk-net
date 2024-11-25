@@ -134,6 +134,8 @@ namespace ServiceClientGenerator
             ProjectGuid = UnitTestsNetStandardCoreOnlyProjectGuid,
             ProjectPath = Utils.PathCombineAlt("..", "..", "..", UnitTestsNetStandardCoreOnlyProject.ProjectPath),
             RelativePath = Utils.PathCombineAlt("..", "..", "..", "test", "NetStandard", "UnitTests", $"{UnitTestsNetStandardCoreOnlyProjectName}.csproj")
+        };
+
         private static readonly Project SmithyIdentityProjectForCore = new Project
         {
             Name = SmithyIdentityProjectName,
