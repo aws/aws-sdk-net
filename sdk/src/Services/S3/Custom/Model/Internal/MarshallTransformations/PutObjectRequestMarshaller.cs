@@ -119,6 +119,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if (putObjectRequest.IsSetIfNoneMatch())
                 request.Headers["If-None-Match"] = putObjectRequest.IfNoneMatch;
+
+            if (putObjectRequest.IsSetIfMatch())
+                request.Headers.Add(HeaderKeys.IfMatchHeader, S3Transforms.ToStringValue(putObjectRequest.IfMatch));
+
                 
             if (putObjectRequest.IsSetWriteOffsetBytes())
                 request.Headers.Add("x-amz-write-offset-bytes", S3Transforms.ToStringValue(putObjectRequest.WriteOffsetBytes));

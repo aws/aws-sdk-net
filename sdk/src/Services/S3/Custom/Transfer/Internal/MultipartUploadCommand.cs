@@ -174,6 +174,7 @@ namespace Amazon.S3.Transfer.Internal
                 Key = this._fileTransporterRequest.Key,
                 UploadId = initResponse.UploadId,
                 IfNoneMatch = this._fileTransporterRequest.IfNoneMatch,
+                IfMatch = this._fileTransporterRequest.IfMatch,
                 RequestPayer = this._fileTransporterRequest.RequestPayer
             };
 

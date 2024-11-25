@@ -74,6 +74,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (completeMultipartUploadRequest.IsSetIfNoneMatch())
                 request.Headers["If-None-Match"] = completeMultipartUploadRequest.IfNoneMatch;
 
+            if (completeMultipartUploadRequest.IsSetIfMatch())
+                request.Headers[HeaderKeys.IfMatchHeader] = completeMultipartUploadRequest.IfMatch;
+
             if (string.IsNullOrEmpty(completeMultipartUploadRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "CompleteMultipartUploadRequest.BucketName");
             if (string.IsNullOrEmpty(completeMultipartUploadRequest.Key))
