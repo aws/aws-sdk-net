@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// 
+    /// Information about the email recipient
     /// </summary>
     public partial class EmailRecipient
     {
@@ -38,7 +38,18 @@ namespace Amazon.Connect.Model
         private string _displayName;
 
         /// <summary>
-        /// Gets and sets the property Address.
+        /// Gets and sets the property Address. 
+        /// <para>
+        /// Address of the email recipient.
+        /// </para>
+        ///  
+        /// <para>
+        /// Type: String
+        /// </para>
+        ///  
+        /// <para>
+        /// Length Constraints: Minimum length of 1. Maximum length of 256.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
         public string Address
@@ -54,7 +65,18 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DisplayName.
+        /// Gets and sets the property DisplayName. 
+        /// <para>
+        /// Display name of the email recipient.
+        /// </para>
+        ///  
+        /// <para>
+        /// Type: String
+        /// </para>
+        ///  
+        /// <para>
+        /// Length Constraints: Minimum length of 1. Maximum length of 256.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
         public string DisplayName

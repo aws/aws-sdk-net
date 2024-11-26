@@ -38,7 +38,10 @@ namespace Amazon.Connect.Model
         private string _contactId;
 
         /// <summary>
-        /// Gets and sets the property ContactArn.
+        /// Gets and sets the property ContactArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the created contact.
+        /// </para>
         /// </summary>
         public string ContactArn
         {
@@ -53,7 +56,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ContactId.
+        /// Gets and sets the property ContactId. 
+        /// <para>
+        /// The identifier of the contact in this instance of Amazon Connect. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
         public string ContactId

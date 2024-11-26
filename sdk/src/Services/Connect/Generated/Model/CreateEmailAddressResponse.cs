@@ -38,7 +38,10 @@ namespace Amazon.Connect.Model
         private string _emailAddressId;
 
         /// <summary>
-        /// Gets and sets the property EmailAddressArn.
+        /// Gets and sets the property EmailAddressArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the email address.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
         public string EmailAddressArn
@@ -54,7 +57,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EmailAddressId.
+        /// Gets and sets the property EmailAddressId. 
+        /// <para>
+        /// The identifier of the email address.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
         public string EmailAddressId

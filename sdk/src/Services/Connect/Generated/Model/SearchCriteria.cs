@@ -181,7 +181,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SearchableSegmentAttributes.
+        /// Gets and sets the property SearchableSegmentAttributes. 
+        /// <para>
+        /// The search criteria based on searchable segment attributes of a contact.
+        /// </para>
         /// </summary>
         public SearchableSegmentAttributes SearchableSegmentAttributes
         {

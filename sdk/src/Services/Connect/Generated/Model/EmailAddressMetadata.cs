@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// 
+    /// Contains information about an email address for a contact center.
     /// </summary>
     public partial class EmailAddressMetadata
     {
@@ -41,7 +41,10 @@ namespace Amazon.Connect.Model
         private string _emailAddressId;
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description of the email address.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=4096)]
         public string Description
@@ -57,7 +60,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DisplayName.
+        /// Gets and sets the property DisplayName. 
+        /// <para>
+        /// The display name of email address.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=256)]
         public string DisplayName
@@ -73,7 +79,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EmailAddress.
+        /// Gets and sets the property EmailAddress. 
+        /// <para>
+        /// The email address with the instance, in [^\s@]+@[^\s@]+\.[^\s@]+ format.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=255)]
         public string EmailAddress
@@ -89,7 +98,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EmailAddressArn.
+        /// Gets and sets the property EmailAddressArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the email address.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
         public string EmailAddressArn
@@ -105,7 +117,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EmailAddressId.
+        /// Gets and sets the property EmailAddressId. 
+        /// <para>
+        /// The identifier of the email address.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
         public string EmailAddressId

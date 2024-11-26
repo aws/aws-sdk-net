@@ -39,7 +39,10 @@ namespace Amazon.Connect.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property ApproximateTotalCount.
+        /// Gets and sets the property ApproximateTotalCount. 
+        /// <para>
+        /// The total number of email addresses which matched your search query.
+        /// </para>
         /// </summary>
         public long ApproximateTotalCount
         {
@@ -54,7 +57,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EmailAddresses.
+        /// Gets and sets the property EmailAddresses. 
+        /// <para>
+        /// List of email addresses matching SearchFilter and SearchCriteria 
+        /// </para>
         /// </summary>
         public List<EmailAddressMetadata> EmailAddresses
         {
@@ -69,7 +75,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// If there are additional results, this is the token for the next set of results.
+        /// </para>
         /// </summary>
         public string NextToken
         {

@@ -44,7 +44,10 @@ namespace Amazon.Connect.Model
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
-        /// Gets and sets the property CreateTimestamp.
+        /// Gets and sets the property CreateTimestamp. 
+        /// <para>
+        /// The email address creation timestamp in ISO 8601 Datetime.
+        /// </para>
         /// </summary>
         public string CreateTimestamp
         {
@@ -59,7 +62,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description of the email address.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=4096)]
         public string Description
@@ -75,7 +81,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DisplayName.
+        /// Gets and sets the property DisplayName. 
+        /// <para>
+        /// The display name of email address
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=256)]
         public string DisplayName
@@ -91,7 +100,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EmailAddress.
+        /// Gets and sets the property EmailAddress. 
+        /// <para>
+        /// The email address with the instance, in [^\s@]+@[^\s@]+\.[^\s@]+ format.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=255)]
         public string EmailAddress
@@ -107,7 +119,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EmailAddressArn.
+        /// Gets and sets the property EmailAddressArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the email address.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
         public string EmailAddressArn
@@ -123,7 +138,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EmailAddressId.
+        /// Gets and sets the property EmailAddressId. 
+        /// <para>
+        /// The identifier of the email address.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
         public string EmailAddressId
@@ -139,7 +157,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ModifiedTimestamp.
+        /// Gets and sets the property ModifiedTimestamp. 
+        /// <para>
+        /// The email address last modification timestamp in ISO 8601 Datetime.
+        /// </para>
         /// </summary>
         public string ModifiedTimestamp
         {
@@ -154,7 +175,11 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags used to organize, track, or control access for this resource. For example,
+        /// { "Tags": {"key1":"value1", "key2":"value2"} }.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public Dictionary<string, string> Tags

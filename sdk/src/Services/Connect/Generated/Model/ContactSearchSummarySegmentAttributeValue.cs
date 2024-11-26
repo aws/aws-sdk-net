@@ -30,14 +30,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// 
+    /// The value of a segment attribute. This is structured as a map with a single key-value
+    /// pair. The key 'valueString' indicates that the attribute type is a string, and its
+    /// corresponding value is the actual string value of the segment attribute.
     /// </summary>
     public partial class ContactSearchSummarySegmentAttributeValue
     {
         private string _valueString;
 
         /// <summary>
-        /// Gets and sets the property ValueString.
+        /// Gets and sets the property ValueString. 
+        /// <para>
+        /// The value of a segment attribute represented as a string.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
         public string ValueString

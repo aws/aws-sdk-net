@@ -31,7 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateQueueOutboundEmailConfig operation.
-    /// 
+    /// Updates the outbound email address Id for a specified queue.
     /// </summary>
     public partial class UpdateQueueOutboundEmailConfigRequest : AmazonConnectRequest
     {
@@ -40,7 +40,11 @@ namespace Amazon.Connect.Model
         private string _queueId;
 
         /// <summary>
-        /// Gets and sets the property InstanceId.
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
         public string InstanceId
@@ -56,7 +60,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OutboundEmailConfig.
+        /// Gets and sets the property OutboundEmailConfig. 
+        /// <para>
+        /// The outbound email address ID for a specified queue.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public OutboundEmailConfig OutboundEmailConfig
@@ -72,7 +79,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property QueueId.
+        /// Gets and sets the property QueueId. 
+        /// <para>
+        /// The identifier for the queue.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string QueueId

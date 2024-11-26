@@ -30,14 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// 
+    /// The outbound email address Id.
     /// </summary>
     public partial class OutboundEmailConfig
     {
         private string _outboundEmailAddressId;
 
         /// <summary>
-        /// Gets and sets the property OutboundEmailAddressId.
+        /// Gets and sets the property OutboundEmailAddressId. 
+        /// <para>
+        /// The identifier of the email address.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
         public string OutboundEmailAddressId

@@ -103,7 +103,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property SearchCriteria. 
         /// <para>
-        /// The search criteria to be used to return contact flow modules.
+        /// The search criteria to be used to return flow modules.
         /// </para>
         ///  <note> 
         /// <para>

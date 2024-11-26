@@ -2292,7 +2292,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// 
+        /// Creates a new contact.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateContact service method.</param>
         /// 
@@ -2337,7 +2337,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// 
+        /// Creates a new contact.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateContact service method.</param>
         /// <param name="cancellationToken">
@@ -2684,7 +2684,9 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// 
+        /// Create new email address in the specified Amazon Connect instance. For more information
+        /// about email addresses, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-email-address1.html">Create
+        /// email addresses</a> in the Amazon Connect Administrator Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEmailAddress service method.</param>
         /// 
@@ -2731,7 +2733,9 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// 
+        /// Create new email address in the specified Amazon Connect instance. For more information
+        /// about email addresses, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-email-address1.html">Create
+        /// email addresses</a> in the Amazon Connect Administrator Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEmailAddress service method.</param>
         /// <param name="cancellationToken">
@@ -5143,7 +5147,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// 
+        /// Deletes email address from the specified Amazon Connect instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEmailAddress service method.</param>
         /// 
@@ -5181,7 +5185,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// 
+        /// Deletes email address from the specified Amazon Connect instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEmailAddress service method.</param>
         /// <param name="cancellationToken">
@@ -7133,9 +7137,9 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// Use the <c>$SAVED</c> alias in the request to describe the <c>SAVED</c> content of
-        /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. Once a contact flow
-        /// is published, <c>$SAVED</c> needs to be supplied to view saved content that has not
-        /// been published.
+        /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. After a flow is
+        /// published, <c>$SAVED</c> needs to be supplied to view saved content that has not been
+        /// published.
         /// </para>
         ///  
         /// <para>
@@ -7188,9 +7192,9 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// Use the <c>$SAVED</c> alias in the request to describe the <c>SAVED</c> content of
-        /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. Once a contact flow
-        /// is published, <c>$SAVED</c> needs to be supplied to view saved content that has not
-        /// been published.
+        /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. After a flow is
+        /// published, <c>$SAVED</c> needs to be supplied to view saved content that has not been
+        /// published.
         /// </para>
         ///  
         /// <para>
@@ -7245,9 +7249,9 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// Use the <c>$SAVED</c> alias in the request to describe the <c>SAVED</c> content of
-        /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. Once a contact flow
-        /// is published, <c>$SAVED</c> needs to be supplied to view saved content that has not
-        /// been published.
+        /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. After a flow is
+        /// published, <c>$SAVED</c> needs to be supplied to view saved content that has not been
+        /// published.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeContactFlowModule service method.</param>
@@ -7288,9 +7292,9 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// Use the <c>$SAVED</c> alias in the request to describe the <c>SAVED</c> content of
-        /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. Once a contact flow
-        /// is published, <c>$SAVED</c> needs to be supplied to view saved content that has not
-        /// been published.
+        /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. After a flow is
+        /// published, <c>$SAVED</c> needs to be supplied to view saved content that has not been
+        /// published.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeContactFlowModule service method.</param>
@@ -7333,7 +7337,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// 
+        /// Describe email address form the specified Amazon Connect instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEmailAddress service method.</param>
         /// 
@@ -7368,7 +7372,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// 
+        /// Describe email address form the specified Amazon Connect instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEmailAddress service method.</param>
         /// <param name="cancellationToken">
@@ -11298,7 +11302,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// 
+        /// Provides information about contact tree, a list of associated contacts with a unique
+        /// identifier.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAssociatedContacts service method.</param>
         /// 
@@ -11330,7 +11335,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// 
+        /// Provides information about contact tree, a list of associated contacts with a unique
+        /// identifier.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAssociatedContacts service method.</param>
         /// <param name="cancellationToken">
@@ -13403,7 +13409,7 @@ namespace Amazon.Connect
         /// <exception cref="Amazon.Connect.Model.OutputTypeNotFoundException">
         /// Thrown for analyzed content when requested OutputType was not enabled for a given
         /// contact. For example, if an OutputType.Raw was requested for a contact that had `RedactedOnly`
-        /// Redaction policy set in Contact flow.
+        /// Redaction policy set in the flow.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -13443,7 +13449,7 @@ namespace Amazon.Connect
         /// <exception cref="Amazon.Connect.Model.OutputTypeNotFoundException">
         /// Thrown for analyzed content when requested OutputType was not enabled for a given
         /// contact. For example, if an OutputType.Raw was requested for a contact that had `RedactedOnly`
-        /// Redaction policy set in Contact flow.
+        /// Redaction policy set in the flow.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
@@ -15686,7 +15692,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches the contact flows in an Amazon Connect instance, with optional filtering.
+        /// Searches the flows in an Amazon Connect instance, with optional filtering.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchContactFlows service method.</param>
         /// 
@@ -15718,7 +15724,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches the contact flows in an Amazon Connect instance, with optional filtering.
+        /// Searches the flows in an Amazon Connect instance, with optional filtering.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchContactFlows service method.</param>
         /// <param name="cancellationToken">
@@ -15828,7 +15834,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// 
+        /// Searches email address in an instance, with optional filtering.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchEmailAddresses service method.</param>
         /// 
@@ -15863,7 +15869,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// 
+        /// Searches email address in an instance, with optional filtering.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchEmailAddresses service method.</param>
         /// <param name="cancellationToken">
@@ -16855,7 +16861,16 @@ namespace Amazon.Connect
 
 
         /// <summary>
+        /// Send outbound email for outbound campaigns. For more information about outbound campaigns,
+        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html">Set
+        /// up Amazon Connect outbound campaigns</a>.
         /// 
+        ///  <note> 
+        /// <para>
+        /// Only the Amazon Connect outbound campaigns service principal is allowed to assume
+        /// a role in your account and call this API.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendOutboundEmail service method.</param>
         /// 
@@ -16893,7 +16908,16 @@ namespace Amazon.Connect
 
 
         /// <summary>
+        /// Send outbound email for outbound campaigns. For more information about outbound campaigns,
+        /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html">Set
+        /// up Amazon Connect outbound campaigns</a>.
         /// 
+        ///  <note> 
+        /// <para>
+        /// Only the Amazon Connect outbound campaigns service principal is allowed to assume
+        /// a role in your account and call this API.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendOutboundEmail service method.</param>
         /// <param name="cancellationToken">
@@ -16943,7 +16967,8 @@ namespace Amazon.Connect
         ///  <important> 
         /// <para>
         /// You may only use this API to upload attachments to an <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Amazon
-        /// Connect Case</a>.
+        /// Connect Case</a> or <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Amazon
+        /// Connect Email</a>. 
         /// </para>
         ///  </important>
         /// </summary>
@@ -16985,7 +17010,8 @@ namespace Amazon.Connect
         ///  <important> 
         /// <para>
         /// You may only use this API to upload attachments to an <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Amazon
-        /// Connect Case</a>.
+        /// Connect Case</a> or <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Amazon
+        /// Connect Email</a>. 
         /// </para>
         ///  </important>
         /// </summary>
@@ -17523,7 +17549,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// 
+        /// Creates an inbound email contact and initiates a flow to start the email contact for
+        /// the customer. Response of this API provides the ContactId of the email contact created.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartEmailContact service method.</param>
         /// 
@@ -17561,7 +17588,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// 
+        /// Creates an inbound email contact and initiates a flow to start the email contact for
+        /// the customer. Response of this API provides the ContactId of the email contact created.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartEmailContact service method.</param>
         /// <param name="cancellationToken">
@@ -17751,7 +17779,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// 
+        /// Initiates a flow to send an agent reply or outbound email contact (created from the
+        /// CreateContact API) to a customer.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartOutboundEmailContact service method.</param>
         /// 
@@ -17789,7 +17818,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// 
+        /// Initiates a flow to send an agent reply or outbound email contact (created from the
+        /// CreateContact API) to a customer.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartOutboundEmailContact service method.</param>
         /// <param name="cancellationToken">
@@ -18851,8 +18881,8 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// Some of the supported resource types are agents, routing profiles, queues, quick connects,
-        /// contact flows, agent statuses, hours of operation, phone numbers, security profiles,
-        /// and task templates. For a complete list, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tagging.html">Tagging
+        /// flows, agent statuses, hours of operation, phone numbers, security profiles, and task
+        /// templates. For a complete list, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tagging.html">Tagging
         /// resources in Amazon Connect</a>.
         /// </para>
         ///  
@@ -18897,8 +18927,8 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// Some of the supported resource types are agents, routing profiles, queues, quick connects,
-        /// contact flows, agent statuses, hours of operation, phone numbers, security profiles,
-        /// and task templates. For a complete list, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tagging.html">Tagging
+        /// flows, agent statuses, hours of operation, phone numbers, security profiles, and task
+        /// templates. For a complete list, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tagging.html">Tagging
         /// resources in Amazon Connect</a>.
         /// </para>
         ///  
@@ -19695,9 +19725,9 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// Use the <c>$SAVED</c> alias in the request to describe the <c>SAVED</c> content of
-        /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. Once a contact flow
-        /// is published, <c>$SAVED</c> needs to be supplied to view saved content that has not
-        /// been published.
+        /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. After a flow is
+        /// published, <c>$SAVED</c> needs to be supplied to view saved content that has not been
+        /// published.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContactFlowContent service method.</param>
@@ -19743,9 +19773,9 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// Use the <c>$SAVED</c> alias in the request to describe the <c>SAVED</c> content of
-        /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. Once a contact flow
-        /// is published, <c>$SAVED</c> needs to be supplied to view saved content that has not
-        /// been published.
+        /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. After a flow is
+        /// published, <c>$SAVED</c> needs to be supplied to view saved content that has not been
+        /// published.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContactFlowContent service method.</param>
@@ -19870,9 +19900,9 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// Use the <c>$SAVED</c> alias in the request to describe the <c>SAVED</c> content of
-        /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. Once a contact flow
-        /// is published, <c>$SAVED</c> needs to be supplied to view saved content that has not
-        /// been published.
+        /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. After a flow is
+        /// published, <c>$SAVED</c> needs to be supplied to view saved content that has not been
+        /// published.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContactFlowModuleContent service method.</param>
@@ -19913,9 +19943,9 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// Use the <c>$SAVED</c> alias in the request to describe the <c>SAVED</c> content of
-        /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. Once a contact flow
-        /// is published, <c>$SAVED</c> needs to be supplied to view saved content that has not
-        /// been published.
+        /// a Flow. For example, <c>arn:aws:.../contact-flow/{id}:$SAVED</c>. After a flow is
+        /// published, <c>$SAVED</c> needs to be supplied to view saved content that has not been
+        /// published.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContactFlowModuleContent service method.</param>
@@ -20316,7 +20346,9 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// 
+        /// Updates an email address metadata. For more information about email addresses, see
+        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-email-address1.html">Create
+        /// email addresses</a> in the Amazon Connect Administrator Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEmailAddressMetadata service method.</param>
         /// 
@@ -20354,7 +20386,9 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// 
+        /// Updates an email address metadata. For more information about email addresses, see
+        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-email-address1.html">Create
+        /// email addresses</a> in the Amazon Connect Administrator Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEmailAddressMetadata service method.</param>
         /// <param name="cancellationToken">
@@ -21624,7 +21658,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// 
+        /// Updates the outbound email address Id for a specified queue.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateQueueOutboundEmailConfig service method.</param>
         /// 
@@ -21633,7 +21667,7 @@ namespace Amazon.Connect
         /// You do not have sufficient permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ConditionalOperationFailedException">
-        /// 
+        /// A conditional check failed.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
@@ -21662,7 +21696,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// 
+        /// Updates the outbound email address Id for a specified queue.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateQueueOutboundEmailConfig service method.</param>
         /// <param name="cancellationToken">
@@ -21674,7 +21708,7 @@ namespace Amazon.Connect
         /// You do not have sufficient permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ConditionalOperationFailedException">
-        /// 
+        /// A conditional check failed.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.

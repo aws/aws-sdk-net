@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// 
+    /// The search criteria based on searchable segment attribute key and values to search
+    /// on.
     /// </summary>
     public partial class SearchableSegmentAttributesCriteria
     {
@@ -38,7 +39,10 @@ namespace Amazon.Connect.Model
         private List<string> _values = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
-        /// Gets and sets the property Key.
+        /// Gets and sets the property Key. 
+        /// <para>
+        /// The key containing a searchable segment attribute.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=64)]
         public string Key
@@ -54,7 +58,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Values.
+        /// Gets and sets the property Values. 
+        /// <para>
+        /// The list of values to search for within a searchable segment attribute.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=20)]
         public List<string> Values

@@ -32,7 +32,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Thrown for analyzed content when requested OutputType was not enabled for a given
     /// contact. For example, if an OutputType.Raw was requested for a contact that had `RedactedOnly`
-    /// Redaction policy set in Contact flow.
+    /// Redaction policy set in the flow.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

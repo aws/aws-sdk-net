@@ -31,7 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateContact operation.
-    /// 
+    /// Creates a new contact.
     /// </summary>
     public partial class CreateContactRequest : AmazonConnectRequest
     {
@@ -50,7 +50,16 @@ namespace Amazon.Connect.Model
         private UserInfo _userInfo;
 
         /// <summary>
-        /// Gets and sets the property Attributes.
+        /// Gets and sets the property Attributes. 
+        /// <para>
+        /// A custom key-value pair using an attribute map. The attributes are standard Amazon
+        /// Connect attributes, and can be accessed in flows just like any other contact attributes.
+        /// </para>
+        ///  
+        /// <para>
+        /// There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute
+        /// keys can include only alphanumeric, dash, and underscore characters.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Attributes
         {
@@ -65,7 +74,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Channel.
+        /// Gets and sets the property Channel. 
+        /// <para>
+        /// The channel for the contact
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public Channel Channel
@@ -81,7 +93,13 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ClientToken.
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
+        /// the request. If not provided, the Amazon Web Services SDK populates this field. For
+        /// more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+        /// retries safe with idempotent APIs</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=500)]
         public string ClientToken
@@ -97,7 +115,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// A description of the contact.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=4096)]
         public string Description
@@ -113,7 +134,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExpiryDurationInMinutes.
+        /// Gets and sets the property ExpiryDurationInMinutes. 
+        /// <para>
+        /// Number of minutes the contact will be active for before expiring
+        /// </para>
         /// </summary>
         public int ExpiryDurationInMinutes
         {
@@ -128,7 +152,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InitiateAs.
+        /// Gets and sets the property InitiateAs. 
+        /// <para>
+        /// Initial state of the contact when it's created
+        /// </para>
         /// </summary>
         public InitiateAs InitiateAs
         {
@@ -143,7 +170,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InitiationMethod.
+        /// Gets and sets the property InitiationMethod. 
+        /// <para>
+        /// Indicates how the contact was initiated.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public ContactInitiationMethod InitiationMethod
@@ -159,7 +189,11 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceId.
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
         public string InstanceId
@@ -175,7 +209,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of a the contact.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=1024)]
         public string Name
@@ -191,7 +228,12 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property References.
+        /// Gets and sets the property References. 
+        /// <para>
+        /// A formatted URL that is shown to an agent in the Contact Control Panel (CCP). Tasks
+        /// can have the following reference types at the time of creation: URL | NUMBER | STRING
+        /// | DATE | EMAIL | ATTACHMENT.
+        /// </para>
         /// </summary>
         public Dictionary<string, Reference> References
         {
@@ -206,7 +248,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RelatedContactId.
+        /// Gets and sets the property RelatedContactId. 
+        /// <para>
+        /// The identifier of the contact in this instance of Amazon Connect. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
         public string RelatedContactId
@@ -222,7 +267,28 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SegmentAttributes.
+        /// Gets and sets the property SegmentAttributes. 
+        /// <para>
+        /// A set of system defined key-value pairs stored on individual contact segments (unique
+        /// contact ID) using an attribute map. The attributes are standard Amazon Connect attributes.
+        /// They can be accessed in flows.
+        /// </para>
+        ///  
+        /// <para>
+        /// Attribute keys can include only alphanumeric, -, and _.
+        /// </para>
+        ///  
+        /// <para>
+        /// This field can be used to set Segment Contact Expiry as a duration in minutes.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// To set contact expiry, a ValueMap must be specified containing the integer number
+        /// of minutes the contact will be active for before expiring, with <c>SegmentAttributes</c>
+        /// like { <c> "connect:ContactExpiry": {"ValueMap" : { "ExpiryDuration": { "ValueInteger":
+        /// 135}}}}</c>. 
+        /// </para>
+        ///  </note>
         /// </summary>
         public Dictionary<string, SegmentAttributeValue> SegmentAttributes
         {
@@ -237,7 +303,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UserInfo.
+        /// Gets and sets the property UserInfo. 
+        /// <para>
+        /// User details for the contact
+        /// </para>
         /// </summary>
         public UserInfo UserInfo
         {

@@ -42,7 +42,10 @@ namespace Amazon.Connect.Model
         private string _value;
 
         /// <summary>
-        /// Gets and sets the property Arn.
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the reference
+        /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=256)]
         public string Arn
@@ -58,7 +61,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// Status of the attachment reference type.
+        /// </para>
         /// </summary>
         public ReferenceStatus Status
         {
@@ -73,7 +79,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StatusReason.
+        /// Gets and sets the property StatusReason. 
+        /// <para>
+        /// Relevant details why the reference was not successfully created.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
         public string StatusReason

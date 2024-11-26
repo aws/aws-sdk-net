@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// 
+    /// Information about the campaign.
     /// </summary>
     public partial class SourceCampaign
     {
@@ -38,7 +38,10 @@ namespace Amazon.Connect.Model
         private string _outboundRequestId;
 
         /// <summary>
-        /// Gets and sets the property CampaignId.
+        /// Gets and sets the property CampaignId. 
+        /// <para>
+        /// A unique identifier for a campaign.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public string CampaignId
@@ -54,7 +57,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OutboundRequestId.
+        /// Gets and sets the property OutboundRequestId. 
+        /// <para>
+        /// A unique identifier for a each request part of same campaign.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
         public string OutboundRequestId

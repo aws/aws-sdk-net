@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// The search criteria to be used to return contact flows.
+    /// The search criteria to be used to return flows.
     /// </summary>
     public partial class ContactFlowSearchCriteria
     {

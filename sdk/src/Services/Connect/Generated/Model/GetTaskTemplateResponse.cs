@@ -256,7 +256,11 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SelfAssignFlowId.
+        /// Gets and sets the property SelfAssignFlowId. 
+        /// <para>
+        /// ContactFlowId for the flow that will be run if this template is used to create a self-assigned
+        /// task
+        /// </para>
         /// </summary>
         [AWSProperty(Max=500)]
         public string SelfAssignFlowId

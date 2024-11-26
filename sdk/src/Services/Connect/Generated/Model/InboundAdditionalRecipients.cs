@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// 
+    /// The additional TO CC recipients information of inbound email.
     /// </summary>
     public partial class InboundAdditionalRecipients
     {
@@ -38,7 +38,10 @@ namespace Amazon.Connect.Model
         private List<EmailAddressInfo> _toAddresses = AWSConfigs.InitializeCollections ? new List<EmailAddressInfo>() : null;
 
         /// <summary>
-        /// Gets and sets the property CcAddresses.
+        /// Gets and sets the property CcAddresses. 
+        /// <para>
+        /// The additional recipients information present in cc list.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<EmailAddressInfo> CcAddresses
@@ -54,7 +57,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ToAddresses.
+        /// Gets and sets the property ToAddresses. 
+        /// <para>
+        /// The additional recipients information present in to list.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<EmailAddressInfo> ToAddresses

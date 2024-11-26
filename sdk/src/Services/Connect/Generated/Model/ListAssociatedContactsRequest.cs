@@ -31,7 +31,8 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAssociatedContacts operation.
-    /// 
+    /// Provides information about contact tree, a list of associated contacts with a unique
+    /// identifier.
     /// </summary>
     public partial class ListAssociatedContactsRequest : AmazonConnectRequest
     {
@@ -41,7 +42,10 @@ namespace Amazon.Connect.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property ContactId.
+        /// Gets and sets the property ContactId. 
+        /// <para>
+        /// The identifier of the contact in this instance of Amazon Connect. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string ContactId
@@ -57,7 +61,11 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceId.
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
         public string InstanceId
@@ -73,7 +81,18 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to return per page.
+        /// </para>
+        ///  
+        /// <para>
+        /// The maximum number of results to return per page. The default MaxResult size is 25.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Range: Minimum value of 1. Maximum value of 100.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public int MaxResults
@@ -89,7 +108,11 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token for the next set of results. Use the value returned in the previous response
+        /// in the next request to retrieve the next set of results.
+        /// </para>
         /// </summary>
         public string NextToken
         {

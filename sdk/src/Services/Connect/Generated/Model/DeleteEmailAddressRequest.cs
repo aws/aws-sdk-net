@@ -31,7 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteEmailAddress operation.
-    /// 
+    /// Deletes email address from the specified Amazon Connect instance.
     /// </summary>
     public partial class DeleteEmailAddressRequest : AmazonConnectRequest
     {
@@ -39,7 +39,10 @@ namespace Amazon.Connect.Model
         private string _instanceId;
 
         /// <summary>
-        /// Gets and sets the property EmailAddressId.
+        /// Gets and sets the property EmailAddressId. 
+        /// <para>
+        /// The identifier of the email address.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=500)]
         public string EmailAddressId
@@ -55,7 +58,11 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceId.
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
         public string InstanceId

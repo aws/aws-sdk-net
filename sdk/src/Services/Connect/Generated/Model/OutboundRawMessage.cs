@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// 
+    /// Information about the raw email body content.
     /// </summary>
     public partial class OutboundRawMessage
     {
@@ -39,7 +39,10 @@ namespace Amazon.Connect.Model
         private string _subject;
 
         /// <summary>
-        /// Gets and sets the property Body.
+        /// Gets and sets the property Body. 
+        /// <para>
+        /// The email message body.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=5242880)]
         public string Body
@@ -55,7 +58,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ContentType.
+        /// Gets and sets the property ContentType. 
+        /// <para>
+        /// Type of content, that is, <c>text/plain</c> or <c>text/html</c>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
         public string ContentType
@@ -71,7 +77,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Subject.
+        /// Gets and sets the property Subject. 
+        /// <para>
+        /// The email subject.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=998)]
         public string Subject

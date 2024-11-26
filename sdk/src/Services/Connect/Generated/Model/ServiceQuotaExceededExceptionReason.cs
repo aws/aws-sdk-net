@@ -30,14 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// 
+    /// The reason for the exception.
     /// </summary>
     public partial class ServiceQuotaExceededExceptionReason
     {
         private AttachedFileServiceQuotaExceededExceptionReason _attachedFileServiceQuotaExceededExceptionReason;
 
         /// <summary>
-        /// Gets and sets the property AttachedFileServiceQuotaExceededExceptionReason.
+        /// Gets and sets the property AttachedFileServiceQuotaExceededExceptionReason. 
+        /// <para>
+        /// Total file size of all files or total number of files exceeds the service quota
+        /// </para>
         /// </summary>
         public AttachedFileServiceQuotaExceededExceptionReason AttachedFileServiceQuotaExceededExceptionReason
         {

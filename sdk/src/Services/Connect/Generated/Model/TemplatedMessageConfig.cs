@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// 
+    /// Information about template message configuration.
     /// </summary>
     public partial class TemplatedMessageConfig
     {
@@ -39,7 +39,11 @@ namespace Amazon.Connect.Model
         private TemplateAttributes _templateAttributes;
 
         /// <summary>
-        /// Gets and sets the property KnowledgeBaseId.
+        /// Gets and sets the property KnowledgeBaseId. 
+        /// <para>
+        /// The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot
+        /// contain the ARN.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=500)]
         public string KnowledgeBaseId
@@ -55,7 +59,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MessageTemplateId.
+        /// Gets and sets the property MessageTemplateId. 
+        /// <para>
+        /// The identifier of the message template Id.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=500)]
         public string MessageTemplateId
@@ -71,7 +78,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TemplateAttributes.
+        /// Gets and sets the property TemplateAttributes. 
+        /// <para>
+        /// Information about template attributes, that is, CustomAttributes or CustomerProfileAttributes.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public TemplateAttributes TemplateAttributes

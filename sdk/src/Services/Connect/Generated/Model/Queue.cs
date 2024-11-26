@@ -177,7 +177,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OutboundEmailConfig.
+        /// Gets and sets the property OutboundEmailConfig. 
+        /// <para>
+        /// The outbound email address ID for a specified queue.
+        /// </para>
         /// </summary>
         public OutboundEmailConfig OutboundEmailConfig
         {

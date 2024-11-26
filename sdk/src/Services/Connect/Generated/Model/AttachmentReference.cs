@@ -41,7 +41,10 @@ namespace Amazon.Connect.Model
         private string _value;
 
         /// <summary>
-        /// Gets and sets the property Arn.
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the attachment reference.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=256)]
         public string Arn

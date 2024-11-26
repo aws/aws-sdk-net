@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// 
+    /// Contains information about a source or destination email address
     /// </summary>
     public partial class EmailAddressInfo
     {
@@ -38,7 +38,10 @@ namespace Amazon.Connect.Model
         private string _emailAddress;
 
         /// <summary>
-        /// Gets and sets the property DisplayName.
+        /// Gets and sets the property DisplayName. 
+        /// <para>
+        /// The display name of email address.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=256)]
         public string DisplayName
@@ -54,7 +57,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EmailAddress.
+        /// Gets and sets the property EmailAddress. 
+        /// <para>
+        /// The email address with the instance, in [^\s@]+@[^\s@]+\.[^\s@]+ format.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=255)]
         public string EmailAddress

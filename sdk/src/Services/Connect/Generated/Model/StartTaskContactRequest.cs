@@ -155,10 +155,10 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property ContactFlowId. 
         /// <para>
         /// The identifier of the flow for initiating the tasks. To see the ContactFlowId in the
-        /// Amazon Connect admin website, on the navigation menu go to <b>Routing</b>, <b>Contact
-        /// Flows</b>. Choose the flow. On the flow page, under the name of the flow, choose <b>Show
-        /// additional flow information</b>. The ContactFlowId is the last part of the ARN, shown
-        /// here in bold: 
+        /// Amazon Connect admin website, on the navigation menu go to <b>Routing</b>, <b>Flows</b>.
+        /// Choose the flow. On the flow page, under the name of the flow, choose <b>Show additional
+        /// flow information</b>. The ContactFlowId is the last part of the ARN, shown here in
+        /// bold: 
         /// </para>
         ///  
         /// <para>
@@ -347,7 +347,35 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SegmentAttributes.
+        /// Gets and sets the property SegmentAttributes. 
+        /// <para>
+        /// A set of system defined key-value pairs stored on individual contact segments (unique
+        /// contact ID) using an attribute map. The attributes are standard Amazon Connect attributes.
+        /// They can be accessed in flows.
+        /// </para>
+        ///  
+        /// <para>
+        /// Attribute keys can include only alphanumeric, -, and _.
+        /// </para>
+        ///  
+        /// <para>
+        /// This field can be used to set Contact Expiry as a duration in minutes and set a UserId
+        /// for the User who created a task.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// To set contact expiry, a ValueMap must be specified containing the integer number
+        /// of minutes the contact will be active for before expiring, with <c>SegmentAttributes</c>
+        /// like { <c> "connect:ContactExpiry": {"ValueMap" : { "ExpiryDuration": { "ValueInteger":
+        /// 135}}}}</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To set the created by user, a valid AgentResourceId must be supplied, with <c>SegmentAttributes</c>
+        /// like { <c>"connect:CreatedByUser" { "ValueString": "arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/agent/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"}}}</c>.
+        /// 
+        /// </para>
+        ///  </note>
         /// </summary>
         public Dictionary<string, SegmentAttributeValue> SegmentAttributes
         {

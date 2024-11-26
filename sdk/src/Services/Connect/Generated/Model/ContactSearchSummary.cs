@@ -255,7 +255,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SegmentAttributes.
+        /// Gets and sets the property SegmentAttributes. 
+        /// <para>
+        /// Set of segment attributes for a contact.
+        /// </para>
         /// </summary>
         public Dictionary<string, ContactSearchSummarySegmentAttributeValue> SegmentAttributes
         {

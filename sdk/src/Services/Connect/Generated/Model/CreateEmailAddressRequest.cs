@@ -31,7 +31,9 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateEmailAddress operation.
-    /// 
+    /// Create new email address in the specified Amazon Connect instance. For more information
+    /// about email addresses, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-email-address1.html">Create
+    /// email addresses</a> in the Amazon Connect Administrator Guide.
     /// </summary>
     public partial class CreateEmailAddressRequest : AmazonConnectRequest
     {
@@ -43,7 +45,13 @@ namespace Amazon.Connect.Model
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
-        /// Gets and sets the property ClientToken.
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
+        /// the request. If not provided, the Amazon Web Services SDK populates this field. For
+        /// more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+        /// retries safe with idempotent APIs</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=500)]
         public string ClientToken
@@ -59,7 +67,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description of the email address.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=4096)]
         public string Description
@@ -75,7 +86,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DisplayName.
+        /// Gets and sets the property DisplayName. 
+        /// <para>
+        /// The display name of email address
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=256)]
         public string DisplayName
@@ -91,7 +105,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EmailAddress.
+        /// Gets and sets the property EmailAddress. 
+        /// <para>
+        /// The email address with the instance, in [^\s@]+@[^\s@]+\.[^\s@]+ format.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=255)]
         public string EmailAddress
@@ -107,7 +124,11 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceId.
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
         public string InstanceId
@@ -123,7 +144,11 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags used to organize, track, or control access for this resource. For example,
+        /// { "Tags": {"key1":"value1", "key2":"value2"} }.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public Dictionary<string, string> Tags

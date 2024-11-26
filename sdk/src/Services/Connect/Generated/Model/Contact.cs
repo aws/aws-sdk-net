@@ -72,7 +72,10 @@ namespace Amazon.Connect.Model
         private WisdomInfo _wisdomInfo;
 
         /// <summary>
-        /// Gets and sets the property AdditionalEmailRecipients.
+        /// Gets and sets the property AdditionalEmailRecipients. 
+        /// <para>
+        /// List of additional email addresses for an email contact.
+        /// </para>
         /// </summary>
         public AdditionalEmailRecipients AdditionalEmailRecipients
         {
@@ -193,7 +196,11 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ContactAssociationId.
+        /// Gets and sets the property ContactAssociationId. 
+        /// <para>
+        /// This is the root contactId which is used as a unique identifier for all subsequent
+        /// contacts in a contact tree.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
         public string ContactAssociationId
@@ -227,7 +234,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CustomerEndpoint.
+        /// Gets and sets the property CustomerEndpoint. 
+        /// <para>
+        /// The customer or external third party participant endpoint.
+        /// </para>
         /// </summary>
         public EndpointInfo CustomerEndpoint
         {
@@ -645,7 +655,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SystemEndpoint.
+        /// Gets and sets the property SystemEndpoint. 
+        /// <para>
+        /// The system endpoint. For <c>INBOUND</c>, this is the phone number or email address
+        /// that the customer dialed. For <c>OUTBOUND</c> and <c>EXTERNAL_OUTBOUND</c>, this is
+        /// the outbound caller ID number assigned to the outbound queue that is used to dial
+        /// the customer. For callback, this shows up as Softphone for calls handled by agents
+        /// with softphone.
+        /// </para>
         /// </summary>
         public EndpointInfo SystemEndpoint
         {

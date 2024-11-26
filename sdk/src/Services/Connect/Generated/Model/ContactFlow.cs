@@ -39,7 +39,6 @@ namespace Amazon.Connect.Model
         private string _description;
         private string _flowContentSha256;
         private string _id;
-        private bool? _isDefault;
         private string _lastModifiedRegion;
         private DateTime? _lastModifiedTime;
         private string _name;
@@ -148,28 +147,9 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IsDefault. 
-        /// <para>
-        /// Amazon Connect includes a set of default flows that have already been published. It
-        /// uses them to power your contact center.
-        /// </para>
-        /// </summary>
-        public bool IsDefault
-        {
-            get { return this._isDefault.GetValueOrDefault(); }
-            set { this._isDefault = value; }
-        }
-
-        // Check to see if IsDefault property is set
-        internal bool IsSetIsDefault()
-        {
-            return this._isDefault.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property LastModifiedRegion. 
         /// <para>
-        /// The region in which the contact flow was last modified
+        /// The region in which the flow was last modified
         /// </para>
         /// </summary>
         public string LastModifiedRegion
@@ -187,7 +167,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// The time at which the contact flow was last modified.
+        /// The time at which the flow was last modified.
         /// </para>
         /// </summary>
         public DateTime LastModifiedTime
@@ -242,7 +222,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the contact flow.
+        /// The status of the flow.
         /// </para>
         /// </summary>
         public ContactFlowStatus Status

@@ -31,7 +31,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchEmailAddresses operation.
-    /// 
+    /// Searches email address in an instance, with optional filtering.
     /// </summary>
     public partial class SearchEmailAddressesRequest : AmazonConnectRequest
     {
@@ -42,7 +42,11 @@ namespace Amazon.Connect.Model
         private EmailAddressSearchFilter _searchFilter;
 
         /// <summary>
-        /// Gets and sets the property InstanceId.
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
         public string InstanceId
@@ -58,7 +62,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to return per page.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public int MaxResults
@@ -74,7 +81,11 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token for the next set of results. Use the value returned in the previous response
+        /// in the next request to retrieve the next set of results.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2500)]
         public string NextToken
@@ -90,7 +101,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SearchCriteria.
+        /// Gets and sets the property SearchCriteria. 
+        /// <para>
+        /// The search criteria to be used to return email addresses.
+        /// </para>
         /// </summary>
         public EmailAddressSearchCriteria SearchCriteria
         {
@@ -105,7 +119,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SearchFilter.
+        /// Gets and sets the property SearchFilter. 
+        /// <para>
+        /// Filters to be applied to search results.
+        /// </para>
         /// </summary>
         public EmailAddressSearchFilter SearchFilter
         {

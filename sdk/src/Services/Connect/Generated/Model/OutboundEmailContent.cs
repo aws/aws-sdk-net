@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// 
+    /// Information about email body content.
     /// </summary>
     public partial class OutboundEmailContent
     {
@@ -39,7 +39,10 @@ namespace Amazon.Connect.Model
         private TemplatedMessageConfig _templatedMessageConfig;
 
         /// <summary>
-        /// Gets and sets the property MessageSourceType.
+        /// Gets and sets the property MessageSourceType. 
+        /// <para>
+        /// The message source type, that is, <c>RAW</c> or <c>TEMPLATE</c>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public OutboundMessageSourceType MessageSourceType
@@ -55,7 +58,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RawMessage.
+        /// Gets and sets the property RawMessage. 
+        /// <para>
+        /// The raw email body content.
+        /// </para>
         /// </summary>
         public OutboundRawMessage RawMessage
         {
@@ -70,7 +76,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TemplatedMessageConfig.
+        /// Gets and sets the property TemplatedMessageConfig. 
+        /// <para>
+        /// Information about template message configuration.
+        /// </para>
         /// </summary>
         public TemplatedMessageConfig TemplatedMessageConfig
         {

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// 
+    /// Information about the template attributes.
     /// </summary>
     public partial class TemplateAttributes
     {
@@ -38,7 +38,12 @@ namespace Amazon.Connect.Model
         private string _customerProfileAttributes;
 
         /// <summary>
-        /// Gets and sets the property CustomAttributes.
+        /// Gets and sets the property CustomAttributes. 
+        /// <para>
+        /// An object that specifies the custom attributes values to use for variables in the
+        /// message template. This object contains different categories of key-value pairs. Each
+        /// key defines a variable or placeholder in the message template. 
+        /// </para>
         /// </summary>
         public Dictionary<string, string> CustomAttributes
         {
@@ -53,7 +58,12 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CustomerProfileAttributes.
+        /// Gets and sets the property CustomerProfileAttributes. 
+        /// <para>
+        /// An object that specifies the customer profile attributes values to use for variables
+        /// in the message template. This object contains different categories of key-value pairs.
+        /// Each key defines a variable or placeholder in the message template. 
+        /// </para>
         /// </summary>
         public string CustomerProfileAttributes
         {

@@ -31,7 +31,8 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the StartOutboundEmailContact operation.
-    /// 
+    /// Initiates a flow to send an agent reply or outbound email contact (created from the
+    /// CreateContact API) to a customer.
     /// </summary>
     public partial class StartOutboundEmailContactRequest : AmazonConnectRequest
     {
@@ -44,7 +45,10 @@ namespace Amazon.Connect.Model
         private string _instanceId;
 
         /// <summary>
-        /// Gets and sets the property AdditionalRecipients.
+        /// Gets and sets the property AdditionalRecipients. 
+        /// <para>
+        /// The addtional recipients address of email in CC.
+        /// </para>
         /// </summary>
         public OutboundAdditionalRecipients AdditionalRecipients
         {
@@ -59,7 +63,13 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ClientToken.
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
+        /// the request. If not provided, the Amazon Web Services SDK populates this field. For
+        /// more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+        /// retries safe with idempotent APIs</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=500)]
         public string ClientToken
@@ -75,7 +85,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ContactId.
+        /// Gets and sets the property ContactId. 
+        /// <para>
+        /// The identifier of the contact in this instance of Amazon Connect. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string ContactId
@@ -91,7 +104,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DestinationEmailAddress.
+        /// Gets and sets the property DestinationEmailAddress. 
+        /// <para>
+        /// The email address of the customer.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public EmailAddressInfo DestinationEmailAddress
@@ -107,7 +123,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EmailMessage.
+        /// Gets and sets the property EmailMessage. 
+        /// <para>
+        /// The email message body to be sent to the newly created email.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public OutboundEmailContent EmailMessage
@@ -123,7 +142,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FromEmailAddress.
+        /// Gets and sets the property FromEmailAddress. 
+        /// <para>
+        /// The email address associated with the instance.
+        /// </para>
         /// </summary>
         public EmailAddressInfo FromEmailAddress
         {
@@ -138,7 +160,11 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceId.
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
         public string InstanceId

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// A summary of a contact flow version's metadata.
+    /// A summary of a flow version's metadata.
     /// </summary>
     public partial class ContactFlowVersionSummary
     {

@@ -31,7 +31,16 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the SendOutboundEmail operation.
+    /// Send outbound email for outbound campaigns. For more information about outbound campaigns,
+    /// see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-outbound-campaigns.html">Set
+    /// up Amazon Connect outbound campaigns</a>.
     /// 
+    ///  <note> 
+    /// <para>
+    /// Only the Amazon Connect outbound campaigns service principal is allowed to assume
+    /// a role in your account and call this API.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class SendOutboundEmailRequest : AmazonConnectRequest
     {
@@ -45,7 +54,10 @@ namespace Amazon.Connect.Model
         private TrafficType _trafficType;
 
         /// <summary>
-        /// Gets and sets the property AdditionalRecipients.
+        /// Gets and sets the property AdditionalRecipients. 
+        /// <para>
+        /// The additional recipients address of the email in CC.
+        /// </para>
         /// </summary>
         public OutboundAdditionalRecipients AdditionalRecipients
         {
@@ -60,7 +72,13 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ClientToken.
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
+        /// the request. If not provided, the Amazon Web Services SDK populates this field. For
+        /// more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+        /// retries safe with idempotent APIs</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=500)]
         public string ClientToken
@@ -76,7 +94,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DestinationEmailAddress.
+        /// Gets and sets the property DestinationEmailAddress. 
+        /// <para>
+        /// The email address to send the email to.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public EmailAddressInfo DestinationEmailAddress
@@ -92,7 +113,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EmailMessage.
+        /// Gets and sets the property EmailMessage. 
+        /// <para>
+        /// The email message body to be sent to the newly created email.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public OutboundEmailContent EmailMessage
@@ -108,7 +132,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FromEmailAddress.
+        /// Gets and sets the property FromEmailAddress. 
+        /// <para>
+        /// The email address to be used for sending email.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public EmailAddressInfo FromEmailAddress
@@ -124,7 +151,11 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceId.
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
         public string InstanceId
@@ -140,7 +171,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceCampaign.
+        /// Gets and sets the property SourceCampaign. 
+        /// <para>
+        /// A Campaign object need for Campaign traffic type.
+        /// </para>
         /// </summary>
         public SourceCampaign SourceCampaign
         {
@@ -155,7 +189,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TrafficType.
+        /// Gets and sets the property TrafficType. 
+        /// <para>
+        /// Denotes the class of traffic.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public TrafficType TrafficType

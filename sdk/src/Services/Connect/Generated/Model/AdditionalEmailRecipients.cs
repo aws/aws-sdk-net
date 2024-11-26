@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// 
+    /// List of additional email addresses for an email contact.
     /// </summary>
     public partial class AdditionalEmailRecipients
     {
@@ -38,7 +38,10 @@ namespace Amazon.Connect.Model
         private List<EmailRecipient> _toList = AWSConfigs.InitializeCollections ? new List<EmailRecipient>() : null;
 
         /// <summary>
-        /// Gets and sets the property CcList.
+        /// Gets and sets the property CcList. 
+        /// <para>
+        /// List of additional CC email recipients for an email contact.
+        /// </para>
         /// </summary>
         public List<EmailRecipient> CcList
         {
@@ -53,7 +56,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ToList.
+        /// Gets and sets the property ToList. 
+        /// <para>
+        /// List of additional TO email recipients for an email contact.
+        /// </para>
         /// </summary>
         public List<EmailRecipient> ToList
         {

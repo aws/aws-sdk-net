@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// The search criteria based on user-defned contact attribute key and values to search
+    /// The search criteria based on user-defined contact attribute key and values to search
     /// on.
     /// </summary>
     public partial class SearchableContactAttributesCriteria

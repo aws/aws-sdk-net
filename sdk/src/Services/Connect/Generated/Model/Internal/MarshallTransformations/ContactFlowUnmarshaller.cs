@@ -96,12 +96,6 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("IsDefault", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.IsDefault = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("LastModifiedRegion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

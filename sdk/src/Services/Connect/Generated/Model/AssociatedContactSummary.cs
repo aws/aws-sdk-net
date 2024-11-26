@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// 
+    /// Contact summary of a contact in contact tree associated with unique identifier.
     /// </summary>
     public partial class AssociatedContactSummary
     {
@@ -45,7 +45,10 @@ namespace Amazon.Connect.Model
         private string _relatedContactId;
 
         /// <summary>
-        /// Gets and sets the property Channel.
+        /// Gets and sets the property Channel. 
+        /// <para>
+        /// How the contact reached your contact center.
+        /// </para>
         /// </summary>
         public Channel Channel
         {
@@ -60,7 +63,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ContactArn.
+        /// Gets and sets the property ContactArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the contact
+        /// </para>
         /// </summary>
         public string ContactArn
         {
@@ -75,7 +81,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ContactId.
+        /// Gets and sets the property ContactId. 
+        /// <para>
+        /// The identifier of the contact in this instance of Amazon Connect. 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
         public string ContactId
@@ -91,7 +100,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DisconnectTimestamp.
+        /// Gets and sets the property DisconnectTimestamp. 
+        /// <para>
+        /// The timestamp when the customer endpoint disconnected from Amazon Connect.
+        /// </para>
         /// </summary>
         public DateTime DisconnectTimestamp
         {
@@ -106,7 +118,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InitialContactId.
+        /// Gets and sets the property InitialContactId. 
+        /// <para>
+        /// If this contact is related to other contacts, this is the ID of the initial contact.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
         public string InitialContactId
@@ -122,7 +137,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InitiationMethod.
+        /// Gets and sets the property InitiationMethod. 
+        /// <para>
+        /// Indicates how the contact was initiated.
+        /// </para>
         /// </summary>
         public ContactInitiationMethod InitiationMethod
         {
@@ -137,7 +155,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InitiationTimestamp.
+        /// Gets and sets the property InitiationTimestamp. 
+        /// <para>
+        /// The date and time this contact was initiated, in UTC time.
+        /// </para>
         /// </summary>
         public DateTime InitiationTimestamp
         {
@@ -152,7 +173,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PreviousContactId.
+        /// Gets and sets the property PreviousContactId. 
+        /// <para>
+        /// If this contact is not the first contact, this is the ID of the previous contact.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
         public string PreviousContactId
@@ -168,7 +192,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RelatedContactId.
+        /// Gets and sets the property RelatedContactId. 
+        /// <para>
+        /// The contactId that is related to this contact.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
         public string RelatedContactId

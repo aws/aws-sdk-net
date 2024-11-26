@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// 
+    /// Filters to be applied to search results.
     /// </summary>
     public partial class EmailAddressSearchFilter
     {

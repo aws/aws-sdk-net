@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// 
+    /// Information about email body content.
     /// </summary>
     public partial class InboundEmailContent
     {
@@ -38,7 +38,10 @@ namespace Amazon.Connect.Model
         private InboundRawMessage _rawMessage;
 
         /// <summary>
-        /// Gets and sets the property MessageSourceType.
+        /// Gets and sets the property MessageSourceType. 
+        /// <para>
+        /// The message source type, that is, <c>RAW</c>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public InboundMessageSourceType MessageSourceType
@@ -54,7 +57,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RawMessage.
+        /// Gets and sets the property RawMessage. 
+        /// <para>
+        /// The raw email body content.
+        /// </para>
         /// </summary>
         public InboundRawMessage RawMessage
         {

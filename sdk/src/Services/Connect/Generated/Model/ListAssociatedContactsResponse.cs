@@ -38,7 +38,11 @@ namespace Amazon.Connect.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property ContactSummaryList.
+        /// Gets and sets the property ContactSummaryList. 
+        /// <para>
+        /// List of the contact summary for all the contacts in contact tree associated with unique
+        /// identifier.
+        /// </para>
         /// </summary>
         public List<AssociatedContactSummary> ContactSummaryList
         {
@@ -53,7 +57,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// If there are additional results, this is the token for the next set of results.
+        /// </para>
         /// </summary>
         public string NextToken
         {

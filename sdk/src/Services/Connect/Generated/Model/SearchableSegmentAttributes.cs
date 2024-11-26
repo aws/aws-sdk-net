@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// 
+    /// The search criteria based on searchable segment attributes of a contact
     /// </summary>
     public partial class SearchableSegmentAttributes
     {
@@ -38,7 +38,10 @@ namespace Amazon.Connect.Model
         private SearchContactsMatchType _matchType;
 
         /// <summary>
-        /// Gets and sets the property Criteria.
+        /// Gets and sets the property Criteria. 
+        /// <para>
+        /// The list of criteria based on searchable segment attributes.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=15)]
         public List<SearchableSegmentAttributesCriteria> Criteria
@@ -54,7 +57,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MatchType.
+        /// Gets and sets the property MatchType. 
+        /// <para>
+        /// The match type combining search criteria using multiple searchable segment attributes.
+        /// </para>
         /// </summary>
         public SearchContactsMatchType MatchType
         {

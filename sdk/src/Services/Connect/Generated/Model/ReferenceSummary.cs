@@ -101,7 +101,11 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EmailMessage.
+        /// Gets and sets the property EmailMessage. 
+        /// <para>
+        /// Information about the reference when the referenceType is <c>EMAIL_MESSAGE</c>. Otherwise,
+        /// null.
+        /// </para>
         /// </summary>
         public EmailMessageReference EmailMessage
         {

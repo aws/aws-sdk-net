@@ -30,14 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// 
+    /// The additional recipients information of outbound email.
     /// </summary>
     public partial class OutboundAdditionalRecipients
     {
         private List<EmailAddressInfo> _ccEmailAddresses = AWSConfigs.InitializeCollections ? new List<EmailAddressInfo>() : null;
 
         /// <summary>
-        /// Gets and sets the property CcEmailAddresses.
+        /// Gets and sets the property CcEmailAddresses. 
+        /// <para>
+        /// The additional CC email address recipients information.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<EmailAddressInfo> CcEmailAddresses

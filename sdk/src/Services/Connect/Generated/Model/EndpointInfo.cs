@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// 
+    /// Information about the endpoint.
     /// </summary>
     public partial class EndpointInfo
     {
@@ -39,7 +39,10 @@ namespace Amazon.Connect.Model
         private EndpointType _type;
 
         /// <summary>
-        /// Gets and sets the property Address.
+        /// Gets and sets the property Address. 
+        /// <para>
+        /// Address of the endpoint.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
         public string Address
@@ -55,7 +58,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DisplayName.
+        /// Gets and sets the property DisplayName. 
+        /// <para>
+        /// Display name of the endpoint.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
         public string DisplayName
@@ -71,7 +77,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type.
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// Type of endpoint.
+        /// </para>
         /// </summary>
         public EndpointType Type
         {

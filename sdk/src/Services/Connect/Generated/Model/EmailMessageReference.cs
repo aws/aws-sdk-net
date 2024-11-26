@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// 
+    /// Information about the reference when the referenceType is <c>EMAIL_MESSAGE</c>. Otherwise,
+    /// null.
     /// </summary>
     public partial class EmailMessageReference
     {
@@ -38,7 +39,10 @@ namespace Amazon.Connect.Model
         private string _name;
 
         /// <summary>
-        /// Gets and sets the property Arn.
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the email message reference
+        /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=256)]
         public string Arn
@@ -54,7 +58,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the email message reference
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]
         public string Name

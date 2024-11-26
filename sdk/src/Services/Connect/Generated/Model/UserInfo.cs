@@ -30,14 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// 
+    /// The user details for the contact.
     /// </summary>
     public partial class UserInfo
     {
         private string _userId;
 
         /// <summary>
-        /// Gets and sets the property UserId.
+        /// Gets and sets the property UserId. 
+        /// <para>
+        /// The user identifier for the contact.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
         public string UserId

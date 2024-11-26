@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// 
+    /// Information about the email attachment files.
     /// </summary>
     public partial class EmailAttachment
     {
@@ -38,7 +38,10 @@ namespace Amazon.Connect.Model
         private string _s3Url;
 
         /// <summary>
-        /// Gets and sets the property FileName.
+        /// Gets and sets the property FileName. 
+        /// <para>
+        /// A case-sensitive name of the attached file being uploaded.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string FileName
@@ -54,7 +57,10 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property S3Url.
+        /// Gets and sets the property S3Url. 
+        /// <para>
+        /// The pre-signed URLs for the S3 bucket where the email attachment is stored.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2000)]
         public string S3Url

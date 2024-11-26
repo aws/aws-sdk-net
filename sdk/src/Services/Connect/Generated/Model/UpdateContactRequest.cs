@@ -151,7 +151,25 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SegmentAttributes.
+        /// Gets and sets the property SegmentAttributes. 
+        /// <para>
+        /// A set of system defined key-value pairs stored on individual contact segments (unique
+        /// contact ID) using an attribute map. The attributes are standard Amazon Connect attributes.
+        /// They can be accessed in flows.
+        /// </para>
+        ///  
+        /// <para>
+        /// Attribute keys can include only alphanumeric, -, and _.
+        /// </para>
+        ///  
+        /// <para>
+        /// This field can be used to show channel subtype, such as <c>connect:Guide</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Currently Contact Expiry is the only segment attribute which can be updated by using
+        /// the UpdateContact API.
+        /// </para>
         /// </summary>
         public Dictionary<string, SegmentAttributeValue> SegmentAttributes
         {
