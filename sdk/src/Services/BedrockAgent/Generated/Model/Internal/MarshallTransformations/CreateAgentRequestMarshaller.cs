@@ -96,6 +96,17 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.CustomerEncryptionKeyArn);
                 }
 
+                if(publicRequest.IsSetCustomOrchestration())
+                {
+                    context.Writer.WritePropertyName("customOrchestration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CustomOrchestrationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CustomOrchestration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("description");
@@ -140,6 +151,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.MemoryConfiguration, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetOrchestrationType())
+                {
+                    context.Writer.WritePropertyName("orchestrationType");
+                    context.Writer.Write(publicRequest.OrchestrationType);
                 }
 
                 if(publicRequest.IsSetPromptOverrideConfiguration())

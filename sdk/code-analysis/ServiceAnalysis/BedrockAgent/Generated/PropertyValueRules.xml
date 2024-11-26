@@ -2201,6 +2201,12 @@
     <pattern>^.*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.OrchestrationExecutor.Lambda</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_\.]+(:(\$LATEST|[a-zA-Z0-9-_]+))?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgent.Model.ParameterDetail.Description</property>
     <min>1</min>
     <max>500</max>
