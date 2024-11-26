@@ -97,6 +97,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         private string _memoryId;
         private string _sessionId;
         private SessionState _sessionState;
+        private StreamingConfigurations _streamingConfigurations;
 
         /// <summary>
         /// Gets and sets the property AgentAliasId. 
@@ -262,6 +263,24 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetSessionState()
         {
             return this._sessionState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamingConfigurations. 
+        /// <para>
+        ///  Specifies the configurations for streaming. 
+        /// </para>
+        /// </summary>
+        public StreamingConfigurations StreamingConfigurations
+        {
+            get { return this._streamingConfigurations; }
+            set { this._streamingConfigurations = value; }
+        }
+
+        // Check to see if StreamingConfigurations property is set
+        internal bool IsSetStreamingConfigurations()
+        {
+            return this._streamingConfigurations != null;
         }
 
     }

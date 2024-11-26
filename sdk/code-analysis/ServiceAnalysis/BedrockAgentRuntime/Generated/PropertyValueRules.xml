@@ -219,6 +219,11 @@
     <max>10485760</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.CustomOrchestrationTrace.TraceId</property>
+    <min>2</min>
+    <max>16</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentRuntime.Model.DependencyFailedException.ResourceName</property>
     <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
@@ -502,6 +507,10 @@
   <property-value-rule>
     <property>Amazon.BedrockAgentRuntime.Model.Span.Start</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.StreamingConfigurations.ApplyGuardrailInterval</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentRuntime.Model.TextInferenceConfig.MaxTokens</property>

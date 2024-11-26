@@ -111,6 +111,17 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetStreamingConfigurations())
+                {
+                    context.Writer.WritePropertyName("streamingConfigurations");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StreamingConfigurationsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.StreamingConfigurations, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
