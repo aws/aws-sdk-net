@@ -118,13 +118,22 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>fast-restored</c> - Indicates whether the volume was created from a snapshot that
+        /// is enabled for fast snapshot restore (<c>true</c> | <c>false</c>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>multi-attach-enabled</c> - Indicates whether the volume is enabled for Multi-Attach
         /// (<c>true</c> | <c>false</c>)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>fast-restored</c> - Indicates whether the volume was created from a snapshot that
-        /// is enabled for fast snapshot restore (<c>true</c> | <c>false</c>).
+        ///  <c>operator.managed</c> - A Boolean that indicates whether this is a managed volume.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>operator.principal</c> - The principal that manages the volume. Only valid for
+        /// managed volumes, where <c>managed</c> is <c>true</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>

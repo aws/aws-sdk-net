@@ -47,6 +47,7 @@ namespace Amazon.EC2.Model
         private bool? _requesterManaged;
         private List<string> _routeTableIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _serviceName;
+        private string _serviceRegion;
         private State _state;
         private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -288,6 +289,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetServiceName()
         {
             return this._serviceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceRegion. 
+        /// <para>
+        /// The Region where the service is hosted.
+        /// </para>
+        /// </summary>
+        public string ServiceRegion
+        {
+            get { return this._serviceRegion; }
+            set { this._serviceRegion = value; }
+        }
+
+        // Check to see if ServiceRegion property is set
+        internal bool IsSetServiceRegion()
+        {
+            return this._serviceRegion != null;
         }
 
         /// <summary>

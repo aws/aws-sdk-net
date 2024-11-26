@@ -108,6 +108,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ServiceName", StringUtils.FromString(publicRequest.ServiceName));
                 }
+                if(publicRequest.IsSetServiceRegion())
+                {
+                    request.Parameters.Add("ServiceRegion", StringUtils.FromString(publicRequest.ServiceRegion));
+                }
                 if(publicRequest.IsSetSubnetConfigurations())
                 {
                     int publicRequestlistValueIndex = 1;

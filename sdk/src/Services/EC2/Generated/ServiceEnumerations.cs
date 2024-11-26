@@ -20503,6 +20503,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type TransferType.
+    /// </summary>
+    public class TransferType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Standard for TransferType
+        /// </summary>
+        public static readonly TransferType Standard = new TransferType("standard");
+        /// <summary>
+        /// Constant TimeBased for TransferType
+        /// </summary>
+        public static readonly TransferType TimeBased = new TransferType("time-based");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TransferType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TransferType FindValue(string value)
+        {
+            return FindValue<TransferType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TransferType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TransitGatewayAssociationState.
     /// </summary>
     public class TransitGatewayAssociationState : ConstantClass

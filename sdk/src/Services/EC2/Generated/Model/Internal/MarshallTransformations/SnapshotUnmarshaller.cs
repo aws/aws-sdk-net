@@ -55,6 +55,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("completionDurationMinutes", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.CompletionDurationMinutes = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("completionTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.CompletionTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("dataEncryptionKeyId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -154,6 +166,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Tags.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("transferType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TransferType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("volumeId", targetDepth))

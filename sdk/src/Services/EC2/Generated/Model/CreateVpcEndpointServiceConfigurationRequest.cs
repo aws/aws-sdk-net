@@ -69,6 +69,7 @@ namespace Amazon.EC2.Model
         private List<string> _networkLoadBalancerArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _privateDnsName;
         private List<string> _supportedIpAddressTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _supportedRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
 
         /// <summary>
@@ -181,6 +182,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetSupportedIpAddressTypes()
         {
             return this._supportedIpAddressTypes != null && (this._supportedIpAddressTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedRegions. 
+        /// <para>
+        /// The Regions from which service consumers can access the service.
+        /// </para>
+        /// </summary>
+        public List<string> SupportedRegions
+        {
+            get { return this._supportedRegions; }
+            set { this._supportedRegions = value; }
+        }
+
+        // Check to see if SupportedRegions property is set
+        internal bool IsSetSupportedRegions()
+        {
+            return this._supportedRegions != null && (this._supportedRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

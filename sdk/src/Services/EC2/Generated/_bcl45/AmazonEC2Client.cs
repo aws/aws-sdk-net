@@ -34274,10 +34274,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modifies the attributes of your VPC endpoint service configuration. You can change
-        /// the Network Load Balancers or Gateway Load Balancers for your service, and you can
-        /// specify whether acceptance is required for requests to connect to your endpoint service
-        /// through an interface VPC endpoint.
+        /// Modifies the attributes of the specified VPC endpoint service configuration.
         /// 
         ///  
         /// <para>
@@ -34300,10 +34297,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modifies the attributes of your VPC endpoint service configuration. You can change
-        /// the Network Load Balancers or Gateway Load Balancers for your service, and you can
-        /// specify whether acceptance is required for requests to connect to your endpoint service
-        /// through an interface VPC endpoint.
+        /// Modifies the attributes of the specified VPC endpoint service configuration.
         /// 
         ///  
         /// <para>

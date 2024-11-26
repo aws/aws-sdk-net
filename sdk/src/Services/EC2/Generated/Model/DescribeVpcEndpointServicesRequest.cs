@@ -49,6 +49,7 @@ namespace Amazon.EC2.Model
         private int? _maxResults;
         private string _nextToken;
         private List<string> _serviceNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _serviceRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Filters. 
@@ -62,6 +63,10 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>service-name</c> - The name of the service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>service-region</c> - The Region of the service.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -155,6 +160,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetServiceNames()
         {
             return this._serviceNames != null && (this._serviceNames.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceRegions. 
+        /// <para>
+        /// The service Regions.
+        /// </para>
+        /// </summary>
+        public List<string> ServiceRegions
+        {
+            get { return this._serviceRegions; }
+            set { this._serviceRegions = value; }
+        }
+
+        // Check to see if ServiceRegions property is set
+        internal bool IsSetServiceRegions()
+        {
+            return this._serviceRegions != null && (this._serviceRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

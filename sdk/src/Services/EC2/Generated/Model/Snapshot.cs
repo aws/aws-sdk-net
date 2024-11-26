@@ -34,6 +34,8 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class Snapshot
     {
+        private int? _completionDurationMinutes;
+        private DateTime? _completionTime;
         private string _dataEncryptionKeyId;
         private string _description;
         private bool? _encrypted;
@@ -50,8 +52,49 @@ namespace Amazon.EC2.Model
         private string _stateMessage;
         private StorageTier _storageTier;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private TransferType _transferType;
         private string _volumeId;
         private int? _volumeSize;
+
+        /// <summary>
+        /// Gets and sets the property CompletionDurationMinutes. <note> 
+        /// <para>
+        /// Only for snapshot copies created with time-based snapshot copy operations.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The completion duration requested for the time-based snapshot copy operation.
+        /// </para>
+        /// </summary>
+        public int CompletionDurationMinutes
+        {
+            get { return this._completionDurationMinutes.GetValueOrDefault(); }
+            set { this._completionDurationMinutes = value; }
+        }
+
+        // Check to see if CompletionDurationMinutes property is set
+        internal bool IsSetCompletionDurationMinutes()
+        {
+            return this._completionDurationMinutes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CompletionTime. 
+        /// <para>
+        /// The time stamp when the snapshot was completed.
+        /// </para>
+        /// </summary>
+        public DateTime CompletionTime
+        {
+            get { return this._completionTime.GetValueOrDefault(); }
+            set { this._completionTime = value; }
+        }
+
+        // Check to see if CompletionTime property is set
+        internal bool IsSetCompletionTime()
+        {
+            return this._completionTime.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property DataEncryptionKeyId. 
@@ -356,6 +399,41 @@ namespace Amazon.EC2.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransferType. <note> 
+        /// <para>
+        /// Only for snapshot copies.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Indicates whether the snapshot copy was created with a standard or time-based snapshot
+        /// copy operation. Time-based snapshot copy operations complete within the completion
+        /// duration specified in the request. Standard snapshot copy operations are completed
+        /// on a best-effort basis.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>standard</c> - The snapshot copy was created with a standard snapshot copy operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>time-based</c> - The snapshot copy was created with a time-based snapshot copy
+        /// operation.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public TransferType TransferType
+        {
+            get { return this._transferType; }
+            set { this._transferType = value; }
+        }
+
+        // Check to see if TransferType property is set
+        internal bool IsSetTransferType()
+        {
+            return this._transferType != null;
         }
 
         /// <summary>

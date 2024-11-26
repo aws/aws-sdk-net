@@ -474,6 +474,10 @@ namespace Amazon.EC2.Model
         /// <para>
         /// For instance types with Amazon Web Services CPUs, specify <c>amazon-web-services</c>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For instance types with Apple CPUs, specify <c>apple</c>.
+        /// </para>
         ///  </li> </ul> <note> 
         /// <para>
         /// Don't confuse the CPU manufacturer with the CPU architecture. Instances will be launched

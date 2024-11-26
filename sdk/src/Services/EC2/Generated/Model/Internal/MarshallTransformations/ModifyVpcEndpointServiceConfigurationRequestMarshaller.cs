@@ -90,6 +90,15 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetAddSupportedRegions())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.AddSupportedRegions)
+                    {
+                        request.Parameters.Add("AddSupportedRegion" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
                 if(publicRequest.IsSetPrivateDnsName())
                 {
                     request.Parameters.Add("PrivateDnsName", StringUtils.FromString(publicRequest.PrivateDnsName));
@@ -122,6 +131,15 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     foreach(var publicRequestlistValue in publicRequest.RemoveSupportedIpAddressTypes)
                     {
                         request.Parameters.Add("RemoveSupportedIpAddressType" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetRemoveSupportedRegions())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.RemoveSupportedRegions)
+                    {
+                        request.Parameters.Add("RemoveSupportedRegion" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
                         publicRequestlistValueIndex++;
                     }
                 }
