@@ -35,6 +35,7 @@ namespace Amazon.QApps.Model
     public partial class Card
     {
         private FileUploadCard _fileUpload;
+        private FormInputCard _formInput;
         private QPluginCard _qPlugin;
         private QQueryCard _qQuery;
         private TextInputCard _textInput;
@@ -55,6 +56,24 @@ namespace Amazon.QApps.Model
         internal bool IsSetFileUpload()
         {
             return this._fileUpload != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FormInput. 
+        /// <para>
+        /// A container for the properties of the form input card.
+        /// </para>
+        /// </summary>
+        public FormInputCard FormInput
+        {
+            get { return this._formInput; }
+            set { this._formInput = value; }
+        }
+
+        // Check to see if FormInput property is set
+        internal bool IsSetFormInput()
+        {
+            return this._formInput != null;
         }
 
         /// <summary>

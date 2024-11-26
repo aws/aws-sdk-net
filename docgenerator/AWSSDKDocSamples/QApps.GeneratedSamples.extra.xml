@@ -116,6 +116,44 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.QApps.IAmazonQApps.CreatePresignedUrl(Amazon.QApps.Model.CreatePresignedUrlRequest)" />
+            <member name="M:Amazon.QApps.AmazonQAppsClient.CreatePresignedUrl(Amazon.QApps.Model.CreatePresignedUrlRequest)" />
+            <member name="T:Amazon.QApps.Model.CreatePresignedUrlRequest" />
+            <member name="T:Amazon.QApps.Model.CreatePresignedUrlResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Upload a file to a specific session"
+                    source=".\AWSSDKDocSamples\QApps\QApps.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.QApps.IAmazonQApps.CreatePresignedUrl(Amazon.QApps.Model.CreatePresignedUrlRequest)" />
+            <member name="M:Amazon.QApps.AmazonQAppsClient.CreatePresignedUrl(Amazon.QApps.Model.CreatePresignedUrlRequest)" />
+            <member name="T:Amazon.QApps.Model.CreatePresignedUrlRequest" />
+            <member name="T:Amazon.QApps.Model.CreatePresignedUrlResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Upload a file into a application"
+                    source=".\AWSSDKDocSamples\QApps\QApps.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.QApps.IAmazonQApps.CreateQApp(Amazon.QApps.Model.CreateQAppRequest)" />
             <member name="M:Amazon.QApps.AmazonQAppsClient.CreateQApp(Amazon.QApps.Model.CreateQAppRequest)" />
             <member name="T:Amazon.QApps.Model.CreateQAppRequest" />
@@ -166,6 +204,25 @@
                 </para>
                 <code
                     title="Delete an Amazon Q App"
+                    source=".\AWSSDKDocSamples\QApps\QApps.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.QApps.IAmazonQApps.DescribeQAppPermissions(Amazon.QApps.Model.DescribeQAppPermissionsRequest)" />
+            <member name="M:Amazon.QApps.AmazonQAppsClient.DescribeQAppPermissions(Amazon.QApps.Model.DescribeQAppPermissionsRequest)" />
+            <member name="T:Amazon.QApps.Model.DescribeQAppPermissionsRequest" />
+            <member name="T:Amazon.QApps.Model.DescribeQAppPermissionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Describe permissions for the app"
                     source=".\AWSSDKDocSamples\QApps\QApps.GeneratedSamples.cs"
                     region="example-1" />
             </example>
@@ -261,6 +318,25 @@
                 </para>
                 <code
                     title="Retrieves an existing session for an Amazon Q App"
+                    source=".\AWSSDKDocSamples\QApps\QApps.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.QApps.IAmazonQApps.GetQAppSessionMetadata(Amazon.QApps.Model.GetQAppSessionMetadataRequest)" />
+            <member name="M:Amazon.QApps.AmazonQAppsClient.GetQAppSessionMetadata(Amazon.QApps.Model.GetQAppSessionMetadataRequest)" />
+            <member name="T:Amazon.QApps.Model.GetQAppSessionMetadataRequest" />
+            <member name="T:Amazon.QApps.Model.GetQAppSessionMetadataResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Retrieves an existing session metadata for an Amazon Q App"
                     source=".\AWSSDKDocSamples\QApps\QApps.GeneratedSamples.cs"
                     region="example-1" />
             </example>
@@ -529,6 +605,63 @@
                     title="Updating the app so it has a single q-query card"
                     source=".\AWSSDKDocSamples\QApps\QApps.GeneratedSamples.cs"
                     region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.QApps.IAmazonQApps.UpdateQAppPermissions(Amazon.QApps.Model.UpdateQAppPermissionsRequest)" />
+            <member name="M:Amazon.QApps.AmazonQAppsClient.UpdateQAppPermissions(Amazon.QApps.Model.UpdateQAppPermissionsRequest)" />
+            <member name="T:Amazon.QApps.Model.UpdateQAppPermissionsRequest" />
+            <member name="T:Amazon.QApps.Model.UpdateQAppPermissionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Grant permissions for the app"
+                    source=".\AWSSDKDocSamples\QApps\QApps.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.QApps.IAmazonQApps.UpdateQAppPermissions(Amazon.QApps.Model.UpdateQAppPermissionsRequest)" />
+            <member name="M:Amazon.QApps.AmazonQAppsClient.UpdateQAppPermissions(Amazon.QApps.Model.UpdateQAppPermissionsRequest)" />
+            <member name="T:Amazon.QApps.Model.UpdateQAppPermissionsRequest" />
+            <member name="T:Amazon.QApps.Model.UpdateQAppPermissionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Revoke permissions for the app"
+                    source=".\AWSSDKDocSamples\QApps\QApps.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.QApps.IAmazonQApps.UpdateQAppSessionMetadata(Amazon.QApps.Model.UpdateQAppSessionMetadataRequest)" />
+            <member name="M:Amazon.QApps.AmazonQAppsClient.UpdateQAppSessionMetadata(Amazon.QApps.Model.UpdateQAppSessionMetadataRequest)" />
+            <member name="T:Amazon.QApps.Model.UpdateQAppSessionMetadataRequest" />
+            <member name="T:Amazon.QApps.Model.UpdateQAppSessionMetadataResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Updates an existing session metadata for an Amazon Q App"
+                    source=".\AWSSDKDocSamples\QApps\QApps.GeneratedSamples.cs"
+                    region="example-1" />
             </example>
         </value>
     </doc>

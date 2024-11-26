@@ -62,6 +62,9 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetAppId())
                 request.Parameters.Add("appId", StringUtils.FromString(publicRequest.AppId));
+            
+            if (publicRequest.IsSetAppVersion())
+                request.Parameters.Add("appVersion", StringUtils.FromInt(publicRequest.AppVersion));
             request.ResourcePath = "/apps.get";
         
             if (publicRequest.IsSetInstanceId()) 

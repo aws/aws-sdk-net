@@ -327,6 +327,43 @@ namespace Amazon.QApps
 
         #endregion
                 
+        #region  CreatePresignedUrl
+
+
+
+        /// <summary>
+        /// Creates a presigned URL for an S3 POST operation to upload a file. You can use this
+        /// URL to set a default file for a <c>FileUploadCard</c> in a Q App definition or to
+        /// provide a file for a single Q App run. The <c>scope</c> parameter determines how the
+        /// file will be used, either at the app definition level or the app session level.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePresignedUrl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePresignedUrl service method, as returned by QApps.</returns>
+        /// <exception cref="Amazon.QApps.Model.AccessDeniedException">
+        /// The client is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.InternalServerException">
+        /// An internal service error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ThrottlingException">
+        /// The requested operation could not be completed because too many requests were sent
+        /// at once. Wait a bit and try again later.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.UnauthorizedException">
+        /// The client is not authenticated or authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/CreatePresignedUrl">REST API Reference for CreatePresignedUrl Operation</seealso>
+        Task<CreatePresignedUrlResponse> CreatePresignedUrlAsync(CreatePresignedUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateQApp
 
 
@@ -455,6 +492,44 @@ namespace Amazon.QApps
 
         #endregion
                 
+        #region  DescribeQAppPermissions
+
+
+
+        /// <summary>
+        /// Describes read permissions for a Amazon Q App in Amazon Q Business application environment
+        /// instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeQAppPermissions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeQAppPermissions service method, as returned by QApps.</returns>
+        /// <exception cref="Amazon.QApps.Model.AccessDeniedException">
+        /// The client is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.InternalServerException">
+        /// An internal service error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ThrottlingException">
+        /// The requested operation could not be completed because too many requests were sent
+        /// at once. Wait a bit and try again later.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.UnauthorizedException">
+        /// The client is not authenticated or authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/DescribeQAppPermissions">REST API Reference for DescribeQAppPermissions Operation</seealso>
+        Task<DescribeQAppPermissionsResponse> DescribeQAppPermissionsAsync(DescribeQAppPermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DisassociateLibraryItemReview
 
 
@@ -534,6 +609,51 @@ namespace Amazon.QApps
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/DisassociateQAppFromUser">REST API Reference for DisassociateQAppFromUser Operation</seealso>
         Task<DisassociateQAppFromUserResponse> DisassociateQAppFromUserAsync(DisassociateQAppFromUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ExportQAppSessionData
+
+
+
+        /// <summary>
+        /// Exports the collected data of a Q App data collection session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportQAppSessionData service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ExportQAppSessionData service method, as returned by QApps.</returns>
+        /// <exception cref="Amazon.QApps.Model.AccessDeniedException">
+        /// The client is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ConflictException">
+        /// The requested operation could not be completed due to a conflict with the current
+        /// state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.InternalServerException">
+        /// An internal service error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ServiceQuotaExceededException">
+        /// The requested operation could not be completed because it would exceed the service's
+        /// quota or limit.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ThrottlingException">
+        /// The requested operation could not be completed because too many requests were sent
+        /// at once. Wait a bit and try again later.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.UnauthorizedException">
+        /// The client is not authenticated or authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/ExportQAppSessionData">REST API Reference for ExportQAppSessionData Operation</seealso>
+        Task<ExportQAppSessionDataResponse> ExportQAppSessionDataAsync(ExportQAppSessionDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -651,6 +771,47 @@ namespace Amazon.QApps
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/GetQAppSession">REST API Reference for GetQAppSession Operation</seealso>
         Task<GetQAppSessionResponse> GetQAppSessionAsync(GetQAppSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetQAppSessionMetadata
+
+
+
+        /// <summary>
+        /// Retrieves the current configuration of a Q App session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetQAppSessionMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetQAppSessionMetadata service method, as returned by QApps.</returns>
+        /// <exception cref="Amazon.QApps.Model.AccessDeniedException">
+        /// The client is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.InternalServerException">
+        /// An internal service error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ServiceQuotaExceededException">
+        /// The requested operation could not be completed because it would exceed the service's
+        /// quota or limit.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ThrottlingException">
+        /// The requested operation could not be completed because too many requests were sent
+        /// at once. Wait a bit and try again later.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.UnauthorizedException">
+        /// The client is not authenticated or authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/GetQAppSessionMetadata">REST API Reference for GetQAppSessionMetadata Operation</seealso>
+        Task<GetQAppSessionMetadataResponse> GetQAppSessionMetadataAsync(GetQAppSessionMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -812,6 +973,47 @@ namespace Amazon.QApps
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/ListQApps">REST API Reference for ListQApps Operation</seealso>
         Task<ListQAppsResponse> ListQAppsAsync(ListQAppsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListQAppSessionData
+
+
+
+        /// <summary>
+        /// Lists the collected data of a Q App data collection session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListQAppSessionData service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListQAppSessionData service method, as returned by QApps.</returns>
+        /// <exception cref="Amazon.QApps.Model.AccessDeniedException">
+        /// The client is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.InternalServerException">
+        /// An internal service error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ServiceQuotaExceededException">
+        /// The requested operation could not be completed because it would exceed the service's
+        /// quota or limit.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ThrottlingException">
+        /// The requested operation could not be completed because too many requests were sent
+        /// at once. Wait a bit and try again later.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.UnauthorizedException">
+        /// The client is not authenticated or authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/ListQAppSessionData">REST API Reference for ListQAppSessionData Operation</seealso>
+        Task<ListQAppSessionDataResponse> ListQAppSessionDataAsync(ListQAppSessionDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1172,6 +1374,44 @@ namespace Amazon.QApps
 
         #endregion
                 
+        #region  UpdateQAppPermissions
+
+
+
+        /// <summary>
+        /// Updates read permissions for a Amazon Q App in Amazon Q Business application environment
+        /// instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQAppPermissions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateQAppPermissions service method, as returned by QApps.</returns>
+        /// <exception cref="Amazon.QApps.Model.AccessDeniedException">
+        /// The client is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.InternalServerException">
+        /// An internal service error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ThrottlingException">
+        /// The requested operation could not be completed because too many requests were sent
+        /// at once. Wait a bit and try again later.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.UnauthorizedException">
+        /// The client is not authenticated or authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/UpdateQAppPermissions">REST API Reference for UpdateQAppPermissions Operation</seealso>
+        Task<UpdateQAppPermissionsResponse> UpdateQAppPermissionsAsync(UpdateQAppPermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  UpdateQAppSession
 
 
@@ -1214,6 +1454,47 @@ namespace Amazon.QApps
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/UpdateQAppSession">REST API Reference for UpdateQAppSession Operation</seealso>
         Task<UpdateQAppSessionResponse> UpdateQAppSessionAsync(UpdateQAppSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateQAppSessionMetadata
+
+
+
+        /// <summary>
+        /// Updates the configuration metadata of a session for a given Q App <c>sessionId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQAppSessionMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateQAppSessionMetadata service method, as returned by QApps.</returns>
+        /// <exception cref="Amazon.QApps.Model.AccessDeniedException">
+        /// The client is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.InternalServerException">
+        /// An internal service error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ServiceQuotaExceededException">
+        /// The requested operation could not be completed because it would exceed the service's
+        /// quota or limit.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ThrottlingException">
+        /// The requested operation could not be completed because too many requests were sent
+        /// at once. Wait a bit and try again later.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.UnauthorizedException">
+        /// The client is not authenticated or authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/UpdateQAppSessionMetadata">REST API Reference for UpdateQAppSessionMetadata Operation</seealso>
+        Task<UpdateQAppSessionMetadataResponse> UpdateQAppSessionMetadataAsync(UpdateQAppSessionMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

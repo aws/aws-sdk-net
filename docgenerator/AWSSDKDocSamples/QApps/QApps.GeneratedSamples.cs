@@ -133,6 +133,53 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
             #endregion
         }
 
+        public void QAppsCreatePresignedUrl()
+        {
+            #region example-1
+
+            var client = new AmazonQAppsClient();
+            var response = client.CreatePresignedUrl(new CreatePresignedUrlRequest 
+            {
+                AppId = "4263767c-d889-4cb2-a8f6-8b649bc66af0",
+                CardId = "82f69028-22a9-4bea-8727-0eabf58e9fed",
+                FileContentsSha256 = "myMXwslBoXkTDQ0olhq1QsiHRWWL4yj1V0IuoK+PYOg=",
+                FileName = "myFile.txt",
+                InstanceId = "0b95c9c4-89cc-4aa8-9aae-aa91cbec699f",
+                Scope = "SESSION",
+                SessionId = "4f0e5b87-9d38-41cd-9eb4-ebce2f2917cc"
+            });
+
+            string fileId = response.FileId;
+            string presignedUrl = response.PresignedUrl;
+            DateTime presignedUrlExpiration = response.PresignedUrlExpiration;
+            Dictionary<string, string> presignedUrlFields = response.PresignedUrlFields;
+
+            #endregion
+        }
+
+        public void QAppsCreatePresignedUrl()
+        {
+            #region example-2
+
+            var client = new AmazonQAppsClient();
+            var response = client.CreatePresignedUrl(new CreatePresignedUrlRequest 
+            {
+                AppId = "4263767c-d889-4cb2-a8f6-8b649bc66af0",
+                CardId = "7a11f34b-42d4-4bc8-b668-ae4a788dae1e",
+                FileContentsSha256 = "myMXwslBoXkTDQ0olhq1QsiHRWWL4yj1V0IuoK+PYOg=",
+                FileName = "anApplicationFile.txt",
+                InstanceId = "0b95c9c4-89cc-4aa8-9aae-aa91cbec699f",
+                Scope = "APPLICATION"
+            });
+
+            string fileId = response.FileId;
+            string presignedUrl = response.PresignedUrl;
+            DateTime presignedUrlExpiration = response.PresignedUrlExpiration;
+            Dictionary<string, string> presignedUrlFields = response.PresignedUrlFields;
+
+            #endregion
+        }
+
         public void QAppsCreateQApp()
         {
             #region example-1
@@ -201,6 +248,24 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
                 InstanceId = "0b95c9c4-89cc-4aa8-9aae-aa91cbec699f"
             });
 
+
+            #endregion
+        }
+
+        public void QAppsDescribeQAppPermissions()
+        {
+            #region example-1
+
+            var client = new AmazonQAppsClient();
+            var response = client.DescribeQAppPermissions(new DescribeQAppPermissionsRequest 
+            {
+                AppId = "fe0acf86-49e5-4def-a0c2-40ce0cafee14",
+                InstanceId = "01793661-ad73-4c7d-8eaa-1c95a10151c2"
+            });
+
+            string appId = response.AppId;
+            List<PermissionOutput> permissions = response.Permissions;
+            string resourceArn = response.ResourceArn;
 
             #endregion
         }
@@ -303,6 +368,26 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
             string sessionArn = response.SessionArn;
             string sessionId = response.SessionId;
             string status = response.Status;
+
+            #endregion
+        }
+
+        public void QAppsGetQAppSessionMetadata()
+        {
+            #region example-1
+
+            var client = new AmazonQAppsClient();
+            var response = client.GetQAppSessionMetadata(new GetQAppSessionMetadataRequest 
+            {
+                InstanceId = "0b95c9c4-89cc-4aa8-9aae-aa91cbec699f",
+                SessionId = "56ae47c3-10bc-4c2c-8b27-9b9fe23b3edb"
+            });
+
+            string sessionArn = response.SessionArn;
+            string sessionId = response.SessionId;
+            string sessionName = response.SessionName;
+            bool sessionOwner = response.SessionOwner;
+            SessionSharingConfiguration sharingConfiguration = response.SharingConfiguration;
 
             #endregion
         }
@@ -586,6 +671,79 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
             string title = response.Title;
             DateTime updatedAt = response.UpdatedAt;
             string updatedBy = response.UpdatedBy;
+
+            #endregion
+        }
+
+        public void QAppsUpdateQAppPermissions()
+        {
+            #region example-1
+
+            var client = new AmazonQAppsClient();
+            var response = client.UpdateQAppPermissions(new UpdateQAppPermissionsRequest 
+            {
+                AppId = "fe0acf86-49e5-4def-a0c2-40ce0cafee14",
+                GrantPermissions = new List<PermissionInput> {
+                    new PermissionInput {
+                        Action = "read",
+                        Principal = "user2@example.com"
+                    }
+                },
+                InstanceId = "01793661-ad73-4c7d-8eaa-1c95a10151c2"
+            });
+
+            string appId = response.AppId;
+            List<PermissionOutput> permissions = response.Permissions;
+            string resourceArn = response.ResourceArn;
+
+            #endregion
+        }
+
+        public void QAppsUpdateQAppPermissions()
+        {
+            #region example-2
+
+            var client = new AmazonQAppsClient();
+            var response = client.UpdateQAppPermissions(new UpdateQAppPermissionsRequest 
+            {
+                AppId = "fe0acf86-49e5-4def-a0c2-40ce0cafee14",
+                InstanceId = "01793661-ad73-4c7d-8eaa-1c95a10151c2",
+                RevokePermissions = new List<PermissionInput> {
+                    new PermissionInput {
+                        Action = "read",
+                        Principal = "user2@example.com"
+                    }
+                }
+            });
+
+            string appId = response.AppId;
+            List<PermissionOutput> permissions = response.Permissions;
+            string resourceArn = response.ResourceArn;
+
+            #endregion
+        }
+
+        public void QAppsUpdateQAppSessionMetadata()
+        {
+            #region example-1
+
+            var client = new AmazonQAppsClient();
+            var response = client.UpdateQAppSessionMetadata(new UpdateQAppSessionMetadataRequest 
+            {
+                InstanceId = "0b95c9c4-89cc-4aa8-9aae-aa91cbec699f",
+                SessionId = "56ae47c3-10bc-4c2c-8b27-9b9fe23b3edb",
+                SessionName = "Trip itinerary collection session",
+                SharingConfiguration = new SessionSharingConfiguration {
+                    AcceptResponses = true,
+                    Enabled = true,
+                    RevealCards = false
+                }
+            });
+
+            string sessionArn = response.SessionArn;
+            string sessionId = response.SessionId;
+            string sessionName = response.SessionName;
+            SessionSharingConfiguration sharingConfiguration = response.SharingConfiguration;
 
             #endregion
         }

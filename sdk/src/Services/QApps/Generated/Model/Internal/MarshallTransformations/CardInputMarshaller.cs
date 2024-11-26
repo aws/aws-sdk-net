@@ -59,6 +59,17 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetFormInput())
+            {
+                context.Writer.WritePropertyName("formInput");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FormInputCardInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.FormInput, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetQPlugin())
             {
                 context.Writer.WritePropertyName("qPlugin");

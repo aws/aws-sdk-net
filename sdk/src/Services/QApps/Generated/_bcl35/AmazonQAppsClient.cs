@@ -764,6 +764,79 @@ namespace Amazon.QApps
 
         #endregion
         
+        #region  CreatePresignedUrl
+
+        /// <summary>
+        /// Creates a presigned URL for an S3 POST operation to upload a file. You can use this
+        /// URL to set a default file for a <c>FileUploadCard</c> in a Q App definition or to
+        /// provide a file for a single Q App run. The <c>scope</c> parameter determines how the
+        /// file will be used, either at the app definition level or the app session level.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePresignedUrl service method.</param>
+        /// 
+        /// <returns>The response from the CreatePresignedUrl service method, as returned by QApps.</returns>
+        /// <exception cref="Amazon.QApps.Model.AccessDeniedException">
+        /// The client is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.InternalServerException">
+        /// An internal service error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ThrottlingException">
+        /// The requested operation could not be completed because too many requests were sent
+        /// at once. Wait a bit and try again later.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.UnauthorizedException">
+        /// The client is not authenticated or authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/CreatePresignedUrl">REST API Reference for CreatePresignedUrl Operation</seealso>
+        public virtual CreatePresignedUrlResponse CreatePresignedUrl(CreatePresignedUrlRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePresignedUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePresignedUrlResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePresignedUrlResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePresignedUrl operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePresignedUrl operation on AmazonQAppsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePresignedUrl
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/CreatePresignedUrl">REST API Reference for CreatePresignedUrl Operation</seealso>
+        public virtual IAsyncResult BeginCreatePresignedUrl(CreatePresignedUrlRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePresignedUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePresignedUrlResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePresignedUrl operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePresignedUrl.</param>
+        /// 
+        /// <returns>Returns a  CreatePresignedUrlResult from QApps.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/CreatePresignedUrl">REST API Reference for CreatePresignedUrl Operation</seealso>
+        public virtual CreatePresignedUrlResponse EndCreatePresignedUrl(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreatePresignedUrlResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateQApp
 
         /// <summary>
@@ -1000,6 +1073,80 @@ namespace Amazon.QApps
 
         #endregion
         
+        #region  DescribeQAppPermissions
+
+        /// <summary>
+        /// Describes read permissions for a Amazon Q App in Amazon Q Business application environment
+        /// instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeQAppPermissions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeQAppPermissions service method, as returned by QApps.</returns>
+        /// <exception cref="Amazon.QApps.Model.AccessDeniedException">
+        /// The client is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.InternalServerException">
+        /// An internal service error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ThrottlingException">
+        /// The requested operation could not be completed because too many requests were sent
+        /// at once. Wait a bit and try again later.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.UnauthorizedException">
+        /// The client is not authenticated or authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/DescribeQAppPermissions">REST API Reference for DescribeQAppPermissions Operation</seealso>
+        public virtual DescribeQAppPermissionsResponse DescribeQAppPermissions(DescribeQAppPermissionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeQAppPermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeQAppPermissionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeQAppPermissionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeQAppPermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeQAppPermissions operation on AmazonQAppsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeQAppPermissions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/DescribeQAppPermissions">REST API Reference for DescribeQAppPermissions Operation</seealso>
+        public virtual IAsyncResult BeginDescribeQAppPermissions(DescribeQAppPermissionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeQAppPermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeQAppPermissionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeQAppPermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeQAppPermissions.</param>
+        /// 
+        /// <returns>Returns a  DescribeQAppPermissionsResult from QApps.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/DescribeQAppPermissions">REST API Reference for DescribeQAppPermissions Operation</seealso>
+        public virtual DescribeQAppPermissionsResponse EndDescribeQAppPermissions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeQAppPermissionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DisassociateLibraryItemReview
 
         /// <summary>
@@ -1150,6 +1297,87 @@ namespace Amazon.QApps
         public virtual DisassociateQAppFromUserResponse EndDisassociateQAppFromUser(IAsyncResult asyncResult)
         {
             return EndInvoke<DisassociateQAppFromUserResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ExportQAppSessionData
+
+        /// <summary>
+        /// Exports the collected data of a Q App data collection session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportQAppSessionData service method.</param>
+        /// 
+        /// <returns>The response from the ExportQAppSessionData service method, as returned by QApps.</returns>
+        /// <exception cref="Amazon.QApps.Model.AccessDeniedException">
+        /// The client is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ConflictException">
+        /// The requested operation could not be completed due to a conflict with the current
+        /// state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.InternalServerException">
+        /// An internal service error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ServiceQuotaExceededException">
+        /// The requested operation could not be completed because it would exceed the service's
+        /// quota or limit.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ThrottlingException">
+        /// The requested operation could not be completed because too many requests were sent
+        /// at once. Wait a bit and try again later.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.UnauthorizedException">
+        /// The client is not authenticated or authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/ExportQAppSessionData">REST API Reference for ExportQAppSessionData Operation</seealso>
+        public virtual ExportQAppSessionDataResponse ExportQAppSessionData(ExportQAppSessionDataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportQAppSessionDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportQAppSessionDataResponseUnmarshaller.Instance;
+
+            return Invoke<ExportQAppSessionDataResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExportQAppSessionData operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExportQAppSessionData operation on AmazonQAppsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExportQAppSessionData
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/ExportQAppSessionData">REST API Reference for ExportQAppSessionData Operation</seealso>
+        public virtual IAsyncResult BeginExportQAppSessionData(ExportQAppSessionDataRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportQAppSessionDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportQAppSessionDataResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ExportQAppSessionData operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExportQAppSessionData.</param>
+        /// 
+        /// <returns>Returns a  ExportQAppSessionDataResult from QApps.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/ExportQAppSessionData">REST API Reference for ExportQAppSessionData Operation</seealso>
+        public virtual ExportQAppSessionDataResponse EndExportQAppSessionData(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ExportQAppSessionDataResponse>(asyncResult);
         }
 
         #endregion
@@ -1375,6 +1603,83 @@ namespace Amazon.QApps
         public virtual GetQAppSessionResponse EndGetQAppSession(IAsyncResult asyncResult)
         {
             return EndInvoke<GetQAppSessionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetQAppSessionMetadata
+
+        /// <summary>
+        /// Retrieves the current configuration of a Q App session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetQAppSessionMetadata service method.</param>
+        /// 
+        /// <returns>The response from the GetQAppSessionMetadata service method, as returned by QApps.</returns>
+        /// <exception cref="Amazon.QApps.Model.AccessDeniedException">
+        /// The client is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.InternalServerException">
+        /// An internal service error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ServiceQuotaExceededException">
+        /// The requested operation could not be completed because it would exceed the service's
+        /// quota or limit.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ThrottlingException">
+        /// The requested operation could not be completed because too many requests were sent
+        /// at once. Wait a bit and try again later.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.UnauthorizedException">
+        /// The client is not authenticated or authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/GetQAppSessionMetadata">REST API Reference for GetQAppSessionMetadata Operation</seealso>
+        public virtual GetQAppSessionMetadataResponse GetQAppSessionMetadata(GetQAppSessionMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetQAppSessionMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetQAppSessionMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<GetQAppSessionMetadataResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetQAppSessionMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetQAppSessionMetadata operation on AmazonQAppsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetQAppSessionMetadata
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/GetQAppSessionMetadata">REST API Reference for GetQAppSessionMetadata Operation</seealso>
+        public virtual IAsyncResult BeginGetQAppSessionMetadata(GetQAppSessionMetadataRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetQAppSessionMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetQAppSessionMetadataResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetQAppSessionMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetQAppSessionMetadata.</param>
+        /// 
+        /// <returns>Returns a  GetQAppSessionMetadataResult from QApps.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/GetQAppSessionMetadata">REST API Reference for GetQAppSessionMetadata Operation</seealso>
+        public virtual GetQAppSessionMetadataResponse EndGetQAppSessionMetadata(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetQAppSessionMetadataResponse>(asyncResult);
         }
 
         #endregion
@@ -1680,6 +1985,83 @@ namespace Amazon.QApps
         public virtual ListQAppsResponse EndListQApps(IAsyncResult asyncResult)
         {
             return EndInvoke<ListQAppsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListQAppSessionData
+
+        /// <summary>
+        /// Lists the collected data of a Q App data collection session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListQAppSessionData service method.</param>
+        /// 
+        /// <returns>The response from the ListQAppSessionData service method, as returned by QApps.</returns>
+        /// <exception cref="Amazon.QApps.Model.AccessDeniedException">
+        /// The client is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.InternalServerException">
+        /// An internal service error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ServiceQuotaExceededException">
+        /// The requested operation could not be completed because it would exceed the service's
+        /// quota or limit.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ThrottlingException">
+        /// The requested operation could not be completed because too many requests were sent
+        /// at once. Wait a bit and try again later.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.UnauthorizedException">
+        /// The client is not authenticated or authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/ListQAppSessionData">REST API Reference for ListQAppSessionData Operation</seealso>
+        public virtual ListQAppSessionDataResponse ListQAppSessionData(ListQAppSessionDataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListQAppSessionDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListQAppSessionDataResponseUnmarshaller.Instance;
+
+            return Invoke<ListQAppSessionDataResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListQAppSessionData operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListQAppSessionData operation on AmazonQAppsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListQAppSessionData
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/ListQAppSessionData">REST API Reference for ListQAppSessionData Operation</seealso>
+        public virtual IAsyncResult BeginListQAppSessionData(ListQAppSessionDataRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListQAppSessionDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListQAppSessionDataResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListQAppSessionData operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListQAppSessionData.</param>
+        /// 
+        /// <returns>Returns a  ListQAppSessionDataResult from QApps.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/ListQAppSessionData">REST API Reference for ListQAppSessionData Operation</seealso>
+        public virtual ListQAppSessionDataResponse EndListQAppSessionData(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListQAppSessionDataResponse>(asyncResult);
         }
 
         #endregion
@@ -2365,6 +2747,80 @@ namespace Amazon.QApps
 
         #endregion
         
+        #region  UpdateQAppPermissions
+
+        /// <summary>
+        /// Updates read permissions for a Amazon Q App in Amazon Q Business application environment
+        /// instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQAppPermissions service method.</param>
+        /// 
+        /// <returns>The response from the UpdateQAppPermissions service method, as returned by QApps.</returns>
+        /// <exception cref="Amazon.QApps.Model.AccessDeniedException">
+        /// The client is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.InternalServerException">
+        /// An internal service error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ThrottlingException">
+        /// The requested operation could not be completed because too many requests were sent
+        /// at once. Wait a bit and try again later.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.UnauthorizedException">
+        /// The client is not authenticated or authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/UpdateQAppPermissions">REST API Reference for UpdateQAppPermissions Operation</seealso>
+        public virtual UpdateQAppPermissionsResponse UpdateQAppPermissions(UpdateQAppPermissionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateQAppPermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateQAppPermissionsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateQAppPermissionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateQAppPermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQAppPermissions operation on AmazonQAppsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateQAppPermissions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/UpdateQAppPermissions">REST API Reference for UpdateQAppPermissions Operation</seealso>
+        public virtual IAsyncResult BeginUpdateQAppPermissions(UpdateQAppPermissionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateQAppPermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateQAppPermissionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateQAppPermissions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateQAppPermissions.</param>
+        /// 
+        /// <returns>Returns a  UpdateQAppPermissionsResult from QApps.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/UpdateQAppPermissions">REST API Reference for UpdateQAppPermissions Operation</seealso>
+        public virtual UpdateQAppPermissionsResponse EndUpdateQAppPermissions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateQAppPermissionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateQAppSession
 
         /// <summary>
@@ -2442,6 +2898,83 @@ namespace Amazon.QApps
         public virtual UpdateQAppSessionResponse EndUpdateQAppSession(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateQAppSessionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateQAppSessionMetadata
+
+        /// <summary>
+        /// Updates the configuration metadata of a session for a given Q App <c>sessionId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQAppSessionMetadata service method.</param>
+        /// 
+        /// <returns>The response from the UpdateQAppSessionMetadata service method, as returned by QApps.</returns>
+        /// <exception cref="Amazon.QApps.Model.AccessDeniedException">
+        /// The client is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.InternalServerException">
+        /// An internal service error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ServiceQuotaExceededException">
+        /// The requested operation could not be completed because it would exceed the service's
+        /// quota or limit.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ThrottlingException">
+        /// The requested operation could not be completed because too many requests were sent
+        /// at once. Wait a bit and try again later.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.UnauthorizedException">
+        /// The client is not authenticated or authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/UpdateQAppSessionMetadata">REST API Reference for UpdateQAppSessionMetadata Operation</seealso>
+        public virtual UpdateQAppSessionMetadataResponse UpdateQAppSessionMetadata(UpdateQAppSessionMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateQAppSessionMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateQAppSessionMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateQAppSessionMetadataResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateQAppSessionMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQAppSessionMetadata operation on AmazonQAppsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateQAppSessionMetadata
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/UpdateQAppSessionMetadata">REST API Reference for UpdateQAppSessionMetadata Operation</seealso>
+        public virtual IAsyncResult BeginUpdateQAppSessionMetadata(UpdateQAppSessionMetadataRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateQAppSessionMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateQAppSessionMetadataResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateQAppSessionMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateQAppSessionMetadata.</param>
+        /// 
+        /// <returns>Returns a  UpdateQAppSessionMetadataResult from QApps.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/UpdateQAppSessionMetadata">REST API Reference for UpdateQAppSessionMetadata Operation</seealso>
+        public virtual UpdateQAppSessionMetadataResponse EndUpdateQAppSessionMetadata(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateQAppSessionMetadataResponse>(asyncResult);
         }
 
         #endregion

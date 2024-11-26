@@ -124,7 +124,7 @@ namespace Amazon.QApps.Model
         /// The prompt or instructions displayed for the plugin card.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=7000)]
+        [AWSProperty(Required=true, Min=0, Max=50000)]
         public string Prompt
         {
             get { return this._prompt; }

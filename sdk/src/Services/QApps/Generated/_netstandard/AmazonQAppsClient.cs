@@ -648,6 +648,59 @@ namespace Amazon.QApps
 
         #endregion
         
+        #region  CreatePresignedUrl
+
+        internal virtual CreatePresignedUrlResponse CreatePresignedUrl(CreatePresignedUrlRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePresignedUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePresignedUrlResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePresignedUrlResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a presigned URL for an S3 POST operation to upload a file. You can use this
+        /// URL to set a default file for a <c>FileUploadCard</c> in a Q App definition or to
+        /// provide a file for a single Q App run. The <c>scope</c> parameter determines how the
+        /// file will be used, either at the app definition level or the app session level.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePresignedUrl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePresignedUrl service method, as returned by QApps.</returns>
+        /// <exception cref="Amazon.QApps.Model.AccessDeniedException">
+        /// The client is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.InternalServerException">
+        /// An internal service error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ThrottlingException">
+        /// The requested operation could not be completed because too many requests were sent
+        /// at once. Wait a bit and try again later.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.UnauthorizedException">
+        /// The client is not authenticated or authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/CreatePresignedUrl">REST API Reference for CreatePresignedUrl Operation</seealso>
+        public virtual Task<CreatePresignedUrlResponse> CreatePresignedUrlAsync(CreatePresignedUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePresignedUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePresignedUrlResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreatePresignedUrlResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateQApp
 
         internal virtual CreateQAppResponse CreateQApp(CreateQAppRequest request)
@@ -824,6 +877,60 @@ namespace Amazon.QApps
 
         #endregion
         
+        #region  DescribeQAppPermissions
+
+        internal virtual DescribeQAppPermissionsResponse DescribeQAppPermissions(DescribeQAppPermissionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeQAppPermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeQAppPermissionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeQAppPermissionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes read permissions for a Amazon Q App in Amazon Q Business application environment
+        /// instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeQAppPermissions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeQAppPermissions service method, as returned by QApps.</returns>
+        /// <exception cref="Amazon.QApps.Model.AccessDeniedException">
+        /// The client is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.InternalServerException">
+        /// An internal service error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ThrottlingException">
+        /// The requested operation could not be completed because too many requests were sent
+        /// at once. Wait a bit and try again later.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.UnauthorizedException">
+        /// The client is not authenticated or authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/DescribeQAppPermissions">REST API Reference for DescribeQAppPermissions Operation</seealso>
+        public virtual Task<DescribeQAppPermissionsResponse> DescribeQAppPermissionsAsync(DescribeQAppPermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeQAppPermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeQAppPermissionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeQAppPermissionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateLibraryItemReview
 
         internal virtual DisassociateLibraryItemReviewResponse DisassociateLibraryItemReview(DisassociateLibraryItemReviewRequest request)
@@ -934,6 +1041,67 @@ namespace Amazon.QApps
             options.ResponseUnmarshaller = DisassociateQAppFromUserResponseUnmarshaller.Instance;
 
             return InvokeAsync<DisassociateQAppFromUserResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ExportQAppSessionData
+
+        internal virtual ExportQAppSessionDataResponse ExportQAppSessionData(ExportQAppSessionDataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportQAppSessionDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportQAppSessionDataResponseUnmarshaller.Instance;
+
+            return Invoke<ExportQAppSessionDataResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Exports the collected data of a Q App data collection session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportQAppSessionData service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ExportQAppSessionData service method, as returned by QApps.</returns>
+        /// <exception cref="Amazon.QApps.Model.AccessDeniedException">
+        /// The client is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ConflictException">
+        /// The requested operation could not be completed due to a conflict with the current
+        /// state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.InternalServerException">
+        /// An internal service error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ServiceQuotaExceededException">
+        /// The requested operation could not be completed because it would exceed the service's
+        /// quota or limit.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ThrottlingException">
+        /// The requested operation could not be completed because too many requests were sent
+        /// at once. Wait a bit and try again later.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.UnauthorizedException">
+        /// The client is not authenticated or authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/ExportQAppSessionData">REST API Reference for ExportQAppSessionData Operation</seealso>
+        public virtual Task<ExportQAppSessionDataResponse> ExportQAppSessionDataAsync(ExportQAppSessionDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ExportQAppSessionDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ExportQAppSessionDataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ExportQAppSessionDataResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1099,6 +1267,63 @@ namespace Amazon.QApps
             options.ResponseUnmarshaller = GetQAppSessionResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetQAppSessionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetQAppSessionMetadata
+
+        internal virtual GetQAppSessionMetadataResponse GetQAppSessionMetadata(GetQAppSessionMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetQAppSessionMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetQAppSessionMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<GetQAppSessionMetadataResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the current configuration of a Q App session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetQAppSessionMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetQAppSessionMetadata service method, as returned by QApps.</returns>
+        /// <exception cref="Amazon.QApps.Model.AccessDeniedException">
+        /// The client is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.InternalServerException">
+        /// An internal service error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ServiceQuotaExceededException">
+        /// The requested operation could not be completed because it would exceed the service's
+        /// quota or limit.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ThrottlingException">
+        /// The requested operation could not be completed because too many requests were sent
+        /// at once. Wait a bit and try again later.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.UnauthorizedException">
+        /// The client is not authenticated or authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/GetQAppSessionMetadata">REST API Reference for GetQAppSessionMetadata Operation</seealso>
+        public virtual Task<GetQAppSessionMetadataResponse> GetQAppSessionMetadataAsync(GetQAppSessionMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetQAppSessionMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetQAppSessionMetadataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetQAppSessionMetadataResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1324,6 +1549,63 @@ namespace Amazon.QApps
             options.ResponseUnmarshaller = ListQAppsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListQAppsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListQAppSessionData
+
+        internal virtual ListQAppSessionDataResponse ListQAppSessionData(ListQAppSessionDataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListQAppSessionDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListQAppSessionDataResponseUnmarshaller.Instance;
+
+            return Invoke<ListQAppSessionDataResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the collected data of a Q App data collection session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListQAppSessionData service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListQAppSessionData service method, as returned by QApps.</returns>
+        /// <exception cref="Amazon.QApps.Model.AccessDeniedException">
+        /// The client is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.InternalServerException">
+        /// An internal service error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ServiceQuotaExceededException">
+        /// The requested operation could not be completed because it would exceed the service's
+        /// quota or limit.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ThrottlingException">
+        /// The requested operation could not be completed because too many requests were sent
+        /// at once. Wait a bit and try again later.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.UnauthorizedException">
+        /// The client is not authenticated or authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/ListQAppSessionData">REST API Reference for ListQAppSessionData Operation</seealso>
+        public virtual Task<ListQAppSessionDataResponse> ListQAppSessionDataAsync(ListQAppSessionDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListQAppSessionDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListQAppSessionDataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListQAppSessionDataResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1829,6 +2111,60 @@ namespace Amazon.QApps
 
         #endregion
         
+        #region  UpdateQAppPermissions
+
+        internal virtual UpdateQAppPermissionsResponse UpdateQAppPermissions(UpdateQAppPermissionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateQAppPermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateQAppPermissionsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateQAppPermissionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates read permissions for a Amazon Q App in Amazon Q Business application environment
+        /// instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQAppPermissions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateQAppPermissions service method, as returned by QApps.</returns>
+        /// <exception cref="Amazon.QApps.Model.AccessDeniedException">
+        /// The client is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.InternalServerException">
+        /// An internal service error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ThrottlingException">
+        /// The requested operation could not be completed because too many requests were sent
+        /// at once. Wait a bit and try again later.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.UnauthorizedException">
+        /// The client is not authenticated or authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/UpdateQAppPermissions">REST API Reference for UpdateQAppPermissions Operation</seealso>
+        public virtual Task<UpdateQAppPermissionsResponse> UpdateQAppPermissionsAsync(UpdateQAppPermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateQAppPermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateQAppPermissionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateQAppPermissionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateQAppSession
 
         internal virtual UpdateQAppSessionResponse UpdateQAppSession(UpdateQAppSessionRequest request)
@@ -1886,6 +2222,63 @@ namespace Amazon.QApps
             options.ResponseUnmarshaller = UpdateQAppSessionResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateQAppSessionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateQAppSessionMetadata
+
+        internal virtual UpdateQAppSessionMetadataResponse UpdateQAppSessionMetadata(UpdateQAppSessionMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateQAppSessionMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateQAppSessionMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateQAppSessionMetadataResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the configuration metadata of a session for a given Q App <c>sessionId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateQAppSessionMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateQAppSessionMetadata service method, as returned by QApps.</returns>
+        /// <exception cref="Amazon.QApps.Model.AccessDeniedException">
+        /// The client is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.InternalServerException">
+        /// An internal service error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ServiceQuotaExceededException">
+        /// The requested operation could not be completed because it would exceed the service's
+        /// quota or limit.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ThrottlingException">
+        /// The requested operation could not be completed because too many requests were sent
+        /// at once. Wait a bit and try again later.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.UnauthorizedException">
+        /// The client is not authenticated or authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/UpdateQAppSessionMetadata">REST API Reference for UpdateQAppSessionMetadata Operation</seealso>
+        public virtual Task<UpdateQAppSessionMetadataResponse> UpdateQAppSessionMetadataAsync(UpdateQAppSessionMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateQAppSessionMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateQAppSessionMetadataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateQAppSessionMetadataResponse>(request, options, cancellationToken);
         }
 
         #endregion

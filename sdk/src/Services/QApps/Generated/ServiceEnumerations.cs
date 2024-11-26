@@ -197,6 +197,10 @@ namespace Amazon.QApps
         /// </summary>
         public static readonly CardType FileUpload = new CardType("file-upload");
         /// <summary>
+        /// Constant FormInput for CardType
+        /// </summary>
+        public static readonly CardType FormInput = new CardType("form-input");
+        /// <summary>
         /// Constant QPlugin for CardType
         /// </summary>
         public static readonly CardType QPlugin = new CardType("q-plugin");
@@ -305,6 +309,10 @@ namespace Amazon.QApps
         /// </summary>
         public static readonly ExecutionStatus COMPLETED = new ExecutionStatus("COMPLETED");
         /// <summary>
+        /// Constant ERROR for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus ERROR = new ExecutionStatus("ERROR");
+        /// <summary>
         /// Constant IN_PROGRESS for ExecutionStatus
         /// </summary>
         public static readonly ExecutionStatus IN_PROGRESS = new ExecutionStatus("IN_PROGRESS");
@@ -342,6 +350,56 @@ namespace Amazon.QApps
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ExecutionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InputCardComputeMode.
+    /// </summary>
+    public class InputCardComputeMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Append for InputCardComputeMode
+        /// </summary>
+        public static readonly InputCardComputeMode Append = new InputCardComputeMode("append");
+        /// <summary>
+        /// Constant Replace for InputCardComputeMode
+        /// </summary>
+        public static readonly InputCardComputeMode Replace = new InputCardComputeMode("replace");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InputCardComputeMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InputCardComputeMode FindValue(string value)
+        {
+            return FindValue<InputCardComputeMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InputCardComputeMode(string value)
         {
             return FindValue(value);
         }
@@ -392,6 +450,106 @@ namespace Amazon.QApps
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LibraryItemStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PermissionInputActionEnum.
+    /// </summary>
+    public class PermissionInputActionEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Read for PermissionInputActionEnum
+        /// </summary>
+        public static readonly PermissionInputActionEnum Read = new PermissionInputActionEnum("read");
+        /// <summary>
+        /// Constant Write for PermissionInputActionEnum
+        /// </summary>
+        public static readonly PermissionInputActionEnum Write = new PermissionInputActionEnum("write");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PermissionInputActionEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PermissionInputActionEnum FindValue(string value)
+        {
+            return FindValue<PermissionInputActionEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PermissionInputActionEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PermissionOutputActionEnum.
+    /// </summary>
+    public class PermissionOutputActionEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Read for PermissionOutputActionEnum
+        /// </summary>
+        public static readonly PermissionOutputActionEnum Read = new PermissionOutputActionEnum("read");
+        /// <summary>
+        /// Constant Write for PermissionOutputActionEnum
+        /// </summary>
+        public static readonly PermissionOutputActionEnum Write = new PermissionOutputActionEnum("write");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PermissionOutputActionEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PermissionOutputActionEnum FindValue(string value)
+        {
+            return FindValue<PermissionOutputActionEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PermissionOutputActionEnum(string value)
         {
             return FindValue(value);
         }
@@ -461,6 +619,56 @@ namespace Amazon.QApps
 
 
     /// <summary>
+    /// Constants used for properties of type PrincipalOutputUserTypeEnum.
+    /// </summary>
+    public class PrincipalOutputUserTypeEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Owner for PrincipalOutputUserTypeEnum
+        /// </summary>
+        public static readonly PrincipalOutputUserTypeEnum Owner = new PrincipalOutputUserTypeEnum("owner");
+        /// <summary>
+        /// Constant User for PrincipalOutputUserTypeEnum
+        /// </summary>
+        public static readonly PrincipalOutputUserTypeEnum User = new PrincipalOutputUserTypeEnum("user");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PrincipalOutputUserTypeEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PrincipalOutputUserTypeEnum FindValue(string value)
+        {
+            return FindValue<PrincipalOutputUserTypeEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PrincipalOutputUserTypeEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Sender.
     /// </summary>
     public class Sender : ConstantClass
@@ -504,6 +712,60 @@ namespace Amazon.QApps
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Sender(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SubmissionMutationKind.
+    /// </summary>
+    public class SubmissionMutationKind : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Add for SubmissionMutationKind
+        /// </summary>
+        public static readonly SubmissionMutationKind Add = new SubmissionMutationKind("add");
+        /// <summary>
+        /// Constant Delete for SubmissionMutationKind
+        /// </summary>
+        public static readonly SubmissionMutationKind Delete = new SubmissionMutationKind("delete");
+        /// <summary>
+        /// Constant Edit for SubmissionMutationKind
+        /// </summary>
+        public static readonly SubmissionMutationKind Edit = new SubmissionMutationKind("edit");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SubmissionMutationKind(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SubmissionMutationKind FindValue(string value)
+        {
+            return FindValue<SubmissionMutationKind>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SubmissionMutationKind(string value)
         {
             return FindValue(value);
         }

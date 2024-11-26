@@ -78,6 +78,12 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
                     unmarshalledObject.CurrentValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("submissions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Submission, SubmissionUnmarshaller>(SubmissionUnmarshaller.Instance);
+                    unmarshalledObject.Submissions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

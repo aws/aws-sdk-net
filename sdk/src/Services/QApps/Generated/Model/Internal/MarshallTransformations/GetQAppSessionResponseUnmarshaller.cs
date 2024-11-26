@@ -52,10 +52,22 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("appVersion", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.AppVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("cardStatus", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, CardStatus, StringUnmarshaller, CardStatusUnmarshaller>(StringUnmarshaller.Instance, CardStatusUnmarshaller.Instance);
                     response.CardStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("latestPublishedAppVersion", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.LatestPublishedAppVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("sessionArn", targetDepth))
@@ -70,10 +82,22 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
                     response.SessionId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("sessionName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.SessionName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("userIsHost", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.UserIsHost = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
