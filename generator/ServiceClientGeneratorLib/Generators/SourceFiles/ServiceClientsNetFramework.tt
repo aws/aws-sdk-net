@@ -232,7 +232,7 @@ namespace <#=this.Config.Namespace#>
         /// <param name="pipeline"></param>
         protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
-            pipeline.AddHandlerBefore<Amazon.Runtime.Internal.CredentialsRetriever>(new Amazon<#=this.Config.ClassName#>AuthSchemeHandler(this.Config.DefaultAWSCredentials));
+            pipeline.AddHandlerBefore<Amazon.Runtime.Internal.CredentialsRetriever>(new Amazon<#=this.Config.ClassName#>AuthSchemeHandler());
 <#
     var pipelineOverrides = this.Config.ServiceModel.Customizations.PipelineOverride;
     if (pipelineOverrides != null)

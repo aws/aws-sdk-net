@@ -574,7 +574,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             
             #line default
             #line hidden
-            this.Write("AuthSchemeHandler(this.Config.DefaultAWSCredentials));\r\n");
+            this.Write("AuthSchemeHandler());\r\n");
             
             #line 236 "C:\repos\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceClientsNetFramework.tt"
 
