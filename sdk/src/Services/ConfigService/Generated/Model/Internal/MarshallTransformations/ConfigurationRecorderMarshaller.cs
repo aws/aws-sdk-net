@@ -48,6 +48,12 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetArn())
+            {
+                context.Writer.WritePropertyName("arn");
+                context.Writer.Write(requestObject.Arn);
+            }
+
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
@@ -76,10 +82,22 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetRecordingScope())
+            {
+                context.Writer.WritePropertyName("recordingScope");
+                context.Writer.Write(requestObject.RecordingScope);
+            }
+
             if(requestObject.IsSetRoleARN())
             {
                 context.Writer.WritePropertyName("roleARN");
                 context.Writer.Write(requestObject.RoleARN);
+            }
+
+            if(requestObject.IsSetServicePrincipal())
+            {
+                context.Writer.WritePropertyName("servicePrincipal");
+                context.Writer.Write(requestObject.ServicePrincipal);
             }
 
         }

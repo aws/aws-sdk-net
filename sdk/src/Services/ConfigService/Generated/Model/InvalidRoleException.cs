@@ -31,7 +31,7 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// You have provided a null or empty Amazon Resource Name (ARN) for the IAM role assumed
-    /// by Config and used by the configuration recorder.
+    /// by Config and used by the customer managed configuration recorder.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

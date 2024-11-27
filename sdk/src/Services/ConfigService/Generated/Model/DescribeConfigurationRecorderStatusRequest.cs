@@ -31,30 +31,62 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeConfigurationRecorderStatus operation.
-    /// Returns the current status of the specified configuration recorder as well as the
-    /// status of the last recording event for the recorder. If a configuration recorder is
-    /// not specified, this action returns the status of all configuration recorders associated
-    /// with the account.
+    /// Returns the current status of the configuration recorder you specify as well as the
+    /// status of the last recording event for the configuration recorders.
     /// 
+    ///  
+    /// <para>
+    /// For a detailed status of recording events over time, add your Config events to Amazon
+    /// CloudWatch metrics and use CloudWatch metrics.
+    /// </para>
+    ///  
+    /// <para>
+    /// If a configuration recorder is not specified, this operation returns the status for
+    /// the customer managed configuration recorder configured for the account, if applicable.
+    /// </para>
     ///  <note> 
     /// <para>
-    /// &gt;You can specify only one configuration recorder for each Amazon Web Services Region
-    /// for each account. For a detailed status of recording events over time, add your Config
-    /// events to Amazon CloudWatch metrics and use CloudWatch metrics.
+    /// When making a request to this operation, you can only specify one configuration recorder.
     /// </para>
     ///  </note>
     /// </summary>
     public partial class DescribeConfigurationRecorderStatusRequest : AmazonConfigServiceRequest
     {
+        private string _arn;
         private List<string> _configurationRecorderNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _servicePrincipal;
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the configuration recorder that you want to specify.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ConfigurationRecorderNames. 
         /// <para>
-        /// The name(s) of the configuration recorder. If the name is not specified, the action
-        /// returns the current status of all the configuration recorders associated with the
-        /// account.
+        /// The name of the configuration recorder. If the name is not specified, the opertation
+        /// returns the status for the customer managed configuration recorder configured for
+        /// the account, if applicable.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When making a request to this operation, you can only specify one configuration recorder.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<string> ConfigurationRecorderNames
         {
@@ -66,6 +98,26 @@ namespace Amazon.ConfigService.Model
         internal bool IsSetConfigurationRecorderNames()
         {
             return this._configurationRecorderNames != null && (this._configurationRecorderNames.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServicePrincipal. 
+        /// <para>
+        /// For service-linked configuration recorders, you can use the service principal of the
+        /// linked Amazon Web Services service to specify the configuration recorder.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string ServicePrincipal
+        {
+            get { return this._servicePrincipal; }
+            set { this._servicePrincipal = value; }
+        }
+
+        // Check to see if ServicePrincipal property is set
+        internal bool IsSetServicePrincipal()
+        {
+            return this._servicePrincipal != null;
         }
 
     }

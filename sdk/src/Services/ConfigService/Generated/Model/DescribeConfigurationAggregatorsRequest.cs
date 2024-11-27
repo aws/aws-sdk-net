@@ -32,7 +32,7 @@ namespace Amazon.ConfigService.Model
     /// <summary>
     /// Container for the parameters to the DescribeConfigurationAggregators operation.
     /// Returns the details of one or more configuration aggregators. If the configuration
-    /// aggregator is not specified, this action returns the details for all the configuration
+    /// aggregator is not specified, this operation returns the details for all the configuration
     /// aggregators associated with the account.
     /// </summary>
     public partial class DescribeConfigurationAggregatorsRequest : AmazonConfigServiceRequest

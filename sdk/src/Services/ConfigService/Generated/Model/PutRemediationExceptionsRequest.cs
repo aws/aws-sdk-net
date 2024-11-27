@@ -73,6 +73,15 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  </note> <note> 
     /// <para>
+    ///  <b>Exceptions cannot be placed on service-linked remediation actions</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// You cannot place an exception on service-linked remediation actions, such as remediation
+    /// actions put by an organizational conformance pack.
+    /// </para>
+    ///  </note> <note> 
+    /// <para>
     ///  <b>Auto remediation can be initiated even for compliant resources</b> 
     /// </para>
     ///  

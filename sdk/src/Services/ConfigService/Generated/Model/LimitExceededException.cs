@@ -30,10 +30,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
+    /// For <c>PutServiceLinkedConfigurationRecorder</c> API, this exception is thrown if
+    /// the number of service-linked roles in the account exceeds the limit.
+    /// 
+    ///  
+    /// <para>
     /// For <c>StartConfigRulesEvaluation</c> API, this exception is thrown if an evaluation
     /// is in progress or if you call the <a>StartConfigRulesEvaluation</a> API more than
     /// once per minute.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// For <c>PutConfigurationAggregator</c> API, this exception is thrown if the number
