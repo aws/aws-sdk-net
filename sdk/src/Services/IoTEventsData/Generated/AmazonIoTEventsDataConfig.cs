@@ -32,7 +32,7 @@ namespace Amazon.IoTEventsData
     public partial class AmazonIoTEventsDataConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("IoT Events Data", "3.7.400.57");
+            InternalSDKUtils.BuildUserAgentString("IoT Events Data", "3.7.400.58");
 
         private string _userAgent = UserAgentString;
         ///<summary>
