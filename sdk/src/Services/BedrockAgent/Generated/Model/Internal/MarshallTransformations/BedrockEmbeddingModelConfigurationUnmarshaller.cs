@@ -72,6 +72,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.Dimensions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("embeddingDataType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EmbeddingDataType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
