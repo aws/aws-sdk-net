@@ -50,7 +50,7 @@ namespace Amazon.Runtime.Internal.Util
 
             _stream = stream;
             // 300 bytes of padding to acocunt for stream.read() returning more bytes than requested sometimes
-            _buffer = ArrayPool<byte>.Shared.Rent( (AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096) + 300);
+            _buffer = ArrayPool<byte>.Shared.Rent( (AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096) + 0);
             // need to initialize the reader even if the buffer is empty because auto-default of unassigned fields is only 
             // supported in C# 11+
             _reader = new Utf8JsonReader(_buffer);
@@ -126,7 +126,7 @@ namespace Amazon.Runtime.Internal.Util
                     resized = true;
                     // rent double the capacity, hopefully we never have to rent the maxValue but in case buffer.Length * 2 ends up greater 
                     // we must protect against that
-                    var resizedBuffer = ArrayPool<byte>.Shared.Rent(Math.Min(int.MaxValue, (buffer.Length * 2) + 300));
+                    var resizedBuffer = ArrayPool<byte>.Shared.Rent(Math.Min(int.MaxValue, (buffer.Length * 2) + 0));
                     Logger.GetLogger(typeof(StreamingUtf8JsonReader)).InfoFormat("Resizing buffer from {0} to {1}", buffer.Length, resizedBuffer.Length);
                     
                     buffer.AsSpan().CopyTo(resizedBuffer);
@@ -136,18 +136,8 @@ namespace Amazon.Runtime.Internal.Util
                 
                 leftover.CopyTo(buffer);
                 int offset = leftover.Length;
-                int bytesToRead = buffer.Length - leftover.Length;
-                int cachedBytesToRead = bytesToRead;
-                // Stream.Read is not guaranteed to return all the data requested, so if the bytes read is less than what we requested,
-                // read again in case there is more data.
-                while (bytesToRead > 0)
-                {
-                    int read = stream.Read(buffer, offset, bytesToRead);
-                    if (read == 0) break; // End of stream
-                    offset += read;
-                    bytesToRead -= read;
-                    bytesRead += read;
-                }
+
+                bytesRead = FillBuffer(stream, ref buffer, leftover.Length, buffer.Length - leftover.Length);
 
                 if (resized)
                 {
@@ -159,7 +149,7 @@ namespace Amazon.Runtime.Internal.Util
 
             else
             {
-                bytesRead = stream.Read(buffer, 0, buffer.Length);
+                bytesRead = FillBuffer(stream, ref buffer, 0, buffer.Length);
             }
 
             if (bytesRead == 0)
@@ -172,6 +162,23 @@ namespace Amazon.Runtime.Internal.Util
             }
 
             reader = new Utf8JsonReader(buffer, isFinalBlock: false, reader.CurrentState);
+        }
+        
+        private static int FillBuffer(Stream stream, ref byte[] buffer, int offset, int bytesToRead)
+        {
+            if (stream is null)
+                throw new ArgumentNullException("stream must be populated.");
+            int bytesRead = 0;
+            while (bytesToRead > 0)
+            {
+                int read = stream.Read(buffer, offset, bytesToRead);
+                if (read == 0) break; // End of stream
+                offset += read;
+                bytesToRead -= read;
+                bytesRead += read;
+            }
+
+            return bytesRead;
         }
     }
 }
