@@ -78,7 +78,7 @@ namespace AWSSDK.UnitTests
             var httpHandler = new HttpHandler<Stream>(_requestFactory, this);
 
             pipeline.ReplaceHandler<HttpHandler<Stream>>(httpHandler);
-            pipeline.AddHandlerBefore<CredentialsRetriever>(new AmazonElasticTranscoderAuthSchemeHandler());
+            pipeline.AddHandlerAfter<Marshaller>(new AmazonElasticTranscoderAuthSchemeHandler());
         }
     }
 }

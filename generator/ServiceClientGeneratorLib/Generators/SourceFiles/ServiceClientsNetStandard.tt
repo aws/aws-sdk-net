@@ -236,7 +236,6 @@ namespace <#=this.Config.Namespace#>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
         protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
-            pipeline.AddHandlerBefore<Amazon.Runtime.Internal.CredentialsRetriever>(new Amazon<#=this.Config.ClassName#>AuthSchemeHandler());
 <#
     var pipelineOverrides = this.Config.ServiceModel.Customizations.PipelineOverride;
     if (pipelineOverrides != null)
@@ -284,6 +283,7 @@ namespace <#=this.Config.Namespace#>
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new Amazon<#=this.Config.ClassName#>EndpointResolver());
 <# } #>
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new Amazon<#=this.Config.ClassName#>AuthSchemeHandler());
         }
 
 		/// <summary>
