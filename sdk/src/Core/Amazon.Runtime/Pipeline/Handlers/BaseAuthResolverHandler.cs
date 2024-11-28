@@ -20,17 +20,18 @@ using Smithy.Identity.Abstractions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Amazon.Runtime.Internal
 {
     public abstract class BaseAuthResolverHandler : PipelineHandler
     {
-        // These are the client supported schemes, included here for now.
         private readonly HashSet<IAuthScheme<BaseIdentity>> _supportedSchemes = new()
         {
             new AnonymousAuthScheme(),
             new AwsV4aAuthScheme(),
-            new AwsV4AuthScheme()
+            new AwsV4AuthScheme(),
+            new BearerAuthScheme(),
         };
 
         public override void InvokeSync(IExecutionContext executionContext)
@@ -39,21 +40,21 @@ namespace Amazon.Runtime.Internal
             base.InvokeSync(executionContext);
         }
 
-#if AWS_ASYNC_API
-        public override System.Threading.Tasks.Task<T> InvokeAsync<T>(IExecutionContext executionContext)
+        public override async Task<T> InvokeAsync<T>(IExecutionContext executionContext)
         {
-            PreInvoke(executionContext);
-            return base.InvokeAsync<T>(executionContext);
+            await PreInvokeAsync(executionContext).ConfigureAwait(false);
+            return await base.InvokeAsync<T>(executionContext).ConfigureAwait(false);
         }
-#endif
 
         protected void PreInvoke(IExecutionContext executionContext)
         {
             var authOptions = ResolveAuthOptions(executionContext);
-            if (authOptions == null || !authOptions.Any())
+            if (authOptions == null || authOptions.Count == 0)
             {
-                throw new AmazonClientException("TBD - no valid auth schemes for the current request");
+                throw new AmazonClientException($"No valid authentication schemes defined for ${executionContext.RequestContext.RequestName}");
             }
+
+            var clientConfig = executionContext.RequestContext.ClientConfig;
 
             foreach (var authOption in authOptions)
             {
@@ -67,13 +68,80 @@ namespace Amazon.Runtime.Internal
                 if (scheme is AwsV4aAuthScheme || scheme is AwsV4AuthScheme)
                 {
                     // We can use DefaultAWSCredentials if it was set by the user for these schemes.
-                    executionContext.RequestContext.Identity = executionContext.RequestContext.ClientConfig.DefaultAWSCredentials;
+                    executionContext.RequestContext.Identity = clientConfig.DefaultAWSCredentials;
+                }
+
+#if NETFRAMEWORK
+                if (scheme is BearerAuthScheme && clientConfig.AWSTokenProvider != null)
+                {
+                    // If the legacy token provider is set, we'll use it to resolve the identity.
+                    var resolvedToken = clientConfig.AWSTokenProvider.TryResolveToken(out var token);
+                    if (!resolvedToken)
+                    {
+                        continue;
+                    }
+
+                    executionContext.RequestContext.Identity = token;
+                }
+#endif
+
+                if (executionContext.RequestContext.Identity == null)
+                {
+                    var identityResolver = scheme.GetIdentityResolver(clientConfig.IdentityResolverConfiguration);
+                    executionContext.RequestContext.Identity = identityResolver.ResolveIdentity();
+                }
+
+                executionContext.RequestContext.Signer = GetSigner(scheme);
+            }
+        }
+
+        protected async Task PreInvokeAsync(IExecutionContext executionContext)
+        {
+            var authOptions = ResolveAuthOptions(executionContext);
+            if (authOptions == null || authOptions.Count == 0)
+            {
+                throw new AmazonClientException($"No valid authentication schemes defined for ${executionContext.RequestContext.RequestName}");
+            }
+
+            var clientConfig = executionContext.RequestContext.ClientConfig;
+            var cancellationToken = executionContext.RequestContext.CancellationToken;
+
+            foreach (var authOption in authOptions)
+            {
+                var scheme = _supportedSchemes.FirstOrDefault(s => s.SchemeId == authOption.SchemeId);
+                if (scheme == null)
+                {
+                    // Current auth scheme option is not enabled, continue iterating.
+                    continue;
+                }
+
+                if (scheme is AwsV4aAuthScheme || scheme is AwsV4AuthScheme)
+                {
+                    // We can use DefaultAWSCredentials if it was set by the user for these schemes.
+                    executionContext.RequestContext.Identity = clientConfig.DefaultAWSCredentials;
+                }
+
+                if (scheme is BearerAuthScheme && clientConfig.AWSTokenProvider != null)
+                {
+                    // If the legacy token provider is set, we'll use it to resolve the identity.
+                    var resolvedToken = await clientConfig.AWSTokenProvider
+                        .TryResolveTokenAsync(cancellationToken)
+                        .ConfigureAwait(false);
+                    
+                    if (!resolvedToken.Success)
+                    {
+                        continue;
+                    }
+
+                    executionContext.RequestContext.Identity = resolvedToken.Value;
                 }
 
                 if (executionContext.RequestContext.Identity == null)
                 {
-                    var identityResolver = scheme.GetIdentityResolver(executionContext.RequestContext.ClientConfig.IdentityResolverConfiguration);
-                    executionContext.RequestContext.Identity = identityResolver.ResolveIdentity();
+                    var identityResolver = scheme.GetIdentityResolver(clientConfig.IdentityResolverConfiguration);
+                    executionContext.RequestContext.Identity = await identityResolver
+                        .ResolveIdentityAsync(cancellationToken)
+                        .ConfigureAwait(false);
                 }
 
                 executionContext.RequestContext.Signer = GetSigner(scheme);

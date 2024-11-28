@@ -58,7 +58,6 @@ namespace AWSSDK.UnitTests.Runtime
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        [Ignore("This test is pending 'smithy.api#httpBearerAuth' schemeId implementation")]
         public void ServiceUsingBearerTokenCorrectlySetsAuthorizationHeader()
         {
             // ARRANGE
@@ -95,7 +94,6 @@ namespace AWSSDK.UnitTests.Runtime
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        [Ignore("This test is pending 'smithy.api#httpBearerAuth' schemeId implementation")]
         public void ServiceUsingBearerTokenAllowsCustomizingTokenProvider()
         {
             // ARRANGE

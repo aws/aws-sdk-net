@@ -28,6 +28,11 @@ namespace Amazon.Runtime
     {
         public override bool RequiresCredentials { get; } = false;
 
+        /// <summary>
+        /// The resolved bearer token, determined during the auth resolver handler.
+        /// </summary>
+        public string ResolvedToken { get; internal set; }
+
 #if BCL
         public override void Sign(
             IRequest request, 
@@ -43,16 +48,12 @@ namespace Amazon.Runtime
                     "Endpoint must not use 'http'.");
             }
 
-            if (null == clientConfig.AWSTokenProvider)
-                return;
-
-            if (!clientConfig.AWSTokenProvider.TryResolveToken(out var token) ||
-                string.IsNullOrEmpty(token.Token))
+            if (string.IsNullOrEmpty(ResolvedToken))
             {
                 throw new AmazonClientException("No Token found.  Operation requires a Bearer token.");
             }
 
-            request.Headers["Authorization"] = $"Bearer {token}";
+            request.Headers["Authorization"] = $"Bearer {ResolvedToken}";
         }
 #else
         public override void Sign(
@@ -67,7 +68,7 @@ namespace Amazon.Runtime
 #endif
 
 #if AWS_ASYNC_API
-        public override async Task SignAsync(
+        public override Task SignAsync(
             IRequest request, 
             IClientConfig clientConfig, 
             RequestMetrics metrics, 
@@ -81,15 +82,13 @@ namespace Amazon.Runtime
                     "Endpoint must not use 'http'.");
             }
 
-            if (null == clientConfig.AWSTokenProvider)
-                return;
-
-            var result = await clientConfig.AWSTokenProvider.TryResolveTokenAsync(token).ConfigureAwait(false);
-
-            if (true != result.Success || string.IsNullOrEmpty(result.Value.Token))
+            if (string.IsNullOrEmpty(ResolvedToken))
+            {
                 throw new AmazonClientException("No Token found.  Operation requires a Bearer token.");
+            }
 
-            request.Headers["Authorization"] = $"Bearer {result.Value.Token}";
+            request.Headers["Authorization"] = $"Bearer {ResolvedToken}";
+            return Task.CompletedTask;
         }
 #endif
 

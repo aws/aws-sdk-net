@@ -22,6 +22,7 @@ using System.Globalization;
 using System.IO;
 using System.Security;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace Amazon.Runtime.Credentials.Internal.IdentityResolvers
 {
@@ -48,7 +49,7 @@ namespace Amazon.Runtime.Credentials.Internal.IdentityResolvers
                 _credentialsGenerators = new List<CredentialsGenerator>
                 {
 #if BCL
-                () => new AppConfigAWSCredentials(), // Test explicit keys/profile name first.
+                    () => new AppConfigAWSCredentials(), // Test explicit keys/profile name first.
 #endif
                     () => AssumeRoleWithWebIdentityCredentials.FromEnvironmentVariables(),
                     () => new EnvironmentVariablesAWSCredentials(), // Look for credentials set in environment vars.
@@ -136,7 +137,11 @@ namespace Amazon.Runtime.Credentials.Internal.IdentityResolvers
             {
                 _cachedCredentialsLock.ExitWriteLock();
             }
+        }
 
+        public async Task<BaseIdentity> ResolveIdentityAsync(CancellationToken cancellationToken = default)
+        {
+            return await Task.Run(() => ResolveIdentity(), cancellationToken).ConfigureAwait(false);
         }
 
         private static AWSCredentials GetAWSCredentials(ICredentialProfileSource source)

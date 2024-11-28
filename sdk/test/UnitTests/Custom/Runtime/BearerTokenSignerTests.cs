@@ -15,13 +15,13 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Amazon.Runtime;
+using Amazon.Runtime.Credentials.Internal;
 using Amazon.Runtime.Internal;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using Smithy.Identity.Abstractions;
 
 namespace AWSSDK.UnitTests.Runtime
 {
@@ -109,10 +109,7 @@ namespace AWSSDK.UnitTests.Runtime
                 AWSTokenProvider = new StaticTokenProvider(fakeAuthToken)
             };
 
-            var pipeline = new RuntimePipeline(new MockHandler());
-            pipeline.AddHandler(new Signer());
-            pipeline.AddHandler(new CredentialsRetriever());
-
+            var pipeline = CreateMockPipeline();
             var context = CreateTestContext(new BearerTokenSigner(), null, mockConfig);
             pipeline.InvokeSync(context);
 
@@ -132,10 +129,7 @@ namespace AWSSDK.UnitTests.Runtime
                 AWSTokenProvider = new StaticTokenProvider(fakeAuthToken)
             };
 
-            var pipeline = new RuntimePipeline(new MockHandler());
-            pipeline.AddHandler(new Signer());
-            pipeline.AddHandler(new CredentialsRetriever());
-
+            var pipeline = CreateMockPipeline();
             var context = CreateTestContext(new BearerTokenSigner(), null, mockConfig);
             await pipeline.InvokeAsync<AmazonWebServiceResponse>(context);
 
@@ -155,10 +149,7 @@ namespace AWSSDK.UnitTests.Runtime
                 AWSTokenProvider = new StaticTokenProvider(fakeAuthToken)
             };
 
-            var pipeline = new RuntimePipeline(new MockHandler());
-            pipeline.AddHandler(new Signer());
-            pipeline.AddHandler(new CredentialsRetriever());
-
+            var pipeline = CreateMockPipeline();
             var context = CreateTestContext(new BearerTokenSigner(), null, mockConfig);
             pipeline.InvokeSync(context);
 
@@ -178,10 +169,7 @@ namespace AWSSDK.UnitTests.Runtime
                 AWSTokenProvider = new StaticTokenProvider(fakeAuthToken)
             };
 
-            var pipeline = new RuntimePipeline(new MockHandler());
-            pipeline.AddHandler(new Signer());
-            pipeline.AddHandler(new CredentialsRetriever());
-
+            var pipeline = CreateMockPipeline();
             var context = CreateTestContext(new BearerTokenSigner(), null, mockConfig);
             await pipeline.InvokeAsync<AmazonWebServiceResponse>(context);
 
@@ -192,7 +180,7 @@ namespace AWSSDK.UnitTests.Runtime
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        public void SingerShouldOverrideExistingHeader()
+        public void SignerShouldOverrideExistingHeader()
         {
             var fakeAuthToken = "mF_9.B5f-4.1JqM";
 
@@ -201,10 +189,7 @@ namespace AWSSDK.UnitTests.Runtime
                 AWSTokenProvider = new StaticTokenProvider(fakeAuthToken)
             };
 
-            var pipeline = new RuntimePipeline(new MockHandler());
-            pipeline.AddHandler(new Signer());
-            pipeline.AddHandler(new CredentialsRetriever());
-
+            var pipeline = CreateMockPipeline();
             var context = CreateTestContext(new BearerTokenSigner(), null, mockConfig);
 
             context.RequestContext.Request.Headers.Add("Authorization", "Bearer foo");
@@ -219,7 +204,7 @@ namespace AWSSDK.UnitTests.Runtime
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        public async Task SingerShouldOverrideExistingHeaderAsync()
+        public async Task SignerShouldOverrideExistingHeaderAsync()
         {
             var fakeAuthToken = "mF_9.B5f-4.1JqM";
 
@@ -228,10 +213,7 @@ namespace AWSSDK.UnitTests.Runtime
                 AWSTokenProvider = new StaticTokenProvider(fakeAuthToken)
             };
 
-            var pipeline = new RuntimePipeline(new MockHandler());
-            pipeline.AddHandler(new Signer());
-            pipeline.AddHandler(new CredentialsRetriever());
-
+            var pipeline = CreateMockPipeline();
             var context = CreateTestContext(new BearerTokenSigner(), null, mockConfig);
 
             context.RequestContext.Request.Headers.Add("Authorization", "Bearer foo");
@@ -246,17 +228,14 @@ namespace AWSSDK.UnitTests.Runtime
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        public void SingerRequiresAToken()
+        public void SignerRequiresAToken()
         {
             var mockConfig = new MockClientConfig
             {
                 AWSTokenProvider = new AWSTokenProviderChain() // chain is empty
             };
 
-            var pipeline = new RuntimePipeline(new MockHandler());
-            pipeline.AddHandler(new Signer());
-            pipeline.AddHandler(new CredentialsRetriever());
-
+            var pipeline = CreateMockPipeline();
             var context = CreateTestContext(new BearerTokenSigner(), null, mockConfig);
 
             Exception exception = null;
@@ -279,17 +258,14 @@ namespace AWSSDK.UnitTests.Runtime
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        public async Task SingerRequiresATokenAsync()
+        public async Task SignerRequiresATokenAsync()
         {
             var mockConfig = new MockClientConfig
             {
                 AWSTokenProvider = new AWSTokenProviderChain() // chain is empty
             };
 
-            var pipeline = new RuntimePipeline(new MockHandler());
-            pipeline.AddHandler(new Signer());
-            pipeline.AddHandler(new CredentialsRetriever());
-
+            var pipeline = CreateMockPipeline();
             var context = CreateTestContext(new BearerTokenSigner(), null, mockConfig);
 
             Exception exception = null;
@@ -309,16 +285,31 @@ namespace AWSSDK.UnitTests.Runtime
         }
 #endif
 
-
         private void AssertAuthorizationHeaderIs(IExecutionContext context, string expected)
         {
             if (!context.RequestContext.Request.Headers.TryGetValue("Authorization", out var authHeader))
+            {
                 Assert.Fail("No Authorization header found");
+            }
 
             expected = expected.Replace("Bearer ", "");
-
             Assert.AreEqual($"Bearer {expected}", authHeader);
         }
 
+        private RuntimePipeline CreateMockPipeline()
+        {
+            var pipeline = new RuntimePipeline(new MockHandler());
+            pipeline.AddHandler(new Signer());
+            pipeline.AddHandler(new CredentialsRetriever());
+            pipeline.AddHandler(new MockAuthResolverHandler());
+
+            return pipeline;
+        }
+
+        private class MockAuthResolverHandler : BaseAuthResolverHandler
+        {
+            protected override List<IAuthSchemeOption> ResolveAuthOptions(IExecutionContext executionContext) 
+                => AuthSchemeOption.DEFAULT_BEARER;
+        }
     }
 }

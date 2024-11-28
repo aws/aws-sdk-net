@@ -106,7 +106,19 @@ namespace Amazon.Runtime.Internal
 
             // credentials would be null in the case of anonymous users getting public resources from S3
             if (immutableCredentials == null && requestContext.Signer.RequiresCredentials)
+            {
                 return;
+            }
+
+            // The signer interface expects immutable credentials, which does not match the AWSToken structure.
+            // We'll manually set a property so that the bearer token still works as expected.
+            if (requestContext.Signer is BearerTokenSigner tokenSigner)
+            {
+                if (requestContext.Identity is AWSToken resolvedToken)
+                {
+                    tokenSigner.ResolvedToken = resolvedToken.Token;
+                }
+            }
 
             using (requestContext.Metrics.StartEvent(Metric.RequestSigningTime))
             using (MetricsUtilities.MeasureDuration(requestContext, TelemetryConstants.AuthSigningDurationMetricName))
@@ -143,7 +155,19 @@ namespace Amazon.Runtime.Internal
 
             // credentials would be null in the case of anonymous users getting public resources from S3
             if (immutableCredentials == null && requestContext.Signer.RequiresCredentials)
+            {
                 return;
+            }
+
+            // The signer interface expects immutable credentials, which does not match the AWSToken structure.
+            // We'll manually set a property so that the bearer token still works as expected.
+            if (requestContext.Signer is BearerTokenSigner tokenSigner)
+            {
+                if (requestContext.Identity is AWSToken resolvedToken)
+                {
+                    tokenSigner.ResolvedToken = resolvedToken.Token;
+                }
+            }
 
             using (requestContext.Metrics.StartEvent(Metric.RequestSigningTime))
             using (MetricsUtilities.MeasureDuration(requestContext, TelemetryConstants.AuthSigningDurationMetricName))
