@@ -43,13 +43,6 @@ namespace Amazon.S3.Internal
     /// </summary>
     public class AmazonS3AuthSchemeHandler : BaseAuthResolverHandler
     {
-        /// <summary>
-        /// Construct an instance of AmazonS3AuthSchemeHandler
-        /// </summary>
-        public AmazonS3AuthSchemeHandler(AWSCredentials credentials)
-            : base(credentials)
-        { }
-
         private readonly AmazonS3EndpointResolver _endpointResolver = new();
 
         /// <summary>

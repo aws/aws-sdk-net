@@ -67,7 +67,7 @@ namespace AWSSDK.UnitTests
                 .GetValue(client, null)
                 as RuntimePipeline;
             // Setup STS failures
-            var credentialsRetriever = new Mock<CredentialsRetriever>(awsCredentials);
+            var credentialsRetriever = new Mock<CredentialsRetriever>();
             credentialsRetriever.Setup(cr => cr.InvokeSync(It.IsAny<IExecutionContext>())).Throws(exception); // Setting up the exception here
             pipeline.ReplaceHandler<CredentialsRetriever>(credentialsRetriever.Object);
             // Setup retry count notifications
@@ -87,7 +87,6 @@ namespace AWSSDK.UnitTests
 
             webIdentityCredentials.Dispose();
         }
-
 
         [TestMethod]
         public void TestAssumeRoleWithWebIdentity_RetriesInvalidIdentityToken()
@@ -134,7 +133,7 @@ namespace AWSSDK.UnitTests
                 .GetValue(client, null)
                 as RuntimePipeline;
             // Setup STS failures
-            var credentialsRetriever = new Mock<CredentialsRetriever>(awsCredentials);
+            var credentialsRetriever = new Mock<CredentialsRetriever>();
             credentialsRetriever.Setup(cr => cr.InvokeAsync<AssumeRoleWithWebIdentityResponse>(It.IsAny<IExecutionContext>())).ThrowsAsync(excpetion); // Setting up the exception here
             pipeline.ReplaceHandler<CredentialsRetriever>(credentialsRetriever.Object);
             // Setup retry count notifications
@@ -155,7 +154,6 @@ namespace AWSSDK.UnitTests
             webIdentityCredentials.Dispose();
         }
 
-        
         [TestMethod]
         public async Task TestAssumeRoleWithWebIdentityAsync_RetriesInvalidIdentityToken()
         {
