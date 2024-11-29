@@ -43,7 +43,6 @@ namespace Amazon.Runtime
         private Logger _logger;
         protected EndpointDiscoveryResolverBase EndpointDiscoveryResolver { get; private set; }
         protected RuntimePipeline RuntimePipeline { get; set; }
-        protected internal AWSCredentials DefaultAWSCredentials { get; private set; }
         public IClientConfig Config => _config;
         private readonly ClientConfig _config;
         protected virtual IServiceMetadata ServiceMetadata { get; } = new ServiceMetadata();
@@ -160,7 +159,10 @@ namespace Amazon.Runtime
                 _logger = Logger.GetLogger(this.GetType());
 
             config.Validate();
-            this.DefaultAWSCredentials = credentials;
+
+            if(credentials != null)
+                config.DefaultAWSCredentials = credentials;
+
             _config = config;
             EndpointDiscoveryResolver = new EndpointDiscoveryResolver(config, _logger);
             Initialize();

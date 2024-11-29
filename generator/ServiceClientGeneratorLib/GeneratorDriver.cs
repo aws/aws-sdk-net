@@ -197,12 +197,7 @@ namespace ServiceClientGenerator
                 ExecuteTestGenerator(new EndpointProviderTests(), Configuration.ClassName + "EndpointProviderTests.cs", "Endpoints");
             }
 
-            // TODO: We'll eventually generate auth resolvers for all services, but only including a couple for now to keep
-            // the number of generated changes low.
-            if (Configuration.ClassName == "AutoScaling" || Configuration.ClassName == "S3")
-            {
-                ExecuteGenerator(new ModeledResolver(), "Amazon" + Configuration.ClassName + "AuthResolver.cs", "Internal");
-            }
+            ExecuteGenerator(new ModeledResolver(), "Amazon" + Configuration.ClassName + "AuthResolver.cs", "Internal");
 
             if (Configuration.Namespace == "Amazon.S3")
             {
