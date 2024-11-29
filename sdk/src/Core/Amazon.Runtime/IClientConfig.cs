@@ -57,6 +57,22 @@ namespace Amazon.Runtime
         /// </summary>
         Profile Profile { get; }
 
+        /// <summary> 
+        /// <para> 
+        /// The AWS credentials used for authenticating calls to AWS for services using AWS signature version 4 (SigV4). 
+        /// SigV4 is the most common authentication mechanism used for AWS service calls. If AWSCredentials are used as a 
+        /// parameter to the service client's constructor the value will be set on this property. 
+        /// </para> 
+        /// <para> 
+        /// Common instances of AWSCredentials are <see cref="Amazon.Runtime.BasicAWSCredentials" /> for static credentials and 
+        /// <see cref="Amazon.Runtime.AssumeRoleAWSCredentials" /> for getting credentials by assuming an IAM role. 
+        /// </para> 
+        /// <para> 
+        /// If null, the SDK will determine which credentials to use at request time using information from the source service model. 
+        /// </para> 
+        /// </summary>
+        AWSCredentials DefaultAWSCredentials { get; }
+
         /// <summary>
         /// Gets the configuration for identity resolvers used by the service client, which manages
         /// the resolvers used to obtain various types of identities.

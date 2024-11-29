@@ -89,6 +89,7 @@ namespace Amazon.Runtime
         private const int MaxRetriesDefault = 2;
         private const long DefaultMinCompressionSizeBytes = 10240;
         private bool didProcessServiceURL = false;
+        private AWSCredentials _defaultAWSCredentials = null;
         private IIdentityResolverConfiguration _identityResolverConfiguration = DefaultIdentityResolverConfiguration.Instance;
         private IAWSTokenProvider _awsTokenProvider = new DefaultAWSTokenProviderChain();
         private TelemetryProvider telemetryProvider = AWSConfigs.TelemetryProvider;
@@ -183,6 +184,14 @@ namespace Amazon.Runtime
 
             return null;
         }
+
+        /// <inheritdoc />
+        public AWSCredentials DefaultAWSCredentials
+        {
+            get { return this._defaultAWSCredentials; }
+            set { this._defaultAWSCredentials = value; }
+        }
+
         /// <inheritdoc />
         public IIdentityResolverConfiguration IdentityResolverConfiguration
         {

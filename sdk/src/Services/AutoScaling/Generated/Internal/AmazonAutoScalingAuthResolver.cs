@@ -44,13 +44,6 @@ namespace Amazon.AutoScaling.Internal
     public class AmazonAutoScalingAuthSchemeHandler : BaseAuthResolverHandler
     {
         /// <summary>
-        /// Construct an instance of AmazonAutoScalingAuthSchemeHandler
-        /// </summary>
-        public AmazonAutoScalingAuthSchemeHandler(AWSCredentials credentials)
-            : base(credentials)
-        { }
-
-        /// <summary>
         /// Modeled auth scheme resolver for AutoScaling.
         /// </summary>
         public AmazonAutoScalingAuthSchemeResolver AuthSchemeResolver { get; } = new();
