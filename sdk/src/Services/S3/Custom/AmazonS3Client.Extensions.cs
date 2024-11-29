@@ -88,7 +88,7 @@ namespace Amazon.S3
         /// <exception cref="T:System.ArgumentNullException" />
         internal string GetPreSignedURLInternal(GetPreSignedUrlRequest request, bool useSigV2Fallback = true)
         {
-            var credentials = DefaultAWSCredentials ?? DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
+            var credentials = Config.DefaultAWSCredentials ?? DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
 
             if(credentials == null)
                 throw new AmazonS3Exception("Credentials must be specified, cannot call method anonymously");
@@ -153,7 +153,7 @@ namespace Amazon.S3
         [SuppressMessage("AWSSDKRules", "CR1004")]
         internal async Task<string> GetPreSignedURLInternalAsync(GetPreSignedUrlRequest request, bool useSigV2Fallback = true)
         {
-            var credentials = DefaultAWSCredentials ?? DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
+            var credentials = Config.DefaultAWSCredentials ?? DefaultIdentityResolverConfiguration.ResolveDefaultIdentity<AWSCredentials>();
 
             if (credentials == null)
                 throw new AmazonS3Exception("Credentials must be specified, cannot call method anonymously");
