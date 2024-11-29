@@ -13,6 +13,8 @@ namespace ServiceClientGenerator
         {
             switch (signatureVersion)
             {
+                case "v2":
+                    return "QueryStringSigner";
                 case "s3":
                     return "Amazon.S3.Internal.S3Signer";
                 case "s3v4":

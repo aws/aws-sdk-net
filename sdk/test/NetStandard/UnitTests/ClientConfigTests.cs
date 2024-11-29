@@ -66,7 +66,8 @@ namespace UnitTests
             "ClientAppId",
             "TelemetryProvider",
             "AccountIdEndpointMode",
-            "IdentityResolverConfiguration"
+            "IdentityResolverConfiguration",
+            "DefaultAWSCredentials"
         };
 
         [Fact]
