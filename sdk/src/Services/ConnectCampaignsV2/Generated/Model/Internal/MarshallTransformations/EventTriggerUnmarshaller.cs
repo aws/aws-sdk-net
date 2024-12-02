@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Source Object
+    /// Response Unmarshaller for EventTrigger Object
     /// </summary>  
-    public class SourceUnmarshaller : IUnmarshaller<Source, XmlUnmarshallerContext>, IUnmarshaller<Source, JsonUnmarshallerContext>
+    public class EventTriggerUnmarshaller : IUnmarshaller<EventTrigger, XmlUnmarshallerContext>, IUnmarshaller<EventTrigger, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Source IUnmarshaller<Source, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EventTrigger IUnmarshaller<EventTrigger, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public Source Unmarshall(JsonUnmarshallerContext context)
+        public EventTrigger Unmarshall(JsonUnmarshallerContext context)
         {
-            Source unmarshalledObject = new Source();
+            EventTrigger unmarshalledObject = new EventTrigger();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,10 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("customerProfilesSegmentArn", targetDepth))
+                if (context.TestExpression("customerProfilesDomainArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CustomerProfilesSegmentArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("eventTrigger", targetDepth))
-                {
-                    var unmarshaller = EventTriggerUnmarshaller.Instance;
-                    unmarshalledObject.EventTrigger = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CustomerProfilesDomainArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +77,12 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static SourceUnmarshaller _instance = new SourceUnmarshaller();        
+        private static EventTriggerUnmarshaller _instance = new EventTriggerUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SourceUnmarshaller Instance
+        public static EventTriggerUnmarshaller Instance
         {
             get
             {

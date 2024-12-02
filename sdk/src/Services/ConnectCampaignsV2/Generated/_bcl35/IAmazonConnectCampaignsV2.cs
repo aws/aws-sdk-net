@@ -1112,6 +1112,70 @@ namespace Amazon.ConnectCampaignsV2
 
         #endregion
         
+        #region  PutProfileOutboundRequestBatch
+
+
+        /// <summary>
+        /// Takes in a list of profile outbound requests to be placed as part of an outbound campaign.
+        /// This API is idempotent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutProfileOutboundRequestBatch service method.</param>
+        /// 
+        /// <returns>The response from the PutProfileOutboundRequestBatch service method, as returned by ConnectCampaignsV2.</returns>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.InternalServerException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.InvalidCampaignStateException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// campaign.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/PutProfileOutboundRequestBatch">REST API Reference for PutProfileOutboundRequestBatch Operation</seealso>
+        PutProfileOutboundRequestBatchResponse PutProfileOutboundRequestBatch(PutProfileOutboundRequestBatchRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutProfileOutboundRequestBatch operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutProfileOutboundRequestBatch operation on AmazonConnectCampaignsV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutProfileOutboundRequestBatch
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/PutProfileOutboundRequestBatch">REST API Reference for PutProfileOutboundRequestBatch Operation</seealso>
+        IAsyncResult BeginPutProfileOutboundRequestBatch(PutProfileOutboundRequestBatchRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutProfileOutboundRequestBatch operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutProfileOutboundRequestBatch.</param>
+        /// 
+        /// <returns>Returns a  PutProfileOutboundRequestBatchResult from ConnectCampaignsV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/PutProfileOutboundRequestBatch">REST API Reference for PutProfileOutboundRequestBatch Operation</seealso>
+        PutProfileOutboundRequestBatchResponse EndPutProfileOutboundRequestBatch(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ResumeCampaign
 
 

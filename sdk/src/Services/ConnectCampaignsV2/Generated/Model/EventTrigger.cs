@@ -30,42 +30,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectCampaignsV2.Model
 {
     /// <summary>
-    /// Source of the campaign
+    /// Event trigger of the campaign
     /// </summary>
-    public partial class Source
+    public partial class EventTrigger
     {
-        private string _customerProfilesSegmentArn;
-        private EventTrigger _eventTrigger;
+        private string _customerProfilesDomainArn;
 
         /// <summary>
-        /// Gets and sets the property CustomerProfilesSegmentArn.
+        /// Gets and sets the property CustomerProfilesDomainArn.
         /// </summary>
         [AWSProperty(Min=20, Max=500)]
-        public string CustomerProfilesSegmentArn
+        public string CustomerProfilesDomainArn
         {
-            get { return this._customerProfilesSegmentArn; }
-            set { this._customerProfilesSegmentArn = value; }
+            get { return this._customerProfilesDomainArn; }
+            set { this._customerProfilesDomainArn = value; }
         }
 
-        // Check to see if CustomerProfilesSegmentArn property is set
-        internal bool IsSetCustomerProfilesSegmentArn()
+        // Check to see if CustomerProfilesDomainArn property is set
+        internal bool IsSetCustomerProfilesDomainArn()
         {
-            return this._customerProfilesSegmentArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property EventTrigger.
-        /// </summary>
-        public EventTrigger EventTrigger
-        {
-            get { return this._eventTrigger; }
-            set { this._eventTrigger = value; }
-        }
-
-        // Check to see if EventTrigger property is set
-        internal bool IsSetEventTrigger()
-        {
-            return this._eventTrigger != null;
+            return this._customerProfilesDomainArn != null;
         }
 
     }

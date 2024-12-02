@@ -30,42 +30,43 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectCampaignsV2.Model
 {
     /// <summary>
-    /// Source of the campaign
+    /// Success details for a profile outbound request
     /// </summary>
-    public partial class Source
+    public partial class SuccessfulProfileOutboundRequest
     {
-        private string _customerProfilesSegmentArn;
-        private EventTrigger _eventTrigger;
+        private string _clientToken;
+        private string _id;
 
         /// <summary>
-        /// Gets and sets the property CustomerProfilesSegmentArn.
+        /// Gets and sets the property ClientToken.
         /// </summary>
-        [AWSProperty(Min=20, Max=500)]
-        public string CustomerProfilesSegmentArn
+        [AWSProperty(Min=0, Max=200)]
+        public string ClientToken
         {
-            get { return this._customerProfilesSegmentArn; }
-            set { this._customerProfilesSegmentArn = value; }
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
         }
 
-        // Check to see if CustomerProfilesSegmentArn property is set
-        internal bool IsSetCustomerProfilesSegmentArn()
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
         {
-            return this._customerProfilesSegmentArn != null;
+            return this._clientToken != null;
         }
 
         /// <summary>
-        /// Gets and sets the property EventTrigger.
+        /// Gets and sets the property Id.
         /// </summary>
-        public EventTrigger EventTrigger
+        [AWSProperty(Min=0, Max=256)]
+        public string Id
         {
-            get { return this._eventTrigger; }
-            set { this._eventTrigger = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
-        // Check to see if EventTrigger property is set
-        internal bool IsSetEventTrigger()
+        // Check to see if Id property is set
+        internal bool IsSetId()
         {
-            return this._eventTrigger != null;
+            return this._id != null;
         }
 
     }

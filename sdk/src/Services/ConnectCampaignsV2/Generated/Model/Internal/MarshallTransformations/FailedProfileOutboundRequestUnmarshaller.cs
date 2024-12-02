@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Source Object
+    /// Response Unmarshaller for FailedProfileOutboundRequest Object
     /// </summary>  
-    public class SourceUnmarshaller : IUnmarshaller<Source, XmlUnmarshallerContext>, IUnmarshaller<Source, JsonUnmarshallerContext>
+    public class FailedProfileOutboundRequestUnmarshaller : IUnmarshaller<FailedProfileOutboundRequest, XmlUnmarshallerContext>, IUnmarshaller<FailedProfileOutboundRequest, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Source IUnmarshaller<Source, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        FailedProfileOutboundRequest IUnmarshaller<FailedProfileOutboundRequest, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public Source Unmarshall(JsonUnmarshallerContext context)
+        public FailedProfileOutboundRequest Unmarshall(JsonUnmarshallerContext context)
         {
-            Source unmarshalledObject = new Source();
+            FailedProfileOutboundRequest unmarshalledObject = new FailedProfileOutboundRequest();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,22 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("customerProfilesSegmentArn", targetDepth))
+                if (context.TestExpression("clientToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CustomerProfilesSegmentArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ClientToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("eventTrigger", targetDepth))
+                if (context.TestExpression("failureCode", targetDepth))
                 {
-                    var unmarshaller = EventTriggerUnmarshaller.Instance;
-                    unmarshalledObject.EventTrigger = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FailureCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("id", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +89,12 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static SourceUnmarshaller _instance = new SourceUnmarshaller();        
+        private static FailedProfileOutboundRequestUnmarshaller _instance = new FailedProfileOutboundRequestUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SourceUnmarshaller Instance
+        public static FailedProfileOutboundRequestUnmarshaller Instance
         {
             get
             {

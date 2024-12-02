@@ -1657,6 +1657,95 @@ namespace Amazon.ConnectCampaignsV2
 
         #endregion
         
+        #region  PutProfileOutboundRequestBatch
+
+
+        /// <summary>
+        /// Takes in a list of profile outbound requests to be placed as part of an outbound campaign.
+        /// This API is idempotent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutProfileOutboundRequestBatch service method.</param>
+        /// 
+        /// <returns>The response from the PutProfileOutboundRequestBatch service method, as returned by ConnectCampaignsV2.</returns>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.InternalServerException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.InvalidCampaignStateException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// campaign.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/PutProfileOutboundRequestBatch">REST API Reference for PutProfileOutboundRequestBatch Operation</seealso>
+        public virtual PutProfileOutboundRequestBatchResponse PutProfileOutboundRequestBatch(PutProfileOutboundRequestBatchRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutProfileOutboundRequestBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutProfileOutboundRequestBatchResponseUnmarshaller.Instance;
+
+            return Invoke<PutProfileOutboundRequestBatchResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Takes in a list of profile outbound requests to be placed as part of an outbound campaign.
+        /// This API is idempotent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutProfileOutboundRequestBatch service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutProfileOutboundRequestBatch service method, as returned by ConnectCampaignsV2.</returns>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.InternalServerException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.InvalidCampaignStateException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// campaign.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.ConnectCampaignsV2.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connectcampaignsv2-2024-04-23/PutProfileOutboundRequestBatch">REST API Reference for PutProfileOutboundRequestBatch Operation</seealso>
+        public virtual Task<PutProfileOutboundRequestBatchResponse> PutProfileOutboundRequestBatchAsync(PutProfileOutboundRequestBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutProfileOutboundRequestBatchRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutProfileOutboundRequestBatchResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutProfileOutboundRequestBatchResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ResumeCampaign
 
 

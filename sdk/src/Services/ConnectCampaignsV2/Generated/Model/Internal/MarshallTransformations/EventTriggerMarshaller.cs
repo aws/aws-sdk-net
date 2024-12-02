@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Source Marshaller
+    /// EventTrigger Marshaller
     /// </summary>
-    public class SourceMarshaller : IRequestMarshaller<Source, JsonMarshallerContext> 
+    public class EventTriggerMarshaller : IRequestMarshaller<EventTrigger, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,25 +44,14 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Source requestObject, JsonMarshallerContext context)
+        public void Marshall(EventTrigger requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetCustomerProfilesSegmentArn())
+            if(requestObject.IsSetCustomerProfilesDomainArn())
             {
-                context.Writer.WritePropertyName("customerProfilesSegmentArn");
-                context.Writer.Write(requestObject.CustomerProfilesSegmentArn);
-            }
-
-            if(requestObject.IsSetEventTrigger())
-            {
-                context.Writer.WritePropertyName("eventTrigger");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = EventTriggerMarshaller.Instance;
-                marshaller.Marshall(requestObject.EventTrigger, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("customerProfilesDomainArn");
+                context.Writer.Write(requestObject.CustomerProfilesDomainArn);
             }
 
         }
@@ -70,7 +59,7 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static SourceMarshaller Instance = new SourceMarshaller();
+        public readonly static EventTriggerMarshaller Instance = new EventTriggerMarshaller();
 
     }
 }
