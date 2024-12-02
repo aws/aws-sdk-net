@@ -170,6 +170,11 @@ namespace Amazon.S3
         public static readonly DataRedundancy SingleAvailabilityZone = new DataRedundancy("SingleAvailabilityZone");
 
         /// <summary>
+        /// Constant SingleLocalZone for DataRedundancy
+        /// </summary>
+        public static readonly DataRedundancy SingleLocalZone = new DataRedundancy("SingleLocalZone");
+
+        /// <summary>
         /// This constant constructor does not need to be called if the constant
         /// you are attempting to use is already defined as a static instance of 
         /// this class.
@@ -537,6 +542,11 @@ namespace Amazon.S3
         /// Constant AvailabilityZone for LocationType
         /// </summary>
         public static readonly LocationType AvailabilityZone = new LocationType("AvailabilityZone");
+
+        /// <summary>
+        /// Constant LocalZone for LocationType
+        /// </summary>
+        public static readonly LocationType LocalZone = new LocationType("LocalZone");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
