@@ -1,3 +1,65 @@
+### 3.7.937.0 (2024-12-02 04:28 UTC)
+* Bedrock (3.7.410.0)
+	* Add support for Knowledge Base Evaluations & LLM as a judge
+* BedrockAgent (3.7.412.0)
+	* This release introduces APIs to upload documents directly into a Knowledge Base
+* BedrockAgentRuntime (3.7.411.0)
+	* This release introduces a new Rerank API to leverage reranking models (with integration into Knowledge Bases); APIs to upload documents directly into Knowledge Base; RetrieveAndGenerateStream API for streaming response; Guardrails on Retrieve API; and ability to automatically generate filters
+* ChimeSDKVoice (3.7.401.0)
+	* This release adds supports for enterprises to integrate Amazon Connect with other voice systems. It supports directly transferring voice calls and metadata without using the public telephone network. It also supports real-time and post-call analytics.
+* CleanRooms (3.7.403.0)
+	* This release allows customers and their partners to easily collaborate with data stored in Snowflake and Amazon Athena, without having to move or share their underlying data among collaborators.
+* CloudWatchLogs (3.7.408.0)
+	* Adds PutIntegration, GetIntegration, ListIntegrations and DeleteIntegration APIs. Adds QueryLanguage support to StartQuery, GetQueryResults, DescribeQueries, DescribeQueryDefinitions, and PutQueryDefinition APIs.
+* Connect (3.7.412.0)
+	* Adds support for WhatsApp Business messaging, IVR call recording, enabling Contact Lens for existing on-premise contact centers and telephony platforms, and enabling telephony and IVR migration to Amazon Connect independent of their contact center agents.
+* ConnectCampaignsV2 (3.7.401.0)
+	* Amazon Connect Outbound Campaigns V2 / Features : Adds support for Event-Triggered Campaigns.
+* CustomerProfiles (3.7.403.0)
+	* This release introduces Event Trigger APIs as part of Amazon Connect Customer Profiles service.
+* EC2 (3.7.422.0)
+	* Adds support for declarative policies that allow you to enforce desired configuration across an AWS organization through configuring account attributes. Adds support for Allowed AMIs that allows you to limit the use of AMIs in AWS accounts. Adds support for connectivity over non-HTTP protocols.
+* ECS (3.7.407.4)
+	* This release adds support for Container Insights with Enhanced Observability for Amazon ECS.
+* EKS (3.7.405.0)
+	* Added support for Auto Mode Clusters, Hybrid Nodes, and specifying computeTypes in the DescribeAddonVersions API.
+* EventBridge (3.7.402.0)
+	* Call private APIs by configuring Connections with VPC connectivity through PrivateLink and VPC Lattice
+* FSx (3.7.402.0)
+	* FSx API changes to support the public launch of the Amazon FSx Intelligent Tiering for OpenZFS storage class.
+* GuardDuty (3.7.405.0)
+	* Add new Multi Domain Correlation findings.
+* Imagebuilder (3.7.402.0)
+	* Added support for EC2 Image Builder's integration with AWS Marketplace for Marketplace components.
+* Invoicing (3.7.400.0)
+	* AWS Invoice Configuration allows you to receive separate AWS invoices based on your organizational needs. You can use the AWS SDKs to manage Invoice Units and programmatically fetch the information of the invoice receiver.
+* MemoryDB (3.7.402.0)
+	* Amazon MemoryDB SDK now supports all APIs for Multi-Region. Please refer to the updated Amazon MemoryDB public documentation for detailed information on API usage.
+* NetworkFlowMonitor (3.7.400.0)
+	* This release adds documentation for a new feature in Amazon CloudWatch called Network Flow Monitor. You can use Network Flow Monitor to get near real-time metrics, including retransmissions and data transferred, for your actual workloads.
+* OpenSearchService (3.7.404.0)
+	* This feature introduces support for CRUDL APIs, enabling the creation and management of Connected data sources.
+* Organizations (3.7.404.0)
+	* Add support for policy operations on the DECLARATIVE_POLICY_EC2 policy type.
+* QBusiness (3.7.405.0)
+	* Amazon Q Business now supports capabilities to extract insights and answer questions from visual elements embedded within documents, a browser extension for Google Chrome, Mozilla Firefox, and Microsoft Edge, and attachments across conversations.
+* QConnect (3.7.403.0)
+	* This release adds following capabilities: Configuring safeguards via AIGuardrails for Q in Connect inferencing, and APIs to support Q&A self-service use cases
+* RDS (3.7.409.0)
+	* Amazon RDS supports CloudWatch Database Insights. You can use the SDK to create, modify, and describe the DatabaseInsightsMode for your DB instances and clusters.
+* S3 (3.7.409.0)
+	* Amazon S3 introduces support for AWS Dedicated Local Zones
+* S3Control (3.7.403.0)
+	* Amazon S3 introduces support for AWS Dedicated Local Zones
+* SecurityHub (3.7.402.0)
+	* Add new Multi Domain Correlation findings.
+* SecurityIR (3.7.400.0)
+	* AWS Security Incident Response is a purpose-built security incident solution designed to help customers prepare for, respond to, and recover from security incidents.
+* Transfer (3.7.402.0)
+	* AWS Transfer Family now offers Web apps that enables simple and secure access to data stored in Amazon S3.
+* VPCLattice (3.7.401.0)
+	* Lattice APIs that allow sharing and access of VPC resources across accounts.
+
 ### 3.7.936.0 (2024-11-27 19:24 UTC)
 * BedrockAgent (3.7.411.0)
 	* Add support for specifying embeddingDataType, either FLOAT32 or BINARY
