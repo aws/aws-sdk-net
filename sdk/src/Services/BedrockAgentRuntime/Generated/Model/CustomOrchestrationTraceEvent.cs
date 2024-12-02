@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// The event in the custom orchestration sequence.
+    /// The event in the custom orchestration sequence. Events are the responses which the
+    /// custom orchestration Lambda function sends as response to the agent.
     /// </summary>
     public partial class CustomOrchestrationTraceEvent
     {

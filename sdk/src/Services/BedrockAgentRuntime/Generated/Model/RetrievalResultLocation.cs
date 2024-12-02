@@ -56,6 +56,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     public partial class RetrievalResultLocation
     {
         private RetrievalResultConfluenceLocation _confluenceLocation;
+        private RetrievalResultCustomDocumentLocation _customDocumentLocation;
         private RetrievalResultS3Location _s3Location;
         private RetrievalResultSalesforceLocation _salesforceLocation;
         private RetrievalResultSharePointLocation _sharePointLocation;
@@ -78,6 +79,24 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetConfluenceLocation()
         {
             return this._confluenceLocation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomDocumentLocation. 
+        /// <para>
+        /// Specifies the location of a document in a custom data source.
+        /// </para>
+        /// </summary>
+        public RetrievalResultCustomDocumentLocation CustomDocumentLocation
+        {
+            get { return this._customDocumentLocation; }
+            set { this._customDocumentLocation = value; }
+        }
+
+        // Check to see if CustomDocumentLocation property is set
+        internal bool IsSetCustomDocumentLocation()
+        {
+            return this._customDocumentLocation != null;
         }
 
         /// <summary>

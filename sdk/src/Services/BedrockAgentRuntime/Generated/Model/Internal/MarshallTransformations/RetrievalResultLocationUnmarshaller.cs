@@ -72,6 +72,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                     unmarshalledObject.ConfluenceLocation = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("customDocumentLocation", targetDepth))
+                {
+                    var unmarshaller = RetrievalResultCustomDocumentLocationUnmarshaller.Instance;
+                    unmarshalledObject.CustomDocumentLocation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("s3Location", targetDepth))
                 {
                     var unmarshaller = RetrievalResultS3LocationUnmarshaller.Instance;

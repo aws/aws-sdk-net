@@ -32,6 +32,11 @@ namespace Amazon.BedrockAgentRuntime.Model
         IGetAgentMemoryPaginator GetAgentMemory(GetAgentMemoryRequest request);
 
         /// <summary>
+        /// Paginator for Rerank operation
+        ///</summary>
+        IRerankPaginator Rerank(RerankRequest request);
+
+        /// <summary>
         /// Paginator for Retrieve operation
         ///</summary>
         IRetrievePaginator Retrieve(RetrieveRequest request);

@@ -40,7 +40,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property Event. 
         /// <para>
-        ///  The trace event details used with the custom orchestration. 
+        ///  The event details used with the custom orchestration. 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
