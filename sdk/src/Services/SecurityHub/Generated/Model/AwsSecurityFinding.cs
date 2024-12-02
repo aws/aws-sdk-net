@@ -52,6 +52,7 @@ namespace Amazon.SecurityHub.Model
         private string _createdAt;
         private int? _criticality;
         private string _description;
+        private Detection _detection;
         private FindingProviderFields _findingProviderFields;
         private string _firstObservedAt;
         private GeneratorDetails _generatorDetails;
@@ -320,6 +321,29 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Detection. 
+        /// <para>
+        ///  Provides details about an Amazon GuardDuty Extended Threat Detection attack sequence.
+        /// GuardDuty generates an attack sequence finding when multiple events align to a potentially
+        /// suspicious activity. To receive GuardDuty attack sequence findings in Security Hub,
+        /// you must have GuardDuty and GuardDuty S3 Protection enabled. For more information,
+        /// see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-extended-threat-detection.html">GuardDuty
+        /// Extended Threat Detection </a> in the <i>Amazon GuardDuty User Guide</i>. 
+        /// </para>
+        /// </summary>
+        public Detection Detection
+        {
+            get { return this._detection; }
+            set { this._detection = value; }
+        }
+
+        // Check to see if Detection property is set
+        internal bool IsSetDetection()
+        {
+            return this._detection != null;
         }
 
         /// <summary>
