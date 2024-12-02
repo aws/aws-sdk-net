@@ -2273,6 +2273,68 @@ namespace Amazon.Imagebuilder
 
         #endregion
         
+        #region  GetMarketplaceResource
+
+
+        /// <summary>
+        /// Verify the subscription and perform resource dependency checks on the requested Amazon
+        /// Web Services Marketplace resource. For Amazon Web Services Marketplace components,
+        /// the response contains fields to download the components and their artifacts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMarketplaceResource service method.</param>
+        /// 
+        /// <returns>The response from the GetMarketplaceResource service method, as returned by Imagebuilder.</returns>
+        /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
+        /// You have exceeded the permitted request rate for the specific operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
+        /// These errors are usually caused by a client action, such as using an action or resource
+        /// on behalf of a user that doesn't have permissions to use the action or resource, or
+        /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
+        /// You are not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
+        /// You have requested an action that that the service doesn't support.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
+        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
+        /// The service is unable to process your request at this time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetMarketplaceResource">REST API Reference for GetMarketplaceResource Operation</seealso>
+        GetMarketplaceResourceResponse GetMarketplaceResource(GetMarketplaceResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMarketplaceResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMarketplaceResource operation on AmazonImagebuilderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMarketplaceResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetMarketplaceResource">REST API Reference for GetMarketplaceResource Operation</seealso>
+        IAsyncResult BeginGetMarketplaceResource(GetMarketplaceResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMarketplaceResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMarketplaceResource.</param>
+        /// 
+        /// <returns>Returns a  GetMarketplaceResourceResult from Imagebuilder.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetMarketplaceResource">REST API Reference for GetMarketplaceResource Operation</seealso>
+        GetMarketplaceResourceResponse EndGetMarketplaceResource(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetWorkflow
 
 

@@ -46,6 +46,7 @@ namespace Amazon.Imagebuilder.Model
         private string _owner;
         private List<ComponentParameterDetail> _parameters = AWSConfigs.InitializeCollections ? new List<ComponentParameterDetail>() : null;
         private Platform _platform;
+        private List<ProductCodeListItem> _productCodes = AWSConfigs.InitializeCollections ? new List<ProductCodeListItem>() : null;
         private string _publisher;
         private ComponentState _state;
         private List<string> _supportedOsVersions = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -277,6 +278,25 @@ namespace Amazon.Imagebuilder.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ProductCodes. 
+        /// <para>
+        /// Contains product codes that are used for billing purposes for Amazon Web Services
+        /// Marketplace components.
+        /// </para>
+        /// </summary>
+        public List<ProductCodeListItem> ProductCodes
+        {
+            get { return this._productCodes; }
+            set { this._productCodes = value; }
+        }
+
+        // Check to see if ProductCodes property is set
+        internal bool IsSetProductCodes()
+        {
+            return this._productCodes != null && (this._productCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property Publisher. 
         /// <para>
         /// Contains the name of the publisher if this is a third-party component. Otherwise,
@@ -299,8 +319,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// Describes the current status of the component. This is used for components that are
-        /// no longer active.
+        /// Describes the current status of the component.
         /// </para>
         /// </summary>
         public ComponentState State
