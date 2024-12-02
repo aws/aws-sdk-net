@@ -87,6 +87,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
+                if(publicRequest.IsSetQueryLanguage())
+                {
+                    context.Writer.WritePropertyName("queryLanguage");
+                    context.Writer.Write(publicRequest.QueryLanguage);
+                }
+
                 if(publicRequest.IsSetStatus())
                 {
                     context.Writer.WritePropertyName("status");

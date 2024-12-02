@@ -2064,6 +2064,79 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
         
+        #region  DeleteIntegration
+
+
+        /// <summary>
+        /// Deletes the integration between CloudWatch Logs and OpenSearch Service. If your integration
+        /// has active vended logs dashboards, you must specify <c>true</c> for the <c>force</c>
+        /// parameter, otherwise the operation will fail. If you delete the integration by setting
+        /// <c>force</c> to <c>true</c>, all your vended logs dashboards powered by OpenSearch
+        /// Service will be deleted and the data that was on them will no longer be accessible.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIntegration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteIntegration service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteIntegration">REST API Reference for DeleteIntegration Operation</seealso>
+        public virtual DeleteIntegrationResponse DeleteIntegration(DeleteIntegrationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIntegrationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteIntegrationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the integration between CloudWatch Logs and OpenSearch Service. If your integration
+        /// has active vended logs dashboards, you must specify <c>true</c> for the <c>force</c>
+        /// parameter, otherwise the operation will fail. If you delete the integration by setting
+        /// <c>force</c> to <c>true</c>, all your vended logs dashboards powered by OpenSearch
+        /// Service will be deleted and the data that was on them will no longer be accessible.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIntegration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteIntegration service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteIntegration">REST API Reference for DeleteIntegration Operation</seealso>
+        public virtual Task<DeleteIntegrationResponse> DeleteIntegrationAsync(DeleteIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIntegrationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteIntegrationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteLogAnomalyDetector
 
 
@@ -4540,6 +4613,65 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
         
+        #region  GetIntegration
+
+
+        /// <summary>
+        /// Returns information about one integration between CloudWatch Logs and OpenSearch Service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIntegration service method.</param>
+        /// 
+        /// <returns>The response from the GetIntegration service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetIntegration">REST API Reference for GetIntegration Operation</seealso>
+        public virtual GetIntegrationResponse GetIntegration(GetIntegrationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIntegrationResponseUnmarshaller.Instance;
+
+            return Invoke<GetIntegrationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns information about one integration between CloudWatch Logs and OpenSearch Service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIntegration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIntegration service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetIntegration">REST API Reference for GetIntegration Operation</seealso>
+        public virtual Task<GetIntegrationResponse> GetIntegrationAsync(GetIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIntegrationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetIntegrationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetLogAnomalyDetector
 
 
@@ -5165,6 +5297,63 @@ namespace Amazon.CloudWatchLogs
             options.ResponseUnmarshaller = ListAnomaliesResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListAnomaliesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListIntegrations
+
+
+        /// <summary>
+        /// Returns a list of integrations between CloudWatch Logs and other services in this
+        /// account. Currently, only one integration can be created in an account, and this integration
+        /// must be with OpenSearch Service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIntegrations service method.</param>
+        /// 
+        /// <returns>The response from the ListIntegrations service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListIntegrations">REST API Reference for ListIntegrations Operation</seealso>
+        public virtual ListIntegrationsResponse ListIntegrations(ListIntegrationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIntegrationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIntegrationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListIntegrationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a list of integrations between CloudWatch Logs and other services in this
+        /// account. Currently, only one integration can be created in an account, and this integration
+        /// must be with OpenSearch Service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIntegrations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListIntegrations service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListIntegrations">REST API Reference for ListIntegrations Operation</seealso>
+        public virtual Task<ListIntegrationsResponse> ListIntegrationsAsync(ListIntegrationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIntegrationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIntegrationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListIntegrationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6923,6 +7112,101 @@ namespace Amazon.CloudWatchLogs
             options.ResponseUnmarshaller = PutIndexPolicyResponseUnmarshaller.Instance;
             
             return InvokeAsync<PutIndexPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutIntegration
+
+
+        /// <summary>
+        /// Creates an integration between CloudWatch Logs and another service in this account.
+        /// Currently, only integrations with OpenSearch Service are supported, and currently
+        /// you can have only one integration in your account.
+        /// 
+        ///  
+        /// <para>
+        /// Integrating with OpenSearch Service makes it possible for you to create curated vended
+        /// logs dashboards, powered by OpenSearch Service analytics. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-OpenSearch-Dashboards.html">Vended
+        /// log dashboards powered by Amazon OpenSearch Service</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use this operation only to create a new integration. You can't modify an existing
+        /// integration.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutIntegration service method.</param>
+        /// 
+        /// <returns>The response from the PutIntegration service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.LimitExceededException">
+        /// You have reached the maximum number of resources that can be created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutIntegration">REST API Reference for PutIntegration Operation</seealso>
+        public virtual PutIntegrationResponse PutIntegration(PutIntegrationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutIntegrationResponseUnmarshaller.Instance;
+
+            return Invoke<PutIntegrationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an integration between CloudWatch Logs and another service in this account.
+        /// Currently, only integrations with OpenSearch Service are supported, and currently
+        /// you can have only one integration in your account.
+        /// 
+        ///  
+        /// <para>
+        /// Integrating with OpenSearch Service makes it possible for you to create curated vended
+        /// logs dashboards, powered by OpenSearch Service analytics. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-OpenSearch-Dashboards.html">Vended
+        /// log dashboards powered by Amazon OpenSearch Service</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use this operation only to create a new integration. You can't modify an existing
+        /// integration.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutIntegration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutIntegration service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.LimitExceededException">
+        /// You have reached the maximum number of resources that can be created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ValidationException">
+        /// One of the parameters for the request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutIntegration">REST API Reference for PutIntegration Operation</seealso>
+        public virtual Task<PutIntegrationResponse> PutIntegrationAsync(PutIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutIntegrationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutIntegrationResponse>(request, options, cancellationToken);
         }
 
         #endregion

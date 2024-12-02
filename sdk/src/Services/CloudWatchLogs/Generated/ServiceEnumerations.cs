@@ -601,6 +601,106 @@ namespace Amazon.CloudWatchLogs
 
 
     /// <summary>
+    /// Constants used for properties of type IntegrationStatus.
+    /// </summary>
+    public class IntegrationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for IntegrationStatus
+        /// </summary>
+        public static readonly IntegrationStatus ACTIVE = new IntegrationStatus("ACTIVE");
+        /// <summary>
+        /// Constant FAILED for IntegrationStatus
+        /// </summary>
+        public static readonly IntegrationStatus FAILED = new IntegrationStatus("FAILED");
+        /// <summary>
+        /// Constant PROVISIONING for IntegrationStatus
+        /// </summary>
+        public static readonly IntegrationStatus PROVISIONING = new IntegrationStatus("PROVISIONING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IntegrationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IntegrationStatus FindValue(string value)
+        {
+            return FindValue<IntegrationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IntegrationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IntegrationType.
+    /// </summary>
+    public class IntegrationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OPENSEARCH for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType OPENSEARCH = new IntegrationType("OPENSEARCH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IntegrationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IntegrationType FindValue(string value)
+        {
+            return FindValue<IntegrationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IntegrationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LogGroupClass.
     /// </summary>
     public class LogGroupClass : ConstantClass
@@ -644,6 +744,60 @@ namespace Amazon.CloudWatchLogs
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LogGroupClass(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OpenSearchResourceStatusType.
+    /// </summary>
+    public class OpenSearchResourceStatusType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for OpenSearchResourceStatusType
+        /// </summary>
+        public static readonly OpenSearchResourceStatusType ACTIVE = new OpenSearchResourceStatusType("ACTIVE");
+        /// <summary>
+        /// Constant ERROR for OpenSearchResourceStatusType
+        /// </summary>
+        public static readonly OpenSearchResourceStatusType ERROR = new OpenSearchResourceStatusType("ERROR");
+        /// <summary>
+        /// Constant NOT_FOUND for OpenSearchResourceStatusType
+        /// </summary>
+        public static readonly OpenSearchResourceStatusType NOT_FOUND = new OpenSearchResourceStatusType("NOT_FOUND");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OpenSearchResourceStatusType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OpenSearchResourceStatusType FindValue(string value)
+        {
+            return FindValue<OpenSearchResourceStatusType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OpenSearchResourceStatusType(string value)
         {
             return FindValue(value);
         }
@@ -814,6 +968,60 @@ namespace Amazon.CloudWatchLogs
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PolicyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type QueryLanguage.
+    /// </summary>
+    public class QueryLanguage : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CWLI for QueryLanguage
+        /// </summary>
+        public static readonly QueryLanguage CWLI = new QueryLanguage("CWLI");
+        /// <summary>
+        /// Constant PPL for QueryLanguage
+        /// </summary>
+        public static readonly QueryLanguage PPL = new QueryLanguage("PPL");
+        /// <summary>
+        /// Constant SQL for QueryLanguage
+        /// </summary>
+        public static readonly QueryLanguage SQL = new QueryLanguage("SQL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QueryLanguage(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QueryLanguage FindValue(string value)
+        {
+            return FindValue<QueryLanguage>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QueryLanguage(string value)
         {
             return FindValue(value);
         }

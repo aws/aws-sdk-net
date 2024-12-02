@@ -99,6 +99,7 @@ namespace Amazon.CloudWatchLogs.Model
         private List<string> _logGroupIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _logGroupName;
         private List<string> _logGroupNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private QueryLanguage _queryLanguage;
         private string _queryString;
         private long? _startTime;
 
@@ -164,7 +165,9 @@ namespace Amazon.CloudWatchLogs.Model
         ///  
         /// <para>
         /// A <c>StartQuery</c> operation must include exactly one of the following parameters:
-        /// <c>logGroupName</c>, <c>logGroupNames</c>, or <c>logGroupIdentifiers</c>. 
+        /// <c>logGroupName</c>, <c>logGroupNames</c>, or <c>logGroupIdentifiers</c>. The exception
+        /// is queries using the OpenSearch Service SQL query language, where you specify the
+        /// log group names inside the <c>querystring</c> instead of here. 
         /// </para>
         /// </summary>
         public List<string> LogGroupIdentifiers
@@ -184,6 +187,14 @@ namespace Amazon.CloudWatchLogs.Model
         /// <para>
         /// The log group on which to perform the query.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// A <c>StartQuery</c> operation must include exactly one of the following parameters:
+        /// <c>logGroupName</c>, <c>logGroupNames</c>, or <c>logGroupIdentifiers</c>. The exception
+        /// is queries using the OpenSearch Service SQL query language, where you specify the
+        /// log group names inside the <c>querystring</c> instead of here.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
         public string LogGroupName
@@ -203,6 +214,14 @@ namespace Amazon.CloudWatchLogs.Model
         /// <para>
         /// The list of log groups to be queried. You can include up to 50 log groups.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// A <c>StartQuery</c> operation must include exactly one of the following parameters:
+        /// <c>logGroupName</c>, <c>logGroupNames</c>, or <c>logGroupIdentifiers</c>. The exception
+        /// is queries using the OpenSearch Service SQL query language, where you specify the
+        /// log group names inside the <c>querystring</c> instead of here.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<string> LogGroupNames
         {
@@ -214,6 +233,27 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetLogGroupNames()
         {
             return this._logGroupNames != null && (this._logGroupNames.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueryLanguage. 
+        /// <para>
+        /// Specify the query language to use for this query. The options are Logs Insights QL,
+        /// OpenSearch PPL, and OpenSearch SQL. For more information about the query languages
+        /// that CloudWatch Logs supports, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html">Supported
+        /// query languages</a>.
+        /// </para>
+        /// </summary>
+        public QueryLanguage QueryLanguage
+        {
+            get { return this._queryLanguage; }
+            set { this._queryLanguage = value; }
+        }
+
+        // Check to see if QueryLanguage property is set
+        internal bool IsSetQueryLanguage()
+        {
+            return this._queryLanguage != null;
         }
 
         /// <summary>
