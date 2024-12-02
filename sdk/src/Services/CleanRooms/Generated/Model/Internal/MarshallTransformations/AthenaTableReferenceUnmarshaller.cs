@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TableReference Object
+    /// Response Unmarshaller for AthenaTableReference Object
     /// </summary>  
-    public class TableReferenceUnmarshaller : IUnmarshaller<TableReference, XmlUnmarshallerContext>, IUnmarshaller<TableReference, JsonUnmarshallerContext>
+    public class AthenaTableReferenceUnmarshaller : IUnmarshaller<AthenaTableReference, XmlUnmarshallerContext>, IUnmarshaller<AthenaTableReference, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        TableReference IUnmarshaller<TableReference, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AthenaTableReference IUnmarshaller<AthenaTableReference, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public TableReference Unmarshall(JsonUnmarshallerContext context)
+        public AthenaTableReference Unmarshall(JsonUnmarshallerContext context)
         {
-            TableReference unmarshalledObject = new TableReference();
+            AthenaTableReference unmarshalledObject = new AthenaTableReference();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,28 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("athena", targetDepth))
+                if (context.TestExpression("databaseName", targetDepth))
                 {
-                    var unmarshaller = AthenaTableReferenceUnmarshaller.Instance;
-                    unmarshalledObject.Athena = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DatabaseName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("glue", targetDepth))
+                if (context.TestExpression("outputLocation", targetDepth))
                 {
-                    var unmarshaller = GlueTableReferenceUnmarshaller.Instance;
-                    unmarshalledObject.Glue = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OutputLocation = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("snowflake", targetDepth))
+                if (context.TestExpression("tableName", targetDepth))
                 {
-                    var unmarshaller = SnowflakeTableReferenceUnmarshaller.Instance;
-                    unmarshalledObject.Snowflake = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TableName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("workGroup", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.WorkGroup = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +95,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         }
 
 
-        private static TableReferenceUnmarshaller _instance = new TableReferenceUnmarshaller();        
+        private static AthenaTableReferenceUnmarshaller _instance = new AthenaTableReferenceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TableReferenceUnmarshaller Instance
+        public static AthenaTableReferenceUnmarshaller Instance
         {
             get
             {

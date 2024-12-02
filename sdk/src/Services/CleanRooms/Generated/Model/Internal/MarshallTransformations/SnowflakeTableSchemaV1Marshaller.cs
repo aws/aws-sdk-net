@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// TableReference Marshaller
+    /// SnowflakeTableSchemaV1 Marshaller
     /// </summary>
-    public class TableReferenceMarshaller : IRequestMarshaller<TableReference, JsonMarshallerContext> 
+    public class SnowflakeTableSchemaV1Marshaller : IRequestMarshaller<SnowflakeTableSchemaV1, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,41 +44,20 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(TableReference requestObject, JsonMarshallerContext context)
+        public void Marshall(SnowflakeTableSchemaV1 requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAthena())
+            if(requestObject.IsSetColumnName())
             {
-                context.Writer.WritePropertyName("athena");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = AthenaTableReferenceMarshaller.Instance;
-                marshaller.Marshall(requestObject.Athena, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("columnName");
+                context.Writer.Write(requestObject.ColumnName);
             }
 
-            if(requestObject.IsSetGlue())
+            if(requestObject.IsSetColumnType())
             {
-                context.Writer.WritePropertyName("glue");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = GlueTableReferenceMarshaller.Instance;
-                marshaller.Marshall(requestObject.Glue, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetSnowflake())
-            {
-                context.Writer.WritePropertyName("snowflake");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = SnowflakeTableReferenceMarshaller.Instance;
-                marshaller.Marshall(requestObject.Snowflake, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("columnType");
+                context.Writer.Write(requestObject.ColumnType);
             }
 
         }
@@ -86,7 +65,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static TableReferenceMarshaller Instance = new TableReferenceMarshaller();
+        public readonly static SnowflakeTableSchemaV1Marshaller Instance = new SnowflakeTableSchemaV1Marshaller();
 
     }
 }

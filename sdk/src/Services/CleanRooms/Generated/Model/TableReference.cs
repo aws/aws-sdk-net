@@ -30,12 +30,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
-    /// A pointer to the dataset that underlies this table. Currently, this can only be an
-    /// Glue table.
+    /// A pointer to the dataset that underlies this table.
     /// </summary>
     public partial class TableReference
     {
+        private AthenaTableReference _athena;
         private GlueTableReference _glue;
+        private SnowflakeTableReference _snowflake;
+
+        /// <summary>
+        /// Gets and sets the property Athena. 
+        /// <para>
+        ///  If present, a reference to the Athena table referred to by this table reference.
+        /// </para>
+        /// </summary>
+        public AthenaTableReference Athena
+        {
+            get { return this._athena; }
+            set { this._athena = value; }
+        }
+
+        // Check to see if Athena property is set
+        internal bool IsSetAthena()
+        {
+            return this._athena != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Glue. 
@@ -53,6 +72,24 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetGlue()
         {
             return this._glue != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Snowflake. 
+        /// <para>
+        ///  If present, a reference to the Snowflake table referred to by this table reference.
+        /// </para>
+        /// </summary>
+        public SnowflakeTableReference Snowflake
+        {
+            get { return this._snowflake; }
+            set { this._snowflake = value; }
+        }
+
+        // Check to see if Snowflake property is set
+        internal bool IsSetSnowflake()
+        {
+            return this._snowflake != null;
         }
 
     }

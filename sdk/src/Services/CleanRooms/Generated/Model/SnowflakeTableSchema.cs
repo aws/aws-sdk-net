@@ -30,49 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
-    /// A column within a schema relation, derived from the underlying table.
+    /// The schema of a Snowflake table.
     /// </summary>
-    public partial class Column
+    public partial class SnowflakeTableSchema
     {
-        private string _name;
-        private string _type;
+        private List<SnowflakeTableSchemaV1> _v1 = AWSConfigs.InitializeCollections ? new List<SnowflakeTableSchemaV1>() : null;
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property V1. 
         /// <para>
-        /// The name of the column.
+        ///  The schema of a Snowflake table.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=128)]
-        public string Name
+        [AWSProperty(Min=1, Max=250)]
+        public List<SnowflakeTableSchemaV1> V1
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._v1; }
+            set { this._v1 = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if V1 property is set
+        internal bool IsSetV1()
         {
-            return this._name != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Type. 
-        /// <para>
-        /// The type of the column.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=255)]
-        public string Type
-        {
-            get { return this._type; }
-            set { this._type = value; }
-        }
-
-        // Check to see if Type property is set
-        internal bool IsSetType()
-        {
-            return this._type != null;
+            return this._v1 != null && (this._v1.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

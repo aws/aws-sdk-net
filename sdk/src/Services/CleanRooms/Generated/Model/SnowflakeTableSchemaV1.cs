@@ -30,49 +30,54 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
-    /// A column within a schema relation, derived from the underlying table.
+    /// The Snowflake table schema.
     /// </summary>
-    public partial class Column
+    public partial class SnowflakeTableSchemaV1
     {
-        private string _name;
-        private string _type;
+        private string _columnName;
+        private string _columnType;
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property ColumnName. 
         /// <para>
-        /// The name of the column.
+        ///  The column name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=128)]
-        public string Name
+        public string ColumnName
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._columnName; }
+            set { this._columnName = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if ColumnName property is set
+        internal bool IsSetColumnName()
         {
-            return this._name != null;
+            return this._columnName != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Type. 
+        /// Gets and sets the property ColumnType. 
         /// <para>
-        /// The type of the column.
+        ///  The column's data type. Supported data types: <c>ARRAY</c>, <c>BIGINT</c>, <c>BOOLEAN</c>,
+        /// <c>CHAR</c>, <c>DATE</c>, <c>DECIMAL</c>, <c>DOUBLE</c>, <c>DOUBLE PRECISION</c>,
+        /// <c>FLOAT</c>, <c>FLOAT4</c>, <c>INT</c>, <c>INTEGER</c>, <c>MAP</c>, <c>NUMERIC</c>,
+        /// <c>NUMBER</c>, <c>REAL</c>, <c>SMALLINT</c>, <c>STRING</c>, <c>TIMESTAMP</c>, <c>TIMESTAMP_LTZ</c>,
+        /// <c>TIMESTAMP_NTZ</c>, <c>DATETIME</c>, <c>TINYINT</c>, <c>VARCHAR</c>, <c>TEXT</c>,
+        /// <c>CHARACTER</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=255)]
-        public string Type
+        public string ColumnType
         {
-            get { return this._type; }
-            set { this._type = value; }
+            get { return this._columnType; }
+            set { this._columnType = value; }
         }
 
-        // Check to see if Type property is set
-        internal bool IsSetType()
+        // Check to see if ColumnType property is set
+        internal bool IsSetColumnType()
         {
-            return this._type != null;
+            return this._columnType != null;
         }
 
     }

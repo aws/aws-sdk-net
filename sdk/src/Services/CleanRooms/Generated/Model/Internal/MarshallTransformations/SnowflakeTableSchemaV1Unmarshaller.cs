@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TableReference Object
+    /// Response Unmarshaller for SnowflakeTableSchemaV1 Object
     /// </summary>  
-    public class TableReferenceUnmarshaller : IUnmarshaller<TableReference, XmlUnmarshallerContext>, IUnmarshaller<TableReference, JsonUnmarshallerContext>
+    public class SnowflakeTableSchemaV1Unmarshaller : IUnmarshaller<SnowflakeTableSchemaV1, XmlUnmarshallerContext>, IUnmarshaller<SnowflakeTableSchemaV1, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        TableReference IUnmarshaller<TableReference, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SnowflakeTableSchemaV1 IUnmarshaller<SnowflakeTableSchemaV1, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public TableReference Unmarshall(JsonUnmarshallerContext context)
+        public SnowflakeTableSchemaV1 Unmarshall(JsonUnmarshallerContext context)
         {
-            TableReference unmarshalledObject = new TableReference();
+            SnowflakeTableSchemaV1 unmarshalledObject = new SnowflakeTableSchemaV1();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,16 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("athena", targetDepth))
+                if (context.TestExpression("columnName", targetDepth))
                 {
-                    var unmarshaller = AthenaTableReferenceUnmarshaller.Instance;
-                    unmarshalledObject.Athena = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ColumnName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("glue", targetDepth))
+                if (context.TestExpression("columnType", targetDepth))
                 {
-                    var unmarshaller = GlueTableReferenceUnmarshaller.Instance;
-                    unmarshalledObject.Glue = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("snowflake", targetDepth))
-                {
-                    var unmarshaller = SnowflakeTableReferenceUnmarshaller.Instance;
-                    unmarshalledObject.Snowflake = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ColumnType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -89,12 +83,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         }
 
 
-        private static TableReferenceUnmarshaller _instance = new TableReferenceUnmarshaller();        
+        private static SnowflakeTableSchemaV1Unmarshaller _instance = new SnowflakeTableSchemaV1Unmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TableReferenceUnmarshaller Instance
+        public static SnowflakeTableSchemaV1Unmarshaller Instance
         {
             get
             {
