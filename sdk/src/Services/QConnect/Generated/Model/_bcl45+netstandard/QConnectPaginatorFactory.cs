@@ -53,6 +53,22 @@ namespace Amazon.QConnect.Model
         }
 
         /// <summary>
+        /// Paginator for ListAIGuardrails operation
+        ///</summary>
+        public IListAIGuardrailsPaginator ListAIGuardrails(ListAIGuardrailsRequest request) 
+        {
+            return new ListAIGuardrailsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAIGuardrailVersions operation
+        ///</summary>
+        public IListAIGuardrailVersionsPaginator ListAIGuardrailVersions(ListAIGuardrailVersionsRequest request) 
+        {
+            return new ListAIGuardrailVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAIPrompts operation
         ///</summary>
         public IListAIPromptsPaginator ListAIPrompts(ListAIPromptsRequest request) 
@@ -114,6 +130,14 @@ namespace Amazon.QConnect.Model
         public IListKnowledgeBasesPaginator ListKnowledgeBases(ListKnowledgeBasesRequest request) 
         {
             return new ListKnowledgeBasesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListMessages operation
+        ///</summary>
+        public IListMessagesPaginator ListMessages(ListMessagesRequest request) 
+        {
+            return new ListMessagesPaginator(this.client, request);
         }
 
         /// <summary>
