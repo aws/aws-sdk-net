@@ -126,7 +126,7 @@ namespace Amazon.FSx.Model
         /// Tips for maximizing performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=4, Max=1024)]
+        [AWSProperty(Min=4, Max=4096)]
         public int RecordSizeKiB
         {
             get { return this._recordSizeKiB.GetValueOrDefault(); }

@@ -46,6 +46,7 @@ namespace Amazon.FSx.Model
         private int? _progressPercent;
         private string _resourceARN;
         private ResourceType _resourceType;
+        private long? _sizeInBytes;
         private string _sourceBackupId;
         private string _sourceBackupRegion;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -284,6 +285,26 @@ namespace Amazon.FSx.Model
         internal bool IsSetResourceType()
         {
             return this._resourceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SizeInBytes. 
+        /// <para>
+        ///  The size of the backup in bytes. This represents the amount of data that the file
+        /// system would contain if you restore this backup. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public long SizeInBytes
+        {
+            get { return this._sizeInBytes.GetValueOrDefault(); }
+            set { this._sizeInBytes = value; }
+        }
+
+        // Check to see if SizeInBytes property is set
+        internal bool IsSetSizeInBytes()
+        {
+            return this._sizeInBytes.HasValue; 
         }
 
         /// <summary>

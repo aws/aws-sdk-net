@@ -3952,6 +3952,10 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>ReadCacheConfiguration</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>RemoveRouteTableIds</c> 
         /// </para>
         ///  </li> <li> 
