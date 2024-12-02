@@ -14,33 +14,35 @@
  */
 
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Util;
 using System;
 using Amazon.Util;
 using System.Xml;
-using ThirdParty.Json.LitJson;
 using System.Text;
 using System.IO;
+using System.Text.Json;
 
 namespace Amazon.Runtime.Internal.Transform
 {
     /// <summary>
-    ///    First-pass unmarshaller for all errors
+    /// First-pass unmarshaller for all errors
     /// </summary>
-    public class JsonErrorResponseUnmarshaller : IUnmarshaller<ErrorResponse, JsonUnmarshallerContext>
+    public class JsonErrorResponseUnmarshaller : IJsonUnmarshaller<ErrorResponse, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Build an ErrorResponse from json 
         /// </summary>
         /// <param name="context">The json parsing context. 
+        /// <param name="reader">The Utf8JsonReader</param>
         /// Usually an <c>Amazon.Runtime.Internal.JsonUnmarshallerContext</c>.</param>
         /// <returns>An <c>ErrorResponse</c> object.</returns>
-        public ErrorResponse Unmarshall(JsonUnmarshallerContext context)
+        public ErrorResponse Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ErrorResponse response;
 
             if (context.Peek() == 60) //starts with '<' so assuming XML.
             {
-                ErrorResponseUnmarshaller xmlUnmarshaller = new ErrorResponseUnmarshaller();
+                XmlErrorResponseUnmarshaller xmlUnmarshaller = new XmlErrorResponseUnmarshaller();
                 using (var stream = new MemoryStream(context.GetResponseBodyBytes()))
                 {
                     XmlUnmarshallerContext xmlContext = new XmlUnmarshallerContext(stream, false, null);
@@ -53,7 +55,7 @@ namespace Amazon.Runtime.Internal.Transform
                 string message;
                 string code;
                 string requestId = null;
-                GetValuesFromJsonIfPossible(context, out type, out message, out code);
+                GetValuesFromJsonIfPossible(context, ref reader, out type, out message, out code);
 
                 // If an error code was not found, check for the x-amzn-ErrorType header. 
                 // This header is returned by rest-json services.
@@ -140,37 +142,37 @@ namespace Amazon.Runtime.Internal.Transform
 
         }
 
-        private static void GetValuesFromJsonIfPossible(JsonUnmarshallerContext context, out string type, out string message, out string code)
+        private static void GetValuesFromJsonIfPossible(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader,  out string type, out string message, out string code)
         {
             code = null;
             type = null;
             message = null;
 
-            while (TryReadContext(context))
+            while (TryReadContext(context, ref reader))
             {
                 if (context.TestExpression("__type"))
                 {
-                    type = StringUnmarshaller.GetInstance().Unmarshall(context);
+                    type = StringUnmarshaller.GetInstance().Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("message"))
                 {
-                    message = StringUnmarshaller.GetInstance().Unmarshall(context);
+                    message = StringUnmarshaller.GetInstance().Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("code"))
                 {
-                    code = StringUnmarshaller.GetInstance().Unmarshall(context);
+                    code = StringUnmarshaller.GetInstance().Unmarshall(context, ref reader);
                     continue;
                 }
             }
         }
 
-        private static bool TryReadContext(JsonUnmarshallerContext context)
+        private static bool TryReadContext(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             try
             {
-                return context.Read();
+                return context.Read(ref reader);
             }
             catch (JsonException)
             {

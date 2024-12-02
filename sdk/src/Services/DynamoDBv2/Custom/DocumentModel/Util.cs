@@ -18,10 +18,11 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Text;
-
+using System.Text.Json;
 using Amazon.DynamoDBv2.Model;
 using Amazon.DynamoDBv2.Model.Internal.MarshallTransformations;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 using Amazon.Util.Internal;
 
 #pragma warning disable 1591
@@ -514,7 +515,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         }
         private static string SerializeClearString(Dictionary<string, AttributeValue> nextKey)
         {
-            using (var writer = new StringWriter(CultureInfo.InvariantCulture))
+            using (var stream = new MemoryStream())
+            using (var writer = new Utf8JsonWriter(stream))
             {
                 WriteNextKey(nextKey, writer);
 
@@ -541,27 +543,27 @@ namespace Amazon.DynamoDBv2.DocumentModel
         private static Dictionary<string, AttributeValue> ReadNextKey(Stream stream)
         {
             JsonUnmarshallerContext context = new JsonUnmarshallerContext(stream, false, null);
-            var unmarshaller = new DictionaryUnmarshaller<string, AttributeValue, StringUnmarshaller, AttributeValueUnmarshaller>(StringUnmarshaller.Instance, AttributeValueUnmarshaller.Instance);
-            var nextKey = unmarshaller.Unmarshall(context);
+            var unmarshaller = new JsonDictionaryUnmarshaller<string, AttributeValue, StringUnmarshaller, AttributeValueUnmarshaller>(StringUnmarshaller.Instance, AttributeValueUnmarshaller.Instance);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            var nextKey = unmarshaller.Unmarshall(context, ref reader);
             return nextKey;
         }
-        private static void WriteNextKey(Dictionary<string, AttributeValue> nextKey, TextWriter writer)
+        private static void WriteNextKey(Dictionary<string, AttributeValue> nextKey, Utf8JsonWriter writer)
         {
-            var marshaller = Amazon.DynamoDBv2.Model.Internal.MarshallTransformations.AttributeValueMarshaller.Instance;
-            var jsonWriter = new ThirdParty.Json.LitJson.JsonWriter(writer);
-            var context = new Runtime.Internal.Transform.JsonMarshallerContext(null, jsonWriter);
+            var marshaller = AttributeValueMarshaller.Instance;
+            var context = new JsonMarshallerContext(null, writer);
 
-            context.Writer.WriteObjectStart();
+            context.Writer.WriteStartObject();
             foreach (var kvp in nextKey)
             {
                 context.Writer.WritePropertyName(kvp.Key);
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 {
                     marshaller.Marshall(kvp.Value, context);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
-            context.Writer.WriteObjectEnd();
+            context.Writer.WriteEndObject();
         }
     }
  }

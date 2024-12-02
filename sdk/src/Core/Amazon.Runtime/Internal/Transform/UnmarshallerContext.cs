@@ -21,6 +21,7 @@ using System.Globalization;
 using System.IO;
 using System.Xml;
 using ThirdParty.Ionic.Zlib;
+using System.Text.Json;
 
 namespace Amazon.Runtime.Internal.Transform
 {
@@ -194,6 +195,17 @@ namespace Amazon.Runtime.Internal.Transform
             return Read() && this.CurrentDepth >= targetDepth;
         }
 
+        /// <summary>
+        /// Reads the next token at depth greater than or equal to target depth.
+        /// </summary>
+        /// <param name="targetDepth">Tokens are read at depth greater than or equal to target depth.</param>
+        /// <param name="reader">The Utf8JsonReader used to read the document</param>
+        /// <returns>True if a token was read and current depth is greater than or equal to target depth.</returns>
+        public bool ReadAtDepth(int targetDepth, ref StreamingUtf8JsonReader reader)
+        {
+            return Read(ref reader) && this.CurrentDepth >= targetDepth;
+        }
+
         private static bool TestExpression(string expression, string currentPath)
         {
             if (expression.Equals("."))
@@ -242,6 +254,14 @@ namespace Amazon.Runtime.Internal.Transform
         /// True if a node was read, false if there are no more elements to read.
         /// </returns>
         public abstract bool Read();
+
+        /// <summary>
+        /// Reads the next node in the document and updates the context accordingly.
+        /// This is specifically used for JSON protocols which require a reader to be passed in.
+        /// </summary>
+        /// <param name="reader">The Utf8JsonReader</param>
+        /// <returns></returns>
+        public abstract bool Read(ref StreamingUtf8JsonReader reader);
 
         /// <summary>
         ///     Returns the text contents of the current element being parsed.
@@ -651,6 +671,11 @@ namespace Amazon.Runtime.Internal.Transform
                 disposed = true;
             }
             base.Dispose(disposing);
+        }
+
+        public override bool Read(ref StreamingUtf8JsonReader reader)
+        {
+            throw new NotImplementedException();
         }
     }
 

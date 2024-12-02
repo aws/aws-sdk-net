@@ -8,32 +8,22 @@
 
     AddCommonUsingStatements();
 #>
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for <#=this.UnmarshallerBaseName #> Object
     /// </summary>  
-    public class <#=this.UnmarshallerBaseName #>Unmarshaller : IUnmarshaller<<#=this.UnmarshallerBaseName #>, XmlUnmarshallerContext>, IUnmarshaller<<#=this.UnmarshallerBaseName #>, JsonUnmarshallerContext>
+    public class <#=this.UnmarshallerBaseName #>Unmarshaller : IJsonUnmarshaller<<#=this.UnmarshallerBaseName #>, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        <#=this.UnmarshallerBaseName #> IUnmarshaller<<#=this.UnmarshallerBaseName #>, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public <#=this.UnmarshallerBaseName #> Unmarshall(JsonUnmarshallerContext context)
+        public <#=this.UnmarshallerBaseName #> Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             <#=this.UnmarshallerBaseName #> unmarshalledObject = new <#=this.UnmarshallerBaseName #>();
             if (context.IsEmptyResponse)
@@ -68,12 +58,12 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
     if(this.Structure != null && (this.Structure.HasImplicitEventPayloadMembers() || !this.Structure.IsEvent))
     {
 #>
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
 <#
     }
@@ -87,7 +77,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
                 if (context.TestExpression("<#=member.MarshallName#>", targetDepth))
                 {
                     var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
-                    unmarshalledObject.<#=member.PropertyName#> = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.<#=member.PropertyName#> = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 <#
