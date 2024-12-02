@@ -121,6 +121,10 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.DeleteVoiceConnectorExternalSystemsConfigurationRequest.VoiceConnectorId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.DeleteVoiceConnectorGroupRequest.VoiceConnectorGroupId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -224,6 +228,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.GetVoiceConnectorEmergencyCallingConfigurationRequest.VoiceConnectorId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.GetVoiceConnectorExternalSystemsConfigurationRequest.VoiceConnectorId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -384,6 +392,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.PutVoiceConnectorEmergencyCallingConfigurationRequest.VoiceConnectorId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.PutVoiceConnectorExternalSystemsConfigurationRequest.VoiceConnectorId</property>
+    <min>1</min>
+    <max>128</max>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>

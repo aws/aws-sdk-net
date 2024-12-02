@@ -1335,6 +1335,67 @@ namespace Amazon.ChimeSDKVoice
 
         #endregion
         
+        #region  DeleteVoiceConnectorExternalSystemsConfiguration
+
+
+        /// <summary>
+        /// Deletes the external systems configuration for a Voice Connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVoiceConnectorExternalSystemsConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVoiceConnectorExternalSystemsConfiguration service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// The requested resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// The number of customer requests exceeds the request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// The client isn't authorized to request a resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnectorExternalSystemsConfiguration">REST API Reference for DeleteVoiceConnectorExternalSystemsConfiguration Operation</seealso>
+        DeleteVoiceConnectorExternalSystemsConfigurationResponse DeleteVoiceConnectorExternalSystemsConfiguration(DeleteVoiceConnectorExternalSystemsConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVoiceConnectorExternalSystemsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVoiceConnectorExternalSystemsConfiguration operation on AmazonChimeSDKVoiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVoiceConnectorExternalSystemsConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnectorExternalSystemsConfiguration">REST API Reference for DeleteVoiceConnectorExternalSystemsConfiguration Operation</seealso>
+        IAsyncResult BeginDeleteVoiceConnectorExternalSystemsConfiguration(DeleteVoiceConnectorExternalSystemsConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteVoiceConnectorExternalSystemsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVoiceConnectorExternalSystemsConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteVoiceConnectorExternalSystemsConfigurationResult from ChimeSDKVoice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnectorExternalSystemsConfiguration">REST API Reference for DeleteVoiceConnectorExternalSystemsConfiguration Operation</seealso>
+        DeleteVoiceConnectorExternalSystemsConfigurationResponse EndDeleteVoiceConnectorExternalSystemsConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteVoiceConnectorGroup
 
 
@@ -2728,6 +2789,67 @@ namespace Amazon.ChimeSDKVoice
         /// <returns>Returns a  GetVoiceConnectorEmergencyCallingConfigurationResult from ChimeSDKVoice.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorEmergencyCallingConfiguration">REST API Reference for GetVoiceConnectorEmergencyCallingConfiguration Operation</seealso>
         GetVoiceConnectorEmergencyCallingConfigurationResponse EndGetVoiceConnectorEmergencyCallingConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetVoiceConnectorExternalSystemsConfiguration
+
+
+        /// <summary>
+        /// Gets information about an external systems configuration for a Voice Connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVoiceConnectorExternalSystemsConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetVoiceConnectorExternalSystemsConfiguration service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// The requested resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// The number of customer requests exceeds the request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// The client isn't authorized to request a resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorExternalSystemsConfiguration">REST API Reference for GetVoiceConnectorExternalSystemsConfiguration Operation</seealso>
+        GetVoiceConnectorExternalSystemsConfigurationResponse GetVoiceConnectorExternalSystemsConfiguration(GetVoiceConnectorExternalSystemsConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetVoiceConnectorExternalSystemsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetVoiceConnectorExternalSystemsConfiguration operation on AmazonChimeSDKVoiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetVoiceConnectorExternalSystemsConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorExternalSystemsConfiguration">REST API Reference for GetVoiceConnectorExternalSystemsConfiguration Operation</seealso>
+        IAsyncResult BeginGetVoiceConnectorExternalSystemsConfiguration(GetVoiceConnectorExternalSystemsConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetVoiceConnectorExternalSystemsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetVoiceConnectorExternalSystemsConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetVoiceConnectorExternalSystemsConfigurationResult from ChimeSDKVoice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorExternalSystemsConfiguration">REST API Reference for GetVoiceConnectorExternalSystemsConfiguration Operation</seealso>
+        GetVoiceConnectorExternalSystemsConfigurationResponse EndGetVoiceConnectorExternalSystemsConfiguration(IAsyncResult asyncResult);
 
         #endregion
         
@@ -4324,6 +4446,70 @@ namespace Amazon.ChimeSDKVoice
         /// <returns>Returns a  PutVoiceConnectorEmergencyCallingConfigurationResult from ChimeSDKVoice.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutVoiceConnectorEmergencyCallingConfiguration">REST API Reference for PutVoiceConnectorEmergencyCallingConfiguration Operation</seealso>
         PutVoiceConnectorEmergencyCallingConfigurationResponse EndPutVoiceConnectorEmergencyCallingConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutVoiceConnectorExternalSystemsConfiguration
+
+
+        /// <summary>
+        /// Adds an external systems configuration to a Voice Connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutVoiceConnectorExternalSystemsConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutVoiceConnectorExternalSystemsConfiguration service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ConflictException">
+        /// Multiple instances of the same request were made simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// The requested resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.ThrottledClientException">
+        /// The number of customer requests exceeds the request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.UnauthorizedClientException">
+        /// The client isn't authorized to request a resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutVoiceConnectorExternalSystemsConfiguration">REST API Reference for PutVoiceConnectorExternalSystemsConfiguration Operation</seealso>
+        PutVoiceConnectorExternalSystemsConfigurationResponse PutVoiceConnectorExternalSystemsConfiguration(PutVoiceConnectorExternalSystemsConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutVoiceConnectorExternalSystemsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutVoiceConnectorExternalSystemsConfiguration operation on AmazonChimeSDKVoiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutVoiceConnectorExternalSystemsConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutVoiceConnectorExternalSystemsConfiguration">REST API Reference for PutVoiceConnectorExternalSystemsConfiguration Operation</seealso>
+        IAsyncResult BeginPutVoiceConnectorExternalSystemsConfiguration(PutVoiceConnectorExternalSystemsConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutVoiceConnectorExternalSystemsConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutVoiceConnectorExternalSystemsConfiguration.</param>
+        /// 
+        /// <returns>Returns a  PutVoiceConnectorExternalSystemsConfigurationResult from ChimeSDKVoice.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutVoiceConnectorExternalSystemsConfiguration">REST API Reference for PutVoiceConnectorExternalSystemsConfiguration Operation</seealso>
+        PutVoiceConnectorExternalSystemsConfigurationResponse EndPutVoiceConnectorExternalSystemsConfiguration(IAsyncResult asyncResult);
 
         #endregion
         

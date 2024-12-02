@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateVoiceConnector Request Marshaller
+    /// PutVoiceConnectorExternalSystemsConfiguration Request Marshaller
     /// </summary>       
-    public class CreateVoiceConnectorRequestMarshaller : IMarshaller<IRequest, CreateVoiceConnectorRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class PutVoiceConnectorExternalSystemsConfigurationRequestMarshaller : IMarshaller<IRequest, PutVoiceConnectorExternalSystemsConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateVoiceConnectorRequest)input);
+            return this.Marshall((PutVoiceConnectorExternalSystemsConfigurationRequest)input);
         }
 
         /// <summary>
@@ -53,56 +53,41 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateVoiceConnectorRequest publicRequest)
+        public IRequest Marshall(PutVoiceConnectorExternalSystemsConfigurationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ChimeSDKVoice");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2022-08-03";
-            request.HttpMethod = "POST";
+            request.HttpMethod = "PUT";
 
-            request.ResourcePath = "/voice-connectors";
+            if (!publicRequest.IsSetVoiceConnectorId())
+                throw new AmazonChimeSDKVoiceException("Request object does not have required field VoiceConnectorId set");
+            request.AddPathResource("{voiceConnectorId}", StringUtils.FromString(publicRequest.VoiceConnectorId));
+            request.ResourcePath = "/voice-connectors/{voiceConnectorId}/external-systems-configuration";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAwsRegion())
+                if(publicRequest.IsSetContactCenterSystemTypes())
                 {
-                    context.Writer.WritePropertyName("AwsRegion");
-                    context.Writer.Write(publicRequest.AwsRegion);
-                }
-
-                if(publicRequest.IsSetIntegrationType())
-                {
-                    context.Writer.WritePropertyName("IntegrationType");
-                    context.Writer.Write(publicRequest.IntegrationType);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetRequireEncryption())
-                {
-                    context.Writer.WritePropertyName("RequireEncryption");
-                    context.Writer.Write(publicRequest.RequireEncryption);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
+                    context.Writer.WritePropertyName("ContactCenterSystemTypes");
                     context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    foreach(var publicRequestContactCenterSystemTypesListValue in publicRequest.ContactCenterSystemTypes)
                     {
-                        context.Writer.WriteObjectStart();
+                            context.Writer.Write(publicRequestContactCenterSystemTypesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
 
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                if(publicRequest.IsSetSessionBorderControllerTypes())
+                {
+                    context.Writer.WritePropertyName("SessionBorderControllerTypes");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSessionBorderControllerTypesListValue in publicRequest.SessionBorderControllerTypes)
+                    {
+                            context.Writer.Write(publicRequestSessionBorderControllerTypesListValue);
                     }
                     context.Writer.WriteArrayEnd();
                 }
@@ -115,9 +100,9 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateVoiceConnectorRequestMarshaller _instance = new CreateVoiceConnectorRequestMarshaller();        
+        private static PutVoiceConnectorExternalSystemsConfigurationRequestMarshaller _instance = new PutVoiceConnectorExternalSystemsConfigurationRequestMarshaller();        
 
-        internal static CreateVoiceConnectorRequestMarshaller GetInstance()
+        internal static PutVoiceConnectorExternalSystemsConfigurationRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -125,7 +110,7 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateVoiceConnectorRequestMarshaller Instance
+        public static PutVoiceConnectorExternalSystemsConfigurationRequestMarshaller Instance
         {
             get
             {

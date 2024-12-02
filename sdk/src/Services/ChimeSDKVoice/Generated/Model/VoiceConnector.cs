@@ -37,6 +37,7 @@ namespace Amazon.ChimeSDKVoice.Model
     {
         private VoiceConnectorAwsRegion _awsRegion;
         private DateTime? _createdTimestamp;
+        private VoiceConnectorIntegrationType _integrationType;
         private string _name;
         private string _outboundHostName;
         private bool? _requireEncryption;
@@ -78,6 +79,24 @@ namespace Amazon.ChimeSDKVoice.Model
         internal bool IsSetCreatedTimestamp()
         {
             return this._createdTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IntegrationType. 
+        /// <para>
+        /// The connectors for use with Amazon Connect.
+        /// </para>
+        /// </summary>
+        public VoiceConnectorIntegrationType IntegrationType
+        {
+            get { return this._integrationType; }
+            set { this._integrationType = value; }
+        }
+
+        // Check to see if IntegrationType property is set
+        internal bool IsSetIntegrationType()
+        {
+            return this._integrationType != null;
         }
 
         /// <summary>

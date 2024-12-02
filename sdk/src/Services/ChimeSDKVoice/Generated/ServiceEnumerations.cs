@@ -233,6 +233,64 @@ namespace Amazon.ChimeSDKVoice
 
 
     /// <summary>
+    /// Constants used for properties of type ContactCenterSystemType.
+    /// </summary>
+    public class ContactCenterSystemType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAYA_AURA_CALL_CENTER_ELITE for ContactCenterSystemType
+        /// </summary>
+        public static readonly ContactCenterSystemType AVAYA_AURA_CALL_CENTER_ELITE = new ContactCenterSystemType("AVAYA_AURA_CALL_CENTER_ELITE");
+        /// <summary>
+        /// Constant AVAYA_AURA_CONTACT_CENTER for ContactCenterSystemType
+        /// </summary>
+        public static readonly ContactCenterSystemType AVAYA_AURA_CONTACT_CENTER = new ContactCenterSystemType("AVAYA_AURA_CONTACT_CENTER");
+        /// <summary>
+        /// Constant CISCO_UNIFIED_CONTACT_CENTER_ENTERPRISE for ContactCenterSystemType
+        /// </summary>
+        public static readonly ContactCenterSystemType CISCO_UNIFIED_CONTACT_CENTER_ENTERPRISE = new ContactCenterSystemType("CISCO_UNIFIED_CONTACT_CENTER_ENTERPRISE");
+        /// <summary>
+        /// Constant GENESYS_ENGAGE_ON_PREMISES for ContactCenterSystemType
+        /// </summary>
+        public static readonly ContactCenterSystemType GENESYS_ENGAGE_ON_PREMISES = new ContactCenterSystemType("GENESYS_ENGAGE_ON_PREMISES");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContactCenterSystemType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContactCenterSystemType FindValue(string value)
+        {
+            return FindValue<ContactCenterSystemType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContactCenterSystemType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ErrorCode.
     /// </summary>
     public class ErrorCode : ConstantClass
@@ -1073,6 +1131,68 @@ namespace Amazon.ChimeSDKVoice
 
 
     /// <summary>
+    /// Constants used for properties of type SessionBorderControllerType.
+    /// </summary>
+    public class SessionBorderControllerType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUDIOCODES_MEDIANT_SBC for SessionBorderControllerType
+        /// </summary>
+        public static readonly SessionBorderControllerType AUDIOCODES_MEDIANT_SBC = new SessionBorderControllerType("AUDIOCODES_MEDIANT_SBC");
+        /// <summary>
+        /// Constant AVAYA_SBCE for SessionBorderControllerType
+        /// </summary>
+        public static readonly SessionBorderControllerType AVAYA_SBCE = new SessionBorderControllerType("AVAYA_SBCE");
+        /// <summary>
+        /// Constant CISCO_UNIFIED_BORDER_ELEMENT for SessionBorderControllerType
+        /// </summary>
+        public static readonly SessionBorderControllerType CISCO_UNIFIED_BORDER_ELEMENT = new SessionBorderControllerType("CISCO_UNIFIED_BORDER_ELEMENT");
+        /// <summary>
+        /// Constant ORACLE_ACME_PACKET_SBC for SessionBorderControllerType
+        /// </summary>
+        public static readonly SessionBorderControllerType ORACLE_ACME_PACKET_SBC = new SessionBorderControllerType("ORACLE_ACME_PACKET_SBC");
+        /// <summary>
+        /// Constant RIBBON_SBC for SessionBorderControllerType
+        /// </summary>
+        public static readonly SessionBorderControllerType RIBBON_SBC = new SessionBorderControllerType("RIBBON_SBC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SessionBorderControllerType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SessionBorderControllerType FindValue(string value)
+        {
+            return FindValue<SessionBorderControllerType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SessionBorderControllerType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SipRuleTriggerType.
     /// </summary>
     public class SipRuleTriggerType : ConstantClass
@@ -1198,6 +1318,56 @@ namespace Amazon.ChimeSDKVoice
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator VoiceConnectorAwsRegion(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VoiceConnectorIntegrationType.
+    /// </summary>
+    public class VoiceConnectorIntegrationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONNECT_ANALYTICS_CONNECTOR for VoiceConnectorIntegrationType
+        /// </summary>
+        public static readonly VoiceConnectorIntegrationType CONNECT_ANALYTICS_CONNECTOR = new VoiceConnectorIntegrationType("CONNECT_ANALYTICS_CONNECTOR");
+        /// <summary>
+        /// Constant CONNECT_CALL_TRANSFER_CONNECTOR for VoiceConnectorIntegrationType
+        /// </summary>
+        public static readonly VoiceConnectorIntegrationType CONNECT_CALL_TRANSFER_CONNECTOR = new VoiceConnectorIntegrationType("CONNECT_CALL_TRANSFER_CONNECTOR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VoiceConnectorIntegrationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VoiceConnectorIntegrationType FindValue(string value)
+        {
+            return FindValue<VoiceConnectorIntegrationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VoiceConnectorIntegrationType(string value)
         {
             return FindValue(value);
         }
