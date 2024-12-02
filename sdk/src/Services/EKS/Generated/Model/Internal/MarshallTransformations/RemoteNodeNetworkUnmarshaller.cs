@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for KubernetesNetworkConfigResponse Object
+    /// Response Unmarshaller for RemoteNodeNetwork Object
     /// </summary>  
-    public class KubernetesNetworkConfigResponseUnmarshaller : IUnmarshaller<KubernetesNetworkConfigResponse, XmlUnmarshallerContext>, IUnmarshaller<KubernetesNetworkConfigResponse, JsonUnmarshallerContext>
+    public class RemoteNodeNetworkUnmarshaller : IUnmarshaller<RemoteNodeNetwork, XmlUnmarshallerContext>, IUnmarshaller<RemoteNodeNetwork, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        KubernetesNetworkConfigResponse IUnmarshaller<KubernetesNetworkConfigResponse, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RemoteNodeNetwork IUnmarshaller<RemoteNodeNetwork, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public KubernetesNetworkConfigResponse Unmarshall(JsonUnmarshallerContext context)
+        public RemoteNodeNetwork Unmarshall(JsonUnmarshallerContext context)
         {
-            KubernetesNetworkConfigResponse unmarshalledObject = new KubernetesNetworkConfigResponse();
+            RemoteNodeNetwork unmarshalledObject = new RemoteNodeNetwork();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,10 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("elasticLoadBalancing", targetDepth))
+                if (context.TestExpression("cidrs", targetDepth))
                 {
-                    var unmarshaller = ElasticLoadBalancingUnmarshaller.Instance;
-                    unmarshalledObject.ElasticLoadBalancing = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ipFamily", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IpFamily = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("serviceIpv4Cidr", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ServiceIpv4Cidr = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("serviceIpv6Cidr", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ServiceIpv6Cidr = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Cidrs = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +77,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         }
 
 
-        private static KubernetesNetworkConfigResponseUnmarshaller _instance = new KubernetesNetworkConfigResponseUnmarshaller();        
+        private static RemoteNodeNetworkUnmarshaller _instance = new RemoteNodeNetworkUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static KubernetesNetworkConfigResponseUnmarshaller Instance
+        public static RemoteNodeNetworkUnmarshaller Instance
         {
             get
             {

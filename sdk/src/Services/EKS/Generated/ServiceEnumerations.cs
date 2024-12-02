@@ -1797,6 +1797,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly UpdateParamType ClusterLogging = new UpdateParamType("ClusterLogging");
         /// <summary>
+        /// Constant ComputeConfig for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType ComputeConfig = new UpdateParamType("ComputeConfig");
+        /// <summary>
         /// Constant ConfigurationValues for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType ConfigurationValues = new UpdateParamType("ConfigurationValues");
@@ -1820,6 +1824,10 @@ namespace Amazon.EKS
         /// Constant IdentityProviderConfig for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType IdentityProviderConfig = new UpdateParamType("IdentityProviderConfig");
+        /// <summary>
+        /// Constant KubernetesNetworkConfig for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType KubernetesNetworkConfig = new UpdateParamType("KubernetesNetworkConfig");
         /// <summary>
         /// Constant LabelsToAdd for UpdateParamType
         /// </summary>
@@ -1880,6 +1888,10 @@ namespace Amazon.EKS
         /// Constant ServiceAccountRoleArn for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType ServiceAccountRoleArn = new UpdateParamType("ServiceAccountRoleArn");
+        /// <summary>
+        /// Constant StorageConfig for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType StorageConfig = new UpdateParamType("StorageConfig");
         /// <summary>
         /// Constant Subnets for UpdateParamType
         /// </summary>
@@ -2020,6 +2032,10 @@ namespace Amazon.EKS
         /// Constant AssociateIdentityProviderConfig for UpdateType
         /// </summary>
         public static readonly UpdateType AssociateIdentityProviderConfig = new UpdateType("AssociateIdentityProviderConfig");
+        /// <summary>
+        /// Constant AutoModeUpdate for UpdateType
+        /// </summary>
+        public static readonly UpdateType AutoModeUpdate = new UpdateType("AutoModeUpdate");
         /// <summary>
         /// Constant ConfigUpdate for UpdateType
         /// </summary>

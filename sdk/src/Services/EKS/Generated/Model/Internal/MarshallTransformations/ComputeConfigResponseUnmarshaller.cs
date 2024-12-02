@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for KubernetesNetworkConfigResponse Object
+    /// Response Unmarshaller for ComputeConfigResponse Object
     /// </summary>  
-    public class KubernetesNetworkConfigResponseUnmarshaller : IUnmarshaller<KubernetesNetworkConfigResponse, XmlUnmarshallerContext>, IUnmarshaller<KubernetesNetworkConfigResponse, JsonUnmarshallerContext>
+    public class ComputeConfigResponseUnmarshaller : IUnmarshaller<ComputeConfigResponse, XmlUnmarshallerContext>, IUnmarshaller<ComputeConfigResponse, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        KubernetesNetworkConfigResponse IUnmarshaller<KubernetesNetworkConfigResponse, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ComputeConfigResponse IUnmarshaller<ComputeConfigResponse, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public KubernetesNetworkConfigResponse Unmarshall(JsonUnmarshallerContext context)
+        public ComputeConfigResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            KubernetesNetworkConfigResponse unmarshalledObject = new KubernetesNetworkConfigResponse();
+            ComputeConfigResponse unmarshalledObject = new ComputeConfigResponse();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,22 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("elasticLoadBalancing", targetDepth))
+                if (context.TestExpression("enabled", targetDepth))
                 {
-                    var unmarshaller = ElasticLoadBalancingUnmarshaller.Instance;
-                    unmarshalledObject.ElasticLoadBalancing = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ipFamily", targetDepth))
+                if (context.TestExpression("nodePools", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IpFamily = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.NodePools = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("serviceIpv4Cidr", targetDepth))
+                if (context.TestExpression("nodeRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ServiceIpv4Cidr = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("serviceIpv6Cidr", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ServiceIpv6Cidr = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NodeRoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +89,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         }
 
 
-        private static KubernetesNetworkConfigResponseUnmarshaller _instance = new KubernetesNetworkConfigResponseUnmarshaller();        
+        private static ComputeConfigResponseUnmarshaller _instance = new ComputeConfigResponseUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static KubernetesNetworkConfigResponseUnmarshaller Instance
+        public static ComputeConfigResponseUnmarshaller Instance
         {
             get
             {

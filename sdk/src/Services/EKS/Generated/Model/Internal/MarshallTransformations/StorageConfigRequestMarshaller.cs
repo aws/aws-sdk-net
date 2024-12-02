@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// KubernetesNetworkConfigRequest Marshaller
+    /// StorageConfigRequest Marshaller
     /// </summary>
-    public class KubernetesNetworkConfigRequestMarshaller : IRequestMarshaller<KubernetesNetworkConfigRequest, JsonMarshallerContext> 
+    public class StorageConfigRequestMarshaller : IRequestMarshaller<StorageConfigRequest, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,31 +44,19 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(KubernetesNetworkConfigRequest requestObject, JsonMarshallerContext context)
+        public void Marshall(StorageConfigRequest requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetElasticLoadBalancing())
+            if(requestObject.IsSetBlockStorage())
             {
-                context.Writer.WritePropertyName("elasticLoadBalancing");
+                context.Writer.WritePropertyName("blockStorage");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = ElasticLoadBalancingMarshaller.Instance;
-                marshaller.Marshall(requestObject.ElasticLoadBalancing, context);
+                var marshaller = BlockStorageMarshaller.Instance;
+                marshaller.Marshall(requestObject.BlockStorage, context);
 
                 context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetIpFamily())
-            {
-                context.Writer.WritePropertyName("ipFamily");
-                context.Writer.Write(requestObject.IpFamily);
-            }
-
-            if(requestObject.IsSetServiceIpv4Cidr())
-            {
-                context.Writer.WritePropertyName("serviceIpv4Cidr");
-                context.Writer.Write(requestObject.ServiceIpv4Cidr);
             }
 
         }
@@ -76,7 +64,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static KubernetesNetworkConfigRequestMarshaller Instance = new KubernetesNetworkConfigRequestMarshaller();
+        public readonly static StorageConfigRequestMarshaller Instance = new StorageConfigRequestMarshaller();
 
     }
 }

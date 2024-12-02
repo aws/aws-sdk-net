@@ -91,13 +91,16 @@ namespace Amazon.EKS.Model
         private CreateAccessConfigRequest _accessConfig;
         private bool? _bootstrapSelfManagedAddons;
         private string _clientRequestToken;
+        private ComputeConfigRequest _computeConfig;
         private List<EncryptionConfig> _encryptionConfig = AWSConfigs.InitializeCollections ? new List<EncryptionConfig>() : null;
         private KubernetesNetworkConfigRequest _kubernetesNetworkConfig;
         private Logging _logging;
         private string _name;
         private OutpostConfigRequest _outpostConfig;
+        private RemoteNetworkConfigRequest _remoteNetworkConfig;
         private VpcConfigRequest _resourcesVpcConfig;
         private string _roleArn;
+        private StorageConfigRequest _storageConfig;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private UpgradePolicyRequest _upgradePolicy;
         private string _version;
@@ -166,6 +169,26 @@ namespace Amazon.EKS.Model
         internal bool IsSetClientRequestToken()
         {
             return this._clientRequestToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComputeConfig. 
+        /// <para>
+        /// Enable or disable the compute capability of EKS Auto Mode when creating your EKS Auto
+        /// Mode cluster. If the compute capability is enabled, EKS Auto Mode will create and
+        /// delete EC2 Managed Instances in your Amazon Web Services account
+        /// </para>
+        /// </summary>
+        public ComputeConfigRequest ComputeConfig
+        {
+            get { return this._computeConfig; }
+            set { this._computeConfig = value; }
+        }
+
+        // Check to see if ComputeConfig property is set
+        internal bool IsSetComputeConfig()
+        {
+            return this._computeConfig != null;
         }
 
         /// <summary>
@@ -279,6 +302,25 @@ namespace Amazon.EKS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RemoteNetworkConfig. 
+        /// <para>
+        /// The configuration in the cluster for EKS Hybrid Nodes. You can't change or update
+        /// this configuration after the cluster is created.
+        /// </para>
+        /// </summary>
+        public RemoteNetworkConfigRequest RemoteNetworkConfig
+        {
+            get { return this._remoteNetworkConfig; }
+            set { this._remoteNetworkConfig = value; }
+        }
+
+        // Check to see if RemoteNetworkConfig property is set
+        internal bool IsSetRemoteNetworkConfig()
+        {
+            return this._remoteNetworkConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ResourcesVpcConfig. 
         /// <para>
         /// The VPC configuration that's used by the cluster control plane. Amazon EKS VPC resources
@@ -323,6 +365,26 @@ namespace Amazon.EKS.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageConfig. 
+        /// <para>
+        /// Enable or disable the block storage capability of EKS Auto Mode when creating your
+        /// EKS Auto Mode cluster. If the block storage capability is enabled, EKS Auto Mode will
+        /// create and delete EBS volumes in your Amazon Web Services account.
+        /// </para>
+        /// </summary>
+        public StorageConfigRequest StorageConfig
+        {
+            get { return this._storageConfig; }
+            set { this._storageConfig = value; }
+        }
+
+        // Check to see if StorageConfig property is set
+        internal bool IsSetStorageConfig()
+        {
+            return this._storageConfig != null;
         }
 
         /// <summary>

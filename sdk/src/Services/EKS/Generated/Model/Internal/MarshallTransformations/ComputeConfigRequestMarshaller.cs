@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// KubernetesNetworkConfigRequest Marshaller
+    /// ComputeConfigRequest Marshaller
     /// </summary>
-    public class KubernetesNetworkConfigRequestMarshaller : IRequestMarshaller<KubernetesNetworkConfigRequest, JsonMarshallerContext> 
+    public class ComputeConfigRequestMarshaller : IRequestMarshaller<ComputeConfigRequest, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,31 +44,31 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(KubernetesNetworkConfigRequest requestObject, JsonMarshallerContext context)
+        public void Marshall(ComputeConfigRequest requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetElasticLoadBalancing())
+            if(requestObject.IsSetEnabled())
             {
-                context.Writer.WritePropertyName("elasticLoadBalancing");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ElasticLoadBalancingMarshaller.Instance;
-                marshaller.Marshall(requestObject.ElasticLoadBalancing, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("enabled");
+                context.Writer.Write(requestObject.Enabled);
             }
 
-            if(requestObject.IsSetIpFamily())
+            if(requestObject.IsSetNodePools())
             {
-                context.Writer.WritePropertyName("ipFamily");
-                context.Writer.Write(requestObject.IpFamily);
+                context.Writer.WritePropertyName("nodePools");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectNodePoolsListValue in requestObject.NodePools)
+                {
+                        context.Writer.Write(requestObjectNodePoolsListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
-            if(requestObject.IsSetServiceIpv4Cidr())
+            if(requestObject.IsSetNodeRoleArn())
             {
-                context.Writer.WritePropertyName("serviceIpv4Cidr");
-                context.Writer.Write(requestObject.ServiceIpv4Cidr);
+                context.Writer.WritePropertyName("nodeRoleArn");
+                context.Writer.Write(requestObject.NodeRoleArn);
             }
 
         }
@@ -76,7 +76,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static KubernetesNetworkConfigRequestMarshaller Instance = new KubernetesNetworkConfigRequestMarshaller();
+        public readonly static ComputeConfigRequestMarshaller Instance = new ComputeConfigRequestMarshaller();
 
     }
 }
