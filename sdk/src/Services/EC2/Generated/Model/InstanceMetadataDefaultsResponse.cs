@@ -39,6 +39,8 @@ namespace Amazon.EC2.Model
         private int? _httpPutResponseHopLimit;
         private HttpTokensState _httpTokens;
         private InstanceMetadataTagsState _instanceMetadataTags;
+        private ManagedBy _managedBy;
+        private string _managedExceptionMessage;
 
         /// <summary>
         /// Gets and sets the property HttpEndpoint. 
@@ -124,6 +126,52 @@ namespace Amazon.EC2.Model
         internal bool IsSetInstanceMetadataTags()
         {
             return this._instanceMetadataTags != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedBy. 
+        /// <para>
+        /// The entity that manages the IMDS default settings. Possible values include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>account</c> - The IMDS default settings are managed by the account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>declarative-policy</c> - The IMDS default settings are managed by a declarative
+        /// policy and can't be modified by the account.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ManagedBy ManagedBy
+        {
+            get { return this._managedBy; }
+            set { this._managedBy = value; }
+        }
+
+        // Check to see if ManagedBy property is set
+        internal bool IsSetManagedBy()
+        {
+            return this._managedBy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedExceptionMessage. 
+        /// <para>
+        /// The customized exception message that is specified in the declarative policy.
+        /// </para>
+        /// </summary>
+        public string ManagedExceptionMessage
+        {
+            get { return this._managedExceptionMessage; }
+            set { this._managedExceptionMessage = value; }
+        }
+
+        // Check to see if ManagedExceptionMessage property is set
+        internal bool IsSetManagedExceptionMessage()
+        {
+            return this._managedExceptionMessage != null;
         }
 
     }

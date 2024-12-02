@@ -85,6 +85,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.LastUpdatedTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("nativeApplicationOidcOptions", targetDepth))
+                    {
+                        var unmarshaller = NativeApplicationOidcOptionsUnmarshaller.Instance;
+                        unmarshalledObject.NativeApplicationOidcOptions = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("oidcOptions", targetDepth))
                     {
                         var unmarshaller = OidcOptionsUnmarshaller.Instance;

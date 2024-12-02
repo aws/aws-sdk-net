@@ -212,7 +212,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Operator. 
         /// <para>
-        /// The entity that manages the volume.
+        /// The service provider that manages the volume.
         /// </para>
         /// </summary>
         public OperatorResponse Operator

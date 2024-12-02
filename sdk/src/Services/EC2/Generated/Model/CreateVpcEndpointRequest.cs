@@ -44,9 +44,11 @@ namespace Amazon.EC2.Model
         private IpAddressType _ipAddressType;
         private string _policyDocument;
         private bool? _privateDnsEnabled;
+        private string _resourceConfigurationArn;
         private List<string> _routeTableIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _serviceName;
+        private string _serviceNetworkArn;
         private string _serviceRegion;
         private List<SubnetConfiguration> _subnetConfigurations = AWSConfigs.InitializeCollections ? new List<SubnetConfiguration>() : null;
         private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -165,6 +167,25 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ResourceConfigurationArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of a resource configuration that will be associated
+        /// with the VPC endpoint of type resource.
+        /// </para>
+        /// </summary>
+        public string ResourceConfigurationArn
+        {
+            get { return this._resourceConfigurationArn; }
+            set { this._resourceConfigurationArn = value; }
+        }
+
+        // Check to see if ResourceConfigurationArn property is set
+        internal bool IsSetResourceConfigurationArn()
+        {
+            return this._resourceConfigurationArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RouteTableIds. 
         /// <para>
         /// (Gateway endpoint) The route table IDs.
@@ -208,7 +229,6 @@ namespace Amazon.EC2.Model
         /// The name of the endpoint service.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string ServiceName
         {
             get { return this._serviceName; }
@@ -219,6 +239,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetServiceName()
         {
             return this._serviceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceNetworkArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of a service network that will be associated with the
+        /// VPC endpoint of type service-network.
+        /// </para>
+        /// </summary>
+        public string ServiceNetworkArn
+        {
+            get { return this._serviceNetworkArn; }
+            set { this._serviceNetworkArn = value; }
+        }
+
+        // Check to see if ServiceNetworkArn property is set
+        internal bool IsSetServiceNetworkArn()
+        {
+            return this._serviceNetworkArn != null;
         }
 
         /// <summary>

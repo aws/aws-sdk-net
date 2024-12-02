@@ -263,7 +263,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Operator. 
         /// <para>
-        /// The entity that manages the network interface.
+        /// The service provider that manages the network interface.
         /// </para>
         /// </summary>
         public OperatorResponse Operator

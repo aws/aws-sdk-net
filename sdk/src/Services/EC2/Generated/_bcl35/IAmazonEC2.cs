@@ -2540,6 +2540,58 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CancelDeclarativePoliciesReport
+
+
+        /// <summary>
+        /// Cancels the generation of an account status report.
+        /// 
+        ///  
+        /// <para>
+        /// You can only cancel a report while it has the <c>running</c> status. Reports with
+        /// other statuses (<c>complete</c>, <c>cancelled</c>, or <c>error</c>) can't be canceled.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_declarative_status-report.html">Generating
+        /// the account status report for declarative policies</a> in the <i>Amazon Web Services
+        /// Organizations User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelDeclarativePoliciesReport service method.</param>
+        /// 
+        /// <returns>The response from the CancelDeclarativePoliciesReport service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelDeclarativePoliciesReport">REST API Reference for CancelDeclarativePoliciesReport Operation</seealso>
+        CancelDeclarativePoliciesReportResponse CancelDeclarativePoliciesReport(CancelDeclarativePoliciesReportRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelDeclarativePoliciesReport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelDeclarativePoliciesReport operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelDeclarativePoliciesReport
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelDeclarativePoliciesReport">REST API Reference for CancelDeclarativePoliciesReport Operation</seealso>
+        IAsyncResult BeginCancelDeclarativePoliciesReport(CancelDeclarativePoliciesReportRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelDeclarativePoliciesReport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelDeclarativePoliciesReport.</param>
+        /// 
+        /// <returns>Returns a  CancelDeclarativePoliciesReportResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelDeclarativePoliciesReport">REST API Reference for CancelDeclarativePoliciesReport Operation</seealso>
+        CancelDeclarativePoliciesReportResponse EndCancelDeclarativePoliciesReport(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CancelExportTask
 
 
@@ -12401,6 +12453,62 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeDeclarativePoliciesReports
+
+
+        /// <summary>
+        /// Describes the metadata of an account status report, including the status of the report.
+        /// 
+        ///  
+        /// <para>
+        /// To view the full report, download it from the Amazon S3 bucket where it was saved.
+        /// Reports are accessible only when they have the <c>complete</c> status. Reports with
+        /// other statuses (<c>running</c>, <c>cancelled</c>, or <c>error</c>) are not available
+        /// in the S3 bucket. For more information about downloading objects from an S3 bucket,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/download-objects.html">Downloading
+        /// objects</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_declarative_status-report.html">Generating
+        /// the account status report for declarative policies</a> in the <i>Amazon Web Services
+        /// Organizations User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDeclarativePoliciesReports service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDeclarativePoliciesReports service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeDeclarativePoliciesReports">REST API Reference for DescribeDeclarativePoliciesReports Operation</seealso>
+        DescribeDeclarativePoliciesReportsResponse DescribeDeclarativePoliciesReports(DescribeDeclarativePoliciesReportsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDeclarativePoliciesReports operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDeclarativePoliciesReports operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDeclarativePoliciesReports
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeDeclarativePoliciesReports">REST API Reference for DescribeDeclarativePoliciesReports Operation</seealso>
+        IAsyncResult BeginDescribeDeclarativePoliciesReports(DescribeDeclarativePoliciesReportsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDeclarativePoliciesReports operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDeclarativePoliciesReports.</param>
+        /// 
+        /// <returns>Returns a  DescribeDeclarativePoliciesReportsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeDeclarativePoliciesReports">REST API Reference for DescribeDeclarativePoliciesReports Operation</seealso>
+        DescribeDeclarativePoliciesReportsResponse EndDescribeDeclarativePoliciesReports(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeDhcpOptions
 
 
@@ -13380,6 +13488,14 @@ namespace Amazon.EC2
         /// terminated, specifying the ID of the image will eventually return an error indicating
         /// that the AMI ID cannot be found.
         /// </para>
+        ///  
+        /// <para>
+        /// When Allowed AMIs is set to <c>enabled</c>, only allowed images are returned in the
+        /// results, with the <c>imageAllowed</c> field set to <c>true</c> for each image. In
+        /// <c>audit-mode</c>, the <c>imageAllowed</c> field is set to <c>true</c> for images
+        /// that meet the account's Allowed AMIs criteria, and <c>false</c> for images that don't
+        /// meet the criteria. For more information, see <a>EnableAllowedImagesSettings</a>.
+        /// </para>
         ///  <important> 
         /// <para>
         /// We strongly recommend using only paginated requests. Unpaginated requests are susceptible
@@ -13413,6 +13529,14 @@ namespace Amazon.EC2
         /// then return empty results. After all instances that reference a deregistered AMI are
         /// terminated, specifying the ID of the image will eventually return an error indicating
         /// that the AMI ID cannot be found.
+        /// </para>
+        ///  
+        /// <para>
+        /// When Allowed AMIs is set to <c>enabled</c>, only allowed images are returned in the
+        /// results, with the <c>imageAllowed</c> field set to <c>true</c> for each image. In
+        /// <c>audit-mode</c>, the <c>imageAllowed</c> field is set to <c>true</c> for images
+        /// that meet the account's Allowed AMIs criteria, and <c>false</c> for images that don't
+        /// meet the criteria. For more information, see <a>EnableAllowedImagesSettings</a>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -13800,7 +13924,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the AMI that was used to launch an instance, even if the AMI is deprecated,
-        /// deregistered, or made private (no longer public or shared with your account).
+        /// deregistered, made private (no longer public or shared with your account), or not
+        /// allowed.
         /// 
         ///  
         /// <para>
@@ -18931,6 +19056,47 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeVpcEndpointAssociations
+
+
+        /// <summary>
+        /// Describes the VPC resources, VPC endpoint services, Amazon Lattice services, or service
+        /// networks associated with the VPC endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpointAssociations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVpcEndpointAssociations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointAssociations">REST API Reference for DescribeVpcEndpointAssociations Operation</seealso>
+        DescribeVpcEndpointAssociationsResponse DescribeVpcEndpointAssociations(DescribeVpcEndpointAssociationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVpcEndpointAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpointAssociations operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVpcEndpointAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointAssociations">REST API Reference for DescribeVpcEndpointAssociations Operation</seealso>
+        IAsyncResult BeginDescribeVpcEndpointAssociations(DescribeVpcEndpointAssociationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeVpcEndpointAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVpcEndpointAssociations.</param>
+        /// 
+        /// <returns>Returns a  DescribeVpcEndpointAssociationsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointAssociations">REST API Reference for DescribeVpcEndpointAssociations Operation</seealso>
+        DescribeVpcEndpointAssociationsResponse EndDescribeVpcEndpointAssociations(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeVpcEndpointConnectionNotifications
 
 
@@ -19737,6 +19903,62 @@ namespace Amazon.EC2
         /// <returns>Returns a  DisableAddressTransferResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableAddressTransfer">REST API Reference for DisableAddressTransfer Operation</seealso>
         DisableAddressTransferResponse EndDisableAddressTransfer(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DisableAllowedImagesSettings
+
+
+        /// <summary>
+        /// Disables Allowed AMIs for your account in the specified Amazon Web Services Region.
+        /// When set to <c>disabled</c>, the image criteria in your Allowed AMIs settings do not
+        /// apply, and no restrictions are placed on AMI discoverability or usage. Users in your
+        /// account can launch instances using any public AMI or AMI shared with your account.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The Allowed AMIs feature does not restrict the AMIs owned by your account. Regardless
+        /// of the criteria you set, the AMIs created by your account will always be discoverable
+        /// and usable by users in your account.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-allowed-amis.html">Control
+        /// the discovery and use of AMIs in Amazon EC2 with Allowed AMIs</a> in <i>Amazon EC2
+        /// User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableAllowedImagesSettings service method.</param>
+        /// 
+        /// <returns>The response from the DisableAllowedImagesSettings service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableAllowedImagesSettings">REST API Reference for DisableAllowedImagesSettings Operation</seealso>
+        DisableAllowedImagesSettingsResponse DisableAllowedImagesSettings(DisableAllowedImagesSettingsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableAllowedImagesSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableAllowedImagesSettings operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableAllowedImagesSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableAllowedImagesSettings">REST API Reference for DisableAllowedImagesSettings Operation</seealso>
+        IAsyncResult BeginDisableAllowedImagesSettings(DisableAllowedImagesSettingsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisableAllowedImagesSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableAllowedImagesSettings.</param>
+        /// 
+        /// <returns>Returns a  DisableAllowedImagesSettingsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableAllowedImagesSettings">REST API Reference for DisableAllowedImagesSettings Operation</seealso>
+        DisableAllowedImagesSettingsResponse EndDisableAllowedImagesSettings(IAsyncResult asyncResult);
 
         #endregion
         
@@ -21285,6 +21507,79 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  EnableAllowedImagesSettings
+
+
+        /// <summary>
+        /// Enables Allowed AMIs for your account in the specified Amazon Web Services Region.
+        /// Two values are accepted:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>enabled</c>: The image criteria in your Allowed AMIs settings are applied. As
+        /// a result, only AMIs matching these criteria are discoverable and can be used by your
+        /// account to launch instances.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>audit-mode</c>: The image criteria in your Allowed AMIs settings are not applied.
+        /// No restrictions are placed on AMI discoverability or usage. Users in your account
+        /// can launch instances using any public AMI or AMI shared with your account.
+        /// </para>
+        ///  
+        /// <para>
+        /// The purpose of <c>audit-mode</c> is to indicate which AMIs will be affected when Allowed
+        /// AMIs is <c>enabled</c>. In <c>audit-mode</c>, each AMI displays either <c>"ImageAllowed":
+        /// true</c> or <c>"ImageAllowed": false</c> to indicate whether the AMI will be discoverable
+        /// and available to users in the account when Allowed AMIs is enabled.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// The Allowed AMIs feature does not restrict the AMIs owned by your account. Regardless
+        /// of the criteria you set, the AMIs created by your account will always be discoverable
+        /// and usable by users in your account.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-allowed-amis.html">Control
+        /// the discovery and use of AMIs in Amazon EC2 with Allowed AMIs</a> in <i>Amazon EC2
+        /// User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableAllowedImagesSettings service method.</param>
+        /// 
+        /// <returns>The response from the EnableAllowedImagesSettings service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableAllowedImagesSettings">REST API Reference for EnableAllowedImagesSettings Operation</seealso>
+        EnableAllowedImagesSettingsResponse EnableAllowedImagesSettings(EnableAllowedImagesSettingsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableAllowedImagesSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableAllowedImagesSettings operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableAllowedImagesSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableAllowedImagesSettings">REST API Reference for EnableAllowedImagesSettings Operation</seealso>
+        IAsyncResult BeginEnableAllowedImagesSettings(EnableAllowedImagesSettingsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EnableAllowedImagesSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableAllowedImagesSettings.</param>
+        /// 
+        /// <returns>Returns a  EnableAllowedImagesSettingsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableAllowedImagesSettings">REST API Reference for EnableAllowedImagesSettings Operation</seealso>
+        EnableAllowedImagesSettingsResponse EndEnableAllowedImagesSettings(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  EnableAwsNetworkPerformanceMetricSubscription
 
 
@@ -22301,6 +22596,100 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ExportVerifiedAccessInstanceClientConfiguration
+
+
+        /// <summary>
+        /// Exports the client configuration for a Verified Access instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportVerifiedAccessInstanceClientConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the ExportVerifiedAccessInstanceClientConfiguration service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportVerifiedAccessInstanceClientConfiguration">REST API Reference for ExportVerifiedAccessInstanceClientConfiguration Operation</seealso>
+        ExportVerifiedAccessInstanceClientConfigurationResponse ExportVerifiedAccessInstanceClientConfiguration(ExportVerifiedAccessInstanceClientConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExportVerifiedAccessInstanceClientConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExportVerifiedAccessInstanceClientConfiguration operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExportVerifiedAccessInstanceClientConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportVerifiedAccessInstanceClientConfiguration">REST API Reference for ExportVerifiedAccessInstanceClientConfiguration Operation</seealso>
+        IAsyncResult BeginExportVerifiedAccessInstanceClientConfiguration(ExportVerifiedAccessInstanceClientConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ExportVerifiedAccessInstanceClientConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExportVerifiedAccessInstanceClientConfiguration.</param>
+        /// 
+        /// <returns>Returns a  ExportVerifiedAccessInstanceClientConfigurationResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportVerifiedAccessInstanceClientConfiguration">REST API Reference for ExportVerifiedAccessInstanceClientConfiguration Operation</seealso>
+        ExportVerifiedAccessInstanceClientConfigurationResponse EndExportVerifiedAccessInstanceClientConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetAllowedImagesSettings
+
+
+        /// <summary>
+        /// Gets the current state of the Allowed AMIs setting and the list of Allowed AMIs criteria
+        /// at the account level in the specified Region.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The Allowed AMIs feature does not restrict the AMIs owned by your account. Regardless
+        /// of the criteria you set, the AMIs created by your account will always be discoverable
+        /// and usable by users in your account.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-allowed-amis.html">Control
+        /// the discovery and use of AMIs in Amazon EC2 with Allowed AMIs</a> in <i>Amazon EC2
+        /// User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAllowedImagesSettings service method.</param>
+        /// 
+        /// <returns>The response from the GetAllowedImagesSettings service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAllowedImagesSettings">REST API Reference for GetAllowedImagesSettings Operation</seealso>
+        GetAllowedImagesSettingsResponse GetAllowedImagesSettings(GetAllowedImagesSettingsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAllowedImagesSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAllowedImagesSettings operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAllowedImagesSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAllowedImagesSettings">REST API Reference for GetAllowedImagesSettings Operation</seealso>
+        IAsyncResult BeginGetAllowedImagesSettings(GetAllowedImagesSettingsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAllowedImagesSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAllowedImagesSettings.</param>
+        /// 
+        /// <returns>Returns a  GetAllowedImagesSettingsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAllowedImagesSettings">REST API Reference for GetAllowedImagesSettings Operation</seealso>
+        GetAllowedImagesSettingsResponse EndGetAllowedImagesSettings(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetAssociatedEnclaveCertificateIamRoles
 
 
@@ -22604,6 +22993,62 @@ namespace Amazon.EC2
         /// <returns>Returns a  GetConsoleScreenshotResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetConsoleScreenshot">REST API Reference for GetConsoleScreenshot Operation</seealso>
         GetConsoleScreenshotResponse EndGetConsoleScreenshot(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetDeclarativePoliciesReportSummary
+
+
+        /// <summary>
+        /// Retrieves a summary of the account status report.
+        /// 
+        ///  
+        /// <para>
+        /// To view the full report, download it from the Amazon S3 bucket where it was saved.
+        /// Reports are accessible only when they have the <c>complete</c> status. Reports with
+        /// other statuses (<c>running</c>, <c>cancelled</c>, or <c>error</c>) are not available
+        /// in the S3 bucket. For more information about downloading objects from an S3 bucket,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/download-objects.html">Downloading
+        /// objects</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_declarative_status-report.html">Generating
+        /// the account status report for declarative policies</a> in the <i>Amazon Web Services
+        /// Organizations User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDeclarativePoliciesReportSummary service method.</param>
+        /// 
+        /// <returns>The response from the GetDeclarativePoliciesReportSummary service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetDeclarativePoliciesReportSummary">REST API Reference for GetDeclarativePoliciesReportSummary Operation</seealso>
+        GetDeclarativePoliciesReportSummaryResponse GetDeclarativePoliciesReportSummary(GetDeclarativePoliciesReportSummaryRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDeclarativePoliciesReportSummary operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDeclarativePoliciesReportSummary operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDeclarativePoliciesReportSummary
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetDeclarativePoliciesReportSummary">REST API Reference for GetDeclarativePoliciesReportSummary Operation</seealso>
+        IAsyncResult BeginGetDeclarativePoliciesReportSummary(GetDeclarativePoliciesReportSummaryRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDeclarativePoliciesReportSummary operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDeclarativePoliciesReportSummary.</param>
+        /// 
+        /// <returns>Returns a  GetDeclarativePoliciesReportSummaryResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetDeclarativePoliciesReportSummary">REST API Reference for GetDeclarativePoliciesReportSummary Operation</seealso>
+        GetDeclarativePoliciesReportSummaryResponse EndGetDeclarativePoliciesReportSummary(IAsyncResult asyncResult);
 
         #endregion
         
@@ -24318,6 +24763,46 @@ namespace Amazon.EC2
         /// <returns>Returns a  GetVerifiedAccessEndpointPolicyResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVerifiedAccessEndpointPolicy">REST API Reference for GetVerifiedAccessEndpointPolicy Operation</seealso>
         GetVerifiedAccessEndpointPolicyResponse EndGetVerifiedAccessEndpointPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetVerifiedAccessEndpointTargets
+
+
+        /// <summary>
+        /// Gets the targets for the specified network CIDR endpoint for Verified Access.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVerifiedAccessEndpointTargets service method.</param>
+        /// 
+        /// <returns>The response from the GetVerifiedAccessEndpointTargets service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVerifiedAccessEndpointTargets">REST API Reference for GetVerifiedAccessEndpointTargets Operation</seealso>
+        GetVerifiedAccessEndpointTargetsResponse GetVerifiedAccessEndpointTargets(GetVerifiedAccessEndpointTargetsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetVerifiedAccessEndpointTargets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetVerifiedAccessEndpointTargets operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetVerifiedAccessEndpointTargets
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVerifiedAccessEndpointTargets">REST API Reference for GetVerifiedAccessEndpointTargets Operation</seealso>
+        IAsyncResult BeginGetVerifiedAccessEndpointTargets(GetVerifiedAccessEndpointTargetsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetVerifiedAccessEndpointTargets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetVerifiedAccessEndpointTargets.</param>
+        /// 
+        /// <returns>Returns a  GetVerifiedAccessEndpointTargetsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVerifiedAccessEndpointTargets">REST API Reference for GetVerifiedAccessEndpointTargets Operation</seealso>
+        GetVerifiedAccessEndpointTargetsResponse EndGetVerifiedAccessEndpointTargets(IAsyncResult asyncResult);
 
         #endregion
         
@@ -29772,6 +30257,59 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ReplaceImageCriteriaInAllowedImagesSettings
+
+
+        /// <summary>
+        /// Sets or replaces the criteria for Allowed AMIs.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The Allowed AMIs feature does not restrict the AMIs owned by your account. Regardless
+        /// of the criteria you set, the AMIs created by your account will always be discoverable
+        /// and usable by users in your account.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-allowed-amis.html">Control
+        /// the discovery and use of AMIs in Amazon EC2 with Allowed AMIs</a> in <i>Amazon EC2
+        /// User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReplaceImageCriteriaInAllowedImagesSettings service method.</param>
+        /// 
+        /// <returns>The response from the ReplaceImageCriteriaInAllowedImagesSettings service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceImageCriteriaInAllowedImagesSettings">REST API Reference for ReplaceImageCriteriaInAllowedImagesSettings Operation</seealso>
+        ReplaceImageCriteriaInAllowedImagesSettingsResponse ReplaceImageCriteriaInAllowedImagesSettings(ReplaceImageCriteriaInAllowedImagesSettingsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ReplaceImageCriteriaInAllowedImagesSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ReplaceImageCriteriaInAllowedImagesSettings operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndReplaceImageCriteriaInAllowedImagesSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceImageCriteriaInAllowedImagesSettings">REST API Reference for ReplaceImageCriteriaInAllowedImagesSettings Operation</seealso>
+        IAsyncResult BeginReplaceImageCriteriaInAllowedImagesSettings(ReplaceImageCriteriaInAllowedImagesSettingsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ReplaceImageCriteriaInAllowedImagesSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginReplaceImageCriteriaInAllowedImagesSettings.</param>
+        /// 
+        /// <returns>Returns a  ReplaceImageCriteriaInAllowedImagesSettingsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceImageCriteriaInAllowedImagesSettings">REST API Reference for ReplaceImageCriteriaInAllowedImagesSettings Operation</seealso>
+        ReplaceImageCriteriaInAllowedImagesSettingsResponse EndReplaceImageCriteriaInAllowedImagesSettings(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ReplaceNetworkAclAssociation
 
 
@@ -31285,6 +31823,104 @@ namespace Amazon.EC2
         /// <returns>Returns a  SendDiagnosticInterruptResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SendDiagnosticInterrupt">REST API Reference for SendDiagnosticInterrupt Operation</seealso>
         SendDiagnosticInterruptResponse EndSendDiagnosticInterrupt(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartDeclarativePoliciesReport
+
+
+        /// <summary>
+        /// Generates an account status report. The report is generated asynchronously, and can
+        /// take several hours to complete.
+        /// 
+        ///  
+        /// <para>
+        /// The report provides the current status of all attributes supported by declarative
+        /// policies for the accounts within the specified scope. The scope is determined by the
+        /// specified <c>TargetId</c>, which can represent an individual account, or all the accounts
+        /// that fall under the specified organizational unit (OU) or root (the entire Amazon
+        /// Web Services Organization).
+        /// </para>
+        ///  
+        /// <para>
+        /// The report is saved to your specified S3 bucket, using the following path structure
+        /// (with the <i>italicized placeholders</i> representing your specific values):
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>s3://<i>amzn-s3-demo-bucket</i>/<i>your-optional-s3-prefix</i>/ec2_<i>targetId</i>_<i>reportId</i>_<i>yyyyMMdd</i>T<i>hhmm</i>Z.csv</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Prerequisites for generating a report</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>StartDeclarativePoliciesReport</c> API can only be called by the management
+        /// account or delegated administrators for the organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An S3 bucket must be available before generating the report (you can create a new
+        /// one or use an existing one), and it must have an appropriate bucket policy. For a
+        /// sample S3 policy, see <i>Sample Amazon S3 policy</i> under .
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Trusted access must be enabled for the service for which the declarative policy will
+        /// enforce a baseline configuration. If you use the Amazon Web Services Organizations
+        /// console, this is done automatically when you enable declarative policies. The API
+        /// uses the following service principal to identify the EC2 service: <c>ec2.amazonaws.com</c>.
+        /// For more information on how to enable trusted access with the Amazon Web Services
+        /// CLI and Amazon Web Services SDKs, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Using
+        /// Organizations with other Amazon Web Services services</a> in the <i>Amazon Web Services
+        /// Organizations User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Only one report per organization can be generated at a time. Attempting to generate
+        /// a report while another is in progress will result in an error.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, including the required IAM permissions to run this API, see
+        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_declarative_status-report.html">Generating
+        /// the account status report for declarative policies</a> in the <i>Amazon Web Services
+        /// Organizations User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDeclarativePoliciesReport service method.</param>
+        /// 
+        /// <returns>The response from the StartDeclarativePoliciesReport service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartDeclarativePoliciesReport">REST API Reference for StartDeclarativePoliciesReport Operation</seealso>
+        StartDeclarativePoliciesReportResponse StartDeclarativePoliciesReport(StartDeclarativePoliciesReportRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartDeclarativePoliciesReport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartDeclarativePoliciesReport operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartDeclarativePoliciesReport
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartDeclarativePoliciesReport">REST API Reference for StartDeclarativePoliciesReport Operation</seealso>
+        IAsyncResult BeginStartDeclarativePoliciesReport(StartDeclarativePoliciesReportRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartDeclarativePoliciesReport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartDeclarativePoliciesReport.</param>
+        /// 
+        /// <returns>Returns a  StartDeclarativePoliciesReportResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartDeclarativePoliciesReport">REST API Reference for StartDeclarativePoliciesReport Operation</seealso>
+        StartDeclarativePoliciesReportResponse EndStartDeclarativePoliciesReport(IAsyncResult asyncResult);
 
         #endregion
         

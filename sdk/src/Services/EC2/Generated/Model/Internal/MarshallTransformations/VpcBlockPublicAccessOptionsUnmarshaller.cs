@@ -67,6 +67,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.AwsRegion = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("exclusionsAllowed", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ExclusionsAllowed = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("internetGatewayBlockMode", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -77,6 +83,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;
                         unmarshalledObject.LastUpdateTimestamp = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("managedBy", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ManagedBy = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("reason", targetDepth))

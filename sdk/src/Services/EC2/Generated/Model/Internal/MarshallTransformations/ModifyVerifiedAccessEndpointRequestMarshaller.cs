@@ -59,6 +59,25 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetCidrOptions())
+                {
+                    if(publicRequest.CidrOptions.IsSetPortRanges())
+                    {
+                        int publicRequestCidrOptionslistValueIndex = 1;
+                        foreach(var publicRequestCidrOptionslistValue in publicRequest.CidrOptions.PortRanges)
+                        {
+                            if(publicRequestCidrOptionslistValue.IsSetFromPort())
+                            {
+                                request.Parameters.Add("CidrOptions" + "." + "PortRange" + "." + publicRequestCidrOptionslistValueIndex + "." + "FromPort", StringUtils.FromInt(publicRequestCidrOptionslistValue.FromPort));
+                            }
+                            if(publicRequestCidrOptionslistValue.IsSetToPort())
+                            {
+                                request.Parameters.Add("CidrOptions" + "." + "PortRange" + "." + publicRequestCidrOptionslistValueIndex + "." + "ToPort", StringUtils.FromInt(publicRequestCidrOptionslistValue.ToPort));
+                            }
+                            publicRequestCidrOptionslistValueIndex++;
+                        }
+                    }
+                }
                 if(publicRequest.IsSetClientToken())
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
@@ -76,6 +95,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if(publicRequest.LoadBalancerOptions.IsSetPort())
                     {
                         request.Parameters.Add("LoadBalancerOptions" + "." + "Port", StringUtils.FromInt(publicRequest.LoadBalancerOptions.Port));
+                    }
+                    if(publicRequest.LoadBalancerOptions.IsSetPortRanges())
+                    {
+                        int publicRequestLoadBalancerOptionslistValueIndex = 1;
+                        foreach(var publicRequestLoadBalancerOptionslistValue in publicRequest.LoadBalancerOptions.PortRanges)
+                        {
+                            if(publicRequestLoadBalancerOptionslistValue.IsSetFromPort())
+                            {
+                                request.Parameters.Add("LoadBalancerOptions" + "." + "PortRange" + "." + publicRequestLoadBalancerOptionslistValueIndex + "." + "FromPort", StringUtils.FromInt(publicRequestLoadBalancerOptionslistValue.FromPort));
+                            }
+                            if(publicRequestLoadBalancerOptionslistValue.IsSetToPort())
+                            {
+                                request.Parameters.Add("LoadBalancerOptions" + "." + "PortRange" + "." + publicRequestLoadBalancerOptionslistValueIndex + "." + "ToPort", StringUtils.FromInt(publicRequestLoadBalancerOptionslistValue.ToPort));
+                            }
+                            publicRequestLoadBalancerOptionslistValueIndex++;
+                        }
                     }
                     if(publicRequest.LoadBalancerOptions.IsSetProtocol())
                     {
@@ -97,9 +132,45 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("NetworkInterfaceOptions" + "." + "Port", StringUtils.FromInt(publicRequest.NetworkInterfaceOptions.Port));
                     }
+                    if(publicRequest.NetworkInterfaceOptions.IsSetPortRanges())
+                    {
+                        int publicRequestNetworkInterfaceOptionslistValueIndex = 1;
+                        foreach(var publicRequestNetworkInterfaceOptionslistValue in publicRequest.NetworkInterfaceOptions.PortRanges)
+                        {
+                            if(publicRequestNetworkInterfaceOptionslistValue.IsSetFromPort())
+                            {
+                                request.Parameters.Add("NetworkInterfaceOptions" + "." + "PortRange" + "." + publicRequestNetworkInterfaceOptionslistValueIndex + "." + "FromPort", StringUtils.FromInt(publicRequestNetworkInterfaceOptionslistValue.FromPort));
+                            }
+                            if(publicRequestNetworkInterfaceOptionslistValue.IsSetToPort())
+                            {
+                                request.Parameters.Add("NetworkInterfaceOptions" + "." + "PortRange" + "." + publicRequestNetworkInterfaceOptionslistValueIndex + "." + "ToPort", StringUtils.FromInt(publicRequestNetworkInterfaceOptionslistValue.ToPort));
+                            }
+                            publicRequestNetworkInterfaceOptionslistValueIndex++;
+                        }
+                    }
                     if(publicRequest.NetworkInterfaceOptions.IsSetProtocol())
                     {
                         request.Parameters.Add("NetworkInterfaceOptions" + "." + "Protocol", StringUtils.FromString(publicRequest.NetworkInterfaceOptions.Protocol));
+                    }
+                }
+                if(publicRequest.IsSetRdsOptions())
+                {
+                    if(publicRequest.RdsOptions.IsSetPort())
+                    {
+                        request.Parameters.Add("RdsOptions" + "." + "Port", StringUtils.FromInt(publicRequest.RdsOptions.Port));
+                    }
+                    if(publicRequest.RdsOptions.IsSetRdsEndpoint())
+                    {
+                        request.Parameters.Add("RdsOptions" + "." + "RdsEndpoint", StringUtils.FromString(publicRequest.RdsOptions.RdsEndpoint));
+                    }
+                    if(publicRequest.RdsOptions.IsSetSubnetIds())
+                    {
+                        int publicRequestRdsOptionslistValueIndex = 1;
+                        foreach(var publicRequestRdsOptionslistValue in publicRequest.RdsOptions.SubnetIds)
+                        {
+                            request.Parameters.Add("RdsOptions" + "." + "SubnetId" + "." + publicRequestRdsOptionslistValueIndex, StringUtils.FromString(publicRequestRdsOptionslistValue));
+                            publicRequestRdsOptionslistValueIndex++;
+                        }
                     }
                 }
                 if(publicRequest.IsSetVerifiedAccessEndpointId())

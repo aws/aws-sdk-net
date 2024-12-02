@@ -139,7 +139,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Operator. 
         /// <para>
-        /// The entity that manages the instance.
+        /// The service provider that manages the instance.
         /// </para>
         /// </summary>
         public OperatorResponse Operator

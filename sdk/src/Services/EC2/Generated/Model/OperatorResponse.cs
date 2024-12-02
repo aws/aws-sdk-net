@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes whether the resource is managed by an entity and, if so, describes the entity
-    /// that manages it.
+    /// Describes whether the resource is managed by an service provider and, if so, describes
+    /// the service provider that manages it.
     /// </summary>
     public partial class OperatorResponse
     {
@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Managed. 
         /// <para>
-        /// If <c>true</c>, the resource is managed by an entity.
+        /// If <c>true</c>, the resource is managed by an service provider.
         /// </para>
         /// </summary>
         public bool Managed
@@ -60,7 +60,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Principal. 
         /// <para>
         /// If <c>managed</c> is <c>true</c>, then the principal is returned. The principal is
-        /// the entity that manages the resource.
+        /// the service provider that manages the resource.
         /// </para>
         /// </summary>
         public string Principal

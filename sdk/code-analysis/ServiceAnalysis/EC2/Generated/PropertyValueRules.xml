@@ -191,6 +191,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeDeclarativePoliciesReportsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeDhcpOptionsRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
@@ -607,6 +612,11 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeVpcEndpointAssociationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeVpcPeeringConnectionsRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
@@ -753,6 +763,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.GetVerifiedAccessEndpointTargetsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.GetVpnConnectionDeviceTypesRequest.MaxResults</property>
     <min>200</min>
     <max>1000</max>
@@ -881,6 +896,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.CreateVerifiedAccessEndpointLoadBalancerOptions.Port</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.CreateVerifiedAccessEndpointPortRange.FromPort</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.CreateVerifiedAccessEndpointPortRange.ToPort</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.CreateVerifiedAccessEndpointRdsOptions.Port</property>
     <min>1</min>
     <max>65535</max>
   </property-value-rule>
@@ -1105,6 +1135,21 @@
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.ModifyVerifiedAccessEndpointPortRange.FromPort</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.ModifyVerifiedAccessEndpointPortRange.ToPort</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.ModifyVerifiedAccessEndpointRdsOptions.Port</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.NetworkInsightsAccessScope.NetworkInsightsAccessScopeArn</property>
     <min>1</min>
     <max>1283</max>
@@ -1201,6 +1246,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.VerifiedAccessEndpointLoadBalancerOptions.Port</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.VerifiedAccessEndpointPortRange.FromPort</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.VerifiedAccessEndpointPortRange.ToPort</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.VerifiedAccessEndpointRdsOptions.Port</property>
     <min>1</min>
     <max>65535</max>
   </property-value-rule>

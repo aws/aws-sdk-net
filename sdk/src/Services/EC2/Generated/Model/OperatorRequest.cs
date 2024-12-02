@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// The entity that manages the resource.
+    /// The service provider that manages the resource.
     /// </summary>
     public partial class OperatorRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Principal. 
         /// <para>
-        /// The entity that manages the resource.
+        /// The service provider that manages the resource.
         /// </para>
         /// </summary>
         public string Principal

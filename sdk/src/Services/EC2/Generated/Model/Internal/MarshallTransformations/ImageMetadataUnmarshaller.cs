@@ -67,6 +67,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.DeprecationTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("imageAllowed", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.ImageAllowed = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("imageId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

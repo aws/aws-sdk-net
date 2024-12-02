@@ -99,7 +99,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Operator. 
         /// <para>
-        /// The entity that manages the EBS volume.
+        /// The service provider that manages the EBS volume.
         /// </para>
         /// </summary>
         public OperatorResponse Operator

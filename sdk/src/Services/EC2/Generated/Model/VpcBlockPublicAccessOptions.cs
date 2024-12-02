@@ -39,8 +39,10 @@ namespace Amazon.EC2.Model
     {
         private string _awsAccountId;
         private string _awsRegion;
+        private VpcBlockPublicAccessExclusionsAllowed _exclusionsAllowed;
         private InternetGatewayBlockMode _internetGatewayBlockMode;
         private DateTime? _lastUpdateTimestamp;
+        private ManagedBy _managedBy;
         private string _reason;
         private VpcBlockPublicAccessState _state;
 
@@ -78,6 +80,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetAwsRegion()
         {
             return this._awsRegion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExclusionsAllowed. 
+        /// <para>
+        /// Determines if exclusions are allowed. If you have <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html#security-vpc-bpa-exclusions-orgs">enabled
+        /// VPC BPA at the Organization level</a>, exclusions may be <c>not-allowed</c>. Otherwise,
+        /// they are <c>allowed</c>.
+        /// </para>
+        /// </summary>
+        public VpcBlockPublicAccessExclusionsAllowed ExclusionsAllowed
+        {
+            get { return this._exclusionsAllowed; }
+            set { this._exclusionsAllowed = value; }
+        }
+
+        // Check to see if ExclusionsAllowed property is set
+        internal bool IsSetExclusionsAllowed()
+        {
+            return this._exclusionsAllowed != null;
         }
 
         /// <summary>
@@ -132,6 +154,34 @@ namespace Amazon.EC2.Model
         internal bool IsSetLastUpdateTimestamp()
         {
             return this._lastUpdateTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedBy. 
+        /// <para>
+        /// The entity that manages the state of VPC BPA. Possible values include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>account</c> - The state is managed by the account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>declarative-policy</c> - The state is managed by a declarative policy and can't
+        /// be modified by the account.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ManagedBy ManagedBy
+        {
+            get { return this._managedBy; }
+            set { this._managedBy = value; }
+        }
+
+        // Check to see if ManagedBy property is set
+        internal bool IsSetManagedBy()
+        {
+            return this._managedBy != null;
         }
 
         /// <summary>
