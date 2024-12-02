@@ -28,8 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
@@ -63,53 +63,57 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if NETCOREAPP3_1_OR_GREATER
+            ArrayBufferWriter<byte> arrayBufferWriter = new ArrayBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetActions())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("Actions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestActionsListValue in publicRequest.Actions)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetActions())
-                    {
-                        context.Writer.WritePropertyName("Actions");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestActionsListValue in publicRequest.Actions)
-                        {
-                                context.Writer.Write(publicRequestActionsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetAWSAccountIds())
-                    {
-                        context.Writer.WritePropertyName("AWSAccountIds");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAWSAccountIdsListValue in publicRequest.AWSAccountIds)
-                        {
-                                context.Writer.Write(publicRequestAWSAccountIdsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetLabel())
-                    {
-                        context.Writer.WritePropertyName("Label");
-                        context.Writer.Write(publicRequest.Label);
-                    }
-
-                    if(publicRequest.IsSetQueueUrl())
-                    {
-                        context.Writer.WritePropertyName("QueueUrl");
-                        context.Writer.Write(publicRequest.QueueUrl);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestActionsListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetAWSAccountIds())
+            {
+                context.Writer.WritePropertyName("AWSAccountIds");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAWSAccountIdsListValue in publicRequest.AWSAccountIds)
+                {
+                        context.Writer.WriteStringValue(publicRequestAWSAccountIdsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetLabel())
+            {
+                context.Writer.WritePropertyName("Label");
+                context.Writer.WriteStringValue(publicRequest.Label);
+            }
+
+            if(publicRequest.IsSetQueueUrl())
+            {
+                context.Writer.WritePropertyName("QueueUrl");
+                context.Writer.WriteStringValue(publicRequest.QueueUrl);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETCOREAPP3_1_OR_GREATER
+            request.Content = arrayBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;
