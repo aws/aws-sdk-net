@@ -40,7 +40,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property JobSummaries. 
         /// <para>
-        /// A summary of the model evaluation jobs.
+        /// A list of summaries of the evaluation jobs.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]

@@ -72,6 +72,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                     unmarshalledObject.DatasetMetricConfigs = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("evaluatorModelConfig", targetDepth))
+                {
+                    var unmarshaller = EvaluatorModelConfigUnmarshaller.Instance;
+                    unmarshalledObject.EvaluatorModelConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

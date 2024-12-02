@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// A JSON array that provides the status of the model evaluation jobs being deleted.
+    /// A JSON array that provides the status of the evaluation jobs being deleted.
     /// </summary>
     public partial class BatchDeleteEvaluationJobError
     {
@@ -41,7 +41,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// A HTTP status code of the model evaluation job being deleted.
+        /// A HTTP status code of the evaluation job being deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property JobIdentifier. 
         /// <para>
-        /// The ARN of the model evaluation job being deleted.
+        /// The ARN of the evaluation job being deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=0, Max=1011)]
@@ -79,7 +79,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// A status message about the model evaluation job deletion.
+        /// A status message about the evaluation job deletion.
         /// </para>
         /// </summary>
         public string Message

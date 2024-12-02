@@ -30,8 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// Used to specify either a <c>AutomatedEvaluationConfig</c> or <c>HumanEvaluationConfig</c>
-    /// object.
+    /// The configuration details of either an automated or human-based evaluation job.
     /// </summary>
     public partial class EvaluationConfig
     {
@@ -41,8 +40,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property Automated. 
         /// <para>
-        /// Used to specify an automated model evaluation job. See <c>AutomatedEvaluationConfig</c>
-        /// to view the required parameters.
+        /// Contains the configuration details of an automated evaluation job that computes metrics.
         /// </para>
         /// </summary>
         public AutomatedEvaluationConfig Automated
@@ -60,8 +58,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property Human. 
         /// <para>
-        /// Used to specify a model evaluation job that uses human workers.See <c>HumanEvaluationConfig</c>
-        /// to view the required parameters.
+        /// Contains the configuration details of an evaluation job that uses human workers.
         /// </para>
         /// </summary>
         public HumanEvaluationConfig Human

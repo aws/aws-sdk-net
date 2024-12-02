@@ -31,7 +31,7 @@ namespace Amazon.Bedrock.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchDeleteEvaluationJob operation.
-    /// Creates a batch deletion job. A model evaluation job can only be deleted if it has
+    /// Deletes a batch of evaluation jobs. An evaluation job can only be deleted if it has
     /// following status <c>FAILED</c>, <c>COMPLETED</c>, and <c>STOPPED</c>. You can request
     /// up to 25 model evaluation jobs be deleted in a single request.
     /// </summary>
@@ -42,7 +42,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property JobIdentifiers. 
         /// <para>
-        /// An array of model evaluation job ARNs to be deleted.
+        /// A list of one or more evaluation job Amazon Resource Names (ARNs) you want to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=25)]

@@ -269,7 +269,7 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Creates a batch deletion job. A model evaluation job can only be deleted if it has
+        /// Deletes a batch of evaluation jobs. An evaluation job can only be deleted if it has
         /// following status <c>FAILED</c>, <c>COMPLETED</c>, and <c>STOPPED</c>. You can request
         /// up to 25 model evaluation jobs be deleted in a single request.
         /// </summary>
@@ -307,7 +307,7 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Creates a batch deletion job. A model evaluation job can only be deleted if it has
+        /// Deletes a batch of evaluation jobs. An evaluation job can only be deleted if it has
         /// following status <c>FAILED</c>, <c>COMPLETED</c>, and <c>STOPPED</c>. You can request
         /// up to 25 model evaluation jobs be deleted in a single request.
         /// </summary>
@@ -352,10 +352,7 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// API operation for creating and managing Amazon Bedrock automatic model evaluation
-        /// jobs and model evaluation jobs that use human workers. To learn more about the requirements
-        /// for creating a model evaluation job see, <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html">Model
-        /// evaluation</a>.
+        /// Creates an evaluation job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEvaluationJob service method.</param>
         /// 
@@ -394,10 +391,7 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// API operation for creating and managing Amazon Bedrock automatic model evaluation
-        /// jobs and model evaluation jobs that use human workers. To learn more about the requirements
-        /// for creating a model evaluation job see, <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html">Model
-        /// evaluation</a>.
+        /// Creates an evaluation job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEvaluationJob service method.</param>
         /// <param name="cancellationToken">
@@ -1916,9 +1910,7 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Retrieves the properties associated with a model evaluation job, including the status
-        /// of the job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html">Model
-        /// evaluation</a>.
+        /// Gets information about an evaluation job, such as the status of the job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEvaluationJob service method.</param>
         /// 
@@ -1951,9 +1943,7 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Retrieves the properties associated with a model evaluation job, including the status
-        /// of the job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html">Model
-        /// evaluation</a>.
+        /// Gets information about an evaluation job, such as the status of the job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEvaluationJob service method.</param>
         /// <param name="cancellationToken">
@@ -2818,7 +2808,7 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Lists model evaluation jobs.
+        /// Lists all existing evaluation jobs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEvaluationJobs service method.</param>
         /// 
@@ -2847,7 +2837,7 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Lists model evaluation jobs.
+        /// Lists all existing evaluation jobs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEvaluationJobs service method.</param>
         /// <param name="cancellationToken">
@@ -3710,7 +3700,7 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Stops an in progress model evaluation job.
+        /// Stops an evaluation job that is current being created or running.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopEvaluationJob service method.</param>
         /// 
@@ -3746,7 +3736,7 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Stops an in progress model evaluation job.
+        /// Stops an evaluation job that is current being created or running.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopEvaluationJob service method.</param>
         /// <param name="cancellationToken">

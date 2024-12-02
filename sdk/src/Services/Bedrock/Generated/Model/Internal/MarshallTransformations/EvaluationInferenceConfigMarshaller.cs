@@ -64,6 +64,22 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetRagConfigs())
+            {
+                context.Writer.WritePropertyName("ragConfigs");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectRagConfigsListValue in requestObject.RagConfigs)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RAGConfigMarshaller.Instance;
+                    marshaller.Marshall(requestObjectRagConfigsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>
