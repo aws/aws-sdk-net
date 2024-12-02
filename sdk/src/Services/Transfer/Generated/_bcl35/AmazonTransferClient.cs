@@ -753,6 +753,77 @@ namespace Amazon.Transfer
 
         #endregion
         
+        #region  CreateWebApp
+
+        /// <summary>
+        /// Creates a web app based on specified parameters, and returns the ID for the new web
+        /// app.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWebApp service method.</param>
+        /// 
+        /// <returns>The response from the CreateWebApp service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Transfer Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateWebApp">REST API Reference for CreateWebApp Operation</seealso>
+        public virtual CreateWebAppResponse CreateWebApp(CreateWebAppRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateWebAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWebAppResponseUnmarshaller.Instance;
+
+            return Invoke<CreateWebAppResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateWebApp operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateWebApp operation on AmazonTransferClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateWebApp
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateWebApp">REST API Reference for CreateWebApp Operation</seealso>
+        public virtual IAsyncResult BeginCreateWebApp(CreateWebAppRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateWebAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWebAppResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateWebApp operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateWebApp.</param>
+        /// 
+        /// <returns>Returns a  CreateWebAppResult from Transfer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateWebApp">REST API Reference for CreateWebApp Operation</seealso>
+        public virtual CreateWebAppResponse EndCreateWebApp(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateWebAppResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateWorkflow
 
         /// <summary>
@@ -1463,6 +1534,151 @@ namespace Amazon.Transfer
         public virtual DeleteUserResponse EndDeleteUser(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteUserResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteWebApp
+
+        /// <summary>
+        /// Deletes the specified web app.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWebApp service method.</param>
+        /// 
+        /// <returns>The response from the DeleteWebApp service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Transfer Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteWebApp">REST API Reference for DeleteWebApp Operation</seealso>
+        public virtual DeleteWebAppResponse DeleteWebApp(DeleteWebAppRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWebAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWebAppResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteWebAppResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteWebApp operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWebApp operation on AmazonTransferClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteWebApp
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteWebApp">REST API Reference for DeleteWebApp Operation</seealso>
+        public virtual IAsyncResult BeginDeleteWebApp(DeleteWebAppRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWebAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWebAppResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteWebApp operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteWebApp.</param>
+        /// 
+        /// <returns>Returns a  DeleteWebAppResult from Transfer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteWebApp">REST API Reference for DeleteWebApp Operation</seealso>
+        public virtual DeleteWebAppResponse EndDeleteWebApp(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteWebAppResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteWebAppCustomization
+
+        /// <summary>
+        /// Deletes the <c>WebAppCustomization</c> object that corresponds to the web app ID specified.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWebAppCustomization service method.</param>
+        /// 
+        /// <returns>The response from the DeleteWebAppCustomization service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ConflictException">
+        /// This exception is thrown when the <c>UpdateServer</c> is called for a file transfer
+        /// protocol-enabled server that has VPC as the endpoint type and the server's <c>VpcEndpointID</c>
+        /// is not in the available state.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Transfer Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteWebAppCustomization">REST API Reference for DeleteWebAppCustomization Operation</seealso>
+        public virtual DeleteWebAppCustomizationResponse DeleteWebAppCustomization(DeleteWebAppCustomizationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWebAppCustomizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWebAppCustomizationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteWebAppCustomizationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteWebAppCustomization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWebAppCustomization operation on AmazonTransferClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteWebAppCustomization
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteWebAppCustomization">REST API Reference for DeleteWebAppCustomization Operation</seealso>
+        public virtual IAsyncResult BeginDeleteWebAppCustomization(DeleteWebAppCustomizationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWebAppCustomizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWebAppCustomizationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteWebAppCustomization operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteWebAppCustomization.</param>
+        /// 
+        /// <returns>Returns a  DeleteWebAppCustomizationResult from Transfer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteWebAppCustomization">REST API Reference for DeleteWebAppCustomization Operation</seealso>
+        public virtual DeleteWebAppCustomizationResponse EndDeleteWebAppCustomization(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteWebAppCustomizationResponse>(asyncResult);
         }
 
         #endregion
@@ -2251,6 +2467,146 @@ namespace Amazon.Transfer
         public virtual DescribeUserResponse EndDescribeUser(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeUserResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeWebApp
+
+        /// <summary>
+        /// Describes the web app that's identified by <c>WebAppId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWebApp service method.</param>
+        /// 
+        /// <returns>The response from the DescribeWebApp service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Transfer Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeWebApp">REST API Reference for DescribeWebApp Operation</seealso>
+        public virtual DescribeWebAppResponse DescribeWebApp(DescribeWebAppRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWebAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWebAppResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeWebAppResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeWebApp operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWebApp operation on AmazonTransferClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeWebApp
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeWebApp">REST API Reference for DescribeWebApp Operation</seealso>
+        public virtual IAsyncResult BeginDescribeWebApp(DescribeWebAppRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWebAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWebAppResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeWebApp operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeWebApp.</param>
+        /// 
+        /// <returns>Returns a  DescribeWebAppResult from Transfer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeWebApp">REST API Reference for DescribeWebApp Operation</seealso>
+        public virtual DescribeWebAppResponse EndDescribeWebApp(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeWebAppResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeWebAppCustomization
+
+        /// <summary>
+        /// Describes the web app customization object that's identified by <c>WebAppId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWebAppCustomization service method.</param>
+        /// 
+        /// <returns>The response from the DescribeWebAppCustomization service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Transfer Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeWebAppCustomization">REST API Reference for DescribeWebAppCustomization Operation</seealso>
+        public virtual DescribeWebAppCustomizationResponse DescribeWebAppCustomization(DescribeWebAppCustomizationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWebAppCustomizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWebAppCustomizationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeWebAppCustomizationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeWebAppCustomization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWebAppCustomization operation on AmazonTransferClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeWebAppCustomization
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeWebAppCustomization">REST API Reference for DescribeWebAppCustomization Operation</seealso>
+        public virtual IAsyncResult BeginDescribeWebAppCustomization(DescribeWebAppCustomizationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWebAppCustomizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWebAppCustomizationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeWebAppCustomization operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeWebAppCustomization.</param>
+        /// 
+        /// <returns>Returns a  DescribeWebAppCustomizationResult from Transfer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeWebAppCustomization">REST API Reference for DescribeWebAppCustomization Operation</seealso>
+        public virtual DescribeWebAppCustomizationResponse EndDescribeWebAppCustomization(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeWebAppCustomizationResponse>(asyncResult);
         }
 
         #endregion
@@ -3416,6 +3772,73 @@ namespace Amazon.Transfer
         public virtual ListUsersResponse EndListUsers(IAsyncResult asyncResult)
         {
             return EndInvoke<ListUsersResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListWebApps
+
+        /// <summary>
+        /// Lists all web apps associated with your Amazon Web Services account for your current
+        /// region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWebApps service method.</param>
+        /// 
+        /// <returns>The response from the ListWebApps service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Transfer Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
+        /// The <c>NextToken</c> parameter that was passed is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListWebApps">REST API Reference for ListWebApps Operation</seealso>
+        public virtual ListWebAppsResponse ListWebApps(ListWebAppsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWebAppsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWebAppsResponseUnmarshaller.Instance;
+
+            return Invoke<ListWebAppsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListWebApps operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListWebApps operation on AmazonTransferClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListWebApps
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListWebApps">REST API Reference for ListWebApps Operation</seealso>
+        public virtual IAsyncResult BeginListWebApps(ListWebAppsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWebAppsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWebAppsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListWebApps operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListWebApps.</param>
+        /// 
+        /// <returns>Returns a  ListWebAppsResult from Transfer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListWebApps">REST API Reference for ListWebApps Operation</seealso>
+        public virtual ListWebAppsResponse EndListWebApps(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListWebAppsResponse>(asyncResult);
         }
 
         #endregion
@@ -4932,6 +5355,158 @@ namespace Amazon.Transfer
         public virtual UpdateUserResponse EndUpdateUser(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateUserResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateWebApp
+
+        /// <summary>
+        /// Assigns new properties to a web app. You can modify the access point, identity provider
+        /// details, and the web app units.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWebApp service method.</param>
+        /// 
+        /// <returns>The response from the UpdateWebApp service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ConflictException">
+        /// This exception is thrown when the <c>UpdateServer</c> is called for a file transfer
+        /// protocol-enabled server that has VPC as the endpoint type and the server's <c>VpcEndpointID</c>
+        /// is not in the available state.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Transfer Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateWebApp">REST API Reference for UpdateWebApp Operation</seealso>
+        public virtual UpdateWebAppResponse UpdateWebApp(UpdateWebAppRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateWebAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWebAppResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateWebAppResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateWebApp operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWebApp operation on AmazonTransferClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateWebApp
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateWebApp">REST API Reference for UpdateWebApp Operation</seealso>
+        public virtual IAsyncResult BeginUpdateWebApp(UpdateWebAppRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateWebAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWebAppResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateWebApp operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateWebApp.</param>
+        /// 
+        /// <returns>Returns a  UpdateWebAppResult from Transfer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateWebApp">REST API Reference for UpdateWebApp Operation</seealso>
+        public virtual UpdateWebAppResponse EndUpdateWebApp(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateWebAppResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateWebAppCustomization
+
+        /// <summary>
+        /// Assigns new customization properties to a web app. You can modify the icon file, logo
+        /// file, and title.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWebAppCustomization service method.</param>
+        /// 
+        /// <returns>The response from the UpdateWebAppCustomization service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ConflictException">
+        /// This exception is thrown when the <c>UpdateServer</c> is called for a file transfer
+        /// protocol-enabled server that has VPC as the endpoint type and the server's <c>VpcEndpointID</c>
+        /// is not in the available state.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Transfer Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateWebAppCustomization">REST API Reference for UpdateWebAppCustomization Operation</seealso>
+        public virtual UpdateWebAppCustomizationResponse UpdateWebAppCustomization(UpdateWebAppCustomizationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateWebAppCustomizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWebAppCustomizationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateWebAppCustomizationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateWebAppCustomization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWebAppCustomization operation on AmazonTransferClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateWebAppCustomization
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateWebAppCustomization">REST API Reference for UpdateWebAppCustomization Operation</seealso>
+        public virtual IAsyncResult BeginUpdateWebAppCustomization(UpdateWebAppCustomizationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateWebAppCustomizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWebAppCustomizationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateWebAppCustomization operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateWebAppCustomization.</param>
+        /// 
+        /// <returns>Returns a  UpdateWebAppCustomizationResult from Transfer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateWebAppCustomization">REST API Reference for UpdateWebAppCustomization Operation</seealso>
+        public virtual UpdateWebAppCustomizationResponse EndUpdateWebAppCustomization(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateWebAppCustomizationResponse>(asyncResult);
         }
 
         #endregion

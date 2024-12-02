@@ -637,6 +637,57 @@ namespace Amazon.Transfer
 
         #endregion
         
+        #region  CreateWebApp
+
+        internal virtual CreateWebAppResponse CreateWebApp(CreateWebAppRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateWebAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWebAppResponseUnmarshaller.Instance;
+
+            return Invoke<CreateWebAppResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a web app based on specified parameters, and returns the ID for the new web
+        /// app.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWebApp service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateWebApp service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Transfer Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateWebApp">REST API Reference for CreateWebApp Operation</seealso>
+        public virtual Task<CreateWebAppResponse> CreateWebAppAsync(CreateWebAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateWebAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWebAppResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateWebAppResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateWorkflow
 
         internal virtual CreateWorkflowResponse CreateWorkflow(CreateWorkflowRequest request)
@@ -1147,6 +1198,111 @@ namespace Amazon.Transfer
             options.ResponseUnmarshaller = DeleteUserResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteUserResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteWebApp
+
+        internal virtual DeleteWebAppResponse DeleteWebApp(DeleteWebAppRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWebAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWebAppResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteWebAppResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the specified web app.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWebApp service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteWebApp service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Transfer Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteWebApp">REST API Reference for DeleteWebApp Operation</seealso>
+        public virtual Task<DeleteWebAppResponse> DeleteWebAppAsync(DeleteWebAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWebAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWebAppResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteWebAppResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteWebAppCustomization
+
+        internal virtual DeleteWebAppCustomizationResponse DeleteWebAppCustomization(DeleteWebAppCustomizationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWebAppCustomizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWebAppCustomizationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteWebAppCustomizationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the <c>WebAppCustomization</c> object that corresponds to the web app ID specified.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWebAppCustomization service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteWebAppCustomization service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ConflictException">
+        /// This exception is thrown when the <c>UpdateServer</c> is called for a file transfer
+        /// protocol-enabled server that has VPC as the endpoint type and the server's <c>VpcEndpointID</c>
+        /// is not in the available state.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Transfer Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteWebAppCustomization">REST API Reference for DeleteWebAppCustomization Operation</seealso>
+        public virtual Task<DeleteWebAppCustomizationResponse> DeleteWebAppCustomizationAsync(DeleteWebAppCustomizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWebAppCustomizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWebAppCustomizationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteWebAppCustomizationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1715,6 +1871,106 @@ namespace Amazon.Transfer
             options.ResponseUnmarshaller = DescribeUserResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeUserResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeWebApp
+
+        internal virtual DescribeWebAppResponse DescribeWebApp(DescribeWebAppRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWebAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWebAppResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeWebAppResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the web app that's identified by <c>WebAppId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWebApp service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeWebApp service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Transfer Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeWebApp">REST API Reference for DescribeWebApp Operation</seealso>
+        public virtual Task<DescribeWebAppResponse> DescribeWebAppAsync(DescribeWebAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWebAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWebAppResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeWebAppResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeWebAppCustomization
+
+        internal virtual DescribeWebAppCustomizationResponse DescribeWebAppCustomization(DescribeWebAppCustomizationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWebAppCustomizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWebAppCustomizationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeWebAppCustomizationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the web app customization object that's identified by <c>WebAppId</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWebAppCustomization service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeWebAppCustomization service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Transfer Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeWebAppCustomization">REST API Reference for DescribeWebAppCustomization Operation</seealso>
+        public virtual Task<DescribeWebAppCustomizationResponse> DescribeWebAppCustomizationAsync(DescribeWebAppCustomizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeWebAppCustomizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeWebAppCustomizationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeWebAppCustomizationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2560,6 +2816,53 @@ namespace Amazon.Transfer
             options.ResponseUnmarshaller = ListUsersResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListUsersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListWebApps
+
+        internal virtual ListWebAppsResponse ListWebApps(ListWebAppsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWebAppsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWebAppsResponseUnmarshaller.Instance;
+
+            return Invoke<ListWebAppsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all web apps associated with your Amazon Web Services account for your current
+        /// region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWebApps service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListWebApps service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Transfer Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidNextTokenException">
+        /// The <c>NextToken</c> parameter that was passed is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListWebApps">REST API Reference for ListWebApps Operation</seealso>
+        public virtual Task<ListWebAppsResponse> ListWebAppsAsync(ListWebAppsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWebAppsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWebAppsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListWebAppsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3716,6 +4019,118 @@ namespace Amazon.Transfer
             options.ResponseUnmarshaller = UpdateUserResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateUserResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateWebApp
+
+        internal virtual UpdateWebAppResponse UpdateWebApp(UpdateWebAppRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateWebAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWebAppResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateWebAppResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Assigns new properties to a web app. You can modify the access point, identity provider
+        /// details, and the web app units.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWebApp service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateWebApp service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ConflictException">
+        /// This exception is thrown when the <c>UpdateServer</c> is called for a file transfer
+        /// protocol-enabled server that has VPC as the endpoint type and the server's <c>VpcEndpointID</c>
+        /// is not in the available state.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Transfer Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateWebApp">REST API Reference for UpdateWebApp Operation</seealso>
+        public virtual Task<UpdateWebAppResponse> UpdateWebAppAsync(UpdateWebAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateWebAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWebAppResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateWebAppResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateWebAppCustomization
+
+        internal virtual UpdateWebAppCustomizationResponse UpdateWebAppCustomization(UpdateWebAppCustomizationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateWebAppCustomizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWebAppCustomizationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateWebAppCustomizationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Assigns new customization properties to a web app. You can modify the icon file, logo
+        /// file, and title.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWebAppCustomization service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateWebAppCustomization service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ConflictException">
+        /// This exception is thrown when the <c>UpdateServer</c> is called for a file transfer
+        /// protocol-enabled server that has VPC as the endpoint type and the server's <c>VpcEndpointID</c>
+        /// is not in the available state.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Transfer Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateWebAppCustomization">REST API Reference for UpdateWebAppCustomization Operation</seealso>
+        public virtual Task<UpdateWebAppCustomizationResponse> UpdateWebAppCustomizationAsync(UpdateWebAppCustomizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateWebAppCustomizationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWebAppCustomizationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateWebAppCustomizationResponse>(request, options, cancellationToken);
         }
 
         #endregion
