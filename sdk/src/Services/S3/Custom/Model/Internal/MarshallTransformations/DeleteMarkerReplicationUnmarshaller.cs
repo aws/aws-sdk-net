@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// DeleteMarkerReplication unmarshaller
     /// </summary>
-    public class DeleteMarkerReplicationUnmarshaller : IUnmarshaller<DeleteMarkerReplication, XmlUnmarshallerContext>
+    public class DeleteMarkerReplicationUnmarshaller : IXmlUnmarshaller<DeleteMarkerReplication, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

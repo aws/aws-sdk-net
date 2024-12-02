@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     ///   InventoryDestination Unmarshaller
     /// </summary>
-    public class InventoryDestinationUnmarshaller : IUnmarshaller<InventoryDestination, XmlUnmarshallerContext>, IUnmarshaller<InventoryDestination, JsonUnmarshallerContext> 
+    public class InventoryDestinationUnmarshaller : IXmlUnmarshaller<InventoryDestination, XmlUnmarshallerContext>, IXmlUnmarshaller<InventoryDestination, JsonUnmarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     ///   SSEKMS Unmarshaller
     /// </summary>
-    public class SSEKMSUnmarshaller : IUnmarshaller<SSEKMS, XmlUnmarshallerContext>, IUnmarshaller<SSEKMS, JsonUnmarshallerContext>
+    public class SSEKMSUnmarshaller : IXmlUnmarshaller<SSEKMS, XmlUnmarshallerContext>, IXmlUnmarshaller<SSEKMS, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
