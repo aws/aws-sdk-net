@@ -36,6 +36,7 @@ namespace Amazon.QBusiness.Model
     {
         private string _applicationId;
         private WebExperienceAuthConfiguration _authenticationConfiguration;
+        private BrowserExtensionConfiguration _browserExtensionConfiguration;
         private DateTime? _createdAt;
         private string _defaultEndpoint;
         private ErrorDetail _error;
@@ -87,6 +88,24 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetAuthenticationConfiguration()
         {
             return this._authenticationConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BrowserExtensionConfiguration. 
+        /// <para>
+        /// The browser extension configuration for an Amazon Q Business web experience.
+        /// </para>
+        /// </summary>
+        public BrowserExtensionConfiguration BrowserExtensionConfiguration
+        {
+            get { return this._browserExtensionConfiguration; }
+            set { this._browserExtensionConfiguration = value; }
+        }
+
+        // Check to see if BrowserExtensionConfiguration property is set
+        internal bool IsSetBrowserExtensionConfiguration()
+        {
+            return this._browserExtensionConfiguration != null;
         }
 
         /// <summary>

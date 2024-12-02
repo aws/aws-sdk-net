@@ -43,10 +43,17 @@ namespace Amazon.QBusiness.Model
     /// </para>
     ///  
     /// <para>
-    ///  A Amazon Q Apps service linked role will be created if it's absent in the Amazon
-    /// Web Services account when the QAppsConfiguration is enabled in the request. For more
-    /// information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/using-service-linked-roles-qapps.html">
-    /// Using service-linked roles for Q Apps </a> 
+    /// An Amazon Q Apps service linked role will be created if it's absent in the Amazon
+    /// Web Services account when <c>QAppsConfiguration</c> is enabled in the request. For
+    /// more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/using-service-linked-roles-qapps.html">
+    /// Using service-linked roles for Q Apps</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// When you create an application, Amazon Q Business may securely transmit data for processing
+    /// from your selected Amazon Web Services region, but within your geography. For more
+    /// information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/cross-region-inference.html">Cross
+    /// region inference in Amazon Q Business</a>.
     /// </para>
     ///  </note>
     /// </summary>

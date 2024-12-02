@@ -37,6 +37,7 @@ namespace Amazon.QBusiness.Model
     {
         private string _applicationId;
         private WebExperienceAuthConfiguration _authenticationConfiguration;
+        private BrowserExtensionConfiguration _browserExtensionConfiguration;
         private IdentityProviderConfiguration _identityProviderConfiguration;
         private List<string> _origins = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _roleArn;
@@ -82,6 +83,32 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetAuthenticationConfiguration()
         {
             return this._authenticationConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BrowserExtensionConfiguration. 
+        /// <para>
+        /// The browser extension configuration for an Amazon Q Business web experience.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  For Amazon Q Business application using external OIDC-compliant identity providers
+        /// (IdPs). The IdP administrator must add the browser extension sign-in redirect URLs
+        /// to the IdP application. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/browser-extensions.html">Configure
+        /// external OIDC identity provider for your browser extensions.</a>. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public BrowserExtensionConfiguration BrowserExtensionConfiguration
+        {
+            get { return this._browserExtensionConfiguration; }
+            set { this._browserExtensionConfiguration = value; }
+        }
+
+        // Check to see if BrowserExtensionConfiguration property is set
+        internal bool IsSetBrowserExtensionConfiguration()
+        {
+            return this._browserExtensionConfiguration != null;
         }
 
         /// <summary>

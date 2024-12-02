@@ -251,9 +251,9 @@ namespace Amazon.QBusiness
         /// </summary>
         public static readonly AttachmentStatus FAILED = new AttachmentStatus("FAILED");
         /// <summary>
-        /// Constant SUCCEEDED for AttachmentStatus
+        /// Constant SUCCESS for AttachmentStatus
         /// </summary>
-        public static readonly AttachmentStatus SUCCEEDED = new AttachmentStatus("SUCCEEDED");
+        public static readonly AttachmentStatus SUCCESS = new AttachmentStatus("SUCCESS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -438,6 +438,56 @@ namespace Amazon.QBusiness
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AutoSubscriptionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BrowserExtension.
+    /// </summary>
+    public class BrowserExtension : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CHROME for BrowserExtension
+        /// </summary>
+        public static readonly BrowserExtension CHROME = new BrowserExtension("CHROME");
+        /// <summary>
+        /// Constant FIREFOX for BrowserExtension
+        /// </summary>
+        public static readonly BrowserExtension FIREFOX = new BrowserExtension("FIREFOX");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BrowserExtension(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BrowserExtension FindValue(string value)
+        {
+            return FindValue<BrowserExtension>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BrowserExtension(string value)
         {
             return FindValue(value);
         }
@@ -1210,6 +1260,56 @@ namespace Amazon.QBusiness
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator IdentityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImageExtractionStatus.
+    /// </summary>
+    public class ImageExtractionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for ImageExtractionStatus
+        /// </summary>
+        public static readonly ImageExtractionStatus DISABLED = new ImageExtractionStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for ImageExtractionStatus
+        /// </summary>
+        public static readonly ImageExtractionStatus ENABLED = new ImageExtractionStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImageExtractionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImageExtractionStatus FindValue(string value)
+        {
+            return FindValue<ImageExtractionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImageExtractionStatus(string value)
         {
             return FindValue(value);
         }

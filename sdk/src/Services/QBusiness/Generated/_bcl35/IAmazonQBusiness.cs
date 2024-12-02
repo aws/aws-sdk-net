@@ -107,7 +107,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -194,7 +194,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -261,7 +261,11 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ExternalResourceException">
+        /// An external resource that you configured with your application is returning errors
+        /// and preventing this operation from succeeding. Fix those errors and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -330,10 +334,17 @@ namespace Amazon.QBusiness
         /// </para>
         ///  
         /// <para>
-        ///  A Amazon Q Apps service linked role will be created if it's absent in the Amazon
-        /// Web Services account when the QAppsConfiguration is enabled in the request. For more
-        /// information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/using-service-linked-roles-qapps.html">
-        /// Using service-linked roles for Q Apps </a> 
+        /// An Amazon Q Apps service linked role will be created if it's absent in the Amazon
+        /// Web Services account when <c>QAppsConfiguration</c> is enabled in the request. For
+        /// more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/using-service-linked-roles-qapps.html">
+        /// Using service-linked roles for Q Apps</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you create an application, Amazon Q Business may securely transmit data for processing
+        /// from your selected Amazon Web Services region, but within your geography. For more
+        /// information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/cross-region-inference.html">Cross
+        /// region inference in Amazon Q Business</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -346,7 +357,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -419,7 +430,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -499,7 +510,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -566,7 +577,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -633,7 +644,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -701,7 +712,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -768,7 +779,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -835,7 +846,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -1025,7 +1036,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -1100,7 +1111,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -1164,7 +1175,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -1228,7 +1239,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -1292,7 +1303,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -1356,7 +1367,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -1420,7 +1431,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -1665,7 +1676,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -1771,6 +1782,82 @@ namespace Amazon.QBusiness
         /// <returns>Returns a  GetIndexResult from QBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetIndex">REST API Reference for GetIndex Operation</seealso>
         GetIndexResponse EndGetIndex(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetMedia
+
+
+        /// <summary>
+        /// Returns the image bytes corresponding to a media object. If you have implemented your
+        /// own application with the Chat and ChatSync APIs, and have enabled content extraction
+        /// from visual data in Amazon Q Business, you use the GetMedia API operation to download
+        /// the images so you can show them in your UI with responses.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/extracting-meaning-from-images.html">Extracting
+        /// semantic meaning from images and visuals</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMedia service method.</param>
+        /// 
+        /// <returns>The response from the GetMedia service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.LicenseNotFoundException">
+        /// You don't have permissions to perform the action because your license is inactive.
+        /// Ask your admin to activate your license and try again after your licence is active.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.MediaTooLargeException">
+        /// The requested media object is too large to be returned.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
+        /// resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetMedia">REST API Reference for GetMedia Operation</seealso>
+        GetMediaResponse GetMedia(GetMediaRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMedia operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMedia operation on AmazonQBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMedia
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetMedia">REST API Reference for GetMedia Operation</seealso>
+        IAsyncResult BeginGetMedia(GetMediaRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMedia operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMedia.</param>
+        /// 
+        /// <returns>Returns a  GetMediaResult from QBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetMedia">REST API Reference for GetMedia Operation</seealso>
+        GetMediaResponse EndGetMedia(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1910,7 +1997,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -2024,6 +2111,14 @@ namespace Amazon.QBusiness
 
         /// <summary>
         /// Lists Amazon Q Business applications.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Q Business applications may securely transmit data for processing across Amazon
+        /// Web Services Regions within your geography. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/cross-region-inference.html">Cross
+        /// region inference in Amazon Q Business</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListApplications service method.</param>
         /// 
@@ -2072,6 +2167,71 @@ namespace Amazon.QBusiness
         /// <returns>Returns a  ListApplicationsResult from QBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListApplications">REST API Reference for ListApplications Operation</seealso>
         ListApplicationsResponse EndListApplications(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListAttachments
+
+
+        /// <summary>
+        /// Gets a list of attachments associated with an Amazon Q Business web experience or
+        /// a list of attachements associated with a specific Amazon Q Business conversation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAttachments service method.</param>
+        /// 
+        /// <returns>The response from the ListAttachments service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.LicenseNotFoundException">
+        /// You don't have permissions to perform the action because your license is inactive.
+        /// Ask your admin to activate your license and try again after your licence is active.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
+        /// resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListAttachments">REST API Reference for ListAttachments Operation</seealso>
+        ListAttachmentsResponse ListAttachments(ListAttachmentsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAttachments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAttachments operation on AmazonQBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAttachments
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListAttachments">REST API Reference for ListAttachments Operation</seealso>
+        IAsyncResult BeginListAttachments(ListAttachmentsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAttachments operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAttachments.</param>
+        /// 
+        /// <returns>Returns a  ListAttachmentsResult from QBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListAttachments">REST API Reference for ListAttachments Operation</seealso>
+        ListAttachmentsResponse EndListAttachments(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2212,6 +2372,10 @@ namespace Amazon.QBusiness
         /// You don't have access to perform this action. Make sure you have the required permission
         /// policies and user accounts and try again.
         /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
         /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
@@ -2334,7 +2498,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -2833,7 +2997,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -2901,7 +3065,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -2966,6 +3130,10 @@ namespace Amazon.QBusiness
         /// You don't have access to perform this action. Make sure you have the required permission
         /// policies and user accounts and try again.
         /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
         /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
@@ -3029,7 +3197,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -3146,10 +3314,16 @@ namespace Amazon.QBusiness
         /// 
         ///  <note> 
         /// <para>
-        ///  A Amazon Q Apps service-linked role will be created if it's absent in the Amazon
-        /// Web Services account when the QAppsConfiguration is enabled in the request. For more
-        /// information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/using-service-linked-roles-qapps.html">
-        /// Using service-linked roles for Q Apps </a> 
+        /// Amazon Q Business applications may securely transmit data for processing across Amazon
+        /// Web Services Regions within your geography. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/cross-region-inference.html">Cross
+        /// region inference in Amazon Q Business</a>.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// An Amazon Q Apps service-linked role will be created if it's absent in the Amazon
+        /// Web Services account when <c>QAppsConfiguration</c> is enabled in the request. For
+        /// more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/using-service-linked-roles-qapps.html">Using
+        /// service-linked roles for Q Apps</a>. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -3162,7 +3336,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -3226,7 +3400,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -3293,7 +3467,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -3357,7 +3531,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -3424,7 +3598,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -3491,7 +3665,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.
@@ -3621,7 +3795,7 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ConflictException">
         /// You are trying to perform an action that conflicts with the current status of your
-        /// resource. Fix any inconsistences with your resources and try again.
+        /// resource. Fix any inconsistencies with your resources and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Q Business service.

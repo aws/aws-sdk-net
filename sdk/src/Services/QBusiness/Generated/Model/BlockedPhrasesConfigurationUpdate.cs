@@ -44,7 +44,6 @@ namespace Amazon.QBusiness.Model
         /// Creates or updates a blocked phrases configuration in your Amazon Q Business application.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=5)]
         public List<string> BlockedPhrasesToCreateOrUpdate
         {
             get { return this._blockedPhrasesToCreateOrUpdate; }
@@ -63,7 +62,6 @@ namespace Amazon.QBusiness.Model
         /// Deletes a blocked phrases configuration in your Amazon Q Business application.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=5)]
         public List<string> BlockedPhrasesToDelete
         {
             get { return this._blockedPhrasesToDelete; }

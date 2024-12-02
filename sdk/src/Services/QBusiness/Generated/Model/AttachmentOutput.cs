@@ -34,9 +34,48 @@ namespace Amazon.QBusiness.Model
     /// </summary>
     public partial class AttachmentOutput
     {
+        private string _attachmentId;
+        private string _conversationId;
         private ErrorDetail _error;
         private string _name;
         private AttachmentStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property AttachmentId. 
+        /// <para>
+        /// The unique identifier of the Amazon Q Business attachment.
+        /// </para>
+        /// </summary>
+        public string AttachmentId
+        {
+            get { return this._attachmentId; }
+            set { this._attachmentId = value; }
+        }
+
+        // Check to see if AttachmentId property is set
+        internal bool IsSetAttachmentId()
+        {
+            return this._attachmentId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConversationId. 
+        /// <para>
+        /// The unique identifier of the Amazon Q Business conversation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=36, Max=36)]
+        public string ConversationId
+        {
+            get { return this._conversationId; }
+            set { this._conversationId = value; }
+        }
+
+        // Check to see if ConversationId property is set
+        internal bool IsSetConversationId()
+        {
+            return this._conversationId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Error. 

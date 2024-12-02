@@ -37,6 +37,11 @@ namespace Amazon.QBusiness.Model
         IListApplicationsPaginator ListApplications(ListApplicationsRequest request);
 
         /// <summary>
+        /// Paginator for ListAttachments operation
+        ///</summary>
+        IListAttachmentsPaginator ListAttachments(ListAttachmentsRequest request);
+
+        /// <summary>
         /// Paginator for ListConversations operation
         ///</summary>
         IListConversationsPaginator ListConversations(ListConversationsRequest request);

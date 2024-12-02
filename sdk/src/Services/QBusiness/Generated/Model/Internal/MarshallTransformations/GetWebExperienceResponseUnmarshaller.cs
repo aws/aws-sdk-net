@@ -64,6 +64,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     response.AuthenticationConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("browserExtensionConfiguration", targetDepth))
+                {
+                    var unmarshaller = BrowserExtensionConfigurationUnmarshaller.Instance;
+                    response.BrowserExtensionConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

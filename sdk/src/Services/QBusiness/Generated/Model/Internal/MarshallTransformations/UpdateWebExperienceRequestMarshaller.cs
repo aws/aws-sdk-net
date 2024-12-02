@@ -84,6 +84,17 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetBrowserExtensionConfiguration())
+                {
+                    context.Writer.WritePropertyName("browserExtensionConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = BrowserExtensionConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.BrowserExtensionConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetIdentityProviderConfiguration())
                 {
                     context.Writer.WritePropertyName("identityProviderConfiguration");

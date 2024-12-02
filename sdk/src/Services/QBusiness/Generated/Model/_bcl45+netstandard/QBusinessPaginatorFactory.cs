@@ -53,6 +53,14 @@ namespace Amazon.QBusiness.Model
         }
 
         /// <summary>
+        /// Paginator for ListAttachments operation
+        ///</summary>
+        public IListAttachmentsPaginator ListAttachments(ListAttachmentsRequest request) 
+        {
+            return new ListAttachmentsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListConversations operation
         ///</summary>
         public IListConversationsPaginator ListConversations(ListConversationsRequest request) 

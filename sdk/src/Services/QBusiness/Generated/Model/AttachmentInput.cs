@@ -30,20 +30,39 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// A file directly uploaded into a web experience chat.
+    /// This is either a file directly uploaded into a web experience chat or a reference
+    /// to an existing attachment that is part of a web experience chat.
     /// </summary>
     public partial class AttachmentInput
     {
+        private CopyFromSource _copyFrom;
         private MemoryStream _data;
         private string _name;
 
         /// <summary>
-        /// Gets and sets the property Data. 
+        /// Gets and sets the property CopyFrom. 
         /// <para>
-        /// The data contained within the uploaded file.
+        /// A reference to an existing attachment.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        public CopyFromSource CopyFrom
+        {
+            get { return this._copyFrom; }
+            set { this._copyFrom = value; }
+        }
+
+        // Check to see if CopyFrom property is set
+        internal bool IsSetCopyFrom()
+        {
+            return this._copyFrom != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Data. 
+        /// <para>
+        /// The contents of the attachment.
+        /// </para>
+        /// </summary>
         public MemoryStream Data
         {
             get { return this._data; }
@@ -59,10 +78,10 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the file.
+        /// The filename of the attachment.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1000)]
+        [AWSProperty(Min=1, Max=1000)]
         public string Name
         {
             get { return this._name; }
