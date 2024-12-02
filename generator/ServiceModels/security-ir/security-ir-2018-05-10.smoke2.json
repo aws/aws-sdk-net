@@ -1,0 +1,21 @@
+{
+  "version" : 2,
+  "testCases" : [ {
+    "id" : "GetMembershipFailure",
+    "operationName" : "GetMembership",
+    "input" : {
+      "membershipId" : "m-aaaaaaaaaaaaaaaaaaaa"
+    },
+    "expectation" : {
+      "failure" : {
+        "errorId" : "AccessDeniedException"
+      }
+    },
+    "config" : {
+      "region" : "us-east-1",
+      "useFips" : false,
+      "useDualstack" : false,
+      "useAccountIdRouting" : true
+    }
+  } ]
+}
