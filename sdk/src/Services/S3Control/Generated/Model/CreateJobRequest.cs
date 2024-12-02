@@ -209,7 +209,7 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property Operation. 
         /// <para>
         /// The action that you want this job to perform on every object listed in the manifest.
-        /// For more information about the available actions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a>
+        /// For more information about the available actions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Operations</a>
         /// in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
