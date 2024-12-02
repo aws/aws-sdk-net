@@ -36,7 +36,7 @@ namespace Amazon.ECS.Model
     ///  <note> 
     /// <para>
     /// The <c>FARGATE</c> and <c>FARGATE_SPOT</c> capacity providers are reserved and can't
-    /// be deleted. You can disassociate them from a cluster using either <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutCapacityProviderProviders.html">PutCapacityProviderProviders</a>
+    /// be deleted. You can disassociate them from a cluster using either <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutClusterCapacityProviders.html">PutClusterCapacityProviders</a>
     /// or by deleting the cluster.
     /// </para>
     ///  </note> 

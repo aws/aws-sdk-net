@@ -952,7 +952,7 @@ namespace Amazon.ECS
         ///  <note> 
         /// <para>
         /// The <c>FARGATE</c> and <c>FARGATE_SPOT</c> capacity providers are reserved and can't
-        /// be deleted. You can disassociate them from a cluster using either <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutCapacityProviderProviders.html">PutCapacityProviderProviders</a>
+        /// be deleted. You can disassociate them from a cluster using either <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutClusterCapacityProviders.html">PutClusterCapacityProviders</a>
         /// or by deleting the cluster.
         /// </para>
         ///  </note> 
@@ -1006,7 +1006,7 @@ namespace Amazon.ECS
         ///  <note> 
         /// <para>
         /// The <c>FARGATE</c> and <c>FARGATE_SPOT</c> capacity providers are reserved and can't
-        /// be deleted. You can disassociate them from a cluster using either <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutCapacityProviderProviders.html">PutCapacityProviderProviders</a>
+        /// be deleted. You can disassociate them from a cluster using either <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutClusterCapacityProviders.html">PutClusterCapacityProviders</a>
         /// or by deleting the cluster.
         /// </para>
         ///  </note> 
@@ -1948,6 +1948,12 @@ namespace Amazon.ECS
 
         /// <summary>
         /// Describes one or more of your clusters.
+        /// 
+        ///  
+        /// <para>
+        ///  For CLI examples, see <a href="https://github.com/aws/aws-cli/blob/develop/awscli/examples/ecs/describe-clusters.rst">describe-clusters.rst</a>
+        /// on GitHub.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeClusters service method.</param>
         /// 
@@ -1983,6 +1989,12 @@ namespace Amazon.ECS
 
         /// <summary>
         /// Describes one or more of your clusters.
+        /// 
+        ///  
+        /// <para>
+        ///  For CLI examples, see <a href="https://github.com/aws/aws-cli/blob/develop/awscli/examples/ecs/describe-clusters.rst">describe-clusters.rst</a>
+        /// on GitHub.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeClusters service method.</param>
         /// <param name="cancellationToken">
