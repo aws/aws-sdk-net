@@ -30,29 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The results of a <c>ListTags</c> operation.
+    /// This is the response object from the DeleteDirectQueryDataSource operation.
     /// </summary>
-    public partial class ListTagsResponse : AmazonWebServiceResponse
+    public partial class DeleteDirectQueryDataSourceResponse : AmazonWebServiceResponse
     {
-        private List<Tag> _tagList = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
-
-        /// <summary>
-        /// Gets and sets the property TagList. 
-        /// <para>
-        /// List of resource tags associated with the specified domain, data source, or application.
-        /// </para>
-        /// </summary>
-        public List<Tag> TagList
-        {
-            get { return this._tagList; }
-            set { this._tagList = value; }
-        }
-
-        // Check to see if TagList property is set
-        internal bool IsSetTagList()
-        {
-            return this._tagList != null && (this._tagList.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
 
     }
 }

@@ -164,13 +164,78 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  AddDirectQueryDataSource
+
+
+        /// <summary>
+        /// Adds a new data source in Amazon OpenSearch Service so that you can perform direct
+        /// queries on external data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddDirectQueryDataSource service method.</param>
+        /// 
+        /// <returns>The response from the AddDirectQueryDataSource service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
+        /// An exception for trying to create more than the allowed number of resources or sub-resources.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AddDirectQueryDataSource">REST API Reference for AddDirectQueryDataSource Operation</seealso>
+        AddDirectQueryDataSourceResponse AddDirectQueryDataSource(AddDirectQueryDataSourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddDirectQueryDataSource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddDirectQueryDataSource operation on AmazonOpenSearchServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddDirectQueryDataSource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AddDirectQueryDataSource">REST API Reference for AddDirectQueryDataSource Operation</seealso>
+        IAsyncResult BeginAddDirectQueryDataSource(AddDirectQueryDataSourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AddDirectQueryDataSource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddDirectQueryDataSource.</param>
+        /// 
+        /// <returns>Returns a  AddDirectQueryDataSourceResult from OpenSearchService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AddDirectQueryDataSource">REST API Reference for AddDirectQueryDataSource Operation</seealso>
+        AddDirectQueryDataSourceResponse EndAddDirectQueryDataSource(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  AddTags
 
 
         /// <summary>
-        /// Attaches tags to an existing Amazon OpenSearch Service domain. Tags are a set of case-sensitive
-        /// key-value pairs. A domain can have up to 10 tags. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-awsresourcetagging.html">Tagging
-        /// Amazon OpenSearch Service domains</a>.
+        /// Attaches tags to an existing Amazon OpenSearch Service domain, data source, or application.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// Tags are a set of case-sensitive key-value pairs. A domain, data source, or application
+        /// can have up to 10 tags. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-awsresourcetagging.html">Tagging
+        /// Amazon OpenSearch Service resources</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTags service method.</param>
         /// 
@@ -927,6 +992,61 @@ namespace Amazon.OpenSearchService
         /// <returns>Returns a  DeleteDataSourceResult from OpenSearchService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteDataSource">REST API Reference for DeleteDataSource Operation</seealso>
         DeleteDataSourceResponse EndDeleteDataSource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteDirectQueryDataSource
+
+
+        /// <summary>
+        /// Deletes a previously configured direct query data source from Amazon OpenSearch Service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDirectQueryDataSource service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDirectQueryDataSource service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteDirectQueryDataSource">REST API Reference for DeleteDirectQueryDataSource Operation</seealso>
+        DeleteDirectQueryDataSourceResponse DeleteDirectQueryDataSource(DeleteDirectQueryDataSourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDirectQueryDataSource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDirectQueryDataSource operation on AmazonOpenSearchServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDirectQueryDataSource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteDirectQueryDataSource">REST API Reference for DeleteDirectQueryDataSource Operation</seealso>
+        IAsyncResult BeginDeleteDirectQueryDataSource(DeleteDirectQueryDataSourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteDirectQueryDataSource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDirectQueryDataSource.</param>
+        /// 
+        /// <returns>Returns a  DeleteDirectQueryDataSourceResult from OpenSearchService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteDirectQueryDataSource">REST API Reference for DeleteDirectQueryDataSource Operation</seealso>
+        DeleteDirectQueryDataSourceResponse EndDeleteDirectQueryDataSource(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2295,6 +2415,62 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  GetDirectQueryDataSource
+
+
+        /// <summary>
+        /// Returns detailed configuration information for a specific direct query data source
+        /// in Amazon OpenSearch Service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDirectQueryDataSource service method.</param>
+        /// 
+        /// <returns>The response from the GetDirectQueryDataSource service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetDirectQueryDataSource">REST API Reference for GetDirectQueryDataSource Operation</seealso>
+        GetDirectQueryDataSourceResponse GetDirectQueryDataSource(GetDirectQueryDataSourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDirectQueryDataSource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDirectQueryDataSource operation on AmazonOpenSearchServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDirectQueryDataSource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetDirectQueryDataSource">REST API Reference for GetDirectQueryDataSource Operation</seealso>
+        IAsyncResult BeginGetDirectQueryDataSource(GetDirectQueryDataSourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDirectQueryDataSource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDirectQueryDataSource.</param>
+        /// 
+        /// <returns>Returns a  GetDirectQueryDataSourceResult from OpenSearchService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetDirectQueryDataSource">REST API Reference for GetDirectQueryDataSource Operation</seealso>
+        GetDirectQueryDataSourceResponse EndGetDirectQueryDataSource(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetDomainMaintenanceStatus
 
 
@@ -2639,6 +2815,62 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  ListDirectQueryDataSources
+
+
+        /// <summary>
+        /// Lists an inventory of all the direct query data sources that you have configured
+        /// within Amazon OpenSearch Service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDirectQueryDataSources service method.</param>
+        /// 
+        /// <returns>The response from the ListDirectQueryDataSources service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListDirectQueryDataSources">REST API Reference for ListDirectQueryDataSources Operation</seealso>
+        ListDirectQueryDataSourcesResponse ListDirectQueryDataSources(ListDirectQueryDataSourcesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDirectQueryDataSources operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDirectQueryDataSources operation on AmazonOpenSearchServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDirectQueryDataSources
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListDirectQueryDataSources">REST API Reference for ListDirectQueryDataSources Operation</seealso>
+        IAsyncResult BeginListDirectQueryDataSources(ListDirectQueryDataSourcesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDirectQueryDataSources operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDirectQueryDataSources.</param>
+        /// 
+        /// <returns>Returns a  ListDirectQueryDataSourcesResult from OpenSearchService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListDirectQueryDataSources">REST API Reference for ListDirectQueryDataSources Operation</seealso>
+        ListDirectQueryDataSourcesResponse EndListDirectQueryDataSources(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListDomainMaintenances
 
 
@@ -2970,9 +3202,9 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Returns all resource tags for an Amazon OpenSearch Service domain. For more information,
-        /// see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-awsresourcetagging.html">Tagging
-        /// Amazon OpenSearch Service domains</a>.
+        /// Returns all resource tags for an Amazon OpenSearch Service domain, data source, or
+        /// application. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-awsresourcetagging.html">Tagging
+        /// Amazon OpenSearch Service resources</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTags service method.</param>
         /// 
@@ -3339,9 +3571,9 @@ namespace Amazon.OpenSearchService
 
 
         /// <summary>
-        /// Removes the specified set of tags from an Amazon OpenSearch Service domain. For more
-        /// information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-awsresorcetagging">
-        /// Tagging Amazon OpenSearch Service domains</a>.
+        /// Removes the specified set of tags from an Amazon OpenSearch Service domain, data source,
+        /// or application. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-awsresorcetagging">
+        /// Tagging Amazon OpenSearch Service resources</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveTags service method.</param>
         /// 
@@ -3672,6 +3904,62 @@ namespace Amazon.OpenSearchService
         /// <returns>Returns a  UpdateDataSourceResult from OpenSearchService.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateDataSource">REST API Reference for UpdateDataSource Operation</seealso>
         UpdateDataSourceResponse EndUpdateDataSource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateDirectQueryDataSource
+
+
+        /// <summary>
+        /// Updates the configuration or properties of an existing direct query data source in
+        /// Amazon OpenSearch Service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDirectQueryDataSource service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDirectQueryDataSource service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateDirectQueryDataSource">REST API Reference for UpdateDirectQueryDataSource Operation</seealso>
+        UpdateDirectQueryDataSourceResponse UpdateDirectQueryDataSource(UpdateDirectQueryDataSourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDirectQueryDataSource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDirectQueryDataSource operation on AmazonOpenSearchServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDirectQueryDataSource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateDirectQueryDataSource">REST API Reference for UpdateDirectQueryDataSource Operation</seealso>
+        IAsyncResult BeginUpdateDirectQueryDataSource(UpdateDirectQueryDataSourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateDirectQueryDataSource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDirectQueryDataSource.</param>
+        /// 
+        /// <returns>Returns a  UpdateDirectQueryDataSourceResult from OpenSearchService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateDirectQueryDataSource">REST API Reference for UpdateDirectQueryDataSource Operation</seealso>
+        UpdateDirectQueryDataSourceResponse EndUpdateDirectQueryDataSource(IAsyncResult asyncResult);
 
         #endregion
         

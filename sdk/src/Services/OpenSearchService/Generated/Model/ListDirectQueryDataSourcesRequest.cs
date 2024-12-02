@@ -30,28 +30,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The results of a <c>ListTags</c> operation.
+    /// Container for the parameters to the ListDirectQueryDataSources operation.
+    /// Lists an inventory of all the direct query data sources that you have configured
+    /// within Amazon OpenSearch Service.
     /// </summary>
-    public partial class ListTagsResponse : AmazonWebServiceResponse
+    public partial class ListDirectQueryDataSourcesRequest : AmazonOpenSearchServiceRequest
     {
-        private List<Tag> _tagList = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property TagList. 
-        /// <para>
-        /// List of resource tags associated with the specified domain, data source, or application.
-        /// </para>
+        /// Gets and sets the property NextToken.
         /// </summary>
-        public List<Tag> TagList
+        public string NextToken
         {
-            get { return this._tagList; }
-            set { this._tagList = value; }
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
         }
 
-        // Check to see if TagList property is set
-        internal bool IsSetTagList()
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
         {
-            return this._tagList != null && (this._tagList.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._nextToken != null;
         }
 
     }

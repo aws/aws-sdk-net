@@ -30,28 +30,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The results of a <c>ListTags</c> operation.
+    /// Configuration details for a CloudWatch Logs data source that can be used for direct
+    /// queries.
     /// </summary>
-    public partial class ListTagsResponse : AmazonWebServiceResponse
+    public partial class CloudWatchDirectQueryDataSource
     {
-        private List<Tag> _tagList = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private string _roleArn;
 
         /// <summary>
-        /// Gets and sets the property TagList. 
+        /// Gets and sets the property RoleArn. 
         /// <para>
-        /// List of resource tags associated with the specified domain, data source, or application.
+        ///  The unique identifier of the IAM role that grants OpenSearch Service permission to
+        /// access the specified data source. 
         /// </para>
         /// </summary>
-        public List<Tag> TagList
+        [AWSProperty(Required=true, Min=32, Max=200)]
+        public string RoleArn
         {
-            get { return this._tagList; }
-            set { this._tagList = value; }
+            get { return this._roleArn; }
+            set { this._roleArn = value; }
         }
 
-        // Check to see if TagList property is set
-        internal bool IsSetTagList()
+        // Check to see if RoleArn property is set
+        internal bool IsSetRoleArn()
         {
-            return this._tagList != null && (this._tagList.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._roleArn != null;
         }
 
     }
