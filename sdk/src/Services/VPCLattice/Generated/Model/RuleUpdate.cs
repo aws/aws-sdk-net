@@ -97,7 +97,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property RuleIdentifier. 
         /// <para>
-        /// The ID or Amazon Resource Name (ARN) of the rule.
+        /// The ID or ARN of the rule.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

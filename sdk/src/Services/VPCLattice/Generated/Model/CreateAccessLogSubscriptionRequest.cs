@@ -44,6 +44,7 @@ namespace Amazon.VPCLattice.Model
         private string _clientToken;
         private string _destinationArn;
         private string _resourceIdentifier;
+        private ServiceNetworkLogType _serviceNetworkLogType;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property ResourceIdentifier. 
         /// <para>
-        /// The ID or Amazon Resource Name (ARN) of the service network or service.
+        /// The ID or ARN of the service network or service.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=17, Max=200)]
@@ -105,6 +106,24 @@ namespace Amazon.VPCLattice.Model
         internal bool IsSetResourceIdentifier()
         {
             return this._resourceIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceNetworkLogType. 
+        /// <para>
+        /// The type of log that monitors your Amazon VPC Lattice service networks.
+        /// </para>
+        /// </summary>
+        public ServiceNetworkLogType ServiceNetworkLogType
+        {
+            get { return this._serviceNetworkLogType; }
+            set { this._serviceNetworkLogType = value; }
+        }
+
+        // Check to see if ServiceNetworkLogType property is set
+        internal bool IsSetServiceNetworkLogType()
+        {
+            return this._serviceNetworkLogType != null;
         }
 
         /// <summary>
