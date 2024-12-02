@@ -30,47 +30,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Contains information about the detected behavior.
+    /// Contains information about the account.
     /// </summary>
-    public partial class Detection
+    public partial class Account
     {
-        private Anomaly _anomaly;
-        private Sequence _sequence;
+        private string _name;
+        private string _uid;
 
         /// <summary>
-        /// Gets and sets the property Anomaly. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// The details about the anomalous activity that caused GuardDuty to generate the finding.
+        /// Name of the member's Amazon Web Services account.
         /// </para>
         /// </summary>
-        public Anomaly Anomaly
+        public string Name
         {
-            get { return this._anomaly; }
-            set { this._anomaly = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if Anomaly property is set
-        internal bool IsSetAnomaly()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._anomaly != null;
+            return this._name != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Sequence. 
+        /// Gets and sets the property Uid. 
         /// <para>
-        /// The details about the attack sequence.
+        /// ID of the member's Amazon Web Services account
         /// </para>
         /// </summary>
-        public Sequence Sequence
+        [AWSProperty(Required=true)]
+        public string Uid
         {
-            get { return this._sequence; }
-            set { this._sequence = value; }
+            get { return this._uid; }
+            set { this._uid = value; }
         }
 
-        // Check to see if Sequence property is set
-        internal bool IsSetSequence()
+        // Check to see if Uid property is set
+        internal bool IsSetUid()
         {
-            return this._sequence != null;
+            return this._uid != null;
         }
 
     }

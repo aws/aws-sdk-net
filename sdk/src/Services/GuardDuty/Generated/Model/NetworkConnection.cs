@@ -30,47 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Contains information about the detected behavior.
+    /// Contains information about the network connection.
     /// </summary>
-    public partial class Detection
+    public partial class NetworkConnection
     {
-        private Anomaly _anomaly;
-        private Sequence _sequence;
+        private NetworkDirection _direction;
 
         /// <summary>
-        /// Gets and sets the property Anomaly. 
+        /// Gets and sets the property Direction. 
         /// <para>
-        /// The details about the anomalous activity that caused GuardDuty to generate the finding.
+        /// The direction in which the network traffic is flowing.
         /// </para>
         /// </summary>
-        public Anomaly Anomaly
+        [AWSProperty(Required=true)]
+        public NetworkDirection Direction
         {
-            get { return this._anomaly; }
-            set { this._anomaly = value; }
+            get { return this._direction; }
+            set { this._direction = value; }
         }
 
-        // Check to see if Anomaly property is set
-        internal bool IsSetAnomaly()
+        // Check to see if Direction property is set
+        internal bool IsSetDirection()
         {
-            return this._anomaly != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Sequence. 
-        /// <para>
-        /// The details about the attack sequence.
-        /// </para>
-        /// </summary>
-        public Sequence Sequence
-        {
-            get { return this._sequence; }
-            set { this._sequence = value; }
-        }
-
-        // Check to see if Sequence property is set
-        internal bool IsSetSequence()
-        {
-            return this._sequence != null;
+            return this._direction != null;
         }
 
     }

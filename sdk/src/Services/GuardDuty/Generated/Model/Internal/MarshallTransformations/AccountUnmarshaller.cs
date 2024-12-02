@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Detection Object
+    /// Response Unmarshaller for Account Object
     /// </summary>  
-    public class DetectionUnmarshaller : IUnmarshaller<Detection, XmlUnmarshallerContext>, IUnmarshaller<Detection, JsonUnmarshallerContext>
+    public class AccountUnmarshaller : IUnmarshaller<Account, XmlUnmarshallerContext>, IUnmarshaller<Account, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Detection IUnmarshaller<Detection, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Account IUnmarshaller<Account, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public Detection Unmarshall(JsonUnmarshallerContext context)
+        public Account Unmarshall(JsonUnmarshallerContext context)
         {
-            Detection unmarshalledObject = new Detection();
+            Account unmarshalledObject = new Account();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,16 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("anomaly", targetDepth))
+                if (context.TestExpression("account", targetDepth))
                 {
-                    var unmarshaller = AnomalyUnmarshaller.Instance;
-                    unmarshalledObject.Anomaly = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("sequence", targetDepth))
+                if (context.TestExpression("uid", targetDepth))
                 {
-                    var unmarshaller = SequenceUnmarshaller.Instance;
-                    unmarshalledObject.Sequence = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Uid = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +83,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         }
 
 
-        private static DetectionUnmarshaller _instance = new DetectionUnmarshaller();        
+        private static AccountUnmarshaller _instance = new AccountUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DetectionUnmarshaller Instance
+        public static AccountUnmarshaller Instance
         {
             get
             {

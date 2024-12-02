@@ -30,47 +30,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Contains information about the detected behavior.
+    /// Contains information about the Autonomous System (AS) associated with the network
+    /// endpoints involved in an attack sequence.
     /// </summary>
-    public partial class Detection
+    public partial class AutonomousSystem
     {
-        private Anomaly _anomaly;
-        private Sequence _sequence;
+        private string _name;
+        private int? _number;
 
         /// <summary>
-        /// Gets and sets the property Anomaly. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// The details about the anomalous activity that caused GuardDuty to generate the finding.
+        /// Name associated with the Autonomous System (AS).
         /// </para>
         /// </summary>
-        public Anomaly Anomaly
+        [AWSProperty(Required=true)]
+        public string Name
         {
-            get { return this._anomaly; }
-            set { this._anomaly = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if Anomaly property is set
-        internal bool IsSetAnomaly()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._anomaly != null;
+            return this._name != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Sequence. 
+        /// Gets and sets the property Number. 
         /// <para>
-        /// The details about the attack sequence.
+        /// The unique number that identifies the Autonomous System (AS).
         /// </para>
         /// </summary>
-        public Sequence Sequence
+        [AWSProperty(Required=true)]
+        public int Number
         {
-            get { return this._sequence; }
-            set { this._sequence = value; }
+            get { return this._number.GetValueOrDefault(); }
+            set { this._number = value; }
         }
 
-        // Check to see if Sequence property is set
-        internal bool IsSetSequence()
+        // Check to see if Number property is set
+        internal bool IsSetNumber()
         {
-            return this._sequence != null;
+            return this._number.HasValue; 
         }
 
     }

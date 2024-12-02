@@ -154,7 +154,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Information about the tag-key value pair.
+        /// Information about the tag key-value pair.
         /// </para>
         /// </summary>
         public List<Tag> Tags

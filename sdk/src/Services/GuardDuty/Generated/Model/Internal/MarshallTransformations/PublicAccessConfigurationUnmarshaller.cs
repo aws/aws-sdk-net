@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Detection Object
+    /// Response Unmarshaller for PublicAccessConfiguration Object
     /// </summary>  
-    public class DetectionUnmarshaller : IUnmarshaller<Detection, XmlUnmarshallerContext>, IUnmarshaller<Detection, JsonUnmarshallerContext>
+    public class PublicAccessConfigurationUnmarshaller : IUnmarshaller<PublicAccessConfiguration, XmlUnmarshallerContext>, IUnmarshaller<PublicAccessConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Detection IUnmarshaller<Detection, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PublicAccessConfiguration IUnmarshaller<PublicAccessConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public Detection Unmarshall(JsonUnmarshallerContext context)
+        public PublicAccessConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            Detection unmarshalledObject = new Detection();
+            PublicAccessConfiguration unmarshalledObject = new PublicAccessConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,28 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("anomaly", targetDepth))
+                if (context.TestExpression("publicAclAccess", targetDepth))
                 {
-                    var unmarshaller = AnomalyUnmarshaller.Instance;
-                    unmarshalledObject.Anomaly = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PublicAclAccess = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("sequence", targetDepth))
+                if (context.TestExpression("publicAclIgnoreBehavior", targetDepth))
                 {
-                    var unmarshaller = SequenceUnmarshaller.Instance;
-                    unmarshalledObject.Sequence = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PublicAclIgnoreBehavior = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("publicBucketRestrictBehavior", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PublicBucketRestrictBehavior = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("publicPolicyAccess", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PublicPolicyAccess = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +95,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
         }
 
 
-        private static DetectionUnmarshaller _instance = new DetectionUnmarshaller();        
+        private static PublicAccessConfigurationUnmarshaller _instance = new PublicAccessConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DetectionUnmarshaller Instance
+        public static PublicAccessConfigurationUnmarshaller Instance
         {
             get
             {
