@@ -30,49 +30,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// A tag set contains tag key and tag value.
+    /// Information about a queue.
     /// </summary>
-    public partial class TagSet
+    public partial class QueueInfoInput
     {
-        private string _key;
-        private string _value;
+        private string _id;
 
         /// <summary>
-        /// Gets and sets the property Key. 
+        /// Gets and sets the property Id. 
         /// <para>
-        /// The tag key in the TagSet.
+        /// The identifier of the queue.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
-        public string Key
+        public string Id
         {
-            get { return this._key; }
-            set { this._key = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
-        // Check to see if Key property is set
-        internal bool IsSetKey()
+        // Check to see if Id property is set
+        internal bool IsSetId()
         {
-            return this._key != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Value. 
-        /// <para>
-        /// The tag value in the tagSet.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Max=256)]
-        public string Value
-        {
-            get { return this._value; }
-            set { this._value = value; }
-        }
-
-        // Check to see if Value property is set
-        internal bool IsSetValue()
-        {
-            return this._value != null;
+            return this._id != null;
         }
 
     }

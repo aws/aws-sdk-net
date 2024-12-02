@@ -89,7 +89,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the secruity profile.
+        /// The Amazon Resource Name (ARN) for the security profile.
         /// </para>
         /// </summary>
         public string Arn

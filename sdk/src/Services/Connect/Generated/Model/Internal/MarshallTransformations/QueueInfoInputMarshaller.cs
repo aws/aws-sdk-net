@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// VoiceRecordingConfiguration Marshaller
+    /// QueueInfoInput Marshaller
     /// </summary>
-    public class VoiceRecordingConfigurationMarshaller : IRequestMarshaller<VoiceRecordingConfiguration, JsonMarshallerContext> 
+    public class QueueInfoInputMarshaller : IRequestMarshaller<QueueInfoInput, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,20 +44,14 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(VoiceRecordingConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(QueueInfoInput requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetIvrRecordingTrack())
+            if(requestObject.IsSetId())
             {
-                context.Writer.WritePropertyName("IvrRecordingTrack");
-                context.Writer.Write(requestObject.IvrRecordingTrack);
-            }
-
-            if(requestObject.IsSetVoiceRecordingTrack())
-            {
-                context.Writer.WritePropertyName("VoiceRecordingTrack");
-                context.Writer.Write(requestObject.VoiceRecordingTrack);
+                context.Writer.WritePropertyName("Id");
+                context.Writer.Write(requestObject.Id);
             }
 
         }
@@ -65,7 +59,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static VoiceRecordingConfigurationMarshaller Instance = new VoiceRecordingConfigurationMarshaller();
+        public readonly static QueueInfoInputMarshaller Instance = new QueueInfoInputMarshaller();
 
     }
 }

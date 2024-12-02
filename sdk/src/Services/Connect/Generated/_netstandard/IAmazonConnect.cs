@@ -62,7 +62,7 @@ namespace Amazon.Connect
     /// </para>
     ///  
     /// <para>
-    /// You can connect programmatically to an Amazon Web Services service by using an endpoint.
+    /// You can use an endpoint to connect programmatically to an Amazon Web Services service.
     /// For a list of Amazon Connect endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
     /// Connect Endpoints</a>.
     /// </para>
@@ -3631,7 +3631,7 @@ namespace Amazon.Connect
         /// parameter. However, if the number is claimed to a traffic distribution group and you
         /// are calling this API in the alternate Amazon Web Services Region associated with the
         /// traffic distribution group, you must provide a full phone number ARN. If a UUID is
-        /// provided in this scenario, you will receive a <c>ResourceNotFoundException</c>.
+        /// provided in this scenario, you receive a <c>ResourceNotFoundException</c>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -5083,9 +5083,9 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Imports a claimed phone number from an external service, such as Amazon Pinpoint,
-        /// into an Amazon Connect instance. You can call this API only in the same Amazon Web
-        /// Services Region where the Amazon Connect instance was created.
+        /// Imports a claimed phone number from an external service, such as Amazon Web Services
+        /// End User Messaging, into an Amazon Connect instance. You can call this API only in
+        /// the same Amazon Web Services Region where the Amazon Connect instance was created.
         /// 
         ///  <important> 
         /// <para>
@@ -7831,8 +7831,8 @@ namespace Amazon.Connect
         /// </para>
         ///  
         /// <para>
-        /// Access to this API is currently restricted to Amazon Pinpoint for supporting SMS integration.
-        /// 
+        /// Access to this API is currently restricted to Amazon Web Services End User Messaging
+        /// for supporting SMS integration. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendChatIntegrationEvent service method.</param>
@@ -8236,7 +8236,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Initiates a new outbound SMS contact to a customer. Response of this API provides
-        /// the ContactId of the outbound SMS contact created.
+        /// the <c>ContactId</c> of the outbound SMS contact created.
         /// 
         ///  
         /// <para>
@@ -8246,7 +8246,7 @@ namespace Amazon.Connect
         /// </para>
         ///  
         /// <para>
-        /// This API can be used to initiate outbound SMS contacts for an agent or it can also
+        /// This API can be used to initiate outbound SMS contacts for an agent, or it can also
         /// deflect an ongoing contact to an outbound SMS contact by using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartOutboundChatContact.html">StartOutboundChatContact</a>
         /// Flow Action.
         /// </para>
@@ -9114,6 +9114,13 @@ namespace Amazon.Connect
         /// </param>
         /// 
         /// <returns>The response from the UpdateContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ConflictException">
+        /// Operation cannot be performed at this time as there is a conflict with another operation
+        /// or contact state.
+        /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
         /// </exception>

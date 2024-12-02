@@ -1085,6 +1085,60 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type ContactRecordingType.
+    /// </summary>
+    public class ContactRecordingType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AGENT for ContactRecordingType
+        /// </summary>
+        public static readonly ContactRecordingType AGENT = new ContactRecordingType("AGENT");
+        /// <summary>
+        /// Constant IVR for ContactRecordingType
+        /// </summary>
+        public static readonly ContactRecordingType IVR = new ContactRecordingType("IVR");
+        /// <summary>
+        /// Constant SCREEN for ContactRecordingType
+        /// </summary>
+        public static readonly ContactRecordingType SCREEN = new ContactRecordingType("SCREEN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContactRecordingType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContactRecordingType FindValue(string value)
+        {
+            return FindValue<ContactRecordingType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContactRecordingType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ContactState.
     /// </summary>
     public class ContactState : ConstantClass
@@ -2067,6 +2121,10 @@ namespace Amazon.Connect
     {
 
         /// <summary>
+        /// Constant ANALYTICS_CONNECTOR for FlowAssociationResourceType
+        /// </summary>
+        public static readonly FlowAssociationResourceType ANALYTICS_CONNECTOR = new FlowAssociationResourceType("ANALYTICS_CONNECTOR");
+        /// <summary>
         /// Constant INBOUND_EMAIL for FlowAssociationResourceType
         /// </summary>
         public static readonly FlowAssociationResourceType INBOUND_EMAIL = new FlowAssociationResourceType("INBOUND_EMAIL");
@@ -2078,6 +2136,10 @@ namespace Amazon.Connect
         /// Constant SMS_PHONE_NUMBER for FlowAssociationResourceType
         /// </summary>
         public static readonly FlowAssociationResourceType SMS_PHONE_NUMBER = new FlowAssociationResourceType("SMS_PHONE_NUMBER");
+        /// <summary>
+        /// Constant WHATSAPP_MESSAGING_PHONE_NUMBER for FlowAssociationResourceType
+        /// </summary>
+        public static readonly FlowAssociationResourceType WHATSAPP_MESSAGING_PHONE_NUMBER = new FlowAssociationResourceType("WHATSAPP_MESSAGING_PHONE_NUMBER");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2833,9 +2895,17 @@ namespace Amazon.Connect
     {
 
         /// <summary>
+        /// Constant ANALYTICS_CONNECTOR for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType ANALYTICS_CONNECTOR = new IntegrationType("ANALYTICS_CONNECTOR");
+        /// <summary>
         /// Constant APPLICATION for IntegrationType
         /// </summary>
         public static readonly IntegrationType APPLICATION = new IntegrationType("APPLICATION");
+        /// <summary>
+        /// Constant CALL_TRANSFER_CONNECTOR for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType CALL_TRANSFER_CONNECTOR = new IntegrationType("CALL_TRANSFER_CONNECTOR");
         /// <summary>
         /// Constant CASES_DOMAIN for IntegrationType
         /// </summary>
@@ -2979,6 +3049,52 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type IvrRecordingTrack.
+    /// </summary>
+    public class IvrRecordingTrack : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for IvrRecordingTrack
+        /// </summary>
+        public static readonly IvrRecordingTrack ALL = new IvrRecordingTrack("ALL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IvrRecordingTrack(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IvrRecordingTrack FindValue(string value)
+        {
+            return FindValue<IvrRecordingTrack>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IvrRecordingTrack(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LexVersion.
     /// </summary>
     public class LexVersion : ConstantClass
@@ -3035,6 +3151,10 @@ namespace Amazon.Connect
     {
 
         /// <summary>
+        /// Constant ANALYTICS_CONNECTOR for ListFlowAssociationResourceType
+        /// </summary>
+        public static readonly ListFlowAssociationResourceType ANALYTICS_CONNECTOR = new ListFlowAssociationResourceType("ANALYTICS_CONNECTOR");
+        /// <summary>
         /// Constant INBOUND_EMAIL for ListFlowAssociationResourceType
         /// </summary>
         public static readonly ListFlowAssociationResourceType INBOUND_EMAIL = new ListFlowAssociationResourceType("INBOUND_EMAIL");
@@ -3046,6 +3166,10 @@ namespace Amazon.Connect
         /// Constant VOICE_PHONE_NUMBER for ListFlowAssociationResourceType
         /// </summary>
         public static readonly ListFlowAssociationResourceType VOICE_PHONE_NUMBER = new ListFlowAssociationResourceType("VOICE_PHONE_NUMBER");
+        /// <summary>
+        /// Constant WHATSAPP_MESSAGING_PHONE_NUMBER for ListFlowAssociationResourceType
+        /// </summary>
+        public static readonly ListFlowAssociationResourceType WHATSAPP_MESSAGING_PHONE_NUMBER = new ListFlowAssociationResourceType("WHATSAPP_MESSAGING_PHONE_NUMBER");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
