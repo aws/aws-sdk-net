@@ -117,6 +117,14 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
+        /// Paginator for ListKnowledgeBaseDocuments operation
+        ///</summary>
+        public IListKnowledgeBaseDocumentsPaginator ListKnowledgeBaseDocuments(ListKnowledgeBaseDocumentsRequest request) 
+        {
+            return new ListKnowledgeBaseDocumentsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListKnowledgeBases operation
         ///</summary>
         public IListKnowledgeBasesPaginator ListKnowledgeBases(ListKnowledgeBasesRequest request) 

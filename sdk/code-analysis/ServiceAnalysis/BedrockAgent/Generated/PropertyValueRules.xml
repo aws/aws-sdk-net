@@ -525,6 +525,20 @@
     <pattern>^[0-9a-zA-Z]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.DeleteKnowledgeBaseDocumentsRequest.ClientToken</property>
+    <min>33</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.DeleteKnowledgeBaseDocumentsRequest.DataSourceId</property>
+    <pattern>^[0-9a-zA-Z]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.DeleteKnowledgeBaseDocumentsRequest.KnowledgeBaseId</property>
+    <pattern>^[0-9a-zA-Z]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgent.Model.DeletePromptRequest.PromptIdentifier</property>
     <pattern>^([0-9a-zA-Z]{10})|(arn:aws:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:prompt/[0-9a-zA-Z]{10})(?::[0-9]{1,5})?$</pattern>
   </property-value-rule>
@@ -738,6 +752,14 @@
     <pattern>^[0-9a-zA-Z]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.GetKnowledgeBaseDocumentsRequest.DataSourceId</property>
+    <pattern>^[0-9a-zA-Z]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.GetKnowledgeBaseDocumentsRequest.KnowledgeBaseId</property>
+    <pattern>^[0-9a-zA-Z]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgent.Model.GetPromptRequest.PromptIdentifier</property>
     <pattern>^([0-9a-zA-Z]{10})|(arn:aws:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:prompt/[0-9a-zA-Z]{10})(?::[0-9]{1,5})?$</pattern>
   </property-value-rule>
@@ -779,6 +801,20 @@
     <min>1</min>
     <max>5</max>
     <pattern>^(DRAFT|[0-9]{0,4}[1-9][0-9]{0,4})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.IngestKnowledgeBaseDocumentsRequest.ClientToken</property>
+    <min>33</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.IngestKnowledgeBaseDocumentsRequest.DataSourceId</property>
+    <pattern>^[0-9a-zA-Z]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.IngestKnowledgeBaseDocumentsRequest.KnowledgeBaseId</property>
+    <pattern>^[0-9a-zA-Z]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.ListAgentActionGroupsRequest.AgentId</property>
@@ -994,6 +1030,25 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.ListIngestionJobsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^\S*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.ListKnowledgeBaseDocumentsRequest.DataSourceId</property>
+    <pattern>^[0-9a-zA-Z]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.ListKnowledgeBaseDocumentsRequest.KnowledgeBaseId</property>
+    <pattern>^[0-9a-zA-Z]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.ListKnowledgeBaseDocumentsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.ListKnowledgeBaseDocumentsRequest.NextToken</property>
     <min>1</min>
     <max>2048</max>
     <pattern>^\S*$</pattern>
@@ -1695,12 +1750,38 @@
     <pattern>^(arn:aws(-[^:]{1,12})?:(bedrock):[a-z0-9-]{1,20}:([0-9]{12})?:([a-z-]+/)?)?([a-zA-Z0-9.-]{1,63}){0,2}(([:][a-z0-9-]{1,63}){0,2})?(/[a-z0-9]{1,12})?$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.ByteContentDoc.Data</property>
+    <min>1</min>
+    <max>5242880</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.ByteContentDoc.MimeType</property>
+    <pattern>[a-z]{1,20}/.{1,20}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgent.Model.ConfluenceSourceConfiguration.CredentialsSecretArn</property>
     <pattern>^arn:aws(|-cn|-us-gov):secretsmanager:[a-z0-9-]{1,20}:([0-9]{12}|):secret:[a-zA-Z0-9!/_+=.@-]{1,512}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.ConfluenceSourceConfiguration.HostUrl</property>
     <pattern>^https://[A-Za-z0-9][^\s]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.CustomDocumentIdentifier.Id</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.CustomS3Location.BucketOwnerAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.CustomS3Location.Uri</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^s3://[a-z0-9][a-z0-9.-]{1,61}[a-z0-9]/.{1,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.CyclicConnectionFlowValidationDetails.Connection</property>
@@ -1994,6 +2075,14 @@
     <pattern>^arn:aws(-[^:]+)?:iam::([0-9]{12})?:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.KnowledgeBaseDocumentDetail.DataSourceId</property>
+    <pattern>^[0-9a-zA-Z]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.KnowledgeBaseDocumentDetail.KnowledgeBaseId</property>
+    <pattern>^[0-9a-zA-Z]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgent.Model.KnowledgeBaseFlowNodeConfiguration.KnowledgeBaseId</property>
     <min>0</min>
     <max>10</max>
@@ -2065,6 +2154,16 @@
     <property>Amazon.BedrockAgent.Model.MemoryConfiguration.StorageDays</property>
     <min>0</min>
     <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.MetadataAttribute.Key</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.MetadataAttributeValue.StringValue</property>
+    <min>1</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.MismatchedNodeInputTypeFlowValidationDetails.Input</property>
@@ -2515,6 +2614,11 @@
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.SystemContentBlock.Text</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.TextContentDoc.Data</property>
+    <min>1</min>
+    <max>5242880</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.TextPromptTemplateConfiguration.Text</property>

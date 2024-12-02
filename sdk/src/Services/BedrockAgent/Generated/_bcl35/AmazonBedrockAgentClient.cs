@@ -639,7 +639,8 @@ namespace Amazon.BedrockAgent
         #region  CreateDataSource
 
         /// <summary>
-        /// Creates a data source connector for a knowledge base.
+        /// Connects a knowledge base to a data source. You specify the configuration for the
+        /// specific data source service in the <c>dataSourceConfiguration</c> field.
         /// 
         ///  <important> 
         /// <para>
@@ -1888,6 +1889,81 @@ namespace Amazon.BedrockAgent
 
         #endregion
         
+        #region  DeleteKnowledgeBaseDocuments
+
+        /// <summary>
+        /// Deletes documents from a data source and syncs the changes to the knowledge base that
+        /// is connected to it. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-real-time-ingestion.html">Ingest
+        /// documents into a knowledge base in real-time</a> in the Amazon Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteKnowledgeBaseDocuments service method.</param>
+        /// 
+        /// <returns>The response from the DeleteKnowledgeBaseDocuments service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteKnowledgeBaseDocuments">REST API Reference for DeleteKnowledgeBaseDocuments Operation</seealso>
+        public virtual DeleteKnowledgeBaseDocumentsResponse DeleteKnowledgeBaseDocuments(DeleteKnowledgeBaseDocumentsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteKnowledgeBaseDocumentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteKnowledgeBaseDocumentsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteKnowledgeBaseDocumentsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteKnowledgeBaseDocuments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteKnowledgeBaseDocuments operation on AmazonBedrockAgentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteKnowledgeBaseDocuments
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteKnowledgeBaseDocuments">REST API Reference for DeleteKnowledgeBaseDocuments Operation</seealso>
+        public virtual IAsyncResult BeginDeleteKnowledgeBaseDocuments(DeleteKnowledgeBaseDocumentsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteKnowledgeBaseDocumentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteKnowledgeBaseDocumentsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteKnowledgeBaseDocuments operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteKnowledgeBaseDocuments.</param>
+        /// 
+        /// <returns>Returns a  DeleteKnowledgeBaseDocumentsResult from BedrockAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteKnowledgeBaseDocuments">REST API Reference for DeleteKnowledgeBaseDocuments Operation</seealso>
+        public virtual DeleteKnowledgeBaseDocumentsResponse EndDeleteKnowledgeBaseDocuments(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteKnowledgeBaseDocumentsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeletePrompt
 
         /// <summary>
@@ -2812,6 +2888,81 @@ namespace Amazon.BedrockAgent
 
         #endregion
         
+        #region  GetKnowledgeBaseDocuments
+
+        /// <summary>
+        /// Retrieves specific documents from a data source that is connected to a knowledge base.
+        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-real-time-ingestion.html">Ingest
+        /// documents into a knowledge base in real-time</a> in the Amazon Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetKnowledgeBaseDocuments service method.</param>
+        /// 
+        /// <returns>The response from the GetKnowledgeBaseDocuments service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetKnowledgeBaseDocuments">REST API Reference for GetKnowledgeBaseDocuments Operation</seealso>
+        public virtual GetKnowledgeBaseDocumentsResponse GetKnowledgeBaseDocuments(GetKnowledgeBaseDocumentsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetKnowledgeBaseDocumentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetKnowledgeBaseDocumentsResponseUnmarshaller.Instance;
+
+            return Invoke<GetKnowledgeBaseDocumentsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetKnowledgeBaseDocuments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetKnowledgeBaseDocuments operation on AmazonBedrockAgentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetKnowledgeBaseDocuments
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetKnowledgeBaseDocuments">REST API Reference for GetKnowledgeBaseDocuments Operation</seealso>
+        public virtual IAsyncResult BeginGetKnowledgeBaseDocuments(GetKnowledgeBaseDocumentsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetKnowledgeBaseDocumentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetKnowledgeBaseDocumentsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetKnowledgeBaseDocuments operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetKnowledgeBaseDocuments.</param>
+        /// 
+        /// <returns>Returns a  GetKnowledgeBaseDocumentsResult from BedrockAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetKnowledgeBaseDocuments">REST API Reference for GetKnowledgeBaseDocuments Operation</seealso>
+        public virtual GetKnowledgeBaseDocumentsResponse EndGetKnowledgeBaseDocuments(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetKnowledgeBaseDocumentsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetPrompt
 
         /// <summary>
@@ -2882,6 +3033,83 @@ namespace Amazon.BedrockAgent
         public virtual GetPromptResponse EndGetPrompt(IAsyncResult asyncResult)
         {
             return EndInvoke<GetPromptResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  IngestKnowledgeBaseDocuments
+
+        /// <summary>
+        /// Ingests documents directly into the knowledge base that is connected to the data source.
+        /// The <c>dataSourceType</c> specified in the content for each document must match the
+        /// type of the data source that you specify in the header. For more information, see
+        /// <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-real-time-ingestion.html">Ingest
+        /// documents into a knowledge base in real-time</a> in the Amazon Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the IngestKnowledgeBaseDocuments service method.</param>
+        /// 
+        /// <returns>The response from the IngestKnowledgeBaseDocuments service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/IngestKnowledgeBaseDocuments">REST API Reference for IngestKnowledgeBaseDocuments Operation</seealso>
+        public virtual IngestKnowledgeBaseDocumentsResponse IngestKnowledgeBaseDocuments(IngestKnowledgeBaseDocumentsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = IngestKnowledgeBaseDocumentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = IngestKnowledgeBaseDocumentsResponseUnmarshaller.Instance;
+
+            return Invoke<IngestKnowledgeBaseDocumentsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the IngestKnowledgeBaseDocuments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the IngestKnowledgeBaseDocuments operation on AmazonBedrockAgentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndIngestKnowledgeBaseDocuments
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/IngestKnowledgeBaseDocuments">REST API Reference for IngestKnowledgeBaseDocuments Operation</seealso>
+        public virtual IAsyncResult BeginIngestKnowledgeBaseDocuments(IngestKnowledgeBaseDocumentsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = IngestKnowledgeBaseDocumentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = IngestKnowledgeBaseDocumentsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  IngestKnowledgeBaseDocuments operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginIngestKnowledgeBaseDocuments.</param>
+        /// 
+        /// <returns>Returns a  IngestKnowledgeBaseDocumentsResult from BedrockAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/IngestKnowledgeBaseDocuments">REST API Reference for IngestKnowledgeBaseDocuments Operation</seealso>
+        public virtual IngestKnowledgeBaseDocumentsResponse EndIngestKnowledgeBaseDocuments(IAsyncResult asyncResult)
+        {
+            return EndInvoke<IngestKnowledgeBaseDocumentsResponse>(asyncResult);
         }
 
         #endregion
@@ -3578,6 +3806,81 @@ namespace Amazon.BedrockAgent
         public virtual ListIngestionJobsResponse EndListIngestionJobs(IAsyncResult asyncResult)
         {
             return EndInvoke<ListIngestionJobsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListKnowledgeBaseDocuments
+
+        /// <summary>
+        /// Retrieves all the documents contained in a data source that is connected to a knowledge
+        /// base. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-real-time-ingestion.html">Ingest
+        /// documents into a knowledge base in real-time</a> in the Amazon Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListKnowledgeBaseDocuments service method.</param>
+        /// 
+        /// <returns>The response from the ListKnowledgeBaseDocuments service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListKnowledgeBaseDocuments">REST API Reference for ListKnowledgeBaseDocuments Operation</seealso>
+        public virtual ListKnowledgeBaseDocumentsResponse ListKnowledgeBaseDocuments(ListKnowledgeBaseDocumentsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListKnowledgeBaseDocumentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListKnowledgeBaseDocumentsResponseUnmarshaller.Instance;
+
+            return Invoke<ListKnowledgeBaseDocumentsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListKnowledgeBaseDocuments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListKnowledgeBaseDocuments operation on AmazonBedrockAgentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListKnowledgeBaseDocuments
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListKnowledgeBaseDocuments">REST API Reference for ListKnowledgeBaseDocuments Operation</seealso>
+        public virtual IAsyncResult BeginListKnowledgeBaseDocuments(ListKnowledgeBaseDocumentsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListKnowledgeBaseDocumentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListKnowledgeBaseDocumentsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListKnowledgeBaseDocuments operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListKnowledgeBaseDocuments.</param>
+        /// 
+        /// <returns>Returns a  ListKnowledgeBaseDocumentsResult from BedrockAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListKnowledgeBaseDocuments">REST API Reference for ListKnowledgeBaseDocuments Operation</seealso>
+        public virtual ListKnowledgeBaseDocumentsResponse EndListKnowledgeBaseDocuments(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListKnowledgeBaseDocumentsResponse>(asyncResult);
         }
 
         #endregion
