@@ -7093,9 +7093,9 @@ namespace Amazon.RDS
         /// </para>
         ///  <note> 
         /// <para>
-        /// This operation applies only to Aurora PostgreSQL Serverless v2 and provisioned DB
-        /// clusters. To disable the HTTP endpoint for Aurora Serverless v1 DB clusters, use the
-        /// <c>EnableHttpEndpoint</c> parameter of the <c>ModifyDBCluster</c> operation.
+        /// This operation applies only to Aurora Serverless v2 and provisioned DB clusters. To
+        /// disable the HTTP endpoint for Aurora Serverless v1 DB clusters, use the <c>EnableHttpEndpoint</c>
+        /// parameter of the <c>ModifyDBCluster</c> operation.
         /// </para>
         ///  </note>
         /// </summary>
@@ -7124,9 +7124,9 @@ namespace Amazon.RDS
         /// </para>
         ///  <note> 
         /// <para>
-        /// This operation applies only to Aurora PostgreSQL Serverless v2 and provisioned DB
-        /// clusters. To disable the HTTP endpoint for Aurora Serverless v1 DB clusters, use the
-        /// <c>EnableHttpEndpoint</c> parameter of the <c>ModifyDBCluster</c> operation.
+        /// This operation applies only to Aurora Serverless v2 and provisioned DB clusters. To
+        /// disable the HTTP endpoint for Aurora Serverless v1 DB clusters, use the <c>EnableHttpEndpoint</c>
+        /// parameter of the <c>ModifyDBCluster</c> operation.
         /// </para>
         ///  </note>
         /// </summary>
@@ -7225,9 +7225,9 @@ namespace Amazon.RDS
         /// </para>
         ///  <note> 
         /// <para>
-        /// This operation applies only to Aurora PostgreSQL Serverless v2 and provisioned DB
-        /// clusters. To enable the HTTP endpoint for Aurora Serverless v1 DB clusters, use the
-        /// <c>EnableHttpEndpoint</c> parameter of the <c>ModifyDBCluster</c> operation.
+        /// This operation applies only to Aurora Serverless v2 and provisioned DB clusters. To
+        /// enable the HTTP endpoint for Aurora Serverless v1 DB clusters, use the <c>EnableHttpEndpoint</c>
+        /// parameter of the <c>ModifyDBCluster</c> operation.
         /// </para>
         ///  </note>
         /// </summary>
@@ -7262,9 +7262,9 @@ namespace Amazon.RDS
         /// </para>
         ///  <note> 
         /// <para>
-        /// This operation applies only to Aurora PostgreSQL Serverless v2 and provisioned DB
-        /// clusters. To enable the HTTP endpoint for Aurora Serverless v1 DB clusters, use the
-        /// <c>EnableHttpEndpoint</c> parameter of the <c>ModifyDBCluster</c> operation.
+        /// This operation applies only to Aurora Serverless v2 and provisioned DB clusters. To
+        /// enable the HTTP endpoint for Aurora Serverless v1 DB clusters, use the <c>EnableHttpEndpoint</c>
+        /// parameter of the <c>ModifyDBCluster</c> operation.
         /// </para>
         ///  </note>
         /// </summary>

@@ -83,6 +83,7 @@ namespace Amazon.RDS.Model
         private bool? _copyTagsToSnapshot;
         private bool? _crossAccountClone;
         private List<string> _customEndpoints = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private DatabaseInsightsMode _databaseInsightsMode;
         private string _databaseName;
         private string _dbClusterArn;
         private string _dbClusterIdentifier;
@@ -562,6 +563,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetCustomEndpoints()
         {
             return this._customEndpoints != null && (this._customEndpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatabaseInsightsMode. 
+        /// <para>
+        /// The mode of Database Insights that is enabled for the cluster.
+        /// </para>
+        /// </summary>
+        public DatabaseInsightsMode DatabaseInsightsMode
+        {
+            get { return this._databaseInsightsMode; }
+            set { this._databaseInsightsMode = value; }
+        }
+
+        // Check to see if DatabaseInsightsMode property is set
+        internal bool IsSetDatabaseInsightsMode()
+        {
+            return this._databaseInsightsMode != null;
         }
 
         /// <summary>

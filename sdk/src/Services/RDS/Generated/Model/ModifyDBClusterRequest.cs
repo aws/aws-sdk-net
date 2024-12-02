@@ -59,6 +59,7 @@ namespace Amazon.RDS.Model
         private string _caCertificateIdentifier;
         private CloudwatchLogsExportConfiguration _cloudwatchLogsExportConfiguration;
         private bool? _copyTagsToSnapshot;
+        private DatabaseInsightsMode _databaseInsightsMode;
         private string _dbClusterIdentifier;
         private string _dbClusterInstanceClass;
         private string _dbClusterParameterGroupName;
@@ -435,6 +436,24 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DatabaseInsightsMode. 
+        /// <para>
+        /// Specifies the mode of Database Insights to enable for the cluster.
+        /// </para>
+        /// </summary>
+        public DatabaseInsightsMode DatabaseInsightsMode
+        {
+            get { return this._databaseInsightsMode; }
+            set { this._databaseInsightsMode = value; }
+        }
+
+        // Check to see if DatabaseInsightsMode property is set
+        internal bool IsSetDatabaseInsightsMode()
+        {
+            return this._databaseInsightsMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
         /// The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.
@@ -693,8 +712,8 @@ namespace Amazon.RDS.Model
         ///  <note> 
         /// <para>
         /// This parameter applies only to Aurora Serverless v1 DB clusters. To enable or disable
-        /// the HTTP endpoint for an Aurora PostgreSQL Serverless v2 or provisioned DB cluster,
-        /// use the <c>EnableHttpEndpoint</c> and <c>DisableHttpEndpoint</c> operations.
+        /// the HTTP endpoint for an Aurora Serverless v2 or provisioned DB cluster, use the <c>EnableHttpEndpoint</c>
+        /// and <c>DisableHttpEndpoint</c> operations.
         /// </para>
         ///  </note> 
         /// <para>

@@ -3595,6 +3595,7 @@
         "AutoMinorVersionUpgrade":{"shape":"BooleanOptional"},
         "MonitoringInterval":{"shape":"IntegerOptional"},
         "MonitoringRoleArn":{"shape":"String"},
+        "DatabaseInsightsMode":{"shape":"DatabaseInsightsMode"},
         "EnablePerformanceInsights":{"shape":"BooleanOptional"},
         "PerformanceInsightsKMSKeyId":{"shape":"String"},
         "PerformanceInsightsRetentionPeriod":{"shape":"IntegerOptional"},
@@ -3706,6 +3707,7 @@
         "PromotionTier":{"shape":"IntegerOptional"},
         "Timezone":{"shape":"String"},
         "EnableIAMDatabaseAuthentication":{"shape":"BooleanOptional"},
+        "DatabaseInsightsMode":{"shape":"DatabaseInsightsMode"},
         "EnablePerformanceInsights":{"shape":"BooleanOptional"},
         "PerformanceInsightsKMSKeyId":{"shape":"String"},
         "PerformanceInsightsRetentionPeriod":{"shape":"IntegerOptional"},
@@ -3752,6 +3754,7 @@
         "KmsKeyId":{"shape":"String"},
         "PreSignedUrl":{"shape":"String"},
         "EnableIAMDatabaseAuthentication":{"shape":"BooleanOptional"},
+        "DatabaseInsightsMode":{"shape":"DatabaseInsightsMode"},
         "EnablePerformanceInsights":{"shape":"BooleanOptional"},
         "PerformanceInsightsKMSKeyId":{"shape":"String"},
         "PerformanceInsightsRetentionPeriod":{"shape":"IntegerOptional"},
@@ -4185,6 +4188,7 @@
         "AutoMinorVersionUpgrade":{"shape":"Boolean"},
         "MonitoringInterval":{"shape":"IntegerOptional"},
         "MonitoringRoleArn":{"shape":"String"},
+        "DatabaseInsightsMode":{"shape":"DatabaseInsightsMode"},
         "PerformanceInsightsEnabled":{"shape":"BooleanOptional"},
         "PerformanceInsightsKMSKeyId":{"shape":"String"},
         "PerformanceInsightsRetentionPeriod":{"shape":"IntegerOptional"},
@@ -4773,6 +4777,7 @@
         "DBInstanceArn":{"shape":"String"},
         "Timezone":{"shape":"String"},
         "IAMDatabaseAuthenticationEnabled":{"shape":"Boolean"},
+        "DatabaseInsightsMode":{"shape":"DatabaseInsightsMode"},
         "PerformanceInsightsEnabled":{"shape":"BooleanOptional"},
         "PerformanceInsightsKMSKeyId":{"shape":"String"},
         "PerformanceInsightsRetentionPeriod":{"shape":"IntegerOptional"},
@@ -5759,6 +5764,13 @@
       "max":2048,
       "min":1,
       "pattern":"^arn:[A-Za-z][0-9A-Za-z-:._]*"
+    },
+    "DatabaseInsightsMode":{
+      "type":"string",
+      "enum":[
+        "standard",
+        "advanced"
+      ]
     },
     "DeleteBlueGreenDeploymentRequest":{
       "type":"structure",
@@ -7880,6 +7892,7 @@
         "AutoMinorVersionUpgrade":{"shape":"BooleanOptional"},
         "MonitoringInterval":{"shape":"IntegerOptional"},
         "MonitoringRoleArn":{"shape":"String"},
+        "DatabaseInsightsMode":{"shape":"DatabaseInsightsMode"},
         "EnablePerformanceInsights":{"shape":"BooleanOptional"},
         "PerformanceInsightsKMSKeyId":{"shape":"String"},
         "PerformanceInsightsRetentionPeriod":{"shape":"IntegerOptional"},
@@ -7974,6 +7987,7 @@
         "DisableDomain":{"shape":"BooleanOptional"},
         "PromotionTier":{"shape":"IntegerOptional"},
         "EnableIAMDatabaseAuthentication":{"shape":"BooleanOptional"},
+        "DatabaseInsightsMode":{"shape":"DatabaseInsightsMode"},
         "EnablePerformanceInsights":{"shape":"BooleanOptional"},
         "PerformanceInsightsKMSKeyId":{"shape":"String"},
         "PerformanceInsightsRetentionPeriod":{"shape":"IntegerOptional"},
@@ -9359,6 +9373,7 @@
         "S3BucketName":{"shape":"String"},
         "S3Prefix":{"shape":"String"},
         "S3IngestionRoleArn":{"shape":"String"},
+        "DatabaseInsightsMode":{"shape":"DatabaseInsightsMode"},
         "EnablePerformanceInsights":{"shape":"BooleanOptional"},
         "PerformanceInsightsKMSKeyId":{"shape":"String"},
         "PerformanceInsightsRetentionPeriod":{"shape":"IntegerOptional"},
