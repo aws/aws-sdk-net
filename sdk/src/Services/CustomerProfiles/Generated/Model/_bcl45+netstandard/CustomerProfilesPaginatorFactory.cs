@@ -53,6 +53,14 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
+        /// Paginator for ListEventTriggers operation
+        ///</summary>
+        public IListEventTriggersPaginator ListEventTriggers(ListEventTriggersRequest request) 
+        {
+            return new ListEventTriggersPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListObjectTypeAttributes operation
         ///</summary>
         public IListObjectTypeAttributesPaginator ListObjectTypeAttributes(ListObjectTypeAttributesRequest request) 

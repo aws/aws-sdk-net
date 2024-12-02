@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ListIntegrationItem Object
+    /// Response Unmarshaller for EventTriggerSummaryItem Object
     /// </summary>  
-    public class ListIntegrationItemUnmarshaller : IUnmarshaller<ListIntegrationItem, XmlUnmarshallerContext>, IUnmarshaller<ListIntegrationItem, JsonUnmarshallerContext>
+    public class EventTriggerSummaryItemUnmarshaller : IUnmarshaller<EventTriggerSummaryItem, XmlUnmarshallerContext>, IUnmarshaller<EventTriggerSummaryItem, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ListIntegrationItem IUnmarshaller<ListIntegrationItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EventTriggerSummaryItem IUnmarshaller<EventTriggerSummaryItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ListIntegrationItem Unmarshall(JsonUnmarshallerContext context)
+        public EventTriggerSummaryItem Unmarshall(JsonUnmarshallerContext context)
         {
-            ListIntegrationItem unmarshalledObject = new ListIntegrationItem();
+            EventTriggerSummaryItem unmarshalledObject = new EventTriggerSummaryItem();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -72,22 +72,16 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DomainName", targetDepth))
+                if (context.TestExpression("Description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DomainName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EventTriggerNames", targetDepth))
+                if (context.TestExpression("EventTriggerName", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.EventTriggerNames = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("IsUnstructured", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.IsUnstructured = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EventTriggerName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastUpdatedAt", targetDepth))
@@ -102,34 +96,10 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     unmarshalledObject.ObjectTypeName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ObjectTypeNames", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.ObjectTypeNames = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RoleArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("Tags", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Uri", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Uri = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("WorkflowId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WorkflowId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -137,12 +107,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         }
 
 
-        private static ListIntegrationItemUnmarshaller _instance = new ListIntegrationItemUnmarshaller();        
+        private static EventTriggerSummaryItemUnmarshaller _instance = new EventTriggerSummaryItemUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListIntegrationItemUnmarshaller Instance
+        public static EventTriggerSummaryItemUnmarshaller Instance
         {
             get
             {

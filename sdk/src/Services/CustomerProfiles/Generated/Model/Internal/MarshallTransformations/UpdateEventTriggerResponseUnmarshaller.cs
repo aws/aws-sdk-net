@@ -35,9 +35,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PutIntegration operation
+    /// Response Unmarshaller for UpdateEventTrigger operation
     /// </summary>  
-    public class PutIntegrationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdateEventTriggerResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,7 +46,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            PutIntegrationResponse response = new PutIntegrationResponse();
+            UpdateEventTriggerResponse response = new UpdateEventTriggerResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -58,22 +58,28 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     response.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DomainName", targetDepth))
+                if (context.TestExpression("Description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.DomainName = unmarshaller.Unmarshall(context);
+                    response.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EventTriggerNames", targetDepth))
+                if (context.TestExpression("EventTriggerConditions", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.EventTriggerNames = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<EventTriggerCondition, EventTriggerConditionUnmarshaller>(EventTriggerConditionUnmarshaller.Instance);
+                    response.EventTriggerConditions = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("IsUnstructured", targetDepth))
+                if (context.TestExpression("EventTriggerLimits", targetDepth))
                 {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.IsUnstructured = unmarshaller.Unmarshall(context);
+                    var unmarshaller = EventTriggerLimitsUnmarshaller.Instance;
+                    response.EventTriggerLimits = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EventTriggerName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.EventTriggerName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LastUpdatedAt", targetDepth))
@@ -88,34 +94,16 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     response.ObjectTypeName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("ObjectTypeNames", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.ObjectTypeNames = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RoleArn", targetDepth))
+                if (context.TestExpression("SegmentFilter", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.RoleArn = unmarshaller.Unmarshall(context);
+                    response.SegmentFilter = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Tags", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.Tags = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Uri", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Uri = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("WorkflowId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.WorkflowId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -165,9 +153,9 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             return new AmazonCustomerProfilesException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static PutIntegrationResponseUnmarshaller _instance = new PutIntegrationResponseUnmarshaller();        
+        private static UpdateEventTriggerResponseUnmarshaller _instance = new UpdateEventTriggerResponseUnmarshaller();        
 
-        internal static PutIntegrationResponseUnmarshaller GetInstance()
+        internal static UpdateEventTriggerResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -175,7 +163,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PutIntegrationResponseUnmarshaller Instance
+        public static UpdateEventTriggerResponseUnmarshaller Instance
         {
             get
             {

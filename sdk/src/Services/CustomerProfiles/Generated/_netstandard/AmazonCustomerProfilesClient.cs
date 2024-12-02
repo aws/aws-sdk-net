@@ -635,6 +635,62 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  CreateEventTrigger
+
+        internal virtual CreateEventTriggerResponse CreateEventTrigger(CreateEventTriggerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEventTriggerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEventTriggerResponseUnmarshaller.Instance;
+
+            return Invoke<CreateEventTriggerResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an event trigger, which specifies the rules when to perform action based on
+        /// customer's ingested data.
+        /// 
+        ///  
+        /// <para>
+        /// Each event stream can be associated with only one integration in the same region and
+        /// AWS account as the event stream. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEventTrigger service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateEventTrigger service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateEventTrigger">REST API Reference for CreateEventTrigger Operation</seealso>
+        public virtual Task<CreateEventTriggerResponse> CreateEventTriggerAsync(CreateEventTriggerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEventTriggerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEventTriggerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateEventTriggerResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateIntegrationWorkflow
 
         internal virtual CreateIntegrationWorkflowResponse CreateIntegrationWorkflow(CreateIntegrationWorkflowRequest request)
@@ -1035,6 +1091,61 @@ namespace Amazon.CustomerProfiles
             options.ResponseUnmarshaller = DeleteEventStreamResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteEventStreamResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteEventTrigger
+
+        internal virtual DeleteEventTriggerResponse DeleteEventTrigger(DeleteEventTriggerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEventTriggerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEventTriggerResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEventTriggerResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Disable and deletes the Event Trigger.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You cannot delete an Event Trigger with an active Integration associated.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEventTrigger service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteEventTrigger service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteEventTrigger">REST API Reference for DeleteEventTrigger Operation</seealso>
+        public virtual Task<DeleteEventTriggerResponse> DeleteEventTriggerAsync(DeleteEventTriggerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEventTriggerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEventTriggerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteEventTriggerResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1695,6 +1806,55 @@ namespace Amazon.CustomerProfiles
             options.ResponseUnmarshaller = GetEventStreamResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetEventStreamResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetEventTrigger
+
+        internal virtual GetEventTriggerResponse GetEventTrigger(GetEventTriggerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEventTriggerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEventTriggerResponseUnmarshaller.Instance;
+
+            return Invoke<GetEventTriggerResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get a specific Event Trigger from the domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEventTrigger service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetEventTrigger service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetEventTrigger">REST API Reference for GetEventTrigger Operation</seealso>
+        public virtual Task<GetEventTriggerResponse> GetEventTriggerAsync(GetEventTriggerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEventTriggerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEventTriggerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetEventTriggerResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2610,6 +2770,55 @@ namespace Amazon.CustomerProfiles
             options.ResponseUnmarshaller = ListEventStreamsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListEventStreamsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListEventTriggers
+
+        internal virtual ListEventTriggersResponse ListEventTriggers(ListEventTriggersRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEventTriggersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEventTriggersResponseUnmarshaller.Instance;
+
+            return Invoke<ListEventTriggersResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List all Event Triggers under a domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEventTriggers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListEventTriggers service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListEventTriggers">REST API Reference for ListEventTriggers Operation</seealso>
+        public virtual Task<ListEventTriggersResponse> ListEventTriggersAsync(ListEventTriggersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEventTriggersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEventTriggersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListEventTriggersResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3709,6 +3918,55 @@ namespace Amazon.CustomerProfiles
             options.ResponseUnmarshaller = UpdateDomainResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateDomainResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateEventTrigger
+
+        internal virtual UpdateEventTriggerResponse UpdateEventTrigger(UpdateEventTriggerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEventTriggerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEventTriggerResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateEventTriggerResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Update the properties of an Event Trigger.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEventTrigger service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateEventTrigger service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateEventTrigger">REST API Reference for UpdateEventTrigger Operation</seealso>
+        public virtual Task<UpdateEventTriggerResponse> UpdateEventTriggerAsync(UpdateEventTriggerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEventTriggerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEventTriggerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateEventTriggerResponse>(request, options, cancellationToken);
         }
 
         #endregion

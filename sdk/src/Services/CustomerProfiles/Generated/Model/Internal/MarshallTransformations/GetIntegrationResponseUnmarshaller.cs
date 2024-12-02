@@ -64,6 +64,12 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     response.DomainName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EventTriggerNames", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.EventTriggerNames = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("IsUnstructured", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

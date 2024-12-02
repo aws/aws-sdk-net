@@ -177,6 +177,108 @@ namespace Amazon.CustomerProfiles
 
 
     /// <summary>
+    /// Constants used for properties of type ComparisonOperator.
+    /// </summary>
+    public class ComparisonOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AFTER for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator AFTER = new ComparisonOperator("AFTER");
+        /// <summary>
+        /// Constant BEFORE for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator BEFORE = new ComparisonOperator("BEFORE");
+        /// <summary>
+        /// Constant BEGINS_WITH for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator BEGINS_WITH = new ComparisonOperator("BEGINS_WITH");
+        /// <summary>
+        /// Constant BETWEEN for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator BETWEEN = new ComparisonOperator("BETWEEN");
+        /// <summary>
+        /// Constant CONTAINS for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator CONTAINS = new ComparisonOperator("CONTAINS");
+        /// <summary>
+        /// Constant ENDS_WITH for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator ENDS_WITH = new ComparisonOperator("ENDS_WITH");
+        /// <summary>
+        /// Constant EQUAL for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator EQUAL = new ComparisonOperator("EQUAL");
+        /// <summary>
+        /// Constant EXCLUSIVE for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator EXCLUSIVE = new ComparisonOperator("EXCLUSIVE");
+        /// <summary>
+        /// Constant GREATER_THAN for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator GREATER_THAN = new ComparisonOperator("GREATER_THAN");
+        /// <summary>
+        /// Constant GREATER_THAN_OR_EQUAL for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator GREATER_THAN_OR_EQUAL = new ComparisonOperator("GREATER_THAN_OR_EQUAL");
+        /// <summary>
+        /// Constant INCLUSIVE for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator INCLUSIVE = new ComparisonOperator("INCLUSIVE");
+        /// <summary>
+        /// Constant LESS_THAN for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator LESS_THAN = new ComparisonOperator("LESS_THAN");
+        /// <summary>
+        /// Constant LESS_THAN_OR_EQUAL for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator LESS_THAN_OR_EQUAL = new ComparisonOperator("LESS_THAN_OR_EQUAL");
+        /// <summary>
+        /// Constant NOT_BETWEEN for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator NOT_BETWEEN = new ComparisonOperator("NOT_BETWEEN");
+        /// <summary>
+        /// Constant ON for ComparisonOperator
+        /// </summary>
+        public static readonly ComparisonOperator ON = new ComparisonOperator("ON");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ComparisonOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ComparisonOperator FindValue(string value)
+        {
+            return FindValue<ComparisonOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ComparisonOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConflictResolvingModel.
     /// </summary>
     public class ConflictResolvingModel : ConstantClass
@@ -540,6 +642,60 @@ namespace Amazon.CustomerProfiles
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EventStreamState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EventTriggerLogicalOperator.
+    /// </summary>
+    public class EventTriggerLogicalOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for EventTriggerLogicalOperator
+        /// </summary>
+        public static readonly EventTriggerLogicalOperator ALL = new EventTriggerLogicalOperator("ALL");
+        /// <summary>
+        /// Constant ANY for EventTriggerLogicalOperator
+        /// </summary>
+        public static readonly EventTriggerLogicalOperator ANY = new EventTriggerLogicalOperator("ANY");
+        /// <summary>
+        /// Constant NONE for EventTriggerLogicalOperator
+        /// </summary>
+        public static readonly EventTriggerLogicalOperator NONE = new EventTriggerLogicalOperator("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EventTriggerLogicalOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventTriggerLogicalOperator FindValue(string value)
+        {
+            return FindValue<EventTriggerLogicalOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventTriggerLogicalOperator(string value)
         {
             return FindValue(value);
         }
@@ -1422,6 +1578,64 @@ namespace Amazon.CustomerProfiles
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PartyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PeriodUnit.
+    /// </summary>
+    public class PeriodUnit : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DAYS for PeriodUnit
+        /// </summary>
+        public static readonly PeriodUnit DAYS = new PeriodUnit("DAYS");
+        /// <summary>
+        /// Constant HOURS for PeriodUnit
+        /// </summary>
+        public static readonly PeriodUnit HOURS = new PeriodUnit("HOURS");
+        /// <summary>
+        /// Constant MONTHS for PeriodUnit
+        /// </summary>
+        public static readonly PeriodUnit MONTHS = new PeriodUnit("MONTHS");
+        /// <summary>
+        /// Constant WEEKS for PeriodUnit
+        /// </summary>
+        public static readonly PeriodUnit WEEKS = new PeriodUnit("WEEKS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PeriodUnit(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PeriodUnit FindValue(string value)
+        {
+            return FindValue<PeriodUnit>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PeriodUnit(string value)
         {
             return FindValue(value);
         }

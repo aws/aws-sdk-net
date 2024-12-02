@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// PutIntegration Request Marshaller
+    /// UpdateEventTrigger Request Marshaller
     /// </summary>       
-    public class PutIntegrationRequestMarshaller : IMarshaller<IRequest, PutIntegrationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateEventTriggerRequestMarshaller : IMarshaller<IRequest, UpdateEventTriggerRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((PutIntegrationRequest)input);
+            return this.Marshall((UpdateEventTriggerRequest)input);
         }
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(PutIntegrationRequest publicRequest)
+        public IRequest Marshall(UpdateEventTriggerRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CustomerProfiles");
             request.Headers["Content-Type"] = "application/json";
@@ -63,31 +63,45 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetDomainName())
                 throw new AmazonCustomerProfilesException("Request object does not have required field DomainName set");
             request.AddPathResource("{DomainName}", StringUtils.FromString(publicRequest.DomainName));
-            request.ResourcePath = "/domains/{DomainName}/integrations";
+            if (!publicRequest.IsSetEventTriggerName())
+                throw new AmazonCustomerProfilesException("Request object does not have required field EventTriggerName set");
+            request.AddPathResource("{EventTriggerName}", StringUtils.FromString(publicRequest.EventTriggerName));
+            request.ResourcePath = "/domains/{DomainName}/event-triggers/{EventTriggerName}";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEventTriggerNames())
+                if(publicRequest.IsSetDescription())
                 {
-                    context.Writer.WritePropertyName("EventTriggerNames");
+                    context.Writer.WritePropertyName("Description");
+                    context.Writer.Write(publicRequest.Description);
+                }
+
+                if(publicRequest.IsSetEventTriggerConditions())
+                {
+                    context.Writer.WritePropertyName("EventTriggerConditions");
                     context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEventTriggerNamesListValue in publicRequest.EventTriggerNames)
+                    foreach(var publicRequestEventTriggerConditionsListValue in publicRequest.EventTriggerConditions)
                     {
-                            context.Writer.Write(publicRequestEventTriggerNamesListValue);
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EventTriggerConditionMarshaller.Instance;
+                        marshaller.Marshall(publicRequestEventTriggerConditionsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
                 }
 
-                if(publicRequest.IsSetFlowDefinition())
+                if(publicRequest.IsSetEventTriggerLimits())
                 {
-                    context.Writer.WritePropertyName("FlowDefinition");
+                    context.Writer.WritePropertyName("EventTriggerLimits");
                     context.Writer.WriteObjectStart();
 
-                    var marshaller = FlowDefinitionMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.FlowDefinition, context);
+                    var marshaller = EventTriggerLimitsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EventTriggerLimits, context);
 
                     context.Writer.WriteObjectEnd();
                 }
@@ -98,44 +112,10 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ObjectTypeName);
                 }
 
-                if(publicRequest.IsSetObjectTypeNames())
+                if(publicRequest.IsSetSegmentFilter())
                 {
-                    context.Writer.WritePropertyName("ObjectTypeNames");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestObjectTypeNamesKvp in publicRequest.ObjectTypeNames)
-                    {
-                        context.Writer.WritePropertyName(publicRequestObjectTypeNamesKvp.Key);
-                        var publicRequestObjectTypeNamesValue = publicRequestObjectTypeNamesKvp.Value;
-
-                            context.Writer.Write(publicRequestObjectTypeNamesValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetRoleArn())
-                {
-                    context.Writer.WritePropertyName("RoleArn");
-                    context.Writer.Write(publicRequest.RoleArn);
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("Tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                    {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetUri())
-                {
-                    context.Writer.WritePropertyName("Uri");
-                    context.Writer.Write(publicRequest.Uri);
+                    context.Writer.WritePropertyName("SegmentFilter");
+                    context.Writer.Write(publicRequest.SegmentFilter);
                 }
 
                 writer.WriteObjectEnd();
@@ -146,9 +126,9 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static PutIntegrationRequestMarshaller _instance = new PutIntegrationRequestMarshaller();        
+        private static UpdateEventTriggerRequestMarshaller _instance = new UpdateEventTriggerRequestMarshaller();        
 
-        internal static PutIntegrationRequestMarshaller GetInstance()
+        internal static UpdateEventTriggerRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -156,7 +136,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PutIntegrationRequestMarshaller Instance
+        public static UpdateEventTriggerRequestMarshaller Instance
         {
             get
             {

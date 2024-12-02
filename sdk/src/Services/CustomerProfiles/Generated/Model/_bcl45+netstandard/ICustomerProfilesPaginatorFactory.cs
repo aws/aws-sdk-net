@@ -37,6 +37,11 @@ namespace Amazon.CustomerProfiles.Model
         IListEventStreamsPaginator ListEventStreams(ListEventStreamsRequest request);
 
         /// <summary>
+        /// Paginator for ListEventTriggers operation
+        ///</summary>
+        IListEventTriggersPaginator ListEventTriggers(ListEventTriggersRequest request);
+
+        /// <summary>
         /// Paginator for ListObjectTypeAttributes operation
         ///</summary>
         IListObjectTypeAttributesPaginator ListObjectTypeAttributes(ListObjectTypeAttributesRequest request);

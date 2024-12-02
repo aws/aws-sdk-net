@@ -36,6 +36,7 @@ namespace Amazon.CustomerProfiles.Model
     {
         private DateTime? _createdAt;
         private string _domainName;
+        private List<string> _eventTriggerNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _isUnstructured;
         private DateTime? _lastUpdatedAt;
         private string _objectTypeName;
@@ -81,6 +82,26 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetDomainName()
         {
             return this._domainName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventTriggerNames. 
+        /// <para>
+        /// A list of unique names for active event triggers associated with the integration.
+        /// This list would be empty if no Event Trigger is associated with the integration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> EventTriggerNames
+        {
+            get { return this._eventTriggerNames; }
+            set { this._eventTriggerNames = value; }
+        }
+
+        // Check to see if EventTriggerNames property is set
+        internal bool IsSetEventTriggerNames()
+        {
+            return this._eventTriggerNames != null && (this._eventTriggerNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
