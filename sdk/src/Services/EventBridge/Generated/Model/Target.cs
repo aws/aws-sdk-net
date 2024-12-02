@@ -317,8 +317,7 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property RetryPolicy. 
         /// <para>
-        /// The <c>RetryPolicy</c> object that contains the retry policy configuration to use
-        /// for the dead-letter queue.
+        /// The retry policy configuration to use for the dead-letter queue.
         /// </para>
         /// </summary>
         public RetryPolicy RetryPolicy

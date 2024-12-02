@@ -30,30 +30,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EventBridge.Model
 {
     /// <summary>
-    /// The client response parameters for the connection when OAuth is specified as the authorization
-    /// type.
+    /// If the connection uses a private OAuth endpoint, the parameters for EventBridge to
+    /// use when authenticating against the endpoint.
+    /// 
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection-auth.html">Authorization
+    /// methods for connections</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.
+    /// </para>
     /// </summary>
-    public partial class ConnectionOAuthClientResponseParameters
+    public partial class DescribeConnectionConnectivityParameters
     {
-        private string _clientID;
+        private DescribeConnectionResourceParameters _resourceParameters;
 
         /// <summary>
-        /// Gets and sets the property ClientID. 
+        /// Gets and sets the property ResourceParameters. 
         /// <para>
-        /// The client ID associated with the response to the connection request.
+        /// The parameters for EventBridge to use when invoking the resource endpoint.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=512)]
-        public string ClientID
+        [AWSProperty(Required=true)]
+        public DescribeConnectionResourceParameters ResourceParameters
         {
-            get { return this._clientID; }
-            set { this._clientID = value; }
+            get { return this._resourceParameters; }
+            set { this._resourceParameters = value; }
         }
 
-        // Check to see if ClientID property is set
-        internal bool IsSetClientID()
+        // Check to see if ResourceParameters property is set
+        internal bool IsSetResourceParameters()
         {
-            return this._clientID != null;
+            return this._resourceParameters != null;
         }
 
     }

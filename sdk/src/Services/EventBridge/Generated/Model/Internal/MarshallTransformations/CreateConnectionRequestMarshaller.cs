@@ -92,6 +92,17 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetInvocationConnectivityParameters())
+                {
+                    context.Writer.WritePropertyName("InvocationConnectivityParameters");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ConnectivityResourceParametersMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.InvocationConnectivityParameters, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("Name");

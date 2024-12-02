@@ -30,12 +30,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EventBridge.Model
 {
     /// <summary>
-    /// Contains the authorization parameters to use for the connection.
+    /// Tthe authorization parameters to use for the connection.
     /// </summary>
     public partial class ConnectionAuthResponseParameters
     {
         private ConnectionApiKeyAuthResponseParameters _apiKeyAuthParameters;
         private ConnectionBasicAuthResponseParameters _basicAuthParameters;
+        private DescribeConnectionConnectivityParameters _connectivityParameters;
         private ConnectionHttpParameters _invocationHttpParameters;
         private ConnectionOAuthResponseParameters _oAuthParameters;
 
@@ -73,6 +74,30 @@ namespace Amazon.EventBridge.Model
         internal bool IsSetBasicAuthParameters()
         {
             return this._basicAuthParameters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectivityParameters. 
+        /// <para>
+        /// For private OAuth authentication endpoints. The parameters EventBridge uses to authenticate
+        /// against the endpoint.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-target-connection-auth.html">Authorization
+        /// methods for connections</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.
+        /// </para>
+        /// </summary>
+        public DescribeConnectionConnectivityParameters ConnectivityParameters
+        {
+            get { return this._connectivityParameters; }
+            set { this._connectivityParameters = value; }
+        }
+
+        // Check to see if ConnectivityParameters property is set
+        internal bool IsSetConnectivityParameters()
+        {
+            return this._connectivityParameters != null;
         }
 
         /// <summary>

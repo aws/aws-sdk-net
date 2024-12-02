@@ -70,6 +70,17 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetConnectivityParameters())
+            {
+                context.Writer.WritePropertyName("ConnectivityParameters");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ConnectivityResourceParametersMarshaller.Instance;
+                marshaller.Marshall(requestObject.ConnectivityParameters, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetInvocationHttpParameters())
             {
                 context.Writer.WritePropertyName("InvocationHttpParameters");

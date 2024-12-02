@@ -30,30 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EventBridge.Model
 {
     /// <summary>
-    /// The client response parameters for the connection when OAuth is specified as the authorization
-    /// type.
+    /// The Amazon Resource Name (ARN) of the resource configuration for the resource endpoint.
     /// </summary>
-    public partial class ConnectionOAuthClientResponseParameters
+    public partial class ConnectivityResourceConfigurationArn
     {
-        private string _clientID;
+        private string _resourceConfigurationArn;
 
         /// <summary>
-        /// Gets and sets the property ClientID. 
+        /// Gets and sets the property ResourceConfigurationArn. 
         /// <para>
-        /// The client ID associated with the response to the connection request.
+        /// The Amazon Resource Name (ARN) of the resource configuration for the resource endpoint.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=512)]
-        public string ClientID
+        [AWSProperty(Required=true, Min=0, Max=2048)]
+        public string ResourceConfigurationArn
         {
-            get { return this._clientID; }
-            set { this._clientID = value; }
+            get { return this._resourceConfigurationArn; }
+            set { this._resourceConfigurationArn = value; }
         }
 
-        // Check to see if ClientID property is set
-        internal bool IsSetClientID()
+        // Check to see if ResourceConfigurationArn property is set
+        internal bool IsSetResourceConfigurationArn()
         {
-            return this._clientID != null;
+            return this._resourceConfigurationArn != null;
         }
 
     }
