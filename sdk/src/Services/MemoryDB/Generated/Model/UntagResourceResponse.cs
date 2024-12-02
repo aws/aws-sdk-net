@@ -39,7 +39,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property TagList. 
         /// <para>
-        /// The list of tags removed
+        /// The list of tags removed.
         /// </para>
         /// </summary>
         [AWSProperty(Max=200)]

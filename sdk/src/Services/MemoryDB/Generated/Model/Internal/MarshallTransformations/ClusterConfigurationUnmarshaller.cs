@@ -90,6 +90,18 @@ namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
                     unmarshalledObject.MaintenanceWindow = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MultiRegionClusterName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MultiRegionClusterName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("MultiRegionParameterGroupName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MultiRegionParameterGroupName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

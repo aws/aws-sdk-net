@@ -39,7 +39,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property Cluster. 
         /// <para>
-        /// The cluster being failed over
+        /// The cluster being failed over.
         /// </para>
         /// </summary>
         public Cluster Cluster

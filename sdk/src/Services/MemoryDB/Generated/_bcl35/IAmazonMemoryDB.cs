@@ -30,12 +30,12 @@ namespace Amazon.MemoryDB
     /// <summary>
     /// <para>Interface for accessing MemoryDB</para>
     ///
-    /// MemoryDB for Redis is a fully managed, Redis-compatible, in-memory database that delivers
+    /// MemoryDB is a fully managed, Redis OSS-compatible, in-memory database that delivers
     /// ultra-fast performance and Multi-AZ durability for modern applications built using
     /// microservices architectures. MemoryDB stores the entire database in-memory, enabling
-    /// low latency and high throughput data access. It is compatible with Redis, a popular
-    /// open source data store, enabling you to leverage Redis’ flexible and friendly data
-    /// structures, APIs, and commands.
+    /// low latency and high throughput data access. It is compatible with Redis OSS, a popular
+    /// open source data store, enabling you to leverage Redis OSS’ flexible and friendly
+    /// data structures, APIs, and commands.
     /// </summary>
     public partial interface IAmazonMemoryDB : IAmazonService, IDisposable
     {
@@ -252,6 +252,10 @@ namespace Amazon.MemoryDB
         /// <exception cref="Amazon.MemoryDB.Model.InvalidCredentialsException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.InvalidMultiRegionClusterStateException">
+        /// The requested operation cannot be performed on the multi-Region cluster in its current
+        /// state.
+        /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterCombinationException">
         /// 
         /// </exception>
@@ -260,6 +264,9 @@ namespace Amazon.MemoryDB
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidVPCNetworkStateException">
         /// 
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.MultiRegionClusterNotFoundException">
+        /// The specified multi-Region cluster does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.NodeQuotaForClusterExceededException">
         /// 
@@ -310,6 +317,64 @@ namespace Amazon.MemoryDB
         /// <returns>Returns a  CreateClusterResult from MemoryDB.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/CreateCluster">REST API Reference for CreateCluster Operation</seealso>
         CreateClusterResponse EndCreateCluster(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateMultiRegionCluster
+
+
+        /// <summary>
+        /// Creates a new multi-Region cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMultiRegionCluster service method.</param>
+        /// 
+        /// <returns>The response from the CreateMultiRegionCluster service method, as returned by MemoryDB.</returns>
+        /// <exception cref="Amazon.MemoryDB.Model.ClusterQuotaForCustomerExceededException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterCombinationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.MultiRegionClusterAlreadyExistsException">
+        /// A multi-Region cluster with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.MultiRegionParameterGroupNotFoundException">
+        /// The specified multi-Region parameter group does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.TagQuotaPerResourceExceededException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/CreateMultiRegionCluster">REST API Reference for CreateMultiRegionCluster Operation</seealso>
+        CreateMultiRegionClusterResponse CreateMultiRegionCluster(CreateMultiRegionClusterRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateMultiRegionCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateMultiRegionCluster operation on AmazonMemoryDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateMultiRegionCluster
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/CreateMultiRegionCluster">REST API Reference for CreateMultiRegionCluster Operation</seealso>
+        IAsyncResult BeginCreateMultiRegionCluster(CreateMultiRegionClusterRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateMultiRegionCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateMultiRegionCluster.</param>
+        /// 
+        /// <returns>Returns a  CreateMultiRegionClusterResult from MemoryDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/CreateMultiRegionCluster">REST API Reference for CreateMultiRegionCluster Operation</seealso>
+        CreateMultiRegionClusterResponse EndCreateMultiRegionCluster(IAsyncResult asyncResult);
 
         #endregion
         
@@ -621,7 +686,14 @@ namespace Amazon.MemoryDB
 
 
         /// <summary>
-        /// Deletes a cluster. It also deletes all associated nodes and node endpoints
+        /// Deletes a cluster. It also deletes all associated nodes and node endpoints.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  <c>CreateSnapshot</c> permission is required to create a final snapshot. Without
+        /// this permission, the API call will fail with an <c>Access Denied</c> exception.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCluster service method.</param>
         /// 
@@ -672,6 +744,56 @@ namespace Amazon.MemoryDB
         /// <returns>Returns a  DeleteClusterResult from MemoryDB.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         DeleteClusterResponse EndDeleteCluster(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteMultiRegionCluster
+
+
+        /// <summary>
+        /// Deletes an existing multi-Region cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMultiRegionCluster service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMultiRegionCluster service method, as returned by MemoryDB.</returns>
+        /// <exception cref="Amazon.MemoryDB.Model.InvalidMultiRegionClusterStateException">
+        /// The requested operation cannot be performed on the multi-Region cluster in its current
+        /// state.
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.MultiRegionClusterNotFoundException">
+        /// The specified multi-Region cluster does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DeleteMultiRegionCluster">REST API Reference for DeleteMultiRegionCluster Operation</seealso>
+        DeleteMultiRegionClusterResponse DeleteMultiRegionCluster(DeleteMultiRegionClusterRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteMultiRegionCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMultiRegionCluster operation on AmazonMemoryDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMultiRegionCluster
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DeleteMultiRegionCluster">REST API Reference for DeleteMultiRegionCluster Operation</seealso>
+        IAsyncResult BeginDeleteMultiRegionCluster(DeleteMultiRegionClusterRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteMultiRegionCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMultiRegionCluster.</param>
+        /// 
+        /// <returns>Returns a  DeleteMultiRegionClusterResult from MemoryDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DeleteMultiRegionCluster">REST API Reference for DeleteMultiRegionCluster Operation</seealso>
+        DeleteMultiRegionClusterResponse EndDeleteMultiRegionCluster(IAsyncResult asyncResult);
 
         #endregion
         
@@ -893,7 +1015,7 @@ namespace Amazon.MemoryDB
 
 
         /// <summary>
-        /// Returns a list of ACLs
+        /// Returns a list of ACLs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeACLs service method.</param>
         /// 
@@ -992,7 +1114,7 @@ namespace Amazon.MemoryDB
 
 
         /// <summary>
-        /// Returns a list of the available engine versions.
+        /// Returns a list of the available Redis OSS engine versions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEngineVersions service method.</param>
         /// 
@@ -1087,6 +1209,58 @@ namespace Amazon.MemoryDB
         /// <returns>Returns a  DescribeEventsResult from MemoryDB.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeEvents">REST API Reference for DescribeEvents Operation</seealso>
         DescribeEventsResponse EndDescribeEvents(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeMultiRegionClusters
+
+
+        /// <summary>
+        /// Returns details about one or more multi-Region clusters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMultiRegionClusters service method.</param>
+        /// 
+        /// <returns>The response from the DescribeMultiRegionClusters service method, as returned by MemoryDB.</returns>
+        /// <exception cref="Amazon.MemoryDB.Model.ClusterNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterCombinationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.MultiRegionClusterNotFoundException">
+        /// The specified multi-Region cluster does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeMultiRegionClusters">REST API Reference for DescribeMultiRegionClusters Operation</seealso>
+        DescribeMultiRegionClustersResponse DescribeMultiRegionClusters(DescribeMultiRegionClustersRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeMultiRegionClusters operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMultiRegionClusters operation on AmazonMemoryDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeMultiRegionClusters
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeMultiRegionClusters">REST API Reference for DescribeMultiRegionClusters Operation</seealso>
+        IAsyncResult BeginDescribeMultiRegionClusters(DescribeMultiRegionClustersRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeMultiRegionClusters operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeMultiRegionClusters.</param>
+        /// 
+        /// <returns>Returns a  DescribeMultiRegionClustersResult from MemoryDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeMultiRegionClusters">REST API Reference for DescribeMultiRegionClusters Operation</seealso>
+        DescribeMultiRegionClustersResponse EndDescribeMultiRegionClusters(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1304,7 +1478,7 @@ namespace Amazon.MemoryDB
 
 
         /// <summary>
-        /// Returns details of the service updates
+        /// Returns details of the service updates.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeServiceUpdates service method.</param>
         /// 
@@ -1561,6 +1735,55 @@ namespace Amazon.MemoryDB
 
         #endregion
         
+        #region  ListAllowedMultiRegionClusterUpdates
+
+
+        /// <summary>
+        /// Lists the allowed updates for a multi-Region cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAllowedMultiRegionClusterUpdates service method.</param>
+        /// 
+        /// <returns>The response from the ListAllowedMultiRegionClusterUpdates service method, as returned by MemoryDB.</returns>
+        /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterCombinationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.MultiRegionClusterNotFoundException">
+        /// The specified multi-Region cluster does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/ListAllowedMultiRegionClusterUpdates">REST API Reference for ListAllowedMultiRegionClusterUpdates Operation</seealso>
+        ListAllowedMultiRegionClusterUpdatesResponse ListAllowedMultiRegionClusterUpdates(ListAllowedMultiRegionClusterUpdatesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAllowedMultiRegionClusterUpdates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAllowedMultiRegionClusterUpdates operation on AmazonMemoryDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAllowedMultiRegionClusterUpdates
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/ListAllowedMultiRegionClusterUpdates">REST API Reference for ListAllowedMultiRegionClusterUpdates Operation</seealso>
+        IAsyncResult BeginListAllowedMultiRegionClusterUpdates(ListAllowedMultiRegionClusterUpdatesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAllowedMultiRegionClusterUpdates operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAllowedMultiRegionClusterUpdates.</param>
+        /// 
+        /// <returns>Returns a  ListAllowedMultiRegionClusterUpdatesResult from MemoryDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/ListAllowedMultiRegionClusterUpdates">REST API Reference for ListAllowedMultiRegionClusterUpdates Operation</seealso>
+        ListAllowedMultiRegionClusterUpdatesResponse EndListAllowedMultiRegionClusterUpdates(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListAllowedNodeTypeUpdates
 
 
@@ -1622,7 +1845,7 @@ namespace Amazon.MemoryDB
         /// Lists all tags currently on a named resource. A tag is a key-value pair where the
         /// key and value are case-sensitive. You can use tags to categorize and track your MemoryDB
         /// resources. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/Tagging-Resources.html">Tagging
-        /// your MemoryDB resources</a>
+        /// your MemoryDB resources</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTags service method.</param>
         /// 
@@ -1638,6 +1861,12 @@ namespace Amazon.MemoryDB
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidClusterStateException">
         /// 
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.MultiRegionClusterNotFoundException">
+        /// The specified multi-Region cluster does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.MultiRegionParameterGroupNotFoundException">
+        /// The specified multi-Region parameter group does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ParameterGroupNotFoundException">
         /// 
@@ -1839,6 +2068,15 @@ namespace Amazon.MemoryDB
         /// <exception cref="Amazon.MemoryDB.Model.InvalidClusterStateException">
         /// 
         /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.MultiRegionClusterNotFoundException">
+        /// The specified multi-Region cluster does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.MultiRegionParameterGroupNotFoundException">
+        /// The specified multi-Region parameter group does not exist.
+        /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ParameterGroupNotFoundException">
         /// 
         /// </exception>
@@ -1892,7 +2130,7 @@ namespace Amazon.MemoryDB
 
 
         /// <summary>
-        /// Use this operation to remove tags on a resource
+        /// Use this operation to remove tags on a resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -1908,6 +2146,15 @@ namespace Amazon.MemoryDB
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.InvalidClusterStateException">
         /// 
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.MultiRegionClusterNotFoundException">
+        /// The specified multi-Region cluster does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.MultiRegionParameterGroupNotFoundException">
+        /// The specified multi-Region parameter group does not exist.
         /// </exception>
         /// <exception cref="Amazon.MemoryDB.Model.ParameterGroupNotFoundException">
         /// 
@@ -2105,6 +2352,62 @@ namespace Amazon.MemoryDB
         /// <returns>Returns a  UpdateClusterResult from MemoryDB.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/UpdateCluster">REST API Reference for UpdateCluster Operation</seealso>
         UpdateClusterResponse EndUpdateCluster(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateMultiRegionCluster
+
+
+        /// <summary>
+        /// Updates the configuration of an existing multi-Region cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMultiRegionCluster service method.</param>
+        /// 
+        /// <returns>The response from the UpdateMultiRegionCluster service method, as returned by MemoryDB.</returns>
+        /// <exception cref="Amazon.MemoryDB.Model.InvalidMultiRegionClusterStateException">
+        /// The requested operation cannot be performed on the multi-Region cluster in its current
+        /// state.
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterCombinationException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.InvalidParameterValueException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.MultiRegionClusterNotFoundException">
+        /// The specified multi-Region cluster does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MemoryDB.Model.MultiRegionParameterGroupNotFoundException">
+        /// The specified multi-Region parameter group does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/UpdateMultiRegionCluster">REST API Reference for UpdateMultiRegionCluster Operation</seealso>
+        UpdateMultiRegionClusterResponse UpdateMultiRegionCluster(UpdateMultiRegionClusterRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateMultiRegionCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMultiRegionCluster operation on AmazonMemoryDBClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateMultiRegionCluster
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/UpdateMultiRegionCluster">REST API Reference for UpdateMultiRegionCluster Operation</seealso>
+        IAsyncResult BeginUpdateMultiRegionCluster(UpdateMultiRegionClusterRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateMultiRegionCluster operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateMultiRegionCluster.</param>
+        /// 
+        /// <returns>Returns a  UpdateMultiRegionClusterResult from MemoryDB.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/UpdateMultiRegionCluster">REST API Reference for UpdateMultiRegionCluster Operation</seealso>
+        UpdateMultiRegionClusterResponse EndUpdateMultiRegionCluster(IAsyncResult asyncResult);
 
         #endregion
         

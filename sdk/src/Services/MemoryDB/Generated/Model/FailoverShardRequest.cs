@@ -45,7 +45,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property ClusterName. 
         /// <para>
-        /// The cluster being failed over
+        /// The cluster being failed over.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -64,7 +64,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property ShardName. 
         /// <para>
-        /// The name of the shard
+        /// The name of the shard.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// Provides details of the engine version.
+    /// Provides details of the Redis OSS engine version
     /// </summary>
     public partial class EngineVersionInfo
     {
@@ -42,7 +42,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The version of the Redis OSS or Valkey engine used by the cluster.
+        /// The name of the engine for which version information is provided.
         /// </para>
         /// </summary>
         public string Engine

@@ -55,7 +55,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource to which the tags are to be added
+        /// The Amazon Resource Name (ARN) of the resource to which the tags are to be added.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

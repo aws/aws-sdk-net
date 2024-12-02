@@ -31,7 +31,7 @@ namespace Amazon.MemoryDB.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeACLs operation.
-    /// Returns a list of ACLs
+    /// Returns a list of ACLs.
     /// </summary>
     public partial class DescribeACLsRequest : AmazonMemoryDBRequest
     {
@@ -42,7 +42,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property ACLName. 
         /// <para>
-        /// The name of the ACL
+        /// The name of the ACL.
         /// </para>
         /// </summary>
         public string ACLName
