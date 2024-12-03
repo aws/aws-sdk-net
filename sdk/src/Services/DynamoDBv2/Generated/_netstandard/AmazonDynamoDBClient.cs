@@ -1723,6 +1723,10 @@ namespace Amazon.DynamoDBv2
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ReplicatedWriteConflictException">
+        /// The request was rejected because one or more items in the request are being modified
+        /// by a request in another Region.
+        /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
         /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
@@ -1792,6 +1796,10 @@ namespace Amazon.DynamoDBv2
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ReplicatedWriteConflictException">
+        /// The request was rejected because one or more items in the request are being modified
+        /// by a request in another Region.
+        /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
         /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
@@ -1860,6 +1868,10 @@ namespace Amazon.DynamoDBv2
         /// unless your retry queue is too large to finish. Reduce the frequency of requests and
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ReplicatedWriteConflictException">
+        /// The request was rejected because one or more items in the request are being modified
+        /// by a request in another Region.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
@@ -4759,6 +4771,10 @@ namespace Amazon.DynamoDBv2
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ReplicatedWriteConflictException">
+        /// The request was rejected because one or more items in the request are being modified
+        /// by a request in another Region.
+        /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
         /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
@@ -4844,6 +4860,10 @@ namespace Amazon.DynamoDBv2
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ReplicatedWriteConflictException">
+        /// The request was rejected because one or more items in the request are being modified
+        /// by a request in another Region.
+        /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
         /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
@@ -4928,6 +4948,10 @@ namespace Amazon.DynamoDBv2
         /// unless your retry queue is too large to finish. Reduce the frequency of requests and
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ReplicatedWriteConflictException">
+        /// The request was rejected because one or more items in the request are being modified
+        /// by a request in another Region.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
@@ -7304,6 +7328,10 @@ namespace Amazon.DynamoDBv2
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ReplicatedWriteConflictException">
+        /// The request was rejected because one or more items in the request are being modified
+        /// by a request in another Region.
+        /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
         /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
@@ -7366,6 +7394,10 @@ namespace Amazon.DynamoDBv2
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ReplicatedWriteConflictException">
+        /// The request was rejected because one or more items in the request are being modified
+        /// by a request in another Region.
+        /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a
         /// href="https://aws.amazon.com/support">Amazon Web Services Support</a> to request a
@@ -7426,6 +7458,10 @@ namespace Amazon.DynamoDBv2
         /// unless your retry queue is too large to finish. Reduce the frequency of requests and
         /// use exponential backoff. For more information, go to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ReplicatedWriteConflictException">
+        /// The request was rejected because one or more items in the request are being modified
+        /// by a request in another Region.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
         /// Throughput exceeds the current throughput quota for your account. Please contact <a

@@ -113,6 +113,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetMultiRegionConsistency())
+                {
+                    context.Writer.WritePropertyName("MultiRegionConsistency");
+                    context.Writer.Write(publicRequest.MultiRegionConsistency);
+                }
+
                 if(publicRequest.IsSetOnDemandThroughput())
                 {
                     context.Writer.WritePropertyName("OnDemandThroughput");
