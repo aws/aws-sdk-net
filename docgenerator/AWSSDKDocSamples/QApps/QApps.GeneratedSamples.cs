@@ -142,7 +142,7 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
             {
                 AppId = "4263767c-d889-4cb2-a8f6-8b649bc66af0",
                 CardId = "82f69028-22a9-4bea-8727-0eabf58e9fed",
-                FileContentsSha256 = "myMXwslBoXkTDQ0olhq1QsiHRWWL4yj1V0IuoK+PYOg=",
+                FileContentsSha256 = "wXY7GD8m4fmHhdtuQyBdXzNQpdCseVwBcOBIlzfm+kg=",
                 FileName = "myFile.txt",
                 InstanceId = "0b95c9c4-89cc-4aa8-9aae-aa91cbec699f",
                 Scope = "SESSION",
@@ -166,7 +166,7 @@ namespace AWSSDKDocSamples.Amazon.QApps.Generated
             {
                 AppId = "4263767c-d889-4cb2-a8f6-8b649bc66af0",
                 CardId = "7a11f34b-42d4-4bc8-b668-ae4a788dae1e",
-                FileContentsSha256 = "myMXwslBoXkTDQ0olhq1QsiHRWWL4yj1V0IuoK+PYOg=",
+                FileContentsSha256 = "wXY7GD8m4fmHhdtuQyBdXzNQpdCseVwBcOBIlzfm+kg=",
                 FileName = "anApplicationFile.txt",
                 InstanceId = "0b95c9c4-89cc-4aa8-9aae-aa91cbec699f",
                 Scope = "APPLICATION"

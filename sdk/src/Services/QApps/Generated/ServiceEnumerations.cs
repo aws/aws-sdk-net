@@ -563,25 +563,69 @@ namespace Amazon.QApps
     {
 
         /// <summary>
+        /// Constant ASANA for PluginType
+        /// </summary>
+        public static readonly PluginType ASANA = new PluginType("ASANA");
+        /// <summary>
+        /// Constant ATLASSIAN_CONFLUENCE for PluginType
+        /// </summary>
+        public static readonly PluginType ATLASSIAN_CONFLUENCE = new PluginType("ATLASSIAN_CONFLUENCE");
+        /// <summary>
         /// Constant CUSTOM for PluginType
         /// </summary>
         public static readonly PluginType CUSTOM = new PluginType("CUSTOM");
+        /// <summary>
+        /// Constant GOOGLE_CALENDAR for PluginType
+        /// </summary>
+        public static readonly PluginType GOOGLE_CALENDAR = new PluginType("GOOGLE_CALENDAR");
         /// <summary>
         /// Constant JIRA for PluginType
         /// </summary>
         public static readonly PluginType JIRA = new PluginType("JIRA");
         /// <summary>
+        /// Constant JIRA_CLOUD for PluginType
+        /// </summary>
+        public static readonly PluginType JIRA_CLOUD = new PluginType("JIRA_CLOUD");
+        /// <summary>
+        /// Constant MICROSOFT_EXCHANGE for PluginType
+        /// </summary>
+        public static readonly PluginType MICROSOFT_EXCHANGE = new PluginType("MICROSOFT_EXCHANGE");
+        /// <summary>
+        /// Constant MICROSOFT_TEAMS for PluginType
+        /// </summary>
+        public static readonly PluginType MICROSOFT_TEAMS = new PluginType("MICROSOFT_TEAMS");
+        /// <summary>
+        /// Constant PAGERDUTY_ADVANCE for PluginType
+        /// </summary>
+        public static readonly PluginType PAGERDUTY_ADVANCE = new PluginType("PAGERDUTY_ADVANCE");
+        /// <summary>
         /// Constant SALESFORCE for PluginType
         /// </summary>
         public static readonly PluginType SALESFORCE = new PluginType("SALESFORCE");
+        /// <summary>
+        /// Constant SALESFORCE_CRM for PluginType
+        /// </summary>
+        public static readonly PluginType SALESFORCE_CRM = new PluginType("SALESFORCE_CRM");
         /// <summary>
         /// Constant SERVICE_NOW for PluginType
         /// </summary>
         public static readonly PluginType SERVICE_NOW = new PluginType("SERVICE_NOW");
         /// <summary>
+        /// Constant SERVICENOW_NOW_PLATFORM for PluginType
+        /// </summary>
+        public static readonly PluginType SERVICENOW_NOW_PLATFORM = new PluginType("SERVICENOW_NOW_PLATFORM");
+        /// <summary>
+        /// Constant SMARTSHEET for PluginType
+        /// </summary>
+        public static readonly PluginType SMARTSHEET = new PluginType("SMARTSHEET");
+        /// <summary>
         /// Constant ZENDESK for PluginType
         /// </summary>
         public static readonly PluginType ZENDESK = new PluginType("ZENDESK");
+        /// <summary>
+        /// Constant ZENDESK_SUITE for PluginType
+        /// </summary>
+        public static readonly PluginType ZENDESK_SUITE = new PluginType("ZENDESK_SUITE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -536,6 +536,11 @@
     <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QApps.Model.QPluginCard.ActionIdentifier</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QApps.Model.QPluginCard.Id</property>
     <pattern>[\da-f]{8}-[\da-f]{4}-[45][\da-f]{3}-[89ABab][\da-f]{3}-[\da-f]{12}</pattern>
   </property-value-rule>
@@ -549,6 +554,11 @@
     <min>0</min>
     <max>100</max>
     <pattern>[^{}\\"&lt;&gt;]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QApps.Model.QPluginCardInput.ActionIdentifier</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QApps.Model.QPluginCardInput.Id</property>
