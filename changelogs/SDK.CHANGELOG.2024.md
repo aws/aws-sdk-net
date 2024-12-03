@@ -1,3 +1,7 @@
+### 3.7.939.1 (2024-12-03 22:28 UTC)
+* S3 (3.7.410.1)
+	* Breaking Change: Fixed the namespace for ErrorDetails.
+
 ### 3.7.939.0 (2024-12-03 19:33 UTC)
 * Athena (3.7.403.0)
 	* Add FEDERATED type to CreateDataCatalog. This creates Athena Data Catalog, AWS Lambda connector, and AWS Glue connection. Create/DeleteDataCatalog returns DataCatalog. Add Status, ConnectionType, and Error to DataCatalog and DataCatalogSummary. Add DeleteCatalogOnly to delete Athena Catalog only.
