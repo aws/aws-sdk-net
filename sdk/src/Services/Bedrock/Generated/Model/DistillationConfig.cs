@@ -30,32 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// Container for the parameters to the StopModelInvocationJob operation.
-    /// Stops a batch inference job. You're only charged for tokens that were already processed.
-    /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-stop.html">Stop
-    /// a batch inference job</a>.
+    /// Settings for distilling a foundation model into a smaller and more efficient model.
     /// </summary>
-    public partial class StopModelInvocationJobRequest : AmazonBedrockRequest
+    public partial class DistillationConfig
     {
-        private string _jobIdentifier;
+        private TeacherModelConfig _teacherModelConfig;
 
         /// <summary>
-        /// Gets and sets the property JobIdentifier. 
+        /// Gets and sets the property TeacherModelConfig. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the batch inference job to stop.
+        /// The teacher model configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=1011)]
-        public string JobIdentifier
+        [AWSProperty(Required=true)]
+        public TeacherModelConfig TeacherModelConfig
         {
-            get { return this._jobIdentifier; }
-            set { this._jobIdentifier = value; }
+            get { return this._teacherModelConfig; }
+            set { this._teacherModelConfig = value; }
         }
 
-        // Check to see if JobIdentifier property is set
-        internal bool IsSetJobIdentifier()
+        // Check to see if TeacherModelConfig property is set
+        internal bool IsSetTeacherModelConfig()
         {
-            return this._jobIdentifier != null;
+            return this._teacherModelConfig != null;
         }
 
     }

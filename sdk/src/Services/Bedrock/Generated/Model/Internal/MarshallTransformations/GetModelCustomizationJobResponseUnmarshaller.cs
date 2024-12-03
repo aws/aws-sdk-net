@@ -70,6 +70,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                     response.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("customizationConfig", targetDepth))
+                {
+                    var unmarshaller = CustomizationConfigUnmarshaller.Instance;
+                    response.CustomizationConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("customizationType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -135,6 +135,10 @@ namespace Amazon.Bedrock
         /// </summary>
         public static readonly CustomizationType CONTINUED_PRE_TRAINING = new CustomizationType("CONTINUED_PRE_TRAINING");
         /// <summary>
+        /// Constant DISTILLATION for CustomizationType
+        /// </summary>
+        public static readonly CustomizationType DISTILLATION = new CustomizationType("DISTILLATION");
+        /// <summary>
         /// Constant FINE_TUNING for CustomizationType
         /// </summary>
         public static readonly CustomizationType FINE_TUNING = new CustomizationType("FINE_TUNING");
@@ -1272,6 +1276,10 @@ namespace Amazon.Bedrock
         /// Constant CONTINUED_PRE_TRAINING for ModelCustomization
         /// </summary>
         public static readonly ModelCustomization CONTINUED_PRE_TRAINING = new ModelCustomization("CONTINUED_PRE_TRAINING");
+        /// <summary>
+        /// Constant DISTILLATION for ModelCustomization
+        /// </summary>
+        public static readonly ModelCustomization DISTILLATION = new ModelCustomization("DISTILLATION");
         /// <summary>
         /// Constant FINE_TUNING for ModelCustomization
         /// </summary>

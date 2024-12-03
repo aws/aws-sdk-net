@@ -37,6 +37,7 @@ namespace Amazon.Bedrock.Model
         private string _baseModelArn;
         private string _clientRequestToken;
         private DateTime? _creationTime;
+        private CustomizationConfig _customizationConfig;
         private CustomizationType _customizationType;
         private DateTime? _endTime;
         private string _failureMessage;
@@ -114,6 +115,24 @@ namespace Amazon.Bedrock.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CustomizationConfig. 
+        /// <para>
+        /// The customization configuration for the model customization job.
+        /// </para>
+        /// </summary>
+        public CustomizationConfig CustomizationConfig
+        {
+            get { return this._customizationConfig; }
+            set { this._customizationConfig = value; }
+        }
+
+        // Check to see if CustomizationConfig property is set
+        internal bool IsSetCustomizationConfig()
+        {
+            return this._customizationConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CustomizationType. 
         /// <para>
         /// The type of model customization.
@@ -176,7 +195,6 @@ namespace Amazon.Bedrock.Model
         /// model hyperparameters</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public Dictionary<string, string> HyperParameters
         {
             get { return this._hyperParameters; }

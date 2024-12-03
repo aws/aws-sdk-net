@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// TrainingDataConfig Marshaller
+    /// InvocationLogsConfig Marshaller
     /// </summary>
-    public class TrainingDataConfigMarshaller : IRequestMarshaller<TrainingDataConfig, JsonMarshallerContext> 
+    public class InvocationLogsConfigMarshaller : IRequestMarshaller<InvocationLogsConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,25 +44,36 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(TrainingDataConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(InvocationLogsConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetInvocationLogsConfig())
+            if(requestObject.IsSetInvocationLogSource())
             {
-                context.Writer.WritePropertyName("invocationLogsConfig");
+                context.Writer.WritePropertyName("invocationLogSource");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = InvocationLogsConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.InvocationLogsConfig, context);
+                var marshaller = InvocationLogSourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.InvocationLogSource, context);
 
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetS3Uri())
+            if(requestObject.IsSetRequestMetadataFilters())
             {
-                context.Writer.WritePropertyName("s3Uri");
-                context.Writer.Write(requestObject.S3Uri);
+                context.Writer.WritePropertyName("requestMetadataFilters");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RequestMetadataFiltersMarshaller.Instance;
+                marshaller.Marshall(requestObject.RequestMetadataFilters, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetUsePromptResponse())
+            {
+                context.Writer.WritePropertyName("usePromptResponse");
+                context.Writer.Write(requestObject.UsePromptResponse);
             }
 
         }
@@ -70,7 +81,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static TrainingDataConfigMarshaller Instance = new TrainingDataConfigMarshaller();
+        public readonly static InvocationLogsConfigMarshaller Instance = new InvocationLogsConfigMarshaller();
 
     }
 }

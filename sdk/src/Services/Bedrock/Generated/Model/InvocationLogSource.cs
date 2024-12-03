@@ -30,35 +30,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
-    /// S3 Location of the training data.
+    /// A storage location for invocation logs.
     /// </summary>
-    public partial class TrainingDataConfig
+    public partial class InvocationLogSource
     {
-        private InvocationLogsConfig _invocationLogsConfig;
         private string _s3Uri;
-
-        /// <summary>
-        /// Gets and sets the property InvocationLogsConfig. 
-        /// <para>
-        /// Settings for using invocation logs to customize a model.
-        /// </para>
-        /// </summary>
-        public InvocationLogsConfig InvocationLogsConfig
-        {
-            get { return this._invocationLogsConfig; }
-            set { this._invocationLogsConfig = value; }
-        }
-
-        // Check to see if InvocationLogsConfig property is set
-        internal bool IsSetInvocationLogsConfig()
-        {
-            return this._invocationLogsConfig != null;
-        }
 
         /// <summary>
         /// Gets and sets the property S3Uri. 
         /// <para>
-        /// The S3 URI where the training data is stored.
+        /// The URI of an invocation log in a bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

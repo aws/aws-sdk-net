@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// TrainingDataConfig Marshaller
+    /// TeacherModelConfig Marshaller
     /// </summary>
-    public class TrainingDataConfigMarshaller : IRequestMarshaller<TrainingDataConfig, JsonMarshallerContext> 
+    public class TeacherModelConfigMarshaller : IRequestMarshaller<TeacherModelConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,25 +44,20 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(TrainingDataConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(TeacherModelConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetInvocationLogsConfig())
+            if(requestObject.IsSetMaxResponseLengthForInference())
             {
-                context.Writer.WritePropertyName("invocationLogsConfig");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = InvocationLogsConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.InvocationLogsConfig, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("maxResponseLengthForInference");
+                context.Writer.Write(requestObject.MaxResponseLengthForInference);
             }
 
-            if(requestObject.IsSetS3Uri())
+            if(requestObject.IsSetTeacherModelIdentifier())
             {
-                context.Writer.WritePropertyName("s3Uri");
-                context.Writer.Write(requestObject.S3Uri);
+                context.Writer.WritePropertyName("teacherModelIdentifier");
+                context.Writer.Write(requestObject.TeacherModelIdentifier);
             }
 
         }
@@ -70,7 +65,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static TrainingDataConfigMarshaller Instance = new TrainingDataConfigMarshaller();
+        public readonly static TeacherModelConfigMarshaller Instance = new TeacherModelConfigMarshaller();
 
     }
 }

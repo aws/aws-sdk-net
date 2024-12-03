@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TrainingDataConfig Object
+    /// Response Unmarshaller for TeacherModelConfig Object
     /// </summary>  
-    public class TrainingDataConfigUnmarshaller : IUnmarshaller<TrainingDataConfig, XmlUnmarshallerContext>, IUnmarshaller<TrainingDataConfig, JsonUnmarshallerContext>
+    public class TeacherModelConfigUnmarshaller : IUnmarshaller<TeacherModelConfig, XmlUnmarshallerContext>, IUnmarshaller<TeacherModelConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        TrainingDataConfig IUnmarshaller<TrainingDataConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TeacherModelConfig IUnmarshaller<TeacherModelConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public TrainingDataConfig Unmarshall(JsonUnmarshallerContext context)
+        public TeacherModelConfig Unmarshall(JsonUnmarshallerContext context)
         {
-            TrainingDataConfig unmarshalledObject = new TrainingDataConfig();
+            TeacherModelConfig unmarshalledObject = new TeacherModelConfig();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,16 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("invocationLogsConfig", targetDepth))
+                if (context.TestExpression("maxResponseLengthForInference", targetDepth))
                 {
-                    var unmarshaller = InvocationLogsConfigUnmarshaller.Instance;
-                    unmarshalledObject.InvocationLogsConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxResponseLengthForInference = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("s3Uri", targetDepth))
+                if (context.TestExpression("teacherModelIdentifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3Uri = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TeacherModelIdentifier = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +83,12 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         }
 
 
-        private static TrainingDataConfigUnmarshaller _instance = new TrainingDataConfigUnmarshaller();        
+        private static TeacherModelConfigUnmarshaller _instance = new TeacherModelConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TrainingDataConfigUnmarshaller Instance
+        public static TeacherModelConfigUnmarshaller Instance
         {
             get
             {

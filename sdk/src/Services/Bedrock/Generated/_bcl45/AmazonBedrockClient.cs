@@ -476,8 +476,8 @@ namespace Amazon.Bedrock
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html">Guardrails
-        /// for Amazon Bedrock</a> in the <i>Amazon Bedrock User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html">Amazon
+        /// Bedrock Guardrails</a> in the <i>Amazon Bedrock User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGuardrail service method.</param>
@@ -561,8 +561,8 @@ namespace Amazon.Bedrock
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html">Guardrails
-        /// for Amazon Bedrock</a> in the <i>Amazon Bedrock User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html">Amazon
+        /// Bedrock Guardrails</a> in the <i>Amazon Bedrock User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGuardrail service method.</param>
@@ -2516,8 +2516,8 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Gets details about a batch inference job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-manage.html#batch-inference-view">View
-        /// details about a batch inference job</a>
+        /// Gets details about a batch inference job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-monitor">Monitor
+        /// batch inference jobs</a>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetModelInvocationJob service method.</param>
         /// 
@@ -2550,8 +2550,8 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Gets details about a batch inference job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-manage.html#batch-inference-view">View
-        /// details about a batch inference job</a>
+        /// Gets details about a batch inference job. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-monitor">Monitor
+        /// batch inference jobs</a>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetModelInvocationJob service method.</param>
         /// <param name="cancellationToken">
@@ -3412,7 +3412,7 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Lists all batch inference jobs in the account. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-manage.html#batch-inference-view">View
+        /// Lists all batch inference jobs in the account. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-view.html">View
         /// details about a batch inference job</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListModelInvocationJobs service method.</param>
@@ -3442,7 +3442,7 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Lists all batch inference jobs in the account. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-manage.html#batch-inference-view">View
+        /// Lists all batch inference jobs in the account. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-view.html">View
         /// details about a batch inference job</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListModelInvocationJobs service method.</param>
@@ -3863,7 +3863,7 @@ namespace Amazon.Bedrock
 
         /// <summary>
         /// Stops a batch inference job. You're only charged for tokens that were already processed.
-        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-manage.html#batch-inference-stop">Stop
+        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-stop.html">Stop
         /// a batch inference job</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopModelInvocationJob service method.</param>
@@ -3901,7 +3901,7 @@ namespace Amazon.Bedrock
 
         /// <summary>
         /// Stops a batch inference job. You're only charged for tokens that were already processed.
-        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-manage.html#batch-inference-stop">Stop
+        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-stop.html">Stop
         /// a batch inference job</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopModelInvocationJob service method.</param>

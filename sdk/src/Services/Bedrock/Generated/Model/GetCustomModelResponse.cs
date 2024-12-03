@@ -36,6 +36,7 @@ namespace Amazon.Bedrock.Model
     {
         private string _baseModelArn;
         private DateTime? _creationTime;
+        private CustomizationConfig _customizationConfig;
         private CustomizationType _customizationType;
         private Dictionary<string, string> _hyperParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _jobArn;
@@ -85,6 +86,24 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomizationConfig. 
+        /// <para>
+        /// The customization configuration for the custom model.
+        /// </para>
+        /// </summary>
+        public CustomizationConfig CustomizationConfig
+        {
+            get { return this._customizationConfig; }
+            set { this._customizationConfig = value; }
+        }
+
+        // Check to see if CustomizationConfig property is set
+        internal bool IsSetCustomizationConfig()
+        {
+            return this._customizationConfig != null;
         }
 
         /// <summary>

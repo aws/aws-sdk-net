@@ -84,6 +84,17 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientRequestToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetCustomizationConfig())
+                {
+                    context.Writer.WritePropertyName("customizationConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CustomizationConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CustomizationConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetCustomizationType())
                 {
                     context.Writer.WritePropertyName("customizationType");

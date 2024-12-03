@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// TrainingDataConfig Marshaller
+    /// CustomizationConfig Marshaller
     /// </summary>
-    public class TrainingDataConfigMarshaller : IRequestMarshaller<TrainingDataConfig, JsonMarshallerContext> 
+    public class CustomizationConfigMarshaller : IRequestMarshaller<CustomizationConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,25 +44,19 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(TrainingDataConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(CustomizationConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetInvocationLogsConfig())
+            if(requestObject.IsSetDistillationConfig())
             {
-                context.Writer.WritePropertyName("invocationLogsConfig");
+                context.Writer.WritePropertyName("distillationConfig");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = InvocationLogsConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.InvocationLogsConfig, context);
+                var marshaller = DistillationConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.DistillationConfig, context);
 
                 context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetS3Uri())
-            {
-                context.Writer.WritePropertyName("s3Uri");
-                context.Writer.Write(requestObject.S3Uri);
             }
 
         }
@@ -70,7 +64,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static TrainingDataConfigMarshaller Instance = new TrainingDataConfigMarshaller();
+        public readonly static CustomizationConfigMarshaller Instance = new CustomizationConfigMarshaller();
 
     }
 }

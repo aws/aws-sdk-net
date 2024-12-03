@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// TrainingDataConfig Marshaller
+    /// RequestMetadataBaseFilters Marshaller
     /// </summary>
-    public class TrainingDataConfigMarshaller : IRequestMarshaller<TrainingDataConfig, JsonMarshallerContext> 
+    public class RequestMetadataBaseFiltersMarshaller : IRequestMarshaller<RequestMetadataBaseFilters, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,25 +44,36 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(TrainingDataConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(RequestMetadataBaseFilters requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetInvocationLogsConfig())
+            if(requestObject.IsSetEquals())
             {
-                context.Writer.WritePropertyName("invocationLogsConfig");
+                context.Writer.WritePropertyName("equals");
                 context.Writer.WriteObjectStart();
+                foreach (var requestObjectEqualsKvp in requestObject.Equals)
+                {
+                    context.Writer.WritePropertyName(requestObjectEqualsKvp.Key);
+                    var requestObjectEqualsValue = requestObjectEqualsKvp.Value;
 
-                var marshaller = InvocationLogsConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.InvocationLogsConfig, context);
-
+                        context.Writer.Write(requestObjectEqualsValue);
+                }
                 context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetS3Uri())
+            if(requestObject.IsSetNotEquals())
             {
-                context.Writer.WritePropertyName("s3Uri");
-                context.Writer.Write(requestObject.S3Uri);
+                context.Writer.WritePropertyName("notEquals");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectNotEqualsKvp in requestObject.NotEquals)
+                {
+                    context.Writer.WritePropertyName(requestObjectNotEqualsKvp.Key);
+                    var requestObjectNotEqualsValue = requestObjectNotEqualsKvp.Value;
+
+                        context.Writer.Write(requestObjectNotEqualsValue);
+                }
+                context.Writer.WriteObjectEnd();
             }
 
         }
@@ -70,7 +81,7 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static TrainingDataConfigMarshaller Instance = new TrainingDataConfigMarshaller();
+        public readonly static RequestMetadataBaseFiltersMarshaller Instance = new RequestMetadataBaseFiltersMarshaller();
 
     }
 }
