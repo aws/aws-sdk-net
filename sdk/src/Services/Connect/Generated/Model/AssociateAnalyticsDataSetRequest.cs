@@ -31,13 +31,8 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateAnalyticsDataSet operation.
-    /// This API is in preview release for Amazon Connect and is subject to change.
-    /// 
-    ///  
-    /// <para>
     /// Associates the specified dataset for a Amazon Connect instance with the target account.
     /// You can associate only one dataset in a single call.
-    /// </para>
     /// </summary>
     public partial class AssociateAnalyticsDataSetRequest : AmazonConnectRequest
     {

@@ -98,6 +98,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.GroupName);
                     }
 
+                    if(publicRequest.IsSetRoleArn())
+                    {
+                        context.Writer.WritePropertyName("roleArn");
+                        context.Writer.Write(publicRequest.RoleArn);
+                    }
+
                     if(publicRequest.IsSetType())
                     {
                         context.Writer.WritePropertyName("type");

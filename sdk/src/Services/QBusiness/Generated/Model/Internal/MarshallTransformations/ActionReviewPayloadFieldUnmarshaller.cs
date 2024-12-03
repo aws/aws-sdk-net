@@ -78,6 +78,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     unmarshalledObject.AllowedValues = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("arrayItemJsonSchema", targetDepth))
+                {
+                    var unmarshaller = Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance;
+                    unmarshalledObject.ArrayItemJsonSchema = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("displayDescription", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -76,13 +76,13 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property OnPremConfig. 
         /// <para>
-        /// Specifies the Amazon Resource Name (ARN) of the DataSync agent that want to connect
-        /// to your NFS file server.
+        /// Specifies the Amazon Resource Name (ARN) of the DataSync agent that can connect to
+        /// your NFS file server.
         /// </para>
         ///  
         /// <para>
-        /// You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using
-        /// multiple agents for transfers</a>.
+        /// You can specify more than one agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/do-i-need-datasync-agent.html#multiple-agents">Using
+        /// multiple DataSync agents</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

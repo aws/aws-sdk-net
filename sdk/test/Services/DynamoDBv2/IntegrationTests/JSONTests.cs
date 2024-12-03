@@ -22,7 +22,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 ""CurrentStatus"" : ""Active"",
 ""CompanyInfo"" : {
     ""Name"" : ""Big River"" ,
-    ""Year Founded"" : 1998,
+    ""Year Founded"" : 1998
 } ,
 ""Aliases"" :
     [ ""Al"" , ""Steve"" , ""Alan-san"" ],
@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 ""CurrentStatus"" : ""Active"",
 ""CompanyInfo"" : {
     ""Name"" : ""Big River"" ,
-    ""Year Founded"" : 1998,
+    ""Year Founded"" : 1998
 } ,
 ""Aliases"" :
     [ ""Al"" , ""Steve"" , ""Alan-san"" ],
@@ -48,10 +48,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 ""Name"" : ""George P. Burdell"" ,
 ""Age"" : 87,
 ""CompanyName"" : ""Georgia Tech"" ,
-""CurrentStatus"" : ""Active""
+""CurrentStatus"" : ""Active"",
 ""CompanyInfo"" : {
     ""Name"" : ""Georgia Tech"" ,
-    ""Year Founded"" : 1885,
+    ""Year Founded"" : 1885
 } ,
 ""Aliases"" :
     [ ""Buzz"" , ""Ed"" , ""Rat"" ],
@@ -95,7 +95,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public static void TestDocumentJsonConversions()
+        public void TestDocumentJsonConversions()
         {
             // Create Document from JSON
             var doc = Document.FromJson(_sampleJson);
@@ -117,7 +117,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public static void TestDocumentBinaryDecoding()
+        public void TestDocumentBinaryDecoding()
         {
             // Test data
             var data = "Hello world!";
@@ -250,7 +250,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public static void TestJsonArrayMethods()
+        public void TestJsonArrayMethods()
         {
             var docs = TestArrayRoundTrip(_sampleJsonArray);
             TestArrayRoundTrip(docs.ToJsonPretty());
@@ -329,7 +329,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
         [TestMethod]
         [TestCategory("DynamoDBv2")]
-        public static void TestFromJsonCanHandleAllDataTypes()
+        public void TestFromJsonCanHandleAllDataTypes()
         {
             var json = @"
                 {

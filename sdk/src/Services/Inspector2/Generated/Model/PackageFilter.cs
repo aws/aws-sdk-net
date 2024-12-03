@@ -36,6 +36,7 @@ namespace Amazon.Inspector2.Model
     {
         private StringFilter _architecture;
         private NumberFilter _epoch;
+        private StringFilter _filePath;
         private StringFilter _name;
         private StringFilter _release;
         private StringFilter _sourceLambdaLayerArn;
@@ -79,6 +80,24 @@ namespace Amazon.Inspector2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FilePath. 
+        /// <para>
+        /// An object that contains details on the package file path to filter on.
+        /// </para>
+        /// </summary>
+        public StringFilter FilePath
+        {
+            get { return this._filePath; }
+            set { this._filePath = value; }
+        }
+
+        // Check to see if FilePath property is set
+        internal bool IsSetFilePath()
+        {
+            return this._filePath != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// An object that contains details on the name of the package to filter on.
@@ -115,7 +134,10 @@ namespace Amazon.Inspector2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceLambdaLayerArn.
+        /// Gets and sets the property SourceLambdaLayerArn. 
+        /// <para>
+        /// An object that describes the details of a string filter.
+        /// </para>
         /// </summary>
         public StringFilter SourceLambdaLayerArn
         {

@@ -35,6 +35,7 @@ namespace Amazon.QConnect.Model
     public partial class SourceConfiguration
     {
         private AppIntegrationsConfiguration _appIntegrations;
+        private ManagedSourceConfiguration _managedSourceConfiguration;
 
         /// <summary>
         /// Gets and sets the property AppIntegrations. 
@@ -52,6 +53,24 @@ namespace Amazon.QConnect.Model
         internal bool IsSetAppIntegrations()
         {
             return this._appIntegrations != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedSourceConfiguration. 
+        /// <para>
+        /// Source configuration for managed resources.
+        /// </para>
+        /// </summary>
+        public ManagedSourceConfiguration ManagedSourceConfiguration
+        {
+            get { return this._managedSourceConfiguration; }
+            set { this._managedSourceConfiguration = value; }
+        }
+
+        // Check to see if ManagedSourceConfiguration property is set
+        internal bool IsSetManagedSourceConfiguration()
+        {
+            return this._managedSourceConfiguration != null;
         }
 
     }

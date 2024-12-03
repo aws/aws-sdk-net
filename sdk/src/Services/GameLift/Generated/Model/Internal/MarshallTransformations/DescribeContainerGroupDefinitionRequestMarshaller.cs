@@ -77,6 +77,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Name);
                     }
 
+                    if(publicRequest.IsSetVersionNumber())
+                    {
+                        context.Writer.WritePropertyName("VersionNumber");
+                        context.Writer.Write(publicRequest.VersionNumber.Value);
+                    }
+
                     writer.WriteObjectEnd();
                 }
 

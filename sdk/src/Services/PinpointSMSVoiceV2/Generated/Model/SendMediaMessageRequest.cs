@@ -42,6 +42,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         private string _maxPrice;
         private List<string> _mediaUrls = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _messageBody;
+        private bool? _messageFeedbackEnabled;
         private string _originationIdentity;
         private string _protectConfigurationId;
         private int? _timeToLive;
@@ -191,6 +192,25 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MessageFeedbackEnabled. 
+        /// <para>
+        /// Set to true to enable message feedback for the message. When a user receives the message
+        /// you need to update the message status using <a>PutMessageFeedback</a>.
+        /// </para>
+        /// </summary>
+        public bool? MessageFeedbackEnabled
+        {
+            get { return this._messageFeedbackEnabled; }
+            set { this._messageFeedbackEnabled = value; }
+        }
+
+        // Check to see if MessageFeedbackEnabled property is set
+        internal bool IsSetMessageFeedbackEnabled()
+        {
+            return this._messageFeedbackEnabled.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property OriginationIdentity. 
         /// <para>
         /// The origination identity of the message. This can be either the PhoneNumber, PhoneNumberId,
@@ -238,7 +258,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// <summary>
         /// Gets and sets the property TimeToLive. 
         /// <para>
-        /// How long the text message is valid for. By default this is 72 hours.
+        /// How long the media message is valid for. By default this is 72 hours.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=259200)]

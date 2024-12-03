@@ -75,10 +75,32 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.CommitMessage);
                     }
 
+                    if(publicRequest.IsSetPackageConfiguration())
+                    {
+                        context.Writer.WritePropertyName("PackageConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PackageConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.PackageConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetPackageDescription())
                     {
                         context.Writer.WritePropertyName("PackageDescription");
                         context.Writer.Write(publicRequest.PackageDescription);
+                    }
+
+                    if(publicRequest.IsSetPackageEncryptionOptions())
+                    {
+                        context.Writer.WritePropertyName("PackageEncryptionOptions");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PackageEncryptionOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.PackageEncryptionOptions, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
 
                     if(publicRequest.IsSetPackageID())

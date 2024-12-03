@@ -82,6 +82,17 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
                         context.Writer.WriteArrayEnd();
                     }
 
+                    if(publicRequest.IsSetCapabilityOptions())
+                    {
+                        context.Writer.WritePropertyName("capabilityOptions");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = CapabilityOptionsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.CapabilityOptions, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetClientToken())
                     {
                         context.Writer.WritePropertyName("clientToken");

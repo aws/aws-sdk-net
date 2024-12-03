@@ -194,8 +194,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// The port on which the load balancer is listening. You cannot specify a port for a
-        /// Gateway Load Balancer.
+        /// The port on which the load balancer is listening. You can't specify a port for a Gateway
+        /// Load Balancer.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65535)]
@@ -217,7 +217,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The protocol for connections from clients to the load balancer. For Application Load
         /// Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers,
         /// the supported protocols are TCP, TLS, UDP, and TCP_UDP. You can’t specify the UDP
-        /// or TCP_UDP protocol if dual-stack mode is enabled. You cannot specify a protocol for
+        /// or TCP_UDP protocol if dual-stack mode is enabled. You can't specify a protocol for
         /// a Gateway Load Balancer.
         /// </para>
         /// </summary>

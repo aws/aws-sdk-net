@@ -2424,8 +2424,8 @@ namespace Amazon.PaymentCryptography
 
         /// <summary>
         /// Lists the aliases for all keys in the caller's Amazon Web Services account and Amazon
-        /// Web Services Region. You can filter the list of aliases. For more information, see
-        /// <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-managealias.html">Using
+        /// Web Services Region. You can filter the aliases by <c>keyARN</c>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-managealias.html">Using
         /// aliases</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.
         /// 
         ///  
@@ -2495,8 +2495,8 @@ namespace Amazon.PaymentCryptography
 
         /// <summary>
         /// Lists the aliases for all keys in the caller's Amazon Web Services account and Amazon
-        /// Web Services Region. You can filter the list of aliases. For more information, see
-        /// <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-managealias.html">Using
+        /// Web Services Region. You can filter the aliases by <c>keyARN</c>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-managealias.html">Using
         /// aliases</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.
         /// 
         ///  

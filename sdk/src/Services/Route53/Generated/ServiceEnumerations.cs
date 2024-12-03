@@ -1137,6 +1137,10 @@ namespace Amazon.Route53
         /// </summary>
         public static readonly RRType DS = new RRType("DS");
         /// <summary>
+        /// Constant HTTPS for RRType
+        /// </summary>
+        public static readonly RRType HTTPS = new RRType("HTTPS");
+        /// <summary>
         /// Constant MX for RRType
         /// </summary>
         public static readonly RRType MX = new RRType("MX");
@@ -1164,6 +1168,18 @@ namespace Amazon.Route53
         /// Constant SRV for RRType
         /// </summary>
         public static readonly RRType SRV = new RRType("SRV");
+        /// <summary>
+        /// Constant SSHFP for RRType
+        /// </summary>
+        public static readonly RRType SSHFP = new RRType("SSHFP");
+        /// <summary>
+        /// Constant SVCB for RRType
+        /// </summary>
+        public static readonly RRType SVCB = new RRType("SVCB");
+        /// <summary>
+        /// Constant TLSA for RRType
+        /// </summary>
+        public static readonly RRType TLSA = new RRType("TLSA");
         /// <summary>
         /// Constant TXT for RRType
         /// </summary>
@@ -1382,6 +1398,10 @@ namespace Amazon.Route53
         /// Constant CnNorth1 for VPCRegion
         /// </summary>
         public static readonly VPCRegion CnNorth1 = new VPCRegion("cn-north-1");
+        /// <summary>
+        /// Constant CnNorthwest1 for VPCRegion
+        /// </summary>
+        public static readonly VPCRegion CnNorthwest1 = new VPCRegion("cn-northwest-1");
         /// <summary>
         /// Constant EuCentral1 for VPCRegion
         /// </summary>

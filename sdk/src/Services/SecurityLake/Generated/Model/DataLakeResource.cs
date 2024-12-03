@@ -46,8 +46,8 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property CreateStatus. 
         /// <para>
-        /// Retrieves the status of the configuration operation for an account in Amazon Security
-        /// Lake.
+        /// Retrieves the status of the <c>CreateDatalake</c> API call for an account in Amazon
+        /// Security Lake.
         /// </para>
         /// </summary>
         public DataLakeStatus CreateStatus

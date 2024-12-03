@@ -69,11 +69,12 @@ namespace Amazon.AutoScaling.Model
     ///  </li> <li> 
     /// <para>
     /// If you need more time, record the lifecycle action heartbeat to keep the instance
-    /// in a wait state using the <a>RecordLifecycleActionHeartbeat</a> API call.
+    /// in a wait state using the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_RecordLifecycleActionHeartbeat.html">RecordLifecycleActionHeartbeat</a>
+    /// API call.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If you finish before the timeout period ends, send a callback by using the <a>CompleteLifecycleAction</a>
+    /// If you finish before the timeout period ends, send a callback by using the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CompleteLifecycleAction.html">CompleteLifecycleAction</a>
     /// API call.
     /// </para>
     ///  </li> </ol> 
@@ -88,9 +89,10 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// You can view the lifecycle hooks for an Auto Scaling group using the <a>DescribeLifecycleHooks</a>
+    /// You can view the lifecycle hooks for an Auto Scaling group using the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeLifecycleHooks.html">DescribeLifecycleHooks</a>
     /// API call. If you are no longer using a lifecycle hook, you can delete it by calling
-    /// the <a>DeleteLifecycleHook</a> API.
+    /// the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DeleteLifecycleHook.html">DeleteLifecycleHook</a>
+    /// API.
     /// </para>
     /// </summary>
     public partial class PutLifecycleHookRequest : AmazonAutoScalingRequest

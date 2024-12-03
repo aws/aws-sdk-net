@@ -41,8 +41,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property NodeGroupId. 
         /// <para>
-        /// Either the ElastiCache (Redis OSS) supplied 4-digit id or a user supplied id for the
-        /// node group these configuration values apply to.
+        /// Either the ElastiCache supplied 4-digit id or a user supplied id for the node group
+        /// these configuration values apply to.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4)]

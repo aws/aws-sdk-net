@@ -82,6 +82,7 @@ namespace Amazon.S3.Transfer
         /// <summary>
         /// 	Gets or sets the local directory where objects from Amazon S3 will be downloaded.  
 		/// 	If the directory doesn't exist, it will be created.
+        /// 	For some platforms like Linux, the file system is case-sensitive. The correct casing to the actual path must be used.
         /// </summary>
         /// <value>
         /// 	The local directory where objects from Amazon S3 will be downloaded.

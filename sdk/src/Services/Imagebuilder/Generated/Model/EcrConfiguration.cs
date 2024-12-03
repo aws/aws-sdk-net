@@ -41,8 +41,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ContainerTags. 
         /// <para>
-        /// Tags for Image Builder to apply to the output container image that &amp;INS; scans.
-        /// Tags can help you identify and manage your scanned images.
+        /// Tags for Image Builder to apply to the output container image that Amazon Inspector
+        /// scans. Tags can help you identify and manage your scanned images.
         /// </para>
         /// </summary>
         public List<string> ContainerTags

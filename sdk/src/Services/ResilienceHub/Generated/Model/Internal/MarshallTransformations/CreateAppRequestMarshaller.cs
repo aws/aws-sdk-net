@@ -75,6 +75,12 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.AssessmentSchedule);
                     }
 
+                    if(publicRequest.IsSetAwsApplicationArn())
+                    {
+                        context.Writer.WritePropertyName("awsApplicationArn");
+                        context.Writer.Write(publicRequest.AwsApplicationArn);
+                    }
+
                     if(publicRequest.IsSetClientToken())
                     {
                         context.Writer.WritePropertyName("clientToken");

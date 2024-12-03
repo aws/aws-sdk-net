@@ -123,6 +123,12 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Priority.Value);
                     }
 
+                    if(publicRequest.IsSetSourceJobId())
+                    {
+                        context.Writer.WritePropertyName("sourceJobId");
+                        context.Writer.Write(publicRequest.SourceJobId);
+                    }
+
                     if(publicRequest.IsSetStorageProfileId())
                     {
                         context.Writer.WritePropertyName("storageProfileId");

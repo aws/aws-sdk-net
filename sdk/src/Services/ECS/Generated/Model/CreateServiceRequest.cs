@@ -34,13 +34,17 @@ namespace Amazon.ECS.Model
     /// Runs and maintains your desired number of tasks from a specified task definition.
     /// If the number of tasks running in a service drops below the <c>desiredCount</c>, Amazon
     /// ECS runs another copy of the task in the specified cluster. To update an existing
-    /// service, use <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html">UpdateService</a>.
+    /// service, see the <a>UpdateService</a> action.
     /// 
     ///  <note> 
     /// <para>
     /// On March 21, 2024, a change was made to resolve the task definition revision before
     /// authorization. When a task definition revision is not specified, authorization will
     /// occur using the latest revision of a task definition.
+    /// </para>
+    ///  </note> <note> 
+    /// <para>
+    /// Amazon Elastic Inference (EI) is no longer available to customers.
     /// </para>
     ///  </note> 
     /// <para>
@@ -150,16 +154,6 @@ namespace Amazon.ECS.Model
     /// ECS task placement</a> in the <i>Amazon Elastic Container Service Developer Guide</i>
     /// 
     /// </para>
-    ///  
-    /// <para>
-    /// Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon
-    /// Elastic Inference (EI), and will help current customers migrate their workloads to
-    /// options that offer better price and performance. After April 15, 2023, new customers
-    /// will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker,
-    /// Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once
-    /// during the past 30-day period are considered current customers and will be able to
-    /// continue using the service. 
-    /// </para>
     /// </summary>
     public partial class CreateServiceRequest : AmazonECSRequest
     {
@@ -259,7 +253,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property DeploymentConfiguration. 
         /// <para>
         /// Optional deployment parameters that control how many tasks run during the deployment
-        /// and the ordering of stopping and starting tasks.
+        /// and the failure detection methods.
         /// </para>
         /// </summary>
         public DeploymentConfiguration DeploymentConfiguration

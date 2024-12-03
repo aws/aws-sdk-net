@@ -72,6 +72,18 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("instructSupported", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.InstructSupported = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("modelArchitecture", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ModelArchitecture = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("modelArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

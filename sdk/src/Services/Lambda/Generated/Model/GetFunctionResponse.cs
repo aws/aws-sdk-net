@@ -38,6 +38,7 @@ namespace Amazon.Lambda.Model
         private Concurrency _concurrency;
         private FunctionConfiguration _configuration;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private TagsError _tagsError;
 
         /// <summary>
         /// Gets and sets the property Code. 
@@ -98,6 +99,7 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.
+        /// Lambda returns tag data only if you have explicit allow permissions for <a href="https://docs.aws.amazon.com/lambda/latest/api/API_ListTags.html">lambda:ListTags</a>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
@@ -110,6 +112,24 @@ namespace Amazon.Lambda.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagsError. 
+        /// <para>
+        /// An object that contains details about an error related to retrieving tags.
+        /// </para>
+        /// </summary>
+        public TagsError TagsError
+        {
+            get { return this._tagsError; }
+            set { this._tagsError = value; }
+        }
+
+        // Check to see if TagsError property is set
+        internal bool IsSetTagsError()
+        {
+            return this._tagsError != null;
         }
 
     }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.Runtime.Telemetry;
 using Amazon.Runtime.Telemetry.Tracing;

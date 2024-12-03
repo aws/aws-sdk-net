@@ -6,6 +6,12 @@
     <max>31</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.AssociateCapacityReservationBillingOwnerRequest.UnusedReservationBillingOwnerId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.CreateCapacityReservationRequest.OutpostArn</property>
     <pattern>^arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/op-[a-f0-9]{17}$</pattern>
   </property-value-rule>
@@ -106,6 +112,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeCapacityBlockOfferingsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeCapacityReservationBillingRequestsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
   </property-value-rule>
@@ -218,6 +229,11 @@
     <property>Amazon.EC2.Model.DescribeInstanceEventWindowsRequest.MaxResults</property>
     <min>20</min>
     <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeInstanceImageMetadataRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeInstanceTopologyRequest.MaxResults</property>
@@ -416,6 +432,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeSecurityGroupVpcAssociationsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeSpotFleetInstancesRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -569,6 +590,12 @@
     <property>Amazon.EC2.Model.DescribeVpcsRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DisassociateCapacityReservationBillingOwnerRequest.UnusedReservationBillingOwnerId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DisassociateNatGatewayAddressRequest.MaxDrainDurationSeconds</property>
@@ -804,6 +831,18 @@
   <property-value-rule>
     <property>Amazon.EC2.Model.CapacityReservation.PlacementGroupArn</property>
     <pattern>^arn:aws([a-z-]+)?:ec2:[a-z\d-]+:\d{12}:placement-group/^.{1,255}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.CapacityReservation.UnusedReservationBillingOwnerId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.CapacityReservationBillingRequest.UnusedReservationBillingOwnerId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.CoipPool.PoolArn</property>

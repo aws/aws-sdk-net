@@ -36,6 +36,7 @@ namespace Amazon.CodeBuild.Model
     {
         private string _arn;
         private ProjectArtifacts _artifacts;
+        private int? _autoRetryLimit;
         private ProjectBadge _badge;
         private ProjectBuildBatchConfig _buildBatchConfig;
         private ProjectCache _cache;
@@ -97,6 +98,26 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetArtifacts()
         {
             return this._artifacts != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoRetryLimit. 
+        /// <para>
+        /// The maximum number of additional automatic retries after a failed build. For example,
+        /// if the auto-retry limit is set to 2, CodeBuild will call the <c>RetryBuild</c> API
+        /// to automatically retry your build for up to 2 additional times.
+        /// </para>
+        /// </summary>
+        public int? AutoRetryLimit
+        {
+            get { return this._autoRetryLimit; }
+            set { this._autoRetryLimit = value; }
+        }
+
+        // Check to see if AutoRetryLimit property is set
+        internal bool IsSetAutoRetryLimit()
+        {
+            return this._autoRetryLimit.HasValue; 
         }
 
         /// <summary>

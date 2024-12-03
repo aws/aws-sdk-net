@@ -37,6 +37,14 @@ namespace Amazon.TaxSettings.Model
         }
 
         /// <summary>
+        /// Paginator for ListSupplementalTaxRegistrations operation
+        ///</summary>
+        public IListSupplementalTaxRegistrationsPaginator ListSupplementalTaxRegistrations(ListSupplementalTaxRegistrationsRequest request) 
+        {
+            return new ListSupplementalTaxRegistrationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListTaxRegistrations operation
         ///</summary>
         public IListTaxRegistrationsPaginator ListTaxRegistrations(ListTaxRegistrationsRequest request) 

@@ -31,8 +31,8 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the CopyServerlessCacheSnapshot operation.
-    /// Creates a copy of an existing serverless cache’s snapshot. Available for Redis OSS
-    /// and Serverless Memcached only.
+    /// Creates a copy of an existing serverless cache’s snapshot. Available for Valkey, Redis
+    /// OSS and Serverless Memcached only.
     /// </summary>
     public partial class CopyServerlessCacheSnapshotRequest : AmazonElastiCacheRequest
     {
@@ -44,8 +44,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The identifier of the KMS key used to encrypt the target snapshot. Available for Redis
-        /// OSS and Serverless Memcached only.
+        /// The identifier of the KMS key used to encrypt the target snapshot. Available for Valkey,
+        /// Redis OSS and Serverless Memcached only.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -64,7 +64,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property SourceServerlessCacheSnapshotName. 
         /// <para>
         /// The identifier of the existing serverless cache’s snapshot to be copied. Available
-        /// for Redis OSS and Serverless Memcached only.
+        /// for Valkey, Redis OSS and Serverless Memcached only.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -84,7 +84,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// A list of tags to be added to the target snapshot resource. A tag is a key-value pair.
-        /// Available for Redis OSS and Serverless Memcached only. Default: NULL
+        /// Available for Valkey, Redis OSS and Serverless Memcached only. Default: NULL
         /// </para>
         /// </summary>
         public List<Tag> Tags
@@ -102,8 +102,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property TargetServerlessCacheSnapshotName. 
         /// <para>
-        /// The identifier for the snapshot to be created. Available for Redis OSS and Serverless
-        /// Memcached only.
+        /// The identifier for the snapshot to be created. Available for Valkey, Redis OSS and
+        /// Serverless Memcached only.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

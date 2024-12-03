@@ -38,8 +38,8 @@ namespace Amazon.CloudFormation.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-exports.html">
-    /// CloudFormation export stack output values</a>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-exports.html">Get
+    /// exported outputs from a deployed CloudFormation stack</a>.
     /// </para>
     /// </summary>
     public partial class ListExportsRequest : AmazonCloudFormationRequest

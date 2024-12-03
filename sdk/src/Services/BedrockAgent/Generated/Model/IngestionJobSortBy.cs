@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Parameters by which to sort the results.
+    /// The parameters of sorting the data.
     /// </summary>
     public partial class IngestionJobSortBy
     {
@@ -40,7 +40,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property Attribute. 
         /// <para>
-        /// The attribute by which to sort the results.
+        /// The name of field or attribute to apply sorting of data.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +59,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property Order. 
         /// <para>
-        /// The order by which to sort the results.
+        /// The order for sorting the data.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

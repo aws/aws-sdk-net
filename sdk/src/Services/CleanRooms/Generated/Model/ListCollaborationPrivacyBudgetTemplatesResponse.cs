@@ -60,7 +60,7 @@ namespace Amazon.CleanRooms.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token value retrieved from a previous call to access the next page of results.
+        /// The pagination token that's used to fetch the next set of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10240)]

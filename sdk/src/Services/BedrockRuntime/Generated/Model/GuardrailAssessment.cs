@@ -36,6 +36,7 @@ namespace Amazon.BedrockRuntime.Model
     {
         private GuardrailContentPolicyAssessment _contentPolicy;
         private GuardrailContextualGroundingPolicyAssessment _contextualGroundingPolicy;
+        private GuardrailInvocationMetrics _invocationMetrics;
         private GuardrailSensitiveInformationPolicyAssessment _sensitiveInformationPolicy;
         private GuardrailTopicPolicyAssessment _topicPolicy;
         private GuardrailWordPolicyAssessment _wordPolicy;
@@ -74,6 +75,24 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetContextualGroundingPolicy()
         {
             return this._contextualGroundingPolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InvocationMetrics. 
+        /// <para>
+        /// The invocation metrics for the guardrail assessment.
+        /// </para>
+        /// </summary>
+        public GuardrailInvocationMetrics InvocationMetrics
+        {
+            get { return this._invocationMetrics; }
+            set { this._invocationMetrics = value; }
+        }
+
+        // Check to see if InvocationMetrics property is set
+        internal bool IsSetInvocationMetrics()
+        {
+            return this._invocationMetrics != null;
         }
 
         /// <summary>

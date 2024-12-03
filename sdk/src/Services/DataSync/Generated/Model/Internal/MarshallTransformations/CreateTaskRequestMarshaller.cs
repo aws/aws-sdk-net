@@ -176,6 +176,12 @@ namespace Amazon.DataSync.Model.Internal.MarshallTransformations
                         context.Writer.WriteArrayEnd();
                     }
 
+                    if(publicRequest.IsSetTaskMode())
+                    {
+                        context.Writer.WritePropertyName("TaskMode");
+                        context.Writer.Write(publicRequest.TaskMode);
+                    }
+
                     if(publicRequest.IsSetTaskReportConfig())
                     {
                         context.Writer.WritePropertyName("TaskReportConfig");

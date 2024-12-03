@@ -31,13 +31,8 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchAssociateAnalyticsDataSet operation.
-    /// This API is in preview release for Amazon Connect and is subject to change.
-    /// 
-    ///  
-    /// <para>
     /// Associates a list of analytics datasets for a given Amazon Connect instance to a target
     /// account. You can associate multiple datasets in a single call.
-    /// </para>
     /// </summary>
     public partial class BatchAssociateAnalyticsDataSetRequest : AmazonConnectRequest
     {

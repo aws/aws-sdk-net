@@ -62,7 +62,7 @@ namespace Amazon.PaymentCryptography.Model
         /// The value of the tag.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=256)]
+        [AWSProperty(Required=true, Min=1, Max=256)]
         public string Value
         {
             get { return this._value; }

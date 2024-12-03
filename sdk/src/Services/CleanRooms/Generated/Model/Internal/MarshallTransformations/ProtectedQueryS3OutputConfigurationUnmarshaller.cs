@@ -84,6 +84,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                     unmarshalledObject.ResultFormat = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("singleFileOutput", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.SingleFileOutput = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

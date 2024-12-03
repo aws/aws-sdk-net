@@ -25,6 +25,64 @@ namespace Amazon.Deadline
 {
 
     /// <summary>
+    /// Constants used for properties of type AcceleratorName.
+    /// </summary>
+    public class AcceleratorName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant A10g for AcceleratorName
+        /// </summary>
+        public static readonly AcceleratorName A10g = new AcceleratorName("a10g");
+        /// <summary>
+        /// Constant L4 for AcceleratorName
+        /// </summary>
+        public static readonly AcceleratorName L4 = new AcceleratorName("l4");
+        /// <summary>
+        /// Constant L40s for AcceleratorName
+        /// </summary>
+        public static readonly AcceleratorName L40s = new AcceleratorName("l40s");
+        /// <summary>
+        /// Constant T4 for AcceleratorName
+        /// </summary>
+        public static readonly AcceleratorName T4 = new AcceleratorName("t4");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AcceleratorName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AcceleratorName FindValue(string value)
+        {
+            return FindValue<AcceleratorName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AcceleratorName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AcceleratorType.
     /// </summary>
     public class AcceleratorType : ConstantClass

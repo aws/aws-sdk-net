@@ -31,13 +31,13 @@ namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDeliveryStream operation.
-    /// Describes the specified delivery stream and its status. For example, after your delivery
-    /// stream is created, call <c>DescribeDeliveryStream</c> to see whether the delivery
+    /// Describes the specified Firehose stream and its status. For example, after your Firehose
+    /// stream is created, call <c>DescribeDeliveryStream</c> to see whether the Firehose
     /// stream is <c>ACTIVE</c> and therefore ready for data to be sent to it. 
     /// 
     ///  
     /// <para>
-    /// If the status of a delivery stream is <c>CREATING_FAILED</c>, this status doesn't
+    /// If the status of a Firehose stream is <c>CREATING_FAILED</c>, this status doesn't
     /// change, and you can't invoke <a>CreateDeliveryStream</a> again on it. However, you
     /// can invoke the <a>DeleteDeliveryStream</a> operation to delete it. If the status is
     /// <c>DELETING_FAILED</c>, you can force deletion by invoking <a>DeleteDeliveryStream</a>
@@ -53,7 +53,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property DeliveryStreamName. 
         /// <para>
-        /// The name of the delivery stream.
+        /// The name of the Firehose stream.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -73,7 +73,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property ExclusiveStartDestinationId. 
         /// <para>
         /// The ID of the destination to start returning the destination information. Firehose
-        /// supports one destination per delivery stream.
+        /// supports one destination per Firehose stream.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -93,7 +93,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// The limit on the number of destinations to return. You can have one destination per
-        /// delivery stream.
+        /// Firehose stream.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]

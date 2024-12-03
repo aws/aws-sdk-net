@@ -47,9 +47,9 @@ namespace Amazon.RoboMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  For example, if your simulation output location is <c>s3://my-bucket</c> and your
-        /// upload configuration name is <c>robot-test</c>, your files will be uploaded to <c>s3://my-bucket/&lt;simid&gt;/&lt;runid&gt;/robot-test</c>.
-        /// 
+        ///  For example, if your simulation output location is <c>s3://amzn-s3-demo-bucket</c>
+        /// and your upload configuration name is <c>robot-test</c>, your files will be uploaded
+        /// to <c>s3://amzn-s3-demo-bucket/&lt;simid&gt;/&lt;runid&gt;/robot-test</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

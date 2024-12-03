@@ -52,6 +52,11 @@ namespace Amazon.Transfer.Model
         IListExecutionsPaginator ListExecutions(ListExecutionsRequest request);
 
         /// <summary>
+        /// Paginator for ListFileTransferResults operation
+        ///</summary>
+        IListFileTransferResultsPaginator ListFileTransferResults(ListFileTransferResultsRequest request);
+
+        /// <summary>
         /// Paginator for ListProfiles operation
         ///</summary>
         IListProfilesPaginator ListProfiles(ListProfilesRequest request);

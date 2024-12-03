@@ -70,6 +70,72 @@ namespace Amazon.DataExchange
         IDataExchangePaginatorFactory Paginators { get; }
 
         
+        #region  AcceptDataGrant
+
+
+        /// <summary>
+        /// This operation accepts a data grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptDataGrant service method.</param>
+        /// 
+        /// <returns>The response from the AcceptDataGrant service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ConflictException">
+        /// The request couldn't be completed because it conflicted with the current state of
+        /// the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/AcceptDataGrant">REST API Reference for AcceptDataGrant Operation</seealso>
+        AcceptDataGrantResponse AcceptDataGrant(AcceptDataGrantRequest request);
+
+
+
+        /// <summary>
+        /// This operation accepts a data grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptDataGrant service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AcceptDataGrant service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ConflictException">
+        /// The request couldn't be completed because it conflicted with the current state of
+        /// the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/AcceptDataGrant">REST API Reference for AcceptDataGrant Operation</seealso>
+        Task<AcceptDataGrantResponse> AcceptDataGrantAsync(AcceptDataGrantRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CancelJob
 
 
@@ -129,6 +195,70 @@ namespace Amazon.DataExchange
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/CancelJob">REST API Reference for CancelJob Operation</seealso>
         Task<CancelJobResponse> CancelJobAsync(CancelJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateDataGrant
+
+
+        /// <summary>
+        /// This operation creates a data grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataGrant service method.</param>
+        /// 
+        /// <returns>The response from the CreateDataGrant service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ServiceLimitExceededException">
+        /// The request has exceeded the quotas imposed by the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/CreateDataGrant">REST API Reference for CreateDataGrant Operation</seealso>
+        CreateDataGrantResponse CreateDataGrant(CreateDataGrantRequest request);
+
+
+
+        /// <summary>
+        /// This operation creates a data grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataGrant service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDataGrant service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ServiceLimitExceededException">
+        /// The request has exceeded the quotas imposed by the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/CreateDataGrant">REST API Reference for CreateDataGrant Operation</seealso>
+        Task<CreateDataGrantResponse> CreateDataGrantAsync(CreateDataGrantRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -438,6 +568,64 @@ namespace Amazon.DataExchange
 
         #endregion
         
+        #region  DeleteDataGrant
+
+
+        /// <summary>
+        /// This operation deletes a data grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataGrant service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDataGrant service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/DeleteDataGrant">REST API Reference for DeleteDataGrant Operation</seealso>
+        DeleteDataGrantResponse DeleteDataGrant(DeleteDataGrantRequest request);
+
+
+
+        /// <summary>
+        /// This operation deletes a data grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataGrant service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDataGrant service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/DeleteDataGrant">REST API Reference for DeleteDataGrant Operation</seealso>
+        Task<DeleteDataGrantResponse> DeleteDataGrantAsync(DeleteDataGrantRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteDataSet
 
 
@@ -674,6 +862,64 @@ namespace Amazon.DataExchange
 
         #endregion
         
+        #region  GetDataGrant
+
+
+        /// <summary>
+        /// This operation returns information about a data grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataGrant service method.</param>
+        /// 
+        /// <returns>The response from the GetDataGrant service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetDataGrant">REST API Reference for GetDataGrant Operation</seealso>
+        GetDataGrantResponse GetDataGrant(GetDataGrantRequest request);
+
+
+
+        /// <summary>
+        /// This operation returns information about a data grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataGrant service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDataGrant service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetDataGrant">REST API Reference for GetDataGrant Operation</seealso>
+        Task<GetDataGrantResponse> GetDataGrantAsync(GetDataGrantRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetDataSet
 
 
@@ -830,6 +1076,64 @@ namespace Amazon.DataExchange
 
         #endregion
         
+        #region  GetReceivedDataGrant
+
+
+        /// <summary>
+        /// This operation returns information about a received data grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetReceivedDataGrant service method.</param>
+        /// 
+        /// <returns>The response from the GetReceivedDataGrant service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetReceivedDataGrant">REST API Reference for GetReceivedDataGrant Operation</seealso>
+        GetReceivedDataGrantResponse GetReceivedDataGrant(GetReceivedDataGrantRequest request);
+
+
+
+        /// <summary>
+        /// This operation returns information about a received data grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetReceivedDataGrant service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetReceivedDataGrant service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetReceivedDataGrant">REST API Reference for GetReceivedDataGrant Operation</seealso>
+        Task<GetReceivedDataGrantResponse> GetReceivedDataGrantAsync(GetReceivedDataGrantRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetRevision
 
 
@@ -879,6 +1183,64 @@ namespace Amazon.DataExchange
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetRevision">REST API Reference for GetRevision Operation</seealso>
         Task<GetRevisionResponse> GetRevisionAsync(GetRevisionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListDataGrants
+
+
+        /// <summary>
+        /// This operation returns information about all data grants.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataGrants service method.</param>
+        /// 
+        /// <returns>The response from the ListDataGrants service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListDataGrants">REST API Reference for ListDataGrants Operation</seealso>
+        ListDataGrantsResponse ListDataGrants(ListDataGrantsRequest request);
+
+
+
+        /// <summary>
+        /// This operation returns information about all data grants.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataGrants service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDataGrants service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListDataGrants">REST API Reference for ListDataGrants Operation</seealso>
+        Task<ListDataGrantsResponse> ListDataGrantsAsync(ListDataGrantsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -939,8 +1301,7 @@ namespace Amazon.DataExchange
 
         /// <summary>
         /// This operation lists your data sets. When listing by origin OWNED, results are sorted
-        /// by CreatedAt in descending order. When listing by origin ENTITLED, there is no order
-        /// and the maxResults parameter is ignored.
+        /// by CreatedAt in descending order. When listing by origin ENTITLED, there is no order.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDataSets service method.</param>
         /// 
@@ -964,8 +1325,7 @@ namespace Amazon.DataExchange
 
         /// <summary>
         /// This operation lists your data sets. When listing by origin OWNED, results are sorted
-        /// by CreatedAt in descending order. When listing by origin ENTITLED, there is no order
-        /// and the maxResults parameter is ignored.
+        /// by CreatedAt in descending order. When listing by origin ENTITLED, there is no order.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDataSets service method.</param>
         /// <param name="cancellationToken">
@@ -1091,6 +1451,64 @@ namespace Amazon.DataExchange
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListJobs">REST API Reference for ListJobs Operation</seealso>
         Task<ListJobsResponse> ListJobsAsync(ListJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListReceivedDataGrants
+
+
+        /// <summary>
+        /// This operation returns information about all received data grants.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReceivedDataGrants service method.</param>
+        /// 
+        /// <returns>The response from the ListReceivedDataGrants service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListReceivedDataGrants">REST API Reference for ListReceivedDataGrants Operation</seealso>
+        ListReceivedDataGrantsResponse ListReceivedDataGrants(ListReceivedDataGrantsRequest request);
+
+
+
+        /// <summary>
+        /// This operation returns information about all received data grants.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReceivedDataGrants service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListReceivedDataGrants service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListReceivedDataGrants">REST API Reference for ListReceivedDataGrants Operation</seealso>
+        Task<ListReceivedDataGrantsResponse> ListReceivedDataGrantsAsync(ListReceivedDataGrantsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

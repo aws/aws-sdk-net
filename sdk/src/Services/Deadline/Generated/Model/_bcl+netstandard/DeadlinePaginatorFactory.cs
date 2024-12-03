@@ -101,6 +101,14 @@ namespace Amazon.Deadline.Model
         }
 
         /// <summary>
+        /// Paginator for ListJobParameterDefinitions operation
+        ///</summary>
+        public IListJobParameterDefinitionsPaginator ListJobParameterDefinitions(ListJobParameterDefinitionsRequest request) 
+        {
+            return new ListJobParameterDefinitionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListJobs operation
         ///</summary>
         public IListJobsPaginator ListJobs(ListJobsRequest request) 

@@ -31,7 +31,7 @@ namespace Amazon.Keyspaces.Model
 {
     /// <summary>
     /// Container for the parameters to the ListKeyspaces operation.
-    /// Returns a list of keyspaces.
+    /// The <c>ListKeyspaces</c> operation returns a list of keyspaces.
     /// </summary>
     public partial class ListKeyspacesRequest : AmazonKeyspacesRequest
     {

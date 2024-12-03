@@ -296,7 +296,8 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Associates a software bill of materials (SBOM) with a specific software package version.
+        /// Associates the selected software bill of materials (SBOM) with a specific software
+        /// package version.
         /// 
         ///  
         /// <para>
@@ -332,7 +333,8 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Associates a software bill of materials (SBOM) with a specific software package version.
+        /// Associates the selected software bill of materials (SBOM) with a specific software
+        /// package version.
         /// 
         ///  
         /// <para>
@@ -1823,7 +1825,10 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Creates a billing group.
+        /// Creates a billing group. If this call is made multiple times using the same billing
+        /// group name and configuration, the call will succeed. If this call is made with the
+        /// same billing group name but different configuration a <c>ResourceAlreadyExistsException</c>
+        /// is thrown.
         /// 
         ///  
         /// <para>
@@ -1852,7 +1857,10 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Creates a billing group.
+        /// Creates a billing group. If this call is made multiple times using the same billing
+        /// group name and configuration, the call will succeed. If this call is made with the
+        /// same billing group name but different configuration a <c>ResourceAlreadyExistsException</c>
+        /// is thrown.
         /// 
         ///  
         /// <para>
@@ -4443,6 +4451,16 @@ namespace Amazon.IoT
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateRoleAlias</a>
         /// action.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// The value of <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CreateRoleAlias.html#iot-CreateRoleAlias-request-credentialDurationSeconds">
+        /// <c>credentialDurationSeconds</c> </a> must be less than or equal to the maximum session
+        /// duration of the IAM role that the role alias references. For more information, see
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-managingrole-editing-api.html#roles-modify_max-session-duration-api">
+        /// Modifying a role maximum session duration (Amazon Web Services API)</a> from the Amazon
+        /// Web Services Identity and Access Management User Guide.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRoleAlias service method.</param>
         /// 
@@ -4481,6 +4499,16 @@ namespace Amazon.IoT
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateRoleAlias</a>
         /// action.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// The value of <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CreateRoleAlias.html#iot-CreateRoleAlias-request-credentialDurationSeconds">
+        /// <c>credentialDurationSeconds</c> </a> must be less than or equal to the maximum session
+        /// duration of the IAM role that the role alias references. For more information, see
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-managingrole-editing-api.html#roles-modify_max-session-duration-api">
+        /// Modifying a role maximum session duration (Amazon Web Services API)</a> from the Amazon
+        /// Web Services Identity and Access Management User Guide.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRoleAlias service method.</param>
         /// <param name="cancellationToken">
@@ -4926,7 +4954,10 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Creates a new thing type.
+        /// Creates a new thing type. If this call is made multiple times using the same thing
+        /// type name and configuration, the call will succeed. If this call is made with the
+        /// same thing type name but different configuration a <c>ResourceAlreadyExistsException</c>
+        /// is thrown. 
         /// 
         ///  
         /// <para>
@@ -4961,7 +4992,10 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Creates a new thing type.
+        /// Creates a new thing type. If this call is made multiple times using the same thing
+        /// type name and configuration, the call will succeed. If this call is made with the
+        /// same thing type name but different configuration a <c>ResourceAlreadyExistsException</c>
+        /// is thrown. 
         /// 
         ///  
         /// <para>
@@ -11304,8 +11338,8 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Disassociates a software bill of materials (SBOM) from a specific software package
-        /// version.
+        /// Disassociates the selected software bill of materials (SBOM) from a specific software
+        /// package version.
         /// 
         ///  
         /// <para>
@@ -11338,8 +11372,8 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Disassociates a software bill of materials (SBOM) from a specific software package
-        /// version.
+        /// Disassociates the selected software bill of materials (SBOM) from a specific software
+        /// package version.
         /// 
         ///  
         /// <para>
@@ -15832,6 +15866,84 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  ListPrincipalThingsV2
+
+
+        /// <summary>
+        /// Lists the things associated with the specified principal. A principal can be an X.509
+        /// certificate or an Amazon Cognito ID.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPrincipalThings</a>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPrincipalThingsV2 service method.</param>
+        /// 
+        /// <returns>The response from the ListPrincipalThingsV2 service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPrincipalThingsV2">REST API Reference for ListPrincipalThingsV2 Operation</seealso>
+        ListPrincipalThingsV2Response ListPrincipalThingsV2(ListPrincipalThingsV2Request request);
+
+
+
+        /// <summary>
+        /// Lists the things associated with the specified principal. A principal can be an X.509
+        /// certificate or an Amazon Cognito ID.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPrincipalThings</a>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPrincipalThingsV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPrincipalThingsV2 service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPrincipalThingsV2">REST API Reference for ListPrincipalThingsV2 Operation</seealso>
+        Task<ListPrincipalThingsV2Response> ListPrincipalThingsV2Async(ListPrincipalThingsV2Request request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListProvisioningTemplates
 
 
@@ -17008,6 +17120,84 @@ namespace Amazon.IoT
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingPrincipals">REST API Reference for ListThingPrincipals Operation</seealso>
         Task<ListThingPrincipalsResponse> ListThingPrincipalsAsync(ListThingPrincipalsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListThingPrincipalsV2
+
+
+        /// <summary>
+        /// Lists the principals associated with the specified thing. A principal can be an X.509
+        /// certificate or an Amazon Cognito ID.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingPrincipals</a>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListThingPrincipalsV2 service method.</param>
+        /// 
+        /// <returns>The response from the ListThingPrincipalsV2 service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingPrincipalsV2">REST API Reference for ListThingPrincipalsV2 Operation</seealso>
+        ListThingPrincipalsV2Response ListThingPrincipalsV2(ListThingPrincipalsV2Request request);
+
+
+
+        /// <summary>
+        /// Lists the principals associated with the specified thing. A principal can be an X.509
+        /// certificate or an Amazon Cognito ID.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingPrincipals</a>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListThingPrincipalsV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListThingPrincipalsV2 service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingPrincipalsV2">REST API Reference for ListThingPrincipalsV2 Operation</seealso>
+        Task<ListThingPrincipalsV2Response> ListThingPrincipalsV2Async(ListThingPrincipalsV2Request request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -21652,6 +21842,16 @@ namespace Amazon.IoT
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateRoleAlias</a>
         /// action.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// The value of <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateRoleAlias.html#iot-UpdateRoleAlias-request-credentialDurationSeconds">
+        /// <c>credentialDurationSeconds</c> </a> must be less than or equal to the maximum session
+        /// duration of the IAM role that the role alias references. For more information, see
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-managingrole-editing-api.html#roles-modify_max-session-duration-api">
+        /// Modifying a role maximum session duration (Amazon Web Services API)</a> from the Amazon
+        /// Web Services Identity and Access Management User Guide.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRoleAlias service method.</param>
         /// 
@@ -21687,6 +21887,16 @@ namespace Amazon.IoT
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateRoleAlias</a>
         /// action.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// The value of <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_UpdateRoleAlias.html#iot-UpdateRoleAlias-request-credentialDurationSeconds">
+        /// <c>credentialDurationSeconds</c> </a> must be less than or equal to the maximum session
+        /// duration of the IAM role that the role alias references. For more information, see
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-managingrole-editing-api.html#roles-modify_max-session-duration-api">
+        /// Modifying a role maximum session duration (Amazon Web Services API)</a> from the Amazon
+        /// Web Services Identity and Access Management User Guide.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRoleAlias service method.</param>
         /// <param name="cancellationToken">
@@ -22154,6 +22364,70 @@ namespace Amazon.IoT
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateThingGroupsForThing">REST API Reference for UpdateThingGroupsForThing Operation</seealso>
         Task<UpdateThingGroupsForThingResponse> UpdateThingGroupsForThingAsync(UpdateThingGroupsForThingRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateThingType
+
+
+        /// <summary>
+        /// Updates a thing type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateThingType service method.</param>
+        /// 
+        /// <returns>The response from the UpdateThingType service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateThingType">REST API Reference for UpdateThingType Operation</seealso>
+        UpdateThingTypeResponse UpdateThingType(UpdateThingTypeRequest request);
+
+
+
+        /// <summary>
+        /// Updates a thing type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateThingType service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateThingType service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateThingType">REST API Reference for UpdateThingType Operation</seealso>
+        Task<UpdateThingTypeResponse> UpdateThingTypeAsync(UpdateThingTypeRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

@@ -37,6 +37,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         private string _configurationSetArn;
         private string _configurationSetName;
         private DateTime? _createdTimestamp;
+        private bool? _defaultMessageFeedbackEnabled;
         private MessageType _defaultMessageType;
         private string _defaultSenderId;
         private List<EventDestination> _eventDestinations = AWSConfigs.InitializeCollections ? new List<EventDestination>() : null;
@@ -95,6 +96,25 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         internal bool IsSetCreatedTimestamp()
         {
             return this._createdTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultMessageFeedbackEnabled. 
+        /// <para>
+        /// True if the configuration set has message feedback enabled. By default this is set
+        /// to false. 
+        /// </para>
+        /// </summary>
+        public bool? DefaultMessageFeedbackEnabled
+        {
+            get { return this._defaultMessageFeedbackEnabled; }
+            set { this._defaultMessageFeedbackEnabled = value; }
+        }
+
+        // Check to see if DefaultMessageFeedbackEnabled property is set
+        internal bool IsSetDefaultMessageFeedbackEnabled()
+        {
+            return this._defaultMessageFeedbackEnabled.HasValue; 
         }
 
         /// <summary>

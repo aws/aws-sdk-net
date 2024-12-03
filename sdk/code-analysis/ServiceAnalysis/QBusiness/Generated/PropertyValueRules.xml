@@ -1190,6 +1190,12 @@
     <pattern>[a-zA-Z0-9][a-zA-Z0-9-]{35}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QBusiness.Model.PutGroupRequest.RoleArn</property>
+    <min>0</min>
+    <max>1284</max>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QBusiness.Model.StartDataSourceSyncJobRequest.ApplicationId</property>
     <min>36</min>
     <max>36</max>

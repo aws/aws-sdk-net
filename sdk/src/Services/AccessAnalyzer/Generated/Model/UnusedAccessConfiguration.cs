@@ -34,7 +34,23 @@ namespace Amazon.AccessAnalyzer.Model
     /// </summary>
     public partial class UnusedAccessConfiguration
     {
+        private AnalysisRule _analysisRule;
         private int? _unusedAccessAge;
+
+        /// <summary>
+        /// Gets and sets the property AnalysisRule.
+        /// </summary>
+        public AnalysisRule AnalysisRule
+        {
+            get { return this._analysisRule; }
+            set { this._analysisRule = value; }
+        }
+
+        // Check to see if AnalysisRule property is set
+        internal bool IsSetAnalysisRule()
+        {
+            return this._analysisRule != null;
+        }
 
         /// <summary>
         /// Gets and sets the property UnusedAccessAge. 
@@ -43,7 +59,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// For example, if you specify 90 days, the analyzer will generate findings for IAM entities
         /// within the accounts of the selected organization for any access that hasn't been used
         /// in 90 or more days since the analyzer's last scan. You can choose a value between
-        /// 1 and 180 days.
+        /// 1 and 365 days.
         /// </para>
         /// </summary>
         public int? UnusedAccessAge

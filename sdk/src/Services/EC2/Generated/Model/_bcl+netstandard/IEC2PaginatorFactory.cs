@@ -52,6 +52,11 @@ namespace Amazon.EC2.Model
         IDescribeCapacityBlockOfferingsPaginator DescribeCapacityBlockOfferings(DescribeCapacityBlockOfferingsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeCapacityReservationBillingRequests operation
+        ///</summary>
+        IDescribeCapacityReservationBillingRequestsPaginator DescribeCapacityReservationBillingRequests(DescribeCapacityReservationBillingRequestsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeCapacityReservationFleets operation
         ///</summary>
         IDescribeCapacityReservationFleetsPaginator DescribeCapacityReservationFleets(DescribeCapacityReservationFleetsRequest request);
@@ -190,6 +195,11 @@ namespace Amazon.EC2.Model
         /// Paginator for DescribeInstanceEventWindows operation
         ///</summary>
         IDescribeInstanceEventWindowsPaginator DescribeInstanceEventWindows(DescribeInstanceEventWindowsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeInstanceImageMetadata operation
+        ///</summary>
+        IDescribeInstanceImageMetadataPaginator DescribeInstanceImageMetadata(DescribeInstanceImageMetadataRequest request);
 
         /// <summary>
         /// Paginator for DescribeInstances operation
@@ -400,6 +410,11 @@ namespace Amazon.EC2.Model
         /// Paginator for DescribeSecurityGroups operation
         ///</summary>
         IDescribeSecurityGroupsPaginator DescribeSecurityGroups(DescribeSecurityGroupsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeSecurityGroupVpcAssociations operation
+        ///</summary>
+        IDescribeSecurityGroupVpcAssociationsPaginator DescribeSecurityGroupVpcAssociations(DescribeSecurityGroupVpcAssociationsRequest request);
 
         /// <summary>
         /// Paginator for DescribeSnapshots operation

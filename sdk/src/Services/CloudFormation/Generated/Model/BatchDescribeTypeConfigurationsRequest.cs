@@ -36,8 +36,9 @@ namespace Amazon.CloudFormation.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration">Configuring
-    /// extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-set-configuration.html">Edit
+    /// configuration data for extensions in your account</a> in the <i>CloudFormation User
+    /// Guide</i>.
     /// </para>
     /// </summary>
     public partial class BatchDescribeTypeConfigurationsRequest : AmazonCloudFormationRequest

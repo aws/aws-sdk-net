@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
-    /// The configurations for SQS subscriber notification.
+    /// The configurations used for EventBridge subscriber notification.
     /// </summary>
     public partial class SqsNotificationConfiguration
     {

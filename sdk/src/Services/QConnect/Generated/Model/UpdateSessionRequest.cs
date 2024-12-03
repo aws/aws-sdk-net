@@ -37,10 +37,30 @@ namespace Amazon.QConnect.Model
     /// </summary>
     public partial class UpdateSessionRequest : AmazonQConnectRequest
     {
+        private Dictionary<string, AIAgentConfigurationData> _aiAgentConfiguration = AWSConfigs.InitializeCollections ? new Dictionary<string, AIAgentConfigurationData>() : null;
         private string _assistantId;
         private string _description;
         private string _sessionId;
         private TagFilter _tagFilter;
+
+        /// <summary>
+        /// Gets and sets the property AiAgentConfiguration. 
+        /// <para>
+        /// The configuration of the AI Agents (mapped by AI Agent Type to AI Agent version) that
+        /// should be used by Amazon Q in Connect for this Session.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, AIAgentConfigurationData> AiAgentConfiguration
+        {
+            get { return this._aiAgentConfiguration; }
+            set { this._aiAgentConfiguration = value; }
+        }
+
+        // Check to see if AiAgentConfiguration property is set
+        internal bool IsSetAiAgentConfiguration()
+        {
+            return this._aiAgentConfiguration != null && (this._aiAgentConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property AssistantId. 

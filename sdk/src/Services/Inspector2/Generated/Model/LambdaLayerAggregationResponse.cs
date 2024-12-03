@@ -118,7 +118,10 @@ namespace Amazon.Inspector2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SeverityCounts.
+        /// Gets and sets the property SeverityCounts. 
+        /// <para>
+        /// An object that contains the counts of aggregated finding per severity.
+        /// </para>
         /// </summary>
         public SeverityCounts SeverityCounts
         {

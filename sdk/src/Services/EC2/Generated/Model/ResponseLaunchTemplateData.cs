@@ -222,7 +222,11 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ElasticInferenceAccelerators. 
+        /// Gets and sets the property ElasticInferenceAccelerators. <note> 
+        /// <para>
+        /// Amazon Elastic Inference is no longer available.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// An elastic inference accelerator to associate with the instance. Elastic inference
         /// accelerators are a resource you can attach to your Amazon EC2 instances to accelerate

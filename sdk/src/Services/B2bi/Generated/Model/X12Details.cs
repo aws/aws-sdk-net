@@ -68,8 +68,8 @@ namespace Amazon.B2bi.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// Returns the version to use for the specified X12 transaction set. <pre><c> &lt;/p&gt;
-        /// </c></pre>
+        /// Returns the version to use for the specified X12 transaction set.
+        /// </para>
         /// </summary>
         public X12Version Version
         {

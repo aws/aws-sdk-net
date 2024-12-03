@@ -40,7 +40,7 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the resource group from which tags have been removed.
+        /// The Amazon resource name (ARN) of the resource group from which tags have been removed.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=1600)]

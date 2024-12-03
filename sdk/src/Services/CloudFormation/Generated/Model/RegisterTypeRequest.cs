@@ -51,7 +51,8 @@ namespace Amazon.CloudFormation.Model
     /// <para>
     /// For more information about how to develop extensions and ready them for registration,
     /// see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-types.html">Creating
-    /// Resource Providers</a> in the <i>CloudFormation CLI User Guide</i>.
+    /// resource types using the CloudFormation CLI</a> in the <i>CloudFormation Command Line
+    /// Interface (CLI) User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -68,8 +69,9 @@ namespace Amazon.CloudFormation.Model
     /// <para>
     /// Once you have registered a private extension in your account and Region, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>
     /// to specify configuration properties for the extension. For more information, see <a
-    /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration">Configuring
-    /// extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
+    /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-set-configuration.html">Edit
+    /// configuration data for extensions in your account</a> in the <i>CloudFormation User
+    /// Guide</i>.
     /// </para>
     /// </summary>
     public partial class RegisterTypeRequest : AmazonCloudFormationRequest
@@ -168,7 +170,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// For information about generating a schema handler package for the extension you want
         /// to register, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
-        /// in the <i>CloudFormation CLI User Guide</i>.
+        /// in the <i>CloudFormation Command Line Interface (CLI) User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -222,15 +224,15 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For resource types, <i>company_or_organization</i>::<i>service</i>::<i>type</i>.
+        /// For resource types, <c>company_or_organization::service::type</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For modules, <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.
+        /// For modules, <c>company_or_organization::service::type::MODULE</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For hooks, <i>MyCompany</i>::<i>Testing</i>::<i>MyTestHook</i>.
+        /// For hooks, <c>MyCompany::Testing::MyTestHook</c>.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>

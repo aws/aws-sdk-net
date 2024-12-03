@@ -37,7 +37,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// Each rule can optionally include up to one of each of the following conditions: <c>http-request-method</c>,
     /// <c>host-header</c>, <c>path-pattern</c>, and <c>source-ip</c>. Each rule can also
     /// optionally include one or more of each of the following conditions: <c>http-header</c>
-    /// and <c>query-string</c>. Note that the value for a condition cannot be empty.
+    /// and <c>query-string</c>. Note that the value for a condition can't be empty.
     /// </para>
     ///  
     /// <para>

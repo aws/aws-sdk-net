@@ -35,6 +35,7 @@ namespace Amazon.IoTWireless.Model
     public partial class GetLogLevelsByResourceTypesResponse : AmazonWebServiceResponse
     {
         private LogLevel _defaultLogLevel;
+        private List<FuotaTaskLogOption> _fuotaTaskLogOptions = AWSConfigs.InitializeCollections ? new List<FuotaTaskLogOption>() : null;
         private List<WirelessDeviceLogOption> _wirelessDeviceLogOptions = AWSConfigs.InitializeCollections ? new List<WirelessDeviceLogOption>() : null;
         private List<WirelessGatewayLogOption> _wirelessGatewayLogOptions = AWSConfigs.InitializeCollections ? new List<WirelessGatewayLogOption>() : null;
 
@@ -51,6 +52,21 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetDefaultLogLevel()
         {
             return this._defaultLogLevel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FuotaTaskLogOptions.
+        /// </summary>
+        public List<FuotaTaskLogOption> FuotaTaskLogOptions
+        {
+            get { return this._fuotaTaskLogOptions; }
+            set { this._fuotaTaskLogOptions = value; }
+        }
+
+        // Check to see if FuotaTaskLogOptions property is set
+        internal bool IsSetFuotaTaskLogOptions()
+        {
+            return this._fuotaTaskLogOptions != null && (this._fuotaTaskLogOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

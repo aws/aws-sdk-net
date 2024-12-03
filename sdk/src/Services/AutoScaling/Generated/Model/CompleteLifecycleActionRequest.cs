@@ -68,7 +68,8 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>If you finish before the timeout period ends, send a callback by using the <a>CompleteLifecycleAction</a>
+    ///  <b>If you finish before the timeout period ends, send a callback by using the <a
+    /// href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CompleteLifecycleAction.html">CompleteLifecycleAction</a>
     /// API call.</b> 
     /// </para>
     ///  </li> </ol> 

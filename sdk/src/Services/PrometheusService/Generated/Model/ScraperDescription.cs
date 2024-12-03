@@ -70,7 +70,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the scraper.
+        /// The Amazon Resource Name (ARN) of the scraper. For example, <c>arn:aws:aps:&lt;region&gt;:123456798012:scraper/s-example1-1234-abcd-5678-ef9012abcd34</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -149,6 +149,10 @@ namespace Amazon.PrometheusService.Model
         /// The Amazon Resource Name (ARN) of the IAM role that provides permissions for the scraper
         /// to discover and collect metrics on your behalf.
         /// </para>
+        ///  
+        /// <para>
+        /// For example, <c>arn:aws:iam::123456789012:role/service-role/AmazonGrafanaServiceRole-12example</c>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string RoleArn
@@ -166,7 +170,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property ScrapeConfiguration. 
         /// <para>
-        /// The configuration file in use by the scraper.
+        /// The configuration in use by the scraper.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -185,7 +189,7 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property ScraperId. 
         /// <para>
-        /// The ID of the scraper.
+        /// The ID of the scraper. For example, <c>s-example1-1234-abcd-5678-ef9012abcd34</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

@@ -78,6 +78,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.AssessmentRunName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IsLatestTaskAssessmentRun", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.IsLatestTaskAssessmentRun = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastFailureMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -124,6 +130,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResultLocationFolder = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ResultStatistic", targetDepth))
+                {
+                    var unmarshaller = ReplicationTaskAssessmentRunResultStatisticUnmarshaller.Instance;
+                    unmarshalledObject.ResultStatistic = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ServiceAccessRoleArn", targetDepth))

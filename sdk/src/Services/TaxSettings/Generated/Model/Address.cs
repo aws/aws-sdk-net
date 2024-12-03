@@ -188,7 +188,9 @@ namespace Amazon.TaxSettings.Model
         /// <summary>
         /// Gets and sets the property StateOrRegion. 
         /// <para>
-        /// The state, region, or province that the address is located.
+        /// The state, region, or province that the address is located. This field is only required
+        /// for Canada, India, United Arab Emirates, Romania, and Brazil (CPF). It is optional
+        /// for all other countries.
         /// </para>
         ///  
         /// <para>

@@ -142,6 +142,28 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSchemaEvolutionConfiguration())
+            {
+                context.Writer.WritePropertyName("SchemaEvolutionConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SchemaEvolutionConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SchemaEvolutionConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetTableCreationConfiguration())
+            {
+                context.Writer.WritePropertyName("TableCreationConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TableCreationConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.TableCreationConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

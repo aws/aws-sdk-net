@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
     public partial class RevokeSecurityGroupEgressResponse : AmazonWebServiceResponse
     {
         private bool? _return;
+        private List<RevokedSecurityGroupRule> _revokedSecurityGroupRules = AWSConfigs.InitializeCollections ? new List<RevokedSecurityGroupRule>() : null;
         private List<IpPermission> _unknownIpPermissions = AWSConfigs.InitializeCollections ? new List<IpPermission>() : null;
 
         /// <summary>
@@ -53,6 +54,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetReturn()
         {
             return this._return.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RevokedSecurityGroupRules. 
+        /// <para>
+        /// Details about the revoked security group rules.
+        /// </para>
+        /// </summary>
+        public List<RevokedSecurityGroupRule> RevokedSecurityGroupRules
+        {
+            get { return this._revokedSecurityGroupRules; }
+            set { this._revokedSecurityGroupRules = value; }
+        }
+
+        // Check to see if RevokedSecurityGroupRules property is set
+        internal bool IsSetRevokedSecurityGroupRules()
+        {
+            return this._revokedSecurityGroupRules != null && (this._revokedSecurityGroupRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

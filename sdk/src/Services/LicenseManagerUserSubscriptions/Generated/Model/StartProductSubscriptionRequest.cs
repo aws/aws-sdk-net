@@ -47,12 +47,14 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         private string _domain;
         private IdentityProvider _identityProvider;
         private string _product;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _username;
 
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// The domain name of the user.
+        /// The domain name of the Active Directory that contains the user for whom to start the
+        /// product subscription.
         /// </para>
         /// </summary>
         public string Domain
@@ -91,6 +93,11 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         /// <para>
         /// The name of the user-based subscription product.
         /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <c>VISUAL_STUDIO_ENTERPRISE</c> | <c>VISUAL_STUDIO_PROFESSIONAL</c>
+        /// | <c>OFFICE_PROFESSIONAL_PLUS</c> 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Product
@@ -103,6 +110,25 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         internal bool IsSetProduct()
         {
             return this._product != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags that apply to the product subscription.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -47,11 +47,41 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid metric filter keys: <c>INITIATION_METHOD</c>, <c>DISCONNECT_REASON</c>. These
-        /// are the same values as the <c>InitiationMethod</c> and <c>DisconnectReason</c> in
-        /// the contact record. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a>
-        /// in the <i>Amazon Connect Administrator Guide</i>. 
+        /// Valid metric filter keys: 
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// ANSWERING_MACHINE_DETECTION_STATUS
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CASE_STATUS
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DISCONNECT_REASON
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// FLOWS_ACTION_IDENTIFIER
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// FLOWS_NEXT_ACTION_IDENTIFIER
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// FLOWS_OUTCOME_TYPE
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// FLOWS_RESOURCE_TYPE
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// INITIATION_METHOD
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string MetricFilterKey
         {
@@ -68,19 +98,20 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property MetricFilterValues. 
         /// <para>
-        /// The values to use for filtering data. 
+        /// The values to use for filtering data. Values for metric-level filters can be either
+        /// a fixed set of values or a customized list, depending on the use case.
         /// </para>
         ///  
         /// <para>
-        /// Valid metric filter values for <c>INITIATION_METHOD</c>: <c>INBOUND</c> | <c>OUTBOUND</c>
-        /// | <c>TRANSFER</c> | <c>QUEUE_TRANSFER</c> | <c>CALLBACK</c> | <c>API</c> 
+        /// For valid values of metric-level filters <c>INITIATION_METHOD</c>, <c>DISCONNECT_REASON</c>,
+        /// and <c>ANSWERING_MACHINE_DETECTION_STATUS</c>, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a>
+        /// in the <i>Amazon Connect Administrator Guide</i>. 
         /// </para>
         ///  
         /// <para>
-        /// Valid metric filter values for <c>DISCONNECT_REASON</c>: <c>CUSTOMER_DISCONNECT</c>
-        /// | <c>AGENT_DISCONNECT</c> | <c>THIRD_PARTY_DISCONNECT</c> | <c>TELECOM_PROBLEM</c>
-        /// | <c>BARGED</c> | <c>CONTACT_FLOW_DISCONNECT</c> | <c>OTHER</c> | <c>EXPIRED</c> |
-        /// <c>API</c> 
+        /// For valid values of the metric-level filter <c>FLOWS_OUTCOME_TYPE</c>, see the description
+        /// for the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#flows-outcome-historical">Flow
+        /// outcome</a> metric in the <i>Amazon Connect Administrator Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -99,9 +130,9 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Negate. 
         /// <para>
-        /// The flag to use to filter on requested metric filter values or to not filter on requested
-        /// metric filter values. By default the negate is <c>false</c>, which indicates to filter
-        /// on the requested metric filter. 
+        /// If set to <c>true</c>, the API response contains results that filter out the results
+        /// matched by the metric-level filters condition. By default, <c>Negate</c> is set to
+        /// <c>false</c>. 
         /// </para>
         /// </summary>
         public bool? Negate

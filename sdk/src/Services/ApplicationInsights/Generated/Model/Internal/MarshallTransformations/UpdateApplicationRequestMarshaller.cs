@@ -113,6 +113,12 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.ResourceGroupName);
                     }
 
+                    if(publicRequest.IsSetSNSNotificationArn())
+                    {
+                        context.Writer.WritePropertyName("SNSNotificationArn");
+                        context.Writer.Write(publicRequest.SNSNotificationArn);
+                    }
+
                     writer.WriteObjectEnd();
                 }
 

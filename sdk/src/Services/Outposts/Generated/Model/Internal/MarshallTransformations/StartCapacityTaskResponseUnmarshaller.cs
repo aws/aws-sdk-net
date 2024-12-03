@@ -88,6 +88,12 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
                     response.Failed = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InstancesToExclude", targetDepth))
+                {
+                    var unmarshaller = InstancesToExcludeUnmarshaller.Instance;
+                    response.InstancesToExclude = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastModifiedDate", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
@@ -110,6 +116,12 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<InstanceTypeCapacity, InstanceTypeCapacityUnmarshaller>(InstanceTypeCapacityUnmarshaller.Instance);
                     response.RequestedInstancePools = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TaskActionOnBlockingInstances", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.TaskActionOnBlockingInstances = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

@@ -48,6 +48,7 @@ namespace Amazon.RedshiftServerless.Model
         private string _namespaceName;
         private string _patchVersion;
         private int? _port;
+        private PerformanceTarget _pricePerformanceTarget;
         private bool? _publiclyAccessible;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private WorkgroupStatus _status;
@@ -322,6 +323,24 @@ namespace Amazon.RedshiftServerless.Model
         internal bool IsSetPort()
         {
             return this._port.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PricePerformanceTarget. 
+        /// <para>
+        /// An object that represents the price performance target settings for the workgroup.
+        /// </para>
+        /// </summary>
+        public PerformanceTarget PricePerformanceTarget
+        {
+            get { return this._pricePerformanceTarget; }
+            set { this._pricePerformanceTarget = value; }
+        }
+
+        // Check to see if PricePerformanceTarget property is set
+        internal bool IsSetPricePerformanceTarget()
+        {
+            return this._pricePerformanceTarget != null;
         }
 
         /// <summary>

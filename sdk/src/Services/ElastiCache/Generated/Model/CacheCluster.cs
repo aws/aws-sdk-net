@@ -122,7 +122,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AuthTokenEnabled. 
         /// <para>
-        /// A flag that enables using an <c>AuthToken</c> (password) when issuing Redis OSS commands.
+        /// A flag that enables using an <c>AuthToken</c> (password) when issuing Valkey or Redis
+        /// OSS commands.
         /// </para>
         ///  
         /// <para>
@@ -162,9 +163,9 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
-        ///  If you are running Redis OSS engine version 6.0 or later, set this parameter to yes
-        /// if you want to opt-in to the next auto minor version upgrade campaign. This parameter
-        /// is disabled for previous versions.  
+        ///  If you are running Valkey or Redis OSS engine version 6.0 or later, set this parameter
+        /// to yes if you want to opt-in to the next auto minor version upgrade campaign. This
+        /// parameter is disabled for previous versions.  
         /// </para>
         /// </summary>
         public bool? AutoMinorVersionUpgrade
@@ -410,16 +411,16 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redis OSS append-only files (AOF) are not supported for T1 or T2 instances.
+        /// Valkey or Redis OSS append-only files (AOF) are not supported for T1 or T2 instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redis OSS Multi-AZ with automatic failover is not supported on T1 instances.
+        /// Valkey or Redis OSS Multi-AZ with automatic failover is not supported on T1 instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redis OSS configuration variables <c>appendonly</c> and <c>appendfsync</c> are not
-        /// supported on Redis OSS version 2.8.22 and later.
+        /// The configuration variables <c>appendonly</c> and <c>appendfsync</c> are not supported
+        /// on Valkey, or on Redis OSS version 2.8.22 and later.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -572,9 +573,9 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property IpDiscovery. 
         /// <para>
         /// The network type associated with the cluster, either <c>ipv4</c> | <c>ipv6</c>. IPv6
-        /// is supported for workloads using Redis OSS engine version 6.2 onward or Memcached
-        /// engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
-        /// system</a>.
+        /// is supported for workloads using Valkey 7.2 and above, Redis OSS engine version 6.2
+        /// and above or Memcached engine version 1.6.6 and above on all instances built on the
+        /// <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
         /// </para>
         /// </summary>
         public IpDiscovery IpDiscovery
@@ -611,8 +612,9 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property NetworkType. 
         /// <para>
         /// Must be either <c>ipv4</c> | <c>ipv6</c> | <c>dual_stack</c>. IPv6 is supported for
-        /// workloads using Redis OSS engine version 6.2 onward or Memcached engine version 1.6.6
-        /// on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+        /// workloads using Valkey 7.2 and above, Redis OSS engine version 6.2 and above or Memcached
+        /// engine version 1.6.6 and above on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
+        /// system</a>.
         /// </para>
         /// </summary>
         public NetworkType NetworkType
@@ -654,8 +656,8 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// For clusters running Redis OSS, this value must be 1. For clusters running Memcached,
-        /// this value must be between 1 and 40.
+        /// For clusters running Valkey or Redis OSS, this value must be 1. For clusters running
+        /// Memcached, this value must be between 1 and 40.
         /// </para>
         /// </summary>
         public int? NumCacheNodes

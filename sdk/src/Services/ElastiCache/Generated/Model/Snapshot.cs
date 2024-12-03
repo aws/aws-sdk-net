@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Represents a copy of an entire Redis OSS cluster as of the time when the snapshot
-    /// was taken.
+    /// Represents a copy of an entire Valkey or Redis OSS cluster as of the time when the
+    /// snapshot was taken.
     /// </summary>
     public partial class Snapshot
     {
@@ -85,7 +85,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AutomaticFailover. 
         /// <para>
-        /// Indicates the status of automatic failover for the source Redis OSS replication group.
+        /// Indicates the status of automatic failover for the source Valkey or Redis OSS replication
+        /// group.
         /// </para>
         /// </summary>
         public AutomaticFailoverStatus AutomaticFailover
@@ -103,9 +104,9 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
-        ///  If you are running Redis OSS engine version 6.0 or later, set this parameter to yes
-        /// if you want to opt-in to the next auto minor version upgrade campaign. This parameter
-        /// is disabled for previous versions.  
+        ///  If you are running Valkey 7.2 and above or Redis OSS engine version 6.0 and above,
+        /// set this parameter to yes if you want to opt-in to the next auto minor version upgrade
+        /// campaign. This parameter is disabled for previous versions.  
         /// </para>
         /// </summary>
         public bool? AutoMinorVersionUpgrade
@@ -312,16 +313,16 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redis OSS append-only files (AOF) are not supported for T1 or T2 instances.
+        /// Valkey or Redis OSS append-only files (AOF) are not supported for T1 or T2 instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redis OSS Multi-AZ with automatic failover is not supported on T1 instances.
+        /// Valkey or Redis OSS Multi-AZ with automatic failover is not supported on T1 instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redis OSS configuration variables <c>appendonly</c> and <c>appendfsync</c> are not
-        /// supported on Redis OSS version 2.8.22 and later.
+        /// The configuration variables <c>appendonly</c> and <c>appendfsync</c> are not supported
+        /// on Valkey, or on Redis OSS version 2.8.22 and later.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -474,8 +475,8 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// For clusters running Redis OSS, this value must be 1. For clusters running Memcached,
-        /// this value must be between 1 and 40.
+        /// For clusters running Valkey or Redis OSS, this value must be 1. For clusters running
+        /// Memcached, this value must be between 1 and 40.
         /// </para>
         /// </summary>
         public int? NumCacheNodes

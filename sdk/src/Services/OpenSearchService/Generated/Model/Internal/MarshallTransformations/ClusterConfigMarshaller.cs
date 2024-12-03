@@ -95,6 +95,22 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MultiAZWithStandbyEnabled.Value);
             }
 
+            if(requestObject.IsSetNodeOptions())
+            {
+                context.Writer.WritePropertyName("NodeOptions");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectNodeOptionsListValue in requestObject.NodeOptions)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = NodeOptionMarshaller.Instance;
+                    marshaller.Marshall(requestObjectNodeOptionsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetWarmCount())
             {
                 context.Writer.WritePropertyName("WarmCount");

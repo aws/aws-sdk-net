@@ -57,11 +57,12 @@ namespace Amazon.Route53Resolver.Model
         ///  
         /// <para>
         /// The action that DNS Firewall should take on a DNS query when it matches one of the
-        /// domains in the rule's domain list:
+        /// domains in the rule's domain list, or a threat in a DNS Firewall Advanced rule:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>ALLOW</c> - Permit the request to go through.
+        ///  <c>ALLOW</c> - Permit the request to go through. Not availabe for DNS Firewall Advanced
+        /// rules.
         /// </para>
         ///  </li> <li> 
         /// <para>

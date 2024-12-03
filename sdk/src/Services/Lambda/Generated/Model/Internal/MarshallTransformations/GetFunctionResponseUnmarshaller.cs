@@ -76,6 +76,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     response.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TagsError", targetDepth))
+                {
+                    var unmarshaller = TagsErrorUnmarshaller.Instance;
+                    response.TagsError = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

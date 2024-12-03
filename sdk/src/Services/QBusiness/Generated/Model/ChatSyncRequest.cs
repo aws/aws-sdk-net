@@ -264,7 +264,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property UserGroups. 
         /// <para>
-        /// The groups that a user associated with the chat input belongs to.
+        /// The group names that a user associated with the chat input belongs to.
         /// </para>
         /// </summary>
         public List<string> UserGroups

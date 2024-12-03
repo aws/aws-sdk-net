@@ -102,9 +102,9 @@ namespace Amazon.Pipes.Model
         /// <summary>
         /// Gets and sets the property MaximumRecordAgeInSeconds. 
         /// <para>
-        /// (Streams only) Discard records older than the specified age. The default value is
-        /// -1, which sets the maximum age to infinite. When the value is set to infinite, EventBridge
-        /// never discards old records. 
+        /// Discard records older than the specified age. The default value is -1, which sets
+        /// the maximum age to infinite. When the value is set to infinite, EventBridge never
+        /// discards old records. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=-1, Max=604800)]
@@ -123,10 +123,9 @@ namespace Amazon.Pipes.Model
         /// <summary>
         /// Gets and sets the property MaximumRetryAttempts. 
         /// <para>
-        /// (Streams only) Discard records after the specified number of retries. The default
-        /// value is -1, which sets the maximum number of retries to infinite. When MaximumRetryAttempts
-        /// is infinite, EventBridge retries failed records until the record expires in the event
-        /// source.
+        /// Discard records after the specified number of retries. The default value is -1, which
+        /// sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite,
+        /// EventBridge retries failed records until the record expires in the event source.
         /// </para>
         /// </summary>
         [AWSProperty(Min=-1, Max=10000)]
@@ -145,9 +144,9 @@ namespace Amazon.Pipes.Model
         /// <summary>
         /// Gets and sets the property OnPartialBatchItemFailure. 
         /// <para>
-        /// (Streams only) Define how to handle item process failures. <c>AUTOMATIC_BISECT</c>
-        /// halves each batch and retry each half until all the records are processed or there
-        /// is one failed message left in the batch.
+        /// Define how to handle item process failures. <c>AUTOMATIC_BISECT</c> halves each batch
+        /// and retry each half until all the records are processed or there is one failed message
+        /// left in the batch.
         /// </para>
         /// </summary>
         public OnPartialBatchItemFailureStreams OnPartialBatchItemFailure
@@ -165,8 +164,8 @@ namespace Amazon.Pipes.Model
         /// <summary>
         /// Gets and sets the property ParallelizationFactor. 
         /// <para>
-        /// (Streams only) The number of batches to process concurrently from each shard. The
-        /// default value is 1.
+        /// The number of batches to process concurrently from each shard. The default value is
+        /// 1.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -185,7 +184,7 @@ namespace Amazon.Pipes.Model
         /// <summary>
         /// Gets and sets the property StartingPosition. 
         /// <para>
-        /// (Streams only) The position in a stream from which to start reading.
+        /// The position in a stream from which to start reading.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -11,6 +11,23 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
 {
     class MediaPackageV2Samples : ISample
     {
+        public void MediaPackageV2CancelHarvestJob()
+        {
+            #region example-1
+
+            var client = new AmazonMediaPackageV2Client();
+            var response = client.CancelHarvestJob(new CancelHarvestJobRequest 
+            {
+                ChannelGroupName = "exampleChannelGroup",
+                ChannelName = "exampleChannelName",
+                HarvestJobName = "HarvestJobName",
+                OriginEndpointName = "exampleOriginEndpointName"
+            });
+
+
+            #endregion
+        }
+
         public void MediaPackageV2CreateChannel()
         {
             #region example-1
@@ -64,6 +81,56 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
             string eTag = response.ETag;
             string egressDomain = response.EgressDomain;
             DateTime modifiedAt = response.ModifiedAt;
+            Dictionary<string, string> tags = response.Tags;
+
+            #endregion
+        }
+
+        public void MediaPackageV2CreateHarvestJob()
+        {
+            #region example-1
+
+            var client = new AmazonMediaPackageV2Client();
+            var response = client.CreateHarvestJob(new CreateHarvestJobRequest 
+            {
+                ChannelGroupName = "exampleChannelGroup",
+                ChannelName = "exampleChannelName",
+                Description = "Example HarvestJob description",
+                Destination = new Destination { S3Destination = new S3DestinationConfig {
+                    BucketName = "harvestJobS3DestinationBucket",
+                    DestinationPath = "manifests"
+                } },
+                HarvestedManifests = new HarvestedManifests {
+                    DashManifests = new List<HarvestedDashManifest> {
+                        new HarvestedDashManifest { ManifestName = "DashManifest" }
+                    },
+                    HlsManifests = new List<HarvestedHlsManifest> {
+                        new HarvestedHlsManifest { ManifestName = "HlsManifest" }
+                    },
+                    LowLatencyHlsManifests = new List<HarvestedLowLatencyHlsManifest> {
+                        new HarvestedLowLatencyHlsManifest { ManifestName = "LowLatencyHlsManifest" }
+                    }
+                },
+                OriginEndpointName = "exampleOriginEndpointName",
+                ScheduleConfiguration = new HarvesterScheduleConfiguration {
+                    EndTime = new DateTime(2024, 5, 28, 12, 0, 0, DateTimeKind.Utc),
+                    StartTime = new DateTime(2024, 5, 28, 6, 0, 0, DateTimeKind.Utc)
+                }
+            });
+
+            string arn = response.Arn;
+            string channelGroupName = response.ChannelGroupName;
+            string channelName = response.ChannelName;
+            DateTime createdAt = response.CreatedAt;
+            string description = response.Description;
+            Destination destination = response.Destination;
+            string eTag = response.ETag;
+            string harvestJobName = response.HarvestJobName;
+            HarvestedManifests harvestedManifests = response.HarvestedManifests;
+            DateTime modifiedAt = response.ModifiedAt;
+            string originEndpointName = response.OriginEndpointName;
+            HarvesterScheduleConfiguration scheduleConfiguration = response.ScheduleConfiguration;
+            string status = response.Status;
             Dictionary<string, string> tags = response.Tags;
 
             #endregion
@@ -447,6 +514,37 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
             #endregion
         }
 
+        public void MediaPackageV2GetHarvestJob()
+        {
+            #region example-1
+
+            var client = new AmazonMediaPackageV2Client();
+            var response = client.GetHarvestJob(new GetHarvestJobRequest 
+            {
+                ChannelGroupName = "exampleChannelGroup",
+                ChannelName = "exampleChannelName",
+                HarvestJobName = "HarvestJobName",
+                OriginEndpointName = "exampleOriginEndpointName"
+            });
+
+            string arn = response.Arn;
+            string channelGroupName = response.ChannelGroupName;
+            string channelName = response.ChannelName;
+            DateTime createdAt = response.CreatedAt;
+            string description = response.Description;
+            Destination destination = response.Destination;
+            string eTag = response.ETag;
+            string harvestJobName = response.HarvestJobName;
+            HarvestedManifests harvestedManifests = response.HarvestedManifests;
+            DateTime modifiedAt = response.ModifiedAt;
+            string originEndpointName = response.OriginEndpointName;
+            HarvesterScheduleConfiguration scheduleConfiguration = response.ScheduleConfiguration;
+            string status = response.Status;
+            Dictionary<string, string> tags = response.Tags;
+
+            #endregion
+        }
+
         public void MediaPackageV2GetOriginEndpoint()
         {
             #region example-1
@@ -523,6 +621,92 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
             });
 
             List<ChannelListConfiguration> items = response.Items;
+
+            #endregion
+        }
+
+        public void MediaPackageV2ListHarvestJobs()
+        {
+            #region example-1
+
+            var client = new AmazonMediaPackageV2Client();
+            var response = client.ListHarvestJobs(new ListHarvestJobsRequest 
+            {
+                ChannelGroupName = "exampleChannelGroup"
+            });
+
+            List<HarvestJob> items = response.Items;
+            string nextToken = response.NextToken;
+
+            #endregion
+        }
+
+        public void MediaPackageV2ListHarvestJobs()
+        {
+            #region example-2
+
+            var client = new AmazonMediaPackageV2Client();
+            var response = client.ListHarvestJobs(new ListHarvestJobsRequest 
+            {
+                ChannelGroupName = "exampleChannelGroup",
+                ChannelName = "exampleChannelName"
+            });
+
+            List<HarvestJob> items = response.Items;
+            string nextToken = response.NextToken;
+
+            #endregion
+        }
+
+        public void MediaPackageV2ListHarvestJobs()
+        {
+            #region example-3
+
+            var client = new AmazonMediaPackageV2Client();
+            var response = client.ListHarvestJobs(new ListHarvestJobsRequest 
+            {
+                ChannelGroupName = "exampleChannelGroup",
+                ChannelName = "exampleChannelName",
+                OriginEndpointName = "exampleOriginEndpointName"
+            });
+
+            List<HarvestJob> items = response.Items;
+            string nextToken = response.NextToken;
+
+            #endregion
+        }
+
+        public void MediaPackageV2ListHarvestJobs()
+        {
+            #region example-4
+
+            var client = new AmazonMediaPackageV2Client();
+            var response = client.ListHarvestJobs(new ListHarvestJobsRequest 
+            {
+                ChannelGroupName = "exampleChannelGroup",
+                ChannelName = "exampleChannelName",
+                OriginEndpointName = "exampleOriginEndpointName",
+                Status = "QUEUED"
+            });
+
+            List<HarvestJob> items = response.Items;
+            string nextToken = response.NextToken;
+
+            #endregion
+        }
+
+        public void MediaPackageV2ListHarvestJobs()
+        {
+            #region example-5
+
+            var client = new AmazonMediaPackageV2Client();
+            var response = client.ListHarvestJobs(new ListHarvestJobsRequest 
+            {
+                ChannelGroupName = "exampleChannelGroup",
+                ChannelName = "exampleChannelName",
+                OriginEndpointName = "exampleOriginEndpointName"
+            });
+
 
             #endregion
         }

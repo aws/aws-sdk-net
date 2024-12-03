@@ -76,6 +76,12 @@ namespace Amazon.GuardDuty.Model
         /// with. If the account is an administrator, the <c>AdminDetectorId</c> will be the same
         /// as the one used for <c>DetectorId</c>.
         /// </para>
+        ///  
+        /// <para>
+        /// To find the <c>detectorId</c> in the current Region, see the Settings page in the
+        /// GuardDuty console, or run the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListDetectors.html">ListDetectors</a>
+        /// API.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=300)]
         public string AdminDetectorId
@@ -112,6 +118,12 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property DetectorId. 
         /// <para>
         /// The unique ID of the detector that the request is associated with.
+        /// </para>
+        ///  
+        /// <para>
+        /// To find the <c>detectorId</c> in the current Region, see the Settings page in the
+        /// GuardDuty console, or run the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListDetectors.html">ListDetectors</a>
+        /// API.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=300)]

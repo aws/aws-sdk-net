@@ -78,6 +78,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.LaunchTemplateName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("overrides", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<LaunchTemplateSpecificationOverride, LaunchTemplateSpecificationOverrideUnmarshaller>(LaunchTemplateSpecificationOverrideUnmarshaller.Instance);
+                    unmarshalledObject.Overrides = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("version", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

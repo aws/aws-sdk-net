@@ -90,6 +90,12 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
                     unmarshalledObject.Principal = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("resourceControlPolicyRestriction", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResourceControlPolicyRestriction = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sources", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<FindingSource, FindingSourceUnmarshaller>(FindingSourceUnmarshaller.Instance);

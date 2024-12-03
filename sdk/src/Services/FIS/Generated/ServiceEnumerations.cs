@@ -253,6 +253,68 @@ namespace Amazon.FIS
 
 
     /// <summary>
+    /// Constants used for properties of type ExperimentReportStatus.
+    /// </summary>
+    public class ExperimentReportStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Cancelled for ExperimentReportStatus
+        /// </summary>
+        public static readonly ExperimentReportStatus Cancelled = new ExperimentReportStatus("cancelled");
+        /// <summary>
+        /// Constant Completed for ExperimentReportStatus
+        /// </summary>
+        public static readonly ExperimentReportStatus Completed = new ExperimentReportStatus("completed");
+        /// <summary>
+        /// Constant Failed for ExperimentReportStatus
+        /// </summary>
+        public static readonly ExperimentReportStatus Failed = new ExperimentReportStatus("failed");
+        /// <summary>
+        /// Constant Pending for ExperimentReportStatus
+        /// </summary>
+        public static readonly ExperimentReportStatus Pending = new ExperimentReportStatus("pending");
+        /// <summary>
+        /// Constant Running for ExperimentReportStatus
+        /// </summary>
+        public static readonly ExperimentReportStatus Running = new ExperimentReportStatus("running");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExperimentReportStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExperimentReportStatus FindValue(string value)
+        {
+            return FindValue<ExperimentReportStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExperimentReportStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ExperimentStatus.
     /// </summary>
     public class ExperimentStatus : ConstantClass

@@ -101,6 +101,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.IncludeAllDependencies.Value);
                     }
 
+                    if(publicRequest.IsSetIncludeFolderMembers())
+                    {
+                        context.Writer.WritePropertyName("IncludeFolderMembers");
+                        context.Writer.Write(publicRequest.IncludeFolderMembers);
+                    }
+
+                    if(publicRequest.IsSetIncludeFolderMemberships())
+                    {
+                        context.Writer.WritePropertyName("IncludeFolderMemberships");
+                        context.Writer.Write(publicRequest.IncludeFolderMemberships.Value);
+                    }
+
                     if(publicRequest.IsSetIncludePermissions())
                     {
                         context.Writer.WritePropertyName("IncludePermissions");

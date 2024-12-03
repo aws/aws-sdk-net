@@ -39,7 +39,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property LocationArn. 
         /// <para>
-        /// The ARN of the source HDFS cluster location that's created. 
+        /// The ARN of the source HDFS cluster location that you create.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]

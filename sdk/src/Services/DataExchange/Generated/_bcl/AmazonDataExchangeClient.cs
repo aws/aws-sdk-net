@@ -292,6 +292,85 @@ namespace Amazon.DataExchange
         #endregion
 
 
+        #region  AcceptDataGrant
+
+
+        /// <summary>
+        /// This operation accepts a data grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptDataGrant service method.</param>
+        /// 
+        /// <returns>The response from the AcceptDataGrant service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ConflictException">
+        /// The request couldn't be completed because it conflicted with the current state of
+        /// the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/AcceptDataGrant">REST API Reference for AcceptDataGrant Operation</seealso>
+        public virtual AcceptDataGrantResponse AcceptDataGrant(AcceptDataGrantRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptDataGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptDataGrantResponseUnmarshaller.Instance;
+
+            return Invoke<AcceptDataGrantResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This operation accepts a data grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptDataGrant service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AcceptDataGrant service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ConflictException">
+        /// The request couldn't be completed because it conflicted with the current state of
+        /// the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/AcceptDataGrant">REST API Reference for AcceptDataGrant Operation</seealso>
+        public virtual Task<AcceptDataGrantResponse> AcceptDataGrantAsync(AcceptDataGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AcceptDataGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcceptDataGrantResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AcceptDataGrantResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CancelJob
 
 
@@ -363,6 +442,83 @@ namespace Amazon.DataExchange
             options.ResponseUnmarshaller = CancelJobResponseUnmarshaller.Instance;
             
             return InvokeAsync<CancelJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateDataGrant
+
+
+        /// <summary>
+        /// This operation creates a data grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataGrant service method.</param>
+        /// 
+        /// <returns>The response from the CreateDataGrant service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ServiceLimitExceededException">
+        /// The request has exceeded the quotas imposed by the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/CreateDataGrant">REST API Reference for CreateDataGrant Operation</seealso>
+        public virtual CreateDataGrantResponse CreateDataGrant(CreateDataGrantRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDataGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataGrantResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDataGrantResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This operation creates a data grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataGrant service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDataGrant service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ServiceLimitExceededException">
+        /// The request has exceeded the quotas imposed by the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/CreateDataGrant">REST API Reference for CreateDataGrant Operation</seealso>
+        public virtual Task<CreateDataGrantResponse> CreateDataGrantAsync(CreateDataGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDataGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataGrantResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateDataGrantResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -738,6 +894,77 @@ namespace Amazon.DataExchange
 
         #endregion
         
+        #region  DeleteDataGrant
+
+
+        /// <summary>
+        /// This operation deletes a data grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataGrant service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDataGrant service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/DeleteDataGrant">REST API Reference for DeleteDataGrant Operation</seealso>
+        public virtual DeleteDataGrantResponse DeleteDataGrant(DeleteDataGrantRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDataGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataGrantResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDataGrantResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This operation deletes a data grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataGrant service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDataGrant service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/DeleteDataGrant">REST API Reference for DeleteDataGrant Operation</seealso>
+        public virtual Task<DeleteDataGrantResponse> DeleteDataGrantAsync(DeleteDataGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDataGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataGrantResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteDataGrantResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteDataSet
 
 
@@ -1026,6 +1253,77 @@ namespace Amazon.DataExchange
 
         #endregion
         
+        #region  GetDataGrant
+
+
+        /// <summary>
+        /// This operation returns information about a data grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataGrant service method.</param>
+        /// 
+        /// <returns>The response from the GetDataGrant service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetDataGrant">REST API Reference for GetDataGrant Operation</seealso>
+        public virtual GetDataGrantResponse GetDataGrant(GetDataGrantRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataGrantResponseUnmarshaller.Instance;
+
+            return Invoke<GetDataGrantResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This operation returns information about a data grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataGrant service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDataGrant service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetDataGrant">REST API Reference for GetDataGrant Operation</seealso>
+        public virtual Task<GetDataGrantResponse> GetDataGrantAsync(GetDataGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataGrantResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetDataGrantResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetDataSet
 
 
@@ -1221,6 +1519,77 @@ namespace Amazon.DataExchange
 
         #endregion
         
+        #region  GetReceivedDataGrant
+
+
+        /// <summary>
+        /// This operation returns information about a received data grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetReceivedDataGrant service method.</param>
+        /// 
+        /// <returns>The response from the GetReceivedDataGrant service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetReceivedDataGrant">REST API Reference for GetReceivedDataGrant Operation</seealso>
+        public virtual GetReceivedDataGrantResponse GetReceivedDataGrant(GetReceivedDataGrantRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetReceivedDataGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetReceivedDataGrantResponseUnmarshaller.Instance;
+
+            return Invoke<GetReceivedDataGrantResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This operation returns information about a received data grant.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetReceivedDataGrant service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetReceivedDataGrant service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/GetReceivedDataGrant">REST API Reference for GetReceivedDataGrant Operation</seealso>
+        public virtual Task<GetReceivedDataGrantResponse> GetReceivedDataGrantAsync(GetReceivedDataGrantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetReceivedDataGrantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetReceivedDataGrantResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetReceivedDataGrantResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetRevision
 
 
@@ -1282,6 +1651,77 @@ namespace Amazon.DataExchange
             options.ResponseUnmarshaller = GetRevisionResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetRevisionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDataGrants
+
+
+        /// <summary>
+        /// This operation returns information about all data grants.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataGrants service method.</param>
+        /// 
+        /// <returns>The response from the ListDataGrants service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListDataGrants">REST API Reference for ListDataGrants Operation</seealso>
+        public virtual ListDataGrantsResponse ListDataGrants(ListDataGrantsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataGrantsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataGrantsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDataGrantsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This operation returns information about all data grants.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataGrants service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDataGrants service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListDataGrants">REST API Reference for ListDataGrants Operation</seealso>
+        public virtual Task<ListDataGrantsResponse> ListDataGrantsAsync(ListDataGrantsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataGrantsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataGrantsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListDataGrantsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1356,8 +1796,7 @@ namespace Amazon.DataExchange
 
         /// <summary>
         /// This operation lists your data sets. When listing by origin OWNED, results are sorted
-        /// by CreatedAt in descending order. When listing by origin ENTITLED, there is no order
-        /// and the maxResults parameter is ignored.
+        /// by CreatedAt in descending order. When listing by origin ENTITLED, there is no order.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDataSets service method.</param>
         /// 
@@ -1387,8 +1826,7 @@ namespace Amazon.DataExchange
 
         /// <summary>
         /// This operation lists your data sets. When listing by origin OWNED, results are sorted
-        /// by CreatedAt in descending order. When listing by origin ENTITLED, there is no order
-        /// and the maxResults parameter is ignored.
+        /// by CreatedAt in descending order. When listing by origin ENTITLED, there is no order.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDataSets service method.</param>
         /// <param name="cancellationToken">
@@ -1546,6 +1984,77 @@ namespace Amazon.DataExchange
             options.ResponseUnmarshaller = ListJobsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListReceivedDataGrants
+
+
+        /// <summary>
+        /// This operation returns information about all received data grants.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReceivedDataGrants service method.</param>
+        /// 
+        /// <returns>The response from the ListReceivedDataGrants service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListReceivedDataGrants">REST API Reference for ListReceivedDataGrants Operation</seealso>
+        public virtual ListReceivedDataGrantsResponse ListReceivedDataGrants(ListReceivedDataGrantsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListReceivedDataGrantsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListReceivedDataGrantsResponseUnmarshaller.Instance;
+
+            return Invoke<ListReceivedDataGrantsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This operation returns information about all received data grants.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReceivedDataGrants service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListReceivedDataGrants service method, as returned by DataExchange.</returns>
+        /// <exception cref="Amazon.DataExchange.Model.AccessDeniedException">
+        /// Access to the resource is denied.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.InternalServerException">
+        /// An exception occurred with the service.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.DataExchange.Model.ValidationException">
+        /// The request was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ListReceivedDataGrants">REST API Reference for ListReceivedDataGrants Operation</seealso>
+        public virtual Task<ListReceivedDataGrantsResponse> ListReceivedDataGrantsAsync(ListReceivedDataGrantsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListReceivedDataGrantsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListReceivedDataGrantsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListReceivedDataGrantsResponse>(request, options, cancellationToken);
         }
 
         #endregion

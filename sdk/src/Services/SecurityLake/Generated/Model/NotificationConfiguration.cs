@@ -42,7 +42,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property HttpsNotificationConfiguration. 
         /// <para>
-        /// The configurations for HTTPS subscriber notification.
+        /// The configurations used for HTTPS subscriber notification.
         /// </para>
         /// </summary>
         public HttpsNotificationConfiguration HttpsNotificationConfiguration

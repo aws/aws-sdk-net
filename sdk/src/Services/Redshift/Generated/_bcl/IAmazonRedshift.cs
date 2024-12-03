@@ -1865,6 +1865,94 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  CreateIntegration
+
+
+        /// <summary>
+        /// Creates a zero-ETL integration or S3 event integration with Amazon Redshift.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIntegration service method.</param>
+        /// 
+        /// <returns>The response from the CreateIntegration service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationAlreadyExistsException">
+        /// The integration you are trying to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationConflictOperationException">
+        /// A conflicting conditional operation is currently in progress against this resource.
+        /// This typically occurs when there are multiple requests being made to the same resource
+        /// at the same time, and these requests conflict with each other.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationQuotaExceededException">
+        /// You can't create any more zero-ETL or S3 event integrations because the quota has
+        /// been reached.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationSourceNotFoundException">
+        /// The specified integration source can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationTargetNotFoundException">
+        /// The specified integration target can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <c>available</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.TagLimitExceededException">
+        /// You have exceeded the number of tags allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateIntegration">REST API Reference for CreateIntegration Operation</seealso>
+        CreateIntegrationResponse CreateIntegration(CreateIntegrationRequest request);
+
+
+
+        /// <summary>
+        /// Creates a zero-ETL integration or S3 event integration with Amazon Redshift.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIntegration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateIntegration service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationAlreadyExistsException">
+        /// The integration you are trying to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationConflictOperationException">
+        /// A conflicting conditional operation is currently in progress against this resource.
+        /// This typically occurs when there are multiple requests being made to the same resource
+        /// at the same time, and these requests conflict with each other.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationQuotaExceededException">
+        /// You can't create any more zero-ETL or S3 event integrations because the quota has
+        /// been reached.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationSourceNotFoundException">
+        /// The specified integration source can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationTargetNotFoundException">
+        /// The specified integration target can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <c>available</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidTagException">
+        /// The tag is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.TagLimitExceededException">
+        /// You have exceeded the number of tags allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateIntegration">REST API Reference for CreateIntegration Operation</seealso>
+        Task<CreateIntegrationResponse> CreateIntegrationAsync(CreateIntegrationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateRedshiftIdcApplication
 
 
@@ -2954,6 +3042,62 @@ namespace Amazon.Redshift
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteHsmConfiguration">REST API Reference for DeleteHsmConfiguration Operation</seealso>
         Task<DeleteHsmConfigurationResponse> DeleteHsmConfigurationAsync(DeleteHsmConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteIntegration
+
+
+        /// <summary>
+        /// Deletes a zero-ETL integration or S3 event integration with Amazon Redshift.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIntegration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteIntegration service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationConflictOperationException">
+        /// A conflicting conditional operation is currently in progress against this resource.
+        /// This typically occurs when there are multiple requests being made to the same resource
+        /// at the same time, and these requests conflict with each other.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationConflictStateException">
+        /// The integration is in an invalid state and can't perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationNotFoundException">
+        /// The integration can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteIntegration">REST API Reference for DeleteIntegration Operation</seealso>
+        DeleteIntegrationResponse DeleteIntegration(DeleteIntegrationRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a zero-ETL integration or S3 event integration with Amazon Redshift.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIntegration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteIntegration service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationConflictOperationException">
+        /// A conflicting conditional operation is currently in progress against this resource.
+        /// This typically occurs when there are multiple requests being made to the same resource
+        /// at the same time, and these requests conflict with each other.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationConflictStateException">
+        /// The integration is in an invalid state and can't perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationNotFoundException">
+        /// The integration can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteIntegration">REST API Reference for DeleteIntegration Operation</seealso>
+        Task<DeleteIntegrationResponse> DeleteIntegrationAsync(DeleteIntegrationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -5209,6 +5353,46 @@ namespace Amazon.Redshift
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeInboundIntegrations">REST API Reference for DescribeInboundIntegrations Operation</seealso>
         Task<DescribeInboundIntegrationsResponse> DescribeInboundIntegrationsAsync(DescribeInboundIntegrationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeIntegrations
+
+
+        /// <summary>
+        /// Describes one or more zero-ETL or S3 event integrations with Amazon Redshift.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIntegrations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeIntegrations service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationNotFoundException">
+        /// The integration can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeIntegrations">REST API Reference for DescribeIntegrations Operation</seealso>
+        DescribeIntegrationsResponse DescribeIntegrations(DescribeIntegrationsRequest request);
+
+
+
+        /// <summary>
+        /// Describes one or more zero-ETL or S3 event integrations with Amazon Redshift.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIntegrations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeIntegrations service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationNotFoundException">
+        /// The integration can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeIntegrations">REST API Reference for DescribeIntegrations Operation</seealso>
+        Task<DescribeIntegrationsResponse> DescribeIntegrationsAsync(DescribeIntegrationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -7943,6 +8127,68 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  ModifyIntegration
+
+
+        /// <summary>
+        /// Modifies a zero-ETL integration or S3 event integration with Amazon Redshift.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIntegration service method.</param>
+        /// 
+        /// <returns>The response from the ModifyIntegration service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationAlreadyExistsException">
+        /// The integration you are trying to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationConflictOperationException">
+        /// A conflicting conditional operation is currently in progress against this resource.
+        /// This typically occurs when there are multiple requests being made to the same resource
+        /// at the same time, and these requests conflict with each other.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationConflictStateException">
+        /// The integration is in an invalid state and can't perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationNotFoundException">
+        /// The integration can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyIntegration">REST API Reference for ModifyIntegration Operation</seealso>
+        ModifyIntegrationResponse ModifyIntegration(ModifyIntegrationRequest request);
+
+
+
+        /// <summary>
+        /// Modifies a zero-ETL integration or S3 event integration with Amazon Redshift.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIntegration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyIntegration service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationAlreadyExistsException">
+        /// The integration you are trying to create already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationConflictOperationException">
+        /// A conflicting conditional operation is currently in progress against this resource.
+        /// This typically occurs when there are multiple requests being made to the same resource
+        /// at the same time, and these requests conflict with each other.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationConflictStateException">
+        /// The integration is in an invalid state and can't perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.IntegrationNotFoundException">
+        /// The integration can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyIntegration">REST API Reference for ModifyIntegration Operation</seealso>
+        Task<ModifyIntegrationResponse> ModifyIntegrationAsync(ModifyIntegrationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ModifyRedshiftIdcApplication
 
 
@@ -8576,6 +8822,10 @@ namespace Amazon.Redshift
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ra3.large
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ra3.xlplus
         /// </para>
         ///  </li> <li> 
@@ -8669,6 +8919,10 @@ namespace Amazon.Redshift
         ///  </li> <li> 
         /// <para>
         /// dc2.8xlarge
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ra3.large
         /// </para>
         ///  </li> <li> 
         /// <para>

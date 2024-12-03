@@ -31,27 +31,18 @@ namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
     /// Describes the containers where the destination Apache Iceberg Tables are persisted.
-    /// 
-    /// 
-    ///  
-    /// <para>
-    /// Amazon Data Firehose is in preview release and is subject to change.
-    /// </para>
     /// </summary>
     public partial class CatalogConfiguration
     {
         private string _catalogARN;
+        private string _warehouseLocation;
 
         /// <summary>
         /// Gets and sets the property CatalogARN. 
         /// <para>
-        ///  Specifies the Glue catalog ARN indentifier of the destination Apache Iceberg Tables.
+        ///  Specifies the Glue catalog ARN identifier of the destination Apache Iceberg Tables.
         /// You must specify the ARN in the format <c>arn:aws:glue:region:account-id:catalog</c>.
         /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// Amazon Data Firehose is in preview release and is subject to change.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
@@ -65,6 +56,29 @@ namespace Amazon.KinesisFirehose.Model
         internal bool IsSetCatalogARN()
         {
             return this._catalogARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WarehouseLocation. 
+        /// <para>
+        ///  
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Data Firehose is in preview release and is subject to change.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string WarehouseLocation
+        {
+            get { return this._warehouseLocation; }
+            set { this._warehouseLocation = value; }
+        }
+
+        // Check to see if WarehouseLocation property is set
+        internal bool IsSetWarehouseLocation()
+        {
+            return this._warehouseLocation != null;
         }
 
     }

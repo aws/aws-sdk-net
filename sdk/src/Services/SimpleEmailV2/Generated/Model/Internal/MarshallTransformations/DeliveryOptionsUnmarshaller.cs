@@ -66,6 +66,12 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("MaxDeliverySeconds", targetDepth))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.MaxDeliverySeconds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SendingPoolName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

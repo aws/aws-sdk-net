@@ -47,6 +47,11 @@ namespace Amazon.DataSync.Model
         /// <para>
         /// The ARN of the access point that DataSync uses to access the Amazon EFS file system.
         /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html#create-efs-location-iam">Accessing
+        /// restricted file systems</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
         public string AccessPointArn
@@ -97,8 +102,13 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property FileSystemAccessRoleArn. 
         /// <para>
-        /// The Identity and Access Management (IAM) role that DataSync assumes when mounting
-        /// the Amazon EFS file system.
+        /// The Identity and Access Management (IAM) role that allows DataSync to access your
+        /// Amazon EFS file system.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html#create-efs-location-iam-role">Creating
+        /// a DataSync IAM role for file system access</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]
@@ -117,7 +127,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property InTransitEncryption. 
         /// <para>
-        /// Describes whether DataSync uses Transport Layer Security (TLS) encryption when copying
+        /// Indicates whether DataSync uses Transport Layer Security (TLS) encryption when transferring
         /// data to or from the Amazon EFS file system.
         /// </para>
         /// </summary>

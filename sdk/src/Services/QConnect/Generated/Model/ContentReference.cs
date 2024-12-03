@@ -38,6 +38,8 @@ namespace Amazon.QConnect.Model
         private string _contentId;
         private string _knowledgeBaseArn;
         private string _knowledgeBaseId;
+        private ReferenceType _referenceType;
+        private string _sourceurl;
 
         /// <summary>
         /// Gets and sets the property ContentArn. 
@@ -110,6 +112,42 @@ namespace Amazon.QConnect.Model
         internal bool IsSetKnowledgeBaseId()
         {
             return this._knowledgeBaseId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReferenceType. 
+        /// <para>
+        /// The type of reference content.
+        /// </para>
+        /// </summary>
+        public ReferenceType ReferenceType
+        {
+            get { return this._referenceType; }
+            set { this._referenceType = value; }
+        }
+
+        // Check to see if ReferenceType property is set
+        internal bool IsSetReferenceType()
+        {
+            return this._referenceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceURL. 
+        /// <para>
+        /// The web URL of the source content.
+        /// </para>
+        /// </summary>
+        public string SourceURL
+        {
+            get { return this._sourceurl; }
+            set { this._sourceurl = value; }
+        }
+
+        // Check to see if SourceURL property is set
+        internal bool IsSetSourceURL()
+        {
+            return this._sourceurl != null;
         }
 
     }

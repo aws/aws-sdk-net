@@ -57,7 +57,8 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// Uses price to determine which instance types are the highest priority, launching the
         /// lowest priced instance types within an Availability Zone first. This is the default
-        /// value for Auto Scaling groups that specify <a>InstanceRequirements</a>. 
+        /// value for Auto Scaling groups that specify <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_InstanceRequirements.html">InstanceRequirements</a>.
+        /// 
         /// </para>
         ///  </dd> <dt>prioritized</dt> <dd> 
         /// <para>
@@ -66,7 +67,7 @@ namespace Amazon.AutoScaling.Model
         /// your highest priority instance types first. If all your On-Demand capacity cannot
         /// be fulfilled using your highest priority instance type, then Amazon EC2 Auto Scaling
         /// launches the remaining capacity using the second priority instance type, and so on.
-        /// This is the default value for Auto Scaling groups that don't specify <a>InstanceRequirements</a>
+        /// This is the default value for Auto Scaling groups that don't specify <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_InstanceRequirements.html">InstanceRequirements</a>
         /// and cannot be used for groups that do.
         /// </para>
         ///  </dd> </dl>
@@ -162,7 +163,7 @@ namespace Amazon.AutoScaling.Model
         /// the instance type priorities on a best effort basis but optimizes for capacity first.
         /// Note that if the On-Demand allocation strategy is set to <c>prioritized</c>, the same
         /// priority is applied when fulfilling On-Demand capacity. This is not a valid value
-        /// for Auto Scaling groups that specify <a>InstanceRequirements</a>.
+        /// for Auto Scaling groups that specify <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_InstanceRequirements.html">InstanceRequirements</a>.
         /// </para>
         ///  </dd> <dt>lowest-price</dt> <dd> 
         /// <para>

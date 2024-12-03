@@ -1015,6 +1015,10 @@ namespace Amazon.Bedrock
     {
 
         /// <summary>
+        /// Constant APPLICATION for InferenceProfileType
+        /// </summary>
+        public static readonly InferenceProfileType APPLICATION = new InferenceProfileType("APPLICATION");
+        /// <summary>
         /// Constant SYSTEM_DEFINED for InferenceProfileType
         /// </summary>
         public static readonly InferenceProfileType SYSTEM_DEFINED = new InferenceProfileType("SYSTEM_DEFINED");

@@ -38,12 +38,14 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         private string _domain;
         private IdentityProvider _identityProvider;
         private string _product;
+        private string _productUserArn;
         private string _username;
 
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// The domain name of the user.
+        /// The domain name of the Active Directory that contains the user for whom to stop the
+        /// product subscription.
         /// </para>
         /// </summary>
         public string Domain
@@ -64,7 +66,6 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         /// An object that specifies details for the identity provider.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public IdentityProvider IdentityProvider
         {
             get { return this._identityProvider; }
@@ -82,8 +83,12 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         /// <para>
         /// The name of the user-based subscription product.
         /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <c>VISUAL_STUDIO_ENTERPRISE</c> | <c>VISUAL_STUDIO_PROFESSIONAL</c>
+        /// | <c>OFFICE_PROFESSIONAL_PLUS</c> 
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string Product
         {
             get { return this._product; }
@@ -97,12 +102,29 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ProductUserArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the product user.
+        /// </para>
+        /// </summary>
+        public string ProductUserArn
+        {
+            get { return this._productUserArn; }
+            set { this._productUserArn = value; }
+        }
+
+        // Check to see if ProductUserArn property is set
+        internal bool IsSetProductUserArn()
+        {
+            return this._productUserArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
         /// The user name from the identity provider for the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string Username
         {
             get { return this._username; }

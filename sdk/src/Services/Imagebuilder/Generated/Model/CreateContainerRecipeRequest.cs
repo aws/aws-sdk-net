@@ -211,7 +211,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// Identifies which KMS key is used to encrypt the container image.
+        /// Identifies which KMS key is used to encrypt the Dockerfile template.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

@@ -43,6 +43,7 @@ namespace Amazon.OpenSearchService.Model
         private int? _instanceCount;
         private OpenSearchPartitionInstanceType _instanceType;
         private bool? _multiAZWithStandbyEnabled;
+        private List<NodeOption> _nodeOptions = AWSConfigs.InitializeCollections ? new List<NodeOption>() : null;
         private int? _warmCount;
         private bool? _warmEnabled;
         private OpenSearchWarmPartitionInstanceType _warmType;
@@ -178,6 +179,24 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetMultiAZWithStandbyEnabled()
         {
             return this._multiAZWithStandbyEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NodeOptions. 
+        /// <para>
+        /// List of node options for the domain.
+        /// </para>
+        /// </summary>
+        public List<NodeOption> NodeOptions
+        {
+            get { return this._nodeOptions; }
+            set { this._nodeOptions = value; }
+        }
+
+        // Check to see if NodeOptions property is set
+        internal bool IsSetNodeOptions()
+        {
+            return this._nodeOptions != null && (this._nodeOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

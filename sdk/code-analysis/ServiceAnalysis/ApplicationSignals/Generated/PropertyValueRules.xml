@@ -72,6 +72,11 @@
     <pattern>[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$|^arn:aws:application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.BurnRateConfiguration.LookBackWindowMinutes</property>
+    <min>1</min>
+    <max>10080</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.CalendarInterval.Duration</property>
     <min>1</min>
   </property-value-rule>

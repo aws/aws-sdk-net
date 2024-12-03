@@ -84,6 +84,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     unmarshalledObject.ProvisionedThroughputOverride = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("WarmThroughput", targetDepth))
+                {
+                    var unmarshaller = GlobalSecondaryIndexWarmThroughputDescriptionUnmarshaller.Instance;
+                    unmarshalledObject.WarmThroughput = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

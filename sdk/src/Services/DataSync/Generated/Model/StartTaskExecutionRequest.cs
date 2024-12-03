@@ -36,7 +36,7 @@ namespace Amazon.DataSync.Model
     /// 
     ///  
     /// <para>
-    /// There are several phases to a task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/working-with-task-executions.html#understand-task-execution-statuses">Task
+    /// There are several steps to a task execution. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/working-with-task-executions.html#understand-task-execution-statuses">Task
     /// execution statuses</a>.
     /// </para>
     ///  <important> 

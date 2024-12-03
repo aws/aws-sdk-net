@@ -137,7 +137,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Instance tag key-value pairs associated with the database instance ID.
+        /// Information about the tag key-value pairs.
         /// </para>
         /// </summary>
         public List<Tag> Tags

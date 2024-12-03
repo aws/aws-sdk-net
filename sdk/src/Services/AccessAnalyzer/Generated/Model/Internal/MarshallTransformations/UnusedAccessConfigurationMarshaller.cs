@@ -48,6 +48,17 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAnalysisRule())
+            {
+                context.Writer.WritePropertyName("analysisRule");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AnalysisRuleMarshaller.Instance;
+                marshaller.Marshall(requestObject.AnalysisRule, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetUnusedAccessAge())
             {
                 context.Writer.WritePropertyName("unusedAccessAge");

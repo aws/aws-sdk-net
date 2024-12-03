@@ -37,12 +37,37 @@ namespace Amazon.PaymentCryptographyData.Model
     /// 
     ///  
     /// <para>
-    /// PIN block translation involves changing the encrytion of PIN block from one encryption
-    /// key to another encryption key and changing PIN block format from one to another without
-    /// PIN block data leaving Amazon Web Services Payment Cryptography. The encryption key
-    /// transformation can be from PEK (Pin Encryption Key) to BDK (Base Derivation Key) for
-    /// DUKPT or from BDK for DUKPT to PEK. Amazon Web Services Payment Cryptography supports
-    /// <c>TDES</c> and <c>AES</c> key derivation type for DUKPT translations. 
+    /// PIN block translation involves changing a PIN block from one encryption key to another
+    /// and optionally change its format. PIN block translation occurs entirely within the
+    /// HSM boundary and PIN data never enters or leaves Amazon Web Services Payment Cryptography
+    /// in clear text. The encryption key transformation can be from PEK (Pin Encryption Key)
+    /// to BDK (Base Derivation Key) for DUKPT or from BDK for DUKPT to PEK.
+    /// </para>
+    ///  
+    /// <para>
+    /// Amazon Web Services Payment Cryptography also supports use of dynamic keys and ECDH
+    /// (Elliptic Curve Diffie-Hellman) based key exchange for this operation.
+    /// </para>
+    ///  
+    /// <para>
+    /// Dynamic keys allow you to pass a PEK as a TR-31 WrappedKeyBlock. They can be used
+    /// when key material is frequently rotated, such as during every card transaction, and
+    /// there is need to avoid importing short-lived keys into Amazon Web Services Payment
+    /// Cryptography. To translate PIN block using dynamic keys, the <c>keyARN</c> is the
+    /// Key Encryption Key (KEK) of the TR-31 wrapped PEK. The incoming wrapped key shall
+    /// have a key purpose of P0 with a mode of use of B or D. For more information, see <a
+    /// href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/use-cases-acquirers-dynamickeys.html">Using
+    /// Dynamic Keys</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// Using ECDH key exchange, you can receive cardholder selectable PINs into Amazon Web
+    /// Services Payment Cryptography. The ECDH derived key protects the incoming PIN block,
+    /// which is translated to a PEK encrypted PIN block for use within the service. You can
+    /// also use ECDH for reveal PIN, wherein the service translates the PIN block from PEK
+    /// to a ECDH derived encryption key. For more information on establishing ECDH derived
+    /// keys, see the <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/create-keys.html">Generating
+    /// keys</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -141,8 +166,8 @@ namespace Amazon.PaymentCryptographyData.Model
         /// </para>
         ///  
         /// <para>
-        /// When a WrappedKeyBlock is provided, this value will be the identifier to the key wrapping
-        /// key for PIN block. Otherwise, it is the key identifier used to perform the operation.
+        /// For dynamic keys, it is the <c>keyARN</c> of KEK of the TR-31 wrapped PEK. For ECDH,
+        /// it is the <c>keyARN</c> of the asymmetric ECC key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=7, Max=322)]
@@ -221,6 +246,10 @@ namespace Amazon.PaymentCryptographyData.Model
         /// <para>
         /// The <c>keyARN</c> of the encryption key for encrypting outgoing PIN block data. This
         /// key type can be PEK or BDK.
+        /// </para>
+        ///  
+        /// <para>
+        /// For ECDH, it is the <c>keyARN</c> of the asymmetric ECC key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=7, Max=322)]

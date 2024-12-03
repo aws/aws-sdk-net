@@ -40,7 +40,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// Gets and sets the property Results. 
         /// <para>
         /// A series of <c>Allow</c> or <c>Deny</c> decisions for each request, and the policies
-        /// that produced them.
+        /// that produced them. These results are returned in the order they were requested.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

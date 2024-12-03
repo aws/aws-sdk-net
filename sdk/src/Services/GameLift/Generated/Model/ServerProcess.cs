@@ -44,7 +44,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property ConcurrentExecutions. 
         /// <para>
         /// The number of server processes using this configuration that run concurrently on each
-        /// instance or container..
+        /// instance or compute.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

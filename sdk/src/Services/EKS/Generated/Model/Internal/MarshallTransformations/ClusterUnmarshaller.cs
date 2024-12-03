@@ -198,6 +198,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Version = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("zonalShiftConfig", targetDepth))
+                {
+                    var unmarshaller = ZonalShiftConfigResponseUnmarshaller.Instance;
+                    unmarshalledObject.ZonalShiftConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

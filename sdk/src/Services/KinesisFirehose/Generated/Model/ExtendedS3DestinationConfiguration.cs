@@ -91,7 +91,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property CloudWatchLoggingOptions. 
         /// <para>
-        /// The Amazon CloudWatch logging options for your delivery stream.
+        /// The Amazon CloudWatch logging options for your Firehose stream.
         /// </para>
         /// </summary>
         public CloudWatchLoggingOptions CloudWatchLoggingOptions
@@ -322,9 +322,9 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property S3BackupMode. 
         /// <para>
-        /// The Amazon S3 backup mode. After you create a delivery stream, you can update it to
+        /// The Amazon S3 backup mode. After you create a Firehose stream, you can update it to
         /// enable Amazon S3 backup if it is disabled. If backup is enabled, you can't update
-        /// the delivery stream to disable it. 
+        /// the Firehose stream to disable it. 
         /// </para>
         /// </summary>
         public S3BackupMode S3BackupMode

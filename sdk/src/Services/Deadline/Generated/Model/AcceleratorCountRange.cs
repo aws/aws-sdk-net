@@ -40,7 +40,7 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property Max. 
         /// <para>
-        /// The maximum GPU for the accelerator.
+        /// The maximum number of GPUs for the accelerator.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
@@ -59,7 +59,8 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property Min. 
         /// <para>
-        /// The minimum GPU for the accelerator.
+        /// The minimum number of GPUs for the accelerator. If you set the value to 0, a worker
+        /// will still have 1 GPU.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2147483647)]

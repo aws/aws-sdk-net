@@ -56,7 +56,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property BlueGreenDeploymentIdentifier. 
         /// <para>
-        /// The unique identifier of the blue/green deployment.
+        /// The resource ID of the blue/green deployment.
         /// </para>
         ///  
         /// <para>
@@ -64,7 +64,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must match an existing blue/green deployment identifier.
+        /// Must match an existing blue/green deployment resource ID.
         /// </para>
         ///  </li> </ul>
         /// </summary>

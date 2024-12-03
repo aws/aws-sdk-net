@@ -72,6 +72,12 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Protocol);
             }
 
+            if(requestObject.IsSetServerNameIndication())
+            {
+                context.Writer.WritePropertyName("ServerNameIndication");
+                context.Writer.Write(requestObject.ServerNameIndication);
+            }
+
         }
 
         /// <summary>

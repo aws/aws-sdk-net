@@ -48,6 +48,17 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetGuardrailConfiguration())
+            {
+                context.Writer.WritePropertyName("guardrailConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = GuardrailConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.GuardrailConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSourceConfiguration())
             {
                 context.Writer.WritePropertyName("sourceConfiguration");

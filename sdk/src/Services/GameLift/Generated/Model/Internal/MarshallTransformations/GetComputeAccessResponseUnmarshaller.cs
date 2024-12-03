@@ -64,6 +64,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     response.ComputeName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ContainerIdentifiers", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ContainerIdentifier, ContainerIdentifierUnmarshaller>(ContainerIdentifierUnmarshaller.Instance);
+                    response.ContainerIdentifiers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Credentials", targetDepth))
                 {
                     var unmarshaller = CredentialsUnmarshaller.Instance;
@@ -126,6 +132,10 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("UnauthorizedException"))
                 {
                     return UnauthorizedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedRegionException"))
+                {
+                    return UnsupportedRegionExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonGameLiftException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Contains details about the embeddings configuration of the knowledge base.
+    /// Contains details about the vector embeddings configuration of the knowledge base.
     /// </summary>
     public partial class KnowledgeBaseConfiguration
     {
@@ -59,7 +59,8 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property VectorKnowledgeBaseConfiguration. 
         /// <para>
-        /// Contains details about the embeddings model that'sused to convert the data source.
+        /// Contains details about the model that's used to convert the data source into vector
+        /// embeddings.
         /// </para>
         /// </summary>
         public VectorKnowledgeBaseConfiguration VectorKnowledgeBaseConfiguration

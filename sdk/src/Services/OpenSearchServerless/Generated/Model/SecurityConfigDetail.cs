@@ -37,6 +37,7 @@ namespace Amazon.OpenSearchServerless.Model
         private string _configVersion;
         private long? _createdDate;
         private string _description;
+        private IamIdentityCenterConfigOptions _iamIdentityCenterOptions;
         private string _id;
         private long? _lastModifiedDate;
         private SamlConfigOptions _samlOptions;
@@ -96,6 +97,24 @@ namespace Amazon.OpenSearchServerless.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IamIdentityCenterOptions. 
+        /// <para>
+        /// Describes IAM Identity Center options in the form of a key-value map.
+        /// </para>
+        /// </summary>
+        public IamIdentityCenterConfigOptions IamIdentityCenterOptions
+        {
+            get { return this._iamIdentityCenterOptions; }
+            set { this._iamIdentityCenterOptions = value; }
+        }
+
+        // Check to see if IamIdentityCenterOptions property is set
+        internal bool IsSetIamIdentityCenterOptions()
+        {
+            return this._iamIdentityCenterOptions != null;
         }
 
         /// <summary>

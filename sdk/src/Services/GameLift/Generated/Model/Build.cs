@@ -54,8 +54,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property BuildArn. 
         /// <para>
         /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-        /// assigned to a Amazon GameLift build resource and uniquely identifies it. ARNs are
-        /// unique across all Regions. Format is <c>arn:aws:gamelift:&lt;region&gt;::build/build-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</c>.
+        /// that is assigned to a Amazon GameLift build resource and uniquely identifies it. ARNs
+        /// are unique across all Regions. Format is <c>arn:aws:gamelift:&lt;region&gt;::build/build-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</c>.
         /// In a GameLift build ARN, the resource ID matches the <i>BuildId</i> value.
         /// </para>
         /// </summary>
@@ -111,8 +111,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A descriptive label associated with a build. Build names don't need to be unique.
-        /// It can be set using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html">CreateBuild</a>
+        /// A descriptive label that is associated with a build. Build names do not need to be
+        /// unique. It can be set using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html">CreateBuild</a>
         /// or <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/UpdateBuild">UpdateBuild</a>.
         /// </para>
         /// </summary>
@@ -239,8 +239,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// Version information associated with a build or script. Version strings don't need
-        /// to be unique.
+        /// Version information that is associated with a build or script. Version strings do
+        /// not need to be unique.
         /// </para>
         /// </summary>
         public string Version

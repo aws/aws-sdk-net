@@ -72,6 +72,12 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                     writer.Validate = false;
                     writer.WriteObjectStart();
                     var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetMaxDeliverySeconds())
+                    {
+                        context.Writer.WritePropertyName("MaxDeliverySeconds");
+                        context.Writer.Write(publicRequest.MaxDeliverySeconds.Value);
+                    }
+
                     if(publicRequest.IsSetSendingPoolName())
                     {
                         context.Writer.WritePropertyName("SendingPoolName");

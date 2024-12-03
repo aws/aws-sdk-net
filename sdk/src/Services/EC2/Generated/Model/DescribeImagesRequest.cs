@@ -193,10 +193,10 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>owner-alias</c> - The owner alias (<c>amazon</c> | <c>aws-marketplace</c>). The
-        /// valid aliases are defined in an Amazon-maintained list. This is not the Amazon Web
-        /// Services account alias that can be set using the IAM console. We recommend that you
-        /// use the <b>Owner</b> request parameter instead of this filter.
+        ///  <c>owner-alias</c> - The owner alias (<c>amazon</c> | <c>aws-backup-vault</c> | <c>aws-marketplace</c>).
+        /// The valid aliases are defined in an Amazon-maintained list. This is not the Amazon
+        /// Web Services account alias that can be set using the IAM console. We recommend that
+        /// you use the <b>Owner</b> request parameter instead of this filter.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -253,7 +253,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>tag</c>:&lt;key&gt; - The key/value combination of a tag assigned to the resource.
+        ///  <c>tag:&lt;key&gt;</c> - The key/value combination of a tag assigned to the resource.
         /// Use the tag key in the filter name and the tag value as the filter value. For example,
         /// to find all resources that have a tag with the key <c>Owner</c> and the value <c>TeamA</c>,
         /// specify <c>tag:Owner</c> for the filter name and <c>TeamA</c> for the filter value.
@@ -396,9 +396,9 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Owners. 
         /// <para>
         /// Scopes the results to images with the specified owners. You can specify a combination
-        /// of Amazon Web Services account IDs, <c>self</c>, <c>amazon</c>, and <c>aws-marketplace</c>.
-        /// If you omit this parameter, the results include all images for which you have launch
-        /// permissions, regardless of ownership.
+        /// of Amazon Web Services account IDs, <c>self</c>, <c>amazon</c>, <c>aws-backup-vault</c>,
+        /// and <c>aws-marketplace</c>. If you omit this parameter, the results include all images
+        /// for which you have launch permissions, regardless of ownership.
         /// </para>
         /// </summary>
         public List<string> Owners

@@ -56,6 +56,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         public IRequest Marshall(AssociatePackageRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.OpenSearchService");
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-01-01";
             request.HttpMethod = "POST";
 
@@ -66,6 +67,42 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 throw new AmazonOpenSearchServiceException("Request object does not have required field PackageID set");
             request.AddPathResource("{PackageID}", StringUtils.FromString(publicRequest.PackageID));
             request.ResourcePath = "/2021-01-01/packages/associate/{PackageID}/{DomainName}";
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                {
+                    JsonWriter writer = new JsonWriter(streamWriter);
+                    writer.Validate = false;
+                    writer.WriteObjectStart();
+                    var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetAssociationConfiguration())
+                    {
+                        context.Writer.WritePropertyName("AssociationConfiguration");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PackageAssociationConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.AssociationConfiguration, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetPrerequisitePackageIDList())
+                    {
+                        context.Writer.WritePropertyName("PrerequisitePackageIDList");
+                        context.Writer.WriteArrayStart();
+                        foreach(var publicRequestPrerequisitePackageIDListListValue in publicRequest.PrerequisitePackageIDList)
+                        {
+                                context.Writer.Write(publicRequestPrerequisitePackageIDListListValue);
+                        }
+                        context.Writer.WriteArrayEnd();
+                    }
+
+                    writer.WriteObjectEnd();
+                }
+
+                request.Content = memoryStream.ToArray();
+            }
+
 
             return request;
         }

@@ -132,6 +132,11 @@ namespace Amazon.Redshift.Model
         IDescribeInboundIntegrationsPaginator DescribeInboundIntegrations(DescribeInboundIntegrationsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeIntegrations operation
+        ///</summary>
+        IDescribeIntegrationsPaginator DescribeIntegrations(DescribeIntegrationsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeNodeConfigurationOptions operation
         ///</summary>
         IDescribeNodeConfigurationOptionsPaginator DescribeNodeConfigurationOptions(DescribeNodeConfigurationOptionsRequest request);

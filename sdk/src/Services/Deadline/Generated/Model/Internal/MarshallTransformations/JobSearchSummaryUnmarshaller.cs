@@ -138,6 +138,12 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                     unmarshalledObject.QueueId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("sourceJobId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceJobId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("startedAt", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

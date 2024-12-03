@@ -2647,4 +2647,9 @@
     <max>128</max>
     <pattern>[a-zA-Z0-9_](([a-zA-Z0-9_ ]+-)*([a-zA-Z0-9_ ]+))?</pattern>
   </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CleanRooms.Model.WorkerComputeConfiguration.Number</property>
+    <min>2</min>
+    <max>400</max>
+  </property-value-rule>
 </property-value-rules>

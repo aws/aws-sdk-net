@@ -143,7 +143,7 @@ namespace Amazon.CloudTrail.Model
         ///  </li> </ul> 
         /// <para>
         /// Additional resource types are available through <i>advanced</i> event selectors. For
-        /// more information about these additional resource types, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a>.
+        /// more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedEventSelector.html">AdvancedEventSelector</a>.
         /// </para>
         /// </summary>
         public string Type

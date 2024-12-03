@@ -272,6 +272,148 @@ namespace Amazon.Repostspace
         #endregion
 
 
+        #region  BatchAddRole
+
+
+        /// <summary>
+        /// Add role to multiple users or groups in a private re:Post.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchAddRole service method.</param>
+        /// 
+        /// <returns>The response from the BatchAddRole service method, as returned by Repostspace.</returns>
+        /// <exception cref="Amazon.Repostspace.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/BatchAddRole">REST API Reference for BatchAddRole Operation</seealso>
+        public virtual BatchAddRoleResponse BatchAddRole(BatchAddRoleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchAddRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchAddRoleResponseUnmarshaller.Instance;
+
+            return Invoke<BatchAddRoleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Add role to multiple users or groups in a private re:Post.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchAddRole service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchAddRole service method, as returned by Repostspace.</returns>
+        /// <exception cref="Amazon.Repostspace.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/BatchAddRole">REST API Reference for BatchAddRole Operation</seealso>
+        public virtual Task<BatchAddRoleResponse> BatchAddRoleAsync(BatchAddRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchAddRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchAddRoleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchAddRoleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchRemoveRole
+
+
+        /// <summary>
+        /// Remove role from multiple users or groups in a private re:Post.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchRemoveRole service method.</param>
+        /// 
+        /// <returns>The response from the BatchRemoveRole service method, as returned by Repostspace.</returns>
+        /// <exception cref="Amazon.Repostspace.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/BatchRemoveRole">REST API Reference for BatchRemoveRole Operation</seealso>
+        public virtual BatchRemoveRoleResponse BatchRemoveRole(BatchRemoveRoleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchRemoveRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchRemoveRoleResponseUnmarshaller.Instance;
+
+            return Invoke<BatchRemoveRoleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Remove role from multiple users or groups in a private re:Post.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchRemoveRole service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchRemoveRole service method, as returned by Repostspace.</returns>
+        /// <exception cref="Amazon.Repostspace.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Repostspace.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/repostspace-2022-05-13/BatchRemoveRole">REST API Reference for BatchRemoveRole Operation</seealso>
+        public virtual Task<BatchRemoveRoleResponse> BatchRemoveRoleAsync(BatchRemoveRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchRemoveRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchRemoveRoleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchRemoveRoleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateSpace
 
 

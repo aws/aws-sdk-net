@@ -120,6 +120,18 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                     unmarshalledObject.S3DestinationDescription = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SchemaEvolutionConfiguration", targetDepth))
+                {
+                    var unmarshaller = SchemaEvolutionConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SchemaEvolutionConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TableCreationConfiguration", targetDepth))
+                {
+                    var unmarshaller = TableCreationConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.TableCreationConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

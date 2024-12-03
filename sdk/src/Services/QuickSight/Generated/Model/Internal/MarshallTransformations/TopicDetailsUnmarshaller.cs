@@ -66,6 +66,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ConfigOptions", targetDepth))
+                {
+                    var unmarshaller = TopicConfigOptionsUnmarshaller.Instance;
+                    unmarshalledObject.ConfigOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DataSets", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<DatasetMetadata, DatasetMetadataUnmarshaller>(DatasetMetadataUnmarshaller.Instance);

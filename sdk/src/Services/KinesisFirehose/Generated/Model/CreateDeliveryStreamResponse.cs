@@ -39,7 +39,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property DeliveryStreamARN. 
         /// <para>
-        /// The ARN of the delivery stream.
+        /// The ARN of the Firehose stream.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]

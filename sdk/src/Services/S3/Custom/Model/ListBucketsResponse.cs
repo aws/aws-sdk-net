@@ -29,6 +29,7 @@ namespace Amazon.S3.Model
         private List<S3Bucket> buckets = AWSConfigs.InitializeCollections ? new List<S3Bucket>() : null;
         private Owner owner;
         private string continuationToken;
+        private string _prefix;
 
         /// <summary>
         /// List of buckets.
@@ -78,6 +79,21 @@ namespace Amazon.S3.Model
         internal bool IsSetContinuationToken()
         {
             return this.continuationToken != null;
+        }
+
+        /// <summary>
+        /// <para>If <c>Prefix</c> was sent with the request, it is included in the response.</para> <para>All bucket names in the response begin with the specified bucket name prefix.</para>
+        /// </summary>
+        public string Prefix
+        {
+            get { return this._prefix; }
+            set { this._prefix = value; }
+        }
+
+        // Check to see if Prefix property is set
+        internal bool IsSetPrefix()
+        {
+            return this._prefix != null;
         }
     }
 }

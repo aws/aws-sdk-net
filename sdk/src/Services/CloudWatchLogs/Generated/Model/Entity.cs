@@ -62,7 +62,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Reserved for internal use.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=3)]
+        [AWSProperty(Min=2, Max=4)]
         public Dictionary<string, string> KeyAttributes
         {
             get { return this._keyAttributes; }

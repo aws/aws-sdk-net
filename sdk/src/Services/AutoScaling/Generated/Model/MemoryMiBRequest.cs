@@ -31,7 +31,8 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Specifies the minimum and maximum for the <c>MemoryMiB</c> object when you specify
-    /// <a>InstanceRequirements</a> for an Auto Scaling group.
+    /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_InstanceRequirements.html">InstanceRequirements</a>
+    /// for an Auto Scaling group.
     /// </summary>
     public partial class MemoryMiBRequest
     {

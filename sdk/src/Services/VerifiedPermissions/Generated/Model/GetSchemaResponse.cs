@@ -121,7 +121,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// The body of the schema, written in Cedar schema JSON.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=100000)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1)]
         public string Schema
         {
             get { return this._schema; }

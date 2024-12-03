@@ -35,6 +35,7 @@ namespace Amazon.MemoryDB.Model
     public partial class ClusterConfiguration
     {
         private string _description;
+        private string _engine;
         private string _engineVersion;
         private string _maintenanceWindow;
         private string _name;
@@ -68,9 +69,27 @@ namespace Amazon.MemoryDB.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Engine. 
+        /// <para>
+        /// The configuration for the Redis OSS or Valkey engine used by the cluster.
+        /// </para>
+        /// </summary>
+        public string Engine
+        {
+            get { return this._engine; }
+            set { this._engine = value; }
+        }
+
+        // Check to see if Engine property is set
+        internal bool IsSetEngine()
+        {
+            return this._engine != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The Redis OSS engine version used by the cluster
+        /// The engine version used by the cluster
         /// </para>
         /// </summary>
         public string EngineVersion

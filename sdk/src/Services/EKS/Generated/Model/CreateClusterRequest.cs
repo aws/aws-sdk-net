@@ -101,6 +101,7 @@ namespace Amazon.EKS.Model
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private UpgradePolicyRequest _upgradePolicy;
         private string _version;
+        private ZonalShiftConfigRequest _zonalShiftConfig;
 
         /// <summary>
         /// Gets and sets the property AccessConfig. 
@@ -235,7 +236,11 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The unique name to give to your cluster.
+        /// The unique name to give to your cluster. The name can contain only alphanumeric characters
+        /// (case-sensitive), hyphens, and underscores. It must start with an alphanumeric character
+        /// and can't be longer than 100 characters. The name must be unique within the Amazon
+        /// Web Services Region and Amazon Web Services account that you're creating the cluster
+        /// in.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -382,6 +387,44 @@ namespace Amazon.EKS.Model
         internal bool IsSetVersion()
         {
             return this._version != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ZonalShiftConfig. 
+        /// <para>
+        /// Enable or disable ARC zonal shift for the cluster. If zonal shift is enabled, Amazon
+        /// Web Services configures zonal autoshift for the cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Zonal shift is a feature of Amazon Application Recovery Controller (ARC). ARC zonal
+        /// shift is designed to be a temporary measure that allows you to move traffic for a
+        /// resource away from an impaired AZ until the zonal shift expires or you cancel it.
+        /// You can extend the zonal shift if necessary.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can start a zonal shift for an EKS cluster, or you can allow Amazon Web Services
+        /// to do it for you by enabling <i>zonal autoshift</i>. This shift updates the flow of
+        /// east-to-west network traffic in your cluster to only consider network endpoints for
+        /// Pods running on worker nodes in healthy AZs. Additionally, any ALB or NLB handling
+        /// ingress traffic for applications in your EKS cluster will automatically route traffic
+        /// to targets in the healthy AZs. For more information about zonal shift in EKS, see
+        /// <a href="https://docs.aws.amazon.com/eks/latest/userguide/zone-shift.html">Learn about
+        /// Amazon Application Recovery Controller (ARC) Zonal Shift in Amazon EKS</a> in the
+        /// <i> <i>Amazon EKS User Guide</i> </i>.
+        /// </para>
+        /// </summary>
+        public ZonalShiftConfigRequest ZonalShiftConfig
+        {
+            get { return this._zonalShiftConfig; }
+            set { this._zonalShiftConfig = value; }
+        }
+
+        // Check to see if ZonalShiftConfig property is set
+        internal bool IsSetZonalShiftConfig()
+        {
+            return this._zonalShiftConfig != null;
         }
 
     }

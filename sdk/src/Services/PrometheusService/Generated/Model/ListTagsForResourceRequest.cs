@@ -33,7 +33,7 @@ namespace Amazon.PrometheusService.Model
     /// Container for the parameters to the ListTagsForResource operation.
     /// The <c>ListTagsForResource</c> operation returns the tags that are associated with
     /// an Amazon Managed Service for Prometheus resource. Currently, the only resources that
-    /// can be tagged are workspaces and rule groups namespaces.
+    /// can be tagged are scrapers, workspaces, and rule groups namespaces.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonPrometheusServiceRequest
     {
@@ -42,8 +42,8 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN of the resource to list tages for. Must be a workspace or rule groups namespace
-        /// resource.
+        /// The ARN of the resource to list tages for. Must be a workspace, scraper, or rule groups
+        /// namespace resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

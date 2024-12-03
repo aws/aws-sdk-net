@@ -93,7 +93,7 @@ namespace Amazon.BedrockRuntime.Model
         /// inference</a> in the Bedrock User Guide.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=25000000)]
+        [AWSProperty(Sensitive=true, Min=0, Max=25000000)]
         public MemoryStream Body
         {
             get { return this._body; }

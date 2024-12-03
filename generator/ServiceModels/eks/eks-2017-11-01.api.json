@@ -1297,7 +1297,8 @@
         "health":{"shape":"ClusterHealth"},
         "outpostConfig":{"shape":"OutpostConfigResponse"},
         "accessConfig":{"shape":"AccessConfigResponse"},
-        "upgradePolicy":{"shape":"UpgradePolicyResponse"}
+        "upgradePolicy":{"shape":"UpgradePolicyResponse"},
+        "zonalShiftConfig":{"shape":"ZonalShiftConfigResponse"}
       }
     },
     "ClusterHealth":{
@@ -1508,7 +1509,8 @@
         "outpostConfig":{"shape":"OutpostConfigRequest"},
         "accessConfig":{"shape":"CreateAccessConfigRequest"},
         "bootstrapSelfManagedAddons":{"shape":"BoxedBoolean"},
-        "upgradePolicy":{"shape":"UpgradePolicyRequest"}
+        "upgradePolicy":{"shape":"UpgradePolicyRequest"},
+        "zonalShiftConfig":{"shape":"ZonalShiftConfigRequest"}
       }
     },
     "CreateClusterResponse":{
@@ -3118,7 +3120,8 @@
         "Unknown",
         "AutoScalingGroupInstanceRefreshActive",
         "KubernetesLabelInvalid",
-        "Ec2LaunchTemplateVersionMaxLimitExceeded"
+        "Ec2LaunchTemplateVersionMaxLimitExceeded",
+        "Ec2InstanceTypeDoesNotExist"
       ]
     },
     "NodegroupResources":{
@@ -3586,7 +3589,8 @@
           "idempotencyToken":true
         },
         "accessConfig":{"shape":"UpdateAccessConfigRequest"},
-        "upgradePolicy":{"shape":"UpgradePolicyRequest"}
+        "upgradePolicy":{"shape":"UpgradePolicyRequest"},
+        "zonalShiftConfig":{"shape":"ZonalShiftConfigRequest"}
       }
     },
     "UpdateClusterConfigResponse":{
@@ -3756,7 +3760,8 @@
         "Subnets",
         "AuthenticationMode",
         "PodIdentityAssociations",
-        "UpgradePolicy"
+        "UpgradePolicy",
+        "ZonalShiftConfig"
       ]
     },
     "UpdateParams":{
@@ -3822,7 +3827,8 @@
         "AddonUpdate",
         "VpcConfigUpdate",
         "AccessConfigUpdate",
-        "UpgradePolicyUpdate"
+        "UpgradePolicyUpdate",
+        "ZonalShiftConfigUpdate"
       ]
     },
     "UpgradePolicyRequest":{
@@ -3863,6 +3869,18 @@
       "type":"integer",
       "box":true,
       "min":0
+    },
+    "ZonalShiftConfigRequest":{
+      "type":"structure",
+      "members":{
+        "enabled":{"shape":"BoxedBoolean"}
+      }
+    },
+    "ZonalShiftConfigResponse":{
+      "type":"structure",
+      "members":{
+        "enabled":{"shape":"BoxedBoolean"}
+      }
     },
     "configStatus":{
       "type":"string",

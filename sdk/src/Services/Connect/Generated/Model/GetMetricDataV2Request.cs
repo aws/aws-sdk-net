@@ -39,7 +39,7 @@ namespace Amazon.Connect.Model
     /// the previous version of this API. It has new metrics, offers filtering at a metric
     /// level, and offers the ability to filter and group data by channels, queues, routing
     /// profiles, agents, and agent hierarchy levels. It can retrieve historical data for
-    /// the last 3 months, at varying intervals. 
+    /// the last 3 months, at varying intervals. It does not support agent queues.
     /// </para>
     ///  
     /// <para>
@@ -236,7 +236,7 @@ namespace Amazon.Connect.Model
         /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=3)]
+        [AWSProperty(Max=4)]
         public List<string> Groupings
         {
             get { return this._groupings; }
@@ -557,7 +557,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <c>Negate</c> key in Metric Level Filters is not applicable for this metric.
+        /// The <c>Negate</c> key in metric-level filters is not applicable for this metric.
         /// </para>
         ///  </note> </dd> <dt>AVG_AGENT_PAUSE_TIME</dt> <dd> 
         /// <para>
@@ -1202,7 +1202,8 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Threshold: For <c>ThresholdValue</c>, enter any whole number from 1 to 604800 (inclusive),
-        /// in seconds. For <c>Comparison</c>, you must enter <c>LT</c> (for "Less than").
+        /// in seconds. For <c>Comparison</c>, you can use <c>LT</c> (for "Less than") or <c>LTE</c>
+        /// (for "Less than equal").
         /// </para>
         ///  
         /// <para>
@@ -1220,8 +1221,9 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Threshold: For <c>ThresholdValue</c> enter any whole number from 1 to 604800 (inclusive),
-        /// in seconds. For <c>Comparison</c>, you must enter <c>LT</c> (for "Less than").
+        /// Threshold: For <c>ThresholdValue</c>, enter any whole number from 1 to 604800 (inclusive),
+        /// in seconds. For <c>Comparison</c>, you can use <c>LT</c> (for "Less than") or <c>LTE</c>
+        /// (for "Less than equal").
         /// </para>
         ///  
         /// <para>
@@ -1626,7 +1628,8 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Threshold: For <c>ThresholdValue</c>, enter any whole number from 1 to 604800 (inclusive),
-        /// in seconds. For <c>Comparison</c>, you must enter <c>LT</c> (for "Less than"). 
+        /// in seconds. For <c>Comparison</c>, you can use <c>LT</c> (for "Less than") or <c>LTE</c>
+        /// (for "Less than equal").
         /// </para>
         ///  
         /// <para>
@@ -1681,7 +1684,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <c>Negate</c> key in Metric Level Filters is not applicable for this metric.
+        /// The <c>Negate</c> key in metric-level filters is not applicable for this metric.
         /// </para>
         ///  </note> </dd> <dt>CONTACTS_ABANDONED</dt> <dd> 
         /// <para>
@@ -1718,7 +1721,8 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Threshold: For <c>ThresholdValue</c>, enter any whole number from 1 to 604800 (inclusive),
-        /// in seconds. For <c>Comparison</c>, you must enter <c>LT</c> (for "Less than"). 
+        /// in seconds. For <c>Comparison</c>, you can use <c>LT</c> (for "Less than") or <c>LTE</c>
+        /// (for "Less than equal").
         /// </para>
         ///  
         /// <para>
@@ -1737,7 +1741,8 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Threshold: For <c>ThresholdValue</c>, enter any whole number from 1 to 604800 (inclusive),
-        /// in seconds. For <c>Comparison</c>, you must enter <c>LT</c> (for "Less than"). 
+        /// in seconds. For <c>Comparison</c>, you can use <c>LT</c> (for "Less than") or <c>LTE</c>
+        /// (for "Less than equal").
         /// </para>
         ///  
         /// <para>

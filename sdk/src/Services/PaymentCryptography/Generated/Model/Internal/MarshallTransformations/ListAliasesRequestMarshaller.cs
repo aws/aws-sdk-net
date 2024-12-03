@@ -71,6 +71,12 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
                     writer.Validate = false;
                     writer.WriteObjectStart();
                     var context = new JsonMarshallerContext(request, writer);
+                    if(publicRequest.IsSetKeyArn())
+                    {
+                        context.Writer.WritePropertyName("KeyArn");
+                        context.Writer.Write(publicRequest.KeyArn);
+                    }
+
                     if(publicRequest.IsSetMaxResults())
                     {
                         context.Writer.WritePropertyName("MaxResults");

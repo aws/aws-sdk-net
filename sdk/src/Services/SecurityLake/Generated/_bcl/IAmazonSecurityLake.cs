@@ -65,15 +65,15 @@ namespace Amazon.SecurityLake
     ///  
     /// <para>
     /// Security Lake automates the collection of security-related log and event data from
-    /// integrated Amazon Web Services and third-party services. It also helps you manage
-    /// the lifecycle of data with customizable retention and replication settings. Security
-    /// Lake converts ingested data into Apache Parquet format and a standard open-source
+    /// integrated Amazon Web Services services and third-party services. It also helps you
+    /// manage the lifecycle of data with customizable retention and replication settings.
+    /// Security Lake converts ingested data into Apache Parquet format and a standard open-source
     /// schema called the Open Cybersecurity Schema Framework (OCSF).
     /// </para>
     ///  
     /// <para>
-    /// Other Amazon Web Services and third-party services can subscribe to the data that's
-    /// stored in Security Lake for incident response and security data analytics.
+    /// Other Amazon Web Services services and third-party services can subscribe to the data
+    /// that's stored in Security Lake for incident response and security data analytics.
     /// </para>
     /// </summary>
     public partial interface IAmazonSecurityLake : IAmazonService, IDisposable
@@ -89,17 +89,18 @@ namespace Amazon.SecurityLake
 
 
         /// <summary>
-        /// Adds a natively supported Amazon Web Service as an Amazon Security Lake source. Enables
-        /// source types for member accounts in required Amazon Web Services Regions, based on
-        /// the parameters you specify. You can choose any source type in any Region for either
-        /// accounts that are part of a trusted organization or standalone accounts. Once you
-        /// add an Amazon Web Service as a source, Security Lake starts collecting logs and events
-        /// from it.
+        /// Adds a natively supported Amazon Web Services service as an Amazon Security Lake source.
+        /// Enables source types for member accounts in required Amazon Web Services Regions,
+        /// based on the parameters you specify. You can choose any source type in any Region
+        /// for either accounts that are part of a trusted organization or standalone accounts.
+        /// Once you add an Amazon Web Services service as a source, Security Lake starts collecting
+        /// logs and events from it.
         /// 
         ///  
         /// <para>
-        /// You can use this API only to enable natively supported Amazon Web Services as a source.
-        /// Use <c>CreateCustomLogSource</c> to enable data collection from a custom source.
+        /// You can use this API only to enable natively supported Amazon Web Services services
+        /// as a source. Use <c>CreateCustomLogSource</c> to enable data collection from a custom
+        /// source.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAwsLogSource service method.</param>
@@ -138,17 +139,18 @@ namespace Amazon.SecurityLake
 
 
         /// <summary>
-        /// Adds a natively supported Amazon Web Service as an Amazon Security Lake source. Enables
-        /// source types for member accounts in required Amazon Web Services Regions, based on
-        /// the parameters you specify. You can choose any source type in any Region for either
-        /// accounts that are part of a trusted organization or standalone accounts. Once you
-        /// add an Amazon Web Service as a source, Security Lake starts collecting logs and events
-        /// from it.
+        /// Adds a natively supported Amazon Web Services service as an Amazon Security Lake source.
+        /// Enables source types for member accounts in required Amazon Web Services Regions,
+        /// based on the parameters you specify. You can choose any source type in any Region
+        /// for either accounts that are part of a trusted organization or standalone accounts.
+        /// Once you add an Amazon Web Services service as a source, Security Lake starts collecting
+        /// logs and events from it.
         /// 
         ///  
         /// <para>
-        /// You can use this API only to enable natively supported Amazon Web Services as a source.
-        /// Use <c>CreateCustomLogSource</c> to enable data collection from a custom source.
+        /// You can use this API only to enable natively supported Amazon Web Services services
+        /// as a source. Use <c>CreateCustomLogSource</c> to enable data collection from a custom
+        /// source.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAwsLogSource service method.</param>
@@ -299,11 +301,11 @@ namespace Amazon.SecurityLake
         ///  
         /// <para>
         /// When you enable Security Lake, it starts ingesting security data after the <c>CreateAwsLogSource</c>
-        /// call. This includes ingesting security data from sources, storing data, and making
-        /// data accessible to subscribers. Security Lake also enables all the existing settings
-        /// and resources that it stores or maintains for your Amazon Web Services account in
-        /// the current Region, including security log and event data. For more information, see
-        /// the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/what-is-security-lake.html">Amazon
+        /// call and after you create subscribers using the <c>CreateSubscriber</c> API. This
+        /// includes ingesting security data from sources, storing data, and making data accessible
+        /// to subscribers. Security Lake also enables all the existing settings and resources
+        /// that it stores or maintains for your Amazon Web Services account in the current Region,
+        /// including security log and event data. For more information, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/what-is-security-lake.html">Amazon
         /// Security Lake User Guide</a>.
         /// </para>
         /// </summary>
@@ -355,11 +357,11 @@ namespace Amazon.SecurityLake
         ///  
         /// <para>
         /// When you enable Security Lake, it starts ingesting security data after the <c>CreateAwsLogSource</c>
-        /// call. This includes ingesting security data from sources, storing data, and making
-        /// data accessible to subscribers. Security Lake also enables all the existing settings
-        /// and resources that it stores or maintains for your Amazon Web Services account in
-        /// the current Region, including security log and event data. For more information, see
-        /// the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/what-is-security-lake.html">Amazon
+        /// call and after you create subscribers using the <c>CreateSubscriber</c> API. This
+        /// includes ingesting security data from sources, storing data, and making data accessible
+        /// to subscribers. Security Lake also enables all the existing settings and resources
+        /// that it stores or maintains for your Amazon Web Services account in the current Region,
+        /// including security log and event data. For more information, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/what-is-security-lake.html">Amazon
         /// Security Lake User Guide</a>.
         /// </para>
         /// </summary>
@@ -406,7 +408,8 @@ namespace Amazon.SecurityLake
 
         /// <summary>
         /// Creates the specified notification subscription in Amazon Security Lake for the organization
-        /// you specify.
+        /// you specify. The notification subscription is created for exceptions that cannot be
+        /// resolved by Security Lake automatically.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataLakeExceptionSubscription service method.</param>
         /// 
@@ -445,7 +448,8 @@ namespace Amazon.SecurityLake
 
         /// <summary>
         /// Creates the specified notification subscription in Amazon Security Lake for the organization
-        /// you specify.
+        /// you specify. The notification subscription is created for exceptions that cannot be
+        /// resolved by Security Lake automatically.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataLakeExceptionSubscription service method.</param>
         /// <param name="cancellationToken">
@@ -575,9 +579,9 @@ namespace Amazon.SecurityLake
 
 
         /// <summary>
-        /// Creates a subscription permission for accounts that are already enabled in Amazon
-        /// Security Lake. You can create a subscriber with access to data in the current Amazon
-        /// Web Services Region.
+        /// Creates a subscriber for accounts that are already enabled in Amazon Security Lake.
+        /// You can create a subscriber with access to data in the current Amazon Web Services
+        /// Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSubscriber service method.</param>
         /// 
@@ -615,9 +619,9 @@ namespace Amazon.SecurityLake
 
 
         /// <summary>
-        /// Creates a subscription permission for accounts that are already enabled in Amazon
-        /// Security Lake. You can create a subscriber with access to data in the current Amazon
-        /// Web Services Region.
+        /// Creates a subscriber for accounts that are already enabled in Amazon Security Lake.
+        /// You can create a subscriber with access to data in the current Amazon Web Services
+        /// Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSubscriber service method.</param>
         /// <param name="cancellationToken">
@@ -747,11 +751,12 @@ namespace Amazon.SecurityLake
 
 
         /// <summary>
-        /// Removes a natively supported Amazon Web Service as an Amazon Security Lake source.
-        /// You can remove a source for one or more Regions. When you remove the source, Security
-        /// Lake stops collecting data from that source in the specified Regions and accounts,
-        /// and subscribers can no longer consume new data from the source. However, subscribers
-        /// can still consume data that Security Lake collected from the source before removal.
+        /// Removes a natively supported Amazon Web Services service as an Amazon Security Lake
+        /// source. You can remove a source for one or more Regions. When you remove the source,
+        /// Security Lake stops collecting data from that source in the specified Regions and
+        /// accounts, and subscribers can no longer consume new data from the source. However,
+        /// subscribers can still consume data that Security Lake collected from the source before
+        /// removal.
         /// 
         ///  
         /// <para>
@@ -795,11 +800,12 @@ namespace Amazon.SecurityLake
 
 
         /// <summary>
-        /// Removes a natively supported Amazon Web Service as an Amazon Security Lake source.
-        /// You can remove a source for one or more Regions. When you remove the source, Security
-        /// Lake stops collecting data from that source in the specified Regions and accounts,
-        /// and subscribers can no longer consume new data from the source. However, subscribers
-        /// can still consume data that Security Lake collected from the source before removal.
+        /// Removes a natively supported Amazon Web Services service as an Amazon Security Lake
+        /// source. You can remove a source for one or more Regions. When you remove the source,
+        /// Security Lake stops collecting data from that source in the specified Regions and
+        /// accounts, and subscribers can no longer consume new data from the source. However,
+        /// subscribers can still consume data that Security Lake collected from the source before
+        /// removal.
         /// 
         ///  
         /// <para>
@@ -1305,7 +1311,7 @@ namespace Amazon.SecurityLake
 
 
         /// <summary>
-        /// Deletes the specified notification subscription in Amazon Security Lake for the organization
+        /// Deletes the specified subscription notification in Amazon Security Lake for the organization
         /// you specify.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSubscriberNotification service method.</param>
@@ -1344,7 +1350,7 @@ namespace Amazon.SecurityLake
 
 
         /// <summary>
-        /// Deletes the specified notification subscription in Amazon Security Lake for the organization
+        /// Deletes the specified subscription notification in Amazon Security Lake for the organization
         /// you specify.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSubscriberNotification service method.</param>
@@ -1475,8 +1481,8 @@ namespace Amazon.SecurityLake
 
 
         /// <summary>
-        /// Retrieves the details of exception notifications for the account in Amazon Security
-        /// Lake.
+        /// Retrieves the protocol and endpoint that were provided when subscribing to Amazon
+        /// SNS topics for exception notifications.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDataLakeExceptionSubscription service method.</param>
         /// 
@@ -1514,8 +1520,8 @@ namespace Amazon.SecurityLake
 
 
         /// <summary>
-        /// Retrieves the details of exception notifications for the account in Amazon Security
-        /// Lake.
+        /// Retrieves the protocol and endpoint that were provided when subscribing to Amazon
+        /// SNS topics for exception notifications.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDataLakeExceptionSubscription service method.</param>
         /// <param name="cancellationToken">
@@ -1983,7 +1989,7 @@ namespace Amazon.SecurityLake
 
 
         /// <summary>
-        /// Retrieves the log sources in the current Amazon Web Services Region.
+        /// Retrieves the log sources.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListLogSources service method.</param>
         /// 
@@ -2021,7 +2027,7 @@ namespace Amazon.SecurityLake
 
 
         /// <summary>
-        /// Retrieves the log sources in the current Amazon Web Services Region.
+        /// Retrieves the log sources.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListLogSources service method.</param>
         /// <param name="cancellationToken">
@@ -2065,7 +2071,7 @@ namespace Amazon.SecurityLake
 
 
         /// <summary>
-        /// List all subscribers for the specific Amazon Security Lake account ID. You can retrieve
+        /// Lists all subscribers for the specific Amazon Security Lake account ID. You can retrieve
         /// a list of subscriptions associated with a specific organization or Amazon Web Services
         /// account.
         /// </summary>
@@ -2105,7 +2111,7 @@ namespace Amazon.SecurityLake
 
 
         /// <summary>
-        /// List all subscribers for the specific Amazon Security Lake account ID. You can retrieve
+        /// Lists all subscribers for the specific Amazon Security Lake account ID. You can retrieve
         /// a list of subscriptions associated with a specific organization or Amazon Web Services
         /// account.
         /// </summary>
@@ -2509,8 +2515,30 @@ namespace Amazon.SecurityLake
 
 
         /// <summary>
-        /// Specifies where to store your security data and for how long. You can add a rollup
-        /// Region to consolidate data from multiple Amazon Web Services Regions.
+        /// You can use <c>UpdateDataLake</c> to specify where to store your security data, how
+        /// it should be encrypted at rest and for how long. You can add a <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/manage-regions.html#add-rollup-region">Rollup
+        /// Region</a> to consolidate data from multiple Amazon Web Services Regions, replace
+        /// default encryption (SSE-S3) with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">Customer
+        /// Manged Key</a>, or specify transition and expiration actions through storage <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/lifecycle-management.html">Lifecycle
+        /// management</a>. The <c>UpdateDataLake</c> API works as an "upsert" operation that
+        /// performs an insert if the specified item or record does not exist, or an update if
+        /// it already exists. Security Lake securely stores your data at rest using Amazon Web
+        /// Services encryption solutions. For more details, see <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/data-protection.html">Data
+        /// protection in Amazon Security Lake</a>.
+        /// 
+        ///  
+        /// <para>
+        /// For example, omitting the key <c>encryptionConfiguration</c> from a Region that is
+        /// included in an update call that currently uses KMS will leave that Region's KMS key
+        /// in place, but specifying <c>encryptionConfiguration: {kmsKeyId: 'S3_MANAGED_KEY'}</c>
+        /// for that same Region will reset the key to <c>S3-managed</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more details about lifecycle management and how to update retention settings for
+        /// one or more Regions after enabling Security Lake, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/lifecycle-management.html">Amazon
+        /// Security Lake User Guide</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDataLake service method.</param>
         /// 
@@ -2548,8 +2576,30 @@ namespace Amazon.SecurityLake
 
 
         /// <summary>
-        /// Specifies where to store your security data and for how long. You can add a rollup
-        /// Region to consolidate data from multiple Amazon Web Services Regions.
+        /// You can use <c>UpdateDataLake</c> to specify where to store your security data, how
+        /// it should be encrypted at rest and for how long. You can add a <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/manage-regions.html#add-rollup-region">Rollup
+        /// Region</a> to consolidate data from multiple Amazon Web Services Regions, replace
+        /// default encryption (SSE-S3) with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">Customer
+        /// Manged Key</a>, or specify transition and expiration actions through storage <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/lifecycle-management.html">Lifecycle
+        /// management</a>. The <c>UpdateDataLake</c> API works as an "upsert" operation that
+        /// performs an insert if the specified item or record does not exist, or an update if
+        /// it already exists. Security Lake securely stores your data at rest using Amazon Web
+        /// Services encryption solutions. For more details, see <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/data-protection.html">Data
+        /// protection in Amazon Security Lake</a>.
+        /// 
+        ///  
+        /// <para>
+        /// For example, omitting the key <c>encryptionConfiguration</c> from a Region that is
+        /// included in an update call that currently uses KMS will leave that Region's KMS key
+        /// in place, but specifying <c>encryptionConfiguration: {kmsKeyId: 'S3_MANAGED_KEY'}</c>
+        /// for that same Region will reset the key to <c>S3-managed</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more details about lifecycle management and how to update retention settings for
+        /// one or more Regions after enabling Security Lake, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/lifecycle-management.html">Amazon
+        /// Security Lake User Guide</a>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDataLake service method.</param>
         /// <param name="cancellationToken">

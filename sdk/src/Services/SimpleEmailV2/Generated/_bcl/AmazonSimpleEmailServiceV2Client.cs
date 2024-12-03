@@ -238,7 +238,7 @@ namespace Amazon.SimpleEmailV2
         /// </summary>
         protected override AbstractAWSSigner CreateSigner()
         {
-            return new AWS4Signer();
+            return new AWSEndpointAuthSchemeSigner();
         }    
 
         /// <summary>

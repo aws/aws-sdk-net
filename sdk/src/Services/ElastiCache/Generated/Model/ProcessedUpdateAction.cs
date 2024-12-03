@@ -96,7 +96,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property UpdateActionStatus. 
         /// <para>
-        /// The status of the update action on the Redis OSS cluster
+        /// The status of the update action on the Valkey or Redis OSS cluster
         /// </para>
         /// </summary>
         public UpdateActionStatus UpdateActionStatus

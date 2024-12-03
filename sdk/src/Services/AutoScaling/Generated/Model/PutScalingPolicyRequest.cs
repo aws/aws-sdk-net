@@ -48,9 +48,10 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// You can view the scaling policies for an Auto Scaling group using the <a>DescribePolicies</a>
+    /// You can view the scaling policies for an Auto Scaling group using the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribePolicies.html">DescribePolicies</a>
     /// API call. If you are no longer using a scaling policy, you can delete it by calling
-    /// the <a>DeletePolicy</a> API.
+    /// the <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DeletePolicy.html">DeletePolicy</a>
+    /// API.
     /// </para>
     /// </summary>
     public partial class PutScalingPolicyRequest : AmazonAutoScalingRequest

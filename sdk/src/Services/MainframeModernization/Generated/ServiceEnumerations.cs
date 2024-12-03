@@ -539,6 +539,10 @@ namespace Amazon.MainframeModernization
         /// </summary>
         public static readonly EnvironmentLifecycle Failed = new EnvironmentLifecycle("Failed");
         /// <summary>
+        /// Constant UnHealthy for EnvironmentLifecycle
+        /// </summary>
+        public static readonly EnvironmentLifecycle UnHealthy = new EnvironmentLifecycle("UnHealthy");
+        /// <summary>
         /// Constant Updating for EnvironmentLifecycle
         /// </summary>
         public static readonly EnvironmentLifecycle Updating = new EnvironmentLifecycle("Updating");

@@ -126,6 +126,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("placement", targetDepth))
+                {
+                    var unmarshaller = PlacementUnmarshaller.Instance;
+                    unmarshalledObject.Placement = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("resourceTags", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);

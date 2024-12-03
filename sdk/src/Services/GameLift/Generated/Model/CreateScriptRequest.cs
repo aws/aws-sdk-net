@@ -31,16 +31,16 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateScript operation.
-    /// Creates a new script record for your Realtime Servers script. Realtime scripts are
-    /// JavaScript that provide configuration settings and optional custom game logic for
-    /// your game. The script is deployed when you create a Realtime Servers fleet to host
-    /// your game sessions. Script logic is executed during an active game session. 
+    /// Creates a script resource for your Realtime Servers script. Realtime scripts are JavaScript
+    /// files that provide configuration settings and optional custom game logic for your
+    /// game. Script logic is executed during an active game session. To deploy Realtime Servers
+    /// for hosting, create an Amazon GameLift managed fleet with the script.
     /// 
     ///  
     /// <para>
-    /// To create a new script record, specify a script name and provide the script file(s).
-    /// The script files and all dependencies must be zipped into a single file. You can pull
-    /// the zip file from either of these locations: 
+    /// To create a script resource, specify a script name and provide the script file(s).
+    /// The script files and all dependencies must be combined into a single .zip file. You
+    /// can upload the .zip file from either of these locations: 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -55,11 +55,8 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// If the call is successful, a new script record is created with a unique script ID.
-    /// If the script file is provided as a local file, the file is uploaded to an Amazon
-    /// GameLift-owned S3 bucket and the script record's storage location reflects this location.
-    /// If the script file is provided as an S3 bucket, Amazon GameLift accesses the file
-    /// at this storage location as needed for deployment.
+    /// If the call is successful, Amazon GameLift creates a new script resource with a unique
+    /// script ID. The script is uploaded to an Amazon S3 bucket that is owned by Amazon GameLift.
     /// </para>
     ///  
     /// <para>
@@ -96,8 +93,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A descriptive label that is associated with a script. Script names don't need to be
-        /// unique. You can use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
+        /// A descriptive label that is associated with a script. Script names do not need to
+        /// be unique. You can use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
         /// to change this value later. 
         /// </para>
         /// </summary>
@@ -168,8 +165,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// Version information associated with a build or script. Version strings don't need
-        /// to be unique. You can use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
+        /// Version information that is associated with a build or script. Version strings do
+        /// not need to be unique. You can use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
         /// to change this value later. 
         /// </para>
         /// </summary>

@@ -351,6 +351,10 @@ namespace Amazon.GameLift
         /// </summary>
         public static readonly ComputeStatus ACTIVE = new ComputeStatus("ACTIVE");
         /// <summary>
+        /// Constant IMPAIRED for ComputeStatus
+        /// </summary>
+        public static readonly ComputeStatus IMPAIRED = new ComputeStatus("IMPAIRED");
+        /// <summary>
         /// Constant PENDING for ComputeStatus
         /// </summary>
         public static readonly ComputeStatus PENDING = new ComputeStatus("PENDING");
@@ -404,10 +408,6 @@ namespace Amazon.GameLift
         /// Constant ANYWHERE for ComputeType
         /// </summary>
         public static readonly ComputeType ANYWHERE = new ComputeType("ANYWHERE");
-        /// <summary>
-        /// Constant CONTAINER for ComputeType
-        /// </summary>
-        public static readonly ComputeType CONTAINER = new ComputeType("CONTAINER");
         /// <summary>
         /// Constant EC2 for ComputeType
         /// </summary>
@@ -507,6 +507,242 @@ namespace Amazon.GameLift
 
 
     /// <summary>
+    /// Constants used for properties of type ContainerFleetBillingType.
+    /// </summary>
+    public class ContainerFleetBillingType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ON_DEMAND for ContainerFleetBillingType
+        /// </summary>
+        public static readonly ContainerFleetBillingType ON_DEMAND = new ContainerFleetBillingType("ON_DEMAND");
+        /// <summary>
+        /// Constant SPOT for ContainerFleetBillingType
+        /// </summary>
+        public static readonly ContainerFleetBillingType SPOT = new ContainerFleetBillingType("SPOT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContainerFleetBillingType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContainerFleetBillingType FindValue(string value)
+        {
+            return FindValue<ContainerFleetBillingType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContainerFleetBillingType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ContainerFleetLocationStatus.
+    /// </summary>
+    public class ContainerFleetLocationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVATING for ContainerFleetLocationStatus
+        /// </summary>
+        public static readonly ContainerFleetLocationStatus ACTIVATING = new ContainerFleetLocationStatus("ACTIVATING");
+        /// <summary>
+        /// Constant ACTIVE for ContainerFleetLocationStatus
+        /// </summary>
+        public static readonly ContainerFleetLocationStatus ACTIVE = new ContainerFleetLocationStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATED for ContainerFleetLocationStatus
+        /// </summary>
+        public static readonly ContainerFleetLocationStatus CREATED = new ContainerFleetLocationStatus("CREATED");
+        /// <summary>
+        /// Constant CREATING for ContainerFleetLocationStatus
+        /// </summary>
+        public static readonly ContainerFleetLocationStatus CREATING = new ContainerFleetLocationStatus("CREATING");
+        /// <summary>
+        /// Constant DELETING for ContainerFleetLocationStatus
+        /// </summary>
+        public static readonly ContainerFleetLocationStatus DELETING = new ContainerFleetLocationStatus("DELETING");
+        /// <summary>
+        /// Constant PENDING for ContainerFleetLocationStatus
+        /// </summary>
+        public static readonly ContainerFleetLocationStatus PENDING = new ContainerFleetLocationStatus("PENDING");
+        /// <summary>
+        /// Constant UPDATING for ContainerFleetLocationStatus
+        /// </summary>
+        public static readonly ContainerFleetLocationStatus UPDATING = new ContainerFleetLocationStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContainerFleetLocationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContainerFleetLocationStatus FindValue(string value)
+        {
+            return FindValue<ContainerFleetLocationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContainerFleetLocationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ContainerFleetRemoveAttribute.
+    /// </summary>
+    public class ContainerFleetRemoveAttribute : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PER_INSTANCE_CONTAINER_GROUP_DEFINITION for ContainerFleetRemoveAttribute
+        /// </summary>
+        public static readonly ContainerFleetRemoveAttribute PER_INSTANCE_CONTAINER_GROUP_DEFINITION = new ContainerFleetRemoveAttribute("PER_INSTANCE_CONTAINER_GROUP_DEFINITION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContainerFleetRemoveAttribute(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContainerFleetRemoveAttribute FindValue(string value)
+        {
+            return FindValue<ContainerFleetRemoveAttribute>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContainerFleetRemoveAttribute(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ContainerFleetStatus.
+    /// </summary>
+    public class ContainerFleetStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVATING for ContainerFleetStatus
+        /// </summary>
+        public static readonly ContainerFleetStatus ACTIVATING = new ContainerFleetStatus("ACTIVATING");
+        /// <summary>
+        /// Constant ACTIVE for ContainerFleetStatus
+        /// </summary>
+        public static readonly ContainerFleetStatus ACTIVE = new ContainerFleetStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATED for ContainerFleetStatus
+        /// </summary>
+        public static readonly ContainerFleetStatus CREATED = new ContainerFleetStatus("CREATED");
+        /// <summary>
+        /// Constant CREATING for ContainerFleetStatus
+        /// </summary>
+        public static readonly ContainerFleetStatus CREATING = new ContainerFleetStatus("CREATING");
+        /// <summary>
+        /// Constant DELETING for ContainerFleetStatus
+        /// </summary>
+        public static readonly ContainerFleetStatus DELETING = new ContainerFleetStatus("DELETING");
+        /// <summary>
+        /// Constant PENDING for ContainerFleetStatus
+        /// </summary>
+        public static readonly ContainerFleetStatus PENDING = new ContainerFleetStatus("PENDING");
+        /// <summary>
+        /// Constant UPDATING for ContainerFleetStatus
+        /// </summary>
+        public static readonly ContainerFleetStatus UPDATING = new ContainerFleetStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContainerFleetStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContainerFleetStatus FindValue(string value)
+        {
+            return FindValue<ContainerFleetStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContainerFleetStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ContainerGroupDefinitionStatus.
     /// </summary>
     public class ContainerGroupDefinitionStatus : ConstantClass
@@ -561,6 +797,106 @@ namespace Amazon.GameLift
 
 
     /// <summary>
+    /// Constants used for properties of type ContainerGroupType.
+    /// </summary>
+    public class ContainerGroupType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GAME_SERVER for ContainerGroupType
+        /// </summary>
+        public static readonly ContainerGroupType GAME_SERVER = new ContainerGroupType("GAME_SERVER");
+        /// <summary>
+        /// Constant PER_INSTANCE for ContainerGroupType
+        /// </summary>
+        public static readonly ContainerGroupType PER_INSTANCE = new ContainerGroupType("PER_INSTANCE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContainerGroupType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContainerGroupType FindValue(string value)
+        {
+            return FindValue<ContainerGroupType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContainerGroupType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ContainerMountPointAccessLevel.
+    /// </summary>
+    public class ContainerMountPointAccessLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant READ_AND_WRITE for ContainerMountPointAccessLevel
+        /// </summary>
+        public static readonly ContainerMountPointAccessLevel READ_AND_WRITE = new ContainerMountPointAccessLevel("READ_AND_WRITE");
+        /// <summary>
+        /// Constant READ_ONLY for ContainerMountPointAccessLevel
+        /// </summary>
+        public static readonly ContainerMountPointAccessLevel READ_ONLY = new ContainerMountPointAccessLevel("READ_ONLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContainerMountPointAccessLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContainerMountPointAccessLevel FindValue(string value)
+        {
+            return FindValue<ContainerMountPointAccessLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContainerMountPointAccessLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ContainerOperatingSystem.
     /// </summary>
     public class ContainerOperatingSystem : ConstantClass
@@ -607,19 +943,19 @@ namespace Amazon.GameLift
 
 
     /// <summary>
-    /// Constants used for properties of type ContainerSchedulingStrategy.
+    /// Constants used for properties of type DeploymentImpairmentStrategy.
     /// </summary>
-    public class ContainerSchedulingStrategy : ConstantClass
+    public class DeploymentImpairmentStrategy : ConstantClass
     {
 
         /// <summary>
-        /// Constant DAEMON for ContainerSchedulingStrategy
+        /// Constant MAINTAIN for DeploymentImpairmentStrategy
         /// </summary>
-        public static readonly ContainerSchedulingStrategy DAEMON = new ContainerSchedulingStrategy("DAEMON");
+        public static readonly DeploymentImpairmentStrategy MAINTAIN = new DeploymentImpairmentStrategy("MAINTAIN");
         /// <summary>
-        /// Constant REPLICA for ContainerSchedulingStrategy
+        /// Constant ROLLBACK for DeploymentImpairmentStrategy
         /// </summary>
-        public static readonly ContainerSchedulingStrategy REPLICA = new ContainerSchedulingStrategy("REPLICA");
+        public static readonly DeploymentImpairmentStrategy ROLLBACK = new DeploymentImpairmentStrategy("ROLLBACK");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -629,7 +965,7 @@ namespace Amazon.GameLift
         /// defined as statics, for instance if attempting to use a feature that is
         /// newer than the current version of the SDK.
         /// </summary>
-        public ContainerSchedulingStrategy(string value)
+        public DeploymentImpairmentStrategy(string value)
             : base(value)
         {
         }
@@ -639,9 +975,9 @@ namespace Amazon.GameLift
         /// </summary>
         /// <param name="value">The unique value for the constant</param>
         /// <returns>The constant for the unique value</returns>
-        public static ContainerSchedulingStrategy FindValue(string value)
+        public static DeploymentImpairmentStrategy FindValue(string value)
         {
-            return FindValue<ContainerSchedulingStrategy>(value);
+            return FindValue<DeploymentImpairmentStrategy>(value);
         }
 
         /// <summary>
@@ -649,7 +985,127 @@ namespace Amazon.GameLift
         /// </summary>
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
-        public static implicit operator ContainerSchedulingStrategy(string value)
+        public static implicit operator DeploymentImpairmentStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DeploymentProtectionStrategy.
+    /// </summary>
+    public class DeploymentProtectionStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IGNORE_PROTECTION for DeploymentProtectionStrategy
+        /// </summary>
+        public static readonly DeploymentProtectionStrategy IGNORE_PROTECTION = new DeploymentProtectionStrategy("IGNORE_PROTECTION");
+        /// <summary>
+        /// Constant WITH_PROTECTION for DeploymentProtectionStrategy
+        /// </summary>
+        public static readonly DeploymentProtectionStrategy WITH_PROTECTION = new DeploymentProtectionStrategy("WITH_PROTECTION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeploymentProtectionStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeploymentProtectionStrategy FindValue(string value)
+        {
+            return FindValue<DeploymentProtectionStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeploymentProtectionStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DeploymentStatus.
+    /// </summary>
+    public class DeploymentStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELLED for DeploymentStatus
+        /// </summary>
+        public static readonly DeploymentStatus CANCELLED = new DeploymentStatus("CANCELLED");
+        /// <summary>
+        /// Constant COMPLETE for DeploymentStatus
+        /// </summary>
+        public static readonly DeploymentStatus COMPLETE = new DeploymentStatus("COMPLETE");
+        /// <summary>
+        /// Constant IMPAIRED for DeploymentStatus
+        /// </summary>
+        public static readonly DeploymentStatus IMPAIRED = new DeploymentStatus("IMPAIRED");
+        /// <summary>
+        /// Constant IN_PROGRESS for DeploymentStatus
+        /// </summary>
+        public static readonly DeploymentStatus IN_PROGRESS = new DeploymentStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant PENDING for DeploymentStatus
+        /// </summary>
+        public static readonly DeploymentStatus PENDING = new DeploymentStatus("PENDING");
+        /// <summary>
+        /// Constant ROLLBACK_COMPLETE for DeploymentStatus
+        /// </summary>
+        public static readonly DeploymentStatus ROLLBACK_COMPLETE = new DeploymentStatus("ROLLBACK_COMPLETE");
+        /// <summary>
+        /// Constant ROLLBACK_IN_PROGRESS for DeploymentStatus
+        /// </summary>
+        public static readonly DeploymentStatus ROLLBACK_IN_PROGRESS = new DeploymentStatus("ROLLBACK_IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeploymentStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeploymentStatus FindValue(string value)
+        {
+            return FindValue<DeploymentStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeploymentStatus(string value)
         {
             return FindValue(value);
         }
@@ -1405,6 +1861,10 @@ namespace Amazon.GameLift
     {
 
         /// <summary>
+        /// Constant COMPUTE_LOG_UPLOAD_FAILED for EventCode
+        /// </summary>
+        public static readonly EventCode COMPUTE_LOG_UPLOAD_FAILED = new EventCode("COMPUTE_LOG_UPLOAD_FAILED");
+        /// <summary>
         /// Constant FLEET_ACTIVATION_FAILED for EventCode
         /// </summary>
         public static readonly EventCode FLEET_ACTIVATION_FAILED = new EventCode("FLEET_ACTIVATION_FAILED");
@@ -1469,6 +1929,14 @@ namespace Amazon.GameLift
         /// </summary>
         public static readonly EventCode FLEET_STATE_BUILDING = new EventCode("FLEET_STATE_BUILDING");
         /// <summary>
+        /// Constant FLEET_STATE_CREATED for EventCode
+        /// </summary>
+        public static readonly EventCode FLEET_STATE_CREATED = new EventCode("FLEET_STATE_CREATED");
+        /// <summary>
+        /// Constant FLEET_STATE_CREATING for EventCode
+        /// </summary>
+        public static readonly EventCode FLEET_STATE_CREATING = new EventCode("FLEET_STATE_CREATING");
+        /// <summary>
         /// Constant FLEET_STATE_DOWNLOADING for EventCode
         /// </summary>
         public static readonly EventCode FLEET_STATE_DOWNLOADING = new EventCode("FLEET_STATE_DOWNLOADING");
@@ -1476,6 +1944,14 @@ namespace Amazon.GameLift
         /// Constant FLEET_STATE_ERROR for EventCode
         /// </summary>
         public static readonly EventCode FLEET_STATE_ERROR = new EventCode("FLEET_STATE_ERROR");
+        /// <summary>
+        /// Constant FLEET_STATE_PENDING for EventCode
+        /// </summary>
+        public static readonly EventCode FLEET_STATE_PENDING = new EventCode("FLEET_STATE_PENDING");
+        /// <summary>
+        /// Constant FLEET_STATE_UPDATING for EventCode
+        /// </summary>
+        public static readonly EventCode FLEET_STATE_UPDATING = new EventCode("FLEET_STATE_UPDATING");
         /// <summary>
         /// Constant FLEET_STATE_VALIDATING for EventCode
         /// </summary>
@@ -1505,6 +1981,14 @@ namespace Amazon.GameLift
         /// </summary>
         public static readonly EventCode FLEET_VPC_PEERING_SUCCEEDED = new EventCode("FLEET_VPC_PEERING_SUCCEEDED");
         /// <summary>
+        /// Constant GAME_SERVER_CONTAINER_GROUP_CRASHED for EventCode
+        /// </summary>
+        public static readonly EventCode GAME_SERVER_CONTAINER_GROUP_CRASHED = new EventCode("GAME_SERVER_CONTAINER_GROUP_CRASHED");
+        /// <summary>
+        /// Constant GAME_SERVER_CONTAINER_GROUP_REPLACED_UNHEALTHY for EventCode
+        /// </summary>
+        public static readonly EventCode GAME_SERVER_CONTAINER_GROUP_REPLACED_UNHEALTHY = new EventCode("GAME_SERVER_CONTAINER_GROUP_REPLACED_UNHEALTHY");
+        /// <summary>
         /// Constant GAME_SESSION_ACTIVATION_TIMEOUT for EventCode
         /// </summary>
         public static readonly EventCode GAME_SESSION_ACTIVATION_TIMEOUT = new EventCode("GAME_SESSION_ACTIVATION_TIMEOUT");
@@ -1521,6 +2005,50 @@ namespace Amazon.GameLift
         /// </summary>
         public static readonly EventCode INSTANCE_RECYCLED = new EventCode("INSTANCE_RECYCLED");
         /// <summary>
+        /// Constant INSTANCE_REPLACED_UNHEALTHY for EventCode
+        /// </summary>
+        public static readonly EventCode INSTANCE_REPLACED_UNHEALTHY = new EventCode("INSTANCE_REPLACED_UNHEALTHY");
+        /// <summary>
+        /// Constant LOCATION_STATE_ACTIVATING for EventCode
+        /// </summary>
+        public static readonly EventCode LOCATION_STATE_ACTIVATING = new EventCode("LOCATION_STATE_ACTIVATING");
+        /// <summary>
+        /// Constant LOCATION_STATE_ACTIVE for EventCode
+        /// </summary>
+        public static readonly EventCode LOCATION_STATE_ACTIVE = new EventCode("LOCATION_STATE_ACTIVE");
+        /// <summary>
+        /// Constant LOCATION_STATE_CREATED for EventCode
+        /// </summary>
+        public static readonly EventCode LOCATION_STATE_CREATED = new EventCode("LOCATION_STATE_CREATED");
+        /// <summary>
+        /// Constant LOCATION_STATE_CREATING for EventCode
+        /// </summary>
+        public static readonly EventCode LOCATION_STATE_CREATING = new EventCode("LOCATION_STATE_CREATING");
+        /// <summary>
+        /// Constant LOCATION_STATE_DELETED for EventCode
+        /// </summary>
+        public static readonly EventCode LOCATION_STATE_DELETED = new EventCode("LOCATION_STATE_DELETED");
+        /// <summary>
+        /// Constant LOCATION_STATE_DELETING for EventCode
+        /// </summary>
+        public static readonly EventCode LOCATION_STATE_DELETING = new EventCode("LOCATION_STATE_DELETING");
+        /// <summary>
+        /// Constant LOCATION_STATE_ERROR for EventCode
+        /// </summary>
+        public static readonly EventCode LOCATION_STATE_ERROR = new EventCode("LOCATION_STATE_ERROR");
+        /// <summary>
+        /// Constant LOCATION_STATE_PENDING for EventCode
+        /// </summary>
+        public static readonly EventCode LOCATION_STATE_PENDING = new EventCode("LOCATION_STATE_PENDING");
+        /// <summary>
+        /// Constant LOCATION_STATE_UPDATING for EventCode
+        /// </summary>
+        public static readonly EventCode LOCATION_STATE_UPDATING = new EventCode("LOCATION_STATE_UPDATING");
+        /// <summary>
+        /// Constant PER_INSTANCE_CONTAINER_GROUP_CRASHED for EventCode
+        /// </summary>
+        public static readonly EventCode PER_INSTANCE_CONTAINER_GROUP_CRASHED = new EventCode("PER_INSTANCE_CONTAINER_GROUP_CRASHED");
+        /// <summary>
         /// Constant SERVER_PROCESS_CRASHED for EventCode
         /// </summary>
         public static readonly EventCode SERVER_PROCESS_CRASHED = new EventCode("SERVER_PROCESS_CRASHED");
@@ -1533,6 +2061,10 @@ namespace Amazon.GameLift
         /// </summary>
         public static readonly EventCode SERVER_PROCESS_INVALID_PATH = new EventCode("SERVER_PROCESS_INVALID_PATH");
         /// <summary>
+        /// Constant SERVER_PROCESS_MISCONFIGURED_CONTAINER_PORT for EventCode
+        /// </summary>
+        public static readonly EventCode SERVER_PROCESS_MISCONFIGURED_CONTAINER_PORT = new EventCode("SERVER_PROCESS_MISCONFIGURED_CONTAINER_PORT");
+        /// <summary>
         /// Constant SERVER_PROCESS_PROCESS_EXIT_TIMEOUT for EventCode
         /// </summary>
         public static readonly EventCode SERVER_PROCESS_PROCESS_EXIT_TIMEOUT = new EventCode("SERVER_PROCESS_PROCESS_EXIT_TIMEOUT");
@@ -1540,6 +2072,10 @@ namespace Amazon.GameLift
         /// Constant SERVER_PROCESS_PROCESS_READY_TIMEOUT for EventCode
         /// </summary>
         public static readonly EventCode SERVER_PROCESS_PROCESS_READY_TIMEOUT = new EventCode("SERVER_PROCESS_PROCESS_READY_TIMEOUT");
+        /// <summary>
+        /// Constant SERVER_PROCESS_SDK_INITIALIZATION_FAILED for EventCode
+        /// </summary>
+        public static readonly EventCode SERVER_PROCESS_SDK_INITIALIZATION_FAILED = new EventCode("SERVER_PROCESS_SDK_INITIALIZATION_FAILED");
         /// <summary>
         /// Constant SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT for EventCode
         /// </summary>
@@ -2993,6 +3529,56 @@ namespace Amazon.GameLift
 
 
     /// <summary>
+    /// Constants used for properties of type ListComputeInputStatus.
+    /// </summary>
+    public class ListComputeInputStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ListComputeInputStatus
+        /// </summary>
+        public static readonly ListComputeInputStatus ACTIVE = new ListComputeInputStatus("ACTIVE");
+        /// <summary>
+        /// Constant IMPAIRED for ListComputeInputStatus
+        /// </summary>
+        public static readonly ListComputeInputStatus IMPAIRED = new ListComputeInputStatus("IMPAIRED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ListComputeInputStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ListComputeInputStatus FindValue(string value)
+        {
+            return FindValue<ListComputeInputStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ListComputeInputStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LocationFilter.
     /// </summary>
     public class LocationFilter : ConstantClass
@@ -3082,6 +3668,60 @@ namespace Amazon.GameLift
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LocationUpdateStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LogDestination.
+    /// </summary>
+    public class LogDestination : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLOUDWATCH for LogDestination
+        /// </summary>
+        public static readonly LogDestination CLOUDWATCH = new LogDestination("CLOUDWATCH");
+        /// <summary>
+        /// Constant NONE for LogDestination
+        /// </summary>
+        public static readonly LogDestination NONE = new LogDestination("NONE");
+        /// <summary>
+        /// Constant S3 for LogDestination
+        /// </summary>
+        public static readonly LogDestination S3 = new LogDestination("S3");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LogDestination(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LogDestination FindValue(string value)
+        {
+            return FindValue<LogDestination>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LogDestination(string value)
         {
             return FindValue(value);
         }

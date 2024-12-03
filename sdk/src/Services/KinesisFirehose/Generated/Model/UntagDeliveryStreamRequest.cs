@@ -31,7 +31,7 @@ namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagDeliveryStream operation.
-    /// Removes tags from the specified delivery stream. Removed tags are deleted, and you
+    /// Removes tags from the specified Firehose stream. Removed tags are deleted, and you
     /// can't recover them after this operation successfully completes.
     /// 
     ///  
@@ -51,7 +51,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property DeliveryStreamName. 
         /// <para>
-        /// The name of the delivery stream.
+        /// The name of the Firehose stream.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

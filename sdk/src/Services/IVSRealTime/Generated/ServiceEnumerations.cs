@@ -159,6 +159,10 @@ namespace Amazon.IVSRealTime
     {
 
         /// <summary>
+        /// Constant B_FRAME_PRESENT for EventErrorCode
+        /// </summary>
+        public static readonly EventErrorCode B_FRAME_PRESENT = new EventErrorCode("B_FRAME_PRESENT");
+        /// <summary>
         /// Constant BITRATE_EXCEEDED for EventErrorCode
         /// </summary>
         public static readonly EventErrorCode BITRATE_EXCEEDED = new EventErrorCode("BITRATE_EXCEEDED");
@@ -167,9 +171,17 @@ namespace Amazon.IVSRealTime
         /// </summary>
         public static readonly EventErrorCode INSUFFICIENT_CAPABILITIES = new EventErrorCode("INSUFFICIENT_CAPABILITIES");
         /// <summary>
+        /// Constant INTERNAL_SERVER_EXCEPTION for EventErrorCode
+        /// </summary>
+        public static readonly EventErrorCode INTERNAL_SERVER_EXCEPTION = new EventErrorCode("INTERNAL_SERVER_EXCEPTION");
+        /// <summary>
         /// Constant INVALID_AUDIO_CODEC for EventErrorCode
         /// </summary>
         public static readonly EventErrorCode INVALID_AUDIO_CODEC = new EventErrorCode("INVALID_AUDIO_CODEC");
+        /// <summary>
+        /// Constant INVALID_INPUT for EventErrorCode
+        /// </summary>
+        public static readonly EventErrorCode INVALID_INPUT = new EventErrorCode("INVALID_INPUT");
         /// <summary>
         /// Constant INVALID_PROTOCOL for EventErrorCode
         /// </summary>

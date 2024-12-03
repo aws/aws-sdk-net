@@ -31,8 +31,8 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateSbomFromPackageVersion operation.
-    /// Disassociates a software bill of materials (SBOM) from a specific software package
-    /// version.
+    /// Disassociates the selected software bill of materials (SBOM) from a specific software
+    /// package version.
     /// 
     ///  
     /// <para>

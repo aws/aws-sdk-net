@@ -32,8 +32,7 @@ namespace Amazon.DataExchange.Model
     /// <summary>
     /// Container for the parameters to the ListDataSets operation.
     /// This operation lists your data sets. When listing by origin OWNED, results are sorted
-    /// by CreatedAt in descending order. When listing by origin ENTITLED, there is no order
-    /// and the maxResults parameter is ignored.
+    /// by CreatedAt in descending order. When listing by origin ENTITLED, there is no order.
     /// </summary>
     public partial class ListDataSetsRequest : AmazonDataExchangeRequest
     {

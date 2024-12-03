@@ -127,6 +127,25 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                         context.Writer.WriteArrayEnd();
                     }
 
+                    if(publicRequest.IsSetPromptVariables())
+                    {
+                        context.Writer.WritePropertyName("promptVariables");
+                        context.Writer.WriteObjectStart();
+                        foreach (var publicRequestPromptVariablesKvp in publicRequest.PromptVariables)
+                        {
+                            context.Writer.WritePropertyName(publicRequestPromptVariablesKvp.Key);
+                            var publicRequestPromptVariablesValue = publicRequestPromptVariablesKvp.Value;
+
+                            context.Writer.WriteObjectStart();
+
+                            var marshaller = PromptVariableValuesMarshaller.Instance;
+                            marshaller.Marshall(publicRequestPromptVariablesValue, context);
+
+                            context.Writer.WriteObjectEnd();
+                        }
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetSystem())
                     {
                         context.Writer.WritePropertyName("system");

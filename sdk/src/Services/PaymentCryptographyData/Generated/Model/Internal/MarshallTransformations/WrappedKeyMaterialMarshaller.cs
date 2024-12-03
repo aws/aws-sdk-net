@@ -48,6 +48,17 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetDiffieHellmanSymmetricKey())
+            {
+                context.Writer.WritePropertyName("DiffieHellmanSymmetricKey");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EcdhDerivationAttributesMarshaller.Instance;
+                marshaller.Marshall(requestObject.DiffieHellmanSymmetricKey, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTr31KeyBlock())
             {
                 context.Writer.WritePropertyName("Tr31KeyBlock");

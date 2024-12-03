@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// A serverless cache snapshot with this name already exists. Available for Redis OSS
-    /// and Serverless Memcached only.
+    /// A serverless cache snapshot with this name already exists. Available for Valkey, Redis
+    /// OSS and Serverless Memcached only.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

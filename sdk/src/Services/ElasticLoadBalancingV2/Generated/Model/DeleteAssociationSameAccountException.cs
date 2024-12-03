@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
-    /// The specified association cannot be within the same account.
+    /// The specified association can't be within the same account.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
-    /// The Security Lake logs source configuration file describes the information needed
-    /// to generate Security Lake logs.
+    /// To add a natively-supported Amazon Web Services service as a log source, use these
+    /// parameters to specify the configuration settings for the log source.
     /// </summary>
     public partial class AwsLogSourceConfiguration
     {
@@ -81,7 +81,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property SourceName. 
         /// <para>
-        /// The name for a Amazon Web Services source. This must be a Regionally unique value.
+        /// The name for a Amazon Web Services source. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -100,7 +100,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property SourceVersion. 
         /// <para>
-        /// The version for a Amazon Web Services source. This must be a Regionally unique value.
+        /// The version for a Amazon Web Services source. 
         /// </para>
         /// </summary>
         public string SourceVersion

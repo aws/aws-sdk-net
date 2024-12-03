@@ -430,6 +430,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("Preferences" + "." + "AutoRollback", StringUtils.FromBool(publicRequest.Preferences.AutoRollback));
                     }
+                    if(publicRequest.Preferences.IsSetBakeTime())
+                    {
+                        request.Parameters.Add("Preferences" + "." + "BakeTime", StringUtils.FromInt(publicRequest.Preferences.BakeTime));
+                    }
                     if(publicRequest.Preferences.IsSetCheckpointDelay())
                     {
                         request.Parameters.Add("Preferences" + "." + "CheckpointDelay", StringUtils.FromInt(publicRequest.Preferences.CheckpointDelay));

@@ -69,6 +69,11 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
                 throw new AmazonAppConfigException("Request object does not have required field EnvironmentId set");
             request.AddPathResource("{EnvironmentId}", StringUtils.FromString(publicRequest.EnvironmentId));
             request.ResourcePath = "/applications/{ApplicationId}/environments/{EnvironmentId}/deployments/{DeploymentNumber}";
+        
+            if (publicRequest.IsSetAllowRevert()) 
+            {
+                request.Headers["Allow-Revert"] = StringUtils.FromBool(publicRequest.AllowRevert);
+            }
 
             return request;
         }

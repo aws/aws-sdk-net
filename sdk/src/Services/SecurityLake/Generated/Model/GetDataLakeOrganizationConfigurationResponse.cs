@@ -39,7 +39,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property AutoEnableNewAccount. 
         /// <para>
-        /// The configuration for new accounts.
+        /// The configuration used for new accounts in Security Lake.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

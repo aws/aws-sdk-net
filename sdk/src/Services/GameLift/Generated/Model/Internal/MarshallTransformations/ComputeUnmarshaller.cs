@@ -86,7 +86,7 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("ContainerAttributes", targetDepth))
                 {
-                    var unmarshaller = ContainerAttributesUnmarshaller.Instance;
+                    var unmarshaller = new ListUnmarshaller<ContainerAttribute, ContainerAttributeUnmarshaller>(ContainerAttributeUnmarshaller.Instance);
                     unmarshalledObject.ContainerAttributes = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -124,6 +124,12 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.GameLiftServiceSdkEndpoint = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("GameServerContainerGroupDefinitionArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.GameServerContainerGroupDefinitionArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("InstanceId", targetDepth))

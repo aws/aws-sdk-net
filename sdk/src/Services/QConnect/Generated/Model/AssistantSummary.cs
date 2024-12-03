@@ -34,6 +34,7 @@ namespace Amazon.QConnect.Model
     /// </summary>
     public partial class AssistantSummary
     {
+        private Dictionary<string, AIAgentConfigurationData> _aiAgentConfiguration = AWSConfigs.InitializeCollections ? new Dictionary<string, AIAgentConfigurationData>() : null;
         private string _assistantArn;
         private string _assistantId;
         private AssistantCapabilityConfiguration _capabilityConfiguration;
@@ -44,6 +45,25 @@ namespace Amazon.QConnect.Model
         private AssistantStatus _status;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private AssistantType _type;
+
+        /// <summary>
+        /// Gets and sets the property AiAgentConfiguration. 
+        /// <para>
+        /// The configuration of the AI Agents (mapped by AI Agent Type to AI Agent version) that
+        /// is set on the Amazon Q in Connect Assistant.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, AIAgentConfigurationData> AiAgentConfiguration
+        {
+            get { return this._aiAgentConfiguration; }
+            set { this._aiAgentConfiguration = value; }
+        }
+
+        // Check to see if AiAgentConfiguration property is set
+        internal bool IsSetAiAgentConfiguration()
+        {
+            return this._aiAgentConfiguration != null && (this._aiAgentConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property AssistantArn. 

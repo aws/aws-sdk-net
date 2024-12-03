@@ -97,6 +97,12 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.SinkArn);
                     }
 
+                    if(publicRequest.IsSetSinkIamRoleArn())
+                    {
+                        context.Writer.WritePropertyName("SinkIamRoleArn");
+                        context.Writer.Write(publicRequest.SinkIamRoleArn);
+                    }
+
                     if(publicRequest.IsSetSinkType())
                     {
                         context.Writer.WritePropertyName("SinkType");
@@ -113,6 +119,17 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
                     {
                         context.Writer.WritePropertyName("SourceType");
                         context.Writer.Write(publicRequest.SourceType);
+                    }
+
+                    if(publicRequest.IsSetSseAwsKeyManagementParams())
+                    {
+                        context.Writer.WritePropertyName("SseAwsKeyManagementParams");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = SseAwsKeyManagementParamsMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.SseAwsKeyManagementParams, context);
+
+                        context.Writer.WriteObjectEnd();
                     }
 
                     if(publicRequest.IsSetTags())

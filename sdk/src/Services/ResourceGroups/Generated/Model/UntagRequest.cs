@@ -55,8 +55,8 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the resource group from which to remove tags. The command removed both
-        /// the specified keys and any values associated with those keys.
+        /// The Amazon resource name (ARN) of the resource group from which to remove tags. The
+        /// command removed both the specified keys and any values associated with those keys.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=1600)]

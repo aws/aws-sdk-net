@@ -34,6 +34,12 @@ namespace Amazon.StorageGateway.Model
     /// consists of one or more bandwidth rate limit intervals. A bandwidth rate limit interval
     /// defines a period of time on one or more days of the week, during which bandwidth rate
     /// limits are specified for uploading, downloading, or both.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// FSx File Gateway does not support this feature.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class BandwidthRateLimitInterval
     {
@@ -52,6 +58,11 @@ namespace Amazon.StorageGateway.Model
         /// bits per second. This field does not appear in the response if the download rate limit
         /// is not set. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// S3 File Gateway does not support this feature.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=102400)]
         public long? AverageDownloadRateLimitInBitsPerSec
@@ -79,7 +90,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  
         /// <para>
-        /// For S3 File Gateway and FSx File Gateway, the minimum value is <c>104857600</c>.
+        /// This field is required for S3 File Gateway, and the minimum value is <c>104857600</c>.
         /// </para>
         ///  </note>
         /// </summary>

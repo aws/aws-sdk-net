@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// The state of the serverless cache snapshot was not received. Available for Redis OSS
-    /// and Serverless Memcached only.
+    /// The state of the serverless cache snapshot was not received. Available for Valkey,
+    /// Redis OSS and Serverless Memcached only.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

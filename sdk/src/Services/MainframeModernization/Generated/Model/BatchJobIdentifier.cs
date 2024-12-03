@@ -60,7 +60,7 @@ namespace Amazon.MainframeModernization.Model
         /// <summary>
         /// Gets and sets the property RestartBatchJobIdentifier. 
         /// <para>
-        /// Specifies the required information for restart, including execution ID and jobsteprestartmarker.
+        /// Specifies the required information for restart, including <c>executionId</c> and <c>JobStepRestartMarker</c>.
         /// </para>
         /// </summary>
         public RestartBatchJobIdentifier RestartBatchJobIdentifier

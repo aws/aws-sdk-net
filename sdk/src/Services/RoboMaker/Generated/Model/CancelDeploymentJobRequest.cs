@@ -31,14 +31,16 @@ namespace Amazon.RoboMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelDeploymentJob operation.
-    /// Cancels the specified deployment job.
-    /// 
-    ///  <important> 
+    /// <important> 
     /// <para>
-    /// This API will no longer be supported as of May 2, 2022. Use it to remove resources
-    /// that were created for Deployment Service.
+    /// This API is no longer supported. For more information, see the May 2, 2022 update
+    /// in the <a href="https://docs.aws.amazon.com/robomaker/latest/dg/chapter-support-policy.html#software-support-policy-may2022">Support
+    /// policy</a> page.
     /// </para>
-    ///  </important>
+    ///  </important> 
+    /// <para>
+    /// Cancels the specified deployment job.
+    /// </para>
     /// </summary>
     [Obsolete("Support for the AWS RoboMaker application deployment feature has ended. For additional information, see https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html.")]
     public partial class CancelDeploymentJobRequest : AmazonRoboMakerRequest

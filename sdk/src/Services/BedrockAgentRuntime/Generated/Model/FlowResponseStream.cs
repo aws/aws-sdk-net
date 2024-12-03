@@ -35,17 +35,6 @@ namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
     /// The output of the flow.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is used in the following API operations:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeFlow.html#API_agent_InvokeFlow_ResponseSyntax">InvokeFlow
-    /// response</a> 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1710:Identifiers should have correct suffix", Justification = "FlowResponseStreamCollection is not descriptive")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1063", Justification = "IDisposable is a transient interface from IEventStream. Users need to be able to call Dispose.")]
@@ -60,6 +49,7 @@ namespace Amazon.BedrockAgentRuntime.Model
             {"Initial-Response", payload => new InitialResponseEvent(payload)},
             {"FlowCompletionEvent", payload => new FlowCompletionEventUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))},
             {"FlowOutputEvent", payload => new FlowOutputEventUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))},
+            {"FlowTraceEvent", payload => new FlowTraceEventUnmarshaller().Unmarshall(EventStreamUtils.ConvertMessageToJsonContext(payload))},
         };
         /// <summary>
         /// The mapping of event message to a generator function to construct the matching EventStream Exception
@@ -111,6 +101,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         ///Raised when an FlowOutputEvent event is received
         ///</summary>
         public event EventHandler<EventStreamEventReceivedArgs<FlowOutputEvent>> FlowOutputEventReceived;
+        ///<summary>
+        ///Raised when an FlowTraceEvent event is received
+        ///</summary>
+        public event EventHandler<EventStreamEventReceivedArgs<FlowTraceEvent>> FlowTraceEventReceived;
 
         /// <summary>
         /// Construct an instance
@@ -149,7 +143,8 @@ namespace Amazon.BedrockAgentRuntime.Model
                 var _ =
                     RaiseEvent(InitialResponseReceived, ev) ||
                     RaiseEvent(FlowCompletionEventReceived,ev) ||
-                    RaiseEvent(FlowOutputEventReceived,ev);
+                    RaiseEvent(FlowOutputEventReceived,ev) ||
+                    RaiseEvent(FlowTraceEventReceived,ev);
             };       
         }
         private bool RaiseEvent<T>(EventHandler<EventStreamEventReceivedArgs<T>> eventHandler, IEventStreamEvent ev) where T : class, IEventStreamEvent

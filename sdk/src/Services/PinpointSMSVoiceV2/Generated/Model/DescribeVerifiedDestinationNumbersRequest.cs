@@ -31,7 +31,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeVerifiedDestinationNumbers operation.
-    /// Retrieves the specified verified destiona numbers.
+    /// Retrieves the specified verified destination numbers.
     /// </summary>
     public partial class DescribeVerifiedDestinationNumbersRequest : AmazonPinpointSMSVoiceV2Request
     {
@@ -121,7 +121,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// <summary>
         /// Gets and sets the property VerifiedDestinationNumberIds. 
         /// <para>
-        /// An array of VerifiedDestinationNumberid to retreive.
+        /// An array of VerifiedDestinationNumberid to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]

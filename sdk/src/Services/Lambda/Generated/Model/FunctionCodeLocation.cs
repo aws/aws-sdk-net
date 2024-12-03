@@ -38,6 +38,7 @@ namespace Amazon.Lambda.Model
         private string _location;
         private string _repositoryType;
         private string _resolvedImageUri;
+        private string _sourceKMSKeyArn;
 
         /// <summary>
         /// Gets and sets the property ImageUri. 
@@ -109,6 +110,27 @@ namespace Amazon.Lambda.Model
         internal bool IsSetResolvedImageUri()
         {
             return this._resolvedImageUri != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceKMSKeyArn. 
+        /// <para>
+        /// The ARN of the Key Management Service (KMS) customer managed key that's used to encrypt
+        /// your function's .zip deployment package. If you don't provide a customer managed key,
+        /// Lambda uses an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+        /// Web Services owned key</a>.
+        /// </para>
+        /// </summary>
+        public string SourceKMSKeyArn
+        {
+            get { return this._sourceKMSKeyArn; }
+            set { this._sourceKMSKeyArn = value; }
+        }
+
+        // Check to see if SourceKMSKeyArn property is set
+        internal bool IsSetSourceKMSKeyArn()
+        {
+            return this._sourceKMSKeyArn != null;
         }
 
     }

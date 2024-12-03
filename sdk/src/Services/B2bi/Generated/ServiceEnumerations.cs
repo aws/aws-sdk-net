@@ -25,6 +25,56 @@ namespace Amazon.B2bi
 {
 
     /// <summary>
+    /// Constants used for properties of type CapabilityDirection.
+    /// </summary>
+    public class CapabilityDirection : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INBOUND for CapabilityDirection
+        /// </summary>
+        public static readonly CapabilityDirection INBOUND = new CapabilityDirection("INBOUND");
+        /// <summary>
+        /// Constant OUTBOUND for CapabilityDirection
+        /// </summary>
+        public static readonly CapabilityDirection OUTBOUND = new CapabilityDirection("OUTBOUND");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapabilityDirection(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapabilityDirection FindValue(string value)
+        {
+            return FindValue<CapabilityDirection>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapabilityDirection(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CapabilityType.
     /// </summary>
     public class CapabilityType : ConstantClass
@@ -71,6 +121,102 @@ namespace Amazon.B2bi
 
 
     /// <summary>
+    /// Constants used for properties of type ConversionSourceFormat.
+    /// </summary>
+    public class ConversionSourceFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant JSON for ConversionSourceFormat
+        /// </summary>
+        public static readonly ConversionSourceFormat JSON = new ConversionSourceFormat("JSON");
+        /// <summary>
+        /// Constant XML for ConversionSourceFormat
+        /// </summary>
+        public static readonly ConversionSourceFormat XML = new ConversionSourceFormat("XML");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConversionSourceFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConversionSourceFormat FindValue(string value)
+        {
+            return FindValue<ConversionSourceFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConversionSourceFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConversionTargetFormat.
+    /// </summary>
+    public class ConversionTargetFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant X12 for ConversionTargetFormat
+        /// </summary>
+        public static readonly ConversionTargetFormat X12 = new ConversionTargetFormat("X12");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConversionTargetFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConversionTargetFormat FindValue(string value)
+        {
+            return FindValue<ConversionTargetFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConversionTargetFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FileFormat.
     /// </summary>
     public class FileFormat : ConstantClass
@@ -80,6 +226,10 @@ namespace Amazon.B2bi
         /// Constant JSON for FileFormat
         /// </summary>
         public static readonly FileFormat JSON = new FileFormat("JSON");
+        /// <summary>
+        /// Constant NOT_USED for FileFormat
+        /// </summary>
+        public static readonly FileFormat NOT_USED = new FileFormat("NOT_USED");
         /// <summary>
         /// Constant XML for FileFormat
         /// </summary>
@@ -114,6 +264,52 @@ namespace Amazon.B2bi
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FileFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FromFormat.
+    /// </summary>
+    public class FromFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant X12 for FromFormat
+        /// </summary>
+        public static readonly FromFormat X12 = new FromFormat("X12");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FromFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FromFormat FindValue(string value)
+        {
+            return FindValue<FromFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FromFormat(string value)
         {
             return FindValue(value);
         }
@@ -164,6 +360,152 @@ namespace Amazon.B2bi
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Logging(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MappingTemplateLanguage.
+    /// </summary>
+    public class MappingTemplateLanguage : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant JSONATA for MappingTemplateLanguage
+        /// </summary>
+        public static readonly MappingTemplateLanguage JSONATA = new MappingTemplateLanguage("JSONATA");
+        /// <summary>
+        /// Constant XSLT for MappingTemplateLanguage
+        /// </summary>
+        public static readonly MappingTemplateLanguage XSLT = new MappingTemplateLanguage("XSLT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MappingTemplateLanguage(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MappingTemplateLanguage FindValue(string value)
+        {
+            return FindValue<MappingTemplateLanguage>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MappingTemplateLanguage(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MappingType.
+    /// </summary>
+    public class MappingType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant JSONATA for MappingType
+        /// </summary>
+        public static readonly MappingType JSONATA = new MappingType("JSONATA");
+        /// <summary>
+        /// Constant XSLT for MappingType
+        /// </summary>
+        public static readonly MappingType XSLT = new MappingType("XSLT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MappingType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MappingType FindValue(string value)
+        {
+            return FindValue<MappingType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MappingType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ToFormat.
+    /// </summary>
+    public class ToFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant X12 for ToFormat
+        /// </summary>
+        public static readonly ToFormat X12 = new ToFormat("X12");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ToFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ToFormat FindValue(string value)
+        {
+            return FindValue<ToFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ToFormat(string value)
         {
             return FindValue(value);
         }

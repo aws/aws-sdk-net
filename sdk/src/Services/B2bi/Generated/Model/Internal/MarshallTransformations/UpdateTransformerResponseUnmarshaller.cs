@@ -70,6 +70,18 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
                     response.FileFormat = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("inputConversion", targetDepth))
+                {
+                    var unmarshaller = InputConversionUnmarshaller.Instance;
+                    response.InputConversion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("mapping", targetDepth))
+                {
+                    var unmarshaller = MappingUnmarshaller.Instance;
+                    response.Mapping = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("mappingTemplate", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -88,10 +100,22 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
                     response.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("outputConversion", targetDepth))
+                {
+                    var unmarshaller = OutputConversionUnmarshaller.Instance;
+                    response.OutputConversion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sampleDocument", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SampleDocument = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sampleDocuments", targetDepth))
+                {
+                    var unmarshaller = SampleDocumentsUnmarshaller.Instance;
+                    response.SampleDocuments = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))

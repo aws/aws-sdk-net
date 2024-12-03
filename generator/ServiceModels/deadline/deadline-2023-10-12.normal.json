@@ -1218,6 +1218,25 @@
       "documentation":"<p>Lists members on a job.</p>",
       "endpoint":{"hostPrefix":"management."}
     },
+    "ListJobParameterDefinitions":{
+      "name":"ListJobParameterDefinitions",
+      "http":{
+        "method":"GET",
+        "requestUri":"/2023-10-12/farms/{farmId}/queues/{queueId}/jobs/{jobId}/parameter-definitions",
+        "responseCode":200
+      },
+      "input":{"shape":"ListJobParameterDefinitionsRequest"},
+      "output":{"shape":"ListJobParameterDefinitionsResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"InternalServerErrorException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ValidationException"}
+      ],
+      "documentation":"<p>Lists parameter definitions of a job.</p>",
+      "endpoint":{"hostPrefix":"management."}
+    },
     "ListJobs":{
       "name":"ListJobs",
       "http":{
@@ -2021,20 +2040,68 @@
     }
   },
   "shapes":{
+    "AcceleratorCapabilities":{
+      "type":"structure",
+      "required":["selections"],
+      "members":{
+        "selections":{
+          "shape":"AcceleratorSelections",
+          "documentation":"<p>A list of objects that contain the GPU name of the accelerator and driver for the instance types that support the accelerator.</p>"
+        },
+        "count":{
+          "shape":"AcceleratorCountRange",
+          "documentation":"<p>The number of GPUs on each worker. The default is 1.</p>"
+        }
+      },
+      "documentation":"<p>Provides information about the GPU accelerators and drivers for the instance types in a fleet. If you include the <code>acceleratorCapabilities</code> property in the <a href=\"https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ServiceManagedEc2InstanceCapabilities\">ServiceManagedEc2InstanceCapabilities</a> object, all of the Amazon EC2 instances will have at least one accelerator. </p>"
+    },
     "AcceleratorCountRange":{
       "type":"structure",
       "required":["min"],
       "members":{
         "min":{
           "shape":"MinZeroMaxInteger",
-          "documentation":"<p>The minimum GPU for the accelerator.</p>"
+          "documentation":"<p>The minimum number of GPUs for the accelerator. If you set the value to 0, a worker will still have 1 GPU.</p>"
         },
         "max":{
           "shape":"MinZeroMaxInteger",
-          "documentation":"<p>The maximum GPU for the accelerator.</p>"
+          "documentation":"<p>The maximum number of GPUs for the accelerator.</p>"
         }
       },
       "documentation":"<p>The range for the GPU fleet acceleration.</p>"
+    },
+    "AcceleratorName":{
+      "type":"string",
+      "enum":[
+        "t4",
+        "a10g",
+        "l4",
+        "l40s"
+      ]
+    },
+    "AcceleratorRuntime":{
+      "type":"string",
+      "max":100,
+      "min":1
+    },
+    "AcceleratorSelection":{
+      "type":"structure",
+      "required":["name"],
+      "members":{
+        "name":{
+          "shape":"AcceleratorName",
+          "documentation":"<p>The name of the GPU accelerator.</p>"
+        },
+        "runtime":{
+          "shape":"AcceleratorRuntime",
+          "documentation":"<p>The driver version that the GPU accelerator uses. </p>"
+        }
+      },
+      "documentation":"<p>Values that you can use to select a particular Amazon EC2 instance type. </p>"
+    },
+    "AcceleratorSelections":{
+      "type":"list",
+      "member":{"shape":"AcceleratorSelection"}
     },
     "AcceleratorTotalMemoryMiBRange":{
       "type":"structure",
@@ -3203,8 +3270,6 @@
       "required":[
         "farmId",
         "queueId",
-        "template",
-        "templateType",
         "priority"
       ],
       "members":{
@@ -3262,6 +3327,10 @@
         "maxRetriesPerTask":{
           "shape":"MaxRetriesPerTask",
           "documentation":"<p>The maximum number of retries for each task.</p>"
+        },
+        "sourceJobId":{
+          "shape":"JobId",
+          "documentation":"<p>The job ID for the source job.</p>"
         }
       }
     },
@@ -5211,6 +5280,10 @@
         "description":{
           "shape":"JobDescription",
           "documentation":"<p>The description of the job.</p> <important> <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p> </important>"
+        },
+        "sourceJobId":{
+          "shape":"JobId",
+          "documentation":"<p>The job ID for the source job.</p>"
         }
       }
     },
@@ -6693,6 +6766,16 @@
       "documentation":"<p>The details of job parameters.</p>",
       "union":true
     },
+    "JobParameterDefinition":{
+      "type":"structure",
+      "members":{
+      },
+      "document":true
+    },
+    "JobParameterDefinitions":{
+      "type":"list",
+      "member":{"shape":"JobParameterDefinition"}
+    },
     "JobParameters":{
       "type":"map",
       "key":{"shape":"String"},
@@ -6794,6 +6877,10 @@
         "jobParameters":{
           "shape":"JobParameters",
           "documentation":"<p>The job parameters.</p>"
+        },
+        "sourceJobId":{
+          "shape":"JobId",
+          "documentation":"<p>The job ID for the source job.</p>"
         }
       },
       "documentation":"<p>The details of a job search.</p>"
@@ -6877,6 +6964,10 @@
         "maxRetriesPerTask":{
           "shape":"MaxRetriesPerTask",
           "documentation":"<p>The maximum number of retries for a job.</p>"
+        },
+        "sourceJobId":{
+          "shape":"JobId",
+          "documentation":"<p>The job ID for the source job.</p>"
         }
       },
       "documentation":"<p>A summary of job details.</p>"
@@ -7253,6 +7344,60 @@
         "members":{
           "shape":"JobMembers",
           "documentation":"<p>The members on the list.</p>"
+        },
+        "nextToken":{
+          "shape":"String",
+          "documentation":"<p>If Deadline Cloud returns <code>nextToken</code>, then there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, call the operation again using the returned token. Keep all other arguments unchanged. If no results remain, then <code>nextToken</code> is set to <code>null</code>. Each pagination token expires after 24 hours. If you provide a token that isn't valid, then you receive an HTTP 400 <code>ValidationException</code> error.</p>"
+        }
+      }
+    },
+    "ListJobParameterDefinitionsRequest":{
+      "type":"structure",
+      "required":[
+        "farmId",
+        "jobId",
+        "queueId"
+      ],
+      "members":{
+        "farmId":{
+          "shape":"FarmId",
+          "documentation":"<p>The farm ID of the job to list.</p>",
+          "location":"uri",
+          "locationName":"farmId"
+        },
+        "jobId":{
+          "shape":"JobId",
+          "documentation":"<p>The job ID to include on the list.</p>",
+          "location":"uri",
+          "locationName":"jobId"
+        },
+        "queueId":{
+          "shape":"QueueId",
+          "documentation":"<p>The queue ID to include on the list.</p>",
+          "location":"uri",
+          "locationName":"queueId"
+        },
+        "nextToken":{
+          "shape":"String",
+          "documentation":"<p>The token for the next set of results, or <code>null</code> to start from the beginning.</p>",
+          "location":"querystring",
+          "locationName":"nextToken"
+        },
+        "maxResults":{
+          "shape":"MaxResults",
+          "documentation":"<p>The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set of sequential pages.</p>",
+          "location":"querystring",
+          "locationName":"maxResults"
+        }
+      }
+    },
+    "ListJobParameterDefinitionsResponse":{
+      "type":"structure",
+      "required":["jobParameterDefinitions"],
+      "members":{
+        "jobParameterDefinitions":{
+          "shape":"JobParameterDefinitions",
+          "documentation":"<p>Lists parameter definitions of a job.</p>"
         },
         "nextToken":{
           "shape":"String",
@@ -9440,6 +9585,10 @@
           "shape":"Ec2EbsVolume",
           "documentation":"<p>The root EBS volume.</p>"
         },
+        "acceleratorCapabilities":{
+          "shape":"AcceleratorCapabilities",
+          "documentation":"<p>The GPU accelerator capabilities required for the Amazon EC2 instances. If you include the <code>acceleratorCapabilities</code> property in the <a href=\"https://docs.aws.amazon.com/deadline-cloud/latest/APIReference/API_ServiceManagedEc2InstanceCapabilities\">ServiceManagedEc2InstanceCapabilities</a> object, all of the Amazon EC2 instances will have at least one accelerator. </p>"
+        },
         "allowedInstanceTypes":{
           "shape":"InstanceTypes",
           "documentation":"<p>The allowable Amazon EC2 instance types.</p>"
@@ -9933,7 +10082,9 @@
     },
     "StepAmountCapabilities":{
       "type":"list",
-      "member":{"shape":"StepAmountCapability"}
+      "member":{"shape":"StepAmountCapability"},
+      "max":25,
+      "min":1
     },
     "StepAmountCapability":{
       "type":"structure",
@@ -9960,7 +10111,9 @@
     },
     "StepAttributeCapabilities":{
       "type":"list",
-      "member":{"shape":"StepAttributeCapability"}
+      "member":{"shape":"StepAttributeCapability"},
+      "max":25,
+      "min":1
     },
     "StepAttributeCapability":{
       "type":"structure",

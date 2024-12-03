@@ -417,6 +417,66 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
             #endregion
         }
 
+        public void IdentityManagementServiceDisableOrganizationsRootCredentialsManagement()
+        {
+            #region to-disable-the-rootcredentialsmanagement-feature-in-your-organization-1730908292211
+
+            var client = new AmazonIdentityManagementServiceClient();
+            var response = client.DisableOrganizationsRootCredentialsManagement(new DisableOrganizationsRootCredentialsManagementRequest 
+            {
+            });
+
+            List<string> enabledFeatures = response.EnabledFeatures;
+            string organizationId = response.OrganizationId;
+
+            #endregion
+        }
+
+        public void IdentityManagementServiceDisableOrganizationsRootSessions()
+        {
+            #region to-disable-the-rootsessions-feature-in-your-organization-1730908495962
+
+            var client = new AmazonIdentityManagementServiceClient();
+            var response = client.DisableOrganizationsRootSessions(new DisableOrganizationsRootSessionsRequest 
+            {
+            });
+
+            List<string> enabledFeatures = response.EnabledFeatures;
+            string organizationId = response.OrganizationId;
+
+            #endregion
+        }
+
+        public void IdentityManagementServiceEnableOrganizationsRootCredentialsManagement()
+        {
+            #region to-enable-the-rootcredentialsmanagement-feature-in-your-organization-1730908602395
+
+            var client = new AmazonIdentityManagementServiceClient();
+            var response = client.EnableOrganizationsRootCredentialsManagement(new EnableOrganizationsRootCredentialsManagementRequest 
+            {
+            });
+
+            List<string> enabledFeatures = response.EnabledFeatures;
+            string organizationId = response.OrganizationId;
+
+            #endregion
+        }
+
+        public void IdentityManagementServiceEnableOrganizationsRootSessions()
+        {
+            #region to-enable-the-rootsessions-feature-in-your-organization-1730908736611
+
+            var client = new AmazonIdentityManagementServiceClient();
+            var response = client.EnableOrganizationsRootSessions(new EnableOrganizationsRootSessionsRequest 
+            {
+            });
+
+            List<string> enabledFeatures = response.EnabledFeatures;
+            string organizationId = response.OrganizationId;
+
+            #endregion
+        }
+
         public void IdentityManagementServiceGenerateOrganizationsAccessReport()
         {
             #region generateorganizationsaccessreport-ou
@@ -664,6 +724,21 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
             });
 
             List<Group> groups = response.Groups;
+
+            #endregion
+        }
+
+        public void IdentityManagementServiceListOrganizationsFeatures()
+        {
+            #region to-list-the-centralized-root-access-features-enabled-for-your-organization-1730908832557
+
+            var client = new AmazonIdentityManagementServiceClient();
+            var response = client.ListOrganizationsFeatures(new ListOrganizationsFeaturesRequest 
+            {
+            });
+
+            List<string> enabledFeatures = response.EnabledFeatures;
+            string organizationId = response.OrganizationId;
 
             #endregion
         }

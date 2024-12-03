@@ -61,10 +61,10 @@ namespace Amazon.TaxSettings.Model
         /// <summary>
         /// Gets and sets the property CanadaRetailSalesTaxNumber. 
         /// <para>
-        ///  Manitoba Retail Sales Tax ID number. Customers purchasing Amazon Web Services for
-        /// resale in Manitoba must provide a valid Retail Sales Tax ID number for Manitoba. Leave
-        /// this blank if you do not have a Retail Sales Tax ID number in Manitoba or are not
-        /// purchasing Amazon Web Services for resale. 
+        ///  Manitoba Retail Sales Tax ID number. Customers purchasing Amazon Web Services services
+        /// for resale in Manitoba must provide a valid Retail Sales Tax ID number for Manitoba.
+        /// Leave this blank if you do not have a Retail Sales Tax ID number in Manitoba or are
+        /// not purchasing Amazon Web Services services for resale. 
         /// </para>
         /// </summary>
         public string CanadaRetailSalesTaxNumber

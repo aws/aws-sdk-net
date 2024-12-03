@@ -432,6 +432,102 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  CreateInferenceProfile
+
+
+        /// <summary>
+        /// Creates an application inference profile to track metrics and costs when invoking
+        /// a model. To create an application inference profile for a foundation model in one
+        /// region, specify the ARN of the model in that region. To create an application inference
+        /// profile for a foundation model across multiple regions, specify the ARN of the system-defined
+        /// inference profile that contains the regions that you want to route requests to. For
+        /// more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">Increase
+        /// throughput and resilience with cross-region inference in Amazon Bedrock</a>. in the
+        /// Amazon Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInferenceProfile service method.</param>
+        /// 
+        /// <returns>The response from the CreateInferenceProfile service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateInferenceProfile">REST API Reference for CreateInferenceProfile Operation</seealso>
+        CreateInferenceProfileResponse CreateInferenceProfile(CreateInferenceProfileRequest request);
+
+
+
+        /// <summary>
+        /// Creates an application inference profile to track metrics and costs when invoking
+        /// a model. To create an application inference profile for a foundation model in one
+        /// region, specify the ARN of the model in that region. To create an application inference
+        /// profile for a foundation model across multiple regions, specify the ARN of the system-defined
+        /// inference profile that contains the regions that you want to route requests to. For
+        /// more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">Increase
+        /// throughput and resilience with cross-region inference in Amazon Bedrock</a>. in the
+        /// Amazon Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInferenceProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateInferenceProfile service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.TooManyTagsException">
+        /// The request contains more tags than can be associated with a resource (50 tags per
+        /// resource). The maximum number of tags includes both existing tags and those included
+        /// in your current request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/CreateInferenceProfile">REST API Reference for CreateInferenceProfile Operation</seealso>
+        Task<CreateInferenceProfileResponse> CreateInferenceProfileAsync(CreateInferenceProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateModelCopyJob
 
 
@@ -1120,6 +1216,76 @@ namespace Amazon.Bedrock
 
         #endregion
         
+        #region  DeleteInferenceProfile
+
+
+        /// <summary>
+        /// Deletes an application inference profile. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">Increase
+        /// throughput and resilience with cross-region inference in Amazon Bedrock</a>. in the
+        /// Amazon Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInferenceProfile service method.</param>
+        /// 
+        /// <returns>The response from the DeleteInferenceProfile service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteInferenceProfile">REST API Reference for DeleteInferenceProfile Operation</seealso>
+        DeleteInferenceProfileResponse DeleteInferenceProfile(DeleteInferenceProfileRequest request);
+
+
+
+        /// <summary>
+        /// Deletes an application inference profile. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">Increase
+        /// throughput and resilience with cross-region inference in Amazon Bedrock</a>. in the
+        /// Amazon Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInferenceProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteInferenceProfile service method, as returned by Bedrock.</returns>
+        /// <exception cref="Amazon.Bedrock.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ConflictException">
+        /// Error occurred because of a conflict while performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Bedrock.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-2023-04-20/DeleteInferenceProfile">REST API Reference for DeleteInferenceProfile Operation</seealso>
+        Task<DeleteInferenceProfileResponse> DeleteInferenceProfileAsync(DeleteInferenceProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteModelInvocationLoggingConfiguration
 
 
@@ -1554,8 +1720,9 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Gets information about an inference profile. For more information, see the Amazon
-        /// Bedrock User Guide.
+        /// Gets information about an inference profile. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">Increase
+        /// throughput and resilience with cross-region inference in Amazon Bedrock</a>. in the
+        /// Amazon Bedrock User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetInferenceProfile service method.</param>
         /// 
@@ -1582,8 +1749,9 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Gets information about an inference profile. For more information, see the Amazon
-        /// Bedrock User Guide.
+        /// Gets information about an inference profile. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">Increase
+        /// throughput and resilience with cross-region inference in Amazon Bedrock</a>. in the
+        /// Amazon Bedrock User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetInferenceProfile service method.</param>
         /// <param name="cancellationToken">
@@ -2302,7 +2470,10 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Returns a list of inference profiles that you can use.
+        /// Returns a list of inference profiles that you can use. For more information, see <a
+        /// href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">Increase
+        /// throughput and resilience with cross-region inference in Amazon Bedrock</a>. in the
+        /// Amazon Bedrock User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInferenceProfiles service method.</param>
         /// 
@@ -2325,7 +2496,10 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Returns a list of inference profiles that you can use.
+        /// Returns a list of inference profiles that you can use. For more information, see <a
+        /// href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">Increase
+        /// throughput and resilience with cross-region inference in Amazon Bedrock</a>. in the
+        /// Amazon Bedrock User Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInferenceProfiles service method.</param>
         /// <param name="cancellationToken">
@@ -2660,7 +2834,7 @@ namespace Amazon.Bedrock
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html">Tagging
+        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Tagging
         /// resources</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
         /// Bedrock User Guide</a>.
         /// </para>
@@ -2694,7 +2868,7 @@ namespace Amazon.Bedrock
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html">Tagging
+        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Tagging
         /// resources</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
         /// Bedrock User Guide</a>.
         /// </para>
@@ -2988,7 +3162,7 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Associate tags with a resource. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html">Tagging
+        /// Associate tags with a resource. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Tagging
         /// resources</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
         /// Bedrock User Guide</a>.
         /// </summary>
@@ -3022,7 +3196,7 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Associate tags with a resource. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html">Tagging
+        /// Associate tags with a resource. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Tagging
         /// resources</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
         /// Bedrock User Guide</a>.
         /// </summary>
@@ -3062,7 +3236,7 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Remove one or more tags from a resource. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html">Tagging
+        /// Remove one or more tags from a resource. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Tagging
         /// resources</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
         /// Bedrock User Guide</a>.
         /// </summary>
@@ -3091,7 +3265,7 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Remove one or more tags from a resource. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html">Tagging
+        /// Remove one or more tags from a resource. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Tagging
         /// resources</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon
         /// Bedrock User Guide</a>.
         /// </summary>

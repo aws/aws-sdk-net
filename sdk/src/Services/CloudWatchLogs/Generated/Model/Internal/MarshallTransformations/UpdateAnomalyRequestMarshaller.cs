@@ -83,6 +83,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.AnomalyId);
                     }
 
+                    if(publicRequest.IsSetBaseline())
+                    {
+                        context.Writer.WritePropertyName("baseline");
+                        context.Writer.Write(publicRequest.Baseline.Value);
+                    }
+
                     if(publicRequest.IsSetPatternId())
                     {
                         context.Writer.WritePropertyName("patternId");

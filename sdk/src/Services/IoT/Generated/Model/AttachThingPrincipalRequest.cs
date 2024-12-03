@@ -44,6 +44,7 @@ namespace Amazon.IoT.Model
     {
         private string _principal;
         private string _thingName;
+        private ThingPrincipalType _thingPrincipalType;
 
         /// <summary>
         /// Gets and sets the property Principal. 
@@ -82,6 +83,35 @@ namespace Amazon.IoT.Model
         internal bool IsSetThingName()
         {
             return this._thingName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThingPrincipalType. 
+        /// <para>
+        /// The type of the relation you want to specify when you attach a principal to a thing.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>EXCLUSIVE_THING</c> - Attaches the specified principal to the specified thing,
+        /// exclusively. The thing will be the only thing that’s attached to the principal.
+        /// </para>
+        ///  </li> </ul> <ul> <li> 
+        /// <para>
+        ///  <c>NON_EXCLUSIVE_THING</c> - Attaches the specified principal to the specified thing.
+        /// Multiple things can be attached to the principal.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ThingPrincipalType ThingPrincipalType
+        {
+            get { return this._thingPrincipalType; }
+            set { this._thingPrincipalType = value; }
+        }
+
+        // Check to see if ThingPrincipalType property is set
+        internal bool IsSetThingPrincipalType()
+        {
+            return this._thingPrincipalType != null;
         }
 
     }

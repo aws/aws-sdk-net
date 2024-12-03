@@ -199,16 +199,16 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redis OSS append-only files (AOF) are not supported for T1 or T2 instances.
+        /// Valkey or Redis OSS append-only files (AOF) are not supported for T1 or T2 instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redis OSS Multi-AZ with automatic failover is not supported on T1 instances.
+        /// Valkey or Redis OSS Multi-AZ with automatic failover is not supported on T1 instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redis OSS configuration variables <c>appendonly</c> and <c>appendfsync</c> are not
-        /// supported on Redis OSS version 2.8.22 and later.
+        /// The configuration variables <c>appendonly</c> and <c>appendfsync</c> are not supported
+        /// on Valkey, or on Redis OSS version 2.8.22 and later.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -78,6 +78,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Account);
                     }
 
+                    if(publicRequest.IsSetService())
+                    {
+                        context.Writer.WritePropertyName("Service");
+                        context.Writer.Write(publicRequest.Service);
+                    }
+
                     writer.WriteObjectEnd();
                 }
 

@@ -60,6 +60,17 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DestinationTableName);
             }
 
+            if(requestObject.IsSetPartitionSpec())
+            {
+                context.Writer.WritePropertyName("PartitionSpec");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = PartitionSpecMarshaller.Instance;
+                marshaller.Marshall(requestObject.PartitionSpec, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetS3ErrorOutputPrefix())
             {
                 context.Writer.WritePropertyName("S3ErrorOutputPrefix");

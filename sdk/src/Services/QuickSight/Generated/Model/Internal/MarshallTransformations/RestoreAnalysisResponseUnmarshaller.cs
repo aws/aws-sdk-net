@@ -70,6 +70,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     response.RequestId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("RestorationFailedFolderArns", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.RestorationFailedFolderArns = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             response.Status = (int)context.ResponseData.StatusCode;
 
@@ -105,6 +111,14 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValueException"))
                 {
                     return InvalidParameterValueExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
+                {
+                    return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("PreconditionNotMetException"))
+                {
+                    return PreconditionNotMetExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {

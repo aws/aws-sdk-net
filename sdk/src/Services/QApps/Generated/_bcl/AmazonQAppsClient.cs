@@ -475,6 +475,285 @@ namespace Amazon.QApps
 
         #endregion
         
+        #region  BatchCreateCategory
+
+
+        /// <summary>
+        /// Creates Categories for the Amazon Q Business application environment instance. Web
+        /// experience users use Categories to tag and filter library items. For more information,
+        /// see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/qapps-custom-labels.html">Custom
+        /// labels for Amazon Q Apps</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchCreateCategory service method.</param>
+        /// 
+        /// <returns>The response from the BatchCreateCategory service method, as returned by QApps.</returns>
+        /// <exception cref="Amazon.QApps.Model.AccessDeniedException">
+        /// The client is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ConflictException">
+        /// The requested operation could not be completed due to a conflict with the current
+        /// state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.InternalServerException">
+        /// An internal service error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ThrottlingException">
+        /// The requested operation could not be completed because too many requests were sent
+        /// at once. Wait a bit and try again later.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.UnauthorizedException">
+        /// The client is not authenticated or authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/BatchCreateCategory">REST API Reference for BatchCreateCategory Operation</seealso>
+        public virtual BatchCreateCategoryResponse BatchCreateCategory(BatchCreateCategoryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchCreateCategoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchCreateCategoryResponseUnmarshaller.Instance;
+
+            return Invoke<BatchCreateCategoryResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates Categories for the Amazon Q Business application environment instance. Web
+        /// experience users use Categories to tag and filter library items. For more information,
+        /// see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/qapps-custom-labels.html">Custom
+        /// labels for Amazon Q Apps</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchCreateCategory service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchCreateCategory service method, as returned by QApps.</returns>
+        /// <exception cref="Amazon.QApps.Model.AccessDeniedException">
+        /// The client is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ConflictException">
+        /// The requested operation could not be completed due to a conflict with the current
+        /// state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.InternalServerException">
+        /// An internal service error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ThrottlingException">
+        /// The requested operation could not be completed because too many requests were sent
+        /// at once. Wait a bit and try again later.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.UnauthorizedException">
+        /// The client is not authenticated or authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/BatchCreateCategory">REST API Reference for BatchCreateCategory Operation</seealso>
+        public virtual Task<BatchCreateCategoryResponse> BatchCreateCategoryAsync(BatchCreateCategoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchCreateCategoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchCreateCategoryResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchCreateCategoryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchDeleteCategory
+
+
+        /// <summary>
+        /// Deletes Categories for the Amazon Q Business application environment instance. Web
+        /// experience users use Categories to tag and filter library items. For more information,
+        /// see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/qapps-custom-labels.html">Custom
+        /// labels for Amazon Q Apps</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteCategory service method.</param>
+        /// 
+        /// <returns>The response from the BatchDeleteCategory service method, as returned by QApps.</returns>
+        /// <exception cref="Amazon.QApps.Model.AccessDeniedException">
+        /// The client is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ConflictException">
+        /// The requested operation could not be completed due to a conflict with the current
+        /// state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.InternalServerException">
+        /// An internal service error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ThrottlingException">
+        /// The requested operation could not be completed because too many requests were sent
+        /// at once. Wait a bit and try again later.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.UnauthorizedException">
+        /// The client is not authenticated or authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/BatchDeleteCategory">REST API Reference for BatchDeleteCategory Operation</seealso>
+        public virtual BatchDeleteCategoryResponse BatchDeleteCategory(BatchDeleteCategoryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteCategoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteCategoryResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDeleteCategoryResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes Categories for the Amazon Q Business application environment instance. Web
+        /// experience users use Categories to tag and filter library items. For more information,
+        /// see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/qapps-custom-labels.html">Custom
+        /// labels for Amazon Q Apps</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteCategory service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchDeleteCategory service method, as returned by QApps.</returns>
+        /// <exception cref="Amazon.QApps.Model.AccessDeniedException">
+        /// The client is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ConflictException">
+        /// The requested operation could not be completed due to a conflict with the current
+        /// state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.InternalServerException">
+        /// An internal service error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ThrottlingException">
+        /// The requested operation could not be completed because too many requests were sent
+        /// at once. Wait a bit and try again later.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.UnauthorizedException">
+        /// The client is not authenticated or authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/BatchDeleteCategory">REST API Reference for BatchDeleteCategory Operation</seealso>
+        public virtual Task<BatchDeleteCategoryResponse> BatchDeleteCategoryAsync(BatchDeleteCategoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteCategoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteCategoryResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchDeleteCategoryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchUpdateCategory
+
+
+        /// <summary>
+        /// Updates Categories for the Amazon Q Business application environment instance. Web
+        /// experience users use Categories to tag and filter library items. For more information,
+        /// see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/qapps-custom-labels.html">Custom
+        /// labels for Amazon Q Apps</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateCategory service method.</param>
+        /// 
+        /// <returns>The response from the BatchUpdateCategory service method, as returned by QApps.</returns>
+        /// <exception cref="Amazon.QApps.Model.AccessDeniedException">
+        /// The client is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ConflictException">
+        /// The requested operation could not be completed due to a conflict with the current
+        /// state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.InternalServerException">
+        /// An internal service error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ThrottlingException">
+        /// The requested operation could not be completed because too many requests were sent
+        /// at once. Wait a bit and try again later.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.UnauthorizedException">
+        /// The client is not authenticated or authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/BatchUpdateCategory">REST API Reference for BatchUpdateCategory Operation</seealso>
+        public virtual BatchUpdateCategoryResponse BatchUpdateCategory(BatchUpdateCategoryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchUpdateCategoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateCategoryResponseUnmarshaller.Instance;
+
+            return Invoke<BatchUpdateCategoryResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates Categories for the Amazon Q Business application environment instance. Web
+        /// experience users use Categories to tag and filter library items. For more information,
+        /// see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/qapps-custom-labels.html">Custom
+        /// labels for Amazon Q Apps</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateCategory service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchUpdateCategory service method, as returned by QApps.</returns>
+        /// <exception cref="Amazon.QApps.Model.AccessDeniedException">
+        /// The client is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ConflictException">
+        /// The requested operation could not be completed due to a conflict with the current
+        /// state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.InternalServerException">
+        /// An internal service error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ThrottlingException">
+        /// The requested operation could not be completed because too many requests were sent
+        /// at once. Wait a bit and try again later.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.UnauthorizedException">
+        /// The client is not authenticated or authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/BatchUpdateCategory">REST API Reference for BatchUpdateCategory Operation</seealso>
+        public virtual Task<BatchUpdateCategoryResponse> BatchUpdateCategoryAsync(BatchUpdateCategoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchUpdateCategoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateCategoryResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchUpdateCategoryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateLibraryItem
 
 
@@ -1355,6 +1634,89 @@ namespace Amazon.QApps
             options.ResponseUnmarshaller = ImportDocumentResponseUnmarshaller.Instance;
             
             return InvokeAsync<ImportDocumentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListCategories
+
+
+        /// <summary>
+        /// Lists the categories of a Amazon Q Business application environment instance. For
+        /// more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/qapps-custom-labels.html">Custom
+        /// labels for Amazon Q Apps</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCategories service method.</param>
+        /// 
+        /// <returns>The response from the ListCategories service method, as returned by QApps.</returns>
+        /// <exception cref="Amazon.QApps.Model.AccessDeniedException">
+        /// The client is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.InternalServerException">
+        /// An internal service error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ThrottlingException">
+        /// The requested operation could not be completed because too many requests were sent
+        /// at once. Wait a bit and try again later.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.UnauthorizedException">
+        /// The client is not authenticated or authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/ListCategories">REST API Reference for ListCategories Operation</seealso>
+        public virtual ListCategoriesResponse ListCategories(ListCategoriesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCategoriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCategoriesResponseUnmarshaller.Instance;
+
+            return Invoke<ListCategoriesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the categories of a Amazon Q Business application environment instance. For
+        /// more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/qapps-custom-labels.html">Custom
+        /// labels for Amazon Q Apps</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCategories service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCategories service method, as returned by QApps.</returns>
+        /// <exception cref="Amazon.QApps.Model.AccessDeniedException">
+        /// The client is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.InternalServerException">
+        /// An internal service error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ThrottlingException">
+        /// The requested operation could not be completed because too many requests were sent
+        /// at once. Wait a bit and try again later.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.UnauthorizedException">
+        /// The client is not authenticated or authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.QApps.Model.ValidationException">
+        /// The input failed to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qapps-2023-11-27/ListCategories">REST API Reference for ListCategories Operation</seealso>
+        public virtual Task<ListCategoriesResponse> ListCategoriesAsync(ListCategoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCategoriesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCategoriesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListCategoriesResponse>(request, options, cancellationToken);
         }
 
         #endregion

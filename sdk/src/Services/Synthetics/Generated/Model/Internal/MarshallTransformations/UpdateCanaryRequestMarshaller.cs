@@ -112,6 +112,12 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.FailureRetentionPeriodInDays.Value);
                     }
 
+                    if(publicRequest.IsSetProvisionedResourceCleanup())
+                    {
+                        context.Writer.WritePropertyName("ProvisionedResourceCleanup");
+                        context.Writer.Write(publicRequest.ProvisionedResourceCleanup);
+                    }
+
                     if(publicRequest.IsSetRunConfig())
                     {
                         context.Writer.WritePropertyName("RunConfig");

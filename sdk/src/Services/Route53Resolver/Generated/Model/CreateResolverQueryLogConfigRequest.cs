@@ -90,7 +90,7 @@ namespace Amazon.Route53Resolver.Model
         /// </para>
         ///  
         /// <para>
-        ///  <c>arn:aws:s3:::examplebucket</c> 
+        ///  <c>arn:aws:s3:::amzn-s3-demo-bucket</c> 
         /// </para>
         ///  
         /// <para>
@@ -98,7 +98,7 @@ namespace Amazon.Route53Resolver.Model
         /// </para>
         ///  
         /// <para>
-        ///  <c>arn:aws:s3:::examplebucket/development/</c> 
+        ///  <c>arn:aws:s3:::amzn-s3-demo-bucket/development/</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>

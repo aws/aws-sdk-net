@@ -31,12 +31,16 @@ namespace Amazon.Bedrock.Model
 {
     /// <summary>
     /// Container for the parameters to the ListInferenceProfiles operation.
-    /// Returns a list of inference profiles that you can use.
+    /// Returns a list of inference profiles that you can use. For more information, see <a
+    /// href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">Increase
+    /// throughput and resilience with cross-region inference in Amazon Bedrock</a>. in the
+    /// Amazon Bedrock User Guide.
     /// </summary>
     public partial class ListInferenceProfilesRequest : AmazonBedrockRequest
     {
         private int? _maxResults;
         private string _nextToken;
+        private InferenceProfileType _typeEquals;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -78,6 +82,36 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TypeEquals. 
+        /// <para>
+        /// Filters for inference profiles that match the type you specify.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>SYSTEM_DEFINED</c> – The inference profile is defined by Amazon Bedrock. You can
+        /// route inference requests across regions with these inference profiles.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>APPLICATION</c> – The inference profile was created by a user. This type of inference
+        /// profile can track metrics and costs when invoking the model in it. The inference profile
+        /// may route requests to one or multiple regions.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public InferenceProfileType TypeEquals
+        {
+            get { return this._typeEquals; }
+            set { this._typeEquals = value; }
+        }
+
+        // Check to see if TypeEquals property is set
+        internal bool IsSetTypeEquals()
+        {
+            return this._typeEquals != null;
         }
 
     }

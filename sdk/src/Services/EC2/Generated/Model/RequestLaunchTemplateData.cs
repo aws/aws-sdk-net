@@ -237,7 +237,11 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ElasticInferenceAccelerators. 
+        /// Gets and sets the property ElasticInferenceAccelerators. <note> 
+        /// <para>
+        /// Amazon Elastic Inference is no longer available.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// An elastic inference accelerator to associate with the instance. Elastic inference
         /// accelerators are a resource you can attach to your Amazon EC2 instances to accelerate
@@ -505,9 +509,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html">Attribute-based
-        /// instance type selection for EC2 Fleet</a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-attribute-based-instance-type-selection.html">Attribute-based
-        /// instance type selection for Spot Fleet</a>, and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html">Spot
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html">Specify
+        /// attributes for instance type selection for EC2 Fleet or Spot Fleet</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html">Spot
         /// placement score</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>

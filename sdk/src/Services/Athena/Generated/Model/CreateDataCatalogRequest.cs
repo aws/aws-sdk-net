@@ -137,36 +137,6 @@ namespace Amazon.Athena.Model
         /// The <c>GLUE</c> data catalog type also applies to the default <c>AwsDataCatalog</c>
         /// that already exists in your account, of which you can have only one and cannot modify.
         /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        /// The <c>FEDERATED</c> data catalog type uses one of the following parameters, but not
-        /// both. Use <c>connection-arn</c> for an existing Glue connection. Use <c>connection-type</c>
-        /// and <c>connection-properties</c> to specify the configuration setting for a new connection.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>connection-arn:<i>&lt;glue_connection_arn_to_reuse&gt;</i> </c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>lambda-role-arn</c> (optional): The execution role to use for the Lambda function.
-        /// If not provided, one is created.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>connection-type:MYSQL|REDSHIFT|...., connection-properties:"<i>&lt;json_string&gt;</i>"</c>
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// For <i> <c>&lt;json_string&gt;</c> </i>, use escaped JSON text, as in the following
-        /// example.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>"{\"spill_bucket\":\"my_spill\",\"spill_prefix\":\"athena-spill\",\"host\":\"abc12345.snowflakecomputing.com\",\"port\":\"1234\",\"warehouse\":\"DEV_WH\",\"database\":\"TEST\",\"schema\":\"PUBLIC\",\"SecretArn\":\"arn:aws:secretsmanager:ap-south-1:111122223333:secret:snowflake-XHb67j\"}"</c>
-        /// 
-        /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
         public Dictionary<string, string> Parameters
@@ -202,10 +172,8 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of data catalog to create: <c>LAMBDA</c> for a federated catalog, <c>GLUE</c>
-        /// for an Glue Data Catalog, and <c>HIVE</c> for an external Apache Hive metastore. <c>FEDERATED</c>
-        /// is a federated catalog for which Athena creates the connection and the Lambda function
-        /// for you based on the parameters that you pass.
+        /// The type of data catalog to create: <c>LAMBDA</c> for a federated catalog, <c>HIVE</c>
+        /// for an external hive metastore, or <c>GLUE</c> for an Glue Data Catalog.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

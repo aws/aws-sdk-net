@@ -60,9 +60,9 @@ namespace Amazon.WorkSpaces.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// During the image import process, non-GPU WSP WorkSpaces with Windows 11 support only
-        /// <c>Microsoft_Office_2019</c>. GPU WSP WorkSpaces with Windows 11 do not support Office
-        /// installation.
+        /// During the image import process, non-GPU DCV (formerly WSP) WorkSpaces with Windows
+        /// 11 support only <c>Microsoft_Office_2019</c>. GPU DCV (formerly WSP) WorkSpaces with
+        /// Windows 11 do not support Office installation.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -140,15 +140,15 @@ namespace Amazon.WorkSpaces.Model
         /// Gets and sets the property IngestionProcess. 
         /// <para>
         /// The ingestion process to be used when importing the image, depending on which protocol
-        /// you want to use for your BYOL Workspace image, either PCoIP, WorkSpaces Streaming
-        /// Protocol (WSP), or bring your own protocol (BYOP). To use WSP, specify a value that
-        /// ends in <c>_WSP</c>. To use PCoIP, specify a value that does not end in <c>_WSP</c>.
-        /// To use BYOP, specify a value that ends in <c>_BYOP</c>.
+        /// you want to use for your BYOL Workspace image, either PCoIP, DCV, or bring your own
+        /// protocol (BYOP). To use WSP, specify a value that ends in <c>_DCV</c>. To use PCoIP,
+        /// specify a value that does not end in <c>_DCV</c>. To use BYOP, specify a value that
+        /// ends in <c>_BYOP</c>.
         /// </para>
         ///  
         /// <para>
         /// For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify
-        /// <c>BYOL_REGULAR</c>, <c>BYOL_REGULAR_WSP</c>, or <c>BYOL_REGULAR_BYOP</c>, depending
+        /// <c>BYOL_REGULAR</c>, <c>BYOL_REGULAR_DCV</c>, or <c>BYOL_REGULAR_BYOP</c>, depending
         /// on the protocol.
         /// </para>
         ///  <note> 

@@ -6,7 +6,6 @@
     <GenerateDocumentationFile>false</GenerateDocumentationFile>
     <AssemblyName>AWSSDK.IntegrationTestUtilities.NetFramework</AssemblyName>
     <PackageId>AWSSDK.IntegrationTestUtilities.NetFramework</PackageId>
-    <BaseIntermediateOutputPath>./obj/net472</BaseIntermediateOutputPath>
 
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>

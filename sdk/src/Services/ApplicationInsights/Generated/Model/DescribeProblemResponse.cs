@@ -35,6 +35,7 @@ namespace Amazon.ApplicationInsights.Model
     public partial class DescribeProblemResponse : AmazonWebServiceResponse
     {
         private Problem _problem;
+        private string _snsNotificationArn;
 
         /// <summary>
         /// Gets and sets the property Problem. 
@@ -52,6 +53,25 @@ namespace Amazon.ApplicationInsights.Model
         internal bool IsSetProblem()
         {
             return this._problem != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SNSNotificationArn. 
+        /// <para>
+        ///  The SNS notification topic ARN of the problem. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=300)]
+        public string SNSNotificationArn
+        {
+            get { return this._snsNotificationArn; }
+            set { this._snsNotificationArn = value; }
+        }
+
+        // Check to see if SNSNotificationArn property is set
+        internal bool IsSetSNSNotificationArn()
+        {
+            return this._snsNotificationArn != null;
         }
 
     }

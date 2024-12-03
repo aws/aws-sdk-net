@@ -185,19 +185,19 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Status of the resource scan.
         /// </para>
-        ///  <dl> <dt>INPROGRESS</dt> <dd> 
+        ///  <dl> <dt> INPROGRESS </dt> <dd> 
         /// <para>
         /// The resource scan is still in progress.
         /// </para>
-        ///  </dd> <dt>COMPLETE</dt> <dd> 
+        ///  </dd> <dt> COMPLETE </dt> <dd> 
         /// <para>
         /// The resource scan is complete.
         /// </para>
-        ///  </dd> <dt>EXPIRED</dt> <dd> 
+        ///  </dd> <dt> EXPIRED </dt> <dd> 
         /// <para>
         /// The resource scan has expired.
         /// </para>
-        ///  </dd> <dt>FAILED</dt> <dd> 
+        ///  </dd> <dt> FAILED </dt> <dd> 
         /// <para>
         /// The resource scan has failed.
         /// </para>

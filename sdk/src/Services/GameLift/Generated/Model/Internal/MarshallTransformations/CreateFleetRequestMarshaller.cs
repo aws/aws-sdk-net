@@ -105,17 +105,6 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.ComputeType);
                     }
 
-                    if(publicRequest.IsSetContainerGroupsConfiguration())
-                    {
-                        context.Writer.WritePropertyName("ContainerGroupsConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ContainerGroupsConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ContainerGroupsConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
                     if(publicRequest.IsSetDescription())
                     {
                         context.Writer.WritePropertyName("Description");

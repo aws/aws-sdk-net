@@ -37,6 +37,7 @@ namespace Amazon.SageMaker.Model
         private string _appArn;
         private string _appName;
         private AppType _appType;
+        private string _builtInLifecycleConfigArn;
         private DateTime? _creationTime;
         private string _domainId;
         private string _failureReason;
@@ -101,6 +102,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetAppType()
         {
             return this._appType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BuiltInLifecycleConfigArn. 
+        /// <para>
+        /// The lifecycle configuration that runs before the default lifecycle configuration
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string BuiltInLifecycleConfigArn
+        {
+            get { return this._builtInLifecycleConfigArn; }
+            set { this._builtInLifecycleConfigArn = value; }
+        }
+
+        // Check to see if BuiltInLifecycleConfigArn property is set
+        internal bool IsSetBuiltInLifecycleConfigArn()
+        {
+            return this._builtInLifecycleConfigArn != null;
         }
 
         /// <summary>

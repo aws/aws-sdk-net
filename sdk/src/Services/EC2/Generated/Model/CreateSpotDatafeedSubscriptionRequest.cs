@@ -49,7 +49,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates CreateSpotDatafeedSubscriptionRequest with the parameterized properties
         /// </summary>
-        /// <param name="bucket">The name of the Amazon S3 bucket in which to store the Spot Instance data feed. For more information about bucket names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules">Rules for bucket naming</a> in the <i>Amazon S3 Developer Guide</i>.</param>
+        /// <param name="bucket">The name of the Amazon S3 bucket in which to store the Spot Instance data feed. For more information about bucket names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">Bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</param>
         public CreateSpotDatafeedSubscriptionRequest(string bucket)
         {
             _bucket = bucket;
@@ -59,8 +59,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Bucket. 
         /// <para>
         /// The name of the Amazon S3 bucket in which to store the Spot Instance data feed. For
-        /// more information about bucket names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules">Rules
-        /// for bucket naming</a> in the <i>Amazon S3 Developer Guide</i>.
+        /// more information about bucket names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">Bucket
+        /// naming rules</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

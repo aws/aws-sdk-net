@@ -93,6 +93,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.ApprovalDescription);
                     }
 
+                    if(publicRequest.IsSetClientToken())
+                    {
+                        context.Writer.WritePropertyName("ClientToken");
+                        context.Writer.Write(publicRequest.ClientToken);
+                    }
+
                     if(publicRequest.IsSetCustomerMetadataProperties())
                     {
                         context.Writer.WritePropertyName("CustomerMetadataProperties");
@@ -142,6 +148,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 
                         var marshaller = ModelPackageModelCardMarshaller.Instance;
                         marshaller.Marshall(publicRequest.ModelCard, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
+                    if(publicRequest.IsSetModelLifeCycle())
+                    {
+                        context.Writer.WritePropertyName("ModelLifeCycle");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ModelLifeCycleMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.ModelLifeCycle, context);
 
                         context.Writer.WriteObjectEnd();
                     }

@@ -137,6 +137,17 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                         context.Writer.Write(publicRequest.Name);
                     }
 
+                    if(publicRequest.IsSetPlacement())
+                    {
+                        context.Writer.WritePropertyName("placement");
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = PlacementMarshaller.Instance;
+                        marshaller.Marshall(publicRequest.Placement, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+
                     if(publicRequest.IsSetResourceTags())
                     {
                         context.Writer.WritePropertyName("resourceTags");

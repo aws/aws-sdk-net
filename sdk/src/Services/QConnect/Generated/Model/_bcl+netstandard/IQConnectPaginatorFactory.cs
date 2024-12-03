@@ -27,6 +27,26 @@ namespace Amazon.QConnect.Model
     {
 
         /// <summary>
+        /// Paginator for ListAIAgents operation
+        ///</summary>
+        IListAIAgentsPaginator ListAIAgents(ListAIAgentsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAIAgentVersions operation
+        ///</summary>
+        IListAIAgentVersionsPaginator ListAIAgentVersions(ListAIAgentVersionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAIPrompts operation
+        ///</summary>
+        IListAIPromptsPaginator ListAIPrompts(ListAIPromptsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAIPromptVersions operation
+        ///</summary>
+        IListAIPromptVersionsPaginator ListAIPromptVersions(ListAIPromptVersionsRequest request);
+
+        /// <summary>
         /// Paginator for ListAssistantAssociations operation
         ///</summary>
         IListAssistantAssociationsPaginator ListAssistantAssociations(ListAssistantAssociationsRequest request);

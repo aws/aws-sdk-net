@@ -43,11 +43,11 @@ namespace Amazon.SecurityLake.Model
     ///  
     /// <para>
     /// When you enable Security Lake, it starts ingesting security data after the <c>CreateAwsLogSource</c>
-    /// call. This includes ingesting security data from sources, storing data, and making
-    /// data accessible to subscribers. Security Lake also enables all the existing settings
-    /// and resources that it stores or maintains for your Amazon Web Services account in
-    /// the current Region, including security log and event data. For more information, see
-    /// the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/what-is-security-lake.html">Amazon
+    /// call and after you create subscribers using the <c>CreateSubscriber</c> API. This
+    /// includes ingesting security data from sources, storing data, and making data accessible
+    /// to subscribers. Security Lake also enables all the existing settings and resources
+    /// that it stores or maintains for your Amazon Web Services account in the current Region,
+    /// including security log and event data. For more information, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/what-is-security-lake.html">Amazon
     /// Security Lake User Guide</a>.
     /// </para>
     /// </summary>

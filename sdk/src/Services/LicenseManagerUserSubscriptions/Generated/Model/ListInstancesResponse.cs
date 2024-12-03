@@ -40,7 +40,8 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         /// <summary>
         /// Gets and sets the property InstanceSummaries. 
         /// <para>
-        /// Metadata that describes the list instances operation.
+        /// An array of <c>InstanceSummary</c> resources that contain details about the instances
+        /// that provide user-based subscriptions and also meet the request criteria.
         /// </para>
         /// </summary>
         public List<InstanceSummary> InstanceSummaries
@@ -58,7 +59,9 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Token for the next set of results.
+        /// The next token used for paginated responses. When this field isn't empty, there are
+        /// additional elements that the service hasn't included in this request. Use this token
+        /// with the next request to retrieve additional objects.
         /// </para>
         /// </summary>
         public string NextToken

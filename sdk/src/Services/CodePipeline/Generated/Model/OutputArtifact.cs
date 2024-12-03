@@ -34,7 +34,28 @@ namespace Amazon.CodePipeline.Model
     /// </summary>
     public partial class OutputArtifact
     {
+        private List<string> _files = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
+
+        /// <summary>
+        /// Gets and sets the property Files. 
+        /// <para>
+        /// The files that you want to associate with the output artifact that will be exported
+        /// from the compute action.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<string> Files
+        {
+            get { return this._files; }
+            set { this._files = value; }
+        }
+
+        // Check to see if Files property is set
+        internal bool IsSetFiles()
+        {
+            return this._files != null && (this._files.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 

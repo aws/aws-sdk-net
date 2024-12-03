@@ -66,6 +66,18 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ActiveDirectorySettings", targetDepth))
+                {
+                    var unmarshaller = ActiveDirectorySettingsUnmarshaller.Instance;
+                    unmarshalledObject.ActiveDirectorySettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ActiveDirectoryType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ActiveDirectoryType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DirectoryId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
