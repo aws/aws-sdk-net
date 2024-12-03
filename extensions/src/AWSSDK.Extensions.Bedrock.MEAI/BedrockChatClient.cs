@@ -51,7 +51,7 @@ internal sealed partial class BedrockChatClient : IChatClient
         _runtime = runtime!;
         _modelId = modelId;
 
-        Metadata = new(runtime!.Config.ServiceId, modelId: modelId);
+        Metadata = new("aws.bedrock", modelId: modelId);
     }
 
     public void Dispose()

@@ -50,7 +50,7 @@ internal sealed partial class BedrockEmbeddingGenerator : IEmbeddingGenerator<st
         _modelId = modelId;
         _dimensions = dimensions;
 
-        Metadata = new(runtime!.Config.ServiceId, modelId: modelId, dimensions: dimensions);
+        Metadata = new("aws.bedrock", modelId: modelId, dimensions: dimensions);
     }
 
     public void Dispose()
