@@ -32,7 +32,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Checksum Object
     /// </summary>  
-    public class ChecksumUnmarshaller : IUnmarshaller<Checksum, XmlUnmarshallerContext>
+    public class ChecksumUnmarshaller : IXmlUnmarshaller<Checksum, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

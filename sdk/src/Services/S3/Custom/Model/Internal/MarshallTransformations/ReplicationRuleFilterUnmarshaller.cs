@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// ReplicationRuleFilter unmarshaller
     /// </summary>
-    public class ReplicationRuleFilterUnmarshaller : IUnmarshaller<ReplicationRuleFilter, XmlUnmarshallerContext>
+    public class ReplicationRuleFilterUnmarshaller : IXmlUnmarshaller<ReplicationRuleFilter, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

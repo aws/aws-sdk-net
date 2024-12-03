@@ -243,14 +243,34 @@ namespace Amazon
         }
 
         #endregion
-
-
-        #region SDK Cache
+        #region StreamingUtf8JsonReaderBufferSize
 
         /// <summary>
-        /// Key for the UseSdkCache property.
-        /// <seealso cref="Amazon.AWSConfigs.UseSdkCache"/>
+        /// Key for the StreamingUtf8JsonReaderBufferSize property.
+        /// <seealso cref="Amazon.AWSConfigs.StreamingUtf8JsonReaderBufferSize"/>"/>
         /// </summary>
+        public const string StreamingUtf8JsonReaderBufferSizeKey = "StreamingUtf8JsonReaderBufferSize";
+
+        /// <summary>
+        /// Configures the default buffer size for the <see cref="Amazon.Runtime.Internal.Util.StreamingUtf8JsonReader"/>
+        /// used for buffering data from the stream passed into its constructor. If this isn't set, the SDK will default to 4096 bytes.
+        /// 
+        /// Setting this property is not thread safe and should only be set at application startup.
+        /// </summary>
+        public static int? StreamingUtf8JsonReaderBufferSize
+        {
+            get { return _rootConfig.StreamingUtf8JsonReaderBufferSize; }
+            set { _rootConfig.StreamingUtf8JsonReaderBufferSize = value; }
+        }
+
+        #endregion
+
+            #region SDK Cache
+
+            /// <summary>
+            /// Key for the UseSdkCache property.
+            /// <seealso cref="Amazon.AWSConfigs.UseSdkCache"/>
+            /// </summary>
         public const string UseSdkCacheKey = "AWSCache";
 
         /// <summary>

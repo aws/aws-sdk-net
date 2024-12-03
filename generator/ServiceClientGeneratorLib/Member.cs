@@ -664,16 +664,26 @@ namespace ServiceClientGenerator
                     var keyTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Shape.KeyKey], useNullable);
                     var valueType = DetermineType(memberShape[Shape.ValueKey], true, useNullable);
                     var valueTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Shape.ValueKey], useNullable);
-
-                    return string.Format("DictionaryUnmarshaller<{0}, {1}, {2}, {3}>",
-                        keyType, valueType, keyTypeUnmarshaller, valueTypeUnmarshaller);
+                    if (this.model.Type == ServiceType.Json || this.model.Type == ServiceType.Rest_Json)
+                        return string.Format("JsonDictionaryUnmarshaller<{0}, {1}, {2}, {3}>",
+                            keyType, valueType, keyTypeUnmarshaller, valueTypeUnmarshaller);
+                    else if (this.model.Type == ServiceType.Query || this.model.Type == ServiceType.Rest_Xml)
+                        return string.Format("XmlDictionaryUnmarshaller<{0}, {1}, {2}, {3}>",
+                            keyType, valueType, keyTypeUnmarshaller, valueTypeUnmarshaller);
+                    else
+                        throw new Exception("Unknown protocol type");
                 case "list":
                     var listType = DetermineType(memberShape[Member.MemberKey], true, useNullable);
                     var listTypeUnmarshaller = GetTypeUnmarshallerName(memberShape[Member.MemberKey], useNullable);
-
-                    return string.Format("ListUnmarshaller<{0}, {1}>",
+                    if (this.model.Type == ServiceType.Json || this.model.Type == ServiceType.Rest_Json)
+                        return string.Format("JsonListUnmarshaller<{0},{1}>",listType, listTypeUnmarshaller);
+                    if (this.model.Type == ServiceType.Rest_Xml || this.model.Type == ServiceType.Query)
+                        return string.Format("XmlListUnmarshaller<{0}, {1}>",
                         listType, listTypeUnmarshaller);
-
+                    else
+                    {
+                        throw new Exception("Unknown protocol type");
+                    }
                 case "decimal":
                     throw new Exception(UnhandledTypeDecimalErrorMessage);
 
@@ -759,13 +769,14 @@ namespace ServiceClientGenerator
                         isFlat = false;
                     }
 
-                    if (this.model.Type == ServiceType.Json 
-                        || this.model.Type == ServiceType.Rest_Json 
-                        || (this.model.Type == ServiceType.Rest_Xml && !isFlat))
-                        return string.Format("new DictionaryUnmarshaller<{0}, {1}, {2}, {3}>(StringUnmarshaller.Instance, {5})",
+                    if (this.model.Type == ServiceType.Json || this.model.Type == ServiceType.Rest_Json)
+                        return string.Format("new JsonDictionaryUnmarshaller<{0}, {1}, {2}, {3}>(StringUnmarshaller.Instance, {5})",
+                            keyType, valueType, keyTypeUnmarshaller, valueTypeUnmarshaller, keyTypeUnmarshallerInstantiate, valueTypeUnmarshallerInstantiate);
+                    else if (this.model.Type == ServiceType.Rest_Xml && !isFlat)
+                        return string.Format("new XmlDictionaryUnmarshaller<{0}, {1}, {2}, {3}>(StringUnmarshaller.Instance, {5})",
                             keyType, valueType, keyTypeUnmarshaller, valueTypeUnmarshaller, keyTypeUnmarshallerInstantiate, valueTypeUnmarshallerInstantiate);
                     else
-                        return string.Format("new KeyValueUnmarshaller<{0}, {1}, {2}, {3}>(StringUnmarshaller.Instance, {5})",
+                        return string.Format("new XmlKeyValueUnmarshaller<{0}, {1}, {2}, {3}>(StringUnmarshaller.Instance, {5})",
                             keyType, valueType, keyTypeUnmarshaller, valueTypeUnmarshaller, keyTypeUnmarshallerInstantiate, valueTypeUnmarshallerInstantiate);
                 case "list":
                     var listType = DetermineType(memberShape[Shape.MemberKey], true, false);
@@ -773,7 +784,7 @@ namespace ServiceClientGenerator
                     var listTypeUnmarshallerInstantiate = DetermineTypeUnmarshallerInstantiate(memberShape[Shape.MemberKey], typeNode.ToString(), false);
 
                     if (this.model.Type == ServiceType.Json || this.model.Type == ServiceType.Rest_Json)
-                        return string.Format("new ListUnmarshaller<{0}, {1}>({2})",
+                        return string.Format("new JsonListUnmarshaller<{0}, {1}>({2})",
                             listType, listTypeUnmarshaller, listTypeUnmarshallerInstantiate);
                     else if ((this.model.Type == ServiceType.Query || this.model.Type == ServiceType.Rest_Xml) && $"{listTypeUnmarshaller}.Instance" != listTypeUnmarshallerInstantiate)
                         return $"new {listTypeUnmarshaller}({listTypeUnmarshallerInstantiate})";

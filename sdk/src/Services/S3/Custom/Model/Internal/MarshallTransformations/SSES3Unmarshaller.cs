@@ -20,7 +20,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// SSES3 Unmarshaller
     /// </summary>
-    public class SSES3Unmarshaller : IUnmarshaller<SSES3, XmlUnmarshallerContext>, IUnmarshaller<SSES3, JsonUnmarshallerContext>
+    public class SSES3Unmarshaller : IXmlUnmarshaller<SSES3, XmlUnmarshallerContext>, IXmlUnmarshaller<SSES3, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

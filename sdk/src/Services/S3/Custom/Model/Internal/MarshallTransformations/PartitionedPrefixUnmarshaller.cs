@@ -19,7 +19,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PartitionedPrefix Object
     /// </summary>  
-    public class PartitionedPrefixUnmarshaller : IUnmarshaller<PartitionedPrefix, XmlUnmarshallerContext>, IUnmarshaller<PartitionedPrefix, JsonUnmarshallerContext>
+    public class PartitionedPrefixUnmarshaller : IXmlUnmarshaller<PartitionedPrefix, XmlUnmarshallerContext>, IXmlUnmarshaller<PartitionedPrefix, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

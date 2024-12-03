@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// <summary>
      ///   UploadsItem Unmarshaller
      /// </summary>
-    public class MultipartUploadUnmarshaller : IUnmarshaller<MultipartUpload, XmlUnmarshallerContext>, IUnmarshaller<MultipartUpload, JsonUnmarshallerContext> 
+    public class MultipartUploadUnmarshaller : IXmlUnmarshaller<MultipartUpload, XmlUnmarshallerContext>, IXmlUnmarshaller<MultipartUpload, JsonUnmarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

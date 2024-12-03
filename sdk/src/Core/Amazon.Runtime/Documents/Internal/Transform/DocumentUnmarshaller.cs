@@ -18,77 +18,80 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
+using System.Text.Json;
 using Amazon.Runtime.Internal.Transform;
-using ThirdParty.Json.LitJson;
+using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Runtime.Documents.Internal.Transform
 {
     /// <summary>
-    /// Dedicated <see cref="IUnmarshaller{T,R}"/> for <see cref="Document"/>.
+    /// Dedicated <see cref="IXmlUnmarshaller{T,R}"/> for <see cref="Document"/>.
     /// </summary>
     /// <remarks>
     /// Per the Document Spec, Xml is not supported.
     /// </remarks>
-    public class DocumentUnmarshaller : IUnmarshaller<Document, JsonUnmarshallerContext>, IUnmarshaller<Document, XmlUnmarshallerContext>
+    public class DocumentUnmarshaller : IJsonUnmarshaller<Document, JsonUnmarshallerContext>
     {
         public static DocumentUnmarshaller Instance { get; } = new DocumentUnmarshaller();
         private DocumentUnmarshaller() { }
 
-        public Document Unmarshall(JsonUnmarshallerContext context)
+        public Document Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            context.Read();
+            context.Read(ref reader);
             switch (context.CurrentTokenType)
             {
-                case JsonToken.Null:
-                case JsonToken.None:
+                case JsonTokenType.Null:
+                case JsonTokenType.None:
                     return new Document();
-                case JsonToken.Boolean:
-                    return new Document(bool.Parse(context.ReadText()));
-                case JsonToken.Double:
-                    return new Document(double.Parse(context.ReadText()));
-                case JsonToken.Int:
-                    return new Document(int.Parse(context.ReadText()));
-                case JsonToken.Long:
-                    return new Document(long.Parse(context.ReadText()));
-                case JsonToken.String:
-                    return new Document(context.ReadText());
-                case JsonToken.ArrayStart:
+                case JsonTokenType.True:
+                case JsonTokenType.False:
+                    return new Document(reader.Reader.GetBoolean());
+                case JsonTokenType.Number:
+                    if (reader.Reader.TryGetDouble(out double doubleValue))
+                    {
+                        return new Document(doubleValue);
+                    }
+                    else if (reader.Reader.TryGetInt32(out int intValue))
+                    {
+                        return new Document(intValue);
+                    }
+                    else if (reader.Reader.TryGetInt64(out long longValue))
+                    {
+                        return new Document(longValue);
+                    }
+                    else
+                    {
+                        throw new JsonException("Unsupported number type.");
+                    }
+                case JsonTokenType.String:
+                    return new Document(reader.Reader.GetString());
+                case JsonTokenType.StartArray:
                     var list = new List<Document>();
 
-                    while (!context.Peek(JsonToken.ArrayEnd))
-                        list.Add(Unmarshall(context));
+                    while (!context.Peek(JsonTokenType.EndArray, ref reader))
+                        list.Add(Unmarshall(context, ref reader));
 
-                    context.Read(); // Read ArrayEnd
+                    context.Read(ref reader); // Read ArrayEnd
                     return new Document(list);
-                case JsonToken.ObjectStart:
+                case JsonTokenType.StartObject:
                     var dict = new Dictionary<string, Document>();
 
-                    while (!context.Peek(JsonToken.ObjectEnd))
+                    while (!context.Peek(JsonTokenType.EndObject, ref reader))
                     {
                         // Only supported Object is Dictionary<string, Document>
 
-                        var key = StringUnmarshaller.Instance.Unmarshall(context);
-                        var value = Unmarshall(context);
+                        var key = StringUnmarshaller.Instance.Unmarshall(context, ref reader);
+                        var value = Unmarshall(context, ref reader);
 
                         dict.Add(key, value);
                     }
 
-                    context.Read(); // Read ObjectEnd
+                    context.Read(ref reader); // Read ObjectEnd
 
                     return new Document(dict);
                 default:
                     throw new ArgumentException($"Unknown JSON type: {context.CurrentTokenType}");
             }
-        }
-
-        /// <remarks>
-        /// Document Types does not support xml.  However, Generic Type constraints for
-        /// <see cref="ListUnmarshaller{I,IUnmarshaller}"/> require implementing both
-        /// json and xml unmarshalling support.
-        /// </remarks>
-        Document IUnmarshaller<Document, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext input)
-        {
-            throw new NotImplementedException("Document is not supported in Xml Protocol");
         }
     }
 }

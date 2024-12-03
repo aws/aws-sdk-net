@@ -22,7 +22,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// EncryptionConfiguration unmarshaller
     /// </summary>
-    public class EncryptionConfigurationUnmarshaller : IUnmarshaller<EncryptionConfiguration, XmlUnmarshallerContext>, IUnmarshaller<EncryptionConfiguration, JsonUnmarshallerContext>
+    public class EncryptionConfigurationUnmarshaller : IXmlUnmarshaller<EncryptionConfiguration, XmlUnmarshallerContext>, IXmlUnmarshaller<EncryptionConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -35,7 +35,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ObjectLockLegalHold Object
     /// </summary>  
-    public class ObjectLockLegalHoldUnmarshaller : IUnmarshaller<ObjectLockLegalHold, XmlUnmarshallerContext>, IUnmarshaller<ObjectLockLegalHold, JsonUnmarshallerContext>
+    public class ObjectLockLegalHoldUnmarshaller : IXmlUnmarshaller<ObjectLockLegalHold, XmlUnmarshallerContext>, IXmlUnmarshaller<ObjectLockLegalHold, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
