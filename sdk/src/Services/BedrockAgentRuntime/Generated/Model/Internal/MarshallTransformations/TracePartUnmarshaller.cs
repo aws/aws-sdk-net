@@ -84,6 +84,18 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                     unmarshalledObject.AgentVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("callerChain", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Caller, CallerUnmarshaller>(CallerUnmarshaller.Instance);
+                    unmarshalledObject.CallerChain = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("collaboratorName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CollaboratorName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sessionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -72,6 +72,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                     unmarshalledObject.ActionGroupInvocationOutput = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("agentCollaboratorInvocationOutput", targetDepth))
+                {
+                    var unmarshaller = AgentCollaboratorInvocationOutputUnmarshaller.Instance;
+                    unmarshalledObject.AgentCollaboratorInvocationOutput = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("codeInterpreterInvocationOutput", targetDepth))
                 {
                     var unmarshaller = CodeInterpreterInvocationOutputUnmarshaller.Instance;

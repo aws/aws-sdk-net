@@ -43,6 +43,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         private OrchestrationTrace _orchestrationTrace;
         private PostProcessingTrace _postProcessingTrace;
         private PreProcessingTrace _preProcessingTrace;
+        private RoutingClassifierTrace _routingClassifierTrace;
 
         /// <summary>
         /// Gets and sets the property CustomOrchestrationTrace. 
@@ -159,6 +160,25 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetPreProcessingTrace()
         {
             return this._preProcessingTrace != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoutingClassifierTrace. 
+        /// <para>
+        /// A routing classifier's trace.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public RoutingClassifierTrace RoutingClassifierTrace
+        {
+            get { return this._routingClassifierTrace; }
+            set { this._routingClassifierTrace = value; }
+        }
+
+        // Check to see if RoutingClassifierTrace property is set
+        internal bool IsSetRoutingClassifierTrace()
+        {
+            return this._routingClassifierTrace != null;
         }
 
     }

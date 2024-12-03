@@ -102,6 +102,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                     unmarshalledObject.PreProcessingTrace = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("routingClassifierTrace", targetDepth))
+                {
+                    var unmarshaller = RoutingClassifierTraceUnmarshaller.Instance;
+                    unmarshalledObject.RoutingClassifierTrace = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

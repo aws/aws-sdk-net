@@ -97,6 +97,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         private string _memoryId;
         private string _sessionId;
         private SessionState _sessionState;
+        private string _sourceArn;
         private StreamingConfigurations _streamingConfigurations;
 
         /// <summary>
@@ -263,6 +264,25 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetSessionState()
         {
             return this._sessionState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceArn. 
+        /// <para>
+        /// The ARN of the resource making the request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
+        public string SourceArn
+        {
+            get { return this._sourceArn; }
+            set { this._sourceArn = value; }
+        }
+
+        // Check to see if SourceArn property is set
+        internal bool IsSetSourceArn()
+        {
+            return !string.IsNullOrEmpty(this._sourceArn);
         }
 
         /// <summary>

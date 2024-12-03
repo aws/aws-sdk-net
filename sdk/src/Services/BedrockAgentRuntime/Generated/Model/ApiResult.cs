@@ -47,6 +47,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     public partial class ApiResult
     {
         private string _actionGroup;
+        private string _agentId;
         private string _apiPath;
         private ConfirmationState _confirmationState;
         private string _httpMethod;
@@ -71,6 +72,24 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetActionGroup()
         {
             return this._actionGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AgentId. 
+        /// <para>
+        /// The agent's ID.
+        /// </para>
+        /// </summary>
+        public string AgentId
+        {
+            get { return this._agentId; }
+            set { this._agentId = value; }
+        }
+
+        // Check to see if AgentId property is set
+        internal bool IsSetAgentId()
+        {
+            return this._agentId != null;
         }
 
         /// <summary>

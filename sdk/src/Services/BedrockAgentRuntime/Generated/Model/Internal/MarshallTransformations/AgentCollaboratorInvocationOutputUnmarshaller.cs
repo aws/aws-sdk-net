@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FunctionInvocationInput Object
+    /// Response Unmarshaller for AgentCollaboratorInvocationOutput Object
     /// </summary>  
-    public class FunctionInvocationInputUnmarshaller : IUnmarshaller<FunctionInvocationInput, XmlUnmarshallerContext>, IUnmarshaller<FunctionInvocationInput, JsonUnmarshallerContext>
+    public class AgentCollaboratorInvocationOutputUnmarshaller : IUnmarshaller<AgentCollaboratorInvocationOutput, XmlUnmarshallerContext>, IUnmarshaller<AgentCollaboratorInvocationOutput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        FunctionInvocationInput IUnmarshaller<FunctionInvocationInput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AgentCollaboratorInvocationOutput IUnmarshaller<AgentCollaboratorInvocationOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public FunctionInvocationInput Unmarshall(JsonUnmarshallerContext context)
+        public AgentCollaboratorInvocationOutput Unmarshall(JsonUnmarshallerContext context)
         {
-            FunctionInvocationInput unmarshalledObject = new FunctionInvocationInput();
+            AgentCollaboratorInvocationOutput unmarshalledObject = new AgentCollaboratorInvocationOutput();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,40 +66,22 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("actionGroup", targetDepth))
+                if (context.TestExpression("agentCollaboratorAliasArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ActionGroup = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AgentCollaboratorAliasArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("actionInvocationType", targetDepth))
+                if (context.TestExpression("agentCollaboratorName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ActionInvocationType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AgentCollaboratorName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("agentId", targetDepth))
+                if (context.TestExpression("output", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AgentId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("collaboratorName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CollaboratorName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("function", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Function = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("parameters", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<FunctionParameter, FunctionParameterUnmarshaller>(FunctionParameterUnmarshaller.Instance);
-                    unmarshalledObject.Parameters = unmarshaller.Unmarshall(context);
+                    var unmarshaller = AgentCollaboratorOutputPayloadUnmarshaller.Instance;
+                    unmarshalledObject.Output = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -107,12 +89,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static FunctionInvocationInputUnmarshaller _instance = new FunctionInvocationInputUnmarshaller();        
+        private static AgentCollaboratorInvocationOutputUnmarshaller _instance = new AgentCollaboratorInvocationOutputUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FunctionInvocationInputUnmarshaller Instance
+        public static AgentCollaboratorInvocationOutputUnmarshaller Instance
         {
             get
             {

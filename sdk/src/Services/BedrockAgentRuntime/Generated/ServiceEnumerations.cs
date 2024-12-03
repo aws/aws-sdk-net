@@ -237,6 +237,56 @@ namespace Amazon.BedrockAgentRuntime
 
 
     /// <summary>
+    /// Constants used for properties of type ConversationRole.
+    /// </summary>
+    public class ConversationRole : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Assistant for ConversationRole
+        /// </summary>
+        public static readonly ConversationRole Assistant = new ConversationRole("assistant");
+        /// <summary>
+        /// Constant User for ConversationRole
+        /// </summary>
+        public static readonly ConversationRole User = new ConversationRole("user");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConversationRole(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConversationRole FindValue(string value)
+        {
+            return FindValue<ConversationRole>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConversationRole(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CreationMode.
     /// </summary>
     public class CreationMode : ConstantClass
@@ -1263,6 +1313,10 @@ namespace Amazon.BedrockAgentRuntime
         /// </summary>
         public static readonly InvocationType ACTION_GROUP_CODE_INTERPRETER = new InvocationType("ACTION_GROUP_CODE_INTERPRETER");
         /// <summary>
+        /// Constant AGENT_COLLABORATOR for InvocationType
+        /// </summary>
+        public static readonly InvocationType AGENT_COLLABORATOR = new InvocationType("AGENT_COLLABORATOR");
+        /// <summary>
         /// Constant FINISH for InvocationType
         /// </summary>
         public static readonly InvocationType FINISH = new InvocationType("FINISH");
@@ -1478,6 +1532,56 @@ namespace Amazon.BedrockAgentRuntime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ParameterType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PayloadType.
+    /// </summary>
+    public class PayloadType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RETURN_CONTROL for PayloadType
+        /// </summary>
+        public static readonly PayloadType RETURN_CONTROL = new PayloadType("RETURN_CONTROL");
+        /// <summary>
+        /// Constant TEXT for PayloadType
+        /// </summary>
+        public static readonly PayloadType TEXT = new PayloadType("TEXT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PayloadType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PayloadType FindValue(string value)
+        {
+            return FindValue<PayloadType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PayloadType(string value)
         {
             return FindValue(value);
         }
@@ -2210,6 +2314,10 @@ namespace Amazon.BedrockAgentRuntime
         /// Constant ACTION_GROUP for Type
         /// </summary>
         public static readonly Type ACTION_GROUP = new Type("ACTION_GROUP");
+        /// <summary>
+        /// Constant AGENT_COLLABORATOR for Type
+        /// </summary>
+        public static readonly Type AGENT_COLLABORATOR = new Type("AGENT_COLLABORATOR");
         /// <summary>
         /// Constant ASK_USER for Type
         /// </summary>

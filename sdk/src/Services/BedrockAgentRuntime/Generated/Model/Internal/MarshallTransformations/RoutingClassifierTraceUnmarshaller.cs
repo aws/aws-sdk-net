@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FunctionInvocationInput Object
+    /// Response Unmarshaller for RoutingClassifierTrace Object
     /// </summary>  
-    public class FunctionInvocationInputUnmarshaller : IUnmarshaller<FunctionInvocationInput, XmlUnmarshallerContext>, IUnmarshaller<FunctionInvocationInput, JsonUnmarshallerContext>
+    public class RoutingClassifierTraceUnmarshaller : IUnmarshaller<RoutingClassifierTrace, XmlUnmarshallerContext>, IUnmarshaller<RoutingClassifierTrace, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        FunctionInvocationInput IUnmarshaller<FunctionInvocationInput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RoutingClassifierTrace IUnmarshaller<RoutingClassifierTrace, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public FunctionInvocationInput Unmarshall(JsonUnmarshallerContext context)
+        public RoutingClassifierTrace Unmarshall(JsonUnmarshallerContext context)
         {
-            FunctionInvocationInput unmarshalledObject = new FunctionInvocationInput();
+            RoutingClassifierTrace unmarshalledObject = new RoutingClassifierTrace();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,40 +66,28 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("actionGroup", targetDepth))
+                if (context.TestExpression("invocationInput", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ActionGroup = unmarshaller.Unmarshall(context);
+                    var unmarshaller = InvocationInputUnmarshaller.Instance;
+                    unmarshalledObject.InvocationInput = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("actionInvocationType", targetDepth))
+                if (context.TestExpression("modelInvocationInput", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ActionInvocationType = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ModelInvocationInputUnmarshaller.Instance;
+                    unmarshalledObject.ModelInvocationInput = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("agentId", targetDepth))
+                if (context.TestExpression("modelInvocationOutput", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AgentId = unmarshaller.Unmarshall(context);
+                    var unmarshaller = RoutingClassifierModelInvocationOutputUnmarshaller.Instance;
+                    unmarshalledObject.ModelInvocationOutput = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("collaboratorName", targetDepth))
+                if (context.TestExpression("observation", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CollaboratorName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("function", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Function = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("parameters", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<FunctionParameter, FunctionParameterUnmarshaller>(FunctionParameterUnmarshaller.Instance);
-                    unmarshalledObject.Parameters = unmarshaller.Unmarshall(context);
+                    var unmarshaller = ObservationUnmarshaller.Instance;
+                    unmarshalledObject.Observation = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -107,12 +95,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static FunctionInvocationInputUnmarshaller _instance = new FunctionInvocationInputUnmarshaller();        
+        private static RoutingClassifierTraceUnmarshaller _instance = new RoutingClassifierTraceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FunctionInvocationInputUnmarshaller Instance
+        public static RoutingClassifierTraceUnmarshaller Instance
         {
             get
             {

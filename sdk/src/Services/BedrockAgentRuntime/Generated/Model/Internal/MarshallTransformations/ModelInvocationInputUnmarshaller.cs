@@ -66,6 +66,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("foundationModel", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FoundationModel = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("inferenceConfiguration", targetDepth))
                 {
                     var unmarshaller = InferenceConfigurationUnmarshaller.Instance;

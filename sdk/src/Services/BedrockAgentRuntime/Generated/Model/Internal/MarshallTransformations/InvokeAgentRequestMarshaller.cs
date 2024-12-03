@@ -127,6 +127,11 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
+        
+            if (publicRequest.IsSetSourceArn()) 
+            {
+                request.Headers["x-amz-source-arn"] = publicRequest.SourceArn;
+            }
 
             return request;
         }
