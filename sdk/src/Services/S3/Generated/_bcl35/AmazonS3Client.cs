@@ -2221,6 +2221,112 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  CreateBucketMetadataTableConfiguration
+
+        /// <summary>
+        /// Creates a metadata table configuration for a general purpose bucket. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html">Accelerating
+        /// data discovery with S3 Metadata</a> in the <i>Amazon S3 User Guide</i>. 
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// To use this operation, you must have the following permissions. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-permissions.html">Setting
+        /// up permissions for configuring metadata tables</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you also want to integrate your table bucket with Amazon Web Services analytics
+        /// services so that you can query your metadata table, you need additional permissions.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-integrating-aws.html">
+        /// Integrating Amazon S3 Tables with Amazon Web Services analytics services</a> in the
+        /// <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>s3:CreateBucketMetadataTableConfiguration</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:CreateNamespace</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:GetTable</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:CreateTable</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:PutTablePolicy</c> 
+        /// </para>
+        ///  </li> </ul> </dd> </dl> 
+        /// <para>
+        /// The following operations are related to <c>CreateBucketMetadataTableConfiguration</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetadataTableConfiguration.html">DeleteBucketMetadataTableConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataTableConfiguration.html">GetBucketMetadataTableConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBucketMetadataTableConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the CreateBucketMetadataTableConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucketMetadataTableConfiguration">REST API Reference for CreateBucketMetadataTableConfiguration Operation</seealso>
+        public virtual CreateBucketMetadataTableConfigurationResponse CreateBucketMetadataTableConfiguration(CreateBucketMetadataTableConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBucketMetadataTableConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBucketMetadataTableConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateBucketMetadataTableConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateBucketMetadataTableConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateBucketMetadataTableConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateBucketMetadataTableConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucketMetadataTableConfiguration">REST API Reference for CreateBucketMetadataTableConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginCreateBucketMetadataTableConfiguration(CreateBucketMetadataTableConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBucketMetadataTableConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBucketMetadataTableConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateBucketMetadataTableConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateBucketMetadataTableConfiguration.</param>
+        /// 
+        /// <returns>Returns a  CreateBucketMetadataTableConfigurationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucketMetadataTableConfiguration">REST API Reference for CreateBucketMetadataTableConfiguration Operation</seealso>
+        public virtual CreateBucketMetadataTableConfigurationResponse EndCreateBucketMetadataTableConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateBucketMetadataTableConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateSession
 
         /// <summary>
@@ -2992,6 +3098,85 @@ namespace Amazon.S3
         public virtual DeleteBucketInventoryConfigurationResponse EndDeleteBucketInventoryConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteBucketInventoryConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteBucketMetadataTableConfiguration
+
+        /// <summary>
+        /// Deletes a metadata table configuration from a general purpose bucket. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html">Accelerating
+        /// data discovery with S3 Metadata</a> in the <i>Amazon S3 User Guide</i>. 
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// To use this operation, you must have the <c>s3:DeleteBucketMetadataTableConfiguration</c>
+        /// permission. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-permissions.html">Setting
+        /// up permissions for configuring metadata tables</a> in the <i>Amazon S3 User Guide</i>.
+        /// 
+        /// </para>
+        ///  </dd> </dl> 
+        /// <para>
+        /// The following operations are related to <c>DeleteBucketMetadataTableConfiguration</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataTableConfiguration.html">CreateBucketMetadataTableConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataTableConfiguration.html">GetBucketMetadataTableConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketMetadataTableConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBucketMetadataTableConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketMetadataTableConfiguration">REST API Reference for DeleteBucketMetadataTableConfiguration Operation</seealso>
+        public virtual DeleteBucketMetadataTableConfigurationResponse DeleteBucketMetadataTableConfiguration(DeleteBucketMetadataTableConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBucketMetadataTableConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBucketMetadataTableConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBucketMetadataTableConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBucketMetadataTableConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketMetadataTableConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBucketMetadataTableConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketMetadataTableConfiguration">REST API Reference for DeleteBucketMetadataTableConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginDeleteBucketMetadataTableConfiguration(DeleteBucketMetadataTableConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBucketMetadataTableConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBucketMetadataTableConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteBucketMetadataTableConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBucketMetadataTableConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteBucketMetadataTableConfigurationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketMetadataTableConfiguration">REST API Reference for DeleteBucketMetadataTableConfiguration Operation</seealso>
+        public virtual DeleteBucketMetadataTableConfigurationResponse EndDeleteBucketMetadataTableConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteBucketMetadataTableConfigurationResponse>(asyncResult);
         }
 
         #endregion
@@ -5885,6 +6070,85 @@ namespace Amazon.S3
         public virtual GetBucketLoggingResponse EndGetBucketLogging(IAsyncResult asyncResult)
         {
             return EndInvoke<GetBucketLoggingResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetBucketMetadataTableConfiguration
+
+        /// <summary>
+        /// Retrieves the metadata table configuration for a general purpose bucket. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html">Accelerating
+        /// data discovery with S3 Metadata</a> in the <i>Amazon S3 User Guide</i>. 
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// To use this operation, you must have the <c>s3:GetBucketMetadataTableConfiguration</c>
+        /// permission. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-permissions.html">Setting
+        /// up permissions for configuring metadata tables</a> in the <i>Amazon S3 User Guide</i>.
+        /// 
+        /// </para>
+        ///  </dd> </dl> 
+        /// <para>
+        /// The following operations are related to <c>GetBucketMetadataTableConfiguration</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataTableConfiguration.html">CreateBucketMetadataTableConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetadataTableConfiguration.html">DeleteBucketMetadataTableConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketMetadataTableConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetBucketMetadataTableConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketMetadataTableConfiguration">REST API Reference for GetBucketMetadataTableConfiguration Operation</seealso>
+        public virtual GetBucketMetadataTableConfigurationResponse GetBucketMetadataTableConfiguration(GetBucketMetadataTableConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBucketMetadataTableConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBucketMetadataTableConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetBucketMetadataTableConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBucketMetadataTableConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketMetadataTableConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBucketMetadataTableConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketMetadataTableConfiguration">REST API Reference for GetBucketMetadataTableConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginGetBucketMetadataTableConfiguration(GetBucketMetadataTableConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBucketMetadataTableConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBucketMetadataTableConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetBucketMetadataTableConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBucketMetadataTableConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetBucketMetadataTableConfigurationResult from S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketMetadataTableConfiguration">REST API Reference for GetBucketMetadataTableConfiguration Operation</seealso>
+        public virtual GetBucketMetadataTableConfigurationResponse EndGetBucketMetadataTableConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetBucketMetadataTableConfigurationResponse>(asyncResult);
         }
 
         #endregion

@@ -23,9 +23,6 @@ using Amazon.Util;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
-    /// <summary>
-    /// GetObjectMetadata Marshaller
-    /// </summary>       
     public class GetObjectMetadataRequestMarshaller : IMarshaller<IRequest, GetObjectMetadataRequest> ,IMarshaller<IRequest,Amazon.Runtime.AmazonWebServiceRequest>
 	{
 		public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)

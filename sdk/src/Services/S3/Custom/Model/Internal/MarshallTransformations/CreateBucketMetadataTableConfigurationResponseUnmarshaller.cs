@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -20,40 +20,35 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable 1591
+
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
-    /// <summary>
-    ///    Response Unmarshaller for DeleteInventoryConfiguration operation
-    /// </summary>
-    public class DeleteBucketInventoryConfigurationResponseUnmarshaller : S3ReponseUnmarshaller
+    public class CreateBucketMetadataTableConfigurationResponseUnmarshaller : S3ReponseUnmarshaller
     {
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            DeleteBucketInventoryConfigurationResponse response = new DeleteBucketInventoryConfigurationResponse();
+            CreateBucketMetadataTableConfigurationResponse response = new CreateBucketMetadataTableConfigurationResponse();
 
             return response;
         }
 
-        private static DeleteBucketInventoryConfigurationResponseUnmarshaller _instance;
+        private static CreateBucketMetadataTableConfigurationResponseUnmarshaller _instance;
 
         /// <summary>
         /// Singleton for the unmarshaller
         /// </summary>
-        public static DeleteBucketInventoryConfigurationResponseUnmarshaller Instance
+        public static CreateBucketMetadataTableConfigurationResponseUnmarshaller Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new DeleteBucketInventoryConfigurationResponseUnmarshaller();
+                    _instance = new CreateBucketMetadataTableConfigurationResponseUnmarshaller();
                 }
                 return _instance;
             }
         }
+
     }
 }

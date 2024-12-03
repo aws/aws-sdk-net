@@ -2160,6 +2160,92 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  CreateBucketMetadataTableConfiguration
+
+        internal virtual CreateBucketMetadataTableConfigurationResponse CreateBucketMetadataTableConfiguration(CreateBucketMetadataTableConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBucketMetadataTableConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBucketMetadataTableConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateBucketMetadataTableConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a metadata table configuration for a general purpose bucket. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html">Accelerating
+        /// data discovery with S3 Metadata</a> in the <i>Amazon S3 User Guide</i>. 
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// To use this operation, you must have the following permissions. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-permissions.html">Setting
+        /// up permissions for configuring metadata tables</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you also want to integrate your table bucket with Amazon Web Services analytics
+        /// services so that you can query your metadata table, you need additional permissions.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-integrating-aws.html">
+        /// Integrating Amazon S3 Tables with Amazon Web Services analytics services</a> in the
+        /// <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>s3:CreateBucketMetadataTableConfiguration</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:CreateNamespace</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:GetTable</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:CreateTable</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>s3tables:PutTablePolicy</c> 
+        /// </para>
+        ///  </li> </ul> </dd> </dl> 
+        /// <para>
+        /// The following operations are related to <c>CreateBucketMetadataTableConfiguration</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetadataTableConfiguration.html">DeleteBucketMetadataTableConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataTableConfiguration.html">GetBucketMetadataTableConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBucketMetadataTableConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateBucketMetadataTableConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucketMetadataTableConfiguration">REST API Reference for CreateBucketMetadataTableConfiguration Operation</seealso>
+        public virtual Task<CreateBucketMetadataTableConfigurationResponse> CreateBucketMetadataTableConfigurationAsync(CreateBucketMetadataTableConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateBucketMetadataTableConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateBucketMetadataTableConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateBucketMetadataTableConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateSession
 
         internal virtual CreateSessionResponse CreateSession(CreateSessionRequest request)
@@ -2814,6 +2900,65 @@ namespace Amazon.S3
             options.ResponseUnmarshaller = DeleteBucketInventoryConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteBucketInventoryConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteBucketMetadataTableConfiguration
+
+        internal virtual DeleteBucketMetadataTableConfigurationResponse DeleteBucketMetadataTableConfiguration(DeleteBucketMetadataTableConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBucketMetadataTableConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBucketMetadataTableConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBucketMetadataTableConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a metadata table configuration from a general purpose bucket. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html">Accelerating
+        /// data discovery with S3 Metadata</a> in the <i>Amazon S3 User Guide</i>. 
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// To use this operation, you must have the <c>s3:DeleteBucketMetadataTableConfiguration</c>
+        /// permission. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-permissions.html">Setting
+        /// up permissions for configuring metadata tables</a> in the <i>Amazon S3 User Guide</i>.
+        /// 
+        /// </para>
+        ///  </dd> </dl> 
+        /// <para>
+        /// The following operations are related to <c>DeleteBucketMetadataTableConfiguration</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataTableConfiguration.html">CreateBucketMetadataTableConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataTableConfiguration.html">GetBucketMetadataTableConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBucketMetadataTableConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteBucketMetadataTableConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketMetadataTableConfiguration">REST API Reference for DeleteBucketMetadataTableConfiguration Operation</seealso>
+        public virtual Task<DeleteBucketMetadataTableConfigurationResponse> DeleteBucketMetadataTableConfigurationAsync(DeleteBucketMetadataTableConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteBucketMetadataTableConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteBucketMetadataTableConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteBucketMetadataTableConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5340,6 +5485,65 @@ namespace Amazon.S3
             options.ResponseUnmarshaller = GetBucketLoggingResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetBucketLoggingResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetBucketMetadataTableConfiguration
+
+        internal virtual GetBucketMetadataTableConfigurationResponse GetBucketMetadataTableConfiguration(GetBucketMetadataTableConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBucketMetadataTableConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBucketMetadataTableConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetBucketMetadataTableConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the metadata table configuration for a general purpose bucket. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html">Accelerating
+        /// data discovery with S3 Metadata</a> in the <i>Amazon S3 User Guide</i>. 
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// To use this operation, you must have the <c>s3:GetBucketMetadataTableConfiguration</c>
+        /// permission. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-permissions.html">Setting
+        /// up permissions for configuring metadata tables</a> in the <i>Amazon S3 User Guide</i>.
+        /// 
+        /// </para>
+        ///  </dd> </dl> 
+        /// <para>
+        /// The following operations are related to <c>GetBucketMetadataTableConfiguration</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataTableConfiguration.html">CreateBucketMetadataTableConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetadataTableConfiguration.html">DeleteBucketMetadataTableConfiguration</a>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBucketMetadataTableConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetBucketMetadataTableConfiguration service method, as returned by S3.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketMetadataTableConfiguration">REST API Reference for GetBucketMetadataTableConfiguration Operation</seealso>
+        public virtual Task<GetBucketMetadataTableConfigurationResponse> GetBucketMetadataTableConfigurationAsync(GetBucketMetadataTableConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetBucketMetadataTableConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBucketMetadataTableConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetBucketMetadataTableConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
