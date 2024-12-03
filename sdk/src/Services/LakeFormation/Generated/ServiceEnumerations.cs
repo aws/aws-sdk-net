@@ -415,6 +415,10 @@ namespace Amazon.LakeFormation
         /// </summary>
         public static readonly Permission ASSOCIATE = new Permission("ASSOCIATE");
         /// <summary>
+        /// Constant CREATE_CATALOG for Permission
+        /// </summary>
+        public static readonly Permission CREATE_CATALOG = new Permission("CREATE_CATALOG");
+        /// <summary>
         /// Constant CREATE_DATABASE for Permission
         /// </summary>
         public static readonly Permission CREATE_DATABASE = new Permission("CREATE_DATABASE");
@@ -458,6 +462,10 @@ namespace Amazon.LakeFormation
         /// Constant SELECT for Permission
         /// </summary>
         public static readonly Permission SELECT = new Permission("SELECT");
+        /// <summary>
+        /// Constant SUPER_USER for Permission
+        /// </summary>
+        public static readonly Permission SUPER_USER = new Permission("SUPER_USER");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

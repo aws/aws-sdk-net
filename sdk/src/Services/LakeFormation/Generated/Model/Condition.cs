@@ -30,29 +30,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LakeFormation.Model
 {
     /// <summary>
-    /// A structure for the catalog object.
+    /// A Lake Formation condition, which applies to permissions and opt-ins that contain
+    /// an expression.
     /// </summary>
-    public partial class CatalogResource
+    public partial class Condition
     {
-        private string _id;
+        private string _expression;
 
         /// <summary>
-        /// Gets and sets the property Id. 
+        /// Gets and sets the property Expression. 
         /// <para>
-        /// An identifier for the catalog resource.
+        /// An expression written based on the Cedar Policy Language used to match the principal
+        /// attributes.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
-        public string Id
+        [AWSProperty(Max=3000)]
+        public string Expression
         {
-            get { return this._id; }
-            set { this._id = value; }
+            get { return this._expression; }
+            set { this._expression = value; }
         }
 
-        // Check to see if Id property is set
-        internal bool IsSetId()
+        // Check to see if Expression property is set
+        internal bool IsSetExpression()
         {
-            return this._id != null;
+            return this._expression != null;
         }
 
     }

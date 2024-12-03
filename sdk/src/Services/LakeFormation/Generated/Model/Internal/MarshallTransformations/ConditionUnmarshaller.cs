@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CatalogResource Object
+    /// Response Unmarshaller for Condition Object
     /// </summary>  
-    public class CatalogResourceUnmarshaller : IUnmarshaller<CatalogResource, XmlUnmarshallerContext>, IUnmarshaller<CatalogResource, JsonUnmarshallerContext>
+    public class ConditionUnmarshaller : IUnmarshaller<Condition, XmlUnmarshallerContext>, IUnmarshaller<Condition, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CatalogResource IUnmarshaller<CatalogResource, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        Condition IUnmarshaller<Condition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public CatalogResource Unmarshall(JsonUnmarshallerContext context)
+        public Condition Unmarshall(JsonUnmarshallerContext context)
         {
-            CatalogResource unmarshalledObject = new CatalogResource();
+            Condition unmarshalledObject = new Condition();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,10 +66,10 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("Expression", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Expression = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -77,12 +77,12 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
         }
 
 
-        private static CatalogResourceUnmarshaller _instance = new CatalogResourceUnmarshaller();        
+        private static ConditionUnmarshaller _instance = new ConditionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CatalogResourceUnmarshaller Instance
+        public static ConditionUnmarshaller Instance
         {
             get
             {
