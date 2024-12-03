@@ -13,7 +13,6 @@
  * permissions and limitations under the License.
  */
 using Amazon.Runtime.Internal.Transform;
-using AWSSDK.S3.Net35.Custom.Model;
 
 #pragma warning disable 1591
 

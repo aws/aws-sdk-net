@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 
-namespace AWSSDK.S3.Net35.Custom.Model
+namespace Amazon.S3.Model
 {
     /// <summary>
     /// <para>
