@@ -49,8 +49,7 @@ namespace Amazon.Runtime.Internal.Util
                 throw new ArgumentException("Stream must not be null. Please initialize a stream and pass it into the constructor.");
 
             _stream = stream;
-            // 300 bytes of padding to acocunt for stream.read() returning more bytes than requested sometimes
-            _buffer = ArrayPool<byte>.Shared.Rent( (AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096) + 0);
+            _buffer = ArrayPool<byte>.Shared.Rent(AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096);
             // need to initialize the reader even if the buffer is empty because auto-default of unassigned fields is only 
             // supported in C# 11+
             _reader = new Utf8JsonReader(_buffer);
@@ -126,7 +125,7 @@ namespace Amazon.Runtime.Internal.Util
                     resized = true;
                     // rent double the capacity, hopefully we never have to rent the maxValue but in case buffer.Length * 2 ends up greater 
                     // we must protect against that
-                    var resizedBuffer = ArrayPool<byte>.Shared.Rent(Math.Min(int.MaxValue, (buffer.Length * 2) + 0));
+                    var resizedBuffer = ArrayPool<byte>.Shared.Rent(Math.Min(int.MaxValue, (buffer.Length * 2)));
                     Logger.GetLogger(typeof(StreamingUtf8JsonReader)).InfoFormat("Resizing buffer from {0} to {1}", buffer.Length, resizedBuffer.Length);
                     
                     buffer.AsSpan().CopyTo(resizedBuffer);
