@@ -17306,8 +17306,40 @@
             "ap-southeast-2": {},
             "ap-southeast-3": {},
             "ap-southeast-4": {},
-            "ca-central-1": {},
-            "ca-west-1": {},
+            "ca-central-1": {
+              "variants": [
+                {
+                  "hostname": "metrics-fips.sagemaker.ca-central-1.amazonaws.com",
+                  "tags": [
+                    "fips"
+                  ]
+                }
+              ]
+            },
+            "ca-central-1-fips": {
+              "credentialScope": {
+                "region": "ca-central-1"
+              },
+              "deprecated": true,
+              "hostname": "metrics-fips.sagemaker.ca-central-1.amazonaws.com"
+            },
+            "ca-west-1": {
+              "variants": [
+                {
+                  "hostname": "metrics-fips.sagemaker.ca-west-1.amazonaws.com",
+                  "tags": [
+                    "fips"
+                  ]
+                }
+              ]
+            },
+            "ca-west-1-fips": {
+              "credentialScope": {
+                "region": "ca-west-1"
+              },
+              "deprecated": true,
+              "hostname": "metrics-fips.sagemaker.ca-west-1.amazonaws.com"
+            },
             "eu-central-1": {},
             "eu-central-2": {},
             "eu-north-1": {},
@@ -17320,10 +17352,74 @@
             "me-central-1": {},
             "me-south-1": {},
             "sa-east-1": {},
-            "us-east-1": {},
-            "us-east-2": {},
-            "us-west-1": {},
-            "us-west-2": {}
+            "us-east-1": {
+              "variants": [
+                {
+                  "hostname": "metrics-fips.sagemaker.us-east-1.amazonaws.com",
+                  "tags": [
+                    "fips"
+                  ]
+                }
+              ]
+            },
+            "us-east-1-fips": {
+              "credentialScope": {
+                "region": "us-east-1"
+              },
+              "deprecated": true,
+              "hostname": "metrics-fips.sagemaker.us-east-1.amazonaws.com"
+            },
+            "us-east-2": {
+              "variants": [
+                {
+                  "hostname": "metrics-fips.sagemaker.us-east-2.amazonaws.com",
+                  "tags": [
+                    "fips"
+                  ]
+                }
+              ]
+            },
+            "us-east-2-fips": {
+              "credentialScope": {
+                "region": "us-east-2"
+              },
+              "deprecated": true,
+              "hostname": "metrics-fips.sagemaker.us-east-2.amazonaws.com"
+            },
+            "us-west-1": {
+              "variants": [
+                {
+                  "hostname": "metrics-fips.sagemaker.us-west-1.amazonaws.com",
+                  "tags": [
+                    "fips"
+                  ]
+                }
+              ]
+            },
+            "us-west-1-fips": {
+              "credentialScope": {
+                "region": "us-west-1"
+              },
+              "deprecated": true,
+              "hostname": "metrics-fips.sagemaker.us-west-1.amazonaws.com"
+            },
+            "us-west-2": {
+              "variants": [
+                {
+                  "hostname": "metrics-fips.sagemaker.us-west-2.amazonaws.com",
+                  "tags": [
+                    "fips"
+                  ]
+                }
+              ]
+            },
+            "us-west-2-fips": {
+              "credentialScope": {
+                "region": "us-west-2"
+              },
+              "deprecated": true,
+              "hostname": "metrics-fips.sagemaker.us-west-2.amazonaws.com"
+            }
           }
         },
         "mgh": {
@@ -26883,8 +26979,46 @@
             "ap-southeast-3": {},
             "ap-southeast-4": {},
             "ap-southeast-5": {},
-            "ca-central-1": {},
-            "ca-west-1": {},
+            "ca-central-1": {
+              "variants": [
+                {
+                  "hostname": "streams.dynamodb-fips.ca-central-1.amazonaws.com",
+                  "tags": [
+                    "fips"
+                  ]
+                }
+              ]
+            },
+            "ca-central-1-fips": {
+              "credentialScope": {
+                "region": "ca-central-1"
+              },
+              "deprecated": true,
+              "hostname": "streams.dynamodb-fips.ca-central-1.amazonaws.com",
+              "protocols": [
+                "https"
+              ]
+            },
+            "ca-west-1": {
+              "variants": [
+                {
+                  "hostname": "streams.dynamodb-fips.ca-west-1.amazonaws.com",
+                  "tags": [
+                    "fips"
+                  ]
+                }
+              ]
+            },
+            "ca-west-1-fips": {
+              "credentialScope": {
+                "region": "ca-west-1"
+              },
+              "deprecated": true,
+              "hostname": "streams.dynamodb-fips.ca-west-1.amazonaws.com",
+              "protocols": [
+                "https"
+              ]
+            },
             "eu-central-1": {},
             "eu-central-2": {},
             "eu-north-1": {},
@@ -26906,10 +27040,86 @@
             "me-central-1": {},
             "me-south-1": {},
             "sa-east-1": {},
-            "us-east-1": {},
-            "us-east-2": {},
-            "us-west-1": {},
-            "us-west-2": {}
+            "us-east-1": {
+              "variants": [
+                {
+                  "hostname": "streams.dynamodb-fips.us-east-1.amazonaws.com",
+                  "tags": [
+                    "fips"
+                  ]
+                }
+              ]
+            },
+            "us-east-1-fips": {
+              "credentialScope": {
+                "region": "us-east-1"
+              },
+              "deprecated": true,
+              "hostname": "streams.dynamodb-fips.us-east-1.amazonaws.com",
+              "protocols": [
+                "https"
+              ]
+            },
+            "us-east-2": {
+              "variants": [
+                {
+                  "hostname": "streams.dynamodb-fips.us-east-2.amazonaws.com",
+                  "tags": [
+                    "fips"
+                  ]
+                }
+              ]
+            },
+            "us-east-2-fips": {
+              "credentialScope": {
+                "region": "us-east-2"
+              },
+              "deprecated": true,
+              "hostname": "streams.dynamodb-fips.us-east-2.amazonaws.com",
+              "protocols": [
+                "https"
+              ]
+            },
+            "us-west-1": {
+              "variants": [
+                {
+                  "hostname": "streams.dynamodb-fips.us-west-1.amazonaws.com",
+                  "tags": [
+                    "fips"
+                  ]
+                }
+              ]
+            },
+            "us-west-1-fips": {
+              "credentialScope": {
+                "region": "us-west-1"
+              },
+              "deprecated": true,
+              "hostname": "streams.dynamodb-fips.us-west-1.amazonaws.com",
+              "protocols": [
+                "https"
+              ]
+            },
+            "us-west-2": {
+              "variants": [
+                {
+                  "hostname": "streams.dynamodb-fips.us-west-2.amazonaws.com",
+                  "tags": [
+                    "fips"
+                  ]
+                }
+              ]
+            },
+            "us-west-2-fips": {
+              "credentialScope": {
+                "region": "us-west-2"
+              },
+              "deprecated": true,
+              "hostname": "streams.dynamodb-fips.us-west-2.amazonaws.com",
+              "protocols": [
+                "https"
+              ]
+            }
           }
         },
         "sts": {
@@ -30495,8 +30705,26 @@
         },
         "elasticbeanstalk": {
           "endpoints": {
-            "cn-north-1": {},
-            "cn-northwest-1": {}
+            "cn-north-1": {
+              "variants": [
+                {
+                  "hostname": "elasticbeanstalk.cn-north-1.api.amazonwebservices.com.cn",
+                  "tags": [
+                    "dualstack"
+                  ]
+                }
+              ]
+            },
+            "cn-northwest-1": {
+              "variants": [
+                {
+                  "hostname": "elasticbeanstalk.cn-northwest-1.api.amazonwebservices.com.cn",
+                  "tags": [
+                    "dualstack"
+                  ]
+                }
+              ]
+            }
           }
         },
         "elasticfilesystem": {
@@ -37936,7 +38164,7 @@
             "us-gov-east-1": {
               "variants": [
                 {
-                  "hostname": "streams.dynamodb.us-gov-east-1.amazonaws.com",
+                  "hostname": "streams.dynamodb-fips.us-gov-east-1.amazonaws.com",
                   "tags": [
                     "fips"
                   ]
@@ -37948,12 +38176,15 @@
                 "region": "us-gov-east-1"
               },
               "deprecated": true,
-              "hostname": "streams.dynamodb.us-gov-east-1.amazonaws.com"
+              "hostname": "streams.dynamodb-fips.us-gov-east-1.amazonaws.com",
+              "protocols": [
+                "https"
+              ]
             },
             "us-gov-west-1": {
               "variants": [
                 {
-                  "hostname": "streams.dynamodb.us-gov-west-1.amazonaws.com",
+                  "hostname": "streams.dynamodb-fips.us-gov-west-1.amazonaws.com",
                   "tags": [
                     "fips"
                   ]
@@ -37965,7 +38196,10 @@
                 "region": "us-gov-west-1"
               },
               "deprecated": true,
-              "hostname": "streams.dynamodb.us-gov-west-1.amazonaws.com"
+              "hostname": "streams.dynamodb-fips.us-gov-west-1.amazonaws.com",
+              "protocols": [
+                "https"
+              ]
             }
           }
         },
@@ -39626,8 +39860,46 @@
             }
           },
           "endpoints": {
-            "us-iso-east-1": {},
-            "us-iso-west-1": {}
+            "us-iso-east-1": {
+              "variants": [
+                {
+                  "hostname": "streams.dynamodb-fips.us-iso-east-1.c2s.ic.gov",
+                  "tags": [
+                    "fips"
+                  ]
+                }
+              ]
+            },
+            "us-iso-east-1-fips": {
+              "credentialScope": {
+                "region": "us-iso-east-1"
+              },
+              "deprecated": true,
+              "hostname": "streams.dynamodb-fips.us-iso-east-1.c2s.ic.gov",
+              "protocols": [
+                "https"
+              ]
+            },
+            "us-iso-west-1": {
+              "variants": [
+                {
+                  "hostname": "streams.dynamodb-fips.us-iso-west-1.c2s.ic.gov",
+                  "tags": [
+                    "fips"
+                  ]
+                }
+              ]
+            },
+            "us-iso-west-1-fips": {
+              "credentialScope": {
+                "region": "us-iso-west-1"
+              },
+              "deprecated": true,
+              "hostname": "streams.dynamodb-fips.us-iso-west-1.c2s.ic.gov",
+              "protocols": [
+                "https"
+              ]
+            }
           }
         },
         "sts": {
@@ -40467,7 +40739,26 @@
             ]
           },
           "endpoints": {
-            "us-isob-east-1": {}
+            "us-isob-east-1": {
+              "variants": [
+                {
+                  "hostname": "streams.dynamodb-fips.us-isob-east-1.sc2s.sgov.gov",
+                  "tags": [
+                    "fips"
+                  ]
+                }
+              ]
+            },
+            "us-isob-east-1-fips": {
+              "credentialScope": {
+                "region": "us-isob-east-1"
+              },
+              "deprecated": true,
+              "hostname": "streams.dynamodb-fips.us-isob-east-1.sc2s.sgov.gov",
+              "protocols": [
+                "https"
+              ]
+            }
           }
         },
         "sts": {
