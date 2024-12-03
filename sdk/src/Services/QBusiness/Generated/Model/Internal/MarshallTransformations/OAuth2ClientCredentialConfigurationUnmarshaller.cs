@@ -66,6 +66,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("authorizationUrl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AuthorizationUrl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("roleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -76,6 +82,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SecretArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("tokenUrl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TokenUrl = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

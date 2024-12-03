@@ -142,6 +142,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     response.QAppsConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("quickSightConfiguration", targetDepth))
+                {
+                    var unmarshaller = QuickSightConfigurationUnmarshaller.Instance;
+                    response.QuickSightConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("roleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

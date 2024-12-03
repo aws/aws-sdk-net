@@ -38,6 +38,7 @@ namespace Amazon.QBusiness.Model
         private string _applicationId;
         private WebExperienceAuthConfiguration _authenticationConfiguration;
         private BrowserExtensionConfiguration _browserExtensionConfiguration;
+        private CustomizationConfiguration _customizationConfiguration;
         private IdentityProviderConfiguration _identityProviderConfiguration;
         private List<string> _origins = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _roleArn;
@@ -109,6 +110,25 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetBrowserExtensionConfiguration()
         {
             return this._browserExtensionConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomizationConfiguration. 
+        /// <para>
+        /// Updates the custom logo, favicon, font, and color used in the Amazon Q web experience.
+        /// 
+        /// </para>
+        /// </summary>
+        public CustomizationConfiguration CustomizationConfiguration
+        {
+            get { return this._customizationConfiguration; }
+            set { this._customizationConfiguration = value; }
+        }
+
+        // Check to see if CustomizationConfiguration property is set
+        internal bool IsSetCustomizationConfiguration()
+        {
+            return this._customizationConfiguration != null;
         }
 
         /// <summary>

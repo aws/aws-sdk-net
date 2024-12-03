@@ -47,6 +47,11 @@ namespace Amazon.QBusiness.Model
         IListConversationsPaginator ListConversations(ListConversationsRequest request);
 
         /// <summary>
+        /// Paginator for ListDataAccessors operation
+        ///</summary>
+        IListDataAccessorsPaginator ListDataAccessors(ListDataAccessorsRequest request);
+
+        /// <summary>
         /// Paginator for ListDataSources operation
         ///</summary>
         IListDataSourcesPaginator ListDataSources(ListDataSourcesRequest request);
@@ -77,9 +82,24 @@ namespace Amazon.QBusiness.Model
         IListMessagesPaginator ListMessages(ListMessagesRequest request);
 
         /// <summary>
+        /// Paginator for ListPluginActions operation
+        ///</summary>
+        IListPluginActionsPaginator ListPluginActions(ListPluginActionsRequest request);
+
+        /// <summary>
         /// Paginator for ListPlugins operation
         ///</summary>
         IListPluginsPaginator ListPlugins(ListPluginsRequest request);
+
+        /// <summary>
+        /// Paginator for ListPluginTypeActions operation
+        ///</summary>
+        IListPluginTypeActionsPaginator ListPluginTypeActions(ListPluginTypeActionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListPluginTypeMetadata operation
+        ///</summary>
+        IListPluginTypeMetadataPaginator ListPluginTypeMetadata(ListPluginTypeMetadataRequest request);
 
         /// <summary>
         /// Paginator for ListRetrievers operation
@@ -90,5 +110,10 @@ namespace Amazon.QBusiness.Model
         /// Paginator for ListWebExperiences operation
         ///</summary>
         IListWebExperiencesPaginator ListWebExperiences(ListWebExperiencesRequest request);
+
+        /// <summary>
+        /// Paginator for SearchRelevantContent operation
+        ///</summary>
+        ISearchRelevantContentPaginator SearchRelevantContent(SearchRelevantContentRequest request);
     }
 }

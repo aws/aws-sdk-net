@@ -48,6 +48,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAuthorizationUrl())
+            {
+                context.Writer.WritePropertyName("authorizationUrl");
+                context.Writer.Write(requestObject.AuthorizationUrl);
+            }
+
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("roleArn");
@@ -58,6 +64,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("secretArn");
                 context.Writer.Write(requestObject.SecretArn);
+            }
+
+            if(requestObject.IsSetTokenUrl())
+            {
+                context.Writer.WritePropertyName("tokenUrl");
+                context.Writer.Write(requestObject.TokenUrl);
             }
 
         }

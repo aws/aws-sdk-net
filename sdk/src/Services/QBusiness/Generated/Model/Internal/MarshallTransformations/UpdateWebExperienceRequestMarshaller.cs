@@ -95,6 +95,17 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetCustomizationConfiguration())
+                {
+                    context.Writer.WritePropertyName("customizationConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CustomizationConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CustomizationConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetIdentityProviderConfiguration())
                 {
                     context.Writer.WritePropertyName("identityProviderConfiguration");

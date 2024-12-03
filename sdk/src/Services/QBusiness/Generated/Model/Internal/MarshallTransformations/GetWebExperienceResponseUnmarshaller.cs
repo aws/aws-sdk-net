@@ -76,6 +76,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     response.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("customizationConfiguration", targetDepth))
+                {
+                    var unmarshaller = CustomizationConfigurationUnmarshaller.Instance;
+                    response.CustomizationConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("defaultEndpoint", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

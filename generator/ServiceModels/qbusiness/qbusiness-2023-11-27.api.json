@@ -14,6 +14,25 @@
     "uid":"qbusiness-2023-11-27"
   },
   "operations":{
+    "AssociatePermission":{
+      "name":"AssociatePermission",
+      "http":{
+        "method":"POST",
+        "requestUri":"/applications/{applicationId}/policy",
+        "responseCode":200
+      },
+      "input":{"shape":"AssociatePermissionRequest"},
+      "output":{"shape":"AssociatePermissionResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ConflictException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ServiceQuotaExceededException"}
+      ]
+    },
     "BatchDeleteDocument":{
       "name":"BatchDeleteDocument",
       "http":{
@@ -100,6 +119,26 @@
       },
       "input":{"shape":"CreateApplicationRequest"},
       "output":{"shape":"CreateApplicationResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ConflictException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ServiceQuotaExceededException"}
+      ],
+      "idempotent":true
+    },
+    "CreateDataAccessor":{
+      "name":"CreateDataAccessor",
+      "http":{
+        "method":"POST",
+        "requestUri":"/applications/{applicationId}/dataaccessors",
+        "responseCode":200
+      },
+      "input":{"shape":"CreateDataAccessorRequest"},
+      "output":{"shape":"CreateDataAccessorResponse"},
       "errors":[
         {"shape":"ResourceNotFoundException"},
         {"shape":"InternalServerException"},
@@ -284,6 +323,25 @@
       ],
       "idempotent":true
     },
+    "DeleteDataAccessor":{
+      "name":"DeleteDataAccessor",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/applications/{applicationId}/dataaccessors/{dataAccessorId}",
+        "responseCode":200
+      },
+      "input":{"shape":"DeleteDataAccessorRequest"},
+      "output":{"shape":"DeleteDataAccessorResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ConflictException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"}
+      ],
+      "idempotent":true
+    },
     "DeleteDataSource":{
       "name":"DeleteDataSource",
       "http":{
@@ -417,6 +475,25 @@
       ],
       "idempotent":true
     },
+    "DisassociatePermission":{
+      "name":"DisassociatePermission",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/applications/{applicationId}/policy/{statementId}",
+        "responseCode":200
+      },
+      "input":{"shape":"DisassociatePermissionRequest"},
+      "output":{"shape":"DisassociatePermissionResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ConflictException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"}
+      ],
+      "idempotent":true
+    },
     "GetApplication":{
       "name":"GetApplication",
       "http":{
@@ -443,6 +520,23 @@
       },
       "input":{"shape":"GetChatControlsConfigurationRequest"},
       "output":{"shape":"GetChatControlsConfigurationResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"}
+      ]
+    },
+    "GetDataAccessor":{
+      "name":"GetDataAccessor",
+      "http":{
+        "method":"GET",
+        "requestUri":"/applications/{applicationId}/dataaccessors/{dataAccessorId}",
+        "responseCode":200
+      },
+      "input":{"shape":"GetDataAccessorRequest"},
+      "output":{"shape":"GetDataAccessorResponse"},
       "errors":[
         {"shape":"ResourceNotFoundException"},
         {"shape":"InternalServerException"},
@@ -531,6 +625,23 @@
       },
       "input":{"shape":"GetPluginRequest"},
       "output":{"shape":"GetPluginResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"}
+      ]
+    },
+    "GetPolicy":{
+      "name":"GetPolicy",
+      "http":{
+        "method":"GET",
+        "requestUri":"/applications/{applicationId}/policy",
+        "responseCode":200
+      },
+      "input":{"shape":"GetPolicyRequest"},
+      "output":{"shape":"GetPolicyResponse"},
       "errors":[
         {"shape":"ResourceNotFoundException"},
         {"shape":"InternalServerException"},
@@ -643,6 +754,23 @@
         {"shape":"AccessDeniedException"}
       ]
     },
+    "ListDataAccessors":{
+      "name":"ListDataAccessors",
+      "http":{
+        "method":"GET",
+        "requestUri":"/applications/{applicationId}/dataaccessors",
+        "responseCode":200
+      },
+      "input":{"shape":"ListDataAccessorsRequest"},
+      "output":{"shape":"ListDataAccessorsResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"}
+      ]
+    },
     "ListDataSourceSyncJobs":{
       "name":"ListDataSourceSyncJobs",
       "http":{
@@ -743,6 +871,55 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"InternalServerException"},
         {"shape":"LicenseNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"}
+      ]
+    },
+    "ListPluginActions":{
+      "name":"ListPluginActions",
+      "http":{
+        "method":"GET",
+        "requestUri":"/applications/{applicationId}/plugins/{pluginId}/actions",
+        "responseCode":200
+      },
+      "input":{"shape":"ListPluginActionsRequest"},
+      "output":{"shape":"ListPluginActionsResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"}
+      ]
+    },
+    "ListPluginTypeActions":{
+      "name":"ListPluginTypeActions",
+      "http":{
+        "method":"GET",
+        "requestUri":"/pluginTypes/{pluginType}/actions",
+        "responseCode":200
+      },
+      "input":{"shape":"ListPluginTypeActionsRequest"},
+      "output":{"shape":"ListPluginTypeActionsResponse"},
+      "errors":[
+        {"shape":"InternalServerException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"}
+      ]
+    },
+    "ListPluginTypeMetadata":{
+      "name":"ListPluginTypeMetadata",
+      "http":{
+        "method":"GET",
+        "requestUri":"/pluginTypeMetadata",
+        "responseCode":200
+      },
+      "input":{"shape":"ListPluginTypeMetadataRequest"},
+      "output":{"shape":"ListPluginTypeMetadataResponse"},
+      "errors":[
+        {"shape":"InternalServerException"},
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"}
@@ -851,6 +1028,24 @@
         {"shape":"ServiceQuotaExceededException"}
       ],
       "idempotent":true
+    },
+    "SearchRelevantContent":{
+      "name":"SearchRelevantContent",
+      "http":{
+        "method":"POST",
+        "requestUri":"/applications/{applicationId}/relevant-content",
+        "responseCode":200
+      },
+      "input":{"shape":"SearchRelevantContentRequest"},
+      "output":{"shape":"SearchRelevantContentResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"},
+        {"shape":"LicenseNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"}
+      ]
     },
     "StartDataSourceSyncJob":{
       "name":"StartDataSourceSyncJob",
@@ -962,6 +1157,25 @@
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"},
         {"shape":"ServiceQuotaExceededException"}
+      ],
+      "idempotent":true
+    },
+    "UpdateDataAccessor":{
+      "name":"UpdateDataAccessor",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/applications/{applicationId}/dataaccessors/{dataAccessorId}",
+        "responseCode":200
+      },
+      "input":{"shape":"UpdateDataAccessorRequest"},
+      "output":{"shape":"UpdateDataAccessorResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"InternalServerException"},
+        {"shape":"ConflictException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"}
       ],
       "idempotent":true
     },
@@ -1128,6 +1342,20 @@
       },
       "exception":true
     },
+    "ActionConfiguration":{
+      "type":"structure",
+      "required":["action"],
+      "members":{
+        "action":{"shape":"QIamAction"},
+        "filterConfiguration":{"shape":"ActionFilterConfiguration"}
+      }
+    },
+    "ActionConfigurationList":{
+      "type":"list",
+      "member":{"shape":"ActionConfiguration"},
+      "max":10,
+      "min":1
+    },
     "ActionExecution":{
       "type":"structure",
       "required":[
@@ -1165,6 +1393,13 @@
       "required":["value"],
       "members":{
         "value":{"shape":"ActionPayloadFieldValue"}
+      }
+    },
+    "ActionFilterConfiguration":{
+      "type":"structure",
+      "required":["documentAttributeFilter"],
+      "members":{
+        "documentAttributeFilter":{"shape":"AttributeFilter"}
       }
     },
     "ActionPayloadFieldKey":{
@@ -1249,6 +1484,19 @@
       },
       "document":true
     },
+    "ActionSummary":{
+      "type":"structure",
+      "members":{
+        "actionIdentifier":{"shape":"String"},
+        "displayName":{"shape":"String"},
+        "instructionExample":{"shape":"String"},
+        "description":{"shape":"String"}
+      }
+    },
+    "Actions":{
+      "type":"list",
+      "member":{"shape":"ActionSummary"}
+    },
     "AmazonResourceName":{
       "type":"string",
       "max":1011,
@@ -1262,7 +1510,8 @@
         "createdAt":{"shape":"Timestamp"},
         "updatedAt":{"shape":"Timestamp"},
         "status":{"shape":"ApplicationStatus"},
-        "identityType":{"shape":"IdentityType"}
+        "identityType":{"shape":"IdentityType"},
+        "quickSightConfiguration":{"shape":"QuickSightConfiguration"}
       }
     },
     "ApplicationArn":{
@@ -1308,6 +1557,31 @@
       "required":["creatorModeControl"],
       "members":{
         "creatorModeControl":{"shape":"CreatorModeControl"}
+      }
+    },
+    "AssociatePermissionRequest":{
+      "type":"structure",
+      "required":[
+        "applicationId",
+        "statementId",
+        "actions",
+        "principal"
+      ],
+      "members":{
+        "applicationId":{
+          "shape":"ApplicationId",
+          "location":"uri",
+          "locationName":"applicationId"
+        },
+        "statementId":{"shape":"StatementId"},
+        "actions":{"shape":"QIamActions"},
+        "principal":{"shape":"PrincipalRoleArn"}
+      }
+    },
+    "AssociatePermissionResponse":{
+      "type":"structure",
+      "members":{
+        "statement":{"shape":"String"}
       }
     },
     "Attachment":{
@@ -1751,6 +2025,12 @@
       "type":"list",
       "member":{"shape":"ClientIdForOIDC"}
     },
+    "ClientNamespace":{
+      "type":"string",
+      "max":64,
+      "min":1,
+      "pattern":"[a-zA-Z0-9._-]*"
+    },
     "ClientToken":{
       "type":"string",
       "max":100,
@@ -1794,6 +2074,13 @@
       "members":{
         "eligibleDataSources":{"shape":"EligibleDataSources"}
       }
+    },
+    "ContentSource":{
+      "type":"structure",
+      "members":{
+        "retriever":{"shape":"RetrieverContentSource"}
+      },
+      "union":true
     },
     "ContentType":{
       "type":"string",
@@ -1868,7 +2155,8 @@
         },
         "attachmentsConfiguration":{"shape":"AttachmentsConfiguration"},
         "qAppsConfiguration":{"shape":"QAppsConfiguration"},
-        "personalizationConfiguration":{"shape":"PersonalizationConfiguration"}
+        "personalizationConfiguration":{"shape":"PersonalizationConfiguration"},
+        "quickSightConfiguration":{"shape":"QuickSightConfiguration"}
       }
     },
     "CreateApplicationResponse":{
@@ -1876,6 +2164,43 @@
       "members":{
         "applicationId":{"shape":"ApplicationId"},
         "applicationArn":{"shape":"ApplicationArn"}
+      }
+    },
+    "CreateDataAccessorRequest":{
+      "type":"structure",
+      "required":[
+        "applicationId",
+        "principal",
+        "actionConfigurations",
+        "displayName"
+      ],
+      "members":{
+        "applicationId":{
+          "shape":"ApplicationId",
+          "location":"uri",
+          "locationName":"applicationId"
+        },
+        "principal":{"shape":"PrincipalRoleArn"},
+        "actionConfigurations":{"shape":"ActionConfigurationList"},
+        "clientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true
+        },
+        "displayName":{"shape":"DataAccessorName"},
+        "tags":{"shape":"Tags"}
+      }
+    },
+    "CreateDataAccessorResponse":{
+      "type":"structure",
+      "required":[
+        "dataAccessorId",
+        "idcApplicationArn",
+        "dataAccessorArn"
+      ],
+      "members":{
+        "dataAccessorId":{"shape":"DataAccessorId"},
+        "idcApplicationArn":{"shape":"IdcApplicationArn"},
+        "dataAccessorArn":{"shape":"DataAccessorArn"}
       }
     },
     "CreateDataSourceRequest":{
@@ -2067,7 +2392,8 @@
           "idempotencyToken":true
         },
         "identityProviderConfiguration":{"shape":"IdentityProviderConfiguration"},
-        "browserExtensionConfiguration":{"shape":"BrowserExtensionConfiguration"}
+        "browserExtensionConfiguration":{"shape":"BrowserExtensionConfiguration"},
+        "customizationConfiguration":{"shape":"CustomizationConfiguration"}
       }
     },
     "CreateWebExperienceResponse":{
@@ -2091,6 +2417,12 @@
         "DISABLED"
       ]
     },
+    "CustomCSSUrl":{
+      "type":"string",
+      "max":1284,
+      "min":0,
+      "pattern":"(https?://[a-zA-Z0-9-_.+%/]+\\.css)?"
+    },
     "CustomPluginConfiguration":{
       "type":"structure",
       "required":[
@@ -2103,6 +2435,50 @@
         "apiSchemaType":{"shape":"APISchemaType"},
         "apiSchema":{"shape":"APISchema"}
       }
+    },
+    "CustomizationConfiguration":{
+      "type":"structure",
+      "members":{
+        "customCSSUrl":{"shape":"CustomCSSUrl"},
+        "logoUrl":{"shape":"LogoUrl"},
+        "fontUrl":{"shape":"FontUrl"},
+        "faviconUrl":{"shape":"FaviconUrl"}
+      }
+    },
+    "DataAccessor":{
+      "type":"structure",
+      "members":{
+        "displayName":{"shape":"DataAccessorName"},
+        "dataAccessorId":{"shape":"DataAccessorId"},
+        "dataAccessorArn":{"shape":"DataAccessorArn"},
+        "idcApplicationArn":{"shape":"IdcApplicationArn"},
+        "principal":{"shape":"PrincipalRoleArn"},
+        "createdAt":{"shape":"Timestamp"},
+        "updatedAt":{"shape":"Timestamp"}
+      }
+    },
+    "DataAccessorArn":{
+      "type":"string",
+      "max":1284,
+      "min":0,
+      "pattern":"arn:[a-z0-9-\\.]{1,63}:[a-z0-9-\\.]{0,63}:[a-z0-9-\\.]{0,63}:[a-z0-9-\\.]{0,63}:[^/].{0,1023}"
+    },
+    "DataAccessorId":{
+      "type":"string",
+      "max":36,
+      "min":36,
+      "pattern":"[a-zA-Z0-9][a-zA-Z0-9-]{35}"
+    },
+    "DataAccessorName":{
+      "type":"string",
+      "max":100,
+      "min":1,
+      "pattern":"[a-zA-Z0-9][a-zA-Z0-9_-]*",
+      "sensitive":true
+    },
+    "DataAccessors":{
+      "type":"list",
+      "member":{"shape":"DataAccessor"}
     },
     "DataSource":{
       "type":"structure",
@@ -2280,6 +2656,30 @@
       }
     },
     "DeleteConversationResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "DeleteDataAccessorRequest":{
+      "type":"structure",
+      "required":[
+        "applicationId",
+        "dataAccessorId"
+      ],
+      "members":{
+        "applicationId":{
+          "shape":"ApplicationId",
+          "location":"uri",
+          "locationName":"applicationId"
+        },
+        "dataAccessorId":{
+          "shape":"DataAccessorId",
+          "location":"uri",
+          "locationName":"dataAccessorId"
+        }
+      }
+    },
+    "DeleteDataAccessorResponse":{
       "type":"structure",
       "members":{
       }
@@ -2485,6 +2885,30 @@
       "max":1000,
       "min":0,
       "pattern":"[\\s\\S]*"
+    },
+    "DisassociatePermissionRequest":{
+      "type":"structure",
+      "required":[
+        "applicationId",
+        "statementId"
+      ],
+      "members":{
+        "applicationId":{
+          "shape":"ApplicationId",
+          "location":"uri",
+          "locationName":"applicationId"
+        },
+        "statementId":{
+          "shape":"String",
+          "location":"uri",
+          "locationName":"statementId"
+        }
+      }
+    },
+    "DisassociatePermissionResponse":{
+      "type":"structure",
+      "members":{
+      }
     },
     "Document":{
       "type":"structure",
@@ -2783,6 +3207,18 @@
       "type":"list",
       "member":{"shape":"FailedDocument"}
     },
+    "FaviconUrl":{
+      "type":"string",
+      "max":1284,
+      "min":0,
+      "pattern":"(https?://[a-zA-Z0-9-_.+%/]+\\.(svg|ico))?"
+    },
+    "FontUrl":{
+      "type":"string",
+      "max":1284,
+      "min":0,
+      "pattern":"(https?://[a-zA-Z0-9-_.+%/]+\\.(ttf|woff|woff2|otf))?"
+    },
     "GetApplicationRequest":{
       "type":"structure",
       "required":["applicationId"],
@@ -2814,7 +3250,8 @@
         "qAppsConfiguration":{"shape":"QAppsConfiguration"},
         "personalizationConfiguration":{"shape":"PersonalizationConfiguration"},
         "autoSubscriptionConfiguration":{"shape":"AutoSubscriptionConfiguration"},
-        "clientIdsForOIDC":{"shape":"ClientIdsForOIDC"}
+        "clientIdsForOIDC":{"shape":"ClientIdsForOIDC"},
+        "quickSightConfiguration":{"shape":"QuickSightConfiguration"}
       }
     },
     "GetChatControlsConfigurationRequest":{
@@ -2846,6 +3283,39 @@
         "topicConfigurations":{"shape":"TopicConfigurations"},
         "creatorModeConfiguration":{"shape":"AppliedCreatorModeConfiguration"},
         "nextToken":{"shape":"NextToken"}
+      }
+    },
+    "GetDataAccessorRequest":{
+      "type":"structure",
+      "required":[
+        "applicationId",
+        "dataAccessorId"
+      ],
+      "members":{
+        "applicationId":{
+          "shape":"ApplicationId",
+          "location":"uri",
+          "locationName":"applicationId"
+        },
+        "dataAccessorId":{
+          "shape":"DataAccessorId",
+          "location":"uri",
+          "locationName":"dataAccessorId"
+        }
+      }
+    },
+    "GetDataAccessorResponse":{
+      "type":"structure",
+      "members":{
+        "displayName":{"shape":"DataAccessorName"},
+        "dataAccessorId":{"shape":"DataAccessorId"},
+        "dataAccessorArn":{"shape":"DataAccessorArn"},
+        "applicationId":{"shape":"ApplicationId"},
+        "idcApplicationArn":{"shape":"IdcApplicationArn"},
+        "principal":{"shape":"PrincipalRoleArn"},
+        "actionConfigurations":{"shape":"ActionConfigurationList"},
+        "createdAt":{"shape":"Timestamp"},
+        "updatedAt":{"shape":"Timestamp"}
       }
     },
     "GetDataSourceRequest":{
@@ -3043,6 +3513,23 @@
         "updatedAt":{"shape":"Timestamp"}
       }
     },
+    "GetPolicyRequest":{
+      "type":"structure",
+      "required":["applicationId"],
+      "members":{
+        "applicationId":{
+          "shape":"ApplicationId",
+          "location":"uri",
+          "locationName":"applicationId"
+        }
+      }
+    },
+    "GetPolicyResponse":{
+      "type":"structure",
+      "members":{
+        "policy":{"shape":"String"}
+      }
+    },
     "GetRetrieverRequest":{
       "type":"structure",
       "required":[
@@ -3144,7 +3631,8 @@
           "deprecatedMessage":"Property associated with legacy SAML IdP flow. Deprecated in favor of using AWS IAM Identity Center for user management."
         },
         "error":{"shape":"ErrorDetail"},
-        "browserExtensionConfiguration":{"shape":"BrowserExtensionConfiguration"}
+        "browserExtensionConfiguration":{"shape":"BrowserExtensionConfiguration"},
+        "customizationConfiguration":{"shape":"CustomizationConfiguration"}
       }
     },
     "GroupMembers":{
@@ -3214,6 +3702,17 @@
       "min":10,
       "pattern":"arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso::\\d{12}:application/(sso)?ins-[a-zA-Z0-9-.]{16}/apl-[a-zA-Z0-9]{16}"
     },
+    "IdcAuthConfiguration":{
+      "type":"structure",
+      "required":[
+        "idcApplicationArn",
+        "roleArn"
+      ],
+      "members":{
+        "idcApplicationArn":{"shape":"IdcApplicationArn"},
+        "roleArn":{"shape":"RoleArn"}
+      }
+    },
     "IdentityProviderConfiguration":{
       "type":"structure",
       "members":{
@@ -3227,7 +3726,8 @@
       "enum":[
         "AWS_IAM_IDP_SAML",
         "AWS_IAM_IDP_OIDC",
-        "AWS_IAM_IDC"
+        "AWS_IAM_IDC",
+        "AWS_QUICKSIGHT_IDP"
       ]
     },
     "ImageExtractionConfiguration":{
@@ -3484,6 +3984,34 @@
         "conversations":{"shape":"Conversations"}
       }
     },
+    "ListDataAccessorsRequest":{
+      "type":"structure",
+      "required":["applicationId"],
+      "members":{
+        "applicationId":{
+          "shape":"ApplicationId",
+          "location":"uri",
+          "locationName":"applicationId"
+        },
+        "nextToken":{
+          "shape":"NextToken1500",
+          "location":"querystring",
+          "locationName":"nextToken"
+        },
+        "maxResults":{
+          "shape":"MaxResultsIntegerForListDataAccessors",
+          "location":"querystring",
+          "locationName":"maxResults"
+        }
+      }
+    },
+    "ListDataAccessorsResponse":{
+      "type":"structure",
+      "members":{
+        "dataAccessors":{"shape":"DataAccessors"},
+        "nextToken":{"shape":"NextToken1500"}
+      }
+    },
     "ListDataSourceSyncJobsRequest":{
       "type":"structure",
       "required":[
@@ -3734,6 +4262,96 @@
         "nextToken":{"shape":"NextToken"}
       }
     },
+    "ListPluginActionsRequest":{
+      "type":"structure",
+      "required":[
+        "applicationId",
+        "pluginId"
+      ],
+      "members":{
+        "applicationId":{
+          "shape":"ApplicationId",
+          "location":"uri",
+          "locationName":"applicationId"
+        },
+        "pluginId":{
+          "shape":"PluginId",
+          "location":"uri",
+          "locationName":"pluginId"
+        },
+        "nextToken":{
+          "shape":"NextToken",
+          "location":"querystring",
+          "locationName":"nextToken"
+        },
+        "maxResults":{
+          "shape":"MaxResultsIntegerForListPluginActions",
+          "location":"querystring",
+          "locationName":"maxResults"
+        }
+      }
+    },
+    "ListPluginActionsResponse":{
+      "type":"structure",
+      "members":{
+        "nextToken":{"shape":"NextToken"},
+        "items":{"shape":"Actions"}
+      }
+    },
+    "ListPluginTypeActionsRequest":{
+      "type":"structure",
+      "required":["pluginType"],
+      "members":{
+        "pluginType":{
+          "shape":"PluginType",
+          "location":"uri",
+          "locationName":"pluginType"
+        },
+        "nextToken":{
+          "shape":"NextToken",
+          "location":"querystring",
+          "locationName":"nextToken"
+        },
+        "maxResults":{
+          "shape":"MaxResultsIntegerForListPluginTypeActions",
+          "location":"querystring",
+          "locationName":"maxResults"
+        }
+      }
+    },
+    "ListPluginTypeActionsResponse":{
+      "type":"structure",
+      "members":{
+        "nextToken":{"shape":"NextToken"},
+        "items":{"shape":"Actions"}
+      }
+    },
+    "ListPluginTypeMetadataRequest":{
+      "type":"structure",
+      "members":{
+        "nextToken":{
+          "shape":"NextToken",
+          "location":"querystring",
+          "locationName":"nextToken"
+        },
+        "maxResults":{
+          "shape":"MaxResultsIntegerForListPluginTypeMetadata",
+          "location":"querystring",
+          "locationName":"maxResults"
+        }
+      }
+    },
+    "ListPluginTypeMetadataResponse":{
+      "type":"structure",
+      "members":{
+        "nextToken":{"shape":"NextToken"},
+        "items":{"shape":"ListPluginTypeMetadataSummaries"}
+      }
+    },
+    "ListPluginTypeMetadataSummaries":{
+      "type":"list",
+      "member":{"shape":"PluginTypeMetadataSummary"}
+    },
     "ListPluginsRequest":{
       "type":"structure",
       "required":["applicationId"],
@@ -3835,8 +4453,18 @@
         "nextToken":{"shape":"NextToken"}
       }
     },
+    "LogoUrl":{
+      "type":"string",
+      "max":1284,
+      "min":0,
+      "pattern":"(https?://[a-zA-Z0-9-_.+%/]+\\.(svg|png))?"
+    },
     "Long":{
       "type":"long",
+      "box":true
+    },
+    "MaxResults":{
+      "type":"integer",
       "box":true
     },
     "MaxResultsIntegerForGetTopicConfigurations":{
@@ -3861,6 +4489,12 @@
       "type":"integer",
       "box":true,
       "max":100,
+      "min":1
+    },
+    "MaxResultsIntegerForListDataAccessors":{
+      "type":"integer",
+      "box":true,
+      "max":10,
       "min":1
     },
     "MaxResultsIntegerForListDataSources":{
@@ -3897,6 +4531,24 @@
       "type":"integer",
       "box":true,
       "max":100,
+      "min":1
+    },
+    "MaxResultsIntegerForListPluginActions":{
+      "type":"integer",
+      "box":true,
+      "max":50,
+      "min":1
+    },
+    "MaxResultsIntegerForListPluginTypeActions":{
+      "type":"integer",
+      "box":true,
+      "max":50,
+      "min":1
+    },
+    "MaxResultsIntegerForListPluginTypeMetadata":{
+      "type":"integer",
+      "box":true,
+      "max":50,
       "min":1
     },
     "MaxResultsIntegerForListPlugins":{
@@ -4086,6 +4738,11 @@
       "max":800,
       "min":1
     },
+    "NextToken1500":{
+      "type":"string",
+      "max":1500,
+      "min":1
+    },
     "NoAuthConfiguration":{
       "type":"structure",
       "members":{
@@ -4114,7 +4771,9 @@
       ],
       "members":{
         "secretArn":{"shape":"SecretArn"},
-        "roleArn":{"shape":"RoleArn"}
+        "roleArn":{"shape":"RoleArn"},
+        "authorizationUrl":{"shape":"Url"},
+        "tokenUrl":{"shape":"Url"}
       }
     },
     "OpenIDConnectProviderConfiguration":{
@@ -4176,7 +4835,8 @@
       "members":{
         "basicAuthConfiguration":{"shape":"BasicAuthConfiguration"},
         "oAuth2ClientCredentialConfiguration":{"shape":"OAuth2ClientCredentialConfiguration"},
-        "noAuthConfiguration":{"shape":"NoAuthConfiguration"}
+        "noAuthConfiguration":{"shape":"NoAuthConfiguration"},
+        "idcAuthConfiguration":{"shape":"IdcAuthConfiguration"}
       },
       "union":true
     },
@@ -4230,8 +4890,38 @@
         "SALESFORCE",
         "JIRA",
         "ZENDESK",
-        "CUSTOM"
+        "CUSTOM",
+        "QUICKSIGHT",
+        "SERVICENOW_NOW_PLATFORM",
+        "JIRA_CLOUD",
+        "SALESFORCE_CRM",
+        "ZENDESK_SUITE",
+        "ATLASSIAN_CONFLUENCE",
+        "GOOGLE_CALENDAR",
+        "MICROSOFT_TEAMS",
+        "MICROSOFT_EXCHANGE",
+        "PAGERDUTY_ADVANCE",
+        "SMARTSHEET",
+        "ASANA"
       ]
+    },
+    "PluginTypeCategory":{
+      "type":"string",
+      "enum":[
+        "Customer relationship management (CRM)",
+        "Project management",
+        "Communication",
+        "Productivity",
+        "Ticketing and incident management"
+      ]
+    },
+    "PluginTypeMetadataSummary":{
+      "type":"structure",
+      "members":{
+        "type":{"shape":"PluginType"},
+        "category":{"shape":"PluginTypeCategory"},
+        "description":{"shape":"String"}
+      }
     },
     "Plugins":{
       "type":"list",
@@ -4253,6 +4943,12 @@
         "access":{"shape":"ReadAccessType"},
         "membershipType":{"shape":"MembershipType"}
       }
+    },
+    "PrincipalRoleArn":{
+      "type":"string",
+      "max":1284,
+      "min":1,
+      "pattern":"arn:aws:iam::[0-9]{12}:role/[a-zA-Z0-9_/+=,.@-]+"
     },
     "PrincipalUser":{
       "type":"structure",
@@ -4345,12 +5041,45 @@
         "DISABLED"
       ]
     },
+    "QIamAction":{
+      "type":"string",
+      "pattern":"qbusiness:[a-zA-Z]+"
+    },
+    "QIamActions":{
+      "type":"list",
+      "member":{"shape":"QIamAction"},
+      "max":10,
+      "min":1
+    },
+    "QueryText":{"type":"string"},
+    "QuickSightConfiguration":{
+      "type":"structure",
+      "required":["clientNamespace"],
+      "members":{
+        "clientNamespace":{"shape":"ClientNamespace"}
+      }
+    },
     "ReadAccessType":{
       "type":"string",
       "enum":[
         "ALLOW",
         "DENY"
       ]
+    },
+    "RelevantContent":{
+      "type":"structure",
+      "members":{
+        "content":{"shape":"String"},
+        "documentId":{"shape":"DocumentId"},
+        "documentTitle":{"shape":"Title"},
+        "documentUri":{"shape":"Url"},
+        "documentAttributes":{"shape":"DocumentAttributes"},
+        "scoreAttributes":{"shape":"ScoreAttributes"}
+      }
+    },
+    "RelevantContentList":{
+      "type":"list",
+      "member":{"shape":"RelevantContent"}
     },
     "ResourceNotFoundException":{
       "type":"structure",
@@ -4400,6 +5129,13 @@
         "kendraIndexConfiguration":{"shape":"KendraIndexConfiguration"}
       },
       "union":true
+    },
+    "RetrieverContentSource":{
+      "type":"structure",
+      "required":["retrieverId"],
+      "members":{
+        "retrieverId":{"shape":"RetrieverId"}
+      }
     },
     "RetrieverId":{
       "type":"string",
@@ -4529,6 +5265,59 @@
         "authenticationUrl":{"shape":"SamlAuthenticationUrl"}
       }
     },
+    "ScoreAttributes":{
+      "type":"structure",
+      "members":{
+        "scoreConfidence":{"shape":"ScoreConfidence"}
+      }
+    },
+    "ScoreConfidence":{
+      "type":"string",
+      "enum":[
+        "VERY_HIGH",
+        "HIGH",
+        "MEDIUM",
+        "LOW",
+        "NOT_AVAILABLE"
+      ]
+    },
+    "SearchRelevantContentRequest":{
+      "type":"structure",
+      "required":[
+        "applicationId",
+        "queryText",
+        "contentSource"
+      ],
+      "members":{
+        "applicationId":{
+          "shape":"ApplicationId",
+          "location":"uri",
+          "locationName":"applicationId"
+        },
+        "userId":{
+          "shape":"UserId",
+          "location":"querystring",
+          "locationName":"userId"
+        },
+        "userGroups":{
+          "shape":"UserGroups",
+          "location":"querystring",
+          "locationName":"userGroups"
+        },
+        "queryText":{"shape":"QueryText"},
+        "contentSource":{"shape":"ContentSource"},
+        "attributeFilter":{"shape":"AttributeFilter"},
+        "maxResults":{"shape":"MaxResults"},
+        "nextToken":{"shape":"NextToken"}
+      }
+    },
+    "SearchRelevantContentResponse":{
+      "type":"structure",
+      "members":{
+        "relevantContent":{"shape":"RelevantContentList"},
+        "nextToken":{"shape":"NextToken"}
+      }
+    },
     "SecretArn":{
       "type":"string",
       "max":1284,
@@ -4623,6 +5412,12 @@
       "members":{
         "executionId":{"shape":"ExecutionId"}
       }
+    },
+    "StatementId":{
+      "type":"string",
+      "max":100,
+      "min":1,
+      "pattern":"[a-zA-Z0-9_-]+"
     },
     "Status":{
       "type":"string",
@@ -4946,6 +5741,33 @@
       "members":{
       }
     },
+    "UpdateDataAccessorRequest":{
+      "type":"structure",
+      "required":[
+        "applicationId",
+        "dataAccessorId",
+        "actionConfigurations"
+      ],
+      "members":{
+        "applicationId":{
+          "shape":"ApplicationId",
+          "location":"uri",
+          "locationName":"applicationId"
+        },
+        "dataAccessorId":{
+          "shape":"DataAccessorId",
+          "location":"uri",
+          "locationName":"dataAccessorId"
+        },
+        "actionConfigurations":{"shape":"ActionConfigurationList"},
+        "displayName":{"shape":"DataAccessorName"}
+      }
+    },
+    "UpdateDataAccessorResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "UpdateDataSourceRequest":{
       "type":"structure",
       "required":[
@@ -5126,7 +5948,8 @@
         "samplePromptsControlMode":{"shape":"WebExperienceSamplePromptsControlMode"},
         "identityProviderConfiguration":{"shape":"IdentityProviderConfiguration"},
         "origins":{"shape":"WebExperienceOrigins"},
-        "browserExtensionConfiguration":{"shape":"BrowserExtensionConfiguration"}
+        "browserExtensionConfiguration":{"shape":"BrowserExtensionConfiguration"},
+        "customizationConfiguration":{"shape":"CustomizationConfiguration"}
       }
     },
     "UpdateWebExperienceResponse":{

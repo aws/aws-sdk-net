@@ -69,6 +69,14 @@ namespace Amazon.QBusiness.Model
         }
 
         /// <summary>
+        /// Paginator for ListDataAccessors operation
+        ///</summary>
+        public IListDataAccessorsPaginator ListDataAccessors(ListDataAccessorsRequest request) 
+        {
+            return new ListDataAccessorsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDataSources operation
         ///</summary>
         public IListDataSourcesPaginator ListDataSources(ListDataSourcesRequest request) 
@@ -117,11 +125,35 @@ namespace Amazon.QBusiness.Model
         }
 
         /// <summary>
+        /// Paginator for ListPluginActions operation
+        ///</summary>
+        public IListPluginActionsPaginator ListPluginActions(ListPluginActionsRequest request) 
+        {
+            return new ListPluginActionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListPlugins operation
         ///</summary>
         public IListPluginsPaginator ListPlugins(ListPluginsRequest request) 
         {
             return new ListPluginsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPluginTypeActions operation
+        ///</summary>
+        public IListPluginTypeActionsPaginator ListPluginTypeActions(ListPluginTypeActionsRequest request) 
+        {
+            return new ListPluginTypeActionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPluginTypeMetadata operation
+        ///</summary>
+        public IListPluginTypeMetadataPaginator ListPluginTypeMetadata(ListPluginTypeMetadataRequest request) 
+        {
+            return new ListPluginTypeMetadataPaginator(this.client, request);
         }
 
         /// <summary>
@@ -138,6 +170,14 @@ namespace Amazon.QBusiness.Model
         public IListWebExperiencesPaginator ListWebExperiences(ListWebExperiencesRequest request) 
         {
             return new ListWebExperiencesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchRelevantContent operation
+        ///</summary>
+        public ISearchRelevantContentPaginator SearchRelevantContent(SearchRelevantContentRequest request) 
+        {
+            return new SearchRelevantContentPaginator(this.client, request);
         }
     }
 }

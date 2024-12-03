@@ -304,6 +304,90 @@ namespace Amazon.QBusiness
         #endregion
 
 
+        #region  AssociatePermission
+
+        /// <summary>
+        /// Adds or updates a permission policy for a Q Business application, allowing cross-account
+        /// access for an ISV. This operation creates a new policy statement for the specified
+        /// Q Business application. The policy statement defines the IAM actions that the ISV
+        /// is allowed to perform on the Q Business application's resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociatePermission service method.</param>
+        /// 
+        /// <returns>The response from the AssociatePermission service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
+        /// You have exceeded the set limits for your Amazon Q Business service.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/AssociatePermission">REST API Reference for AssociatePermission Operation</seealso>
+        public virtual AssociatePermissionResponse AssociatePermission(AssociatePermissionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociatePermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociatePermissionResponseUnmarshaller.Instance;
+
+            return Invoke<AssociatePermissionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociatePermission operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociatePermission operation on AmazonQBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociatePermission
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/AssociatePermission">REST API Reference for AssociatePermission Operation</seealso>
+        public virtual IAsyncResult BeginAssociatePermission(AssociatePermissionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociatePermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociatePermissionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociatePermission operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociatePermission.</param>
+        /// 
+        /// <returns>Returns a  AssociatePermissionResult from QBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/AssociatePermission">REST API Reference for AssociatePermission Operation</seealso>
+        public virtual AssociatePermissionResponse EndAssociatePermission(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociatePermissionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  BatchDeleteDocument
 
         /// <summary>
@@ -333,8 +417,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -434,8 +518,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -523,8 +607,8 @@ namespace Amazon.QBusiness
         /// Ask your admin to activate your license and try again after your licence is active.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -625,8 +709,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -684,6 +768,93 @@ namespace Amazon.QBusiness
 
         #endregion
         
+        #region  CreateDataAccessor
+
+        /// <summary>
+        /// Creates a new data accessor for an ISV to access data from a Q Business application.
+        /// The data accessor is an entity that represents the ISV's access to the Q Business
+        /// application's data. It includes the IAM role ARN for the ISV, a friendly name, and
+        /// a set of action configurations that define the specific actions the ISV is allowed
+        /// to perform and any associated data filters. When the data accessor is created, an
+        /// AWS IAM Identity Center application is also created to manage the ISV's identity and
+        /// authentication for accessing the Q Business application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataAccessor service method.</param>
+        /// 
+        /// <returns>The response from the CreateDataAccessor service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
+        /// You have exceeded the set limits for your Amazon Q Business service.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateDataAccessor">REST API Reference for CreateDataAccessor Operation</seealso>
+        public virtual CreateDataAccessorResponse CreateDataAccessor(CreateDataAccessorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDataAccessorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataAccessorResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDataAccessorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDataAccessor operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataAccessor operation on AmazonQBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDataAccessor
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateDataAccessor">REST API Reference for CreateDataAccessor Operation</seealso>
+        public virtual IAsyncResult BeginCreateDataAccessor(CreateDataAccessorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDataAccessorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataAccessorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateDataAccessor operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDataAccessor.</param>
+        /// 
+        /// <returns>Returns a  CreateDataAccessorResult from QBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateDataAccessor">REST API Reference for CreateDataAccessor Operation</seealso>
+        public virtual CreateDataAccessorResponse EndCreateDataAccessor(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateDataAccessorResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateDataSource
 
         /// <summary>
@@ -712,8 +883,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -806,8 +977,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -887,8 +1058,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -968,8 +1139,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -1050,8 +1221,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -1131,8 +1302,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -1212,8 +1383,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -1286,8 +1457,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -1364,8 +1535,8 @@ namespace Amazon.QBusiness
         /// Ask your admin to activate your license and try again after your licence is active.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -1420,6 +1591,86 @@ namespace Amazon.QBusiness
 
         #endregion
         
+        #region  DeleteDataAccessor
+
+        /// <summary>
+        /// Deletes a specified data accessor. This operation permanently removes the data accessor
+        /// and its associated AWS IAM Identity Center application. Any access granted to the
+        /// ISV through this data accessor will be revoked
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataAccessor service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDataAccessor service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteDataAccessor">REST API Reference for DeleteDataAccessor Operation</seealso>
+        public virtual DeleteDataAccessorResponse DeleteDataAccessor(DeleteDataAccessorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDataAccessorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataAccessorResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDataAccessorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDataAccessor operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataAccessor operation on AmazonQBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDataAccessor
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteDataAccessor">REST API Reference for DeleteDataAccessor Operation</seealso>
+        public virtual IAsyncResult BeginDeleteDataAccessor(DeleteDataAccessorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDataAccessorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataAccessorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteDataAccessor operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDataAccessor.</param>
+        /// 
+        /// <returns>Returns a  DeleteDataAccessorResult from QBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DeleteDataAccessor">REST API Reference for DeleteDataAccessor Operation</seealso>
+        public virtual DeleteDataAccessorResponse EndDeleteDataAccessor(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteDataAccessorResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteDataSource
 
         /// <summary>
@@ -1444,8 +1695,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -1533,8 +1784,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -1611,8 +1862,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -1689,8 +1940,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -1767,8 +2018,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -1845,8 +2096,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -1923,8 +2174,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -1979,6 +2230,86 @@ namespace Amazon.QBusiness
 
         #endregion
         
+        #region  DisassociatePermission
+
+        /// <summary>
+        /// Removes a permission policy from a Q Business application, revoking the cross-account
+        /// access that was previously granted to an ISV. This operation deletes the specified
+        /// policy statement from the application's permission policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociatePermission service method.</param>
+        /// 
+        /// <returns>The response from the DisassociatePermission service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DisassociatePermission">REST API Reference for DisassociatePermission Operation</seealso>
+        public virtual DisassociatePermissionResponse DisassociatePermission(DisassociatePermissionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociatePermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociatePermissionResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociatePermissionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociatePermission operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociatePermission operation on AmazonQBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociatePermission
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DisassociatePermission">REST API Reference for DisassociatePermission Operation</seealso>
+        public virtual IAsyncResult BeginDisassociatePermission(DisassociatePermissionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociatePermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociatePermissionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociatePermission operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociatePermission.</param>
+        /// 
+        /// <returns>Returns a  DisassociatePermissionResult from QBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/DisassociatePermission">REST API Reference for DisassociatePermission Operation</seealso>
+        public virtual DisassociatePermissionResponse EndDisassociatePermission(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociatePermissionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetApplication
 
         /// <summary>
@@ -1997,8 +2328,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -2072,8 +2403,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -2128,6 +2459,84 @@ namespace Amazon.QBusiness
 
         #endregion
         
+        #region  GetDataAccessor
+
+        /// <summary>
+        /// Retrieves information about a specified data accessor. This operation returns details
+        /// about the data accessor, including its display name, unique identifier, Amazon Resource
+        /// Name (ARN), the associated Q Business application and AWS IAM Identity Center application,
+        /// the IAM role for the ISV, the action configurations, and the timestamps for when the
+        /// data accessor was created and last updated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataAccessor service method.</param>
+        /// 
+        /// <returns>The response from the GetDataAccessor service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetDataAccessor">REST API Reference for GetDataAccessor Operation</seealso>
+        public virtual GetDataAccessorResponse GetDataAccessor(GetDataAccessorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataAccessorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataAccessorResponseUnmarshaller.Instance;
+
+            return Invoke<GetDataAccessorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDataAccessor operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDataAccessor operation on AmazonQBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDataAccessor
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetDataAccessor">REST API Reference for GetDataAccessor Operation</seealso>
+        public virtual IAsyncResult BeginGetDataAccessor(GetDataAccessorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataAccessorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataAccessorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDataAccessor operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDataAccessor.</param>
+        /// 
+        /// <returns>Returns a  GetDataAccessorResult from QBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetDataAccessor">REST API Reference for GetDataAccessor Operation</seealso>
+        public virtual GetDataAccessorResponse EndGetDataAccessor(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDataAccessorResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetDataSource
 
         /// <summary>
@@ -2146,8 +2555,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -2224,8 +2633,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -2298,8 +2707,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -2388,8 +2797,8 @@ namespace Amazon.QBusiness
         /// The requested media object is too large to be returned.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -2462,8 +2871,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -2518,6 +2927,82 @@ namespace Amazon.QBusiness
 
         #endregion
         
+        #region  GetPolicy
+
+        /// <summary>
+        /// Retrieves the current permission policy for a Q Business application. The policy is
+        /// returned as a JSON-formatted string and defines the IAM actions that are allowed or
+        /// denied for the application's resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetPolicy service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
+        public virtual GetPolicyResponse GetPolicy(GetPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPolicy operation on AmazonQBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
+        public virtual IAsyncResult BeginGetPolicy(GetPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPolicy.</param>
+        /// 
+        /// <returns>Returns a  GetPolicyResult from QBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/GetPolicy">REST API Reference for GetPolicy Operation</seealso>
+        public virtual GetPolicyResponse EndGetPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetRetriever
 
         /// <summary>
@@ -2536,8 +3021,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -2615,8 +3100,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -2689,8 +3174,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -2846,8 +3331,8 @@ namespace Amazon.QBusiness
         /// Ask your admin to activate your license and try again after your licence is active.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -2924,8 +3409,8 @@ namespace Amazon.QBusiness
         /// Ask your admin to activate your license and try again after your licence is active.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -2980,6 +3465,82 @@ namespace Amazon.QBusiness
 
         #endregion
         
+        #region  ListDataAccessors
+
+        /// <summary>
+        /// Lists the data accessors for a Q Business application. This operation returns a paginated
+        /// list of data accessor summaries, including the friendly name, unique identifier, ARN,
+        /// associated IAM role, and creation/update timestamps for each data accessor.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataAccessors service method.</param>
+        /// 
+        /// <returns>The response from the ListDataAccessors service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListDataAccessors">REST API Reference for ListDataAccessors Operation</seealso>
+        public virtual ListDataAccessorsResponse ListDataAccessors(ListDataAccessorsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataAccessorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataAccessorsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDataAccessorsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDataAccessors operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDataAccessors operation on AmazonQBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDataAccessors
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListDataAccessors">REST API Reference for ListDataAccessors Operation</seealso>
+        public virtual IAsyncResult BeginListDataAccessors(ListDataAccessorsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataAccessorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataAccessorsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDataAccessors operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDataAccessors.</param>
+        /// 
+        /// <returns>Returns a  ListDataAccessorsResult from QBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListDataAccessors">REST API Reference for ListDataAccessors Operation</seealso>
+        public virtual ListDataAccessorsResponse EndListDataAccessors(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDataAccessorsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListDataSources
 
         /// <summary>
@@ -2998,8 +3559,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -3076,8 +3637,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -3150,8 +3711,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -3228,8 +3789,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -3302,8 +3863,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -3380,8 +3941,8 @@ namespace Amazon.QBusiness
         /// Ask your admin to activate your license and try again after your licence is active.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -3436,6 +3997,81 @@ namespace Amazon.QBusiness
 
         #endregion
         
+        #region  ListPluginActions
+
+        /// <summary>
+        /// Lists configured Amazon Q Business actions for a specific plugin in an Amazon Q Business
+        /// application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPluginActions service method.</param>
+        /// 
+        /// <returns>The response from the ListPluginActions service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListPluginActions">REST API Reference for ListPluginActions Operation</seealso>
+        public virtual ListPluginActionsResponse ListPluginActions(ListPluginActionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPluginActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPluginActionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPluginActionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPluginActions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPluginActions operation on AmazonQBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPluginActions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListPluginActions">REST API Reference for ListPluginActions Operation</seealso>
+        public virtual IAsyncResult BeginListPluginActions(ListPluginActionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPluginActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPluginActionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPluginActions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPluginActions.</param>
+        /// 
+        /// <returns>Returns a  ListPluginActionsResult from QBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListPluginActions">REST API Reference for ListPluginActions Operation</seealso>
+        public virtual ListPluginActionsResponse EndListPluginActions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListPluginActionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListPlugins
 
         /// <summary>
@@ -3454,8 +4090,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -3510,6 +4146,146 @@ namespace Amazon.QBusiness
 
         #endregion
         
+        #region  ListPluginTypeActions
+
+        /// <summary>
+        /// Lists configured Amazon Q Business actions for any plugin type—both built-in and custom.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPluginTypeActions service method.</param>
+        /// 
+        /// <returns>The response from the ListPluginTypeActions service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListPluginTypeActions">REST API Reference for ListPluginTypeActions Operation</seealso>
+        public virtual ListPluginTypeActionsResponse ListPluginTypeActions(ListPluginTypeActionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPluginTypeActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPluginTypeActionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPluginTypeActionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPluginTypeActions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPluginTypeActions operation on AmazonQBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPluginTypeActions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListPluginTypeActions">REST API Reference for ListPluginTypeActions Operation</seealso>
+        public virtual IAsyncResult BeginListPluginTypeActions(ListPluginTypeActionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPluginTypeActionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPluginTypeActionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPluginTypeActions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPluginTypeActions.</param>
+        /// 
+        /// <returns>Returns a  ListPluginTypeActionsResult from QBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListPluginTypeActions">REST API Reference for ListPluginTypeActions Operation</seealso>
+        public virtual ListPluginTypeActionsResponse EndListPluginTypeActions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListPluginTypeActionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListPluginTypeMetadata
+
+        /// <summary>
+        /// Lists metadata for all Amazon Q Business plugin types.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPluginTypeMetadata service method.</param>
+        /// 
+        /// <returns>The response from the ListPluginTypeMetadata service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListPluginTypeMetadata">REST API Reference for ListPluginTypeMetadata Operation</seealso>
+        public virtual ListPluginTypeMetadataResponse ListPluginTypeMetadata(ListPluginTypeMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPluginTypeMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPluginTypeMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<ListPluginTypeMetadataResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPluginTypeMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPluginTypeMetadata operation on AmazonQBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPluginTypeMetadata
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListPluginTypeMetadata">REST API Reference for ListPluginTypeMetadata Operation</seealso>
+        public virtual IAsyncResult BeginListPluginTypeMetadata(ListPluginTypeMetadataRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPluginTypeMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPluginTypeMetadataResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPluginTypeMetadata operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPluginTypeMetadata.</param>
+        /// 
+        /// <returns>Returns a  ListPluginTypeMetadataResult from QBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListPluginTypeMetadata">REST API Reference for ListPluginTypeMetadata Operation</seealso>
+        public virtual ListPluginTypeMetadataResponse EndListPluginTypeMetadata(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListPluginTypeMetadataResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListRetrievers
 
         /// <summary>
@@ -3528,8 +4304,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -3603,8 +4379,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -3677,8 +4453,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -3752,8 +4528,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -3839,8 +4615,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -3898,6 +4674,89 @@ namespace Amazon.QBusiness
 
         #endregion
         
+        #region  SearchRelevantContent
+
+        /// <summary>
+        /// Searches for relevant content in a Q Business application based on a query. This operation
+        /// takes a search query text, the Q Business application identifier, and optional filters
+        /// (such as user ID, user groups, content source, and maximum results) as input. It returns
+        /// a list of relevant content items, where each item includes the content text, the unique
+        /// document identifier, the document title, the document URI, any relevant document attributes,
+        /// and score attributes indicating the confidence level of the relevance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchRelevantContent service method.</param>
+        /// 
+        /// <returns>The response from the SearchRelevantContent service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.LicenseNotFoundException">
+        /// You don't have permissions to perform the action because your license is inactive.
+        /// Ask your admin to activate your license and try again after your licence is active.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/SearchRelevantContent">REST API Reference for SearchRelevantContent Operation</seealso>
+        public virtual SearchRelevantContentResponse SearchRelevantContent(SearchRelevantContentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchRelevantContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchRelevantContentResponseUnmarshaller.Instance;
+
+            return Invoke<SearchRelevantContentResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchRelevantContent operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchRelevantContent operation on AmazonQBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchRelevantContent
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/SearchRelevantContent">REST API Reference for SearchRelevantContent Operation</seealso>
+        public virtual IAsyncResult BeginSearchRelevantContent(SearchRelevantContentRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchRelevantContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchRelevantContentResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchRelevantContent operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchRelevantContent.</param>
+        /// 
+        /// <returns>Returns a  SearchRelevantContentResult from QBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/SearchRelevantContent">REST API Reference for SearchRelevantContent Operation</seealso>
+        public virtual SearchRelevantContentResponse EndSearchRelevantContent(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SearchRelevantContentResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartDataSourceSyncJob
 
         /// <summary>
@@ -3921,8 +4780,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -4002,8 +4861,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -4081,8 +4940,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -4155,8 +5014,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -4248,8 +5107,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -4326,8 +5185,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -4385,6 +5244,87 @@ namespace Amazon.QBusiness
 
         #endregion
         
+        #region  UpdateDataAccessor
+
+        /// <summary>
+        /// Updates an existing data accessor. This operation allows modifying the action configurations
+        /// (the allowed actions and associated filters) and the display name of the data accessor.
+        /// It does not allow changing the IAM role associated with the data accessor or other
+        /// core properties of the data accessor.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataAccessor service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDataAccessor service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateDataAccessor">REST API Reference for UpdateDataAccessor Operation</seealso>
+        public virtual UpdateDataAccessorResponse UpdateDataAccessor(UpdateDataAccessorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDataAccessorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataAccessorResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDataAccessorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDataAccessor operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataAccessor operation on AmazonQBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDataAccessor
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateDataAccessor">REST API Reference for UpdateDataAccessor Operation</seealso>
+        public virtual IAsyncResult BeginUpdateDataAccessor(UpdateDataAccessorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateDataAccessorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataAccessorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateDataAccessor operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDataAccessor.</param>
+        /// 
+        /// <returns>Returns a  UpdateDataAccessorResult from QBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateDataAccessor">REST API Reference for UpdateDataAccessor Operation</seealso>
+        public virtual UpdateDataAccessorResponse EndUpdateDataAccessor(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateDataAccessorResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateDataSource
 
         /// <summary>
@@ -4407,8 +5347,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.
@@ -4485,8 +5425,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -4566,8 +5506,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -4647,8 +5587,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -4724,8 +5664,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ServiceQuotaExceededException">
         /// You have exceeded the set limits for your Amazon Q Business service.
@@ -4805,8 +5745,8 @@ namespace Amazon.QBusiness
         /// for help.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
-        /// The resource you want to use doesn’t exist. Make sure you have provided the correct
-        /// resource and try again.
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
         /// </exception>
         /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
         /// The request was denied due to throttling. Reduce the number of requests and try again.

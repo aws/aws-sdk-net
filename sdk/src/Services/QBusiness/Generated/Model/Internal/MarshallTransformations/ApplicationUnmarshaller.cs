@@ -90,6 +90,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     unmarshalledObject.IdentityType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("quickSightConfiguration", targetDepth))
+                {
+                    var unmarshaller = QuickSightConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.QuickSightConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

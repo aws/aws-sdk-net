@@ -38,6 +38,7 @@ namespace Amazon.QBusiness.Model
         private DateTime? _createdAt;
         private string _displayName;
         private IdentityType _identityType;
+        private QuickSightConfiguration _quickSightConfiguration;
         private ApplicationStatus _status;
         private DateTime? _updatedAt;
 
@@ -113,6 +114,25 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetIdentityType()
         {
             return this._identityType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QuickSightConfiguration. 
+        /// <para>
+        /// The Amazon QuickSight configuration for an Amazon Q Business application that uses
+        /// QuickSight as the identity provider.
+        /// </para>
+        /// </summary>
+        public QuickSightConfiguration QuickSightConfiguration
+        {
+            get { return this._quickSightConfiguration; }
+            set { this._quickSightConfiguration = value; }
+        }
+
+        // Check to see if QuickSightConfiguration property is set
+        internal bool IsSetQuickSightConfiguration()
+        {
+            return this._quickSightConfiguration != null;
         }
 
         /// <summary>

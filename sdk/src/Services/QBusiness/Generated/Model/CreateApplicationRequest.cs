@@ -70,6 +70,7 @@ namespace Amazon.QBusiness.Model
         private IdentityType _identityType;
         private PersonalizationConfiguration _personalizationConfiguration;
         private QAppsConfiguration _qAppsConfiguration;
+        private QuickSightConfiguration _quickSightConfiguration;
         private string _roleArn;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
@@ -280,6 +281,27 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetQAppsConfiguration()
         {
             return this._qAppsConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QuickSightConfiguration. 
+        /// <para>
+        /// The Amazon QuickSight configuration for an Amazon Q Business application that uses
+        /// QuickSight for authentication. This configuration is required if your application
+        /// uses QuickSight as the identity provider. For more information, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/create-quicksight-integrated-application.html">Creating
+        /// an Amazon QuickSight integrated application</a>.
+        /// </para>
+        /// </summary>
+        public QuickSightConfiguration QuickSightConfiguration
+        {
+            get { return this._quickSightConfiguration; }
+            set { this._quickSightConfiguration = value; }
+        }
+
+        // Check to see if QuickSightConfiguration property is set
+        internal bool IsSetQuickSightConfiguration()
+        {
+            return this._quickSightConfiguration != null;
         }
 
         /// <summary>

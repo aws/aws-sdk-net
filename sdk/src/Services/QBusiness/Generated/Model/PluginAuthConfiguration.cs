@@ -35,6 +35,7 @@ namespace Amazon.QBusiness.Model
     public partial class PluginAuthConfiguration
     {
         private BasicAuthConfiguration _basicAuthConfiguration;
+        private IdcAuthConfiguration _idcAuthConfiguration;
         private NoAuthConfiguration _noAuthConfiguration;
         private OAuth2ClientCredentialConfiguration _oAuth2ClientCredentialConfiguration;
 
@@ -54,6 +55,25 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetBasicAuthConfiguration()
         {
             return this._basicAuthConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdcAuthConfiguration. 
+        /// <para>
+        /// Information about the IAM Identity Center Application used to configure authentication
+        /// for a plugin.
+        /// </para>
+        /// </summary>
+        public IdcAuthConfiguration IdcAuthConfiguration
+        {
+            get { return this._idcAuthConfiguration; }
+            set { this._idcAuthConfiguration = value; }
+        }
+
+        // Check to see if IdcAuthConfiguration property is set
+        internal bool IsSetIdcAuthConfiguration()
+        {
+            return this._idcAuthConfiguration != null;
         }
 
         /// <summary>

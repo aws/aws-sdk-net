@@ -38,6 +38,7 @@ namespace Amazon.QBusiness.Model
         private WebExperienceAuthConfiguration _authenticationConfiguration;
         private BrowserExtensionConfiguration _browserExtensionConfiguration;
         private DateTime? _createdAt;
+        private CustomizationConfiguration _customizationConfiguration;
         private string _defaultEndpoint;
         private ErrorDetail _error;
         private IdentityProviderConfiguration _identityProviderConfiguration;
@@ -124,6 +125,25 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomizationConfiguration. 
+        /// <para>
+        /// Gets the custom logo, favicon, font, and color used in the Amazon Q web experience.
+        /// 
+        /// </para>
+        /// </summary>
+        public CustomizationConfiguration CustomizationConfiguration
+        {
+            get { return this._customizationConfiguration; }
+            set { this._customizationConfiguration = value; }
+        }
+
+        // Check to see if CustomizationConfiguration property is set
+        internal bool IsSetCustomizationConfiguration()
+        {
+            return this._customizationConfiguration != null;
         }
 
         /// <summary>

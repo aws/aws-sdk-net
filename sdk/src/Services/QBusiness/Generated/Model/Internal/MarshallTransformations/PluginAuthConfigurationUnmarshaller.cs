@@ -72,6 +72,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     unmarshalledObject.BasicAuthConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("idcAuthConfiguration", targetDepth))
+                {
+                    var unmarshaller = IdcAuthConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.IdcAuthConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("noAuthConfiguration", targetDepth))
                 {
                     var unmarshaller = NoAuthConfigurationUnmarshaller.Instance;
