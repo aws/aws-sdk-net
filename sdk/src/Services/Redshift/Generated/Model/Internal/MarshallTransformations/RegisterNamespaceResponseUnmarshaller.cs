@@ -33,9 +33,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DisassociateDataShareConsumer operation
+    /// Response Unmarshaller for RegisterNamespace operation
     /// </summary>  
-    public class DisassociateDataShareConsumerResponseUnmarshaller : XmlResponseUnmarshaller
+    public class RegisterNamespaceResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,7 +44,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            DisassociateDataShareConsumerResponse response = new DisassociateDataShareConsumerResponse();
+            RegisterNamespaceResponse response = new RegisterNamespaceResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -52,7 +52,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement)
                 {                    
-                    if(context.TestExpression("DisassociateDataShareConsumerResult", 2))
+                    if(context.TestExpression("RegisterNamespaceResult", 2))
                     {
                         UnmarshallResult(context, response);                        
                         continue;
@@ -68,7 +68,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, DisassociateDataShareConsumerResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, RegisterNamespaceResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -82,45 +82,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("AllowPubliclyAccessibleConsumers", targetDepth))
-                    {
-                        var unmarshaller = BoolUnmarshaller.Instance;
-                        response.AllowPubliclyAccessibleConsumers = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("DataShareArn", targetDepth))
+                    if (context.TestExpression("Status", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        response.DataShareArn = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("DataShareAssociations/member", targetDepth))
-                    {
-                        var unmarshaller = DataShareAssociationUnmarshaller.Instance;
-                        if (response.DataShareAssociations == null)
-                        {
-                            response.DataShareAssociations = new List<DataShareAssociation>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        response.DataShareAssociations.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("DataShareType", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.DataShareType = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ManagedBy", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.ManagedBy = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("ProducerArn", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.ProducerArn = unmarshaller.Unmarshall(context);
+                        response.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 
@@ -148,9 +113,13 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, null))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDataShareFault"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ClusterNotFound"))
                 {
-                    return InvalidDataShareExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ClusterNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidClusterState"))
+                {
+                    return InvalidClusterStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidNamespaceFault"))
                 {
@@ -159,9 +128,9 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
             }
             return new AmazonRedshiftException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static DisassociateDataShareConsumerResponseUnmarshaller _instance = new DisassociateDataShareConsumerResponseUnmarshaller();        
+        private static RegisterNamespaceResponseUnmarshaller _instance = new RegisterNamespaceResponseUnmarshaller();        
 
-        internal static DisassociateDataShareConsumerResponseUnmarshaller GetInstance()
+        internal static RegisterNamespaceResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -169,7 +138,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DisassociateDataShareConsumerResponseUnmarshaller Instance
+        public static RegisterNamespaceResponseUnmarshaller Instance
         {
             get
             {

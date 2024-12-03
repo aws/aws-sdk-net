@@ -78,6 +78,12 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         unmarshalledObject.DataShareAssociations.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("DataShareType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DataShareType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ManagedBy", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

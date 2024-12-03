@@ -1232,6 +1232,35 @@ namespace Amazon.Redshift
         /// go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
         /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// VPC Block Public Access (BPA) enables you to block resources in VPCs and subnets that
+        /// you own in a Region from reaching or being reached from the internet through internet
+        /// gateways and egress-only internet gateways. If a subnet group for a provisioned cluster
+        /// is in an account with VPC BPA turned on, the following capabilities are blocked:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Creating a public cluster
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Restoring a public cluster
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Modifying a private cluster to be public
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Adding a subnet with VPC BPA turned on to the subnet group when there's at least one
+        /// public cluster within the group
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about VPC BPA, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+        /// public access to VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCluster service method.</param>
         /// 
@@ -1343,6 +1372,35 @@ namespace Amazon.Redshift
         /// Redshift uses when creating the cluster. For more information about managing clusters,
         /// go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
         /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// VPC Block Public Access (BPA) enables you to block resources in VPCs and subnets that
+        /// you own in a Region from reaching or being reached from the internet through internet
+        /// gateways and egress-only internet gateways. If a subnet group for a provisioned cluster
+        /// is in an account with VPC BPA turned on, the following capabilities are blocked:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Creating a public cluster
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Restoring a public cluster
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Modifying a private cluster to be public
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Adding a subnet with VPC BPA turned on to the subnet group when there's at least one
+        /// public cluster within the group
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about VPC BPA, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+        /// public access to VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCluster service method.</param>
@@ -4320,6 +4378,67 @@ namespace Amazon.Redshift
             options.ResponseUnmarshaller = DeleteUsageLimitResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteUsageLimitResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeregisterNamespace
+
+
+        /// <summary>
+        /// Deregisters a cluster or serverless namespace from the Amazon Web Services Glue Data
+        /// Catalog.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterNamespace service method.</param>
+        /// 
+        /// <returns>The response from the DeregisterNamespace service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <c>ClusterIdentifier</c> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <c>available</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidNamespaceException">
+        /// The namespace isn't valid because the namespace doesn't exist. Provide a valid namespace.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeregisterNamespace">REST API Reference for DeregisterNamespace Operation</seealso>
+        public virtual DeregisterNamespaceResponse DeregisterNamespace(DeregisterNamespaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterNamespaceResponseUnmarshaller.Instance;
+
+            return Invoke<DeregisterNamespaceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deregisters a cluster or serverless namespace from the Amazon Web Services Glue Data
+        /// Catalog.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterNamespace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeregisterNamespace service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <c>ClusterIdentifier</c> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <c>available</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidNamespaceException">
+        /// The namespace isn't valid because the namespace doesn't exist. Provide a valid namespace.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeregisterNamespace">REST API Reference for DeregisterNamespace Operation</seealso>
+        public virtual Task<DeregisterNamespaceResponse> DeregisterNamespaceAsync(DeregisterNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterNamespaceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeregisterNamespaceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -8989,6 +9108,35 @@ namespace Amazon.Redshift
         /// to take effect. For more information about managing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
         /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// VPC Block Public Access (BPA) enables you to block resources in VPCs and subnets that
+        /// you own in a Region from reaching or being reached from the internet through internet
+        /// gateways and egress-only internet gateways. If a subnet group for a provisioned cluster
+        /// is in an account with VPC BPA turned on, the following capabilities are blocked:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Creating a public cluster
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Restoring a public cluster
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Modifying a private cluster to be public
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Adding a subnet with VPC BPA turned on to the subnet group when there's at least one
+        /// public cluster within the group
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about VPC BPA, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+        /// public access to VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyCluster service method.</param>
         /// 
@@ -9096,6 +9244,35 @@ namespace Amazon.Redshift
         /// do not need a reboot. However, modifying a parameter group requires a reboot for parameters
         /// to take effect. For more information about managing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon
         /// Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// VPC Block Public Access (BPA) enables you to block resources in VPCs and subnets that
+        /// you own in a Region from reaching or being reached from the internet through internet
+        /// gateways and egress-only internet gateways. If a subnet group for a provisioned cluster
+        /// is in an account with VPC BPA turned on, the following capabilities are blocked:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Creating a public cluster
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Restoring a public cluster
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Modifying a private cluster to be public
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Adding a subnet with VPC BPA turned on to the subnet group when there's at least one
+        /// public cluster within the group
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about VPC BPA, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+        /// public access to VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyCluster service method.</param>
@@ -9598,6 +9775,36 @@ namespace Amazon.Redshift
         /// <summary>
         /// Modifies a cluster subnet group to include the specified list of VPC subnets. The
         /// operation replaces the existing list of subnets with the new list of subnets.
+        /// 
+        ///  
+        /// <para>
+        /// VPC Block Public Access (BPA) enables you to block resources in VPCs and subnets that
+        /// you own in a Region from reaching or being reached from the internet through internet
+        /// gateways and egress-only internet gateways. If a subnet group for a provisioned cluster
+        /// is in an account with VPC BPA turned on, the following capabilities are blocked:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Creating a public cluster
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Restoring a public cluster
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Modifying a private cluster to be public
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Adding a subnet with VPC BPA turned on to the subnet group when there's at least one
+        /// public cluster within the group
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about VPC BPA, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+        /// public access to VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyClusterSubnetGroup service method.</param>
         /// 
@@ -9637,6 +9844,36 @@ namespace Amazon.Redshift
         /// <summary>
         /// Modifies a cluster subnet group to include the specified list of VPC subnets. The
         /// operation replaces the existing list of subnets with the new list of subnets.
+        /// 
+        ///  
+        /// <para>
+        /// VPC Block Public Access (BPA) enables you to block resources in VPCs and subnets that
+        /// you own in a Region from reaching or being reached from the internet through internet
+        /// gateways and egress-only internet gateways. If a subnet group for a provisioned cluster
+        /// is in an account with VPC BPA turned on, the following capabilities are blocked:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Creating a public cluster
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Restoring a public cluster
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Modifying a private cluster to be public
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Adding a subnet with VPC BPA turned on to the subnet group when there's at least one
+        /// public cluster within the group
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about VPC BPA, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+        /// public access to VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyClusterSubnetGroup service method.</param>
         /// <param name="cancellationToken">
@@ -10640,6 +10877,65 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  RegisterNamespace
+
+
+        /// <summary>
+        /// Registers a cluster or serverless namespace to the Amazon Web Services Glue Data Catalog.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterNamespace service method.</param>
+        /// 
+        /// <returns>The response from the RegisterNamespace service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <c>ClusterIdentifier</c> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <c>available</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidNamespaceException">
+        /// The namespace isn't valid because the namespace doesn't exist. Provide a valid namespace.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RegisterNamespace">REST API Reference for RegisterNamespace Operation</seealso>
+        public virtual RegisterNamespaceResponse RegisterNamespace(RegisterNamespaceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterNamespaceResponseUnmarshaller.Instance;
+
+            return Invoke<RegisterNamespaceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Registers a cluster or serverless namespace to the Amazon Web Services Glue Data Catalog.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterNamespace service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RegisterNamespace service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <c>ClusterIdentifier</c> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidClusterStateException">
+        /// The specified cluster is not in the <c>available</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.InvalidNamespaceException">
+        /// The namespace isn't valid because the namespace doesn't exist. Provide a valid namespace.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RegisterNamespace">REST API Reference for RegisterNamespace Operation</seealso>
+        public virtual Task<RegisterNamespaceResponse> RegisterNamespaceAsync(RegisterNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RegisterNamespaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterNamespaceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RegisterNamespaceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RejectDataShare
 
 
@@ -10988,6 +11284,35 @@ namespace Amazon.Redshift
         /// </para>
         ///  
         /// <para>
+        /// VPC Block Public Access (BPA) enables you to block resources in VPCs and subnets that
+        /// you own in a Region from reaching or being reached from the internet through internet
+        /// gateways and egress-only internet gateways. If a subnet group for a provisioned cluster
+        /// is in an account with VPC BPA turned on, the following capabilities are blocked:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Creating a public cluster
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Restoring a public cluster
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Modifying a private cluster to be public
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Adding a subnet with VPC BPA turned on to the subnet group when there's at least one
+        /// public cluster within the group
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about VPC BPA, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+        /// public access to VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
         ///  For more information about working with snapshots, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html">Amazon
         /// Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
         /// </para>
@@ -11127,6 +11452,35 @@ namespace Amazon.Redshift
         /// <para>
         /// If you restore a cluster into a VPC, you must provide a cluster subnet group where
         /// you want the cluster restored.
+        /// </para>
+        ///  
+        /// <para>
+        /// VPC Block Public Access (BPA) enables you to block resources in VPCs and subnets that
+        /// you own in a Region from reaching or being reached from the internet through internet
+        /// gateways and egress-only internet gateways. If a subnet group for a provisioned cluster
+        /// is in an account with VPC BPA turned on, the following capabilities are blocked:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Creating a public cluster
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Restoring a public cluster
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Modifying a private cluster to be public
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Adding a subnet with VPC BPA turned on to the subnet group when there's at least one
+        /// public cluster within the group
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about VPC BPA, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+        /// public access to VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         ///  
         /// <para>
