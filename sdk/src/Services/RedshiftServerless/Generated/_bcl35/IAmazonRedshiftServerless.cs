@@ -46,7 +46,7 @@ namespace Amazon.RedshiftServerless
     ///  
     /// <para>
     ///  To learn more about Amazon Redshift Serverless, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-whatis.html">What
-    /// is Amazon Redshift Serverless</a>. 
+    /// is Amazon Redshift Serverless?</a>.
     /// </para>
     /// </summary>
     public partial interface IAmazonRedshiftServerless : IAmazonService, IDisposable
@@ -524,6 +524,31 @@ namespace Amazon.RedshiftServerless
 
         /// <summary>
         /// Creates an workgroup in Amazon Redshift Serverless.
+        /// 
+        ///  
+        /// <para>
+        /// VPC Block Public Access (BPA) enables you to block resources in VPCs and subnets that
+        /// you own in a Region from reaching or being reached from the internet through internet
+        /// gateways and egress-only internet gateways. If a workgroup is in an account with VPC
+        /// BPA turned on, the following capabilities are blocked: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Creating a public access workgroup
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Modifying a private workgroup to public
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Adding a subnet with VPC BPA turned on to the workgroup when the workgroup is public
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about VPC BPA, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+        /// public access to VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWorkgroup service method.</param>
         /// 
@@ -1065,11 +1090,16 @@ namespace Amazon.RedshiftServerless
         /// By default, the temporary credentials expire in 900 seconds. You can optionally specify
         /// a duration between 900 seconds (15 minutes) and 3600 seconds (60 minutes).
         /// </para>
-        ///  <pre><c> &lt;p&gt;The Identity and Access Management (IAM) user or role that runs
-        /// GetCredentials must have an IAM policy attached that allows access to all necessary
-        /// actions and resources.&lt;/p&gt; &lt;p&gt;If the &lt;code&gt;DbName&lt;/code&gt; parameter
-        /// is specified, the IAM policy must allow access to the resource dbname for the specified
-        /// database name.&lt;/p&gt; </c></pre>
+        ///  
+        /// <para>
+        /// The Identity and Access Management (IAM) user or role that runs GetCredentials must
+        /// have an IAM policy attached that allows access to all necessary actions and resources.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the <c>DbName</c> parameter is specified, the IAM policy must allow access to the
+        /// resource dbname for the specified database name.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCredentials service method.</param>
         /// 
@@ -1723,6 +1753,52 @@ namespace Amazon.RedshiftServerless
         /// <returns>Returns a  ListEndpointAccessResult from RedshiftServerless.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListEndpointAccess">REST API Reference for ListEndpointAccess Operation</seealso>
         ListEndpointAccessResponse EndListEndpointAccess(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListManagedWorkgroups
+
+
+        /// <summary>
+        /// Returns information about a list of specified managed workgroups in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListManagedWorkgroups service method.</param>
+        /// 
+        /// <returns>The response from the ListManagedWorkgroups service method, as returned by RedshiftServerless.</returns>
+        /// <exception cref="Amazon.RedshiftServerless.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftServerless.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListManagedWorkgroups">REST API Reference for ListManagedWorkgroups Operation</seealso>
+        ListManagedWorkgroupsResponse ListManagedWorkgroups(ListManagedWorkgroupsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListManagedWorkgroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListManagedWorkgroups operation on AmazonRedshiftServerlessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListManagedWorkgroups
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListManagedWorkgroups">REST API Reference for ListManagedWorkgroups Operation</seealso>
+        IAsyncResult BeginListManagedWorkgroups(ListManagedWorkgroupsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListManagedWorkgroups operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListManagedWorkgroups.</param>
+        /// 
+        /// <returns>Returns a  ListManagedWorkgroupsResult from RedshiftServerless.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListManagedWorkgroups">REST API Reference for ListManagedWorkgroups Operation</seealso>
+        ListManagedWorkgroupsResponse EndListManagedWorkgroups(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2941,6 +3017,31 @@ namespace Amazon.RedshiftServerless
         /// Updates a workgroup with the specified configuration settings. You can't update multiple
         /// parameters in one request. For example, you can update <c>baseCapacity</c> or <c>port</c>
         /// in a single request, but you can't update both in the same request.
+        /// 
+        ///  
+        /// <para>
+        /// VPC Block Public Access (BPA) enables you to block resources in VPCs and subnets that
+        /// you own in a Region from reaching or being reached from the internet through internet
+        /// gateways and egress-only internet gateways. If a workgroup is in an account with VPC
+        /// BPA turned on, the following capabilities are blocked: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Creating a public access workgroup
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Modifying a private workgroup to public
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Adding a subnet with VPC BPA turned on to the workgroup when the workgroup is public
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about VPC BPA, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-vpc-bpa.html">Block
+        /// public access to VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateWorkgroup service method.</param>
         /// 

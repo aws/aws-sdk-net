@@ -53,6 +53,14 @@ namespace Amazon.RedshiftServerless.Model
         }
 
         /// <summary>
+        /// Paginator for ListManagedWorkgroups operation
+        ///</summary>
+        public IListManagedWorkgroupsPaginator ListManagedWorkgroups(ListManagedWorkgroupsRequest request) 
+        {
+            return new ListManagedWorkgroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListNamespaces operation
         ///</summary>
         public IListNamespacesPaginator ListNamespaces(ListNamespacesRequest request) 
