@@ -619,6 +619,17 @@
     <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.DeleteDefaultQBusinessApplicationRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DeleteDefaultQBusinessApplicationRequest.Namespace</property>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.DeleteFolderRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
@@ -1325,6 +1336,17 @@
     <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeDefaultQBusinessApplicationRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeDefaultQBusinessApplicationRequest.Namespace</property>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.DescribeFolderRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
@@ -1499,6 +1521,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.DescribeQPersonalizationConfigurationRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeQuickSightQSearchConfigurationRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
     <pattern>^[0-9]{12}$</pattern>
@@ -1783,6 +1811,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.GenerateEmbedUrlForRegisteredUserRequest.SessionLifetimeInMinutes</property>
+    <min>15</min>
+    <max>600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.GenerateEmbedUrlForRegisteredUserWithIdentityRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.GenerateEmbedUrlForRegisteredUserWithIdentityRequest.SessionLifetimeInMinutes</property>
     <min>15</min>
     <max>600</max>
   </property-value-rule>
@@ -2287,6 +2326,22 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.PredictQAResultsRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.PredictQAResultsRequest.MaxTopicsToConsider</property>
+    <min>1</min>
+    <max>4</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.PredictQAResultsRequest.QueryText</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.PutDataSetRefreshPropertiesRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
@@ -2589,6 +2644,17 @@
     <pattern>[\w\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateApplicationWithTokenExchangeGrantRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateApplicationWithTokenExchangeGrantRequest.Namespace</property>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.UpdateBrandRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
@@ -2763,6 +2829,21 @@
     <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateDefaultQBusinessApplicationRequest.ApplicationId</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateDefaultQBusinessApplicationRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateDefaultQBusinessApplicationRequest.Namespace</property>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.UpdateFolderRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
@@ -2881,6 +2962,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.UpdateQPersonalizationConfigurationRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateQuickSightQSearchConfigurationRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
     <pattern>^[0-9]{12}$</pattern>
@@ -3828,6 +3915,44 @@
     <pattern>[\w\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.DashboardVisualResult.DashboardId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DashboardVisualResult.DashboardName</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DashboardVisualResult.SheetId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DashboardVisualResult.SheetName</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DashboardVisualResult.VisualId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DashboardVisualResult.VisualSubtitle</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DashboardVisualResult.VisualTitle</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.DataAggregation.DefaultDateColumnName</property>
     <max>256</max>
   </property-value-rule>
@@ -4395,6 +4520,36 @@
     <min>1</min>
     <max>512</max>
     <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.GeneratedAnswerResult.AnswerId</property>
+    <max>256</max>
+    <pattern>^[A-Za-z0-9-_.\\+]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.GeneratedAnswerResult.QuestionId</property>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.GeneratedAnswerResult.QuestionText</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.GeneratedAnswerResult.Restatement</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.GeneratedAnswerResult.TopicId</property>
+    <max>256</max>
+    <pattern>^[A-Za-z0-9-_.\\+]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.GeneratedAnswerResult.TopicName</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.GeospatialCategoricalColor.DefaultOpacity</property>
