@@ -133,7 +133,7 @@ namespace Amazon.DataZone.Model
         /// The external ID of the asset.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=256)]
+        [AWSProperty(Min=1, Max=600)]
         public string ExternalIdentifier
         {
             get { return this._externalIdentifier; }

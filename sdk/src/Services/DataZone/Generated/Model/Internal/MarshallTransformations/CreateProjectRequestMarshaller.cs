@@ -99,6 +99,28 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetProjectProfileId())
+                {
+                    context.Writer.WritePropertyName("projectProfileId");
+                    context.Writer.Write(publicRequest.ProjectProfileId);
+                }
+
+                if(publicRequest.IsSetUserParameters())
+                {
+                    context.Writer.WritePropertyName("userParameters");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestUserParametersListValue in publicRequest.UserParameters)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EnvironmentConfigurationUserParameterMarshaller.Instance;
+                        marshaller.Marshall(publicRequestUserParametersListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

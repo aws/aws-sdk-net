@@ -92,6 +92,17 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetCreateEnvironmentFromBlueprint())
+            {
+                context.Writer.WritePropertyName("createEnvironmentFromBlueprint");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = UnitMarshaller.Instance;
+                marshaller.Marshall(requestObject.CreateEnvironmentFromBlueprint, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetCreateEnvironmentProfile())
             {
                 context.Writer.WritePropertyName("createEnvironmentProfile");
@@ -132,6 +143,17 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 
                 var marshaller = CreateProjectPolicyGrantDetailMarshaller.Instance;
                 marshaller.Marshall(requestObject.CreateProject, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetCreateProjectFromProjectProfile())
+            {
+                context.Writer.WritePropertyName("createProjectFromProjectProfile");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CreateProjectFromProjectProfilePolicyGrantDetailMarshaller.Instance;
+                marshaller.Marshall(requestObject.CreateProjectFromProjectProfile, context);
 
                 context.Writer.WriteObjectEnd();
             }

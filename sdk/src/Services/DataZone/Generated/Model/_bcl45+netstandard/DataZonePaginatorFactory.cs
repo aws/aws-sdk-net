@@ -53,6 +53,14 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
+        /// Paginator for ListConnections operation
+        ///</summary>
+        public IListConnectionsPaginator ListConnections(ListConnectionsRequest request) 
+        {
+            return new ListConnectionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDataProductRevisions operation
         ///</summary>
         public IListDataProductRevisionsPaginator ListDataProductRevisions(ListDataProductRevisionsRequest request) 
@@ -149,6 +157,22 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
+        /// Paginator for ListJobRuns operation
+        ///</summary>
+        public IListJobRunsPaginator ListJobRuns(ListJobRunsRequest request) 
+        {
+            return new ListJobRunsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListLineageEvents operation
+        ///</summary>
+        public IListLineageEventsPaginator ListLineageEvents(ListLineageEventsRequest request) 
+        {
+            return new ListLineageEventsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListLineageNodeHistory operation
         ///</summary>
         public IListLineageNodeHistoryPaginator ListLineageNodeHistory(ListLineageNodeHistoryRequest request) 
@@ -186,6 +210,14 @@ namespace Amazon.DataZone.Model
         public IListProjectMembershipsPaginator ListProjectMemberships(ListProjectMembershipsRequest request) 
         {
             return new ListProjectMembershipsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListProjectProfiles operation
+        ///</summary>
+        public IListProjectProfilesPaginator ListProjectProfiles(ListProjectProfilesRequest request) 
+        {
+            return new ListProjectProfilesPaginator(this.client, request);
         }
 
         /// <summary>

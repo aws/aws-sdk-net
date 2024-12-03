@@ -79,6 +79,17 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetEnvironmentDeploymentDetails())
+                {
+                    context.Writer.WritePropertyName("environmentDeploymentDetails");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EnvironmentDeploymentDetailsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EnvironmentDeploymentDetails, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetGlossaryTerms())
                 {
                     context.Writer.WritePropertyName("glossaryTerms");

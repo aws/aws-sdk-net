@@ -38,6 +38,7 @@ namespace Amazon.DataZone.Model
         private List<FormInput> _assetFormsInput = AWSConfigs.InitializeCollections ? new List<FormInput>() : null;
         private string _clientToken;
         private DataSourceConfigurationInput _configuration;
+        private string _connectionIdentifier;
         private string _description;
         private string _domainIdentifier;
         private EnableSetting _enableSetting;
@@ -108,6 +109,24 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ConnectionIdentifier. 
+        /// <para>
+        /// The ID of the connection.
+        /// </para>
+        /// </summary>
+        public string ConnectionIdentifier
+        {
+            get { return this._connectionIdentifier; }
+            set { this._connectionIdentifier = value; }
+        }
+
+        // Check to see if ConnectionIdentifier property is set
+        internal bool IsSetConnectionIdentifier()
+        {
+            return this._connectionIdentifier != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// The description of the data source.
@@ -170,7 +189,6 @@ namespace Amazon.DataZone.Model
         /// publishes assets. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string EnvironmentIdentifier
         {
             get { return this._environmentIdentifier; }

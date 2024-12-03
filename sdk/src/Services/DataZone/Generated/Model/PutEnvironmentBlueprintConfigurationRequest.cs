@@ -38,6 +38,7 @@ namespace Amazon.DataZone.Model
         private string _domainIdentifier;
         private List<string> _enabledRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _environmentBlueprintIdentifier;
+        private string _environmentRolePermissionBoundary;
         private string _manageAccessRoleArn;
         private List<ProvisioningConfiguration> _provisioningConfigurations = AWSConfigs.InitializeCollections ? new List<ProvisioningConfiguration>() : null;
         private string _provisioningRoleArn;
@@ -98,6 +99,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetEnvironmentBlueprintIdentifier()
         {
             return this._environmentBlueprintIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnvironmentRolePermissionBoundary. 
+        /// <para>
+        /// The environment role permissions boundary.
+        /// </para>
+        /// </summary>
+        public string EnvironmentRolePermissionBoundary
+        {
+            get { return this._environmentRolePermissionBoundary; }
+            set { this._environmentRolePermissionBoundary = value; }
+        }
+
+        // Check to see if EnvironmentRolePermissionBoundary property is set
+        internal bool IsSetEnvironmentRolePermissionBoundary()
+        {
+            return this._environmentRolePermissionBoundary != null;
         }
 
         /// <summary>

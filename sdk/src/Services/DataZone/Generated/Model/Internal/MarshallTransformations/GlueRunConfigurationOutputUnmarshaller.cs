@@ -78,6 +78,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     unmarshalledObject.AutoImportDataQualityResult = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("catalogName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CatalogName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("dataAccessRole", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

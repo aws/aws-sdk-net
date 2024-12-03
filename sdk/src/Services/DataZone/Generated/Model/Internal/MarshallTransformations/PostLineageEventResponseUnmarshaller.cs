@@ -48,6 +48,23 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         {
             PostLineageEventResponse response = new PostLineageEventResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("domainId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.DomainId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("id", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Id = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }

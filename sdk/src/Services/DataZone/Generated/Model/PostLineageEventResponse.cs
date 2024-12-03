@@ -34,6 +34,44 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class PostLineageEventResponse : AmazonWebServiceResponse
     {
+        private string _domainId;
+        private string _id;
+
+        /// <summary>
+        /// Gets and sets the property DomainId. 
+        /// <para>
+        /// The ID of the domain.
+        /// </para>
+        /// </summary>
+        public string DomainId
+        {
+            get { return this._domainId; }
+            set { this._domainId = value; }
+        }
+
+        // Check to see if DomainId property is set
+        internal bool IsSetDomainId()
+        {
+            return this._domainId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// The ID of the lineage event.
+        /// </para>
+        /// </summary>
+        public string Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
+
+        // Check to see if Id property is set
+        internal bool IsSetId()
+        {
+            return this._id != null;
+        }
 
     }
 }

@@ -35,16 +35,36 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class CreateEnvironmentRequest : AmazonDataZoneRequest
     {
+        private int? _deploymentOrder;
         private string _description;
         private string _domainIdentifier;
         private string _environmentAccountIdentifier;
         private string _environmentAccountRegion;
         private string _environmentBlueprintIdentifier;
+        private string _environmentConfigurationId;
         private string _environmentProfileIdentifier;
         private List<string> _glossaryTerms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private string _projectIdentifier;
         private List<EnvironmentParameter> _userParameters = AWSConfigs.InitializeCollections ? new List<EnvironmentParameter>() : null;
+
+        /// <summary>
+        /// Gets and sets the property DeploymentOrder. 
+        /// <para>
+        /// The deployment order of the environment.
+        /// </para>
+        /// </summary>
+        public int DeploymentOrder
+        {
+            get { return this._deploymentOrder.GetValueOrDefault(); }
+            set { this._deploymentOrder = value; }
+        }
+
+        // Check to see if DeploymentOrder property is set
+        internal bool IsSetDeploymentOrder()
+        {
+            return this._deploymentOrder.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -135,6 +155,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetEnvironmentBlueprintIdentifier()
         {
             return this._environmentBlueprintIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnvironmentConfigurationId. 
+        /// <para>
+        /// The configuration ID of the environment.
+        /// </para>
+        /// </summary>
+        public string EnvironmentConfigurationId
+        {
+            get { return this._environmentConfigurationId; }
+            set { this._environmentConfigurationId = value; }
+        }
+
+        // Check to see if EnvironmentConfigurationId property is set
+        internal bool IsSetEnvironmentConfigurationId()
+        {
+            return this._environmentConfigurationId != null;
         }
 
         /// <summary>

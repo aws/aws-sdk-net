@@ -88,6 +88,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     response.RootDomainUnitId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("serviceRole", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ServiceRole = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("singleSignOn", targetDepth))
                 {
                     var unmarshaller = SingleSignOnUnmarshaller.Instance;

@@ -54,6 +54,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AutoImportDataQualityResult);
             }
 
+            if(requestObject.IsSetCatalogName())
+            {
+                context.Writer.WritePropertyName("catalogName");
+                context.Writer.Write(requestObject.CatalogName);
+            }
+
             if(requestObject.IsSetDataAccessRole())
             {
                 context.Writer.WritePropertyName("dataAccessRole");
