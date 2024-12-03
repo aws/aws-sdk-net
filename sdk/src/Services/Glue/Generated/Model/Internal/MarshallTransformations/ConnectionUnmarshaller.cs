@@ -78,10 +78,22 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.AuthenticationConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CompatibleComputeEnvironments", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.CompatibleComputeEnvironments = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ConnectionProperties", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.ConnectionProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ConnectionSchemaVersion", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ConnectionSchemaVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ConnectionType", targetDepth))
@@ -136,6 +148,18 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = PhysicalConnectionRequirementsUnmarshaller.Instance;
                     unmarshalledObject.PhysicalConnectionRequirements = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PythonProperties", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.PythonProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SparkProperties", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.SparkProperties = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))

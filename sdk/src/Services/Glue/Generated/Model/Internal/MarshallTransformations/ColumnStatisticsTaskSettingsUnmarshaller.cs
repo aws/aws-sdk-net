@@ -84,6 +84,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.DatabaseName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LastExecutionAttempt", targetDepth))
+                {
+                    var unmarshaller = ExecutionAttemptUnmarshaller.Instance;
+                    unmarshalledObject.LastExecutionAttempt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Role", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -102,10 +108,22 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.Schedule = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ScheduleType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ScheduleType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SecurityConfiguration", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SecurityConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SettingSource", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SettingSource = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("TableName", targetDepth))

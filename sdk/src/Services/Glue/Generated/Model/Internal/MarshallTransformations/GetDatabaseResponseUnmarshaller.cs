@@ -89,6 +89,10 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     return FederationSourceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("FederationSourceRetryableException"))
+                {
+                    return FederationSourceRetryableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("GlueEncryptionException"))
                 {
                     return GlueEncryptionExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
