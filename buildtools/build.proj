@@ -523,15 +523,16 @@
 
     <Target Name="copy-license-and-notice" DependsOnTargets="$(copy-license-and-notice-DependsOnTargets)">
         <Message Text="Copying License.txt and Notice.txt to the assembly zips" />
+        <!-- net472 and netstandard2.0 need modified Notice with additional 3rd party dependencies -->
         <Copy
-            SourceFiles="../Notice.txt;../License.txt"
+            SourceFiles="./NoticeForZips.txt;../License.txt"
             DestinationFiles="../Deployment/assemblies/net472/Notice.txt;../Deployment/assemblies/net472/License.txt"
         />
-        <!-- netstandard2.0 needs modified Notice with additional 3rd party dependencies -->
         <Copy
             SourceFiles="./NoticeForZips.txt;../License.txt"
             DestinationFiles="../Deployment/assemblies/netstandard2.0/Notice.txt;../Deployment/assemblies/netstandard2.0/License.txt"
         />
+
         <Copy
             SourceFiles="../Notice.txt;../License.txt"
             DestinationFiles="../Deployment/assemblies/netcoreapp3.1/Notice.txt;../Deployment/assemblies/netcoreapp3.1/License.txt"
