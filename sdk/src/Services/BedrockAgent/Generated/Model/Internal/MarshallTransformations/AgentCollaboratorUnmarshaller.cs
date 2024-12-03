@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PromptConfiguration Object
+    /// Response Unmarshaller for AgentCollaborator Object
     /// </summary>  
-    public class PromptConfigurationUnmarshaller : IUnmarshaller<PromptConfiguration, XmlUnmarshallerContext>, IUnmarshaller<PromptConfiguration, JsonUnmarshallerContext>
+    public class AgentCollaboratorUnmarshaller : IUnmarshaller<AgentCollaborator, XmlUnmarshallerContext>, IUnmarshaller<AgentCollaborator, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PromptConfiguration IUnmarshaller<PromptConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AgentCollaborator IUnmarshaller<AgentCollaborator, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public PromptConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public AgentCollaborator Unmarshall(JsonUnmarshallerContext context)
         {
-            PromptConfiguration unmarshalledObject = new PromptConfiguration();
+            AgentCollaborator unmarshalledObject = new AgentCollaborator();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,46 +66,64 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("basePromptTemplate", targetDepth))
+                if (context.TestExpression("agentDescriptor", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BasePromptTemplate = unmarshaller.Unmarshall(context);
+                    var unmarshaller = AgentDescriptorUnmarshaller.Instance;
+                    unmarshalledObject.AgentDescriptor = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("foundationModel", targetDepth))
+                if (context.TestExpression("agentId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FoundationModel = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AgentId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("inferenceConfiguration", targetDepth))
-                {
-                    var unmarshaller = InferenceConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.InferenceConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("parserMode", targetDepth))
+                if (context.TestExpression("agentVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ParserMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AgentVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("promptCreationMode", targetDepth))
+                if (context.TestExpression("clientToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PromptCreationMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ClientToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("promptState", targetDepth))
+                if (context.TestExpression("collaborationInstruction", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PromptState = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CollaborationInstruction = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("promptType", targetDepth))
+                if (context.TestExpression("collaboratorId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PromptType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CollaboratorId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("collaboratorName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CollaboratorName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("createdAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("lastUpdatedAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastUpdatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("relayConversationHistory", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RelayConversationHistory = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -113,12 +131,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         }
 
 
-        private static PromptConfigurationUnmarshaller _instance = new PromptConfigurationUnmarshaller();        
+        private static AgentCollaboratorUnmarshaller _instance = new AgentCollaboratorUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PromptConfigurationUnmarshaller Instance
+        public static AgentCollaboratorUnmarshaller Instance
         {
             get
             {

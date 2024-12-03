@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.AssociateAgentCollaboratorRequest.AgentId</property>
+    <pattern>^[0-9a-zA-Z]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.AssociateAgentCollaboratorRequest.AgentVersion</property>
+    <min>5</min>
+    <max>5</max>
+    <pattern>^DRAFT$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.AssociateAgentCollaboratorRequest.ClientToken</property>
+    <min>33</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.AssociateAgentCollaboratorRequest.CollaborationInstruction</property>
+    <min>1</min>
+    <max>4000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.AssociateAgentCollaboratorRequest.CollaboratorName</property>
+    <pattern>^([0-9a-zA-Z][_-]?){1,100}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgent.Model.AssociateAgentKnowledgeBaseRequest.AgentId</property>
     <pattern>^[0-9a-zA-Z]{10}$</pattern>
   </property-value-rule>
@@ -555,6 +580,20 @@
     <pattern>^[0-9]{1,5}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.DisassociateAgentCollaboratorRequest.AgentId</property>
+    <pattern>^[0-9a-zA-Z]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.DisassociateAgentCollaboratorRequest.AgentVersion</property>
+    <min>5</min>
+    <max>5</max>
+    <pattern>^DRAFT$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.DisassociateAgentCollaboratorRequest.CollaboratorId</property>
+    <pattern>^[0-9a-zA-Z]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgent.Model.DisassociateAgentKnowledgeBaseRequest.AgentId</property>
     <pattern>^[0-9a-zA-Z]{10}$</pattern>
   </property-value-rule>
@@ -594,6 +633,20 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.GetAgentAliasRequest.AgentId</property>
+    <pattern>^[0-9a-zA-Z]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.GetAgentCollaboratorRequest.AgentId</property>
+    <pattern>^[0-9a-zA-Z]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.GetAgentCollaboratorRequest.AgentVersion</property>
+    <min>1</min>
+    <max>5</max>
+    <pattern>^(DRAFT|[0-9]{0,4}[1-9][0-9]{0,4})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.GetAgentCollaboratorRequest.CollaboratorId</property>
     <pattern>^[0-9a-zA-Z]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -860,6 +913,33 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.ListAgentAliasesResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^\S*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.ListAgentCollaboratorsRequest.AgentId</property>
+    <pattern>^[0-9a-zA-Z]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.ListAgentCollaboratorsRequest.AgentVersion</property>
+    <min>1</min>
+    <max>5</max>
+    <pattern>^(DRAFT|[0-9]{0,4}[1-9][0-9]{0,4})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.ListAgentCollaboratorsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.ListAgentCollaboratorsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^\S*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.ListAgentCollaboratorsResponse.NextToken</property>
     <min>1</min>
     <max>2048</max>
     <pattern>^\S*$</pattern>
@@ -1246,6 +1326,29 @@
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.UpdateAgentCollaboratorRequest.AgentId</property>
+    <pattern>^[0-9a-zA-Z]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.UpdateAgentCollaboratorRequest.AgentVersion</property>
+    <min>5</min>
+    <max>5</max>
+    <pattern>^DRAFT$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.UpdateAgentCollaboratorRequest.CollaborationInstruction</property>
+    <min>1</min>
+    <max>4000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.UpdateAgentCollaboratorRequest.CollaboratorId</property>
+    <pattern>^[0-9a-zA-Z]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.UpdateAgentCollaboratorRequest.CollaboratorName</property>
+    <pattern>^([0-9a-zA-Z][_-]?){1,100}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgent.Model.UpdateAgentKnowledgeBaseRequest.AgentId</property>
     <pattern>^[0-9a-zA-Z]{10}$</pattern>
   </property-value-rule>
@@ -1618,6 +1721,64 @@
     <property>Amazon.BedrockAgent.Model.AgentAliasSummary.Description</property>
     <min>1</min>
     <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.AgentCollaborator.AgentId</property>
+    <pattern>^[0-9a-zA-Z]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.AgentCollaborator.AgentVersion</property>
+    <min>1</min>
+    <max>5</max>
+    <pattern>^(DRAFT|[0-9]{0,4}[1-9][0-9]{0,4})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.AgentCollaborator.ClientToken</property>
+    <min>33</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.AgentCollaborator.CollaborationInstruction</property>
+    <min>1</min>
+    <max>4000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.AgentCollaborator.CollaboratorId</property>
+    <pattern>^[0-9a-zA-Z]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.AgentCollaborator.CollaboratorName</property>
+    <pattern>^([0-9a-zA-Z][_-]?){1,100}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.AgentCollaboratorSummary.AgentId</property>
+    <pattern>^[0-9a-zA-Z]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.AgentCollaboratorSummary.AgentVersion</property>
+    <min>1</min>
+    <max>5</max>
+    <pattern>^(DRAFT|[0-9]{0,4}[1-9][0-9]{0,4})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.AgentCollaboratorSummary.CollaborationInstruction</property>
+    <min>1</min>
+    <max>4000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.AgentCollaboratorSummary.CollaboratorId</property>
+    <pattern>^[0-9a-zA-Z]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.AgentCollaboratorSummary.CollaboratorName</property>
+    <pattern>^([0-9a-zA-Z][_-]?){1,100}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.AgentDescriptor.AliasArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>^arn:aws:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:agent-alias/[0-9a-zA-Z]{10}/[0-9a-zA-Z]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.AgentFlowNodeConfiguration.AgentAliasArn</property>
@@ -2358,6 +2519,12 @@
     <property>Amazon.BedrockAgent.Model.PromptConfiguration.BasePromptTemplate</property>
     <min>1</min>
     <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.PromptConfiguration.FoundationModel</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(arn:aws(-[^:]{1,12})?:(bedrock|sagemaker):[a-z0-9-]{1,20}:([0-9]{12})?:([a-z-]+/)?)?([a-zA-Z0-9.-]{1,63}){0,2}(([:][a-z0-9-]{1,63}){0,2})?(/[a-z0-9]{1,12})?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.PromptFlowNodeInlineConfiguration.ModelId</property>

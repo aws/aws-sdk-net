@@ -35,6 +35,7 @@ namespace Amazon.BedrockAgent.Model
     /// </summary>
     public partial class UpdateAgentRequest : AmazonBedrockAgentRequest
     {
+        private AgentCollaboration _agentCollaboration;
         private string _agentId;
         private string _agentName;
         private string _agentResourceRoleArn;
@@ -48,6 +49,24 @@ namespace Amazon.BedrockAgent.Model
         private MemoryConfiguration _memoryConfiguration;
         private OrchestrationType _orchestrationType;
         private PromptOverrideConfiguration _promptOverrideConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property AgentCollaboration. 
+        /// <para>
+        /// The agent's collaboration role.
+        /// </para>
+        /// </summary>
+        public AgentCollaboration AgentCollaboration
+        {
+            get { return this._agentCollaboration; }
+            set { this._agentCollaboration = value; }
+        }
+
+        // Check to see if AgentCollaboration property is set
+        internal bool IsSetAgentCollaboration()
+        {
+            return this._agentCollaboration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AgentId. 

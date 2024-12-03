@@ -53,6 +53,14 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
+        /// Paginator for ListAgentCollaborators operation
+        ///</summary>
+        public IListAgentCollaboratorsPaginator ListAgentCollaborators(ListAgentCollaboratorsRequest request) 
+        {
+            return new ListAgentCollaboratorsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAgentKnowledgeBases operation
         ///</summary>
         public IListAgentKnowledgeBasesPaginator ListAgentKnowledgeBases(ListAgentKnowledgeBasesRequest request) 

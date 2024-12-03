@@ -70,6 +70,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAgentCollaboration())
+                {
+                    context.Writer.WritePropertyName("agentCollaboration");
+                    context.Writer.Write(publicRequest.AgentCollaboration);
+                }
+
                 if(publicRequest.IsSetAgentName())
                 {
                     context.Writer.WritePropertyName("agentName");

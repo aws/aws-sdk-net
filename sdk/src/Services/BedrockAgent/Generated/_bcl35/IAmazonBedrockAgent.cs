@@ -45,6 +45,68 @@ namespace Amazon.BedrockAgent
 
 
         
+        #region  AssociateAgentCollaborator
+
+
+        /// <summary>
+        /// Makes an agent a collaborator for another agent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateAgentCollaborator service method.</param>
+        /// 
+        /// <returns>The response from the AssociateAgentCollaborator service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
+        /// There was a conflict performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/AssociateAgentCollaborator">REST API Reference for AssociateAgentCollaborator Operation</seealso>
+        AssociateAgentCollaboratorResponse AssociateAgentCollaborator(AssociateAgentCollaboratorRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateAgentCollaborator operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateAgentCollaborator operation on AmazonBedrockAgentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateAgentCollaborator
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/AssociateAgentCollaborator">REST API Reference for AssociateAgentCollaborator Operation</seealso>
+        IAsyncResult BeginAssociateAgentCollaborator(AssociateAgentCollaboratorRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateAgentCollaborator operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateAgentCollaborator.</param>
+        /// 
+        /// <returns>Returns a  AssociateAgentCollaboratorResult from BedrockAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/AssociateAgentCollaborator">REST API Reference for AssociateAgentCollaborator Operation</seealso>
+        AssociateAgentCollaboratorResponse EndAssociateAgentCollaborator(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  AssociateAgentKnowledgeBase
 
 
@@ -1514,6 +1576,65 @@ namespace Amazon.BedrockAgent
 
         #endregion
         
+        #region  DisassociateAgentCollaborator
+
+
+        /// <summary>
+        /// Disassociates an agent collaborator.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateAgentCollaborator service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateAgentCollaborator service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
+        /// There was a conflict performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DisassociateAgentCollaborator">REST API Reference for DisassociateAgentCollaborator Operation</seealso>
+        DisassociateAgentCollaboratorResponse DisassociateAgentCollaborator(DisassociateAgentCollaboratorRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateAgentCollaborator operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateAgentCollaborator operation on AmazonBedrockAgentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateAgentCollaborator
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DisassociateAgentCollaborator">REST API Reference for DisassociateAgentCollaborator Operation</seealso>
+        IAsyncResult BeginDisassociateAgentCollaborator(DisassociateAgentCollaboratorRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateAgentCollaborator operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateAgentCollaborator.</param>
+        /// 
+        /// <returns>Returns a  DisassociateAgentCollaboratorResult from BedrockAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DisassociateAgentCollaborator">REST API Reference for DisassociateAgentCollaborator Operation</seealso>
+        DisassociateAgentCollaboratorResponse EndDisassociateAgentCollaborator(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DisassociateAgentKnowledgeBase
 
 
@@ -1738,6 +1859,62 @@ namespace Amazon.BedrockAgent
         /// <returns>Returns a  GetAgentAliasResult from BedrockAgent.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetAgentAlias">REST API Reference for GetAgentAlias Operation</seealso>
         GetAgentAliasResponse EndGetAgentAlias(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetAgentCollaborator
+
+
+        /// <summary>
+        /// Retrieves information about an agent's collaborator.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentCollaborator service method.</param>
+        /// 
+        /// <returns>The response from the GetAgentCollaborator service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetAgentCollaborator">REST API Reference for GetAgentCollaborator Operation</seealso>
+        GetAgentCollaboratorResponse GetAgentCollaborator(GetAgentCollaboratorRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAgentCollaborator operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentCollaborator operation on AmazonBedrockAgentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAgentCollaborator
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetAgentCollaborator">REST API Reference for GetAgentCollaborator Operation</seealso>
+        IAsyncResult BeginGetAgentCollaborator(GetAgentCollaboratorRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAgentCollaborator operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAgentCollaborator.</param>
+        /// 
+        /// <returns>Returns a  GetAgentCollaboratorResult from BedrockAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetAgentCollaborator">REST API Reference for GetAgentCollaborator Operation</seealso>
+        GetAgentCollaboratorResponse EndGetAgentCollaborator(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2486,6 +2663,62 @@ namespace Amazon.BedrockAgent
         /// <returns>Returns a  ListAgentAliasesResult from BedrockAgent.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListAgentAliases">REST API Reference for ListAgentAliases Operation</seealso>
         ListAgentAliasesResponse EndListAgentAliases(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListAgentCollaborators
+
+
+        /// <summary>
+        /// Retrieve a list of an agent's collaborators.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAgentCollaborators service method.</param>
+        /// 
+        /// <returns>The response from the ListAgentCollaborators service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListAgentCollaborators">REST API Reference for ListAgentCollaborators Operation</seealso>
+        ListAgentCollaboratorsResponse ListAgentCollaborators(ListAgentCollaboratorsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAgentCollaborators operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAgentCollaborators operation on AmazonBedrockAgentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAgentCollaborators
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListAgentCollaborators">REST API Reference for ListAgentCollaborators Operation</seealso>
+        IAsyncResult BeginListAgentCollaborators(ListAgentCollaboratorsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAgentCollaborators operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAgentCollaborators.</param>
+        /// 
+        /// <returns>Returns a  ListAgentCollaboratorsResult from BedrockAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListAgentCollaborators">REST API Reference for ListAgentCollaborators Operation</seealso>
+        ListAgentCollaboratorsResponse EndListAgentCollaborators(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3711,6 +3944,68 @@ namespace Amazon.BedrockAgent
         /// <returns>Returns a  UpdateAgentAliasResult from BedrockAgent.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdateAgentAlias">REST API Reference for UpdateAgentAlias Operation</seealso>
         UpdateAgentAliasResponse EndUpdateAgentAlias(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateAgentCollaborator
+
+
+        /// <summary>
+        /// Updates an agent's collaborator.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAgentCollaborator service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAgentCollaborator service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
+        /// There was a conflict performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdateAgentCollaborator">REST API Reference for UpdateAgentCollaborator Operation</seealso>
+        UpdateAgentCollaboratorResponse UpdateAgentCollaborator(UpdateAgentCollaboratorRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateAgentCollaborator operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAgentCollaborator operation on AmazonBedrockAgentClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAgentCollaborator
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdateAgentCollaborator">REST API Reference for UpdateAgentCollaborator Operation</seealso>
+        IAsyncResult BeginUpdateAgentCollaborator(UpdateAgentCollaboratorRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateAgentCollaborator operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateAgentCollaborator.</param>
+        /// 
+        /// <returns>Returns a  UpdateAgentCollaboratorResult from BedrockAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdateAgentCollaborator">REST API Reference for UpdateAgentCollaborator Operation</seealso>
+        UpdateAgentCollaboratorResponse EndUpdateAgentCollaborator(IAsyncResult asyncResult);
 
         #endregion
         

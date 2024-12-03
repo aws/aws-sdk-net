@@ -72,6 +72,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.AgentArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("agentCollaboration", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AgentCollaboration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("agentId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

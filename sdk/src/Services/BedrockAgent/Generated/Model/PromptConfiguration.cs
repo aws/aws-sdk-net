@@ -37,6 +37,7 @@ namespace Amazon.BedrockAgent.Model
     public partial class PromptConfiguration
     {
         private string _basePromptTemplate;
+        private string _foundationModel;
         private InferenceConfiguration _inferenceConfiguration;
         private CreationMode _parserMode;
         private CreationMode _promptCreationMode;
@@ -64,6 +65,25 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetBasePromptTemplate()
         {
             return this._basePromptTemplate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FoundationModel. 
+        /// <para>
+        /// The agent's foundation model.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string FoundationModel
+        {
+            get { return this._foundationModel; }
+            set { this._foundationModel = value; }
+        }
+
+        // Check to see if FoundationModel property is set
+        internal bool IsSetFoundationModel()
+        {
+            return this._foundationModel != null;
         }
 
         /// <summary>

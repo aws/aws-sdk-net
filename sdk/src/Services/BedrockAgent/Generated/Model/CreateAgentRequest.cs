@@ -81,6 +81,7 @@ namespace Amazon.BedrockAgent.Model
     /// </summary>
     public partial class CreateAgentRequest : AmazonBedrockAgentRequest
     {
+        private AgentCollaboration _agentCollaboration;
         private string _agentName;
         private string _agentResourceRoleArn;
         private string _clientToken;
@@ -95,6 +96,24 @@ namespace Amazon.BedrockAgent.Model
         private OrchestrationType _orchestrationType;
         private PromptOverrideConfiguration _promptOverrideConfiguration;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AgentCollaboration. 
+        /// <para>
+        /// The agent's collaboration role.
+        /// </para>
+        /// </summary>
+        public AgentCollaboration AgentCollaboration
+        {
+            get { return this._agentCollaboration; }
+            set { this._agentCollaboration = value; }
+        }
+
+        // Check to see if AgentCollaboration property is set
+        internal bool IsSetAgentCollaboration()
+        {
+            return this._agentCollaboration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AgentName. 
