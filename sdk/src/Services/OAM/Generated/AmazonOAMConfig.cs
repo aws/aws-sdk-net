@@ -32,7 +32,7 @@ namespace Amazon.OAM
     public partial class AmazonOAMConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("OAM", "3.7.400.58");
+            InternalSDKUtils.BuildUserAgentString("OAM", "3.7.400.59");
 
         private string _userAgent = UserAgentString;
         ///<summary>

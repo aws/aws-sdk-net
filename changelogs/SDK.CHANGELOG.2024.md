@@ -1,3 +1,14 @@
+### 3.7.938.0 (2024-12-03 05:43 UTC)
+* BedrockRuntime (3.7.409.0)
+	* Add an API parameter that allows customers to set performance configuration for invoking a model.
+* S3Control (3.7.404.0)
+	* It allows customers to pass CRC64NVME as a header in S3 Batch Operations copy requests
+* SocialMessaging (3.7.401.0)
+	* Added support for passing role arn corresponding to the supported event destination
+* Core 3.7.400.59
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.937.0 (2024-12-02 04:28 UTC)
 * Bedrock (3.7.410.0)
 	* Add support for Knowledge Base Evaluations & LLM as a judge
