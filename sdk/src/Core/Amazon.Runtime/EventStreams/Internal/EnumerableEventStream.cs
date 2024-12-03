@@ -24,6 +24,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
+using System.Threading;
+
 #if AWS_ASYNC_API
 using System.Threading.Tasks;
 #endif
@@ -48,9 +50,9 @@ namespace Amazon.Runtime.EventStreams.Internal
     [SuppressMessage("Microsoft.Naming", "CA1710", Justification = "EventStreamCollection is not descriptive.")]
     [SuppressMessage("Microsoft.Design", "CA1063", Justification = "IDisposable is a transient interface from IEventStream. Users need to be able to call Dispose.")]
 #if NET8_0_OR_GREATER
-    public abstract class EnumerableEventStream<T, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TE> : EventStream<T, TE>, IEnumerableEventStream<T, TE> where T : IEventStreamEvent where TE : EventStreamException, new()
+    public abstract class EnumerableEventStream<T, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] TE> : EventStream<T, TE>, IEnumerableEventStream<T, TE>, IAsyncEnumerable<T> where T : IEventStreamEvent where TE : EventStreamException, new()
 #else
-    public abstract class EnumerableEventStream<T, TE> : EventStream<T, TE>, IEnumerableEventStream<T, TE> where T : IEventStreamEvent where TE : EventStreamException, new()
+    public abstract class EnumerableEventStream<T, TE> : EventStream<T, TE>, IEnumerableEventStream<T, TE>, IAsyncEnumerable<T> where T : IEventStreamEvent where TE : EventStreamException, new()
 #endif
     {
         private const string MutuallyExclusiveExceptionMessage = "Stream has already begun processing. Event-driven and Enumerable traversals of the stream are mutually exclusive. " +
@@ -132,6 +134,67 @@ namespace Amazon.Runtime.EventStreams.Internal
                     try
                     {
                         ReadFromStream(buffer);
+                    }
+                    catch (Exception ex)
+                    {
+                        IsProcessing = false;
+                        Dispose();
+
+                        // Wrap exceptions as needed to match event-driven behavior.
+                        throw WrapException(ex);
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Returns an async enumerator that asynchronously iterates through the collection.
+        /// </summary>
+        /// <returns>An async enumerator that can be used to iterate through the collection.</returns>
+        public async IAsyncEnumerator<T> GetAsyncEnumerator(CancellationToken cancellationToken)
+        {
+            // This implementation of this method is identical to that of GetEnumerator, except that
+            // instead of using ReadFromStream, it uses ReadFromStreamAsync. The two implementations
+            // should be kept in sync.
+
+            if (IsProcessing)
+            {
+                // If the queue has already begun processing, refuse to enumerate.
+                throw new InvalidOperationException(MutuallyExclusiveExceptionMessage);
+            }
+
+            // There could be more than 1 message created per decoder cycle.
+            var events = new Queue<T>();
+
+            // Opting out of events - letting the enumeration handle everything.
+            IsEnumerated = true;
+            IsProcessing = true;
+
+            // Enumeration is just magic over the event driven mechanism.
+            EventReceived += (sender, args) => events.Enqueue(args.EventStreamEvent);
+
+            var buffer = new byte[BufferSize];
+
+            while (IsProcessing)
+            {
+                // If there are already events ready to be served, do not ask for more.
+                if (events.Count > 0)
+                {
+                    var ev = events.Dequeue();
+                    // Enumeration handles terminal events on behalf of the user.
+                    if (ev is IEventStreamTerminalEvent)
+                    {
+                        IsProcessing = false;
+                        Dispose();
+                    }
+
+                    yield return ev;
+                }
+                else
+                {
+                    try
+                    {
+                        await ReadFromStreamAsync(buffer, cancellationToken).ConfigureAwait(false);
                     }
                     catch (Exception ex)
                     {
