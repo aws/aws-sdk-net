@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ContentBlock Object
+    /// Response Unmarshaller for S3Location Object
     /// </summary>  
-    public class ContentBlockUnmarshaller : IUnmarshaller<ContentBlock, XmlUnmarshallerContext>, IUnmarshaller<ContentBlock, JsonUnmarshallerContext>
+    public class S3LocationUnmarshaller : IUnmarshaller<S3Location, XmlUnmarshallerContext>, IUnmarshaller<S3Location, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ContentBlock IUnmarshaller<ContentBlock, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        S3Location IUnmarshaller<S3Location, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ContentBlock Unmarshall(JsonUnmarshallerContext context)
+        public S3Location Unmarshall(JsonUnmarshallerContext context)
         {
-            ContentBlock unmarshalledObject = new ContentBlock();
+            S3Location unmarshalledObject = new S3Location();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,46 +66,16 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("document", targetDepth))
-                {
-                    var unmarshaller = DocumentBlockUnmarshaller.Instance;
-                    unmarshalledObject.Document = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("guardContent", targetDepth))
-                {
-                    var unmarshaller = GuardrailConverseContentBlockUnmarshaller.Instance;
-                    unmarshalledObject.GuardContent = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("image", targetDepth))
-                {
-                    var unmarshaller = ImageBlockUnmarshaller.Instance;
-                    unmarshalledObject.Image = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("text", targetDepth))
+                if (context.TestExpression("bucketOwner", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Text = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BucketOwner = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("toolResult", targetDepth))
+                if (context.TestExpression("uri", targetDepth))
                 {
-                    var unmarshaller = ToolResultBlockUnmarshaller.Instance;
-                    unmarshalledObject.ToolResult = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("toolUse", targetDepth))
-                {
-                    var unmarshaller = ToolUseBlockUnmarshaller.Instance;
-                    unmarshalledObject.ToolUse = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("video", targetDepth))
-                {
-                    var unmarshaller = VideoBlockUnmarshaller.Instance;
-                    unmarshalledObject.Video = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Uri = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -113,12 +83,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static ContentBlockUnmarshaller _instance = new ContentBlockUnmarshaller();        
+        private static S3LocationUnmarshaller _instance = new S3LocationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ContentBlockUnmarshaller Instance
+        public static S3LocationUnmarshaller Instance
         {
             get
             {

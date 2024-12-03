@@ -101,6 +101,7 @@ namespace Amazon.BedrockRuntime.Model
         private string _modelId;
         private PerformanceConfiguration _performanceConfig;
         private Dictionary<string, PromptVariableValues> _promptVariables = AWSConfigs.InitializeCollections ? new Dictionary<string, PromptVariableValues>() : null;
+        private Dictionary<string, string> _requestMetadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private List<SystemContentBlock> _system = AWSConfigs.InitializeCollections ? new List<SystemContentBlock>() : null;
         private ToolConfiguration _toolConfig;
 
@@ -316,6 +317,25 @@ namespace Amazon.BedrockRuntime.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RequestMetadata. 
+        /// <para>
+        /// Key-value pairs that you can use to filter invocation logs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=1, Max=16)]
+        public Dictionary<string, string> RequestMetadata
+        {
+            get { return this._requestMetadata; }
+            set { this._requestMetadata = value; }
+        }
+
+        // Check to see if RequestMetadata property is set
+        internal bool IsSetRequestMetadata()
+        {
+            return this._requestMetadata != null && (this._requestMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property System. 
         /// <para>
         /// A prompt that provides instructions or context to the model about the task it should
@@ -340,12 +360,11 @@ namespace Amazon.BedrockRuntime.Model
         /// Configuration information for the tools that the model can use when generating a response.
         /// 
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
-        /// This field is only supported by Anthropic Claude 3, Cohere Command R, Cohere Command
-        /// R+, and Mistral Large models.
+        /// For information about models that support tool use, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html#conversation-inference-supported-models-features">Supported
+        /// models and model features</a>.
         /// </para>
-        ///  </note>
         /// </summary>
         public ToolConfiguration ToolConfig
         {

@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ToolResultContentBlock Object
+    /// Response Unmarshaller for AsyncInvokeOutputDataConfig Object
     /// </summary>  
-    public class ToolResultContentBlockUnmarshaller : IUnmarshaller<ToolResultContentBlock, XmlUnmarshallerContext>, IUnmarshaller<ToolResultContentBlock, JsonUnmarshallerContext>
+    public class AsyncInvokeOutputDataConfigUnmarshaller : IUnmarshaller<AsyncInvokeOutputDataConfig, XmlUnmarshallerContext>, IUnmarshaller<AsyncInvokeOutputDataConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ToolResultContentBlock IUnmarshaller<ToolResultContentBlock, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AsyncInvokeOutputDataConfig IUnmarshaller<AsyncInvokeOutputDataConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ToolResultContentBlock Unmarshall(JsonUnmarshallerContext context)
+        public AsyncInvokeOutputDataConfig Unmarshall(JsonUnmarshallerContext context)
         {
-            ToolResultContentBlock unmarshalledObject = new ToolResultContentBlock();
+            AsyncInvokeOutputDataConfig unmarshalledObject = new AsyncInvokeOutputDataConfig();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,34 +66,10 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("document", targetDepth))
+                if (context.TestExpression("s3OutputDataConfig", targetDepth))
                 {
-                    var unmarshaller = DocumentBlockUnmarshaller.Instance;
-                    unmarshalledObject.Document = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("image", targetDepth))
-                {
-                    var unmarshaller = ImageBlockUnmarshaller.Instance;
-                    unmarshalledObject.Image = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("json", targetDepth))
-                {
-                    var unmarshaller = Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance;
-                    unmarshalledObject.Json = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("text", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Text = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("video", targetDepth))
-                {
-                    var unmarshaller = VideoBlockUnmarshaller.Instance;
-                    unmarshalledObject.Video = unmarshaller.Unmarshall(context);
+                    var unmarshaller = AsyncInvokeS3OutputDataConfigUnmarshaller.Instance;
+                    unmarshalledObject.S3OutputDataConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -101,12 +77,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static ToolResultContentBlockUnmarshaller _instance = new ToolResultContentBlockUnmarshaller();        
+        private static AsyncInvokeOutputDataConfigUnmarshaller _instance = new AsyncInvokeOutputDataConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ToolResultContentBlockUnmarshaller Instance
+        public static AsyncInvokeOutputDataConfigUnmarshaller Instance
         {
             get
             {

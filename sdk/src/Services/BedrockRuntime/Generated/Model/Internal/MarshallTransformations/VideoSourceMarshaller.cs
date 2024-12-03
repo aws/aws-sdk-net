@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ToolResultContentBlock Marshaller
+    /// VideoSource Marshaller
     /// </summary>
-    public class ToolResultContentBlockMarshaller : IRequestMarshaller<ToolResultContentBlock, JsonMarshallerContext> 
+    public class VideoSourceMarshaller : IRequestMarshaller<VideoSource, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,51 +44,23 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ToolResultContentBlock requestObject, JsonMarshallerContext context)
+        public void Marshall(VideoSource requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetDocument())
+            if(requestObject.IsSetBytes())
             {
-                context.Writer.WritePropertyName("document");
+                context.Writer.WritePropertyName("bytes");
+                context.Writer.Write(StringUtils.FromMemoryStream(requestObject.Bytes));
+            }
+
+            if(requestObject.IsSetS3Location())
+            {
+                context.Writer.WritePropertyName("s3Location");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = DocumentBlockMarshaller.Instance;
-                marshaller.Marshall(requestObject.Document, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetImage())
-            {
-                context.Writer.WritePropertyName("image");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ImageBlockMarshaller.Instance;
-                marshaller.Marshall(requestObject.Image, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetJson())
-            {
-                context.Writer.WritePropertyName("json");
-                Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, requestObject.Json);
-            }
-
-            if(requestObject.IsSetText())
-            {
-                context.Writer.WritePropertyName("text");
-                context.Writer.Write(requestObject.Text);
-            }
-
-            if(requestObject.IsSetVideo())
-            {
-                context.Writer.WritePropertyName("video");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = VideoBlockMarshaller.Instance;
-                marshaller.Marshall(requestObject.Video, context);
+                var marshaller = S3LocationMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3Location, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -98,7 +70,7 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ToolResultContentBlockMarshaller Instance = new ToolResultContentBlockMarshaller();
+        public readonly static VideoSourceMarshaller Instance = new VideoSourceMarshaller();
 
     }
 }
