@@ -36,6 +36,7 @@ namespace Amazon.BedrockRuntime.Model
     {
         private ResponseStream _body;
         private string _contentType;
+        private PerformanceConfigLatency _performanceConfigLatency;
 
         /// <summary>
         /// Gets and sets the property Body. 
@@ -76,6 +77,24 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetContentType()
         {
             return !string.IsNullOrEmpty(this._contentType);
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerformanceConfigLatency. 
+        /// <para>
+        /// Model performance settings for the request.
+        /// </para>
+        /// </summary>
+        public PerformanceConfigLatency PerformanceConfigLatency
+        {
+            get { return this._performanceConfigLatency; }
+            set { this._performanceConfigLatency = value; }
+        }
+
+        // Check to see if PerformanceConfigLatency property is set
+        internal bool IsSetPerformanceConfigLatency()
+        {
+            return !string.IsNullOrEmpty(this._performanceConfigLatency);
         }
 
     }

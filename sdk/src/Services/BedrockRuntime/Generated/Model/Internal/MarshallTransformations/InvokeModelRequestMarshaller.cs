@@ -93,6 +93,11 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                 request.Headers["X-Amzn-Bedrock-GuardrailVersion"] = publicRequest.GuardrailVersion;
             }
         
+            if (publicRequest.IsSetPerformanceConfigLatency()) 
+            {
+                request.Headers["X-Amzn-Bedrock-PerformanceConfig-Latency"] = publicRequest.PerformanceConfigLatency;
+            }
+        
             if (publicRequest.IsSetTrace()) 
             {
                 request.Headers["X-Amzn-Bedrock-Trace"] = publicRequest.Trace;

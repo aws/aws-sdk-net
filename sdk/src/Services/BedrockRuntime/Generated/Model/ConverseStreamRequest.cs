@@ -85,6 +85,22 @@ namespace Amazon.BedrockRuntime.Model
     /// This operation requires permission for the <c>bedrock:InvokeModelWithResponseStream</c>
     /// action.
     /// </para>
+    ///  <important> 
+    /// <para>
+    /// To deny all inference access to resources that you specify in the modelId field, you
+    /// need to deny access to the <c>bedrock:InvokeModel</c> and <c>bedrock:InvokeModelWithResponseStream</c>
+    /// actions. Doing this also denies access to the resource through the base inference
+    /// actions (<a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModel.html">InvokeModel</a>
+    /// and <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModelWithResponseStream.html">InvokeModelWithResponseStream</a>).
+    /// For more information see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-deny-inference">Deny
+    /// access for inference on specific models</a>. 
+    /// </para>
+    ///  </important> 
+    /// <para>
+    /// For troubleshooting some of the common errors you might encounter when using the <c>ConverseStream</c>
+    /// API, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html">Troubleshooting
+    /// Amazon Bedrock API Error Codes</a> in the Amazon Bedrock User Guide
+    /// </para>
     /// </summary>
     public partial class ConverseStreamRequest : AmazonBedrockRuntimeRequest
     {
@@ -94,6 +110,7 @@ namespace Amazon.BedrockRuntime.Model
         private InferenceConfiguration _inferenceConfig;
         private List<Message> _messages = AWSConfigs.InitializeCollections ? new List<Message>() : null;
         private string _modelId;
+        private PerformanceConfiguration _performanceConfig;
         private Dictionary<string, PromptVariableValues> _promptVariables = AWSConfigs.InitializeCollections ? new Dictionary<string, PromptVariableValues>() : null;
         private List<SystemContentBlock> _system = AWSConfigs.InitializeCollections ? new List<SystemContentBlock>() : null;
         private ToolConfiguration _toolConfig;
@@ -248,8 +265,8 @@ namespace Amazon.BedrockRuntime.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To include a prompt that was defined in Prompt management, specify the ARN of the
-        /// prompt version to use.
+        /// To include a prompt that was defined in <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management.html">Prompt
+        /// management</a>, specify the ARN of the prompt version to use.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -268,6 +285,24 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetModelId()
         {
             return this._modelId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerformanceConfig. 
+        /// <para>
+        /// Model performance settings for the request.
+        /// </para>
+        /// </summary>
+        public PerformanceConfiguration PerformanceConfig
+        {
+            get { return this._performanceConfig; }
+            set { this._performanceConfig = value; }
+        }
+
+        // Check to see if PerformanceConfig property is set
+        internal bool IsSetPerformanceConfig()
+        {
+            return this._performanceConfig != null;
         }
 
         /// <summary>

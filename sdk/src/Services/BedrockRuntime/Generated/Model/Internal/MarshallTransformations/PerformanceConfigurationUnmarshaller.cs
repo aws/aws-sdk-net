@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ConverseStreamMetadataEvent Object
+    /// Response Unmarshaller for PerformanceConfiguration Object
     /// </summary>  
-    public class ConverseStreamMetadataEventUnmarshaller : IUnmarshaller<ConverseStreamMetadataEvent, XmlUnmarshallerContext>, IUnmarshaller<ConverseStreamMetadataEvent, JsonUnmarshallerContext>
+    public class PerformanceConfigurationUnmarshaller : IUnmarshaller<PerformanceConfiguration, XmlUnmarshallerContext>, IUnmarshaller<PerformanceConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ConverseStreamMetadataEvent IUnmarshaller<ConverseStreamMetadataEvent, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PerformanceConfiguration IUnmarshaller<PerformanceConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public ConverseStreamMetadataEvent Unmarshall(JsonUnmarshallerContext context)
+        public PerformanceConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            ConverseStreamMetadataEvent unmarshalledObject = new ConverseStreamMetadataEvent();
+            PerformanceConfiguration unmarshalledObject = new PerformanceConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,10 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("metrics", targetDepth))
+                if (context.TestExpression("latency", targetDepth))
                 {
-                    var unmarshaller = ConverseStreamMetricsUnmarshaller.Instance;
-                    unmarshalledObject.Metrics = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("performanceConfig", targetDepth))
-                {
-                    var unmarshaller = PerformanceConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.PerformanceConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("trace", targetDepth))
-                {
-                    var unmarshaller = ConverseStreamTraceUnmarshaller.Instance;
-                    unmarshalledObject.Trace = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("usage", targetDepth))
-                {
-                    var unmarshaller = TokenUsageUnmarshaller.Instance;
-                    unmarshalledObject.Usage = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Latency = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +77,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static ConverseStreamMetadataEventUnmarshaller _instance = new ConverseStreamMetadataEventUnmarshaller();        
+        private static PerformanceConfigurationUnmarshaller _instance = new PerformanceConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ConverseStreamMetadataEventUnmarshaller Instance
+        public static PerformanceConfigurationUnmarshaller Instance
         {
             get
             {

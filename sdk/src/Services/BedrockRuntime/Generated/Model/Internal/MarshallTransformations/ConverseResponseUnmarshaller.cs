@@ -70,6 +70,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                     response.Output = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("performanceConfig", targetDepth))
+                {
+                    var unmarshaller = PerformanceConfigurationUnmarshaller.Instance;
+                    response.PerformanceConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("stopReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
