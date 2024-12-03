@@ -1,3 +1,41 @@
+### 3.7.939.0 (2024-12-03 19:33 UTC)
+* Athena (3.7.403.0)
+	* Add FEDERATED type to CreateDataCatalog. This creates Athena Data Catalog, AWS Lambda connector, and AWS Glue connection. Create/DeleteDataCatalog returns DataCatalog. Add Status, ConnectionType, and Error to DataCatalog and DataCatalogSummary. Add DeleteCatalogOnly to delete Athena Catalog only.
+* Bedrock (3.7.411.0)
+	* Tagging support for Async Invoke resources. Added support for Distillation in CreateModelCustomizationJob API. Support for videoDataDeliveryEnabled flag in invocation logging.
+* BedrockAgent (3.7.413.0)
+	* Releasing SDK for Multi-Agent Collaboration.
+* BedrockAgentRuntime (3.7.412.0)
+	* Releasing SDK for multi agent collaboration
+* BedrockRuntime (3.7.410.0)
+	* Added support for Async Invoke Operations Start, List and Get. Support for invocation logs with `requestMetadata` field in Converse, ConverseStream, Invoke and InvokeStream. Video content blocks in Converse/ConverseStream accept raw bytes or S3 URI.
+* CloudWatch (3.7.402.7)
+	* Support for configuring AiOps investigation as alarm action
+* DataZone (3.7.408.0)
+	* Adds support for Connections, ProjectProfiles, and JobRuns APIs. Supports the new Lineage feature at GA. Adjusts optionality of a parameter for DataSource and SubscriptionTarget APIs which may adjust types in some clients.
+* DSQL (3.7.400.0)
+	* Add new API operations for Amazon Aurora DSQL. Amazon Aurora DSQL is a serverless, distributed SQL database with virtually unlimited scale, highest availability, and zero infrastructure management.
+* DynamoDBv2 (3.7.404.0)
+	* This change adds support for global tables with multi-Region strong consistency (in preview). The UpdateTable API now supports a new attribute MultiRegionConsistency to set consistency when creating global tables. The DescribeTable output now optionally includes the MultiRegionConsistency attribute.
+* Glue (3.7.411.0)
+	* This release includes(1)Zero-ETL integration to ingest data from 3P SaaS and DynamoDB to Redshift/Redlake (2)new properties on Connections to enable reuse; new connection APIs for retrieve/preview metadata (3)support of CRUD operations for Multi-catalog (4)support of automatic statistics collections
+* LakeFormation (3.7.402.0)
+	* This release added two new LakeFormation Permissions (CREATE_CATALOG, SUPER_USER) and added Id field for CatalogResource. It also added new conditon and expression field.
+* QApps (3.7.404.0)
+	* Add support for 11 new plugins as action cards to help automate repetitive tasks and improve productivity.
+* QBusiness (3.7.406.0)
+	* Amazon Q Business now supports customization options for your web experience, 11 new Plugins, and QuickSight support. Amazon Q index allows software providers to enrich their native generative AI experiences with their customer's enterprise knowledge and user context spanning multiple applications.
+* QuickSight (3.7.411.0)
+	* This release includes API needed to support for Unstructured Data in Q in QuickSight Q&A (IDC).
+* Redshift (3.7.405.0)
+	* Adds support for Amazon Redshift RegisterNamespace and DeregisterNamespace APIs to share data to AWS Glue Data Catalog.
+* RedshiftServerless (3.7.402.0)
+	* Adds support for the ListManagedWorkgroups API to get an overview of existing managed workgroups.
+* S3 (3.7.410.0)
+	* Amazon S3 Metadata stores object metadata in read-only, fully managed Apache Iceberg metadata tables that you can query. You can create metadata table configurations for S3 general purpose buckets.
+* S3Tables (3.7.400.0)
+	* Amazon S3 Tables deliver the first cloud object store with built-in open table format support, and the easiest way to store tabular data at scale.
+
 ### 3.7.938.0 (2024-12-03 05:43 UTC)
 * BedrockRuntime (3.7.409.0)
 	* Add an API parameter that allows customers to set performance configuration for invoking a model.
