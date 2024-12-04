@@ -111,6 +111,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.SortOrder);
                 }
 
+                if(publicRequest.IsSetTrainingPlanArn())
+                {
+                    context.Writer.WritePropertyName("TrainingPlanArn");
+                    context.Writer.Write(publicRequest.TrainingPlanArn);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

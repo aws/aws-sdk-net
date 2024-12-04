@@ -90,6 +90,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.KeepAlivePeriodInSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TrainingPlanArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TrainingPlanArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("VolumeKmsKeyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

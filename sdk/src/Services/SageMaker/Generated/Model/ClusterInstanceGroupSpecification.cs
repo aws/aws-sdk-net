@@ -43,6 +43,7 @@ namespace Amazon.SageMaker.Model
         private List<string> _onStartDeepHealthChecks = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private VpcConfig _overrideVpcConfig;
         private int? _threadsPerCore;
+        private string _trainingPlanArn;
 
         /// <summary>
         /// Gets and sets the property ExecutionRole. 
@@ -217,6 +218,32 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetThreadsPerCore()
         {
             return this._threadsPerCore.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainingPlanArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN); of the training plan to use for this cluster instance
+        /// group.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about how to reserve GPU capacity for your SageMaker HyperPod
+        /// clusters using Amazon SageMaker Training Plan, see <c> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a>
+        /// </c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=50, Max=2048)]
+        public string TrainingPlanArn
+        {
+            get { return this._trainingPlanArn; }
+            set { this._trainingPlanArn = value; }
+        }
+
+        // Check to see if TrainingPlanArn property is set
+        internal bool IsSetTrainingPlanArn()
+        {
+            return this._trainingPlanArn != null;
         }
 
     }

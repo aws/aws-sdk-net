@@ -39,6 +39,7 @@ namespace Amazon.SageMaker.Model
         private List<InstanceGroup> _instanceGroups = AWSConfigs.InitializeCollections ? new List<InstanceGroup>() : null;
         private TrainingInstanceType _instanceType;
         private int? _keepAlivePeriodInSeconds;
+        private string _trainingPlanArn;
         private string _volumeKmsKeyId;
         private int? _volumeSizeInGB;
 
@@ -146,6 +147,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetKeepAlivePeriodInSeconds()
         {
             return this._keepAlivePeriodInSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainingPlanArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN); of the training plan to use for this resource configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=50, Max=2048)]
+        public string TrainingPlanArn
+        {
+            get { return this._trainingPlanArn; }
+            set { this._trainingPlanArn = value; }
+        }
+
+        // Check to see if TrainingPlanArn property is set
+        internal bool IsSetTrainingPlanArn()
+        {
+            return this._trainingPlanArn != null;
         }
 
         /// <summary>

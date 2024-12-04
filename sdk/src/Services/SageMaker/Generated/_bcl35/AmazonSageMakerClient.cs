@@ -1208,6 +1208,70 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  CreateClusterSchedulerConfig
+
+        /// <summary>
+        /// Create cluster policy configuration. This policy is used for task prioritization and
+        /// fair-share allocation of idle compute. This helps prioritize critical workloads and
+        /// distributes idle compute across entities.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateClusterSchedulerConfig service method.</param>
+        /// 
+        /// <returns>The response from the CreateClusterSchedulerConfig service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateClusterSchedulerConfig">REST API Reference for CreateClusterSchedulerConfig Operation</seealso>
+        public virtual CreateClusterSchedulerConfigResponse CreateClusterSchedulerConfig(CreateClusterSchedulerConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateClusterSchedulerConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateClusterSchedulerConfigResponseUnmarshaller.Instance;
+
+            return Invoke<CreateClusterSchedulerConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateClusterSchedulerConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateClusterSchedulerConfig operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateClusterSchedulerConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateClusterSchedulerConfig">REST API Reference for CreateClusterSchedulerConfig Operation</seealso>
+        public virtual IAsyncResult BeginCreateClusterSchedulerConfig(CreateClusterSchedulerConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateClusterSchedulerConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateClusterSchedulerConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateClusterSchedulerConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateClusterSchedulerConfig.</param>
+        /// 
+        /// <returns>Returns a  CreateClusterSchedulerConfigResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateClusterSchedulerConfig">REST API Reference for CreateClusterSchedulerConfig Operation</seealso>
+        public virtual CreateClusterSchedulerConfigResponse EndCreateClusterSchedulerConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateClusterSchedulerConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateCodeRepository
 
         /// <summary>
@@ -1372,6 +1436,70 @@ namespace Amazon.SageMaker
         public virtual CreateCompilationJobResponse EndCreateCompilationJob(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateCompilationJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateComputeQuota
+
+        /// <summary>
+        /// Create compute allocation definition. This defines how compute is allocated, shared,
+        /// and borrowed for specified entities. Specifically, how to lend and borrow idle compute
+        /// and assign a fair-share weight to the specified entities.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateComputeQuota service method.</param>
+        /// 
+        /// <returns>The response from the CreateComputeQuota service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateComputeQuota">REST API Reference for CreateComputeQuota Operation</seealso>
+        public virtual CreateComputeQuotaResponse CreateComputeQuota(CreateComputeQuotaRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateComputeQuotaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateComputeQuotaResponseUnmarshaller.Instance;
+
+            return Invoke<CreateComputeQuotaResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateComputeQuota operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateComputeQuota operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateComputeQuota
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateComputeQuota">REST API Reference for CreateComputeQuota Operation</seealso>
+        public virtual IAsyncResult BeginCreateComputeQuota(CreateComputeQuotaRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateComputeQuotaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateComputeQuotaResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateComputeQuota operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateComputeQuota.</param>
+        /// 
+        /// <returns>Returns a  CreateComputeQuotaResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateComputeQuota">REST API Reference for CreateComputeQuota Operation</seealso>
+        public virtual CreateComputeQuotaResponse EndCreateComputeQuota(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateComputeQuotaResponse>(asyncResult);
         }
 
         #endregion
@@ -4022,6 +4150,125 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  CreatePartnerApp
+
+        /// <summary>
+        /// Creates an Amazon SageMaker Partner AI App.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePartnerApp service method.</param>
+        /// 
+        /// <returns>The response from the CreatePartnerApp service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePartnerApp">REST API Reference for CreatePartnerApp Operation</seealso>
+        public virtual CreatePartnerAppResponse CreatePartnerApp(CreatePartnerAppRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePartnerAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePartnerAppResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePartnerAppResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePartnerApp operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePartnerApp operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePartnerApp
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePartnerApp">REST API Reference for CreatePartnerApp Operation</seealso>
+        public virtual IAsyncResult BeginCreatePartnerApp(CreatePartnerAppRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePartnerAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePartnerAppResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePartnerApp operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePartnerApp.</param>
+        /// 
+        /// <returns>Returns a  CreatePartnerAppResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePartnerApp">REST API Reference for CreatePartnerApp Operation</seealso>
+        public virtual CreatePartnerAppResponse EndCreatePartnerApp(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreatePartnerAppResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreatePartnerAppPresignedUrl
+
+        /// <summary>
+        /// Creates a presigned URL to access an Amazon SageMaker Partner AI App.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePartnerAppPresignedUrl service method.</param>
+        /// 
+        /// <returns>The response from the CreatePartnerAppPresignedUrl service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePartnerAppPresignedUrl">REST API Reference for CreatePartnerAppPresignedUrl Operation</seealso>
+        public virtual CreatePartnerAppPresignedUrlResponse CreatePartnerAppPresignedUrl(CreatePartnerAppPresignedUrlRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePartnerAppPresignedUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePartnerAppPresignedUrlResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePartnerAppPresignedUrlResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePartnerAppPresignedUrl operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePartnerAppPresignedUrl operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePartnerAppPresignedUrl
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePartnerAppPresignedUrl">REST API Reference for CreatePartnerAppPresignedUrl Operation</seealso>
+        public virtual IAsyncResult BeginCreatePartnerAppPresignedUrl(CreatePartnerAppPresignedUrlRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePartnerAppPresignedUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePartnerAppPresignedUrlResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePartnerAppPresignedUrl operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePartnerAppPresignedUrl.</param>
+        /// 
+        /// <returns>Returns a  CreatePartnerAppPresignedUrlResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePartnerAppPresignedUrl">REST API Reference for CreatePartnerAppPresignedUrl Operation</seealso>
+        public virtual CreatePartnerAppPresignedUrlResponse EndCreatePartnerAppPresignedUrl(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreatePartnerAppPresignedUrlResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreatePipeline
 
         /// <summary>
@@ -4697,6 +4944,143 @@ namespace Amazon.SageMaker
         public virtual CreateTrainingJobResponse EndCreateTrainingJob(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateTrainingJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateTrainingPlan
+
+        /// <summary>
+        /// Creates a new training plan in SageMaker to reserve compute capacity.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon SageMaker Training Plan is a capability within SageMaker that allows customers
+        /// to reserve and manage GPU capacity for large-scale AI model training. It provides
+        /// a way to secure predictable access to computational resources within specific timelines
+        /// and budgets, without the need to manage underlying infrastructure. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>How it works</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Plans can be created for specific resources such as SageMaker Training Jobs or SageMaker
+        /// HyperPod clusters, automatically provisioning resources, setting up infrastructure,
+        /// executing workloads, and handling infrastructure failures.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Plan creation workflow</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Users search for available plan offerings based on their requirements (e.g., instance
+        /// type, count, start time, duration) using the <c> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SearchTrainingPlanOfferings.html">SearchTrainingPlanOfferings</a>
+        /// </c> API operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// They create a plan that best matches their needs using the ID of the plan offering
+        /// they want to use. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// After successful upfront payment, the plan's status becomes <c>Scheduled</c>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The plan can be used to:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Queue training jobs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Allocate to an instance group of a SageMaker HyperPod cluster. 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// When the plan start date arrives, it becomes <c>Active</c>. Based on available reserved
+        /// capacity:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Training jobs are launched.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Instance groups are provisioned.
+        /// </para>
+        ///  </li> </ul> </li> </ul> 
+        /// <para>
+        ///  <b>Plan composition</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// A plan can consist of one or more Reserved Capacities, each defined by a specific
+        /// instance type, quantity, Availability Zone, duration, and start and end times. For
+        /// more information about Reserved Capacity, see <c> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ReservedCapacitySummary.html">ReservedCapacitySummary</a>
+        /// </c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrainingPlan service method.</param>
+        /// 
+        /// <returns>The response from the CreateTrainingPlan service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrainingPlan">REST API Reference for CreateTrainingPlan Operation</seealso>
+        public virtual CreateTrainingPlanResponse CreateTrainingPlan(CreateTrainingPlanRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTrainingPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTrainingPlanResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTrainingPlanResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTrainingPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrainingPlan operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTrainingPlan
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrainingPlan">REST API Reference for CreateTrainingPlan Operation</seealso>
+        public virtual IAsyncResult BeginCreateTrainingPlan(CreateTrainingPlanRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateTrainingPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTrainingPlanResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTrainingPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTrainingPlan.</param>
+        /// 
+        /// <returns>Returns a  CreateTrainingPlanResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrainingPlan">REST API Reference for CreateTrainingPlan Operation</seealso>
+        public virtual CreateTrainingPlanResponse EndCreateTrainingPlan(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateTrainingPlanResponse>(asyncResult);
         }
 
         #endregion
@@ -5588,6 +5972,63 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DeleteClusterSchedulerConfig
+
+        /// <summary>
+        /// Deletes the cluster policy of the cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteClusterSchedulerConfig service method.</param>
+        /// 
+        /// <returns>The response from the DeleteClusterSchedulerConfig service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteClusterSchedulerConfig">REST API Reference for DeleteClusterSchedulerConfig Operation</seealso>
+        public virtual DeleteClusterSchedulerConfigResponse DeleteClusterSchedulerConfig(DeleteClusterSchedulerConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteClusterSchedulerConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteClusterSchedulerConfigResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteClusterSchedulerConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteClusterSchedulerConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteClusterSchedulerConfig operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteClusterSchedulerConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteClusterSchedulerConfig">REST API Reference for DeleteClusterSchedulerConfig Operation</seealso>
+        public virtual IAsyncResult BeginDeleteClusterSchedulerConfig(DeleteClusterSchedulerConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteClusterSchedulerConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteClusterSchedulerConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteClusterSchedulerConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteClusterSchedulerConfig.</param>
+        /// 
+        /// <returns>Returns a  DeleteClusterSchedulerConfigResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteClusterSchedulerConfig">REST API Reference for DeleteClusterSchedulerConfig Operation</seealso>
+        public virtual DeleteClusterSchedulerConfigResponse EndDeleteClusterSchedulerConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteClusterSchedulerConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteCodeRepository
 
         /// <summary>
@@ -5705,6 +6146,63 @@ namespace Amazon.SageMaker
         public virtual DeleteCompilationJobResponse EndDeleteCompilationJob(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteCompilationJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteComputeQuota
+
+        /// <summary>
+        /// Deletes the compute allocation from the cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteComputeQuota service method.</param>
+        /// 
+        /// <returns>The response from the DeleteComputeQuota service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteComputeQuota">REST API Reference for DeleteComputeQuota Operation</seealso>
+        public virtual DeleteComputeQuotaResponse DeleteComputeQuota(DeleteComputeQuotaRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteComputeQuotaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteComputeQuotaResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteComputeQuotaResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteComputeQuota operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteComputeQuota operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteComputeQuota
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteComputeQuota">REST API Reference for DeleteComputeQuota Operation</seealso>
+        public virtual IAsyncResult BeginDeleteComputeQuota(DeleteComputeQuotaRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteComputeQuotaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteComputeQuotaResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteComputeQuota operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteComputeQuota.</param>
+        /// 
+        /// <returns>Returns a  DeleteComputeQuotaResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteComputeQuota">REST API Reference for DeleteComputeQuota Operation</seealso>
+        public virtual DeleteComputeQuotaResponse EndDeleteComputeQuota(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteComputeQuotaResponse>(asyncResult);
         }
 
         #endregion
@@ -7681,6 +8179,67 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DeletePartnerApp
+
+        /// <summary>
+        /// Deletes a SageMaker Partner AI App.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePartnerApp service method.</param>
+        /// 
+        /// <returns>The response from the DeletePartnerApp service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeletePartnerApp">REST API Reference for DeletePartnerApp Operation</seealso>
+        public virtual DeletePartnerAppResponse DeletePartnerApp(DeletePartnerAppRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePartnerAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePartnerAppResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePartnerAppResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePartnerApp operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePartnerApp operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePartnerApp
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeletePartnerApp">REST API Reference for DeletePartnerApp Operation</seealso>
+        public virtual IAsyncResult BeginDeletePartnerApp(DeletePartnerAppRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePartnerAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePartnerAppResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePartnerApp operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePartnerApp.</param>
+        /// 
+        /// <returns>Returns a  DeletePartnerAppResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeletePartnerApp">REST API Reference for DeletePartnerApp Operation</seealso>
+        public virtual DeletePartnerAppResponse EndDeletePartnerApp(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeletePartnerAppResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeletePipeline
 
         /// <summary>
@@ -8879,6 +9438,65 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeClusterSchedulerConfig
+
+        /// <summary>
+        /// Description of the cluster policy. This policy is used for task prioritization and
+        /// fair-share allocation. This helps prioritize critical workloads and distributes idle
+        /// compute across entities.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusterSchedulerConfig service method.</param>
+        /// 
+        /// <returns>The response from the DescribeClusterSchedulerConfig service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeClusterSchedulerConfig">REST API Reference for DescribeClusterSchedulerConfig Operation</seealso>
+        public virtual DescribeClusterSchedulerConfigResponse DescribeClusterSchedulerConfig(DescribeClusterSchedulerConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterSchedulerConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterSchedulerConfigResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeClusterSchedulerConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeClusterSchedulerConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusterSchedulerConfig operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeClusterSchedulerConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeClusterSchedulerConfig">REST API Reference for DescribeClusterSchedulerConfig Operation</seealso>
+        public virtual IAsyncResult BeginDescribeClusterSchedulerConfig(DescribeClusterSchedulerConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeClusterSchedulerConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeClusterSchedulerConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeClusterSchedulerConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeClusterSchedulerConfig.</param>
+        /// 
+        /// <returns>Returns a  DescribeClusterSchedulerConfigResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeClusterSchedulerConfig">REST API Reference for DescribeClusterSchedulerConfig Operation</seealso>
+        public virtual DescribeClusterSchedulerConfigResponse EndDescribeClusterSchedulerConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeClusterSchedulerConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeCodeRepository
 
         /// <summary>
@@ -8992,6 +9610,63 @@ namespace Amazon.SageMaker
         public virtual DescribeCompilationJobResponse EndDescribeCompilationJob(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeCompilationJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeComputeQuota
+
+        /// <summary>
+        /// Description of the compute allocation definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeComputeQuota service method.</param>
+        /// 
+        /// <returns>The response from the DescribeComputeQuota service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeComputeQuota">REST API Reference for DescribeComputeQuota Operation</seealso>
+        public virtual DescribeComputeQuotaResponse DescribeComputeQuota(DescribeComputeQuotaRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeComputeQuotaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeComputeQuotaResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeComputeQuotaResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeComputeQuota operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeComputeQuota operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeComputeQuota
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeComputeQuota">REST API Reference for DescribeComputeQuota Operation</seealso>
+        public virtual IAsyncResult BeginDescribeComputeQuota(DescribeComputeQuotaRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeComputeQuotaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeComputeQuotaResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeComputeQuota operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeComputeQuota.</param>
+        /// 
+        /// <returns>Returns a  DescribeComputeQuotaResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeComputeQuota">REST API Reference for DescribeComputeQuota Operation</seealso>
+        public virtual DescribeComputeQuotaResponse EndDescribeComputeQuota(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeComputeQuotaResponse>(asyncResult);
         }
 
         #endregion
@@ -11109,6 +11784,63 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribePartnerApp
+
+        /// <summary>
+        /// Gets information about a SageMaker Partner AI App.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePartnerApp service method.</param>
+        /// 
+        /// <returns>The response from the DescribePartnerApp service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribePartnerApp">REST API Reference for DescribePartnerApp Operation</seealso>
+        public virtual DescribePartnerAppResponse DescribePartnerApp(DescribePartnerAppRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePartnerAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePartnerAppResponseUnmarshaller.Instance;
+
+            return Invoke<DescribePartnerAppResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePartnerApp operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePartnerApp operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribePartnerApp
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribePartnerApp">REST API Reference for DescribePartnerApp Operation</seealso>
+        public virtual IAsyncResult BeginDescribePartnerApp(DescribePartnerAppRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePartnerAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePartnerAppResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribePartnerApp operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribePartnerApp.</param>
+        /// 
+        /// <returns>Returns a  DescribePartnerAppResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribePartnerApp">REST API Reference for DescribePartnerApp Operation</seealso>
+        public virtual DescribePartnerAppResponse EndDescribePartnerApp(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribePartnerAppResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribePipeline
 
         /// <summary>
@@ -11622,6 +12354,63 @@ namespace Amazon.SageMaker
         public virtual DescribeTrainingJobResponse EndDescribeTrainingJob(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeTrainingJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeTrainingPlan
+
+        /// <summary>
+        /// Retrieves detailed information about a specific training plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrainingPlan service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTrainingPlan service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTrainingPlan">REST API Reference for DescribeTrainingPlan Operation</seealso>
+        public virtual DescribeTrainingPlanResponse DescribeTrainingPlan(DescribeTrainingPlanRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTrainingPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTrainingPlanResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTrainingPlanResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTrainingPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrainingPlan operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTrainingPlan
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTrainingPlan">REST API Reference for DescribeTrainingPlan Operation</seealso>
+        public virtual IAsyncResult BeginDescribeTrainingPlan(DescribeTrainingPlanRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeTrainingPlanRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTrainingPlanResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeTrainingPlan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTrainingPlan.</param>
+        /// 
+        /// <returns>Returns a  DescribeTrainingPlanResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTrainingPlan">REST API Reference for DescribeTrainingPlan Operation</seealso>
+        public virtual DescribeTrainingPlanResponse EndDescribeTrainingPlan(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeTrainingPlanResponse>(asyncResult);
         }
 
         #endregion
@@ -13171,6 +13960,60 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListClusterSchedulerConfigs
+
+        /// <summary>
+        /// List the cluster policy configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListClusterSchedulerConfigs service method.</param>
+        /// 
+        /// <returns>The response from the ListClusterSchedulerConfigs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListClusterSchedulerConfigs">REST API Reference for ListClusterSchedulerConfigs Operation</seealso>
+        public virtual ListClusterSchedulerConfigsResponse ListClusterSchedulerConfigs(ListClusterSchedulerConfigsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListClusterSchedulerConfigsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListClusterSchedulerConfigsResponseUnmarshaller.Instance;
+
+            return Invoke<ListClusterSchedulerConfigsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListClusterSchedulerConfigs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListClusterSchedulerConfigs operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListClusterSchedulerConfigs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListClusterSchedulerConfigs">REST API Reference for ListClusterSchedulerConfigs Operation</seealso>
+        public virtual IAsyncResult BeginListClusterSchedulerConfigs(ListClusterSchedulerConfigsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListClusterSchedulerConfigsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListClusterSchedulerConfigsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListClusterSchedulerConfigs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListClusterSchedulerConfigs.</param>
+        /// 
+        /// <returns>Returns a  ListClusterSchedulerConfigsResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListClusterSchedulerConfigs">REST API Reference for ListClusterSchedulerConfigs Operation</seealso>
+        public virtual ListClusterSchedulerConfigsResponse EndListClusterSchedulerConfigs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListClusterSchedulerConfigsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListCodeRepositories
 
         /// <summary>
@@ -13282,6 +14125,60 @@ namespace Amazon.SageMaker
         public virtual ListCompilationJobsResponse EndListCompilationJobs(IAsyncResult asyncResult)
         {
             return EndInvoke<ListCompilationJobsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListComputeQuotas
+
+        /// <summary>
+        /// List the resource allocation definitions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListComputeQuotas service method.</param>
+        /// 
+        /// <returns>The response from the ListComputeQuotas service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListComputeQuotas">REST API Reference for ListComputeQuotas Operation</seealso>
+        public virtual ListComputeQuotasResponse ListComputeQuotas(ListComputeQuotasRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListComputeQuotasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListComputeQuotasResponseUnmarshaller.Instance;
+
+            return Invoke<ListComputeQuotasResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListComputeQuotas operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListComputeQuotas operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListComputeQuotas
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListComputeQuotas">REST API Reference for ListComputeQuotas Operation</seealso>
+        public virtual IAsyncResult BeginListComputeQuotas(ListComputeQuotasRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListComputeQuotasRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListComputeQuotasResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListComputeQuotas operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListComputeQuotas.</param>
+        /// 
+        /// <returns>Returns a  ListComputeQuotasResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListComputeQuotas">REST API Reference for ListComputeQuotas Operation</seealso>
+        public virtual ListComputeQuotasResponse EndListComputeQuotas(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListComputeQuotasResponse>(asyncResult);
         }
 
         #endregion
@@ -15705,6 +16602,60 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListPartnerApps
+
+        /// <summary>
+        /// Lists all of the SageMaker Partner AI Apps in an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPartnerApps service method.</param>
+        /// 
+        /// <returns>The response from the ListPartnerApps service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListPartnerApps">REST API Reference for ListPartnerApps Operation</seealso>
+        public virtual ListPartnerAppsResponse ListPartnerApps(ListPartnerAppsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPartnerAppsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPartnerAppsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPartnerAppsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPartnerApps operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPartnerApps operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPartnerApps
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListPartnerApps">REST API Reference for ListPartnerApps Operation</seealso>
+        public virtual IAsyncResult BeginListPartnerApps(ListPartnerAppsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPartnerAppsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPartnerAppsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPartnerApps operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPartnerApps.</param>
+        /// 
+        /// <returns>Returns a  ListPartnerAppsResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListPartnerApps">REST API Reference for ListPartnerApps Operation</seealso>
+        public virtual ListPartnerAppsResponse EndListPartnerApps(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListPartnerAppsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListPipelineExecutions
 
         /// <summary>
@@ -16514,6 +17465,60 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListTrainingPlans
+
+        /// <summary>
+        /// Retrieves a list of training plans for the current account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTrainingPlans service method.</param>
+        /// 
+        /// <returns>The response from the ListTrainingPlans service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrainingPlans">REST API Reference for ListTrainingPlans Operation</seealso>
+        public virtual ListTrainingPlansResponse ListTrainingPlans(ListTrainingPlansRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTrainingPlansRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTrainingPlansResponseUnmarshaller.Instance;
+
+            return Invoke<ListTrainingPlansResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTrainingPlans operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTrainingPlans operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTrainingPlans
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrainingPlans">REST API Reference for ListTrainingPlans Operation</seealso>
+        public virtual IAsyncResult BeginListTrainingPlans(ListTrainingPlansRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTrainingPlansRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTrainingPlansResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTrainingPlans operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTrainingPlans.</param>
+        /// 
+        /// <returns>Returns a  ListTrainingPlansResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrainingPlans">REST API Reference for ListTrainingPlans Operation</seealso>
+        public virtual ListTrainingPlansResponse EndListTrainingPlans(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTrainingPlansResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListTransformJobs
 
         /// <summary>
@@ -17232,6 +18237,82 @@ namespace Amazon.SageMaker
         public virtual SearchResponse EndSearch(IAsyncResult asyncResult)
         {
             return EndInvoke<SearchResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  SearchTrainingPlanOfferings
+
+        /// <summary>
+        /// Searches for available training plan offerings based on specified criteria. 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Users search for available plan offerings based on their requirements (e.g., instance
+        /// type, count, start time, duration). 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// And then, they create a plan that best matches their needs using the ID of the plan
+        /// offering they want to use. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about how to reserve GPU capacity for your SageMaker training
+        /// jobs or SageMaker HyperPod clusters using Amazon SageMaker Training Plan , see <c>
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a>
+        /// </c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchTrainingPlanOfferings service method.</param>
+        /// 
+        /// <returns>The response from the SearchTrainingPlanOfferings service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SearchTrainingPlanOfferings">REST API Reference for SearchTrainingPlanOfferings Operation</seealso>
+        public virtual SearchTrainingPlanOfferingsResponse SearchTrainingPlanOfferings(SearchTrainingPlanOfferingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchTrainingPlanOfferingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchTrainingPlanOfferingsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchTrainingPlanOfferingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchTrainingPlanOfferings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchTrainingPlanOfferings operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchTrainingPlanOfferings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SearchTrainingPlanOfferings">REST API Reference for SearchTrainingPlanOfferings Operation</seealso>
+        public virtual IAsyncResult BeginSearchTrainingPlanOfferings(SearchTrainingPlanOfferingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchTrainingPlanOfferingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchTrainingPlanOfferingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchTrainingPlanOfferings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchTrainingPlanOfferings.</param>
+        /// 
+        /// <returns>Returns a  SearchTrainingPlanOfferingsResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SearchTrainingPlanOfferings">REST API Reference for SearchTrainingPlanOfferings Operation</seealso>
+        public virtual SearchTrainingPlanOfferingsResponse EndSearchTrainingPlanOfferings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SearchTrainingPlanOfferingsResponse>(asyncResult);
         }
 
         #endregion
@@ -18980,6 +20061,71 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  UpdateClusterSchedulerConfig
+
+        /// <summary>
+        /// Update the cluster policy configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateClusterSchedulerConfig service method.</param>
+        /// 
+        /// <returns>The response from the UpdateClusterSchedulerConfig service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateClusterSchedulerConfig">REST API Reference for UpdateClusterSchedulerConfig Operation</seealso>
+        public virtual UpdateClusterSchedulerConfigResponse UpdateClusterSchedulerConfig(UpdateClusterSchedulerConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateClusterSchedulerConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateClusterSchedulerConfigResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateClusterSchedulerConfigResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateClusterSchedulerConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateClusterSchedulerConfig operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateClusterSchedulerConfig
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateClusterSchedulerConfig">REST API Reference for UpdateClusterSchedulerConfig Operation</seealso>
+        public virtual IAsyncResult BeginUpdateClusterSchedulerConfig(UpdateClusterSchedulerConfigRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateClusterSchedulerConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateClusterSchedulerConfigResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateClusterSchedulerConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateClusterSchedulerConfig.</param>
+        /// 
+        /// <returns>Returns a  UpdateClusterSchedulerConfigResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateClusterSchedulerConfig">REST API Reference for UpdateClusterSchedulerConfig Operation</seealso>
+        public virtual UpdateClusterSchedulerConfigResponse EndUpdateClusterSchedulerConfig(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateClusterSchedulerConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateClusterSoftware
 
         /// <summary>
@@ -19105,6 +20251,71 @@ namespace Amazon.SageMaker
         public virtual UpdateCodeRepositoryResponse EndUpdateCodeRepository(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateCodeRepositoryResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateComputeQuota
+
+        /// <summary>
+        /// Update the compute allocation definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateComputeQuota service method.</param>
+        /// 
+        /// <returns>The response from the UpdateComputeQuota service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateComputeQuota">REST API Reference for UpdateComputeQuota Operation</seealso>
+        public virtual UpdateComputeQuotaResponse UpdateComputeQuota(UpdateComputeQuotaRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateComputeQuotaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateComputeQuotaResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateComputeQuotaResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateComputeQuota operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateComputeQuota operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateComputeQuota
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateComputeQuota">REST API Reference for UpdateComputeQuota Operation</seealso>
+        public virtual IAsyncResult BeginUpdateComputeQuota(UpdateComputeQuotaRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateComputeQuotaRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateComputeQuotaResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateComputeQuota operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateComputeQuota.</param>
+        /// 
+        /// <returns>Returns a  UpdateComputeQuotaResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateComputeQuota">REST API Reference for UpdateComputeQuota Operation</seealso>
+        public virtual UpdateComputeQuotaResponse EndUpdateComputeQuota(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateComputeQuotaResponse>(asyncResult);
         }
 
         #endregion
@@ -20480,6 +21691,67 @@ namespace Amazon.SageMaker
         public virtual UpdateNotebookInstanceLifecycleConfigResponse EndUpdateNotebookInstanceLifecycleConfig(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateNotebookInstanceLifecycleConfigResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdatePartnerApp
+
+        /// <summary>
+        /// Updates all of the SageMaker Partner AI Apps in an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePartnerApp service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePartnerApp service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdatePartnerApp">REST API Reference for UpdatePartnerApp Operation</seealso>
+        public virtual UpdatePartnerAppResponse UpdatePartnerApp(UpdatePartnerAppRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePartnerAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePartnerAppResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePartnerAppResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdatePartnerApp operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePartnerApp operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdatePartnerApp
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdatePartnerApp">REST API Reference for UpdatePartnerApp Operation</seealso>
+        public virtual IAsyncResult BeginUpdatePartnerApp(UpdatePartnerAppRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePartnerAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePartnerAppResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdatePartnerApp operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdatePartnerApp.</param>
+        /// 
+        /// <returns>Returns a  UpdatePartnerAppResult from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdatePartnerApp">REST API Reference for UpdatePartnerApp Operation</seealso>
+        public virtual UpdatePartnerAppResponse EndUpdatePartnerApp(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdatePartnerAppResponse>(asyncResult);
         }
 
         #endregion

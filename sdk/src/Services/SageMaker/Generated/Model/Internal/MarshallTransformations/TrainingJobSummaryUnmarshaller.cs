@@ -108,6 +108,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.TrainingJobStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TrainingPlanArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TrainingPlanArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("WarmPoolStatus", targetDepth))
                 {
                     var unmarshaller = WarmPoolStatusUnmarshaller.Instance;

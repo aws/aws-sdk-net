@@ -875,6 +875,54 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  CreateClusterSchedulerConfig
+
+
+        /// <summary>
+        /// Create cluster policy configuration. This policy is used for task prioritization and
+        /// fair-share allocation of idle compute. This helps prioritize critical workloads and
+        /// distributes idle compute across entities.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateClusterSchedulerConfig service method.</param>
+        /// 
+        /// <returns>The response from the CreateClusterSchedulerConfig service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateClusterSchedulerConfig">REST API Reference for CreateClusterSchedulerConfig Operation</seealso>
+        CreateClusterSchedulerConfigResponse CreateClusterSchedulerConfig(CreateClusterSchedulerConfigRequest request);
+
+
+
+        /// <summary>
+        /// Create cluster policy configuration. This policy is used for task prioritization and
+        /// fair-share allocation of idle compute. This helps prioritize critical workloads and
+        /// distributes idle compute across entities.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateClusterSchedulerConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateClusterSchedulerConfig service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateClusterSchedulerConfig">REST API Reference for CreateClusterSchedulerConfig Operation</seealso>
+        Task<CreateClusterSchedulerConfigResponse> CreateClusterSchedulerConfigAsync(CreateClusterSchedulerConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateCodeRepository
 
 
@@ -1048,6 +1096,54 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateCompilationJob">REST API Reference for CreateCompilationJob Operation</seealso>
         Task<CreateCompilationJobResponse> CreateCompilationJobAsync(CreateCompilationJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateComputeQuota
+
+
+        /// <summary>
+        /// Create compute allocation definition. This defines how compute is allocated, shared,
+        /// and borrowed for specified entities. Specifically, how to lend and borrow idle compute
+        /// and assign a fair-share weight to the specified entities.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateComputeQuota service method.</param>
+        /// 
+        /// <returns>The response from the CreateComputeQuota service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateComputeQuota">REST API Reference for CreateComputeQuota Operation</seealso>
+        CreateComputeQuotaResponse CreateComputeQuota(CreateComputeQuotaRequest request);
+
+
+
+        /// <summary>
+        /// Create compute allocation definition. This defines how compute is allocated, shared,
+        /// and borrowed for specified entities. Specifically, how to lend and borrow idle compute
+        /// and assign a fair-share weight to the specified entities.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateComputeQuota service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateComputeQuota service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateComputeQuota">REST API Reference for CreateComputeQuota Operation</seealso>
+        Task<CreateComputeQuotaResponse> CreateComputeQuotaAsync(CreateComputeQuotaRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3543,6 +3639,84 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  CreatePartnerApp
+
+
+        /// <summary>
+        /// Creates an Amazon SageMaker Partner AI App.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePartnerApp service method.</param>
+        /// 
+        /// <returns>The response from the CreatePartnerApp service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePartnerApp">REST API Reference for CreatePartnerApp Operation</seealso>
+        CreatePartnerAppResponse CreatePartnerApp(CreatePartnerAppRequest request);
+
+
+
+        /// <summary>
+        /// Creates an Amazon SageMaker Partner AI App.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePartnerApp service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePartnerApp service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePartnerApp">REST API Reference for CreatePartnerApp Operation</seealso>
+        Task<CreatePartnerAppResponse> CreatePartnerAppAsync(CreatePartnerAppRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreatePartnerAppPresignedUrl
+
+
+        /// <summary>
+        /// Creates a presigned URL to access an Amazon SageMaker Partner AI App.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePartnerAppPresignedUrl service method.</param>
+        /// 
+        /// <returns>The response from the CreatePartnerAppPresignedUrl service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePartnerAppPresignedUrl">REST API Reference for CreatePartnerAppPresignedUrl Operation</seealso>
+        CreatePartnerAppPresignedUrlResponse CreatePartnerAppPresignedUrl(CreatePartnerAppPresignedUrlRequest request);
+
+
+
+        /// <summary>
+        /// Creates a presigned URL to access an Amazon SageMaker Partner AI App.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePartnerAppPresignedUrl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePartnerAppPresignedUrl service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePartnerAppPresignedUrl">REST API Reference for CreatePartnerAppPresignedUrl Operation</seealso>
+        Task<CreatePartnerAppPresignedUrlResponse> CreatePartnerAppPresignedUrlAsync(CreatePartnerAppPresignedUrlRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreatePipeline
 
 
@@ -4178,6 +4352,200 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrainingJob">REST API Reference for CreateTrainingJob Operation</seealso>
         Task<CreateTrainingJobResponse> CreateTrainingJobAsync(CreateTrainingJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateTrainingPlan
+
+
+        /// <summary>
+        /// Creates a new training plan in SageMaker to reserve compute capacity.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon SageMaker Training Plan is a capability within SageMaker that allows customers
+        /// to reserve and manage GPU capacity for large-scale AI model training. It provides
+        /// a way to secure predictable access to computational resources within specific timelines
+        /// and budgets, without the need to manage underlying infrastructure. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>How it works</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Plans can be created for specific resources such as SageMaker Training Jobs or SageMaker
+        /// HyperPod clusters, automatically provisioning resources, setting up infrastructure,
+        /// executing workloads, and handling infrastructure failures.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Plan creation workflow</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Users search for available plan offerings based on their requirements (e.g., instance
+        /// type, count, start time, duration) using the <c> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SearchTrainingPlanOfferings.html">SearchTrainingPlanOfferings</a>
+        /// </c> API operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// They create a plan that best matches their needs using the ID of the plan offering
+        /// they want to use. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// After successful upfront payment, the plan's status becomes <c>Scheduled</c>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The plan can be used to:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Queue training jobs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Allocate to an instance group of a SageMaker HyperPod cluster. 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// When the plan start date arrives, it becomes <c>Active</c>. Based on available reserved
+        /// capacity:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Training jobs are launched.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Instance groups are provisioned.
+        /// </para>
+        ///  </li> </ul> </li> </ul> 
+        /// <para>
+        ///  <b>Plan composition</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// A plan can consist of one or more Reserved Capacities, each defined by a specific
+        /// instance type, quantity, Availability Zone, duration, and start and end times. For
+        /// more information about Reserved Capacity, see <c> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ReservedCapacitySummary.html">ReservedCapacitySummary</a>
+        /// </c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrainingPlan service method.</param>
+        /// 
+        /// <returns>The response from the CreateTrainingPlan service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrainingPlan">REST API Reference for CreateTrainingPlan Operation</seealso>
+        CreateTrainingPlanResponse CreateTrainingPlan(CreateTrainingPlanRequest request);
+
+
+
+        /// <summary>
+        /// Creates a new training plan in SageMaker to reserve compute capacity.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon SageMaker Training Plan is a capability within SageMaker that allows customers
+        /// to reserve and manage GPU capacity for large-scale AI model training. It provides
+        /// a way to secure predictable access to computational resources within specific timelines
+        /// and budgets, without the need to manage underlying infrastructure. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>How it works</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Plans can be created for specific resources such as SageMaker Training Jobs or SageMaker
+        /// HyperPod clusters, automatically provisioning resources, setting up infrastructure,
+        /// executing workloads, and handling infrastructure failures.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Plan creation workflow</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Users search for available plan offerings based on their requirements (e.g., instance
+        /// type, count, start time, duration) using the <c> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SearchTrainingPlanOfferings.html">SearchTrainingPlanOfferings</a>
+        /// </c> API operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// They create a plan that best matches their needs using the ID of the plan offering
+        /// they want to use. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// After successful upfront payment, the plan's status becomes <c>Scheduled</c>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The plan can be used to:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Queue training jobs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Allocate to an instance group of a SageMaker HyperPod cluster. 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// When the plan start date arrives, it becomes <c>Active</c>. Based on available reserved
+        /// capacity:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Training jobs are launched.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Instance groups are provisioned.
+        /// </para>
+        ///  </li> </ul> </li> </ul> 
+        /// <para>
+        ///  <b>Plan composition</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// A plan can consist of one or more Reserved Capacities, each defined by a specific
+        /// instance type, quantity, Availability Zone, duration, and start and end times. For
+        /// more information about Reserved Capacity, see <c> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ReservedCapacitySummary.html">ReservedCapacitySummary</a>
+        /// </c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTrainingPlan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTrainingPlan service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrainingPlan">REST API Reference for CreateTrainingPlan Operation</seealso>
+        Task<CreateTrainingPlanResponse> CreateTrainingPlanAsync(CreateTrainingPlanRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -4915,6 +5283,40 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DeleteClusterSchedulerConfig
+
+
+        /// <summary>
+        /// Deletes the cluster policy of the cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteClusterSchedulerConfig service method.</param>
+        /// 
+        /// <returns>The response from the DeleteClusterSchedulerConfig service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteClusterSchedulerConfig">REST API Reference for DeleteClusterSchedulerConfig Operation</seealso>
+        DeleteClusterSchedulerConfigResponse DeleteClusterSchedulerConfig(DeleteClusterSchedulerConfigRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the cluster policy of the cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteClusterSchedulerConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteClusterSchedulerConfig service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteClusterSchedulerConfig">REST API Reference for DeleteClusterSchedulerConfig Operation</seealso>
+        Task<DeleteClusterSchedulerConfigResponse> DeleteClusterSchedulerConfigAsync(DeleteClusterSchedulerConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteCodeRepository
 
 
@@ -4994,6 +5396,40 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteCompilationJob">REST API Reference for DeleteCompilationJob Operation</seealso>
         Task<DeleteCompilationJobResponse> DeleteCompilationJobAsync(DeleteCompilationJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteComputeQuota
+
+
+        /// <summary>
+        /// Deletes the compute allocation from the cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteComputeQuota service method.</param>
+        /// 
+        /// <returns>The response from the DeleteComputeQuota service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteComputeQuota">REST API Reference for DeleteComputeQuota Operation</seealso>
+        DeleteComputeQuotaResponse DeleteComputeQuota(DeleteComputeQuotaRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the compute allocation from the cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteComputeQuota service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteComputeQuota service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteComputeQuota">REST API Reference for DeleteComputeQuota Operation</seealso>
+        Task<DeleteComputeQuotaResponse> DeleteComputeQuotaAsync(DeleteComputeQuotaRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -6301,6 +6737,48 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DeletePartnerApp
+
+
+        /// <summary>
+        /// Deletes a SageMaker Partner AI App.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePartnerApp service method.</param>
+        /// 
+        /// <returns>The response from the DeletePartnerApp service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeletePartnerApp">REST API Reference for DeletePartnerApp Operation</seealso>
+        DeletePartnerAppResponse DeletePartnerApp(DeletePartnerAppRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a SageMaker Partner AI App.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePartnerApp service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePartnerApp service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeletePartnerApp">REST API Reference for DeletePartnerApp Operation</seealso>
+        Task<DeletePartnerAppResponse> DeletePartnerAppAsync(DeletePartnerAppRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeletePipeline
 
 
@@ -7097,6 +7575,44 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeClusterSchedulerConfig
+
+
+        /// <summary>
+        /// Description of the cluster policy. This policy is used for task prioritization and
+        /// fair-share allocation. This helps prioritize critical workloads and distributes idle
+        /// compute across entities.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusterSchedulerConfig service method.</param>
+        /// 
+        /// <returns>The response from the DescribeClusterSchedulerConfig service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeClusterSchedulerConfig">REST API Reference for DescribeClusterSchedulerConfig Operation</seealso>
+        DescribeClusterSchedulerConfigResponse DescribeClusterSchedulerConfig(DescribeClusterSchedulerConfigRequest request);
+
+
+
+        /// <summary>
+        /// Description of the cluster policy. This policy is used for task prioritization and
+        /// fair-share allocation. This helps prioritize critical workloads and distributes idle
+        /// compute across entities.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClusterSchedulerConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeClusterSchedulerConfig service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeClusterSchedulerConfig">REST API Reference for DescribeClusterSchedulerConfig Operation</seealso>
+        Task<DescribeClusterSchedulerConfigResponse> DescribeClusterSchedulerConfigAsync(DescribeClusterSchedulerConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeCodeRepository
 
 
@@ -7168,6 +7684,40 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeCompilationJob">REST API Reference for DescribeCompilationJob Operation</seealso>
         Task<DescribeCompilationJobResponse> DescribeCompilationJobAsync(DescribeCompilationJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeComputeQuota
+
+
+        /// <summary>
+        /// Description of the compute allocation definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeComputeQuota service method.</param>
+        /// 
+        /// <returns>The response from the DescribeComputeQuota service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeComputeQuota">REST API Reference for DescribeComputeQuota Operation</seealso>
+        DescribeComputeQuotaResponse DescribeComputeQuota(DescribeComputeQuotaRequest request);
+
+
+
+        /// <summary>
+        /// Description of the compute allocation definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeComputeQuota service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeComputeQuota service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeComputeQuota">REST API Reference for DescribeComputeQuota Operation</seealso>
+        Task<DescribeComputeQuotaResponse> DescribeComputeQuotaAsync(DescribeComputeQuotaRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -8437,6 +8987,40 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribePartnerApp
+
+
+        /// <summary>
+        /// Gets information about a SageMaker Partner AI App.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePartnerApp service method.</param>
+        /// 
+        /// <returns>The response from the DescribePartnerApp service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribePartnerApp">REST API Reference for DescribePartnerApp Operation</seealso>
+        DescribePartnerAppResponse DescribePartnerApp(DescribePartnerAppRequest request);
+
+
+
+        /// <summary>
+        /// Gets information about a SageMaker Partner AI App.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePartnerApp service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribePartnerApp service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribePartnerApp">REST API Reference for DescribePartnerApp Operation</seealso>
+        Task<DescribePartnerAppResponse> DescribePartnerAppAsync(DescribePartnerAppRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribePipeline
 
 
@@ -8748,6 +9332,40 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTrainingJob">REST API Reference for DescribeTrainingJob Operation</seealso>
         Task<DescribeTrainingJobResponse> DescribeTrainingJobAsync(DescribeTrainingJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeTrainingPlan
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific training plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrainingPlan service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTrainingPlan service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTrainingPlan">REST API Reference for DescribeTrainingPlan Operation</seealso>
+        DescribeTrainingPlanResponse DescribeTrainingPlan(DescribeTrainingPlanRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific training plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTrainingPlan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTrainingPlan service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTrainingPlan">REST API Reference for DescribeTrainingPlan Operation</seealso>
+        Task<DescribeTrainingPlanResponse> DescribeTrainingPlanAsync(DescribeTrainingPlanRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -9681,6 +10299,34 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListClusterSchedulerConfigs
+
+
+        /// <summary>
+        /// List the cluster policy configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListClusterSchedulerConfigs service method.</param>
+        /// 
+        /// <returns>The response from the ListClusterSchedulerConfigs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListClusterSchedulerConfigs">REST API Reference for ListClusterSchedulerConfigs Operation</seealso>
+        ListClusterSchedulerConfigsResponse ListClusterSchedulerConfigs(ListClusterSchedulerConfigsRequest request);
+
+
+
+        /// <summary>
+        /// List the cluster policy configurations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListClusterSchedulerConfigs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListClusterSchedulerConfigs service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListClusterSchedulerConfigs">REST API Reference for ListClusterSchedulerConfigs Operation</seealso>
+        Task<ListClusterSchedulerConfigsResponse> ListClusterSchedulerConfigsAsync(ListClusterSchedulerConfigsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListCodeRepositories
 
 
@@ -9748,6 +10394,34 @@ namespace Amazon.SageMaker
         /// <returns>The response from the ListCompilationJobs service method, as returned by SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListCompilationJobs">REST API Reference for ListCompilationJobs Operation</seealso>
         Task<ListCompilationJobsResponse> ListCompilationJobsAsync(ListCompilationJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListComputeQuotas
+
+
+        /// <summary>
+        /// List the resource allocation definitions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListComputeQuotas service method.</param>
+        /// 
+        /// <returns>The response from the ListComputeQuotas service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListComputeQuotas">REST API Reference for ListComputeQuotas Operation</seealso>
+        ListComputeQuotasResponse ListComputeQuotas(ListComputeQuotasRequest request);
+
+
+
+        /// <summary>
+        /// List the resource allocation definitions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListComputeQuotas service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListComputeQuotas service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListComputeQuotas">REST API Reference for ListComputeQuotas Operation</seealso>
+        Task<ListComputeQuotasResponse> ListComputeQuotasAsync(ListComputeQuotasRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -11069,6 +11743,34 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListPartnerApps
+
+
+        /// <summary>
+        /// Lists all of the SageMaker Partner AI Apps in an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPartnerApps service method.</param>
+        /// 
+        /// <returns>The response from the ListPartnerApps service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListPartnerApps">REST API Reference for ListPartnerApps Operation</seealso>
+        ListPartnerAppsResponse ListPartnerApps(ListPartnerAppsRequest request);
+
+
+
+        /// <summary>
+        /// Lists all of the SageMaker Partner AI Apps in an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPartnerApps service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPartnerApps service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListPartnerApps">REST API Reference for ListPartnerApps Operation</seealso>
+        Task<ListPartnerAppsResponse> ListPartnerAppsAsync(ListPartnerAppsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListPipelineExecutions
 
 
@@ -11567,6 +12269,34 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListTrainingPlans
+
+
+        /// <summary>
+        /// Retrieves a list of training plans for the current account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTrainingPlans service method.</param>
+        /// 
+        /// <returns>The response from the ListTrainingPlans service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrainingPlans">REST API Reference for ListTrainingPlans Operation</seealso>
+        ListTrainingPlansResponse ListTrainingPlans(ListTrainingPlansRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves a list of training plans for the current account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTrainingPlans service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTrainingPlans service method, as returned by SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrainingPlans">REST API Reference for ListTrainingPlans Operation</seealso>
+        Task<ListTrainingPlansResponse> ListTrainingPlansAsync(ListTrainingPlansRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListTransformJobs
 
 
@@ -12048,6 +12778,78 @@ namespace Amazon.SageMaker
         /// <returns>The response from the Search service method, as returned by SageMaker.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/Search">REST API Reference for Search Operation</seealso>
         Task<SearchResponse> SearchAsync(SearchRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  SearchTrainingPlanOfferings
+
+
+        /// <summary>
+        /// Searches for available training plan offerings based on specified criteria. 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Users search for available plan offerings based on their requirements (e.g., instance
+        /// type, count, start time, duration). 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// And then, they create a plan that best matches their needs using the ID of the plan
+        /// offering they want to use. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about how to reserve GPU capacity for your SageMaker training
+        /// jobs or SageMaker HyperPod clusters using Amazon SageMaker Training Plan , see <c>
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a>
+        /// </c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchTrainingPlanOfferings service method.</param>
+        /// 
+        /// <returns>The response from the SearchTrainingPlanOfferings service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SearchTrainingPlanOfferings">REST API Reference for SearchTrainingPlanOfferings Operation</seealso>
+        SearchTrainingPlanOfferingsResponse SearchTrainingPlanOfferings(SearchTrainingPlanOfferingsRequest request);
+
+
+
+        /// <summary>
+        /// Searches for available training plan offerings based on specified criteria. 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Users search for available plan offerings based on their requirements (e.g., instance
+        /// type, count, start time, duration). 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// And then, they create a plan that best matches their needs using the ID of the plan
+        /// offering they want to use. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about how to reserve GPU capacity for your SageMaker training
+        /// jobs or SageMaker HyperPod clusters using Amazon SageMaker Training Plan , see <c>
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html">CreateTrainingPlan</a>
+        /// </c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchTrainingPlanOfferings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchTrainingPlanOfferings service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SearchTrainingPlanOfferings">REST API Reference for SearchTrainingPlanOfferings Operation</seealso>
+        Task<SearchTrainingPlanOfferingsResponse> SearchTrainingPlanOfferingsAsync(SearchTrainingPlanOfferingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -13299,6 +14101,56 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  UpdateClusterSchedulerConfig
+
+
+        /// <summary>
+        /// Update the cluster policy configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateClusterSchedulerConfig service method.</param>
+        /// 
+        /// <returns>The response from the UpdateClusterSchedulerConfig service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateClusterSchedulerConfig">REST API Reference for UpdateClusterSchedulerConfig Operation</seealso>
+        UpdateClusterSchedulerConfigResponse UpdateClusterSchedulerConfig(UpdateClusterSchedulerConfigRequest request);
+
+
+
+        /// <summary>
+        /// Update the cluster policy configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateClusterSchedulerConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateClusterSchedulerConfig service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateClusterSchedulerConfig">REST API Reference for UpdateClusterSchedulerConfig Operation</seealso>
+        Task<UpdateClusterSchedulerConfigResponse> UpdateClusterSchedulerConfigAsync(UpdateClusterSchedulerConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateClusterSoftware
 
 
@@ -13394,6 +14246,56 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateCodeRepository">REST API Reference for UpdateCodeRepository Operation</seealso>
         Task<UpdateCodeRepositoryResponse> UpdateCodeRepositoryAsync(UpdateCodeRepositoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateComputeQuota
+
+
+        /// <summary>
+        /// Update the compute allocation definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateComputeQuota service method.</param>
+        /// 
+        /// <returns>The response from the UpdateComputeQuota service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateComputeQuota">REST API Reference for UpdateComputeQuota Operation</seealso>
+        UpdateComputeQuotaResponse UpdateComputeQuota(UpdateComputeQuotaRequest request);
+
+
+
+        /// <summary>
+        /// Update the compute allocation definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateComputeQuota service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateComputeQuota service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateComputeQuota">REST API Reference for UpdateComputeQuota Operation</seealso>
+        Task<UpdateComputeQuotaResponse> UpdateComputeQuotaAsync(UpdateComputeQuotaRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -14384,6 +15286,48 @@ namespace Amazon.SageMaker
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateNotebookInstanceLifecycleConfig">REST API Reference for UpdateNotebookInstanceLifecycleConfig Operation</seealso>
         Task<UpdateNotebookInstanceLifecycleConfigResponse> UpdateNotebookInstanceLifecycleConfigAsync(UpdateNotebookInstanceLifecycleConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdatePartnerApp
+
+
+        /// <summary>
+        /// Updates all of the SageMaker Partner AI Apps in an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePartnerApp service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePartnerApp service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdatePartnerApp">REST API Reference for UpdatePartnerApp Operation</seealso>
+        UpdatePartnerAppResponse UpdatePartnerApp(UpdatePartnerAppRequest request);
+
+
+
+        /// <summary>
+        /// Updates all of the SageMaker Partner AI Apps in an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePartnerApp service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePartnerApp service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ConflictException">
+        /// There was a conflict when you attempted to modify a SageMaker entity such as an <c>Experiment</c>
+        /// or <c>Artifact</c>.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdatePartnerApp">REST API Reference for UpdatePartnerApp Operation</seealso>
+        Task<UpdatePartnerAppResponse> UpdatePartnerAppAsync(UpdatePartnerAppRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

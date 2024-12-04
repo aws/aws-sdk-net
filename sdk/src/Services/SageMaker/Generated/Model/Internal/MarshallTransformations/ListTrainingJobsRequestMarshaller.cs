@@ -129,6 +129,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.StatusEquals);
                 }
 
+                if(publicRequest.IsSetTrainingPlanArnEquals())
+                {
+                    context.Writer.WritePropertyName("TrainingPlanArnEquals");
+                    context.Writer.Write(publicRequest.TrainingPlanArnEquals);
+                }
+
                 if(publicRequest.IsSetWarmPoolStatusEquals())
                 {
                     context.Writer.WritePropertyName("WarmPoolStatusEquals");

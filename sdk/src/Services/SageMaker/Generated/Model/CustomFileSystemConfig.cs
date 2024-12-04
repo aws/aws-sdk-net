@@ -37,6 +37,7 @@ namespace Amazon.SageMaker.Model
     public partial class CustomFileSystemConfig
     {
         private EFSFileSystemConfig _efsFileSystemConfig;
+        private FSxLustreFileSystemConfig _fSxLustreFileSystemConfig;
 
         /// <summary>
         /// Gets and sets the property EFSFileSystemConfig. 
@@ -54,6 +55,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetEFSFileSystemConfig()
         {
             return this._efsFileSystemConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FSxLustreFileSystemConfig. 
+        /// <para>
+        /// The settings for a custom Amazon FSx for Lustre file system.
+        /// </para>
+        /// </summary>
+        public FSxLustreFileSystemConfig FSxLustreFileSystemConfig
+        {
+            get { return this._fSxLustreFileSystemConfig; }
+            set { this._fSxLustreFileSystemConfig = value; }
+        }
+
+        // Check to see if FSxLustreFileSystemConfig property is set
+        internal bool IsSetFSxLustreFileSystemConfig()
+        {
+            return this._fSxLustreFileSystemConfig != null;
         }
 
     }
