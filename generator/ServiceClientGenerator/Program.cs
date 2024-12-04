@@ -65,7 +65,7 @@ namespace ServiceClientGenerator
                         {
                             generatedFiles.TryAdd(file, 0);
                         }
-                        var generatedTestFiles = GeneratorDriver.UpdateUnitTestProjects(generationManifest, options, driver.ServiceUnitTestFilesRoot, serviceConfig);
+                        var generatedTestFiles = GeneratorDriver.UpdateUnitTestProjects(generationManifest, options, driver.ServiceTestFilesRoot, serviceConfig);
                         foreach (var file in generatedTestFiles)
                         {
                             generatedUnitTestFiles.TryAdd(file, 0);

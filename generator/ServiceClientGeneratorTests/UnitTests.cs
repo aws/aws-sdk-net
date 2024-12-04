@@ -44,7 +44,7 @@ namespace ServiceClientGeneratorTests
         [InlineData("ListItems", "ParentItem.SubItem.ChildItem", "ChildItem")]
         public void TestHandleJmesPathWithServiceModel(string operationName, string jmesPathInput, string childName)
         {
-            var model = new ServiceModel(_modelsPath, null, _paginatorsPath);
+            var model = new ServiceModel(_modelsPath, null, _paginatorsPath, null);
 
             var operation = model.Operations.Single(x => x.Name.Equals(operationName));
             var shapes = operation.model.Shapes;

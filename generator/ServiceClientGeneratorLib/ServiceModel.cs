@@ -108,6 +108,11 @@ namespace ServiceClientGenerator
         internal JsonData PaginatorsRoot;
 
         /// <summary>
+        /// This is the smoke tests v2 as a json object
+        /// </summary>
+        internal JsonData SmokeTestsV2Root;
+
+        /// <summary>
         /// Used for unit testing, creates a service model from a TextReader so that the generation can be checked
         /// </summary>
         /// <param name="serviceModelReader">The reader to get the model information from</param>
@@ -137,7 +142,7 @@ namespace ServiceClientGenerator
         /// <param name="serviceModelPath">Path to the file containing the model of the service</param>
         /// <param name="customizationModelPath">Path to the customizations file for the service</param>
         /// /// <param name="servicePaginatorsPath">Path to the customizations file for the service</param>
-        public ServiceModel(string serviceModelPath, string customizationModelPath, string servicePaginatorsPath)
+        public ServiceModel(string serviceModelPath, string customizationModelPath, string servicePaginatorsPath, string smokeTestsV2Path)
         {
             using (var reader = new StreamReader(serviceModelPath))
             {
@@ -148,6 +153,12 @@ namespace ServiceClientGenerator
                 using (var reader = new StreamReader(servicePaginatorsPath))
                     InitializePaginators(reader);
             }
+            if (File.Exists(smokeTestsV2Path))
+            {
+                using (var reader = new StreamReader(smokeTestsV2Path))
+                    InitializSmokeTestsV2(reader);
+            }
+
             this._customizationModel = new CustomizationsModel(customizationModelPath);
         }
 
@@ -170,6 +181,11 @@ namespace ServiceClientGenerator
             this.PaginatorsRoot = JsonMapper.ToObject(reader);
         }
 
+        private void InitializSmokeTestsV2(TextReader reader)
+        {            
+            this.SmokeTestsV2Root = JsonMapper.ToObject(reader);
+        }
+
         /// <summary>
         /// Indicates that this service was converted from query to json 1.0
         /// and may be sending AWSQuery compatible error code data in header.
@@ -187,6 +203,11 @@ namespace ServiceClientGenerator
         /// for any operation
         /// </summary>
         public bool HasPaginators { get; private set; } = false;
+
+        /// <summary>
+        /// Whether or not this service has SmokeTests V2 defined.
+        /// </summary>
+        public bool HasSmokeTestsV2 => this.SmokeTestsV2Root != null;
 
         /// <summary>
         /// The customization model for the service

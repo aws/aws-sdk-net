@@ -11,7 +11,7 @@ namespace ServiceClientGeneratorTests
         private const string _modelsPath = "../../Content/TestModelComplexParameters.json";
         private const string _paginatorsPath = "../../Content/TestPaginators.json";
 
-        private ServiceModel testModel = new ServiceModel(_modelsPath, null, null);
+        private ServiceModel testModel = new ServiceModel(_modelsPath, null, null, null);
 
         [Fact]
         public void SimplePath_ShouldReturnCorrectCodePath()

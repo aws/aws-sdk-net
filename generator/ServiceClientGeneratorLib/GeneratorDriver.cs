@@ -71,10 +71,10 @@ namespace ServiceClientGenerator
         public string SampleFilesRoot { get; private set; }
 
         /// <summary>
-        /// The folder under which all of the unit files for the service
+        /// The folder under which all of the files for the service
         /// will exist.
         /// </summary>
-        public string ServiceUnitTestFilesRoot { get; private set; }
+        public string ServiceTestFilesRoot { get; private set; }
 
         private readonly HashSet<Shape> _structuresToProcess = new HashSet<Shape>();
 
@@ -85,7 +85,8 @@ namespace ServiceClientGenerator
         private const string BclSubFolder = "_bcl";
         private const string NetStandardSubFolder = "_netstandard";
         private string PaginatorsSubFolder = string.Format("Model{0}_bcl+netstandard", Path.AltDirectorySeparatorChar);
-        private string GeneratedTestsSubFolder = string.Format("UnitTests{0}Generated", Path.AltDirectorySeparatorChar);
+        private string GeneratedUnitTestsSubFolder = string.Format("UnitTests{0}Generated", Path.AltDirectorySeparatorChar);
+        private string GeneratedIntegrationTestsSubFolder = string.Format("IntegrationTests{0}Generated", Path.AltDirectorySeparatorChar);
         private string CustomizationTestsSubFolder = string.Format("UnitTests{0}Generated{0}Customizations", Path.AltDirectorySeparatorChar);
         private string PaginatorTestsSubFolder = string.Format("UnitTests{0}Generated{0}_bcl+netstandard{0}Paginators", Path.AltDirectorySeparatorChar);
 
@@ -118,11 +119,11 @@ namespace ServiceClientGenerator
             Options = options;
 
             ServiceFilesRoot = Utils.PathCombineAlt(Options.SdkRootFolder, SourceSubFoldername, ServicesSubFoldername, Configuration.ServiceFolderName);
-            ServiceUnitTestFilesRoot = Utils.PathCombineAlt(Options.SdkRootFolder, TestsSubFoldername, ServicesSubFoldername, Configuration.ServiceFolderName);
+            ServiceTestFilesRoot = Utils.PathCombineAlt(Options.SdkRootFolder, TestsSubFoldername, ServicesSubFoldername, Configuration.ServiceFolderName);
 
             if (config.IsTestService)
             {
-                ServiceFilesRoot = ServiceUnitTestFilesRoot;
+                ServiceFilesRoot = ServiceTestFilesRoot;
             }
 
             GeneratedFilesRoot = Utils.PathCombineAlt(ServiceFilesRoot, GeneratedCodeFoldername);
@@ -268,6 +269,12 @@ namespace ServiceClientGenerator
                 var servicename = Configuration.Namespace.Split('.').Last();
                 ExecuteExampleGenerator(new ExampleCode(), servicename + ".GeneratedSamples.cs", servicename);
                 ExecuteExampleGenerator(new ExampleMetadata(), servicename + ".GeneratedSamples.extra.xml");
+            }
+
+            if (this.Configuration.ServiceModel.HasSmokeTestsV2 && 
+                (this.Configuration.ServiceId == "API Gateway" || this.Configuration.ServiceId == "ACM") )
+            {
+                ExecuteIntegrationTestGenerator(new SmokeTestsV2(), "SmokeTestsV2.cs");
             }
         }
 
@@ -1184,8 +1191,22 @@ namespace ServiceClientGenerator
         {
             generator.Config = this.Configuration;
             var text = generator.TransformText();
-            var outputSubFolder = subNamespace == null ? GeneratedTestsSubFolder : Utils.PathCombineAlt(GeneratedTestsSubFolder, subNamespace);
-            WriteFile(ServiceUnitTestFilesRoot, outputSubFolder, fileName, text);
+            var outputSubFolder = subNamespace == null ? GeneratedUnitTestsSubFolder : Utils.PathCombineAlt(GeneratedUnitTestsSubFolder, subNamespace);
+            WriteFile(ServiceTestFilesRoot, outputSubFolder, fileName, text);
+        }
+
+        /// <summary>
+        /// Runs the generator and saves the content in the test directory.
+        /// </summary>
+        /// <param name="generator">The generator to use for outputting the text of the cs file</param>
+        /// <param name="fileName">The name of the cs file</param>
+        /// <param name="subNamespace">Adds an additional directory for the namespace</param>
+        void ExecuteIntegrationTestGenerator(BaseGenerator generator, string fileName, string subNamespace = null)
+        {
+            generator.Config = this.Configuration;
+            var text = generator.TransformText();
+            var outputSubFolder = subNamespace == null ? GeneratedIntegrationTestsSubFolder : Utils.PathCombineAlt(GeneratedIntegrationTestsSubFolder, subNamespace);
+            WriteFile(ServiceTestFilesRoot, outputSubFolder, fileName, text);
         }
 
         void ExecuteGeneratorAssemblyInfo()
@@ -1219,7 +1240,7 @@ namespace ServiceClientGenerator
             generator.Config = this.Configuration;
             var text = generator.TransformText();
             var outputSubFolder = subNamespace == null ? CustomizationTestsSubFolder : Utils.PathCombineAlt(CustomizationTestsSubFolder, subNamespace);
-            WriteFile(ServiceUnitTestFilesRoot, outputSubFolder, fileName, text);
+            WriteFile(ServiceTestFilesRoot, outputSubFolder, fileName, text);
         }
 
         /// <summary>
@@ -1236,7 +1257,7 @@ namespace ServiceClientGenerator
 
                 var text = paginatorTests.TransformText();
                 var outputSubFolder = PaginatorTestsSubFolder;
-                WriteFile(ServiceUnitTestFilesRoot, outputSubFolder, this.Configuration.ClassName + "PaginatorTests.cs", text);
+                WriteFile(ServiceTestFilesRoot, outputSubFolder, this.Configuration.ClassName + "PaginatorTests.cs", text);
             }
         }
 

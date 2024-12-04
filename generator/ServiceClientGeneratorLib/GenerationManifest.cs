@@ -164,8 +164,9 @@ namespace ServiceClientGenerator
 
                     var serviceModelFileName = GetLatestModel(serviceDirectory);
                     string paginatorsFileName = GetLatestPaginators(serviceDirectory);
-                    
-                    var config = CreateServiceConfiguration(metadataNode, serviceVersions, serviceDirectory, serviceModelFileName, paginatorsFileName);
+                    string smokeTestsV2FileName = GetLatestSmokeTestsV2(serviceDirectory);
+
+                    var config = CreateServiceConfiguration(metadataNode, serviceVersions, serviceDirectory, serviceModelFileName, paginatorsFileName, smokeTestsV2FileName);
                     serviceConfigurations.Add(config);
 
                     modelConfigList.Add(new Tuple<JsonData, ServiceConfiguration>(metadataNode, config));
@@ -257,13 +258,21 @@ namespace ServiceClientGenerator
             return Path.GetFileName(latestPaginatorsName);
         }
 
+        private static string GetLatestSmokeTestsV2(string serviceDirectory)
+        {
+            var latestPaginatorsName = Directory.GetFiles(serviceDirectory, "*.smoke2.json", SearchOption.TopDirectoryOnly)
+                .OrderBy(x => x).FirstOrDefault() ?? "";
+            return Path.GetFileName(latestPaginatorsName);
+        }
+
         private const string EndpointRuleSetFile = "endpoint-rule-set.json";
         private const string EndpointRuleSetTestsFile = "endpoint-tests.json";
 
-        private ServiceConfiguration CreateServiceConfiguration(JsonData modelNode, JsonData serviceVersions, string serviceDirectoryPath, string serviceModelFileName, string servicePaginatorsFileName)
+        private ServiceConfiguration CreateServiceConfiguration(JsonData modelNode, JsonData serviceVersions, string serviceDirectoryPath, string serviceModelFileName, string servicePaginatorsFileName, string serviceSmokeTestsV2FileName)
         {
             var modelFullPath = Utils.PathCombineAlt(serviceDirectoryPath, serviceModelFileName);
             var paginatorsFullPath = Utils.PathCombineAlt(serviceDirectoryPath, servicePaginatorsFileName);
+            var smokeTestsV2FullPath = Utils.PathCombineAlt(serviceDirectoryPath, serviceSmokeTestsV2FileName);
 
             JsonData metadata = JsonMapper.ToObject(File.ReadAllText(modelFullPath))[ServiceModel.MetadataKey];
 
@@ -274,6 +283,7 @@ namespace ServiceClientGenerator
                 ModelName = modelName,
                 ModelPath = modelFullPath,
                 PaginatorsPath = paginatorsFullPath,
+                SmokeTestsV2 = smokeTestsV2FullPath,
                 Namespace = Utils.JsonDataToString(modelNode[ModelsSectionKeys.NamespaceKey]), // Namespace of the service if it's different from basename
                 ClassNameOverride = Utils.JsonDataToString(modelNode[ModelsSectionKeys.BaseNameKey]),
                 DefaultRegion = Utils.JsonDataToString(modelNode[ModelsSectionKeys.DefaultRegionKey]),

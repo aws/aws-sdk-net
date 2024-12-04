@@ -397,6 +397,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>AmazonS3RetryPolicy.tt</DependentUpon>
     </Compile>
+    <Compile Update="Generators\TestFiles\SmokeTestsV2.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SmokeTestsV2.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Update="Generators/Component/Component.tt">
@@ -697,6 +702,10 @@
     <None Update="Generators\SourceFiles\AmazonS3RetryPolicy.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>AmazonS3RetryPolicy.cs</LastGenOutput>
+    </None>
+    <None Update="Generators\TestFiles\SmokeTestsV2.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>SmokeTestsV2.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

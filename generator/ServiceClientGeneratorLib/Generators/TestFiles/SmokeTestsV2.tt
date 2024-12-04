@@ -1,0 +1,61 @@
+﻿<#@ template language="C#" inherits="Generators.BaseGenerator" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="Json.LitJson" #>
+<#
+	AddLicenseHeader();
+#>
+using System;
+using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+using Amazon;
+using <#=this.Config.Namespace#>;
+using <#=this.Config.Namespace#>.Model;
+
+namespace AWSSDK_DotNet.IntegrationTests.SmokeTestsV2
+{
+    [TestClass]
+    public class <#=this.Config.ClassName#>SmokeTestsV2
+    {
+<#
+		foreach (JsonData testCase in this.Config.ServiceModel.SmokeTestsV2Root["testCases"])
+		{
+            var modeledOperation = FindOperation(testCase);
+            if (modeledOperation == null)
+                throw new ApplicationException($"Failed to find operation {testCase["operationName"]} for {testCase["id"]} while generating smoke tests for service {this.Config.ServiceModel.ServiceId}");
+#>
+
+        [TestMethod]
+        [TestCategory("SmokeTests")]
+        [TestCategory("<#=this.Config.ServiceModel.ServiceId#>")]
+        public async Task <#=testCase["id"].ToString()#>()
+        {
+            var serviceConfig = new Amazon<#=this.Config.ClassName#>Config();
+            
+            // TODO: Apply any other config settings required for the service config.
+<#
+        if (this.GetRegion(testCase) != null)
+        {
+#>
+            serviceConfig.RegionEndpoint = RegionEndpoint.GetBySystemName(<#=this.GetRegion(testCase)#>);
+<#
+		}
+#>
+            var serviceClient = new Amazon<#=this.Config.ClassName#>Client(serviceConfig);
+
+            // TODO: Add any input from the test case to the request object.
+            var request = new <#=modeledOperation.Name#>Request();
+
+            // TODO: Handle when test cases are testing a failure condition. That means catching the exception and verifing we got the right exception.
+            var response = await serviceClient.<#=modeledOperation.Name#>Async(request);
+
+            await Task.CompletedTask;
+        }
+<#
+		}
+#>
+    }
+}

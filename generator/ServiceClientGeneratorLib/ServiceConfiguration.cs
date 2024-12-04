@@ -16,6 +16,7 @@ namespace ServiceClientGenerator
 
         private string _modelPath;
         private string _paginatorsPath;
+        private string _smokeTestsV2;
 
         /// <summary>
         /// The name of the model, taken from the "model" entry in the service models 
@@ -48,6 +49,15 @@ namespace ServiceClientGenerator
             }
         }
 
+        public string SmokeTestsV2
+        {
+            get { return this._smokeTestsV2; }
+            set
+            {
+                this._smokeTestsV2 = value;
+            }
+        }
+
         ServiceModel _serviceModel;
 
         /// <summary>
@@ -59,7 +69,7 @@ namespace ServiceClientGenerator
             {
                 if (this._serviceModel == null)
                 {
-                    this._serviceModel = this._paginatorsPath != null ? new ServiceModel(this.ModelPath, this.CustomizationsPath, this._paginatorsPath) : 
+                    this._serviceModel = this._paginatorsPath != null ? new ServiceModel(this.ModelPath, this.CustomizationsPath, this._paginatorsPath, this._smokeTestsV2) : 
                         new ServiceModel(this.ModelPath, this.CustomizationsPath);
                 }
 
