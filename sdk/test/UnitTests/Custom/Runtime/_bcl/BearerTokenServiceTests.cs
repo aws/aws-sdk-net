@@ -6,6 +6,7 @@ using Amazon.BearerTokenAuthTest.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Credentials.Internal;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.SharedInterfaces;
 using Amazon.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

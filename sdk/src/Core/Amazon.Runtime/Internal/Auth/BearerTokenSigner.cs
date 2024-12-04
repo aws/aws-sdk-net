@@ -13,16 +13,13 @@
  * permissions and limitations under the License.
  */
 
-using System;
 #if AWS_ASYNC_API
 using System.Threading;
 using System.Threading.Tasks;
 #endif
-using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Util;
 
-namespace Amazon.Runtime
+namespace Amazon.Runtime.Internal.Auth
 {
     public class BearerTokenSigner : AbstractAWSSigner
     {
@@ -33,7 +30,6 @@ namespace Amazon.Runtime
         /// </summary>
         public string ResolvedToken { get; internal set; }
 
-#if BCL
         public override void Sign(
             IRequest request, 
             IClientConfig clientConfig, 
@@ -41,31 +37,8 @@ namespace Amazon.Runtime
             string awsAccessKeyId,
             string awsSecretAccessKey)
         {
-            if (request.Endpoint.Scheme == "http")
-            {
-                throw new AmazonClientException(
-                    $"The configured endpoint [{request.Endpoint}] is invalid for the bearer authorization scheme. " +
-                    "Endpoint must not use 'http'.");
-            }
-
-            if (string.IsNullOrEmpty(ResolvedToken))
-            {
-                throw new AmazonClientException("No Token found.  Operation requires a Bearer token.");
-            }
-
-            request.Headers["Authorization"] = $"Bearer {ResolvedToken}";
+            InternalSign(request);
         }
-#else
-        public override void Sign(
-            IRequest request,
-            IClientConfig clientConfig,
-            RequestMetrics metrics,
-            string awsAccessKeyId,
-            string awsSecretAccessKey)
-        {
-            throw new NotSupportedException($"Use {nameof(SignAsync)} instead.");
-        }
-#endif
 
 #if AWS_ASYNC_API
         public override Task SignAsync(
@@ -75,6 +48,13 @@ namespace Amazon.Runtime
             ImmutableCredentials credentials,
             CancellationToken token = default)
         {
+            InternalSign(request);
+            return Task.CompletedTask;
+        }
+#endif
+
+        private void InternalSign(IRequest request)
+        {
             if (request.Endpoint.Scheme == "http")
             {
                 throw new AmazonClientException(
@@ -88,9 +68,7 @@ namespace Amazon.Runtime
             }
 
             request.Headers["Authorization"] = $"Bearer {ResolvedToken}";
-            return Task.CompletedTask;
         }
-#endif
 
         public override ClientProtocol Protocol { get; } = ClientProtocol.Unknown;
     }

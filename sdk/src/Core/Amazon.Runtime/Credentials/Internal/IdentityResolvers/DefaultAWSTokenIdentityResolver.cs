@@ -42,7 +42,14 @@ namespace Amazon.Runtime.Credentials.Internal.IdentityResolvers
 
             throw new AmazonClientException($"Failed to resolve bearer token in {nameof(DefaultAWSTokenIdentityResolver)}");
 #else
-            throw new System.NotSupportedException($"{nameof(ResolveIdentityAsync)} must be used in cross-platform .NET");
+            // This is bad, but the token provider does not have a synchronous implementation for the .NET Framework.
+            var tokenResponse = _tokenProvider.TryResolveTokenAsync().Result;
+            if (tokenResponse.Success)
+            {
+                return tokenResponse.Value;
+            }
+
+            throw new AmazonClientException($"Failed to resolve bearer token in {nameof(DefaultAWSTokenIdentityResolver)}");
 #endif
         }
 

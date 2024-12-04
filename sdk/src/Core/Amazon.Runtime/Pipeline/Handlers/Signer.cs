@@ -31,6 +31,8 @@ namespace Amazon.Runtime.Internal
     /// </summary>
     public class Signer : PipelineHandler
     {
+        private static readonly object _bearerSignerLock = new();
+
         /// <summary>
         /// Calls pre invoke logic before calling the next handler 
         /// in the pipeline.
@@ -112,9 +114,9 @@ namespace Amazon.Runtime.Internal
 
             // The signer interface expects immutable credentials, which does not match the AWSToken structure.
             // We'll manually set a property so that the bearer token still works as expected.
-            if (requestContext.Signer is BearerTokenSigner tokenSigner)
+            if (requestContext.Signer is BearerTokenSigner tokenSigner && requestContext.Identity is AWSToken resolvedToken)
             {
-                if (requestContext.Identity is AWSToken resolvedToken)
+                lock (_bearerSignerLock)
                 {
                     tokenSigner.ResolvedToken = resolvedToken.Token;
                 }
@@ -161,9 +163,9 @@ namespace Amazon.Runtime.Internal
 
             // The signer interface expects immutable credentials, which does not match the AWSToken structure.
             // We'll manually set a property so that the bearer token still works as expected.
-            if (requestContext.Signer is BearerTokenSigner tokenSigner)
+            if (requestContext.Signer is BearerTokenSigner tokenSigner && requestContext.Identity is AWSToken resolvedToken)
             {
-                if (requestContext.Identity is AWSToken resolvedToken)
+                lock (_bearerSignerLock)
                 {
                     tokenSigner.ResolvedToken = resolvedToken.Token;
                 }

@@ -19,6 +19,7 @@ using System.Threading.Tasks;
 using Amazon.Runtime;
 using Amazon.Runtime.Credentials.Internal;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Auth;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using Smithy.Identity.Abstractions;
