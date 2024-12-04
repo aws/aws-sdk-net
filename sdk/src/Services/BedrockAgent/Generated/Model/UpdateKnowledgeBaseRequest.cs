@@ -172,7 +172,6 @@ namespace Amazon.BedrockAgent.Model
         /// must use the same configuration as when the knowledge base was created.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public StorageConfiguration StorageConfiguration
         {
             get { return this._storageConfiguration; }

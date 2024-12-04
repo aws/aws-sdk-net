@@ -204,7 +204,6 @@ namespace Amazon.BedrockAgent.Model
         /// base.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public StorageConfiguration StorageConfiguration
         {
             get { return this._storageConfiguration; }

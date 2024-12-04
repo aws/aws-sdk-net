@@ -245,7 +245,6 @@ namespace Amazon.BedrockAgent.Model
         /// Contains details about the storage configuration of the knowledge base.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public StorageConfiguration StorageConfiguration
         {
             get { return this._storageConfiguration; }

@@ -66,6 +66,18 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("kendraKnowledgeBaseConfiguration", targetDepth))
+                {
+                    var unmarshaller = KendraKnowledgeBaseConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.KendraKnowledgeBaseConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sqlKnowledgeBaseConfiguration", targetDepth))
+                {
+                    var unmarshaller = SqlKnowledgeBaseConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SqlKnowledgeBaseConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

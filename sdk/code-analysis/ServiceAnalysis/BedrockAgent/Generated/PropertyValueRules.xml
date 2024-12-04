@@ -1928,6 +1928,16 @@
     <pattern>^https://[A-Za-z0-9][^\s]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.CuratedQuery.NaturalLanguage</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.CuratedQuery.Sql</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgent.Model.CustomDocumentIdentifier.Id</property>
     <min>1</min>
     <max>2048</max>
@@ -2209,6 +2219,10 @@
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.IngestionJobSummary.KnowledgeBaseId</property>
     <pattern>^[0-9a-zA-Z]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.KendraKnowledgeBaseConfiguration.KendraIndexArn</property>
+    <pattern>^arn:aws(|-cn|-us-gov):kendra:[a-z0-9-]{1,20}:([0-9]{12}|):index/([a-zA-Z0-9][a-zA-Z0-9-]{35}|[a-zA-Z0-9][a-zA-Z0-9-]{35}-[a-zA-Z0-9][a-zA-Z0-9-]{35})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.KnowledgeBase.Description</property>
@@ -2607,6 +2621,30 @@
     <pattern>^([0-9a-zA-Z][_-]?){1,100}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.QueryGenerationColumn.Description</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.QueryGenerationColumn.Name</property>
+    <min>1</min>
+    <max>127</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.QueryGenerationConfiguration.ExecutionTimeoutSeconds</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.QueryGenerationTable.Description</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.QueryGenerationTable.Name</property>
+    <pattern>^.*\..*\..*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgent.Model.RdsConfiguration.CredentialsSecretArn</property>
     <pattern>^arn:aws(|-cn|-us-gov):secretsmanager:[a-z0-9-]{1,20}:([0-9]{12}|):secret:[a-zA-Z0-9!/_+=.@-]{1,512}$</pattern>
   </property-value-rule>
@@ -2683,6 +2721,28 @@
     <min>0</min>
     <max>2048</max>
     <pattern>^.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.RedshiftProvisionedAuthConfiguration.UsernamePasswordSecretArn</property>
+    <pattern>^arn:aws(|-cn|-us-gov):secretsmanager:[a-z0-9-]{1,20}:([0-9]{12}|):secret:[a-zA-Z0-9!/_+=.@-]{1,512}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.RedshiftProvisionedConfiguration.ClusterIdentifier</property>
+    <min>1</min>
+    <max>63</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.RedshiftQueryEngineRedshiftStorageConfiguration.DatabaseName</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.RedshiftServerlessAuthConfiguration.UsernamePasswordSecretArn</property>
+    <pattern>^arn:aws(|-cn|-us-gov):secretsmanager:[a-z0-9-]{1,20}:([0-9]{12}|):secret:[a-zA-Z0-9!/_+=.@-]{1,512}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.RedshiftServerlessConfiguration.WorkgroupArn</property>
+    <pattern>^(arn:(aws(-[a-z]+)*):redshift-serverless:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:workgroup/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.RetrievalFlowNodeS3Configuration.BucketName</property>

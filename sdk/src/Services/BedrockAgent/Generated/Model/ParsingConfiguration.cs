@@ -30,42 +30,52 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Settings for parsing document contents. By default, the service converts the contents
-    /// of each document into text before splitting it into chunks. To improve processing
-    /// of PDF files with tables and images, you can configure the data source to convert
-    /// the pages of text into images and use a model to describe the contents of each page.
+    /// Settings for parsing document contents. If you exclude this field, the default parser
+    /// converts the contents of each document into text before splitting it into chunks.
+    /// Specify the parsing strategy to use in the <c>parsingStrategy</c> field and include
+    /// the relevant configuration, or omit it to use the Amazon Bedrock default parser. For
+    /// more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-advanced-parsing.html">Parsing
+    /// options for your data source</a>.
     /// 
-    ///  
+    ///  <note> 
     /// <para>
-    /// To use a model to parse PDF documents, set the parsing strategy to <c>BEDROCK_FOUNDATION_MODEL</c>
-    /// and specify the model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference
-    /// profile</a> to use by ARN. You can also override the default parsing prompt with instructions
-    /// for how to interpret images and tables in your documents. The following models are
-    /// supported.
+    /// If you specify <c>BEDROCK_DATA_AUTOMATION</c> or <c>BEDROCK_FOUNDATION_MODEL</c> and
+    /// it fails to parse a file, the Amazon Bedrock default parser will be used instead.
     /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// Anthropic Claude 3 Sonnet - <c>anthropic.claude-3-sonnet-20240229-v1:0</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Anthropic Claude 3 Haiku - <c>anthropic.claude-3-haiku-20240307-v1:0</c> 
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// You can get the ARN of a model with the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_ListFoundationModels.html">ListFoundationModels</a>
-    /// action. Standard model usage charges apply for the foundation model parsing strategy.
-    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ParsingConfiguration
     {
+        private BedrockDataAutomationConfiguration _bedrockDataAutomationConfiguration;
         private BedrockFoundationModelConfiguration _bedrockFoundationModelConfiguration;
         private ParsingStrategy _parsingStrategy;
 
         /// <summary>
+        /// Gets and sets the property BedrockDataAutomationConfiguration. 
+        /// <para>
+        /// If you specify <c>BEDROCK_DATA_AUTOMATION</c> as the parsing strategy for ingesting
+        /// your data source, use this object to modify configurations for using the Amazon Bedrock
+        /// Data Automation parser.
+        /// </para>
+        /// </summary>
+        public BedrockDataAutomationConfiguration BedrockDataAutomationConfiguration
+        {
+            get { return this._bedrockDataAutomationConfiguration; }
+            set { this._bedrockDataAutomationConfiguration = value; }
+        }
+
+        // Check to see if BedrockDataAutomationConfiguration property is set
+        internal bool IsSetBedrockDataAutomationConfiguration()
+        {
+            return this._bedrockDataAutomationConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property BedrockFoundationModelConfiguration. 
         /// <para>
-        /// Settings for a foundation model used to parse documents for a data source.
+        /// If you specify <c>BEDROCK_FOUNDATION_MODEL</c> as the parsing strategy for ingesting
+        /// your data source, use this object to modify configurations for using a foundation
+        /// model to parse documents.
         /// </para>
         /// </summary>
         public BedrockFoundationModelConfiguration BedrockFoundationModelConfiguration

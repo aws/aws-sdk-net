@@ -34,8 +34,46 @@ namespace Amazon.BedrockAgent.Model
     /// </summary>
     public partial class KnowledgeBaseConfiguration
     {
+        private KendraKnowledgeBaseConfiguration _kendraKnowledgeBaseConfiguration;
+        private SqlKnowledgeBaseConfiguration _sqlKnowledgeBaseConfiguration;
         private KnowledgeBaseType _type;
         private VectorKnowledgeBaseConfiguration _vectorKnowledgeBaseConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property KendraKnowledgeBaseConfiguration. 
+        /// <para>
+        /// Settings for an Amazon Kendra knowledge base.
+        /// </para>
+        /// </summary>
+        public KendraKnowledgeBaseConfiguration KendraKnowledgeBaseConfiguration
+        {
+            get { return this._kendraKnowledgeBaseConfiguration; }
+            set { this._kendraKnowledgeBaseConfiguration = value; }
+        }
+
+        // Check to see if KendraKnowledgeBaseConfiguration property is set
+        internal bool IsSetKendraKnowledgeBaseConfiguration()
+        {
+            return this._kendraKnowledgeBaseConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SqlKnowledgeBaseConfiguration. 
+        /// <para>
+        /// Specifies configurations for a knowledge base connected to an SQL database.
+        /// </para>
+        /// </summary>
+        public SqlKnowledgeBaseConfiguration SqlKnowledgeBaseConfiguration
+        {
+            get { return this._sqlKnowledgeBaseConfiguration; }
+            set { this._sqlKnowledgeBaseConfiguration = value; }
+        }
+
+        // Check to see if SqlKnowledgeBaseConfiguration property is set
+        internal bool IsSetSqlKnowledgeBaseConfiguration()
+        {
+            return this._sqlKnowledgeBaseConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Type. 
