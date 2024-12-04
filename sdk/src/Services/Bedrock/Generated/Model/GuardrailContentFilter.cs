@@ -86,9 +86,30 @@ namespace Amazon.Bedrock.Model
     /// </summary>
     public partial class GuardrailContentFilter
     {
+        private List<string> _inputModalities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private GuardrailFilterStrength _inputStrength;
+        private List<string> _outputModalities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private GuardrailFilterStrength _outputStrength;
         private GuardrailContentFilterType _type;
+
+        /// <summary>
+        /// Gets and sets the property InputModalities. 
+        /// <para>
+        /// The input modalities selected for the guardrail content filter.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2)]
+        public List<string> InputModalities
+        {
+            get { return this._inputModalities; }
+            set { this._inputModalities = value; }
+        }
+
+        // Check to see if InputModalities property is set
+        internal bool IsSetInputModalities()
+        {
+            return this._inputModalities != null && (this._inputModalities.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property InputStrength. 
@@ -109,6 +130,25 @@ namespace Amazon.Bedrock.Model
         internal bool IsSetInputStrength()
         {
             return this._inputStrength != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputModalities. 
+        /// <para>
+        /// The output modalities selected for the guardrail content filter.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2)]
+        public List<string> OutputModalities
+        {
+            get { return this._outputModalities; }
+            set { this._outputModalities = value; }
+        }
+
+        // Check to see if OutputModalities property is set
+        internal bool IsSetOutputModalities()
+        {
+            return this._outputModalities != null && (this._outputModalities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

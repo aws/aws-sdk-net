@@ -739,6 +739,56 @@ namespace Amazon.Bedrock
 
 
     /// <summary>
+    /// Constants used for properties of type GuardrailModality.
+    /// </summary>
+    public class GuardrailModality : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IMAGE for GuardrailModality
+        /// </summary>
+        public static readonly GuardrailModality IMAGE = new GuardrailModality("IMAGE");
+        /// <summary>
+        /// Constant TEXT for GuardrailModality
+        /// </summary>
+        public static readonly GuardrailModality TEXT = new GuardrailModality("TEXT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailModality(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailModality FindValue(string value)
+        {
+            return FindValue<GuardrailModality>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailModality(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GuardrailPiiEntityType.
     /// </summary>
     public class GuardrailPiiEntityType : ConstantClass
@@ -1573,6 +1623,102 @@ namespace Amazon.Bedrock
 
 
     /// <summary>
+    /// Constants used for properties of type PromptRouterStatus.
+    /// </summary>
+    public class PromptRouterStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for PromptRouterStatus
+        /// </summary>
+        public static readonly PromptRouterStatus AVAILABLE = new PromptRouterStatus("AVAILABLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PromptRouterStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PromptRouterStatus FindValue(string value)
+        {
+            return FindValue<PromptRouterStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PromptRouterStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PromptRouterType.
+    /// </summary>
+    public class PromptRouterType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Custom for PromptRouterType
+        /// </summary>
+        public static readonly PromptRouterType Custom = new PromptRouterType("custom");
+        /// <summary>
+        /// Constant Default for PromptRouterType
+        /// </summary>
+        public static readonly PromptRouterType Default = new PromptRouterType("default");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PromptRouterType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PromptRouterType FindValue(string value)
+        {
+            return FindValue<PromptRouterType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PromptRouterType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ProvisionedModelStatus.
     /// </summary>
     public class ProvisionedModelStatus : ConstantClass
@@ -2004,6 +2150,56 @@ namespace Amazon.Bedrock
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SortOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Status.
+    /// </summary>
+    public class Status : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INCOMPATIBLE_ENDPOINT for Status
+        /// </summary>
+        public static readonly Status INCOMPATIBLE_ENDPOINT = new Status("INCOMPATIBLE_ENDPOINT");
+        /// <summary>
+        /// Constant REGISTERED for Status
+        /// </summary>
+        public static readonly Status REGISTERED = new Status("REGISTERED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Status(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Status FindValue(string value)
+        {
+            return FindValue<Status>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Status(string value)
         {
             return FindValue(value);
         }

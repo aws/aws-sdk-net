@@ -77,6 +77,14 @@ namespace Amazon.Bedrock.Model
         }
 
         /// <summary>
+        /// Paginator for ListMarketplaceModelEndpoints operation
+        ///</summary>
+        public IListMarketplaceModelEndpointsPaginator ListMarketplaceModelEndpoints(ListMarketplaceModelEndpointsRequest request) 
+        {
+            return new ListMarketplaceModelEndpointsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListModelCopyJobs operation
         ///</summary>
         public IListModelCopyJobsPaginator ListModelCopyJobs(ListModelCopyJobsRequest request) 
@@ -106,6 +114,14 @@ namespace Amazon.Bedrock.Model
         public IListModelInvocationJobsPaginator ListModelInvocationJobs(ListModelInvocationJobsRequest request) 
         {
             return new ListModelInvocationJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPromptRouters operation
+        ///</summary>
+        public IListPromptRoutersPaginator ListPromptRouters(ListPromptRoutersRequest request) 
+        {
+            return new ListPromptRoutersPaginator(this.client, request);
         }
 
         /// <summary>
