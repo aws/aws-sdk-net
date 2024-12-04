@@ -30,48 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// The content block to be evaluated by the guardrail.
+    /// The image source (image bytes) of the guardrail image source. Object used in independent
+    /// api.
     /// </summary>
-    public partial class GuardrailContentBlock
+    public partial class GuardrailImageSource
     {
-        private GuardrailImageBlock _image;
-        private GuardrailTextBlock _text;
+        private MemoryStream _bytes;
 
         /// <summary>
-        /// Gets and sets the property Image. 
+        /// Gets and sets the property Bytes. 
         /// <para>
-        /// Image within guardrail content block to be evaluated by the guardrail.
+        /// The bytes details of the guardrail image source. Object used in independent api.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true)]
-        public GuardrailImageBlock Image
+        [AWSProperty(Min=1)]
+        public MemoryStream Bytes
         {
-            get { return this._image; }
-            set { this._image = value; }
+            get { return this._bytes; }
+            set { this._bytes = value; }
         }
 
-        // Check to see if Image property is set
-        internal bool IsSetImage()
+        // Check to see if Bytes property is set
+        internal bool IsSetBytes()
         {
-            return this._image != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Text. 
-        /// <para>
-        /// Text within content block to be evaluated by the guardrail.
-        /// </para>
-        /// </summary>
-        public GuardrailTextBlock Text
-        {
-            get { return this._text; }
-            set { this._text = value; }
-        }
-
-        // Check to see if Text property is set
-        internal bool IsSetText()
-        {
-            return this._text != null;
+            return this._bytes != null;
         }
 
     }

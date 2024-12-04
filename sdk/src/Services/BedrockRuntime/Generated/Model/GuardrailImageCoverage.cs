@@ -30,47 +30,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// The action of the guardrail coverage details.
+    /// The details of the guardrail image coverage.
     /// </summary>
-    public partial class GuardrailCoverage
+    public partial class GuardrailImageCoverage
     {
-        private GuardrailImageCoverage _images;
-        private GuardrailTextCharactersCoverage _textCharacters;
+        private int? _guarded;
+        private int? _total;
 
         /// <summary>
-        /// Gets and sets the property Images. 
+        /// Gets and sets the property Guarded. 
         /// <para>
-        /// The guardrail coverage for images (the number of images that guardrails guarded).
+        /// The count (integer) of images guardrails guarded.
         /// </para>
         /// </summary>
-        public GuardrailImageCoverage Images
+        public int Guarded
         {
-            get { return this._images; }
-            set { this._images = value; }
+            get { return this._guarded.GetValueOrDefault(); }
+            set { this._guarded = value; }
         }
 
-        // Check to see if Images property is set
-        internal bool IsSetImages()
+        // Check to see if Guarded property is set
+        internal bool IsSetGuarded()
         {
-            return this._images != null;
+            return this._guarded.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property TextCharacters. 
+        /// Gets and sets the property Total. 
         /// <para>
-        /// The text characters of the guardrail coverage details.
+        /// Represents the total number of images (integer) that were in the request (guarded
+        /// and unguarded).
         /// </para>
         /// </summary>
-        public GuardrailTextCharactersCoverage TextCharacters
+        public int Total
         {
-            get { return this._textCharacters; }
-            set { this._textCharacters = value; }
+            get { return this._total.GetValueOrDefault(); }
+            set { this._total = value; }
         }
 
-        // Check to see if TextCharacters property is set
-        internal bool IsSetTextCharacters()
+        // Check to see if Total property is set
+        internal bool IsSetTotal()
         {
-            return this._textCharacters != null;
+            return this._total.HasValue; 
         }
 
     }

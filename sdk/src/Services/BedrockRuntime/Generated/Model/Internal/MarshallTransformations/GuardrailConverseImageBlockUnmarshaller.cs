@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GuardrailCoverage Object
+    /// Response Unmarshaller for GuardrailConverseImageBlock Object
     /// </summary>  
-    public class GuardrailCoverageUnmarshaller : IUnmarshaller<GuardrailCoverage, XmlUnmarshallerContext>, IUnmarshaller<GuardrailCoverage, JsonUnmarshallerContext>
+    public class GuardrailConverseImageBlockUnmarshaller : IUnmarshaller<GuardrailConverseImageBlock, XmlUnmarshallerContext>, IUnmarshaller<GuardrailConverseImageBlock, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        GuardrailCoverage IUnmarshaller<GuardrailCoverage, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        GuardrailConverseImageBlock IUnmarshaller<GuardrailConverseImageBlock, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public GuardrailCoverage Unmarshall(JsonUnmarshallerContext context)
+        public GuardrailConverseImageBlock Unmarshall(JsonUnmarshallerContext context)
         {
-            GuardrailCoverage unmarshalledObject = new GuardrailCoverage();
+            GuardrailConverseImageBlock unmarshalledObject = new GuardrailConverseImageBlock();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,16 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("images", targetDepth))
+                if (context.TestExpression("format", targetDepth))
                 {
-                    var unmarshaller = GuardrailImageCoverageUnmarshaller.Instance;
-                    unmarshalledObject.Images = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Format = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("textCharacters", targetDepth))
+                if (context.TestExpression("source", targetDepth))
                 {
-                    var unmarshaller = GuardrailTextCharactersCoverageUnmarshaller.Instance;
-                    unmarshalledObject.TextCharacters = unmarshaller.Unmarshall(context);
+                    var unmarshaller = GuardrailConverseImageSourceUnmarshaller.Instance;
+                    unmarshalledObject.Source = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +83,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static GuardrailCoverageUnmarshaller _instance = new GuardrailCoverageUnmarshaller();        
+        private static GuardrailConverseImageBlockUnmarshaller _instance = new GuardrailConverseImageBlockUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GuardrailCoverageUnmarshaller Instance
+        public static GuardrailConverseImageBlockUnmarshaller Instance
         {
             get
             {

@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GuardrailCoverage Object
+    /// Response Unmarshaller for PromptRouterTrace Object
     /// </summary>  
-    public class GuardrailCoverageUnmarshaller : IUnmarshaller<GuardrailCoverage, XmlUnmarshallerContext>, IUnmarshaller<GuardrailCoverage, JsonUnmarshallerContext>
+    public class PromptRouterTraceUnmarshaller : IUnmarshaller<PromptRouterTrace, XmlUnmarshallerContext>, IUnmarshaller<PromptRouterTrace, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        GuardrailCoverage IUnmarshaller<GuardrailCoverage, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PromptRouterTrace IUnmarshaller<PromptRouterTrace, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public GuardrailCoverage Unmarshall(JsonUnmarshallerContext context)
+        public PromptRouterTrace Unmarshall(JsonUnmarshallerContext context)
         {
-            GuardrailCoverage unmarshalledObject = new GuardrailCoverage();
+            PromptRouterTrace unmarshalledObject = new PromptRouterTrace();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,16 +66,10 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("images", targetDepth))
+                if (context.TestExpression("invokedModelId", targetDepth))
                 {
-                    var unmarshaller = GuardrailImageCoverageUnmarshaller.Instance;
-                    unmarshalledObject.Images = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("textCharacters", targetDepth))
-                {
-                    var unmarshaller = GuardrailTextCharactersCoverageUnmarshaller.Instance;
-                    unmarshalledObject.TextCharacters = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InvokedModelId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -83,12 +77,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static GuardrailCoverageUnmarshaller _instance = new GuardrailCoverageUnmarshaller();        
+        private static PromptRouterTraceUnmarshaller _instance = new PromptRouterTraceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GuardrailCoverageUnmarshaller Instance
+        public static PromptRouterTraceUnmarshaller Instance
         {
             get
             {

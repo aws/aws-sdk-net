@@ -66,6 +66,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("image", targetDepth))
+                {
+                    var unmarshaller = GuardrailConverseImageBlockUnmarshaller.Instance;
+                    unmarshalledObject.Image = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("text", targetDepth))
                 {
                     var unmarshaller = GuardrailConverseTextBlockUnmarshaller.Instance;

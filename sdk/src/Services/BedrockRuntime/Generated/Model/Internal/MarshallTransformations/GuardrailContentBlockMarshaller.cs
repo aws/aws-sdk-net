@@ -48,6 +48,17 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetImage())
+            {
+                context.Writer.WritePropertyName("image");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = GuardrailImageBlockMarshaller.Instance;
+                marshaller.Marshall(requestObject.Image, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetText())
             {
                 context.Writer.WritePropertyName("text");

@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GuardrailConverseContentBlock Marshaller
+    /// GuardrailConverseImageSource Marshaller
     /// </summary>
-    public class GuardrailConverseContentBlockMarshaller : IRequestMarshaller<GuardrailConverseContentBlock, JsonMarshallerContext> 
+    public class GuardrailConverseImageSourceMarshaller : IRequestMarshaller<GuardrailConverseImageSource, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,30 +44,14 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(GuardrailConverseContentBlock requestObject, JsonMarshallerContext context)
+        public void Marshall(GuardrailConverseImageSource requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetImage())
+            if(requestObject.IsSetBytes())
             {
-                context.Writer.WritePropertyName("image");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = GuardrailConverseImageBlockMarshaller.Instance;
-                marshaller.Marshall(requestObject.Image, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetText())
-            {
-                context.Writer.WritePropertyName("text");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = GuardrailConverseTextBlockMarshaller.Instance;
-                marshaller.Marshall(requestObject.Text, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("bytes");
+                context.Writer.Write(StringUtils.FromMemoryStream(requestObject.Bytes));
             }
 
         }
@@ -75,7 +59,7 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static GuardrailConverseContentBlockMarshaller Instance = new GuardrailConverseContentBlockMarshaller();
+        public readonly static GuardrailConverseImageSourceMarshaller Instance = new GuardrailConverseImageSourceMarshaller();
 
     }
 }

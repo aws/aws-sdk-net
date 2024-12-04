@@ -30,47 +30,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// The action of the guardrail coverage details.
+    /// Contain an image which user wants guarded. This block is accepted by the guardrails
+    /// independent API.
     /// </summary>
-    public partial class GuardrailCoverage
+    public partial class GuardrailImageBlock
     {
-        private GuardrailImageCoverage _images;
-        private GuardrailTextCharactersCoverage _textCharacters;
+        private GuardrailImageFormat _format;
+        private GuardrailImageSource _source;
 
         /// <summary>
-        /// Gets and sets the property Images. 
+        /// Gets and sets the property Format. 
         /// <para>
-        /// The guardrail coverage for images (the number of images that guardrails guarded).
+        /// The format details for the file type of the image blocked by the guardrail.
         /// </para>
         /// </summary>
-        public GuardrailImageCoverage Images
+        [AWSProperty(Required=true)]
+        public GuardrailImageFormat Format
         {
-            get { return this._images; }
-            set { this._images = value; }
+            get { return this._format; }
+            set { this._format = value; }
         }
 
-        // Check to see if Images property is set
-        internal bool IsSetImages()
+        // Check to see if Format property is set
+        internal bool IsSetFormat()
         {
-            return this._images != null;
+            return this._format != null;
         }
 
         /// <summary>
-        /// Gets and sets the property TextCharacters. 
+        /// Gets and sets the property Source. 
         /// <para>
-        /// The text characters of the guardrail coverage details.
+        /// The image source (image bytes) details of the image blocked by the guardrail.
         /// </para>
         /// </summary>
-        public GuardrailTextCharactersCoverage TextCharacters
+        [AWSProperty(Required=true, Sensitive=true)]
+        public GuardrailImageSource Source
         {
-            get { return this._textCharacters; }
-            set { this._textCharacters = value; }
+            get { return this._source; }
+            set { this._source = value; }
         }
 
-        // Check to see if TextCharacters property is set
-        internal bool IsSetTextCharacters()
+        // Check to see if Source property is set
+        internal bool IsSetSource()
         {
-            return this._textCharacters != null;
+            return this._source != null;
         }
 
     }

@@ -30,48 +30,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockRuntime.Model
 {
     /// <summary>
-    /// The content block to be evaluated by the guardrail.
+    /// A prompt router trace.
     /// </summary>
-    public partial class GuardrailContentBlock
+    public partial class PromptRouterTrace
     {
-        private GuardrailImageBlock _image;
-        private GuardrailTextBlock _text;
+        private string _invokedModelId;
 
         /// <summary>
-        /// Gets and sets the property Image. 
+        /// Gets and sets the property InvokedModelId. 
         /// <para>
-        /// Image within guardrail content block to be evaluated by the guardrail.
+        /// The ID of the invoked model.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true)]
-        public GuardrailImageBlock Image
+        public string InvokedModelId
         {
-            get { return this._image; }
-            set { this._image = value; }
+            get { return this._invokedModelId; }
+            set { this._invokedModelId = value; }
         }
 
-        // Check to see if Image property is set
-        internal bool IsSetImage()
+        // Check to see if InvokedModelId property is set
+        internal bool IsSetInvokedModelId()
         {
-            return this._image != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Text. 
-        /// <para>
-        /// Text within content block to be evaluated by the guardrail.
-        /// </para>
-        /// </summary>
-        public GuardrailTextBlock Text
-        {
-            get { return this._text; }
-            set { this._text = value; }
-        }
-
-        // Check to see if Text property is set
-        internal bool IsSetText()
-        {
-            return this._text != null;
+            return this._invokedModelId != null;
         }
 
     }

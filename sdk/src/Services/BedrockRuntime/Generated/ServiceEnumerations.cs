@@ -743,6 +743,106 @@ namespace Amazon.BedrockRuntime
 
 
     /// <summary>
+    /// Constants used for properties of type GuardrailConverseImageFormat.
+    /// </summary>
+    public class GuardrailConverseImageFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Jpeg for GuardrailConverseImageFormat
+        /// </summary>
+        public static readonly GuardrailConverseImageFormat Jpeg = new GuardrailConverseImageFormat("jpeg");
+        /// <summary>
+        /// Constant Png for GuardrailConverseImageFormat
+        /// </summary>
+        public static readonly GuardrailConverseImageFormat Png = new GuardrailConverseImageFormat("png");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailConverseImageFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailConverseImageFormat FindValue(string value)
+        {
+            return FindValue<GuardrailConverseImageFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailConverseImageFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GuardrailImageFormat.
+    /// </summary>
+    public class GuardrailImageFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Jpeg for GuardrailImageFormat
+        /// </summary>
+        public static readonly GuardrailImageFormat Jpeg = new GuardrailImageFormat("jpeg");
+        /// <summary>
+        /// Constant Png for GuardrailImageFormat
+        /// </summary>
+        public static readonly GuardrailImageFormat Png = new GuardrailImageFormat("png");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GuardrailImageFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuardrailImageFormat FindValue(string value)
+        {
+            return FindValue<GuardrailImageFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuardrailImageFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GuardrailManagedWordType.
     /// </summary>
     public class GuardrailManagedWordType : ConstantClass
