@@ -34,9 +34,30 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class BatchPutDocumentResponseFailedDocument
     {
+        private string _dataSourceId;
         private ErrorCode _errorCode;
         private string _errorMessage;
         private string _id;
+
+        /// <summary>
+        /// Gets and sets the property DataSourceId. 
+        /// <para>
+        ///  The identifier of the data source connector that the failed document belongs to.
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public string DataSourceId
+        {
+            get { return this._dataSourceId; }
+            set { this._dataSourceId = value; }
+        }
+
+        // Check to see if DataSourceId property is set
+        internal bool IsSetDataSourceId()
+        {
+            return this._dataSourceId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ErrorCode. 

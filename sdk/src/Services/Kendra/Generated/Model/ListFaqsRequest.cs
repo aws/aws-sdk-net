@@ -31,7 +31,7 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Container for the parameters to the ListFaqs operation.
-    /// Gets a list of FAQ lists associated with an index.
+    /// Gets a list of FAQs associated with an index.
     /// </summary>
     public partial class ListFaqsRequest : AmazonKendraRequest
     {
@@ -42,7 +42,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The index that contains the FAQ lists.
+        /// The index for the FAQs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

@@ -203,9 +203,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// Shows the Amazon Resource Name (ARN) of a role with permission to access <c>Query</c>
+        /// The Amazon Resource Name (ARN) of the IAM role with permission to access the <c>Query</c>
         /// API, <c>QuerySuggestions</c> API, <c>SubmitFeedback</c> API, and IAM Identity Center
-        /// that stores your user and group information.
+        /// that stores your users and groups information.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1284)]

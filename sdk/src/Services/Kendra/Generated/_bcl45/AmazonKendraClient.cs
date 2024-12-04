@@ -1079,6 +1079,13 @@ namespace Amazon.Kendra
         /// Kendra currently only supports access control configuration for S3 data sources and
         /// documents indexed using the <c>BatchPutDocument</c> API.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You can't configure access control using <c>CreateAccessControlConfiguration</c> for
+        /// an Amazon Kendra Gen AI Enterprise Edition index. Amazon Kendra will return a <c>ValidationException</c>
+        /// error for a <c>Gen_AI_ENTERPRISE_EDITION</c> index.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccessControlConfiguration service method.</param>
         /// 
@@ -1151,6 +1158,13 @@ namespace Amazon.Kendra
         /// Kendra currently only supports access control configuration for S3 data sources and
         /// documents indexed using the <c>BatchPutDocument</c> API.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You can't configure access control using <c>CreateAccessControlConfiguration</c> for
+        /// an Amazon Kendra Gen AI Enterprise Edition index. Amazon Kendra will return a <c>ValidationException</c>
+        /// error for a <c>Gen_AI_ENTERPRISE_EDITION</c> index.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccessControlConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -2410,7 +2424,7 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Removes an FAQ from an index.
+        /// Removes a FAQ from an index.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFaq service method.</param>
         /// 
@@ -2452,7 +2466,7 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Removes an FAQ from an index.
+        /// Removes a FAQ from an index.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFaq service method.</param>
         /// <param name="cancellationToken">
@@ -2596,8 +2610,8 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Deletes a group so that all users and sub groups that belong to the group can no longer
-        /// access documents only available to that group.
+        /// Deletes a group so that all users that belong to the group can no longer access documents
+        /// only available to that group.
         /// 
         ///  
         /// <para>
@@ -2659,8 +2673,8 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Deletes a group so that all users and sub groups that belong to the group can no longer
-        /// access documents only available to that group.
+        /// Deletes a group so that all users that belong to the group can no longer access documents
+        /// only available to that group.
         /// 
         ///  
         /// <para>
@@ -3192,7 +3206,7 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Gets information about an FAQ list.
+        /// Gets information about a FAQ.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFaq service method.</param>
         /// 
@@ -3230,7 +3244,7 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Gets information about an FAQ list.
+        /// Gets information about a FAQ.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFaq service method.</param>
         /// <param name="cancellationToken">
@@ -4731,7 +4745,7 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Gets a list of FAQ lists associated with an index.
+        /// Gets a list of FAQs associated with an index.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFaqs service method.</param>
         /// 
@@ -4769,7 +4783,7 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Gets a list of FAQ lists associated with an index.
+        /// Gets a list of FAQs associated with an index.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFaqs service method.</param>
         /// <param name="cancellationToken">
@@ -5186,8 +5200,8 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Gets a list of tags associated with a specified resource. Indexes, FAQs, and data
-        /// sources can have tags associated with them.
+        /// Gets a list of tags associated with a resource. Indexes, FAQs, data sources, and other
+        /// resources can have tags associated with them.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -5225,8 +5239,8 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Gets a list of tags associated with a specified resource. Indexes, FAQs, and data
-        /// sources can have tags associated with them.
+        /// Gets a list of tags associated with a resource. Indexes, FAQs, data sources, and other
+        /// resources can have tags associated with them.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -5539,6 +5553,15 @@ namespace Amazon.Kendra
         /// type to only question-answers, a maximum of four results are returned. If you filter
         /// result type to only answers, a maximum of three results are returned.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you're using an Amazon Kendra Gen AI Enterprise Edition index, you can only use
+        /// <c>ATTRIBUTE_FILTER</c> to filter search results by user context. If you're using
+        /// an Amazon Kendra Gen AI Enterprise Edition index and you try to use <c>USER_TOKEN</c>
+        /// to configure user context policy, Amazon Kendra returns a <c>ValidationException</c>
+        /// error.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Query service method.</param>
         /// 
@@ -5627,6 +5650,15 @@ namespace Amazon.Kendra
         /// type to only question-answers, a maximum of four results are returned. If you filter
         /// result type to only answers, a maximum of three results are returned.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you're using an Amazon Kendra Gen AI Enterprise Edition index, you can only use
+        /// <c>ATTRIBUTE_FILTER</c> to filter search results by user context. If you're using
+        /// an Amazon Kendra Gen AI Enterprise Edition index and you try to use <c>USER_TOKEN</c>
+        /// to configure user context policy, Amazon Kendra returns a <c>ValidationException</c>
+        /// error.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Query service method.</param>
         /// <param name="cancellationToken">
@@ -5732,6 +5764,15 @@ namespace Amazon.Kendra
         /// in a single capacity unit and the default base capacity for an index, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting
         /// capacity</a>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you're using an Amazon Kendra Gen AI Enterprise Edition index, you can only use
+        /// <c>ATTRIBUTE_FILTER</c> to filter search results by user context. If you're using
+        /// an Amazon Kendra Gen AI Enterprise Edition index and you try to use <c>USER_TOKEN</c>
+        /// to configure user context policy, Amazon Kendra returns a <c>ValidationException</c>
+        /// error.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Retrieve service method.</param>
         /// 
@@ -5830,6 +5871,15 @@ namespace Amazon.Kendra
         /// in a single capacity unit and the default base capacity for an index, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting
         /// capacity</a>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you're using an Amazon Kendra Gen AI Enterprise Edition index, you can only use
+        /// <c>ATTRIBUTE_FILTER</c> to filter search results by user context. If you're using
+        /// an Amazon Kendra Gen AI Enterprise Edition index and you try to use <c>USER_TOKEN</c>
+        /// to configure user context policy, Amazon Kendra returns a <c>ValidationException</c>
+        /// error.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the Retrieve service method.</param>
         /// <param name="cancellationToken">
@@ -6188,8 +6238,8 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Adds the specified tag to the specified index, FAQ, or data source resource. If the
-        /// tag already exists, the existing value is replaced with the new value.
+        /// Adds the specified tag to the specified index, FAQ, data source, or other resource.
+        /// If the tag already exists, the existing value is replaced with the new value.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
@@ -6227,8 +6277,8 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Adds the specified tag to the specified index, FAQ, or data source resource. If the
-        /// tag already exists, the existing value is replaced with the new value.
+        /// Adds the specified tag to the specified index, FAQ, data source, or other resource.
+        /// If the tag already exists, the existing value is replaced with the new value.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -6273,7 +6323,7 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Removes a tag from an index, FAQ, or a data source.
+        /// Removes a tag from an index, FAQ, data source, or other resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -6311,7 +6361,7 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Removes a tag from an index, FAQ, or a data source.
+        /// Removes a tag from an index, FAQ, data source, or other resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -6382,6 +6432,13 @@ namespace Amazon.Kendra
         /// Amazon Kendra currently only supports access control configuration for S3 data sources
         /// and documents indexed using the <c>BatchPutDocument</c> API.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You can't configure access control using <c>CreateAccessControlConfiguration</c> for
+        /// an Amazon Kendra Gen AI Enterprise Edition index. Amazon Kendra will return a <c>ValidationException</c>
+        /// error for a <c>Gen_AI_ENTERPRISE_EDITION</c> index.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAccessControlConfiguration service method.</param>
         /// 
@@ -6454,6 +6511,13 @@ namespace Amazon.Kendra
         /// Amazon Kendra currently only supports access control configuration for S3 data sources
         /// and documents indexed using the <c>BatchPutDocument</c> API.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// You can't configure access control using <c>CreateAccessControlConfiguration</c> for
+        /// an Amazon Kendra Gen AI Enterprise Edition index. Amazon Kendra will return a <c>ValidationException</c>
+        /// error for a <c>Gen_AI_ENTERPRISE_EDITION</c> index.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAccessControlConfiguration service method.</param>
         /// <param name="cancellationToken">

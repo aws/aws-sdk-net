@@ -173,6 +173,15 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// The user context policy.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you're using an Amazon Kendra Gen AI Enterprise Edition index, you can only use
+        /// <c>ATTRIBUTE_FILTER</c> to filter search results by user context. If you're using
+        /// an Amazon Kendra Gen AI Enterprise Edition index and you try to use <c>USER_TOKEN</c>
+        /// to configure user context policy, Amazon Kendra returns a <c>ValidationException</c>
+        /// error.
+        /// </para>
+        ///  </important>
         /// </summary>
         public UserContextPolicy UserContextPolicy
         {
@@ -194,6 +203,12 @@ namespace Amazon.Kendra.Model
         /// This is useful for user context filtering, where search results are filtered based
         /// on the user or their group access to documents.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you're using an Amazon Kendra Gen AI Enterprise Edition index, <c>UserGroupResolutionConfiguration</c>
+        /// isn't supported.
+        /// </para>
+        ///  </important>
         /// </summary>
         public UserGroupResolutionConfiguration UserGroupResolutionConfiguration
         {
@@ -212,6 +227,13 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// The user token configuration.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you're using an Amazon Kendra Gen AI Enterprise Edition index and you try to use
+        /// <c>UserTokenConfigurations</c> to configure user context policy, Amazon Kendra returns
+        /// a <c>ValidationException</c> error.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Max=1)]
         public List<UserTokenConfiguration> UserTokenConfigurations
