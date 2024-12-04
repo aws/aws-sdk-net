@@ -190,6 +190,8 @@ Protocol tests can be found in the `sdk/test/ProtocolTests` directory. Protocol 
 	* This release introduces Agents for Amazon Bedrock
 * [AWSSDK.BedrockAgentRuntime](https://www.nuget.org/packages/AWSSDK.BedrockAgentRuntime/)
 	* This release introduces Agents for Amazon Bedrock Runtime
+* [AWSSDK.BedrockDataAutomationRuntime](https://www.nuget.org/packages/AWSSDK.BedrockDataAutomationRuntime/)
+	* Release Bedrock Data Automation Runtime SDK
 * [AWSSDK.BedrockRuntime](https://www.nuget.org/packages/AWSSDK.BedrockRuntime/)
 	* Run Inference: Added support to run the inference on models.  Includes set of APIs for running inference in streaming and non-streaming mode.
 * [AWSSDK.Billing](https://www.nuget.org/packages/AWSSDK.Billing/)
