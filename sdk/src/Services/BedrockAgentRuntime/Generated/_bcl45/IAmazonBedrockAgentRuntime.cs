@@ -133,6 +133,100 @@ namespace Amazon.BedrockAgentRuntime
 
         #endregion
         
+        #region  GenerateQuery
+
+
+        /// <summary>
+        /// Generates an SQL query from a natural language query. For more information, see <a
+        /// href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-generate-query.html">Generate
+        /// a query for structured data</a> in the Amazon Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GenerateQuery service method.</param>
+        /// 
+        /// <returns>The response from the GenerateQuery service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.BadGatewayException">
+        /// There was an issue with a dependency due to a server issue. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ConflictException">
+        /// There was a conflict performing an operation. Resolve the conflict and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.DependencyFailedException">
+        /// There was an issue with a dependency. Check the resource configurations and retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/GenerateQuery">REST API Reference for GenerateQuery Operation</seealso>
+        GenerateQueryResponse GenerateQuery(GenerateQueryRequest request);
+
+
+
+        /// <summary>
+        /// Generates an SQL query from a natural language query. For more information, see <a
+        /// href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-generate-query.html">Generate
+        /// a query for structured data</a> in the Amazon Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GenerateQuery service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GenerateQuery service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.BadGatewayException">
+        /// There was an issue with a dependency due to a server issue. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ConflictException">
+        /// There was a conflict performing an operation. Resolve the conflict and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.DependencyFailedException">
+        /// There was an issue with a dependency. Check the resource configurations and retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/GenerateQuery">REST API Reference for GenerateQuery Operation</seealso>
+        Task<GenerateQueryResponse> GenerateQueryAsync(GenerateQueryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetAgentMemory
 
 

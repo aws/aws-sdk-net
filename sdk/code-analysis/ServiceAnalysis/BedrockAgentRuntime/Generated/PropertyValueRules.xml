@@ -558,6 +558,11 @@
     <max>4000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.QueryGenerationInput.Text</property>
+    <min>1</min>
+    <max>20000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentRuntime.Model.Rationale.TraceId</property>
     <min>2</min>
     <max>16</max>
@@ -642,6 +647,12 @@
     <property>Amazon.BedrockAgentRuntime.Model.TextPrompt.Text</property>
     <min>1</min>
     <max>200000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.TextToSqlKnowledgeBaseConfiguration.KnowledgeBaseArn</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^arn:aws(|-cn|-us-gov):bedrock:[a-zA-Z0-9-]*:[0-9]{12}:knowledge-base/[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentRuntime.Model.TracePart.AgentAliasId</property>

@@ -78,6 +78,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                     unmarshalledObject.CustomDocumentLocation = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("kendraDocumentLocation", targetDepth))
+                {
+                    var unmarshaller = RetrievalResultKendraDocumentLocationUnmarshaller.Instance;
+                    unmarshalledObject.KendraDocumentLocation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("s3Location", targetDepth))
                 {
                     var unmarshaller = RetrievalResultS3LocationUnmarshaller.Instance;
@@ -94,6 +100,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = RetrievalResultSharePointLocationUnmarshaller.Instance;
                     unmarshalledObject.SharePointLocation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sqlLocation", targetDepth))
+                {
+                    var unmarshaller = RetrievalResultSqlLocationUnmarshaller.Instance;
+                    unmarshalledObject.SqlLocation = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("type", targetDepth))

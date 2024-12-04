@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RetrievalResultContent Object
+    /// Response Unmarshaller for RetrievalResultContentColumn Object
     /// </summary>  
-    public class RetrievalResultContentUnmarshaller : IUnmarshaller<RetrievalResultContent, XmlUnmarshallerContext>, IUnmarshaller<RetrievalResultContent, JsonUnmarshallerContext>
+    public class RetrievalResultContentColumnUnmarshaller : IUnmarshaller<RetrievalResultContentColumn, XmlUnmarshallerContext>, IUnmarshaller<RetrievalResultContentColumn, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RetrievalResultContent IUnmarshaller<RetrievalResultContent, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RetrievalResultContentColumn IUnmarshaller<RetrievalResultContentColumn, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public RetrievalResultContent Unmarshall(JsonUnmarshallerContext context)
+        public RetrievalResultContentColumn Unmarshall(JsonUnmarshallerContext context)
         {
-            RetrievalResultContent unmarshalledObject = new RetrievalResultContent();
+            RetrievalResultContentColumn unmarshalledObject = new RetrievalResultContentColumn();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,16 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("byteContent", targetDepth))
+                if (context.TestExpression("columnName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ByteContent = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ColumnName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("row", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<RetrievalResultContentColumn, RetrievalResultContentColumnUnmarshaller>(RetrievalResultContentColumnUnmarshaller.Instance);
-                    unmarshalledObject.Row = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("text", targetDepth))
+                if (context.TestExpression("columnValue", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Text = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ColumnValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("type", targetDepth))
@@ -95,12 +89,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static RetrievalResultContentUnmarshaller _instance = new RetrievalResultContentUnmarshaller();        
+        private static RetrievalResultContentColumnUnmarshaller _instance = new RetrievalResultContentColumnUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RetrievalResultContentUnmarshaller Instance
+        public static RetrievalResultContentColumnUnmarshaller Instance
         {
             get
             {

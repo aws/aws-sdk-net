@@ -629,6 +629,52 @@ namespace Amazon.BedrockAgentRuntime
 
 
     /// <summary>
+    /// Constants used for properties of type GeneratedQueryType.
+    /// </summary>
+    public class GeneratedQueryType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant REDSHIFT_SQL for GeneratedQueryType
+        /// </summary>
+        public static readonly GeneratedQueryType REDSHIFT_SQL = new GeneratedQueryType("REDSHIFT_SQL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GeneratedQueryType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GeneratedQueryType FindValue(string value)
+        {
+            return FindValue<GeneratedQueryType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GeneratedQueryType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GuadrailAction.
     /// </summary>
     public class GuadrailAction : ConstantClass
@@ -1299,6 +1345,52 @@ namespace Amazon.BedrockAgentRuntime
 
 
     /// <summary>
+    /// Constants used for properties of type InputQueryType.
+    /// </summary>
+    public class InputQueryType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TEXT for InputQueryType
+        /// </summary>
+        public static readonly InputQueryType TEXT = new InputQueryType("TEXT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InputQueryType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InputQueryType FindValue(string value)
+        {
+            return FindValue<InputQueryType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InputQueryType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InvocationType.
     /// </summary>
     public class InvocationType : ConstantClass
@@ -1701,6 +1793,52 @@ namespace Amazon.BedrockAgentRuntime
 
 
     /// <summary>
+    /// Constants used for properties of type QueryTransformationMode.
+    /// </summary>
+    public class QueryTransformationMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TEXT_TO_SQL for QueryTransformationMode
+        /// </summary>
+        public static readonly QueryTransformationMode TEXT_TO_SQL = new QueryTransformationMode("TEXT_TO_SQL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QueryTransformationMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QueryTransformationMode FindValue(string value)
+        {
+            return FindValue<QueryTransformationMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QueryTransformationMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type QueryTransformationType.
     /// </summary>
     public class QueryTransformationType : ConstantClass
@@ -2085,6 +2223,126 @@ namespace Amazon.BedrockAgentRuntime
 
 
     /// <summary>
+    /// Constants used for properties of type RetrievalResultContentColumnType.
+    /// </summary>
+    public class RetrievalResultContentColumnType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BLOB for RetrievalResultContentColumnType
+        /// </summary>
+        public static readonly RetrievalResultContentColumnType BLOB = new RetrievalResultContentColumnType("BLOB");
+        /// <summary>
+        /// Constant BOOLEAN for RetrievalResultContentColumnType
+        /// </summary>
+        public static readonly RetrievalResultContentColumnType BOOLEAN = new RetrievalResultContentColumnType("BOOLEAN");
+        /// <summary>
+        /// Constant DOUBLE for RetrievalResultContentColumnType
+        /// </summary>
+        public static readonly RetrievalResultContentColumnType DOUBLE = new RetrievalResultContentColumnType("DOUBLE");
+        /// <summary>
+        /// Constant LONG for RetrievalResultContentColumnType
+        /// </summary>
+        public static readonly RetrievalResultContentColumnType LONG = new RetrievalResultContentColumnType("LONG");
+        /// <summary>
+        /// Constant NULL for RetrievalResultContentColumnType
+        /// </summary>
+        public static readonly RetrievalResultContentColumnType NULL = new RetrievalResultContentColumnType("NULL");
+        /// <summary>
+        /// Constant STRING for RetrievalResultContentColumnType
+        /// </summary>
+        public static readonly RetrievalResultContentColumnType STRING = new RetrievalResultContentColumnType("STRING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RetrievalResultContentColumnType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RetrievalResultContentColumnType FindValue(string value)
+        {
+            return FindValue<RetrievalResultContentColumnType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RetrievalResultContentColumnType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RetrievalResultContentType.
+    /// </summary>
+    public class RetrievalResultContentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IMAGE for RetrievalResultContentType
+        /// </summary>
+        public static readonly RetrievalResultContentType IMAGE = new RetrievalResultContentType("IMAGE");
+        /// <summary>
+        /// Constant ROW for RetrievalResultContentType
+        /// </summary>
+        public static readonly RetrievalResultContentType ROW = new RetrievalResultContentType("ROW");
+        /// <summary>
+        /// Constant TEXT for RetrievalResultContentType
+        /// </summary>
+        public static readonly RetrievalResultContentType TEXT = new RetrievalResultContentType("TEXT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RetrievalResultContentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RetrievalResultContentType FindValue(string value)
+        {
+            return FindValue<RetrievalResultContentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RetrievalResultContentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RetrievalResultLocationType.
     /// </summary>
     public class RetrievalResultLocationType : ConstantClass
@@ -2099,6 +2357,10 @@ namespace Amazon.BedrockAgentRuntime
         /// </summary>
         public static readonly RetrievalResultLocationType CUSTOM = new RetrievalResultLocationType("CUSTOM");
         /// <summary>
+        /// Constant KENDRA for RetrievalResultLocationType
+        /// </summary>
+        public static readonly RetrievalResultLocationType KENDRA = new RetrievalResultLocationType("KENDRA");
+        /// <summary>
         /// Constant S3 for RetrievalResultLocationType
         /// </summary>
         public static readonly RetrievalResultLocationType S3 = new RetrievalResultLocationType("S3");
@@ -2110,6 +2372,10 @@ namespace Amazon.BedrockAgentRuntime
         /// Constant SHAREPOINT for RetrievalResultLocationType
         /// </summary>
         public static readonly RetrievalResultLocationType SHAREPOINT = new RetrievalResultLocationType("SHAREPOINT");
+        /// <summary>
+        /// Constant SQL for RetrievalResultLocationType
+        /// </summary>
+        public static readonly RetrievalResultLocationType SQL = new RetrievalResultLocationType("SQL");
         /// <summary>
         /// Constant WEB for RetrievalResultLocationType
         /// </summary>
@@ -2298,6 +2564,52 @@ namespace Amazon.BedrockAgentRuntime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Source(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TextToSqlConfigurationType.
+    /// </summary>
+    public class TextToSqlConfigurationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant KNOWLEDGE_BASE for TextToSqlConfigurationType
+        /// </summary>
+        public static readonly TextToSqlConfigurationType KNOWLEDGE_BASE = new TextToSqlConfigurationType("KNOWLEDGE_BASE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TextToSqlConfigurationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TextToSqlConfigurationType FindValue(string value)
+        {
+            return FindValue<TextToSqlConfigurationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TextToSqlConfigurationType(string value)
         {
             return FindValue(value);
         }

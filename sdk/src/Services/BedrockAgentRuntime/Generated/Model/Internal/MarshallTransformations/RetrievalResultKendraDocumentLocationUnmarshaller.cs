@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RetrievalResultContent Object
+    /// Response Unmarshaller for RetrievalResultKendraDocumentLocation Object
     /// </summary>  
-    public class RetrievalResultContentUnmarshaller : IUnmarshaller<RetrievalResultContent, XmlUnmarshallerContext>, IUnmarshaller<RetrievalResultContent, JsonUnmarshallerContext>
+    public class RetrievalResultKendraDocumentLocationUnmarshaller : IUnmarshaller<RetrievalResultKendraDocumentLocation, XmlUnmarshallerContext>, IUnmarshaller<RetrievalResultKendraDocumentLocation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RetrievalResultContent IUnmarshaller<RetrievalResultContent, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RetrievalResultKendraDocumentLocation IUnmarshaller<RetrievalResultKendraDocumentLocation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public RetrievalResultContent Unmarshall(JsonUnmarshallerContext context)
+        public RetrievalResultKendraDocumentLocation Unmarshall(JsonUnmarshallerContext context)
         {
-            RetrievalResultContent unmarshalledObject = new RetrievalResultContent();
+            RetrievalResultKendraDocumentLocation unmarshalledObject = new RetrievalResultKendraDocumentLocation();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,10 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("byteContent", targetDepth))
+                if (context.TestExpression("uri", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ByteContent = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("row", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<RetrievalResultContentColumn, RetrievalResultContentColumnUnmarshaller>(RetrievalResultContentColumnUnmarshaller.Instance);
-                    unmarshalledObject.Row = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("text", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Text = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Uri = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +77,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static RetrievalResultContentUnmarshaller _instance = new RetrievalResultContentUnmarshaller();        
+        private static RetrievalResultKendraDocumentLocationUnmarshaller _instance = new RetrievalResultKendraDocumentLocationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RetrievalResultContentUnmarshaller Instance
+        public static RetrievalResultKendraDocumentLocationUnmarshaller Instance
         {
             get
             {

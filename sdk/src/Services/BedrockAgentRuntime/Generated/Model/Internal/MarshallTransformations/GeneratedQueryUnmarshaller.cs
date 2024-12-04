@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RetrievalResultContent Object
+    /// Response Unmarshaller for GeneratedQuery Object
     /// </summary>  
-    public class RetrievalResultContentUnmarshaller : IUnmarshaller<RetrievalResultContent, XmlUnmarshallerContext>, IUnmarshaller<RetrievalResultContent, JsonUnmarshallerContext>
+    public class GeneratedQueryUnmarshaller : IUnmarshaller<GeneratedQuery, XmlUnmarshallerContext>, IUnmarshaller<GeneratedQuery, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RetrievalResultContent IUnmarshaller<RetrievalResultContent, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        GeneratedQuery IUnmarshaller<GeneratedQuery, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public RetrievalResultContent Unmarshall(JsonUnmarshallerContext context)
+        public GeneratedQuery Unmarshall(JsonUnmarshallerContext context)
         {
-            RetrievalResultContent unmarshalledObject = new RetrievalResultContent();
+            GeneratedQuery unmarshalledObject = new GeneratedQuery();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,22 +66,10 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("byteContent", targetDepth))
+                if (context.TestExpression("sql", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ByteContent = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("row", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<RetrievalResultContentColumn, RetrievalResultContentColumnUnmarshaller>(RetrievalResultContentColumnUnmarshaller.Instance);
-                    unmarshalledObject.Row = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("text", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Text = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Sql = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("type", targetDepth))
@@ -95,12 +83,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static RetrievalResultContentUnmarshaller _instance = new RetrievalResultContentUnmarshaller();        
+        private static GeneratedQueryUnmarshaller _instance = new GeneratedQueryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RetrievalResultContentUnmarshaller Instance
+        public static GeneratedQueryUnmarshaller Instance
         {
             get
             {

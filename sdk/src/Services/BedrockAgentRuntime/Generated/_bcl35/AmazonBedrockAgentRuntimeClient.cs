@@ -349,6 +349,93 @@ namespace Amazon.BedrockAgentRuntime
 
         #endregion
         
+        #region  GenerateQuery
+
+        /// <summary>
+        /// Generates an SQL query from a natural language query. For more information, see <a
+        /// href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-generate-query.html">Generate
+        /// a query for structured data</a> in the Amazon Bedrock User Guide.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GenerateQuery service method.</param>
+        /// 
+        /// <returns>The response from the GenerateQuery service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.BadGatewayException">
+        /// There was an issue with a dependency due to a server issue. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ConflictException">
+        /// There was a conflict performing an operation. Resolve the conflict and retry your
+        /// request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.DependencyFailedException">
+        /// There was an issue with a dependency. Check the resource configurations and retry
+        /// the request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ServiceQuotaExceededException">
+        /// The number of requests exceeds the service quota. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/GenerateQuery">REST API Reference for GenerateQuery Operation</seealso>
+        public virtual GenerateQueryResponse GenerateQuery(GenerateQueryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GenerateQueryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GenerateQueryResponseUnmarshaller.Instance;
+
+            return Invoke<GenerateQueryResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GenerateQuery operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GenerateQuery operation on AmazonBedrockAgentRuntimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGenerateQuery
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/GenerateQuery">REST API Reference for GenerateQuery Operation</seealso>
+        public virtual IAsyncResult BeginGenerateQuery(GenerateQueryRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GenerateQueryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GenerateQueryResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GenerateQuery operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGenerateQuery.</param>
+        /// 
+        /// <returns>Returns a  GenerateQueryResult from BedrockAgentRuntime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/GenerateQuery">REST API Reference for GenerateQuery Operation</seealso>
+        public virtual GenerateQueryResponse EndGenerateQuery(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GenerateQueryResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetAgentMemory
 
         /// <summary>
