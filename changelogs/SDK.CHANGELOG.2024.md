@@ -1,3 +1,9 @@
+### 3.7.941.0 (2024-12-05 01:28 UTC)
+* PartnerCentralSelling (3.7.402.0)
+	* Introducing the preview of new partner central selling APIs designed to transform how AWS partners collaborate and co-sell with multiple partners. This enables multiple partners to seamlessly engage and jointly pursue customer opportunities, fostering a new era of collaborative selling.
+* QBusiness (3.7.407.0)
+	* This release removes the deprecated UserId and UserGroups fields from SearchRelevantContent api's request parameters.
+
 ### 3.7.940.0 (2024-12-04 19:25 UTC)
 * Bedrock (3.7.412.0)
 	* Introduced two APIs ListPromptRouters and GetPromptRouter for Intelligent Prompt Router feature. Add support for Bedrock Guardrails image content filter. New Bedrock Marketplace feature enabling a wider range of bedrock compatible models with self-hosted capability.
