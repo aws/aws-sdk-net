@@ -31,12 +31,12 @@ namespace Amazon.PartnerCentralSelling.Model
 {
     /// <summary>
     /// This error occurs when the specified resource can't be found. The resource might not
-    /// exist, or isn't visible with the current credentials. 
+    /// exist, or isn't visible with the current credentials.
     /// 
     ///  
     /// <para>
     /// Suggested action: Verify that the resource ID is correct and the resource is in the
-    /// expected AWS region. Check IAM permissions for accessing the resource. 
+    /// expected AWS region. Check IAM permissions for accessing the resource.
     /// </para>
     /// </summary>
     #if !NETSTANDARD

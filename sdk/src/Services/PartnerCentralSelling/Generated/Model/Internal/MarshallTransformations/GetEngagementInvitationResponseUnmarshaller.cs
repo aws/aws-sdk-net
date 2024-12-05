@@ -64,10 +64,28 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                     response.Catalog = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EngagementDescription", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.EngagementDescription = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EngagementId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.EngagementId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EngagementTitle", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.EngagementTitle = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ExistingMembers", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<EngagementMemberSummary, EngagementMemberSummaryUnmarshaller>(EngagementMemberSummaryUnmarshaller.Instance);
+                    response.ExistingMembers = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ExpirationDate", targetDepth))
@@ -86,6 +104,12 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     response.InvitationDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("InvitationMessage", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.InvitationMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Payload", targetDepth))

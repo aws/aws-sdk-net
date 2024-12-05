@@ -78,6 +78,12 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                     unmarshalledObject.CurrencyCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EstimationUrl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EstimationUrl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Frequency", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

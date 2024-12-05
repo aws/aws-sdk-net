@@ -32,12 +32,12 @@ namespace Amazon.PartnerCentralSelling.Model
     /// <summary>
     /// This error occurs when the request would cause a service quota to be exceeded. Service
     /// quotas represent the maximum allowed use of a specific resource, and this error indicates
-    /// that the request would surpass that limit. 
+    /// that the request would surpass that limit.
     /// 
     ///  
     /// <para>
     /// Suggested action: Review the <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
-    /// for the resource, and either reduce usage or request a quota increase. 
+    /// for the resource, and either reduce usage or request a quota increase.
     /// </para>
     /// </summary>
     #if !NETSTANDARD

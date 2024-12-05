@@ -44,9 +44,9 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Catalog. 
         /// <para>
-        ///  Specifies the catalog in which the AWS Opportunity is located. Accepted values include
+        /// Specifies the catalog in which the AWS Opportunity is located. Accepted values include
         /// <c>AWS</c> for production opportunities or <c>Sandbox</c> for testing purposes. The
-        /// catalog determines which environment the opportunity data is pulled from. 
+        /// catalog determines which environment the opportunity data is pulled from.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -65,8 +65,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property RelatedOpportunityIdentifier. 
         /// <para>
-        ///  The unique identifier for the related partner opportunity. Use this field to correlate
-        /// an AWS opportunity with its corresponding partner opportunity. 
+        /// The unique identifier for the related partner opportunity. Use this field to correlate
+        /// an AWS opportunity with its corresponding partner opportunity.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

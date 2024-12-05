@@ -44,7 +44,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property AwsFundingUsed. 
         /// <para>
         /// Indicates if the <c>Opportunity</c> is a marketing development fund (MDF) funded activity.
-        /// 
         /// </para>
         /// </summary>
         public AwsFundingUsed AwsFundingUsed
@@ -66,7 +65,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// campaign code is a reference to specific marketing initiatives, promotions, or activities.
         /// This field captures the identifier used to track and categorize the <c>Opportunity</c>
         /// within marketing campaigns. If you don't have a campaign code, contact your Amazon
-        /// Web Services point of contact to obtain one. 
+        /// Web Services point of contact to obtain one.
         /// </para>
         /// </summary>
         public string CampaignName
@@ -86,7 +85,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <para>
         /// Specifies the <c>Opportunity</c>'s channel that the marketing activity is associated
         /// with or was contacted through. This field provides information about the specific
-        /// marketing channel that contributed to the generation of the lead or contact. 
+        /// marketing channel that contributed to the generation of the lead or contact.
         /// </para>
         /// </summary>
         public List<string> Channels
@@ -104,11 +103,11 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        ///  Indicates if the <c>Opportunity</c> was sourced from an Amazon Web Services marketing
+        /// Indicates if the <c>Opportunity</c> was sourced from an Amazon Web Services marketing
         /// activity. Use the value <c>Marketing Activity</c>. Use <c>None</c> if it's not associated
         /// with an Amazon Web Services marketing activity. This field helps Amazon Web Services
         /// track the return on marketing investments and enables better distribution of marketing
-        /// budgets among partners. 
+        /// budgets among partners.
         /// </para>
         /// </summary>
         public MarketingSource Source
@@ -126,14 +125,14 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property UseCases. 
         /// <para>
-        ///  Specifies the marketing activity use case or purpose that led to the <c>Opportunity</c>'s
+        /// Specifies the marketing activity use case or purpose that led to the <c>Opportunity</c>'s
         /// creation or contact. This field captures the context or marketing activity's execution's
         /// intention and the direct correlation to the generated opportunity or contact. Must
-        /// be empty when <c>Marketing.AWSFundingUsed = No</c>. 
+        /// be empty when <c>Marketing.AWSFundingUsed = No</c>.
         /// </para>
         ///  
         /// <para>
-        ///  Valid values: <c>AI/ML | Analytics | Application Integration | Blockchain | Business
+        /// Valid values: <c>AI/ML | Analytics | Application Integration | Blockchain | Business
         /// Applications | Cloud Financial Management | Compute | Containers | Customer Engagement
         /// | Databases | Developer Tools | End User Computing | Front End Web &amp; Mobile |
         /// Game Tech | IoT | Management &amp; Governance | Media Services | Migration &amp; Transfer

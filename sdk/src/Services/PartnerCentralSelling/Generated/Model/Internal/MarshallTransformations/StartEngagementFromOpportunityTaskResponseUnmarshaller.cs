@@ -52,6 +52,18 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("EngagementId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.EngagementId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EngagementInvitationId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.EngagementInvitationId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Message", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -68,6 +80,12 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ReasonCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ResourceSnapshotJobId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ResourceSnapshotJobId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StartTime", targetDepth))

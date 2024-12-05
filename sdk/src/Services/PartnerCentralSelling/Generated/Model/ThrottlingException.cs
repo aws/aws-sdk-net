@@ -31,12 +31,12 @@ namespace Amazon.PartnerCentralSelling.Model
 {
     /// <summary>
     /// This error occurs when there are too many requests sent. Review the provided quotas
-    /// and adapt your usage to avoid throttling. 
+    /// and adapt your usage to avoid throttling.
     /// 
     ///  
     /// <para>
     /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
-    /// and retry after the provided delay. 
+    /// and retry after the provided delay.
     /// </para>
     /// </summary>
     #if !NETSTANDARD

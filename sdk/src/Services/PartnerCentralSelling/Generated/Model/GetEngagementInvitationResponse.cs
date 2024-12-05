@@ -36,10 +36,14 @@ namespace Amazon.PartnerCentralSelling.Model
     {
         private string _arn;
         private string _catalog;
+        private string _engagementDescription;
+        private string _engagementId;
         private string _engagementTitle;
+        private List<EngagementMemberSummary> _existingMembers = AWSConfigs.InitializeCollections ? new List<EngagementMemberSummary>() : null;
         private DateTime? _expirationDate;
         private string _id;
         private DateTime? _invitationDate;
+        private string _invitationMessage;
         private Payload _payload;
         private EngagementInvitationPayloadType _payloadType;
         private Receiver _receiver;
@@ -88,6 +92,44 @@ namespace Amazon.PartnerCentralSelling.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EngagementDescription. 
+        /// <para>
+        ///  The description of the engagement associated with this invitation. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=255)]
+        public string EngagementDescription
+        {
+            get { return this._engagementDescription; }
+            set { this._engagementDescription = value; }
+        }
+
+        // Check to see if EngagementDescription property is set
+        internal bool IsSetEngagementDescription()
+        {
+            return this._engagementDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EngagementId. 
+        /// <para>
+        ///  The identifier of the engagement associated with this invitation.This ID links the
+        /// invitation to its corresponding engagement. 
+        /// </para>
+        /// </summary>
+        public string EngagementId
+        {
+            get { return this._engagementId; }
+            set { this._engagementId = value; }
+        }
+
+        // Check to see if EngagementId property is set
+        internal bool IsSetEngagementId()
+        {
+            return this._engagementId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EngagementTitle. 
         /// <para>
         /// The title of the engagement invitation, summarizing the purpose or objectives of the
@@ -105,6 +147,35 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetEngagementTitle()
         {
             return this._engagementTitle != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExistingMembers. 
+        /// <para>
+        ///  A list of active members currently part of the Engagement. This array contains a
+        /// maximum of 10 members, each represented by an object with the following properties.
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  CompanyName: The name of the member's company. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  WebsiteUrl: The website URL of the member's company. 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public List<EngagementMemberSummary> ExistingMembers
+        {
+            get { return this._existingMembers; }
+            set { this._existingMembers = value; }
+        }
+
+        // Check to see if ExistingMembers property is set
+        internal bool IsSetExistingMembers()
+        {
+            return this._existingMembers != null && (this._existingMembers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -161,6 +232,25 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetInvitationDate()
         {
             return this._invitationDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InvitationMessage. 
+        /// <para>
+        ///  The message sent to the invited partner when the invitation was created. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string InvitationMessage
+        {
+            get { return this._invitationMessage; }
+            set { this._invitationMessage = value; }
+        }
+
+        // Check to see if InvitationMessage property is set
+        internal bool IsSetInvitationMessage()
+        {
+            return this._invitationMessage != null;
         }
 
         /// <summary>
@@ -243,7 +333,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property SenderAwsAccountId. 
         /// <para>
         /// Specifies the AWS Account ID of the sender, which identifies the AWS team responsible
-        /// for sharing the engagement invitation. 
+        /// for sharing the engagement invitation.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]

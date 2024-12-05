@@ -33,11 +33,10 @@ namespace Amazon.PartnerCentralSelling.Model
     /// This error occurs when the request can’t be processed due to a conflict with the target
     /// resource's current state, which could result from updating or deleting the resource.
     /// 
-    /// 
     ///  
     /// <para>
     /// Suggested action: Fetch the latest state of the resource, verify the state, and retry
-    /// the request. 
+    /// the request.
     /// </para>
     /// </summary>
     #if !NETSTANDARD

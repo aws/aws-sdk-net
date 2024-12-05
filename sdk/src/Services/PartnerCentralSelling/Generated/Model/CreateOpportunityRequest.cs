@@ -33,11 +33,11 @@ namespace Amazon.PartnerCentralSelling.Model
     /// Container for the parameters to the CreateOpportunity operation.
     /// Creates an <c>Opportunity</c> record in Partner Central. Use this operation to create
     /// a potential business opportunity for submission to Amazon Web Services. Creating an
-    /// opportunity sets <c>Lifecycle.ReviewStatus</c> to <c>Pending Submission</c>. 
+    /// opportunity sets <c>Lifecycle.ReviewStatus</c> to <c>Pending Submission</c>.
     /// 
     ///  
     /// <para>
-    ///  To submit an opportunity, follow these steps: 
+    /// To submit an opportunity, follow these steps:
     /// </para>
     ///  <ol> <li> 
     /// <para>
@@ -53,14 +53,14 @@ namespace Amazon.PartnerCentralSelling.Model
     /// </para>
     ///  </li> </ol> 
     /// <para>
-    ///  After submission, you can't edit the opportunity until the review is complete. But
+    /// After submission, you can't edit the opportunity until the review is complete. But
     /// opportunities in the <c>Pending Submission</c> state must have complete details. You
-    /// can update the opportunity while it's in the <c>Pending Submission</c> state. 
+    /// can update the opportunity while it's in the <c>Pending Submission</c> state.
     /// </para>
     ///  
     /// <para>
-    ///  There's a set of mandatory fields to create opportunities, but consider providing
-    /// optional fields to enrich the opportunity record. 
+    /// There's a set of mandatory fields to create opportunities, but consider providing
+    /// optional fields to enrich the opportunity record.
     /// </para>
     /// </summary>
     public partial class CreateOpportunityRequest : AmazonPartnerCentralSellingRequest
@@ -82,11 +82,11 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Catalog. 
         /// <para>
-        ///  Specifies the catalog associated with the request. This field takes a string value
+        /// Specifies the catalog associated with the request. This field takes a string value
         /// from a predefined list: <c>AWS</c> or <c>Sandbox</c>. The catalog determines which
         /// environment the opportunity is created in. Use <c>AWS</c> to create opportunities
         /// in the Amazon Web Services catalog, and <c>Sandbox</c> for testing in secure, isolated
-        /// environments. 
+        /// environments.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -105,20 +105,20 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        ///  Required to be unique, and should be unchanging, it can be randomly generated or
-        /// a meaningful string. 
+        /// Required to be unique, and should be unchanging, it can be randomly generated or a
+        /// meaningful string.
         /// </para>
         ///  
         /// <para>
-        ///  Default: None 
+        /// Default: None
         /// </para>
         ///  
         /// <para>
-        ///  Best practice: To help ensure uniqueness and avoid conflicts, use a Universally Unique
+        /// Best practice: To help ensure uniqueness and avoid conflicts, use a Universally Unique
         /// Identifier (UUID) as the <c>ClientToken</c>. You can use standard libraries from most
         /// programming languages to generate this. If you use the same client token, the API
         /// returns the following error: "Conflicting client token submitted for a new request
-        /// body." 
+        /// body."
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -137,7 +137,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Customer. 
         /// <para>
-        /// Specifies customer details associated with the <c>Opportunity</c>. 
+        /// Specifies customer details associated with the <c>Opportunity</c>.
         /// </para>
         /// </summary>
         public Customer Customer
@@ -155,7 +155,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property LifeCycle. 
         /// <para>
-        /// An object that contains lifecycle details for the <c>Opportunity</c>. 
+        /// An object that contains lifecycle details for the <c>Opportunity</c>.
         /// </para>
         /// </summary>
         public LifeCycle LifeCycle
@@ -232,27 +232,27 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property OpportunityType. 
         /// <para>
-        ///  Specifies the opportunity type as a renewal, new, or expansion. 
+        /// Specifies the opportunity type as a renewal, new, or expansion.
         /// </para>
         ///  
         /// <para>
-        ///  Opportunity types: 
+        /// Opportunity types:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  New opportunity: Represents a new business opportunity with a potential customer
-        /// that's not previously engaged with your solutions or services. 
+        /// New opportunity: Represents a new business opportunity with a potential customer that's
+        /// not previously engaged with your solutions or services.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Renewal opportunity: Represents an opportunity to renew an existing contract or subscription
-        /// with a current customer, ensuring continuity of service. 
+        /// Renewal opportunity: Represents an opportunity to renew an existing contract or subscription
+        /// with a current customer, ensuring continuity of service.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Expansion opportunity: Represents an opportunity to expand the scope of an existing
+        /// Expansion opportunity: Represents an opportunity to expand the scope of an existing
         /// contract or subscription, either by adding new services or increasing the volume of
-        /// existing services for a current customer. 
+        /// existing services for a current customer.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -271,12 +271,12 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Origin. 
         /// <para>
-        ///  Specifies the origin of the opportunity, indicating if it was sourced from Amazon
+        /// Specifies the origin of the opportunity, indicating if it was sourced from Amazon
         /// Web Services or the partner. For all opportunities created with <c>Catalog: AWS</c>,
         /// this field must only be <c>Partner Referral</c>. However, when using <c>Catalog: Sandbox</c>,
         /// you can set this field to <c>AWS Referral</c> to simulate Amazon Web Services referral
         /// creation. This allows Amazon Web Services-originated flows testing in the sandbox
-        /// catalog. 
+        /// catalog.
         /// </para>
         /// </summary>
         public OpportunityOrigin Origin
@@ -294,15 +294,15 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property PartnerOpportunityIdentifier. 
         /// <para>
-        ///  Specifies the opportunity's unique identifier in the partner's CRM system. This value
+        /// Specifies the opportunity's unique identifier in the partner's CRM system. This value
         /// is essential to track and reconcile because it's included in the outbound payload
-        /// to the partner. 
+        /// to the partner.
         /// </para>
         ///  
         /// <para>
-        ///  This field allows partners to link an opportunity to their CRM, which helps to ensure
+        /// This field allows partners to link an opportunity to their CRM, which helps to ensure
         /// seamless integration and accurate synchronization between the Partner Central API
-        /// and the partner's internal systems. 
+        /// and the partner's internal systems.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=64)]
@@ -321,62 +321,62 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property PrimaryNeedsFromAws. 
         /// <para>
-        ///  Identifies the type of support the partner needs from Amazon Web Services. 
+        /// Identifies the type of support the partner needs from Amazon Web Services.
         /// </para>
         ///  
         /// <para>
-        ///  Valid values: 
+        /// Valid values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  Cosell—Architectural Validation: Confirmation from Amazon Web Services that the partner's
+        /// Cosell—Architectural Validation: Confirmation from Amazon Web Services that the partner's
         /// proposed solution architecture is aligned with Amazon Web Services best practices
-        /// and poses minimal architectural risks. 
+        /// and poses minimal architectural risks.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Cosell—Business Presentation: Request Amazon Web Services seller's participation
-        /// in a joint customer presentation. 
+        /// Cosell—Business Presentation: Request Amazon Web Services seller's participation in
+        /// a joint customer presentation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Cosell—Competitive Information: Access to Amazon Web Services competitive resources
-        /// and support for the partner's proposed solution. 
+        /// Cosell—Competitive Information: Access to Amazon Web Services competitive resources
+        /// and support for the partner's proposed solution.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Cosell—Pricing Assistance: Connect with an Amazon Web Services seller for support
+        /// Cosell—Pricing Assistance: Connect with an Amazon Web Services seller for support
         /// situations where a partner may be receiving an upfront discount on a service (for
-        /// example: EDP deals). 
+        /// example: EDP deals).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Cosell—Technical Consultation: Connect with an Amazon Web Services Solutions Architect
-        /// to address the partner's questions about the proposed solution. 
+        /// Cosell—Technical Consultation: Connect with an Amazon Web Services Solutions Architect
+        /// to address the partner's questions about the proposed solution.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Cosell—Total Cost of Ownership Evaluation: Assistance with quoting different cost
+        /// Cosell—Total Cost of Ownership Evaluation: Assistance with quoting different cost
         /// savings of proposed solutions on Amazon Web Services versus on-premises or a traditional
-        /// hosting environment. 
+        /// hosting environment.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Cosell—Deal Support: Request Amazon Web Services seller's support to progress the
-        /// opportunity (for example: joint customer call, strategic positioning). 
+        /// Cosell—Deal Support: Request Amazon Web Services seller's support to progress the
+        /// opportunity (for example: joint customer call, strategic positioning).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Cosell—Support for Public Tender/RFx: Opportunity related to the public sector where
-        /// the partner needs Amazon Web Services RFx support. 
+        /// Cosell—Support for Public Tender/RFx: Opportunity related to the public sector where
+        /// the partner needs Amazon Web Services RFx support.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Do Not Need Support from AWS Sales Rep: Indicates that a partner doesn't need support
+        /// Do Not Need Support from AWS Sales Rep: Indicates that a partner doesn't need support
         /// from an Amazon Web Services sales representative, and the partner solely manages the
         /// opportunity. It's possible to request coselling support on these opportunities at
         /// any stage during their lifecycles. This is also known as a for-visibility-only (FVO)
-        /// opportunity. 
+        /// opportunity.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -395,7 +395,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Project. 
         /// <para>
-        /// An object that contains project details for the <c>Opportunity</c>. 
+        /// An object that contains project details for the <c>Opportunity</c>.
         /// </para>
         /// </summary>
         public Project Project

@@ -48,11 +48,11 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Catalog. 
         /// <para>
-        ///  Specifies the catalog associated with the request. This field takes a string value
+        /// Specifies the catalog associated with the request. This field takes a string value
         /// from a predefined list: <c>AWS</c> or <c>Sandbox</c>. The catalog determines which
         /// environment the solutions are listed in. Use <c>AWS</c> to list solutions in the Amazon
         /// Web Services catalog, and <c>Sandbox</c> to list solutions in a secure and isolated
-        /// testing environment. 
+        /// testing environment.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -113,7 +113,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results returned by a single call. This value must be provided
-        /// in the next call to retrieve the next set of results. 
+        /// in the next call to retrieve the next set of results.
         /// </para>
         ///  
         /// <para>
@@ -136,9 +136,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  A pagination token used to retrieve the next set of results in subsequent calls.
-        /// This token is included in the response only if there are additional result pages available.
-        /// 
+        /// A pagination token used to retrieve the next set of results in subsequent calls. This
+        /// token is included in the response only if there are additional result pages available.
         /// </para>
         /// </summary>
         public string NextToken
@@ -157,7 +156,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property Sort. 
         /// <para>
         /// Object that configures sorting done on the response. Default <c>Sort.SortBy</c> is
-        /// <c>Identifier</c>. 
+        /// <c>Identifier</c>.
         /// </para>
         /// </summary>
         public SolutionSort Sort

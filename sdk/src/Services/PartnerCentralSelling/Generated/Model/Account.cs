@@ -46,7 +46,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property Address. 
         /// <para>
         /// Specifies the end <c>Customer</c>'s address details associated with the <c>Opportunity</c>.
-        /// 
         /// </para>
         /// </summary>
         public Address Address
@@ -65,7 +64,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property AwsAccountId. 
         /// <para>
         /// Specifies the <c>Customer</c> Amazon Web Services account ID associated with the <c>Opportunity</c>.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -85,7 +83,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property CompanyName. 
         /// <para>
         /// Specifies the end <c>Customer</c>'s company name associated with the <c>Opportunity</c>.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=0, Max=120)]
@@ -104,7 +101,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Duns. 
         /// <para>
-        /// Indicates the <c>Customer</c> DUNS number, if available. 
+        /// Indicates the <c>Customer</c> DUNS number, if available.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -125,7 +122,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <para>
         /// Specifies the industry the end <c>Customer</c> belongs to that's associated with the
         /// <c>Opportunity</c>. It refers to the category or sector where the customer's business
-        /// operates. This is a required field. 
+        /// operates. This is a required field.
         /// </para>
         /// </summary>
         public Industry Industry
@@ -144,7 +141,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// Gets and sets the property OtherIndustry. 
         /// <para>
         /// Specifies the end <c>Customer</c>'s industry associated with the <c>Opportunity</c>,
-        /// when the selected value in the <c>Industry</c> field is <c>Other</c>. 
+        /// when the selected value in the <c>Industry</c> field is <c>Other</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=255)]
@@ -163,10 +160,10 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property WebsiteUrl. 
         /// <para>
-        ///  Specifies the end customer's company website URL associated with the <c>Opportunity</c>.
+        /// Specifies the end customer's company website URL associated with the <c>Opportunity</c>.
         /// This value is crucial to map the customer within the Amazon Web Services CRM system.
         /// This field is required in all cases except when the opportunity is related to national
-        /// security. 
+        /// security.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=4, Max=255)]

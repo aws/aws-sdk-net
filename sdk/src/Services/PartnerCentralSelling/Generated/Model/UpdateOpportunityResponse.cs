@@ -40,7 +40,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// Read-only, system generated <c>Opportunity</c> unique identifier. 
+        /// Read-only, system generated <c>Opportunity</c> unique identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +59,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property LastModifiedDate. 
         /// <para>
-        ///  <c>DateTime</c> when the opportunity was last modified. 
+        ///  <c>DateTime</c> when the opportunity was last modified.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
