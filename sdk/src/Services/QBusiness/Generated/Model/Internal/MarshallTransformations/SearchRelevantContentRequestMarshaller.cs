@@ -63,12 +63,6 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetApplicationId())
                 throw new AmazonQBusinessException("Request object does not have required field ApplicationId set");
             request.AddPathResource("{applicationId}", StringUtils.FromString(publicRequest.ApplicationId));
-            
-            if (publicRequest.IsSetUserGroups())
-                request.ParameterCollection.Add("userGroups", publicRequest.UserGroups);
-            
-            if (publicRequest.IsSetUserId())
-                request.Parameters.Add("userId", StringUtils.FromString(publicRequest.UserId));
             request.ResourcePath = "/applications/{applicationId}/relevant-content";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
@@ -121,7 +115,6 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
-            request.UseQueryString = true;
 
             return request;
         }

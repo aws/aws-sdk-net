@@ -33,10 +33,10 @@ namespace Amazon.QBusiness.Model
     /// Container for the parameters to the SearchRelevantContent operation.
     /// Searches for relevant content in a Q Business application based on a query. This operation
     /// takes a search query text, the Q Business application identifier, and optional filters
-    /// (such as user ID, user groups, content source, and maximum results) as input. It returns
-    /// a list of relevant content items, where each item includes the content text, the unique
-    /// document identifier, the document title, the document URI, any relevant document attributes,
-    /// and score attributes indicating the confidence level of the relevance.
+    /// (such as content source and maximum results) as input. It returns a list of relevant
+    /// content items, where each item includes the content text, the unique document identifier,
+    /// the document title, the document URI, any relevant document attributes, and score
+    /// attributes indicating the confidence level of the relevance.
     /// </summary>
     public partial class SearchRelevantContentRequest : AmazonQBusinessRequest
     {
@@ -46,8 +46,6 @@ namespace Amazon.QBusiness.Model
         private int? _maxResults;
         private string _nextToken;
         private string _queryText;
-        private List<string> _userGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
-        private string _userId;
 
         /// <summary>
         /// Gets and sets the property ApplicationId. 
@@ -156,43 +154,6 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetQueryText()
         {
             return this._queryText != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property UserGroups. 
-        /// <para>
-        /// The groups the user belongs to. Used for access control.
-        /// </para>
-        /// </summary>
-        public List<string> UserGroups
-        {
-            get { return this._userGroups; }
-            set { this._userGroups = value; }
-        }
-
-        // Check to see if UserGroups property is set
-        internal bool IsSetUserGroups()
-        {
-            return this._userGroups != null && (this._userGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
-
-        /// <summary>
-        /// Gets and sets the property UserId. 
-        /// <para>
-        /// The ID of the user performing the search. Used for access control.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
-        public string UserId
-        {
-            get { return this._userId; }
-            set { this._userId = value; }
-        }
-
-        // Check to see if UserId property is set
-        internal bool IsSetUserId()
-        {
-            return this._userId != null;
         }
 
     }

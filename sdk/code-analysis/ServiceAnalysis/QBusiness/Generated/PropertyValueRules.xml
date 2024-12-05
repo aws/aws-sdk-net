@@ -1488,12 +1488,6 @@
     <max>800</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.QBusiness.Model.SearchRelevantContentRequest.UserId</property>
-    <min>1</min>
-    <max>1024</max>
-    <pattern>\P{C}*</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.QBusiness.Model.SearchRelevantContentResponse.NextToken</property>
     <min>1</min>
     <max>800</max>

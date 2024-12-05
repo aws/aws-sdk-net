@@ -5294,16 +5294,6 @@
           "location":"uri",
           "locationName":"applicationId"
         },
-        "userId":{
-          "shape":"UserId",
-          "location":"querystring",
-          "locationName":"userId"
-        },
-        "userGroups":{
-          "shape":"UserGroups",
-          "location":"querystring",
-          "locationName":"userGroups"
-        },
         "queryText":{"shape":"QueryText"},
         "contentSource":{"shape":"ContentSource"},
         "attributeFilter":{"shape":"AttributeFilter"},
