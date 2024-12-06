@@ -17,13 +17,13 @@ namespace Smithy.Identity.Abstractions
     {
         /// <summary>
         /// Loads the customer's identity for this resolver. 
-        /// If the identity cannot be resolved an exception will be thrown.
+        /// If the identity cannot be resolved an <c>AmazonClientException</c> will be thrown.
         /// </summary>
         BaseIdentity ResolveIdentity();
 
         /// <summary>
         /// Loads the customer's identity for this resolver. 
-        /// If the identity cannot be resolved an exception will be thrown.
+        /// If the identity cannot be resolved an <c>AmazonClientException</c> will be thrown.
         /// </summary>
         Task<BaseIdentity> ResolveIdentityAsync(CancellationToken cancellationToken = default);
     }

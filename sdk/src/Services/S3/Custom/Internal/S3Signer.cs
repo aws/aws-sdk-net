@@ -24,6 +24,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.S3.Util;
+using Smithy.Identity.Abstractions;
 
 #pragma warning disable 1591
 
@@ -45,10 +46,10 @@ namespace Amazon.S3.Internal
 
         public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey)
         {
-            Sign(request, clientConfig, metrics, new ImmutableCredentials(awsAccessKeyId, awsSecretAccessKey, ""));
+            Sign(request, clientConfig, metrics, new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey));
         }
 
-        public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, ImmutableCredentials credentials)
+        public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, BaseIdentity credentials)
         {
             _s3Signer.Sign(request, clientConfig, metrics, credentials);
         }

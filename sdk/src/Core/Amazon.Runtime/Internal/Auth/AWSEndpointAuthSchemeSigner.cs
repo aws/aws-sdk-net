@@ -15,6 +15,7 @@
 
 using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
+using Smithy.Identity.Abstractions;
 
 namespace Amazon.Runtime.Internal.Auth
 {
@@ -31,10 +32,10 @@ namespace Amazon.Runtime.Internal.Auth
 
         public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey)
         {
-            Sign(request, clientConfig, metrics, new ImmutableCredentials(awsAccessKeyId, awsSecretAccessKey, ""));
+            Sign(request, clientConfig, metrics, new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey));
         }
 
-        public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, ImmutableCredentials credentials)
+        public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, BaseIdentity baseIdentity)
         {
             var useSigV4 = request.SignatureVersion == SignatureVersion.SigV4;
             var signer = SelectSigner(this, useSigV4, request, clientConfig);
@@ -42,16 +43,18 @@ namespace Amazon.Runtime.Internal.Auth
             var aws4Signer = signer as AWS4Signer;
             var useV4a = aws4aSigner != null;
             var useV4 = aws4Signer != null;
+            var credentials = baseIdentity as AWSCredentials;
+            var immutableCredentials = credentials.GetCredentials();
 
             AWSSigningResultBase signingResult;
-
+            
             if (useV4a)
             {
-                signingResult = aws4aSigner.SignRequest(request, clientConfig, metrics, credentials);
+                signingResult = aws4aSigner.SignRequest(request, clientConfig, metrics, immutableCredentials);
             }
-            else if(useV4)
+            else if (useV4)
             {
-                signingResult = aws4Signer.SignRequest(request, clientConfig, metrics, credentials.AccessKey, credentials.SecretKey);
+                signingResult = aws4Signer.SignRequest(request, clientConfig, metrics, immutableCredentials.AccessKey, immutableCredentials.SecretKey);
             }
             else
             {

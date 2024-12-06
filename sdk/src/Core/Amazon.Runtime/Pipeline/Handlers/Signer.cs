@@ -31,8 +31,6 @@ namespace Amazon.Runtime.Internal
     /// </summary>
     public class Signer : PipelineHandler
     {
-        private static readonly object _bearerSignerLock = new();
-
         /// <summary>
         /// Calls pre invoke logic before calling the next handler 
         /// in the pipeline.
@@ -112,16 +110,6 @@ namespace Amazon.Runtime.Internal
                 return;
             }
 
-            // The signer interface expects immutable credentials, which does not match the AWSToken structure.
-            // We'll manually set a property so that the bearer token still works as expected.
-            if (requestContext.Signer is BearerTokenSigner tokenSigner && requestContext.Identity is AWSToken resolvedToken)
-            {
-                lock (_bearerSignerLock)
-                {
-                    tokenSigner.ResolvedToken = resolvedToken.Token;
-                }
-            }
-
             using (requestContext.Metrics.StartEvent(Metric.RequestSigningTime))
             using (MetricsUtilities.MeasureDuration(requestContext, TelemetryConstants.AuthSigningDurationMetricName))
             {
@@ -142,7 +130,13 @@ namespace Amazon.Runtime.Internal
                             throw new InvalidDataException("Cannot determine protocol");
                     }
                 }
-                requestContext.Signer.Sign(requestContext.Request, requestContext.ClientConfig, requestContext.Metrics, immutableCredentials);
+
+                requestContext.Signer.Sign(
+                    requestContext.Request,
+                    requestContext.ClientConfig,
+                    requestContext.Metrics,
+                    requestContext.Identity
+                );
             }
         }
 
@@ -159,16 +153,6 @@ namespace Amazon.Runtime.Internal
             if (immutableCredentials == null && requestContext.Signer.RequiresCredentials)
             {
                 return;
-            }
-
-            // The signer interface expects immutable credentials, which does not match the AWSToken structure.
-            // We'll manually set a property so that the bearer token still works as expected.
-            if (requestContext.Signer is BearerTokenSigner tokenSigner && requestContext.Identity is AWSToken resolvedToken)
-            {
-                lock (_bearerSignerLock)
-                {
-                    tokenSigner.ResolvedToken = resolvedToken.Token;
-                }
             }
 
             using (requestContext.Metrics.StartEvent(Metric.RequestSigningTime))
@@ -194,10 +178,10 @@ namespace Amazon.Runtime.Internal
 
                 await requestContext.Signer
                     .SignAsync(
-                        requestContext.Request, 
-                        requestContext.ClientConfig, 
-                        requestContext.Metrics, 
-                        immutableCredentials)
+                        requestContext.Request,
+                        requestContext.ClientConfig,
+                        requestContext.Metrics,
+                        requestContext.Identity)
                     .ConfigureAwait(false);
             }
         }

@@ -16,6 +16,7 @@ using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.SharedInterfaces;
 using Amazon.RuntimeDependencies;
 using Amazon.Util.Internal;
+using Smithy.Identity.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -116,12 +117,14 @@ namespace Amazon.Runtime.Internal.Auth
         /// <param name="metrics">
         /// Metrics for the request
         /// </param>
-        /// <param name="credentials">
+        /// <param name="baseIdentity">
         /// The AWS credentials for the account making the service call.
         /// </param>
-        public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, ImmutableCredentials credentials)
+        public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, BaseIdentity baseIdentity)
         {
-            _awsSigV4AProvider.Sign(request, clientConfig, metrics, credentials);
+            var credentials = baseIdentity as AWSCredentials;
+            var immutableCredentials = credentials.GetCredentials();
+            _awsSigV4AProvider.Sign(request, clientConfig, metrics, immutableCredentials);
         }
 
         public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey)

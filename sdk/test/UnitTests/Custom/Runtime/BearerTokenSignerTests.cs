@@ -36,8 +36,8 @@ namespace AWSSDK.UnitTests.Runtime
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
         public void SignThrowsExceptionIfSchemeIsHttp()
-        { 
-            var signer =  new BearerTokenSigner();
+        {
+            var signer = new BearerTokenSigner();
 
             var mockRequest = new Mock<IRequest>();
             mockRequest
@@ -52,7 +52,7 @@ namespace AWSSDK.UnitTests.Runtime
                     mockRequest.Object,
                     clientConfig: null,
                     metrics: null,
-                    credentials: null);
+                    baseIdentity: null);
             }
             catch (Exception e)
             {
@@ -70,8 +70,8 @@ namespace AWSSDK.UnitTests.Runtime
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
         public async Task SignAsyncThrowsExceptionIfSchemeIsHttp()
-        { 
-            var signer =  new BearerTokenSigner();
+        {
+            var signer = new BearerTokenSigner();
 
             var mockRequest = new Mock<IRequest>();
             mockRequest
@@ -86,7 +86,7 @@ namespace AWSSDK.UnitTests.Runtime
                     mockRequest.Object,
                     clientConfig: null,
                     metrics: null,
-                    credentials: null);
+                    baseIdentity: null);
             }
             catch (Exception e)
             {
@@ -309,7 +309,7 @@ namespace AWSSDK.UnitTests.Runtime
 
         private class MockAuthResolverHandler : BaseAuthResolverHandler
         {
-            protected override List<IAuthSchemeOption> ResolveAuthOptions(IExecutionContext executionContext) 
+            protected override List<IAuthSchemeOption> ResolveAuthOptions(IExecutionContext executionContext)
                 => AuthSchemeOption.DEFAULT_BEARER;
         }
     }

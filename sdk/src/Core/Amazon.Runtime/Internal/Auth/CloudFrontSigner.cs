@@ -22,6 +22,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal.Util;
 
 using System.Globalization;
+using Smithy.Identity.Abstractions;
 
 namespace Amazon.Runtime.Internal.Auth
 {
@@ -49,9 +50,11 @@ namespace Amazon.Runtime.Internal.Auth
             request.Headers.Add(HeaderKeys.AuthorizationHeader, "AWS " + awsAccessKeyId + ":" + signature);
         }
 
-        public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, ImmutableCredentials credentials)
+        public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, BaseIdentity baseIdentity)
         {
-            Sign(request, clientConfig, metrics, credentials.AccessKey, credentials.SecretKey);
+            var credentials = baseIdentity as AWSCredentials;
+            var immutableCredentials = credentials.GetCredentials();
+            Sign(request, clientConfig, metrics, immutableCredentials.AccessKey, immutableCredentials.SecretKey);
         }
     }
 }

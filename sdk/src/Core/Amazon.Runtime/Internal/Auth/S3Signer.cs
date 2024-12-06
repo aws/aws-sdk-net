@@ -19,6 +19,7 @@ using System.Text;
 using System.Linq;
 using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
+using Smithy.Identity.Abstractions;
 
 #pragma warning disable 1591
 
@@ -55,20 +56,22 @@ namespace Amazon.Runtime.Internal.Auth
 
         public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey)
         {
-            Sign(request, clientConfig, metrics, new ImmutableCredentials(awsAccessKeyId, awsSecretAccessKey, ""));
+            Sign(request, clientConfig, metrics, new BasicAWSCredentials(awsAccessKeyId, awsSecretAccessKey));
         }
 
-        public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, ImmutableCredentials credentials)
+        public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, BaseIdentity baseIdentity)
         {
             var signer = SelectSigner(this, _useSigV4, request, clientConfig);
             var aws4Signer = signer as AWS4Signer;
             var aws4aSigner = signer as AWS4aSignerCRTWrapper;
             var useV4 = aws4Signer != null;
             var useV4a = aws4aSigner != null;
+            var credentials = baseIdentity as AWSCredentials;
+            var immutableCredentials = credentials.GetCredentials();
 
             if (useV4a)
             {
-                var signingResult = aws4aSigner.SignRequest(request, clientConfig, metrics, credentials);
+                var signingResult = aws4aSigner.SignRequest(request, clientConfig, metrics, immutableCredentials);
                 if (request.UseChunkEncoding)
                 {
                     request.AWS4aSignerResult = signingResult;
@@ -77,14 +80,14 @@ namespace Amazon.Runtime.Internal.Auth
             else if (useV4)
             {
                 _regionDetector?.Invoke(request);
-                var signingResult = aws4Signer.SignRequest(request, clientConfig, metrics, credentials.AccessKey, credentials.SecretKey);
+                var signingResult = aws4Signer.SignRequest(request, clientConfig, metrics, immutableCredentials.AccessKey, immutableCredentials.SecretKey);
                 request.Headers[HeaderKeys.AuthorizationHeader] = signingResult.ForAuthorizationHeader;
                 if (request.UseChunkEncoding)
                     request.AWS4SignerResult = signingResult;
             }
             else
             {
-                SignRequest(request, metrics, credentials.AccessKey, credentials.SecretKey);
+                SignRequest(request, metrics, immutableCredentials.AccessKey, immutableCredentials.SecretKey);
             }
         }
 

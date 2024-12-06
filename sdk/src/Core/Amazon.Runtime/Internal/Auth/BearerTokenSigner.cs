@@ -13,47 +13,38 @@
  * permissions and limitations under the License.
  */
 
+using System;
 #if AWS_ASYNC_API
 using System.Threading;
 using System.Threading.Tasks;
 #endif
 using Amazon.Runtime.Internal.Util;
+using Smithy.Identity.Abstractions;
 
 namespace Amazon.Runtime.Internal.Auth
 {
     public class BearerTokenSigner : AbstractAWSSigner
     {
         public override bool RequiresCredentials { get; } = false;
+        public override ClientProtocol Protocol { get; } = ClientProtocol.Unknown;
 
-        /// <summary>
-        /// The resolved bearer token, determined during the auth resolver handler.
-        /// </summary>
-        public string ResolvedToken { get; internal set; }
+        public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey) 
+            => InternalSign(request, baseIdentity: null);
 
-        public override void Sign(
-            IRequest request, 
-            IClientConfig clientConfig, 
-            RequestMetrics metrics, 
-            string awsAccessKeyId,
-            string awsSecretAccessKey)
+        public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, BaseIdentity baseIdentity)
         {
-            InternalSign(request);
+            InternalSign(request, baseIdentity);
         }
 
 #if AWS_ASYNC_API
-        public override Task SignAsync(
-            IRequest request, 
-            IClientConfig clientConfig, 
-            RequestMetrics metrics, 
-            ImmutableCredentials credentials,
-            CancellationToken token = default)
+        public override Task SignAsync(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, BaseIdentity baseIdentity, CancellationToken token = default)
         {
-            InternalSign(request);
+            InternalSign(request, baseIdentity);
             return Task.CompletedTask;
         }
 #endif
 
-        private void InternalSign(IRequest request)
+        private void InternalSign(IRequest request, BaseIdentity baseIdentity)
         {
             if (request.Endpoint.Scheme == "http")
             {
@@ -62,14 +53,12 @@ namespace Amazon.Runtime.Internal.Auth
                     "Endpoint must not use 'http'.");
             }
 
-            if (string.IsNullOrEmpty(ResolvedToken))
+            if (baseIdentity is not AWSToken awsToken || string.IsNullOrEmpty(awsToken.Token))
             {
                 throw new AmazonClientException("No Token found.  Operation requires a Bearer token.");
             }
 
-            request.Headers["Authorization"] = $"Bearer {ResolvedToken}";
+            request.Headers["Authorization"] = $"Bearer {awsToken.Token}";
         }
-
-        public override ClientProtocol Protocol { get; } = ClientProtocol.Unknown;
     }
 }

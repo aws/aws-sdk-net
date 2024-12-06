@@ -130,7 +130,7 @@ namespace Amazon.Runtime.Credentials.Internal.IdentityResolvers
                         writer.WriteLine();
                     }
 
-                    throw new AmazonServiceException(writer.ToString());
+                    throw new AmazonClientException(writer.ToString());
                 }
             }
             finally
