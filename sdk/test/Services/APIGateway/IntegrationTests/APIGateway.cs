@@ -33,7 +33,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         private static string restApiId = null;
-        private static string timestamp = DateTime.UTcNow.ToFileTime().ToString();
+        private static string timestamp = DateTime.UtcNow.ToFileTime().ToString();
         private static string apiName = "dotnet-test-" + timestamp;
         private static string apiDescription = "RestApi created by dotnet tests at " + timestamp;
 
