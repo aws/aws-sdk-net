@@ -21,7 +21,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
         private string filePath = string.Empty;
         private static readonly Dictionary<string, string> metadata = new Dictionary<string, string>(StringComparer.Ordinal)
         {
-            { "date", DateTime.Now.ToFileTime().ToString() },
+            { "date", DateTime.UtcNow.ToFileTime().ToString() },
             { "test", "true" }
         };
         private static readonly Dictionary<string, string> unicodeMetadata = new Dictionary<string, string>(StringComparer.Ordinal)

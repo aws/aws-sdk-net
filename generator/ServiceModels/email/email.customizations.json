@@ -4,17 +4,5 @@
         "GetSendStatistics",
         "ListIdentities",
         "ListVerifiedEmailAddresses"
-    ],
-    "shapeModifiers": {
-        "MessageDsn": {
-            "backwardsCompatibleDateTimeProperties": [
-                "ArrivalDate"
-            ]
-        },
-        "RecipientDsnFields": {
-            "backwardsCompatibleDateTimeProperties": [
-                "LastAttemptDate"
-            ]
-        }
-    }
+    ]
 }

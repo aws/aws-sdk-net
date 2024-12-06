@@ -438,7 +438,7 @@ namespace ServiceClientGenerator
         /// <summary>
         /// Determines if the shape's type is a timestamp
         /// </summary>
-        public bool IsDateTime
+        public bool IsTimeStamp
         {
             get { return this.Type == "timestamp"; }
         }
@@ -818,7 +818,7 @@ namespace ServiceClientGenerator
         /// </summary>
         public string PrimitiveMarshaller(MarshallLocation marshallLocation)
         {
-            if (this.IsDateTime)
+            if (this.IsTimeStamp)
             {
                 var timestampFormat = GetTimestampFormat(marshallLocation);
                 string formatAppend = string.Empty;

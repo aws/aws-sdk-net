@@ -177,8 +177,8 @@ export const handler = awslambda.streamifyResponse(async (event, responseStream,
             try
             {
                 //Arrange
-                var functionName = "HelloWorld-" + DateTime.Now.Ticks;
-                var iamRoleName = "Lambda-" + DateTime.Now.Ticks;
+                var functionName = "HelloWorld-" + DateTime.UtcNow.Ticks;
+                var iamRoleName = "Lambda-" + DateTime.UtcNow.Ticks;
                 var request = new CreateRoleRequest
                 {
                     RoleName = iamRoleName,
@@ -364,8 +364,8 @@ export const handler = awslambda.streamifyResponse(async (event, responseStream,
 
         public static void CreateLambdaFunction(out string functionName, out string functionArn, out string iamRoleName, out string iamRoleArn, string functionCode, Runtime runtime)
         {
-            functionName = "HelloWorld-" + DateTime.Now.Ticks;
-            iamRoleName = "Lambda-" + DateTime.Now.Ticks;
+            functionName = "HelloWorld-" + DateTime.UtcNow.Ticks;
+            iamRoleName = "Lambda-" + DateTime.UtcNow.Ticks;
 
             CreateLambdaFunction(functionName, iamRoleName, out iamRoleArn, out functionArn, functionCode, runtime);
         }

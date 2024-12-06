@@ -71,7 +71,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 			else
 			{
 				// Only use timestamp format based marshalling if format is not Unix epoch, which is the default for json/rest-json
-				if(member.IsDateTime && member.TimestampFormat != TimestampFormat.UnixTimestamp)
+				if(member.IsTimeStamp && member.TimestampFormat != TimestampFormat.UnixTimestamp)
 				{
 #>
 <#=new string(' ', level * 4)#>                context.Writer.Write(<#=member.PrimitiveMarshaller#>(<#=variableName + "." + member.PropertyName#>));
@@ -196,7 +196,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 			else
 			{
 				// Only use timestamp format based marshalling if format is not Unix epoch, which is the default for json/rest-json
-				if(structure.IsDateTime && structure.GetTimestampFormat(MarshallLocation.Body) != TimestampFormat.UnixTimestamp)
+				if(structure.IsTimeStamp && structure.GetTimestampFormat(MarshallLocation.Body) != TimestampFormat.UnixTimestamp)
 				{
 #>
 <#=new string(' ', level * 4)#>				    context.Writer.Write(<#=structure.PrimitiveMarshaller(MarshallLocation.Body)#>(<#=variableName#>));

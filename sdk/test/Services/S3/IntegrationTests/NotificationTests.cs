@@ -48,7 +48,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             using (var snsClient = new AmazonSimpleNotificationServiceClient())
             using (var stsClient = new AmazonSecurityTokenServiceClient())
             {
-                var snsCreateResponse = snsClient.CreateTopic("events-test-" + DateTime.Now.Ticks);
+                var snsCreateResponse = snsClient.CreateTopic("events-test-" + DateTime.UtcNow.Ticks);
                 var bucketName = S3TestUtils.CreateBucketWithWait(s3Client);
 
                 try
@@ -125,7 +125,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             using (var sqsClient = new AmazonSQSClient())
             using (var stsClient = new AmazonSecurityTokenServiceClient())
             {
-                var createResponse = sqsClient.CreateQueue("events-test-" + DateTime.Now.Ticks);
+                var createResponse = sqsClient.CreateQueue("events-test-" + DateTime.UtcNow.Ticks);
                 var bucketName = S3TestUtils.CreateBucketWithWait(s3Client);
                 
                 try

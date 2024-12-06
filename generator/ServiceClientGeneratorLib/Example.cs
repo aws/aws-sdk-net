@@ -314,7 +314,7 @@ namespace ServiceClientGenerator
                 cb.AppendFormat("new {0}({1})", ShapeType(shape), data.ToString());
             }
 
-            else if (shape.IsDateTime)
+            else if (shape.IsTimeStamp)
             {
                 string exampleValue = null;
 
@@ -363,7 +363,7 @@ namespace ServiceClientGenerator
                 return "float";
             if (shape.IsDouble)
                 return "double";
-            if (shape.IsDateTime)
+            if (shape.IsTimeStamp)
                 return "DateTime";
             if (shape.IsMemoryStream)
                 return "MemoryStream";

@@ -54,7 +54,7 @@ namespace AWSSDK.UnitTests
         {
             var processCredential = new ProcessAWSCredentials($"{Executable} {ArgumentsBasic} {ValidVersionNumber}");
             var credentialsRefreshState = processCredential.DetermineProcessCredential();
-            Assert.AreEqual(DateTime.MaxValue, credentialsRefreshState.Expiration);
+            Assert.AreEqual(DateTime.SpecifyKind(DateTime.MaxValue, DateTimeKind.Utc), credentialsRefreshState.Expiration);
             Assert.AreEqual(ActualAccessKey, credentialsRefreshState.Credentials.AccessKey);
             Assert.AreEqual(ActualSecretKey, credentialsRefreshState.Credentials.SecretKey);
             Assert.IsTrue(string.IsNullOrEmpty(credentialsRefreshState.Credentials.Token));
@@ -65,7 +65,7 @@ namespace AWSSDK.UnitTests
         {
             var processCredential = new ProcessAWSCredentials($"{Executable} {ArgumentsBasic} {ValidVersionNumber}");
             var credentialsRefreshState = await processCredential.DetermineProcessCredentialAsync().ConfigureAwait(false);
-            Assert.AreEqual(DateTime.MaxValue, credentialsRefreshState.Expiration);
+            Assert.AreEqual(DateTime.SpecifyKind(DateTime.MaxValue, DateTimeKind.Utc), credentialsRefreshState.Expiration);
             Assert.AreEqual(ActualAccessKey, credentialsRefreshState.Credentials.AccessKey);
             Assert.AreEqual(ActualSecretKey, credentialsRefreshState.Credentials.SecretKey);
             Assert.IsTrue(string.IsNullOrEmpty(credentialsRefreshState.Credentials.Token));
@@ -83,7 +83,7 @@ namespace AWSSDK.UnitTests
         {
             var processCredential = new ProcessAWSCredentials($"{Executable} {ArgumentsSession} {ValidVersionNumber}");
             var credentialsRefreshState = processCredential.DetermineProcessCredential();
-            Assert.AreNotEqual(DateTime.MaxValue, credentialsRefreshState.Expiration);
+            Assert.AreNotEqual(DateTime.SpecifyKind(DateTime.MaxValue, DateTimeKind.Utc), credentialsRefreshState.Expiration);
             Assert.AreEqual(ActualAccessKey, credentialsRefreshState.Credentials.AccessKey);
             Assert.AreEqual(ActualSecretKey, credentialsRefreshState.Credentials.SecretKey);
             Assert.IsNotNull(credentialsRefreshState.Credentials.Token);

@@ -199,7 +199,7 @@ namespace AWSSDK.UnitTests
                     request.AddPathResource("{FloatProperty}", StringUtils.FromFloat(publicRequest.FloatProperty));
                     request.AddPathResource("{DoubleProperty}", StringUtils.FromDouble(publicRequest.DoubleProperty));
                     request.AddPathResource("{BooleanProperty}", StringUtils.FromBool(publicRequest.BooleanProperty));
-                    request.AddPathResource("{DateTimeProperty}", StringUtils.FromDateTimeToISO8601NoMs(publicRequest.DateTimeProperty));
+                    request.AddPathResource("{DateTimeProperty}", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.DateTimeProperty));
                     request.ResourcePath = "/HttpRequestWithLabels/{StringProperty}/{IntProperty}/{LongProperty}/{FloatProperty}/{DoubleProperty}/{BooleanProperty}/{DateTimeProperty}";
                 }
                 if (publicRequest.IsGreedy)

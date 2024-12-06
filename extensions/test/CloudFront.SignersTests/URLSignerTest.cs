@@ -163,7 +163,7 @@ namespace AWSSDK_DotNet.UnitTests
                               -----END PRIVATE KEY-----
                               ");
 
-            Assert.NotNull(AmazonCloudFrontUrlSigner.GetCannedSignedURL("http://example.com", reader, "keyPairId", DateTime.Now));
+            Assert.NotNull(AmazonCloudFrontUrlSigner.GetCannedSignedURL("http://example.com", reader, "keyPairId", DateTime.UtcNow));
            
         }
     }

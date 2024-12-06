@@ -158,14 +158,14 @@ namespace Amazon.S3.Model
         /// see <a href="https://www.rfc-editor.org/rfc/rfc7234#section-5.3">https://www.rfc-editor.org/rfc/rfc7234#section-5.3</a>.
         /// </para>
         /// </summary>
-        public DateTime? ExpiresUtc
+        public DateTime? Expires
         {
             get 
             {
                 if (this["Expires"] == null)
                     return null;
 
-                return DateTime.Parse(this["Expires"], CultureInfo.InvariantCulture, DateTimeStyles.AdjustToUniversal); 
+                return DateTime.Parse(this["Expires"], CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal); 
             }
             set 
             {
@@ -174,19 +174,6 @@ namespace Amazon.S3.Model
 
                 this["Expires"] = value.GetValueOrDefault().ToUniversalTime().ToString(Amazon.Util.AWSSDKUtils.RFC822DateFormat, CultureInfo.InvariantCulture); 
             }
-        }
-
-        /// <summary>
-        /// <para>
-        /// The date and time at which the object is no longer cacheable. For more information,
-        /// see <a href="https://www.rfc-editor.org/rfc/rfc7234#section-5.3">https://www.rfc-editor.org/rfc/rfc7234#section-5.3</a>.
-        /// </para>
-        /// </summary>
-        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. Use ExpiresUtc instead.", false)]
-        public DateTime? Expires
-        {
-            get { return ExpiresUtc?.ToLocalTime(); }
-            set { ExpiresUtc = value == null ? (DateTime?)null : new DateTime(value.Value.Ticks, DateTimeKind.Utc); }
-        }
+        }   
     }
 }

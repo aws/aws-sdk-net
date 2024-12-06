@@ -252,11 +252,11 @@ namespace Amazon.DynamoDBv2
         }
         protected override bool TryFrom(Primitive p, Type targetType, out DateTime result)
         {
-            if (DateTime.TryParseExact(p.StringValue, AWSSDKUtils.ISO8601DateFormat, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal, out result))
+            if (DateTime.TryParseExact(p.StringValue, AWSSDKUtils.ISO8601DateFormat, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal, out result))
             {
                 return true;
             }
-            return DateTime.TryParse(p.StringValue, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal, out result);
+            return DateTime.TryParse(p.StringValue, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal, out result);
         }
     }
 

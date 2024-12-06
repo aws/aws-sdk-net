@@ -22,7 +22,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
     {
         #region Private members
 
-        private static readonly DateTime EpochDate = DateTime.Now.AddDays(7);
+        private static readonly DateTime EpochDate = DateTime.UtcNow.AddDays(7);
         private static readonly TimeSpan Epsilon = TimeSpan.FromSeconds(1);
         private static readonly int EpochSeconds = AWSSDKUtils.ConvertToUnixEpochSeconds(EpochDate);
 
