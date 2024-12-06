@@ -10,6 +10,7 @@ using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
 using System.IO;
 using System.Text.Json;
+using System.Globalization;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 {
