@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ServiceClientGenerator": {
+      "commandName": "Project",
+      "commandLineArgs": "-sm ec2-tests-client;json10-tests-client;json11-tests-client;query-tests-client;restjson-tests-client;restxml-tests-client;restxmlwithnamespace-tests-client; -sro"
+    }
+  }
+}
