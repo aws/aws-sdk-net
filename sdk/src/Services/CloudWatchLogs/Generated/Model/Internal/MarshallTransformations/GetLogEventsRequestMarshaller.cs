@@ -74,7 +74,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     if(publicRequest.IsSetEndTime())
                     {
                         context.Writer.WritePropertyName("endTime");
-                        context.Writer.Write(Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds(publicRequest.EndTime.Value));
+                        context.Writer.Write(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochMilliseconds(publicRequest.EndTime.Value));
                     }
 
                     if(publicRequest.IsSetLimit())
@@ -116,7 +116,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     if(publicRequest.IsSetStartTime())
                     {
                         context.Writer.WritePropertyName("startTime");
-                        context.Writer.Write(Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds(publicRequest.StartTime.Value));
+                        context.Writer.Write(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochMilliseconds(publicRequest.StartTime.Value));
                     }
 
                     if(publicRequest.IsSetUnmask())
