@@ -77,13 +77,15 @@ namespace Amazon.S3.Internal.S3Express
         private static void PreSignRequest(IRequestContext requestContext, AmazonS3Config config)
         {
             var sessionCredentials = config.S3ExpressCredentialProvider.ResolveSessionCredentials(GetRequestBucketName(requestContext.Request));
-            
-            if (sessionCredentials == null) // Couldn't resolve session credentials, fallback to regular authentication
+            if (sessionCredentials == null) 
+            {
+                // Couldn't resolve session credentials, fallback to regular authentication
                 return;
+            }
 
             requestContext.Request.Headers[S3ExpressSessionHeader] = sessionCredentials.SessionToken;
-
             requestContext.ImmutableCredentials = new ImmutableCredentials(sessionCredentials.AccessKeyId, sessionCredentials.SecretAccessKey, null);
+            requestContext.Identity = new BasicAWSCredentials(sessionCredentials.AccessKeyId, sessionCredentials.SecretAccessKey);
         }
 
 #if AWS_ASYNC_API 
@@ -126,9 +128,15 @@ namespace Amazon.S3.Internal.S3Express
             var sessionCredentials = await config.S3ExpressCredentialProvider
                     .ResolveSessionCredentialsAsync(GetRequestBucketName(requestContext.Request))
                     .ConfigureAwait(false);
+            if (sessionCredentials == null)
+            {
+                // Couldn't resolve session credentials, fallback to regular authentication
+                return;
+            }
 
             requestContext.Request.Headers[S3ExpressSessionHeader] = sessionCredentials.SessionToken;
             requestContext.ImmutableCredentials = new ImmutableCredentials(sessionCredentials.AccessKeyId, sessionCredentials.SecretAccessKey, null);
+            requestContext.Identity = new BasicAWSCredentials(sessionCredentials.AccessKeyId, sessionCredentials.SecretAccessKey);
         }
 #endif
 

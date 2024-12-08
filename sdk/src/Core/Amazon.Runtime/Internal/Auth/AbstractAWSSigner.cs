@@ -71,7 +71,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// <summary>
         /// Signals to the <see cref="Signer"/> Pipeline Handler
         /// if a Signer requires valid <see cref="ImmutableCredentials"/> in order
-        /// to correctly <see cref="Sign(IRequest,IClientConfig,RequestMetrics,ImmutableCredentials)"/>.
+        /// to correctly <see cref="Sign(IRequest,IClientConfig,RequestMetrics,BaseIdentity)"/>.
         /// </summary>
         public virtual bool RequiresCredentials { get; } = true;
 
@@ -110,20 +110,24 @@ namespace Amazon.Runtime.Internal.Auth
         }
         public abstract void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey);
 
-        public virtual void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, ImmutableCredentials credentials)
+        public virtual void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, BaseIdentity baseIdentity)
         {
-            Sign(request, clientConfig, metrics, credentials?.AccessKey, credentials?.SecretKey);
+            if (baseIdentity is AWSCredentials credentials)
+            {
+                var immutableCredentials = credentials.GetCredentials();
+                Sign(request, clientConfig, metrics, immutableCredentials?.AccessKey, immutableCredentials?.SecretKey);
+            }
         }
 
 #if AWS_ASYNC_API
         public virtual System.Threading.Tasks.Task SignAsync(
             IRequest request, 
             IClientConfig clientConfig,
-            RequestMetrics metrics, 
-            ImmutableCredentials credentials,
+            RequestMetrics metrics,
+            BaseIdentity baseIdentity,
             CancellationToken token = default)
         {
-            Sign(request, clientConfig, metrics, credentials);
+            Sign(request, clientConfig, metrics, baseIdentity);
 #if NETSTANDARD
             return Task.CompletedTask;
 #else

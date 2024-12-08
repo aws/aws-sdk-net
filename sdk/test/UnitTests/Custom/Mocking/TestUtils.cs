@@ -43,6 +43,7 @@ namespace AWSSDK.UnitTests.Mocking
             {
                 new NoopPipelineHandler(),
                 new Signer(),
+                new CredentialsRetriever(),
                 new ChecksumHandler(),
                 new CompressionHandler(),
                 new EndpointResolver(),
@@ -70,6 +71,7 @@ namespace AWSSDK.UnitTests.Mocking
             {
                 new NoopPipelineHandler(),
                 new Signer(),
+                new CredentialsRetriever(),
                 new ChecksumHandler(),
                 new CompressionHandler(),
                 new EndpointResolver(),

@@ -52,11 +52,12 @@ namespace AWSSDK.UnitTests
                 new CompressionHandler(),
                 new AmazonS3PostMarshallHandler(),
                 new AmazonS3EndpointResolver(),
+                new AmazonS3AuthSchemeHandler(),
                 new Marshaller(),
                 new AmazonS3PreMarshallHandler(),
             });
 
-            var requestContext = new RequestContext(config.LogMetrics, new Amazon.Runtime.Internal.Auth.S3Signer())
+            var requestContext = new RequestContext(config.LogMetrics)
             {
                 ClientConfig = config,
                 Marshaller = marshaller,
