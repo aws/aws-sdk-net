@@ -162,5 +162,78 @@ namespace Microsoft.Extensions.DependencyInjection
             collection.TryAdd(descriptor);
             return collection;
         }
+        
+#if NET8_0_OR_GREATER
+
+        /// <summary>
+        /// Adds the Amazon service client to the dependency injection framework with a key. The Amazon service client is not
+        /// created until it is requested. If the ServiceLifetime property is set to Singleton, the default, then the same
+        /// instance will be reused for the lifetime of the process and the object should not be disposed.
+        /// </summary>
+        /// <typeparam name="T">The AWS service interface, like IAmazonS3</typeparam>
+        /// <param name="collection"></param>
+        /// <param name="serviceKey">The key with which the service will be added in the dependency injection framework.</param>
+        /// <param name="lifetime">The lifetime of the service client created. The default is Singleton.</param>
+        /// <returns>Returns back the IServiceCollection to continue the fluent system of IServiceCollection.</returns>
+        public static IServiceCollection AddKeyedAWSService<T>(this IServiceCollection collection, object serviceKey, ServiceLifetime lifetime = ServiceLifetime.Singleton) where T : IAmazonService
+        {
+            return AddKeyedAWSService<T>(collection, serviceKey, null, lifetime);
+        }
+        
+        /// <summary>
+        /// Adds the Amazon service client to the dependency injection framework with a key. The Amazon service client is not
+        /// created until it is requested. If the ServiceLifetime property is set to Singleton, the default, then the same
+        /// instance will be reused for the lifetime of the process and the object should not be disposed.
+        /// </summary>
+        /// <typeparam name="T">The AWS service interface, like IAmazonS3</typeparam>
+        /// <param name="collection"></param>
+        /// <param name="serviceKey">The key with which the service will be added in the dependency injection framework.</param>
+        /// <param name="options">The AWS options used to create the service client overriding the default AWS options added using AddDefaultAWSOptions.</param>
+        /// <param name="lifetime">The lifetime of the service client created. The default is Singleton.</param>
+        /// <returns>Returns back the IServiceCollection to continue the fluent system of IServiceCollection.</returns>
+        public static IServiceCollection AddKeyedAWSService<T>(this IServiceCollection collection, object serviceKey, AWSOptions options, ServiceLifetime lifetime = ServiceLifetime.Singleton) where T : IAmazonService
+        {
+            object Factory(IServiceProvider sp, object key) => new ClientFactory<T>(options).CreateServiceClient(sp);
+
+            var descriptor = new ServiceDescriptor(typeof(T), serviceKey, Factory, lifetime);
+            collection.Add(descriptor);
+            return collection;
+        }
+        
+        /// <summary>
+        /// Adds the Amazon service client to the dependency injection framework with a key if the service type hasn't already been registered with the same key.
+        /// The Amazon service client is not created until it is requested. If the ServiceLifetime property is set to Singleton, the default, then the same
+        /// instance will be reused for the lifetime of the process and the object should not be disposed.
+        /// </summary>
+        /// <typeparam name="T">The AWS service interface, like IAmazonS3</typeparam>
+        /// <param name="collection"></param>
+        /// <param name="serviceKey">The key with which the service will be added in the dependency injection framework.</param>
+        /// <param name="lifetime">The lifetime of the service client created. The default is Singleton.</param>
+        /// <returns>Returns back the IServiceCollection to continue the fluent system of IServiceCollection.</returns>
+        public static IServiceCollection TryAddKeyedAWSService<T>(this IServiceCollection collection, object serviceKey, ServiceLifetime lifetime = ServiceLifetime.Singleton) where T : IAmazonService
+        { 
+            return TryAddKeyedAWSService<T>(collection, serviceKey, null, lifetime);
+        }
+        
+        /// <summary>
+        /// Adds the Amazon service client to the dependency injection framework with a key if the service type hasn't already been registered with the same key.
+        /// The Amazon service client is not created until it is requested. If the ServiceLifetime property is set to Singleton, the default, then the same
+        /// instance will be reused for the lifetime of the process and the object should not be disposed.
+        /// </summary>
+        /// <typeparam name="T">The AWS service interface, like IAmazonS3</typeparam>
+        /// <param name="collection"></param>
+        /// <param name="serviceKey">The key with which the service will be added in the dependency injection framework.</param>
+        /// <param name="options">The AWS options used to create the service client overriding the default AWS options added using AddDefaultAWSOptions.</param>
+        /// <param name="lifetime">The lifetime of the service client created. The default is Singleton.</param>
+        /// <returns>Returns back the IServiceCollection to continue the fluent system of IServiceCollection.</returns>
+        public static IServiceCollection TryAddKeyedAWSService<T>(this IServiceCollection collection, object serviceKey, AWSOptions options, ServiceLifetime lifetime = ServiceLifetime.Singleton) where T : IAmazonService
+        {
+            object Factory(IServiceProvider sp, object key) => new ClientFactory<T>(options).CreateServiceClient(sp);
+
+            var descriptor = new ServiceDescriptor(typeof(T), serviceKey, Factory, lifetime);
+            collection.TryAdd(descriptor);
+            return collection;
+        }
+#endif
     }
 }
