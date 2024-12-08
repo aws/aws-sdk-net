@@ -65,10 +65,13 @@ namespace Amazon.Runtime.Internal
                     continue;
                 }
 
-                if (scheme is AwsV4aAuthScheme || scheme is AwsV4AuthScheme)
+                executionContext.RequestContext.Signer = GetSigner(scheme);
+
+                if ((scheme is AwsV4aAuthScheme || scheme is AwsV4AuthScheme) && clientConfig.DefaultAWSCredentials != null)
                 {
                     // We can use DefaultAWSCredentials if it was set by the user for these schemes.
                     executionContext.RequestContext.Identity = clientConfig.DefaultAWSCredentials;
+                    break;
                 }
 
 #if NETFRAMEWORK
@@ -82,16 +85,12 @@ namespace Amazon.Runtime.Internal
                     }
 
                     executionContext.RequestContext.Identity = token;
+                    break;
                 }
 #endif
 
-                if (executionContext.RequestContext.Identity == null)
-                {
-                    var identityResolver = scheme.GetIdentityResolver(clientConfig.IdentityResolverConfiguration);
-                    executionContext.RequestContext.Identity = identityResolver.ResolveIdentity();
-                }
-
-                executionContext.RequestContext.Signer = GetSigner(scheme);
+                var identityResolver = scheme.GetIdentityResolver(clientConfig.IdentityResolverConfiguration);
+                executionContext.RequestContext.Identity = identityResolver.ResolveIdentity();
             }
         }
 
@@ -115,10 +114,13 @@ namespace Amazon.Runtime.Internal
                     continue;
                 }
 
-                if (scheme is AwsV4aAuthScheme || scheme is AwsV4AuthScheme)
+                executionContext.RequestContext.Signer = GetSigner(scheme);
+
+                if ((scheme is AwsV4aAuthScheme || scheme is AwsV4AuthScheme) && clientConfig.DefaultAWSCredentials != null)
                 {
                     // We can use DefaultAWSCredentials if it was set by the user for these schemes.
                     executionContext.RequestContext.Identity = clientConfig.DefaultAWSCredentials;
+                    break;
                 }
 
                 if (scheme is BearerAuthScheme && clientConfig.AWSTokenProvider != null)
@@ -127,24 +129,20 @@ namespace Amazon.Runtime.Internal
                     var resolvedToken = await clientConfig.AWSTokenProvider
                         .TryResolveTokenAsync(cancellationToken)
                         .ConfigureAwait(false);
-                    
+
                     if (!resolvedToken.Success)
                     {
                         continue;
                     }
 
                     executionContext.RequestContext.Identity = resolvedToken.Value;
+                    break;
                 }
 
-                if (executionContext.RequestContext.Identity == null)
-                {
-                    var identityResolver = scheme.GetIdentityResolver(clientConfig.IdentityResolverConfiguration);
-                    executionContext.RequestContext.Identity = await identityResolver
-                        .ResolveIdentityAsync(cancellationToken)
-                        .ConfigureAwait(false);
-                }
-
-                executionContext.RequestContext.Signer = GetSigner(scheme);
+                var identityResolver = scheme.GetIdentityResolver(clientConfig.IdentityResolverConfiguration);
+                executionContext.RequestContext.Identity = await identityResolver
+                    .ResolveIdentityAsync(cancellationToken)
+                    .ConfigureAwait(false);
             }
         }
 
