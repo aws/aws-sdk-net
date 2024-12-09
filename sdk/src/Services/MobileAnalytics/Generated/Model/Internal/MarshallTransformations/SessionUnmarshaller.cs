@@ -81,13 +81,13 @@ namespace Amazon.MobileAnalytics.Model.Internal.MarshallTransformations
                 if (context.TestExpression("startTimestamp", targetDepth))
                 {
                     var unmarshaller = Amazon.Runtime.Internal.Transform.NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartTimestampUtc = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StartTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("stopTimestamp", targetDepth))
                 {
                     var unmarshaller = Amazon.Runtime.Internal.Transform.NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StopTimestampUtc = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StopTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

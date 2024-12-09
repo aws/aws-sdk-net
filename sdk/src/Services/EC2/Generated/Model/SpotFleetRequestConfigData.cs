@@ -58,8 +58,8 @@ namespace Amazon.EC2.Model
         private TargetCapacityUnitType _targetCapacityUnitType;
         private bool? _terminateInstancesWithExpiration;
         private FleetType _type;
-        private DateTime? _validFromUtc;
-        private DateTime? _validUntilUtc;
+        private DateTime? _validFrom;
+        private DateTime? _validUntil;
 
         /// <summary>
         /// Gets and sets the property AllocationStrategy. 
@@ -661,97 +661,26 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ValidFromUtc. 
+        /// Gets and sets the property ValidFrom. 
         /// <para>
         /// The start date and time of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
         /// By default, Amazon EC2 starts fulfilling the request immediately.
         /// </para>
         /// </summary>
-        public DateTime? ValidFromUtc
-        {
-            get { return this._validFromUtc; }
-            set { this._validFrom = this._validFromUtc = value; }
-        }
-
-        // Check to see if ValidFromUtc property is set
-        internal bool IsSetValidFromUtc()
-        {
-            return this._validFromUtc != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ValidUntilUtc. 
-        /// <para>
-        /// The end date and time of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-        /// After the end date and time, no new Spot Instance requests are placed or able to fulfill
-        /// the request. If no value is specified, the Spot Fleet request remains until you cancel
-        /// it.
-        /// </para>
-        /// </summary>
-        public DateTime? ValidUntilUtc
-        {
-            get { return this._validUntilUtc; }
-            set { this._validUntil = this._validUntilUtc = value; }
-        }
-
-        // Check to see if ValidUntilUtc property is set
-        internal bool IsSetValidUntilUtc()
-        {
-            return this._validUntilUtc != null;
-        }
-
-#region Backwards compatible properties
-        private DateTime? _validFrom;
-        private DateTime? _validUntil;
-
-        /// <summary>
-        /// Gets and sets the property ValidFromUtc. 
-        /// <para>
-        /// This property is deprecated. Setting this property results in non-UTC DateTimes not
-        /// being marshalled correctly. Use ValidFromUtc instead. Setting either ValidFrom or
-        /// ValidFromUtc results in both ValidFrom and ValidFromUtc being assigned, the latest
-        /// assignment to either one of the two property is reflected in the value of both. ValidFrom
-        /// is provided for backwards compatibility only and assigning a non-Utc DateTime to it
-        /// results in the wrong timestamp being passed to the service.
-        /// </para>
-        ///  
-        /// <para>
-        /// The start date and time of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
-        /// By default, Amazon EC2 starts fulfilling the request immediately.
-        /// </para>
-        /// </summary>
-        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
-            "Use ValidFromUtc instead. Setting either ValidFrom or ValidFromUtc results in both ValidFrom and " +
-            "ValidFromUtc being assigned, the latest assignment to either one of the two property is " + 
-            "reflected in the value of both. ValidFrom is provided for backwards compatibility only and " +
-            "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
         public DateTime? ValidFrom
         {
-            get { return this._validFrom.GetValueOrDefault(); }
-            set
-            {
-                this._validFrom = value;
-                if (value != null)
-                {
-                    this._validFromUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
-                }
-                else
-                {
-                    this._validFromUtc = null;
-                }
-            }
+            get { return this._validFrom; }
+            set { this._validFrom = value; }
         }
+
+        // Check to see if ValidFrom property is set
+        internal bool IsSetValidFrom()
+        {
+            return this._validFrom != null;
+        }
+
         /// <summary>
-        /// Gets and sets the property ValidUntilUtc. 
-        /// <para>
-        /// This property is deprecated. Setting this property results in non-UTC DateTimes not
-        /// being marshalled correctly. Use ValidUntilUtc instead. Setting either ValidUntil or
-        /// ValidUntilUtc results in both ValidUntil and ValidUntilUtc being assigned, the latest
-        /// assignment to either one of the two property is reflected in the value of both. ValidUntil
-        /// is provided for backwards compatibility only and assigning a non-Utc DateTime to it
-        /// results in the wrong timestamp being passed to the service.
-        /// </para>
-        ///  
+        /// Gets and sets the property ValidUntil. 
         /// <para>
         /// The end date and time of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
         /// After the end date and time, no new Spot Instance requests are placed or able to fulfill
@@ -759,27 +688,17 @@ namespace Amazon.EC2.Model
         /// it.
         /// </para>
         /// </summary>
-        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
-            "Use ValidUntilUtc instead. Setting either ValidUntil or ValidUntilUtc results in both ValidUntil and " +
-            "ValidUntilUtc being assigned, the latest assignment to either one of the two property is " + 
-            "reflected in the value of both. ValidUntil is provided for backwards compatibility only and " +
-            "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
         public DateTime? ValidUntil
         {
-            get { return this._validUntil.GetValueOrDefault(); }
-            set
-            {
-                this._validUntil = value;
-                if (value != null)
-                {
-                    this._validUntilUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
-                }
-                else
-                {
-                    this._validUntilUtc = null;
-                }
-            }
+            get { return this._validUntil; }
+            set { this._validUntil = value; }
         }
-#endregion
+
+        // Check to see if ValidUntil property is set
+        internal bool IsSetValidUntil()
+        {
+            return this._validUntil != null;
+        }
+
     }
 }

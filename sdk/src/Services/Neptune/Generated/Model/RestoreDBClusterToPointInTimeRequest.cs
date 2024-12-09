@@ -58,7 +58,7 @@ namespace Amazon.Neptune.Model
         private string _kmsKeyId;
         private string _optionGroupName;
         private int? _port;
-        private DateTime? _restoreToTimeUtc;
+        private DateTime? _restoreToTime;
         private string _restoreType;
         private ServerlessV2ScalingConfiguration _serverlessV2ScalingConfiguration;
         private string _sourceDBClusterIdentifier;
@@ -313,7 +313,7 @@ namespace Amazon.Neptune.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RestoreToTimeUtc. 
+        /// Gets and sets the property RestoreToTime. 
         /// <para>
         /// The date and time to restore the DB cluster to.
         /// </para>
@@ -346,16 +346,16 @@ namespace Amazon.Neptune.Model
         /// Example: <c>2015-03-07T23:45:00Z</c> 
         /// </para>
         /// </summary>
-        public DateTime? RestoreToTimeUtc
+        public DateTime? RestoreToTime
         {
-            get { return this._restoreToTimeUtc; }
-            set { this._restoreToTime = this._restoreToTimeUtc = value; }
+            get { return this._restoreToTime; }
+            set { this._restoreToTime = value; }
         }
 
-        // Check to see if RestoreToTimeUtc property is set
-        internal bool IsSetRestoreToTimeUtc()
+        // Check to see if RestoreToTime property is set
+        internal bool IsSetRestoreToTime()
         {
-            return this._restoreToTimeUtc.HasValue; 
+            return this._restoreToTime.HasValue; 
         }
 
         /// <summary>
@@ -531,73 +531,5 @@ namespace Amazon.Neptune.Model
             return this._vpcSecurityGroupIds != null && (this._vpcSecurityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
-#region Backwards compatible properties
-        private DateTime? _restoreToTime;
-
-        /// <summary>
-        /// Gets and sets the property RestoreToTimeUtc. 
-        /// <para>
-        /// This property is deprecated. Setting this property results in non-UTC DateTimes not
-        /// being marshalled correctly. Use RestoreToTimeUtc instead. Setting either RestoreToTime
-        /// or RestoreToTimeUtc results in both RestoreToTime and RestoreToTimeUtc being assigned,
-        /// the latest assignment to either one of the two property is reflected in the value
-        /// of both. RestoreToTime is provided for backwards compatibility only and assigning
-        /// a non-Utc DateTime to it results in the wrong timestamp being passed to the service.
-        /// </para>
-        ///  
-        /// <para>
-        /// The date and time to restore the DB cluster to.
-        /// </para>
-        ///  
-        /// <para>
-        /// Valid Values: Value must be a time in Universal Coordinated Time (UTC) format
-        /// </para>
-        ///  
-        /// <para>
-        /// Constraints:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Must be before the latest restorable time for the DB instance
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Must be specified if <c>UseLatestRestorableTime</c> parameter is not provided
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Cannot be specified if <c>UseLatestRestorableTime</c> parameter is true
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Cannot be specified if <c>RestoreType</c> parameter is <c>copy-on-write</c> 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// Example: <c>2015-03-07T23:45:00Z</c> 
-        /// </para>
-        /// </summary>
-        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
-            "Use RestoreToTimeUtc instead. Setting either RestoreToTime or RestoreToTimeUtc results in both RestoreToTime and " +
-            "RestoreToTimeUtc being assigned, the latest assignment to either one of the two property is " + 
-            "reflected in the value of both. RestoreToTime is provided for backwards compatibility only and " +
-            "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime? RestoreToTime
-        {
-            get { return this._restoreToTime.GetValueOrDefault(); }
-            set
-            {
-                this._restoreToTime = value;
-                if (value != null)
-                {
-                    this._restoreToTimeUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
-                }
-                else
-                {
-                    this._restoreToTimeUtc = null;
-                }
-            }
-        }
-#endregion
     }
 }

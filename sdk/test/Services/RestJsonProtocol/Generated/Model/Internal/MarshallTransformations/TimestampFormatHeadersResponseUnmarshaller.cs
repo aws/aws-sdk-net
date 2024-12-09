@@ -49,19 +49,19 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             TimestampFormatHeadersResponse response = new TimestampFormatHeadersResponse();
 
             if (context.ResponseData.IsHeaderPresent("X-defaultFormat"))
-                response.DefaultFormat = DateTime.Parse(context.ResponseData.GetHeaderValue("X-defaultFormat"), CultureInfo.InvariantCulture);
+                response.DefaultFormat = DateTime.Parse(context.ResponseData.GetHeaderValue("X-defaultFormat"), CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);
             if (context.ResponseData.IsHeaderPresent("X-memberDateTime"))
-                response.MemberDateTime = DateTime.Parse(context.ResponseData.GetHeaderValue("X-memberDateTime"), CultureInfo.InvariantCulture);
+                response.MemberDateTime = DateTime.Parse(context.ResponseData.GetHeaderValue("X-memberDateTime"), CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);
             if (context.ResponseData.IsHeaderPresent("X-memberEpochSeconds"))
                 response.MemberEpochSeconds = Amazon.Util.AWSSDKUtils.ConvertFromUnixEpochSeconds(int.Parse(context.ResponseData.GetHeaderValue("X-memberEpochSeconds"), CultureInfo.InvariantCulture));
             if (context.ResponseData.IsHeaderPresent("X-memberHttpDate"))
-                response.MemberHttpDate = DateTime.Parse(context.ResponseData.GetHeaderValue("X-memberHttpDate"), CultureInfo.InvariantCulture);
+                response.MemberHttpDate = DateTime.Parse(context.ResponseData.GetHeaderValue("X-memberHttpDate"), CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);
             if (context.ResponseData.IsHeaderPresent("X-targetDateTime"))
-                response.TargetDateTime = DateTime.Parse(context.ResponseData.GetHeaderValue("X-targetDateTime"), CultureInfo.InvariantCulture);
+                response.TargetDateTime = DateTime.Parse(context.ResponseData.GetHeaderValue("X-targetDateTime"), CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);
             if (context.ResponseData.IsHeaderPresent("X-targetEpochSeconds"))
                 response.TargetEpochSeconds = Amazon.Util.AWSSDKUtils.ConvertFromUnixEpochSeconds(int.Parse(context.ResponseData.GetHeaderValue("X-targetEpochSeconds"), CultureInfo.InvariantCulture));
             if (context.ResponseData.IsHeaderPresent("X-targetHttpDate"))
-                response.TargetHttpDate = DateTime.Parse(context.ResponseData.GetHeaderValue("X-targetHttpDate"), CultureInfo.InvariantCulture);
+                response.TargetHttpDate = DateTime.Parse(context.ResponseData.GetHeaderValue("X-targetHttpDate"), CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);
 
             return response;
         }

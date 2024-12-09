@@ -115,9 +115,9 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                                 {
                                     request.Parameters.Add("BouncedRecipientInfoList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RecipientDsnFields" + "." + "FinalRecipient", StringUtils.FromString(publicRequestlistValue.RecipientDsnFields.FinalRecipient));
                                 }
-                                if(publicRequestlistValue.RecipientDsnFields.IsSetLastAttemptDateUtc())
+                                if(publicRequestlistValue.RecipientDsnFields.IsSetLastAttemptDate())
                                 {
-                                    request.Parameters.Add("BouncedRecipientInfoList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RecipientDsnFields" + "." + "LastAttemptDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestlistValue.RecipientDsnFields.LastAttemptDateUtc));
+                                    request.Parameters.Add("BouncedRecipientInfoList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "RecipientDsnFields" + "." + "LastAttemptDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestlistValue.RecipientDsnFields.LastAttemptDate));
                                 }
                                 if(publicRequestlistValue.RecipientDsnFields.IsSetRemoteMta())
                                 {
@@ -146,9 +146,9 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetMessageDsn())
                 {
-                    if(publicRequest.MessageDsn.IsSetArrivalDateUtc())
+                    if(publicRequest.MessageDsn.IsSetArrivalDate())
                     {
-                        request.Parameters.Add("MessageDsn" + "." + "ArrivalDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.MessageDsn.ArrivalDateUtc));
+                        request.Parameters.Add("MessageDsn" + "." + "ArrivalDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.MessageDsn.ArrivalDate));
                     }
                     if(publicRequest.MessageDsn.IsSetExtensionFields())
                     {
