@@ -557,6 +557,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>network-performance-options.bandwidth-weighting</c> - Where the performance boost
+        /// is applied, if applicable. Valid values: <c>default</c>, <c>vpc-1</c>, <c>ebs-1</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>operator.managed</c> - A Boolean that indicates whether this is a managed instance.
         /// </para>
         ///  </li> <li> 

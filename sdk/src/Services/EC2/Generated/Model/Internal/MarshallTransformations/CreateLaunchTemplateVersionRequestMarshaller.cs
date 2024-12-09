@@ -702,6 +702,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             publicRequestLaunchTemplateDatalistValueIndex++;
                         }
                     }
+                    if(publicRequest.LaunchTemplateData.IsSetNetworkPerformanceOptions())
+                    {
+                        if(publicRequest.LaunchTemplateData.NetworkPerformanceOptions.IsSetBandwidthWeighting())
+                        {
+                            request.Parameters.Add("LaunchTemplateData" + "." + "NetworkPerformanceOptions" + "." + "BandwidthWeighting", StringUtils.FromString(publicRequest.LaunchTemplateData.NetworkPerformanceOptions.BandwidthWeighting));
+                        }
+                    }
                     if(publicRequest.LaunchTemplateData.IsSetOperator())
                     {
                         if(publicRequest.LaunchTemplateData.Operator.IsSetPrincipal())

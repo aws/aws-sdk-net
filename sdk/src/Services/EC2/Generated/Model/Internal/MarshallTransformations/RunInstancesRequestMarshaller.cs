@@ -540,6 +540,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetNetworkPerformanceOptions())
+                {
+                    if(publicRequest.NetworkPerformanceOptions.IsSetBandwidthWeighting())
+                    {
+                        request.Parameters.Add("NetworkPerformanceOptions" + "." + "BandwidthWeighting", StringUtils.FromString(publicRequest.NetworkPerformanceOptions.BandwidthWeighting));
+                    }
+                }
                 if(publicRequest.IsSetOperator())
                 {
                     if(publicRequest.Operator.IsSetPrincipal())

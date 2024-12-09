@@ -1701,6 +1701,60 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type BandwidthWeightingType.
+    /// </summary>
+    public class BandwidthWeightingType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Default for BandwidthWeightingType
+        /// </summary>
+        public static readonly BandwidthWeightingType Default = new BandwidthWeightingType("default");
+        /// <summary>
+        /// Constant Ebs1 for BandwidthWeightingType
+        /// </summary>
+        public static readonly BandwidthWeightingType Ebs1 = new BandwidthWeightingType("ebs-1");
+        /// <summary>
+        /// Constant Vpc1 for BandwidthWeightingType
+        /// </summary>
+        public static readonly BandwidthWeightingType Vpc1 = new BandwidthWeightingType("vpc-1");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BandwidthWeightingType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BandwidthWeightingType FindValue(string value)
+        {
+            return FindValue<BandwidthWeightingType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BandwidthWeightingType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BareMetal.
     /// </summary>
     public class BareMetal : ConstantClass
@@ -7606,6 +7660,60 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InstanceAutoRecoveryState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InstanceBandwidthWeighting.
+    /// </summary>
+    public class InstanceBandwidthWeighting : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Default for InstanceBandwidthWeighting
+        /// </summary>
+        public static readonly InstanceBandwidthWeighting Default = new InstanceBandwidthWeighting("default");
+        /// <summary>
+        /// Constant Ebs1 for InstanceBandwidthWeighting
+        /// </summary>
+        public static readonly InstanceBandwidthWeighting Ebs1 = new InstanceBandwidthWeighting("ebs-1");
+        /// <summary>
+        /// Constant Vpc1 for InstanceBandwidthWeighting
+        /// </summary>
+        public static readonly InstanceBandwidthWeighting Vpc1 = new InstanceBandwidthWeighting("vpc-1");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceBandwidthWeighting(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceBandwidthWeighting FindValue(string value)
+        {
+            return FindValue<InstanceBandwidthWeighting>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceBandwidthWeighting(string value)
         {
             return FindValue(value);
         }

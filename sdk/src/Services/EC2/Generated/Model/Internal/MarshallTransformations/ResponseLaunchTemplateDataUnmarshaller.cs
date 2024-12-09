@@ -224,6 +224,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.NetworkInterfaces.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("networkPerformanceOptions", targetDepth))
+                    {
+                        var unmarshaller = LaunchTemplateNetworkPerformanceOptionsUnmarshaller.Instance;
+                        unmarshalledObject.NetworkPerformanceOptions = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("operator", targetDepth))
                     {
                         var unmarshaller = OperatorResponseUnmarshaller.Instance;

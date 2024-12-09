@@ -14268,7 +14268,7 @@ namespace Amazon.EC2
         ///  </li> <li> 
         /// <para>
         ///  <c>p3dn.24xlarge</c> | <c>p4d.24xlarge</c> | <c>p4de.24xlarge</c> | <c>p5.48xlarge</c>
-        /// | <c>p5e.48xlarge</c> 
+        /// | <c>p5e.48xlarge</c> | <c>p5en.48xlarge</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -26617,6 +26617,46 @@ namespace Amazon.EC2
         /// <returns>Returns a  ModifyInstanceMetadataOptionsResult from EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMetadataOptions">REST API Reference for ModifyInstanceMetadataOptions Operation</seealso>
         ModifyInstanceMetadataOptionsResponse EndModifyInstanceMetadataOptions(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ModifyInstanceNetworkPerformanceOptions
+
+
+        /// <summary>
+        /// Change the configuration of the network performance options for an existing instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceNetworkPerformanceOptions service method.</param>
+        /// 
+        /// <returns>The response from the ModifyInstanceNetworkPerformanceOptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceNetworkPerformanceOptions">REST API Reference for ModifyInstanceNetworkPerformanceOptions Operation</seealso>
+        ModifyInstanceNetworkPerformanceOptionsResponse ModifyInstanceNetworkPerformanceOptions(ModifyInstanceNetworkPerformanceOptionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyInstanceNetworkPerformanceOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceNetworkPerformanceOptions operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyInstanceNetworkPerformanceOptions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceNetworkPerformanceOptions">REST API Reference for ModifyInstanceNetworkPerformanceOptions Operation</seealso>
+        IAsyncResult BeginModifyInstanceNetworkPerformanceOptions(ModifyInstanceNetworkPerformanceOptionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyInstanceNetworkPerformanceOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyInstanceNetworkPerformanceOptions.</param>
+        /// 
+        /// <returns>Returns a  ModifyInstanceNetworkPerformanceOptionsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceNetworkPerformanceOptions">REST API Reference for ModifyInstanceNetworkPerformanceOptions Operation</seealso>
+        ModifyInstanceNetworkPerformanceOptionsResponse EndModifyInstanceNetworkPerformanceOptions(IAsyncResult asyncResult);
 
         #endregion
         

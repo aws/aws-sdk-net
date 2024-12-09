@@ -64,6 +64,7 @@ namespace Amazon.EC2.Model
         private LaunchTemplateInstanceMetadataOptionsRequest _metadataOptions;
         private LaunchTemplatesMonitoringRequest _monitoring;
         private List<LaunchTemplateInstanceNetworkInterfaceSpecificationRequest> _networkInterfaces = AWSConfigs.InitializeCollections ? new List<LaunchTemplateInstanceNetworkInterfaceSpecificationRequest>() : null;
+        private LaunchTemplateNetworkPerformanceOptionsRequest _networkPerformanceOptions;
         private OperatorRequest _operator;
         private LaunchTemplatePlacementRequest _placement;
         private LaunchTemplatePrivateDnsNameOptionsRequest _privateDnsNameOptions;
@@ -689,6 +690,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetNetworkInterfaces()
         {
             return this._networkInterfaces != null && (this._networkInterfaces.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkPerformanceOptions. 
+        /// <para>
+        /// Contains launch template settings to boost network performance for the type of workload
+        /// that runs on your instance.
+        /// </para>
+        /// </summary>
+        public LaunchTemplateNetworkPerformanceOptionsRequest NetworkPerformanceOptions
+        {
+            get { return this._networkPerformanceOptions; }
+            set { this._networkPerformanceOptions = value; }
+        }
+
+        // Check to see if NetworkPerformanceOptions property is set
+        internal bool IsSetNetworkPerformanceOptions()
+        {
+            return this._networkPerformanceOptions != null;
         }
 
         /// <summary>

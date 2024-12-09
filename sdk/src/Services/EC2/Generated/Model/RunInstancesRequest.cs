@@ -138,6 +138,7 @@ namespace Amazon.EC2.Model
         private int? _minCount;
         private bool? _monitoring;
         private List<InstanceNetworkInterfaceSpecification> _networkInterfaces = AWSConfigs.InitializeCollections ? new List<InstanceNetworkInterfaceSpecification>() : null;
+        private InstanceNetworkPerformanceOptionsRequest _networkPerformanceOptions;
         private OperatorRequest _operator;
         private Placement _placement;
         private PrivateDnsNameOptionsRequest _privateDnsNameOptions;
@@ -864,6 +865,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetNetworkInterfaces()
         {
             return this._networkInterfaces != null && (this._networkInterfaces.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkPerformanceOptions. 
+        /// <para>
+        /// Contains settings for the network performance options for the instance.
+        /// </para>
+        /// </summary>
+        public InstanceNetworkPerformanceOptionsRequest NetworkPerformanceOptions
+        {
+            get { return this._networkPerformanceOptions; }
+            set { this._networkPerformanceOptions = value; }
+        }
+
+        // Check to see if NetworkPerformanceOptions property is set
+        internal bool IsSetNetworkPerformanceOptions()
+        {
+            return this._networkPerformanceOptions != null;
         }
 
         /// <summary>

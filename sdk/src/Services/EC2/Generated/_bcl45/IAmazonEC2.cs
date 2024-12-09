@@ -13696,7 +13696,7 @@ namespace Amazon.EC2
         ///  </li> <li> 
         /// <para>
         ///  <c>p3dn.24xlarge</c> | <c>p4d.24xlarge</c> | <c>p4de.24xlarge</c> | <c>p5.48xlarge</c>
-        /// | <c>p5e.48xlarge</c> 
+        /// | <c>p5e.48xlarge</c> | <c>p5en.48xlarge</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13751,7 +13751,7 @@ namespace Amazon.EC2
         ///  </li> <li> 
         /// <para>
         ///  <c>p3dn.24xlarge</c> | <c>p4d.24xlarge</c> | <c>p4de.24xlarge</c> | <c>p5.48xlarge</c>
-        /// | <c>p5e.48xlarge</c> 
+        /// | <c>p5e.48xlarge</c> | <c>p5en.48xlarge</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -25503,6 +25503,34 @@ namespace Amazon.EC2
         /// <returns>The response from the ModifyInstanceMetadataOptions service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMetadataOptions">REST API Reference for ModifyInstanceMetadataOptions Operation</seealso>
         Task<ModifyInstanceMetadataOptionsResponse> ModifyInstanceMetadataOptionsAsync(ModifyInstanceMetadataOptionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ModifyInstanceNetworkPerformanceOptions
+
+
+        /// <summary>
+        /// Change the configuration of the network performance options for an existing instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceNetworkPerformanceOptions service method.</param>
+        /// 
+        /// <returns>The response from the ModifyInstanceNetworkPerformanceOptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceNetworkPerformanceOptions">REST API Reference for ModifyInstanceNetworkPerformanceOptions Operation</seealso>
+        ModifyInstanceNetworkPerformanceOptionsResponse ModifyInstanceNetworkPerformanceOptions(ModifyInstanceNetworkPerformanceOptionsRequest request);
+
+
+
+        /// <summary>
+        /// Change the configuration of the network performance options for an existing instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceNetworkPerformanceOptions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyInstanceNetworkPerformanceOptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceNetworkPerformanceOptions">REST API Reference for ModifyInstanceNetworkPerformanceOptions Operation</seealso>
+        Task<ModifyInstanceNetworkPerformanceOptionsResponse> ModifyInstanceNetworkPerformanceOptionsAsync(ModifyInstanceNetworkPerformanceOptionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

@@ -17707,7 +17707,7 @@ namespace Amazon.EC2
         ///  </li> <li> 
         /// <para>
         ///  <c>p3dn.24xlarge</c> | <c>p4d.24xlarge</c> | <c>p4de.24xlarge</c> | <c>p5.48xlarge</c>
-        /// | <c>p5e.48xlarge</c> 
+        /// | <c>p5e.48xlarge</c> | <c>p5en.48xlarge</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -17768,7 +17768,7 @@ namespace Amazon.EC2
         ///  </li> <li> 
         /// <para>
         ///  <c>p3dn.24xlarge</c> | <c>p4d.24xlarge</c> | <c>p4de.24xlarge</c> | <c>p5.48xlarge</c>
-        /// | <c>p5e.48xlarge</c> 
+        /// | <c>p5e.48xlarge</c> | <c>p5en.48xlarge</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -32896,6 +32896,47 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = ModifyInstanceMetadataOptionsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ModifyInstanceMetadataOptionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyInstanceNetworkPerformanceOptions
+
+
+        /// <summary>
+        /// Change the configuration of the network performance options for an existing instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceNetworkPerformanceOptions service method.</param>
+        /// 
+        /// <returns>The response from the ModifyInstanceNetworkPerformanceOptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceNetworkPerformanceOptions">REST API Reference for ModifyInstanceNetworkPerformanceOptions Operation</seealso>
+        public virtual ModifyInstanceNetworkPerformanceOptionsResponse ModifyInstanceNetworkPerformanceOptions(ModifyInstanceNetworkPerformanceOptionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyInstanceNetworkPerformanceOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyInstanceNetworkPerformanceOptionsResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyInstanceNetworkPerformanceOptionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Change the configuration of the network performance options for an existing instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceNetworkPerformanceOptions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyInstanceNetworkPerformanceOptions service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceNetworkPerformanceOptions">REST API Reference for ModifyInstanceNetworkPerformanceOptions Operation</seealso>
+        public virtual Task<ModifyInstanceNetworkPerformanceOptionsResponse> ModifyInstanceNetworkPerformanceOptionsAsync(ModifyInstanceNetworkPerformanceOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyInstanceNetworkPerformanceOptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyInstanceNetworkPerformanceOptionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyInstanceNetworkPerformanceOptionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
