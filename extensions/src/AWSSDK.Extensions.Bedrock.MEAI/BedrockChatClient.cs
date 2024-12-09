@@ -331,22 +331,29 @@ internal sealed partial class BedrockChatClient : IChatClient
                     contents.Add(new() { Text = tc.Text });
                     break;
 
-                case ImageContent ic when ic.ContainsData:
-                    contents.Add(new()
+                case DataContent dc when dc.ContainsData:
+                    if (GetImageFormat(dc.MediaType) is ImageFormat imageFormat)
                     {
-                        Image = new()
+                        contents.Add(new()
                         {
-                            Source = new() { Bytes = new(ic.Data!.Value.ToArray()) },
-                            Format = ic.MediaType switch
+                            Image = new()
                             {
-                                "image/jpeg" => ImageFormat.Jpeg,
-                                "image/png" => ImageFormat.Png,
-                                "image/gif" => ImageFormat.Gif,
-                                "image/webp" => ImageFormat.Webp,
-                                _ => null,
-                            },
-                        }
-                    });
+                                Source = new() { Bytes = new(dc.Data!.Value.ToArray()) },
+                                Format = imageFormat,
+                            }
+                        });
+                    }
+                    else if (GetDocumentFormat(dc.MediaType) is DocumentFormat docFormat)
+                    {
+                        contents.Add(new()
+                        {
+                            Document = new DocumentBlock()
+                            {
+                                Source = new() { Bytes = new(dc.Data!.Value.ToArray()) },
+                                Format = docFormat,
+                            }
+                        });
+                    }
                     break;
 
                 case FunctionCallContent fcc:
@@ -389,6 +396,33 @@ internal sealed partial class BedrockChatClient : IChatClient
 
         return contents;
     }
+
+    /// <summary>Gets the <see cref="DocumentFormat"/> for the specified MIME type.</summary>
+    private static DocumentFormat? GetDocumentFormat(string? mediaType) =>
+        mediaType switch
+        {
+            "text/csv" => DocumentFormat.Csv,
+            "text/html" => DocumentFormat.Html,
+            "text/markdown" => DocumentFormat.Md,
+            "text/plain" => DocumentFormat.Txt,
+            "application/pdf" => DocumentFormat.Pdf,
+            "application/msword" => DocumentFormat.Doc,
+            "application/vnd.openxmlformats-officedocument.wordprocessingml.document" => DocumentFormat.Docx,
+            "application/vnd.ms-excel" => DocumentFormat.Xls,
+            "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" => DocumentFormat.Xlsx,
+            _ => null,
+        };
+
+    /// <summary>Gets the <see cref="ImageFormat"/> for the specified MIME type.</summary>
+    private static ImageFormat? GetImageFormat(string? mediaType) =>
+        mediaType switch
+        {
+            "image/jpeg" => ImageFormat.Jpeg,
+            "image/png" => ImageFormat.Png,
+            "image/gif" => ImageFormat.Gif,
+            "image/webp" => ImageFormat.Webp,
+            _ => null,
+        };
 
     /// <summary>Converts a <see cref="Dictionary{String, Object}"/> to a <see cref="Document"/>.</summary>
     private static Document DictionaryToDocument(IDictionary<string, object?>? arguments)
