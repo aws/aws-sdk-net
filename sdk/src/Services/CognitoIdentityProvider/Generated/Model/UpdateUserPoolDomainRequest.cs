@@ -119,7 +119,6 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// request.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public CustomDomainConfigType CustomDomainConfig
         {
             get { return this._customDomainConfig; }
