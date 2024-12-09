@@ -1,0 +1,18 @@
+{
+    "services": [
+        {
+            "serviceName": "DSQL",
+            "type": "minor",
+            "changeLogMessages": [
+                "Add Amazon.DSQL.Util.DSQLAuthTokenGenerator for generating auth tokens for connecting to DSQL clusters."
+            ]
+        },
+        {
+            "serviceName": "RDS",
+            "type": "patch",
+            "changeLogMessages": [
+                "Update documentation for Amazon.RDS.Util.RDSAuthTokenGenerator."
+            ]
+        }		
+    ]
+}
