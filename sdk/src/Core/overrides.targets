@@ -1,5 +1,5 @@
 <!--
- this is a placeholder file to override the system text json version for netstandard20 and net472 targets in the build system.
+ this is a placeholder file to override the System.Text.Json version for netstandard20 and net472 targets in the build system.
 -->
 <Project>
 </Project>
