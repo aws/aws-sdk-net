@@ -217,13 +217,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("validFrom", targetDepth))
                     {
                         var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                        unmarshalledObject.ValidFromUtc = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ValidFrom = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("validUntil", targetDepth))
                     {
                         var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                        unmarshalledObject.ValidUntilUtc = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ValidUntil = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }

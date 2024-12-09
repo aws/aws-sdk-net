@@ -37,13 +37,13 @@ namespace Amazon.WorkDocs.Model
     {
         private string _activityTypes;
         private string _authenticationToken;
-        private DateTime? _endTimeUtc;
+        private DateTime? _endTime;
         private bool? _includeIndirectActivities;
         private int? _limit;
         private string _marker;
         private string _organizationId;
         private string _resourceId;
-        private DateTime? _startTimeUtc;
+        private DateTime? _startTime;
         private string _userId;
 
         /// <summary>
@@ -87,22 +87,22 @@ namespace Amazon.WorkDocs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EndTimeUtc. 
+        /// Gets and sets the property EndTime. 
         /// <para>
         /// The timestamp that determines the end time of the activities. The response includes
         /// the activities performed before the specified timestamp.
         /// </para>
         /// </summary>
-        public DateTime? EndTimeUtc
+        public DateTime? EndTime
         {
-            get { return this._endTimeUtc; }
-            set { this._endTime = this._endTimeUtc = value; }
+            get { return this._endTime; }
+            set { this._endTime = value; }
         }
 
-        // Check to see if EndTimeUtc property is set
-        internal bool IsSetEndTimeUtc()
+        // Check to see if EndTime property is set
+        internal bool IsSetEndTime()
         {
-            return this._endTimeUtc.HasValue; 
+            return this._endTime.HasValue; 
         }
 
         /// <summary>
@@ -204,22 +204,22 @@ namespace Amazon.WorkDocs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StartTimeUtc. 
+        /// Gets and sets the property StartTime. 
         /// <para>
         /// The timestamp that determines the starting time of the activities. The response includes
         /// the activities performed after the specified timestamp.
         /// </para>
         /// </summary>
-        public DateTime? StartTimeUtc
+        public DateTime? StartTime
         {
-            get { return this._startTimeUtc; }
-            set { this._startTime = this._startTimeUtc = value; }
+            get { return this._startTime; }
+            set { this._startTime = value; }
         }
 
-        // Check to see if StartTimeUtc property is set
-        internal bool IsSetStartTimeUtc()
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
         {
-            return this._startTimeUtc.HasValue; 
+            return this._startTime.HasValue; 
         }
 
         /// <summary>
@@ -243,84 +243,5 @@ namespace Amazon.WorkDocs.Model
             return this._userId != null;
         }
 
-#region Backwards compatible properties
-        private DateTime? _endTime;
-        private DateTime? _startTime;
-
-        /// <summary>
-        /// Gets and sets the property EndTimeUtc. 
-        /// <para>
-        /// This property is deprecated. Setting this property results in non-UTC DateTimes not
-        /// being marshalled correctly. Use EndTimeUtc instead. Setting either EndTime or EndTimeUtc
-        /// results in both EndTime and EndTimeUtc being assigned, the latest assignment to either
-        /// one of the two property is reflected in the value of both. EndTime is provided for
-        /// backwards compatibility only and assigning a non-Utc DateTime to it results in the
-        /// wrong timestamp being passed to the service.
-        /// </para>
-        ///  
-        /// <para>
-        /// The timestamp that determines the end time of the activities. The response includes
-        /// the activities performed before the specified timestamp.
-        /// </para>
-        /// </summary>
-        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
-            "Use EndTimeUtc instead. Setting either EndTime or EndTimeUtc results in both EndTime and " +
-            "EndTimeUtc being assigned, the latest assignment to either one of the two property is " + 
-            "reflected in the value of both. EndTime is provided for backwards compatibility only and " +
-            "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime? EndTime
-        {
-            get { return this._endTime.GetValueOrDefault(); }
-            set
-            {
-                this._endTime = value;
-                if (value != null)
-                {
-                    this._endTimeUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
-                }
-                else
-                {
-                    this._endTimeUtc = null;
-                }
-            }
-        }
-        /// <summary>
-        /// Gets and sets the property StartTimeUtc. 
-        /// <para>
-        /// This property is deprecated. Setting this property results in non-UTC DateTimes not
-        /// being marshalled correctly. Use StartTimeUtc instead. Setting either StartTime or
-        /// StartTimeUtc results in both StartTime and StartTimeUtc being assigned, the latest
-        /// assignment to either one of the two property is reflected in the value of both. StartTime
-        /// is provided for backwards compatibility only and assigning a non-Utc DateTime to it
-        /// results in the wrong timestamp being passed to the service.
-        /// </para>
-        ///  
-        /// <para>
-        /// The timestamp that determines the starting time of the activities. The response includes
-        /// the activities performed after the specified timestamp.
-        /// </para>
-        /// </summary>
-        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
-            "Use StartTimeUtc instead. Setting either StartTime or StartTimeUtc results in both StartTime and " +
-            "StartTimeUtc being assigned, the latest assignment to either one of the two property is " + 
-            "reflected in the value of both. StartTime is provided for backwards compatibility only and " +
-            "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime? StartTime
-        {
-            get { return this._startTime.GetValueOrDefault(); }
-            set
-            {
-                this._startTime = value;
-                if (value != null)
-                {
-                    this._startTimeUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
-                }
-                else
-                {
-                    this._startTimeUtc = null;
-                }
-            }
-        }
-#endregion
     }
 }

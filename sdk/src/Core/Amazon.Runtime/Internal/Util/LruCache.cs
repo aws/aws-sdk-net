@@ -96,9 +96,7 @@ namespace Amazon.Runtime.Internal.Util
                 while (Count != 0)
                 {
                     var item = FindOldestItem();
-#pragma warning disable CS0618 // Type or member is obsolete
                     var timeSpan = AWSSDKUtils.CorrectedUtcNow - item.LastTouchedTimestamp;
-#pragma warning restore CS0618 // Type or member is obsolete
                     if (timeSpan.TotalSeconds > validityInSeconds)
                         Evict(item.Key);
                     else

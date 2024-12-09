@@ -23,24 +23,24 @@
 		"DescribeVaultOutput" : {
             "CreationDate": {
                 "Type": "DateTime?",
-                "Marshaller": "Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601",
+                "Marshaller": "Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601WithOptionalMs",
                 "Unmarshaller": "Amazon.Runtime.Internal.Transform.NullableDateTimeUnmarshaller"
             },
             "LastInventoryDate": {
                 "Type": "DateTime?",
-                "Marshaller": "Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601",
+                "Marshaller": "Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601WithOptionalMs",
                 "Unmarshaller": "Amazon.Runtime.Internal.Transform.DateTimeUnmarshaller"
             }
 		},
 		"GlacierJobDescription" : {
             "CreationDate": {
                 "Type": "DateTime?",
-                "Marshaller": "Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601",
+                "Marshaller": "Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601WithOptionalMs",
                 "Unmarshaller": "Amazon.Runtime.Internal.Transform.NullableDateTimeUnmarshaller"
             },
             "CompletionDate": {
                 "Type": "DateTime?",
-                "Marshaller": "Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601",
+                "Marshaller": "Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601WithOptionalMs",
                 "Unmarshaller": "Amazon.Runtime.Internal.Transform.NullableDateTimeUnmarshaller"
             }
 		},
@@ -80,12 +80,12 @@
 		"ListPartsOutput" : {
             "CreationDate": {
                 "Type": "DateTime?",
-                "Marshaller": "Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601",
+                "Marshaller": "Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601WithOptionalMs",
                 "Unmarshaller": "Amazon.Runtime.Internal.Transform.NullableDateTimeUnmarshaller"
             },
             "CompletionDate": {
                 "Type": "DateTime?",
-                "Marshaller": "Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601",
+                "Marshaller": "Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601WithOptionalMs",
                 "Unmarshaller": "Amazon.Runtime.Internal.Transform.NullableDateTimeUnmarshaller"
             }
 		},
@@ -99,7 +99,7 @@
 		"UploadListElement" : {
             "CreationDate": {
                 "Type": "DateTime?",
-                "Marshaller": "Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601",
+                "Marshaller": "Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601WithOptionalMs",
                 "Unmarshaller": "Amazon.Runtime.Internal.Transform.NullableDateTimeUnmarshaller"
             }
 		}

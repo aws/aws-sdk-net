@@ -57,7 +57,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTimestamp())
             {
                 context.Writer.WritePropertyName("timestamp");
-                context.Writer.Write(Amazon.Runtime.Internal.Transform.CustomMarshallTransformations.ConvertDateTimeToEpochMilliseconds(requestObject.Timestamp.Value));
+                context.Writer.Write(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochMilliseconds(requestObject.Timestamp.Value));
             }
 
         }

@@ -55,7 +55,7 @@ namespace Amazon.Redshift.Model
     {
         private bool? _clusterExists;
         private string _clusterIdentifier;
-        private DateTime? _endTimeUtc;
+        private DateTime? _endTime;
         private string _marker;
         private int? _maxRecords;
         private string _ownerAccount;
@@ -63,7 +63,7 @@ namespace Amazon.Redshift.Model
         private string _snapshotIdentifier;
         private string _snapshotType;
         private List<SnapshotSortingEntity> _sortingEntities = AWSConfigs.InitializeCollections ? new List<SnapshotSortingEntity>() : null;
-        private DateTime? _startTimeUtc;
+        private DateTime? _startTime;
         private List<string> _tagKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _tagValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
@@ -129,7 +129,7 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EndTimeUtc. 
+        /// Gets and sets the property EndTime. 
         /// <para>
         /// A time value that requests only snapshots created at or before the specified time.
         /// The time value is specified in ISO 8601 format. For more information about ISO 8601,
@@ -141,16 +141,16 @@ namespace Amazon.Redshift.Model
         /// Example: <c>2012-07-16T18:00:00Z</c> 
         /// </para>
         /// </summary>
-        public DateTime? EndTimeUtc
+        public DateTime? EndTime
         {
-            get { return this._endTimeUtc; }
-            set { this._endTime = this._endTimeUtc = value; }
+            get { return this._endTime; }
+            set { this._endTime = value; }
         }
 
-        // Check to see if EndTimeUtc property is set
-        internal bool IsSetEndTimeUtc()
+        // Check to see if EndTime property is set
+        internal bool IsSetEndTime()
         {
-            return this._endTimeUtc.HasValue; 
+            return this._endTime.HasValue; 
         }
 
         /// <summary>
@@ -306,7 +306,7 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StartTimeUtc. 
+        /// Gets and sets the property StartTime. 
         /// <para>
         /// A value that requests only snapshots created at or after the specified time. The time
         /// value is specified in ISO 8601 format. For more information about ISO 8601, go to
@@ -317,16 +317,16 @@ namespace Amazon.Redshift.Model
         /// Example: <c>2012-07-16T18:00:00Z</c> 
         /// </para>
         /// </summary>
-        public DateTime? StartTimeUtc
+        public DateTime? StartTime
         {
-            get { return this._startTimeUtc; }
-            set { this._startTime = this._startTimeUtc = value; }
+            get { return this._startTime; }
+            set { this._startTime = value; }
         }
 
-        // Check to see if StartTimeUtc property is set
-        internal bool IsSetStartTimeUtc()
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
         {
-            return this._startTimeUtc.HasValue; 
+            return this._startTime.HasValue; 
         }
 
         /// <summary>
@@ -374,95 +374,5 @@ namespace Amazon.Redshift.Model
             return this._tagValues != null && (this._tagValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
-#region Backwards compatible properties
-        private DateTime? _endTime;
-        private DateTime? _startTime;
-
-        /// <summary>
-        /// Gets and sets the property EndTimeUtc. 
-        /// <para>
-        /// This property is deprecated. Setting this property results in non-UTC DateTimes not
-        /// being marshalled correctly. Use EndTimeUtc instead. Setting either EndTime or EndTimeUtc
-        /// results in both EndTime and EndTimeUtc being assigned, the latest assignment to either
-        /// one of the two property is reflected in the value of both. EndTime is provided for
-        /// backwards compatibility only and assigning a non-Utc DateTime to it results in the
-        /// wrong timestamp being passed to the service.
-        /// </para>
-        ///  
-        /// <para>
-        /// A time value that requests only snapshots created at or before the specified time.
-        /// The time value is specified in ISO 8601 format. For more information about ISO 8601,
-        /// go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a>
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: <c>2012-07-16T18:00:00Z</c> 
-        /// </para>
-        /// </summary>
-        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
-            "Use EndTimeUtc instead. Setting either EndTime or EndTimeUtc results in both EndTime and " +
-            "EndTimeUtc being assigned, the latest assignment to either one of the two property is " + 
-            "reflected in the value of both. EndTime is provided for backwards compatibility only and " +
-            "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime? EndTime
-        {
-            get { return this._endTime.GetValueOrDefault(); }
-            set
-            {
-                this._endTime = value;
-                if (value != null)
-                {
-                    this._endTimeUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
-                }
-                else
-                {
-                    this._endTimeUtc = null;
-                }
-            }
-        }
-        /// <summary>
-        /// Gets and sets the property StartTimeUtc. 
-        /// <para>
-        /// This property is deprecated. Setting this property results in non-UTC DateTimes not
-        /// being marshalled correctly. Use StartTimeUtc instead. Setting either StartTime or
-        /// StartTimeUtc results in both StartTime and StartTimeUtc being assigned, the latest
-        /// assignment to either one of the two property is reflected in the value of both. StartTime
-        /// is provided for backwards compatibility only and assigning a non-Utc DateTime to it
-        /// results in the wrong timestamp being passed to the service.
-        /// </para>
-        ///  
-        /// <para>
-        /// A value that requests only snapshots created at or after the specified time. The time
-        /// value is specified in ISO 8601 format. For more information about ISO 8601, go to
-        /// the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Example: <c>2012-07-16T18:00:00Z</c> 
-        /// </para>
-        /// </summary>
-        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
-            "Use StartTimeUtc instead. Setting either StartTime or StartTimeUtc results in both StartTime and " +
-            "StartTimeUtc being assigned, the latest assignment to either one of the two property is " + 
-            "reflected in the value of both. StartTime is provided for backwards compatibility only and " +
-            "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime? StartTime
-        {
-            get { return this._startTime.GetValueOrDefault(); }
-            set
-            {
-                this._startTime = value;
-                if (value != null)
-                {
-                    this._startTimeUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
-                }
-                else
-                {
-                    this._startTimeUtc = null;
-                }
-            }
-        }
-#endregion
     }
 }

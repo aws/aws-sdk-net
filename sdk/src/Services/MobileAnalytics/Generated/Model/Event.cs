@@ -38,7 +38,7 @@ namespace Amazon.MobileAnalytics.Model
         private string _eventType;
         private Dictionary<string, double> _metrics = AWSConfigs.InitializeCollections ? new Dictionary<string, double>() : null;
         private Session _session;
-        private DateTime? _timestampUtc;
+        private DateTime? _timestamp;
         private string _version;
 
         /// <summary>
@@ -128,22 +128,22 @@ namespace Amazon.MobileAnalytics.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TimestampUtc. 
+        /// Gets and sets the property Timestamp. 
         /// <para>
         /// The time the event occurred in ISO 8601 standard date time format. For example, 2014-06-30T19:07:47.885Z
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime? TimestampUtc
+        public DateTime? Timestamp
         {
-            get { return this._timestampUtc; }
-            set { this._timestamp = this._timestampUtc = value; }
+            get { return this._timestamp; }
+            set { this._timestamp = value; }
         }
 
-        // Check to see if TimestampUtc property is set
-        internal bool IsSetTimestampUtc()
+        // Check to see if Timestamp property is set
+        internal bool IsSetTimestamp()
         {
-            return this._timestampUtc != null;
+            return this._timestamp != null;
         }
 
         /// <summary>
@@ -165,45 +165,5 @@ namespace Amazon.MobileAnalytics.Model
             return this._version != null;
         }
 
-#region Backwards compatible properties
-        private DateTime? _timestamp;
-
-        /// <summary>
-        /// Gets and sets the property TimestampUtc. 
-        /// <para>
-        /// This property is deprecated. Setting this property results in non-UTC DateTimes not
-        /// being marshalled correctly. Use TimestampUtc instead. Setting either Timestamp or
-        /// TimestampUtc results in both Timestamp and TimestampUtc being assigned, the latest
-        /// assignment to either one of the two property is reflected in the value of both. Timestamp
-        /// is provided for backwards compatibility only and assigning a non-Utc DateTime to it
-        /// results in the wrong timestamp being passed to the service.
-        /// </para>
-        ///  
-        /// <para>
-        /// The time the event occurred in ISO 8601 standard date time format. For example, 2014-06-30T19:07:47.885Z
-        /// </para>
-        /// </summary>
-        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
-            "Use TimestampUtc instead. Setting either Timestamp or TimestampUtc results in both Timestamp and " +
-            "TimestampUtc being assigned, the latest assignment to either one of the two property is " + 
-            "reflected in the value of both. Timestamp is provided for backwards compatibility only and " +
-            "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime? Timestamp
-        {
-            get { return this._timestamp.GetValueOrDefault(); }
-            set
-            {
-                this._timestamp = value;
-                if (value != null)
-                {
-                    this._timestampUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
-                }
-                else
-                {
-                    this._timestampUtc = null;
-                }
-            }
-        }
-#endregion
     }
 }

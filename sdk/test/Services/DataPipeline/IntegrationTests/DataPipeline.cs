@@ -37,7 +37,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             const string testPipelineName = "dotnet-test-pipeline";
             const string testPipelineDescription = "dotnet test pipeline";
             
-            var testPipelineId = "dotnet-test-pipeline" + DateTime.Now.ToFileTime();
+            var testPipelineId = "dotnet-test-pipeline" + DateTime.UtcNow.ToFileTime();
 
             const string testObjectId = "123";
             const string testObjectName = "object";
@@ -71,7 +71,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 var tags = new List<Tag>
                 {
                     new Tag { Key = "tag1", Value = "42" },
-                    new Tag { Key = "tag2", Value = DateTime.Now.ToString() }
+                    new Tag { Key = "tag2", Value = DateTime.UtcNow.ToString() }
                 };
                 Client.AddTags(createdPipelineId, tags);
 

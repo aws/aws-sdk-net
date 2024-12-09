@@ -65,17 +65,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("ClientData" + "." + "Comment", StringUtils.FromString(publicRequest.ClientData.Comment));
                     }
-                    if(publicRequest.ClientData.IsSetUploadEndUtc())
+                    if(publicRequest.ClientData.IsSetUploadEnd())
                     {
-                        request.Parameters.Add("ClientData" + "." + "UploadEnd", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ClientData.UploadEndUtc));
+                        request.Parameters.Add("ClientData" + "." + "UploadEnd", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ClientData.UploadEnd));
                     }
                     if(publicRequest.ClientData.IsSetUploadSize())
                     {
                         request.Parameters.Add("ClientData" + "." + "UploadSize", StringUtils.FromDouble(publicRequest.ClientData.UploadSize));
                     }
-                    if(publicRequest.ClientData.IsSetUploadStartUtc())
+                    if(publicRequest.ClientData.IsSetUploadStart())
                     {
-                        request.Parameters.Add("ClientData" + "." + "UploadStart", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ClientData.UploadStartUtc));
+                        request.Parameters.Add("ClientData" + "." + "UploadStart", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ClientData.UploadStart));
                     }
                 }
                 if(publicRequest.IsSetClientToken())

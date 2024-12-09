@@ -90,7 +90,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         xmlWriter.WriteElementString("Mode", StringUtils.FromString(publicRequest.Retention.Mode));
     
                     if(publicRequest.Retention.IsSetRetainUntilDate())
-                        xmlWriter.WriteElementString("RetainUntilDate", StringUtils.FromDateTimeToISO8601(publicRequest.Retention.RetainUntilDate.Value));
+                        xmlWriter.WriteElementString("RetainUntilDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.Retention.RetainUntilDate.Value));
     
     
                     xmlWriter.WriteEndElement();

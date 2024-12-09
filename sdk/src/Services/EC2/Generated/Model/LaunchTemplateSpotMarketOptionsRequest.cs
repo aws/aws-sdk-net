@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         private InstanceInterruptionBehavior _instanceInterruptionBehavior;
         private string _maxPrice;
         private SpotInstanceType _spotInstanceType;
-        private DateTime? _validUntilUtc;
+        private DateTime? _validUntil;
 
         /// <summary>
         /// Gets and sets the property BlockDurationMinutes. 
@@ -121,7 +121,7 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ValidUntilUtc. 
+        /// Gets and sets the property ValidUntil. 
         /// <para>
         /// The end date of the request, in UTC format (<i>YYYY-MM-DD</i>T<i>HH:MM:SS</i>Z). Supported
         /// only for persistent requests.
@@ -141,72 +141,17 @@ namespace Amazon.EC2.Model
         /// Default: 7 days from the current date
         /// </para>
         /// </summary>
-        public DateTime? ValidUntilUtc
-        {
-            get { return this._validUntilUtc; }
-            set { this._validUntil = this._validUntilUtc = value; }
-        }
-
-        // Check to see if ValidUntilUtc property is set
-        internal bool IsSetValidUntilUtc()
-        {
-            return this._validUntilUtc.HasValue; 
-        }
-
-#region Backwards compatible properties
-        private DateTime? _validUntil;
-
-        /// <summary>
-        /// Gets and sets the property ValidUntilUtc. 
-        /// <para>
-        /// This property is deprecated. Setting this property results in non-UTC DateTimes not
-        /// being marshalled correctly. Use ValidUntilUtc instead. Setting either ValidUntil or
-        /// ValidUntilUtc results in both ValidUntil and ValidUntilUtc being assigned, the latest
-        /// assignment to either one of the two property is reflected in the value of both. ValidUntil
-        /// is provided for backwards compatibility only and assigning a non-Utc DateTime to it
-        /// results in the wrong timestamp being passed to the service.
-        /// </para>
-        ///  
-        /// <para>
-        /// The end date of the request, in UTC format (<i>YYYY-MM-DD</i>T<i>HH:MM:SS</i>Z). Supported
-        /// only for persistent requests.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// For a persistent request, the request remains active until the <c>ValidUntil</c> date
-        /// and time is reached. Otherwise, the request remains active until you cancel it.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// For a one-time request, <c>ValidUntil</c> is not supported. The request remains active
-        /// until all instances launch or you cancel the request.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// Default: 7 days from the current date
-        /// </para>
-        /// </summary>
-        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
-            "Use ValidUntilUtc instead. Setting either ValidUntil or ValidUntilUtc results in both ValidUntil and " +
-            "ValidUntilUtc being assigned, the latest assignment to either one of the two property is " + 
-            "reflected in the value of both. ValidUntil is provided for backwards compatibility only and " +
-            "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
         public DateTime? ValidUntil
         {
-            get { return this._validUntil.GetValueOrDefault(); }
-            set
-            {
-                this._validUntil = value;
-                if (value != null)
-                {
-                    this._validUntilUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
-                }
-                else
-                {
-                    this._validUntilUtc = null;
-                }
-            }
+            get { return this._validUntil; }
+            set { this._validUntil = value; }
         }
-#endregion
+
+        // Check to see if ValidUntil property is set
+        internal bool IsSetValidUntil()
+        {
+            return this._validUntil.HasValue; 
+        }
+
     }
 }

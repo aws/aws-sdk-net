@@ -63,9 +63,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
-                if(publicRequest.IsSetEndTimeUtc())
+                if(publicRequest.IsSetEndTime())
                 {
-                    request.Parameters.Add("EndTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTimeUtc));
+                    request.Parameters.Add("EndTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTime));
                 }
                 if(publicRequest.IsSetInstances())
                 {
@@ -95,9 +95,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                          }
                     }
                 }
-                if(publicRequest.IsSetStartTimeUtc())
+                if(publicRequest.IsSetStartTime())
                 {
-                    request.Parameters.Add("StartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTimeUtc));
+                    request.Parameters.Add("StartTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTime));
                 }
                 if(publicRequest.IsSetStatus())
                 {

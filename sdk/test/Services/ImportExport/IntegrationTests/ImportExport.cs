@@ -63,7 +63,7 @@ returnAddress:
             s3Client = new AmazonS3Client();
 
             // Add test data to export
-            bucketName = "sdk-import-test" + DateTime.Now.Ticks;
+            bucketName = "sdk-import-test" + DateTime.UtcNow.Ticks;
             s3Client.PutBucket(new PutBucketRequest { BucketName = bucketName });
             s3Client.PutObject(new PutObjectRequest
             {

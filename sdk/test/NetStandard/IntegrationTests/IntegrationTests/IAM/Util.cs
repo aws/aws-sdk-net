@@ -110,7 +110,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         internal static string CreateTestUser(AmazonIdentityManagementServiceClient client, string testPrefix)
         {
             var prefix = MakePath(testPrefix);
-            string username = "sdk-testuser-" + DateTime.Now.Ticks;
+            string username = "sdk-testuser-" + DateTime.UtcNow.Ticks;
             client.CreateUserAsync(new CreateUserRequest() { UserName = username, Path = prefix }).Wait();
             return username;
         }

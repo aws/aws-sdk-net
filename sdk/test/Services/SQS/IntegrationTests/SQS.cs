@@ -187,7 +187,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         public void TestGetQueueUrl()
         {
             Client.ListQueues(new ListQueuesRequest());
-            string queueName = "TestGetQueueUrl" + DateTime.Now.Ticks;
+            string queueName = "TestGetQueueUrl" + DateTime.UtcNow.Ticks;
             CreateQueueResponse createResponse = Client.CreateQueue(new CreateQueueRequest()
             {
                 QueueName = queueName

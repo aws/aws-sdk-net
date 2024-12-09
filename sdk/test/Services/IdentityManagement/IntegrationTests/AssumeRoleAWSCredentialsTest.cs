@@ -199,8 +199,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             {
                 // user/role setup may not be complete
                 // so retry for a bit before giving up
-                var stopTime = DateTime.Now.AddSeconds(30);
-                while (response == null && DateTime.Now < stopTime)
+                var stopTime = DateTime.UtcNow.AddSeconds(30);
+                while (response == null && DateTime.UtcNow < stopTime)
                 {
                     var doSleep = true;
                     try

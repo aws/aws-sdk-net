@@ -180,9 +180,9 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         request.Parameters.Add("RdsCustomClusterConfiguration" + "." + "TransitGatewayMulticastDomainId", StringUtils.FromString(publicRequest.RdsCustomClusterConfiguration.TransitGatewayMulticastDomainId));
                     }
                 }
-                if(publicRequest.IsSetRestoreToTimeUtc())
+                if(publicRequest.IsSetRestoreToTime())
                 {
-                    request.Parameters.Add("RestoreToTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.RestoreToTimeUtc));
+                    request.Parameters.Add("RestoreToTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.RestoreToTime));
                 }
                 if(publicRequest.IsSetRestoreType())
                 {

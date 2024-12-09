@@ -85,7 +85,7 @@ namespace Amazon.Runtime.Internal.Util
             string formatted = null;
             long sequence = Interlocked.Increment(ref _sequanceId);
 #pragma warning disable CS0612,CS0618 // Type or member is obsolete
-            string dt = AWSSDKUtils.CorrectedUtcNow.ToLocalTime().ToString(AWSSDKUtils.ISO8601DateFormat, CultureInfo.InvariantCulture);
+            string dt = AWSSDKUtils.CorrectedUtcNow.ToString(AWSSDKUtils.ISO8601DateFormat, CultureInfo.InvariantCulture);
 #pragma warning restore CS0612,CS0618 // Type or member is obsolete
             string asString = logLevel.ToString().ToUpper(CultureInfo.InvariantCulture);
 

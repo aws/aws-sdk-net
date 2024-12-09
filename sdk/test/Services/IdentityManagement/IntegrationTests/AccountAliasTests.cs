@@ -71,7 +71,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         [TestCategory("IdentityManagement")]
         public void CreateAccountAlias()
         {
-            string alias = "dotnetalias" + DateTime.Now.Ticks;
+            string alias = "dotnetalias" + DateTime.UtcNow.Ticks;
             CreateAccountAliasRequest createRequest = new CreateAccountAliasRequest()
             {
                 AccountAlias = alias

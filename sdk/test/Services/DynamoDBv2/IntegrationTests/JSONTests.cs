@@ -10,6 +10,7 @@ using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
 using System.IO;
 using System.Text.Json;
+using System.Globalization;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 {
@@ -358,7 +359,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Assert.AreEqual(container.StringValue, "test string");
                 Assert.AreEqual(container.BoolValue, true);
                 Assert.AreEqual(container.IntValue, 200);
-                Assert.AreEqual(container.DateValue, DateTime.Parse("2022-12-29T12:46:14.097Z"));
+                Assert.AreEqual(container.DateValue, DateTime.Parse("2022-12-29T12:46:14.097Z", CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal));
+                Assert.AreEqual(container.DateValue.Kind, DateTimeKind.Utc);
+
                 Assert.IsNull(container.NullableBoolValue);
                 Assert.IsNull(container.NullableIntValue);
                 Assert.IsNull(container.NullableDateValue);

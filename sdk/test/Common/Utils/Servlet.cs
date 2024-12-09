@@ -105,7 +105,7 @@ namespace AWSSDK_DotNet.CommonTest.Utils
         private static int RandomPort()
         {
             if (_random == null)
-                _random = new Random((int)DateTime.Now.Ticks);
+                _random = new Random((int)DateTime.UtcNow.Ticks);
             return _random.Next(10000, 11000);
         }
 
@@ -140,7 +140,7 @@ namespace AWSSDK_DotNet.CommonTest.Utils
 
             if (Debug)
             {
-                Console.WriteLine(DateTime.Now.ToString() + "Handling request");
+                Console.WriteLine(DateTime.UtcNow.ToString() + "Handling request");
                 Console.WriteLine("\tRequest url - " + context.Request.Url);
                 Console.WriteLine("\tHost address - " + context.Request.UserHostAddress);
                 Console.WriteLine("\tServlet type - " + this.GetType().FullName);

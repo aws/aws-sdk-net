@@ -91,7 +91,7 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual("096fKKXTRTtl3on89fVO.nfljtsv6qko", record.S3.Object.VersionId);
             Assert.AreEqual("1234567890", record.S3.Object.Sequencer);
 
-            Assert.AreEqual(DateTime.Parse("1970-01-01T00:00:00.000Z", CultureInfo.InvariantCulture), record.GlacierEventData.RestoreEventData.LifecycleRestorationExpiryTime);
+            Assert.AreEqual(DateTime.Parse("1970-01-01T00:00:00.000Z", CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal), record.GlacierEventData.RestoreEventData.LifecycleRestorationExpiryTime);
             Assert.AreEqual("Standard", record.GlacierEventData.RestoreEventData.LifecycleRestoreStorageClass);
         }
 

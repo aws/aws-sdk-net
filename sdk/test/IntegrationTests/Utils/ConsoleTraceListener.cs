@@ -18,6 +18,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
         {
             get
             {
+                // Since there is no date associated with the TimeStamp we will output the time as local time to the console.
                 var now = DateTime.Now;
                 return now.ToString("HH:mm:ss:fffffff");
             }

@@ -38,7 +38,7 @@ namespace Amazon.DNXCore.IntegrationTests
                 {
                     var createRequest = new CreateTopicRequest
                     {
-                        Name = "sdk-accountid-lookup" + DateTime.Now.Ticks
+                        Name = "sdk-accountid-lookup" + DateTime.UtcNow.Ticks
                     };
                     using (var snsClient = CreateClient<AmazonSimpleNotificationServiceClient>())
                     {
@@ -57,7 +57,7 @@ namespace Amazon.DNXCore.IntegrationTests
 
         public async static Task<string> CreateBucketAsync(IAmazonS3 s3Client, string testName, bool setPublicACLs = false)
         {
-            string bucketName = string.Format("{0}-{1}-{2}", UtilityMethods.SDK_TEST_PREFIX, testName, DateTime.Now.Ticks).ToLower().Replace('_','-');
+            string bucketName = string.Format("{0}-{1}-{2}", UtilityMethods.SDK_TEST_PREFIX, testName, DateTime.UtcNow.Ticks).ToLower().Replace('_','-');
             await s3Client.PutBucketAsync(new PutBucketRequest { BucketName = bucketName });
             if (setPublicACLs)
             {
@@ -313,9 +313,9 @@ namespace Amazon.DNXCore.IntegrationTests
 
             var sleepTime = TimeSpan.FromSeconds(sleepSeconds);
             var maxTime = TimeSpan.FromSeconds(maxWaitSeconds);
-            var endTime = DateTime.Now + maxTime;
+            var endTime = DateTime.UtcNow + maxTime;
 
-            while (DateTime.Now < endTime)
+            while (DateTime.UtcNow < endTime)
             {
                 if (matchFunction())
                     return;

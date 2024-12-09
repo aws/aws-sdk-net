@@ -27,7 +27,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         //at the moment
         public void PutRegularBucketUsingS3ExpressConfiguration()
         {
-            string bucketName = UtilityMethods.SDK_TEST_PREFIX + DateTime.Now.Ticks;
+            string bucketName = UtilityMethods.SDK_TEST_PREFIX + DateTime.UtcNow.Ticks;
             var response = Client.PutBucket(new PutBucketRequest
             {
                 BucketName = bucketName,
@@ -45,7 +45,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestCategory("S3")]
         public void PutS3ExpressBucketUsingS3ExpressConfiguration()
         {
-            string bucketName = $"{UtilityMethods.SDK_TEST_PREFIX + DateTime.Now.Ticks}--use1-az5--x-s3";
+            string bucketName = $"{UtilityMethods.SDK_TEST_PREFIX + DateTime.UtcNow.Ticks}--use1-az5--x-s3";
             var response = Client.PutBucket(new PutBucketRequest
             {
                 BucketName = bucketName,
@@ -63,7 +63,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestCategory("S3")]
         public void PutRegularBucketUsingNoConfiguration()
         {
-            string bucketName = UtilityMethods.SDK_TEST_PREFIX + DateTime.Now.Ticks;
+            string bucketName = UtilityMethods.SDK_TEST_PREFIX + DateTime.UtcNow.Ticks;
             var response = Client.PutBucket(new PutBucketRequest
             {
                 BucketName = bucketName,

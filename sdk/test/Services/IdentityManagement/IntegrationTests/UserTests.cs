@@ -69,7 +69,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         [TestCategory("IdentityManagement")]
         public void TestCreateGetUser()
         {
-            string username = "sdk-testuser-" + DateTime.Now.Ticks;
+            string username = "sdk-testuser-" + DateTime.UtcNow.Ticks;
 
             try
             {
@@ -123,7 +123,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         [TestCategory("IdentityManagement")]
         public void TestUserWithPath()
         {
-            string username = "sdk-testuser-" + DateTime.Now.Ticks;
+            string username = "sdk-testuser-" + DateTime.UtcNow.Ticks;
             string path = IAMUtil.MakePath("one", "two", "three");
             try
             {
@@ -143,10 +143,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         [TestCategory("IdentityManagement")]
         public void TestListUsersByPath()
         {
-            string username1 = "sdk-testuser1-" + DateTime.Now.Ticks;
-            string username2 = "sdk-testuser2-" + DateTime.Now.Ticks;
-            string username3 = "sdk-testuser3-" + DateTime.Now.Ticks;
-            string username4 = "sdk-testuser4-" + DateTime.Now.Ticks;
+            string username1 = "sdk-testuser1-" + DateTime.UtcNow.Ticks;
+            string username2 = "sdk-testuser2-" + DateTime.UtcNow.Ticks;
+            string username3 = "sdk-testuser3-" + DateTime.UtcNow.Ticks;
+            string username4 = "sdk-testuser4-" + DateTime.UtcNow.Ticks;
 
             string pathA = IAMUtil.MakePath("A");
             string pathB = IAMUtil.MakePath("B");
@@ -270,8 +270,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         public void TestUpdateUser()
         {
             string
-                username    = "sdk-testuser-" + DateTime.Now.Ticks,
-                newusername = "sdk-testnewuser-" + DateTime.Now.Ticks;
+                username    = "sdk-testuser-" + DateTime.UtcNow.Ticks,
+                newusername = "sdk-testnewuser-" + DateTime.UtcNow.Ticks;
             string
                 firstPath  = IAMUtil.MakePath("first"),
                 secondPath = IAMUtil.MakePath("second");
@@ -305,7 +305,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         [ExpectedException(typeof(NoSuchEntityException))]
         public void TestDeleteUser()
         {
-            string username = "sdk-testuser-" + DateTime.Now.Ticks;
+            string username = "sdk-testuser-" + DateTime.UtcNow.Ticks;
 
             Client.CreateUser(new CreateUserRequest() {UserName = username, Path = IAMUtil.TEST_PATH });
 
@@ -323,7 +323,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         [ExpectedException(typeof(EntityAlreadyExistsException))]
         public void TestDoubleCreateUser()
         {
-            string username = "sdk-testuser-" + DateTime.Now.Ticks;
+            string username = "sdk-testuser-" + DateTime.UtcNow.Ticks;
 
             try
             {
@@ -342,7 +342,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.IAM
         [ExpectedException(typeof(NoSuchEntityException))]
         public void TestUpdateNonexistantUser()
         {
-            string username = "sdk-testuser-" + DateTime.Now.Ticks;
+            string username = "sdk-testuser-" + DateTime.UtcNow.Ticks;
 
             Client.UpdateUser(new UpdateUserRequest() { UserName = username, NewPath = "/lala/" });
         }

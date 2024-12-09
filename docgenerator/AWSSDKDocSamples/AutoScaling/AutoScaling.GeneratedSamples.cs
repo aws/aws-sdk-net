@@ -957,11 +957,11 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
             {
                 AutoScalingGroupName = "my-auto-scaling-group",
                 DesiredCapacity = 4,
-                EndTimeUtc = new DateTime(2014, 5, 12, 8, 0, 0, DateTimeKind.Utc),
+                EndTime = new DateTime(2014, 5, 12, 8, 0, 0, DateTimeKind.Utc),
                 MaxSize = 6,
                 MinSize = 2,
                 ScheduledActionName = "my-scheduled-action",
-                StartTimeUtc = new DateTime(2014, 5, 12, 8, 0, 0, DateTimeKind.Utc)
+                StartTime = new DateTime(2014, 5, 12, 8, 0, 0, DateTimeKind.Utc)
             });
 
 

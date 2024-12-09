@@ -114,12 +114,12 @@ namespace Amazon.CloudWatch.Model
     public partial class GetMetricStatisticsRequest : AmazonCloudWatchRequest
     {
         private List<Dimension> _dimensions = AWSConfigs.InitializeCollections ? new List<Dimension>() : null;
-        private DateTime? _endTimeUtc;
+        private DateTime? _endTime;
         private List<string> _extendedStatistics = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _metricName;
         private string _awsNamespace;
         private int? _period;
-        private DateTime? _startTimeUtc;
+        private DateTime? _startTime;
         private List<string> _statistics = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private StandardUnit _unit;
 
@@ -150,7 +150,7 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EndTimeUtc. 
+        /// Gets and sets the property EndTime. 
         /// <para>
         /// The time stamp that determines the last data point to return.
         /// </para>
@@ -162,16 +162,16 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime? EndTimeUtc
+        public DateTime? EndTime
         {
-            get { return this._endTimeUtc; }
-            set { this._endTime = this._endTimeUtc = value; }
+            get { return this._endTime; }
+            set { this._endTime = value; }
         }
 
-        // Check to see if EndTimeUtc property is set
-        internal bool IsSetEndTimeUtc()
+        // Check to see if EndTime property is set
+        internal bool IsSetEndTime()
         {
-            return this._endTimeUtc.HasValue; 
+            return this._endTime.HasValue; 
         }
 
         /// <summary>
@@ -278,7 +278,7 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StartTimeUtc. 
+        /// Gets and sets the property StartTime. 
         /// <para>
         /// The time stamp that determines the first data point to return. Start times are evaluated
         /// relative to the time that CloudWatch receives the request.
@@ -320,16 +320,16 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public DateTime? StartTimeUtc
+        public DateTime? StartTime
         {
-            get { return this._startTimeUtc; }
-            set { this._startTime = this._startTimeUtc = value; }
+            get { return this._startTime; }
+            set { this._startTime = value; }
         }
 
-        // Check to see if StartTimeUtc property is set
-        internal bool IsSetStartTimeUtc()
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
         {
-            return this._startTimeUtc.HasValue; 
+            return this._startTime.HasValue; 
         }
 
         /// <summary>
@@ -376,124 +376,5 @@ namespace Amazon.CloudWatch.Model
             return this._unit != null;
         }
 
-#region Backwards compatible properties
-        private DateTime? _endTime;
-        private DateTime? _startTime;
-
-        /// <summary>
-        /// Gets and sets the property EndTimeUtc. 
-        /// <para>
-        /// This property is deprecated. Setting this property results in non-UTC DateTimes not
-        /// being marshalled correctly. Use EndTimeUtc instead. Setting either EndTime or EndTimeUtc
-        /// results in both EndTime and EndTimeUtc being assigned, the latest assignment to either
-        /// one of the two property is reflected in the value of both. EndTime is provided for
-        /// backwards compatibility only and assigning a non-Utc DateTime to it results in the
-        /// wrong timestamp being passed to the service.
-        /// </para>
-        ///  
-        /// <para>
-        /// The time stamp that determines the last data point to return.
-        /// </para>
-        ///  
-        /// <para>
-        /// The value specified is exclusive; results include data points up to the specified
-        /// time stamp. In a raw HTTP query, the time stamp must be in ISO 8601 UTC format (for
-        /// example, 2016-10-10T23:00:00Z).
-        /// </para>
-        /// </summary>
-        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
-            "Use EndTimeUtc instead. Setting either EndTime or EndTimeUtc results in both EndTime and " +
-            "EndTimeUtc being assigned, the latest assignment to either one of the two property is " + 
-            "reflected in the value of both. EndTime is provided for backwards compatibility only and " +
-            "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime? EndTime
-        {
-            get { return this._endTime.GetValueOrDefault(); }
-            set
-            {
-                this._endTime = value;
-                if (value != null)
-                {
-                    this._endTimeUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
-                }
-                else
-                {
-                    this._endTimeUtc = null;
-                }
-            }
-        }
-        /// <summary>
-        /// Gets and sets the property StartTimeUtc. 
-        /// <para>
-        /// This property is deprecated. Setting this property results in non-UTC DateTimes not
-        /// being marshalled correctly. Use StartTimeUtc instead. Setting either StartTime or
-        /// StartTimeUtc results in both StartTime and StartTimeUtc being assigned, the latest
-        /// assignment to either one of the two property is reflected in the value of both. StartTime
-        /// is provided for backwards compatibility only and assigning a non-Utc DateTime to it
-        /// results in the wrong timestamp being passed to the service.
-        /// </para>
-        ///  
-        /// <para>
-        /// The time stamp that determines the first data point to return. Start times are evaluated
-        /// relative to the time that CloudWatch receives the request.
-        /// </para>
-        ///  
-        /// <para>
-        /// The value specified is inclusive; results include data points with the specified time
-        /// stamp. In a raw HTTP query, the time stamp must be in ISO 8601 UTC format (for example,
-        /// 2016-10-03T23:00:00Z).
-        /// </para>
-        ///  
-        /// <para>
-        /// CloudWatch rounds the specified time stamp as follows:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Start time less than 15 days ago - Round down to the nearest whole minute. For example,
-        /// 12:32:34 is rounded down to 12:32:00.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Start time between 15 and 63 days ago - Round down to the nearest 5-minute clock interval.
-        /// For example, 12:32:34 is rounded down to 12:30:00.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Start time greater than 63 days ago - Round down to the nearest 1-hour clock interval.
-        /// For example, 12:32:34 is rounded down to 12:00:00.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// If you set <c>Period</c> to 5, 10, or 30, the start time of your request is rounded
-        /// down to the nearest time that corresponds to even 5-, 10-, or 30-second divisions
-        /// of a minute. For example, if you make a query at (HH:mm:ss) 01:05:23 for the previous
-        /// 10-second period, the start time of your request is rounded down and you receive data
-        /// from 01:05:10 to 01:05:20. If you make a query at 15:07:17 for the previous 5 minutes
-        /// of data, using a period of 5 seconds, you receive data timestamped between 15:02:15
-        /// and 15:07:15. 
-        /// </para>
-        /// </summary>
-        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
-            "Use StartTimeUtc instead. Setting either StartTime or StartTimeUtc results in both StartTime and " +
-            "StartTimeUtc being assigned, the latest assignment to either one of the two property is " + 
-            "reflected in the value of both. StartTime is provided for backwards compatibility only and " +
-            "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime? StartTime
-        {
-            get { return this._startTime.GetValueOrDefault(); }
-            set
-            {
-                this._startTime = value;
-                if (value != null)
-                {
-                    this._startTimeUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
-                }
-                else
-                {
-                    this._startTimeUtc = null;
-                }
-            }
-        }
-#endregion
     }
 }
