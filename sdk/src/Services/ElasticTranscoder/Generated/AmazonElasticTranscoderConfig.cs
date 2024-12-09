@@ -32,7 +32,7 @@ namespace Amazon.ElasticTranscoder
     public partial class AmazonElasticTranscoderConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Elastic Transcoder", "3.7.400.59");
+            InternalSDKUtils.BuildUserAgentString("Elastic Transcoder", "3.7.400.60");
 
         private string _userAgent = UserAgentString;
         ///<summary>

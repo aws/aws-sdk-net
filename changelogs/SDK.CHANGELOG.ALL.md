@@ -1,3 +1,26 @@
+### 3.7.942.0 (2024-12-09 19:45 UTC)
+* AppSync (3.7.403.4)
+	* Provides description of new Amazon Bedrock runtime datasource.
+* CognitoIdentityProvider (3.7.405.0)
+	* Change `CustomDomainConfig` from a required to an optional parameter for the `UpdateUserPoolDomain` operation.
+* DSQL (3.7.401.0)
+	* Add Amazon.DSQL.Util.DSQLAuthTokenGenerator for generating auth tokens for connecting to DSQL clusters.
+* EC2 (3.7.423.0)
+	* This release includes a new API for modifying instance network-performance-options after launch.
+* ECS (3.7.407.6)
+	* This is a documentation only update to address various tickets for Amazon ECS.
+* Keyspaces (3.7.402.6)
+	* Amazon Keyspaces: adding the list of IAM actions required by the UpdateKeyspace API.
+* MediaLive (3.7.406.0)
+	* H265 outputs now support disabling the deblocking filter.
+* RDS (3.7.409.2)
+	* Update documentation for Amazon.RDS.Util.RDSAuthTokenGenerator.
+* WorkSpaces (3.7.406.5)
+	* Added text to clarify case-sensitivity
+* Core 3.7.400.60
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.941.0 (2024-12-05 01:28 UTC)
 * PartnerCentralSelling (3.7.402.0)
 	* Introducing the preview of new partner central selling APIs designed to transform how AWS partners collaborate and co-sell with multiple partners. This enables multiple partners to seamlessly engage and jointly pursue customer opportunities, fostering a new era of collaborative selling.
