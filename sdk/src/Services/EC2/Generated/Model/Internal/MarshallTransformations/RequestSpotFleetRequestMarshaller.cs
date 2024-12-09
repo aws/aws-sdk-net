@@ -1186,13 +1186,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("SpotFleetRequestConfig" + "." + "Type", StringUtils.FromString(publicRequest.SpotFleetRequestConfig.Type));
                     }
-                    if(publicRequest.SpotFleetRequestConfig.IsSetValidFromUtc())
+                    if(publicRequest.SpotFleetRequestConfig.IsSetValidFrom())
                     {
-                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "ValidFrom", Amazon.EC2.Internal.CustomMarshallTransformations.ConvertDateTimeISOWithoutMillisecondsUtc(publicRequest.SpotFleetRequestConfig.ValidFromUtc));
+                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "ValidFrom", Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601NoMs(publicRequest.SpotFleetRequestConfig.ValidFrom));
                     }
-                    if(publicRequest.SpotFleetRequestConfig.IsSetValidUntilUtc())
+                    if(publicRequest.SpotFleetRequestConfig.IsSetValidUntil())
                     {
-                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "ValidUntil", Amazon.EC2.Internal.CustomMarshallTransformations.ConvertDateTimeISOWithoutMillisecondsUtc(publicRequest.SpotFleetRequestConfig.ValidUntilUtc));
+                        request.Parameters.Add("SpotFleetRequestConfig" + "." + "ValidUntil", Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601NoMs(publicRequest.SpotFleetRequestConfig.ValidUntil));
                     }
                 }
             }

@@ -41,27 +41,27 @@ namespace Amazon.SimpleEmail.Model
     /// </summary>
     public partial class MessageDsn
     {
-        private DateTime? _arrivalDateUtc;
+        private DateTime? _arrivalDate;
         private List<ExtensionField> _extensionFields = AWSConfigs.InitializeCollections ? new List<ExtensionField>() : null;
         private string _reportingMta;
 
         /// <summary>
-        /// Gets and sets the property ArrivalDateUtc. 
+        /// Gets and sets the property ArrivalDate. 
         /// <para>
         /// When the message was received by the reporting mail transfer agent (MTA), in <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC
         /// 822</a> date-time format.
         /// </para>
         /// </summary>
-        public DateTime? ArrivalDateUtc
+        public DateTime? ArrivalDate
         {
-            get { return this._arrivalDateUtc; }
-            set { this._arrivalDate = this._arrivalDateUtc = value; }
+            get { return this._arrivalDate; }
+            set { this._arrivalDate = value; }
         }
 
-        // Check to see if ArrivalDateUtc property is set
-        internal bool IsSetArrivalDateUtc()
+        // Check to see if ArrivalDate property is set
+        internal bool IsSetArrivalDate()
         {
-            return this._arrivalDateUtc.HasValue; 
+            return this._arrivalDate.HasValue; 
         }
 
         /// <summary>
@@ -103,46 +103,5 @@ namespace Amazon.SimpleEmail.Model
             return this._reportingMta != null;
         }
 
-#region Backwards compatible properties
-        private DateTime? _arrivalDate;
-
-        /// <summary>
-        /// Gets and sets the property ArrivalDateUtc. 
-        /// <para>
-        /// This property is deprecated. Setting this property results in non-UTC DateTimes not
-        /// being marshalled correctly. Use ArrivalDateUtc instead. Setting either ArrivalDate
-        /// or ArrivalDateUtc results in both ArrivalDate and ArrivalDateUtc being assigned, the
-        /// latest assignment to either one of the two property is reflected in the value of both.
-        /// ArrivalDate is provided for backwards compatibility only and assigning a non-Utc DateTime
-        /// to it results in the wrong timestamp being passed to the service.
-        /// </para>
-        ///  
-        /// <para>
-        /// When the message was received by the reporting mail transfer agent (MTA), in <a href="https://www.ietf.org/rfc/rfc0822.txt">RFC
-        /// 822</a> date-time format.
-        /// </para>
-        /// </summary>
-        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
-            "Use ArrivalDateUtc instead. Setting either ArrivalDate or ArrivalDateUtc results in both ArrivalDate and " +
-            "ArrivalDateUtc being assigned, the latest assignment to either one of the two property is " + 
-            "reflected in the value of both. ArrivalDate is provided for backwards compatibility only and " +
-            "assigning a non-Utc DateTime to it results in the wrong timestamp being passed to the service.", false)]
-        public DateTime? ArrivalDate
-        {
-            get { return this._arrivalDate.GetValueOrDefault(); }
-            set
-            {
-                this._arrivalDate = value;
-                if (value != null)
-                {
-                    this._arrivalDateUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
-                }
-                else
-                {
-                    this._arrivalDateUtc = null;
-                }
-            }
-        }
-#endregion
     }
 }

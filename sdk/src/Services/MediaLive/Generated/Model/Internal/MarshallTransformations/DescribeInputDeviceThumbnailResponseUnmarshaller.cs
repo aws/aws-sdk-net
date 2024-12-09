@@ -56,7 +56,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if (context.ResponseData.IsHeaderPresent("ETag"))
                 response.ETag = context.ResponseData.GetHeaderValue("ETag");
             if (context.ResponseData.IsHeaderPresent("Last-Modified"))
-                response.LastModified = DateTime.Parse(context.ResponseData.GetHeaderValue("Last-Modified"), CultureInfo.InvariantCulture);
+                response.LastModified = DateTime.Parse(context.ResponseData.GetHeaderValue("Last-Modified"), CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);
 
             return response;
         }

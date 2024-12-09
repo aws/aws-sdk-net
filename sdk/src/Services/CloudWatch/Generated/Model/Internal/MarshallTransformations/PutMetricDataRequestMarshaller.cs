@@ -173,9 +173,9 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                                         {
                                             request.Parameters.Add("EntityMetricData" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricData" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "StorageResolution", StringUtils.FromInt(publicRequestlistValuelistValue.StorageResolution));
                                         }
-                                        if(publicRequestlistValuelistValue.IsSetTimestampUtc())
+                                        if(publicRequestlistValuelistValue.IsSetTimestamp())
                                         {
-                                            request.Parameters.Add("EntityMetricData" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricData" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "Timestamp", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestlistValuelistValue.TimestampUtc));
+                                            request.Parameters.Add("EntityMetricData" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricData" + "." + "member" + "." + publicRequestlistValuelistValueIndex + "." + "Timestamp", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestlistValuelistValue.Timestamp));
                                         }
                                         if(publicRequestlistValuelistValue.IsSetUnit())
                                         {
@@ -278,9 +278,9 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("MetricData" + "." + "member" + "." + publicRequestlistValueIndex + "." + "StorageResolution", StringUtils.FromInt(publicRequestlistValue.StorageResolution));
                             }
-                            if(publicRequestlistValue.IsSetTimestampUtc())
+                            if(publicRequestlistValue.IsSetTimestamp())
                             {
-                                request.Parameters.Add("MetricData" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Timestamp", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestlistValue.TimestampUtc));
+                                request.Parameters.Add("MetricData" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Timestamp", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestlistValue.Timestamp));
                             }
                             if(publicRequestlistValue.IsSetUnit())
                             {
