@@ -165,7 +165,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         [TestCategory("CloudFormation")]
         public void TestCreateStack()
         {
-            string stackName = "test-stack-" + DateTime.Now.Ticks;
+            string stackName = "test-stack-" + DateTime.UtcNow.Ticks;
             try
             {
                 CreateStackRequest createRequest = new CreateStackRequest
@@ -177,12 +177,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                         new Parameter
                         {
                             ParameterKey = "TopicName",
-                            ParameterValue = "MyTopic" + DateTime.Now.Ticks
+                            ParameterValue = "MyTopic" + DateTime.UtcNow.Ticks
                         },
                         new Parameter
                         {
                             ParameterKey = "QueueName",
-                            ParameterValue = "MyQueue" + DateTime.Now.Ticks
+                            ParameterValue = "MyQueue" + DateTime.UtcNow.Ticks
                         }
                     }
                 };

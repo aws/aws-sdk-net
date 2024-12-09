@@ -152,7 +152,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestMethod]
         [TestCategory("S3")]
         public void USEastSignedParameters() {
-            TestSignedUrlParameters(RegionEndpoint.USEast1, DateTime.Now.AddDays(1));
+            TestSignedUrlParameters(RegionEndpoint.USEast1, DateTime.UtcNow.AddDays(1));
         }
 
         [TestMethod]
@@ -185,7 +185,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 AWSConfigsS3.UseSignatureVersion4 = true;
                 if (testParams.IsS3Express)
                 {
-                    testParams.BucketName = $"{UtilityMethods.SDK_TEST_PREFIX + DateTime.Now.Ticks}--{RegionCodePairs[testParams.Region]}--x-s3";
+                    testParams.BucketName = $"{UtilityMethods.SDK_TEST_PREFIX + DateTime.UtcNow.Ticks}--{RegionCodePairs[testParams.Region]}--x-s3";
                     
                     client.PutBucket(new PutBucketRequest 
                     {
@@ -213,7 +213,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
         private static void AssertPresignedUrlPut(AmazonS3Client client, PresignedUrlTestParameters testParams)
         {
-            string objectKey = TestKey + DateTime.Now.Ticks;
+            string objectKey = TestKey + DateTime.UtcNow.Ticks;
 
             var request = new GetPreSignedUrlRequest
             {
@@ -466,7 +466,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     {
                         BucketName = bucketName,
                         Key = key,
-                        Expires = DateTime.Now.AddDays(1),
+                        Expires = DateTime.UtcNow.AddDays(1),
                         PartNumber = part,
                         UploadId = initiateMultipartResponse.UploadId,
                         Verb = HttpVerb.PUT,

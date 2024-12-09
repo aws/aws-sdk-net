@@ -175,7 +175,7 @@ namespace Amazon.Runtime
                     errorMessage = string.Format(CultureInfo.InvariantCulture,
                         "The retrieved credentials have already expired: Now = {0}, Credentials expiration = {1}",
 #pragma warning disable CS0612,CS0618 // Type or member is obsolete
-                        AWSSDKUtils.CorrectedUtcNow.ToLocalTime(), state.Expiration);
+                        AWSSDKUtils.CorrectedUtcNow, state.Expiration);
 #pragma warning restore CS0612,CS0618 // Type or member is obsolete
                 }
 
@@ -194,7 +194,7 @@ namespace Amazon.Runtime
                 logger.InfoFormat(
                     "The preempt expiry time is set too high: Current time = {0}, Credentials expiry time = {1}, Preempt expiry time = {2}.",
 #pragma warning disable CS0612,CS0618 // Type or member is obsolete
-                    AWSSDKUtils.CorrectedUtcNow.ToLocalTime(),
+                    AWSSDKUtils.CorrectedUtcNow,
 #pragma warning restore CS0612,CS0618 // Type or member is obsolete
                     state.Expiration, preemptExpiryTime);
             }

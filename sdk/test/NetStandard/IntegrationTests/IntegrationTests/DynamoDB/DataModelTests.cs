@@ -290,7 +290,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
         }
         private async Task TestHashObjects()
         {
-            string bucketName = "aws-sdk-net-s3link-" + DateTime.Now.Ticks;
+            string bucketName = "aws-sdk-net-s3link-" + DateTime.UtcNow.Ticks;
             var s3Client = new Amazon.S3.AmazonS3Client(Amazon.RegionEndpoint.USEast1);
             await s3Client.PutBucketAsync(bucketName);
             try
@@ -383,6 +383,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
                 Assert.Equal(product.KeySizes.Count, retrieved.KeySizes.Count);
                 Assert.NotNull(retrieved.CompanyInfo);
                 Assert.Equal(product.CompanyInfo.Name, retrieved.CompanyInfo.Name);
+                //TODO: this is coming back in UTC but the original is DateTimeKind.Unspecified
                 Assert.Equal(product.CompanyInfo.Founded, retrieved.CompanyInfo.Founded);
                 Assert.NotEqual(product.CompanyInfo.Revenue, retrieved.CompanyInfo.Revenue);
                 Assert.Equal(product.CompanyInfo.AllProducts.Count, retrieved.CompanyInfo.AllProducts.Count);

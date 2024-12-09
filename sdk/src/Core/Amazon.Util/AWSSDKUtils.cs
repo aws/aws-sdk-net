@@ -617,26 +617,31 @@ namespace Amazon.Util
         /// <summary>
         /// Utility method for converting Unix epoch seconds to DateTime structure.
         /// </summary>
-        /// <param name="seconds">The number of seconds since January 1, 1970.</param>
+        /// <param name="seconds">The number of seconds that have elapsed since 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970.</param>
         /// <returns>Converted DateTime structure</returns>
         public static DateTime ConvertFromUnixEpochSeconds(int seconds)
         {
-            return new DateTime(seconds * 10000000L + EPOCH_START.Ticks, DateTimeKind.Utc).ToLocalTime();
+            return new DateTime(seconds * 10000000L + EPOCH_START.Ticks, DateTimeKind.Utc);
         }
 
         /// <summary>
         /// Utility method for converting Unix epoch milliseconds to DateTime structure.
         /// </summary>
-        /// <param name="milliseconds">The number of milliseconds since January 1, 1970.</param>
+        /// <param name="milliseconds">The number of milliseconds that have elapsed since 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970.</param>
         /// <returns>Converted DateTime structure</returns>
         public static DateTime ConvertFromUnixEpochMilliseconds(long milliseconds)
         {
-            return new DateTime(milliseconds * 10000L + EPOCH_START.Ticks, DateTimeKind.Utc).ToLocalTime();
+            return new DateTime(milliseconds * 10000L + EPOCH_START.Ticks, DateTimeKind.Utc);
         }
 
         public static int ConvertToUnixEpochSeconds(DateTime dateTime)
         {
             return Convert.ToInt32(GetTimeSpanInTicks(dateTime).TotalSeconds);
+        }
+
+        public static long ConvertToUnixEpochMilliseconds(DateTime dateTime)
+        {
+            return Convert.ToInt64(GetTimeSpanInTicks(dateTime).TotalMilliseconds);
         }
 
         public static string ConvertToUnixEpochSecondsString(DateTime dateTime)
@@ -650,19 +655,15 @@ namespace Amazon.Util
             return Math.Round(GetTimeSpanInTicks(dateTime).TotalMilliseconds, 0) / 1000.0;
         }
 
+        /// <summary>
+        /// This method ensures the passed in DateTime is in UTC format then gets the numbers of ticks from that UTC time
+        /// minus the number of ticks from the UTC Epoch start time.
+        /// </summary>
+        /// <param name="dateTime">The DateTime used to determine the TimeSpan from the Epoch start time. </param>
+        /// <returns>Returns the TimeSpan of the passed DateTime minus the Epoch start time.</returns>
         public static TimeSpan GetTimeSpanInTicks(DateTime dateTime)
         {
             return new TimeSpan(dateTime.ToUniversalTime().Ticks - EPOCH_START.Ticks);
-        }
-
-        public static long ConvertDateTimetoMilliseconds(DateTime dateTime)
-        {
-            return ConvertTimeSpanToMilliseconds(GetTimeSpanInTicks(dateTime));
-        }
-
-        public static long ConvertTimeSpanToMilliseconds(TimeSpan timeSpan)
-        {
-            return timeSpan.Ticks / TimeSpan.TicksPerMillisecond;
         }
 
         /// <summary>
@@ -861,9 +862,7 @@ namespace Amazon.Util
         {
             get
             {
-#pragma warning disable CS0618 // Type or member is obsolete
                 DateTime dateTime = AWSSDKUtils.CorrectedUtcNow;
-#pragma warning restore CS0618 // Type or member is obsolete
                 return dateTime.ToString(GMTDateFormat, CultureInfo.InvariantCulture);
             }
         }
@@ -893,9 +892,7 @@ namespace Amazon.Util
         /// <returns>The ISO8601 formatted future timestamp.</returns>
         public static string GetFormattedTimestampISO8601(int minutesFromNow)
         {
-#pragma warning disable CS0618 // Type or member is obsolete
             return GetFormattedTimestampISO8601(AWSSDKUtils.CorrectedUtcNow.AddMinutes(minutesFromNow));
-#pragma warning restore CS0618 // Type or member is obsolete
         }
 
         internal static string GetFormattedTimestampISO8601(IClientConfig config, AmazonWebServiceRequest request)
@@ -908,17 +905,9 @@ namespace Amazon.Util
 
         private static string GetFormattedTimestampISO8601(DateTime dateTime)
         {
-            DateTime formatted = new DateTime(
-                dateTime.Year,
-                dateTime.Month,
-                dateTime.Day,
-                dateTime.Hour,
-                dateTime.Minute,
-                dateTime.Second,
-                dateTime.Millisecond,
-                DateTimeKind.Local
-                );
-            return formatted.ToString(
+            // In this private method in all cases where it is called the dateTime is already a UTC date but
+            // we will ensure it is one before formatting as a UTC ISO8601 datetime string.
+            return dateTime.ToUniversalTime().ToString(
                 AWSSDKUtils.ISO8601DateFormat,
                 CultureInfo.InvariantCulture
                 );

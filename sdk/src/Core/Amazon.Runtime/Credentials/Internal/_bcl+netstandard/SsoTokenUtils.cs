@@ -51,10 +51,7 @@ namespace Amazon.Runtime.Credentials.Internal
             if (null == token)
                 throw new ArgumentNullException(nameof(token));
 
-#pragma warning disable CS0618 // Type or member is obsolete
             var currentTime = AWSSDKUtils.CorrectedUtcNow;
-#pragma warning restore CS0618 // Type or member is obsolete
-
             return token.ExpiresAt < currentTime;
         }
 
@@ -66,10 +63,7 @@ namespace Amazon.Runtime.Credentials.Internal
         /// </summary>
         public static bool NeedsRefresh(this SsoToken token)
         {
-#pragma warning disable CS0618 // Type or member is obsolete
             var currentTime = AWSSDKUtils.CorrectedUtcNow;
-#pragma warning restore CS0618 // Type or member is obsolete
-
             return token.ExpiresAt <= currentTime.AddMinutes(6);
         }
 
@@ -107,9 +101,7 @@ namespace Amazon.Runtime.Credentials.Internal
             if (null == token)
                 throw new ArgumentNullException(nameof(token));
             DateTime dateTime = ConvertRFC3339StringToDateTime(token.RegistrationExpiresAt);
-#pragma warning disable CS0618 // Type or member is obsolete
             return AWSSDKUtils.CorrectedUtcNow >= dateTime.AddMinutes(-5);
-#pragma warning restore CS0618 // Type or member is obsolete               
         }
 
         #endregion

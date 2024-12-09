@@ -107,9 +107,9 @@ namespace Amazon.Runtime.Internal
 
             requestContext.CSMCallAttempt.AccessKey = requestContext.ImmutableCredentials.AccessKey;
 
-            requestContext.CSMCallAttempt.AttemptLatency = AWSSDKUtils.ConvertTimeSpanToMilliseconds(requestContext
+            requestContext.CSMCallAttempt.AttemptLatency = (long)requestContext
                 .Metrics.StopEvent(Metric.CSMAttemptLatency)
-                .ElapsedTime);
+                .ElapsedTime.TotalMilliseconds;
 
             if (responseContext.HttpResponse != null)
             {

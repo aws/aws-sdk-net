@@ -108,7 +108,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     BucketName = bucketName,
                     Key = key,
                     ServerSideEncryptionCustomerMethod = ServerSideEncryptionCustomerMethod.AES256,
-                    Expires = DateTime.Now.AddMinutes(5)
+                    Expires = DateTime.UtcNow.AddMinutes(5)
                 };
                 var url = Client.GetPreSignedURL(getPresignedUrlRequest);
                 var webRequest = HttpWebRequest.Create(url);

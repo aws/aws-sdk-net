@@ -1,11 +1,5 @@
 {
     "shapeModifiers": {
-        "DescribeActivitiesRequest": {
-            "backwardsCompatibleDateTimeProperties": [
-                "StartTime",
-                "EndTime"
-            ]
-        },
         "DescribeUsersResponse": {
             "modify": [
                 {

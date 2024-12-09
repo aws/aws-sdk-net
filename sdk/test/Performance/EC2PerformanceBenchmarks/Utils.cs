@@ -161,7 +161,7 @@ namespace AWSSDK.Benchmarks
         }
         public static async Task<string> CreateBucket(IAmazonS3 s3Client)
         {
-            string bucketName = Constants.SdkTestPrefix + DateTime.Now.Ticks;
+            string bucketName = Constants.SdkTestPrefix + DateTime.UtcNow.Ticks;
             await s3Client.PutBucketAsync(new PutBucketRequest { BucketName = bucketName });
             return bucketName;
         }

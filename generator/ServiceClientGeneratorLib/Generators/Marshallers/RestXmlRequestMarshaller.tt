@@ -430,7 +430,7 @@ WriteXmlAttributeString(level + 1, member, variableName, isPayload: true, operat
 				// see https://smithy.io/2.0/spec/protocol-traits.html#xmlflattened-trait
 				if(member.IsFlattened)
 					listMarshallName = member.LocationName ?? member.ModeledName;
-				if(member.Shape.ListShape.IsDateTime)
+				if(member.Shape.ListShape.IsTimeStamp)
 				{
 					// Use shape's ListMarshallName as it's a list structure.
 #>

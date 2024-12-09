@@ -167,7 +167,7 @@ namespace Amazon.Util
                 try
                 {
                     var createdAt = (string) json[createDateKey];
-                    creationDateTime = DateTime.ParseExact(createdAt, createDateFormatString, null);
+                    creationDateTime = DateTime.ParseExact(createdAt, createDateFormatString, null, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);
                 }
                 catch (FormatException)
                 {

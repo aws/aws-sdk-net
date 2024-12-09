@@ -305,7 +305,7 @@ using Amazon.Runtime.Internal.Util;
 				response.<#=member.PropertyName#> = MultiValueHeaderParser.ToStringList(context.ResponseData.GetHeaderValue("<#=member.MarshallLocationName#>"));
 <#+
 					}
-					else if(member.Shape.ListShape.IsDateTime)
+					else if(member.Shape.ListShape.IsTimeStamp)
 					{
 						var timestampFormat = member.Shape.ListShape.GetTimestampFormat(MarshallLocation.Headers);
 						if(timestampFormat == TimestampFormat.ISO8601 || timestampFormat == TimestampFormat.RFC822 || timestampFormat == TimestampFormat.UnixTimestamp)
@@ -331,13 +331,13 @@ using Amazon.Runtime.Internal.Util;
 						throw new Exception(string.Format("ListShape of {0}, type {1} is not supported within a List for response headers.", member.Shape.ListShape.Name, member.Shape.ListShape.Type));
 					}
 				}
-				else if (member.Shape.IsDateTime)
+				else if (member.Shape.IsTimeStamp)
 				{
 					if(	member.TimestampFormat == TimestampFormat.ISO8601 || 
 						member.TimestampFormat == TimestampFormat.RFC822)
 					{
 #>
-				response.<#=member.PropertyName#> = DateTime.Parse(context.ResponseData.GetHeaderValue("<#=member.MarshallLocationName#>"), CultureInfo.InvariantCulture);
+				response.<#=member.PropertyName#> = DateTime.Parse(context.ResponseData.GetHeaderValue("<#=member.MarshallLocationName#>"), CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);
 <#+
 					}
 					else if(member.TimestampFormat == TimestampFormat.UnixTimestamp)
@@ -354,7 +354,7 @@ using Amazon.Runtime.Internal.Util;
 				else if (member.Shape.IsPrimitiveType)
 				{
 #>
-				response.<#=member.PropertyName#> = <#=member.Shape.GetPrimitiveType().ToLower()#>.Parse(context.ResponseData.GetHeaderValue("<#=member.MarshallLocationName#>")<#=(member.Shape.IsBoolean)?"":", CultureInfo.InvariantCulture"#>);
+				response.<#=member.PropertyName#> = <#=member.Shape.GetPrimitiveType().ToLower()#>.Parse(context.ResponseData.GetHeaderValue("<#=member.MarshallLocationName#>")<#=(member.Shape.IsBoolean)?"":", CultureInfo.InvariantCulture"#><#=(!member.Shape.IsTimeStamp)?"":", DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal"#>);
 <#+
 				}
 				else

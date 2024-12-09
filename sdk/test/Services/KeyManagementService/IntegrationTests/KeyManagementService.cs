@@ -22,7 +22,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         private const int keySize = 1024;
         private const int numberOfRandomBytes = 1023;
         private const string testContents = "This is test data";
-        private static string keyAlias = "alias/net_key" + DateTime.Now.ToFileTime();
+        private static string keyAlias = "alias/net_key" + DateTime.UtcNow.ToFileTime();
         private static MemoryStream testData = new MemoryStream(Encoding.UTF8.GetBytes(testContents));
         private static TimeSpan keyMaxWait = TimeSpan.FromSeconds(30);
         private static TimeSpan keyDescribeWait = TimeSpan.FromSeconds(5);
@@ -331,10 +331,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
         private void ValidateKey(string keyId, bool keyEnabled, bool isCopy = false)
         {
-            var stopTime = DateTime.Now + keyMaxWait;
+            var stopTime = DateTime.UtcNow + keyMaxWait;
 
             KeyMetadata keyMetadata = null;
-            while(DateTime.Now < stopTime)
+            while(DateTime.UtcNow < stopTime)
             {
                 try
                 {

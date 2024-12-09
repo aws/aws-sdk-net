@@ -47,6 +47,6 @@ namespace Amazon.Runtime.Internal
         /// <summary>
         /// ISO8601 formatted timestamp till when the credential is valid.
         /// </summary>
-        public DateTime Expiration { get; set; } = DateTime.MaxValue;
+        public DateTime Expiration { get; set; } = DateTime.SpecifyKind(DateTime.MaxValue, DateTimeKind.Utc);
     }
 }

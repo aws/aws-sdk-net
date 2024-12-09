@@ -23,7 +23,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
         public static string CreateBucket(IAmazonS3 s3Client)
         {
-            string bucketName = UtilityMethods.SDK_TEST_PREFIX + DateTime.Now.Ticks;
+            string bucketName = UtilityMethods.SDK_TEST_PREFIX + DateTime.UtcNow.Ticks;
 
             s3Client.PutBucket(new PutBucketRequest { BucketName = bucketName });
             return bucketName;
@@ -32,7 +32,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         public static string CreateBucket(IAmazonS3 s3Client, PutBucketRequest bucketRequest)
         {
             string bucketName = string.IsNullOrEmpty(bucketRequest.BucketName) ?
-                UtilityMethods.SDK_TEST_PREFIX + DateTime.Now.Ticks :
+                UtilityMethods.SDK_TEST_PREFIX + DateTime.UtcNow.Ticks :
                 bucketRequest.BucketName;
 
             bucketRequest.BucketName = bucketName;
@@ -42,7 +42,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
         public static string CreateS3ExpressBucketWithWait(IAmazonS3 s3Client, string regionCode, bool setPublicACLs = false)
         {
-            string bucketName = $"{UtilityMethods.SDK_TEST_PREFIX}-{DateTime.Now.Ticks}--{regionCode}--x-s3";
+            string bucketName = $"{UtilityMethods.SDK_TEST_PREFIX}-{DateTime.UtcNow.Ticks}--{regionCode}--x-s3";
 
             s3Client.PutBucket(new PutBucketRequest
             {
@@ -378,7 +378,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 BucketName = bucketName,
                 Key = keyName,
                 Verb = HttpVerb.GET,
-                Expires = DateTime.Now + TimeSpan.FromDays(5)
+                Expires = DateTime.UtcNow + TimeSpan.FromDays(5)
             });
 
             var httpRequest = HttpWebRequest.Create(presignedUrl);

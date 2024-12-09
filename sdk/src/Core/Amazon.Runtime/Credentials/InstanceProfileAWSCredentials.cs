@@ -92,7 +92,7 @@ namespace Amazon.Runtime
                 if (null != _currentRefreshState)
                 {
 #pragma warning disable CS0612, CS0618 // Type or member is obsolete
-                    var newExpiryTime = AWSSDKUtils.CorrectedUtcNow.ToLocalTime() + TimeSpan.FromMinutes(2);
+                    var newExpiryTime = AWSSDKUtils.CorrectedUtcNow + TimeSpan.FromMinutes(2);
 #pragma warning restore CS0612,CS0618 // Type or member is obsolete
 
                     _currentRefreshState = new CredentialsRefreshState(_currentRefreshState.Credentials.Copy(), newExpiryTime);
@@ -108,7 +108,7 @@ namespace Amazon.Runtime
                 // use a custom refresh time
 
 #pragma warning disable CS0612, CS0618 // Type or member is obsolete
-                var newExpiryTime = AWSSDKUtils.CorrectedUtcNow.ToLocalTime() + TimeSpan.FromMinutes(new Random().Next(5, 11));
+                var newExpiryTime = AWSSDKUtils.CorrectedUtcNow + TimeSpan.FromMinutes(new Random().Next(5, 11));
 #pragma warning restore CS0612, CS0618 // Type or member is obsolete
 
                 _currentRefreshState = new CredentialsRefreshState(newState.Credentials.Copy(), newExpiryTime);
@@ -285,11 +285,11 @@ namespace Amazon.Runtime
         {
             // New expiry time = Now + _refreshAttemptPeriod + PreemptExpiryTime
 #pragma warning disable CS0612,CS0618 // Type or member is obsolete
-            var newExpiryTime = AWSSDKUtils.CorrectedUtcNow.ToLocalTime() + _refreshAttemptPeriod + PreemptExpiryTime;
+            DateTime newExpiryTime = AWSSDKUtils.CorrectedUtcNow + _refreshAttemptPeriod + PreemptExpiryTime;
 #pragma warning restore CS0612, CS0618 // Type or member is obsolete
 
             // Use this only if the time is earlier than the default expiration time
-            if (newExpiryTime.ToUniversalTime() > state.Expiration.ToUniversalTime())
+            if (newExpiryTime > state.Expiration)
                 newExpiryTime = state.Expiration;
 
             return new CredentialsRefreshState(state.Credentials.Copy(), newExpiryTime);

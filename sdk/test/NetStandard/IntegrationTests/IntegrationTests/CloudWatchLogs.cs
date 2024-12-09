@@ -17,7 +17,7 @@ namespace Amazon.DNXCore.IntegrationTests
         [Trait(CategoryAttribute,"CloudWatchLogs")]
         public async Task CRUDLogGroup()
         {
-            var logGroupName = "sdk-dotnet-" + DateTime.Now.Ticks;
+            var logGroupName = "sdk-dotnet-" + DateTime.UtcNow.Ticks;
             await Client.CreateLogGroupAsync(new CreateLogGroupRequest
             {
                 LogGroupName = logGroupName
@@ -74,7 +74,7 @@ namespace Amazon.DNXCore.IntegrationTests
                                 new InputLogEvent
                                 {
                                     Message = "First Data",
-                                    Timestamp = DateTime.Now
+                                    Timestamp = DateTime.UtcNow
                                 }
                             }
                         });
@@ -92,7 +92,7 @@ namespace Amazon.DNXCore.IntegrationTests
                                 new InputLogEvent
                                 {
                                     Message = "Second Data",
-                                    Timestamp = DateTime.Now
+                                    Timestamp = DateTime.UtcNow
                                 }
                             }
                     });
@@ -108,8 +108,8 @@ namespace Amazon.DNXCore.IntegrationTests
                             {
                                 LogGroupName = logGroupName,
                                 LogStreamName = "sample",
-                                StartTime = DateTime.Now.AddDays(-2),
-                                EndTime = DateTime.Now
+                                StartTime = DateTime.UtcNow.AddDays(-2),
+                                EndTime = DateTime.UtcNow
                             });
 
                         if (getResponse.Events.Count == 2)

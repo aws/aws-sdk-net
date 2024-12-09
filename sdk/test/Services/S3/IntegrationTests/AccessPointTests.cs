@@ -23,7 +23,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     public class AccessPointTests : TestBase<AmazonS3Client>
     {
         static string _bucketName;
-        static string _accesspointName = "sdk-integtests-" + DateTime.Now.Ticks;
+        static string _accesspointName = "sdk-integtests-" + DateTime.UtcNow.Ticks;
         static string _accesspointArn;
 
         static string _accountId;

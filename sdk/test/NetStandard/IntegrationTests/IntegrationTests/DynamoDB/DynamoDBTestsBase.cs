@@ -155,7 +155,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
         public const int ScanLimit = 1;
         public static readonly string BaseTableNamePrefix = "DotNetTests";
         public static readonly string TableNamePrefix = BaseTableNamePrefix + "-" +
-            (ReuseTables ? string.Empty : + DateTime.Now.ToFileTime() + "-");
+            (ReuseTables ? string.Empty : + DateTime.UtcNow.ToFileTime() + "-");
         public List<string> CreatedTables = new List<string>();
 
         public async Task ClearTable(string tableName)

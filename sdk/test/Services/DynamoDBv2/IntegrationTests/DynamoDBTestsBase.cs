@@ -123,7 +123,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         public const int ScanLimit = 1;
         public static readonly string BaseTableNamePrefix = "DotNetTests";
         public static readonly string TableNamePrefix = BaseTableNamePrefix + "-" +
-            (ReuseTables ? string.Empty : + DateTime.Now.ToFileTime() + "-");
+            (ReuseTables ? string.Empty : + DateTime.UtcNow.ToFileTime() + "-");
         public static List<string> CreatedTables = new List<string>();
 
         public static void ClearTable(string tableName)

@@ -246,7 +246,7 @@ namespace AWSSDK.UnitTests
             {
                 BucketName = arnString,
                 Key = "test2.txt",
-                Expires = DateTime.Now.AddDays(1),
+                Expires = DateTime.UtcNow.AddDays(1),
                 Verb = HttpVerb.GET
             };
 
@@ -463,7 +463,7 @@ namespace AWSSDK.UnitTests
             var transferUtility = new TransferUtility(RegionEndpoint.USWest2);
             try
             {
-                transferUtility.AbortMultipartUploads("arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint/mybanner", DateTime.Now);
+                transferUtility.AbortMultipartUploads("arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint/mybanner", DateTime.UtcNow);
             }
             catch (AmazonS3Exception e)
             {

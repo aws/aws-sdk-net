@@ -702,7 +702,7 @@ namespace Amazon.S3.Util
 
             var parameters = new ServiceOperationEndpointParameters(request);
             var endpoint = s3Client.Config.DetermineServiceOperationEndpoint(parameters);
-            request.Expires = CorrectClockSkew.GetCorrectedUtcNowForEndpoint(endpoint.URL).ToLocalTime().AddDays(1);
+            request.Expires = CorrectClockSkew.GetCorrectedUtcNowForEndpoint(endpoint.URL).AddDays(1);
 
             var url = s3Client.GetPreSignedURL(request);
             var uri = new Uri(url);

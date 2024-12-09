@@ -206,7 +206,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Context = new DynamoDBContext(Client, config);
 #pragma warning restore CS0618 // Re-enable the warning
 
-            var currTime = DateTime.Now;
+            var currTime = DateTime.UtcNow;
 
             var employee = new AnnotatedNumericEpochEmployee
             {
@@ -219,6 +219,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             };
 
             Context.Save(employee);
+
+            //This is a value use of .ToLocalTime
             var expectedCurrTime = retrieveDateTimeInUtc ? currTime.ToUniversalTime() : currTime.ToLocalTime();
 
             // Load 
@@ -280,7 +282,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             // Add a custom DateTime converter
             Context.ConverterCache.Add(typeof(DateTime), new DateTimeUtcConverter());
 
-            var currTime = DateTime.Now;
+            var currTime = DateTime.UtcNow;
 
             var employee = new AnnotatedNumericEpochEmployee
             {
@@ -349,7 +351,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 #pragma warning restore CS0618 // Re-enable the warning
             var operationConfig = new DynamoDBOperationConfig { RetrieveDateTimeInUtc = retrieveDateTimeInUtc };
 
-            var currTime = DateTime.Now;
+            var currTime = DateTime.UtcNow;
 
             var employee = new AnnotatedNumericEpochEmployee
             {
@@ -362,6 +364,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             };
 
             Context.Save(employee);
+
+            //This is a value use of .ToLocalTime
             var expectedCurrTime = retrieveDateTimeInUtc ? currTime.ToUniversalTime() : currTime.ToLocalTime();
 
             // Load 
@@ -659,7 +663,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         }
 
         private void TestContextConversions()
-        {
+        {   
             var conversionV1 = DynamoDBEntryConversion.V1;
             var conversionV2 = DynamoDBEntryConversion.V2;
 
@@ -877,7 +881,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         }
         private void TestHashObjects()
         {
-            string bucketName = "aws-sdk-net-s3link-" + DateTime.Now.Ticks;
+            string bucketName = "aws-sdk-net-s3link-" + DateTime.UtcNow.Ticks;
             var s3Client = new Amazon.S3.AmazonS3Client(Amazon.RegionEndpoint.USEast1);
             s3Client.PutBucket(bucketName);
             try
