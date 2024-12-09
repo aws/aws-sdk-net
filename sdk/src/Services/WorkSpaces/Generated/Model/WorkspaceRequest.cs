@@ -128,6 +128,11 @@ namespace Amazon.WorkSpaces.Model
         /// </para>
         ///  
         /// <para>
+        /// The username is not case-sensitive, but we recommend matching the case in the Directory
+        /// Service directory to avoid potential incompatibilities.
+        /// </para>
+        ///  
+        /// <para>
         /// The reserved keyword, <c>[UNDEFINED]</c>, is used when creating user-decoupled WorkSpaces.
         /// </para>
         /// </summary>
