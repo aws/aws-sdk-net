@@ -129,7 +129,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// A capacity provider strategy may contain a maximum of 6 capacity providers.
+        /// A capacity provider strategy can contain a maximum of 20 capacity providers.
         /// </para>
         /// </summary>
         public List<CapacityProviderStrategyItem> CapacityProviderStrategy
