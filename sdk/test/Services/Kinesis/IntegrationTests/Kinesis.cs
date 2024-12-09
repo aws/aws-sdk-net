@@ -46,7 +46,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         [TestCategory("Kinesis")]
         public void KinesisCRUD()
         {
-            var streamName = "dotnet-integ-test-stream-" + DateTime.Now.Ticks;
+            var streamName = "dotnet-integ-test-stream-" + DateTime.UtcNow.Ticks;
             Action waitUntilStreamActive = () => UtilityMethods.WaitUntil(() =>
                 Client.DescribeStream(new DescribeStreamRequest { StreamName = streamName }).StreamDescription.StreamStatus == StreamStatus.ACTIVE);
 

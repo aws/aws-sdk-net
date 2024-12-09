@@ -131,7 +131,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     {
                         BucketName = BucketName,
                         Key = Key,
-                        Expires = DateTime.Now.AddMinutes(20),
+                        Expires = DateTime.UtcNow.AddMinutes(20),
                         RequestPayer = requestPayer
                     });
 

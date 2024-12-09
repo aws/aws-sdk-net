@@ -32,7 +32,6 @@ namespace Amazon.S3.Model
     public class LifecycleRuleExpiration
     {
         private DateTime? date;
-        private DateTime? dateUtc;
         private int? days;
         private bool? expiredObjectDeleteMarker;
 
@@ -40,39 +39,16 @@ namespace Amazon.S3.Model
         /// Indicates at what date the object is to be moved or deleted. The date value must conform
         /// to the ISO 8601 format. The time is always midnight UTC.
         /// </summary>
-        [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. Use DateUtc instead.", false)]
         public DateTime? Date
         {
             get { return this.date; }
-            set
-            {
-                this.date = value;
-
-                if (value.HasValue)
-                {
-                    this.dateUtc = new DateTime(value.Value.Ticks, DateTimeKind.Utc);
-                }
-                else
-                {
-                    this.dateUtc = null;
-                }
-            }
+            set { this.date = value; }
         }
 
-        /// <summary>
-        /// Indicates at what date the object is to be moved or deleted. The date value must conform
-        /// to the ISO 8601 format. The time is always midnight UTC.
-        /// </summary>
-        public DateTime? DateUtc
+        // Check to see if Date property is set
+        internal bool IsSetDate()
         {
-            get { return this.dateUtc; }
-            set { this.dateUtc = this.date = value; }
-        }
-
-        // Check to see if DateUtc property is set
-        internal bool IsSetDateUtc()
-        {
-            return this.dateUtc.HasValue;
+            return this.date.HasValue;
         }
 
         /// <summary>

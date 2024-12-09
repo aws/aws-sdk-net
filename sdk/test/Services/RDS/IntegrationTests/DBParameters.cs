@@ -14,7 +14,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
         public void TestDBParameterOperations()
         {
             const string engine = "mysql5.5";
-            var parameterGroupName = "dotnet-test-param-group-" + DateTime.Now.Ticks;
+            var parameterGroupName = "dotnet-test-param-group-" + DateTime.UtcNow.Ticks;
             DBParameterGroup parameterGroup = null;
             DBParameterGroup parameterGroup2 = null;
 

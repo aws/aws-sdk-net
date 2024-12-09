@@ -170,6 +170,7 @@ namespace Amazon.SimpleDB.Util
         /// <returns>string representation of the date value</returns>
         public static string EncodeDate(DateTime date)
         {
+            //TODO: ERROR? the dateformat is in localtime...
             return date.ToString(dateFormat, CultureInfo.InvariantCulture);
         }
 
@@ -180,7 +181,7 @@ namespace Amazon.SimpleDB.Util
         /// <returns>original date value</returns>
         public static DateTime DecodeDate(string value)
         {
-            return DateTime.ParseExact(value, dateFormat, CultureInfo.InvariantCulture);
+            return DateTime.ParseExact(value, dateFormat, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);
         }
 
         /// <summary>

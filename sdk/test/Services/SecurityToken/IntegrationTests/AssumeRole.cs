@@ -32,7 +32,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         [TestInitialize]
         public void Init()
         {
-            _now = DateTime.Now.ToFileTime().ToString();
+            _now = DateTime.UtcNow.ToFileTime().ToString();
             _roleName = "assume-role-" + _now;
             _userName = "assume-user-" + _now;
 

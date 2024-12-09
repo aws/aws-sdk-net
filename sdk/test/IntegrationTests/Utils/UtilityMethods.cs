@@ -35,7 +35,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
                 {
                     var createRequest = new CreateTopicRequest
                     {
-                        Name = "sdk-accountid-lookup" + DateTime.Now.Ticks
+                        Name = "sdk-accountid-lookup" + DateTime.UtcNow.Ticks
                     };
                     using(var snsClient = new AmazonSimpleNotificationServiceClient())
                     {
@@ -218,9 +218,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
             if (maxWaitSeconds < 0) throw new ArgumentOutOfRangeException("maxWaitSeconds");
 
             var maxTime = TimeSpan.FromSeconds(maxWaitSeconds);
-            var endTime = DateTime.Now + maxTime;
+            var endTime = DateTime.UtcNow + maxTime;
 
-            while(DateTime.Now < endTime)
+            while(DateTime.UtcNow < endTime)
             {
                 if (matchFunction())
                     return;

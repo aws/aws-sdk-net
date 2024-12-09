@@ -86,7 +86,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
                 BucketName = bucketName,
                 Key = key,
                 Verb = HttpVerb.GET,
-                Expires = DateTime.Now.AddDays(1)
+                Expires = DateTime.UtcNow.AddDays(1)
             };
 
             var presignedUrl = Client.GetPreSignedURL(presignedUrlRequest);

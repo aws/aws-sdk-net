@@ -224,7 +224,7 @@ namespace AWSSDK_DotNet.UnitTests
         [TestMethod]
         [TestCategory("DynamoDBv2")]
         public void TestDateTimeDeserializationWithDdbContext()
-        {
+        {   
             //Arrange
             var dateWithNoDecimals = "2022-05-05T11:56:11Z";
             var expectedDateNoDecimal = DateTime.Parse(dateWithNoDecimals);

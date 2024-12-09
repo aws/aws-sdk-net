@@ -101,7 +101,6 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         internal static DateTime ToDateTime(string value)
         {
-            //return DateTime.ParseExact(value, AWSSDKUtils.RFC822DateFormat, CultureInfo.InvariantCulture);
             DateTime result = (DateTime)Convert.ChangeType(value, typeof(DateTime), System.Globalization.CultureInfo.InvariantCulture);
             result = result.ToUniversalTime();
             return result;

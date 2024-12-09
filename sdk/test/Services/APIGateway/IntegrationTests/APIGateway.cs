@@ -33,7 +33,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         private static string restApiId = null;
-        private static string timestamp = DateTime.Now.ToFileTime().ToString();
+        private static string timestamp = DateTime.UtcNow.ToFileTime().ToString();
         private static string apiName = "dotnet-test-" + timestamp;
         private static string apiDescription = "RestApi created by dotnet tests at " + timestamp;
 
@@ -48,7 +48,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.AreEqual(apiDescription, createRestApi.Description);
             Assert.AreEqual(apiName, createRestApi.Name);
             Assert.IsFalse(string.IsNullOrEmpty(createRestApi.Id));
-            Assert.AreNotEqual(default(DateTime), createRestApi.CreatedDate);
+            Assert.AreNotEqual(DateTime.SpecifyKind(default, DateTimeKind.Utc), createRestApi.CreatedDate);
             restApiId = createRestApi.Id;
         }
 
@@ -130,7 +130,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.AreEqual(apiDescription, getRestApi.Description);
             Assert.AreEqual(apiName, getRestApi.Name);
             Assert.IsFalse(string.IsNullOrEmpty(getRestApi.Id));
-            Assert.AreNotEqual(default(DateTime), getRestApi.CreatedDate);
+            Assert.AreNotEqual(DateTime.SpecifyKind(default, DateTimeKind.Utc), getRestApi.CreatedDate);
 
             var newDescription = "New description!";
             Client.UpdateRestApi(new UpdateRestApiRequest
@@ -154,7 +154,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.AreEqual(newDescription, getRestApi.Description);
             Assert.AreEqual(apiName, getRestApi.Name);
             Assert.IsFalse(string.IsNullOrEmpty(getRestApi.Id));
-            Assert.AreNotEqual(default(DateTime), getRestApi.CreatedDate);
+            Assert.AreNotEqual(DateTime.SpecifyKind(default, DateTimeKind.Utc), getRestApi.CreatedDate);
 
             Client.UpdateRestApi(new UpdateRestApiRequest
             {
@@ -202,8 +202,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             });
             Assert.IsNotNull(clientCert);
             Assert.AreEqual(certDescription, clientCert.Description);
-            Assert.AreNotEqual(default(DateTime), clientCert.CreatedDate);
-            Assert.AreNotEqual(default(DateTime), clientCert.ExpirationDate);
+            Assert.AreNotEqual(DateTime.SpecifyKind(default, DateTimeKind.Utc), clientCert.CreatedDate);
+            Assert.AreNotEqual(DateTime.SpecifyKind(default, DateTimeKind.Utc), clientCert.ExpirationDate);
             Assert.IsTrue(clientCert.ExpirationDate > clientCert.CreatedDate);
             Assert.IsFalse(string.IsNullOrEmpty(clientCert.PemEncodedCertificate));
             Assert.IsFalse(string.IsNullOrEmpty(clientCert.ClientCertificateId));

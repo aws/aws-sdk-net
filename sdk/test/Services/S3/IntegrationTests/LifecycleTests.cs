@@ -244,7 +244,7 @@ namespace S3UnitTest
 
             Thread.Sleep(10000);
 
-            var expectedMinAbortDate = DateTime.Now.Date.AddDays(7);
+            var expectedMinAbortDate = DateTime.UtcNow.Date.AddDays(7);
             var initResponse = Client.InitiateMultipartUpload(new InitiateMultipartUploadRequest
             {
                 BucketName = bucketName,

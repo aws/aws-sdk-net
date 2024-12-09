@@ -38,7 +38,6 @@ namespace Amazon.S3.Model
         private string eTag;
         private int? missingMeta;
         private string versionId;
-        private DateTime? expires;        
         private string websiteRedirectLocation;
         private string serverSideEncryptionKeyManagementServiceKeyId;
         private ServerSideEncryptionMethod serverSideEncryption;
@@ -58,13 +57,7 @@ namespace Amazon.S3.Model
         private string _checksumCRC32C;
         private string _checksumSHA1;
         private string _checksumSHA256;
-
-        /// <summary>
-        /// Flag which returns true if the Expires property has been unmarshalled
-        /// from the raw value or set by user code.
-        /// </summary>
-        private bool isExpiresUnmarshalled;
-
+        
         /// <summary>
         /// The date and time at which the object is no longer cacheable.
         /// </summary>
@@ -286,42 +279,6 @@ namespace Amazon.S3.Model
         internal bool IsSetVersionId()
         {
             return this.versionId != null;
-        }
-
-        /// <summary>
-        /// The date and time at which the object is no longer cacheable.
-        ///  
-        /// </summary>
-        [Obsolete("This property is deprecated for handling cases where Expires cannot be parsed as a DateTime. Instead, use ExpiresString, which returns the unparsed value from S3.")]
-        public DateTime? Expires
-        {
-            get
-            {
-                if (this.isExpiresUnmarshalled)
-                {
-                    return this.expires;
-                }
-                else
-                {
-                    if (!string.IsNullOrEmpty(this.ExpiresString))
-                    {
-                        this.expires = AmazonS3Util.ParseExpiresHeader(this.ExpiresString, this.ResponseMetadata.RequestId);
-                    }
-                    else
-                    {
-                        this.expires = null;
-                    }
-                    this.isExpiresUnmarshalled = true;
-                    return this.expires.GetValueOrDefault();
-                }
-            }
-            set { this.expires = value; this.isExpiresUnmarshalled = true; }
-        }
-
-        // Check to see if Expires property is set
-        internal bool IsSetExpires()
-        {
-            return this.expires.HasValue;
         }
 
         /// <summary>

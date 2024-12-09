@@ -62,7 +62,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void StaticStabilityWhenIMDSExperiencesAnOutageScenarioTest()
         {
-            var currentTime = new DateTime(1997, 8, 29, 16, 20, 0);
+            var currentTime = new DateTime(1997, 8, 29, 16, 20, 0, DateTimeKind.Utc);
 
             var token = "ValidToken";
             

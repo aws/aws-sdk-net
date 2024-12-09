@@ -33,7 +33,7 @@ namespace Amazon.DNXCore.IntegrationTests
         {
             using (var client = UtilityMethods.CreateClient<AmazonSimpleWorkflowClient>())
             {
-                var domainName = "dotnet-test-domain-" + DateTime.Now.ToFileTime();
+                var domainName = "dotnet-test-domain-" + DateTime.UtcNow.ToFileTime();
 
                 await client.RegisterDomainAsync(new RegisterDomainRequest
                 {
@@ -58,7 +58,7 @@ namespace Amazon.DNXCore.IntegrationTests
 
                 var ure = await AssertExtensions.ExpectExceptionAsync<UnknownResourceException>(client.DeprecateDomainAsync(new DeprecateDomainRequest
                 {
-                    Name = "really-fake-domain-that-should-not-exist" + DateTime.Now.ToFileTime()
+                    Name = "really-fake-domain-that-should-not-exist" + DateTime.UtcNow.ToFileTime()
                 }));
                 Assert.NotNull(ure);
                 Assert.NotNull(ure.Message);
@@ -82,7 +82,7 @@ namespace Amazon.DNXCore.IntegrationTests
                         .Count(b =>
                             string.Equals(bucketName, b.BucketName, StringComparison.OrdinalIgnoreCase)));
 
-                    var fakeBucketName = ("really-fake-bucket-that-shout-not-exist" + DateTime.Now.ToFileTime()).ToLower();
+                    var fakeBucketName = ("really-fake-bucket-that-shout-not-exist" + DateTime.UtcNow.ToFileTime()).ToLower();
                     var as3e = await AssertExtensions.ExpectExceptionAsync<AmazonS3Exception>(client.DeleteBucketAsync(new DeleteBucketRequest
                     {
                         BucketName = fakeBucketName

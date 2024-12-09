@@ -599,7 +599,7 @@ namespace Amazon.Runtime.Internal.Transform
         /// </summary>
         /// <param name="text">Value to be parsed</param>
         /// <param name="treatAsNullable">If true, the method will return null if text is null. 
-        /// If false, the method will return default(DateTime), if text is null.</param>
+        /// If false, the method will return DateTime.SpecifyKind(default, DateTimeKind.Utc), if text is null.</param>
         /// <returns></returns>
         internal static DateTime? UnmarshallInternal(string text, bool treatAsNullable)
         {
@@ -613,10 +613,10 @@ namespace Amazon.Runtime.Internal.Transform
                 if (text == null)
                 {
                     if (treatAsNullable) { return null; }
-                    else { return default(DateTime); }
+                    else { return DateTime.SpecifyKind(default, DateTimeKind.Utc); }
                 }
 
-                return DateTime.Parse(text, CultureInfo.InvariantCulture);
+                return DateTime.Parse(text, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);
             }
         }
     }

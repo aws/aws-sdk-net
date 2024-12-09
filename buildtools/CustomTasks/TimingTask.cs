@@ -15,14 +15,14 @@ namespace CustomTasks
             if (ShouldInit)
             {
                 ShouldInit = false;
-                StartTime = DateTime.Now;
+                StartTime = DateTime.UtcNow;
                 MainThread = new Thread(() =>
                 {
                     try
                     {
                         while (true)
                         {
-                            var elapsed = DateTime.Now - StartTime;
+                            var elapsed = DateTime.UtcNow - StartTime;
                             Console.WriteLine(">>>>> ELAPSED TIME = " + elapsed.ToString("h'h 'm'm 's's'"));
                             Thread.Sleep(SleepTime);
                         }

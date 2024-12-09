@@ -93,7 +93,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 {
                     BucketName = BucketName,
                     Key = BucketRegionTestRunner.TestObjectKey,
-                    Expires = DateTime.Now.AddHours(1)
+                    Expires = DateTime.UtcNow.AddHours(1)
                 };
             }
         }
@@ -106,7 +106,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             if (TestBucket == null)
             {
                 // add ticks to bucket name because the bucket namespace is shared globally
-                var bucketName = BucketPrefix + DateTime.Now.Ticks;
+                var bucketName = BucketPrefix + DateTime.UtcNow.Ticks;
                 // Create the bucket but don't run the test.
                 // If the bucket is ready the next time this test runs we'll test then.
                 USWest1Client.PutBucket(new PutBucketRequest()
@@ -115,7 +115,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     BucketName = bucketName,
                 });
             }
-            else if (TestBucket.CreationDate.Value.AddHours(TemporaryRedirectMaxExpirationHours) < DateTime.Now)
+            else if (TestBucket.CreationDate.Value.AddHours(TemporaryRedirectMaxExpirationHours) < DateTime.UtcNow)
             {
                 BucketRegionDetector.BucketRegionCache.Clear();
                 TestBucketIsReady = true;

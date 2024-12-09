@@ -43,7 +43,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void GetSsoToken()
         {
-            var minExpectedExpiresAt = DateTime.Now.AddSeconds(_testFixture.CreateTokenResponse.ExpiresIn.Value);
+            var minExpectedExpiresAt = DateTime.UtcNow.AddSeconds(_testFixture.CreateTokenResponse.ExpiresIn.Value);
             var response = CoreAmazonSSOOIDC.GetSsoToken(_testFixture.OidcClient.Object,
                 _testFixture.GetSsoTokenRequest, _testFixture.GetSsoTokenContext.Object);
 
@@ -58,7 +58,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void GetSsoToken_PkceFlow()
         {
-            var minExpectedExpiresAt = DateTime.Now.AddSeconds(_testFixture.CreateTokenResponse.ExpiresIn.Value);
+            var minExpectedExpiresAt = DateTime.UtcNow.AddSeconds(_testFixture.CreateTokenResponse.ExpiresIn.Value);
             var response = CoreAmazonSSOOIDC.GetSsoToken(
                 _testFixture.OidcClient.Object,
                 _testFixture.GetSsoTokenRequestWithPkceSuccess,
@@ -76,7 +76,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public async Task GetSsoTokenAsync()
         {
-            var minExpectedExpiresAt = DateTime.Now.AddSeconds(_testFixture.CreateTokenResponse.ExpiresIn.Value);
+            var minExpectedExpiresAt = DateTime.UtcNow.AddSeconds(_testFixture.CreateTokenResponse.ExpiresIn.Value);
             var response = await CoreAmazonSSOOIDC.GetSsoTokenAsync(_testFixture.OidcClient.Object,
                 _testFixture.GetSsoTokenRequest, _testFixture.GetSsoTokenContext.Object);
 
@@ -91,7 +91,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public async Task GetSsoToken_PkceFlowAsync()
         {
-            var minExpectedExpiresAt = DateTime.Now.AddSeconds(_testFixture.CreateTokenResponse.ExpiresIn.Value);
+            var minExpectedExpiresAt = DateTime.UtcNow.AddSeconds(_testFixture.CreateTokenResponse.ExpiresIn.Value);
             var response = await CoreAmazonSSOOIDC.GetSsoTokenAsync(
                 _testFixture.OidcClient.Object,
                 _testFixture.GetSsoTokenRequestWithPkceSuccess,
@@ -109,7 +109,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void GetSsoToken_Poll_AuthorizationPendingException()
         {
-            var minExpectedExpiresAt = DateTime.Now.AddSeconds(_testFixture.CreateTokenResponse.ExpiresIn.Value);
+            var minExpectedExpiresAt = DateTime.UtcNow.AddSeconds(_testFixture.CreateTokenResponse.ExpiresIn.Value);
             _testFixture.WithCreateTokenExceptionThenSuccess(new AuthorizationPendingException("simulation"));
 
             var response = CoreAmazonSSOOIDC.GetSsoToken(_testFixture.OidcClient.Object,
@@ -123,7 +123,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public async Task GetSsoTokenAsync_Poll_AuthorizationPendingException()
         {
-            var minExpectedExpiresAt = DateTime.Now.AddSeconds(_testFixture.CreateTokenResponse.ExpiresIn.Value);
+            var minExpectedExpiresAt = DateTime.UtcNow.AddSeconds(_testFixture.CreateTokenResponse.ExpiresIn.Value);
             _testFixture.WithCreateTokenExceptionThenSuccess(new AuthorizationPendingException("simulation"));
 
             var response = await CoreAmazonSSOOIDC.GetSsoTokenAsync(_testFixture.OidcClient.Object,
@@ -137,7 +137,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void GetSsoToken_Poll_SlowDownException()
         {
-            var minExpectedExpiresAt = DateTime.Now.AddSeconds(_testFixture.CreateTokenResponse.ExpiresIn.Value);
+            var minExpectedExpiresAt = DateTime.UtcNow.AddSeconds(_testFixture.CreateTokenResponse.ExpiresIn.Value);
             _testFixture.WithCreateTokenExceptionThenSuccess(new SlowDownException("simulation"));
 
             var response = CoreAmazonSSOOIDC.GetSsoToken(_testFixture.OidcClient.Object,
@@ -151,7 +151,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public async Task GetSsoTokenAsync_Poll_SlowDownException()
         {
-            var minExpectedExpiresAt = DateTime.Now.AddSeconds(_testFixture.CreateTokenResponse.ExpiresIn.Value);
+            var minExpectedExpiresAt = DateTime.UtcNow.AddSeconds(_testFixture.CreateTokenResponse.ExpiresIn.Value);
             _testFixture.WithCreateTokenExceptionThenSuccess(new SlowDownException("simulation"));
 
             var response = await CoreAmazonSSOOIDC.GetSsoTokenAsync(_testFixture.OidcClient.Object,
@@ -165,7 +165,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void GetSsoToken_Poll_TimeoutException()
         {
-            var minExpectedExpiresAt = DateTime.Now.AddSeconds(_testFixture.CreateTokenResponse.ExpiresIn.Value);
+            var minExpectedExpiresAt = DateTime.UtcNow.AddSeconds(_testFixture.CreateTokenResponse.ExpiresIn.Value);
 
             _testFixture.WithCreateTokenExceptionThenSuccess(new TimeoutException("simulation"));
 
@@ -181,7 +181,7 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public async Task GetSsoTokenAsync_Poll_TimeoutException()
         {
-            var minExpectedExpiresAt = DateTime.Now.AddSeconds(_testFixture.CreateTokenResponse.ExpiresIn.Value);
+            var minExpectedExpiresAt = DateTime.UtcNow.AddSeconds(_testFixture.CreateTokenResponse.ExpiresIn.Value);
 
             _testFixture.WithCreateTokenExceptionThenSuccess(new TimeoutException("simulation"));
 
