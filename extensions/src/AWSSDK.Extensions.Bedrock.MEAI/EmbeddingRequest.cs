@@ -15,10 +15,6 @@
 
 using System.Text.Json.Serialization;
 
-#if NET8_0_OR_GREATER
-using System.Diagnostics.CodeAnalysis;
-#endif
-
 namespace Amazon.BedrockRuntime;
 
 internal sealed class EmbeddingRequest

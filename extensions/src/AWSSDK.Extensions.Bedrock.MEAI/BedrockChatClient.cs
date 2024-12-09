@@ -15,13 +15,11 @@
 
 using Amazon.BedrockRuntime.Model;
 using Amazon.Runtime.Documents;
+using Amazon.Runtime.Internal.Util;
 using Microsoft.Extensions.AI;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-#if NET8_0_OR_GREATER
-using System.Diagnostics.CodeAnalysis;
-#endif
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -34,6 +32,9 @@ namespace Amazon.BedrockRuntime;
 
 internal sealed partial class BedrockChatClient : IChatClient
 {
+    /// <summary>A default logger to use.</summary>
+    private static readonly ILogger DefaultLogger = Logger.GetLogger(typeof(BedrockChatClient));
+
     /// <summary>The wrapped <see cref="IAmazonBedrockRuntime"/> instance.</summary>
     private readonly IAmazonBedrockRuntime _runtime;
     /// <summary>Default model ID to use when no model is specified in the request.</summary>
@@ -51,7 +52,7 @@ internal sealed partial class BedrockChatClient : IChatClient
         _runtime = runtime!;
         _modelId = modelId;
 
-        Metadata = new("aws.bedrock", modelId: modelId);
+        Metadata = new(AmazonBedrockRuntimeExtensions.ProviderName, modelId: modelId);
     }
 
     public void Dispose()
@@ -633,7 +634,10 @@ internal sealed partial class BedrockChatClient : IChatClient
                             {
                                 d.Add(prop.Key, ToDocument(JsonSerializer.SerializeToElement(prop.Value, BedrockJsonContext.DefaultOptions.GetTypeInfo(prop.Value.GetType()))));
                             }
-                            catch { }
+                            catch (Exception e)
+                            {
+                                DefaultLogger.Debug(e, "Unable to serialize ChatOptions.AdditionalProperties[\"{PropertyName}\"] of type {PropertyType}", prop.Key, prop.Value?.GetType());
+                            }
                             break;
                     }
                 }

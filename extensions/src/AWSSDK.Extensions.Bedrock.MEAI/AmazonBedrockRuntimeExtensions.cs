@@ -21,6 +21,9 @@ namespace Amazon.BedrockRuntime;
 /// <summary>Provides extensions for working with <see cref="IAmazonBedrockRuntime"/> instances.</summary>
 public static class AmazonBedrockRuntimeExtensions
 {
+    /// <summary>The provider name to use in metadata.</summary>
+    internal const string ProviderName = "aws.bedrock";
+
     /// <summary>Gets an <see cref="IChatClient"/> for the specified <see cref="IAmazonBedrockRuntime"/> instance.</summary>
     /// <param name="runtime">The runtime instance to be represented as an <see cref="IChatClient"/>.</param>
     /// <param name="modelId">

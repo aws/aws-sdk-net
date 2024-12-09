@@ -16,6 +16,7 @@
     
     <LangVersion>Latest</LangVersion>
     <Nullable>enable</Nullable>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   
   <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
