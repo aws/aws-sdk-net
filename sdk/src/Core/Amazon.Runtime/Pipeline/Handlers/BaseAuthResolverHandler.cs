@@ -74,20 +74,28 @@ namespace Amazon.Runtime.Internal
                     break;
                 }
 
-#if NETFRAMEWORK
                 if (scheme is BearerAuthScheme && clientConfig.AWSTokenProvider != null)
                 {
                     // If the legacy token provider is set, we'll use it to resolve the identity.
+#if NETFRAMEWORK
                     var resolvedToken = clientConfig.AWSTokenProvider.TryResolveToken(out var token);
                     if (!resolvedToken)
                     {
                         continue;
                     }
+#else
+                    var resolvedToken = clientConfig.AWSTokenProvider.TryResolveTokenAsync().GetAwaiter().GetResult();
+                    if (!resolvedToken.Success)
+                    {
+                        continue;
+                    }
+
+                    var token = resolvedToken.Value;
+#endif
 
                     executionContext.RequestContext.Identity = token;
                     break;
                 }
-#endif
 
                 var identityResolver = scheme.GetIdentityResolver(clientConfig.IdentityResolverConfiguration);
                 executionContext.RequestContext.Identity = identityResolver.ResolveIdentity();
