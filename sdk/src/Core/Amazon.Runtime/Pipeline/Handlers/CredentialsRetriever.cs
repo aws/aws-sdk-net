@@ -39,7 +39,7 @@ namespace Amazon.Runtime.Internal
             ImmutableCredentials ic = null;
             var identity = executionContext.RequestContext.Identity as AWSCredentials;
 
-            if (identity != null && identity is not AWSToken)
+            if (identity != null)
             {
                 using (TracingUtilities.CreateSpan(executionContext.RequestContext, TelemetryConstants.CredentialsRetrievalSpanName))
                 using (MetricsUtilities.MeasureDuration(executionContext.RequestContext, TelemetryConstants.ResolveIdentityDurationMetricName))
@@ -78,7 +78,7 @@ namespace Amazon.Runtime.Internal
             ImmutableCredentials ic = null;
             var identity = executionContext.RequestContext.Identity as AWSCredentials;
 
-            if (identity != null && identity is not AWSToken)
+            if (identity != null)
             {
                 using (TracingUtilities.CreateSpan(executionContext.RequestContext, TelemetryConstants.CredentialsRetrievalSpanName))
                 using (MetricsUtilities.MeasureDuration(executionContext.RequestContext, TelemetryConstants.ResolveIdentityDurationMetricName))

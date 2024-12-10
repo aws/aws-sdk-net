@@ -29,7 +29,7 @@ namespace Amazon.Runtime
     /// Amazon.Runtime.Credentials.Internal.SsoToken
     /// </remarks>
     [DebuggerDisplay("{" + nameof(Token) + "}")]
-    public class AWSToken : AWSCredentials
+    public class AWSToken : BaseIdentity
     {
         public string Token { get; set; }
 
@@ -41,8 +41,6 @@ namespace Amazon.Runtime
         }
 
         public override DateTime? Expiration { get; set; }
-
-        public override ImmutableCredentials GetCredentials() => throw new NotImplementedException();
 
         public override string ToString() => Token;
     }
