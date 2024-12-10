@@ -36,15 +36,25 @@ namespace Amazon.Extensions.CrtIntegration
     /// </summary>
     public class CrtAWS4aSigner : IAWSSigV4aProvider
     {
+        /// <summary>
+        /// Creates an instance CrtAWS4aSigner with the SignPayload set to true.
+        /// </summary>
         public CrtAWS4aSigner() :
             this(true)
         { }
 
+        /// <summary>
+        /// Creates an instance of CrtAWS4aSigner
+        /// </summary>
+        /// <param name="signPayload">Boolean to generate the auth signature with the request payload.</param>
         public CrtAWS4aSigner(bool signPayload)
         {
             SignPayload = signPayload;
         }
 
+        /// <summary>
+        /// Boolean to generate the auth signature with the request payload.
+        /// </summary>
         public bool SignPayload
         {
             get;

@@ -29,12 +29,16 @@ using System.Diagnostics;
 using Org.BouncyCastle.Security;
 namespace Amazon.EC2.Model
 {
+    /// <summary>
+    /// Extension methods for decrypting the EC2 windows password with the instance keypair.
+    /// </summary>
     public static class GetPasswordDataResponseExtensions
     {
         /// <summary>
         /// Gets the decrypted password using the RSA private key which can be found in the
         /// PEM file for the key pair.
         /// </summary>
+        /// <param name="getPasswordDataResponse">Instance to add the extension method to</param>
         /// <param name="rsaPrivateKey">The RSA private key from the PEM file</param>
         /// <returns>The decrypted password</returns>
         public static string GetDecryptedPassword(this GetPasswordDataResponse getPasswordDataResponse, string rsaPrivateKey)
