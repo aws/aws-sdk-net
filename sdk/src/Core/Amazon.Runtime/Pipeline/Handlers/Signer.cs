@@ -106,7 +106,9 @@ namespace Amazon.Runtime.Internal
 
             // credentials would be null in the case of anonymous users getting public resources from S3
             if (immutableCredentials == null && requestContext.Signer.RequiresCredentials)
+            {
                 return;
+            }
 
             using (requestContext.Metrics.StartEvent(Metric.RequestSigningTime))
             using (MetricsUtilities.MeasureDuration(requestContext, TelemetryConstants.AuthSigningDurationMetricName))
@@ -128,7 +130,13 @@ namespace Amazon.Runtime.Internal
                             throw new InvalidDataException("Cannot determine protocol");
                     }
                 }
-                requestContext.Signer.Sign(requestContext.Request, requestContext.ClientConfig, requestContext.Metrics, immutableCredentials);
+
+                requestContext.Signer.Sign(
+                    requestContext.Request,
+                    requestContext.ClientConfig,
+                    requestContext.Metrics,
+                    requestContext.Identity
+                );
             }
         }
 
@@ -143,7 +151,9 @@ namespace Amazon.Runtime.Internal
 
             // credentials would be null in the case of anonymous users getting public resources from S3
             if (immutableCredentials == null && requestContext.Signer.RequiresCredentials)
+            {
                 return;
+            }
 
             using (requestContext.Metrics.StartEvent(Metric.RequestSigningTime))
             using (MetricsUtilities.MeasureDuration(requestContext, TelemetryConstants.AuthSigningDurationMetricName))
@@ -168,10 +178,10 @@ namespace Amazon.Runtime.Internal
 
                 await requestContext.Signer
                     .SignAsync(
-                        requestContext.Request, 
-                        requestContext.ClientConfig, 
-                        requestContext.Metrics, 
-                        immutableCredentials)
+                        requestContext.Request,
+                        requestContext.ClientConfig,
+                        requestContext.Metrics,
+                        requestContext.Identity)
                     .ConfigureAwait(false);
             }
         }

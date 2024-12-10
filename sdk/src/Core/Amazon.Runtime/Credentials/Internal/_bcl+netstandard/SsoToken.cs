@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.Runtime.Internal.Auth;
 using System;
 
 namespace Amazon.Runtime.Credentials.Internal

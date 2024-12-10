@@ -14,6 +14,8 @@
  */
 
 using Smithy.Identity.Abstractions;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Amazon.Runtime.Credentials.Internal.IdentityResolvers
 {
@@ -22,12 +24,17 @@ namespace Amazon.Runtime.Credentials.Internal.IdentityResolvers
     /// </summary>
     public class AnonymousIdentityResolver : IIdentityResolver
     {
+        private readonly AnonymousAWSCredentials _credentials = new();
+
         /// <summary>
         /// Resolves the identity by returning an instance of <see cref="AnonymousAWSCredentials"/>.
         /// </summary>
-        public BaseIdentity ResolveIdentity()
-        {
-            return new AnonymousAWSCredentials();
-        }
+        public BaseIdentity ResolveIdentity() => _credentials;
+
+        /// <summary>
+        /// Resolves the identity by returning an instance of <see cref="AnonymousAWSCredentials"/>.
+        /// </summary>
+        public Task<BaseIdentity> ResolveIdentityAsync(CancellationToken cancellationToken = default)
+            => Task.FromResult<BaseIdentity>(_credentials);
     }
 }

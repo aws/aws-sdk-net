@@ -137,7 +137,7 @@ namespace Amazon.Runtime
             return new AWSToken
             {
                 Token = token.AccessToken,
-                ExpiresAt = token.ExpiresAt
+                Expiration = token.ExpiresAt
             };
         }
     }

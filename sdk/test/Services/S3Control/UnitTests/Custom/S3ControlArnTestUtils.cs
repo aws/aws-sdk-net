@@ -14,7 +14,6 @@
  */
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.S3Control;
 using Amazon.S3Control.Internal;
@@ -33,11 +32,11 @@ namespace AWSSDK.UnitTests
                 new NoopPipelineHandler(),
                 new Signer(),
                 new AmazonS3ControlEndpointResolver(),
+                new AmazonS3ControlAuthSchemeHandler(),
                 new Marshaller()
             };
 
-
-            return TestUtils.RunMockRequest(pipelineHandlers, request, marshaller, null, config, new AWS4Signer());
+            return TestUtils.RunMockRequest(pipelineHandlers, request, marshaller, null, config, signer: null);
         }
     }
 }

@@ -23,6 +23,7 @@ using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.Endpoints;
 using ThirdParty.RuntimeBackports;
+using Smithy.Identity.Abstractions;
 
 namespace Amazon.Runtime.Internal.Auth
 {
@@ -143,7 +144,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// <param name="metrics">
         /// Metrics for the request
         /// </param>
-        /// <param name="credentials">
+        /// <param name="baseIdentity">
         /// The AWS credentials for the account making the service call.
         /// </param>
         /// <exception cref="Amazon.Runtime.SignatureException">
@@ -151,10 +152,12 @@ namespace Amazon.Runtime.Internal.Auth
         /// </exception>
         public override void Sign(IRequest request, 
                                   IClientConfig clientConfig, 
-                                  RequestMetrics metrics, 
-                                  ImmutableCredentials credentials)
+                                  RequestMetrics metrics,
+                                  BaseIdentity baseIdentity)
         {
-            Sign(request, clientConfig, metrics, credentials.AccessKey, credentials.SecretKey);
+            var credentials = baseIdentity as AWSCredentials;
+            var immutableCredentials = credentials.GetCredentials();
+            Sign(request, clientConfig, metrics, immutableCredentials.AccessKey, immutableCredentials.SecretKey);
         }
 
         /// <summary>
@@ -1118,7 +1121,7 @@ namespace Amazon.Runtime.Internal.Auth
         /// <param name="metrics">
         /// Metrics for the request
         /// </param>
-        /// <param name="credentials">
+        /// <param name="baseIdentity">
         /// The AWS credentials for the account making the service call.
         /// </param>
         /// <exception cref="Amazon.Runtime.SignatureException">
@@ -1127,7 +1130,7 @@ namespace Amazon.Runtime.Internal.Auth
         public override void Sign(IRequest request,
                                   IClientConfig clientConfig,
                                   RequestMetrics metrics,
-                                  ImmutableCredentials credentials)
+                                  BaseIdentity baseIdentity)
         {
             throw new InvalidOperationException("PreSignedUrl signature computation is not supported by this method; use SignRequest instead.");
         }

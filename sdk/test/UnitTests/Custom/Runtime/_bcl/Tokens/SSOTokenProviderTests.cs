@@ -70,7 +70,7 @@ namespace AWSSDK.UnitTests.Runtime
                         x.RefreshToken(It.Is<GetSsoTokenResponse>(r => testCase.MockSSOOIDCCLientRefreshDetails.RefreshRequestMatchCriteria(r))))
                     .Returns(responseFactory);
             }
-            
+
             var mockFileSystem = new MockFileSystem();
             mockFileSystem.WriteAllText(
                 Path.Combine(testCacheFolder, cacheFile),
@@ -168,7 +168,7 @@ namespace AWSSDK.UnitTests.Runtime
                         RegistrationExpiresAt = req.RegistrationExpiresAt,
                         StartUrl = req.StartUrl
                     }));
-                
+
                 mockSSOOIDCClient
                     .Setup(x =>
                         x.RefreshTokenAsync(It.Is<GetSsoTokenResponse>(r => testCase.MockSSOOIDCCLientRefreshDetails.RefreshRequestMatchCriteria(r))))
@@ -264,10 +264,10 @@ namespace AWSSDK.UnitTests.Runtime
                 AssertOnAWSToken = token =>
                 {
                     Assert.AreEqual("cachedtoken", token.Token);
-                    Assert.AreEqual(DateTime.Parse("2021-12-25T21:30:00Z").ToUniversalTime(), token.ExpiresAt);
+                    Assert.AreEqual(DateTime.Parse("2021-12-25T21:30:00Z").ToUniversalTime(), token.Expiration);
                 }
             }};
-            
+
             // Minimal valid cached token
             yield return new object[] {new TestCase
             {
@@ -280,10 +280,10 @@ namespace AWSSDK.UnitTests.Runtime
                 AssertOnAWSToken = token =>
                 {
                     Assert.AreEqual("cachedtoken", token.Token);
-                    Assert.AreEqual(DateTime.Parse("2021-12-25T21:30:00Z").ToUniversalTime(), token.ExpiresAt);
+                    Assert.AreEqual(DateTime.Parse("2021-12-25T21:30:00Z").ToUniversalTime(), token.Expiration);
                 }
             }};
-            
+
             // Minimal expired cached token
             yield return new object[] {new TestCase
             {
@@ -377,7 +377,7 @@ namespace AWSSDK.UnitTests.Runtime
                 AssertOnAWSToken = token =>
                 {
                     Assert.AreEqual("newtoken", token.Token);
-                    Assert.AreEqual(DateTime.Parse("2021-12-25T21:30:00Z").ToUniversalTime(), token.ExpiresAt);
+                    Assert.AreEqual(DateTime.Parse("2021-12-25T21:30:00Z").ToUniversalTime(), token.Expiration);
                 }
             }};
 
@@ -426,7 +426,7 @@ namespace AWSSDK.UnitTests.Runtime
                 AssertOnAWSToken = token =>
                 {
                     Assert.AreEqual("newtoken", token.Token);
-                    Assert.AreEqual(DateTime.Parse("2021-12-25T21:30:00Z").ToUniversalTime(), token.ExpiresAt);
+                    Assert.AreEqual(DateTime.Parse("2021-12-25T21:30:00Z").ToUniversalTime(), token.Expiration);
                 }
             }};
 
@@ -446,7 +446,7 @@ namespace AWSSDK.UnitTests.Runtime
                     ""registrationExpiresAt"": ""2022-12-25T13:30:00Z"",
                     ""refreshToken"": ""cachedrefreshtoken""
                 }",
-                AssertException = e => 
+                AssertException = e =>
                 {
                     Assert.IsInstanceOfType(e, typeof(AmazonClientException));
                     Assert.IsTrue(e.Message.StartsWith("SSO Token has expired and failed to refresh"), e.Message);

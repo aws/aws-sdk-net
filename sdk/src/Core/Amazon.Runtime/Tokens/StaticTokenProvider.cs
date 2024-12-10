@@ -39,7 +39,12 @@ namespace Amazon.Runtime
         {
             if (IsTokenUnexpired())
             {
-                token = new AWSToken {Token = _token};
+                token = new AWSToken 
+                { 
+                    Token = _token,
+                    Expiration = _expiration,
+                };
+
                 return true;
             }
             else
@@ -59,7 +64,7 @@ namespace Amazon.Runtime
                 new TryResponse<AWSToken>
                 {
                     Success = isTokenUnexpired,
-                    Value = isTokenUnexpired ? new AWSToken { Token = _token } : null
+                    Value = isTokenUnexpired ? new AWSToken { Token = _token, Expiration = _expiration } : null
                 });
         }
 #endif

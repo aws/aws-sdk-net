@@ -6,6 +6,7 @@ using Amazon.BearerTokenAuthTest.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Credentials.Internal;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.SharedInterfaces;
 using Amazon.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -58,7 +59,6 @@ namespace AWSSDK.UnitTests.Runtime
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        [Ignore("This test is pending 'smithy.api#httpBearerAuth' schemeId implementation")]
         public void ServiceUsingBearerTokenCorrectlySetsAuthorizationHeader()
         {
             // ARRANGE
@@ -95,7 +95,6 @@ namespace AWSSDK.UnitTests.Runtime
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        [Ignore("This test is pending 'smithy.api#httpBearerAuth' schemeId implementation")]
         public void ServiceUsingBearerTokenAllowsCustomizingTokenProvider()
         {
             // ARRANGE
