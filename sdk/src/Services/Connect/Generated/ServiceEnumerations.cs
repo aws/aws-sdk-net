@@ -1311,6 +1311,60 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type DeviceType.
+    /// </summary>
+    public class DeviceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APNS for DeviceType
+        /// </summary>
+        public static readonly DeviceType APNS = new DeviceType("APNS");
+        /// <summary>
+        /// Constant APNS_SANDBOX for DeviceType
+        /// </summary>
+        public static readonly DeviceType APNS_SANDBOX = new DeviceType("APNS_SANDBOX");
+        /// <summary>
+        /// Constant GCM for DeviceType
+        /// </summary>
+        public static readonly DeviceType GCM = new DeviceType("GCM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeviceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeviceType FindValue(string value)
+        {
+            return FindValue<DeviceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeviceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DirectoryType.
     /// </summary>
     public class DirectoryType : ConstantClass

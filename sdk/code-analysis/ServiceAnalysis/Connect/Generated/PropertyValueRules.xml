@@ -512,6 +512,25 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.CreatePushNotificationRegistrationRequest.ClientToken</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreatePushNotificationRegistrationRequest.DeviceToken</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreatePushNotificationRegistrationRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreatePushNotificationRegistrationResponse.RegistrationId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.CreateQueueRequest.Description</property>
     <min>1</min>
     <max>250</max>
@@ -888,6 +907,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DeletePromptRequest.PromptId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DeletePushNotificationRegistrationRequest.ContactId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DeletePushNotificationRegistrationRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DeletePushNotificationRegistrationRequest.RegistrationId</property>
     <min>1</min>
     <max>256</max>
   </property-value-rule>
@@ -3940,6 +3974,11 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.Contact.TotalPauseDurationInSeconds</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ContactConfiguration.ContactId</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ContactDataRequest.RequestIdentifier</property>

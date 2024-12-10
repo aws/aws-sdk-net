@@ -3473,6 +3473,89 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  CreatePushNotificationRegistration
+
+
+        /// <summary>
+        /// Creates registration for a device token and a chat contact to receive real-time push
+        /// notifications. For more information about push notifications, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/set-up-push-notifications-for-mobile-chat.html">Set
+        /// up push notifications in Amazon Connect for mobile chat</a> in the <i>Amazon Connect
+        /// Administrator Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePushNotificationRegistration service method.</param>
+        /// 
+        /// <returns>The response from the CreatePushNotificationRegistration service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreatePushNotificationRegistration">REST API Reference for CreatePushNotificationRegistration Operation</seealso>
+        public virtual CreatePushNotificationRegistrationResponse CreatePushNotificationRegistration(CreatePushNotificationRegistrationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePushNotificationRegistrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePushNotificationRegistrationResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePushNotificationRegistrationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates registration for a device token and a chat contact to receive real-time push
+        /// notifications. For more information about push notifications, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/set-up-push-notifications-for-mobile-chat.html">Set
+        /// up push notifications in Amazon Connect for mobile chat</a> in the <i>Amazon Connect
+        /// Administrator Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePushNotificationRegistration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePushNotificationRegistration service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreatePushNotificationRegistration">REST API Reference for CreatePushNotificationRegistration Operation</seealso>
+        public virtual Task<CreatePushNotificationRegistrationResponse> CreatePushNotificationRegistrationAsync(CreatePushNotificationRegistrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePushNotificationRegistrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePushNotificationRegistrationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreatePushNotificationRegistrationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateQueue
 
 
@@ -5698,6 +5781,77 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = DeletePromptResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeletePromptResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeletePushNotificationRegistration
+
+
+        /// <summary>
+        /// Deletes registration for a device token and a chat contact.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePushNotificationRegistration service method.</param>
+        /// 
+        /// <returns>The response from the DeletePushNotificationRegistration service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeletePushNotificationRegistration">REST API Reference for DeletePushNotificationRegistration Operation</seealso>
+        public virtual DeletePushNotificationRegistrationResponse DeletePushNotificationRegistration(DeletePushNotificationRegistrationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePushNotificationRegistrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePushNotificationRegistrationResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePushNotificationRegistrationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes registration for a device token and a chat contact.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePushNotificationRegistration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePushNotificationRegistration service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeletePushNotificationRegistration">REST API Reference for DeletePushNotificationRegistration Operation</seealso>
+        public virtual Task<DeletePushNotificationRegistrationResponse> DeletePushNotificationRegistrationAsync(DeletePushNotificationRegistrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePushNotificationRegistrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePushNotificationRegistrationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeletePushNotificationRegistrationResponse>(request, options, cancellationToken);
         }
 
         #endregion

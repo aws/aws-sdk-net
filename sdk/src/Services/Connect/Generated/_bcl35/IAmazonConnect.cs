@@ -2368,6 +2368,67 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  CreatePushNotificationRegistration
+
+
+        /// <summary>
+        /// Creates registration for a device token and a chat contact to receive real-time push
+        /// notifications. For more information about push notifications, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/set-up-push-notifications-for-mobile-chat.html">Set
+        /// up push notifications in Amazon Connect for mobile chat</a> in the <i>Amazon Connect
+        /// Administrator Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePushNotificationRegistration service method.</param>
+        /// 
+        /// <returns>The response from the CreatePushNotificationRegistration service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreatePushNotificationRegistration">REST API Reference for CreatePushNotificationRegistration Operation</seealso>
+        CreatePushNotificationRegistrationResponse CreatePushNotificationRegistration(CreatePushNotificationRegistrationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePushNotificationRegistration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePushNotificationRegistration operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePushNotificationRegistration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreatePushNotificationRegistration">REST API Reference for CreatePushNotificationRegistration Operation</seealso>
+        IAsyncResult BeginCreatePushNotificationRegistration(CreatePushNotificationRegistrationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePushNotificationRegistration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePushNotificationRegistration.</param>
+        /// 
+        /// <returns>Returns a  CreatePushNotificationRegistrationResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreatePushNotificationRegistration">REST API Reference for CreatePushNotificationRegistration Operation</seealso>
+        CreatePushNotificationRegistrationResponse EndCreatePushNotificationRegistration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateQueue
 
 
@@ -3967,6 +4028,61 @@ namespace Amazon.Connect
         /// <returns>Returns a  DeletePromptResult from Connect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeletePrompt">REST API Reference for DeletePrompt Operation</seealso>
         DeletePromptResponse EndDeletePrompt(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeletePushNotificationRegistration
+
+
+        /// <summary>
+        /// Deletes registration for a device token and a chat contact.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePushNotificationRegistration service method.</param>
+        /// 
+        /// <returns>The response from the DeletePushNotificationRegistration service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeletePushNotificationRegistration">REST API Reference for DeletePushNotificationRegistration Operation</seealso>
+        DeletePushNotificationRegistrationResponse DeletePushNotificationRegistration(DeletePushNotificationRegistrationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePushNotificationRegistration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePushNotificationRegistration operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePushNotificationRegistration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeletePushNotificationRegistration">REST API Reference for DeletePushNotificationRegistration Operation</seealso>
+        IAsyncResult BeginDeletePushNotificationRegistration(DeletePushNotificationRegistrationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePushNotificationRegistration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePushNotificationRegistration.</param>
+        /// 
+        /// <returns>Returns a  DeletePushNotificationRegistrationResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeletePushNotificationRegistration">REST API Reference for DeletePushNotificationRegistration Operation</seealso>
+        DeletePushNotificationRegistrationResponse EndDeletePushNotificationRegistration(IAsyncResult asyncResult);
 
         #endregion
         
