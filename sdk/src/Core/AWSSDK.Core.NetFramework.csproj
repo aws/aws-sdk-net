@@ -71,6 +71,10 @@
   <ItemGroup>
     <PackageReference Include="System.Buffers" Version="4.5.1" />
     <PackageReference Include="System.Memory" Version="4.5.5" />
+  <!-- Windows powershell will have a preloaded version of System.Text.Json that is older than
+  the version we will ship in core nuget packages and dlls, so we compile with an  older version of STJ
+   but ship nuget packages and dlls with newer versions of STJ. If we don't do this then sdk assemblies will fail
+    to load in powershell due to unsupported versions-->
     <PackageReference Include="System.Text.Json" Version="6.0.11" />
   </ItemGroup>
   <Import Project="overrides.targets"/>
