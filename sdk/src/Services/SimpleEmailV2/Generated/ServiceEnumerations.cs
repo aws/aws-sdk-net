@@ -611,6 +611,94 @@ namespace Amazon.SimpleEmailV2
         /// </summary>
         public static readonly DkimSigningAttributesOrigin AWS_SES = new DkimSigningAttributesOrigin("AWS_SES");
         /// <summary>
+        /// Constant AWS_SES_AF_SOUTH_1 for DkimSigningAttributesOrigin
+        /// </summary>
+        public static readonly DkimSigningAttributesOrigin AWS_SES_AF_SOUTH_1 = new DkimSigningAttributesOrigin("AWS_SES_AF_SOUTH_1");
+        /// <summary>
+        /// Constant AWS_SES_AP_NORTHEAST_1 for DkimSigningAttributesOrigin
+        /// </summary>
+        public static readonly DkimSigningAttributesOrigin AWS_SES_AP_NORTHEAST_1 = new DkimSigningAttributesOrigin("AWS_SES_AP_NORTHEAST_1");
+        /// <summary>
+        /// Constant AWS_SES_AP_NORTHEAST_2 for DkimSigningAttributesOrigin
+        /// </summary>
+        public static readonly DkimSigningAttributesOrigin AWS_SES_AP_NORTHEAST_2 = new DkimSigningAttributesOrigin("AWS_SES_AP_NORTHEAST_2");
+        /// <summary>
+        /// Constant AWS_SES_AP_NORTHEAST_3 for DkimSigningAttributesOrigin
+        /// </summary>
+        public static readonly DkimSigningAttributesOrigin AWS_SES_AP_NORTHEAST_3 = new DkimSigningAttributesOrigin("AWS_SES_AP_NORTHEAST_3");
+        /// <summary>
+        /// Constant AWS_SES_AP_SOUTH_1 for DkimSigningAttributesOrigin
+        /// </summary>
+        public static readonly DkimSigningAttributesOrigin AWS_SES_AP_SOUTH_1 = new DkimSigningAttributesOrigin("AWS_SES_AP_SOUTH_1");
+        /// <summary>
+        /// Constant AWS_SES_AP_SOUTHEAST_1 for DkimSigningAttributesOrigin
+        /// </summary>
+        public static readonly DkimSigningAttributesOrigin AWS_SES_AP_SOUTHEAST_1 = new DkimSigningAttributesOrigin("AWS_SES_AP_SOUTHEAST_1");
+        /// <summary>
+        /// Constant AWS_SES_AP_SOUTHEAST_2 for DkimSigningAttributesOrigin
+        /// </summary>
+        public static readonly DkimSigningAttributesOrigin AWS_SES_AP_SOUTHEAST_2 = new DkimSigningAttributesOrigin("AWS_SES_AP_SOUTHEAST_2");
+        /// <summary>
+        /// Constant AWS_SES_AP_SOUTHEAST_3 for DkimSigningAttributesOrigin
+        /// </summary>
+        public static readonly DkimSigningAttributesOrigin AWS_SES_AP_SOUTHEAST_3 = new DkimSigningAttributesOrigin("AWS_SES_AP_SOUTHEAST_3");
+        /// <summary>
+        /// Constant AWS_SES_CA_CENTRAL_1 for DkimSigningAttributesOrigin
+        /// </summary>
+        public static readonly DkimSigningAttributesOrigin AWS_SES_CA_CENTRAL_1 = new DkimSigningAttributesOrigin("AWS_SES_CA_CENTRAL_1");
+        /// <summary>
+        /// Constant AWS_SES_EU_CENTRAL_1 for DkimSigningAttributesOrigin
+        /// </summary>
+        public static readonly DkimSigningAttributesOrigin AWS_SES_EU_CENTRAL_1 = new DkimSigningAttributesOrigin("AWS_SES_EU_CENTRAL_1");
+        /// <summary>
+        /// Constant AWS_SES_EU_NORTH_1 for DkimSigningAttributesOrigin
+        /// </summary>
+        public static readonly DkimSigningAttributesOrigin AWS_SES_EU_NORTH_1 = new DkimSigningAttributesOrigin("AWS_SES_EU_NORTH_1");
+        /// <summary>
+        /// Constant AWS_SES_EU_SOUTH_1 for DkimSigningAttributesOrigin
+        /// </summary>
+        public static readonly DkimSigningAttributesOrigin AWS_SES_EU_SOUTH_1 = new DkimSigningAttributesOrigin("AWS_SES_EU_SOUTH_1");
+        /// <summary>
+        /// Constant AWS_SES_EU_WEST_1 for DkimSigningAttributesOrigin
+        /// </summary>
+        public static readonly DkimSigningAttributesOrigin AWS_SES_EU_WEST_1 = new DkimSigningAttributesOrigin("AWS_SES_EU_WEST_1");
+        /// <summary>
+        /// Constant AWS_SES_EU_WEST_2 for DkimSigningAttributesOrigin
+        /// </summary>
+        public static readonly DkimSigningAttributesOrigin AWS_SES_EU_WEST_2 = new DkimSigningAttributesOrigin("AWS_SES_EU_WEST_2");
+        /// <summary>
+        /// Constant AWS_SES_EU_WEST_3 for DkimSigningAttributesOrigin
+        /// </summary>
+        public static readonly DkimSigningAttributesOrigin AWS_SES_EU_WEST_3 = new DkimSigningAttributesOrigin("AWS_SES_EU_WEST_3");
+        /// <summary>
+        /// Constant AWS_SES_IL_CENTRAL_1 for DkimSigningAttributesOrigin
+        /// </summary>
+        public static readonly DkimSigningAttributesOrigin AWS_SES_IL_CENTRAL_1 = new DkimSigningAttributesOrigin("AWS_SES_IL_CENTRAL_1");
+        /// <summary>
+        /// Constant AWS_SES_ME_SOUTH_1 for DkimSigningAttributesOrigin
+        /// </summary>
+        public static readonly DkimSigningAttributesOrigin AWS_SES_ME_SOUTH_1 = new DkimSigningAttributesOrigin("AWS_SES_ME_SOUTH_1");
+        /// <summary>
+        /// Constant AWS_SES_SA_EAST_1 for DkimSigningAttributesOrigin
+        /// </summary>
+        public static readonly DkimSigningAttributesOrigin AWS_SES_SA_EAST_1 = new DkimSigningAttributesOrigin("AWS_SES_SA_EAST_1");
+        /// <summary>
+        /// Constant AWS_SES_US_EAST_1 for DkimSigningAttributesOrigin
+        /// </summary>
+        public static readonly DkimSigningAttributesOrigin AWS_SES_US_EAST_1 = new DkimSigningAttributesOrigin("AWS_SES_US_EAST_1");
+        /// <summary>
+        /// Constant AWS_SES_US_EAST_2 for DkimSigningAttributesOrigin
+        /// </summary>
+        public static readonly DkimSigningAttributesOrigin AWS_SES_US_EAST_2 = new DkimSigningAttributesOrigin("AWS_SES_US_EAST_2");
+        /// <summary>
+        /// Constant AWS_SES_US_WEST_1 for DkimSigningAttributesOrigin
+        /// </summary>
+        public static readonly DkimSigningAttributesOrigin AWS_SES_US_WEST_1 = new DkimSigningAttributesOrigin("AWS_SES_US_WEST_1");
+        /// <summary>
+        /// Constant AWS_SES_US_WEST_2 for DkimSigningAttributesOrigin
+        /// </summary>
+        public static readonly DkimSigningAttributesOrigin AWS_SES_US_WEST_2 = new DkimSigningAttributesOrigin("AWS_SES_US_WEST_2");
+        /// <summary>
         /// Constant EXTERNAL for DkimSigningAttributesOrigin
         /// </summary>
         public static readonly DkimSigningAttributesOrigin EXTERNAL = new DkimSigningAttributesOrigin("EXTERNAL");
@@ -2146,6 +2234,26 @@ namespace Amazon.SimpleEmailV2
         /// Constant INVALID_VALUE for VerificationError
         /// </summary>
         public static readonly VerificationError INVALID_VALUE = new VerificationError("INVALID_VALUE");
+        /// <summary>
+        /// Constant REPLICATION_ACCESS_DENIED for VerificationError
+        /// </summary>
+        public static readonly VerificationError REPLICATION_ACCESS_DENIED = new VerificationError("REPLICATION_ACCESS_DENIED");
+        /// <summary>
+        /// Constant REPLICATION_PRIMARY_BYO_DKIM_NOT_SUPPORTED for VerificationError
+        /// </summary>
+        public static readonly VerificationError REPLICATION_PRIMARY_BYO_DKIM_NOT_SUPPORTED = new VerificationError("REPLICATION_PRIMARY_BYO_DKIM_NOT_SUPPORTED");
+        /// <summary>
+        /// Constant REPLICATION_PRIMARY_INVALID_REGION for VerificationError
+        /// </summary>
+        public static readonly VerificationError REPLICATION_PRIMARY_INVALID_REGION = new VerificationError("REPLICATION_PRIMARY_INVALID_REGION");
+        /// <summary>
+        /// Constant REPLICATION_PRIMARY_NOT_FOUND for VerificationError
+        /// </summary>
+        public static readonly VerificationError REPLICATION_PRIMARY_NOT_FOUND = new VerificationError("REPLICATION_PRIMARY_NOT_FOUND");
+        /// <summary>
+        /// Constant REPLICATION_REPLICA_AS_PRIMARY_NOT_SUPPORTED for VerificationError
+        /// </summary>
+        public static readonly VerificationError REPLICATION_REPLICA_AS_PRIMARY_NOT_SUPPORTED = new VerificationError("REPLICATION_REPLICA_AS_PRIMARY_NOT_SUPPORTED");
         /// <summary>
         /// Constant SERVICE_ERROR for VerificationError
         /// </summary>
