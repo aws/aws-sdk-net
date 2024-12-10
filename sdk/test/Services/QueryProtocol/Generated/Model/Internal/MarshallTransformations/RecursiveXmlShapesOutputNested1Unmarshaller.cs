@@ -35,7 +35,7 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for RecursiveXmlShapesOutputNested1 Object
     /// </summary>  
-    public class RecursiveXmlShapesOutputNested1Unmarshaller : IUnmarshaller<RecursiveXmlShapesOutputNested1, XmlUnmarshallerContext>, IUnmarshaller<RecursiveXmlShapesOutputNested1, JsonUnmarshallerContext>
+    public class RecursiveXmlShapesOutputNested1Unmarshaller : IXmlUnmarshaller<RecursiveXmlShapesOutputNested1, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.QueryProtocol.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public RecursiveXmlShapesOutputNested1 Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static RecursiveXmlShapesOutputNested1Unmarshaller _instance = new RecursiveXmlShapesOutputNested1Unmarshaller();        
 
