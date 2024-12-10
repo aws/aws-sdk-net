@@ -1,3 +1,22 @@
+### 3.7.943.0 (2024-12-10 19:59 UTC)
+* ApplicationAutoScaling (3.7.402.5)
+	* Doc only update for AAS Predictive Scaling policy configuration API.
+* BCMPricingCalculator (3.7.401.0)
+	* Updated condition key inference from Workload Estimate, Bill Scenario, and Bill Estimate resources. Updated documentation links.
+* Connect (3.7.413.0)
+	* Add support for Push Notifications for Amazon Connect chat. With Push Notifications enabled an alert could be sent to customers about new messages even when they aren't actively using the mobile application.
+* DSQL (3.7.401.1)
+	* Doc only update to examples for DeleteMultiRegionClusters & CreateMultiRegionClusters
+* Finspace (3.7.401.0)
+	* Update KxCommandLineArgument value parameter regex to allow for spaces and semicolons
+* IVSRealTime (3.7.403.0)
+	* IVS Real-Time now offers customers the ability to customize thumbnails recording mode and interval for both Individual Participant Recording (IPR) and Server-Side Compositions (SSC).
+* SimpleEmailV2 (3.7.405.0)
+	* Introduces support for creating DEED (Deterministic Easy-DKIM) identities.
+* Core 3.7.400.61
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.942.0 (2024-12-09 19:45 UTC)
 * AppSync (3.7.403.4)
 	* Provides description of new Amazon Bedrock runtime datasource.
