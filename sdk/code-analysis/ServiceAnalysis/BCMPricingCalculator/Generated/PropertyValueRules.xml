@@ -586,7 +586,7 @@
     <property>Amazon.BCMPricingCalculator.Model.BatchCreateBillScenarioUsageModificationEntry.AvailabilityZone</property>
     <min>0</min>
     <max>32</max>
-    <pattern>[-a-zA-Z0-9\.\-_:,]*</pattern>
+    <pattern>[-a-zA-Z0-9\.\-_:, \/()]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.BatchCreateBillScenarioUsageModificationEntry.Group</property>
@@ -604,7 +604,7 @@
     <property>Amazon.BCMPricingCalculator.Model.BatchCreateBillScenarioUsageModificationEntry.Operation</property>
     <min>0</min>
     <max>32</max>
-    <pattern>[-a-zA-Z0-9\.\-_:,]*</pattern>
+    <pattern>[-a-zA-Z0-9\.\-_:, \/()]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.BatchCreateBillScenarioUsageModificationEntry.ServiceCode</property>
@@ -622,7 +622,7 @@
     <property>Amazon.BCMPricingCalculator.Model.BatchCreateBillScenarioUsageModificationEntry.UsageType</property>
     <min>0</min>
     <max>128</max>
-    <pattern>[-a-zA-Z0-9\.\-_:,]*</pattern>
+    <pattern>[-a-zA-Z0-9\.\-_:, \/()]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.BatchCreateBillScenarioUsageModificationError.Key</property>
@@ -634,7 +634,7 @@
     <property>Amazon.BCMPricingCalculator.Model.BatchCreateBillScenarioUsageModificationItem.AvailabilityZone</property>
     <min>0</min>
     <max>32</max>
-    <pattern>[-a-zA-Z0-9\.\-_:,]*</pattern>
+    <pattern>[-a-zA-Z0-9\.\-_:, \/()]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.BatchCreateBillScenarioUsageModificationItem.Group</property>
@@ -658,7 +658,7 @@
     <property>Amazon.BCMPricingCalculator.Model.BatchCreateBillScenarioUsageModificationItem.Operation</property>
     <min>0</min>
     <max>32</max>
-    <pattern>[-a-zA-Z0-9\.\-_:,]*</pattern>
+    <pattern>[-a-zA-Z0-9\.\-_:, \/()]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.BatchCreateBillScenarioUsageModificationItem.ServiceCode</property>
@@ -676,7 +676,7 @@
     <property>Amazon.BCMPricingCalculator.Model.BatchCreateBillScenarioUsageModificationItem.UsageType</property>
     <min>0</min>
     <max>128</max>
-    <pattern>[-a-zA-Z0-9\.\-_:,]*</pattern>
+    <pattern>[-a-zA-Z0-9\.\-_:, \/()]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.BatchCreateWorkloadEstimateUsageEntry.Group</property>
@@ -694,7 +694,7 @@
     <property>Amazon.BCMPricingCalculator.Model.BatchCreateWorkloadEstimateUsageEntry.Operation</property>
     <min>0</min>
     <max>32</max>
-    <pattern>[-a-zA-Z0-9\.\-_:,]*</pattern>
+    <pattern>[-a-zA-Z0-9\.\-_:, \/()]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.BatchCreateWorkloadEstimateUsageEntry.ServiceCode</property>
@@ -712,7 +712,7 @@
     <property>Amazon.BCMPricingCalculator.Model.BatchCreateWorkloadEstimateUsageEntry.UsageType</property>
     <min>0</min>
     <max>128</max>
-    <pattern>[-a-zA-Z0-9\.\-_:,]*</pattern>
+    <pattern>[-a-zA-Z0-9\.\-_:, \/()]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.BatchCreateWorkloadEstimateUsageError.Key</property>
@@ -742,7 +742,7 @@
     <property>Amazon.BCMPricingCalculator.Model.BatchCreateWorkloadEstimateUsageItem.Operation</property>
     <min>0</min>
     <max>32</max>
-    <pattern>[-a-zA-Z0-9\.\-_:,]*</pattern>
+    <pattern>[-a-zA-Z0-9\.\-_:, \/()]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.BatchCreateWorkloadEstimateUsageItem.ServiceCode</property>
@@ -760,7 +760,7 @@
     <property>Amazon.BCMPricingCalculator.Model.BatchCreateWorkloadEstimateUsageItem.UsageType</property>
     <min>0</min>
     <max>128</max>
-    <pattern>[-a-zA-Z0-9\.\-_:,]*</pattern>
+    <pattern>[-a-zA-Z0-9\.\-_:, \/()]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.BatchDeleteBillScenarioCommitmentModificationError.Id</property>
@@ -874,7 +874,7 @@
     <property>Amazon.BCMPricingCalculator.Model.BillEstimateInputUsageModificationSummary.AvailabilityZone</property>
     <min>0</min>
     <max>32</max>
-    <pattern>[-a-zA-Z0-9\.\-_:,]*</pattern>
+    <pattern>[-a-zA-Z0-9\.\-_:, \/()]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.BillEstimateInputUsageModificationSummary.Group</property>
@@ -892,7 +892,7 @@
     <property>Amazon.BCMPricingCalculator.Model.BillEstimateInputUsageModificationSummary.Operation</property>
     <min>0</min>
     <max>32</max>
-    <pattern>[-a-zA-Z0-9\.\-_:,]*</pattern>
+    <pattern>[-a-zA-Z0-9\.\-_:, \/()]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.BillEstimateInputUsageModificationSummary.ServiceCode</property>
@@ -910,13 +910,13 @@
     <property>Amazon.BCMPricingCalculator.Model.BillEstimateInputUsageModificationSummary.UsageType</property>
     <min>0</min>
     <max>128</max>
-    <pattern>[-a-zA-Z0-9\.\-_:,]*</pattern>
+    <pattern>[-a-zA-Z0-9\.\-_:, \/()]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.BillEstimateLineItemSummary.AvailabilityZone</property>
     <min>0</min>
     <max>32</max>
-    <pattern>[-a-zA-Z0-9\.\-_:,]*</pattern>
+    <pattern>[-a-zA-Z0-9\.\-_:, \/()]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.BillEstimateLineItemSummary.Id</property>
@@ -928,7 +928,7 @@
     <property>Amazon.BCMPricingCalculator.Model.BillEstimateLineItemSummary.Operation</property>
     <min>0</min>
     <max>32</max>
-    <pattern>[-a-zA-Z0-9\.\-_:,]*</pattern>
+    <pattern>[-a-zA-Z0-9\.\-_:, \/()]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.BillEstimateLineItemSummary.PayerAccountId</property>
@@ -952,7 +952,7 @@
     <property>Amazon.BCMPricingCalculator.Model.BillEstimateLineItemSummary.UsageType</property>
     <min>0</min>
     <max>128</max>
-    <pattern>[-a-zA-Z0-9\.\-_:,]*</pattern>
+    <pattern>[-a-zA-Z0-9\.\-_:, \/()]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.BillEstimateSummary.Id</property>
@@ -1000,7 +1000,7 @@
     <property>Amazon.BCMPricingCalculator.Model.BillScenarioUsageModificationItem.AvailabilityZone</property>
     <min>0</min>
     <max>32</max>
-    <pattern>[-a-zA-Z0-9\.\-_:,]*</pattern>
+    <pattern>[-a-zA-Z0-9\.\-_:, \/()]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.BillScenarioUsageModificationItem.Group</property>
@@ -1018,7 +1018,7 @@
     <property>Amazon.BCMPricingCalculator.Model.BillScenarioUsageModificationItem.Operation</property>
     <min>0</min>
     <max>32</max>
-    <pattern>[-a-zA-Z0-9\.\-_:,]*</pattern>
+    <pattern>[-a-zA-Z0-9\.\-_:, \/()]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.BillScenarioUsageModificationItem.ServiceCode</property>
@@ -1036,13 +1036,13 @@
     <property>Amazon.BCMPricingCalculator.Model.BillScenarioUsageModificationItem.UsageType</property>
     <min>0</min>
     <max>128</max>
-    <pattern>[-a-zA-Z0-9\.\-_:,]*</pattern>
+    <pattern>[-a-zA-Z0-9\.\-_:, \/()]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.HistoricalUsageEntity.Operation</property>
     <min>0</min>
     <max>32</max>
-    <pattern>[-a-zA-Z0-9\.\-_:,]*</pattern>
+    <pattern>[-a-zA-Z0-9\.\-_:, \/()]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.HistoricalUsageEntity.ServiceCode</property>
@@ -1060,7 +1060,7 @@
     <property>Amazon.BCMPricingCalculator.Model.HistoricalUsageEntity.UsageType</property>
     <min>0</min>
     <max>128</max>
-    <pattern>[-a-zA-Z0-9\.\-_:,]*</pattern>
+    <pattern>[-a-zA-Z0-9\.\-_:, \/()]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.NegateReservedInstanceAction.ReservedInstancesId</property>
@@ -1102,7 +1102,7 @@
     <property>Amazon.BCMPricingCalculator.Model.WorkloadEstimateUsageItem.Operation</property>
     <min>0</min>
     <max>32</max>
-    <pattern>[-a-zA-Z0-9\.\-_:,]*</pattern>
+    <pattern>[-a-zA-Z0-9\.\-_:, \/()]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BCMPricingCalculator.Model.WorkloadEstimateUsageItem.ServiceCode</property>
@@ -1120,6 +1120,6 @@
     <property>Amazon.BCMPricingCalculator.Model.WorkloadEstimateUsageItem.UsageType</property>
     <min>0</min>
     <max>128</max>
-    <pattern>[-a-zA-Z0-9\.\-_:,]*</pattern>
+    <pattern>[-a-zA-Z0-9\.\-_:, \/()]*</pattern>
   </property-value-rule>
 </property-value-rules>
