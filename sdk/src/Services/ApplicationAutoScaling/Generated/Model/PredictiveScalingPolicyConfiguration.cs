@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationAutoScaling.Model
 {
     /// <summary>
-    /// Represents a predictive scaling policy configuration.
+    /// Represents a predictive scaling policy configuration. Predictive scaling is supported
+    /// on Amazon ECS services.
     /// </summary>
     public partial class PredictiveScalingPolicyConfiguration
     {
