@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AutoParticipantRecordingConfiguration Marshaller
+    /// CompositionThumbnailConfiguration Marshaller
     /// </summary>
-    public class AutoParticipantRecordingConfigurationMarshaller : IRequestMarshaller<AutoParticipantRecordingConfiguration, JsonMarshallerContext> 
+    public class CompositionThumbnailConfigurationMarshaller : IRequestMarshaller<CompositionThumbnailConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,36 +44,25 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AutoParticipantRecordingConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(CompositionThumbnailConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetMediaTypes())
+            if(requestObject.IsSetStorage())
             {
-                context.Writer.WritePropertyName("mediaTypes");
+                context.Writer.WritePropertyName("storage");
                 context.Writer.WriteArrayStart();
-                foreach(var requestObjectMediaTypesListValue in requestObject.MediaTypes)
+                foreach(var requestObjectStorageListValue in requestObject.Storage)
                 {
-                        context.Writer.Write(requestObjectMediaTypesListValue);
+                        context.Writer.Write(requestObjectStorageListValue);
                 }
                 context.Writer.WriteArrayEnd();
             }
 
-            if(requestObject.IsSetStorageConfigurationArn())
+            if(requestObject.IsSetTargetIntervalSeconds())
             {
-                context.Writer.WritePropertyName("storageConfigurationArn");
-                context.Writer.Write(requestObject.StorageConfigurationArn);
-            }
-
-            if(requestObject.IsSetThumbnailConfiguration())
-            {
-                context.Writer.WritePropertyName("thumbnailConfiguration");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ParticipantThumbnailConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.ThumbnailConfiguration, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("targetIntervalSeconds");
+                context.Writer.Write(requestObject.TargetIntervalSeconds);
             }
 
         }
@@ -81,7 +70,7 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static AutoParticipantRecordingConfigurationMarshaller Instance = new AutoParticipantRecordingConfigurationMarshaller();
+        public readonly static CompositionThumbnailConfigurationMarshaller Instance = new CompositionThumbnailConfigurationMarshaller();
 
     }
 }

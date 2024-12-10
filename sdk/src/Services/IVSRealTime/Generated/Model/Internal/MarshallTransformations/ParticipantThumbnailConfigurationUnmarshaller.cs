@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for S3DestinationConfiguration Object
+    /// Response Unmarshaller for ParticipantThumbnailConfiguration Object
     /// </summary>  
-    public class S3DestinationConfigurationUnmarshaller : IUnmarshaller<S3DestinationConfiguration, XmlUnmarshallerContext>, IUnmarshaller<S3DestinationConfiguration, JsonUnmarshallerContext>
+    public class ParticipantThumbnailConfigurationUnmarshaller : IUnmarshaller<ParticipantThumbnailConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ParticipantThumbnailConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        S3DestinationConfiguration IUnmarshaller<S3DestinationConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ParticipantThumbnailConfiguration IUnmarshaller<ParticipantThumbnailConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public S3DestinationConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public ParticipantThumbnailConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
-            S3DestinationConfiguration unmarshalledObject = new S3DestinationConfiguration();
+            ParticipantThumbnailConfiguration unmarshalledObject = new ParticipantThumbnailConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read();
@@ -66,28 +66,22 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("encoderConfigurationArns", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.EncoderConfigurationArns = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("recordingConfiguration", targetDepth))
-                {
-                    var unmarshaller = RecordingConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.RecordingConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("storageConfigurationArn", targetDepth))
+                if (context.TestExpression("recordingMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StorageConfigurationArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RecordingMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("thumbnailConfigurations", targetDepth))
+                if (context.TestExpression("storage", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<CompositionThumbnailConfiguration, CompositionThumbnailConfigurationUnmarshaller>(CompositionThumbnailConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.ThumbnailConfigurations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Storage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("targetIntervalSeconds", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.TargetIntervalSeconds = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -95,12 +89,12 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
         }
 
 
-        private static S3DestinationConfigurationUnmarshaller _instance = new S3DestinationConfigurationUnmarshaller();        
+        private static ParticipantThumbnailConfigurationUnmarshaller _instance = new ParticipantThumbnailConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static S3DestinationConfigurationUnmarshaller Instance
+        public static ParticipantThumbnailConfigurationUnmarshaller Instance
         {
             get
             {
