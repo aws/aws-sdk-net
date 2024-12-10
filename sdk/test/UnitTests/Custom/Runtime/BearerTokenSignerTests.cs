@@ -52,7 +52,7 @@ namespace AWSSDK.UnitTests.Runtime
                     mockRequest.Object,
                     clientConfig: null,
                     metrics: null,
-                    baseIdentity: null);
+                    identity: null);
             }
             catch (Exception e)
             {
@@ -86,7 +86,7 @@ namespace AWSSDK.UnitTests.Runtime
                     mockRequest.Object,
                     clientConfig: null,
                     metrics: null,
-                    baseIdentity: null);
+                    identity: null);
             }
             catch (Exception e)
             {
@@ -252,7 +252,7 @@ namespace AWSSDK.UnitTests.Runtime
 
             Assert.IsNotNull(exception);
             Assert.IsInstanceOfType(exception, typeof(AmazonClientException));
-            Assert.AreEqual(exception.Message, "No Token found.  Operation requires a Bearer token.");
+            Assert.AreEqual(exception.Message, "No Token found. Operation requires a Bearer token.");
         }
 
 #if AWS_ASYNC_API
@@ -282,7 +282,7 @@ namespace AWSSDK.UnitTests.Runtime
 
             Assert.IsNotNull(exception);
             Assert.IsInstanceOfType(exception, typeof(AmazonClientException));
-            Assert.AreEqual(exception.Message, "No Token found.  Operation requires a Bearer token.");
+            Assert.AreEqual(exception.Message, "No Token found. Operation requires a Bearer token.");
         }
 #endif
 

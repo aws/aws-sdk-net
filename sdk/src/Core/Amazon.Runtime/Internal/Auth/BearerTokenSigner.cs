@@ -28,23 +28,7 @@ namespace Amazon.Runtime.Internal.Auth
         public override bool RequiresCredentials { get; } = false;
         public override ClientProtocol Protocol { get; } = ClientProtocol.Unknown;
 
-        public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey) 
-            => InternalSign(request, baseIdentity: null);
-
-        public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, BaseIdentity baseIdentity)
-        {
-            InternalSign(request, baseIdentity);
-        }
-
-#if AWS_ASYNC_API
-        public override Task SignAsync(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, BaseIdentity baseIdentity, CancellationToken token = default)
-        {
-            InternalSign(request, baseIdentity);
-            return Task.CompletedTask;
-        }
-#endif
-
-        private void InternalSign(IRequest request, BaseIdentity baseIdentity)
+        public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, BaseIdentity identity)
         {
             if (request.Endpoint.Scheme == "http")
             {
@@ -53,9 +37,9 @@ namespace Amazon.Runtime.Internal.Auth
                     "Endpoint must not use 'http'.");
             }
 
-            if (baseIdentity is not AWSToken awsToken || string.IsNullOrEmpty(awsToken.Token))
+            if (identity is not AWSToken awsToken || string.IsNullOrEmpty(awsToken.Token))
             {
-                throw new AmazonClientException("No Token found.  Operation requires a Bearer token.");
+                throw new AmazonClientException("No Token found. Operation requires a Bearer token.");
             }
 
             request.Headers["Authorization"] = $"Bearer {awsToken.Token}";

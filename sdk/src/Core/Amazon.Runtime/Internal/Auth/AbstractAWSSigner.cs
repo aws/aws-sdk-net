@@ -108,26 +108,18 @@ namespace Amazon.Runtime.Internal.Auth
                 throw new Amazon.Runtime.SignatureException("Failed to generate signature: " + e.Message, e);
             }
         }
-        public abstract void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey);
 
-        public virtual void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, BaseIdentity baseIdentity)
-        {
-            if (baseIdentity is AWSCredentials credentials)
-            {
-                var immutableCredentials = credentials.GetCredentials();
-                Sign(request, clientConfig, metrics, immutableCredentials?.AccessKey, immutableCredentials?.SecretKey);
-            }
-        }
+        public abstract void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, BaseIdentity identity);
 
 #if AWS_ASYNC_API
         public virtual System.Threading.Tasks.Task SignAsync(
             IRequest request, 
             IClientConfig clientConfig,
             RequestMetrics metrics,
-            BaseIdentity baseIdentity,
+            BaseIdentity identity,
             CancellationToken token = default)
         {
-            Sign(request, clientConfig, metrics, baseIdentity);
+            Sign(request, clientConfig, metrics, identity);
 #if NETSTANDARD
             return Task.CompletedTask;
 #else

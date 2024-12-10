@@ -41,20 +41,22 @@ namespace Amazon.Runtime.Internal.Auth
         /// Signs the specified request with the AWS2 signing protocol by using the
         /// AWS account credentials given in the method parameters.
         /// </summary>
-        /// <param name="awsAccessKeyId">The AWS public key</param>
-        /// <param name="awsSecretAccessKey">The AWS secret key used to sign the request in clear text</param>
-        /// <param name="metrics">Request metrics</param>
-        /// <param name="clientConfig">The configuration that specifies which hashing algorithm to use</param>
         /// <param name="request">The request to have the signature compute for</param>
+        /// <param name="clientConfig">The configuration that specifies which hashing algorithm to use</param>
+        /// <param name="metrics">Request metrics</param>
+        /// <param name="identity">AWS credentials for the account making the request</param>
         /// <exception cref="Amazon.Runtime.SignatureException">If any problems are encountered while signing the request</exception>
-        public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, string awsAccessKeyId, string awsSecretAccessKey)
+        public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, BaseIdentity identity)
         {
-            if (String.IsNullOrEmpty(awsAccessKeyId))
+            var credentials = identity as AWSCredentials;
+            var immutableCredentials = credentials.GetCredentials();
+
+            if (String.IsNullOrEmpty(immutableCredentials.AccessKey))
             {
                 throw new ArgumentOutOfRangeException("awsAccessKeyId", "The AWS Access Key ID cannot be NULL or a Zero length string");
             }
-          
-            request.Parameters["AWSAccessKeyId"] = awsAccessKeyId;
+
+            request.Parameters["AWSAccessKeyId"] = immutableCredentials.AccessKey;
             request.Parameters["SignatureVersion"] = SignatureVersion2;
             request.Parameters["SignatureMethod"] = clientConfig.SignatureMethod.ToString();
             request.Parameters["Timestamp"] = AWSSDKUtils.GetFormattedTimestampISO8601(clientConfig, request.OriginalRequest);
@@ -64,24 +66,8 @@ namespace Amazon.Runtime.Internal.Auth
 
             string toSign = AWSSDKUtils.CalculateStringToSignV2(request.ParameterCollection, request.Endpoint.AbsoluteUri);
             metrics.AddProperty(Metric.StringToSign, toSign);
-            string auth = ComputeHash(toSign, awsSecretAccessKey, clientConfig.SignatureMethod);
+            string auth = ComputeHash(toSign, immutableCredentials.SecretKey, clientConfig.SignatureMethod);
             request.Parameters["Signature"] = auth;
-        }
-
-        /// <summary>
-        /// Signs the specified request with the AWS2 signing protocol by using the
-        /// AWS account credentials given in the method parameters.
-        /// </summary>
-        /// <param name="request">The request to have the signature compute for</param>
-        /// <param name="clientConfig">The configuration that specifies which hashing algorithm to use</param>
-        /// <param name="metrics">Request metrics</param>
-        /// <param name="baseIdentity">AWS credentials for the account making the request</param>
-        /// <exception cref="Amazon.Runtime.SignatureException">If any problems are encountered while signing the request</exception>
-        public override void Sign(IRequest request, IClientConfig clientConfig, RequestMetrics metrics, BaseIdentity baseIdentity)
-        {
-            var credentials = baseIdentity as AWSCredentials;
-            var immutableCredentials = credentials.GetCredentials();
-            Sign(request, clientConfig, metrics, immutableCredentials.AccessKey, immutableCredentials.SecretKey);
         }
     }
 }
