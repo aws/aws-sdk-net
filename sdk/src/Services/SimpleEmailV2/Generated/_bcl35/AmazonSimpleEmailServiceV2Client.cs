@@ -1345,6 +1345,81 @@ namespace Amazon.SimpleEmailV2
 
         #endregion
         
+        #region  CreateMultiRegionEndpoint
+
+        /// <summary>
+        /// Creates a multi-region endpoint (global-endpoint).
+        /// 
+        ///  
+        /// <para>
+        /// The primary region is going to be the AWS-Region where the operation is executed.
+        /// The secondary region has to be provided in request's parameters. From the data flow
+        /// standpoint there is no difference between primary and secondary regions - sending
+        /// traffic will be split equally between the two. The primary region is the region where
+        /// the resource has been created and where it can be managed. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMultiRegionEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the CreateMultiRegionEndpoint service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.AlreadyExistsException">
+        /// The resource specified in your request already exists.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.LimitExceededException">
+        /// There are too many instances of the specified resource type.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateMultiRegionEndpoint">REST API Reference for CreateMultiRegionEndpoint Operation</seealso>
+        public virtual CreateMultiRegionEndpointResponse CreateMultiRegionEndpoint(CreateMultiRegionEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMultiRegionEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMultiRegionEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<CreateMultiRegionEndpointResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateMultiRegionEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateMultiRegionEndpoint operation on AmazonSimpleEmailServiceV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateMultiRegionEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateMultiRegionEndpoint">REST API Reference for CreateMultiRegionEndpoint Operation</seealso>
+        public virtual IAsyncResult BeginCreateMultiRegionEndpoint(CreateMultiRegionEndpointRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMultiRegionEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMultiRegionEndpointResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateMultiRegionEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateMultiRegionEndpoint.</param>
+        /// 
+        /// <returns>Returns a  CreateMultiRegionEndpointResult from SimpleEmailServiceV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateMultiRegionEndpoint">REST API Reference for CreateMultiRegionEndpoint Operation</seealso>
+        public virtual CreateMultiRegionEndpointResponse EndCreateMultiRegionEndpoint(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateMultiRegionEndpointResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteConfigurationSet
 
         /// <summary>
@@ -1971,6 +2046,78 @@ namespace Amazon.SimpleEmailV2
         public virtual DeleteEmailTemplateResponse EndDeleteEmailTemplate(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteEmailTemplateResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteMultiRegionEndpoint
+
+        /// <summary>
+        /// Deletes a multi-region endpoint (global-endpoint).
+        /// 
+        ///  
+        /// <para>
+        /// Only multi-region endpoints (global-endpoints) whose primary region is the AWS-Region
+        /// where operation is executed can be deleted.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMultiRegionEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the DeleteMultiRegionEndpoint service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.ConcurrentModificationException">
+        /// The resource is being modified by another operation or thread.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteMultiRegionEndpoint">REST API Reference for DeleteMultiRegionEndpoint Operation</seealso>
+        public virtual DeleteMultiRegionEndpointResponse DeleteMultiRegionEndpoint(DeleteMultiRegionEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMultiRegionEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMultiRegionEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteMultiRegionEndpointResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteMultiRegionEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMultiRegionEndpoint operation on AmazonSimpleEmailServiceV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteMultiRegionEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteMultiRegionEndpoint">REST API Reference for DeleteMultiRegionEndpoint Operation</seealso>
+        public virtual IAsyncResult BeginDeleteMultiRegionEndpoint(DeleteMultiRegionEndpointRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteMultiRegionEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMultiRegionEndpointResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteMultiRegionEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteMultiRegionEndpoint.</param>
+        /// 
+        /// <returns>Returns a  DeleteMultiRegionEndpointResult from SimpleEmailServiceV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteMultiRegionEndpoint">REST API Reference for DeleteMultiRegionEndpoint Operation</seealso>
+        public virtual DeleteMultiRegionEndpointResponse EndDeleteMultiRegionEndpoint(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteMultiRegionEndpointResponse>(asyncResult);
         }
 
         #endregion
@@ -3375,6 +3522,75 @@ namespace Amazon.SimpleEmailV2
 
         #endregion
         
+        #region  GetMultiRegionEndpoint
+
+        /// <summary>
+        /// Displays the multi-region endpoint (global-endpoint) configuration.
+        /// 
+        ///  
+        /// <para>
+        /// Only multi-region endpoints (global-endpoints) whose primary region is the AWS-Region
+        /// where operation is executed can be displayed.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMultiRegionEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the GetMultiRegionEndpoint service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetMultiRegionEndpoint">REST API Reference for GetMultiRegionEndpoint Operation</seealso>
+        public virtual GetMultiRegionEndpointResponse GetMultiRegionEndpoint(GetMultiRegionEndpointRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMultiRegionEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMultiRegionEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<GetMultiRegionEndpointResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMultiRegionEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMultiRegionEndpoint operation on AmazonSimpleEmailServiceV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMultiRegionEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetMultiRegionEndpoint">REST API Reference for GetMultiRegionEndpoint Operation</seealso>
+        public virtual IAsyncResult BeginGetMultiRegionEndpoint(GetMultiRegionEndpointRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetMultiRegionEndpointRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMultiRegionEndpointResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMultiRegionEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMultiRegionEndpoint.</param>
+        /// 
+        /// <returns>Returns a  GetMultiRegionEndpointResult from SimpleEmailServiceV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetMultiRegionEndpoint">REST API Reference for GetMultiRegionEndpoint Operation</seealso>
+        public virtual GetMultiRegionEndpointResponse EndGetMultiRegionEndpoint(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetMultiRegionEndpointResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetSuppressedDestination
 
         /// <summary>
@@ -4137,6 +4353,72 @@ namespace Amazon.SimpleEmailV2
         public virtual ListImportJobsResponse EndListImportJobs(IAsyncResult asyncResult)
         {
             return EndInvoke<ListImportJobsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListMultiRegionEndpoints
+
+        /// <summary>
+        /// List the multi-region endpoints (global-endpoints).
+        /// 
+        ///  
+        /// <para>
+        /// Only multi-region endpoints (global-endpoints) whose primary region is the AWS-Region
+        /// where operation is executed will be listed.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMultiRegionEndpoints service method.</param>
+        /// 
+        /// <returns>The response from the ListMultiRegionEndpoints service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListMultiRegionEndpoints">REST API Reference for ListMultiRegionEndpoints Operation</seealso>
+        public virtual ListMultiRegionEndpointsResponse ListMultiRegionEndpoints(ListMultiRegionEndpointsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMultiRegionEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMultiRegionEndpointsResponseUnmarshaller.Instance;
+
+            return Invoke<ListMultiRegionEndpointsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMultiRegionEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMultiRegionEndpoints operation on AmazonSimpleEmailServiceV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMultiRegionEndpoints
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListMultiRegionEndpoints">REST API Reference for ListMultiRegionEndpoints Operation</seealso>
+        public virtual IAsyncResult BeginListMultiRegionEndpoints(ListMultiRegionEndpointsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMultiRegionEndpointsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMultiRegionEndpointsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMultiRegionEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMultiRegionEndpoints.</param>
+        /// 
+        /// <returns>Returns a  ListMultiRegionEndpointsResult from SimpleEmailServiceV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListMultiRegionEndpoints">REST API Reference for ListMultiRegionEndpoints Operation</seealso>
+        public virtual ListMultiRegionEndpointsResponse EndListMultiRegionEndpoints(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListMultiRegionEndpointsResponse>(asyncResult);
         }
 
         #endregion

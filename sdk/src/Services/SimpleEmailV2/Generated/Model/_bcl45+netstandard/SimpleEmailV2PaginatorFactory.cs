@@ -133,6 +133,14 @@ namespace Amazon.SimpleEmailV2.Model
         }
 
         /// <summary>
+        /// Paginator for ListMultiRegionEndpoints operation
+        ///</summary>
+        public IListMultiRegionEndpointsPaginator ListMultiRegionEndpoints(ListMultiRegionEndpointsRequest request) 
+        {
+            return new ListMultiRegionEndpointsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListRecommendations operation
         ///</summary>
         public IListRecommendationsPaginator ListRecommendations(ListRecommendationsRequest request) 

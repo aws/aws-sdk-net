@@ -87,6 +87,11 @@ namespace Amazon.SimpleEmailV2.Model
         IListImportJobsPaginator ListImportJobs(ListImportJobsRequest request);
 
         /// <summary>
+        /// Paginator for ListMultiRegionEndpoints operation
+        ///</summary>
+        IListMultiRegionEndpointsPaginator ListMultiRegionEndpoints(ListMultiRegionEndpointsRequest request);
+
+        /// <summary>
         /// Paginator for ListRecommendations operation
         ///</summary>
         IListRecommendationsPaginator ListRecommendations(ListRecommendationsRequest request);

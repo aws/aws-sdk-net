@@ -61,6 +61,7 @@ namespace Amazon.SimpleEmailV2.Model
         private EmailContent _content;
         private Destination _destination;
         private List<MessageTag> _emailTags = AWSConfigs.InitializeCollections ? new List<MessageTag>() : null;
+        private string _endpointId;
         private string _feedbackForwardingEmailAddress;
         private string _feedbackForwardingEmailAddressIdentityArn;
         private string _fromEmailAddress;
@@ -142,6 +143,24 @@ namespace Amazon.SimpleEmailV2.Model
         internal bool IsSetEmailTags()
         {
             return this._emailTags != null && (this._emailTags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndpointId. 
+        /// <para>
+        /// The ID of the multi-region endpoint (global-endpoint).
+        /// </para>
+        /// </summary>
+        public string EndpointId
+        {
+            get { return this._endpointId; }
+            set { this._endpointId = value; }
+        }
+
+        // Check to see if EndpointId property is set
+        internal bool IsSetEndpointId()
+        {
+            return this._endpointId != null;
         }
 
         /// <summary>

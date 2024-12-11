@@ -51,7 +51,32 @@ namespace Amazon.SimpleEmailV2.Internal
                 ["UseDualStack"] = parameters["UseDualStack"],
                 ["UseFIPS"] = parameters["UseFIPS"],
                 ["Endpoint"] = parameters["Endpoint"],
+                ["EndpointId"] = parameters["EndpointId"],
             };
+            if (IsSet(refs["EndpointId"]) && IsSet(refs["Region"]) && (refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
+            {
+                if (IsValidHostLabel((string)refs["EndpointId"], true))
+                {
+                    if (Equals(refs["UseFIPS"], false))
+                    {
+                        if (IsSet(refs["Endpoint"]))
+                        {
+                            return new Endpoint((string)refs["Endpoint"], InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4a"",""signingName"":""ses"",""signingRegionSet"":[""*""]}]}", refs), InterpolateJson(@"", refs));
+                        }
+                        if (Equals(refs["UseDualStack"], true))
+                        {
+                            if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
+                            {
+                                return new Endpoint(Interpolate(@"https://{EndpointId}.endpoints.email.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4a"",""signingName"":""ses"",""signingRegionSet"":[""*""]}]}", refs), InterpolateJson(@"", refs));
+                            }
+                            throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
+                        }
+                        return new Endpoint(Interpolate(@"https://{EndpointId}.endpoints.email.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4a"",""signingName"":""ses"",""signingRegionSet"":[""*""]}]}", refs), InterpolateJson(@"", refs));
+                    }
+                    throw new AmazonClientException("Invalid Configuration: FIPS is not supported with multi-region endpoints");
+                }
+                throw new AmazonClientException("EndpointId must be a valid host label");
+            }
             if (IsSet(refs["Endpoint"]))
             {
                 if (Equals(refs["UseFIPS"], true))
