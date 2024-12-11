@@ -16,24 +16,24 @@
 /*
  * Do not modify this file. This file is generated from the artifact-2018-05-10.normal.json service model.
  */
+using Amazon.Runtime;
 
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Artifact.Model
 {
     /// <summary>
-    /// Paginators for the Artifact service
+    /// Paginator for the ListCustomerAgreements operation
     ///</summary>
-    public interface IArtifactPaginatorFactory
+    public interface IListCustomerAgreementsPaginator
     {
+        /// <summary>
+        /// Enumerable containing all full responses for the operation
+        /// </summary>
+        IPaginatedEnumerable<ListCustomerAgreementsResponse> Responses { get; }
 
         /// <summary>
-        /// Paginator for ListCustomerAgreements operation
-        ///</summary>
-        IListCustomerAgreementsPaginator ListCustomerAgreements(ListCustomerAgreementsRequest request);
-
-        /// <summary>
-        /// Paginator for ListReports operation
-        ///</summary>
-        IListReportsPaginator ListReports(ListReportsRequest request);
+        /// Enumerable containing all of the CustomerAgreements
+        /// </summary>
+        IPaginatedEnumerable<CustomerAgreementSummary> CustomerAgreements { get; }
     }
 }

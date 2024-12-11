@@ -75,6 +75,114 @@ namespace Amazon.Artifact
 
 
     /// <summary>
+    /// Constants used for properties of type AgreementType.
+    /// </summary>
+    public class AgreementType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CUSTOM for AgreementType
+        /// </summary>
+        public static readonly AgreementType CUSTOM = new AgreementType("CUSTOM");
+        /// <summary>
+        /// Constant DEFAULT for AgreementType
+        /// </summary>
+        public static readonly AgreementType DEFAULT = new AgreementType("DEFAULT");
+        /// <summary>
+        /// Constant MODIFIED for AgreementType
+        /// </summary>
+        public static readonly AgreementType MODIFIED = new AgreementType("MODIFIED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AgreementType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgreementType FindValue(string value)
+        {
+            return FindValue<AgreementType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgreementType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CustomerAgreementState.
+    /// </summary>
+    public class CustomerAgreementState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for CustomerAgreementState
+        /// </summary>
+        public static readonly CustomerAgreementState ACTIVE = new CustomerAgreementState("ACTIVE");
+        /// <summary>
+        /// Constant AWS_TERMINATED for CustomerAgreementState
+        /// </summary>
+        public static readonly CustomerAgreementState AWS_TERMINATED = new CustomerAgreementState("AWS_TERMINATED");
+        /// <summary>
+        /// Constant CUSTOMER_TERMINATED for CustomerAgreementState
+        /// </summary>
+        public static readonly CustomerAgreementState CUSTOMER_TERMINATED = new CustomerAgreementState("CUSTOMER_TERMINATED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CustomerAgreementState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CustomerAgreementState FindValue(string value)
+        {
+            return FindValue<CustomerAgreementState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CustomerAgreementState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type NotificationSubscriptionStatus.
     /// </summary>
     public class NotificationSubscriptionStatus : ConstantClass
