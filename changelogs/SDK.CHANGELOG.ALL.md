@@ -1,3 +1,24 @@
+### 3.7.944.0 (2024-12-11 20:00 UTC)
+* Artifact (3.7.401.0)
+	* Add support for listing active customer agreements for the calling AWS Account.
+* CloudTrail (3.7.402.6)
+	* Doc-only updates for CloudTrail.
+* CognitoIdentityProvider (3.7.405.2)
+	* Updated descriptions for some API operations and parameters, corrected some errors in Cognito user pools
+* ControlCatalog (3.7.402.15)
+	* Minor documentation updates to the content of ImplementationDetails object part of the Control Catalog GetControl API
+* EMRServerless (3.7.402.0)
+	* This release adds support for accessing system profile logs in Lake Formation-enabled jobs.
+* MigrationHub (3.7.401.0)
+	* API and documentation updates for AWS MigrationHub related to adding support for listing migration task updates and associating, disassociating and listing source resources
+* SimpleEmailV2 (3.7.406.0)
+	* Introduces support for multi-region endpoint.
+* TimestreamInfluxDB (3.7.404.0)
+	* Adds networkType parameter to CreateDbInstance API which allows IPv6 support to the InfluxDB endpoint
+* Core 3.7.400.62
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.943.0 (2024-12-10 19:59 UTC)
 * ApplicationAutoScaling (3.7.402.5)
 	* Doc only update for AAS Predictive Scaling policy configuration API.
