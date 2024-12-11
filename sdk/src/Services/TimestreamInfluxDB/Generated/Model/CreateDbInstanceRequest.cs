@@ -43,6 +43,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         private DeploymentType _deploymentType;
         private LogDeliveryConfiguration _logDeliveryConfiguration;
         private string _name;
+        private NetworkType _networkType;
         private string _organization;
         private string _password;
         private int? _port;
@@ -227,6 +228,26 @@ namespace Amazon.TimestreamInfluxDB.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NetworkType. 
+        /// <para>
+        /// Specifies whether the networkType of the Timestream for InfluxDB instance is IPV4,
+        /// which can communicate over IPv4 protocol only, or DUAL, which can communicate over
+        /// both IPv4 and IPv6 protocols.
+        /// </para>
+        /// </summary>
+        public NetworkType NetworkType
+        {
+            get { return this._networkType; }
+            set { this._networkType = value; }
+        }
+
+        // Check to see if NetworkType property is set
+        internal bool IsSetNetworkType()
+        {
+            return this._networkType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Organization. 
         /// <para>
         /// The name of the initial organization for the initial admin user in InfluxDB. An InfluxDB
@@ -252,7 +273,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// The password of the initial admin user created in InfluxDB. This password will allow
         /// you to access the InfluxDB UI to perform various administrative tasks and also use
         /// the InfluxDB CLI to create an operator token. These attributes will be stored in a
-        /// Secret created in AWS SecretManager in your account.
+        /// Secret created in Amazon Web Services SecretManager in your account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=8, Max=64)]
