@@ -475,15 +475,15 @@ namespace Amazon.DynamoDBv2.DataModel
             if (conversion.HasConverter(targetType))
             {
                 var output = conversion.ConvertFromEntry(targetType, entry);
-                if (flatConfig.RetrieveDateTimeInUtc)
+                if (!flatConfig.RetrieveDateTimeInUtc)
                 {
                     if (targetType == typeof(DateTime))
                     {
-                        return ((DateTime)output).ToUniversalTime();
+                        return ((DateTime)output).ToLocalTime();
                     }
                     else if (targetType == typeof(DateTime?))
                     {
-                        return ((DateTime?)output)?.ToUniversalTime();
+                        return ((DateTime?)output)?.ToLocalTime();
                     }
                 }
                 return output;
