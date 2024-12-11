@@ -66,6 +66,9 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                 throw new AmazonEMRServerlessException("Request object does not have required field JobRunId set");
             request.AddPathResource("{jobRunId}", StringUtils.FromString(publicRequest.JobRunId));
             
+            if (publicRequest.IsSetAccessSystemProfileLogs())
+                request.Parameters.Add("accessSystemProfileLogs", StringUtils.FromBool(publicRequest.AccessSystemProfileLogs));
+            
             if (publicRequest.IsSetAttempt())
                 request.Parameters.Add("attempt", StringUtils.FromInt(publicRequest.Attempt));
             request.ResourcePath = "/applications/{applicationId}/jobruns/{jobRunId}/dashboard";
