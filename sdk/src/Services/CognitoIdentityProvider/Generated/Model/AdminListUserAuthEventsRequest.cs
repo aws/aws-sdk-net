@@ -31,8 +31,9 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the AdminListUserAuthEvents operation.
-    /// A history of user activity and any risks detected as part of Amazon Cognito advanced
-    /// security.
+    /// Requests a history of user activity and any risks detected as part of Amazon Cognito
+    /// threat protection. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-event-user-history">Viewing
+    /// user event history</a>.
     /// 
     ///  <note> 
     /// <para>
@@ -86,7 +87,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A pagination token.
+        /// This API operation returns a limited number of results. The pagination token is an
+        /// identifier that you can present in an additional API request with the same parameters.
+        /// When you include the pagination token, Amazon Cognito returns the next set of items
+        /// after the current list. Subsequent requests return a new pagination token. By use
+        /// of this token, you can paginate through the full list of items.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=131072)]
@@ -127,7 +132,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID.
+        /// The Id of the user pool that contains the user profile with the logged events.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

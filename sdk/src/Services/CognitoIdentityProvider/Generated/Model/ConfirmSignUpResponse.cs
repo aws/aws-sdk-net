@@ -39,10 +39,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Session. 
         /// <para>
-        /// You can automatically sign users in with the one-time password that they provided
-        /// in a successful <c>ConfirmSignUp</c> request. To do this, pass the <c>Session</c>
-        /// parameter from the <c>ConfirmSignUp</c> response in the <c>Session</c> parameter of
-        /// an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>
+        /// A session identifier that you can use to immediately sign in the confirmed user. You
+        /// can automatically sign users in with the one-time password that they provided in a
+        /// successful <c>ConfirmSignUp</c> request. To do this, pass the <c>Session</c> parameter
+        /// from this response in the <c>Session</c> parameter of an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>
         /// or <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>
         /// request.
         /// </para>

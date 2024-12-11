@@ -63,7 +63,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property ManagedLoginVersion. 
         /// <para>
         /// The version of managed login branding applied your domain. A value of <c>1</c> indicates
-        /// hosted UI (classic) branding and a version of <c>2</c> indicates managed login branding.
+        /// hosted UI (classic) and a version of <c>2</c> indicates managed login.
         /// </para>
         /// </summary>
         public int ManagedLoginVersion

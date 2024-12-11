@@ -52,7 +52,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property AccessToken. 
         /// <para>
         /// A valid access token that Amazon Cognito issued to the user whose passkey registration
-        /// you want to verify.
+        /// you want to complete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]

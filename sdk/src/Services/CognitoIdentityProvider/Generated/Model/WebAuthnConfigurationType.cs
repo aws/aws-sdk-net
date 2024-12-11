@@ -101,9 +101,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserVerification. 
         /// <para>
-        /// Sets or displays your user-pool treatment for MFA with a passkey. You can override
-        /// other MFA options and require passkey MFA, or you can set it as preferred. When passkey
-        /// MFA is preferred, the hosted UI encourages users to register a passkey at sign-in.
+        /// When <c>required</c>, users can only register and sign in users with passkeys that
+        /// are capable of <a href="https://www.w3.org/TR/webauthn-2/#enum-userVerificationRequirement">user
+        /// verification</a>. When <c>preferred</c>, your user pool doesn't require the use of
+        /// authenticators with user verification but encourages it.
         /// </para>
         /// </summary>
         public UserVerificationType UserVerification

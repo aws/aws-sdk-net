@@ -31,7 +31,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeIdentityProvider operation.
-    /// Gets information about a specific IdP.
+    /// Given a user pool ID and identity provider (IdP) name, returns details about the IdP.
     /// </summary>
     public partial class DescribeIdentityProviderRequest : AmazonCognitoIdentityProviderRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ProviderName. 
         /// <para>
-        /// The IdP name.
+        /// The name of the IdP that you want to describe.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]
@@ -60,7 +60,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID.
+        /// The ID of the user pool that has the IdP that you want to describe..
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

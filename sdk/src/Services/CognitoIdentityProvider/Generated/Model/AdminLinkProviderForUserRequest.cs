@@ -185,7 +185,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID for the user pool.
+        /// The ID of the user pool where you want to link a federated identity.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=131072)]

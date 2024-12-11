@@ -31,8 +31,8 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeManagedLoginBranding operation.
-    /// When given the ID of a managed login branding style, returns detailed information
-    /// about the style.
+    /// Given the ID of a managed login branding style, returns detailed information about
+    /// the style.
     /// </summary>
     public partial class DescribeManagedLoginBrandingRequest : AmazonCognitoIdentityProviderRequest
     {

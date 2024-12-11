@@ -54,9 +54,8 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Updates the specified user's attributes, including developer attributes, as an administrator.
-    /// Works on any user. To delete an attribute from your user, submit the attribute in
-    /// your API request with a blank value.
+    /// Updates the specified user's attributes. To delete an attribute from your user, submit
+    /// the attribute in your API request with a blank value.
     /// </para>
     ///  
     /// <para>
@@ -65,8 +64,10 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </para>
     ///  
     /// <para>
-    /// In addition to updating user attributes, this API can also be used to mark phone and
-    /// email as verified.
+    /// This operation can set a user's email address or phone number as verified and permit
+    /// immediate sign-in in user pools that require verification of these attributes. To
+    /// do this, set the <c>email_verified</c> or <c>phone_number_verified</c> attribute to
+    /// <c>true</c>.
     /// </para>
     ///  <note> 
     /// <para>
@@ -122,22 +123,23 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the
-        /// following:
+        /// When you use the <c>ClientMetadata</c> parameter, note that Amazon Cognito won't do
+        /// the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Store the ClientMetadata value. This data is available only to Lambda triggers that
-        /// are assigned to a user pool to support custom workflows. If your user pool configuration
-        /// doesn't include triggers, the ClientMetadata parameter serves no purpose.
+        /// Store the <c>ClientMetadata</c> value. This data is available only to Lambda triggers
+        /// that are assigned to a user pool to support custom workflows. If your user pool configuration
+        /// doesn't include triggers, the <c>ClientMetadata</c> parameter serves no purpose.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Validate the ClientMetadata value.
+        /// Validate the <c>ClientMetadata</c> value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.
+        /// Encrypt the <c>ClientMetadata</c> value. Don't send sensitive information in this
+        /// parameter.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -219,7 +221,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID for the user pool where you want to update user attributes.
+        /// The ID of the user pool where you want to update user attributes.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

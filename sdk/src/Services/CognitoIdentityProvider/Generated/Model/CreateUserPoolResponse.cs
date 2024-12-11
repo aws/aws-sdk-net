@@ -39,7 +39,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPool. 
         /// <para>
-        /// A container for the user pool details.
+        /// The details of the created user pool.
         /// </para>
         /// </summary>
         public UserPoolType UserPool

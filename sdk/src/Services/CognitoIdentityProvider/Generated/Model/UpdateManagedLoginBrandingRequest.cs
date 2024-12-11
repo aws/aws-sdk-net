@@ -49,8 +49,10 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/managed-login-brandingdesigner.html#branding-designer-api">API
-    /// and SDK operations for managed login branding</a>.
+    /// As a best practice, modify the output of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeManagedLoginBrandingByClient.html">DescribeManagedLoginBrandingByClient</a>
+    /// into the request parameters for this operation. To get all settings, set <c>ReturnMergedResources</c>
+    /// to <c>true</c>. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/managed-login-brandingdesigner.html#branding-designer-api">API
+    /// and SDK operations for managed login branding</a> 
     /// </para>
     ///  <note> 
     /// <para>

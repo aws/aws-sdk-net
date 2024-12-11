@@ -99,7 +99,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ProposedPassword. 
         /// <para>
-        /// The new password.
+        /// A new password that you prompted the user to enter in your application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Max=256)]

@@ -42,10 +42,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AuthenticationResult. 
         /// <para>
-        /// The result of the authentication response. This is only returned if the caller doesn't
-        /// need to pass another challenge. If the caller does need to pass another challenge
-        /// before it gets tokens, <c>ChallengeName</c>, <c>ChallengeParameters</c>, and <c>Session</c>
-        /// are returned.
+        /// The outcome of successful authentication. This is only returned if the user pool has
+        /// no additional challenges to return. If Amazon Cognito returns another challenge, the
+        /// response includes <c>ChallengeName</c>, <c>ChallengeParameters</c>, and <c>Session</c>
+        /// so that your user can answer the challenge.
         /// </para>
         /// </summary>
         public AuthenticationResultType AuthenticationResult
@@ -228,11 +228,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Session. 
         /// <para>
-        /// The session that should be passed both ways in challenge-response calls to the service.
-        /// If <c>AdminInitiateAuth</c> or <c>AdminRespondToAuthChallenge</c> API call determines
-        /// that the caller must pass another challenge, they return a session with other challenge
-        /// parameters. This session should be passed as it is to the next <c>AdminRespondToAuthChallenge</c>
-        /// API call.
+        /// The session that must be passed to challenge-response requests. If an <c>AdminInitiateAuth</c>
+        /// or <c>AdminRespondToAuthChallenge</c> API request determines that the caller must
+        /// pass another challenge, Amazon Cognito returns a session ID and the parameters of
+        /// the next challenge. Pass this session Id in the <c>Session</c> parameter of <c>AdminRespondToAuthChallenge</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=20, Max=2048)]

@@ -712,11 +712,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  
         /// <para>
-        /// This setting applies to providers that you can access with the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-app-integration.html">hosted
-        /// UI and OAuth 2.0 authorization server</a>. The removal of <c>COGNITO</c> from this
-        /// list doesn't prevent authentication operations for local users with the user pools
-        /// API in an Amazon Web Services SDK. The only way to prevent API-based authentication
-        /// is to block access with a <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-waf.html">WAF
+        /// This setting applies to providers that you can access with <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html">managed
+        /// login</a>. The removal of <c>COGNITO</c> from this list doesn't prevent authentication
+        /// operations for local users with the user pools API in an Amazon Web Services SDK.
+        /// The only way to prevent API-based authentication is to block access with a <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-waf.html">WAF
         /// rule</a>.
         /// </para>
         /// </summary>
@@ -755,7 +754,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID for the user pool where you want to update the user pool client.
+        /// The ID of the user pool where you want to update the user pool client.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

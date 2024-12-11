@@ -151,8 +151,14 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UseCognitoProvidedValues. 
         /// <para>
-        /// When true, applies the default branding style options. This option reverts to a "blank"
-        /// style that you can modify later in the branding designer.
+        /// When true, applies the default branding style options. This option reverts to default
+        /// style options that are managed by Amazon Cognito. You can modify them later in the
+        /// branding designer.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you specify <c>true</c> for this option, you must also omit values for <c>Settings</c>
+        /// and <c>Assets</c> in the request.
         /// </para>
         /// </summary>
         public bool UseCognitoProvidedValues

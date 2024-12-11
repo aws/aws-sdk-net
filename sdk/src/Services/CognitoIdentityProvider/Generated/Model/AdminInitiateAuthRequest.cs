@@ -31,7 +31,11 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the AdminInitiateAuth operation.
-    /// Initiates the authentication flow, as an administrator.
+    /// Starts sign-in for applications with a server-side component, for example a traditional
+    /// web application. This operation specifies the authentication flow that you'd like
+    /// to begin. The authentication flow that you specify must be supported in your app client
+    /// configuration. For more information about authentication flows, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-authentication-flow-methods.html">Authentication
+    /// flows</a>.
     /// 
     ///  <note> 
     /// <para>
@@ -90,8 +94,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AnalyticsMetadata. 
         /// <para>
-        /// The analytics metadata for collecting Amazon Pinpoint metrics for <c>AdminInitiateAuth</c>
-        /// calls.
+        /// The analytics metadata for collecting Amazon Pinpoint metrics.
         /// </para>
         /// </summary>
         public AnalyticsMetadataType AnalyticsMetadata
@@ -109,8 +112,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AuthFlow. 
         /// <para>
-        /// The authentication flow that you want to initiate. The <c>AuthParameters</c> that
-        /// you must submit are linked to the flow that you submit. For example:
+        /// The authentication flow that you want to initiate. Each <c>AuthFlow</c> has linked
+        /// <c>AuthParameters</c> that you must submit. The following are some example flows and
+        /// their parameters.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -136,12 +140,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Valid values include the following:
+        ///  <i>All flows</i> 
         /// </para>
         ///  <dl> <dt>USER_AUTH</dt> <dd> 
         /// <para>
-        /// The entry point for sign-in with passwords, one-time passwords, biometric devices,
-        /// and security keys.
+        /// The entry point for sign-in with passwords, one-time passwords, and WebAuthN authenticators.
         /// </para>
         ///  </dd> <dt>USER_SRP_AUTH</dt> <dd> 
         /// <para>
@@ -243,7 +246,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ClientId. 
         /// <para>
-        /// The app client ID.
+        /// The ID of the app client where the user wants to sign in.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
@@ -333,22 +336,23 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the
-        /// following:
+        /// When you use the <c>ClientMetadata</c> parameter, note that Amazon Cognito won't do
+        /// the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Store the ClientMetadata value. This data is available only to Lambda triggers that
-        /// are assigned to a user pool to support custom workflows. If your user pool configuration
-        /// doesn't include triggers, the ClientMetadata parameter serves no purpose.
+        /// Store the <c>ClientMetadata</c> value. This data is available only to Lambda triggers
+        /// that are assigned to a user pool to support custom workflows. If your user pool configuration
+        /// doesn't include triggers, the <c>ClientMetadata</c> parameter serves no purpose.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Validate the ClientMetadata value.
+        /// Validate the <c>ClientMetadata</c> value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.
+        /// Encrypt the <c>ClientMetadata</c> value. Don't send sensitive information in this
+        /// parameter.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -372,6 +376,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// event based on the context that your app generates and passes to Amazon Cognito when
         /// it makes API requests.
         /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-viewing-threat-protection-app.html">Collecting
+        /// data for threat protection in applications</a>.
+        /// </para>
         /// </summary>
         public ContextDataType ContextData
         {
@@ -389,7 +398,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property Session. 
         /// <para>
         /// The optional session ID from a <c>ConfirmSignUp</c> API request. You can sign in a
-        /// user directly from the sign-up process with the <c>USER_AUTH</c> authentication flow.
+        /// user directly from the sign-up process with an <c>AuthFlow</c> of <c>USER_AUTH</c>
+        /// and <c>AuthParameters</c> of <c>EMAIL_OTP</c> or <c>SMS_OTP</c>, depending on how
+        /// your user pool sent the confirmation-code message.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=20, Max=2048)]
@@ -408,7 +419,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The ID of the Amazon Cognito user pool.
+        /// The ID of the user pool where the user wants to sign in.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

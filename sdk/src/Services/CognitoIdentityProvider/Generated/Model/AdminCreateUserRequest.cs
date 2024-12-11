@@ -125,7 +125,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// you use the AdminCreateUser API action, Amazon Cognito invokes the function that is
         /// assigned to the <i>pre sign-up</i> trigger. When Amazon Cognito invokes this function,
         /// it passes a JSON payload, which the function receives as input. This payload contains
-        /// a <c>clientMetadata</c> attribute, which provides the data that you assigned to the
+        /// a <c>ClientMetadata</c> attribute, which provides the data that you assigned to the
         /// ClientMetadata parameter in your AdminCreateUser request. In your function code in
         /// Lambda, you can process the <c>clientMetadata</c> value to enhance your workflow for
         /// your specific needs.
@@ -138,22 +138,23 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the
-        /// following:
+        /// When you use the <c>ClientMetadata</c> parameter, note that Amazon Cognito won't do
+        /// the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Store the ClientMetadata value. This data is available only to Lambda triggers that
-        /// are assigned to a user pool to support custom workflows. If your user pool configuration
-        /// doesn't include triggers, the ClientMetadata parameter serves no purpose.
+        /// Store the <c>ClientMetadata</c> value. This data is available only to Lambda triggers
+        /// that are assigned to a user pool to support custom workflows. If your user pool configuration
+        /// doesn't include triggers, the <c>ClientMetadata</c> parameter serves no purpose.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Validate the ClientMetadata value.
+        /// Validate the <c>ClientMetadata</c> value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.
+        /// Encrypt the <c>ClientMetadata</c> value. Don't send sensitive information in this
+        /// parameter.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -172,9 +173,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property DesiredDeliveryMediums. 
         /// <para>
-        /// Specify <c>"EMAIL"</c> if email will be used to send the welcome message. Specify
-        /// <c>"SMS"</c> if the phone number will be used. The default value is <c>"SMS"</c>.
-        /// You can specify more than one value.
+        /// Specify <c>EMAIL</c> if email will be used to send the welcome message. Specify <c>SMS</c>
+        /// if the phone number will be used. The default value is <c>SMS</c>. You can specify
+        /// more than one value.
         /// </para>
         /// </summary>
         public List<string> DesiredDeliveryMediums
@@ -198,9 +199,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  
         /// <para>
         /// If this parameter is set to <c>True</c> and the phone number or email address specified
-        /// in the UserAttributes parameter already exists as an alias with a different user,
-        /// the API call will migrate the alias from the previous user to the newly created user.
-        /// The previous user will no longer be able to log in using that alias.
+        /// in the <c>UserAttributes</c> parameter already exists as an alias with a different
+        /// user, this request migrates the alias from the previous user to the newly-created
+        /// user. The previous user will no longer be able to log in using that alias.
         /// </para>
         ///  
         /// <para>
@@ -223,9 +224,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property MessageAction. 
         /// <para>
-        /// Set to <c>RESEND</c> to resend the invitation message to a user that already exists
-        /// and reset the expiration limit on the user's account. Set to <c>SUPPRESS</c> to suppress
-        /// sending the message. You can specify only one value.
+        /// Set to <c>RESEND</c> to resend the invitation message to a user that already exists,
+        /// and to reset the temporary-password duration with a new temporary password. Set to
+        /// <c>SUPPRESS</c> to suppress sending the message. You can specify only one value.
         /// </para>
         /// </summary>
         public MessageActionType MessageAction
@@ -388,7 +389,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The user pool ID for the user pool where the user will be created.
+        /// The ID of the user pool where you want to create a user.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

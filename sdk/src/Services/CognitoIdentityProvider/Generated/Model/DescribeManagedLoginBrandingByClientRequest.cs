@@ -31,8 +31,8 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeManagedLoginBrandingByClient operation.
-    /// When given the ID of a user pool app client, returns detailed information about the
-    /// style assigned to the app client.
+    /// Given the ID of a user pool app client, returns detailed information about the style
+    /// assigned to the app client.
     /// </summary>
     public partial class DescribeManagedLoginBrandingByClientRequest : AmazonCognitoIdentityProviderRequest
     {

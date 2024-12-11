@@ -118,7 +118,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ChallengeName. 
         /// <para>
-        /// The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.
+        /// The name of the challenge that you are responding to. You can find more information
+        /// about values for <c>ChallengeName</c> in the response parameters of <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html#CognitoUserPools-AdminInitiateAuth-response-ChallengeName">AdminInitiateAuth</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -305,7 +306,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ClientId. 
         /// <para>
-        /// The app client ID.
+        /// The ID of the app client where you initiated sign-in.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
@@ -335,7 +336,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// pre sign-up
+        /// Pre sign-up
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -343,27 +344,27 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// post authentication
+        /// Post authentication
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// user migration
+        /// User migration
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// pre token generation
+        /// Pre token generation
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// define auth challenge
+        /// Define auth challenge
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// create auth challenge
+        /// Create auth challenge
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// verify auth challenge response
+        /// Verify auth challenge response
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -381,22 +382,23 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// When you use the ClientMetadata parameter, remember that Amazon Cognito won't do the
-        /// following:
+        /// When you use the <c>ClientMetadata</c> parameter, note that Amazon Cognito won't do
+        /// the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Store the ClientMetadata value. This data is available only to Lambda triggers that
-        /// are assigned to a user pool to support custom workflows. If your user pool configuration
-        /// doesn't include triggers, the ClientMetadata parameter serves no purpose.
+        /// Store the <c>ClientMetadata</c> value. This data is available only to Lambda triggers
+        /// that are assigned to a user pool to support custom workflows. If your user pool configuration
+        /// doesn't include triggers, the <c>ClientMetadata</c> parameter serves no purpose.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Validate the ClientMetadata value.
+        /// Validate the <c>ClientMetadata</c> value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Encrypt the ClientMetadata value. Don't use Amazon Cognito to provide sensitive information.
+        /// Encrypt the <c>ClientMetadata</c> value. Don't send sensitive information in this
+        /// parameter.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -420,6 +422,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// event based on the context that your app generates and passes to Amazon Cognito when
         /// it makes API requests.
         /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-viewing-threat-protection-app.html">Collecting
+        /// data for threat protection in applications</a>.
+        /// </para>
         /// </summary>
         public ContextDataType ContextData
         {
@@ -436,11 +443,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Session. 
         /// <para>
-        /// The session that should be passed both ways in challenge-response calls to the service.
-        /// If an <c>InitiateAuth</c> or <c>RespondToAuthChallenge</c> API call determines that
-        /// the caller must pass another challenge, it returns a session with other challenge
-        /// parameters. This session should be passed as it is to the next <c>RespondToAuthChallenge</c>
-        /// API call.
+        /// The session identifier that maintains the state of authentication requests and challenge
+        /// responses. If an <c>AdminInitiateAuth</c> or <c>AdminRespondToAuthChallenge</c> API
+        /// request results in a determination that your application must pass another challenge,
+        /// Amazon Cognito returns a session with other challenge parameters. Send this session
+        /// identifier, unmodified, to the next <c>AdminRespondToAuthChallenge</c> request.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=20, Max=2048)]
@@ -459,7 +466,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserPoolId. 
         /// <para>
-        /// The ID of the Amazon Cognito user pool.
+        /// The ID of the user pool where you want to respond to an authentication challenge.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=55)]

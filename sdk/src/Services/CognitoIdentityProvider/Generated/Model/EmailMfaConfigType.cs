@@ -49,10 +49,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// The template for the email message that your user pool sends to users with an MFA
-        /// code. The message must contain the <c>{####}</c> placeholder. In the message, Amazon
-        /// Cognito replaces this placeholder with the code. If you don't provide this parameter,
-        /// Amazon Cognito sends messages in the default format.
+        /// The template for the email message that your user pool sends to users with a code
+        /// for MFA and sign-in with an email OTP. The message must contain the <c>{####}</c>
+        /// placeholder. In the message, Amazon Cognito replaces this placeholder with the code.
+        /// If you don't provide this parameter, Amazon Cognito sends messages in the default
+        /// format.
         /// </para>
         /// </summary>
         [AWSProperty(Min=6, Max=20000)]
@@ -71,7 +72,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Subject. 
         /// <para>
-        /// The subject of the email message that your user pool sends to users with an MFA code.
+        /// The subject of the email message that your user pool sends to users with a code for
+        /// MFA and email OTP sign-in.
         /// </para>
         /// </summary>
         public string Subject
