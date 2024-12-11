@@ -47,8 +47,18 @@ namespace Amazon.MigrationHub.Model
         IListMigrationTasksPaginator ListMigrationTasks(ListMigrationTasksRequest request);
 
         /// <summary>
+        /// Paginator for ListMigrationTaskUpdates operation
+        ///</summary>
+        IListMigrationTaskUpdatesPaginator ListMigrationTaskUpdates(ListMigrationTaskUpdatesRequest request);
+
+        /// <summary>
         /// Paginator for ListProgressUpdateStreams operation
         ///</summary>
         IListProgressUpdateStreamsPaginator ListProgressUpdateStreams(ListProgressUpdateStreamsRequest request);
+
+        /// <summary>
+        /// Paginator for ListSourceResources operation
+        ///</summary>
+        IListSourceResourcesPaginator ListSourceResources(ListSourceResourcesRequest request);
     }
 }

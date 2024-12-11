@@ -30,58 +30,59 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MigrationHub.Model
 {
     /// <summary>
-    /// Task object encapsulating task information.
+    /// A source resource can be a source server, a migration wave, an application, or any
+    /// other resource that you track.
     /// </summary>
-    public partial class Task
+    public partial class SourceResource
     {
-        private int? _progressPercent;
-        private Status _status;
+        private string _description;
+        private string _name;
         private string _statusDetail;
 
         /// <summary>
-        /// Gets and sets the property ProgressPercent. 
+        /// Gets and sets the property Description. 
         /// <para>
-        /// Indication of the percentage completion of the task.
+        /// A description that can be free-form text to record additional detail about the resource
+        /// for clarity or later reference.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
-        public int ProgressPercent
+        [AWSProperty(Min=0, Max=500)]
+        public string Description
         {
-            get { return this._progressPercent.GetValueOrDefault(); }
-            set { this._progressPercent = value; }
+            get { return this._description; }
+            set { this._description = value; }
         }
 
-        // Check to see if ProgressPercent property is set
-        internal bool IsSetProgressPercent()
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
         {
-            return this._progressPercent.HasValue; 
+            return this._description != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Status. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// Status of the task - Not Started, In-Progress, Complete.
+        /// This is the name that you want to use to identify the resource. If the resource is
+        /// an AWS resource, we recommend that you set this parameter to the ARN of the resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public Status Status
+        [AWSProperty(Required=true, Min=1, Max=1600)]
+        public string Name
         {
-            get { return this._status; }
-            set { this._status = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._status != null;
+            return this._name != null;
         }
 
         /// <summary>
         /// Gets and sets the property StatusDetail. 
         /// <para>
-        /// Details of task status as notified by a migration tool. A tool might use this field
-        /// to provide clarifying information about the status that is unique to that tool or
-        /// that explains an error state.
+        /// A free-form description of the status of the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2500)]
