@@ -60,7 +60,7 @@ namespace AWSSDK.UnitTests
                 RegionEndpoint = RegionEndpoint.USWest2
             };
             var iRequest = S3ArnTestUtils.RunMockRequest(putObjectRequest, PutObjectRequestMarshaller.Instance, config);
-            signer.Sign(iRequest, config, new RequestMetrics(), new ImmutableCredentials("ACCESS", "SECRET", ""));
+            signer.Sign(iRequest, config, new RequestMetrics(), new BasicAWSCredentials("ACCESS", "SECRET"));
 
             Assert.IsTrue(iRequest.Headers.ContainsKey(HeaderKeys.AuthorizationHeader));
             Assert.IsTrue((iRequest.Headers["Authorization"]).Contains("s3-outposts"));
@@ -115,7 +115,7 @@ namespace AWSSDK.UnitTests
                     RegionEndpoint = RegionEndpoint.USWest1
                 };
 
-                signer.Sign(iRequest, config, new RequestMetrics(), new ImmutableCredentials("ACCESS", "SECRET", ""));
+                signer.Sign(iRequest, config, new RequestMetrics(), new BasicAWSCredentials("ACCESS", "SECRET"));
 
                 Assert.IsTrue(iRequest.Headers.ContainsKey(HeaderKeys.AuthorizationHeader));
 

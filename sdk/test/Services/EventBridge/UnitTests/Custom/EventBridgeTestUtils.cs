@@ -17,7 +17,6 @@ using Amazon.EventBridge;
 using Amazon.EventBridge.Internal;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 using AWSSDK.UnitTests.Mocking;
 using System.Collections.Generic;
@@ -44,10 +43,11 @@ namespace AWSSDK.UnitTests
                 new NoopPipelineHandler(),
                 new Signer(),
                 new AmazonEventBridgeEndpointResolver(),
+                new AmazonEventBridgeAuthSchemeHandler(),
                 new Marshaller()
             };
 
-            return TestUtils.RunMockRequest(pipeline, request, marshaller, null, config, new EventBridgeSigner());
+            return TestUtils.RunMockRequest(pipeline, request, marshaller, null, config, signer: null);
         }
     }
 }
