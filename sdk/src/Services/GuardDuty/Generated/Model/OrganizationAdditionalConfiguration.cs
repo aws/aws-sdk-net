@@ -31,6 +31,12 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// A list of additional configurations which will be configured for the organization.
+    /// 
+    /// 
+    ///  
+    /// <para>
+    /// Additional configuration applies to only GuardDuty Runtime Monitoring protection plan.
+    /// </para>
     /// </summary>
     public partial class OrganizationAdditionalConfiguration
     {
@@ -82,6 +88,7 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the additional configuration that will be configured for the organization.
+        /// These values are applicable to only Runtime Monitoring protection plan.
         /// </para>
         /// </summary>
         public OrgFeatureAdditionalConfiguration Name

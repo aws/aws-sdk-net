@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Contains information about a malware scan.
+    /// Contains information about malware scans associated with GuardDuty Malware Protection
+    /// for EC2.
     /// </summary>
     public partial class Scan
     {
@@ -117,7 +118,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DetectorId. 
         /// <para>
-        /// The unique ID of the detector that the request is associated with.
+        /// The unique ID of the detector that is associated with the request.
         /// </para>
         ///  
         /// <para>
@@ -142,7 +143,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// Represents the reason for FAILED scan status.
+        /// Represents the reason for <c>FAILED</c> scan status.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

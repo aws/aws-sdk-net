@@ -62,7 +62,9 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property AutoEnable. 
         /// <para>
-        /// Represents whether or not to automatically enable member accounts in the organization.
+        /// Represents whether to automatically enable member accounts in the organization. This
+        /// applies to only new member accounts, not the existing member accounts. When a new
+        /// account joins the organization, the chosen features will be enabled for them by default.
         /// </para>
         ///  
         /// <para>
