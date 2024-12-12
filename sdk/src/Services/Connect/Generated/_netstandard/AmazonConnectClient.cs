@@ -2038,6 +2038,61 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  CreateHoursOfOperationOverride
+
+        internal virtual CreateHoursOfOperationOverrideResponse CreateHoursOfOperationOverride(CreateHoursOfOperationOverrideRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateHoursOfOperationOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateHoursOfOperationOverrideResponseUnmarshaller.Instance;
+
+            return Invoke<CreateHoursOfOperationOverrideResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an hours of operation override in an Amazon Connect hours of operation resource
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateHoursOfOperationOverride service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateHoursOfOperationOverride service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateHoursOfOperationOverride">REST API Reference for CreateHoursOfOperationOverride Operation</seealso>
+        public virtual Task<CreateHoursOfOperationOverrideResponse> CreateHoursOfOperationOverrideAsync(CreateHoursOfOperationOverrideRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateHoursOfOperationOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateHoursOfOperationOverrideResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateHoursOfOperationOverrideResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateInstance
 
         internal virtual CreateInstanceResponse CreateInstance(CreateInstanceRequest request)
@@ -2444,12 +2499,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Creates a new queue for the specified Amazon Connect instance.
-        /// </para>
+        /// 
         ///  <important> <ul> <li> 
         /// <para>
         /// If the phone number is claimed to a traffic distribution group that was created in
@@ -3673,6 +3724,55 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = DeleteHoursOfOperationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteHoursOfOperationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteHoursOfOperationOverride
+
+        internal virtual DeleteHoursOfOperationOverrideResponse DeleteHoursOfOperationOverride(DeleteHoursOfOperationOverrideRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteHoursOfOperationOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteHoursOfOperationOverrideResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteHoursOfOperationOverrideResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an hours of operation override in an Amazon Connect hours of operation resource
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHoursOfOperationOverride service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteHoursOfOperationOverride service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteHoursOfOperationOverride">REST API Reference for DeleteHoursOfOperationOverride Operation</seealso>
+        public virtual Task<DeleteHoursOfOperationOverrideResponse> DeleteHoursOfOperationOverrideAsync(DeleteHoursOfOperationOverrideRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteHoursOfOperationOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteHoursOfOperationOverrideResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteHoursOfOperationOverrideResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5152,6 +5252,55 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = DescribeHoursOfOperationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeHoursOfOperationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeHoursOfOperationOverride
+
+        internal virtual DescribeHoursOfOperationOverrideResponse DescribeHoursOfOperationOverride(DescribeHoursOfOperationOverrideRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeHoursOfOperationOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeHoursOfOperationOverrideResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeHoursOfOperationOverrideResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the hours of operation override.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHoursOfOperationOverride service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeHoursOfOperationOverride service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeHoursOfOperationOverride">REST API Reference for DescribeHoursOfOperationOverride Operation</seealso>
+        public virtual Task<DescribeHoursOfOperationOverrideResponse> DescribeHoursOfOperationOverrideAsync(DescribeHoursOfOperationOverrideRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeHoursOfOperationOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeHoursOfOperationOverrideResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeHoursOfOperationOverrideResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7006,6 +7155,55 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  GetEffectiveHoursOfOperations
+
+        internal virtual GetEffectiveHoursOfOperationsResponse GetEffectiveHoursOfOperations(GetEffectiveHoursOfOperationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEffectiveHoursOfOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEffectiveHoursOfOperationsResponseUnmarshaller.Instance;
+
+            return Invoke<GetEffectiveHoursOfOperationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get the hours of operations with the effective override applied.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEffectiveHoursOfOperations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetEffectiveHoursOfOperations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetEffectiveHoursOfOperations">REST API Reference for GetEffectiveHoursOfOperations Operation</seealso>
+        public virtual Task<GetEffectiveHoursOfOperationsResponse> GetEffectiveHoursOfOperationsAsync(GetEffectiveHoursOfOperationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEffectiveHoursOfOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEffectiveHoursOfOperationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetEffectiveHoursOfOperationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetFederationToken
 
         internal virtual GetFederationTokenResponse GetFederationToken(GetFederationTokenRequest request)
@@ -8259,6 +8457,55 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = ListFlowAssociationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListFlowAssociationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListHoursOfOperationOverrides
+
+        internal virtual ListHoursOfOperationOverridesResponse ListHoursOfOperationOverrides(ListHoursOfOperationOverridesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListHoursOfOperationOverridesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListHoursOfOperationOverridesResponseUnmarshaller.Instance;
+
+            return Invoke<ListHoursOfOperationOverridesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List the hours of operation overrides.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHoursOfOperationOverrides service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListHoursOfOperationOverrides service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListHoursOfOperationOverrides">REST API Reference for ListHoursOfOperationOverrides Operation</seealso>
+        public virtual Task<ListHoursOfOperationOverridesResponse> ListHoursOfOperationOverridesAsync(ListHoursOfOperationOverridesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListHoursOfOperationOverridesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListHoursOfOperationOverridesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListHoursOfOperationOverridesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -10717,6 +10964,55 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = SearchEmailAddressesResponseUnmarshaller.Instance;
 
             return InvokeAsync<SearchEmailAddressesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SearchHoursOfOperationOverrides
+
+        internal virtual SearchHoursOfOperationOverridesResponse SearchHoursOfOperationOverrides(SearchHoursOfOperationOverridesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchHoursOfOperationOverridesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchHoursOfOperationOverridesResponseUnmarshaller.Instance;
+
+            return Invoke<SearchHoursOfOperationOverridesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Searches the hours of operation overrides.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchHoursOfOperationOverrides service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchHoursOfOperationOverrides service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchHoursOfOperationOverrides">REST API Reference for SearchHoursOfOperationOverrides Operation</seealso>
+        public virtual Task<SearchHoursOfOperationOverridesResponse> SearchHoursOfOperationOverridesAsync(SearchHoursOfOperationOverridesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchHoursOfOperationOverridesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchHoursOfOperationOverridesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SearchHoursOfOperationOverridesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -13754,6 +14050,61 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  UpdateHoursOfOperationOverride
+
+        internal virtual UpdateHoursOfOperationOverrideResponse UpdateHoursOfOperationOverride(UpdateHoursOfOperationOverrideRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateHoursOfOperationOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateHoursOfOperationOverrideResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateHoursOfOperationOverrideResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Update the hours of operation override.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHoursOfOperationOverride service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateHoursOfOperationOverride service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.ConditionalOperationFailedException">
+        /// Request processing failed because dependent condition failed.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateHoursOfOperationOverride">REST API Reference for UpdateHoursOfOperationOverride Operation</seealso>
+        public virtual Task<UpdateHoursOfOperationOverrideResponse> UpdateHoursOfOperationOverrideAsync(UpdateHoursOfOperationOverrideRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateHoursOfOperationOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateHoursOfOperationOverrideResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateHoursOfOperationOverrideResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateInstanceAttribute
 
         internal virtual UpdateInstanceAttributeResponse UpdateInstanceAttribute(UpdateInstanceAttributeRequest request)
@@ -14451,7 +14802,7 @@ namespace Amazon.Connect
         /// You do not have sufficient permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ConditionalOperationFailedException">
-        /// A conditional check failed.
+        /// Request processing failed because dependent condition failed.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.

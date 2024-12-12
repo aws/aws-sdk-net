@@ -81,6 +81,12 @@ namespace Amazon.Connect.Model
         /// <para>
         /// The role of the participant in the chat conversation.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Only <c>CUSTOMER</c> is currently supported. Any other values other than <c>CUSTOMER</c>
+        /// will result in an exception (4xx error).
+        /// </para>
+        ///  </note>
         /// </summary>
         public ParticipantRole ParticipantRole
         {

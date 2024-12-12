@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// A conditional check failed.
+    /// Request processing failed because dependent condition failed.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

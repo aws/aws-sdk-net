@@ -30,23 +30,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// The search criteria to be used to return flow modules.
+    /// The search criteria to be used to return hours of operations overrides.
     /// </summary>
-    public partial class ContactFlowModuleSearchCriteria
+    public partial class HoursOfOperationOverrideSearchCriteria
     {
-        private List<ContactFlowModuleSearchCriteria> _andConditions = AWSConfigs.InitializeCollections ? new List<ContactFlowModuleSearchCriteria>() : null;
-        private List<ContactFlowModuleSearchCriteria> _orConditions = AWSConfigs.InitializeCollections ? new List<ContactFlowModuleSearchCriteria>() : null;
-        private ContactFlowModuleState _stateCondition;
-        private ContactFlowModuleStatus _statusCondition;
+        private List<HoursOfOperationOverrideSearchCriteria> _andConditions = AWSConfigs.InitializeCollections ? new List<HoursOfOperationOverrideSearchCriteria>() : null;
+        private DateCondition _dateCondition;
+        private List<HoursOfOperationOverrideSearchCriteria> _orConditions = AWSConfigs.InitializeCollections ? new List<HoursOfOperationOverrideSearchCriteria>() : null;
         private StringCondition _stringCondition;
 
         /// <summary>
         /// Gets and sets the property AndConditions. 
         /// <para>
-        /// A list of conditions which would be applied together with an <c>AND</c> condition.
+        /// A list of conditions which would be applied together with an AND condition.
         /// </para>
         /// </summary>
-        public List<ContactFlowModuleSearchCriteria> AndConditions
+        public List<HoursOfOperationOverrideSearchCriteria> AndConditions
         {
             get { return this._andConditions; }
             set { this._andConditions = value; }
@@ -59,12 +58,30 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OrConditions. 
+        /// Gets and sets the property DateCondition. 
         /// <para>
-        /// A list of conditions which would be applied together with an <c>OR</c> condition.
+        /// A leaf node condition which can be used to specify a date condition.
         /// </para>
         /// </summary>
-        public List<ContactFlowModuleSearchCriteria> OrConditions
+        public DateCondition DateCondition
+        {
+            get { return this._dateCondition; }
+            set { this._dateCondition = value; }
+        }
+
+        // Check to see if DateCondition property is set
+        internal bool IsSetDateCondition()
+        {
+            return this._dateCondition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrConditions. 
+        /// <para>
+        /// A list of conditions which would be applied together with an OR condition.
+        /// </para>
+        /// </summary>
+        public List<HoursOfOperationOverrideSearchCriteria> OrConditions
         {
             get { return this._orConditions; }
             set { this._orConditions = value; }
@@ -74,42 +91,6 @@ namespace Amazon.Connect.Model
         internal bool IsSetOrConditions()
         {
             return this._orConditions != null && (this._orConditions.Count > 0 || !AWSConfigs.InitializeCollections); 
-        }
-
-        /// <summary>
-        /// Gets and sets the property StateCondition. 
-        /// <para>
-        /// The state of the flow.
-        /// </para>
-        /// </summary>
-        public ContactFlowModuleState StateCondition
-        {
-            get { return this._stateCondition; }
-            set { this._stateCondition = value; }
-        }
-
-        // Check to see if StateCondition property is set
-        internal bool IsSetStateCondition()
-        {
-            return this._stateCondition != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property StatusCondition. 
-        /// <para>
-        /// The status of the flow.
-        /// </para>
-        /// </summary>
-        public ContactFlowModuleStatus StatusCondition
-        {
-            get { return this._statusCondition; }
-            set { this._statusCondition = value; }
-        }
-
-        // Check to see if StatusCondition property is set
-        internal bool IsSetStatusCondition()
-        {
-            return this._statusCondition != null;
         }
 
         /// <summary>

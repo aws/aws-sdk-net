@@ -112,6 +112,11 @@ namespace Amazon.Connect.Model
         IListFlowAssociationsPaginator ListFlowAssociations(ListFlowAssociationsRequest request);
 
         /// <summary>
+        /// Paginator for ListHoursOfOperationOverrides operation
+        ///</summary>
+        IListHoursOfOperationOverridesPaginator ListHoursOfOperationOverrides(ListHoursOfOperationOverridesRequest request);
+
+        /// <summary>
         /// Paginator for ListHoursOfOperations operation
         ///</summary>
         IListHoursOfOperationsPaginator ListHoursOfOperations(ListHoursOfOperationsRequest request);
@@ -290,6 +295,11 @@ namespace Amazon.Connect.Model
         /// Paginator for SearchContacts operation
         ///</summary>
         ISearchContactsPaginator SearchContacts(SearchContactsRequest request);
+
+        /// <summary>
+        /// Paginator for SearchHoursOfOperationOverrides operation
+        ///</summary>
+        ISearchHoursOfOperationOverridesPaginator SearchHoursOfOperationOverrides(SearchHoursOfOperationOverridesRequest request);
 
         /// <summary>
         /// Paginator for SearchHoursOfOperations operation

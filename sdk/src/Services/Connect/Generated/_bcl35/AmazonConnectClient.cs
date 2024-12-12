@@ -2634,6 +2634,81 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  CreateHoursOfOperationOverride
+
+        /// <summary>
+        /// Creates an hours of operation override in an Amazon Connect hours of operation resource
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateHoursOfOperationOverride service method.</param>
+        /// 
+        /// <returns>The response from the CreateHoursOfOperationOverride service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateHoursOfOperationOverride">REST API Reference for CreateHoursOfOperationOverride Operation</seealso>
+        public virtual CreateHoursOfOperationOverrideResponse CreateHoursOfOperationOverride(CreateHoursOfOperationOverrideRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateHoursOfOperationOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateHoursOfOperationOverrideResponseUnmarshaller.Instance;
+
+            return Invoke<CreateHoursOfOperationOverrideResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateHoursOfOperationOverride operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateHoursOfOperationOverride operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateHoursOfOperationOverride
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateHoursOfOperationOverride">REST API Reference for CreateHoursOfOperationOverride Operation</seealso>
+        public virtual IAsyncResult BeginCreateHoursOfOperationOverride(CreateHoursOfOperationOverrideRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateHoursOfOperationOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateHoursOfOperationOverrideResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateHoursOfOperationOverride operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateHoursOfOperationOverride.</param>
+        /// 
+        /// <returns>Returns a  CreateHoursOfOperationOverrideResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateHoursOfOperationOverride">REST API Reference for CreateHoursOfOperationOverride Operation</seealso>
+        public virtual CreateHoursOfOperationOverrideResponse EndCreateHoursOfOperationOverride(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateHoursOfOperationOverrideResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateInstance
 
         /// <summary>
@@ -3169,12 +3244,8 @@ namespace Amazon.Connect
         #region  CreateQueue
 
         /// <summary>
-        /// This API is in preview release for Amazon Connect and is subject to change.
-        /// 
-        ///  
-        /// <para>
         /// Creates a new queue for the specified Amazon Connect instance.
-        /// </para>
+        /// 
         ///  <important> <ul> <li> 
         /// <para>
         /// If the phone number is claimed to a traffic distribution group that was created in
@@ -4829,6 +4900,75 @@ namespace Amazon.Connect
         public virtual DeleteHoursOfOperationResponse EndDeleteHoursOfOperation(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteHoursOfOperationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteHoursOfOperationOverride
+
+        /// <summary>
+        /// Deletes an hours of operation override in an Amazon Connect hours of operation resource
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHoursOfOperationOverride service method.</param>
+        /// 
+        /// <returns>The response from the DeleteHoursOfOperationOverride service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteHoursOfOperationOverride">REST API Reference for DeleteHoursOfOperationOverride Operation</seealso>
+        public virtual DeleteHoursOfOperationOverrideResponse DeleteHoursOfOperationOverride(DeleteHoursOfOperationOverrideRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteHoursOfOperationOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteHoursOfOperationOverrideResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteHoursOfOperationOverrideResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteHoursOfOperationOverride operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteHoursOfOperationOverride operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteHoursOfOperationOverride
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteHoursOfOperationOverride">REST API Reference for DeleteHoursOfOperationOverride Operation</seealso>
+        public virtual IAsyncResult BeginDeleteHoursOfOperationOverride(DeleteHoursOfOperationOverrideRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteHoursOfOperationOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteHoursOfOperationOverrideResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteHoursOfOperationOverride operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteHoursOfOperationOverride.</param>
+        /// 
+        /// <returns>Returns a  DeleteHoursOfOperationOverrideResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteHoursOfOperationOverride">REST API Reference for DeleteHoursOfOperationOverride Operation</seealso>
+        public virtual DeleteHoursOfOperationOverrideResponse EndDeleteHoursOfOperationOverride(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteHoursOfOperationOverrideResponse>(asyncResult);
         }
 
         #endregion
@@ -6848,6 +6988,75 @@ namespace Amazon.Connect
         public virtual DescribeHoursOfOperationResponse EndDescribeHoursOfOperation(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeHoursOfOperationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeHoursOfOperationOverride
+
+        /// <summary>
+        /// Describes the hours of operation override.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHoursOfOperationOverride service method.</param>
+        /// 
+        /// <returns>The response from the DescribeHoursOfOperationOverride service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeHoursOfOperationOverride">REST API Reference for DescribeHoursOfOperationOverride Operation</seealso>
+        public virtual DescribeHoursOfOperationOverrideResponse DescribeHoursOfOperationOverride(DescribeHoursOfOperationOverrideRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeHoursOfOperationOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeHoursOfOperationOverrideResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeHoursOfOperationOverrideResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeHoursOfOperationOverride operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeHoursOfOperationOverride operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeHoursOfOperationOverride
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeHoursOfOperationOverride">REST API Reference for DescribeHoursOfOperationOverride Operation</seealso>
+        public virtual IAsyncResult BeginDescribeHoursOfOperationOverride(DescribeHoursOfOperationOverrideRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeHoursOfOperationOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeHoursOfOperationOverrideResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeHoursOfOperationOverride operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeHoursOfOperationOverride.</param>
+        /// 
+        /// <returns>Returns a  DescribeHoursOfOperationOverrideResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeHoursOfOperationOverride">REST API Reference for DescribeHoursOfOperationOverride Operation</seealso>
+        public virtual DescribeHoursOfOperationOverrideResponse EndDescribeHoursOfOperationOverride(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeHoursOfOperationOverrideResponse>(asyncResult);
         }
 
         #endregion
@@ -9402,6 +9611,75 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  GetEffectiveHoursOfOperations
+
+        /// <summary>
+        /// Get the hours of operations with the effective override applied.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEffectiveHoursOfOperations service method.</param>
+        /// 
+        /// <returns>The response from the GetEffectiveHoursOfOperations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetEffectiveHoursOfOperations">REST API Reference for GetEffectiveHoursOfOperations Operation</seealso>
+        public virtual GetEffectiveHoursOfOperationsResponse GetEffectiveHoursOfOperations(GetEffectiveHoursOfOperationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEffectiveHoursOfOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEffectiveHoursOfOperationsResponseUnmarshaller.Instance;
+
+            return Invoke<GetEffectiveHoursOfOperationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEffectiveHoursOfOperations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEffectiveHoursOfOperations operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEffectiveHoursOfOperations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetEffectiveHoursOfOperations">REST API Reference for GetEffectiveHoursOfOperations Operation</seealso>
+        public virtual IAsyncResult BeginGetEffectiveHoursOfOperations(GetEffectiveHoursOfOperationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEffectiveHoursOfOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEffectiveHoursOfOperationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetEffectiveHoursOfOperations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEffectiveHoursOfOperations.</param>
+        /// 
+        /// <returns>Returns a  GetEffectiveHoursOfOperationsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetEffectiveHoursOfOperations">REST API Reference for GetEffectiveHoursOfOperations Operation</seealso>
+        public virtual GetEffectiveHoursOfOperationsResponse EndGetEffectiveHoursOfOperations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetEffectiveHoursOfOperationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetFederationToken
 
         /// <summary>
@@ -11115,6 +11393,75 @@ namespace Amazon.Connect
         public virtual ListFlowAssociationsResponse EndListFlowAssociations(IAsyncResult asyncResult)
         {
             return EndInvoke<ListFlowAssociationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListHoursOfOperationOverrides
+
+        /// <summary>
+        /// List the hours of operation overrides.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHoursOfOperationOverrides service method.</param>
+        /// 
+        /// <returns>The response from the ListHoursOfOperationOverrides service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListHoursOfOperationOverrides">REST API Reference for ListHoursOfOperationOverrides Operation</seealso>
+        public virtual ListHoursOfOperationOverridesResponse ListHoursOfOperationOverrides(ListHoursOfOperationOverridesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListHoursOfOperationOverridesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListHoursOfOperationOverridesResponseUnmarshaller.Instance;
+
+            return Invoke<ListHoursOfOperationOverridesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListHoursOfOperationOverrides operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListHoursOfOperationOverrides operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListHoursOfOperationOverrides
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListHoursOfOperationOverrides">REST API Reference for ListHoursOfOperationOverrides Operation</seealso>
+        public virtual IAsyncResult BeginListHoursOfOperationOverrides(ListHoursOfOperationOverridesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListHoursOfOperationOverridesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListHoursOfOperationOverridesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListHoursOfOperationOverrides operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListHoursOfOperationOverrides.</param>
+        /// 
+        /// <returns>Returns a  ListHoursOfOperationOverridesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListHoursOfOperationOverrides">REST API Reference for ListHoursOfOperationOverrides Operation</seealso>
+        public virtual ListHoursOfOperationOverridesResponse EndListHoursOfOperationOverrides(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListHoursOfOperationOverridesResponse>(asyncResult);
         }
 
         #endregion
@@ -14473,6 +14820,75 @@ namespace Amazon.Connect
         public virtual SearchEmailAddressesResponse EndSearchEmailAddresses(IAsyncResult asyncResult)
         {
             return EndInvoke<SearchEmailAddressesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  SearchHoursOfOperationOverrides
+
+        /// <summary>
+        /// Searches the hours of operation overrides.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchHoursOfOperationOverrides service method.</param>
+        /// 
+        /// <returns>The response from the SearchHoursOfOperationOverrides service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchHoursOfOperationOverrides">REST API Reference for SearchHoursOfOperationOverrides Operation</seealso>
+        public virtual SearchHoursOfOperationOverridesResponse SearchHoursOfOperationOverrides(SearchHoursOfOperationOverridesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchHoursOfOperationOverridesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchHoursOfOperationOverridesResponseUnmarshaller.Instance;
+
+            return Invoke<SearchHoursOfOperationOverridesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchHoursOfOperationOverrides operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchHoursOfOperationOverrides operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchHoursOfOperationOverrides
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchHoursOfOperationOverrides">REST API Reference for SearchHoursOfOperationOverrides Operation</seealso>
+        public virtual IAsyncResult BeginSearchHoursOfOperationOverrides(SearchHoursOfOperationOverridesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchHoursOfOperationOverridesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchHoursOfOperationOverridesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchHoursOfOperationOverrides operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchHoursOfOperationOverrides.</param>
+        /// 
+        /// <returns>Returns a  SearchHoursOfOperationOverridesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchHoursOfOperationOverrides">REST API Reference for SearchHoursOfOperationOverrides Operation</seealso>
+        public virtual SearchHoursOfOperationOverridesResponse EndSearchHoursOfOperationOverrides(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SearchHoursOfOperationOverridesResponse>(asyncResult);
         }
 
         #endregion
@@ -18510,6 +18926,81 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  UpdateHoursOfOperationOverride
+
+        /// <summary>
+        /// Update the hours of operation override.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHoursOfOperationOverride service method.</param>
+        /// 
+        /// <returns>The response from the UpdateHoursOfOperationOverride service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.ConditionalOperationFailedException">
+        /// Request processing failed because dependent condition failed.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateHoursOfOperationOverride">REST API Reference for UpdateHoursOfOperationOverride Operation</seealso>
+        public virtual UpdateHoursOfOperationOverrideResponse UpdateHoursOfOperationOverride(UpdateHoursOfOperationOverrideRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateHoursOfOperationOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateHoursOfOperationOverrideResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateHoursOfOperationOverrideResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateHoursOfOperationOverride operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHoursOfOperationOverride operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateHoursOfOperationOverride
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateHoursOfOperationOverride">REST API Reference for UpdateHoursOfOperationOverride Operation</seealso>
+        public virtual IAsyncResult BeginUpdateHoursOfOperationOverride(UpdateHoursOfOperationOverrideRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateHoursOfOperationOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateHoursOfOperationOverrideResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateHoursOfOperationOverride operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateHoursOfOperationOverride.</param>
+        /// 
+        /// <returns>Returns a  UpdateHoursOfOperationOverrideResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateHoursOfOperationOverride">REST API Reference for UpdateHoursOfOperationOverride Operation</seealso>
+        public virtual UpdateHoursOfOperationOverrideResponse EndUpdateHoursOfOperationOverride(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateHoursOfOperationOverrideResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateInstanceAttribute
 
         /// <summary>
@@ -19413,7 +19904,7 @@ namespace Amazon.Connect
         /// You do not have sufficient permissions to perform this action.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ConditionalOperationFailedException">
-        /// A conditional check failed.
+        /// Request processing failed because dependent condition failed.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.

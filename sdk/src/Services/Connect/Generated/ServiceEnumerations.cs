@@ -1311,6 +1311,68 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type DateComparisonType.
+    /// </summary>
+    public class DateComparisonType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EQUAL_TO for DateComparisonType
+        /// </summary>
+        public static readonly DateComparisonType EQUAL_TO = new DateComparisonType("EQUAL_TO");
+        /// <summary>
+        /// Constant GREATER_THAN for DateComparisonType
+        /// </summary>
+        public static readonly DateComparisonType GREATER_THAN = new DateComparisonType("GREATER_THAN");
+        /// <summary>
+        /// Constant GREATER_THAN_OR_EQUAL_TO for DateComparisonType
+        /// </summary>
+        public static readonly DateComparisonType GREATER_THAN_OR_EQUAL_TO = new DateComparisonType("GREATER_THAN_OR_EQUAL_TO");
+        /// <summary>
+        /// Constant LESS_THAN for DateComparisonType
+        /// </summary>
+        public static readonly DateComparisonType LESS_THAN = new DateComparisonType("LESS_THAN");
+        /// <summary>
+        /// Constant LESS_THAN_OR_EQUAL_TO for DateComparisonType
+        /// </summary>
+        public static readonly DateComparisonType LESS_THAN_OR_EQUAL_TO = new DateComparisonType("LESS_THAN_OR_EQUAL_TO");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DateComparisonType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DateComparisonType FindValue(string value)
+        {
+            return FindValue<DateComparisonType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DateComparisonType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DeviceType.
     /// </summary>
     public class DeviceType : ConstantClass
@@ -3640,6 +3702,76 @@ namespace Amazon.Connect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OutboundMessageSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OverrideDays.
+    /// </summary>
+    public class OverrideDays : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FRIDAY for OverrideDays
+        /// </summary>
+        public static readonly OverrideDays FRIDAY = new OverrideDays("FRIDAY");
+        /// <summary>
+        /// Constant MONDAY for OverrideDays
+        /// </summary>
+        public static readonly OverrideDays MONDAY = new OverrideDays("MONDAY");
+        /// <summary>
+        /// Constant SATURDAY for OverrideDays
+        /// </summary>
+        public static readonly OverrideDays SATURDAY = new OverrideDays("SATURDAY");
+        /// <summary>
+        /// Constant SUNDAY for OverrideDays
+        /// </summary>
+        public static readonly OverrideDays SUNDAY = new OverrideDays("SUNDAY");
+        /// <summary>
+        /// Constant THURSDAY for OverrideDays
+        /// </summary>
+        public static readonly OverrideDays THURSDAY = new OverrideDays("THURSDAY");
+        /// <summary>
+        /// Constant TUESDAY for OverrideDays
+        /// </summary>
+        public static readonly OverrideDays TUESDAY = new OverrideDays("TUESDAY");
+        /// <summary>
+        /// Constant WEDNESDAY for OverrideDays
+        /// </summary>
+        public static readonly OverrideDays WEDNESDAY = new OverrideDays("WEDNESDAY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OverrideDays(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OverrideDays FindValue(string value)
+        {
+            return FindValue<OverrideDays>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OverrideDays(string value)
         {
             return FindValue(value);
         }

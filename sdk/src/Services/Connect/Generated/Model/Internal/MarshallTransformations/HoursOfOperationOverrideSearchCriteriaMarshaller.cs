@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ContactFlowModuleSearchCriteria Marshaller
+    /// HoursOfOperationOverrideSearchCriteria Marshaller
     /// </summary>
-    public class ContactFlowModuleSearchCriteriaMarshaller : IRequestMarshaller<ContactFlowModuleSearchCriteria, JsonMarshallerContext> 
+    public class HoursOfOperationOverrideSearchCriteriaMarshaller : IRequestMarshaller<HoursOfOperationOverrideSearchCriteria, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,7 +44,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ContactFlowModuleSearchCriteria requestObject, JsonMarshallerContext context)
+        public void Marshall(HoursOfOperationOverrideSearchCriteria requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
@@ -56,12 +56,23 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WriteObjectStart();
 
-                    var marshaller = ContactFlowModuleSearchCriteriaMarshaller.Instance;
+                    var marshaller = HoursOfOperationOverrideSearchCriteriaMarshaller.Instance;
                     marshaller.Marshall(requestObjectAndConditionsListValue, context);
 
                     context.Writer.WriteObjectEnd();
                 }
                 context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetDateCondition())
+            {
+                context.Writer.WritePropertyName("DateCondition");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DateConditionMarshaller.Instance;
+                marshaller.Marshall(requestObject.DateCondition, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetOrConditions())
@@ -72,24 +83,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WriteObjectStart();
 
-                    var marshaller = ContactFlowModuleSearchCriteriaMarshaller.Instance;
+                    var marshaller = HoursOfOperationOverrideSearchCriteriaMarshaller.Instance;
                     marshaller.Marshall(requestObjectOrConditionsListValue, context);
 
                     context.Writer.WriteObjectEnd();
                 }
                 context.Writer.WriteArrayEnd();
-            }
-
-            if(requestObject.IsSetStateCondition())
-            {
-                context.Writer.WritePropertyName("StateCondition");
-                context.Writer.Write(requestObject.StateCondition);
-            }
-
-            if(requestObject.IsSetStatusCondition())
-            {
-                context.Writer.WritePropertyName("StatusCondition");
-                context.Writer.Write(requestObject.StatusCondition);
             }
 
             if(requestObject.IsSetStringCondition())
@@ -108,7 +107,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ContactFlowModuleSearchCriteriaMarshaller Instance = new ContactFlowModuleSearchCriteriaMarshaller();
+        public readonly static HoursOfOperationOverrideSearchCriteriaMarshaller Instance = new HoursOfOperationOverrideSearchCriteriaMarshaller();
 
     }
 }

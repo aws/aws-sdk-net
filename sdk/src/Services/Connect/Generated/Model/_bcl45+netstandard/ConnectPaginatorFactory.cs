@@ -173,6 +173,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListHoursOfOperationOverrides operation
+        ///</summary>
+        public IListHoursOfOperationOverridesPaginator ListHoursOfOperationOverrides(ListHoursOfOperationOverridesRequest request) 
+        {
+            return new ListHoursOfOperationOverridesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListHoursOfOperations operation
         ///</summary>
         public IListHoursOfOperationsPaginator ListHoursOfOperations(ListHoursOfOperationsRequest request) 
@@ -458,6 +466,14 @@ namespace Amazon.Connect.Model
         public ISearchContactsPaginator SearchContacts(SearchContactsRequest request) 
         {
             return new SearchContactsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchHoursOfOperationOverrides operation
+        ///</summary>
+        public ISearchHoursOfOperationOverridesPaginator SearchHoursOfOperationOverrides(SearchHoursOfOperationOverridesRequest request) 
+        {
+            return new SearchHoursOfOperationOverridesPaginator(this.client, request);
         }
 
         /// <summary>
