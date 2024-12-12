@@ -43,6 +43,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _asmPassword;
         private string _asmServer;
         private string _asmUser;
+        private OracleAuthenticationMethod _authenticationMethod;
         private CharLengthSemantics _charLengthSemantics;
         private bool? _convertTimestampWithZoneToUTC;
         private string _databaseName;
@@ -194,9 +195,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ArchivedLogsOnly. 
         /// <para>
-        /// When this field is set to <c>Y</c>, DMS only accesses the archived redo logs. If the
-        /// archived redo logs are stored on Automatic Storage Management (ASM) only, the DMS
-        /// user account needs to be granted ASM privileges.
+        /// When this field is set to <c>True</c>, DMS only accesses the archived redo logs. If
+        /// the archived redo logs are stored on Automatic Storage Management (ASM) only, the
+        /// DMS user account needs to be granted ASM privileges.
         /// </para>
         /// </summary>
         public bool ArchivedLogsOnly
@@ -277,6 +278,24 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetAsmUser()
         {
             return this._asmUser != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AuthenticationMethod. 
+        /// <para>
+        /// Specifies using Kerberos authentication with Oracle.
+        /// </para>
+        /// </summary>
+        public OracleAuthenticationMethod AuthenticationMethod
+        {
+            get { return this._authenticationMethod; }
+            set { this._authenticationMethod = value; }
+        }
+
+        // Check to see if AuthenticationMethod property is set
+        internal bool IsSetAuthenticationMethod()
+        {
+            return this._authenticationMethod != null;
         }
 
         /// <summary>
@@ -505,8 +524,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter is only valid in DMS version 3.5.0 and later. DMS supports a window
-        /// of up to 9.5 hours including the value for <c>OpenTransactionWindow</c>.
+        /// This parameter is only valid in DMS version 3.5.0 and later.
         /// </para>
         ///  </note>
         /// </summary>
@@ -952,10 +970,11 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property UseBFile. 
         /// <para>
-        /// Set this attribute to Y to capture change data using the Binary Reader utility. Set
-        /// <c>UseLogminerReader</c> to N to set this attribute to Y. To use Binary Reader with
-        /// Amazon RDS for Oracle as the source, you set additional attributes. For more information
-        /// about using this setting with Oracle Automatic Storage Management (ASM), see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC">
+        /// Set this attribute to True to capture change data using the Binary Reader utility.
+        /// Set <c>UseLogminerReader</c> to False to set this attribute to True. To use Binary
+        /// Reader with Amazon RDS for Oracle as the source, you set additional attributes. For
+        /// more information about using this setting with Oracle Automatic Storage Management
+        /// (ASM), see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC">
         /// Using Oracle LogMiner or DMS Binary Reader for CDC</a>.
         /// </para>
         /// </summary>
@@ -974,7 +993,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property UseDirectPathFullLoad. 
         /// <para>
-        /// Set this attribute to Y to have DMS use a direct path full load. Specify this value
+        /// Set this attribute to True to have DMS use a direct path full load. Specify this value
         /// to use the direct path protocol in the Oracle Call Interface (OCI). By using this
         /// OCI protocol, you can bulk-load Oracle target tables during a full load.
         /// </para>
@@ -994,10 +1013,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property UseLogminerReader. 
         /// <para>
-        /// Set this attribute to Y to capture change data using the Oracle LogMiner utility (the
-        /// default). Set this attribute to N if you want to access the redo logs as a binary
-        /// file. When you set <c>UseLogminerReader</c> to N, also set <c>UseBfile</c> to Y. For
-        /// more information on this setting and using Oracle ASM, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC">
+        /// Set this attribute to True to capture change data using the Oracle LogMiner utility
+        /// (the default). Set this attribute to False if you want to access the redo logs as
+        /// a binary file. When you set <c>UseLogminerReader</c> to False, also set <c>UseBfile</c>
+        /// to True. For more information on this setting and using Oracle ASM, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC">
         /// Using Oracle LogMiner or DMS Binary Reader for CDC</a> in the <i>DMS User Guide</i>.
         /// </para>
         /// </summary>

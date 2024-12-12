@@ -130,6 +130,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Selecting the right DMS replication instance for your migration</a>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Max=30)]
         public string ReplicationInstanceClass
         {
             get { return this._replicationInstanceClass; }

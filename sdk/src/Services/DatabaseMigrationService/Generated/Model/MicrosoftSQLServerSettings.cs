@@ -34,6 +34,7 @@ namespace Amazon.DatabaseMigrationService.Model
     /// </summary>
     public partial class MicrosoftSQLServerSettings
     {
+        private SqlServerAuthenticationMethod _authenticationMethod;
         private int? _bcpPacketSize;
         private string _controlTablesFileGroup;
         private string _databaseName;
@@ -51,6 +52,24 @@ namespace Amazon.DatabaseMigrationService.Model
         private bool? _useBcpFullLoad;
         private string _username;
         private bool? _useThirdPartyBackupDevice;
+
+        /// <summary>
+        /// Gets and sets the property AuthenticationMethod. 
+        /// <para>
+        /// Specifies using Kerberos authentication with Microsoft SQL Server.
+        /// </para>
+        /// </summary>
+        public SqlServerAuthenticationMethod AuthenticationMethod
+        {
+            get { return this._authenticationMethod; }
+            set { this._authenticationMethod = value; }
+        }
+
+        // Check to see if AuthenticationMethod property is set
+        internal bool IsSetAuthenticationMethod()
+        {
+            return this._authenticationMethod != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BcpPacketSize. 

@@ -44,6 +44,11 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// Filters applied to the instance profiles described in the form of key-value pairs.
         /// </para>
+        ///  
+        /// <para>
+        /// Valid filter names and values: instance-profile-identifier, instance profile arn or
+        /// name
+        /// </para>
         /// </summary>
         public List<Filter> Filters
         {

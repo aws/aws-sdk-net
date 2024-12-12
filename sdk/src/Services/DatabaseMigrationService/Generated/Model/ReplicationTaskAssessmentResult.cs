@@ -167,6 +167,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// in the request.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string S3ObjectUrl
         {
             get { return this._s3ObjectUrl; }

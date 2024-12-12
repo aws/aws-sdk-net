@@ -66,6 +66,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AuthenticationMethod", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AuthenticationMethod = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BcpPacketSize", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

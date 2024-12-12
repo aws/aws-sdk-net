@@ -40,6 +40,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private DatabaseMode _databaseMode;
         private string _databaseName;
         private string _ddlArtifactsSchema;
+        private bool? _disableUnicodeSourceFilter;
         private int? _executeTimeout;
         private bool? _failTasksOnLobTruncation;
         private bool? _heartbeatEnable;
@@ -108,6 +109,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
+        /// The default value is <c>true</c>.
+        /// </para>
+        ///  
+        /// <para>
         /// If this value is set to <c>N</c>, you don't have to create tables or triggers on the
         /// source database.
         /// </para>
@@ -168,6 +173,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
+        /// The default value is <c>public</c>.
+        /// </para>
+        ///  
+        /// <para>
         /// Example: <c>ddlArtifactsSchema=xyzddlschema;</c> 
         /// </para>
         /// </summary>
@@ -181,6 +190,32 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetDdlArtifactsSchema()
         {
             return this._ddlArtifactsSchema != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisableUnicodeSourceFilter. 
+        /// <para>
+        /// Disables the Unicode source filter with PostgreSQL, for values passed into the Selection
+        /// rule filter on Source Endpoint column values. By default DMS performs source filter
+        /// comparisons using a Unicode string which can cause look ups to ignore the indexes
+        /// in the text columns and slow down migrations.
+        /// </para>
+        ///  
+        /// <para>
+        /// Unicode support should only be disabled when using a selection rule filter is on a
+        /// text column in the Source database that is indexed.
+        /// </para>
+        /// </summary>
+        public bool DisableUnicodeSourceFilter
+        {
+            get { return this._disableUnicodeSourceFilter.GetValueOrDefault(); }
+            set { this._disableUnicodeSourceFilter = value; }
+        }
+
+        // Check to see if DisableUnicodeSourceFilter property is set
+        internal bool IsSetDisableUnicodeSourceFilter()
+        {
+            return this._disableUnicodeSourceFilter.HasValue; 
         }
 
         /// <summary>
@@ -214,6 +249,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
+        /// The default value is <c>false</c>.
+        /// </para>
+        ///  
+        /// <para>
         /// If task is set to Limited LOB mode and this option is set to true, the task fails
         /// instead of truncating the LOB data.
         /// </para>
@@ -238,6 +277,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// result in storage full situations on the source. This heartbeat keeps <c>restart_lsn</c>
         /// moving and prevents storage full scenarios.
         /// </para>
+        ///  
+        /// <para>
+        /// The default value is <c>false</c>.
+        /// </para>
         /// </summary>
         public bool HeartbeatEnable
         {
@@ -256,6 +299,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// Sets the WAL heartbeat frequency (in minutes).
         /// </para>
+        ///  
+        /// <para>
+        /// The default value is 5 minutes.
+        /// </para>
         /// </summary>
         public int HeartbeatFrequency
         {
@@ -273,6 +320,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property HeartbeatSchema. 
         /// <para>
         /// Sets the schema in which the heartbeat artifacts are created.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is <c>public</c>.
         /// </para>
         /// </summary>
         public string HeartbeatSchema
@@ -294,6 +345,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// migrates booleans as <c>varchar(5)</c>. You must set this setting on both the source
         /// and target endpoints for it to take effect.
         /// </para>
+        ///  
+        /// <para>
+        /// The default value is <c>false</c>.
+        /// </para>
         /// </summary>
         public bool MapBooleanAsBoolean
         {
@@ -312,6 +367,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// When true, DMS migrates JSONB values as CLOB.
         /// </para>
+        ///  
+        /// <para>
+        /// The default value is <c>false</c>.
+        /// </para>
         /// </summary>
         public bool MapJsonbAsClob
         {
@@ -328,7 +387,11 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property MapLongVarcharAs. 
         /// <para>
-        /// When true, DMS migrates LONG values as VARCHAR.
+        /// Sets what datatype to map LONG values as.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is <c>wstring</c>.
         /// </para>
         /// </summary>
         public LongVarcharMappingType MapLongVarcharAs
@@ -347,6 +410,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property MaxFileSize. 
         /// <para>
         /// Specifies the maximum size (in KB) of any .csv file used to transfer data to PostgreSQL.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is 32,768 KB (32 MB).
         /// </para>
         ///  
         /// <para>
@@ -388,6 +455,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property PluginName. 
         /// <para>
         /// Specifies the plugin to use to create a replication slot.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is <c>pglogical</c>.
         /// </para>
         /// </summary>
         public PluginNameValue PluginName

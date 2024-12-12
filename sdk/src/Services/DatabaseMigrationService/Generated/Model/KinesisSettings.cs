@@ -46,6 +46,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private bool? _partitionIncludeSchemaTable;
         private string _serviceAccessRoleArn;
         private string _streamArn;
+        private bool? _useLargeIntegerValue;
 
         /// <summary>
         /// Gets and sets the property IncludeControlDetails. 
@@ -243,6 +244,24 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetStreamArn()
         {
             return this._streamArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseLargeIntegerValue. 
+        /// <para>
+        /// Specifies using the large integer value with Kinesis.
+        /// </para>
+        /// </summary>
+        public bool UseLargeIntegerValue
+        {
+            get { return this._useLargeIntegerValue.GetValueOrDefault(); }
+            set { this._useLargeIntegerValue = value; }
+        }
+
+        // Check to see if UseLargeIntegerValue property is set
+        internal bool IsSetUseLargeIntegerValue()
+        {
+            return this._useLargeIntegerValue.HasValue; 
         }
 
     }
